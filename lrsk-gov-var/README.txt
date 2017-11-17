@@ -86,7 +86,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 09-22-17
 -Fixed issue w/ new hive mind type ethos as civic restriction.
--Updated to using "has_valic_civic"
+-Updated to using "has_valid_civic"
 -Changed "Feudal Empire" to "Noble Empire" as alternative to new vanilla "Feudal Empire"
 -Changed "Megachurch" to "Evangelical Franchise" as alternative to new vanilla "Megachurch"
 -Changed "Occult Franchise" to "Occult Cartel"

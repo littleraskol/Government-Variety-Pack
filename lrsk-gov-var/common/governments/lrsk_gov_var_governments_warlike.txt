@@ -233,3 +233,50 @@ lrsk_gov_var_gov_private_military_contractor = {
 		base = 1000
 	}
 }
+
+# Doom Horde
+lrsk_gov_var_gov_doom_horde = {
+	ruler_title = LRSK_GOV_VAR_RT_DEATH_KHAN
+	ruler_title_female = LRSK_GOV_VAR_RT_DEATH_KHATUN
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_warrior_culture
+	}
+
+	weight = {
+		base = 2500
+	}
+}
+
+# Death Cult
+lrsk_gov_var_gov_death_cult = {
+	ruler_title = LRSK_GOV_VAR_RT_BLOOD_ABBOT
+	ruler_title_female = LRSK_GOV_VAR_RT_BLOOD_ABBESS
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_exalted_priesthood
+	}
+
+	weight = {
+		base = 2500
+	}
+}
+
+# Legionary Polis
+lrsk_gov_var_gov_legionary_polis = {
+	ruler_title = LRSK_GOV_VAR_RT_GRAVE_MARSHAL
+	ruler_title_female = LRSK_GOV_VAR_RT_GRAVE_MARSHAL_FEMALE
+
+	possible = {
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_citizen_service
+	}
+
+	weight = {
+		base = 2500
+	}
+}

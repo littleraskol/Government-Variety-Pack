@@ -2,29 +2,6 @@
 # NAME FORMATS #
 ################
 
-# PMC
-empire_name_parts_list = {
-	key = "lrsk_gov_var_pmc_names"
-	parts = {
-		"Defense Contractors" = 2
-		"Enforcement Contractors" = 2
-		"Security Contractors" = 2
-		"Stellar Security" = 2
-		"Stellar Defense" = 2
-		"Stellar Enforcement" = 2
-		"Defense Services" = 2
-		"Enforcement Services" = 2
-		"Security Services" = 2
-		"Defense Solutions" = 2
-		"Enforcement Solutions" = 2
-		"Security Solutions" = 2
-		"Combine" = 1
-		"Company" = 1
-		"Corporation" = 1
-		"Conglomerate" = 1
-	}
-}
-
 ### Democratic Generic
 
 # Democratic Generic 1
@@ -149,6 +126,7 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
 				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -171,6 +149,7 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
 				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -193,6 +172,7 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
 				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -215,6 +195,7 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
 				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -237,6 +218,7 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
 				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -250,17 +232,143 @@ empire_name_format = {
 	# Human Star Empire
 }
 
+## Megacorporation-Types
 
 # Megacorporation
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 5
+			add = 30
 			OR = {
+				has_government = "gov_megacorporation"
 				has_government = "lrsk_gov_var_gov_galactic_cartel"
-				has_government = "lrsk_gov_var_gov_anarcho_capitalism"
 				has_government = "lrsk_gov_var_gov_proprietary_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_megacorp.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesAdj] <lrsk_megacorp>"
+	# Human Empire
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 15
+			OR = {
+				has_government = "gov_megacorporation"
+				has_government = "lrsk_gov_var_gov_galactic_cartel"
+				has_government = "lrsk_gov_var_gov_proprietary_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_megacorp.2"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_megacorp>"
+	# Sol Empire
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 15
+			OR = {
+				has_government = "gov_megacorporation"
+				has_government = "lrsk_gov_var_gov_galactic_cartel"
+				has_government = "lrsk_gov_var_gov_proprietary_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_megacorp.3"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_megacorp>"
+	# Earth Empire
+}
+
+# Trade League
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "gov_trade_league"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_trade_league.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesAdj] <lrsk_trade_league_per>"
+	# Human Empire
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 15
+			OR = {
+				has_government = "gov_trade_league"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_trade_league.2"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_trade_league_org>"
+	# Sol Empire
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 15
+			OR = {
+				has_government = "gov_trade_league"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_trade_league.3"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_trade_league_org>"
+	# Earth Empire
+}
+
+# RMF
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
 				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
 			}
 			is_pirate = no
@@ -269,20 +377,19 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.olig_corp.1"
+	format = "format.lrsk_rmf_corp.1"
 	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <oligarchic_corp>"
+	prefix_format = "[This.GetSpeciesAdj] <lrsk_rmf_corp>"
 	# Human Empire
 }
 
-# PMC
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 5
+			add = 15
 			OR = {
-				has_government = "lrsk_gov_var_gov_private_military_contractor"
+				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -290,11 +397,32 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.pmc_names.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_gov_var_pmc_names>"
-	# Human Empire
+	format = "format.lrsk_rmf_corp.2"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_rmf_corp>"
+	# Sol Empire
 }
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 15
+			OR = {
+				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_rmf_corp.3"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_rmf_corp>"
+	# Earth Empire
+}
+
 
 #empire_name_format = {
 #	random_weight = {
@@ -310,7 +438,7 @@ empire_name_format = {
 #			NOT = { is_country_type = awakened_fallen_empire }
 #		}
 #	}
-#	format = "format.pmc_names.1"
+#	format = "format.lrsk_pmc_corp.1"
 #	noun = "[This.Capital.System.GetName]"
 #	prefix_format = "[This.Capital.System.GetName] <lrsk_gov_var_pmc_names>"
 #	# Human Empire
@@ -330,7 +458,7 @@ empire_name_format = {
 #			NOT = { is_country_type = awakened_fallen_empire }
 #		}
 #	}
-#	format = "format.pmc_names.1"
+#	format = "format.lrsk_pmc_corp.1"
 #	noun = "[This.Capital.GetName]"
 #	prefix_format = "[This.Capital.GetName] <lrsk_gov_var_pmc_names>"
 #	# Human Empire
