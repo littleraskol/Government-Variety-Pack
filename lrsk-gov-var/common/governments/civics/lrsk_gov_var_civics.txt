@@ -1,0 +1,598 @@
+# Government Variety Pack
+# Civics
+# Author: littleraskol
+
+#Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (+25% planetary edict duration)
+lrsk_gov_var_civic_elected_clergy = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_democratic
+      }
+    }
+    ethics = {
+      OR = {
+    	  text = civic_tooltip_spiritualist
+    		value = ethic_spiritualist
+    		value = ethic_fanatic_spiritualist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = { edict_length_mult = 0.25 }
+}
+lrsk_gov_var_civic_elected_clergy_egal = {
+  potential = {
+    ethics = { NOT = { value = ethic_hive_mind } }
+    civics = { value = lrsk_gov_var_civic_elected_clergy_egal }
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
+      }
+      OR = {
+    	  text = civic_tooltip_spiritualist
+    		value = ethic_spiritualist
+    		value = ethic_fanatic_spiritualist
+      }
+    }
+    civics = { NOT = { value = lrsk_gov_var_civic_elected_clergy } }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = { edict_length_mult = 0.25 }
+}
+
+#Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +5 pop growth rate)
+lrsk_gov_var_civic_ascetic_virtues = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_inwards_perfection.dds"
+
+  possible = {
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    leader_age = 10
+    pop_growth_speed = 0.05
+  }
+}
+
+#Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (+15% leader experience gain)
+lrsk_gov_var_civic_republicanism = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
+
+  possible = {
+    authority = {
+      value = auth_democratic
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    species_leader_exp_gain = 0.25
+    country_leader_pool_size = 2
+  }
+}
+
+#Utilitarian Planning (Dictatorship, not Spiritualist) - The dictatorship is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -10% resettlement cost)
+lrsk_gov_var_civic_utilitarian_planning = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_idealistic_foundation.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_dictatorial
+      }
+    }
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_spiritualist
+        value = ethic_spiritualist
+        value = ethic_fanatic_spiritualist
+      }
+    }
+  }
+
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    pop_food_req_mult = -0.1
+    pop_resettlement_cost_mult = -0.1
+  }
+}
+
+#Grandiosity (Dictatorship) - In this society, one can't be taken seriously as a dictator without building some big military hardware. (Enables oversized stations and ships)
+lrsk_gov_var_civic_grandiosity = {
+  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
+
+  possible = {
+    authority = {
+      value = auth_dictatorial
+    }
+  }
+
+
+  random_weight = { base = 1 }
+
+  can_build_ruler_military_station = yes
+  can_build_ruler_ship = yes
+}
+
+#Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown)
+lrsk_gov_var_civic_universal_sovereignty = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        text = civic_tooltip_dic_imp
+        value = auth_dictatorial
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_xenophobe
+        value = ethic_xenophobe
+        value = ethic_fanatic_xenophobe
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    subject_integration_influence_cost_mult = -0.1
+    country_integration_cooldown_mult = -0.2
+  }
+}
+
+#Workers' Councils (Egalitarian, No BL) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
+lrsk_gov_var_civic_workers_councils = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_workers_councils.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+    civics ={
+      NOR = {
+        value = lrsk_gov_var_civic_business_lobby
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    building_time_mult = -0.1
+    spaceport_ship_build_speed_mult = 0.1
+  }
+}
+lrsk_gov_var_civic_workers_councils_dem = {
+  potential = {
+    ethics = { NOT = { value = ethic_hive_mind } }
+    civics = { value = lrsk_gov_var_civic_workers_councils_dem }
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_workers_councils.dds"
+
+  possible = {
+    authority = {
+      value = auth_democratic
+    }
+    civics ={
+      NOR = {
+        value = lrsk_gov_var_civic_business_lobby
+        value = lrsk_gov_var_civic_workers_councils
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    building_time_mult = -0.1
+    spaceport_ship_build_speed_mult = 0.1
+  }
+}
+
+#Supremacist Demagoguery (Dictatorship or Democracy, not Xenophile and not Egalitarian) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
+lrsk_gov_var_civic_supremacist_demagoguery = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_citizen_service.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        text = lrsk_gov_var_civic_tooltip_dem_dic
+        value = auth_dictatorial
+        value = auth_democratic
+      }
+    }
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_xenophile
+        value = ethic_xenophile
+        value = ethic_fanatic_xenophile
+      }
+      NOR = {
+        text = civic_tooltip_not_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    rivalry_influence_gain = 0.1
+    army_morale_damage_mult = 0.2
+  }
+}
+
+#Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (-20% research and mining station cost)
+lrsk_gov_var_civic_enlightened_liberalism  = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_technocracy.dds"
+
+  possible = {
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_spiritualist
+        value = ethic_spiritualist
+        value = ethic_fanatic_spiritualist
+      }
+      NOT = { value = ethic_fanatic_authoritarian }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    shipsize_research_station_build_cost_mult = -0.2
+    shipsize_mining_station_build_cost_mult = -0.2
+  }
+}
+
+#Business Lobby (No WC) - This society's economy is dominated by entrenched business interests that benefit from lucrative government contracts and regulatory loopholes. (+5% tile mineral and energy output)
+lrsk_gov_var_civic_business_lobby  = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_aristocratic_elite.dds"
+
+  possible = {
+    civics ={
+      NOR = {
+        value = lrsk_gov_var_civic_workers_councils
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_resource_energy_mult = 0.05
+    country_resource_minerals_mult = 0.05
+  }
+}
+
+#Chivalry (Imp + Mil) - Ideals of martial valor and honorable conduct prop up the ruling class. (+20% army morale, +1 military leader levels)
+lrsk_gov_var_civic_chivalry = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_warrior_culture.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      OR = {
+        text = civic_tooltip_militarist
+        value = ethic_militarist
+        value = ethic_fanatic_militarist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    army_morale = 0.2
+    admiral_skill_levels = 1
+    general_skill_levels = 1
+  }
+}
+
+#Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (-10% scientist recruit cost, +10% survey speed)
+lrsk_gov_var_civic_lifelong_learning = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_meritocracy.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_democratic
+      }
+    }
+    ethics = {
+      OR = {
+        text = civic_tooltip_pacifist
+        value = ethic_pacifist
+    	  value = ethic_fanatic_pacifist
+    	}
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    leader_scientist_influence_cost = -0.15
+    scientist_skill_levels = 1
+    science_ship_survey_speed = 0.15
+  }
+}
+
+#Institutionalized Collectivism (Not Democratic, Materialist) - The regime is propped up by collectivization and state control of industry and infrastructure. (-5% slave unhappiness, -5% ship upkeep)
+lrsk_gov_var_civic_institutionalized_collectivism = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_mining_guilds.dds"
+
+  possible = {
+    authority = {
+      NOR = {
+        value = auth_democratic
+      }
+    }
+    ethics = {
+      OR = {
+        text = civic_tooltip_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_unrest_unhappy_slave_effect_mult = -0.05
+    ship_upkeep_mult = -0.05
+  }
+}
+
+#Direct Revelation (Egalitarian or Pacifist and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
+lrsk_gov_var_civic_direct_revelation  = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        OR = {
+          text = civic_tooltip_egalitarian
+          value = ethic_egalitarian
+          value = ethic_fanatic_egalitarian
+        }
+        OR = {
+          text = civic_tooltip_pacifist
+      		value = ethic_pacifist
+      		value = ethic_fanatic_pacifist
+      	}
+      }
+      OR = {
+        text = civic_tooltip_spiritualist
+        value = ethic_spiritualist
+        value = ethic_fanatic_spiritualist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    tradition_cost_num_colonies_mult = -0.2
+  }
+}
+
+#Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-15% to Governing Ethics Attraction penalty due to distance)
+lrsk_gov_var_civic_royal_absolutism = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_philosopher_king.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      OR = {
+        text = civic_tooltip_authoritarian
+        value = ethic_authoritarian
+        value = ethic_fanatic_authoritarian
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    mod_distance_to_capital_static_modifier_efficiency_mult = -0.25
+  }
+}
+
+#Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
+lrsk_gov_var_civic_public_works = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_functional_architecture.dds"
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    planet_clear_blocker_cost_mult = -0.15
+    pop_environment_tolerance = 0.05
+  }
+}
+
+#Imperial Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +5% tributary income)
+lrsk_gov_var_civic_imperial_economy = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_slaver_guilds.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        text = civic_tooltip_dic_imp
+        value = auth_dictatorial
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_xenophile
+        value = ethic_xenophile
+        value = ethic_fanatic_xenophile
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_vassal_naval_capacity_contribution_mult = 0.15
+    subject_tribute_mult = 0.075
+  }
+}
+
+#Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -15% expansion influence cost)
+lrsk_gov_var_civic_colonial_fiefs = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_nationalistic_zeal.dds"
+
+  possible = {
+    authority = {
+      OR = {
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_militarist
+    		value = ethic_militarist
+    		value = ethic_fanatic_militarist
+    	}
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    planet_colony_development_speed_mult = 0.15
+    country_expansion_distance_mult = -0.15
+  }
+}
+
+#Automated Indolence (Materialist) - This culture very early on in their industrial revolution early on a philosophy of 'let machines do the work' and its social structure and technical focus has adapted to match. (-5% Unrest, +10% robot output)
+lrsk_gov_var_civic_automated_indolence = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    pop_robot_production_output = 0.10
+    country_unrest_unhappy_pop_effect_mult = -0.05
+  }
+}
+
+#State Secular Rationalism (Dictatorial and Materialist) - The dictatorship sees religion as a destabilizing and divisive force and subtly discourages its practice (while strongly encouraging inter-religious toleration nonetheless) through a variety of means. (+10% Governing ethics attraction, −10% Tradition Cost from Xeno Pops)
+lrsk_gov_var_civic_state_rationalism = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+    authority = {
+      value = auth_dictatorial
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+	pop_government_ethic_attraction = 0.1
+    tradition_cost_num_xenos_mult = -0.1
+  }
+}

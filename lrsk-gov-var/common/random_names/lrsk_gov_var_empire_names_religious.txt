@@ -1,0 +1,229 @@
+################
+# NAME FORMATS #
+################
+
+### Democratic Spiritualist
+
+# Democratic Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dem_spi.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <democratic_spi>"
+	# Empire of Sol
+}
+
+# Democratic Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dem_spi.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <democratic_spi>"
+	# Empire of Sol
+}
+
+# Democratic Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dem_spi.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <democratic_spi>"
+	# Human Empire
+}
+
+# Democratic Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dem_spi.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <democratic_spi>"
+	# Great Human Empire
+}
+
+# Democratic Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dem_spi.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <democratic_spi>"
+	# Human Star Empire
+}
+
+### Oligarchic Tribunal
+
+# Oligarchic Tribunal 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.olig_trib.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <oligarchic_holy_tribunal>"
+	# Empire of Sol
+}
+
+# Oligarchic Tribunal 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.olig_trib.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <oligarchic_holy_tribunal>"
+	# Empire of Earth
+}
+
+# Oligarchic Tribunal 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.olig_trib.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <oligarchic_holy_tribunal>"
+	# Human Empire
+}
+
+# Oligarchic Tribunal 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.olig_trib.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <oligarchic_holy_tribunal>"
+	# Great Human Empire
+}
+
+# Oligarchic Tribunal 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_gov_var_gov_megachurch"
+				has_government = "lrsk_gov_var_gov_occult_franchise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.olig_trib.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <oligarchic_holy_tribunal>"
+	# Human Star Empire
+}

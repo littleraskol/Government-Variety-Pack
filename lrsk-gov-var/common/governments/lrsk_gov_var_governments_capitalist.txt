@@ -1,0 +1,360 @@
+# Government Variety Pack
+# Governments - Capitalistic
+# Author: littleraskol
+
+# Galactic Cartel (CD + CoI)
+lrsk_gov_var_gov_galactic_cartel = {
+	ruler_title = LRSK_GOV_VAR_RT_COSEO
+
+	possible = {
+		has_valid_civic = civic_corporate_dominion
+		has_valid_civic = lrsk_gov_var_civic_business_lobby
+		OR = {
+			has_ethic = ethic_fanatic_militarist
+			has_ethic = ethic_militarist
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			leader_class = governor
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+#pacifism for next two
+# Libertarian Freehold (Democracy + Mer/CoI)
+lrsk_gov_var_gov_libertarian_freehold = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_JUSTICE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = civic_meritocracy
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		NOR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Anarcho-Capitalism (Oligarchy + Mer/CoI)
+lrsk_gov_var_gov_anarcho_capitalism = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_INSPECTOR
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = civic_meritocracy
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		NOR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+#no egal for next
+# Corporate Neofuedalism
+lrsk_gov_var_gov_corporate_neofuedalism = {
+	ruler_title = LRSK_GOV_VAR_RT_AMBAS_AGENT
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_business_lobby
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		NOT = { has_ethic = ethic_egalitarian	}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+#Room to grow: simple variations on Business Lobby?
+
+# Proprietary Franchise (Imperal + Mat/Pac + AE/CP)
+lrsk_gov_var_gov_proprietary_franchise = {
+	ruler_title = LRSK_GOV_VAR_RT_PROPRIETOR
+	heir_title = LRSK_GOV_VAR_HT_SENIOR_VP
+
+	dynastic_last_names = yes
+
+	possible = {
+		OR = {
+			has_authority = auth_imperial
+		}
+		AND = {
+			NOR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		AND = {
+			has_valid_civic = lrsk_gov_var_civic_business_lobby
+			has_valid_civic = civic_cutthroat_politics
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+#Room to grow: Dictatorial and Oligarchic variants of PF?
+
+# Entrepreneurial Council (Mer/AE)
+lrsk_gov_var_gov_entrepreneurial_council = {
+	ruler_title = LRSK_GOV_VAR_RT_ENTERPRISE_COM
+
+	possible = {
+		has_valid_civic = civic_meritocracy
+		has_valid_civic = civic_aristocratic_elite
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Enterprise Society
+lrsk_gov_var_gov_enterprise_society = {
+	ruler_title = LRSK_GOV_VAR_RT_FRANCHISE_MINISTER
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = civic_police_state
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 250
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Enterprise Junta
+lrsk_gov_var_gov_enterprise_junta = {
+	ruler_title = LRSK_GOV_VAR_RT_PRES_COMMANDER
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		has_valid_civic = civic_police_state
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Enterprise Authority
+lrsk_gov_var_gov_enterprise_authority = {
+	ruler_title = LRSK_GOV_VAR_RT_EXEC_MARSHALL
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		has_valid_civic = civic_police_state
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
+	weight = {
+		base = 2000
+	}
+}
+
+# Rationalist Managerial Firm
+lrsk_gov_var_gov_rationalist_managerial_firm = {
+	ruler_title = LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR
+
+	possible = {
+		has_valid_civic = civic_corporate_dominion
+		has_valid_civic = civic_technocracy
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = scientist
+		}
+		modifier = {
+			add = 500
+			leader_class = ruler
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}

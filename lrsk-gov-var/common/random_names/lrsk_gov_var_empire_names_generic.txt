@@ -1,0 +1,191 @@
+################
+# NAME FORMATS #
+################
+
+### Generic Combinations
+
+# Generic Imperial 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				has_government = "lrsk_gov_var_gov_feudal_empire"
+				has_government = "lrsk_gov_var_gov_galactic_imperium"
+				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+				has_government = "lrsk_gov_var_gov_revolutionary_empire"
+				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+				has_government = "lrsk_gov_var_gov_solar_monarchy"
+				has_government = "lrsk_gov_var_gov_libertine_empire"
+				has_government = "lrsk_gov_var_gov_insurrectionary_lineage"
+				has_government = "lrsk_gov_var_gov_populist_monarchy"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_imp.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# United Human Colonies
+}
+
+# Generic Imperial 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				has_government = "lrsk_gov_var_gov_feudal_empire"
+				has_government = "lrsk_gov_var_gov_galactic_imperium"
+				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+				has_government = "lrsk_gov_var_gov_revolutionary_empire"
+				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+				has_government = "lrsk_gov_var_gov_solar_monarchy"
+				has_government = "lrsk_gov_var_gov_libertine_empire"
+				has_government = "lrsk_gov_var_gov_insurrectionary_lineage"
+				has_government = "lrsk_gov_var_gov_populist_monarchy"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_imp.2"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# Human Federated Colonies
+}
+
+# Generic Oligarchic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_social_bureaucracy"
+				has_government = "lrsk_gov_var_gov_socialist_plenary"
+				has_government = "lrsk_gov_var_gov_syndicalism"
+				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
+				has_government = "lrsk_gov_var_gov_republican_protectorate"
+				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_enterprise_junta"
+				has_government = "lrsk_gov_var_gov_innovation_initiative"
+				has_government = "lrsk_gov_var_gov_academy_state"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_olig.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# United Human Colonies
+}
+
+# Generic Oligarchic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_social_bureaucracy"
+				has_government = "lrsk_gov_var_gov_socialist_plenary"
+				has_government = "lrsk_gov_var_gov_syndicalism"
+				has_government = "lrsk_gov_var_gov_entrepreneurial_council"
+				has_government = "lrsk_gov_var_gov_republican_protectorate"
+				has_government = "lrsk_gov_var_gov_corporate_neofuedalism"
+				has_government = "lrsk_gov_var_gov_enterprise_junta"
+				has_government = "lrsk_gov_var_gov_innovation_initiative"
+				has_government = "lrsk_gov_var_gov_academy_state"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_olig.2"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# Human Federated Colonies
+}
+
+# Generic Democratic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_social_democracy"
+				has_government = "lrsk_gov_var_gov_federal_republic"
+				has_government = "lrsk_gov_var_gov_folkish_commonwealth"
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gov_var_gov_communal_democracy"
+				has_government = "lrsk_gov_var_gov_libertarian_freehold"
+				has_government = "lrsk_gov_var_gov_republic_of_virtue"
+				has_government = "lrsk_gov_var_gov_revolutionary_republic"
+				has_government = "lrsk_gov_var_gov_republican_directory"
+				has_government = "lrsk_gov_var_gov_whig_republic"
+				has_government = "lrsk_gov_var_gov_whig_commonwealth"
+				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
+				has_government = "lrsk_gov_var_gov_enterprise_society"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_dem.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# United Human Colonies
+}
+
+# Generic Democratic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_gov_var_gov_social_democracy"
+				has_government = "lrsk_gov_var_gov_federal_republic"
+				has_government = "lrsk_gov_var_gov_folkish_commonwealth"
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gov_var_gov_communal_democracy"
+				has_government = "lrsk_gov_var_gov_libertarian_freehold"
+				has_government = "lrsk_gov_var_gov_republic_of_virtue"
+				has_government = "lrsk_gov_var_gov_revolutionary_republic"
+				has_government = "lrsk_gov_var_gov_republican_directory"
+				has_government = "lrsk_gov_var_gov_whig_republic"
+				has_government = "lrsk_gov_var_gov_whig_commonwealth"
+				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
+				has_government = "lrsk_gov_var_gov_enterprise_society"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.gen_dem.2"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <generic_states>"
+	# Human Federated Colonies
+}
