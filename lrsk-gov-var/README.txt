@@ -84,6 +84,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.1 (11-24-17)
+-Modified some descriptive flavor text, fixed typos.
+-Changed PMC reqs: only Corporate Dominion + Citizen Service, no other civics.
+
 09-22-17
 -Fixed issue w/ new hive mind type ethos as civic restriction.
 -Updated to using "has_valic_civic"
