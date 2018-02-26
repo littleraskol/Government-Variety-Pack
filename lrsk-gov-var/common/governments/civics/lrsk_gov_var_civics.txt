@@ -2,7 +2,7 @@
 # Civics
 # Author: littleraskol
 
-#Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (+15% edict duration, -15% edict cost)
+#Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (+10% edict duration, +0.5 max influence from factions)
 lrsk_gov_var_civic_elected_clergy = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
 
@@ -26,8 +26,8 @@ lrsk_gov_var_civic_elected_clergy = {
   random_weight = { base = 1 }
 
   modifier = {
-    edict_length_mult = 0.15
-    edict_cost = -0.15
+    edict_length_mult = 0.1
+    faction_influence_add = 0.5
   }
 }
 

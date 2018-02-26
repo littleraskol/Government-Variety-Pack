@@ -3,17 +3,19 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (+25% planetary edict duration)
+Normal Civics:
 
-Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +5% growth rate)
+Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (+10% edict duration, +0.5 max influence from factions)
 
-Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (+25% leader experience gain, +2 leader pool size)
+Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +10% growth rate)
+
+Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-20% leader cost, +2 leader pool)
+
+Utilitarian Planning (Dictatorship, not Spiritualist) - The dictatorship is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -20% resettlement cost)
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
-Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) -The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% slave unrest)
-
-Utilitarian Planning (Dictatorship, not Spiritualist)  - The dictatorship is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -10% resettlement cost)
+Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% slave unrest)
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown (NOTE: No idea why the cooldown shows up red text in the tooltip, everywhere else in the game negative values for this modifier are beneficial))
 
@@ -27,28 +29,30 @@ Business Lobby (Not Democratic, no Workers' Councils) - This society's economy i
 
 Chivalry (Imperial, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+20% army morale, +1 military leader levels)
 
-Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (-15% scientist recruit cost, +15% survey speed)
+Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (-15% scientist recruit cost, +1 governor skill levels, +15% leader experience gain)
 
-Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% slave unhappiness, -5% ship upkeep)
+Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% ship and building upkeep)
 
-Direct Revelation (Egalitarian or Pacifist, and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (-20% expansion effect on Tradition cost)
+Direct Revelation (Egalitarian or Pacifist, and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (-10% expansion effect on Tradition cost)
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-25% to Governing Ethics Attraction penalty due to distance)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 
-Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% subject research share, +5% tributary income)
+Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
 
-Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -15% expansion influence cost)
+Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -10% starbase influence cost)
 
 Automated Indolence (Materialist) - This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match. (-5% Unrest, +10% robot output)
+
+Hive Mind Civics:
 
 Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (+15% edict duration, -15% edict cost)
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
 Builder Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for construction. (-10% building and ship construction time)
- 
+
 Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, +20% army morale)
 
 Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+1 governor skill levels, -15% governor recruit cost, +5% influence)
@@ -80,6 +84,8 @@ Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive
 Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+5% fire rate, +5% evasion)
 
 Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus. (+10% army health, –10% growth time)
+
+Machine Intelligence Civics:
 
 Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (+15% edict duration, -15% edict cost)
 
@@ -148,7 +154,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v1.2 (02-04-18) - The Gestalt Project
 -Added gestalt civics (for Hive Minds and Machine Intelligences).
--Changed "Elected Clergy" to now give decent boost to edict length and reduced edict cost.
+-Changed "Elected Clergy" to now boost to edict length and increase max faction influence.
 -Buffed "Aesetic Virtues" because the growth bonus seems uncommonly small.
 -Changed "Republicanism" to make recruitment cheaper rather than increase experience gain.
 -Buffed "Utilitarian Planning" to double resettlement cost savings.
@@ -161,7 +167,7 @@ v1.2 (02-04-18) - The Gestalt Project
 -Nerfed "Direct Revelation" effect to bring it in line with the "Courier Network" tradition.
 -Removed "State Secular Rationalism" because its most interesting modifier was removed from the game.
 -Removed legacy/dummy civics (new patch broke old saves, no longer needed).
--Government "Insurrectionary Lineage" now possible with either "Institutionalized Collectivism" or "Cult of Personality".
+-Government "Insurrectionary Lineage" now possible with "Institutionalized Collectivism" or "Cult of Personality".
 -Some modifiers had to be changed to bring into line with 2.0 changes/removals.
 
 v1.1 (11-24-17)
