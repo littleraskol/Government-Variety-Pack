@@ -152,7 +152,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.2 (02-04-18) - The Gestalt Project
+v1.2.1 (03-04-18)
+-New icons thanks to Meltup.
+
+v1.2 (02-26-18) - The Gestalt Project
 -Added gestalt civics (for Hive Minds and Machine Intelligences).
 -Changed "Elected Clergy" to now boost to edict length and increase max faction influence.
 -Buffed "Aesetic Virtues" because the growth bonus seems uncommonly small.
