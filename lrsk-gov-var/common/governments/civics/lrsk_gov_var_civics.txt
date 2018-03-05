@@ -429,9 +429,37 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
   }
 }
 
-#Direct Revelation (Egalitarian or Pacifist and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
-lrsk_gov_var_civic_direct_revelation  = {
+#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
+lrsk_gov_var_civic_direct_revelation_new  = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
+      }
+      OR = {
+        text = civic_tooltip_spiritualist
+        value = ethic_spiritualist
+        value = ethic_fanatic_spiritualist
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = { tradition_cost_num_colonies_mult = -0.1 }
+}
+# This version will be deprecated in a future update, keeping for a while to not break saves.
+lrsk_gov_var_civic_direct_revelation  = {
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_gov_var_civic_direct_revelation }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
 
@@ -459,7 +487,9 @@ lrsk_gov_var_civic_direct_revelation  = {
 
   random_weight = { base = 1 }
 
-  modifier = { tradition_cost_num_colonies_mult = -0.1 }
+  modifier = {
+    tradition_cost_num_colonies_mult = -0.2
+  }
 }
 
 #Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-15% to Governing Ethics Attraction penalty due to distance)

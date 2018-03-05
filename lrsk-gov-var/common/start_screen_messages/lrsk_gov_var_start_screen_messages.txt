@@ -14,30 +14,31 @@ part = {
 	}
 }
 
-part = {
-	location = 1
-	localization = "LRSK_GOV_VAR_START_SCREEN_P2_RULING_COUNCIL"
-
-	trigger = {
-		OR = {
-			has_government = lrsk_gov_var_gov_ruling_council
-		}
-		NOT = { has_country_flag = custom_start_screen }
-	}
-}
-
-# Default catch-all
-part = {
-	location = 1
-	localization = "LRSK_GOV_VAR_START_SCREEN_P2_ELECTIVE_PRINCIPALITY"
-
-	trigger = {
-		OR = {
-			has_government = lrsk_gov_var_gov_elective_principality
-		}
-		NOT = { has_country_flag = custom_start_screen }
-	}
-}
+# Might as well go ahead and depricate these.
+#part = {
+#	location = 1
+#	localization = "LRSK_GOV_VAR_START_SCREEN_P2_RULING_COUNCIL"
+#
+#	trigger = {
+#		OR = {
+#			has_government = lrsk_gov_var_gov_ruling_council
+#		}
+#		NOT = { has_country_flag = custom_start_screen }
+#	}
+#}
+#
+## Default catch-all
+#part = {
+#	location = 1
+#	localization = "LRSK_GOV_VAR_START_SCREEN_P2_ELECTIVE_PRINCIPALITY"
+#
+#	trigger = {
+#		OR = {
+#			has_government = lrsk_gov_var_gov_elective_principality
+#		}
+#		NOT = { has_country_flag = custom_start_screen }
+#	}
+#}
 
 # Default catch-all
 part = {

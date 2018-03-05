@@ -33,7 +33,7 @@ Lifelong Learning (Democratic and Pacifist) - This society values public educati
 
 Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% ship and building upkeep)
 
-Direct Revelation (Egalitarian or Pacifist, and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (-10% expansion effect on Tradition cost)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (-10% expansion effect on Tradition cost)
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-25% to Governing Ethics Attraction penalty due to distance)
 
@@ -134,7 +134,6 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 3. Known Issues
 
 -In the base game, certain events (the Prethoryn and Unbidden crises, most critically) check to see if the player has certain set defined governments to determine what response to give. However, the default "OK" response doesn't start the crisis events. This means that if you're using any mod-added governments, it doesn't seem that you can start the crises. Fortunately, there is a mod out there that fixes this: Event Bugfixes by ECHO (http://steamcommunity.com/sharedfiles/filedetails/?id=785269836)
--Some of the icon art is bad. This is because I didn't make any of the original icon art, Meltup did. I'm very bad at art! So some civics have vanilla Stellaris icons, some have a blank icon. I welcome suggested replacements! Most glaring is that hive mind icons might be poorly color-shifted versions of non-gestalt icons. This is normal for the base game's hive mind civics but I couldn't figure out how to color shift AND make the silhouette white. Also I think the machine civics use the wrong shade of blue... Folks, what I'm saying here is I'm not an artist. If you know how to fix this hit me up!
 
 4. Future Plans
 
@@ -151,6 +150,11 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.2.2 (03-05-18)
+-Removing deprecated/legacy cruft where possible.
+-"Direct Revelation" changed to just require some degree of Egalitarian and Spiritualist because the previous requirements did not work as intended because you can't nest "OR" blocks in a civic prereq definition.
+-Removing pleas for help with icon art.
 
 v1.2.1 (03-04-18)
 -New icons thanks to Meltup.
