@@ -43,7 +43,10 @@ lrsk_gov_var_gov_insurrectionary_lineage = {
 
 	possible = {
 		has_authority = auth_imperial
-		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+			has_valid_civic = lrsk_gov_var_civic_cult_of_personality
+		}
 		OR = {
 			AND = {
 				has_valid_civic = civic_nationalistic_zeal
@@ -173,7 +176,7 @@ lrsk_gov_var_gov_communal_democracy = {
 	possible = {
 		has_authority = auth_democratic
 		OR = {
-			has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
+			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
 			has_valid_civic = lrsk_gov_var_civic_workers_councils
 		}
 	}
@@ -278,7 +281,7 @@ lrsk_gov_var_gov_syndicalism = {
 	possible = {
 		OR = {
 			has_valid_civic = lrsk_gov_var_civic_workers_councils
-			has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
+			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
 		}
 		has_valid_civic = civic_corporate_dominion
 	}
