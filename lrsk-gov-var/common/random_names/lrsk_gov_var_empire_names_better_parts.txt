@@ -38,6 +38,18 @@ empire_name_parts_list = {
 	}
 }
 
+# Corp Bits - Suffix to corporation-types
+empire_name_parts_list = {
+	key = "lrsk_corp_bits"
+	parts = {
+		"" = 1
+		", Inc" = 1
+		", LLC" = 1
+		", LTD" = 1
+		", ULC" = 1
+	}
+}
+
 ## Descriptive
 
 # Business Descriptive
@@ -106,6 +118,22 @@ empire_name_parts_list = {
 	}
 }
 
+## Governments
+
+# Generic Socialist
+empire_name_parts_list = {
+	key = "lrsk_socialist_gen"
+	parts = {
+		"Commune" = 1
+		"Collective" = 1
+		"Commons" = 1
+		"Social Union" = 1
+	}
+}
+
+# Popular Kingdom
+# format.lrsk_imp_pop.1: "<lrsk_imppop_desc><lrsk_imperial_pop> of the [This.GetSpeciesNamePlural]"
+
 # People's Kingdom Descriptive
 empire_name_parts_list = {
 	key = "lrsk_imppop_desc"
@@ -131,31 +159,10 @@ empire_name_parts_list = {
 	}
 }
 
-# Corp Bits
-empire_name_parts_list = {
-	key = "lrsk_corp_bits"
-	parts = {
-		"" = 1
-		", Inc" = 1
-		", LLC" = 1
-		", LTD" = 1
-		", ULC" = 1
-	}
-}
-
-## For Syndicates
-
-# Labor Descriptive
-empire_name_parts_list = {
-	key = "lrsk_labor_desc"
-	parts = {
-		"Labor" = 1
-		"Workers'" = 1
-		"Artisans'" = 1
-		"Industrial" = 1
-		"Proletarian" = 1
-	}
-}
+# Syndicalism
+# format.lrsk_syndicate.1: "<lrsk_labor_per_desc> [This.GetSpeciesAdj] <lrsk_labor_per>' <lrsk_labor_org>"
+# format.lrsk_syndicate.2: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
+# format.lrsk_syndicate.3: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
 
 # Labor Personal Descriptor
 empire_name_parts_list = {
@@ -181,6 +188,19 @@ empire_name_parts_list = {
 	}
 }
 
+# Labor Organization
+empire_name_parts_list = {
+	key = "lrsk_labor_org"
+	parts = {
+		"Syndicate" = 1
+		"Unions" = 1
+		"Guilds" = 1
+		"League" = 1
+		"Federation" = 1
+		"Councils" = 1
+	}
+}
+
 # Labor Organizational Type
 empire_name_parts_list = {
 	key = "lrsk_labor_type"
@@ -195,33 +215,25 @@ empire_name_parts_list = {
 	}
 }
 
-# Labor Organization
+# Not yet used...
+# Labor Descriptive
 empire_name_parts_list = {
-	key = "lrsk_labor_org"
+	key = "lrsk_labor_desc"
 	parts = {
-		"Syndicate" = 1
-		"Unions" = 1
-		"Guilds" = 1
-		"League" = 1
-		"Federation" = 1
-		"Councils" = 1
+		"Labor" = 1
+		"Workers'" = 1
+		"Artisans'" = 1
+		"Industrial" = 1
+		"Proletarian" = 1
 	}
 }
 
-## Governments
+# PMCs
+# format.lrsk_pmc_corp.1: "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp><lrsk_corp_bits>"
+# format.lrsk_pmc_corp.2: "[This.Capital.System.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
+# format.lrsk_pmc_corp.3: "[This.Capital.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
 
-# Generic Socialist
-empire_name_parts_list = {
-	key = "lrsk_socialist_gen"
-	parts = {
-		"Commune" = 1
-		"Collective" = 1
-		"Commons" = 1
-		"Social Union" = 1
-	}
-}
-
-# PMC
+# PMC Type
 empire_name_parts_list = {
 	key = "lrsk_pmc_corp"
 	parts = {
@@ -230,6 +242,8 @@ empire_name_parts_list = {
 		"Solutions" = 1
 	}
 }
+
+# PMC Desc
 empire_name_parts_list = {
 	key = "lrsk_pmc_desc"
 	parts = {
@@ -240,96 +254,6 @@ empire_name_parts_list = {
 }
 
 ### MILITARIST
-
-# Imperial Militarist
-empire_name_parts_list = {
-	key = "lrsk_imperial_mil"
-	parts = {
-		"Imperium" = 1
-		"Realm" = 1
-		"Empire" = 1
-		"Dynasty" = 1
-		"Domain" = 1
-	}
-}
-
-# Dictatorial Militarist
-empire_name_parts_list = {
-	key = "lrsk_dictatorial_mil"
-	parts = {
-		"Admiralty" = 1
-		"High Command" = 1
-		"Authority" = 1
-		"Protectorate" = 1
-		"Dominion" = 1
-	}
-}
-
-# Oligarchic Militarist
-empire_name_parts_list = {
-	key = "lrsk_oligarchic_mil"
-	parts = {
-		"Alliance" = 1
-		"League" = 1
-		"Coalition" = 1
-		"Compact" = 1
-		"Pact" = 1
-	}
-}
-
-# Democratic Militarist
-empire_name_parts_list = {
-	key = "lrsk_democratic_mil"
-	parts = {
-		"Republic" = 1
-		"Commonwealth" = 1
-		"Confederation" = 1
-		"Commissariat" = 1
-		"Freehold" = 1
-	}
-}
-
-# Democratic Warrior Culture
-empire_name_parts_list = {
-	key = "lrsk_democratic_war_cul"
-	parts = {
-		"Clans" = 1
-		"Tribes" = 1
-		"Bands" = 1
-		"Host" = 1
-		"Horde" = 1
-	}
-}
-
-# Oligarchic Service Guarantees Citizenship
-empire_name_parts_list = {
-	key = "lrsk_oligarchic_service"
-	parts = {
-		"Citizen Alliance" = 1
-		"Citizen Order" = 1
-		"Citizen Coalition" = 1
-		"Citizen Compact" = 1
-		"Citizen Authority" = 1
-		"Citizen Pact" = 1
-		"Citizen League" = 1
-	}
-}
-
-# Democratic Service Guarantees Citizenship
-empire_name_parts_list = {
-	key = "lrsk_democratic_service"
-	parts = {
-		"Citizen Republic" = 1
-		"Citizen Federation" = 1
-		"Citizen Commonwealth" = 1
-		"Citizen Assembly" = 1
-		"Citizen Confederation" = 1
-		"Citizen Commissariat" = 1
-		"Citizen Freehold" = 1
-	}
-}
-
-### Descriptives
 
 # Militarist Descriptive
 empire_name_parts_list = {
@@ -342,6 +266,83 @@ empire_name_parts_list = {
 		"Glorious " = 1
 	}
 }
+
+# Imperial Militarist
+# format.lrsk_imp_mil.1: "<lrsk_mil_desc><lrsk_imperial_mil> of [This.Capital.System.GetName]"
+# format.lrsk_imp_mil.2: "<lrsk_mil_desc><lrsk_imperial_mil> of [This.Capital.GetName]"
+# format.lrsk_imp_mil.3: "<lrsk_mil_desc><lrsk_imperial_mil> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_mil.4: "<lrsk_mil_desc>[This.GetSpeciesAdj] <lrsk_imperial_mil>"
+# format.lrsk_imp_mil.5: "[This.GetSpeciesAdj] <lrsk_mil_desc><lrsk_imperial_mil>"
+
+empire_name_parts_list = {
+	key = "lrsk_imperial_mil"
+	parts = {
+		"Imperium" = 1
+		"Realm" = 1
+		"Empire" = 1
+		"Dynasty" = 1
+		"Domain" = 1
+	}
+}
+
+# Dictatorial Militarist
+# format.lrsk_dic_mil.1: "<lrsk_mil_desc><lrsk_dictatorial_mil> of [This.Capital.System.GetName]"
+# format.lrsk_dic_mil.2: "<lrsk_mil_desc><lrsk_dictatorial_mil> of [This.Capital.GetName]"
+# format.lrsk_dic_mil.3: "<lrsk_mil_desc><lrsk_dictatorial_mil> of [This.GetSpeciesName]kind"
+# format.lrsk_dic_mil.4: "<lrsk_mil_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_mil>"
+# format.lrsk_dic_mil.5: "[This.GetSpeciesAdj] <lrsk_mil_desc><lrsk_dictatorial_mil>"
+
+empire_name_parts_list = {
+	key = "lrsk_dictatorial_mil"
+	parts = {
+		"Admiralty" = 1
+		"High Command" = 1
+		"Authority" = 1
+		"Protectorate" = 1
+		"Dominion" = 1
+	}
+}
+
+# Oligarchic Militarist
+# format.lrsk_oli_mil.1: "<lrsk_mil_desc><lrsk_oligarchic_mil> of [This.Capital.System.GetName]"
+# format.lrsk_oli_mil.2: "<lrsk_mil_desc><lrsk_oligarchic_mil> of [This.Capital.GetName]"
+# format.lrsk_oli_mil.3: "<lrsk_mil_desc><lrsk_oligarchic_mil> of [This.GetSpeciesName]kind"
+# format.lrsk_oli_mil.4: "<lrsk_mil_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_mil>"
+# format.lrsk_oli_mil.5: "[This.GetSpeciesAdj] <lrsk_mil_desc><lrsk_oligarchic_mil>"
+
+empire_name_parts_list = {
+	key = "lrsk_oligarchic_mil"
+	parts = {
+		"Alliance" = 1
+		"League" = 1
+		"Coalition" = 1
+		"Compact" = 1
+		"Pact" = 1
+	}
+}
+
+# Democratic Militarist
+# format.lrsk_dem_mil.1: "<lrsk_mil_desc><lrsk_democratic_mil> of [This.Capital.System.GetName]"
+# format.lrsk_dem_mil.2: "<lrsk_mil_desc><lrsk_democratic_mil> of [This.Capital.GetName]"
+# format.lrsk_dem_mil.3: "<lrsk_mil_desc><lrsk_democratic_mil> of [This.GetSpeciesName]kind"
+# format.lrsk_dem_mil.4: "<lrsk_mil_desc>[This.GetSpeciesAdj] <lrsk_democratic_mil>"
+# format.lrsk_dem_mil.5: "[This.GetSpeciesAdj] <lrsk_mil_desc><lrsk_democratic_mil>"
+
+empire_name_parts_list = {
+	key = "lrsk_democratic_mil"
+	parts = {
+		"Republic" = 1
+		"Commonwealth" = 1
+		"Confederation" = 1
+		"Commissariat" = 1
+		"Freehold" = 1
+	}
+}
+
+# Democratic Warrior Culture
+# format.lrsk_dem_war_cul.1: "<lrsk_dem_war_cul_desc> <lrsk_democratic_war_cul> of [This.Capital.System.GetName]"
+# format.lrsk_dem_war_cul.2: "<lrsk_dem_war_cul_desc> <lrsk_democratic_war_cul> of [This.Capital.GetName]"
+# format.lrsk_dem_war_cul.3: "[This.GetSpeciesAdj] <lrsk_dem_war_cul_desc> <lrsk_democratic_war_cul>"
 
 # Democratic Warrior Culture Desc
 empire_name_parts_list = {
@@ -356,82 +357,60 @@ empire_name_parts_list = {
 	}
 }
 
+# Democratic Warrior Culture types
+empire_name_parts_list = {
+	key = "lrsk_democratic_war_cul"
+	parts = {
+		"Clans" = 1
+		"Tribes" = 1
+		"Bands" = 1
+		"Host" = 1
+		"Horde" = 1
+	}
+}
+
+# Oligarchic Service Guarantees Citizenship
+# format.lrsk_oli_serv.1: "Citizen <lrsk_oligarchic_service> of [This.Capital.System.GetName]"
+# format.lrsk_oli_serv.2: "Citizen <lrsk_oligarchic_service> of [This.Capital.GetName]"
+# format.lrsk_oli_serv.3: "[This.GetSpeciesAdj] Citizen <lrsk_oligarchic_service>"
+
+empire_name_parts_list = {
+	key = "lrsk_oligarchic_service"
+	parts = {
+		"Alliance" = 1
+		"Order" = 1
+		"Coalition" = 1
+		"Compact" = 1
+		"Authority" = 1
+		"Pact" = 1
+		"League" = 1
+	}
+}
+
+# Democratic Service Guarantees Citizenship
+# format.lrsk_dem_serv.1: "Citizen <lrsk_democratic_service> of [This.Capital.System.GetName]"
+# format.lrsk_dem_serv.2: "Citizen <lrsk_democratic_service> of [This.Capital.GetName]"
+# format.lrsk_dem_serv.3: "[This.GetSpeciesAdj] Citizen <lrsk_democratic_service>"
+
+empire_name_parts_list = {
+	key = "lrsk_democratic_service"
+	parts = {
+		"Republic" = 1
+		"Federation" = 1
+		"Commonwealth" = 1
+		"Assembly" = 1
+		"Confederation" = 1
+		"Commissariat" = 1
+		"Freehold" = 1
+	}
+}
+
+# New type: Inclusive? There can be xenophile cit serv empires that might not have names based on species. Maybe:
+# format.lrsk_inclu_dem_serv.3: "<lrsk_stellar_generic_desc> Citizen <lrsk_democratic_service>"
+# format.lrsk_inclu_oli_serv.3: "<lrsk_stellar_generic_desc> Citizen <lrsk_oligarchic_service>"
+
+
 ### SPIRITUALIST
-
-# Imperial Spiritualist
-empire_name_parts_list = {
-	key = "lrsk_imperial_spi"
-	parts = {
-		"Kingdom" = 1
-		"Principality" = 1
-		"Grand Duchy" = 1
-		"Caliphate" = 1
-		"Realm" = 1
-	}
-}
-
-# Dictatorial Spiritualist
-empire_name_parts_list = {
-	key = "lrsk_dictatorial_spi"
-	parts = {
-		"See" = 1
-		"Archbishopric" = 1
-		"Mandate" = 1
-		"Covenant" = 1
-		"Ecclesiarchy" = 1
-	}
-}
-
-# Oligarchic Spiritualist
-empire_name_parts_list = {
-	key = "lrsk_oligarchic_spi"
-	parts = {
-		"Council" = 1
-		"Tribunal" = 1
-		"Diocese" = 1
-		"Millet" = 1
-		"Conclave" = 1
-	}
-}
-
-# Democratic Spiritualist
-empire_name_parts_list = {
-	key = "lrsk_democratic_spi"
-	parts = {
-		"Assembly" = 1
-		"Congregation" = 1
-		"Commonality" = 1
-		"Concordat" = 1
-		"Parish" = 1
-	}
-}
-
-# Imperial Imperial Cult
-empire_name_parts_list = {
-	key = "lrsk_imperial_cult"
-	parts = {
-		"Empire" = 1
-		"Imperium" = 1
-		"Dominion" = 1
-		"Throne" = 1
-	}
-}
-
-# Oligarchic Holy Tribunal
-empire_name_parts_list = {
-	key = "lrsk_holy_tribunal"
-	parts = {
-		"Covenant" = 1
-		"Tribunal" = 1
-		"Mandate" = 1
-		"Assembly" = 1
-		"Council" = 1
-		"Foundation" = 1
-		"Conclave" = 1
-	}
-}
-
-### Descriptives
 
 # Spiritualist Descriptive
 empire_name_parts_list = {
@@ -450,6 +429,110 @@ empire_name_parts_list = {
 	}
 }
 
+# Imperial Spiritualist
+# format.lrsk_imp_spi.1: "<lrsk_spi_desc><lrsk_imperial_spi> of [This.Capital.System.GetName]"
+# format.lrsk_imp_spi.2: "<lrsk_spi_desc><lrsk_imperial_spi> of [This.Capital.GetName]"
+# format.lrsk_imp_spi.3: "<lrsk_spi_desc><lrsk_imperial_spi> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_spi.4: "<lrsk_spi_desc>[This.GetSpeciesAdj] <lrsk_imperial_spi>"
+# format.lrsk_imp_spi.5: "[This.GetSpeciesAdj] <lrsk_spi_desc><lrsk_imperial_spi>"
+
+empire_name_parts_list = {
+	key = "lrsk_imperial_spi"
+	parts = {
+		"Kingdom" = 1
+		"Principality" = 1
+		"Grand Duchy" = 1
+		"Caliphate" = 1
+		"Realm" = 1
+	}
+}
+
+# Dictatorial Spiritualist
+# format.lrsk_dic_spi.1: "<lrsk_spi_desc><lrsk_dictatorial_spi> of [This.Capital.System.GetName]"
+# format.lrsk_dic_spi.2: "<lrsk_spi_desc><lrsk_dictatorial_spi> of [This.Capital.GetName]"
+# format.lrsk_dic_spi.3: "<lrsk_spi_desc><lrsk_dictatorial_spi> of [This.GetSpeciesName]kind"
+# format.lrsk_dic_spi.4: "<lrsk_spi_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_spi>"
+# format.lrsk_dic_spi.5: "[This.GetSpeciesAdj] <lrsk_spi_desc><lrsk_dictatorial_spi>"
+
+empire_name_parts_list = {
+	key = "lrsk_dictatorial_spi"
+	parts = {
+		"See" = 1
+		"Archbishopric" = 1
+		"Mandate" = 1
+		"Covenant" = 1
+		"Ecclesiarchy" = 1
+	}
+}
+
+# Oligarchic Spiritualist
+# format.lrsk_oli_spi.1: "<lrsk_spi_desc><lrsk_oligarchic_spi> of [This.Capital.System.GetName]"
+# format.lrsk_oli_spi.2: "<lrsk_spi_desc><lrsk_oligarchic_spi> of [This.Capital.GetName]"
+# format.lrsk_oli_spi.3: "<lrsk_spi_desc><lrsk_oligarchic_spi> of [This.GetSpeciesName]kind"
+# format.lrsk_oli_spi.4: "<lrsk_spi_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_spi>"
+# format.lrsk_oli_spi.5: "[This.GetSpeciesAdj] <lrsk_spi_desc><lrsk_oligarchic_spi>"
+
+empire_name_parts_list = {
+	key = "lrsk_oligarchic_spi"
+	parts = {
+		"Council" = 1
+		"Tribunal" = 1
+		"Diocese" = 1
+		"Millet" = 1
+		"Conclave" = 1
+	}
+}
+
+# Democratic Spiritualist
+# format.lrsk_dem_spi.1: "<lrsk_spi_desc><lrsk_democratic_spi> of [This.Capital.System.GetName]"
+# format.lrsk_dem_spi.2: "<lrsk_spi_desc><lrsk_democratic_spi> of [This.Capital.GetName]"
+# format.lrsk_dem_spi.3: "<lrsk_spi_desc><lrsk_democratic_spi> of [This.GetSpeciesName]kind"
+# format.lrsk_dem_spi.4: "<lrsk_spi_desc>[This.GetSpeciesAdj] <lrsk_democratic_spi>"
+# format.lrsk_dem_spi.5: "[This.GetSpeciesAdj] <lrsk_spi_desc><lrsk_democratic_spi>"
+
+empire_name_parts_list = {
+	key = "lrsk_democratic_spi"
+	parts = {
+		"Assembly" = 1
+		"Congregation" = 1
+		"Commonality" = 1
+		"Concordat" = 1
+		"Parish" = 1
+	}
+}
+
+# Imperial Cult
+# format.lrsk_imp_cult.1: "<lrsk_impl_cult_desc> <lrsk_imperial_cult> of [This.Capital.System.GetName]"
+# format.lrsk_imp_cult.2: "<lrsk_impl_cult_desc> <lrsk_imperial_cult> of [This.Capital.GetName]"
+# format.lrsk_imp_cult.3: "<lrsk_impl_cult_desc> <lrsk_imperial_cult> of [This.GetSpeciesName]kind"
+
+# Imperial Cult Descriptive
+empire_name_parts_list = {
+	key = "lrsk_imp_cult_desc"
+	parts = {
+		"Holy" = 1
+		"Divine" = 1
+		"Eternal" = 1
+		"Sacred" = 1
+	}
+}
+
+# Imperial Imperial Cult
+empire_name_parts_list = {
+	key = "lrsk_imperial_cult"
+	parts = {
+		"Empire" = 1
+		"Imperium" = 1
+		"Dominion" = 1
+		"Throne" = 1
+	}
+}
+
+# Holy Tribunal
+# format.lrsk_oli_trib.1: "<lrsk_holy_tribunal_desc> <lrsk_holy_tribunal> of [This.Capital.System.GetName]"
+# format.lrsk_oli_trib.2: "<lrsk_holy_tribunal_desc> <lrsk_holy_tribunal> of [This.Capital.GetName]"
+# format.lrsk_oli_trib.3: "[This.GetSpeciesAdj] <lrsk_holy_tribunal_desc> <lrsk_holy_tribunal>"
+
 # Holy Tribunal Descriptive
 empire_name_parts_list = {
 	key = "lrsk_holy_tribunal_desc"
@@ -463,106 +546,21 @@ empire_name_parts_list = {
 	}
 }
 
-# Imperial Cult Descriptive
+# Oligarchic Holy Tribunal
 empire_name_parts_list = {
-	key = "lrsk_imp_cult_desc"
+	key = "lrsk_holy_tribunal"
 	parts = {
-		"Holy" = 1
-		"Divine" = 1
-		"Eternal" = 1
-		"Sacred" = 1
+		"Covenant" = 1
+		"Tribunal" = 1
+		"Mandate" = 1
+		"Assembly" = 1
+		"Council" = 1
+		"Foundation" = 1
+		"Conclave" = 1
 	}
 }
 
 ### MATERIALIST
-
-# Imperial Materialist
-empire_name_parts_list = {
-	key = "lrsk_imperial_mat"
-	parts = {
-		"Sovereignty" = 1
-		"Hierarchy" = 1
-		"Hegemony" = 1
-		"Domain" = 1
-		"Inheritance" = 1
-	}
-}
-
-# Dictatorial Materialist
-empire_name_parts_list = {
-	key = "lrsk_dictatorial_mat"
-	parts = {
-		"Foundation" = 1
-		"Regime" = 1
-		"Combine" = 1
-		"Authority" = 1
-		"Alignment" = 1
-	}
-}
-
-# Oligarchic Materialist
-empire_name_parts_list = {
-	key = "lrsk_oligarchic_mat"
-	parts = {
-		"Union" = 1
-		"Directorate" = 1
-		"Administration" = 1
-		"Council" = 1
-		"Committee" = 1
-	}
-}
-
-# Democratic Materialist
-empire_name_parts_list = {
-	key = "lrsk_democratic_mat"
-	parts = {
-		"Cooperative" = 1
-		"Commonality" = 1
-		"Polity" = 1
-		"Consensus" = 1
-		"Citizenry" = 1
-	}
-}
-
-# Imperial/Dictatorial Technocracy
-empire_name_parts_list = {
-	key = "lrsk_impdic_tech"
-	parts = {
-		"Hegemony" = 1
-		"Hierarchy" = 1
-		"Combine" = 1
-		"Sovereignty" = 1
-		"Alignment" = 1
-		"Foundation" = 1
-	}
-}
-
-# Democratic/Oligarchic Technocracy
-empire_name_parts_list = {
-	key = "lrsk_demoli_tech"
-	parts = {
-		"Directorate" = 1
-		"Union" = 1
-		"Cooperative" = 1
-		"Consensus" = 1
-		"Administration" = 1
-		"Commonality" = 1
-	}
-}
-
-# Scholastic Types
-empire_name_parts_list = {
-	key = "lrsk_schl_types"
-	parts = {
-		"Academy" = 1
-		"Institute" = 1
-		"School" = 1
-		"College" = 1
-		"University" = 1
-	}
-}
-
-### Descriptive
 
 # Materialist Descriptive
 empire_name_parts_list = {
@@ -576,6 +574,80 @@ empire_name_parts_list = {
 	}
 }
 
+# Imperial Materialist
+# format.lrsk_imp_mat.1: "<lrsk_mat_desc><lrsk_imperial_mat> of [This.Capital.System.GetName]"
+# format.lrsk_imp_mat.2: "<lrsk_mat_desc><lrsk_imperial_mat> of [This.Capital.GetName]"
+# format.lrsk_imp_mat.3: "<lrsk_mat_desc><lrsk_imperial_mat> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_mat.4: "<lrsk_mat_desc>[This.GetSpeciesAdj] <lrsk_imperial_mat>"
+# format.lrsk_imp_mat.5: "[This.GetSpeciesAdj] <lrsk_mat_desc><lrsk_imperial_mat>"
+
+empire_name_parts_list = {
+	key = "lrsk_imperial_mat"
+	parts = {
+		"Sovereignty" = 1
+		"Hierarchy" = 1
+		"Hegemony" = 1
+		"Domain" = 1
+		"Inheritance" = 1
+	}
+}
+
+# Dictatorial Materialist
+# format.lrsk_dic_mat.1: "<lrsk_mat_desc><lrsk_dictatorial_mat> of [This.Capital.System.GetName]"
+# format.lrsk_dic_mat.2: "<lrsk_mat_desc><lrsk_dictatorial_mat> of [This.Capital.GetName]"
+# format.lrsk_dic_mat.3: "<lrsk_mat_desc><lrsk_dictatorial_mat> of [This.GetSpeciesName]kind"
+# format.lrsk_dic_mat.4: "<lrsk_mat_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_mat>"
+# format.lrsk_dic_mat.5: "[This.GetSpeciesAdj] <lrsk_mat_desc><lrsk_dictatorial_mat>"
+
+empire_name_parts_list = {
+	key = "lrsk_dictatorial_mat"
+	parts = {
+		"Foundation" = 1
+		"Regime" = 1
+		"Combine" = 1
+		"Authority" = 1
+		"Alignment" = 1
+	}
+}
+
+# Oligarchic Materialist
+# format.lrsk_oli_mat.1: "<lrsk_mat_desc><lrsk_oligarchic_mat> of [This.Capital.System.GetName]"
+# format.lrsk_oli_mat.2: "<lrsk_mat_desc><lrsk_oligarchic_mat> of [This.Capital.GetName]"
+# format.lrsk_oli_mat.3: "<lrsk_mat_desc><lrsk_oligarchic_mat> of [This.GetSpeciesName]kind"
+# format.lrsk_oli_mat.4: "<lrsk_mat_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_mat>"
+# format.lrsk_oli_mat.5: "[This.GetSpeciesAdj] <lrsk_mat_desc><lrsk_oligarchic_mat>"
+
+empire_name_parts_list = {
+	key = "lrsk_oligarchic_mat"
+	parts = {
+		"Union" = 1
+		"Directorate" = 1
+		"Administration" = 1
+		"Council" = 1
+		"Committee" = 1
+	}
+}
+
+# Democratic Materialist
+# format.lrsk_dem_mat.1: "<lrsk_mat_desc><lrsk_democratic_mat> of [This.Capital.System.GetName]"
+# format.lrsk_dem_mat.2: "<lrsk_mat_desc><lrsk_democratic_mat> of [This.Capital.GetName]"
+# format.lrsk_dem_mat.3: "<lrsk_mat_desc><lrsk_democratic_mat> of [This.GetSpeciesName]kind"
+# format.lrsk_dem_mat.4: "<lrsk_mat_desc>[This.GetSpeciesAdj] <lrsk_democratic_mat>"
+# format.lrsk_dem_mat.5: "[This.GetSpeciesAdj] <lrsk_mat_desc><lrsk_democratic_mat>"
+
+empire_name_parts_list = {
+	key = "lrsk_democratic_mat"
+	parts = {
+		"Cooperative" = 1
+		"Commonality" = 1
+		"Polity" = 1
+		"Consensus" = 1
+		"Citizenry" = 1
+	}
+}
+
+## Technocracies
+
 # Technocratic Descriptive
 empire_name_parts_list = {
 	key = "lrsk_tech_desc"
@@ -586,6 +658,54 @@ empire_name_parts_list = {
 		"Scientific" = 1
 		"Integrated" = 1
 		"Scholarly" = 1
+	}
+}
+
+# Imperial/Dictatorial Technocracy
+# format.lrsk_impdic_tech.1: "<lrsk_tech_desc> <lrsk_impdic_tech> of [This.Capital.System.GetName]"
+# format.lrsk_impdic_tech.2: "<lrsk_tech_desc> <lrsk_impdic_tech> of [This.Capital.GetName]"
+# format.lrsk_impdic_tech.3: "[This.GetSpeciesAdj] <lrsk_tech_desc> <lrsk_impdic_tech>"
+
+empire_name_parts_list = {
+	key = "lrsk_impdic_tech"
+	parts = {
+		"Hegemony" = 1
+		"Hierarchy" = 1
+		"Combine" = 1
+		"Sovereignty" = 1
+		"Alignment" = 1
+		"Foundation" = 1
+	}
+}
+
+# Democratic/Oligarchic Technocracy
+# format.lrsk_demoli_tech.1: "<lrsk_tech_desc> <lrsk_demoli_tech> of [This.Capital.System.GetName]"
+# format.lrsk_demoli_tech.2: "<lrsk_tech_desc> <lrsk_demoli_tech> of [This.Capital.GetName]"
+# format.lrsk_demoli_tech.3: "[This.GetSpeciesAdj] <lrsk_tech_desc> <lrsk_demoli_tech>"
+
+empire_name_parts_list = {
+	key = "lrsk_demoli_tech"
+	parts = {
+		"Directorate" = 1
+		"Union" = 1
+		"Cooperative" = 1
+		"Consensus" = 1
+		"Administration" = 1
+		"Commonality" = 1
+	}
+}
+
+# Academy states?
+
+# Scholastic Types
+empire_name_parts_list = {
+	key = "lrsk_schl_types"
+	parts = {
+		"Academy" = 1
+		"Institute" = 1
+		"School" = 1
+		"College" = 1
+		"University" = 1
 	}
 }
 
@@ -626,7 +746,26 @@ empire_name_parts_list = {
 
 ### PACIFIST
 
+# Pacifist Descriptive
+empire_name_parts_list = {
+	key = "lrsk_pac_desc"
+	parts = {
+		"" = 1
+		"Serene " = 1
+		"Irenic " = 1
+		"Tranquil " = 1
+		"Harmonious " = 1
+		"Gentle " = 1
+	}
+}
+
 # Imperial Pacifist
+# format.lrsk_imp_pac.1: "<lrsk_pac_desc><lrsk_imperial_pac> of [This.Capital.System.GetName]"
+# format.lrsk_imp_pac.2: "<lrsk_pac_desc><lrsk_imperial_pac> of [This.Capital.GetName]"
+# format.lrsk_imp_pac.3: "<lrsk_pac_desc><lrsk_imperial_pac> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_pac.4: "<lrsk_pac_desc>[This.GetSpeciesAdj] <lrsk_imperial_pac>"
+# format.lrsk_imp_pac.5: "[This.GetSpeciesAdj] <lrsk_pac_desc><lrsk_imperial_pac>"
+
 empire_name_parts_list = {
 	key = "lrsk_imperial_pac"
 	parts = {
@@ -639,6 +778,12 @@ empire_name_parts_list = {
 }
 
 # Dictatorial Pacifist
+# format.lrsk_dic_pac.1: "<lrsk_pac_desc><lrsk_dictatorial_pac> of [This.Capital.System.GetName]"
+# format.lrsk_dic_pac.2: "<lrsk_pac_desc><lrsk_dictatorial_pac> of [This.Capital.GetName]"
+# format.lrsk_dic_pac.3: "<lrsk_pac_desc><lrsk_dictatorial_pac> of [This.GetSpeciesName]kind"
+# format.lrsk_dic_pac.4: "<lrsk_pac_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_pac>"
+# format.lrsk_dic_pac.5: "[This.GetSpeciesAdj] <lrsk_pac_desc><lrsk_dictatorial_pac>"
+
 empire_name_parts_list = {
 	key = "lrsk_dictatorial_pac"
 	parts = {
@@ -651,6 +796,12 @@ empire_name_parts_list = {
 }
 
 # Oligarchic Pacifist
+# format.lrsk_oli_pac.1: "<lrsk_pac_desc><lrsk_oligarchic_pac> of [This.Capital.System.GetName]"
+# format.lrsk_oli_pac.2: "<lrsk_pac_desc><lrsk_oligarchic_pac> of [This.Capital.GetName]"
+# format.lrsk_oli_pac.3: "<lrsk_pac_desc><lrsk_oligarchic_pac> of [This.GetSpeciesName]kind"
+# format.lrsk_oli_pac.4: "<lrsk_pac_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_pac>"
+# format.lrsk_oli_pac.5: "[This.GetSpeciesAdj] <lrsk_pac_desc><lrsk_oligarchic_pac>"
+
 empire_name_parts_list = {
 	key = "lrsk_oligarchic_pac"
 	parts = {
@@ -663,6 +814,12 @@ empire_name_parts_list = {
 }
 
 # Democratic Pacifist
+# format.lrsk_dem_pac.1: "<lrsk_pac_desc><lrsk_democratic_pac> of [This.Capital.System.GetName]"
+# format.lrsk_dem_pac.2: "<lrsk_pac_desc><lrsk_democratic_pac> of [This.Capital.GetName]"
+# format.lrsk_dem_pac.3: "<lrsk_pac_desc><lrsk_democratic_pac> of [This.GetSpeciesName]kind"
+# format.lrsk_dem_pac.4: "<lrsk_pac_desc>[This.GetSpeciesAdj] <lrsk_democratic_pac>"
+# format.lrsk_dem_pac.5: "[This.GetSpeciesAdj] <lrsk_pac_desc><lrsk_democratic_pac>"
+
 empire_name_parts_list = {
 	key = "lrsk_democratic_pac"
 	parts = {
@@ -671,6 +828,23 @@ empire_name_parts_list = {
 		"Accord" = 1
 		"Congress" = 1
 		"Parliament" = 1
+	}
+}
+
+# Celestial Empires
+# format.lrsk_imp_cel.1: "<lrsk_celestial_emp_desc> <lrsk_imperial_celestial> of [This.Capital.System.GetName]"
+# format.lrsk_imp_cel.2: "<lrsk_celestial_emp_desc> <lrsk_imperial_celestial> of [This.Capital.GetName]"
+# format.lrsk_imp_cel.3: "<lrsk_celestial_emp_desc> <lrsk_imperial_celestial> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_cel.4: "[This.GetSpeciesAdj] <lrsk_celestial_emp_desc> <lrsk_imperial_celestial>"
+
+# Celestial Empire Descriptive
+empire_name_parts_list = {
+	key = "lrsk_celestial_emp_desc"
+	parts = {
+		"Middle" = 1
+		"Central" = 1
+		"Celestial" = 1
+		"Sagely" = 1
 	}
 }
 
@@ -685,42 +859,11 @@ empire_name_parts_list = {
 	}
 }
 
-# Enlightened
-empire_name_parts_list = {
-	key = "lrsk_imperial_enlightened"
-	parts = {
-		"Kingdom" = 1
-		"Dynasty" = 1
-		"Principality" = 1
-		"Regency" = 1
-	}
-}
-
-### Descriptives
-
-# Pacifist Descriptive
-empire_name_parts_list = {
-	key = "lrsk_pac_desc"
-	parts = {
-		"" = 1
-		"Serene " = 1
-		"Irenic " = 1
-		"Tranquil " = 1
-		"Harmonious " = 1
-		"Gentle " = 1
-	}
-}
-
-# Celestial Empire Descriptive
-empire_name_parts_list = {
-	key = "lrsk_celestial_emp_desc"
-	parts = {
-		"Middle" = 1
-		"Central" = 1
-		"Celestial" = 1
-		"Sagely" = 1
-	}
-}
+# Enlightened Monarchy
+# format.lrsk_imp_enl.1: "<lrsk_enlightened_desc> <lrsk_imperial_enlightened> of [This.Capital.System.GetName]"
+# format.lrsk_imp_enl.2: "<lrsk_enlightened_desc> <lrsk_imperial_enlightened> of [This.Capital.GetName]"
+# format.lrsk_imp_enl.3: "<lrsk_enlightened_desc> <lrsk_imperial_enlightened> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_enl.4: "[This.GetSpeciesAdj] <lrsk_enlightened_desc> <lrsk_imperial_enlightened>"
 
 # Enlightened Descriptive
 empire_name_parts_list = {
@@ -735,39 +878,18 @@ empire_name_parts_list = {
 	}
 }
 
+# Enlightened State
+empire_name_parts_list = {
+	key = "lrsk_imperial_enlightened"
+	parts = {
+		"Kingdom" = 1
+		"Dynasty" = 1
+		"Principality" = 1
+		"Regency" = 1
+	}
+}
+
 ### GENERIC DESCRIPTIVES
-
-# Imperial/Dictatorial Filler Descriptive
-empire_name_parts_list = {
-	key = "lrsk_impdic_filler"
-	parts = {
-		"" = 1
-		"Interstellar " = 1
-		"Interplanetary " = 1
-		"Galactic " = 1
-		"Absolute " = 1
-		"Sovereign " = 1
-		"Greater " = 1
-		"Central" = 1
-		"Unified" = 1
-	}
-}
-
-# Democratic/Oligarchic Filler Descriptive
-empire_name_parts_list = {
-	key = "lrsk_demoli_filler"
-	parts = {
-		"" = 1
-		"Interstellar " = 1
-		"Interplanetary " = 1
-		"Galactic " = 1
-		"United " = 1
-		"Confederal " = 1
-		"Federal " = 1
-		"Associated " = 1
-		"Assembled " = 1
-	}
-}
 
 # Stellar Descriptive
 empire_name_parts_list = {
@@ -847,6 +969,8 @@ empire_name_parts_list = {
 
 ### GENERIC STATES
 
+## Descriptives
+
 # Stellar Generic (for use with Generic Descriptives)
 empire_name_parts_list = {
 	key = "lrsk_stellar_generic"
@@ -875,8 +999,63 @@ empire_name_parts_list = {
 	}
 }
 
+# Imperial/Dictatorial Filler Descriptive
+empire_name_parts_list = {
+	key = "lrsk_impdic_filler"
+	parts = {
+		"" = 1
+		"Interstellar " = 1
+		"Interplanetary " = 1
+		"Galactic " = 1
+		"Absolute " = 1
+		"Sovereign " = 1
+		"Greater " = 1
+		"Central" = 1
+		"Unified" = 1
+	}
+}
+
+# Democratic/Oligarchic Filler Descriptive
+empire_name_parts_list = {
+	key = "lrsk_demoli_filler"
+	parts = {
+		"" = 1
+		"Interstellar " = 1
+		"Interplanetary " = 1
+		"Galactic " = 1
+		"United " = 1
+		"Confederal " = 1
+		"Federal " = 1
+		"Associated " = 1
+		"Assembled " = 1
+	}
+}
+
+## Governments
+
 # Imperial Generic
-# USAGE: The "noun" of an imperial name.
+# format.lrsk_imp_gen.1: "<lrsk_impdic_filler><lrsk_imperial_gen> of [This.Capital.System.GetName]"
+# format.lrsk_imp_gen.2: "<lrsk_impdic_filler><lrsk_imperial_gen> of [This.Capital.GetName]"
+# format.lrsk_imp_gen.3: "<lrsk_impdic_filler><lrsk_imperial_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_imp_gen.4: "<lrsk_impdic_filler>[This.GetSpeciesAdj] <lrsk_imperial_gen>"
+# format.lrsk_imp_gen.5: "[This.GetSpeciesAdj] <lrsk_impdic_filler><lrsk_imperial_gen>"
+# By species
+# format.lrsk_gen_imp.1: "<lrsk_imp_generic_desc> [This.GetSpeciesAdj] <lrsk_generic_states>"
+# format.lrsk_gen_imp.2: "[This.GetSpeciesAdj] <lrsk_imp_generic_desc> <lrsk_generic_states>"
+# format.lrsk_gen_imp.3: "<lrsk_imp_generic_desc> <lrsk_generic_states> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_imp.4: "<lrsk_stellar_generic_desc> <lrsk_imperial_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_imp.5: "<lrsk_imp_generic_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic>"
+# format.lrsk_gen_imp.6: "[This.GetSpeciesAdj] <lrsk_imp_generic_desc> <lrsk_stellar_generic>"
+# format.lrsk_gen_imp.7: "<lrsk_imp_generic_desc> <lrsk_stellar_generic> of [This.GetSpeciesName]kind"
+# By home star
+# format.lrsk_gen_imp.8: "<lrsk_imp_generic_desc> <lrsk_generic_states> of [This.Capital.System.GetName]"
+# format.lrsk_gen_imp.9: "<lrsk_stellar_generic_desc> <lrsk_imperial_gen> of [This.Capital.System.GetName]"
+# format.lrsk_gen_imp.10: "<lrsk_imp_generic_desc> <lrsk_stellar_generic> of [This.Capital.System.GetName]"
+# By homeworld
+# format.lrsk_gen_imp.11: "<lrsk_imp_generic_desc> <lrsk_generic_states> of [This.Capital.GetName]"
+# format.lrsk_gen_imp.12: "<lrsk_stellar_generic_desc> <lrsk_imperial_gen> of [This.Capital.GetName]"
+# format.lrsk_gen_imp.13: "<lrsk_imp_generic_desc> <lrsk_stellar_generic> of [This.Capital.GetName]"
+
 empire_name_parts_list = {
 	key = "lrsk_imperial_gen"
 	parts = {
@@ -894,7 +1073,28 @@ empire_name_parts_list = {
 }
 
 # Dictatorial Generic
-# USAGE: The "noun" of a dictatorial name.
+# format.lrsk_dic_gen.1: "<lrsk_impdic_filler><lrsk_dictatorial_gen> of [This.Capital.System.GetName]"
+# format.lrsk_dic_gen.2: "<lrsk_impdic_filler><lrsk_dictatorial_gen> of [This.Capital.GetName]"
+# format.lrsk_dic_gen.3: "<lrsk_impdic_filler><lrsk_dictatorial_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_dic_gen.4: "<lrsk_impdic_filler>[This.GetSpeciesAdj] <lrsk_dictatorial_gen>"
+# format.lrsk_dic_gen.5: "[This.GetSpeciesAdj] <lrsk_impdic_filler><lrsk_dictatorial_gen>"
+# By species
+# format.lrsk_gen_dic.1: "<lrsk_dic_generic_desc> [This.GetSpeciesAdj] <lrsk_generic_states>"
+# format.lrsk_gen_dic.2: "[This.GetSpeciesAdj] <lrsk_dic_generic_desc> <lrsk_generic_states>"
+# format.lrsk_gen_dic.3: "<lrsk_dic_generic_desc> <lrsk_generic_states> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_dic.4: "<lrsk_stellar_generic_desc> <lrsk_dictatorial_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_dic.5: "<lrsk_dic_generic_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic>"
+# format.lrsk_gen_dic.6: "[This.GetSpeciesAdj] <lrsk_dic_generic_desc> <lrsk_stellar_generic>"
+# format.lrsk_gen_dic.7: "<lrsk_dic_generic_desc> <lrsk_stellar_generic> of [This.GetSpeciesName]kind"
+# By home star
+# format.lrsk_gen_dic.8: "<lrsk_dic_generic_desc> <lrsk_generic_states> of [This.Capital.System.GetName]"
+# format.lrsk_gen_dic.9: "<lrsk_stellar_generic_desc> <lrsk_dictatorial_gen> of [This.Capital.System.GetName]"
+# format.lrsk_gen_dic.10: "<lrsk_dic_generic_desc> <lrsk_stellar_generic> of [This.Capital.System.GetName]"
+# By homeworld
+# format.lrsk_gen_dic.11: "<lrsk_dic_generic_desc> <lrsk_generic_states> of [This.Capital.GetName]"
+# format.lrsk_gen_dic.12: "<lrsk_stellar_generic_desc> <lrsk_dictatorial_gen> of [This.Capital.GetName]"
+# format.lrsk_gen_dic.13: "<lrsk_dic_generic_desc> <lrsk_stellar_generic> of [This.Capital.GetName]"
+
 empire_name_parts_list = {
 	key = "lrsk_dictatorial_gen"
 	parts = {
@@ -912,7 +1112,28 @@ empire_name_parts_list = {
 }
 
 # Oligarchic Generic
-# USAGE: The "noun" of an oligarchic name.
+# format.lrsk_oli_gen.1: "<lrsk_demoli_filler><lrsk_oligarchic_gen> of [This.Capital.System.GetName]"
+# format.lrsk_oli_gen.2: "<lrsk_demoli_filler><lrsk_oligarchic_gen> of [This.Capital.GetName]"
+# format.lrsk_oli_gen.3: "<lrsk_demoli_filler><lrsk_oligarchic_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_oli_gen.4: "<lrsk_demoli_filler>[This.GetSpeciesAdj] <lrsk_oligarchic_gen>"
+# format.lrsk_oli_gen.5: "[This.GetSpeciesAdj] <lrsk_demoli_filler><lrsk_oligarchic_gen>"
+# By species
+# format.lrsk_gen_oli.1: "<lrsk_oli_generic_desc> [This.GetSpeciesAdj] <lrsk_generic_states>"
+# format.lrsk_gen_oli.2: "[This.GetSpeciesAdj] <lrsk_oli_generic_desc> <lrsk_generic_states>"
+# format.lrsk_gen_oli.3: "<lrsk_oli_generic_desc> <lrsk_generic_states> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_oli.4: "<lrsk_stellar_generic_desc> <lrsk_oligarchic_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_oli.5: "<lrsk_oli_generic_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic>"
+# format.lrsk_gen_oli.6: "[This.GetSpeciesAdj] <lrsk_oli_generic_desc> <lrsk_stellar_generic>"
+# format.lrsk_gen_oli.7: "<lrsk_oli_generic_desc> <lrsk_stellar_generic> of [This.GetSpeciesName]kind"
+# By home star
+# format.lrsk_gen_oli.8: "<lrsk_oli_generic_desc> <lrsk_generic_states> of [This.Capital.System.GetName]"
+# format.lrsk_gen_oli.9: "<lrsk_stellar_generic_desc> <lrsk_oligarchic_gen> of [This.Capital.System.GetName]"
+# format.lrsk_gen_oli.10: "<lrsk_oli_generic_desc> <lrsk_stellar_generic> of [This.Capital.System.GetName]"
+# By homeworld
+# format.lrsk_gen_oli.11: "<lrsk_oli_generic_desc> <lrsk_generic_states> of [This.Capital.GetName]"
+# format.lrsk_gen_oli.12: "<lrsk_stellar_generic_desc> <lrsk_oligarchic_gen> of [This.Capital.GetName]"
+# format.lrsk_gen_oli.13: "<lrsk_oli_generic_desc> <lrsk_stellar_generic> of [This.Capital.GetName]"
+
 empire_name_parts_list = {
 	key = "lrsk_oligarchic_gen"
 	parts = {
@@ -930,7 +1151,28 @@ empire_name_parts_list = {
 }
 
 # Democratic Generic
-# USAGE: The "noun" of a democratic name.
+# format.lrsk_dem_gen.1: "<lrsk_demoli_filler><lrsk_democratic_gen> of [This.Capital.System.GetName]"
+# format.lrsk_dem_gen.2: "<lrsk_demoli_filler><lrsk_democratic_gen> of [This.Capital.GetName]"
+# format.lrsk_dem_gen.3: "<lrsk_demoli_filler><lrsk_democratic_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_dem_gen.4: "<lrsk_demoli_filler>[This.GetSpeciesAdj] <lrsk_democratic_gen>"
+# format.lrsk_dem_gen.5: "[This.GetSpeciesAdj] <lrsk_demoli_filler><lrsk_democratic_gen>"
+# By species
+# format.lrsk_gen_dem.1: "<lrsk_dem_generic_desc> [This.GetSpeciesAdj] <lrsk_generic_states>"
+# format.lrsk_gen_dem.2: "[This.GetSpeciesAdj] <lrsk_dem_generic_desc> <lrsk_generic_states>"
+# format.lrsk_gen_dem.3: "<lrsk_dem_generic_desc> <lrsk_generic_states> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_dem.4: "<lrsk_stellar_generic_desc> <lrsk_democratic_gen> of [This.GetSpeciesName]kind"
+# format.lrsk_gen_dem.5: "<lrsk_dem_generic_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic>"
+# format.lrsk_gen_dem.6: "[This.GetSpeciesAdj] <lrsk_dem_generic_desc> <lrsk_stellar_generic>"
+# format.lrsk_gen_dem.7: "<lrsk_dem_generic_desc> <lrsk_stellar_generic> of [This.GetSpeciesName]kind"
+# By home star
+# format.lrsk_gen_dem.8: "<lrsk_dem_generic_desc> <lrsk_generic_states> of [This.Capital.System.GetName]"
+# format.lrsk_gen_dem.9: "<lrsk_stellar_generic_desc> <lrsk_democratic_gen> of [This.Capital.System.GetName]"
+# format.lrsk_gen_dem.10: "<lrsk_dem_generic_desc> <lrsk_stellar_generic> of [This.Capital.System.GetName]"
+# By homeworld
+# format.lrsk_gen_dem.11: "<lrsk_dem_generic_desc> <lrsk_generic_states> of [This.Capital.GetName]"
+# format.lrsk_gen_dem.12: "<lrsk_stellar_generic_desc> <lrsk_democratic_gen> of [This.Capital.GetName]"
+# format.lrsk_gen_dem.13: "<lrsk_dem_generic_desc> <lrsk_stellar_generic> of [This.Capital.GetName]"
+
 empire_name_parts_list = {
 	key = "lrsk_democratic_gen"
 	parts = {
@@ -948,6 +1190,11 @@ empire_name_parts_list = {
 }
 
 ## Fanatical Purifiers
+
+# Imperial
+# format.lrsk_imp_purifier.1: "[This.GetSpeciesAdj] <lrsk_imp_pur_desc> <lrsk_imp_purifiers>"
+# format.lrsk_imp_purifier.2: "[This.Capital.GetName]born <lrsk_imp_pur_desc> <lrsk_imp_purifiers>"
+# format.lrsk_imp_purifier.3: "<lrsk_imp_pur_desc> <lrsk_imp_purifiers> of [This.Capital.System.GetName]"
 
 # Purifier Imperial Descriptive
 empire_name_parts_list = {
@@ -977,6 +1224,11 @@ empire_name_parts_list = {
 	}
 }
 
+# Dictatorial
+# format.lrsk_dic_purifier.1: "[This.GetSpeciesAdj] <lrsk_dic_pur_desc> <lrsk_dic_purifiers>"
+# format.lrsk_dic_purifier.2: "[This.Capital.GetName]born <lrsk_dic_pur_desc> <lrsk_dic_purifiers>"
+# format.lrsk_dic_purifier.3: "<lrsk_dic_pur_desc> <lrsk_dic_purifiers> of [This.Capital.System.GetName]"
+
 # Purifier Dictatorial Descriptive
 empire_name_parts_list = {
 	key = "lrsk_dic_pur_desc"
@@ -1005,7 +1257,12 @@ empire_name_parts_list = {
 	}
 }
 
-# Generic oligarchic Descriptive
+# Oligarchic
+# format.lrsk_oli_purifier.1: "[This.GetSpeciesAdj] <lrsk_oli_pur_desc> <lrsk_oli_purifiers>"
+# format.lrsk_oli_purifier.2: "[This.Capital.GetName]born <lrsk_oli_pur_desc> <lrsk_oli_purifiers>"
+# format.lrsk_oli_purifier.3: "<lrsk_oli_pur_desc> <lrsk_oli_purifiers> of [This.Capital.System.GetName]"
+
+# Purifier oligarchic Descriptive
 empire_name_parts_list = {
 	key = "lrsk_oli_pur_desc"
 	parts = {
@@ -1032,6 +1289,11 @@ empire_name_parts_list = {
 		"Reapers" = 1
 	}
 }
+
+# Death Cult
+# format.lrsk_clt_purifier.1: "[This.GetSpeciesAdj] <lrsk_spi_pur_desc> <lrsk_clt_purifiers>"
+# format.lrsk_clt_purifier.2: "[This.Capital.GetName]born <lrsk_spi_pur_desc> <lrsk_clt_purifiers>"
+# format.lrsk_clt_purifier.3: "<lrsk_spi_pur_desc> <lrsk_clt_purifiers> of [This.Capital.System.GetName]"
 
 # Spiritualist Purifiers Descriptive
 empire_name_parts_list = {
@@ -1060,6 +1322,11 @@ empire_name_parts_list = {
 	}
 }
 
+# Legionary Necropolity
+# format.lrsk_cit_purifier.1: "[This.GetSpeciesAdj] Citizen <lrsk_cit_purifiers>"
+# format.lrsk_cit_purifier.2: "[This.Capital.GetName]born Citizen <lrsk_cit_purifiers>"
+# format.lrsk_cit_purifier.3: "Citizen <lrsk_cit_purifiers> of [This.Capital.System.GetName]"
+
 #Citizen Fanatical Purifiers
 empire_name_parts_list = {
 	key = "lrsk_cit_purifiers"
@@ -1076,6 +1343,11 @@ empire_name_parts_list = {
 		"Punishers" = 1
 	}
 }
+
+# Democratic
+# format.lrsk_dem_purifier.1: "[This.GetSpeciesAdj] <lrsk_dem_pur_desc> <lrsk_dem_purifiers>"
+# format.lrsk_dem_purifier.2: "[This.Capital.GetName]born <lrsk_dem_pur_desc> <lrsk_dem_purifiers>"
+# format.lrsk_dem_purifier.3: "<lrsk_dem_pur_desc> <lrsk_dem_purifiers> of [This.Capital.System.GetName]"
 
 # Generic Democratic Descriptive
 empire_name_parts_list = {
@@ -1104,6 +1376,11 @@ empire_name_parts_list = {
 		"Reapers" = 1
 	}
 }
+
+# Doom Horde
+# format.lrsk_hrd_purifier.1: "[This.GetSpeciesAdj] <lrsk_hrd_pur_desc> <lrsk_hrd_purifiers>"
+# format.lrsk_hrd_purifier.2: "[This.Capital.GetName]born <lrsk_hrd_pur_desc> <lrsk_hrd_purifiers>"
+# format.lrsk_hrd_purifier.3: "<lrsk_hrd_pur_desc> <lrsk_hrd_purifiers> of [This.Capital.System.GetName]"
 
 # Horde Purifiers Descriptive
 empire_name_parts_list = {
@@ -1136,6 +1413,9 @@ empire_name_parts_list = {
 }
 
 ## Megachurches
+# format.lrsk_megachurch.1: "[This.GetSpeciesAdj] <lrsk_megachurch> <lrsk_megachurch_suffix>"
+# format.lrsk_megachurch.2: "<lrsk_megachurch_desc> <lrsk_megachurch> of [This.Capital.System.GetName]"
+# format.lrsk_megachurch.3: "<lrsk_megachurch_desc> <lrsk_megachurch> of [This.Capital.GetName]"
 
 # Megachurch Descriptors
 empire_name_parts_list = {
@@ -1198,7 +1478,9 @@ empire_name_parts_list = {
 }
 
 ## Megacorporations
-# Uses generic stellar descriptives
+# format.lrsk_megacorp.1: "[This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_megacorp><lrsk_corp_bits>"
+# format.lrsk_megacorp.2: "<lrsk_stellar_generic_desc> <lrsk_megacorp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+# format.lrsk_megacorp.3: "<lrsk_stellar_generic_desc> <lrsk_megacorp> of [This.Capital.GetName]<lrsk_corp_bits>"
 
 # Megacorporation Noun
 empire_name_parts_list = {
@@ -1223,6 +1505,9 @@ empire_name_parts_list = {
 
 ## Trade Leagues
 # Two types: based on species (personal), based on star/planet (organizational)
+# format.lrsk_trade_league.1: "<lrsk_trade_league_per_desc> [This.GetSpeciesAdj] <lrsk_trade_league_per>"
+# format.lrsk_trade_league.2: "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.System.GetName]"
+# format.lrsk_trade_league.3: "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.GetName]"
 
 # Trade League Personal Descriptor
 empire_name_parts_list = {
@@ -1275,6 +1560,9 @@ empire_name_parts_list = {
 }
 
 ## Rationalist-Managerial Firms
+# format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_rmf_corp><lrsk_corp_bits>"
+# format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+# format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
 
 # Rationalist-Managerial Descriptive
 empire_name_parts_list = {
@@ -1304,7 +1592,10 @@ empire_name_parts_list = {
 	}
 }
 
-## Innovation Initiatives
+# Innovation Initiatives
+# format.lrsk_inno_corp.1: "[This.GetSpeciesAdj] <lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp>"
+# format.lrsk_inno_corp.2: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
+# format.lrsk_inno_corp.3: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
 
 # Innovation Descriptive
 empire_name_parts_list = {
