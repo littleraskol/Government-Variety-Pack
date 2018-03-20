@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.2.2.1 (03-20-18)
+-Fixed bug in "Cosmic Choir" government.
+
 v1.2.2 (03-05-18)
 -Removing deprecated/legacy cruft where possible.
 -"Direct Revelation" changed to just require some degree of Egalitarian and Spiritualist because the previous requirements did not work as intended because you can't nest "OR" blocks in a civic prereq definition.
