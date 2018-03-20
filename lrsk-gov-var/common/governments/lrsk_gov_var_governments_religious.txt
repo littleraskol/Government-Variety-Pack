@@ -32,7 +32,10 @@ lrsk_gov_var_gov_cosmic_choir = {
 			has_authority = auth_democratic
 			has_authority = auth_oligarchic
 		}
-		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_direct_revelation
+			has_valid_civic = lrsk_gov_var_civic_direct_revelation_new
+		}
 		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
 		OR = {
 			has_ethic = ethic_pacifist
