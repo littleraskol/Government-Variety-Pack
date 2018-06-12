@@ -85,9 +85,46 @@ empire_name_parts_list = {
 	}
 }
 
+
 ### Socialist Governments
 
-## Descriptives
+## PDRs
+#Proletarian Dictatorship
+#Insurrectionary Lineage
+#format.lrsk_pdr.1: "<lrsk_pdr_who>' <lrsk_pdr_desc> <lrsk_pdr_type> of [This.Capital.System.GetName]"
+#format.lrsk_pdr.2: "<lrsk_pdr_who>' <lrsk_pdr_desc> <lrsk_pdr_type> of [This.Capital.GetName]"
+#format.lrsk_pdr.3: "[This.GetSpeciesName] <lrsk_pdr_who>' <lrsk_pdr_desc> <lrsk_pdr_type>"
+
+# PDR Who
+empire_name_parts_list = {
+	key = "lrsk_pdr_who"
+	parts = {
+		"Peoples" = 1
+		"Workers" = 1
+	}
+}
+
+# PDR Desc
+empire_name_parts_list = {
+	key = "lrsk_pdr_desc"
+	parts = {
+		"Democratic" = 1
+		"Liberated" = 1
+		"Revolutionary" = 1
+	}
+}
+
+# PDR Type
+empire_name_parts_list = {
+	key = "lrsk_pdr_type"
+	parts = {
+		"Republic" = 1
+		"Commune" = 1
+		"State" = 1
+	}
+}
+
+## Descriptives - unsure how many I will really want to use.
 
 # Generic Socialist Descriptive
 empire_name_parts_list = {
@@ -135,38 +172,120 @@ empire_name_parts_list = {
 	}
 }
 
-# Dictatorial Socialist
+## Oligarchic
+#Social Bureaucracy
+#Socialist Plenary
+#format.lrsk_oli_soc.1: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.Capital.System.GetName]"
+#format.lrsk_oli_soc.2: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.Capital.GetName]"
+#format.lrsk_oli_soc.3: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.GetSpeciesName]kind"
+#format.lrsk_oli_soc.4: "<lrsk_soc_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_soc>"
+#format.lrsk_oli_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_oligarchic_soc>"
+
+# Cent Soc Desc
 empire_name_parts_list = {
-	key = "lrsk_socialist_gen"
+	key = "lrsk_centralist_soc_desc"
 	parts = {
-		"Commune" = 1
+		"Communal" = 1
 		"Collective" = 1
-		"Commons" = 1
-		"Social Union" = 1
+		"Common" = 1
+		"Social" = 1
 	}
 }
 
-# Oligarchic Socialist
+# Cent Soc Types
 empire_name_parts_list = {
-	key = "lrsk_socialist_gen"
+	key = "lrsk_oligarchic_soc"
 	parts = {
-		"Commune" = 1
 		"Collective" = 1
-		"Commons" = 1
-		"Social Union" = 1
+		"Union" = 1
+		"Republic" = 1
+		"Council" = 1
+		"Committee" = 1
+		"Directory" = 1
+		"Administration" = 1
 	}
 }
 
-# Democratic Socialist
+## Democratic
+#Social Democracy
+#Communal Democracy
+#format.lrsk_dem_soc.1: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.Capital.System.GetName]"
+#format.lrsk_dem_soc.2: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.Capital.GetName]"
+#format.lrsk_dem_soc.3: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.GetSpeciesName]kind"
+#format.lrsk_dem_soc.4: "<lrsk_soc_desc>[This.GetSpeciesAdj] <lrsk_democratic_soc>"
+#format.lrsk_dem_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_democratic_soc>"
+
+# Fed Soc Desc
 empire_name_parts_list = {
-	key = "lrsk_socialist_gen"
+	key = "lrsk_federal_soc_desc"
+	parts = {
+		"Communal" = 1
+		"Collective" = 1
+		"Common" = 1
+		"Social" = 1
+	}
+}
+
+# Fed Soc Types
+empire_name_parts_list = {
+	key = "lrsk_democratic_soc"
 	parts = {
 		"Commune" = 1
 		"Collective" = 1
 		"Commons" = 1
 		"Social Union" = 1
+		"Republic" = 1
+		"Commonwealth" = 1
+		"Assembly" = 1
+		"Cooperative" = 1
+		"Congress" = 1
+		"Parliament" = 1
+		"Diet" = 1
+		"Freehold" = 1
+		"Citizenry" = 1
+		"Commonality" = 1
+		"Council" = 1
+		"Syndicate" = 1
+		"Senate" = 1
+		"League" = 1
+		"Union" = 1
+		"Committee" = 1
+		"Consortium" = 1
+		"Directory" = 1
+		"Administration" = 1
+		"Bureaucracy" = 1
 	}
 }
+
+## Techy, I guess
+#Automated World-Commune
+
+
+
+## Dictatorial - Think this is actually covered by PDR?
+
+#format.lrsk_dic_soc.1: "<lrsk_soc_desc><lrsk_dictatorial_soc> of [This.Capital.System.GetName]"
+#format.lrsk_dic_soc.2: "<lrsk_soc_desc><lrsk_dictatorial_soc> of [This.Capital.GetName]"
+#format.lrsk_dic_soc.3: "<lrsk_soc_desc><lrsk_dictatorial_soc> of [This.GetSpeciesName]kind"
+#format.lrsk_dic_soc.4: "<lrsk_soc_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_soc>"
+#format.lrsk_dic_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_dictatorial_soc>"
+## Oligarchic
+
+
+#does this require something technocratic?
+#format.lrsk_oli_soc.1: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.Capital.System.GetName]"
+#format.lrsk_oli_soc.2: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.Capital.GetName]"
+#format.lrsk_oli_soc.3: "<lrsk_soc_desc><lrsk_oligarchic_soc> of [This.GetSpeciesName]kind"
+#format.lrsk_oli_soc.4: "<lrsk_soc_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_soc>"
+#format.lrsk_oli_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_oligarchic_soc>"
+## Democratic
+
+
+#format.lrsk_dem_soc.1: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.Capital.System.GetName]"
+#format.lrsk_dem_soc.2: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.Capital.GetName]"
+#format.lrsk_dem_soc.3: "<lrsk_soc_desc><lrsk_democratic_soc> of [This.GetSpeciesName]kind"
+#format.lrsk_dem_soc.4: "<lrsk_soc_desc>[This.GetSpeciesAdj] <lrsk_democratic_soc>"
+#format.lrsk_dem_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_democratic_soc>"
 
 # Popular Kingdom
 # format.lrsk_imp_pop.1: "<lrsk_imppop_desc><lrsk_imperial_pop> of the [This.GetSpeciesNamePlural]"
