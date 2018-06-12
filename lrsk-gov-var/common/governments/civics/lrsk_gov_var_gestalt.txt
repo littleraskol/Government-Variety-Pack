@@ -321,14 +321,14 @@ lrsk_gov_var_civic_machine_recursive_efficiency_analysis = {
 	}
 }
 
-# Astro-Exploration Mainframe (+10% anomaly research speed, -10% anomaly fail chance, +10% anomaly find chance) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries.
+# Astro-Exploration Mainframe (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries.
 lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 	potential = { authority = { value = auth_machine_intelligence } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 1 }
 	modifier = {
+    science_ship_survey_speed = 0.15
     ship_anomaly_research_speed_mult = 0.1
-    ship_anomaly_fail_risk = -0.1
   	ship_anomaly_generation_chance_mult = 0.1
 	}
 }
