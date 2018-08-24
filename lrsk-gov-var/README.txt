@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.2.4 (08-24-18)
+-Hotfix for civic random pick weighting, civics added by this mod became 80% less likely to spawn due to a change in base game weights (maybe). Should now spawn on roughly par with base game civics.
+
 v1.2.3 (06-12-18)
 -Minor "Enlightened Liberalism" description change.
 -Removed all "anomaly fail chance" related modifiers.
