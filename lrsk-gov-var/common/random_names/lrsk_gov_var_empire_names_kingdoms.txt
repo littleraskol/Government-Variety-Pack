@@ -1,276 +1,253 @@
-################
-# NAME FORMATS #
-################
-
-### Imperial Generic
-
-# Imperial Generic 1
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 1
-			OR = {
-				has_government = "lrsk_gov_var_gov_feudal_empire"
-				has_government = "lrsk_gov_var_gov_absolute_monarchy"
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire"
-				has_government = "lrsk_gov_var_gov_solar_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_gen.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <imperial_gen>"
-	# Empire of Sol
-}
-
-# Imperial Generic 2
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 1
-			OR = {
-				has_government = "lrsk_gov_var_gov_feudal_empire"
-				has_government = "lrsk_gov_var_gov_absolute_monarchy"
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire"
-				has_government = "lrsk_gov_var_gov_solar_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_gen.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <imperial_gen>"
-	# Empire of Earth
-}
-
-# Imperial Generic 3
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 5
-			OR = {
-				has_government = "lrsk_gov_var_gov_feudal_empire"
-				has_government = "lrsk_gov_var_gov_absolute_monarchy"
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire"
-				has_government = "lrsk_gov_var_gov_solar_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_gen.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
-	# Human Empire
-}
-
-# Imperial Generic 4
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 2
-			OR = {
-				has_government = "lrsk_gov_var_gov_feudal_empire"
-				has_government = "lrsk_gov_var_gov_absolute_monarchy"
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire"
-				has_government = "lrsk_gov_var_gov_solar_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_gen.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
-	# Great Human Empire
-}
-
-# Imperial Generic 5
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 2
-			OR = {
-				has_government = "lrsk_gov_var_gov_feudal_empire"
-				has_government = "lrsk_gov_var_gov_absolute_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire"
-				has_government = "lrsk_gov_var_gov_solar_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_gen.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
-	# Human Star Empire
-}
-
-
-### Imperial Pacifist
-
-# Imperial Pacifist 1
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 1
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_pac.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <imperial_pac>"
-	# Empire of Sol
-}
-
-# Imperial Pacifist 2
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 1
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_pac.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <imperial_pac>"
-	# Empire of Earth
-}
-
-# Imperial Pacifist 3
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 5
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_pac.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
-	# Human Empire
-}
-
-# Imperial Pacifist 4
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 2
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_pac.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
-	# Great Human Empire
-}
-
-# Imperial Pacifist 5
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 2
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.imp_pac.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
-	# Human Star Empire
-}
-
-# People's Kingdoms
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 30
-			OR = {
-				has_government = "lrsk_gov_var_gov_constitutional_monarchy"
-				has_government = "lrsk_gov_var_gov_libertine_empire"
-				has_government = "lrsk_gov_var_gov_populist_monarchy"
-				has_government = "lrsk_gov_var_gov_revolutionary_empire""
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.lrsk_imp_pop.1"
-	noun = "[This.GetSpeciesNamePlural]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_imperial_pop>"
-	# Human Star Empire
-}
+#################
+## NAME FORMATS #
+#################
+#
+##Unclear on the purpose of this file w/ Better Names Project, commenting out for now.
+#
+#### Imperial Generic
+#
+## Imperial Generic 1
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 1
+#			OR = {
+#				has_government = "lrsk_gov_var_gov_feudal_empire"
+#				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				#has_government = "lrsk_gov_var_gov_revolutionary_empire"
+#				has_government = "lrsk_gov_var_gov_solar_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_gen.1"
+#	noun = "[This.Capital.System.GetName]"
+#	prefix_format = "[This.Capital.System.GetName] <imperial_gen>"
+#	# Empire of Sol
+#}
+#
+## Imperial Generic 2
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 1
+#			OR = {
+#				has_government = "lrsk_gov_var_gov_feudal_empire"
+#				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				#has_government = "lrsk_gov_var_gov_revolutionary_empire"
+#				has_government = "lrsk_gov_var_gov_solar_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_gen.2"
+#	noun = "[This.Capital.GetName]"
+#	prefix_format = "[This.Capital.GetName] <imperial_gen>"
+#	# Empire of Earth
+#}
+#
+## Imperial Generic 3
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 5
+#			OR = {
+#				has_government = "lrsk_gov_var_gov_feudal_empire"
+#				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				#has_government = "lrsk_gov_var_gov_revolutionary_empire"
+#				has_government = "lrsk_gov_var_gov_solar_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_gen.3"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
+#	# Human Empire
+#}
+#
+## Imperial Generic 4
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 2
+#			OR = {
+#				has_government = "lrsk_gov_var_gov_feudal_empire"
+#				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				#has_government = "lrsk_gov_var_gov_revolutionary_empire"
+#				has_government = "lrsk_gov_var_gov_solar_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_gen.4"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
+#	# Great Human Empire
+#}
+#
+## Imperial Generic 5
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 2
+#			OR = {
+#				has_government = "lrsk_gov_var_gov_feudal_empire"
+#				has_government = "lrsk_gov_var_gov_absolute_monarchy"
+#				#has_government = "lrsk_gov_var_gov_revolutionary_empire"
+#				has_government = "lrsk_gov_var_gov_solar_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_gen.5"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_gen>"
+#	# Human Star Empire
+#}
+#
+#
+#### Imperial Pacifist
+#
+## Imperial Pacifist 1
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 1
+#			OR = {
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#				#has_government = "lrsk_gov_var_gov_populist_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_pac.1"
+#	noun = "[This.Capital.System.GetName]"
+#	prefix_format = "[This.Capital.System.GetName] <imperial_pac>"
+#	# Empire of Sol
+#}
+#
+## Imperial Pacifist 2
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 1
+#			OR = {
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#				#has_government = "lrsk_gov_var_gov_populist_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_pac.2"
+#	noun = "[This.Capital.GetName]"
+#	prefix_format = "[This.Capital.GetName] <imperial_pac>"
+#	# Empire of Earth
+#}
+#
+## Imperial Pacifist 3
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 5
+#			OR = {
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#				#has_government = "lrsk_gov_var_gov_populist_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_pac.3"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
+#	# Human Empire
+#}
+#
+## Imperial Pacifist 4
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 2
+#			OR = {
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#				#has_government = "lrsk_gov_var_gov_populist_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_pac.4"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
+#	# Great Human Empire
+#}
+#
+## Imperial Pacifist 5
+#empire_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 2
+#			OR = {
+#				#has_government = "lrsk_gov_var_gov_constitutional_monarchy"
+#				has_government = "lrsk_gov_var_gov_libertine_empire"
+#				#has_government = "lrsk_gov_var_gov_populist_monarchy"
+#			}
+#			is_pirate = no
+#			is_primitive = no
+#			NOT = { is_country_type = fallen_empire }
+#			NOT = { is_country_type = awakened_fallen_empire }
+#		}
+#	}
+#	format = "format.imp_pac.5"
+#	noun = "[This.GetSpeciesName]"
+#	prefix_format = "[This.GetSpeciesName] <imperial_pac>"
+#	# Human Star Empire
+#}
