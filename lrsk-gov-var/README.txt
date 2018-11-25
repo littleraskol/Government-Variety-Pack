@@ -151,6 +151,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.3 (11-25-18) - Better Names Project
+-Complete rework of random name system to provide more flavor and distinction to empire names. Ranomly spawned empires should now have names that give you some indication of what their government is like (authority and/or ethos). Base game random names still exist and may show up, but are heavily out-weighted.
+-Added new Purifier government types: Doom Horde (w/ Warrior Culture), Death Cult (w/ Exalted Priesthood or Elected Clergy), Citizen Legion (w/ Citizen Service).
+-Fixed misc. typos.
+-Libertarian Freehold ruler title is now "Chief Arbitrator."
+-Republican Directory now requires Egalitarian ethos.
+-Insurrectionary Lineage requirements greatly simplified, now requires Cult of Personality and Institutionalized Collectivism, some degree of Militarist ethos, and Imperial authority.
+
 v1.2.4 (08-24-18)
 -Hotfix for civic random pick weighting, civics added by this mod became 80% less likely to spawn due to a change in base game weights (maybe). Should now spawn on roughly par with base game civics.
 
@@ -193,7 +201,7 @@ v1.1 (11-24-17)
 
 09-22-17
 -Fixed issue w/ new hive mind type ethos as civic restriction.
--Updated to using "has_valic_civic"
+-Updated to using "has_valid_civic"
 -Changed "Feudal Empire" to "Noble Empire" as alternative to new vanilla "Feudal Empire"
 -Changed "Megachurch" to "Evangelical Franchise" as alternative to new vanilla "Megachurch"
 -Changed "Occult Franchise" to "Occult Cartel"

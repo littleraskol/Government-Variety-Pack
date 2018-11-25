@@ -264,6 +264,45 @@ part = {
 # Default catch-all
 part = {
 	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_DOOM_HORDE"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_doom_horde
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_DEATH_CULT"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_death_cult
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_LEGIONARY_POLIS"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_legionary_polis
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_PROPRIETARY_FRANCHISE"
 
 	trigger = {

@@ -24,14 +24,32 @@ lrsk_gov_var_gov_saintly_assembly = {
 }
 
 # Cosmic Choir (Dem/Olg + DR/AV)
+# The "olig" variant allows for different namelist uses.
+lrsk_gov_var_gov_cosmic_choir_olig = {
+	ruler_title = LRSK_GOV_VAR_RT_GURU
+
+	possible = {
+		has_authority = auth_oligarchic
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_direct_revelation
+			has_valid_civic = lrsk_gov_var_civic_direct_revelation_new
+		}
+		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
+		OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
 lrsk_gov_var_gov_cosmic_choir = {
 	ruler_title = LRSK_GOV_VAR_RT_GURU
 
 	possible = {
-		OR = {
-			has_authority = auth_democratic
-			has_authority = auth_oligarchic
-		}
+		has_authority = auth_democratic
 		OR = {
 			has_valid_civic = lrsk_gov_var_civic_direct_revelation
 			has_valid_civic = lrsk_gov_var_civic_direct_revelation_new
