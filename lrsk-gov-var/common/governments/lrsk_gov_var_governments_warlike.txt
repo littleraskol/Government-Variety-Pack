@@ -241,7 +241,24 @@ lrsk_gov_var_gov_doom_horde = {
 	ruler_title_female = LRSK_GOV_VAR_RT_DEATH_KHATUN
 
 	possible = {
-		has_authority = auth_democratic
+		NOT = { has_authority = auth_imperial }
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_warrior_culture
+	}
+
+	weight = {
+		base = 2500
+	}
+}
+# Doom Horde (Imperial Variant)
+lrsk_gov_var_gov_doom_horde_imp = {
+	ruler_title = LRSK_GOV_VAR_RT_DEATH_KHAN
+	ruler_title_female = LRSK_GOV_VAR_RT_DEATH_KHATUN
+	heir_title = LRSK_GOV_VAR_HT_TERROR_JINONG
+	heir_title_female = LRSK_GOV_VAR_HT_TERROR_GONJI
+
+	possible = {
+		has_authority = auth_imperial
 		has_valid_civic = civic_fanatic_purifiers
 		has_valid_civic = civic_warrior_culture
 	}
@@ -257,9 +274,27 @@ lrsk_gov_var_gov_death_cult = {
 	ruler_title_female = LRSK_GOV_VAR_RT_BLOOD_ABBESS
 
 	possible = {
-		has_authority = auth_oligarchic
 		has_valid_civic = civic_fanatic_purifiers
-		has_valid_civic = civic_exalted_priesthood
+		OR = {
+			has_valid_civic = civic_exalted_priesthood
+			has_valid_civic = lrsk_gov_var_civic_elected_clergy
+		}
+	}
+
+	weight = {
+		base = 2500
+	}
+}
+# Death Cult (Imperial Variant) (Whoops turns out this will never appear due to Imperial Cult's Authoritarian requirement!)
+lrsk_gov_var_gov_death_cult_imp = {
+	ruler_title = LRSK_GOV_VAR_RT_BLOOD_GOD
+	ruler_title_female = LRSK_GOV_VAR_RT_BLOOD_GODDESS
+	heir_title = LRSK_GOV_VAR_HT_SLAUGHTER_HERO
+	heir_title_female = LRSK_GOV_VAR_HT_SLAUGHTER_HEROINE
+
+	possible = {
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_imperial_cult
 	}
 
 	weight = {

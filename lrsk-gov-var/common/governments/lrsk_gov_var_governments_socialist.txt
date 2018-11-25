@@ -43,25 +43,13 @@ lrsk_gov_var_gov_insurrectionary_lineage = {
 
 	possible = {
 		has_authority = auth_imperial
-		OR = {
+		AND = {
 			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 			has_valid_civic = lrsk_gov_var_civic_cult_of_personality
 		}
 		OR = {
-			AND = {
-				has_valid_civic = civic_nationalistic_zeal
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
-			}
-			AND = {
-				has_valid_civic = civic_police_state
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
-			}
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
 		}
 	}
 

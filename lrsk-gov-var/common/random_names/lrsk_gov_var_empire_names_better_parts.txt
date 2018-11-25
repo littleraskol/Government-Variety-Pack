@@ -24,7 +24,7 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_o_n"
 	parts = {
-		"" = 1
+		"" = 5
 		"0" = 1
 		"1" = 1
 		"2" = 1
@@ -185,7 +185,6 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_oligarchic_soc_desc"
 	parts = {
-		"" = 4
 		"Communal " = 1
 		"Collective " = 1
 		"Common " = 1
@@ -220,7 +219,6 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_democratic_soc_desc"
 	parts = {
-		"" = 4
 		"Popular " = 1
 		"Collective " = 1
 		"Social " = 1
@@ -251,44 +249,45 @@ empire_name_parts_list = {
 #format.lrsk_dic_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_dictatorial_soc>"
 
 # Syndicalism
-# format.lrsk_syndicate.1: "<lrsk_labor_per_desc> [This.GetSpeciesAdj] <lrsk_labor_per>' <lrsk_labor_org>"
-# format.lrsk_syndicate.2: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
-# format.lrsk_syndicate.3: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
+# format.lrsk_syndicate.1: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
+# format.lrsk_syndicate.2: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.System.GetName]"
+# format.lrsk_syndicate.3: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.GetName]"
+# format.lrsk_syndicate.4: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
 
-# Labor Personal Descriptor
-empire_name_parts_list = {
-	key = "lrsk_labor_per_desc"
-	parts = {
-		"Free and United" = 1
-		"Federated" = 1
-		"Syndicated" = 1
-		"Emancipated" = 1
-	}
-}
+# Note about weighting: Essentially, longer words are less likely to come up as these names can be really long!
 
 # Labor Personal
 empire_name_parts_list = {
 	key = "lrsk_labor_per"
 	parts = {
-		"Workers" = 1
-		"Laborers" = 1
-		"Employees" = 1
+		"Workers" = 2
+		"Laborers" = 2
+		"Employees" = 2
 		"Tradespersons" = 1
-		"Artisans" = 1
-		"Toilers" = 1
+		"Artisans" = 2
+		"Toilers" = 2
 	}
 }
 
-# Labor Organization
+# Labor Descriptor
 empire_name_parts_list = {
-	key = "lrsk_labor_org"
+	key = "lrsk_labor_desc"
 	parts = {
-		"Syndicate" = 1
-		"Unions" = 1
-		"Guilds" = 1
-		"League" = 1
-		"Federation" = 1
-		"Councils" = 1
+		"United" = 2
+		"Federated" = 2
+		"Syndicated" = 1
+		"Allied" = 2
+	}
+}
+
+# Labor Organization (plural)
+empire_name_parts_list = {
+	key = "lrsk_labor_orgs"
+	parts = {
+		"Unions" = 2
+		"Guilds" = 2
+		"Councils" = 2
+		"Associations" = 1
 	}
 }
 
@@ -296,28 +295,36 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_labor_type"
 	parts = {
-		"Industrial" = 1
+		"Industrial" = 2
 		"Proletarian" = 1
-		"Commercial" = 1
-		"Free and United" = 1
 		"Emancipated" = 1
-		"Plebeian" = 1
-		"Collective" = 1
+		"Plebeian" = 2
 	}
 }
 
-# Not yet used...
-# Labor Descriptive
+# Labor Organization
 empire_name_parts_list = {
-	key = "lrsk_labor_desc"
+	key = "lrsk_labor_org"
 	parts = {
-		"Labor" = 1
-		"Workers'" = 1
-		"Artisans'" = 1
-		"Industrial" = 1
-		"Proletarian" = 1
+		"Syndicate" = 2
+		"League" = 2
+		"Federation" = 1
+		"Coalition" = 1
 	}
 }
+
+## Not yet used...
+## Labor Descriptive
+#empire_name_parts_list = {
+#	key = "lrsk_labor_desc"
+#	parts = {
+#		"Labor" = 1
+#		"Workers'" = 1
+#		"Artisans'" = 1
+#		"Industrial" = 1
+#		"Proletarian" = 1
+#	}
+#}
 
 ### Capitalist Governments
 
@@ -336,7 +343,7 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_corp_bits"
 	parts = {
-		"" = 1
+		"" = 4
 		", Inc" = 1
 		", LLC" = 1
 		", LTD" = 1
@@ -356,10 +363,10 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_libemp_desc"
 	parts = {
-		"Free " = 1
-		"Liberal " = 1
-		"Independent " = 1
-		"Enlightened " = 1
+		"Free" = 1
+		"Liberal" = 1
+		"Independent" = 1
+		"Enlightened" = 1
 	}
 }
 
@@ -630,16 +637,16 @@ empire_name_parts_list = {
 }
 
 ## Rationalist-Managerial Firms
-# format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_rmf_corp><lrsk_corp_bits>"
-# format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
-# format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
+# format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_rmf_corp><lrsk_corp_bits>"
+# format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+# format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
 
 # Rationalist-Managerial Descriptive
 empire_name_parts_list = {
 	key = "lrsk_rmf_desc"
 	parts = {
 		"Rational" = 1
-		"Planned" = 1
+		"Managed" = 1
 		"Certified" = 1
 		"Modern" = 1
 		"Integrated" = 1
@@ -655,10 +662,10 @@ empire_name_parts_list = {
 		"Solutions" = 1
 		"Partnership" = 1
 		"Combine" = 1
-		"Company" = 1
+		#"Company" = 1
 		"Synergetics" = 1
 		"Manufacturing" = 1
-		"Industries" = 1
+		#"Industries" = 1
 	}
 }
 
@@ -667,7 +674,7 @@ empire_name_parts_list = {
 # format.lrsk_inno_corp.2: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
 # format.lrsk_inno_corp.3: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
 
-# Innovation Descriptive
+# Innovation Descriptive (names too long, phasing this out)
 empire_name_parts_list = {
 	key = "lrsk_inno_desc"
 	parts = {
@@ -692,9 +699,9 @@ empire_name_parts_list = {
 		"Socio-Political" = 1
 		"Socio-Cultural" = 1
 		"Community" = 1
-		"Legal System" = 1
-		"Justice System" = 1
-		"Regulation" = 1
+		"Legal" = 1
+		"Judicial" = 1
+		"Regulatory" = 1
 		"Opportunity" = 1
 	}
 }
@@ -703,7 +710,7 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_inno_bits"
 	parts = {
-		"" = 1
+		"" = 2
 		"i" = 1
 		"e" = 1
 	}
@@ -715,7 +722,7 @@ empire_name_parts_list = {
 	parts = {
 		"Solutions" = 1
 		"Laboratories" = 1
-		"Research" = 1
+		"Research Firm" = 1
 		"Foundation" = 1
 		"Synergetics" = 1
 		"Academy" = 1
@@ -726,7 +733,7 @@ empire_name_parts_list = {
 
 # Revolutionary Descriptive
 empire_name_parts_list = {
-	key = "lrsk_popular_gen_desc"
+	key = "lrsk_rev_desc"
 	parts = {
 		"Liberated " = 1
 		"Revolutionary " = 1
@@ -899,16 +906,18 @@ empire_name_parts_list = {
 # format.lrsk_dem_war_cul.2: "<lrsk_dem_war_cul_desc> <lrsk_democratic_war_cul> of [This.Capital.GetName]"
 # format.lrsk_dem_war_cul.3: "[This.GetSpeciesAdj] <lrsk_dem_war_cul_desc> <lrsk_democratic_war_cul>"
 
+# Weighting here is designed to prevent too much overlap with base game names.
+
 # Democratic Warrior Culture Desc
 empire_name_parts_list = {
 	key = "lrsk_dem_war_cul_desc"
 	parts = {
 		"Warrior" = 1
 		"Battle" = 1
-		"Fighting" = 1
-		"Thunder" = 1
+		"Fighting" = 2
+		"Thunder" = 2
 		"Fire" = 1
-		"Storm" = 1
+		"Storm" = 2
 	}
 }
 
@@ -917,10 +926,10 @@ empire_name_parts_list = {
 	key = "lrsk_democratic_war_cul"
 	parts = {
 		"Clans" = 1
-		"Tribes" = 1
-		"Bands" = 1
-		"Host" = 1
-		"Horde" = 1
+		"Tribes" = 2
+		"Bands" = 3
+		"Host" = 3
+		"Horde" = 3
 	}
 }
 
@@ -929,18 +938,22 @@ empire_name_parts_list = {
 # format.lrsk_oli_serv.2: "Citizen <lrsk_oligarchic_service> of [This.Capital.GetName]"
 # format.lrsk_oli_serv.3: "[This.GetSpeciesAdj] Citizen <lrsk_oligarchic_service>"
 
+# Weighting here is designed to prevent too much overlap with base game names.
+
 empire_name_parts_list = {
 	key = "lrsk_oligarchic_service"
 	parts = {
-		"Alliance" = 1
-		"Order" = 1
+		"Alliance" = 2
+		"Order" = 2
 		"Coalition" = 1
 		"Compact" = 1
-		"Authority" = 1
-		"Pact" = 1
+		"Authority" = 2
+		"Pact" = 2
 		"League" = 1
 	}
 }
+
+# Weighting here is designed to prevent too much overlap with base game names.
 
 # Democratic Service Guarantees Citizenship
 # format.lrsk_dem_serv.1: "Citizen <lrsk_democratic_service> of [This.Capital.System.GetName]"
@@ -951,12 +964,12 @@ empire_name_parts_list = {
 	key = "lrsk_democratic_service"
 	parts = {
 		"Republic" = 1
-		"Federation" = 1
+		"Federation" = 2
 		"Commonwealth" = 1
-		"Assembly" = 1
+		"Assembly" = 2
 		"Confederation" = 1
-		"Commissariat" = 1
-		"Freehold" = 1
+		"Commissariat" = 2
+		"Freehold" = 2
 	}
 }
 
@@ -971,7 +984,7 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_spi_desc"
 	parts = {
-		"" = 9
+		"" = 10
 		"Holy " = 1
 		"Divine " = 1
 		"Blessed " = 1
@@ -980,7 +993,8 @@ empire_name_parts_list = {
 		"Pious " = 1
 		"Confessional " = 1
 		"Zealous " = 1
-		"Fervent " = 1
+		#"Fervent " = 1
+		"Hallowed " = 1
 	}
 }
 
@@ -1033,7 +1047,7 @@ empire_name_parts_list = {
 		"Council" = 1
 		"Tribunal" = 1
 		"Diocese" = 1
-		"Millet" = 1
+		"Millets" = 1
 		"Conclave" = 1
 	}
 }
@@ -1063,12 +1077,13 @@ empire_name_parts_list = {
 
 # Imperial Cult Descriptive
 empire_name_parts_list = {
-	key = "lrsk_imp_cult_desc"
+	key = "lrsk_impl_cult_desc"
 	parts = {
 		"Holy" = 1
 		"Divine" = 1
 		"Eternal" = 1
 		"Sacred" = 1
+		"Hallowed" = 1
 	}
 }
 
@@ -1080,6 +1095,8 @@ empire_name_parts_list = {
 		"Imperium" = 1
 		"Dominion" = 1
 		"Throne" = 1
+		"Domain" = 1
+		"Sovereignty" = 1
 	}
 }
 
@@ -1123,7 +1140,7 @@ empire_name_parts_list = {
 	parts = {
 		"" = 4
 		"Rational " = 1
-		"New " = 1
+		"Empirical " = 1
 		"Modern " = 1
 		"Objective " = 1
 	}
@@ -1244,7 +1261,7 @@ empire_name_parts_list = {
 		"Directorate" = 1
 		"Union" = 1
 		"Cooperative" = 1
-		"Consensus" = 1
+		"Citizenry" = 1
 		"Administration" = 1
 		"Commonality" = 1
 	}
@@ -1400,6 +1417,8 @@ empire_name_parts_list = {
 		"Central" = 1
 		"Celestial" = 1
 		"Sagely" = 1
+		"Heavenly" = 1
+		"Saintly" = 1
 	}
 }
 
@@ -1559,15 +1578,15 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_impdic_filler"
 	parts = {
-		"" = 1
+		"" = 8
 		"Interstellar " = 1
 		"Interplanetary " = 1
 		"Galactic " = 1
 		"Absolute " = 1
 		"Sovereign " = 1
 		"Greater " = 1
-		"Central" = 1
-		"Unified" = 1
+		"Central " = 1
+		"Unified " = 1
 	}
 }
 
@@ -1575,7 +1594,7 @@ empire_name_parts_list = {
 empire_name_parts_list = {
 	key = "lrsk_demoli_filler"
 	parts = {
-		"" = 1
+		"" = 8
 		"Interstellar " = 1
 		"Interplanetary " = 1
 		"Galactic " = 1

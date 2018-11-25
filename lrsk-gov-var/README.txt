@@ -151,6 +151,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.3 (11-25-18) - Better Names Project
+-Complete rework of random name system to provide more flavor and distinction to empire names. Ranomly spawned empires should now have names that give you some indication of what their government is like (authority and/or ethos). Base game random names still exist and may show up, but are heavily out-weighted.
+-Added new Purifier government types: Doom Horde (w/ Warrior Culture), Death Cult (w/ Exalted Priesthood or Elected Clergy), Citizen Legion (w/ Citizen Service).
+-Fixed misc. typos.
+-Libertarian Freehold ruler title is now "Chief Arbitrator."
+-Republican Directory now requires Egalitarian ethos.
+-Insurrectionary Lineage requirements greatly simplified, now requires Cult of Personality and Institutionalized Collectivism, some degree of Militarist ethos, and Imperial authority.
+
 v1.2.2.1 (03-20-18)
 -Fixed bug in "Cosmic Choir" government.
 

@@ -14,7 +14,7 @@
  #Insurrectionary Lineage
  format.lrsk_pdr.1: "<lrsk_pdr_who> <lrsk_pdr_desc> <lrsk_pdr_type> of [This.Capital.System.GetName]"
  format.lrsk_pdr.2: "<lrsk_pdr_who> <lrsk_pdr_desc> <lrsk_pdr_type> of [This.Capital.GetName]"
- format.lrsk_pdr.3: "[This.GetSpeciesName] <lrsk_pdr_who>' <lrsk_pdr_desc> <lrsk_pdr_type>"
+ format.lrsk_pdr.3: "[This.GetSpeciesName] <lrsk_pdr_who> <lrsk_pdr_desc> <lrsk_pdr_type>"
  ## Oligarchic
  #Social Bureaucracy
  #Socialist Plenary
@@ -33,57 +33,67 @@
  format.lrsk_dem_soc.4: "<lrsk_democratic_soc_desc>[This.GetSpeciesAdj] <lrsk_democratic_soc>"
  format.lrsk_dem_soc.5: "[This.GetSpeciesAdj] <lrsk_democratic_soc_desc><lrsk_democratic_soc>"
  # Syndicalism
- format.lrsk_syndicate.1: "<lrsk_labor_per_desc> [This.GetSpeciesAdj] <lrsk_labor_per>' <lrsk_labor_org>"
- format.lrsk_syndicate.2: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
- format.lrsk_syndicate.3: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
+ #format.lrsk_syndicate.1: "<lrsk_labor_per_desc> [This.GetSpeciesAdj] <lrsk_labor_per>' <lrsk_labor_org>"
+ #format.lrsk_syndicate.2: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
+ #format.lrsk_syndicate.3: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
+ format.lrsk_syndicate.1: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
+ format.lrsk_syndicate.2: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.System.GetName]"
+ format.lrsk_syndicate.3: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.GetName]"
+ format.lrsk_syndicate.4: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
 
  ### Capitalist Governments
  ## Imperial
  #Empire of Liberty
- format.lrsk_imp_cap.1: "<lrsk_libemp_desc><lrsk_imperial_cap> of [This.Capital.System.GetName]"
- format.lrsk_imp_cap.2: "<lrsk_libemp_desc><lrsk_imperial_cap> of [This.Capital.GetName]"
- format.lrsk_imp_cap.3: "<lrsk_libemp_desc><lrsk_imperial_cap> of [This.GetSpeciesName]kind"
- format.lrsk_imp_cap.4: "<lrsk_libemp_desc>[This.GetSpeciesAdj] <lrsk_imperial_cap>"
- format.lrsk_imp_cap.5: "[This.GetSpeciesAdj] <lrsk_libemp_desc><lrsk_imperial_cap>"
+ format.lrsk_imp_cap.1: "<lrsk_libemp_desc> <lrsk_imperial_cap> of [This.Capital.System.GetName]"
+ format.lrsk_imp_cap.2: "<lrsk_libemp_desc> <lrsk_imperial_cap> of [This.Capital.GetName]"
+ format.lrsk_imp_cap.3: "<lrsk_libemp_desc> <lrsk_imperial_cap> of [This.GetSpeciesName]kind"
+ format.lrsk_imp_cap.4: "<lrsk_libemp_desc> [This.GetSpeciesAdj] <lrsk_imperial_cap>"
+ format.lrsk_imp_cap.5: "[This.GetSpeciesAdj] <lrsk_libemp_desc> <lrsk_imperial_cap>"
  ## Dictatorial
  #Enterprise Authority
- format.lrsk_dic_cap.1: "<lrsk_business_desc><lrsk_dictatorial_cap> of [This.Capital.System.GetName]"
- format.lrsk_dic_cap.2: "<lrsk_business_desc><lrsk_dictatorial_cap> of [This.Capital.GetName]"
- format.lrsk_dic_cap.3: "<lrsk_business_desc><lrsk_dictatorial_cap> of [This.GetSpeciesName]kind"
- format.lrsk_dic_cap.4: "<lrsk_business_desc>[This.GetSpeciesAdj] <lrsk_dictatorial_cap>"
- format.lrsk_dic_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc><lrsk_dictatorial_cap>"
+ format.lrsk_dic_cap.1: "<lrsk_business_desc> <lrsk_dictatorial_cap> of [This.Capital.System.GetName]"
+ format.lrsk_dic_cap.2: "<lrsk_business_desc> <lrsk_dictatorial_cap> of [This.Capital.GetName]"
+ format.lrsk_dic_cap.3: "<lrsk_business_desc> <lrsk_dictatorial_cap> of [This.GetSpeciesName]kind"
+ format.lrsk_dic_cap.4: "<lrsk_business_desc> [This.GetSpeciesAdj] <lrsk_dictatorial_cap>"
+ format.lrsk_dic_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc> <lrsk_dictatorial_cap>"
  ## Oligarchic
  #Entrepreneurial Council
  #Enterprise Junta
- format.lrsk_oli_cap.1: "<lrsk_business_desc><lrsk_oligarchic_cap> of [This.Capital.System.GetName]"
- format.lrsk_oli_cap.2: "<lrsk_business_desc><lrsk_oligarchic_cap> of [This.Capital.GetName]"
- format.lrsk_oli_cap.3: "<lrsk_business_desc><lrsk_oligarchic_cap> of [This.GetSpeciesName]kind"
- format.lrsk_oli_cap.4: "<lrsk_business_desc>[This.GetSpeciesAdj] <lrsk_oligarchic_cap>"
- format.lrsk_oli_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc><lrsk_oligarchic_cap>"
+ format.lrsk_oli_cap.1: "<lrsk_business_desc> <lrsk_oligarchic_cap> of [This.Capital.System.GetName]"
+ format.lrsk_oli_cap.2: "<lrsk_business_desc> <lrsk_oligarchic_cap> of [This.Capital.GetName]"
+ format.lrsk_oli_cap.3: "<lrsk_business_desc> <lrsk_oligarchic_cap> of [This.GetSpeciesName]kind"
+ format.lrsk_oli_cap.4: "<lrsk_business_desc> [This.GetSpeciesAdj] <lrsk_oligarchic_cap>"
+ format.lrsk_oli_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc> <lrsk_oligarchic_cap>"
  ## Democratic
  #Enterprise Society
- format.lrsk_dem_cap.1: "<lrsk_business_desc><lrsk_democratic_cap> of [This.Capital.System.GetName]"
- format.lrsk_dem_cap.2: "<lrsk_business_desc><lrsk_democratic_cap> of [This.Capital.GetName]"
- format.lrsk_dem_cap.3: "<lrsk_business_desc><lrsk_democratic_cap> of [This.GetSpeciesName]kind"
- format.lrsk_dem_cap.4: "<lrsk_business_desc>[This.GetSpeciesAdj] <lrsk_democratic_cap>"
- format.lrsk_dem_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc><lrsk_democratic_cap>"
+ format.lrsk_dem_cap.1: "<lrsk_business_desc> <lrsk_democratic_cap> of [This.Capital.System.GetName]"
+ format.lrsk_dem_cap.2: "<lrsk_business_desc> <lrsk_democratic_cap> of [This.Capital.GetName]"
+ format.lrsk_dem_cap.3: "<lrsk_business_desc> <lrsk_democratic_cap> of [This.GetSpeciesName]kind"
+ format.lrsk_dem_cap.4: "<lrsk_business_desc> [This.GetSpeciesAdj] <lrsk_democratic_cap>"
+ format.lrsk_dem_cap.5: "[This.GetSpeciesAdj] <lrsk_business_desc> <lrsk_democratic_cap>"
  ## Libertarian-ish
  #Libertarian Freehold
  #Anarcho-Capitalism
  #Corporate Neofuedalism
- format.lrsk_libertarian.1: "<lrsk_liber_desc> <lrsk_stellar_generic> of [This.GetSpeciesName]kind"
- format.lrsk_libertarian.2: "<lrsk_liber_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic>"
- format.lrsk_libertarian.3: "[This.GetSpeciesAdj] <lrsk_liber_desc> <lrsk_stellar_generic>"
+ format.lrsk_libertarian.1: "<lrsk_liber_desc><lrsk_stellar_generic> of [This.GetSpeciesName]kind"
+ format.lrsk_libertarian.2: "<lrsk_liber_desc>[This.GetSpeciesAdj] <lrsk_stellar_generic>"
+ format.lrsk_libertarian.3: "[This.GetSpeciesAdj] <lrsk_liber_desc><lrsk_stellar_generic>"
 
  ## New Megacorporation-Types
  # Rationalist-Managerial Firms
- format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_rmf_corp><lrsk_corp_bits>"
- format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
- format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_rmf_corp><lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
+ format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_rmf_corp><lrsk_corp_bits>"
+ format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+ format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
  # Innovation Initiatives
- format.lrsk_inno_corp.1: "[This.GetSpeciesAdj] <lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp>"
- format.lrsk_inno_corp.2: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
- format.lrsk_inno_corp.3: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
+ #format.lrsk_inno_corp.1: "[This.GetSpeciesAdj] <lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp>"
+ #format.lrsk_inno_corp.2: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
+ #format.lrsk_inno_corp.3: "<lrsk_inno_desc> <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
+ format.lrsk_inno_corp.1: "[This.GetSpeciesAdj] <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp>"
+ format.lrsk_inno_corp.2: "<lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
+ format.lrsk_inno_corp.3: "<lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
  # PMCs
  format.lrsk_pmc_corp.1: "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp><lrsk_corp_bits>"
  format.lrsk_pmc_corp.2: "[This.Capital.System.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
