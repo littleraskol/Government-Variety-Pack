@@ -199,6 +199,19 @@ part = {
 # Default catch-all
 part = {
 	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_MARKET_SOCIALISM"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_market_socialism
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_SAINTLY_ASSEMBLY"
 
 	trigger = {
@@ -251,11 +264,37 @@ part = {
 # Default catch-all
 part = {
 	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_FOLKISH_LEAGUE"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_folkish_league
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_FOLKISH_REGIME"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_gov_var_gov_folkish_regime
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_FOLKISH_REALM"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_folkish_realm
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}

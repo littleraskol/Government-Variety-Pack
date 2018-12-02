@@ -21,7 +21,7 @@ Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has 
 
 Workers' Councils (Egalitarian, no Business Lobby) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
 
-Supremacist Demagoguery (Dictatorship or Democracy, not Xenophile and not Egalitarian) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
+Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (-20% research and mining station cost)
 
@@ -150,6 +150,14 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.3.1 (12-07-18) - Stellaris 2.2 Le Guin Future-Proofing
+-Updated compatible version number.
+-Commented out or pruned various legacy entries.
+-Crusader Kingdom government type has more specific requirements (civics in addition to ethos).
+-Supremacist Demagoguery no longer bound to any authority type, but conflicts with Fanatic Purifiers (it was always supposed to be a lesser/poser version of that civic anyway.)
+-New government types added for change to Supremacist Demagoguery.
+-Changed Syndicalism government to Market Socialism. (But don't worry, the Space Wobblies will return in a new form someday!)
 
 v1.3 (11-25-18) - Better Names Project
 -Complete rework of random name system to provide more flavor and distinction to empire names. Ranomly spawned empires should now have names that give you some indication of what their government is like (authority and/or ethos). Base game random names still exist and may show up, but are heavily out-weighted.

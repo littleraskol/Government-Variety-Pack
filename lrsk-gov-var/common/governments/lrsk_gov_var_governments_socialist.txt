@@ -262,15 +262,12 @@ lrsk_gov_var_gov_automated_worldcommune = {
 	}
 }
 
-# Syndicalism (Oligarchy + WC/CD)
-lrsk_gov_var_gov_syndicalism = {
-	ruler_title = LRSK_GOV_VAR_RT_GENERAL_SECRETARY
+# Market Socialism (WC+CD)
+lrsk_gov_var_gov_market_socialism = {
+	ruler_title = LRSK_GOV_VAR_RT_CONTRACT_MEDIATOR
 
 	possible = {
-		OR = {
-			has_valid_civic = lrsk_gov_var_civic_workers_councils
-			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
-		}
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
 		has_valid_civic = civic_corporate_dominion
 	}
 
@@ -293,3 +290,36 @@ lrsk_gov_var_gov_syndicalism = {
 		base = 1000
 	}
 }
+
+## Syndicalism (Oligarchy + WC/CD)
+# Need to rethink this one after Megacorp drops.
+#lrsk_gov_var_gov_syndicalism = {
+#	ruler_title = LRSK_GOV_VAR_RT_GENERAL_SECRETARY
+#
+#	possible = {
+#		OR = {
+#			has_valid_civic = lrsk_gov_var_civic_workers_councils
+#			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
+#		}
+#		has_valid_civic = civic_corporate_dominion
+#	}
+#
+#	election_candidates = {
+#		modifier = {
+#			add = 500
+#			OR = {
+#				leader_class = governor
+#			}
+#		}
+#		modifier = {
+#			add = 100
+#			OR = {
+#				leader_class = scientist
+#			}
+#		}
+#	}
+#
+#	weight = {
+#		base = 1000
+#	}
+#}

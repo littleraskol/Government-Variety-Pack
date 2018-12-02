@@ -257,20 +257,20 @@ lrsk_gov_var_civic_workers_councils = {
   }
 }
 
-#Supremacist Demagoguery (Dictatorship or Democracy, not Xenophile and not Egalitarian) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
+#Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
 lrsk_gov_var_civic_supremacist_demagoguery = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
 
   #icon = "gfx/interface/icons/governments/civics/civic_citizen_service.dds"
 
   possible = {
-    authority = {
-      OR = {
-        text = lrsk_gov_var_civic_tooltip_dem_dic
-        value = auth_dictatorial
-        value = auth_democratic
-      }
-    }
+    #authority = {
+    #  OR = {
+    #    text = lrsk_gov_var_civic_tooltip_dem_dic
+    #    value = auth_dictatorial
+    #    value = auth_democratic
+    #  }
+    #}
     ethics = {
       NOR = {
         text = civic_tooltip_not_xenophile
@@ -281,6 +281,11 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
         text = civic_tooltip_not_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+      }
+    }
+    civics ={
+      NOR = {
+        value = civic_fanatic_purifiers
       }
     }
   }
@@ -430,10 +435,10 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 }
 
 #Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
-lrsk_gov_var_civic_direct_revelation_new  = {
+lrsk_gov_var_civic_direct_revelation  = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
 
-  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
+  #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
 
   possible = {
     ethics = {
@@ -454,43 +459,43 @@ lrsk_gov_var_civic_direct_revelation_new  = {
 
   modifier = { tradition_cost_num_colonies_mult = -0.1 }
 }
-# This version will be deprecated in a future update, keeping for a while to not break saves.
-lrsk_gov_var_civic_direct_revelation  = {
-  potential = {
-    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    civics = { value = lrsk_gov_var_civic_direct_revelation }
-  }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
-
-  possible = {
-    ethics = {
-      OR = {
-        OR = {
-          text = civic_tooltip_egalitarian
-          value = ethic_egalitarian
-          value = ethic_fanatic_egalitarian
-        }
-        OR = {
-          text = civic_tooltip_pacifist
-      		value = ethic_pacifist
-      		value = ethic_fanatic_pacifist
-      	}
-      }
-      OR = {
-        text = civic_tooltip_spiritualist
-        value = ethic_spiritualist
-        value = ethic_fanatic_spiritualist
-      }
-    }
-  }
-
-  random_weight = { base = 5 }
-
-  modifier = {
-    tradition_cost_num_colonies_mult = -0.2
-  }
-}
+## This version will be deprecated in a future update, keeping for a while to not break saves.
+#lrsk_gov_var_civic_direct_revelation  = {
+#  potential = {
+#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+#    civics = { value = lrsk_gov_var_civic_direct_revelation }
+#  }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
+#
+#  possible = {
+#    ethics = {
+#      OR = {
+#        OR = {
+#          text = civic_tooltip_egalitarian
+#          value = ethic_egalitarian
+#          value = ethic_fanatic_egalitarian
+#        }
+#        OR = {
+#          text = civic_tooltip_pacifist
+#      		value = ethic_pacifist
+#      		value = ethic_fanatic_pacifist
+#      	}
+#      }
+#      OR = {
+#        text = civic_tooltip_spiritualist
+#        value = ethic_spiritualist
+#        value = ethic_fanatic_spiritualist
+#      }
+#    }
+#  }
+#
+#  random_weight = { base = 5 }
+#
+#  modifier = {
+#    tradition_cost_num_colonies_mult = -0.2
+#  }
+#}
 
 #Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-15% to Governing Ethics Attraction penalty due to distance)
 lrsk_gov_var_civic_royal_absolutism = {
@@ -618,33 +623,33 @@ lrsk_gov_var_civic_automated_indolence = {
   }
 }
 
-#State Secular Rationalism (Dictatorial and Materialist) - The dictatorship sees religion as a destabilizing and divisive force and subtly discourages its practice (while strongly encouraging inter-religious toleration nonetheless) through a variety of means. (+10% Governing ethics attraction, −10% Tradition Cost from number of colonies)
-lrsk_gov_var_civic_state_rationalism = {
-  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
-  potential = {
-    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    civics = { value = lrsk_gov_var_civic_state_rationalism }
-  }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
-
-  possible = {
-    ethics = {
-      OR = {
-        text = civic_tooltip_materialist
-        value = ethic_materialist
-        value = ethic_fanatic_materialist
-      }
-    }
-    authority = {
-      value = auth_dictatorial
-    }
-  }
-
-  random_weight = { base = 5 }
-
-  modifier = {
-	  pop_government_ethic_attraction = 0.1
-    tradition_cost_num_xenos_mult = -0.1 # does this work...? NOPE.
-  }
-}
+##State Secular Rationalism (Dictatorial and Materialist) - The dictatorship sees religion as a destabilizing and divisive force and subtly discourages its practice (while strongly encouraging inter-religious toleration nonetheless) through a variety of means. (+10% Governing ethics attraction, −10% Tradition Cost from number of colonies)
+#lrsk_gov_var_civic_state_rationalism = {
+#  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
+#  potential = {
+#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+#    civics = { value = lrsk_gov_var_civic_state_rationalism }
+#  }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
+#
+#  possible = {
+#    ethics = {
+#      OR = {
+#        text = civic_tooltip_materialist
+#        value = ethic_materialist
+#        value = ethic_fanatic_materialist
+#      }
+#    }
+#    authority = {
+#      value = auth_dictatorial
+#    }
+#  }
+#
+#  random_weight = { base = 5 }
+#
+#  modifier = {
+#	  pop_government_ethic_attraction = 0.1
+#    tradition_cost_num_xenos_mult = -0.1 # does this work...? NOPE.
+#  }
+#}

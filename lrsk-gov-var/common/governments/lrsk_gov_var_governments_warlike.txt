@@ -114,6 +114,54 @@ lrsk_gov_var_gov_folkish_commonwealth = {
 	}
 }
 
+# Folkish League (Oli + SD)
+lrsk_gov_var_gov_folkish_league = {
+	ruler_title = LRSK_GOV_VAR_RT_FOLKSMARSHAL
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
+		OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+		NOR = {
+			has_valid_civic = civic_citizen_service
+			has_valid_civic = civic_fanatic_purifiers
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
 # Folkish Regime (Dic + SD)
 lrsk_gov_var_gov_folkish_regime = {
 	ruler_title = LRSK_GOV_VAR_RT_FOLKSLEADER
@@ -157,8 +205,33 @@ lrsk_gov_var_gov_folkish_regime = {
 	}
 }
 
-# Crusader Kingdom (Imp + Mil/Spi + Ch/WC)
+# Folkish Realm (Imp + SD)
+lrsk_gov_var_gov_folkish_realm = {
+	ruler_title = LRSK_GOV_VAR_RT_FOLKSKING
+	ruler_title_female = LRSK_GOV_VAR_RT_FOLKSQUEEN
+	heir_title = LRSK_GOV_VAR_HT_TRUEBORNSON
+	heir_title_female = LRSK_GOV_VAR_HT_TRUEBORNDAUGHTER
 
+	possible = {
+		has_authority = auth_imperial
+		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
+		OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+		NOT = {
+			has_valid_civic = civic_fanatic_purifiers
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Crusader Kingdom (Imp + Mil/Spi + Ch/FR)
 lrsk_gov_var_gov_crusader_kingdom = {
 	ruler_title = LRSK_GOV_VAR_RT_MHOLY_KING
 	ruler_title_female = LRSK_GOV_VAR_RT_MHOLY_QUEEN
@@ -179,6 +252,10 @@ lrsk_gov_var_gov_crusader_kingdom = {
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
 			}
+		}
+		OR = {
+			has_valid_civic = civic_feudal_realm
+			has_valid_civic = lrsk_gov_var_civic_chivalry
 		}
 	}
 
