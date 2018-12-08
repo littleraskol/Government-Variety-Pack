@@ -276,13 +276,19 @@ lrsk_gov_var_gov_private_military_contractor = {
 	ruler_title = LRSK_GOV_VAR_RT_CAPTAIN_DIRECTOR
 
 	possible = {
-		has_valid_civic = civic_corporate_dominion
-		has_valid_civic = civic_citizen_service
-		#OR = {
-		#	has_valid_civic = civic_warrior_culture
-		#	has_valid_civic = civic_distinguished_admiralty
-		#	has_valid_civic = civic_citizen_service
-		#}
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = civic_citizen_service
+			}
+			AND = {
+				has_authority = auth_corporate
+				AND = {
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_naval_contractors
+				}
+			}
+		}
 	}
 
 	election_candidates = {

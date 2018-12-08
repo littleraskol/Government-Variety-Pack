@@ -2,13 +2,22 @@
 # Governments - Capitalistic
 # Author: littleraskol
 
-# Galactic Cartel (CD + CoI)
+# Galactic Cartel (CD + CoI / MC, RC + BL)
 lrsk_gov_var_gov_galactic_cartel = {
 	ruler_title = LRSK_GOV_VAR_RT_COSEO
 
 	possible = {
-		has_valid_civic = civic_corporate_dominion
-		has_valid_civic = lrsk_gov_var_civic_business_lobby
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = lrsk_gov_var_civic_business_lobby
+			}
+			AND = {
+				has_authority = auth_corporate
+				has_valid_civic = civic_ruthless_competition
+				has_valid_civic = civic_brand_loyalty
+			}
+		}
 		OR = {
 			has_ethic = ethic_fanatic_militarist
 			has_ethic = ethic_militarist

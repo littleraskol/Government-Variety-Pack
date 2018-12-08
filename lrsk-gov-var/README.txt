@@ -158,6 +158,8 @@ v1.3.1 (12-07-18) - Stellaris 2.2 Le Guin Future-Proofing
 -Supremacist Demagoguery no longer bound to any authority type, but conflicts with Fanatic Purifiers (it was always supposed to be a lesser/poser version of that civic anyway.)
 -New government types added for change to Supremacist Demagoguery.
 -Changed Syndicalism government to Market Socialism. (But don't worry, the Space Wobblies will return in a new form someday!)
+-Basic civics not available to Corporate authority.
+-Updated Galactic Cartel, PMC, Evangelical Franchise, and Occult Cartel governments to be available to Corporate authority and civics. (Other custom megacorps will have to wait for new civics...)
 
 v1.3 (11-25-18) - Better Names Project
 -Complete rework of random name system to provide more flavor and distinction to empire names. Ranomly spawned empires should now have names that give you some indication of what their government is like (authority and/or ethos). Base game random names still exist and may show up, but are heavily out-weighted.

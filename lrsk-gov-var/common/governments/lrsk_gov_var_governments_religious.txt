@@ -70,16 +70,22 @@ lrsk_gov_var_gov_megachurch = {
 	ruler_title = LRSK_GOV_VAR_RT_CHIEF_MINISTERIAL_OFFICER
 
 	possible = {
-		AND = {
-			has_valid_civic = civic_corporate_dominion
-			has_valid_civic = civic_exalted_priesthood
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_egalitarian
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = civic_exalted_priesthood
+			}
+			AND = {
+				has_authority = auth_corporate
+				has_valid_civic = civic_gospel_of_the_masses
+			}
 		}
+		has_ethic = ethic_pacifist
+		has_ethic = ethic_egalitarian
 	}
 
 	weight = {
-		base = 1200
+		base = 1300
 	}
 }
 
@@ -88,8 +94,16 @@ lrsk_gov_var_gov_occult_franchise = {
 	ruler_title = LRSK_GOV_VAR_RT_GRAND_EXECUTIVE_SAGE
 
 	possible = {
-		has_valid_civic = civic_corporate_dominion
-		has_valid_civic = civic_exalted_priesthood
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = civic_exalted_priesthood
+			}
+			AND = {
+				has_authority = auth_corporate
+				has_valid_civic = civic_gospel_of_the_masses
+			}
+		}
 		has_ethic = ethic_authoritarian
 		has_ethic = ethic_fanatic_spiritualist
 	}

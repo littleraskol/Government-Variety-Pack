@@ -4,7 +4,10 @@
 
 #Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (+10% edict duration, +0.5 max influence from factions)
 lrsk_gov_var_civic_elected_clergy = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
 
@@ -33,7 +36,10 @@ lrsk_gov_var_civic_elected_clergy = {
 
 #Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +10% pop growth rate)
 lrsk_gov_var_civic_ascetic_virtues = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_inwards_perfection.dds"
 
@@ -57,7 +63,10 @@ lrsk_gov_var_civic_ascetic_virtues = {
 
 #Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-20% leader cost, +2 leader pool)
 lrsk_gov_var_civic_republicanism = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
 
@@ -77,7 +86,10 @@ lrsk_gov_var_civic_republicanism = {
 
 #Utilitarian Planning (Dictatorship, not Spiritualist) - The dictatorship is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -20% resettlement cost)
 lrsk_gov_var_civic_utilitarian_planning = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_idealistic_foundation.dds"
 
@@ -132,7 +144,10 @@ lrsk_gov_var_civic_grandiosity = {
 #Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 lrsk_gov_var_civic_siege_mentality = {
   #description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_grandiosity.dds"
 
@@ -162,7 +177,10 @@ lrsk_gov_var_civic_siege_mentality = {
 
 #Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) -The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% slave unrest, enables oversized ships)
 lrsk_gov_var_civic_cult_of_personality = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
 
@@ -198,7 +216,10 @@ lrsk_gov_var_civic_cult_of_personality = {
 
 #Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown)
 lrsk_gov_var_civic_universal_sovereignty = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds"
 
@@ -229,7 +250,10 @@ lrsk_gov_var_civic_universal_sovereignty = {
 
 #Workers' Councils (Egalitarian, No BL) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
 lrsk_gov_var_civic_workers_councils = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_workers_councils.dds"
 
@@ -259,7 +283,10 @@ lrsk_gov_var_civic_workers_councils = {
 
 #Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
 lrsk_gov_var_civic_supremacist_demagoguery = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_citizen_service.dds"
 
@@ -300,7 +327,10 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
 
 #Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (-20% research and mining station cost)
 lrsk_gov_var_civic_enlightened_liberalism  = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_technocracy.dds"
 
@@ -325,7 +355,10 @@ lrsk_gov_var_civic_enlightened_liberalism  = {
 
 #Business Lobby (No WC) - This society's economy is dominated by entrenched business interests that benefit from lucrative government contracts and regulatory loopholes. (+5% tile mineral and energy output)
 lrsk_gov_var_civic_business_lobby  = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_aristocratic_elite.dds"
 
@@ -347,7 +380,10 @@ lrsk_gov_var_civic_business_lobby  = {
 
 #Chivalry (Imp + Mil) - Ideals of martial valor and honorable conduct prop up the ruling class. (+20% army morale, +1 military leader levels)
 lrsk_gov_var_civic_chivalry = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_warrior_culture.dds"
 
@@ -377,7 +413,10 @@ lrsk_gov_var_civic_chivalry = {
 
 #Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (-15% scientist recruit cost, +1 governor skill levels, +15% leader experience gain)
 lrsk_gov_var_civic_lifelong_learning = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_meritocracy.dds"
 
@@ -407,7 +446,10 @@ lrsk_gov_var_civic_lifelong_learning = {
 
 #Institutionalized Collectivism (Not Democratic, Materialist) - The regime is propped up by collectivization and state control of industry and infrastructure. (-5% ship and building upkeep)
 lrsk_gov_var_civic_institutionalized_collectivism = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_mining_guilds.dds"
 
@@ -436,7 +478,10 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 
 #Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
 lrsk_gov_var_civic_direct_revelation  = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
 
@@ -499,7 +544,10 @@ lrsk_gov_var_civic_direct_revelation  = {
 
 #Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-15% to Governing Ethics Attraction penalty due to distance)
 lrsk_gov_var_civic_royal_absolutism = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_philosopher_king.dds"
 
@@ -527,7 +575,10 @@ lrsk_gov_var_civic_royal_absolutism = {
 
 #Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 lrsk_gov_var_civic_public_works = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_functional_architecture.dds"
 
@@ -541,7 +592,10 @@ lrsk_gov_var_civic_public_works = {
 
 #Imperial Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
 lrsk_gov_var_civic_imperial_economy = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_slaver_guilds.dds"
 
@@ -572,7 +626,10 @@ lrsk_gov_var_civic_imperial_economy = {
 
 #Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -10% starbase influence cost)
 lrsk_gov_var_civic_colonial_fiefs = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_nationalistic_zeal.dds"
 
@@ -601,7 +658,10 @@ lrsk_gov_var_civic_colonial_fiefs = {
 
 #Automated Indolence (Materialist) - This culture very early on in their industrial revolution early on a philosophy of 'let machines do the work' and its social structure and technical focus has adapted to match. (-5% Unrest, +10% robot output)
 lrsk_gov_var_civic_automated_indolence = {
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    authority = { NOT = { value = auth_corporate } }
+  }
 
   #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
 
