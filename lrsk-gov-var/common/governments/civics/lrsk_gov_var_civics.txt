@@ -413,7 +413,10 @@ lrsk_gov_var_civic_chivalry = {
 lrsk_gov_var_civic_chivalry_aristo = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOT = { value = auth_corporate } }
+    authority = { NOR = {
+      value = auth_corporate
+      value = auth_imperial
+    } }
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_chivalry_effects"
@@ -422,7 +425,6 @@ lrsk_gov_var_civic_chivalry_aristo = {
   possible = {
     civics ={
       value = civic_aristocratic_elite
-      NOT = { value = lrsk_gov_var_civic_chivalry }
     }
     ethics = {
       OR = {
