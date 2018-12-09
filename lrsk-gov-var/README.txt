@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.3.3 (12-09-18) - Post-Le Guin Hotfixes part 2
+-Removed an unneeded code line.
+
 v1.3.2 (12-08-18) - Post-Le Guin Hotfixes
 -Error with "OR {" should be "OR = {" fixed in name lists.
 -Commented out missing references until needed.
