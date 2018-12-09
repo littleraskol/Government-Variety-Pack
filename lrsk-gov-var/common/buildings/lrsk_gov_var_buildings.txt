@@ -1,0 +1,143 @@
+# Government Variety Pack
+# Buildings
+# Author: littleraskol
+
+## Army Buildings
+
+# Hall of Honor
+
+lrsk_gov_var_building_hall_of_honor = {
+	base_buildtime = 240
+	#add_to_first_building_slot = yes
+	base_cap_amount = 2
+
+	category = army
+
+	potential = {
+		owner = {  OR = {
+      has_valid_civic = lrsk_gov_var_civic_chivalry
+      has_valid_civic = lrsk_gov_var_civic_chivalry_aristo
+		} }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 1
+	}
+
+	planet_modifier = {
+		job_lrsk_gov_var_job_knight_add = 1
+		planet_orbital_bombardment_damage = -0.1
+		army_morale = 0.1
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 25
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 250
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	upgrades = {
+		"lrsk_gov_var_building_hall_of_valor"
+	}
+
+	ai_weight = {
+		weight = 0.75
+
+		modifier = {
+			factor = 5
+			planet_crime > 4
+			planet_crime < 15
+		}
+
+		modifier = {
+			factor = 10
+			planet_crime > 14
+			planet_crime < 30
+		}
+
+		modifier = {
+			factor = 20
+			planet_crime > 29
+			planet_crime < 50
+		}
+
+		modifier = {
+			factor = 25
+			planet_crime > 49
+		}
+	}
+}
+
+# Hall of Valor
+
+lrsk_gov_var_building_hall_of_valor = {
+	base_buildtime = 360
+	can_build = no
+	#add_to_first_building_slot = yes
+	base_cap_amount = 2
+
+	category = army
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+	planet_modifier = {
+		job_lrsk_gov_var_job_knight_add = 2
+		planet_orbital_bombardment_damage = -0.2
+		army_morale = 0.2
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 50
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 450
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 0.75
+
+		modifier = {
+			factor = 5
+			planet_crime > 4
+			planet_crime < 15
+		}
+
+		modifier = {
+			factor = 10
+			planet_crime > 14
+			planet_crime < 30
+		}
+
+		modifier = {
+			factor = 20
+			planet_crime > 29
+			planet_crime < 50
+		}
+
+		modifier = {
+			factor = 25
+			planet_crime > 49
+		}
+	}
+}
