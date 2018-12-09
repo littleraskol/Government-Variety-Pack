@@ -30,7 +30,7 @@ lrsk_gov_var_civic_elected_clergy = {
 
   modifier = {
     edict_length_mult = 0.1
-    faction_influence_add = 0.5
+    pop_factions_produces_add = 0.5
   }
 }
 
@@ -79,7 +79,7 @@ lrsk_gov_var_civic_republicanism = {
   random_weight = { base = 5 }
 
   modifier = {
-    leader_cost = -0.2
+    leaders_cost_mult = -0.2
     country_leader_pool_size = 2
   }
 }
@@ -112,34 +112,34 @@ lrsk_gov_var_civic_utilitarian_planning = {
   random_weight = { base = 5 }
 
   modifier = {
-    pop_food_req_mult = -0.1
+    planet_pops_organics_food_upkeep_mult = -0.1
     pop_resettlement_cost_mult = -0.2
   }
 }
 
-#Grandiosity (Dictatorship) - In this society, one can't be taken seriously as a dictator without building some big military hardware. (Enables oversized stations and ships)
-## LEGACY LISTING
-lrsk_gov_var_civic_grandiosity = {
-  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
-  potential = {
-    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    civics = { value = lrsk_gov_var_civic_grandiosity }
-  }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
-
-  possible = {
-    authority = {
-      value = auth_dictatorial
-    }
-  }
-
-
-  random_weight = { base = 0 }
-
-  can_build_ruler_military_station = yes
-  can_build_ruler_ship = yes
-}
+##Grandiosity (Dictatorship) - In this society, one can't be taken seriously as a dictator without building some big military hardware. (Enables oversized stations and #ships)
+### LEGACY LISTING
+#lrsk_gov_var_civic_grandiosity = {
+#  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
+#  potential = {
+#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+#    civics = { value = lrsk_gov_var_civic_grandiosity }
+#  }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
+#
+#  possible = {
+#    authority = {
+#      value = auth_dictatorial
+#    }
+#  }
+#
+#
+#  random_weight = { base = 0 }
+#
+#  can_build_ruler_military_station = yes
+#  can_build_ruler_ship = yes
+#}
 
 #Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 lrsk_gov_var_civic_siege_mentality = {
@@ -175,7 +175,7 @@ lrsk_gov_var_civic_siege_mentality = {
   random_weight = { base = 5 }
 }
 
-#Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) -The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% slave unrest, enables oversized ships)
+#Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% war exhaustion)
 lrsk_gov_var_civic_cult_of_personality = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -205,10 +205,10 @@ lrsk_gov_var_civic_cult_of_personality = {
       }
     }
   }
-
+country_war_exhaustion_mult = -0.2
   modifier = {
-    country_resource_influence_mult = 0.1
-    country_unrest_unhappy_slave_effect_mult = -0.1
+    country_influence_produces_mult = 0.10
+    country_war_exhaustion_mult = -0.1
   }
 
   random_weight = { base = 5 }
@@ -281,7 +281,7 @@ lrsk_gov_var_civic_workers_councils = {
   }
 }
 
-#Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
+#Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 lrsk_gov_var_civic_supremacist_demagoguery = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -320,12 +320,12 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
   random_weight = { base = 5 }
 
   modifier = {
-    rivalry_influence_gain = 0.1
+    max_rivalries = 2
     army_morale_damage_mult = 0.2
   }
 }
 
-#Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (-20% research and mining station cost)
+#Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+10% research and mining station output)
 lrsk_gov_var_civic_enlightened_liberalism  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -348,8 +348,8 @@ lrsk_gov_var_civic_enlightened_liberalism  = {
   random_weight = { base = 5 }
 
   modifier = {
-    shipsize_research_station_build_cost_mult = -0.2
-    shipsize_mining_station_build_cost_mult = -0.2
+    station_gatherers_produces_mult = 0.1
+    station_researchers_produces_mult = 0.1
   }
 }
 
@@ -373,8 +373,8 @@ lrsk_gov_var_civic_business_lobby  = {
   random_weight = { base = 5 }
 
   modifier = {
-    country_resource_energy_mult = 0.05
-    country_resource_minerals_mult = 0.05
+    country_energy_produces_mult = 0.05
+    country_minerals_produces_mult = 0.05
   }
 }
 
@@ -411,7 +411,7 @@ lrsk_gov_var_civic_chivalry = {
   }
 }
 
-#Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (-15% scientist recruit cost, +1 governor skill levels, +15% leader experience gain)
+#Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
 lrsk_gov_var_civic_lifelong_learning = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -438,13 +438,13 @@ lrsk_gov_var_civic_lifelong_learning = {
   random_weight = { base = 5 }
 
   modifier = {
-    leader_scientist_cost = -0.15
+    scientist_skill_levels = 1
     governor_skill_levels = 1
     species_leader_exp_gain = 0.15
   }
 }
 
-#Institutionalized Collectivism (Not Democratic, Materialist) - The regime is propped up by collectivization and state control of industry and infrastructure. (-5% ship and building upkeep)
+#Institutionalized Collectivism (Not Democratic, Materialist) - The regime is propped up by collectivization and state control of industry and infrastructure. (-5% ship, building, and district upkeep)
 lrsk_gov_var_civic_institutionalized_collectivism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -471,12 +471,12 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
   random_weight = { base = 5 }
 
   modifier = {
-    ship_upkeep_mult = -0.05
-    planet_building_upkeep_mult = -0.05
+    ships_upkeep_mult = -0.05
+    planet_structures_upkeep_mult = -0.05
   }
 }
 
-#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (-10% expansion effect on Tradition cost)
+#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (+10 admin cap)
 lrsk_gov_var_civic_direct_revelation  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -502,7 +502,7 @@ lrsk_gov_var_civic_direct_revelation  = {
 
   random_weight = { base = 5 }
 
-  modifier = { tradition_cost_num_colonies_mult = -0.1 }
+  modifier = { country_admin_cap_add = 10 }
 }
 ## This version will be deprecated in a future update, keeping for a while to not break saves.
 #lrsk_gov_var_civic_direct_revelation  = {
@@ -542,7 +542,7 @@ lrsk_gov_var_civic_direct_revelation  = {
 #  }
 #}
 
-#Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-15% to Governing Ethics Attraction penalty due to distance)
+#Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
 lrsk_gov_var_civic_royal_absolutism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -569,7 +569,7 @@ lrsk_gov_var_civic_royal_absolutism = {
   random_weight = { base = 5 }
 
   modifier = {
-    mod_distance_to_capital_static_modifier_efficiency_mult = -0.25
+    pop_ethics_shift_speed_mult = -0.5
   }
 }
 
@@ -585,7 +585,7 @@ lrsk_gov_var_civic_public_works = {
   random_weight = { base = 5 }
 
   modifier = {
-    planet_clear_blocker_cost_mult = -0.15
+    deposit_blockers_cost_mult = -0.15
     pop_environment_tolerance = 0.05
   }
 }
@@ -656,7 +656,7 @@ lrsk_gov_var_civic_colonial_fiefs = {
   }
 }
 
-#Automated Indolence (Materialist) - This culture very early on in their industrial revolution early on a philosophy of 'let machines do the work' and its social structure and technical focus has adapted to match. (-5% Unrest, +10% robot output)
+#Automated Indolence (Materialist) - This culture very early on in their industrial revolution early on a philosophy of 'let machines do the work' and its social structure and technical focus has adapted to match. (+5 stability, +10% robot output)
 lrsk_gov_var_civic_automated_indolence = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -678,8 +678,8 @@ lrsk_gov_var_civic_automated_indolence = {
   random_weight = { base = 5 }
 
   modifier = {
-    pop_robot_production_output = 0.10
-    country_unrest_unhappy_pop_effect_mult = -0.05
+    planet_jobs_robotic_produces_mult = 0.10
+    planet_stability_add = 5
   }
 }
 

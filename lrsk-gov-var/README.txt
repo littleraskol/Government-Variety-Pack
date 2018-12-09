@@ -15,27 +15,27 @@ Utilitarian Planning (Dictatorship, not Spiritualist) - The dictatorship is conc
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
-Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% slave unrest)
+Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% war exhaustion)
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown (NOTE: No idea why the cooldown shows up red text in the tooltip, everywhere else in the game negative values for this modifier are beneficial))
 
 Workers' Councils (Egalitarian, no Business Lobby) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
 
-Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+10% rivalry influence gain, +20% army morale damage)
+Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
-Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (-20% research and mining station cost)
+Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+10% research and mining station output)
 
 Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% mineral and energy output)
 
 Chivalry (Imperial, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+20% army morale, +1 military leader levels)
 
-Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (-15% scientist recruit cost, +1 governor skill levels, +15% leader experience gain)
+Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
 
-Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% ship and building upkeep)
+Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% ship, building, and district upkeep)
 
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (-10% expansion effect on Tradition cost)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (+10 admin cap)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-25% to Governing Ethics Attraction penalty due to distance)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 
@@ -43,7 +43,7 @@ Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits it
 
 Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -10% starbase influence cost)
 
-Automated Indolence (Materialist) - This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match. (-5% Unrest, +10% robot output)
+Automated Indolence (Materialist) - This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match. (+5 stability, +10% robot output)
 
 Hive Mind Civics:
 
@@ -59,17 +59,17 @@ Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and
 
 Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (-20% pop food requirements)
 
-Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+10% rivalry influence gain +20% army morale damage)
+Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage)
 
-Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (-20% research and mining station cost)
+Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+10% research and mining station output)
 
 Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output)
 
-Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship and building upkeep)
+Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
 
 Inquisitive Bent (Hive Mind) - The Hive Mind has a deep and impatient curiosity about the universe. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Big Picture Thinker (Hive Mind) - Vast and ambitious are the plans of the Hive Mind, and so it is not distracted by its own expansion to fit these designs. (-20% expansion effect on Tradition cost)
+Big Picture Thinker (Hive Mind) - Vast and ambitious are the plans of the Hive Mind, and so it is not distracted by its own expansion to fit these designs. (+10 admin cap)
 
 Analgesic Stoicism (Hive Mind) - The Hive Mind feels all the bodily aches and irritants experienced by its drones, but its resolve to expand overrides any concern for personal comfort. (+10% habitability)
 
@@ -79,7 +79,7 @@ Unending Bloom (Hive Mind) - Growth is the purpose of all life and expansion the
 
 Benign Overmind (Hive Mind, not Devouring Swarm) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (−25% Subject Power Penalty, +20% vassal naval capacity contribution)
 
-Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +2.5% unity per federation member (max +15%))
+Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap)
 
 Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+5% fire rate, +5% evasion)
 
@@ -91,7 +91,7 @@ Distributed Planning Systems (Machine Intelligence) - Once a public service admi
 
 Self-Improvement Heuristics (Machine Intelligence) - The Machine Intelligence gained its supremacy and independence because its creators imbued it with the ability to improve its own systems. This is a mistake it has never ceased exploiting. (+5% research speed, -15% robo-modification cost)
 
-Reflective Polymorphism (Machine Intelligence) - All the highest-level decision making and creative tasks of the Machine Intelligence are enhanced by a library of standard research and administration expert system classes. (-25% governor and scientist recruit cost)
+Reflective Polymorphism (Machine Intelligence) - All the highest-level decision making and creative tasks of the Machine Intelligence are enhanced by a library of standard research and administration expert system classes. (-33% leader recruit cost)
 
 Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-10% building and ship construction time)
 
@@ -99,15 +99,15 @@ Combat Data (Machine Intelligence) - The Machine Intelligence was once a militar
 
 Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 max rivals, +15% trade attractiveness and trust growth)
 
-Astro-Prospecting Mainframe (Machine Intelligence) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (-20% research and mining station cost)
+Astro-Prospecting Mainframe (Machine Intelligence) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+10% research and mining station output)
 
 Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output)
 
-Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship and building upkeep)
+Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
 
 Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-20% expansion effect on Tradition cost)
+Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+10 admin cap)
 
 Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
 
@@ -150,6 +150,28 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.3.2 (12-08-18) - Post-Le Guin Hotfixes
+-Error with "OR {" should be "OR = {" fixed in name lists.
+-Commented out missing references until needed.
+-More legacy listings removed.
+-Elected Clergy: faction_influence_add changed to pop_factions_produces_add
+-Republicanism: leader_cost changed to leaders_cost_mult
+-Utilitarian Planning, Reclamation Pools: pop_food_req_mult changed to planet_pops_organics_food_upkeep_mult
+-Cult of Personality: country_resource_influence_mult changed to country_influence_produces_mult, changed slave happiness modifier to war exhaustion modifier (old modifier removed).
+-Supremacist Demagoguery, Boundless Spite: Changed rivalry influence gain to increased max rivalries (old modifier removed).
+-Enlightened Liberalism, Void Affinity, Astro-Prospecting Mainframe: Changed station build cost reduction to station outpost boost (old modifier removed).
+-Business Lobby, Hoarder, Self-Aware Production Targets: country_resource_X_mult changed to country_X_produces_mult
+-Lifelong Learning: Changed scientist cost reduction to scientist level bonus (old modifier removed).
+-Institutionalized Collectivism, Eusocial Rhythm, Recursive Efficiency Analysis: ship_upkeep_mult changed to ships_upkeep_mult and planet_building_upkeep_mult to planet_structures_upkeep_mult
+-Direct Revelations, Big Picture Thinker, Reciprocal Planning Routines: Changed to add admin cap (old modifier removed).
+-Royal Absolutism : Changed to slower pop ethics shift speed (old modifier removed, this is a stopgap until I get something better).
+-Public Works, Geosurvey Heuristics: planet_clear_blocker_cost_mult changed to deposit_blockers_cost_mult
+-Automated Indolence: pop_robot_production_output changed to planet_jobs_robotic_produces_mult, unrest reduction changed to stability increase
+-Planetmind Creativity, Distributed Planning Systems: edict_cost changed to edicts_cost_mult
+-Royal Caste: Changed governor cost reduction to additional governor level (old modifier removed), country_resource_influence_mult changed to country_influence_produces_mult
+-Gestalt Extroversion: diplomacy_influence_cost changed to diplomacy_upkeep_mult, changed the now-defunct "Federal Unity" bonuses to trust growth and cap.
+-Reflective Polymorphism: Changed to flat -33% leader cost (old modifier removed).
 
 v1.3.1 (12-07-18) - Stellaris 2.2 Le Guin Future-Proofing
 -Updated compatible version number.
