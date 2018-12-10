@@ -378,11 +378,14 @@ lrsk_gov_var_civic_business_lobby  = {
   }
 }
 
-#Chivalry (Imp + Mil or Aristo Elite + Mil) - Ideals of martial valor and honorable conduct prop up the ruling class. (+1 military leader levels, allows building Warrior Hall buildings which produce Knight jobs.)
+#Chivalry (Imp + Mil or Aristo Elite + Mil) - Ideals of martial valor and honorable conduct prop up the ruling class. (Level Cap of Generals and Admirals increased by 1. Allows building building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 lrsk_gov_var_civic_chivalry = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOT = { value = auth_corporate } }
+    authority = { NOR = {
+      value = auth_corporate
+      value = auth_oligarchic
+    } }
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_chivalry_effects"

@@ -27,7 +27,7 @@ Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This soci
 
 Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% mineral and energy output)
 
-Chivalry (Imperial, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+20% army morale, +1 military leader levels)
+Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
 Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
 
@@ -150,6 +150,9 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.1 (12-09-18) - Le Guin Improvements Phase 1
+-Changed Chivalry: Requires Militarist and Imperial or, with Aristocratic Elite, Oligarchic. Improves military leader skill levels, allows building Warrior Hall buildings which produce Knight jobs.
 
 v1.3.3 (12-09-18) - Post-Le Guin Hotfixes part 2
 -Removed an unneeded code line.

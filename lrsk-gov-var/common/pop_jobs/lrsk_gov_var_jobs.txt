@@ -12,7 +12,7 @@
 lrsk_gov_var_job_knight = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_building_hall_of_honor
+	building_icon = lrsk_gov_var_bldg_hall_of_honor
 	clothes_texture_index = 4
 
 	possible = {
@@ -39,6 +39,16 @@ lrsk_gov_var_job_knight = {
 		pop_defense_armies_add = 1
 	}
 
+	triggered_pop_modifier = {
+		potential = {
+			planet = {
+				exists = owner
+				owner = { has_technology = "tech_global_defense_grid" }
+			}
+		}
+		pop_defense_armies_add = 1
+	}
+
 	resources = {
 		category = planet_enforcers
 		#produces = {
@@ -54,10 +64,6 @@ lrsk_gov_var_job_knight = {
 			trigger = {
 				planet = { has_modifier = anticrime_campaign }
 			}
-			energy = 1
-		}
-		upkeep = {
-			consumer_goods = 1
 			energy = 1
 		}
 	}
