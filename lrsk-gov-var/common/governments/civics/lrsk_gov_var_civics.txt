@@ -248,7 +248,7 @@ lrsk_gov_var_civic_universal_sovereignty = {
   }
 }
 
-#Workers' Councils (Egalitarian, No BL) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
+#Workers' Councils (Egalitarian, No BL) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-5% building and ship construction time, increased happiness and political power of workers and specialists)
 lrsk_gov_var_civic_workers_councils = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -275,9 +275,13 @@ lrsk_gov_var_civic_workers_councils = {
   random_weight = { base = 5 }
 
   modifier = {
-    planet_building_build_speed_mult = 0.1
-    starbase_building_build_speed_mult = 0.1
-    starbase_shipyard_build_speed_mult = 0.1
+    planet_building_build_speed_mult = 0.05
+    starbase_building_build_speed_mult = 0.05
+    starbase_shipyard_build_speed_mult = 0.05
+    pop_cat_worker_happiness = 0.1
+    pop_cat_worker_political_power = 2
+    pop_cat_specialist_happiness = 0.05
+    pop_cat_specialist_political_power = 1
   }
 }
 
