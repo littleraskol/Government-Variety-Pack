@@ -126,12 +126,15 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
 	}
 }
 
-# Big Picture Thinker (+10 admin cap) - Vast and ambitious are the plans of the Hive Mind, and so it is not distracted by its own expansion to fit these designs.
+# Big Picture Thinker (+15% terraform and megastructure build speed) - Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects.
 lrsk_gov_var_civic_hive_big_picture_thinker = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
-	modifier = { country_admin_cap_add = 10 }
+	modifier = {
+		terraform_speed_mult = 0.15
+		megastructure_build_speed_mult = 0.15
+	 }
 }
 
 # Analgesic Stoicism (+10% habitability) - The Hive Mind feels all the bodily aches and irritants experienced by its drones, but its resolve to expand overrides any concern for personal comfort.
@@ -329,12 +332,12 @@ lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 	}
 }
 
-# Reciprocal Planning Routines (+10 admin cap) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks.
+# Reciprocal Planning Routines (+20 admin cap) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks.
 lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	potential = { authority = { value = auth_machine_intelligence } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
-  modifier = { country_admin_cap_add = 10 }
+  modifier = { country_admin_cap_add = 20 }
 }
 
 # Geosurvey Heuristics (-10% clear tile blocker cost, terraform cost, and terraform completion time) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory.
