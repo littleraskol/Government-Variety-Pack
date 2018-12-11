@@ -521,13 +521,14 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
   }
 }
 
-#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (+10 admin cap)
+#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 lrsk_gov_var_civic_direct_revelation  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
 
+  description = "civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects"
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
 
   possible = {
@@ -547,7 +548,7 @@ lrsk_gov_var_civic_direct_revelation  = {
 
   random_weight = { base = 5 }
 
-  modifier = { country_admin_cap_add = 10 }
+  modifier = { }
 }
 ## This version will be deprecated in a future update, keeping for a while to not break saves.
 #lrsk_gov_var_civic_direct_revelation  = {
