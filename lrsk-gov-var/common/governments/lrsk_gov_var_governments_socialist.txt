@@ -9,7 +9,7 @@ lrsk_gov_var_gov_proletarian_dictatorship = {
 
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-		has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
+		has_authority = auth_dictatorial
 	}
 
 	election_candidates = {
@@ -64,7 +64,6 @@ lrsk_gov_var_gov_social_bureaucracy = {
 
 	possible = {
 		has_authority = auth_oligarchic
-		has_valid_civic = lrsk_gov_var_civic_public_works
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
 
@@ -96,12 +95,7 @@ lrsk_gov_var_gov_social_democracy = {
 
 	possible = {
 		has_authority = auth_democratic
-		has_valid_civic = lrsk_gov_var_civic_public_works
-		has_valid_civic = lrsk_gov_var_civic_lifelong_learning
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
 
 	election_candidates = {
@@ -144,12 +138,7 @@ lrsk_gov_var_gov_populist_monarchy = {
 
 	possible = {
 		has_authority = auth_imperial
-		has_valid_civic = lrsk_gov_var_civic_public_works
-		has_valid_civic = civic_philosopher_king
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
 
 	weight = {
@@ -163,10 +152,8 @@ lrsk_gov_var_gov_communal_democracy = {
 
 	possible = {
 		has_authority = auth_democratic
-		OR = {
-			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
-			has_valid_civic = lrsk_gov_var_civic_workers_councils
-		}
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
 	}
 
 	election_candidates = {
@@ -202,6 +189,7 @@ lrsk_gov_var_gov_socialist_plenary = {
 	possible = {
 		has_authority = auth_oligarchic
 		has_valid_civic = lrsk_gov_var_civic_workers_councils
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
 
 	election_candidates = {
@@ -231,11 +219,7 @@ lrsk_gov_var_gov_automated_worldcommune = {
 	possible = {
 		has_authority = auth_dictatorial
 		has_valid_civic = civic_technocracy
-		OR = {
-			has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
-			has_valid_civic = lrsk_gov_var_civic_public_works
-			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-		}
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		NOR = {
 			has_ethic = ethic_authoritarian
 			has_ethic = ethic_fanatic_authoritarian
@@ -291,35 +275,60 @@ lrsk_gov_var_gov_market_socialism = {
 	}
 }
 
-## Syndicalism (Oligarchy + WC/CD)
-# Need to rethink this one after Megacorp drops.
-#lrsk_gov_var_gov_syndicalism = {
-#	ruler_title = LRSK_GOV_VAR_RT_GENERAL_SECRETARY
-#
-#	possible = {
-#		OR = {
-#			has_valid_civic = lrsk_gov_var_civic_workers_councils
-#			#has_valid_civic = lrsk_gov_var_civic_workers_councils_dem
-#		}
-#		has_valid_civic = civic_corporate_dominion
-#	}
-#
-#	election_candidates = {
-#		modifier = {
-#			add = 500
-#			OR = {
-#				leader_class = governor
-#			}
-#		}
-#		modifier = {
-#			add = 100
-#			OR = {
-#				leader_class = scientist
-#			}
-#		}
-#	}
-#
-#	weight = {
-#		base = 1000
-#	}
-#}
+# Syndicalist Conference (Oligarchy + WC)
+lrsk_gov_var_gov_syndicalist_conference = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_STEERING_OFFICER
+
+	possible = {
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
+		has_authority = auth_oligarchic
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# Syndicalist Congress (Democracy + WC)
+lrsk_gov_var_gov_syndicalist_congress = {
+	ruler_title = LRSK_GOV_VAR_RT_GENERAL_SECRETARY
+
+	possible = {
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
+		has_authority = auth_democratic
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}

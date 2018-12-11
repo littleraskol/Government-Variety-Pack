@@ -108,7 +108,6 @@ lrsk_gov_var_civic_utilitarian_planning = {
     }
   }
 
-
   random_weight = { base = 5 }
 
   modifier = {
@@ -270,6 +269,7 @@ lrsk_gov_var_civic_workers_councils = {
     civics ={
       NOR = {
         value = lrsk_gov_var_civic_business_lobby
+        value = civic_shared_burden
       }
     }
   }
@@ -485,7 +485,7 @@ lrsk_gov_var_civic_lifelong_learning = {
   }
 }
 
-#Institutionalized Collectivism (Not Fanatic Authoritarian, Materialist) - The government controls industry and infrastructure to ensure a baseline of economic cooperation so that basic needs can be met. (+10% consumer goods production, +5% worker and specialist production output)
+#Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation so that basic needs can be met. (+10% consumer goods production, +5% worker and specialist production output)
 lrsk_gov_var_civic_institutionalized_collectivism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }

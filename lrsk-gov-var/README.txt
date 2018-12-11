@@ -11,7 +11,7 @@ Ascetic Virtues (Not Materialist) - This culture's religious beliefs include str
 
 Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-20% leader cost, +2 leader pool)
 
-Utilitarian Planning (Dictatorship, not Spiritualist) - The dictatorship is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -20% resettlement cost)
+Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -15% resettlement cost, -2.5% ship and building upkeep)
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
@@ -19,7 +19,7 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown (NOTE: No idea why the cooldown shows up red text in the tooltip, everywhere else in the game negative values for this modifier are beneficial))
 
-Workers' Councils (Egalitarian, no Business Lobby) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time)
+Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-5% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
@@ -31,7 +31,7 @@ Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of mart
 
 Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
 
-Institutionalized Collectivism (Not Democratic, Materialist) - The regime operates by state control of industry and infrastructure. (-5% ship, building, and district upkeep)
+Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (+10 admin cap)
 
@@ -150,6 +150,19 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.2 (12-10-18) - Le Guin Improvements Phase 2
+-Workers' Councils: Nerfed base bonus, incompatible with Shared Burdens, now increases happiness and political power of workers and specialists.
+-Institutionalized Collectivism: Replaced "Not Dem" with "not Fan Auth"; removed ship, building, and district upkeep bonus. Now increases output of workers and specialists, and increases consumer goods output.
+-Utilitarian Planning: Removed Dictatorship req, and no longer really a socialist-themed thing. Moved and nerfed upkeep bonus here, nerfed resettlement bonus.
+-Proletarian Dictatorship: Removed Utilitarian Planning req, changed name to "Proletarian Regime."
+-Automated World-Commune: Removed Utilitarian Planning or Public Works req.
+-Populist Monarchy: Removed Philosopher King and Public Works req and no Authoritarian req, requires Institutionalized Collectivism.
+-Social Bureaucracy: Removed Public Works req.
+-Social Democracy: Removed Lifelong Learning and Public Works req, and not Authoritarian req (latter was redundant w/ democratic req), requires Institutionalized Collectivism.
+-Communal Democracy, Socialist Plenary: Requires both Workers' Councils and Institutionalized Collectivism
+-Pretender Hive: Has an Imperial variant with "Backup Overmind" heir.
+-Return of Syndicalism as either "Syndicalist Congress" (Workers' Councils, Democratic authority) or "Syndicalist Conference" (Workers' Councils, Oligarchic authority)
 
 v1.4.1 (12-09-18) - Le Guin Improvements Phase 1
 -Changed Chivalry: Requires Militarist and Imperial or, with Aristocratic Elite, Oligarchic. Improves military leader skill levels, allows building Warrior Hall buildings which produce Knight jobs.
