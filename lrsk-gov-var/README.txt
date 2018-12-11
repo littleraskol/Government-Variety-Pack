@@ -33,7 +33,7 @@ Lifelong Learning (Democratic and Pacifist) - This society values public educati
 
 Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (+10 admin cap)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (+20 admin cap)
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
 
@@ -150,6 +150,9 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.2.2 (12-10-18) - Post-Le Guin Hotfixes part 3.5
+-Direct Revelation: Admin cap buffed to +20 to bring in line with "Divided Attention" (better things are coming for this civic, but in the meantime...)
 
 v1.4.2.1 (12-10-18) - Post-Le Guin Hotfixes part 3
 -Big Picture Thinker: now gives bonus to terraform and megastructure build speed.
