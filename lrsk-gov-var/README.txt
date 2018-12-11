@@ -69,7 +69,7 @@ Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are p
 
 Inquisitive Bent (Hive Mind) - The Hive Mind has a deep and impatient curiosity about the universe. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Big Picture Thinker (Hive Mind) - Vast and ambitious are the plans of the Hive Mind, and so it is not distracted by its own expansion to fit these designs. (+10 admin cap)
+Big Picture Thinker (Hive Mind) -  Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects. (+15% terraform and megastructure build speed)
 
 Analgesic Stoicism (Hive Mind) - The Hive Mind feels all the bodily aches and irritants experienced by its drones, but its resolve to expand overrides any concern for personal comfort. (+10% habitability)
 
@@ -107,7 +107,7 @@ Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine
 
 Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+10 admin cap)
+Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
 
 Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
 
@@ -150,6 +150,10 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.2.1 (12-10-18) - Post-Le Guin Hotfixes part 3
+-Big Picture Thinker: now gives bonus to terraform and megastructure build speed.
+-Reciprocal Planning Routines: Admin cap buffed to +20 to bring in line with "Divided Attention"
 
 v1.4.2 (12-10-18) - Le Guin Improvements Phase 2
 -Workers' Councils: Nerfed base bonus, incompatible with Shared Burdens, now increases happiness and political power of workers and specialists.
