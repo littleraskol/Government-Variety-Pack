@@ -521,7 +521,7 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
   }
 }
 
-#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
+#Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs. 1 Hedge Preacher per 25 pops.)
 lrsk_gov_var_civic_direct_revelation  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -548,7 +548,7 @@ lrsk_gov_var_civic_direct_revelation  = {
 
   random_weight = { base = 5 }
 
-  modifier = { }
+  modifier = { job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.04 }
 }
 ## This version will be deprecated in a future update, keeping for a while to not break saves.
 #lrsk_gov_var_civic_direct_revelation  = {
@@ -729,6 +729,33 @@ lrsk_gov_var_civic_automated_indolence = {
   }
 }
 
+
+
+##Right of Recall (Democratic) - This society  (Can hold emergency elections.)
+##Unfortunately this is strictly an authority thing...
+#lrsk_gov_var_civic_right_of_recall = {
+#  potential = {
+#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+#    authority = { NOT = { value = auth_corporate } }
+#  }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_meritocracy.dds"
+#
+#  possible = {
+#    authority = {
+#      OR = {
+#        value = auth_democratic
+#      }
+#    }
+#  }
+#
+#  random_weight = { base = 5 }
+#
+#  modifier = {
+#    can_have_emergency_elections = yes
+#    emergency_election_cost = 250
+#  }
+#}
 ##State Secular Rationalism (Dictatorial and Materialist) - The dictatorship sees religion as a destabilizing and divisive force and subtly discourages its practice (while strongly encouraging inter-religious toleration nonetheless) through a variety of means. (+10% Governing ethics attraction, −10% Tradition Cost from number of colonies)
 #lrsk_gov_var_civic_state_rationalism = {
 #  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"

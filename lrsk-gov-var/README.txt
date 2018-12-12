@@ -33,7 +33,7 @@ Lifelong Learning (Democratic and Pacifist) - This society values public educati
 
 Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
 

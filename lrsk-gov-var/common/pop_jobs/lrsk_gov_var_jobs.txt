@@ -10,12 +10,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_primitive_dwellings
-	clothes_texture_index = 3
-
-	possible = {
-		complex_worker_job_check_trigger = yes
-		owner = { is_fallen_empire = no }
-	}
+	clothes_texture_index = 2
 
 	resources = {
 		category = planet_priests
@@ -49,7 +44,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no

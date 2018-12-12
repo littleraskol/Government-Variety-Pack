@@ -85,3 +85,44 @@ lrsk_gov_var_gov_whig_commonwealth = {
 		base = 1000
 	}
 }
+
+#Noble Republic WIP
+#lrsk_gov_var_gov_noble_republic = {
+#	ruler_title = LRSK_GOV_VAR_RT_HIGH_PRINCE
+#	ruler_title_female = LRSK_GOV_VAR_RT_HIGH_PRINCESS
+#
+#	possible = {
+#		has_valid_civic = civic_shadow_council
+#		OR = {
+#			has_valid_civic = civic_idealistic_foundation
+#			AND = {
+#				has_valid_civic = civic_meritocracy
+#				has_ethic = ethic_egalitarian
+#			}
+#		}
+#		has_authority = auth_oligarchic
+#	}
+#
+#	election_candidates = {
+#		modifier = {
+#			add = 1000
+#			leader_class = ruler
+#		}
+#		modifier = {
+#			add = 500
+#			leader_class = governor
+#		}
+#		modifier = {
+#			add = 100
+#			OR = {
+#				leader_class = scientist
+#				leader_class = admiral
+#				leader_class = general
+#			}
+#		}
+#	}
+#
+#	weight = {
+#		base = 1000
+#	}
+#}
