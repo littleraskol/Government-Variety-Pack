@@ -41,17 +41,6 @@ empire_name_parts_list = {
 ## Descriptive
 # Note sure what these are for yet...
 
-# Aristocratic Descriptive
-empire_name_parts_list = {
-	key = "lrsk_aristo_desc"
-	parts = {
-		"Princely" = 1
-		"Noble" = 1
-		"Patrician" = 1
-		"Aristocratic" = 1
-	}
-}
-
 # Royal Descriptive
 empire_name_parts_list = {
 	key = "lrsk_imperial_roy_desc"
@@ -1132,6 +1121,35 @@ empire_name_parts_list = {
 	}
 }
 
+#Crusader Order
+#format.lrsk_crusord_gen.1: "<lrsk_crusord_desc> <lrsk_crusord_type> of [This.Capital.System.GetName]"
+#format.lrsk_crusord_gen.2: "<lrsk_crusord_desc> <lrsk_crusord_type> of [This.Capital.GetName]"
+
+#Crusader Order Descriptives
+empire_name_parts_list = {
+	key = "lrsk_crusord_desc"
+	parts = {
+		"Holy" = 1
+		"Blessed" = 1
+		"Sacred" = 1
+		"Pious" = 1
+		"Zealous" = 1
+		"Fervent" = 1
+	}
+}
+
+#Crusader Order Type
+empire_name_parts_list = {
+	key = "lrsk_crusord_type"
+	parts = {
+		"Knights" = 1
+		"Soldiers" = 1
+		"Templars" = 1
+		"Paladins" = 1
+		"Warriors" = 1
+	}
+}
+
 ### MATERIALIST
 
 # Materialist Descriptive
@@ -1984,5 +2002,41 @@ empire_name_parts_list = {
 		"Deathlords" = 1
 		"Slayers" = 1
 		"Reapers" = 1
+	}
+}
+
+## Others
+
+## Noble Republic
+#format.lrsk_noblerep_gen.1: "<lrsk_aristo_desc> <lrsk_noblerep_gov> of [This.Capital.System.GetName]"
+#format.lrsk_noblerep_gen.2: "<lrsk_aristo_desc> <lrsk_noblerep_gov> of [This.Capital.GetName]"
+#format.lrsk_noblerep_gen.3: "<lrsk_aristo_desc> <lrsk_noblerep_gov> of [This.GetSpeciesName]kind"
+#format.lrsk_noblerep_gen.4: "<lrsk_aristo_desc> [This.GetSpeciesAdj] <lrsk_noblerep_gov>"
+#format.lrsk_noblerep_gen.5: "[This.GetSpeciesAdj] <lrsk_aristo_desc> <lrsk_noblerep_gov>"
+
+# Aristocratic Descriptive
+empire_name_parts_list = {
+	key = "lrsk_aristo_desc"
+	parts = {
+		"Princely" = 2
+		"Noble" = 2
+		"Patrician" = 2
+		"Aristocratic" = 1
+		"Genteel" = 2
+		"Highborn" = 2
+	}
+}
+
+empire_name_parts_list = {
+	key = "lrsk_noblerep_gov"
+	parts = {
+		"Council" = 2
+		"Senate" = 2
+		"League" = 2
+		"Republic" = 2
+		"Commonwealth" = 1
+		"Compact" = 2
+		"Pact" = 2
+		"Order" = 2
 	}
 }

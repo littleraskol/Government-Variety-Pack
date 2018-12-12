@@ -24,6 +24,113 @@ empire_name_format = {
 	# Human Empire
 }
 
+# Noble Republics
+
+# Noble Republic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_noble_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_noblerep_gen.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_noblerep_gov>"
+	# Empire of Sol
+}
+
+# Noble Republic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_noble_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_noblerep_gen.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_noblerep_gov>"
+	# Empire of Earth
+}
+
+# Noble Republic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_noble_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_noblerep_gen.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_noblerep_gov>"
+	# Human Empire
+}
+
+# Noble Republic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_noble_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_noblerep_gen.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_noblerep_gov>"
+	# Great Human Empire
+}
+
+# Noble Republic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_noble_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_noblerep_gen.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_noblerep_gov>"
+	# Human Star Empire
+}
+
 ### Frev-based
 
 ## Imperial

@@ -240,11 +240,24 @@ part = {
 # Default catch-all
 part = {
 	location = 1
-	localization = "LRSK_GOV_VAR_START_SCREEN_P2_FEUDAL_EMPIRE"
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_EMPIRE"
 
 	trigger = {
 		OR = {
-			has_government = lrsk_gov_var_gov_feudal_empire
+			has_government = lrsk_gov_var_gov_noble_empire
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_noble_republic
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}
@@ -375,6 +388,19 @@ part = {
 	trigger = {
 		OR = {
 			has_government = lrsk_gov_var_gov_crusader_kingdom
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_CRUSADER_ORDER"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_crusader_order
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}

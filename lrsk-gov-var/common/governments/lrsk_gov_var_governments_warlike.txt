@@ -271,6 +271,37 @@ lrsk_gov_var_gov_crusader_kingdom = {
 	}
 }
 
+# Crusader Order (Oli + Spi + Ch/AE)
+lrsk_gov_var_gov_crusader_order = {
+	ruler_title = LRSK_GOV_VAR_RT_GRANDMASTER
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_oligarchic
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+		AND = {
+			has_valid_civic = civic_aristocratic_elite
+			has_valid_civic = lrsk_gov_var_civic_chivalry_aristo
+		}
+	}
+
+	weight = {
+		base = 1400
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+}
+
 # Private Military Contractor
 lrsk_gov_var_gov_private_military_contractor = {
 	ruler_title = LRSK_GOV_VAR_RT_CAPTAIN_DIRECTOR
