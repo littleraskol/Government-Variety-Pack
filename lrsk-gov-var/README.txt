@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.2.3 (12-10-18) - Still More Post-Le Guin Hotfixes
+-Fixed bug where oligarchic form of Cosmic Choir had no start screen text.
+
 v1.4.2.2 (12-10-18) - Post-Le Guin Hotfixes part 3.5
 -Direct Revelation: Admin cap buffed to +20 to bring in line with "Divided Attention" (better things are coming for this civic, but in the meantime...)
 
