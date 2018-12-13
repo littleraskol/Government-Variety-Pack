@@ -151,6 +151,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.3 (12-12-18) - Le Guin Improvements Phase 3
+-Direct Revelation: Removed modifier, effect is now based on random mostly beneficial events (wild cults and their added hedge preacher jobs).
+-Added "Noble Republic" government, which requires Oligarch auth and Aristo Elite civic.
+-Added "Crusader Order" government, which requires Oligarch auth, Spiritualist ethos, and both Aristo Elite and Chivalry civics.
+
 v1.4.2.3 (12-10-18) - Still More Post-Le Guin Hotfixes
 -Fixed bug where oligarchic form of Cosmic Choir had no start screen text.
 
