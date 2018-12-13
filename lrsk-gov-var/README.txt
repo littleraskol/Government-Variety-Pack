@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.3.1 (12-12-18) - Hotfix: propagating localizations
+-Yep.
+
 v1.4.3 (12-12-18) - Le Guin Improvements Phase 3
 -Direct Revelation: Removed modifier, effect is now based on random mostly beneficial events (wild cults and their added hedge preacher jobs).
 -Added "Noble Republic" government, which requires Oligarch auth and Aristo Elite civic.
