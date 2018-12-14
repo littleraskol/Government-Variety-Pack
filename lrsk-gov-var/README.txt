@@ -19,7 +19,7 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown (NOTE: No idea why the cooldown shows up red text in the tooltip, everywhere else in the game negative values for this modifier are beneficial))
 
-Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-5% building and ship construction time, increased happiness and political power of workers and spcialists.)
+Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
@@ -150,6 +150,9 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.3 (12-14-18)
+-Workers' Councils: Buffed power bonus to woker +40%, spec +20%, halved happiness bonus (since it is now magnified further, and keeping them happy should be more of a challenge). Build speed bonus doubled to +10%.
 
 v1.4.3.1 (12-12-18) - Hotfix: propagating localizations
 -Yep.
