@@ -34,9 +34,17 @@ lrsk_gov_var_gov_cosmic_choir_olig = {
 			#has_valid_civic = lrsk_gov_var_civic_direct_revelation_new
 		}
 		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
+		NOR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+		}
 		OR = {
 			has_ethic = ethic_pacifist
 			has_ethic = ethic_fanatic_pacifist
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
 		}
 	}
 
@@ -66,7 +74,7 @@ lrsk_gov_var_gov_cosmic_choir = {
 }
 
 # Evangelical Franchise (Corporate Dominion + Exalted Priesthood) (internal string is legacy)
-lrsk_gov_var_gov_megachurch = {
+lrsk_gov_var_gov_evangelical_franchise = {
 	ruler_title = LRSK_GOV_VAR_RT_CHIEF_MINISTERIAL_OFFICER
 
 	possible = {

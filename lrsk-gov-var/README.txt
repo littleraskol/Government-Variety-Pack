@@ -151,7 +151,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.4.3 (12-14-18)
+v1.4.4 (12-14-18)
 -Workers' Councils: Buffed power bonus to woker +40%, spec +20%, halved happiness bonus (since it is now magnified further, and keeping them happy should be more of a challenge). Build speed bonus doubled to +10%.
 
 v1.4.3.1 (12-12-18) - Hotfix: propagating localizations
