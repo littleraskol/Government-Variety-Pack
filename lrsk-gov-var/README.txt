@@ -51,11 +51,11 @@ Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehensio
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
-Builder Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for construction. (-10% building and ship construction time)
+Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Menial Drone per 20 pops)
 
-Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, +20% army morale)
+Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 30 pops)
 
-Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+1 governor skill levels, -15% governor recruit cost, +5% influence)
+Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 40 pops)
 
 Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (-20% pop food requirements)
 
@@ -93,7 +93,7 @@ Self-Improvement Heuristics (Machine Intelligence) - The Machine Intelligence ga
 
 Reflective Polymorphism (Machine Intelligence) - All the highest-level decision making and creative tasks of the Machine Intelligence are enhanced by a library of standard research and administration expert system classes. (-33% leader recruit cost)
 
-Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-10% building and ship construction time)
+Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
 Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage)
 

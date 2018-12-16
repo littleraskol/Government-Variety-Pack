@@ -27,7 +27,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 	}
 }
 
-# Builder Caste (-10% building and ship construction time) - The Hive Mind spawns a special breed of drones that are adapted for construction.
+# Worker Caste (-10% building and ship construction time, 1 Menial Drone per 20 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
 lrsk_gov_var_civic_hive_builder_caste = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -36,10 +36,11 @@ lrsk_gov_var_civic_hive_builder_caste = {
     planet_building_build_speed_mult = 0.1
     starbase_building_build_speed_mult = 0.1
     starbase_shipyard_build_speed_mult = 0.1
+    job_maintenance_drone_per_pop = 0.05
 	}
 }
 
-# Warrior Caste (+1 military leader skill levels, +20% army morale) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
+# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 30 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
 lrsk_gov_var_civic_hive_warrior_caste = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -47,18 +48,18 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 	modifier = {
     admiral_skill_levels = 1
     general_skill_levels = 1
-    army_morale = 0.2
+    job_warrior_drone_per_pop = 0.0334
 	}
 }
 
-# Royal Caste (+2 governor skill levels, +5% influence) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
+# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 40 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
 lrsk_gov_var_civic_hive_royal_caste = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
     governor_skill_levels = 2
-		country_influence_produces_mult = 0.05
+    job_synapse_drone_per_pop = 0.025
 	}
 }
 
@@ -247,15 +248,15 @@ lrsk_gov_var_civic_machine_reflective_polymorphism = {
 	modifier = { leaders_cost_mult = -0.33 }
 }
 
-# Architect Expert Systems (-10% building and ship construction time) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs.
+# Architect Expert Systems (-20% building and ship construction time) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs.
 lrsk_gov_var_civic_machine_architect_expert_systems = {
 	potential = { authority = { value = auth_machine_intelligence } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
 	modifier = {
-    planet_building_build_speed_mult = 0.1
-    starbase_building_build_speed_mult = 0.1
-    starbase_shipyard_build_speed_mult = 0.1
+    planet_building_build_speed_mult = 0.2
+    starbase_building_build_speed_mult = 0.2
+    starbase_shipyard_build_speed_mult = 0.2
 	}
 }
 
