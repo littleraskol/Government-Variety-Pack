@@ -566,7 +566,9 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 50
-			has_government = "lrsk_gov_var_gov_crusader_order"
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_order"
+			}
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -585,7 +587,9 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 50
-			has_government = "lrsk_gov_var_gov_crusader_order"
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_order"
+			}
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -596,4 +600,184 @@ empire_name_format = {
 	noun = "[This.Capital.GetName]"
 	prefix_format = "[This.Capital.GetName] <lrsk_crusord_type>"
 	# Empire of Earth
+}
+
+### Special Weighting for FanSpi Crusader Kingdom
+
+# Imperial Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_imp_spi.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_imperial_spi>"
+	# Empire of Sol
+}
+
+# Imperial Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_imp_spi.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_imperial_spi>"
+	# Empire of Earth
+}
+
+# Imperial Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_imp_spi.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_spi>"
+	# Human Empire
+}
+
+# Imperial Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_imp_spi.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_spi>"
+	# Great Human Empire
+}
+
+# Imperial Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_imp_spi.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_spi>"
+	# Human Star Empire
+}
+
+## Cosmic Choirs
+
+# Cosmic Choir 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_coschoir.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_cosmic_choir>"
+	# Empire of Sol
+}
+
+# Cosmic Choir 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_coschoir.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_cosmic_choir>"
+	# Empire of Earth
+}
+
+# Cosmic Choir 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_coschoir.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_cosmic_choir>"
+	# Human Empire
 }

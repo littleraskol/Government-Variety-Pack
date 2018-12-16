@@ -87,7 +87,7 @@ Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily ex
 
 Machine Intelligence Civics:
 
-Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (+15% edict duration, -15% edict cost)
+Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (-10% pop housing and amenities use)
 
 Self-Improvement Heuristics (Machine Intelligence) - The Machine Intelligence gained its supremacy and independence because its creators imbued it with the ability to improve its own systems. This is a mistake it has never ceased exploiting. (+5% research speed, -15% robo-modification cost)
 

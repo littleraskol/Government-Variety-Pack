@@ -238,10 +238,10 @@ empire_name_parts_list = {
 #format.lrsk_dic_soc.5: "[This.GetSpeciesAdj] <lrsk_soc_desc><lrsk_dictatorial_soc>"
 
 # Syndicalism
-# format.lrsk_syndicate.1: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
-# format.lrsk_syndicate.2: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.System.GetName]"
-# format.lrsk_syndicate.3: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.GetName]"
-# format.lrsk_syndicate.4: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
+# format.lrsk_syndicalist.1: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.System.GetName]"
+# format.lrsk_syndicalist.2: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.System.GetName]"
+# format.lrsk_syndicalist.3: "<lrsk_labor_desc> <lrsk_labor_per>' <lrsk_labor_orgs> of [This.Capital.GetName]"
+# format.lrsk_syndicalist.4: "<lrsk_labor_type> <lrsk_labor_per>' <lrsk_labor_org> of [This.Capital.GetName]"
 
 # Note about weighting: Essentially, longer words are less likely to come up as these names can be really long!
 
@@ -1118,6 +1118,37 @@ empire_name_parts_list = {
 		"Council" = 1
 		"Foundation" = 1
 		"Conclave" = 1
+	}
+}
+
+# Cosmic Choir
+# format.lrsk_oli_coschoir.1: "<lrsk_cosmic_choir_desc> <lrsk_cosmic_choir> of [This.Capital.System.GetName]"
+# format.lrsk_oli_coschoir.2: "<lrsk_cosmic_choir_desc> <lrsk_cosmic_choir> of [This.Capital.GetName]"
+# format.lrsk_oli_coschoir.3: "<lrsk_cosmic_choir_desc> [This.GetSpeciesAdj] <lrsk_cosmic_choir>"
+
+# Holy Tribunal Descriptive
+empire_name_parts_list = {
+	key = "lrsk_cosmic_choir_desc"
+	parts = {
+		"Groovy" = 1
+		"Mystic" = 1
+		"Cosmic" = 1
+		"Trippy" = 1
+		"Astral" = 1
+	}
+}
+
+# Oligarchic Holy Tribunal
+empire_name_parts_list = {
+	key = "lrsk_cosmic_choir"
+	parts = {
+		"Tribes" = 1
+		"Bands" = 1
+		"Collective" = 1
+		"Commonality" = 1
+		"Cooperative" = 1
+		"Accord" = 1
+		"Commune" = 1
 	}
 }
 
