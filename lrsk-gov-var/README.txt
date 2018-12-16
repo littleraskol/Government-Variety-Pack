@@ -151,6 +151,22 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.5 (12-15-18) Le Guin Improvements Phase 4
+-Builder Caste: Changed to "Worker Caste," also gives 1 Menial Drone per 20 pops.
+-Warrior caste: Instead of morale bonus, gives 1 warrior per 30 pops.
+-Royal Caste: Instead of influence bonus, gives 1 Synapse Drone per 40 pops.
+-Architect Expert Systems: Doubled bonus.
+-Distributed Planning Systems: Now gives -10% pop housing and amenities use.
+-Cosmic Choir now requires either pacifist or xenophile.
+-New Cosmic Choir name list.
+-Moved all base game government namelist definitions to one file (this will make it easier to override in any patch for the purpose).
+-Crusader Kingdoms with FanSpi or FanMil are weighted heavily towards the Imperial Spiritualist and Imperial Militarist name lists (respectively).
+-Crusader Orders no longer use regnal or dynastic names (not sure if this actually did anything in game, it was copypasta from CK).
+-Changed 'lrsk_gov_var_gov_megachurch' token to 'lrsk_gov_var_gov_evangelical_franchise' to reflect the "new" name.
+-Changed 'lrsk_syndicate' token to 'lrsk_syndicalist' because "syndicate" has a very different meaning in Stellaris.
+-Changed 'lrsk_gov_var_gov_legionary_polis' token to 'lrsk_gov_var_gov_citizen_legion' to reflect the actual name of the government rather than its weird too edgy prototype.
+-Clearing out a lot of obsolete cruft.
+
 v1.4.4 (12-14-18)
 -Workers' Councils: Buffed power bonus to woker +40%, spec +20%, halved happiness bonus (since it is now magnified further, and keeping them happy should be more of a challenge). Build speed bonus doubled to +10%.
 
