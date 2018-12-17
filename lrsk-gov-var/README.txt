@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.5.1 (12-17-18)
+-Fixed bug that prevented Warrior Hall upgrades in some cases.
+
 v1.4.5 (12-15-18) Le Guin Improvements Phase 4
 -Builder Caste: Changed to "Worker Caste," also gives 1 Menial Drone per 20 pops.
 -Warrior caste: Instead of morale bonus, gives 1 warrior per 30 pops.
