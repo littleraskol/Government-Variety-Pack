@@ -32,7 +32,7 @@ country_event = {
 		NOT = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently }
 	}
 
-	mean_time_to_happen = { months = 12 }
+	mean_time_to_happen = { months = 24 }
 	#mean_time_to_happen = { days = 7 }
 
 	immediate = {
@@ -43,28 +43,28 @@ country_event = {
   		20 = {
         modifier = {
           factor = 1.5
-          num_owned_planets > 2
-          num_owned_planets < 5
+          num_owned_planets > 1
+          num_owned_planets < 4
         }
         modifier = {
           factor = 2
-          num_owned_planets > 4
-          num_owned_planets < 8
+          num_owned_planets > 3
+          num_owned_planets < 7
         }
         modifier = {
           factor = 3
-          num_owned_planets > 7
-          num_owned_planets < 11
+          num_owned_planets > 6
+          num_owned_planets < 10
         }
         modifier = {
           factor = 4
-          num_owned_planets > 10
+          num_owned_planets > 9
         }
 
 				#This flag keeps multiple cults from randomly springing up on top of each other and provides a "grace period" to the player's attention span of 2 years.
 	  		set_timed_country_flag = {
 	  			flag = lrsk_gov_var_wild_cult_formed_recently
-	  			days = 720
+	  			days = 1080
 					#days = 7
 	  		}
 
@@ -190,7 +190,7 @@ planet_event = {
 		name = INTRIGUING
     add_modifier = {
       modifier = "lrsk_gov_var_statmod_divine_right_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -213,7 +213,7 @@ planet_event = {
 		name = INTRIGUING
 	    add_modifier = {
       modifier = "lrsk_gov_var_statmod_children_of_heaven_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -236,7 +236,7 @@ planet_event = {
 		name = INTRIGUING
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_holy_war_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -259,7 +259,7 @@ planet_event = {
 		name = INTRIGUING
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_harmony_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -282,7 +282,7 @@ planet_event = {
 		name = INTRIGUING
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_chosen_few_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -305,7 +305,7 @@ planet_event = {
 		name = INTRIGUING
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_universal_family_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -328,7 +328,7 @@ planet_event = {
 		name = DISCONCERTING
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_doomsday_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }
@@ -351,7 +351,7 @@ planet_event = {
 		name = MARVELOUS
 		add_modifier = {
       modifier = "lrsk_gov_var_statmod_golden_age_cult"
-      days = 1800
+      days = 3600
     }
 	}
 }

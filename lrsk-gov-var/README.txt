@@ -151,6 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.5.2 (12-17-18)
+-Direct Revelation wild cult MttH doubled (felt like they were stacking on top of each other too much), duration doubled (as they happen less frequently, they should last longer).
+
 v1.4.5.1 (12-17-18)
 -Fixed bug that prevented Warrior Hall upgrades in some cases.
 
