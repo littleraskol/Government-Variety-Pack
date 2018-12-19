@@ -4,15 +4,15 @@
 
 # HIVE MIND
 
-# Planetmind Creativity (+15% edict duration, -15% edict cost) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
+# Planetmind Creativity (-10% pop housing and amenities use) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 
   modifier = {
-    edict_length_mult = 0.15
-    edicts_cost_mult = -0.15
+		pop_amenities_usage_mult = -0.10
+		pop_housing_usage_mult = -0.10
   }
 }
 

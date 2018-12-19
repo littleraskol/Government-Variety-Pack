@@ -47,7 +47,7 @@ Automated Indolence (Materialist) - This society, very early on in its industria
 
 Hive Mind Civics:
 
-Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (+15% edict duration, -15% edict cost)
+Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-10% pop housing and amenities use)
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
@@ -150,6 +150,9 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.5.3 (12-19-18)
+-Planetmind Creativity: Now gives -10% pop housing and amenities use. (Had the same issues as Distributed Planning Systems.)
 
 v1.4.5.2 (12-17-18)
 -Direct Revelation wild cult MttH doubled (felt like they were stacking on top of each other too much), duration doubled (as they happen less frequently, they should last longer).
