@@ -2,14 +2,15 @@
 # Civics
 # Author: littleraskol
 
-#Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (+10% edict duration, +0.5 max influence from factions)
+#Elected Clergy (Dem + Spir) - Local priests are elected by congregation, doctrine varied and open to consensus interpretation. (1 Pastor per 40 pops, +0.5 max influence from factions)
 lrsk_gov_var_civic_elected_clergy = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
 
-  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects"
+  #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
 
   possible = {
     authority = {
@@ -29,12 +30,12 @@ lrsk_gov_var_civic_elected_clergy = {
   random_weight = { base = 5 }
 
   modifier = {
-    edict_length_mult = 0.1
+    job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.025
     pop_factions_produces_add = 0.5
   }
 }
 
-#Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +10% pop growth rate)
+#Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% pop growth rate)
 lrsk_gov_var_civic_ascetic_virtues = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -56,12 +57,12 @@ lrsk_gov_var_civic_ascetic_virtues = {
   random_weight = { base = 5 }
 
   modifier = {
-    leader_age = 10
+    leader_age = 15
     pop_growth_speed = 0.1
   }
 }
 
-#Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-20% leader cost, +2 leader pool)
+#Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 lrsk_gov_var_civic_republicanism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -79,18 +80,19 @@ lrsk_gov_var_civic_republicanism = {
   random_weight = { base = 5 }
 
   modifier = {
-    leaders_cost_mult = -0.2
-    country_leader_pool_size = 2
+    leaders_cost_mult = -0.3
+    job_administrator_per_pop = 0.02
   }
 }
 
-#Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -15% resettlement cost, -2.5% ship and building upkeep)
+#Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
 lrsk_gov_var_civic_utilitarian_planning = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
 
+  description = "civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_idealistic_foundation.dds"
 
   possible = {
@@ -111,8 +113,7 @@ lrsk_gov_var_civic_utilitarian_planning = {
   random_weight = { base = 5 }
 
   modifier = {
-    planet_pops_organics_food_upkeep_mult = -0.1
-    pop_resettlement_cost_mult = -0.15
+    planet_pops_organics_food_upkeep_mult = -0.05
     ships_upkeep_mult = -0.025
     planet_structures_upkeep_mult = -0.025
   }
@@ -215,13 +216,14 @@ lrsk_gov_var_civic_cult_of_personality = {
   random_weight = { base = 5 }
 }
 
-#Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown)
+#Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration time)
 lrsk_gov_var_civic_universal_sovereignty = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
 
+  description = "civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds"
 
   possible = {
@@ -330,7 +332,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
   }
 }
 
-#Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+10% research and mining station output)
+#Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 lrsk_gov_var_civic_enlightened_liberalism  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -353,8 +355,8 @@ lrsk_gov_var_civic_enlightened_liberalism  = {
   random_weight = { base = 5 }
 
   modifier = {
-    station_gatherers_produces_mult = 0.1
-    station_researchers_produces_mult = 0.1
+    station_gatherers_produces_mult = 0.2
+    station_researchers_produces_mult = 0.2
   }
 }
 
@@ -451,7 +453,7 @@ lrsk_gov_var_civic_chivalry_aristo = {
   }
 }
 
-#Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
+#Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
 lrsk_gov_var_civic_lifelong_learning = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -480,7 +482,7 @@ lrsk_gov_var_civic_lifelong_learning = {
   modifier = {
     scientist_skill_levels = 1
     governor_skill_levels = 1
-    species_leader_exp_gain = 0.15
+    species_leader_exp_gain = 0.2
   }
 }
 
@@ -669,7 +671,7 @@ lrsk_gov_var_civic_imperial_economy = {
   }
 }
 
-#Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -10% starbase influence cost)
+#Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 lrsk_gov_var_civic_colonial_fiefs = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -697,7 +699,7 @@ lrsk_gov_var_civic_colonial_fiefs = {
 
   modifier = {
     planet_colony_development_speed_mult = 0.15
-    country_starbase_influence_cost_mult = -0.1
+    country_starbase_influence_cost_mult = -0.05
   }
 }
 

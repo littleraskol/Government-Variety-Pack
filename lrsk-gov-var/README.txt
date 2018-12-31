@@ -5,31 +5,31 @@ A grab bag of new civics and government types.
 
 Normal Civics:
 
-Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (+10% edict duration, +0.5 max influence from factions)
+Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +0.5 max influence from factions)
 
-Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+10 years to leader age, +10% growth rate)
+Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
 
-Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-20% leader cost, +2 leader pool)
+Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 
-Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-10% pop food requirements, -15% resettlement cost, -2.5% ship and building upkeep)
+Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
 Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% war exhaustion)
 
-Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration cooldown (NOTE: No idea why the cooldown shows up red text in the tooltip, everywhere else in the game negative values for this modifier are beneficial))
+Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration time)
 
 Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
-Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+10% research and mining station output)
+Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
 Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% mineral and energy output)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
-Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +15% leader experience gain)
+Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
 
 Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
@@ -41,7 +41,7 @@ Public Works (Any) - A system of public employment makes labor power available f
 
 Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
 
-Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -10% starbase influence cost)
+Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
 Automated Indolence (Materialist) - This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match. (+5 stability, +10% robot output)
 
@@ -57,11 +57,11 @@ Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive M
 
 Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 40 pops)
 
-Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (-20% pop food requirements)
+Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
 Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage)
 
-Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+10% research and mining station output)
+Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
 Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output)
 
@@ -75,13 +75,13 @@ Analgesic Stoicism (Hive Mind) - The Hive Mind feels all the bodily aches and ir
 
 Domineering Expectations (Hive Mind, not Devouring Swarm) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones. (+15% subject research share, +7.5% tributary income)
 
-Unending Bloom (Hive Mind) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy. (+15% colony development speed, -10% starbase influence cost)
+Unending Bloom (Hive Mind) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy. (+15% colony development speed, -5% starbase influence cost)
 
 Benign Overmind (Hive Mind, not Devouring Swarm) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (−25% Subject Power Penalty, +20% vassal naval capacity contribution)
 
 Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap)
 
-Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+5% fire rate, +5% evasion)
+Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+10% fire rate, +10% evasion)
 
 Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus. (+10% army health, –10% growth time)
 
@@ -99,7 +99,7 @@ Combat Data (Machine Intelligence) - The Machine Intelligence was once a militar
 
 Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 max rivals, +15% trade attractiveness and trust growth)
 
-Astro-Prospecting Mainframe (Machine Intelligence) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+10% research and mining station output)
+Astro-Prospecting Mainframe (Machine Intelligence) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
 Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output)
 
@@ -113,7 +113,7 @@ Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural su
 
 Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
 
-Optimized Expansion (Machine Intelligence) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency. (+15% colony development speed, -10% starbase influence cost)
+Optimized Expansion (Machine Intelligence) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency. (+15% colony development speed, -5% starbase influence cost)
 
 2. New Governments
 
@@ -150,6 +150,23 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.6 (01-XX-19) - Balance and Weighting Audit #1
+-Elected Clergy: Changed edict duration bonus to +1 Pastor jobs per 40 pops.
+-Added new Pastor job: Specialist, like a Priest but consumes one less Consumer Goods and provides no Society Research.
+-Ascetic Virtues: Buffed to provide +15 years to leader age (was +10).
+-Republicanism: Buffed to provide -30% leader cost (was -20%).
+-Republicanism: Changed leader pool buff to +1 Administrator jobs per 50 pops.
+-Utilitarian Planning: Reduced to provide -5% pop food requirements (was -10%, which is equivalent to a tradition opener all on its own).
+-Utilitarian Planning: Removed -15% resettlement cost (Corvee System civic already does this, and it's quite strong).
+-Universal Sovereignty: Fixed tooltip (has erroneously shown the integration time reduction as a red malus forever, this is the base game doing something weird, but I have 100% verified reduces the integration time as desired (also nothing uses this in the base game anymore so will it last...??)).
+-Enlightened Liberalism, Void Affinity, and Astro-Prospecting Mainframe: Doubled both bonuses to +20% (have heard station output is weak as it stands).
+-Knight job: Overall reduction in crime suppression (some conditions improve this bonus).
+-Lifelong Learning: Buffed to provide +20% leader experience gain (was +15%, this modifier for civics using it tends to be only +10% and paired with a +1 boost to all leader skill levels rather than just some).
+-Colonial Fiefs, Unending Bloom, and Optimized Expansion: Nerfed to provide -5% starbase influence cost (was -10%, this is equivalent to a tradition right out the starting gate on top of the colonization speed boost!).
+-Reclamation Pools: Changed bonus to +10% food from jobs (food usage reduction was equivalent to a tradition opener all on its own, not as logical a bonus (the flavor implies producing more food, not using less...)).
+-Frenzy: Doubled both bonuses to +10% (to bring in line with e.g. Distinguished Admiralty).
+-Fixed missing German localizations.
 
 v1.4.5.3 (12-19-18)
 -Planetmind Creativity: Now gives -10% pop housing and amenities use. (Had the same issues as Distributed Planning Systems.)

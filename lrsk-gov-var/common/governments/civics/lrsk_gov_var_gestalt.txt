@@ -63,12 +63,12 @@ lrsk_gov_var_civic_hive_royal_caste = {
 	}
 }
 
-# Reclamation Pools (-20% pop food requirements) - All dead drones are reprocessed for the sustenance of hive's next generation.
+# Reclamation Pools (+10% job food production) - All dead drones are reprocessed for the sustenance of hive's next generation.
 lrsk_gov_var_civic_hive_reclamation_pools = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
-	modifier = { planet_pops_organics_food_upkeep_mult = -0.2 }
+	modifier = { planet_jobs_food_produces_mult = 0.1 }
 }
 
 # Boundless Spite (+2 maximum rivalvries, +20% army morale damage) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing.
@@ -82,14 +82,14 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 	}
 }
 
-# Void Affinity (+10% research and mining station output) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars.
+# Void Affinity (+20% research and mining station output) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars.
 lrsk_gov_var_civic_hive_void_affinity = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
-    station_gatherers_produces_mult = 0.1
-    station_researchers_produces_mult = 0.1
+    station_gatherers_produces_mult = 0.2
+    station_researchers_produces_mult = 0.2
 	}
 }
 
@@ -158,14 +158,14 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 	}
 }
 
-# Unending Bloom (+15% colony development speed, -10% starbase influence cost) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy.
+# Unending Bloom (+15% colony development speed, -5% starbase influence cost) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy.
 lrsk_gov_var_civic_hive_unending_bloom = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
     planet_colony_development_speed_mult = 0.15
-    country_starbase_influence_cost_mult = -0.1
+    country_starbase_influence_cost_mult = -0.05
 	}
 }
 
@@ -194,14 +194,14 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 	}
 }
 
-# Frenzy (+5% fire rate, +5% evasion) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity.
+# Frenzy (+10% fire rate, +10% evasion) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity.
 lrsk_gov_var_civic_hive_frenzy = {
 	potential = { authority = { value = auth_hive_mind } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
-		ship_fire_rate_mult = 0.05
-    ship_evasion_mult = 0.05
+		ship_fire_rate_mult = 0.1
+    ship_evasion_mult = 0.1
 	}
 }
 
@@ -288,14 +288,14 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 	}
 }
 
-# Astro-Prospecting Mainframe (+10% research and mining station output) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them.
+# Astro-Prospecting Mainframe (+20% research and mining station output) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them.
 lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 	potential = { authority = { value = auth_machine_intelligence } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
 	modifier = {
-    station_gatherers_produces_mult = 0.1
-    station_researchers_produces_mult = 0.1
+    station_gatherers_produces_mult = 0.2
+    station_researchers_produces_mult = 0.2
 	}
 }
 
@@ -368,13 +368,13 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 	}
 }
 
-# Optimized Expansion (+15% colony development speed, -10% starbase influence cost) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency.
+# Optimized Expansion (+15% colony development speed, -5% starbase influence cost) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency.
 lrsk_gov_var_civic_machine_optimized_expansion = {
 	potential = { authority = { value = auth_machine_intelligence } }
   #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
 	modifier = {
     planet_colony_development_speed_mult = 0.15
-    country_starbase_influence_cost_mult = -0.1
+    country_starbase_influence_cost_mult = -0.05
 	}
 }

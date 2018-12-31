@@ -2,6 +2,10 @@
 # Jobs
 # Author: littleraskol
 
+## Custom Weights
+
+# Assumes @specialist_job_weight = 10
+@lrsk_pastor_job_weight = 11
 
 ## Worker Jobs
 
@@ -159,7 +163,7 @@ lrsk_gov_var_job_knight = {
 	}
 
 	planet_modifier = {
-		planet_crime_add = -15
+		planet_crime_add = -5
 		planet_stability_add = 2
 	}
 
@@ -171,6 +175,7 @@ lrsk_gov_var_job_knight = {
 		}
 		modifier = {
 			planet_stability_add = 3
+			planet_crime_add = -5
 		}
 	}
 
@@ -179,7 +184,7 @@ lrsk_gov_var_job_knight = {
 			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
 		}
 		modifier = {
-			planet_crime_add = -2
+			planet_crime_add = -5
 		}
 	}
 
@@ -245,5 +250,102 @@ lrsk_gov_var_job_knight = {
 	}
 }
 
+# Pastor
+lrsk_gov_var_job_pastor = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_temple
+	clothes_texture_index = 3
+
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+
+	resources = {
+		category = planet_priests
+		produces = {
+			unity = 3
+		}
+		upkeep = {
+			consumer_goods = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
+	}
+
+	weight = {
+		weight = @lrsk_pastor_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_spiritualist
+		}
+		modifier = {
+			factor = 1.2
+			has_ethic = ethic_egalitarian
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_quarrelsome
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 0.1
+			has_ethic = ethic_materialist
+			NOT = { has_job = lrsk_gov_var_job_pastor }
+		}
+		modifier = {
+			factor = 1.5
+			has_job = lrsk_gov_var_job_pastor
+		}
+	}
+}
 
 ## Ruler Jobs
