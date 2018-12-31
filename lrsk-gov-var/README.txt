@@ -15,7 +15,7 @@ Utilitarian Planning (Not Spiritualist) - The government is concerned with doing
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
-Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence gain, -10% war exhaustion)
+Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+20% influence gain)
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration time)
 
@@ -151,9 +151,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.4.6 (01-XX-19) - Balance and Weighting Audit #1
+v1.4.6 (12-31-18) - Balance Audit
 -Elected Clergy: Changed edict duration bonus to +1 Pastor jobs per 40 pops.
--Added new Pastor job: Specialist, like a Priest but consumes one less Consumer Goods and provides no Society Research.
+-Added new Pastor job: Specialist, like a Priest but consumes one less Consumer Goods and provides no Society Research. (Only provided by Elected Clergy civic effect.)
 -Ascetic Virtues: Buffed to provide +15 years to leader age (was +10).
 -Republicanism: Buffed to provide -30% leader cost (was -20%).
 -Republicanism: Changed leader pool buff to +1 Administrator jobs per 50 pops.
@@ -166,6 +166,9 @@ v1.4.6 (01-XX-19) - Balance and Weighting Audit #1
 -Colonial Fiefs, Unending Bloom, and Optimized Expansion: Nerfed to provide -5% starbase influence cost (was -10%, this is equivalent to a tradition right out the starting gate on top of the colonization speed boost!).
 -Reclamation Pools: Changed bonus to +10% food from jobs (food usage reduction was equivalent to a tradition opener all on its own, not as logical a bonus (the flavor implies producing more food, not using less...)).
 -Frenzy: Doubled both bonuses to +10% (to bring in line with e.g. Distinguished Admiralty).
+-Cult of Personality: Removed war exhaustion reduction (this is a common modifier used in other government components).
+-Cult of Personality: Buffed to provide +20% influence gain (was +10%).
+-Workers' Councils: Rebalance of political power such that, assuming Decent Conditions living standards, Worker political power increased by 50% and Specialist political power increased by 12.5%. (This will start the two strata with 22.5 and 15.75 political power, respectively.)
 -Fixed missing German localizations.
 
 v1.4.5.3 (12-19-18)
