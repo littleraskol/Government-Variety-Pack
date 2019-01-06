@@ -151,6 +151,13 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.6.2 (01-05-19)
+-Fixed an issue with diplomatic phrases (some clauses now not in use?).
+
+v1.4.6.1 (01-01-19)
+-Added simplified Chinese localization.
+-Fixed incorrect job provision (Elected Clergy are no longer fanatical hedge preachers...)
+
 v1.4.6 (12-31-18) - Balance Audit
 -Elected Clergy: Changed edict duration bonus to +1 Pastor jobs per 40 pops.
 -Added new Pastor job: Specialist, like a Priest but consumes one less Consumer Goods and provides no Society Research. (Only provided by Elected Clergy civic effect.)
