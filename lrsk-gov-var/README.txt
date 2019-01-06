@@ -153,6 +153,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v1.4.6.2 (01-05-19)
 -Fixed an issue with diplomatic phrases (some clauses now not in use?).
+-Fixed misc issues.
 
 v1.4.6.1 (01-01-19)
 -Added simplified Chinese localization.
