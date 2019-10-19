@@ -1,0 +1,18 @@
+# Government Variety Pack
+# Events - Backend
+# Author: littleraskol
+
+# These events serve some general utility function.
+
+namespace = lrsk_government_variety_pack_backend
+
+# Adds a flag denoting this mod is in use.
+country_event = {
+	id = lrsk_government_variety_pack_backend.1
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = { NOT = { has_global_flag = lrsk_government_variety_pack_mod_active } } 
+	
+	immediate = { set_global_flag = lrsk_government_variety_pack_mod_active }
+}

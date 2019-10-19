@@ -77,13 +77,13 @@ Domineering Expectations (Hive Mind, not Devouring Swarm) - The Hive Mind sees n
 
 Unending Bloom (Hive Mind) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy. (+15% colony development speed, -5% starbase influence cost)
 
-Benign Overmind (Hive Mind, not Devouring Swarm) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (−25% Subject Power Penalty, +20% vassal naval capacity contribution)
+Benign Overmind (Hive Mind, not Devouring Swarm) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (-25% Subject Power Penalty, +20% vassal naval capacity contribution)
 
 Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap)
 
 Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+10% fire rate, +10% evasion)
 
-Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus. (+10% army health, –10% growth time)
+Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus. (+10% army health, -10% growth time)
 
 Machine Intelligence Civics:
 
@@ -150,6 +150,9 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.4.6.3 (10-19-19)
+-Added global mod flag.
 
 v1.4.6.2 (01-05-19)
 -Fixed an issue with diplomatic phrases (some clauses now not in use?).
