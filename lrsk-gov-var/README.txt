@@ -153,6 +153,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v1.4.6.3 (10-19-19)
 -Added global mod flag.
+-Fixed some descriptions.
 
 v1.4.6.2 (01-05-19)
 -Fixed an issue with diplomatic phrases (some clauses now not in use?).
