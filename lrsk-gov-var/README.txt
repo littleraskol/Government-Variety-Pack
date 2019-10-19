@@ -15,7 +15,7 @@ Utilitarian Planning (Not Spiritualist) - The government is concerned with doing
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
-Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+20% influence gain)
+Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration time)
 
@@ -25,7 +25,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% mineral and energy output)
+Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% tile mineral and energy output)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -99,7 +99,7 @@ Combat Data (Machine Intelligence) - The Machine Intelligence was once a militar
 
 Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 max rivals, +15% trade attractiveness and trust growth)
 
-Astro-Prospecting Mainframe (Machine Intelligence) - The creators of Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
+Astro-Prospecting Mainframe (Machine Intelligence) - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
 Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output)
 
