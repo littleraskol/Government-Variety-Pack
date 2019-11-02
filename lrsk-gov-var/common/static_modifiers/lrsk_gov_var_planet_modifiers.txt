@@ -6,10 +6,11 @@
 
 #All add some spiritualist pull so that the main ethos effect doesn't end up wiping out religion on the planet...
 #All should show up when an event fires with a 15% prob, except the last two, which are 5% each.
+
 #Divine Right Cult: Moved by a vision from the beyond of social chaos and terror, a wild prophet has begun preaching the need for faith in our 'heaven-appointed leaders.'
 lrsk_gov_var_statmod_divine_right_cult = {
-  pop_ethic_authoritarian_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_authoritarian_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   pop_cat_ruler_political_power = 0.15
   #planet_jobs_ruler_produces_mult = 0.15
   planet_stability_add = 10
@@ -21,8 +22,8 @@ lrsk_gov_var_statmod_divine_right_cult = {
 
 #Children of Heaven Cult: Moved by a vision from the beyond of all our people in harmony as children of the loving divine, a wild prophet has begun preaching that all are equally in need of holy guidance.
 lrsk_gov_var_statmod_children_of_heaven_cult = {
-  pop_ethic_egalitarian_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_egalitarian_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   pop_cat_worker_political_power = 0.1
   planet_jobs_worker_produces_mult = 0.15
   pop_cat_specialist_political_power = 0.1
@@ -35,8 +36,8 @@ lrsk_gov_var_statmod_children_of_heaven_cult = {
 
 #Holy War Cult: Moved by a vision from the beyond of the reward for falling in glorious battle against enemies of the faith, a wild prophet has begun preaching to recruit holy warriors to bring battle to the heathen.
 lrsk_gov_var_statmod_holy_war_cult = {
-  pop_ethic_militarist_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_militarist_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   country_war_exhaustion_mult = -0.05
   army_starting_experience_add = 40
   planet_army_build_speed_mult = 0.5
@@ -48,8 +49,8 @@ lrsk_gov_var_statmod_holy_war_cult = {
 
 #Harmony Cult: Moved by a vision from the beyond of a society of perfect tranquility and bounty, a wild prophet has begun preaching love and nonviolence.
 lrsk_gov_var_statmod_harmony_cult = {
-  pop_ethic_pacifist_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_pacifist_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   country_war_exhaustion_mult = 0.05
   country_admin_cap_add = 2
   planet_jobs_produces_mult = 0.1
@@ -61,8 +62,8 @@ lrsk_gov_var_statmod_harmony_cult = {
 
 #Chosen Few Cult: Moved by a vision from the beyond of the great destiny of our people, a wild prophet has begun preaching the nobility of our traditional culture and the special mission of our people as the chosen of heaven.
 lrsk_gov_var_statmod_chosen_few_cult = {
-  pop_ethic_xenophobe_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_xenophobe_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   pop_citizen_happiness = 0.1
   pop_growth_speed = 0.15
   job_lrsk_gov_var_job_hedge_preacher_add = 2
@@ -73,8 +74,8 @@ lrsk_gov_var_statmod_chosen_few_cult = {
 
 #Universal Family Cult: Moved by a vision from the beyond of the multitude of thinking and feeling beings which can appreciate the divine, a wild prophet has begun preaching a mission of outreach, to embrace alien beings as our spirtial kin.
 lrsk_gov_var_statmod_universal_family_cult = {
-  pop_ethic_xenophile_attraction_mult = 0.2
-  pop_ethic_spiritualist_attraction_mult = 0.1
+  pop_ethic_xenophile_attraction_mult = 0.3
+  pop_ethic_spiritualist_attraction_mult = 0.15
   planet_immigration_pull_mult = 0.2
   pop_growth_from_immigration = 0.1
   job_lrsk_gov_var_job_hedge_preacher_add = 2
@@ -83,11 +84,31 @@ lrsk_gov_var_statmod_universal_family_cult = {
 	icon_frame = 2
 }
 
+#Wild Revelry Cult: Moved by a vision from the beyond of the spiritual wisdom to be found at the ends of excess, a wild prophet has begun preaching about enlightenment through pleasure and through pushing the limits of carnal experience.
+lrsk_gov_var_statmod_wild_revelry_cult = {
+  pop_ethics_shift_speed_mult = 0.5
+  pop_happiness = +0.2
+  planet_crime_mult = 0.4
+  job_lrsk_gov_var_job_hedge_preacher_add = 2
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 2
+}
+
+#Penance and Redemption Cult: Moved by a vision from the beyond of the ugliness of the mortal soul and the psychic wounds in reality left by the many sins all have committed, a wild prophet has begun preaching about the need for universal repentence and redemption through suffering.
+lrsk_gov_var_statmod_penance_and_redemption_cult = {
+  pop_ethics_shift_speed_mult = -0.5
+  planet_crime_mult = -0.4
+  pop_happiness = -0.2
+  job_lrsk_gov_var_job_hedge_preacher_add = 2
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 2
+}
+
 #Doomsday Cult: Moved by a vision from the beyond of an inevitable calamity, a wild prophet has begun preaching about the irredeemable depravity of our society and its foreordained downfall.
 lrsk_gov_var_statmod_doomsday_cult = {
-  pop_ethics_shift_speed_mult = 0.5
   pop_government_ethic_attraction = -0.5
-  pop_ethic_spiritualist_attraction_mult = 0.1
   pop_happiness = -0.2
   job_lrsk_gov_var_job_hedge_preacher_add = 2
 
@@ -95,14 +116,14 @@ lrsk_gov_var_statmod_doomsday_cult = {
 	icon_frame = 3
 }
 
-#Golden Age Cult: Moved by a vision from the beyond of hope and beauty in the little things of life and the holiness of an ordinary life, a wild prophet has begun preaching a lifestyle of quiet contemplation and simple pleasures.
+#Blessed Life Cult: Moved by a vision from the beyond of hope and beauty in the little things of life and the holiness of an ordinary life, a wild prophet has begun preaching a lifestyle of quiet contemplation and simple pleasures.
 lrsk_gov_var_statmod_golden_age_cult = {
-  pop_ethics_shift_speed_mult = -0.5
   pop_government_ethic_attraction = 0.5
-  pop_ethic_spiritualist_attraction_mult = 0.1
   pop_happiness = 0.2
   job_lrsk_gov_var_job_hedge_preacher_add = 2
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
 	icon_frame = 1
 }
+
+
