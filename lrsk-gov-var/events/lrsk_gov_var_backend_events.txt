@@ -7,12 +7,58 @@
 namespace = lrsk_government_variety_pack_backend
 
 # Adds a flag denoting this mod is in use.
-country_event = {
+event = {
 	id = lrsk_government_variety_pack_backend.1
 	hide_window = yes
-	fire_only_once = yes
+	is_triggered_only = yes
 	
-	trigger = { NOT = { has_global_flag = lrsk_government_variety_pack_mod_active } } 
+	#trigger = { NOT = { has_global_flag = lrsk_government_variety_pack_mod_active } } 
 	
-	immediate = { set_global_flag = lrsk_government_variety_pack_mod_active }
+	immediate = {
+		set_global_flag = lrsk_government_variety_pack_mod_active
+		#event = {
+		#	id = lrsk_government_variety_pack_backend.2
+		#	days = 10
+		#}
+	}
 }
+#
+## Checks if CVP is running.
+#event = {
+#	id = lrsk_government_variety_pack_backend.2
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = { 
+#		if = { 
+#			limit = { has_global_flag = lrsk_civics_variety_pack_mod_active }
+#			event = { id = lrsk_government_variety_pack_backend.3 }
+#		}
+#	}
+#}
+#
+## Warns that CVP is running.
+#event = {
+#	id = lrsk_government_variety_pack_backend.3
+#	title = lrsk_government_variety_pack_backend.3.name
+#	desc = lrsk_government_variety_pack_backend.3.desc
+#	picture = GFX_evt_exploding_planet
+#	show_sound = event_bad_omen
+#	#hide_window = yes
+#	is_triggered_only = yes
+#	
+#	option = { name = OK }
+#}
+#
+## Diagnostic to confirm that the event ran
+#event = {
+#	id = lrsk_government_variety_pack_backend.3
+#	title = lrsk_government_variety_pack_backend.3.name
+#	desc = lrsk_government_variety_pack_backend.3.desc
+#	picture = GFX_evt_exploding_planet
+#	show_sound = event_bad_omen
+#	#hide_window = yes
+#	is_triggered_only = yes
+#	
+#	option = { name = OK }
+#}
