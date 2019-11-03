@@ -1,0 +1,325 @@
+# Government Variety Pack
+# Events - Distributed Planning Systems
+# Author: littleraskol
+
+namespace = lrsk_gov_var_distributed_planning_systems
+
+#Gate Event from Decision
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.1
+	#title = lrsk_gov_var_distributed_planning_systems.1.name
+	#desc = lrsk_gov_var_distributed_planning_systems.1.desc
+
+  hide_window = yes
+
+	trigger = { owner = {	has_valid_civic = lrsk_gov_var_civic_machine_distributed_planning_systems } }
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_timed_planet_flag = {
+			flag = lrsk_gov_var_rra_happened
+			years = 11			
+		}
+		planet_event = {
+			id = lrsk_gov_var_distributed_planning_systems.2
+			days = 360			
+		}
+	}
+}
+
+#Selects the modifier
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.2
+	#title = lrsk_gov_var_distributed_planning_systems.2.name
+	#desc = lrsk_gov_var_distributed_planning_systems.2.desc
+
+  hide_window = yes
+  is_triggered_only = yes
+
+	immediate = {
+    random_list = {
+      5 = {
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.3 }	#Ongoing Audit (bad result)
+      }
+      5 = {
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.4 } #Confused Audit (worst result)
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_holy_war_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.5 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_harmony_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.6 }
+      }
+      10 = {
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.7 }	#Just doubling down on basic benefits, a default
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.8 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.9 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 }	#Food focus (servitor only)
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.11 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.12 }	#Consumer goods focus (servitor only)
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.13 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.14 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.15 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_doomsday_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.16 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_golden_age_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.17 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_golden_age_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.18 }
+      }
+      5 = {
+        modifier = {
+          factor = 0
+					has_modifier = lrsk_gov_var_statmod_golden_age_cult
+				}
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.19 }
+      }
+      10 = {
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.20 }	#Inconclusive/refund cost (a default)
+      }
+    }
+	}
+
+	#option = {
+	#	name = OK
+	#}
+}
+
+#Ongoing Audit
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.3
+	title = lrsk_gov_var_distributed_planning_systems.3.name
+	desc = lrsk_gov_var_distributed_planning_systems.3.desc
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_radio_chatter
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = DISCONCERTING
+    add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_audit_continues"
+      days = 7200
+    }
+	}
+}
+
+#Confused Audit
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.4
+	title = lrsk_gov_var_distributed_planning_systems.4.name
+	desc = lrsk_gov_var_distributed_planning_systems.4.desc
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_radio_chatter
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = DISCONCERTING
+	    add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_audit_confused"
+      days = 7200
+    }
+	}
+}
+
+#Favor complex drone output
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.5
+	title = lrsk_gov_var_distributed_planning_systems.5.name
+	desc = lrsk_gov_var_distributed_planning_systems.5.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_spec_priority"
+      days = 7200
+    }
+	}
+}
+
+#Favor simple drone output
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.6
+	title = lrsk_gov_var_distributed_planning_systems.6.name
+	desc = lrsk_gov_var_distributed_planning_systems.6.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_basic_priority"
+      days = 7200
+    }
+	}
+}
+
+#Logistics
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.7
+	title = lrsk_gov_var_distributed_planning_systems.7.name
+	desc = lrsk_gov_var_distributed_planning_systems.7.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_logistic_priority"
+      days = 7200
+    }
+	}
+}
+
+#Mining focus
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.8
+	title = lrsk_gov_var_distributed_planning_systems.8.name
+	desc = lrsk_gov_var_distributed_planning_systems.8.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_mining_priority"
+      days = 7200
+    }
+	}
+}
+
+#Energy focus
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.9
+	title = lrsk_gov_var_distributed_planning_systems.9.name
+	desc = lrsk_gov_var_distributed_planning_systems.9.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_energy_priority"
+      days = 7200
+    }
+	}
+}
+
+#Food focus (servitor only)
+planet_event = {
+	id = lrsk_gov_var_distributed_planning_systems.10
+	title = lrsk_gov_var_distributed_planning_systems.10.name
+	desc = lrsk_gov_var_distributed_planning_systems.10.desc
+	picture = GFX_evt_galactic_market
+	show_sound = event_administrative_work
+
+  is_triggered_only = yes
+	location = this
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+      modifier = "lrsk_gov_var_statmod_planet_food_priority"
+      days = 7200
+    }
+	}
+}
+
+#robot_assembly_plant
+#sapient_AI
+#engineering_research
+#machine_sapience
+#galactic_market
+#modification

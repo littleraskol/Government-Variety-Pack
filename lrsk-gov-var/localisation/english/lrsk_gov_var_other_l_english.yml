@@ -44,6 +44,21 @@ l_english:
  mod_job_lrsk_gov_var_job_hedge_preacher_add:0 "$job_lrsk_gov_var_job_hedge_preacher$ Jobs"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_hedge_preacher_add£ per $VALUE$ £pop£"
+ 
+ # Regional Coordinator
+ job_lrsk_gov_var_job_regional_coordinator:0 "Regional Coordinator"
+ job_lrsk_gov_var_job_regional_coordinator_plural:0 "$job_lrsk_gov_var_job_regional_coordinator$s"
+ job_lrsk_gov_var_job_regional_coordinator_desc:0 "Regional administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
+ job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ produce §G+6§! £unity£ §Y$unity$§! and §G+5§! £mod_planet_amenities_no_happiness_add£ §Y$PLANET_AMENITIES_TITLE$§!. However, they decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R5§! £energy£ §H$energy$§!."
+ mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
+ mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
+
+ ## Decisions
+
+ # Run Recursive Audit
+ decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
+ decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations. This will add a number of £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!.\n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$\n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded."
 
  ## Static Modifiers
 
@@ -75,6 +90,77 @@ l_english:
 
  lrsk_gov_var_statmod_golden_age_cult:0 "Blessed Life Cult"
  lrsk_gov_var_statmod_golden_age_cult_desc:0 "$LRSK_DESC_MOVED_BY$ hope and beauty in the little things and the holiness of an ordinary life, $LRSK_DESC_A_WILD_PROPH$ a lifestyle of quiet contemplation and simple pleasures."
+
+ ## Distributed Planning Systems Audits
+
+ lrsk_gov_var_statmod_planet_audit:0 "Recursive Functionality Audit"
+ lrsk_gov_var_statmod_planet_audit_desc:0 "The regional administrative subroutines have temporarily been given semi-sapience rights and a sweeping mandate to audit and reprogram planetary logistics systems."
+
+ #lrsk_gov_var_statmod_planet_audit_1:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_1_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+ #lrsk_gov_var_statmod_planet_audit_2:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_2_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+ #lrsk_gov_var_statmod_planet_audit_3:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_3_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+ #lrsk_gov_var_statmod_planet_audit_4:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_4_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+ #lrsk_gov_var_statmod_planet_audit_5:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_5_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+ #lrsk_gov_var_statmod_planet_audit_6:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
+ #lrsk_gov_var_statmod_planet_audit_6_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
+
+ lrsk_gov_var_statmod_planet_audit_continues:0 "Ongoing Audit"
+ lrsk_gov_var_statmod_planet_audit_continues_desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make. Indeed, some of them seem soft-locked into repeatedly examining and tweaking the functions of the planet's systems. Perhaps this audit may continue indefinitely."
+
+ lrsk_gov_var_statmod_planet_audit_confused:0 "Confused Audit"
+ lrsk_gov_var_statmod_planet_audit_confused_desc:0 "Something is very wrong. The changes implemented by the regional administrative subroutines make little sense and operational integrity is horribly low. Perhaps running this audit was a miscalculation, but it is not clear how else to correct this situation."
+
+ PRIORITY_STRING:0 "Priority:"
+
+ lrsk_gov_var_statmod_planet_spec_priority:0 "$PRIORITY_STRING$ Specialized Production"
+ lrsk_gov_var_statmod_planet_spec_priority_desc:0 "Enhanced algorithms have been implemented for streamlining the production of specialized goods by complex drones."
+
+ lrsk_gov_var_statmod_planet_basic_priority:0 "$PRIORITY_STRING$ Basic Resources"
+ lrsk_gov_var_statmod_planet_basic_priority_desc:0 "Enhanced algorithms have been implemented for streamlining the extraction of resources by simple drones."
+
+ lrsk_gov_var_statmod_planet_logistic_priority:0 "$PRIORITY_STRING$ Logistics"
+ lrsk_gov_var_statmod_planet_logistic_priority_desc:0 "The regional administrative subroutines focused on further improving their own logicistics optimizations."
+
+ lrsk_gov_var_statmod_planet_mining_priority:0 "$PRIORITY_STRING$ Mining"
+ lrsk_gov_var_statmod_planet_mining_priority_desc:0 "All planetary mines and related infratructure receive priority in allocations and queues."
+
+ lrsk_gov_var_statmod_planet_energy_priority:0 "$PRIORITY_STRING$ Energy"
+ lrsk_gov_var_statmod_planet_energy_priority_desc:0 "All planetary generators and related infratructure receive priority in allocations and queues."
+
+ lrsk_gov_var_statmod_planet_food_priority:0 "$PRIORITY_STRING$ Food"
+ lrsk_gov_var_statmod_planet_food_priority_desc:0 "All planetary farms and related infratructure receive priority in allocations and queues."
+
+ lrsk_gov_var_statmod_planet_smelting_priority:0 "$PRIORITY_STRING$ Alloys"
+ lrsk_gov_var_statmod_planet_smelting_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of military needs."
+
+ lrsk_gov_var_statmod_planet_industrial_priority:0 "$PRIORITY_STRING$ Consumer Goods"
+ lrsk_gov_var_statmod_planet_industrial_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of civilian needs."
+
+ lrsk_gov_var_statmod_planet_rarities_priority:0 "$PRIORITY_STRING$ Rarities"
+ lrsk_gov_var_statmod_planet_rarities_priority_desc:0 "Spare processing power is diverted to smart scheduling the refining of precious resources."
+
+ lrsk_gov_var_statmod_planet_research_priority:0 "$PRIORITY_STRING$ Research"
+ lrsk_gov_var_statmod_planet_research_priority_desc:0 "Research and investigation clusters are overclocked and given extra priority on timing queues."
+
+ lrsk_gov_var_statmod_planet_military_priority:0 "$PRIORITY_STRING$ Defense"
+ lrsk_gov_var_statmod_planet_military_priority_desc:0 "Defensive systems and production standards for warforms are enhanced."
+ 
+ lrsk_gov_var_statmod_planet_growth_priority:0 "$PRIORITY_STRING$ Growth"
+ lrsk_gov_var_statmod_planet_growth_priority_desc:0 "Bolstering the ranks of the planet's drones is given top priority and replicators have all the time and resources they need."
+
+ lrsk_gov_var_statmod_planet_stability_priority:0 "$PRIORITY_STRING$ Stability"
+ lrsk_gov_var_statmod_planet_stability_priority_desc:0 "The new algorithms emphasize data security and reducing programatic corruption."
+ 
+ lrsk_gov_var_statmod_planet_unity_priority:0 "$PRIORITY_STRING$ Coherence"
+ lrsk_gov_var_statmod_planet_unity_priority_desc:0 "Maintaining clear and clean channels of communication is prioritized, givng network hubs and related infrastucture extra resources."
+
+ lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
+ lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
 
  ## Events
 
@@ -116,3 +202,22 @@ l_english:
 
  lrsk_gov_var_direct_revelation.10.name:0 "$lrsk_gov_var_direct_revelation_generic_title$"
  lrsk_gov_var_direct_revelation.10.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_golden_age_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"
+
+ # Distributed Planning Systems
+ 
+ lrsk_gov_var_distributed_planning_systems.3.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.3.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.4.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.4.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.5.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.5.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.6.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.6.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.7.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.7.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.8.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.8.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.9.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.9.desc:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.10.name:0 "REPLACE_ME"
+ lrsk_gov_var_distributed_planning_systems.10.desc:0 "REPLACE_ME"
