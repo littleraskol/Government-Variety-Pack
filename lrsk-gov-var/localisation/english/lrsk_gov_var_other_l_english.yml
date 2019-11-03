@@ -16,6 +16,21 @@ l_english:
  lrsk_gov_var_bldg_hall_of_valor:0 "Hall of Valor"
  lrsk_gov_var_bldg_hall_of_valor_desc:2 "Imposing and noble in its design, this hall admits only the bravest and mightiest heroes of the planet."
 
+ # Planetmind Line
+ LRSK_DESC_PLANETMIND_NAME:0 "Planetary Synaptic"
+ LRSK_DESC_PLANETMIND_DESC:0 "synaptic resonance cords serves as the seat of the local planetmind's semi-autonomous consciousness. While it unleashes great creativity, it also causes some minor local distortions from the hive mind's will, but this is usually well worth the increased overall focus it frees up."
+
+ lrsk_gov_var_bldg_planet_synaptic_node:0 "$LRSK_DESC_PLANETMIND_NAME$ Node"
+ lrsk_gov_var_bldg_planet_synaptic_node_desc:2 "This knot of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_cluster:0 "$LRSK_DESC_PLANETMIND_NAME$ Cluster"
+ lrsk_gov_var_bldg_planet_synaptic_cluster_desc:2 "This tangle of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_confluence:0 "$LRSK_DESC_PLANETMIND_NAME$ Confluence"
+ lrsk_gov_var_bldg_planet_synaptic_confluence_desc:2 "This massive tangle of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_core:0 "$LRSK_DESC_PLANETMIND_NAME$ Core"
+ lrsk_gov_var_bldg_planet_synaptic_core_desc:2 "This great tangled whorl of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_nexus:0 "$LRSK_DESC_PLANETMIND_NAME$ Nexus"
+ lrsk_gov_var_bldg_planet_synaptic_nexus_desc:2 "This enormous thicket of tangled $LRSK_DESC_PLANETMIND_DESC$"
+
  ##Jobs
 
  #Knight
@@ -44,6 +59,15 @@ l_english:
  mod_job_lrsk_gov_var_job_hedge_preacher_add:0 "$job_lrsk_gov_var_job_hedge_preacher$ Jobs"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_hedge_preacher_add£ per $VALUE$ £pop£"
+
+ # Planetmind Overseer
+ job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
+ job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
+ job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
+ job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.2§! £influence£ §Y$INFLUENCE$§! and increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! by §G+2§!. However, they produce §R+10§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R3§! £food£ §H$food$§! and £energy£ §H$energy$§!"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
 
  ## Static Modifiers
 

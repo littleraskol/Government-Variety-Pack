@@ -141,3 +141,310 @@ lrsk_gov_var_bldg_hall_of_valor = {
 		}
 	}
 }
+
+## Government Buildings
+
+# Planetary Synaptic Stuff
+@lrsk_gov_var_planet_synaptic_crime_1 = 0.1
+@lrsk_gov_var_planet_synaptic_crime_2 = 0.2
+@lrsk_gov_var_planet_synaptic_crime_3 = 0.3
+@lrsk_gov_var_planet_synaptic_crime_4 = 0.4
+@lrsk_gov_var_planet_synaptic_crime_5 = 0.5
+
+@lrsk_gov_var_planet_synaptic_unity_1 = 0.1
+@lrsk_gov_var_planet_synaptic_unity_2 = 0.2
+@lrsk_gov_var_planet_synaptic_unity_3 = 0.3
+@lrsk_gov_var_planet_synaptic_unity_4 = 0.4
+@lrsk_gov_var_planet_synaptic_unity_5 = 0.5
+
+@lrsk_gov_var_planet_synaptic_popsreq_1 = 10
+@lrsk_gov_var_planet_synaptic_popsreq_2 = 20
+@lrsk_gov_var_planet_synaptic_popsreq_3 = 30
+@lrsk_gov_var_planet_synaptic_popsreq_4 = 40
+@lrsk_gov_var_planet_synaptic_popsreq_5 = 50
+
+# Planetary Synaptic Node
+lrsk_gov_var_bldg_planet_synaptic_node = {
+	base_buildtime = 360
+	base_cap_amount = 1
+
+	category = government
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_1
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_cluster
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 1
+		job_synapse_drone_add = 1
+		job_maintenance_drone_add = 1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
+	}
+
+	triggered_desc = {
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Cluster
+lrsk_gov_var_bldg_planet_synaptic_cluster = {
+	base_buildtime = 450
+
+	category = government
+	can_build = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_2
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_confluence
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_2
+		job_lrsk_gov_var_job_planetmind_overseer_add = 2
+		job_synapse_drone_add = 1
+		job_maintenance_drone_add = 1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
+	}
+
+	triggered_desc = {
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Confluence
+lrsk_gov_var_bldg_planet_synaptic_confluence = {
+	base_buildtime = 540
+
+	category = government
+	can_build = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_3
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_core
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_3
+		job_lrsk_gov_var_job_planetmind_overseer_add = 3
+		job_synapse_drone_add = 1
+		job_maintenance_drone_add = 1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
+	}
+
+	triggered_desc = {
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Core
+lrsk_gov_var_bldg_planet_synaptic_core = {
+	base_buildtime = 630
+
+	category = government
+	can_build = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_4
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_nexus
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_4
+		job_lrsk_gov_var_job_planetmind_overseer_add = 4
+		job_synapse_drone_add = 1
+		job_maintenance_drone_add = 1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
+	}
+
+	triggered_desc = {
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 700
+		}
+		upkeep = {
+			energy = 6
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Nexus
+lrsk_gov_var_bldg_planet_synaptic_nexus = {
+	base_buildtime = 800
+
+	category = government
+	can_build = no
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_5
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_5
+		job_lrsk_gov_var_job_planetmind_overseer_add = 5
+		job_synapse_drone_add = 1
+		job_maintenance_drone_add = 1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
+	}
+
+	triggered_desc = {
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+		}
+		upkeep = {
+			energy = 7
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
