@@ -151,6 +151,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.7 (11-X-19)
+-Better job descriptions.
+-Cleaned up building definitions.
+-Changed compat version to 2.5.*
+
 v1.4.6.3 (10-19-19)
 -Added global mod flag.
 -Fixed some descriptions.
