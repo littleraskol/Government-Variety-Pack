@@ -5,174 +5,264 @@
 namespace = lrsk_gov_var_direct_revelation
 
 #Gate Event
-country_event = {
+planet_event = {
 	id = lrsk_gov_var_direct_revelation.1
 	title = lrsk_gov_var_direct_revelation.1.name
 	desc = lrsk_gov_var_direct_revelation.1.desc
 
   	hide_window = yes
 
-	#Can only happen in an empire with DR where there's at least one planet in the empire where there are at least 3 pops, at least one is Spiritualist, and the planet lacks at least one wild cult, and in the empire a wild cult has formed recently.
-	trigger = {
-		has_valid_civic = lrsk_gov_var_civic_direct_revelation
-    	any_owned_planet = {
-			num_pops > 2
-			any_pop = { has_ethic = "ethic_spiritualist" }
-			OR = {
-				NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
-				NOT = { has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
-			}
+	#Can only happen on planets which lack at least one wild cult and where there are at least 3 pops (at least one of is Spiritualist) and which are in an empire with DR where a wild cult hasn't formed recently.
+	trigger = {		
+		num_pops > 2
+		any_pop = { has_ethic = "ethic_spiritualist" }
+		OR = {
+			NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
+			NOT = { has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
 		}
-		NOT = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently }
+		owner = {
+			has_valid_civic = lrsk_gov_var_civic_direct_revelation
+			NOT = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently }
+		}
 	}
 
 	mean_time_to_happen = { months = 24 }
-	#mean_time_to_happen = { days = 7 }
+	#mean_time_to_happen = { months = 1 }
 
 	immediate = {
-
-		#While the MTTH is 2 years, 80% of the time nothing will happen. So it's more like once every 5 years on average. However, bigger empires have the event be more likely to fire, reflecting more population centers and thus more opportunities.
+		owner = {
+			#This flag keeps multiple cults from randomly springing up on top of each other and provides a "grace period" to the player's attention span of 2 years.
+			set_timed_country_flag = {
+				flag = lrsk_gov_var_wild_cult_formed_recently
+				days = 1080
+				#days = 7
+			}
+		}
+		#There's a base 50% chance of nothing happening. Each cult otherwise has an equal chance to form so long as it doesn't already exist. Each existing cult increases the chance of nothing happening.
   		random_list = {
-  			80 = {  }
-  			20 = {
-        		modifier = {
-    				factor = 1.5
-        			num_owned_planets > 1
-        			num_owned_planets < 4
-        		}
-        		modifier = {
-        			factor = 2
-        			num_owned_planets > 3
-        			num_owned_planets < 7
-        		}
-        		modifier = {
-        			factor = 3
-        			num_owned_planets > 6
-        			num_owned_planets < 10
-        		}
-        		modifier = {
-        			factor = 4
-        			num_owned_planets > 9
-        		}
-
-				#This flag keeps multiple cults from randomly springing up on top of each other and provides a "grace period" to the player's attention span of 2 years.
-	  			set_timed_country_flag = {
-	  				flag = lrsk_gov_var_wild_cult_formed_recently
-	  				days = 1080
-					#days = 7
-	  			}
+  			50 = {
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_divine_right_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_holy_war_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_harmony_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_chosen_few_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_doomsday_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_golden_age_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_wild_revelry_cult
+				}
+				modifier = {
+					add = 5
+					has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
+				}
+				#DO NOTHING
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_divine_right_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.3 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.4 }
+			  }
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_holy_war_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.5 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_harmony_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.6 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_chosen_few_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.7 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_universal_family_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.8 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_doomsday_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.9 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_golden_age_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.10 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.11 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					has_modifier = lrsk_gov_var_statmod_wild_revelry_cult
+				}
+				planet_event = { id = lrsk_gov_var_direct_revelation.12 }
+			}
 			  
-				#Here, we find a planet meeting the trigger criteria and fire the actual cult formation logic on it.
-				random_owned_planet = {
-    			    limit = {
-        			    num_pops > 2
-        		    	any_pop = { has_ethic = "ethic_spiritualist" }
-						OR = {
-							NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
-							NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
-						}
-        		  	}
-        		  	planet_event = { id = lrsk_gov_var_direct_revelation.2 }
-        		}
-    		}
-  		}
-	}
-
-	#option = {
-	#	name = OK
-	#}
-}
-
-#Forming on planet
-planet_event = {
-	id = lrsk_gov_var_direct_revelation.2
-	title = lrsk_gov_var_direct_revelation.2.name
-	desc = lrsk_gov_var_direct_revelation.2.desc
-
-  	hide_window = yes
-  	is_triggered_only = yes
-
-	immediate = {
-
-		#For each entry, we set the random weight to 0 if the planet already has the cult it would create.
-    	random_list = {
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_divine_right_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.3 }
-    	  }
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.4 }
-    	  }
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_holy_war_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.5 }
-    	  }
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_harmony_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.6 }
-    	  }
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_chosen_few_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.7 }
-    	  }
-    	  15 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_universal_family_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.8 }
-    	  }
-    	  5 = {
-    	    modifier = {
-    	      	factor = 0
-				has_modifier = lrsk_gov_var_statmod_doomsday_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.9 }
-    	  }
-    	  5 = {
-    	    modifier = {
-    	    	factor = 0
-				has_modifier = lrsk_gov_var_statmod_golden_age_cult
-			}
-    	    planet_event = { id = lrsk_gov_var_direct_revelation.10 }
-    	  }
+			##Here, we find a planet meeting the trigger criteria and fire the actual cult formation logic on it.
+			#random_owned_planet = {
+    		#    limit = {
+        	#	    num_pops > 2
+        	#    	any_pop = { has_ethic = "ethic_spiritualist" }
+			#		OR = {
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
+			#			NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
+			#		}
+        	#  	}
+        	#  	planet_event = { id = lrsk_gov_var_direct_revelation.2 }
+        	#}
     	}
-	}
-
+  	}
 	#option = {
 	#	name = OK
 	#}
 }
+
+#Forming on planet - Hopefully not needed as gate can do all the needed logic per planet.
+#planet_event = {
+#	id = lrsk_gov_var_direct_revelation.2
+#	title = lrsk_gov_var_direct_revelation.2.name
+#	desc = lrsk_gov_var_direct_revelation.2.desc
+#
+#  	hide_window = yes
+#  	is_triggered_only = yes
+#
+#	immediate = {
+#
+#		#For each entry, we set the random weight to 0 if the planet already has the cult it would create.
+#    	random_list = {
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_divine_right_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.3 }
+#    	  }
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.4 }
+#    	  }
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_holy_war_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.5 }
+#    	  }
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_harmony_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.6 }
+#    	  }
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_chosen_few_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.7 }
+#    	  }
+#    	  15 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_universal_family_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.8 }
+#    	  }
+#    	  5 = {
+#    	    modifier = {
+#    	      	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_doomsday_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.9 }
+#    	  }
+#    	  5 = {
+#    	    modifier = {
+#    	    	factor = 0
+#				has_modifier = lrsk_gov_var_statmod_golden_age_cult
+#			}
+#    	    planet_event = { id = lrsk_gov_var_direct_revelation.10 }
+#    	  }
+#    	}
+#	}
+#
+#	#option = {
+#	#	name = OK
+#	#}
+#}
 
 #Divine Right Cult
 planet_event = {
@@ -353,6 +443,52 @@ planet_event = {
 		name = MARVELOUS
 		add_modifier = {
       		modifier = "lrsk_gov_var_statmod_golden_age_cult"
+      		days = 3600
+    	}
+	}
+}
+
+#Penance and Redemption Cult
+planet_event = {
+	id = lrsk_gov_var_direct_revelation.11
+	title = lrsk_gov_var_direct_revelation.11.name
+	desc = lrsk_gov_var_direct_revelation.11.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+
+  	is_triggered_only = yes
+	location = this
+
+  #Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
+  #hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+
+	option = {
+		name = INTRIGUING
+		add_modifier = {
+      		modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
+      		days = 3600
+    	}
+	}
+}
+
+#Wild Revelry Cult
+planet_event = {
+	id = lrsk_gov_var_direct_revelation.12
+	title = lrsk_gov_var_direct_revelation.12.name
+	desc = lrsk_gov_var_direct_revelation.12.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+
+  	is_triggered_only = yes
+	location = this
+
+  #Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
+  #hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+
+	option = {
+		name = INTRIGUING
+		add_modifier = {
+      		modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
       		days = 3600
     	}
 	}
