@@ -252,7 +252,10 @@ lrsk_gov_var_gov_market_socialism = {
 
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_workers_councils
-		has_valid_civic = civic_corporate_dominion
+		OR = {
+			has_valid_civic = civic_corporate_dominion
+			has_valid_civic = civic_merchant_guilds
+		}
 	}
 
 	election_candidates = {

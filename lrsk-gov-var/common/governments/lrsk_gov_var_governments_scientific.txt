@@ -7,8 +7,18 @@ lrsk_gov_var_gov_innovation_initiative = {
 	ruler_title = LRSK_GOV_VAR_RT_EXEC_DEAN
 
 	possible = {
-		has_valid_civic = civic_corporate_dominion
-		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+			}
+			AND = {
+				has_authority = auth_corporate
+				has_valid_civic = lrsk_gov_var_civic_mc_edu_corp
+				has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+			}
+		}
+		
 	}
 
 	election_candidates = {
