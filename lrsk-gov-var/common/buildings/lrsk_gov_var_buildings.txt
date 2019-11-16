@@ -151,17 +151,17 @@ lrsk_gov_var_bldg_hall_of_valor = {
 @lrsk_gov_var_planet_synaptic_crime_4 = 0.4
 @lrsk_gov_var_planet_synaptic_crime_5 = 0.5
 
-@lrsk_gov_var_planet_synaptic_unity_1 = 0.1
-@lrsk_gov_var_planet_synaptic_unity_2 = 0.2
-@lrsk_gov_var_planet_synaptic_unity_3 = 0.3
-@lrsk_gov_var_planet_synaptic_unity_4 = 0.4
-@lrsk_gov_var_planet_synaptic_unity_5 = 0.5
+@lrsk_gov_var_planet_synaptic_amenities_1 = 0.05
+@lrsk_gov_var_planet_synaptic_amenities_2 = 0.15
+@lrsk_gov_var_planet_synaptic_amenities_3 = 0.2
+@lrsk_gov_var_planet_synaptic_amenities_4 = 0.25
+@lrsk_gov_var_planet_synaptic_amenities_5 = 0.3
 
-@lrsk_gov_var_planet_synaptic_popsreq_1 = 10
+@lrsk_gov_var_planet_synaptic_popsreq_1 = 15
 @lrsk_gov_var_planet_synaptic_popsreq_2 = 20
-@lrsk_gov_var_planet_synaptic_popsreq_3 = 30
-@lrsk_gov_var_planet_synaptic_popsreq_4 = 40
-@lrsk_gov_var_planet_synaptic_popsreq_5 = 50
+@lrsk_gov_var_planet_synaptic_popsreq_3 = 25
+@lrsk_gov_var_planet_synaptic_popsreq_4 = 30
+@lrsk_gov_var_planet_synaptic_popsreq_5 = 35
 
 # Planetary Synaptic Node
 lrsk_gov_var_bldg_planet_synaptic_node = {
@@ -187,19 +187,14 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 	}
 
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_1
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
 		job_lrsk_gov_var_job_planetmind_overseer_add = 1
-		job_synapse_drone_add = 1
 		job_maintenance_drone_add = 1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
 	}
 
 	triggered_desc = {
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
 	}
 
 	triggered_desc = {
@@ -245,19 +240,14 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 	}
 
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_2
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_2
 		job_lrsk_gov_var_job_planetmind_overseer_add = 2
-		job_synapse_drone_add = 1
 		job_maintenance_drone_add = 1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
 	}
 
 	triggered_desc = {
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
 	}
 
 	triggered_desc = {
@@ -303,19 +293,14 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 	}
 
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_3
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_3
 		job_lrsk_gov_var_job_planetmind_overseer_add = 3
-		job_synapse_drone_add = 1
 		job_maintenance_drone_add = 1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
 	}
 
 	triggered_desc = {
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
 	}
 
 	triggered_desc = {
@@ -361,19 +346,14 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 	}
 
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_4
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_4
 		job_lrsk_gov_var_job_planetmind_overseer_add = 4
-		job_synapse_drone_add = 1
 		job_maintenance_drone_add = 1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
 	}
 
 	triggered_desc = {
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
 	}
 
 	triggered_desc = {
@@ -415,19 +395,14 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 	}
 
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = @lrsk_gov_var_planet_synaptic_unity_5
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_5
 		job_lrsk_gov_var_job_planetmind_overseer_add = 5
-		job_synapse_drone_add = 1
 		job_maintenance_drone_add = 1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
 	}
 
 	triggered_desc = {
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
 	}
 
 	triggered_desc = {
