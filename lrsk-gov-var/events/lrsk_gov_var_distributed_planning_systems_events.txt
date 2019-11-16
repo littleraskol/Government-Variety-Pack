@@ -10,7 +10,7 @@ planet_event = {
 	#title = lrsk_gov_var_distributed_planning_systems.1.name
 	#desc = lrsk_gov_var_distributed_planning_systems.1.desc
 
-  hide_window = yes
+  	hide_window = yes
 
 	trigger = { owner = {	has_valid_civic = lrsk_gov_var_civic_machine_distributed_planning_systems } }
 
@@ -34,8 +34,8 @@ planet_event = {
 	#title = lrsk_gov_var_distributed_planning_systems.2.name
 	#desc = lrsk_gov_var_distributed_planning_systems.2.desc
 
-  hide_window = yes
-  is_triggered_only = yes
+  	hide_window = yes
+  	is_triggered_only = yes
 
 	immediate = {
     random_list = {
@@ -47,16 +47,16 @@ planet_event = {
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_holy_war_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.5 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_harmony_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.6 }
       }
       10 = {
@@ -64,86 +64,86 @@ planet_event = {
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.8 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.9 }
       }
       5 = {
         modifier = {
-          factor = 0
-					NOT = { owner = { has_valid_civic = civic_machine_servitor } }
-				}
+          	factor = 0
+			NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 }	#Food focus (servitor only)
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.11 }
       }
       5 = {
         modifier = {
-          factor = 0
-					NOT = { owner = { has_valid_civic = civic_machine_servitor } }
-				}
+          	factor = 0
+			NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.12 }	#Consumer goods focus (servitor only)
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.13 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.14 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_universal_family_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.15 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_doomsday_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.16 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_golden_age_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.17 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_golden_age_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.18 }
       }
       5 = {
         modifier = {
-          factor = 0
-					has_modifier = lrsk_gov_var_statmod_golden_age_cult
-				}
+        	factor = 0
+			has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.19 }
       }
       10 = {
@@ -165,16 +165,16 @@ planet_event = {
 	picture = GFX_evt_glitchy_matrix
 	show_sound = event_radio_chatter
 
-  is_triggered_only = yes
+  	is_triggered_only = yes
 	location = this
 
-	option = {
-		name = DISCONCERTING
-    add_modifier = {
-      modifier = "lrsk_gov_var_statmod_planet_audit_continues"
-      days = 7200
-    }
+	immediate = {
+    	add_modifier = {
+      		modifier = "lrsk_gov_var_statmod_planet_audit_continues"
+      		days = 7200
+    	}
 	}
+	option = { name = DISCONCERTING }
 }
 
 #Confused Audit
