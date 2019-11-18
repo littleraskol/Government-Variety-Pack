@@ -110,8 +110,6 @@ lrsk_gov_var_statmod_golden_age_cult = {
 ## For Distributed Planning Systems
 
 # Varying levels of regcoord added by population.
-
-#Uhhh or maybe this would work?
 lrsk_gov_var_statmod_planet_audit = {
   job_lrsk_gov_var_job_regional_coordinator_add = 1
   job_lrsk_gov_var_job_regional_coordinator_per_pop = 0.05
@@ -138,7 +136,7 @@ lrsk_gov_var_statmod_planet_audit_confused = {
 
 #Favor complex drone output
 lrsk_gov_var_statmod_planet_spec_priority = {
-  planet_jobs_complex_drone_produces_mult = +0.2
+  planet_jobs_complex_drone_produces_mult = +0.1
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
@@ -150,10 +148,9 @@ lrsk_gov_var_statmod_planet_basic_priority = {
 	icon_frame = 1
 }
 
-#Double down on what's already there, a kind of default
+#Logistics focus
 lrsk_gov_var_statmod_planet_logistic_priority = {
-  pop_amenities_usage_mult = -0.2
-  pop_housing_usage_mult = -0.2
+  planet_amenities_no_happiness_mult  = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
 	icon_frame = 1
 }
@@ -234,55 +231,18 @@ lrsk_gov_var_statmod_planet_stability_priority = {
 }
 
 #Unity Focus
+lrsk_gov_var_statmod_planet_unity_priority = {
+  planet_jobs_unity_produces_mult = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
 
 #Build Speed Focus
+lrsk_gov_var_statmod_planet_building_priority = {
+  planet_building_build_speed_mult = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"
+	icon_frame = 1
+}
 
 #Inconclusive (refund cost, no modifier)
 
-## <20
-#lrsk_gov_var_statmod_planet_audit_1 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 1
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
-#
-## 20-40
-#lrsk_gov_var_statmod_planet_audit_2 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 2
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
-#
-## 40-60
-#lrsk_gov_var_statmod_planet_audit_3 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 3
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
-#
-## 60-80
-#lrsk_gov_var_statmod_planet_audit_4 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 4
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
-#
-## 80-100
-#lrsk_gov_var_statmod_planet_audit_5 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 5
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
-#
-## >100
-#lrsk_gov_var_statmod_planet_audit_6 = {
-#  job_lrsk_gov_var_job_regional_coordinator_add = 6
-#
-#	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
-#	icon_frame = 2
-#}
