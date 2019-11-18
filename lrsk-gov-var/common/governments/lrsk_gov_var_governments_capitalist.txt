@@ -336,9 +336,17 @@ lrsk_gov_var_gov_enterprise_authority = {
 lrsk_gov_var_gov_rationalist_managerial_firm = {
 	ruler_title = LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR
 
-	possible = {
-		has_valid_civic = civic_corporate_dominion
-		has_valid_civic = civic_technocracy
+	possible = {		
+		OR = {
+			AND = {
+				has_valid_civic = civic_corporate_dominion
+				has_valid_civic = civic_technocracy
+			}
+			AND = {
+				has_authority = auth_corporate
+				has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+			}
+		}		
 	}
 
 	election_candidates = {

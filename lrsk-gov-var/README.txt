@@ -115,6 +115,12 @@ Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator n
 
 Optimized Expansion (Machine Intelligence) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency. (+15% colony development speed, -5% starbase influence cost)
 
+Megacorp Civics:
+
+Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
+
+Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+
 2. New Governments
 
 Way too many to list here. They fall into three broad categories:
