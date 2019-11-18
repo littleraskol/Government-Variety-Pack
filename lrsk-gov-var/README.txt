@@ -157,6 +157,22 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.8 (11-XX-19) - Direct Revelation Rebalance, Megacorp Additions and "Restorations"
+-Wild Cult formation is now assessed per planet, which is a better form of scaling than previous "more planets = more cult formation chance" method.
+-Each cult on a planet decreases the likelihood of a new cult forming there.
+-Wild Cult ethos attraction modifiers buffed.
+-Wild Cults now only give one Hedge Preacher job (down from two).
+-New Wild Cult added: "Wild Revelry Cult" (increase happiness but also crime, more ethos shift).
+-New Wild Cult added: "Penance and Redemption Cult" (decrease crime but also happiness, less ethos shift).
+-New Megacorp civic: Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
+-New Megacorp civic: Educational Consortium (None) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+-Innovation Initiative and Rationalist Managerial Firm governments return to Megacorp DLC users based on these civics.
+-Market Socialism now requires Workers' Councils and either Corporate Dominion or Merchant Guilds.
+-Backend: Merged start screen messages to be with their associated government descriptions.
+-Backend: Moved personality/diplomacy to "other" text definitions.
+-Backend: Deleted "lrsk_gov_var_start_screens" and "lrsk_gov_var_personalities" files (text moved elsewhere).
+-Removed some typos and such.
+
 v1.4.7 (11-03-19)
 -Better job descriptions.
 -Cleaned up building definitions.
