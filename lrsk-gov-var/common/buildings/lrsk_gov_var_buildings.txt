@@ -145,6 +145,10 @@ lrsk_gov_var_bldg_hall_of_valor = {
 ## Government Buildings
 
 # Planetary Synaptic Stuff
+@lrsk_gov_var_planet_synaptic_unity_cost_base = 100
+@lrsk_gov_var_planet_synaptic_unity_cost_upgrade = 50
+@lrsk_gov_var_planet_synaptic_unity_cost_upkeep = 2
+
 @lrsk_gov_var_planet_synaptic_crime_1 = 0.1
 @lrsk_gov_var_planet_synaptic_crime_2 = 0.2
 @lrsk_gov_var_planet_synaptic_crime_3 = 0.3
@@ -205,9 +209,11 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 		category = planet_buildings
 		cost = {
 			minerals = 400
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_base
 		}
 		upkeep = {
-			energy = 3
+			energy = 2
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep
 		}
 	}
 
@@ -258,9 +264,11 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		category = planet_buildings
 		cost = {
 			minerals = 500
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade
 		}
 		upkeep = {
-			energy = 4
+			energy = 2
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep
 		}
 	}
 
@@ -311,9 +319,11 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 		category = planet_buildings
 		cost = {
 			minerals = 600
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade
 		}
 		upkeep = {
-			energy = 5
+			energy = 3
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep
 		}
 	}
 
@@ -364,9 +374,11 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		category = planet_buildings
 		cost = {
 			minerals = 700
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade
 		}
 		upkeep = {
-			energy = 6
+			energy = 3
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep
 		}
 	}
 
@@ -413,9 +425,11 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		category = planet_buildings
 		cost = {
 			minerals = 800
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade
 		}
 		upkeep = {
-			energy = 7
+			energy = 4
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep
 		}
 	}
 
