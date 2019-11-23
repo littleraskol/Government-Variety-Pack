@@ -90,12 +90,12 @@ planet_event = {
 					factor = 1.2
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
-				# We want this outcome to create a slight buffer on the next cult formation attempt, of 1/4 of a year.
+				# We want this outcome to create a slight buffer on the next cult formation attempt.
 				owner = {
 					#remove_country_flag = lrsk_gov_var_wild_cult_formed_recently
 					set_timed_country_flag = {
 						flag = lrsk_gov_var_wild_cult_formed_recently
-						days = 90
+						days = 45
 						#days = 3
 					}
 				}
