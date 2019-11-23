@@ -157,7 +157,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.4.8 (11-XX-19) - Direct Revelation Rebalance, Megacorp Additions and "Restorations"
+v1.4.8 (11-23-19) - Direct Revelation Rebalance, Megacorp Additions and "Restorations"
 -Wild Cult formation is now assessed per planet, which is a better form of scaling than previous "more planets = more cult formation chance" method.
 -Each cult on a planet decreases the likelihood of a new cult forming there.
 -Wild Cult ethos attraction modifiers buffed.
