@@ -157,6 +157,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.9 (01-12-20) - Planetmind Creativity Overhaul
+-Planetmind Creativity now allows Planetary Synapse buildings that improve amenities production, compound deviancy, and add Planetmind Overseer jobs.
+-Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.
+-Added new government "Cooperative Super-Sapience" to reflect hive minds with Planetmind Creativity as something like a "committee" of collective minds with one presiding over the others.
+-Small fix: updated version number in descriptor.mod
+
 v1.4.8 (11-23-19) - Direct Revelation Rebalance, Megacorp Additions and "Restorations"
 -Wild Cult formation is now assessed per planet, which is a better form of scaling than previous "more planets = more cult formation chance" method.
 -Each cult on a planet decreases the likelihood of a new cult forming there.
