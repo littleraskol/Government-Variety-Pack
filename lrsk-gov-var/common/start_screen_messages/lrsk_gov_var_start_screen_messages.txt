@@ -697,3 +697,16 @@ part = {
 		NOT = { has_country_flag = custom_start_screen }
 	}
 }
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_COOP_SUPERSAP"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_coop_supersap
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}

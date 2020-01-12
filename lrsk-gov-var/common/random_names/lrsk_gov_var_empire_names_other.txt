@@ -24,6 +24,25 @@ empire_name_format = {
 	# Human Empire
 }
 
+# Cooperative Super-Sapience
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			has_government = "lrsk_gov_var_gov_coop_supersap"
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.hive_mind.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <hive_mind>"
+	# Human Empire
+}
+
 # Noble Republics
 
 # Noble Republic 1
