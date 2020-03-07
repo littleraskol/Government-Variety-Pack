@@ -583,7 +583,10 @@ planet_event = {
       5 = {
         modifier = {
           	factor = 0
-			NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+			NOR = { 
+				owner = { has_valid_civic = civic_machine_servitor }
+				owner = { has_valid_civic = civic_machine_assimilator } #Thinking about this and balance... Probably okay, food's not that big a deal for assimilators.
+			}
 		}
         modifier = {
         	factor = 0.2
@@ -641,7 +644,7 @@ planet_event = {
 			add = 10
 			num_buildings = { type = building_hydroponics_farm value > 0 }
 		}
-        planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 } #Food focus (servitor only)
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 } #Food focus (servitor/assimilator only)
       }
       5 = {
 		modifier = {
@@ -1341,7 +1344,7 @@ planet_event = {
 	option = { name = EXCELLENT }
 }
 
-#Food focus (servitor only)
+#Food focus (servitor/assimilator only)
 planet_event = {
 	id = lrsk_gov_var_distributed_planning_systems.10
 	title = lrsk_gov_var_distributed_planning_systems.10.name

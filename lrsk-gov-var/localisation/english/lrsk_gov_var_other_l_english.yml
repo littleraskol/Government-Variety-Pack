@@ -58,7 +58,8 @@ l_english:
 
  # Run Recursive Audit
  decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
- decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations. This will add a number of £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!.\n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$\n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded."
+ decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
+ decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
 
  ## Static Modifiers
 
@@ -115,7 +116,7 @@ l_english:
  lrsk_gov_var_statmod_planet_audit_confused:0 "Confused Audit"
  lrsk_gov_var_statmod_planet_audit_confused_desc:0 "Something is very wrong. The changes implemented by the regional administrative subroutines make little sense and operational integrity is horribly low. Perhaps running this audit was a miscalculation, but it is not clear how else to correct this situation."
 
- PRIORITY_STRING:0 "Priority:"
+ PRIORITY_STRING:0 "Priority ="
 
  lrsk_gov_var_statmod_planet_spec_priority:0 "$PRIORITY_STRING$ Specialized Production"
  lrsk_gov_var_statmod_planet_spec_priority_desc:0 "Enhanced algorithms have been implemented for streamlining the production of specialized goods by complex drones."
@@ -139,7 +140,7 @@ l_english:
  lrsk_gov_var_statmod_planet_smelting_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of military needs."
 
  lrsk_gov_var_statmod_planet_industrial_priority:0 "$PRIORITY_STRING$ Consumer Goods"
- lrsk_gov_var_statmod_planet_industrial_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of civilian needs."
+ lrsk_gov_var_statmod_planet_industrial_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of organic comfort needs."
 
  lrsk_gov_var_statmod_planet_rarities_priority:0 "$PRIORITY_STRING$ Rarities"
  lrsk_gov_var_statmod_planet_rarities_priority_desc:0 "Spare processing power is diverted to smart scheduling the refining of precious resources."
@@ -204,20 +205,59 @@ l_english:
  lrsk_gov_var_direct_revelation.10.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_golden_age_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"
 
  # Distributed Planning Systems
- 
- lrsk_gov_var_distributed_planning_systems.3.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.3.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.4.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.4.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.5.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.5.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.6.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.6.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.7.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.7.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.8.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.8.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.9.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.9.desc:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.10.name:0 "REPLACE_ME"
- lrsk_gov_var_distributed_planning_systems.10.desc:0 "REPLACE_ME"
+
+ RESULT_STRING:0 "Audit Results on [this.GetName]:"
+
+ lrsk_gov_var_distributed_planning_systems.3.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_audit_continues$"
+ lrsk_gov_var_distributed_planning_systems.3.desc:0 "$lrsk_gov_var_statmod_planet_audit_continues_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.4.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_audit_confused$"
+ lrsk_gov_var_distributed_planning_systems.4.desc:0 "$lrsk_gov_var_statmod_planet_audit_confused_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.5.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_spec_priority$"
+ lrsk_gov_var_distributed_planning_systems.5.desc:0 "$lrsk_gov_var_statmod_planet_spec_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.6.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_basic_priority$"
+ lrsk_gov_var_distributed_planning_systems.6.desc:0 "$lrsk_gov_var_statmod_planet_basic_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.7.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_logistic_priority$"
+ lrsk_gov_var_distributed_planning_systems.7.desc:0 "$lrsk_gov_var_statmod_planet_logistic_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.8.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_mining_priority$"
+ lrsk_gov_var_distributed_planning_systems.8.desc:0 "$lrsk_gov_var_statmod_planet_mining_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.9.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_energy_priority$"
+ lrsk_gov_var_distributed_planning_systems.9.desc:0 "$lrsk_gov_var_statmod_planet_energy_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.10.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_food_priority$"
+ lrsk_gov_var_distributed_planning_systems.10.desc:0 "$lrsk_gov_var_statmod_planet_food_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.11.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_smelting_priority$"
+ lrsk_gov_var_distributed_planning_systems.11.desc:0 "$lrsk_gov_var_statmod_planet_smelting_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.12.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_industrial_priority$"
+ lrsk_gov_var_distributed_planning_systems.12.desc:0 "$lrsk_gov_var_statmod_planet_industrial_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.13.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_rarities_priority$"
+ lrsk_gov_var_distributed_planning_systems.13.desc:0 "$lrsk_gov_var_statmod_planet_rarities_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.14.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_research_priority$"
+ lrsk_gov_var_distributed_planning_systems.14.desc:0 "$lrsk_gov_var_statmod_planet_research_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.15.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_military_priority$"
+ lrsk_gov_var_distributed_planning_systems.15.desc:0 "$lrsk_gov_var_statmod_planet_military_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.16.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_growth_priority$"
+ lrsk_gov_var_distributed_planning_systems.16.desc:0 "$lrsk_gov_var_statmod_planet_growth_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.17.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_stability_priority$"
+ lrsk_gov_var_distributed_planning_systems.17.desc:0 "$lrsk_gov_var_statmod_planet_stability_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.18.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_unity_priority$"
+ lrsk_gov_var_distributed_planning_systems.18.desc:0 "$lrsk_gov_var_statmod_planet_unity_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.19.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_construction_priority$"
+ lrsk_gov_var_distributed_planning_systems.19.desc:0 "$lrsk_gov_var_statmod_planet_construction_priority_desc$"
+
+ lrsk_gov_var_distributed_planning_systems.20.name:0 "$RESULT_STRING$ Inconclusive..."
+ lrsk_gov_var_distributed_planning_systems.20.desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make, seeing no obvious avenues for improvement. This audit could not optimize production on [this.GetName] at this time."
