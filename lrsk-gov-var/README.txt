@@ -157,6 +157,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.4.10 (03-10-20) - Verne Updates
+-Changed version number.
+
 v1.4.9 (01-12-20) - Planetmind Creativity Overhaul
 -Planetmind Creativity now allows Planetary Synapse buildings that improve amenities production, compound deviancy, and add Planetmind Overseer jobs.
 -Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.
