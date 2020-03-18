@@ -157,7 +157,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.4.10 (03-10-20) - Verne Updates
+v1.4.10 (03-17-20) - Verne Updates
 -Changed version number.
 
 v1.4.9 (01-12-20) - Planetmind Creativity Overhaul
