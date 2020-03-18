@@ -4,7 +4,7 @@
 
 # HIVE MIND
 
-# Planetmind Creativity (-10% pop housing and amenities use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
+# Planetmind Creativity (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -13,8 +13,8 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
 	modifier = {
-		pop_amenities_usage_mult = -0.10
-		pop_housing_usage_mult = -0.10
+		#pop_amenities_usage_mult = -0.10
+		pop_housing_usage_mult = -0.15
 	}
 }
 
@@ -140,12 +140,12 @@ lrsk_gov_var_civic_hive_big_picture_thinker = {
 	 }
 }
 
-# Analgesic Stoicism (+10% habitability) - The Hive Mind feels all the bodily aches and irritants experienced by its drones, but its resolve to expand overrides any concern for personal comfort.
+# Toiling Multitudes (+10% simple drone output) - Many hands make light work, for the simplest tasks at least. That's fine when, like a Hive Mind, you have all the hands. [Token is legacy name.]
 lrsk_gov_var_civic_hive_analgesic_stoicism = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
-	modifier = { pop_environment_tolerance = 0.1 }
+	modifier = { planet_jobs_simple_drone_produces_mult = 0.1 }
 }
 
 # Domineering Expectations (+15% subject research share, +7.5% tributary income) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones.
@@ -225,6 +225,8 @@ lrsk_gov_var_civic_machine_distributed_planning_systems = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
+
+	description = "civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects"
 
   	modifier = {
 		pop_amenities_usage_mult = -0.10

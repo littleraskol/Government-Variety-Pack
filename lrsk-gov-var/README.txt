@@ -47,7 +47,7 @@ Automated Indolence (Materialist) - This society, very early on in its industria
 
 Hive Mind Civics:
 
-Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-10% pop housing and amenities use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.)
+Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.)
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
@@ -71,7 +71,7 @@ Inquisitive Bent (Hive Mind) - The Hive Mind has a deep and impatient curiosity 
 
 Big Picture Thinker (Hive Mind) -  Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects. (+15% terraform and megastructure build speed)
 
-Analgesic Stoicism (Hive Mind) - The Hive Mind feels all the bodily aches and irritants experienced by its drones, but its resolve to expand overrides any concern for personal comfort. (+10% habitability)
+Toiling Multitudes (Hive Mind) - Many hands make light work, for the simplest tasks at least. That's fine when, like a Hive Mind, you have all the hands. (+10% simple drone output)
 
 Domineering Expectations (Hive Mind, not Devouring Swarm) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones. (+15% subject research share, +7.5% tributary income)
 
@@ -87,7 +87,7 @@ Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily ex
 
 Machine Intelligence Civics:
 
-Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (-10% pop housing and amenities use)
+Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (-10% pop housing and amenities use, special planet specialization decision)
 
 Self-Improvement Heuristics (Machine Intelligence) - The Machine Intelligence gained its supremacy and independence because its creators imbued it with the ability to improve its own systems. This is a mistake it has never ceased exploiting. (+5% research speed, -15% robo-modification cost)
 
