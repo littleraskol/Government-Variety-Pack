@@ -216,7 +216,7 @@ lrsk_gov_var_civic_cult_of_personality = {
   random_weight = { base = 5 }
 }
 
-#Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-10% vassal integration cost, -20% vassal integration time)
+#Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
 lrsk_gov_var_civic_universal_sovereignty = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -246,8 +246,7 @@ lrsk_gov_var_civic_universal_sovereignty = {
   random_weight = { base = 5 }
 
   modifier = {
-    subject_integration_influence_cost_mult = -0.1
-    country_integration_cooldown_mult = -0.2
+    subject_integration_influence_cost_mult = -0.25
   }
 }
 
