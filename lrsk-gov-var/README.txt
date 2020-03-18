@@ -157,6 +157,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.5 (03-18-20) - Distributed Planning Systems Overhaul, Real Verne Updates
+-Distributed Planning Systems maintains its base bonus but now also allows for a new planet decision. This decision, "Run Recursive Audit," temporarily adds jobs with a mix of beneficial and problematic effects. After a year, the "audit" ends and a longer-term modifier to planet output is applied. The more specialized a planet is, the higher the likelihood of a beneficial outcome.
+-Elected Clergy now gives +10% faction influence instead of +0.5 max faction influence (defunct modifier).
+-Universal Sovereignty now reduces subject integration cost by 25% (removed integration cooldown, not clear it even works or is that useful).
+-Analgesic Stoicism changed to "Toiling Multitudes" and increases simple drone output instead of habitability because Ascetic now increases habitability (and was conceptually overlapping anyway).
+-Planetmind Creativity changed base bonus to -15% housing usage, as Ascetic now reduces amenities usage.
+-Backend: Further consolidation of localization files (civics and governments now in one file).
+
 v1.4.10 (03-17-20) - Verne Updates
 -Changed version number.
 
