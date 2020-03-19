@@ -32,8 +32,10 @@ country_event = {
 		capital_scope ={
 			if = {
 				limit = { owner = { has_origin = lrsk_gov_var_origin_shroud_touched } } # probably redundant but eh
-				
-				# CREATE DEPOSIT HERE
+
+				set_planet_flag = lrsk_gov_var_shroud_touched_capital
+
+				add_deposit = d_lrsk_gov_var_shroud_pockets
 			}
 		}
 	}
@@ -72,21 +74,17 @@ pop_event = {
 	immediate = {
 		if = {
 			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
-			if = {
-				limit = { owner = { has_ascension_perk = ap_mind_over_matter } } #REMOVE the esper trait if they have started real psychic ascension
-				modify_species = {
-					species = this
-					remove_trait = lrsk_gov_var_trait_natural_esper
+			if = { 
+				limit = { or = {
+						owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
+						owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
+					} }
+					modify_species = {
+						species = this
+						remove_trait = lrsk_gov_var_trait_natural_esper
+					}
+					owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
 				}
-				owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
-			}
-			else_if = {
-				limit = { owner = { has_ascension_perk = ap_transcendence } } #REMOVE the esper trait if they are on the next step of psychic ascension (probably redundant with above)
-				modify_species = { 
-					species = this
-					remove_trait = lrsk_gov_var_trait_natural_esper
-				}
-				owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
 			}
 			else = {
 				random_list = {
@@ -116,9 +114,9 @@ country_event = {
 		or = { 
 			has_ascension_perk = ap_mind_over_matter
 			has_ascension_perk = ap_transcendence
-			has_country_flag = lrsk_gov_var_shroud_touched_nation
-			NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone }
 		}
+		has_country_flag = lrsk_gov_var_shroud_touched_nation
+		NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone }
 	}
 
 	immediate = {
@@ -144,7 +142,7 @@ country_event = {
 				species = this
 				remove_trait = lrsk_gov_var_trait_natural_esper
 			}
-			
+
 			set_country_flag = lrsk_gov_var_shroud_touched_esper_undone
 		}
 	}
