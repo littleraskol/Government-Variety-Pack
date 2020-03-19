@@ -284,9 +284,11 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
 	modifier = {
+		envoys_add = 1
+		diplo_weight_mult = 0.05
     	max_rivalries = 1
-		country_trust_growth = 0.15
-		country_trade_attractiveness = 0.15
+		country_trust_growth = 0.1
+		country_trade_attractiveness = 0.1
 	}
 }
 
