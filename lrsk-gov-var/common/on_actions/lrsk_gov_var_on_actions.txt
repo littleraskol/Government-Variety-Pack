@@ -4,6 +4,25 @@
 
 on_game_start = {
 	events = {
-		lrsk_government_variety_pack_backend.1      #Set mod active flag
+		lrsk_government_variety_pack_backend.1      #Set mod active flag, origins
+	}
+}
+
+#on_game_start_country = {
+#	events = {
+#		lrsk_gov_var_galactic_backdoor.1
+#		lrsk_gov_var_shroud_touched.1
+#	}
+#}
+
+on_yearly_pulse_country = {
+	events = {
+		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having a yearly fallback check is good.
+	}
+}
+
+on_pop_grown = {
+	events = {
+		lrsk_gov_var_shroud_touched.2
 	}
 }
