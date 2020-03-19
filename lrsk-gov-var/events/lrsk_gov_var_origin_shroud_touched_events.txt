@@ -48,12 +48,13 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		fromfrom = { species = { has_species_flag = lrsk_gov_var_shroud_touched_species } }
+		#fromfrom = { species = { has_species_flag = lrsk_gov_var_shroud_touched_species } }
+		fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper } }
 	}
 
 	immediate = {
 		if = {
-			limit = { fromfrom = { species = { has_species_flag = lrsk_gov_var_shroud_touched_species } } } # probably redundant but eh
+			limit = { fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper } } # probably redundant but eh
 			fromfrom = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
 		}
 	}
@@ -67,7 +68,7 @@ pop_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
+		#species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
 		pop_has_trait = lrsk_gov_var_trait_natural_esper
 	}
 
@@ -75,10 +76,16 @@ pop_event = {
 		if = {
 			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
 			if = { 
-				limit = {  or = {
-					owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
-					owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
-				} }
+				limit = {  
+					or = {
+						owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
+						owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
+					}
+					or = {
+						pop_has_trait = trait_latent_psionic
+						pop_has_trait = trait_psionic
+					}
+				}
 				modify_species = {
 					species = this
 					remove_trait = lrsk_gov_var_trait_natural_esper
@@ -86,14 +93,20 @@ pop_event = {
 				owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
 			}
 			else = {
+				# Usually do nothing, occasionally spawn without esper, but rarely promote pop to latent psychic
 				random_list = {
-					95 = { } # Usually do nothing, but rarely promote pop to latent psychic
+					60 = { } 
 					5 = { 
 						modify_species = { 
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_esper
 							add_trait = trait_latent_psionic
-							#set_species_flag = lrsk_gov_var_shroud_touched_promoted_pop # Not sure if useful...
+						} 
+					}
+					35 = {
+						modify_species = { 
+							species = this
+							remove_trait = lrsk_gov_var_trait_natural_esper
 						} 
 					}
 				}
@@ -126,10 +139,14 @@ country_event = {
 			} }
 			every_owned_pop = {
 				if = { 
-					limit = { and = {
+					limit = {
 						pop_has_trait = lrsk_gov_var_trait_natural_esper
-						species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
-					} }
+						#species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
+						or = {
+							pop_has_trait = trait_latent_psionic
+							pop_has_trait = trait_psionic
+						}
+					}
 					modify_species = {
 						species = this
 						remove_trait = lrsk_gov_var_trait_natural_esper
