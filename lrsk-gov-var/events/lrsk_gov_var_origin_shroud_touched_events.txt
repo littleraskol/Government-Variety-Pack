@@ -6,7 +6,7 @@ namespace = lrsk_gov_var_shroud_touched
 
 # Sets initial tech progress, planet deposit, and pop traits
 country_event = {
-	id = namespace = lrsk_gov_var_shroud_touched.1
+	id = lrsk_gov_var_shroud_touched.1
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -75,16 +75,15 @@ pop_event = {
 		if = {
 			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
 			if = { 
-				limit = { or = {
-						owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
-						owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
-					} }
-					modify_species = {
-						species = this
-						remove_trait = lrsk_gov_var_trait_natural_esper
-					}
-					owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
+				limit = {  or = {
+					owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
+					owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
+				} }
+				modify_species = {
+					species = this
+					remove_trait = lrsk_gov_var_trait_natural_esper
 				}
+				owner = { if = { limit = { NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } } country_event = { id = lrsk_gov_var_shroud_touched.4 } } } # in this case, we have to remove them ALL.
 			}
 			else = {
 				random_list = {
@@ -94,7 +93,7 @@ pop_event = {
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_esper
 							add_trait = trait_latent_psionic
-							set_species_flag = lrsk_gov_var_shroud_touched_promoted_pop # Not sure if useful...
+							#set_species_flag = lrsk_gov_var_shroud_touched_promoted_pop # Not sure if useful...
 						} 
 					}
 				}
