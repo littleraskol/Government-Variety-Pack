@@ -18,6 +18,12 @@ lrsk_gov_var_job_hedge_preacher = {
 	building_icon = building_primitive_dwellings
 	clothes_texture_index = 2
 
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
 	possible = {
 		worker_job_check_trigger = yes
 	}
@@ -114,6 +120,12 @@ lrsk_gov_var_job_knight = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = lrsk_gov_var_bldg_hall_of_honor
 	clothes_texture_index = 4
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
 
 	possible = {
 		specialist_job_check_trigger = yes
@@ -263,6 +275,12 @@ lrsk_gov_var_job_pastor = {
 	building_icon = building_temple
 	clothes_texture_index = 3
 
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -364,6 +382,13 @@ lrsk_gov_var_job_planetmind_overseer = {
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
 
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
 	possible = {
 		drone_job_check_trigger = yes
 	}
@@ -400,6 +425,13 @@ lrsk_gov_var_job_regional_coordinator = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_machine_capital
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
 
 	possible = {
 		drone_job_check_trigger = yes
