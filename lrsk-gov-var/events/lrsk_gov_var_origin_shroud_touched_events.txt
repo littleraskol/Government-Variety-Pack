@@ -539,8 +539,35 @@ event = {
 					remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
 				}
 			}
+		}
+	}
+}
+event = {
+	id = lrsk_gov_var_shroud_touched.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_pop = {
+			pop_has_trait = lrsk_gov_var_trait_natural_esper
+			OR = {
+				pop_has_trait = trait_latent_psionic
+				pop_has_trait = trait_psionic
+			}
+		}
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
 			every_owned_pop = {
-				limit = { 
+				limit = {
 					pop_has_trait = lrsk_gov_var_trait_natural_esper
 					OR = {
 						pop_has_trait = trait_latent_psionic
