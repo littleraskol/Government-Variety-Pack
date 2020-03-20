@@ -15,15 +15,17 @@ on_game_start = {
 #	}
 #}
 
-on_yearly_pulse_country = {
+on_yearly_pulse = {
 	events = {
-		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having a yearly fallback check is good.
+		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
 	}
 }
 
 on_bi_yearly_pulse_country = {
 	events = {
+		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
 		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
+		lrsk_gov_var_shroud_touched.8 # Not the best solution but I don't want to poll all leaders everywhere too often...
 	}
 }
 
