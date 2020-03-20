@@ -21,8 +21,31 @@ on_yearly_pulse_country = {
 	}
 }
 
+on_bi_yearly_pulse_country = {
+	events = {
+		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
+	}
+}
+
 on_pop_grown = {
 	events = {
 		lrsk_gov_var_shroud_touched.2
+	}
+}
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		lrsk_gov_var_shroud_touched.5
+	}
+}
+
+# Executed when the ruler is ousted and goes back to their pre-ruler class
+# From = Previous Ruler, already has the new class
+# This = Country
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		lrsk_gov_var_shroud_touched.6
 	}
 }

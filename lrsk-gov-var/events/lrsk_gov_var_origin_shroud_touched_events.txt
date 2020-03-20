@@ -101,12 +101,14 @@ pop_event = {
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_esper
 							add_trait = trait_latent_psionic
+							set_species_flag = lrsk_gov_var_shroud_touched_promoted
 						} 
 					}
 					35 = {
 						modify_species = { 
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_esper
+							set_species_flag = lrsk_gov_var_shroud_touched_demoted
 						} 
 					}
 				}
@@ -160,6 +162,313 @@ country_event = {
 			}
 
 			set_country_flag = lrsk_gov_var_shroud_touched_esper_undone
+		}
+	}
+}
+
+# New Leaders Get Psionic/Esper Traits
+country_event = {
+	id = lrsk_gov_var_shroud_touched.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = lrsk_gov_var_trait_natural_esper }
+		}
+	}
+
+	immediate = {
+		from = {
+			random_list = {
+				#usually no trait
+				65 = {}
+				#very rarely get full on psionic
+				5 = {
+					modifier = {
+						factor = 0
+						owner = {
+							OR = {
+								has_ascension_perk = ap_mind_over_matter
+								has_ascension_perk = ap_transcendence
+							}
+						} # probably redundant but eh
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = leader_trait_admiral_psionic
+						add_ruler_trait = leader_trait_ruler_psionic
+					}
+					else_if = {
+						limit = { leader_class = general }
+						add_trait = leader_trait_general_psionic
+						add_ruler_trait = leader_trait_ruler_psionic
+					}
+					else_if = {
+						limit = { leader_class = governor }
+						add_trait = leader_trait_governor_psionic
+						add_ruler_trait = leader_trait_ruler_psionic
+					}
+					else_if = {
+						limit = { leader_class = scientist }
+						add_trait = leader_trait_scientist_psionic
+						add_ruler_trait = leader_trait_ruler_psionic
+					}
+					else_if = {
+						limit = { leader_class = ruler }
+						add_trait = leader_trait_ruler_psionic
+						add_ruler_trait = leader_trait_ruler_psionic
+					}
+				}
+				#sometimes get esper trait
+				30 = {
+					modifier = {
+						factor = 0
+						root = {
+							OR = {
+								has_ascension_perk = ap_mind_over_matter
+								has_ascension_perk = ap_transcendence
+							}
+						} # probably redundant but eh
+					}
+					if = {
+						limit = { leader_class = admiral }
+						add_trait = lrsk_gov_var_leader_trait_admiral_esper
+						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					}
+					else_if = {
+						limit = { leader_class = general }
+						add_trait = lrsk_gov_var_leader_trait_general_esper
+						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					}
+					else_if = {
+						limit = { leader_class = governor }
+						add_trait = lrsk_gov_var_leader_trait_governor_esper
+						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					}
+					else_if = {
+						limit = { leader_class = scientist }
+						add_trait = lrsk_gov_var_leader_trait_scientist_esper
+						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					}
+					else_if = {
+						limit = { leader_class = ruler }
+						add_trait = lrsk_gov_var_leader_trait_ruler_esper
+						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					}
+
+				}
+			}
+		}
+	}
+}
+
+# Ruler gets normal class trait if one hasn't been assigned
+country_event = {
+	id = lrsk_gov_var_shroud_touched.6
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			has_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+			NOR = {
+				has_trait = lrsk_gov_var_leader_trait_admiral_esper
+				has_trait = lrsk_gov_var_leader_trait_general_esper
+				has_trait = lrsk_gov_var_leader_trait_governor_esper
+				has_trait = lrsk_gov_var_leader_trait_scientist_esper
+				has_trait = leader_trait_admiral_psionic
+				has_trait = leader_trait_general_psionic
+				has_trait = leader_trait_governor_psionic
+				has_trait = leader_trait_scientist_psionic
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen			
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_gov_var_leader_trait_admiral_esper
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_gov_var_leader_trait_general_esper
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_gov_var_leader_trait_governor_esper
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_gov_var_leader_trait_scientist_esper
+				break = yes
+			}
+		}
+	}
+}
+
+# Convert leader traits to psionic when AP advances to mind-over-matter
+country_event = {
+	id = lrsk_gov_var_shroud_touched.7
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = lrsk_gov_var_shroud_touched_nation
+		has_ascension_perk = ap_mind_over_matter
+		NOT = { has_ascension_perk = ap_transcendence }
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_same_species = root
+					NOR = {
+						has_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+						has_trait =	leader_trait_admiral_psionic
+						has_trait =	leader_trait_general_psionic
+						has_trait =	leader_trait_governor_psionic
+						has_trait =	leader_trait_scientist_psionic
+						has_trait =	leader_trait_ruler_psionic
+					}
+					OR = {
+						has_trait = lrsk_gov_var_leader_trait_admiral_esper
+						has_trait = lrsk_gov_var_leader_trait_general_esper
+						has_trait = lrsk_gov_var_leader_trait_governor_esper
+						has_trait = lrsk_gov_var_leader_trait_scientist_esper
+						has_trait = lrsk_gov_var_leader_trait_ruler_esper		
+					}
+				}
+				set_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+				random_list = {
+					40 = {
+						if = {
+							limit = { has_trait = lrsk_gov_var_leader_trait_admiral_esper }
+							remove_trait = lrsk_gov_var_leader_trait_admiral_esper
+							add_trait = leader_trait_admiral_psionic
+							add_ruler_trait = leader_trait_ruler_psionic
+						}
+						if = {
+							limit = { has_trait = lrsk_gov_var_leader_trait_general_esper }
+							remove_trait = lrsk_gov_var_leader_trait_general_esper
+							add_trait = leader_trait_general_psionic
+							add_ruler_trait = leader_trait_ruler_psionic
+						}
+						if = {
+							limit = { has_trait = lrsk_gov_var_leader_trait_governor_esper }
+							remove_trait = lrsk_gov_var_leader_trait_governor_esper
+							add_trait = leader_trait_governor_psionic
+							add_ruler_trait = leader_trait_ruler_psionic
+						}
+						if = {
+							limit = { has_trait = lrsk_gov_var_leader_trait_scientist_esper }
+							remove_trait = lrsk_gov_var_leader_trait_scientist_esper
+							add_trait = leader_trait_scientist_psionic
+							add_ruler_trait = leader_trait_ruler_psionic
+						}
+						if = {
+							limit = { has_trait = lrsk_gov_var_leader_trait_ruler_esper }
+							remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+							add_ruler_trait = leader_trait_ruler_psionic
+						}
+					}
+					60 = {	} #Do nothing
+				}
+			}
+		}
+	}
+}
+
+
+
+# Convert leader traits to psionic when AP advances to transcend
+country_event = {
+	id = lrsk_gov_var_shroud_touched.8
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = lrsk_gov_var_shroud_touched_nation
+		has_ascension_perk = ap_transcendence
+		from = {
+			OR = {
+				has_trait = lrsk_gov_var_leader_trait_admiral_esper
+				has_trait = lrsk_gov_var_leader_trait_general_esper
+				has_trait = lrsk_gov_var_leader_trait_governor_esper
+				has_trait = lrsk_gov_var_leader_trait_scientist_esper
+				has_trait = lrsk_gov_var_leader_trait_ruler_esper		
+			}
+		}
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_same_species = root
+					NOR = {
+						has_leader_flag = lrsk_gov_var_esper_ap_trscd_checked
+						has_trait =	leader_trait_admiral_psionic
+						has_trait =	leader_trait_general_psionic
+						has_trait =	leader_trait_governor_psionic
+						has_trait =	leader_trait_scientist_psionic
+						has_trait =	leader_trait_ruler_psionic
+					}
+				}
+				set_leader_flag = lrsk_gov_var_esper_ap_trscd_checked
+				if = {
+					limit = { has_trait = lrsk_gov_var_leader_trait_admiral_esper }
+					remove_trait = lrsk_gov_var_leader_trait_admiral_esper
+					add_trait = leader_trait_admiral_psionic
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+				if = {
+					limit = { has_trait = lrsk_gov_var_leader_trait_general_esper }
+					remove_trait = lrsk_gov_var_leader_trait_general_esper
+					add_trait = leader_trait_general_psionic
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+				if = {
+					limit = { has_trait = lrsk_gov_var_leader_trait_governor_esper }
+					remove_trait = lrsk_gov_var_leader_trait_governor_esper
+					add_trait = leader_trait_governor_psionic
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+				if = {
+					limit = { has_trait = lrsk_gov_var_leader_trait_scientist_esper }
+					remove_trait = lrsk_gov_var_leader_trait_scientist_esper
+					add_trait = leader_trait_scientist_psionic
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+				if = {
+					limit = { has_trait = lrsk_gov_var_leader_trait_ruler_esper }
+					remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+					add_ruler_trait = leader_trait_ruler_psionic
+				}
+			}
 		}
 	}
 }
