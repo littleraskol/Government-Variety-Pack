@@ -1,0 +1,319 @@
+# Government Variety Pack
+# Events - For Discovery / Tradeways / Grand Alliance
+# Author: littleraskol
+
+namespace = lrsk_gov_var_new_fed_starts
+
+# Sets up the research coop/trade league/martial alliance for the related origins.
+country_event = {
+	id = lrsk_gov_var_new_fed_starts.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+		add_tradition = tr_diplomacy_adopt
+		add_tradition = tr_diplomacy_the_federation
+
+		if = {
+			limit = { num_guaranteed_colonies >= 2 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_star_flag = neighbor_t1_first_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = lrsk_fed_planet_1
+							federation_origin_planet_setup = yes
+						}
+					}
+					closest_system = {
+						limit = { has_star_flag = neighbor_t2_second_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = lrsk_fed_planet_2
+							federation_origin_planet_setup = yes
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { num_guaranteed_colonies >= 1 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_star_flag = neighbor_t1_first_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = lrsk_fed_planet_1
+							federation_origin_planet_setup = yes
+						}
+					}
+					closest_system = {
+						limit = { 
+							NOT = { has_star_flag = neighbor_t1_first_colony }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = lrsk_fed_planet_2
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = lrsk_fed_planet_2
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { num_guaranteed_colonies = 0 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_owner = no }
+						set_star_flag = lrsk_fed_origin_system_1
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = lrsk_fed_planet_1
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = lrsk_fed_planet_1
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+					closest_system = {
+						limit = { 
+							NOT = { has_star_flag = lrsk_fed_origin_system_1 }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = lrsk_fed_planet_2
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = lrsk_fed_planet_2
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		# First Member
+		event_target:lrsk_fed_planet_1 = {
+			solar_system = { generate_home_system_resources = yes }
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				homeworld = this
+				effect = {
+					save_event_target_as = lrsk_fed_planet_1_species
+				}
+			}
+			if = {
+				limit = { root = { or = { 
+					has_origin = lrsk_gov_var_origin_for_discovery
+					has_origin = lrsk_gov_var_origin_for_discovery_mi
+				} } }
+				lrsk_create_for_discovery_member_1 = yes
+			}
+			if = {
+				limit = { root = { or = { 
+					has_origin = lrsk_gov_var_origin_tradeways
+					has_origin = lrsk_gov_var_origin_tradeways_mc
+				} } }
+				lrsk_create_tradeways_member_1 = yes
+			}
+			if = {
+				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
+				lrsk_create_grand_alliance_member_1 = yes
+			}
+			create_colony = {
+				owner = event_target:lrsk_fed_member_1
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_fed_member_1
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+			}
+		}
+
+		# Second Member
+		event_target:lrsk_fed_planet_2 = {
+			solar_system = { generate_home_system_resources = yes }
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				homeworld = this
+				effect = {
+					save_event_target_as = lrsk_fed_planet_2_species
+				}
+			}
+			if = {
+				limit = { root = { or = { 
+					has_origin = lrsk_gov_var_origin_for_discovery
+					has_origin = lrsk_gov_var_origin_for_discovery_mi
+				} } }
+				modify_species = {
+					species = event_target:lrsk_fed_planet_2_species
+					class = random # MIs allowed in RCs
+					portrait = random
+					traits = random
+					effect = {
+						save_event_target_as = lrsk_fed_planet_2_species
+					}
+				}
+				lrsk_create_for_discovery_member_2 = yes
+			}
+			if = {
+				limit = { root = { or = { 
+					has_origin = lrsk_gov_var_origin_tradeways
+					has_origin = lrsk_gov_var_origin_tradeways_mc
+				} } }
+				lrsk_create_tradeways_member_2 = yes
+			}
+			if = {
+				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
+				lrsk_create_grand_alliance_member_2 = yes
+			}
+			create_colony = {
+				owner = event_target:lrsk_fed_member_2
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_fed_member_2
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+			}
+		}
+		event_target:lrsk_fed_member_1 = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			join_alliance = { who = root override_requirements = yes }
+			set_name = random # Fixes some naming issues
+		}
+		event_target:lrsk_fed_member_2 = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			join_alliance = { who = root override_requirements = yes }
+			set_name = random # Fixes some naming issues
+		}
+		if = {
+			limit = { or = { 
+				has_origin = lrsk_gov_var_origin_for_discovery
+				has_origin = lrsk_gov_var_origin_for_discovery_mi
+			} }
+			federation = { 
+				set_federation_type = research_federation
+				set_name = random
+			}
+		}
+		if = {
+			limit = { or = { 
+				has_origin = lrsk_gov_var_origin_tradeways
+				has_origin = lrsk_gov_var_origin_tradeways_mc
+			} }
+			federation = { 
+				set_federation_type = trade_federation
+				set_name = random
+			}
+		}
+		if = {
+			limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
+			federation = { 
+				set_federation_type = military_federation
+				set_name = random
+			}
+		}
+		set_federation_leader = root
+	}
+}
