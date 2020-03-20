@@ -229,6 +229,7 @@ country_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						#save_event_target_as = lrsk_next_fed_member
@@ -350,6 +351,7 @@ country_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						#save_event_target_as = lrsk_next_fed_member
@@ -447,6 +449,26 @@ country_event = {
 				set_federation_type = military_federation
 				set_name = random
 			}
+		}
+		event_target:fed_member_1 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_lrsk_gov_var_new_feds
+			}
+		}
+		event_target:fed_member_2 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_lrsk_gov_var_new_feds
+			}
+		}
+		add_opinion_modifier = {
+			who = event_target:fed_member_1
+			modifier = opinion_lrsk_gov_var_new_feds
+		}
+		add_opinion_modifier = {
+			who = event_target:fed_member_2
+			modifier = opinion_lrsk_gov_var_new_feds
 		}
 		set_federation_leader = root
 	}
@@ -686,6 +708,7 @@ planet_event = {
 							authority = auth_machine_intelligence
 							civics = {
 								civic = civic_machine_servitor
+								civic = random
 							}
 							effect = {
 								save_event_target_as = lrsk_next_fed_member
@@ -744,6 +767,7 @@ planet_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						save_event_target_as = lrsk_next_fed_member
@@ -767,6 +791,7 @@ planet_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						save_event_target_as = lrsk_next_fed_member
@@ -790,6 +815,7 @@ planet_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						save_event_target_as = lrsk_next_fed_member
@@ -813,6 +839,7 @@ planet_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						save_event_target_as = lrsk_next_fed_member
@@ -836,6 +863,7 @@ planet_event = {
 					}
 					civics = {
 						civic = civic_merchant_guilds
+						civic = random
 					}
 					effect = {
 						save_event_target_as = lrsk_next_fed_member
