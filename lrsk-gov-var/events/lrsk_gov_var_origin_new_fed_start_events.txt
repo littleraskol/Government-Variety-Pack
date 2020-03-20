@@ -166,8 +166,6 @@ country_event = {
 			}
 		}
 
-
-
 		# First Member
 		event_target:lrsk_fed_planet_1 = {
 			solar_system = { generate_home_system_resources = yes }
@@ -187,7 +185,27 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_for_discovery_mi
 				} } }
 				#lrsk_create_for_discovery_member_1 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.2 } } # research fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.2 } } # research fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_for_discovery_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_materialist"
+						ethic = "ethic_fanatic_materialist"
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_1
+						establish_communications_no_message = root
+					}
+				}
 			}
 			if = {
 				limit = { root = { or = { 
@@ -195,16 +213,58 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_tradeways_mc
 				} } }
 				#lrsk_create_tradeways_member_1 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.3 } } # trade fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.3 } } # trade fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_tradeways_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_fanatic_xenophile"
+					}
+					civics = {
+						civic = civic_merchant_guilds
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_1
+						establish_communications_no_message = root
+					}
+				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				#lrsk_create_grand_alliance_member_1 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.4 } } # military fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.4 } } # military fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_grand_alliance_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_militarist"
+						ethic = "ethic_fanatic_militarist"
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_1
+						establish_communications_no_message = root
+					}
+				}
 			}
-			event_target:lrsk_next_fed_member = {
-				save_event_target_as = lrsk_fed_member_1
-			}
+			#event_target:lrsk_next_fed_member = {
+			#	save_event_target_as = lrsk_fed_member_1
+			#}
 			create_colony = {
 				owner = event_target:lrsk_fed_member_1
 			}
@@ -246,7 +306,27 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_for_discovery_mi
 				} } }
 				#lrsk_create_for_discovery_member_2 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.2 } } # research fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.2 } } # research fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_for_discovery_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_materialist"
+						ethic = "ethic_fanatic_materialist"
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_2
+						establish_communications_no_message = root
+					}
+				}
 			}
 			if = {
 				limit = { root = { or = { 
@@ -254,16 +334,58 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_tradeways_mc
 				} } }
 				#lrsk_create_tradeways_member_2 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.3 } } # trade fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.3 } } # trade fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_tradeways_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_fanatic_xenophile"
+					}
+					civics = {
+						civic = civic_merchant_guilds
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_2
+						establish_communications_no_message = root
+					}
+				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				#lrsk_create_grand_alliance_member_2 = yes
-				this = { planet_event = { id = lrsk_gov_var_new_fed_starts.4 } } # military fed
+				#this = { planet_event = { id = lrsk_gov_var_new_fed_starts.4 } } # military fed
+				#This is a dummy/fallback measure for testing...
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = "lrsk_gov_var_origin_grand_alliance_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_militarist"
+						ethic = "ethic_fanatic_militarist"
+					}
+					effect = {
+						#save_event_target_as = lrsk_next_fed_member
+						save_event_target_as = lrsk_fed_member_2
+						establish_communications_no_message = root
+					}
+				}
 			}
-			event_target:lrsk_next_fed_member = {
-				save_event_target_as = lrsk_fed_member_2
-			}
+			#event_target:lrsk_next_fed_member = {
+			#	save_event_target_as = lrsk_fed_member_2
+			#}
 			create_colony = {
 				owner = event_target:lrsk_fed_member_2
 			}

@@ -30,5 +30,17 @@ event = {
 			limit = { has_origin = lrsk_gov_var_origin_shroud_touched }
 			country_event = { id = lrsk_gov_var_shroud_touched.1 }
 		}
+		
+		# For Discovery / Tradeways / Grand Alliance
+		every_playable_country = {
+			limit = { OR = { 
+				has_origin = lrsk_gov_var_origin_for_discovery
+				has_origin = lrsk_gov_var_origin_for_discovery_mi
+				has_origin = lrsk_gov_var_origin_tradeways
+				has_origin = lrsk_gov_var_origin_tradeways_mc
+				has_origin = lrsk_gov_var_origin_grand_alliance
+			} }
+			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
+		}
 	}
 }
