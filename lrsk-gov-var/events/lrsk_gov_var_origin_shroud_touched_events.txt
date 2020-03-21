@@ -26,7 +26,7 @@ country_event = {
 		# Tag species as being a shroud-touched origin. Not sure if useful...
 		species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
 		
-		# At this stage, randomly sets some to Latent Psychic.
+		# Randomly sets some to Latent Psionic or to lose Natural Esper
 		every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
 
 		capital_scope ={
@@ -47,10 +47,7 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {
-		#fromfrom = { species = { has_species_flag = lrsk_gov_var_shroud_touched_species } }
-		fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper }
-	}
+	trigger = {	fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper } }
 
 	immediate = {
 		if = {
@@ -76,11 +73,7 @@ pop_event = {
 		if = {
 			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
 			if = {
-				limit = {  
-					#or = {
-					#	owner = { has_ascension_perk = ap_mind_over_matter } #REMOVE the esper trait if they have started real psychic ascension 
-					#	owner = { has_ascension_perk = ap_transcendence } #REMOVE the esper trait if reached next step of real psychic ascension
-					#} #Seems like we don't ever want double traits...
+				limit = {
 					or = {
 						pop_has_trait = trait_latent_psionic
 						pop_has_trait = trait_psionic
@@ -99,7 +92,7 @@ pop_event = {
 				} } # in this case, we have to remove them ALL.
 			}
 			else = {
-				# Usually do nothing, occasionally spawn without esper, but rarely promote pop to latent psychic
+				# Usually do nothing, rarely promote pop to Latent Psionic, sometimes remove Natural Esper
 				random_list = {
 					60 = { } 
 					5 = { 
@@ -149,7 +142,6 @@ country_event = {
 				if = { 
 					limit = {
 						pop_has_trait = lrsk_gov_var_trait_natural_esper
-						#species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
 						or = {
 							pop_has_trait = trait_latent_psionic
 							pop_has_trait = trait_psionic
@@ -188,7 +180,7 @@ country_event = {
 		from = {
 			random_list = {
 				#usually no trait
-				65 = {}
+				60 = {}
 				#very rarely get full on psionic
 				5 = {
 					modifier = {
@@ -227,7 +219,7 @@ country_event = {
 					}
 				}
 				#sometimes get esper trait
-				30 = {
+				35 = {
 					modifier = {
 						factor = 0
 						root = {
@@ -259,7 +251,6 @@ country_event = {
 					}
 					else_if = {
 						limit = { leader_class = ruler }
-						add_trait = lrsk_gov_var_leader_trait_ruler_esper
 						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
 					}
 

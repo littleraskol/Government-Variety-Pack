@@ -8,21 +8,7 @@ on_game_start = {
 	}
 }
 
-#on_game_start_country = {
-#	events = {
-#		lrsk_gov_var_galactic_backdoor.1
-#		lrsk_gov_var_shroud_touched.1
-#	}
-#}
-
-on_yearly_pulse = {
-	events = {
-		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.10 # Not the best solution but I don't want to poll all pops everywhere too often...
-	}
-}
-
-on_bi_yearly_pulse_country = {
+on_yearly_pulse_country = {
 	events = {
 		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
 		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
@@ -30,9 +16,16 @@ on_bi_yearly_pulse_country = {
 	}
 }
 
+on_bi_yearly_pulse = {
+	events = {
+		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
+		lrsk_gov_var_shroud_touched.10 # Not the best solution but I don't want to poll all pops everywhere too often...
+	}
+}
+
 on_pop_grown = {
 	events = {
-		lrsk_gov_var_shroud_touched.2
+		lrsk_gov_var_shroud_touched.2 # Handles adding esper trait
 	}
 }
 
@@ -40,7 +33,7 @@ on_pop_grown = {
 # scope: country, from: leader
 on_leader_spawned = {
 	events = {
-		lrsk_gov_var_shroud_touched.5
+		lrsk_gov_var_shroud_touched.5 # Leaders get esper trait as appropriate
 	}
 }
 
@@ -49,6 +42,6 @@ on_leader_spawned = {
 # This = Country
 on_ruler_back_to_pre_ruler_class = {
 	events = {
-		lrsk_gov_var_shroud_touched.6
+		lrsk_gov_var_shroud_touched.6 # Addes esper leader traits to demoted ruler without them
 	}
 }
