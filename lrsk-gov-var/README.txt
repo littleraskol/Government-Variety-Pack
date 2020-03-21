@@ -5,7 +5,7 @@ A grab bag of new civics and government types.
 
 Origins:
 
-Galactic Backdoor (Any) - This civilization has a wormhole in their home system - potential boon to exploration, or an invitation to invasion? (Start with a wormhole in your home system The Wormhole Stabilization tech option starts ready to research. Warning: There are fewer limits on where the wormhole's exit point can spawn than normal. This origin may lead to some interesting interactions.)
+Galactic Backdoor (Any) - This civilization has a wormhole in their home system - potential boon to exploration, or an invitation to invasion? (Start with a wormhole in your home system. The Wormhole Stabilization tech option starts ready to research. Warning: There are fewer limits on where the wormhole's exit point can spawn than normal. This origin may lead to some interesting interactions.)
 
 Shroud-Touched (Not Materialist) - The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies. (Most pops of your starting species have the Natural Esper trait, which is a lesser psionic trait. Can get leader traits like lesser versions of psionic leader traits. Very rarely, actual Latent Psionics can spawn. The Psionic Theory tech option starts ready to research. Your homeworld has an Otherworld Pockets deposit which adds special esper jobs.)
 
@@ -184,6 +184,7 @@ v1.6 (03-22-20) Origins
 -Job definitions now include "possible_pre_triggers" as seems to be needed now?
 -Bug fix: Moved army morale bonus in knight building to army modifiers section.
 -Bug fix: Added missing "add job" icons for some custom jobs.
+-Documentation: Added the "Cooperative Super-Sapience" info to the government thread.
 
 v1.5 (03-18-20) - Distributed Planning Systems Overhaul, Real Verne Updates
 -Distributed Planning Systems maintains its base bonus but now also allows for a new planet decision. This decision, "Run Recursive Audit," temporarily adds jobs with a mix of beneficial and problematic effects. After a year, the "audit" ends and a longer-term modifier to planet output is applied. The more specialized a planet is, the higher the likelihood of a beneficial outcome.
