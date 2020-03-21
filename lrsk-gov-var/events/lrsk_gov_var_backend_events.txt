@@ -6,7 +6,7 @@
 
 namespace = lrsk_government_variety_pack_backend
 
-# Adds a flag denoting this mod is in use.
+# Adds a flag denoting this mod is in use, starts up mod-added origins.
 event = {
 	id = lrsk_government_variety_pack_backend.1
 	hide_window = yes
@@ -16,49 +16,31 @@ event = {
 	
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
-		#event = {
-		#	id = lrsk_government_variety_pack_backend.2
-		#	days = 10
-		#}
+		
+		## Origins Setup
+
+		# Galactic Backdoor
+		every_playable_country = {
+			limit = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
+			country_event = { id = lrsk_gov_var_galactic_backdoor.1 }
+		}
+		
+		# Shroud-Touched
+		every_playable_country = {
+			limit = { has_origin = lrsk_gov_var_origin_shroud_touched }
+			country_event = { id = lrsk_gov_var_shroud_touched.1 }
+		}
+		
+		# For Discovery / Tradeways / Grand Alliance
+		every_playable_country = {
+			limit = { OR = { 
+				has_origin = lrsk_gov_var_origin_for_discovery
+				has_origin = lrsk_gov_var_origin_for_discovery_mi
+				has_origin = lrsk_gov_var_origin_tradeways
+				has_origin = lrsk_gov_var_origin_tradeways_mc
+				has_origin = lrsk_gov_var_origin_grand_alliance
+			} }
+			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
+		}
 	}
 }
-#
-## Checks if CVP is running.
-#event = {
-#	id = lrsk_government_variety_pack_backend.2
-#	hide_window = yes
-#	is_triggered_only = yes
-#	
-#	immediate = { 
-#		if = { 
-#			limit = { has_global_flag = lrsk_civics_variety_pack_mod_active }
-#			event = { id = lrsk_government_variety_pack_backend.3 }
-#		}
-#	}
-#}
-#
-## Warns that CVP is running.
-#event = {
-#	id = lrsk_government_variety_pack_backend.3
-#	title = lrsk_government_variety_pack_backend.3.name
-#	desc = lrsk_government_variety_pack_backend.3.desc
-#	picture = GFX_evt_exploding_planet
-#	show_sound = event_bad_omen
-#	#hide_window = yes
-#	is_triggered_only = yes
-#	
-#	option = { name = OK }
-#}
-#
-## Diagnostic to confirm that the event ran
-#event = {
-#	id = lrsk_government_variety_pack_backend.3
-#	title = lrsk_government_variety_pack_backend.3.name
-#	desc = lrsk_government_variety_pack_backend.3.desc
-#	picture = GFX_evt_exploding_planet
-#	show_sound = event_bad_omen
-#	#hide_window = yes
-#	is_triggered_only = yes
-#	
-#	option = { name = OK }
-#}

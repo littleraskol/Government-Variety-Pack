@@ -688,6 +688,18 @@ part = {
 
 part = {
 	location = 1
+	localization = "START_SCREEN_PART_TWO_COOP_SUPERSAP"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_coop_supersap
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_PMC"
 
 	trigger = {
@@ -698,15 +710,44 @@ part = {
 	}
 }
 
-# Default catch-all
 part = {
-	location = 1
-	localization = "START_SCREEN_PART_TWO_COOP_SUPERSAP"
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_GALACTIC_BACKDOOR"
+	
+	trigger = {
+		has_origin = lrsk_gov_var_origin_galactic_backdoor
+	}
+}
 
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY"
+	
 	trigger = {
 		OR = {
-			has_government = lrsk_gov_var_gov_coop_supersap
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
 		}
-		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_TRADEWAYS"
+	
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+		}
+	}
+}
+
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE"
+	
+	trigger = {
+		has_origin = lrsk_gov_var_origin_grand_alliance
 	}
 }

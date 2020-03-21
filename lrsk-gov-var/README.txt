@@ -3,6 +3,22 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
+Origins:
+
+Galactic Backdoor (Any) - This civilization has a wormhole in their home system - potential boon to exploration, or an invitation to invasion? (Start with a wormhole in your home system The Wormhole Stabilization tech option starts ready to research. Warning: There are fewer limits on where the wormhole's exit point can spawn than normal. This origin may lead to some interesting interactions.)
+
+Shroud-Touched (Not Materialist) - The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies. (Most pops of your starting species have the Natural Esper trait, which is a lesser psionic trait. Can get leader traits like lesser versions of psionic leader traits. Very rarely, actual Latent Psionics can spawn. The Psionic Theory tech option starts ready to research. Your homeworld has an Otherworld Pockets deposit which adds special esper jobs.)
+
+For Discovery (Materialist) - This civilization established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
+Diplomatic Directive: Discover (Machine Intelligence) - This machine intelligence established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with the Universal Compatibility tradition unlocked.)
+
+Tradeways (Merchant Guilds) - This civilization established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Start as the leader of a Trade League federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
+Tradeways, Inc. (Megacorporation) - This global megacorporation established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Same as Tradeways.)
+
+Grand Alliance (Militarist) - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
 Normal Civics:
 
 Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
