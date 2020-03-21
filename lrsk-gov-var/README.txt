@@ -113,7 +113,7 @@ Architect Expert Systems (Machine Intelligence) - Originally built as an advance
 
 Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage)
 
-Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 max rivals, +15% trade attractiveness and trust growth)
+Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness and trust growth)
 
 Astro-Prospecting Mainframe (Machine Intelligence) - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
