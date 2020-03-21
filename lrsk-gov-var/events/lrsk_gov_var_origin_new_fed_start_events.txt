@@ -177,6 +177,10 @@ country_event = {
 				} } }
 				random_list = {
 					20 = {
+						modifier = {
+							factor = 2
+							root = { has_origin = lrsk_gov_var_origin_for_discovery_mi }
+						}
 						create_species = {
 							name = random
 							class = MACHINE # MIs allowed in RCs
@@ -280,6 +284,10 @@ country_event = {
 						}
 					}
 					80 = {
+						modifier = {
+							factor = 0.75
+							root = { has_origin = lrsk_gov_var_origin_for_discovery_mi }
+						}
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
@@ -307,7 +315,7 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_tradeways_mc
 				} } }
 				random_list = {
-					40 = {
+					35 = {
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
@@ -330,7 +338,7 @@ country_event = {
 							}
 						}
 					}
-					60 = {	
+					65 = {	
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
@@ -415,6 +423,11 @@ country_event = {
 				} } }
 				random_list = {
 					20 = {
+						modifier = {
+							factor = 0.5
+							event_target:lrsk_fed_member_1 = { has_authority = auth_machine_intelligence }
+							root = { NOT = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
+						}
 						create_species = {
 							name = random
 							class = MACHINE # MIs allowed in RCs
@@ -518,6 +531,11 @@ country_event = {
 						}
 					}
 					80 = {
+						modifier = {
+							factor = 1.125
+							event_target:lrsk_fed_member_1 = { has_authority = auth_machine_intelligence }
+							root = { NOT = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
+						}
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
@@ -546,6 +564,10 @@ country_event = {
 				} } }
 				random_list = {
 					40 = {
+						modifier = {
+							factor = 1.375
+							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+						}
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
@@ -568,7 +590,11 @@ country_event = {
 							}
 						}
 					}
-					60 = {	
+					60 = {
+						modifier = {
+							factor = 0.75
+							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+						}
 						create_country = {
 							name_list = random
 							species = event_target:lrsk_next_fed_planet_species
