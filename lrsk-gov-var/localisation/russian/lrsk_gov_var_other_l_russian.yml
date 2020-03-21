@@ -8,6 +8,65 @@ l_russian:
 #l_simp_chinese:
 #l_spanish:
 
+ ## Traits
+
+ # Common Strings
+ LRSK_GOV_VAR_ESPER:0 "Esper"
+ LRSK_GOV_VAR_ESP_LEADER:0 "This leader has hightened extra-sensory perception that"
+
+ # Species
+ #:0 ""
+ #_desc:0 "§L§!\n"
+
+ lrsk_gov_var_trait_natural_esper:0 "Natural $LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_trait_natural_esper_desc:0 "§LLong contact with Shroud energies have left many of the members of this species with an inborn special intuition, a 'knack' or 'gift' amounting to extra-sensory perception beyond what biology can explain.§!\n"
+
+ # admiral
+ #:0 ""
+ #_desc:0 ""
+
+ lrsk_gov_var_leader_trait_admiral_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_leader_trait_admiral_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ provides an unusual ability to sense where incoming fire will appear."
+
+ # general
+ #:0 ""
+ #_desc:0 ""
+
+ lrsk_gov_var_leader_trait_general_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_leader_trait_general_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ grants flashes of strange tactical insight. Orders based on these insights tend to work out in a way that gives confidence to the troops while unnerving the enemy."
+
+ # governor
+ #:0 ""
+ #_desc:0 ""
+
+ lrsk_gov_var_leader_trait_governor_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_leader_trait_governor_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ improves day-today administration with preternaturally guided directives."
+
+ # ruler
+ #:0 ""
+ #_desc:0 ""
+
+ lrsk_gov_var_leader_trait_ruler_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_leader_trait_ruler_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ allows for guiding the ship of state with uncanny confidence and discernment."
+
+ # scientist
+ #:0 ""
+ #_desc:0 ""
+
+ lrsk_gov_var_leader_trait_scientist_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gov_var_leader_trait_scientist_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ provides sparks of weird genius."
+
+ ## Deposits
+
+ # Planetary
+ d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
+ d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
+
+ ## Opinion Modifiers
+
+ # New Fed Starts
+ opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
+
  ## Buildings
 
  # Warrior Hall line
@@ -50,6 +109,15 @@ l_russian:
  mod_job_lrsk_gov_var_job_pastor_add:0 "$job_lrsk_gov_var_job_pastor$ Jobs"
  mod_job_lrsk_gov_var_job_pastor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_pastor$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_pastor_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_pastor_add£ per $VALUE$ £pop£"
+
+ #Otherworld Guide
+ job_lrsk_gov_var_job_otherworld_guide:0 "Otherworld Guide"
+ job_lrsk_gov_var_job_otherworld_guide_plural:0 "$job_lrsk_gov_var_job_otherworld_guide$s"
+ job_lrsk_gov_var_job_otherworld_guide_desc:0 "Communities of seers and witches made up of those mentally resiliant (or ill) enough to live near the Otherworld Pockets. Their fortunes and foretellings not only help people feel more confident about their place in the world, they provide a common cultural focus point for society."
+ job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into §G+1§! £unity£ §Y$unity$§! (more with better psionic traits) and increase £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §G+3§!."
+ mod_job_lrsk_gov_var_job_otherworld_guide_add:0 "$job_lrsk_gov_var_job_otherworld_guide$ Jobs"
+ mod_job_lrsk_gov_var_job_otherworld_guide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_otherworld_guide$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_otherworld_guide_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_otherworld_guide_add£ per $VALUE$ £pop£"
 
  #Hedge Preacher
  job_lrsk_gov_var_job_hedge_preacher:0 "Hedge Preacher"
