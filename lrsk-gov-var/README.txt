@@ -173,7 +173,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.6 (03-22-20) Origins
+v1.6 (03-21-20) Origins
 -Added seven new origins.
 -Galactic Backdoor is like Galactic Doorstep, but with a wormhole instead of a gateway. (Not as sophisticated in terms of special event support yet.)
 -Shroud-Touched is intended to be a "psionic" counterpart to the Syncretic Evolution and Mechanist origins, starting you down the path of the psionic ascension part-way.
