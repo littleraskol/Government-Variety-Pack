@@ -173,6 +173,18 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6 (03-22-20) Origins
+-Added seven new origins.
+-Galactic Backdoor is like Galactic Doorstep, but with a wormhole instead of a gateway. (Not as sophisticated in terms of special event support yet.)
+-Shroud-Touched is intended to be a "psionic" counterpart to the Syncretic Evolution and Mechanist origins, starting you down the path of the psionic ascension part-way.
+-For Discovery and Diplomatic Directive: Discover both start you as leader of a Research Co-op, but the latter is for Machine Intelligences.
+-Tradeways and Tradeways, Inc. both start you as leader of a Trade League, but the latter is for Megacorporations.
+-Grand Alliance starts you as leader of a Martial Alliance.
+-The machine civic Diplomatic Protocols is now more in line with the base game diplomatic civics, providing an extra Envoy and a minor diplo weight buff (the other modifiers remain but some have been nerfed).
+-Job definitions now include "possible_pre_triggers" as seems to be needed now?
+-Bug fix: Moved army morale bonus in knight building to army modifiers section.
+-Bug fix: Added missing "add job" icons for some custom jobs.
+
 v1.5 (03-18-20) - Distributed Planning Systems Overhaul, Real Verne Updates
 -Distributed Planning Systems maintains its base bonus but now also allows for a new planet decision. This decision, "Run Recursive Audit," temporarily adds jobs with a mix of beneficial and problematic effects. After a year, the "audit" ends and a longer-term modifier to planet output is applied. The more specialized a planet is, the higher the likelihood of a beneficial outcome.
 -Elected Clergy now gives +10% faction influence instead of +0.5 max faction influence (defunct modifier).
