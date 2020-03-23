@@ -157,7 +157,7 @@ lrsk_gov_var_gov_corporate_neofuedalism = {
 
 #Room to grow: simple variations on Business Lobby?
 
-# Proprietary Franchise (Imperal + Mat/Pac + AE/CP)
+# Proprietary Franchise (Imperal + MerchGuilds + BL or CP)
 lrsk_gov_var_gov_proprietary_franchise = {
 	ruler_title = LRSK_GOV_VAR_RT_PROPRIETOR
 	heir_title = LRSK_GOV_VAR_HT_SENIOR_VP
@@ -165,20 +165,9 @@ lrsk_gov_var_gov_proprietary_franchise = {
 	dynastic_last_names = yes
 
 	possible = {
+		has_authority = auth_imperial
+		has_valid_civic = civic_merchant_guilds
 		OR = {
-			has_authority = auth_imperial
-		}
-		AND = {
-			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
-			NOR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
-		}
-		AND = {
 			has_valid_civic = lrsk_gov_var_civic_business_lobby
 			has_valid_civic = civic_cutthroat_politics
 		}

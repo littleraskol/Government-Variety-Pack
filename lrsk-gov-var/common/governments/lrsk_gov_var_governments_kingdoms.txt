@@ -74,6 +74,27 @@ lrsk_gov_var_gov_libertine_empire = {
 	}
 }
 
+# Empire of Rapine
+lrsk_gov_var_gov_empire_of_rapine = {
+	ruler_title = LRSK_GOV_VAR_RT_EMPEROR_OF_FREE
+	ruler_title_female = LRSK_GOV_VAR_RT_EMPRESS_OF_FREE
+	heir_title = LRSK_GOV_VAR_HT_PRINCELICENTIOUS
+	heir_title_female = LRSK_GOV_VAR_HT_PRINCESSLICENTIOUS
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		has_valid_civic = civic_barbaric_despoilers
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
 # Something combining PK and IC but I dunno what yet...
 #lrsk_gov_var_gov_libertine_empire = {
 #	ruler_title = LRSK_GOV_VAR_RT_LIB_EMPEROR
