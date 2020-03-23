@@ -1522,6 +1522,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_stratocracy"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1541,6 +1542,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_stratocracy"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1560,6 +1562,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_stratocracy"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1569,6 +1572,26 @@ empire_name_format = {
 	format = "format.lrsk_oli_serv.3"
 	noun = "[This.GetSpeciesName]"
 	prefix_format = "[This.GetSpeciesName] <lrsk_oligarchic_service>"
+	# Human Empire
+}
+
+# Oligarchic Citizen Service Inclusive
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			has_government = "gov_citizen_stratocracy"
+			has_ethic = ethic_xenophile
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_inclu_oli_serv.1"
+	noun = "<lrsk_stellar_generic_desc> "
+	prefix_format = "<lrsk_stellar_generic_desc> <lrsk_oligarchic_service>"
 	# Human Empire
 }
 
@@ -1582,6 +1605,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_republic"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1601,6 +1625,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_republic"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1620,6 +1645,7 @@ empire_name_format = {
 		modifier = {
 			add = 25
 			has_government = "gov_citizen_republic"
+			NOT = { has_ethic = ethic_xenophile }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1629,6 +1655,26 @@ empire_name_format = {
 	format = "format.lrsk_dem_serv.3"
 	noun = "[This.GetSpeciesName]"
 	prefix_format = "[This.GetSpeciesName] <lrsk_democratic_service>"
+	# Human Empire
+}
+
+# Democratic Citizen Service Inclusive
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			has_government = "gov_citizen_republic"
+			has_ethic = ethic_xenophile
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_inclu_dem_serv.1"
+	noun = "<lrsk_stellar_generic_desc> "
+	prefix_format = "<lrsk_stellar_generic_desc> <lrsk_democratic_service>"
 	# Human Empire
 }
 
@@ -3144,6 +3190,73 @@ empire_name_format = {
 	noun = "[This.Capital.GetName]"
 	prefix_format = "[This.Capital.GetName] <lrsk_trade_league_org>"
 	# Earth Empire
+}
+
+
+# Crime Orgs
+#Criminal Syndicate
+
+# Criminal Organization 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "gov_criminal_syndicate"
+			}			
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_crimeorg.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_criminal>"
+	# Human Empire
+}
+
+# Criminal Organization 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "gov_criminal_syndicate"
+			}	
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_crimeorg.2"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_criminal>"
+	# Human Empire
+}
+
+# Criminal Organization 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "gov_criminal_syndicate"
+			}	
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_crimeorg.3"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_criminal>"
+	# Human Empire
 }
 
 # Megachurch

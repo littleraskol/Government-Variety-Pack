@@ -464,3 +464,69 @@ empire_name_format = {
 	prefix_format = "[This.Capital.System.GetName] <lrsk_cit_purifiers>"
 	# Human Empire
 }
+
+
+# NazBol
+
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_psr_purifier.1"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <lrsk_dem_purifiers>"
+	# Human Empire
+}
+
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_psr_purifier.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <lrsk_dem_purifiers>"
+	# Human Empire
+}
+
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.lrsk_psr_purifier.3"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <lrsk_dem_purifiers>"
+	# Human Empire
+}

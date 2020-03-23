@@ -81,9 +81,9 @@
 
  ## New Megacorporation-Types
  # Rationalist-Managerial Firms
- # format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_rmf_corp><lrsk_corp_bits>"
- # format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
- # format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_generic_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_stellar_filler_desc><lrsk_rmf_corp><lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_stellar_filler_desc><lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+ # format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_stellar_filler_desc><lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
  format.lrsk_rmf_corp.1: "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_rmf_corp><lrsk_corp_bits>"
  format.lrsk_rmf_corp.2: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
  format.lrsk_rmf_corp.3: "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
@@ -96,8 +96,8 @@
  format.lrsk_inno_corp.3: "<lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
  # PMCs
  format.lrsk_pmc_corp.1: "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp><lrsk_corp_bits>"
- format.lrsk_pmc_corp.2: "[This.Capital.System.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
- format.lrsk_pmc_corp.3: "[This.Capital.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
+ format.lrsk_pmc_corp.2: "[This.Capital.System.GetName]-Force <lrsk_stellar_filler_desc><lrsk_pmc_desc><lrsk_corp_bits>"
+ format.lrsk_pmc_corp.3: "[This.Capital.GetName]-Force <lrsk_stellar_filler_desc><lrsk_pmc_desc><lrsk_corp_bits>"
  # Megachurches
  format.lrsk_megachurch.1: "[This.GetSpeciesAdj] <lrsk_megachurch> <lrsk_megachurch_suffix>"
  format.lrsk_megachurch.2: "<lrsk_megachurch_desc> <lrsk_megachurch> of [This.Capital.System.GetName]"
@@ -149,6 +149,10 @@
  format.lrsk_cit_purifier.1: "[This.GetSpeciesAdj] Citizen <lrsk_cit_purifiers>"
  format.lrsk_cit_purifier.2: "[This.Capital.GetName]born Citizen <lrsk_cit_purifiers>"
  format.lrsk_cit_purifier.3: "Citizen <lrsk_cit_purifiers> of [This.Capital.System.GetName]"
+ # NazBol
+ format.lrsk_psr_purifier.1: "[This.GetSpeciesAdj] People's <lrsk_dem_purifiers>"
+ format.lrsk_psr_purifier.2: "[This.Capital.GetName]born People's <lrsk_dem_purifiers>"
+ format.lrsk_psr_purifier.3: "People's <lrsk_dem_purifiers> of [This.Capital.System.GetName]"
 
  ## New Materialist
  # Academy States
@@ -176,6 +180,11 @@
  #Crusader Order
  format.lrsk_crusord_gen.1: "<lrsk_crusord_desc> <lrsk_crusord_type> of [This.Capital.System.GetName]"
  format.lrsk_crusord_gen.2: "<lrsk_crusord_desc> <lrsk_crusord_type> of [This.Capital.GetName]"
+ # Agrarian Monarchy
+ format.lrsk_imp_pes.1: "<lrsk_imppes_desc><lrsk_imperial_pop> of the [This.GetSpeciesNamePlural]"
+ format.lrsk_imp_pes.2: "<lrsk_imppes_desc><lrsk_imperial_pop> of [This.GetSpeciesName]kind"
+ format.lrsk_imp_pes.3: "<lrsk_imppes_desc>[This.GetSpeciesAdj] <lrsk_imperial_pop>"
+ format.lrsk_imp_pes.4: "[This.GetSpeciesAdj] <lrsk_imppop_desc><lrsk_imperial_pop>"
 
  ## New Militarist
 
@@ -239,11 +248,11 @@
  format.lrsk_oli_serv.1: "Citizen <lrsk_oligarchic_service> of [This.Capital.System.GetName]"
  format.lrsk_oli_serv.2: "Citizen <lrsk_oligarchic_service> of [This.Capital.GetName]"
  format.lrsk_oli_serv.3: "[This.GetSpeciesAdj] Citizen <lrsk_oligarchic_service>"
- format.lrsk_inclu_oli_serv.3: "<lrsk_stellar_generic_desc> Citizen <lrsk_oligarchic_service>"
+ format.lrsk_inclu_oli_serv.1: "<lrsk_stellar_generic_desc> Citizen <lrsk_oligarchic_service>"
  format.lrsk_dem_serv.1: "Citizen <lrsk_democratic_service> of [This.Capital.System.GetName]"
  format.lrsk_dem_serv.2: "Citizen <lrsk_democratic_service> of [This.Capital.GetName]"
  format.lrsk_dem_serv.3: "[This.GetSpeciesAdj] Citizen <lrsk_democratic_service>"
- format.lrsk_inclu_dem_serv.3: "<lrsk_stellar_generic_desc> Citizen <lrsk_democratic_service>"
+ format.lrsk_inclu_dem_serv.1: "<lrsk_stellar_generic_desc> Citizen <lrsk_democratic_service>"
 
  ## Spiritualist
  # Imperial
@@ -366,13 +375,17 @@
 
  ## Megacorporations
  # Megacorporations
- format.lrsk_megacorp.1: "[This.GetSpeciesAdj] <lrsk_stellar_generic_desc> <lrsk_megacorp><lrsk_corp_bits>"
- format.lrsk_megacorp.2: "<lrsk_stellar_generic_desc> <lrsk_megacorp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
- format.lrsk_megacorp.3: "<lrsk_stellar_generic_desc> <lrsk_megacorp> of [This.Capital.GetName]<lrsk_corp_bits>"
+ format.lrsk_megacorp.1: "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc><lrsk_megacorp><lrsk_corp_bits>"
+ format.lrsk_megacorp.2: "<lrsk_stellar_filler_desc><lrsk_megacorp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
+ format.lrsk_megacorp.3: "<lrsk_stellar_filler_desc><lrsk_megacorp> of [This.Capital.GetName]<lrsk_corp_bits>"
  # Trade Leagues
  format.lrsk_trade_league.1: "<lrsk_trade_league_per_desc> [This.GetSpeciesAdj] <lrsk_trade_league_per>"
  format.lrsk_trade_league.2: "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.System.GetName]"
  format.lrsk_trade_league.3: "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.GetName]"
+ # Criminal Oganizations
+ format.lrsk_crimeorg.1: "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc><lrsk_criminal>"
+ format.lrsk_crimeorg.2: "<lrsk_stellar_filler_desc><lrsk_criminal> of [This.Capital.System.GetName]"
+ format.lrsk_crimeorg.3: "<lrsk_stellar_filler_desc><lrsk_criminal> of [This.Capital.GetName]"
 
  ### GENERIC COMBOS
  ## Imperial Generic
