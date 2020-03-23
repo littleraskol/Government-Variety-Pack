@@ -21,6 +21,24 @@ l_english:
  lrsk_gov_var_trait_natural_esper:0 "Natural $LRSK_GOV_VAR_ESPER$"
  lrsk_gov_var_trait_natural_esper_desc:0 "§LLong contact with Shroud energies have left many of the members of this species with an inborn special intuition, a 'knack' or 'gift' amounting to extra-sensory perception beyond what biology can explain.§!\n"
 
+ lrsk_gov_var_trait_starborn:0 "$trait_presapient_starborn$"
+ lrsk_gov_var_trait_starborn_desc:0 "§L$trait_presapient_starborn_desc$§!\n"
+
+ lrsk_gov_var_trait_earthbound:0 "$trait_presapient_earthbound$"
+ lrsk_gov_var_trait_earthbound_desc:0 "§L$trait_presapient_earthbound_desc$§!\n"
+
+ lrsk_gov_var_trait_natural_intellectuals:0 "$trait_presapient_natural_intellectuals$"
+ lrsk_gov_var_trait_natural_intellectuals_desc:0 "§L$trait_presapient_natural_intellectuals_desc$§!\n"
+
+ lrsk_gov_var_trait_proles:0 "$trait_presapient_proles$"
+ lrsk_gov_var_trait_proles_desc:0 "§L$trait_presapient_proles_desc$§!\n"
+
+ lrsk_gov_var_trait_conservative:0 "$trait_presapient_conservative$"
+ lrsk_gov_var_trait_conservative_desc:0 "§L$trait_presapient_conservative_desc$§!\n"
+
+ lrsk_gov_var_trait_enlightened:0 "$lrsk_gov_var_empire_enlightened$"
+ lrsk_gov_var_trait_enlightened_desc:0 "§L$lrsk_gov_var_empire_enlightened_desc$§!\n"
+
  # admiral
  #:0 ""
  #_desc:0 ""
@@ -62,10 +80,12 @@ l_english:
  d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
 
- ## Opinion Modifiers
-
- # New Fed Starts
- opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
+ ## Subjects
+ SUBJECT_lrsk_gov_var_ward:0 "Ward"
+ SUBJECT_DESC_lrsk_gov_var_ward:1 "Another alien civilization meddled the development of these vassals, raising them to the stars (possibly from pre-sapient beginnings). They are very independent and their masters gain Influence, Society Research, and Unity from the arrangement."
+ 
+ SUBJECT_lrsk_gov_var_sublight_colony:0 "Sublight Colony"
+ SUBJECT_DESC_lrsk_gov_var_sublight_colony:1 "This type of vassal began as the colony of another, established by a sub-lightspeed interstellar venture. Their overlord now keeps control through a monopoly on FTL tech... for now. They are able to do most things but are not diplomatically independent. they pay §Y20%§! of their monthly Research, §Y15%§! of their monthly Energy and Minerals, and §Y5%§! of their monthly Alloys and Consumer Goods in tribute to their homeworld."
 
  ## Buildings
 
@@ -153,7 +173,18 @@ l_english:
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
 
- ## Static Modifiers
+ ## Empire Modifiers
+ 
+ lrsk_gov_var_empire_enlightened:0 "Enlightened"
+ lrsk_gov_var_empire_enlightened_desc:0 "This empire was visited by an alien civilization before it took the the stars but after its dominant species attained sapience. They had developed their own cultural yearnings for contact, exchange, and exploration before their alien tutors arrived and their tutelage has left them eager to communicate and discover."
+
+ lrsk_gov_var_empire_black_box_drives:0 "Black Box Hyperdrives"
+ lrsk_gov_var_empire_black_box_drives_desc:0 "Due to restrictions enforced by its overlord, this empire only has access to second-rate feature-restricted hyperdrives lacking most diagnostic functions, which its pilots and engineers understand poorly."
+
+ lrsk_gov_var_empire_colony_red_tape:0 "Colonial Red Tape"
+ lrsk_gov_var_empire_black_box_drives_desc:0 "Colonial regulations and procedural requirements keep this empire's expansion in check to a certain degree. All for the good of the species, of course." 
+
+ ## Planet Modifiers
 
  # Direct Revelation Wild Cults
 
@@ -260,6 +291,16 @@ l_english:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+ 
+ ## Opinion Modifiers
+
+ # New Fed Starts
+ opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
+
+ # Sublight Vasslas
+ opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony"
+ opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Colony"
+ opinion_lrsk_gov_var_ftlmn_sublight:0 "FTL Patent License"
 
  ## Events
 

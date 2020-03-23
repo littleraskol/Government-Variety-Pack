@@ -7,7 +7,7 @@ lrsk_gov_var_trait_natural_esper = {
 	potential_crossbreeding_chance = 0
 	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_natural_esper.dds"
 
-	#improves_leaders = yes	
+	improves_leaders = yes	
 	initial = no
 	randomized = no
 	modification = no
@@ -19,5 +19,200 @@ lrsk_gov_var_trait_natural_esper = {
 		planet_jobs_physics_research_produces_mult = 0.025
 		planet_jobs_society_research_produces_mult = 0.025
 		planet_jobs_energy_produces_mult = 0.025
+	}
+}
+
+lrsk_gov_var_trait_starborn = {
+	cost = 1
+	opposites = {
+		"lrsk_gov_var_trait_earthbound"
+		"lrsk_gov_var_trait_natural_intellectuals"
+		"lrsk_gov_var_trait_proles"
+		"lrsk_gov_var_trait_conservative"
+		"lrsk_gov_var_trait_enlightened"
+		"trait_sedentary"
+		"trait_presapient_earthbound"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	modifier = {
+		pop_growth_from_immigration = 0.25
+		pop_resettlement_cost_mult = -0.25
+		pop_environment_tolerance = 0.1
+	}
+}
+
+lrsk_gov_var_trait_earthbound = {
+	cost = 1
+	opposites = {
+		"lrsk_gov_var_trait_starborn"
+		"lrsk_gov_var_trait_natural_intellectuals"
+		"lrsk_gov_var_trait_proles"
+		"lrsk_gov_var_trait_conservative"
+		"lrsk_gov_var_trait_enlightened"
+		"trait_nomadic"
+		"trait_presapient_starborn"
+	}
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.1
+		army_defense_damage_mult = 0.5
+	}
+}
+
+lrsk_gov_var_trait_natural_intellectuals = {
+	cost = 1
+	opposites = {
+		"lrsk_gov_var_trait_starborn"
+		"lrsk_gov_var_trait_earthbound"
+		"lrsk_gov_var_trait_proles"
+		"lrsk_gov_var_trait_conservative"
+		"lrsk_gov_var_trait_enlightened"
+		"trait_presapient_proles"	
+	}
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = -0.1
+	}
+}
+
+lrsk_gov_var_trait_proles = {
+	cost = 1
+	opposites = {
+		"lrsk_gov_var_trait_starborn"
+		"lrsk_gov_var_trait_earthbound"
+		"lrsk_gov_var_trait_natural_intellectuals"
+		"lrsk_gov_var_trait_conservative"
+		"lrsk_gov_var_trait_enlightened"
+		"trait_presapient_natural_intellectuals" 
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	modifier = {
+		army_damage_mult = 0.10
+		planet_jobs_minerals_produces_mult = 0.10
+		planet_jobs_food_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = -0.15
+		planet_jobs_engineering_research_produces_mult = -0.15
+		planet_jobs_society_research_produces_mult = -0.15
+	}
+}
+
+lrsk_gov_var_trait_conservative = {
+	cost = 1
+	opposites = { 
+		"lrsk_gov_var_trait_starborn"
+		"lrsk_gov_var_trait_earthbound"
+		"lrsk_gov_var_trait_natural_intellectuals"
+		"lrsk_gov_var_trait_proles"
+		"lrsk_gov_var_trait_enlightened"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	modifier = {
+		pop_happiness = 0.05
+		pop_government_ethic_attraction = 0.25
+		species_leader_exp_gain = -0.33
+	}
+}
+
+lrsk_gov_var_trait_enlightened = {
+	cost = 0
+	opposites = { 
+		"lrsk_gov_var_trait_starborn"
+		"lrsk_gov_var_trait_earthbound"
+		"lrsk_gov_var_trait_natural_intellectuals"
+		"lrsk_gov_var_trait_proles"
+		"lrsk_gov_var_trait_conservative"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+	potential_crossbreeding_chance = 0
+
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_spark_of_genius.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	custom_tooltip = TRAIT_LRSK_GOV_VAR_TRAIT_ENLIGHTENED_EFFECT
+
+	modifier = {
+		# nothing, switches to an empire modifier
 	}
 }
