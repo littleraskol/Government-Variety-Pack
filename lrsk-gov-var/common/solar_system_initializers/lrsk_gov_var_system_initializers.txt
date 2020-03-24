@@ -1,0 +1,457 @@
+# Government Variety Pack
+# System Initializers
+# Author: littleraskol
+
+@distance = 50
+@jumps = 3
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 10
+@moon_min_size = 6
+@moon_max_size = 10
+
+### For Uplift
+
+# Uplift Tutor System 1
+lrsk_uplift_1 = {
+	class = "rl_starting_stars"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 50
+	}
+	
+	flags = { empire_home_system lrsk_uplift_tutor_home_system }
+
+	usage = misc_system_init
+
+	usage_odds = {
+		base = 0
+		modifier = {
+			any_country = { 
+				has_origin = lrsk_gov_var_origin_uplift
+				NOT = {
+					has_country_flag = lrsk_uplift_tutor_system_spawned
+				#	species_portrait = human
+				}
+			}
+			NOT = { has_star_flag = empire_cluster }
+			add = 99999
+		}
+	}
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 50
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 40 max = 100 }
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 20
+		home_planet = yes
+		class = random_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		deposit_blockers = none
+		modifiers = none
+		flags = { lrsk_uplift_tutor_homeworld }
+		
+		init_effect = {
+			prevent_anomaly = yes
+
+			random_country = {
+				limit = {
+					has_origin = lrsk_gov_var_origin_uplift
+					NOT = {
+						has_country_flag = lrsk_uplift_tutor_system_spawned
+						#species_portrait = human
+					}
+				}
+				set_country_flag = lrsk_uplift_tutor_system_spawned
+				save_event_target_as = lrsk_uplift_child
+			}
+
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+				homeworld = this
+				effect = {
+					save_event_target_as = lrsk_uplift_tutor_species
+				}
+			}
+
+			create_country = {
+				species = event_target:lrsk_uplift_tutor_species
+				name_list = random
+				type = default
+				origin = "origin_default"
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"					
+					ethic = "ethic_fanatic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+					ethic = "ethic_pacifist"
+					ethic = "ethic_fanatic_pacifist"
+					ethic = "ethic_egalitarian"
+					ethic = "ethic_fanatic_egalitarian"
+					ethic = "ethic_authoritarian"
+					ethic = "ethic_fanatic_authoritarian"
+				}
+				effect = {
+					save_event_target_as = lrsk_uplift_tutor
+					add_resource = {
+						minerals = 900
+						energy = 400
+						alloys = 300
+						influence = 400
+					}
+					if = {
+						limit = { is_machine_empire = no }
+						add_resource = { food = 1400 }
+					}
+					else = {
+						add_resource = { energy = 1000 }
+					}
+					if = {
+						limit = { is_gestalt = no }
+						add_resource = { consumer_goods = 1200 }
+					}
+					else = {
+						add_resource = { minerals = 500 }
+					}
+					establish_communications_no_message = event_target:lrsk_uplift_child
+				}
+			}
+			create_colony = {
+				owner = event_target:lrsk_uplift_tutor
+			}
+			set_planet_size = 20
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			clear_blockers = yes
+			generate_lost_colony_parent_bonus = yes # we can use this unchanged, it just adds stuff
+			event_target:lrsk_uplift_tutor = {
+				create_starting_leaders = yes
+				set_country_flag = lrsk_uplift_tutor
+				#set_country_flag = special_intro_for@event_target:lrsk_uplift_child
+				#set_country_flag = lrsk_uplift_tutor_of@event_target:lrsk_uplift_child
+				country_event = { id = game_start.9 }
+				country_event = { id = game_start.6 } # setting up as actual advanced start!
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				owner_species = { set_species_homeworld = prevprev }
+				set_name = random # Fixes some naming issues
+			}
+		}
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 4 }
+		orbit_distance = 20
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	init_effect = {
+		solar_system = {
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:lrsk_uplift_tutor
+				effect = {
+					set_starbase_module = {
+						slot = 1
+						module = trading_hub
+					}
+				}
+			}
+		}
+	}
+
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "lrsk_uplift_neighbor_t1"
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "lrsk_uplift_neighbor_t1_first_colony"
+	}
+}
+
+# Neighbor Tier 1
+lrsk_uplift_neighbor_t1 = {
+	class = "rl_standard_stars"
+	flags = { neighbor_t1 }
+
+	init_effect = {
+		every_neighbor_system = { set_star_flag = empire_cluster }
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 20
+	}
+
+	init_effect = {
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
+	}
+	
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "lrsk_uplift_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+lrsk_uplift_neighbor_t1_first_colony = {	
+	class = "rl_standard_stars"
+	flags = { neighbor_t1_first_colony }
+
+	init_effect = {
+		every_neighbor_system = { set_star_flag = empire_cluster }
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = event_target:lrsk_uplift_tutor.capital_scope
+		modifiers = none
+		anomaly = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+		flags = { lrsk_uplift_tutor_planet }
+
+		init_effect = {
+			create_colony = {
+				owner = event_target:lrsk_uplift_tutor
+			}
+		}
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+
+	init_effect = {
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
+	}
+	
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t2"
+	}
+}
+
+# Neighbor Tier 2 Second Colony
+lrsk_uplift_neighbor_t2_second_colony = {
+	class = "rl_standard_stars"
+	flags = { neighbor_t2_second_colony }
+
+	init_effect = {
+		every_neighbor_system = { set_star_flag = empire_cluster }
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = event_target:lrsk_uplift_tutor.capital_scope
+		modifiers = none
+		anomaly = none
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		flags = { lrsk_uplift_tutor_planet }
+
+		init_effect = {
+			create_colony = {
+				owner = event_target:lrsk_uplift_tutor
+			}
+		}
+		
+		change_orbit = @base_moon_distance	
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+
+	init_effect = {
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
+	}
+}

@@ -4,7 +4,7 @@
 
 namespace = lrsk_gov_var_uplift
 
-# Trait swap/empire modifier addition
+# Setup traits, etc.
 country_event = {
 	id = lrsk_gov_var_uplift.1
 	hide_window = yes
@@ -16,8 +16,10 @@ country_event = {
 
 	immediate = {
 		set_country_flag = lrsk_gov_var_uplift_nation
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
 
-		#We want the species to have the actual presapient traits for job weighting purposes.
+		# Swap traits out. We want the species to have the actual presapient traits for job weighting purposes.
 		owner_species = { switch = {
 			trigger = has_trait
 			lrsk_gov_var_trait_starborn = {
@@ -53,7 +55,7 @@ country_event = {
 						modify_species = {
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_intellectuals
-							add_trait = trait_presapient_intellectuals
+							add_trait = trait_presapient_natural_intellectuals
 						}
 						species = { save_event_target_as = lrsk_gov_var_new_uplift_species }
 					}
@@ -95,13 +97,13 @@ country_event = {
 						}
 						species = { save_event_target_as = lrsk_gov_var_new_uplift_species }
 					}
-					add_empire_modifier = lrsk_gov_var_empire_enlightened
+					add_modifier = lrsk_gov_var_empire_enlightened
 				}
 			}
 			default = {
 				root = {
 					set_country_flag = lrsk_gov_var_new_uplift_no_trait_swap
-					add_empire_modifier = lrsk_gov_var_empire_enlightened
+					add_modifier = lrsk_gov_var_empire_enlightened
 				}
 			}
 		} }
