@@ -126,6 +126,76 @@ lrsk_gov_var_gov_social_democracy = {
 	}
 }
 
+# Agrarian Social State (Oligarchy + AI/IC)
+lrsk_gov_var_gov_agrarian_social_state = {
+	ruler_title = LRSK_GOV_VAR_RT_GENERAL_RESOURCE_MANAGER
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		has_valid_civic = civic_agrarian_idyll
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+	}
+
+	weight = {
+		base = 1100
+	}
+}
+
+# Agrarian Commonwealth (Democracy + AI/IC)
+lrsk_gov_var_gov_agrarian_commonwealth = {
+	ruler_title = LRSK_GOV_VAR_RT_WELLBEING_COORDINATOR
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		has_valid_civic = civic_agrarian_idyll
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			OR = {
+				leader_class = ruler
+			}
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+	}
+
+	weight = {
+		base = 1100
+	}
+}
+
 # Populist Monarchy
 lrsk_gov_var_gov_populist_monarchy = {
 	ruler_title = LRSK_GOV_VAR_RT_PRINCE_OF_PLENTY
