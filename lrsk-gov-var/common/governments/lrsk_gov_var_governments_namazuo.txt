@@ -207,7 +207,7 @@ lrsk_gov_var_gov_pure_social_republic = {
 	}
 
 	weight = {
-		base = 1100
+		base = 2100
 	}
 }
 
@@ -430,7 +430,10 @@ lrsk_gov_var_gov_reactionary_socialism = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_oligarchic
+		OR = {
+			has_authority = auth_oligarchic
+			has_authority = auth_imperial
+		}
 		has_valid_civic = civic_aristocratic_elite
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
@@ -480,7 +483,7 @@ lrsk_gov_var_gov_feudal_socialism = {
 	}
 
 	weight = {
-		base = 1100
+		base = 1200
 	}
 }
 
@@ -499,7 +502,7 @@ lrsk_gov_var_gov_crime_family = {
 	}
 
 	weight = {
-		base = 1100
+		base = 11000
 	}
 }
 
@@ -537,7 +540,7 @@ lrsk_gov_var_gov_rogue_freehold = {
 	}
 
 	weight = {
-		base = 1100
+		base = 11000
 	}
 }
 
@@ -578,7 +581,7 @@ lrsk_gov_var_gov_corporate_banditry = {
 	}
 
 	weight = {
-		base = 1100
+		base = 11000
 	}
 }
 
