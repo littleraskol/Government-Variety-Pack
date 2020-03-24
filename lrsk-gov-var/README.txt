@@ -173,6 +173,16 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.1 (03-24-20) - Namazuo Governments
+-Added 16 new governments, based on the ideas of Steam user Namazuo "Horse Poop" Toushiro posted here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/ (only took two years...)
+-Government type Proprietary Franchise now requires Merchant Guilds and either Business Lobby or Cutthroat Politics.
+-New government type Empire of Rapine (Barbaric Despoilers and Enlightened Liberalism, Imperial authority ).
+-New government types Agrarian Social State and Agrarian Commonwealth (Institutionalized Collectivism and Agrarian Idyll, Oligarchic or Democratic authority, respectively).
+-Added special name gen for Xenophile Citizen Service govs (might be more about an interstellar army's glory or somesuch)
+-Documentation: Diplo Protocols descriptions include actual benefits.
+-Bugfix: Esper trait correctly shows that it improves leaders.
+-Backend: Tweaks to Better Names gen.
+
 v1.6 (03-21-20) - Origins
 -Added seven new origins.
 -Galactic Backdoor is like Galactic Doorstep, but with a wormhole instead of a gateway. (Not as sophisticated in terms of special event support yet.)
