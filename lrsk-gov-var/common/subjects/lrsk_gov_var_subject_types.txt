@@ -86,3 +86,33 @@ lrsk_gov_var_sublight_colony = {
 		#
 	}	
 }
+
+lrsk_gov_var_sublight_satellite = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = yes
+	research_sharing = no	# for tech sharing modifier
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+	
+	diplo_threat = 0.5 # idk??
+
+	potential = {	
+		from = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+	}
+
+	overlord_resources = {
+		category = subjects
+		produces = {
+			influence = 0.25
+			unity = 2
+		}
+	}
+	
+	effect = {
+		#
+	}	
+}
