@@ -110,7 +110,7 @@ country_event = {
 			} }
 			add_modifier = { modifier = lrsk_gov_var_empire_enlightened }
 		}
-				
+		
 		IF = {
 			limit = { NOT = { has_country_flag = lrsk_gov_var_uplift_no_trait_swap } }
 			change_dominant_species = {
@@ -126,8 +126,8 @@ country_event = {
 					has_owner = no
 					distance = {
 						source = prev
-						min_jumps = 3
-						max_jumps = 6
+						min_jumps = 4
+						max_jumps = 7
 					}
 				}
 				spawn_system = { initializer = "lrsk_uplift_1" } 
@@ -136,27 +136,34 @@ country_event = {
 	}
 }
 
-# Establish vassalage
-#country_event = {
-#	id = lrsk_gov_var_uplift.2
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		has_origin = lrsk_gov_var_origin_uplift
-#	}
-#
-#	immediate = {
-#		set_subject_of = {
-#			who = event_target:scion_master
-#			subject_type = lrsk_gov_var_ward
-#		}
-#		add_opinion_modifier = {
-#			who = event_target:scion_master
-#			modifier = opinion_scion
-#		}
-#	}
-#}
+
+# Tutor system ownership jank
+country_event = {
+	id = lrsk_gov_var_uplift.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				has_deposit_for = shipclass_mining_station
+				has_mining_station = no
+			}
+			create_mining_station = {
+				owner = this
+			}
+		}
+		every_planet_within_border = {
+			limit = {
+				has_deposit_for = shipclass_research_station
+				has_research_station = no
+			}
+			create_research_station = {
+				owner = this
+			}
+		}
+	}
+}
 
 
 

@@ -22,23 +22,6 @@ lrsk_uplift_1 = {
 	
 	flags = { empire_home_system lrsk_uplift_tutor_home_system }
 
-	usage = misc_system_init
-
-	usage_odds = {
-		base = 0
-		#modifier = {
-		#	any_country = { 
-		#		has_origin = lrsk_gov_var_origin_uplift
-		#		NOT = {
-		#			has_country_flag = lrsk_uplift_tutor_system_spawned
-		#		#	species_portrait = human
-		#		}
-		#	}
-		#	NOT = { has_star_flag = empire_cluster }
-		#	add = 99999
-		#}
-	}
-
 	init_effect = {
 		generate_home_system_resources = yes
 	}
@@ -94,57 +77,117 @@ lrsk_uplift_1 = {
 			random_country = {
 				limit = {
 					has_origin = lrsk_gov_var_origin_uplift
-					NOT = {
-						has_country_flag = lrsk_uplift_tutor_system_spawned
-						#species_portrait = human
-					}
+					NOT = { has_country_flag = lrsk_uplift_tutor_system_spawned }
 				}
 				set_country_flag = lrsk_uplift_tutor_system_spawned
-				save_event_target_as = lrsk_uplift_child
+				save_event_target_as = lrsk_uplift_pupil
 			}
 
-			create_species = {
-				name = random
-				class = random
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = lrsk_uplift_tutor_species
+			random_list = {
+				10 = {
+					create_species = {
+						name = random
+						class = MACHINE
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}		
+					create_country = {
+						species = event_target:lrsk_uplift_tutor_species
+						name_list = random
+						type = default
+						origin = "origin_default"
+						ethos = { ethic = ethic_gestalt_consciousness }
+						authority = auth_machine_intelligence
+						civics = {
+							civic = civic_machine_predictive_analysis
+							civic = civic_machine_delegated_functions
+						}
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor
+							add_resource = {
+								minerals = 2400
+								energy = 2400
+								alloys = 800
+								influence = 600
+							}
+							establish_communications_no_message = event_target:lrsk_uplift_pupil
+						}
+					}
+				}
+				10 = {
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}
+		
+					create_country = {
+						species = event_target:lrsk_uplift_tutor_species
+						name_list = random
+						type = default
+						origin = "origin_default"
+						ethos = { ethic = ethic_gestalt_consciousness }
+						authority = auth_hive_mind
+						civics = {
+							civic = civic_hive_empath
+							civic = civic_hive_pooled_knowledge
+						}
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor
+							add_resource = {
+								minerals = 2400
+								energy = 1400
+								food = 2400
+								alloys = 800
+								influence = 600
+							}
+							establish_communications_no_message = event_target:lrsk_uplift_pupil
+						}
+					}
+				}
+				80 = {
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}
+		
+					create_country = {
+						species = event_target:lrsk_uplift_tutor_species
+						name_list = random
+						type = default
+						origin = "origin_default"
+						ethos = event_target:lrsk_uplift_pupil
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor
+							add_resource = {
+								minerals = 1900
+								energy = 1400
+								food = 2400
+								alloys = 800
+								consumer_goods = 1200
+								influence = 600
+							}
+							establish_communications_no_message = event_target:lrsk_uplift_pupil
+						}
+					}
 				}
 			}
 
-			create_country = {
-				species = event_target:lrsk_uplift_tutor_species
-				name_list = random
-				type = default
-				origin = "origin_default"
-				ethos = event_target:lrsk_uplift_child
-				effect = {
-					save_event_target_as = lrsk_uplift_tutor
-					add_resource = {
-						minerals = 900
-						energy = 400
-						alloys = 300
-						influence = 400
-					}
-					if = {
-						limit = { is_machine_empire = no }
-						add_resource = { food = 1400 }
-					}
-					else = {
-						add_resource = { energy = 1000 }
-					}
-					if = {
-						limit = { is_gestalt = no }
-						add_resource = { consumer_goods = 1200 }
-					}
-					else = {
-						add_resource = { minerals = 500 }
-					}
-					establish_communications_no_message = event_target:lrsk_uplift_child
-				}
-			}
 			create_colony = {
 				owner = event_target:lrsk_uplift_tutor
 			}
@@ -153,17 +196,91 @@ lrsk_uplift_1 = {
 			generate_start_buildings_and_districts = yes
 			generate_start_pops = yes
 			clear_blockers = yes
-			generate_lost_colony_parent_bonus = yes # we can use this unchanged, it just adds stuff
+
+			add_district = district_city
+			add_district = district_city
+			add_district = district_mining
+			add_district = district_mining
+			add_district = district_mining
+			add_district = district_generator
+			add_district = district_generator
+			add_district = district_farming
+			add_building = building_research_lab_1
+			add_building = building_foundry_1
+			add_building = building_factory_1
+			add_building = building_holo_theatres
+			add_building = building_precinct_house
+
+			while = {
+				limit = { num_pops < 57 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+
+			owner = {
+				create_fleet = {
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							random_existing_design = science
+						}
+						set_fleet_stance = evasive
+						set_location = prev.capital_scope.star
+						owner = {
+							create_leader = {
+								class = scientist
+								sub_type = survey
+								name = random
+								species = owner_main_species
+							}
+						}
+						set_leader = last_created_leader
+					}
+				}
+			}
+
 			event_target:lrsk_uplift_tutor = {
-				create_starting_leaders = yes
 				set_country_flag = lrsk_uplift_tutor
-				#set_country_flag = special_intro_for@event_target:lrsk_uplift_child
-				#set_country_flag = lrsk_uplift_tutor_of@event_target:lrsk_uplift_child
+				
+				create_starting_leaders = yes
+
+				give_technology = { tech = "tech_society_1" message = no }
+				give_technology = { tech = "tech_engineering_1" message = no }
+				give_technology = { tech = "tech_physics_1" message = no }
+				give_technology = { tech = "tech_planetary_unification" message = no }
+
 				country_event = { id = game_start.9 }
-				country_event = { id = game_start.6 } # setting up as actual advanced start!
-				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = lrsk_gov_var_uplift.100 days = 1 } # needs delay for system ownership to settle
+
 				owner_species = { set_species_homeworld = prevprev }
+
 				set_name = random # Fixes some naming issues
+			}
+			
+			set_owner = event_target:lrsk_uplift_tutor
+			set_controller = event_target:lrsk_uplift_tutor
+			set_capital = yes
+
+			event_target:lrsk_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_uplift_pupil
+				}
+				#country_event = { id = lrsk_gov_var_uplift.20 days = 9000 random = 9000 } # tbd?
+			}
+			event_target:lrsk_uplift_pupil = {
+				set_subject_of = {
+					who = event_target:lrsk_uplift_tutor
+					subject_type = lrsk_gov_var_ward
+				}
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_tutor
+					modifier = opinion_lrsk_gov_var_uplift_tutor
+				}
+				#country_event = { id = lrsk_gov_var_uplift.10 days = 3 } # tbd?
 			}
 		}
 		
