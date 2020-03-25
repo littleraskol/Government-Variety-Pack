@@ -119,6 +119,31 @@ country_event = {
 			}
 		}
 
+		random_country = {
+			limit = { has_country_flag = lrsk_uplift_tutor }
+			save_event_target_as = lrsk_uplift_tutor
+		}
+
+		this.capital_scope.solar_system = {
+			closest_system = {
+				limit = {
+					any_system_planet = { habitable_planet = no }
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = listening_post
+					owner = event_target:lrsk_uplift_tutor
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+			}
+		}
+
 		#Spawn tutor - not working like this, oh well...
 		#this.capital_scope.solar_system = {
 		#	random_system = {
