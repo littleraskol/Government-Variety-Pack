@@ -31,6 +31,7 @@ lrsk_gov_var_trait_starborn = {
 		"lrsk_gov_var_trait_conservative"
 		"lrsk_gov_var_trait_enlightened"
 		"trait_sedentary"
+		"trait_nonadaptive"
 		"trait_presapient_earthbound"
 	}
 
@@ -45,11 +46,46 @@ lrsk_gov_var_trait_starborn = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
 	}
 
 	modifier = {
 		pop_growth_from_immigration = 0.25
+		pop_resettlement_cost_mult = -0.25
+		pop_environment_tolerance = 0.1
+	}
+}
+
+lrsk_gov_var_trait_starborn_hive = {
+	cost = 1
+	opposites = {
+		"trait_sedentary"
+		"trait_slow_breeders"
+		"trait_nonadaptive"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_hive_mind
+		}
+	}
+
+	modifier = {
+		pop_growth_speed = 0.15
 		pop_resettlement_cost_mult = -0.25
 		pop_environment_tolerance = 0.1
 	}
@@ -77,7 +113,38 @@ lrsk_gov_var_trait_earthbound = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
+	}
+
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.1
+		army_defense_damage_mult = 0.5
+	}
+}
+
+lrsk_gov_var_trait_earthbound_hive = {
+	cost = 1
+	opposites = {
+		"trait_nomadic"
+	}
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_hive_mind
+		}
 	}
 
 	modifier = {
@@ -107,7 +174,10 @@ lrsk_gov_var_trait_natural_intellectuals = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
 	}
 
 	modifier = {
@@ -116,6 +186,37 @@ lrsk_gov_var_trait_natural_intellectuals = {
 		planet_jobs_engineering_research_produces_mult = 0.1
 		planet_jobs_society_research_produces_mult = 0.1
 		planet_jobs_minerals_produces_mult = -0.1
+	}
+}
+
+lrsk_gov_var_trait_natural_intellectuals_mech = {
+	cost = 1
+	opposites = {
+		"trait_robot_power_drills"
+	}
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
+
+	allowed_archetypes = { ROBOT MACHINE }
+
+	species_potential_add = {
+		exists = from
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_simple_drone_produces_mult = -0.05
 	}
 }
 
@@ -141,7 +242,10 @@ lrsk_gov_var_trait_proles = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
 	}
 
 	modifier = {
@@ -151,6 +255,67 @@ lrsk_gov_var_trait_proles = {
 		planet_jobs_physics_research_produces_mult = -0.15
 		planet_jobs_engineering_research_produces_mult = -0.15
 		planet_jobs_society_research_produces_mult = -0.15
+	}
+}
+
+lrsk_gov_var_trait_proles_hive = {
+	cost = 1
+	opposites = {
+		"trait_traditional"
+		"trait_weak"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	species_potential_add = {
+		exists = from
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_hive_mind
+		}
+	}
+
+	modifier = {
+		army_damage_mult = 0.10
+		planet_jobs_simple_drone_produces_mult = 0.05
+		planet_jobs_unity_produces_mult = -0.1
+
+	}
+}
+
+lrsk_gov_var_trait_proles_mech = {
+	cost = 1
+	opposites = {
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
+
+	allowed_archetypes = { ROBOT MACHINE }
+
+	species_potential_add = {
+		exists = from
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	modifier = {
+		army_damage_mult = 0.10
+		planet_jobs_complex_drone_produces_mult = 0.1
+		species_leader_exp_gain = -0.33
 	}
 }
 
@@ -175,13 +340,45 @@ lrsk_gov_var_trait_conservative = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
 	}
 
 	modifier = {
 		pop_happiness = 0.05
 		pop_government_ethic_attraction = 0.25
 		species_leader_exp_gain = -0.33
+	}
+}
+
+lrsk_gov_var_trait_conservative_mech = {
+	cost = 1
+	opposites = {
+		"trait_robot_learning_algorithms"
+	}
+
+	#initial = no
+	#sapient = no
+	modification = no
+	randomized = no
+
+	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
+
+	allowed_archetypes = { ROBOT MACHINE }
+
+	species_potential_add = {
+		exists = from
+		from = {
+			has_origin = lrsk_gov_var_origin_uplift
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	modifier = {
+		leader_skill_levels = 2
+		species_leader_exp_gain = 0.33
 	}
 }
 
@@ -207,7 +404,10 @@ lrsk_gov_var_trait_enlightened = {
 
 	species_potential_add = {
 		exists = from
-		from = { has_origin = lrsk_gov_var_origin_uplift }
+		from = { 
+			has_origin = lrsk_gov_var_origin_uplift
+			is_gestalt = no
+		}
 	}
 
 	custom_tooltip = TRAIT_LRSK_GOV_VAR_TRAIT_ENLIGHTENED_EFFECT

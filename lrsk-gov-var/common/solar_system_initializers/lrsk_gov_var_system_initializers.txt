@@ -89,7 +89,7 @@ lrsk_uplift_1 = {
 		size = { min = 16 max = 20 }
 		deposit_blockers = none
 		modifiers = none
-		flags = { lrsk_uplift_tutor_homeworld }
+		flags = { lrsk_uplift_tutor_homeworld lrsk_uplift_tutor_planet }
 		
 		init_effect = {
 			prevent_anomaly = yes
@@ -105,138 +105,173 @@ lrsk_uplift_1 = {
 				set_country_flag = Story2
 			}
 
-			#random_list = {
-			#	10 = {
-			#		create_species = {
-			#			name = random
-			#			class = MACHINE
-			#			portrait = random
-			#			traits = random
-			#			homeworld = this
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor_species
-			#			}
-			#		}	
-			#		create_country = {
-			#			species = event_target:lrsk_uplift_tutor_species
-			#			name_list = random
-			#			type = default
-			#			origin = "origin_default"
-			#			ethos = { ethic = ethic_gestalt_consciousness }
-			#			authority = auth_machine_intelligence
-			#			civics = {
-			#				civic = civic_machine_predictive_analysis
-			#				civic = civic_machine_delegated_functions
-			#			}
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor
-			#				add_resource = {
-			#					minerals = 2400
-			#					energy = 2400
-			#					alloys = 800
-			#					influence = 600
-			#				}
-			#				establish_communications_no_message = event_target:lrsk_uplift_pupil
-			#			}
-			#		}
-			#	}
-			#	10 = {
-			#		create_species = {
-			#			name = random
-			#			class = random_non_machine
-			#			portrait = random
-			#			traits = random
-			#			homeworld = this
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor_species
-			#			}
-			#		}		
-			#		create_country = {
-			#			species = event_target:lrsk_uplift_tutor_species
-			#			name_list = random
-			#			type = default
-			#			origin = "origin_default"
-			#			ethos = { ethic = ethic_gestalt_consciousness }
-			#			authority = auth_hive_mind
-			#			civics = {
-			#				civic = civic_hive_empath
-			#				civic = civic_hive_pooled_knowledge
-			#			}
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor
-			#				add_resource = {
-			#					minerals = 2400
-			#					energy = 1400
-			#					food = 2400
-			#					alloys = 800
-			#					influence = 600
-			#				}
-			#				establish_communications_no_message = event_target:lrsk_uplift_pupil
-			#			}
-			#		}
-			#	}
-			#	80 = {
-			#		create_species = {
-			#			name = random
-			#			class = random_non_machine
-			#			portrait = random
-			#			traits = random
-			#			homeworld = this
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor_species
-			#			}
-			#		}					
-			#		create_country = {
-			#			species = event_target:lrsk_uplift_tutor_species
-			#			name_list = random
-			#			type = default
-			#			origin = "origin_default"
-			#			ethos = event_target:lrsk_uplift_pupil
-			#			effect = {
-			#				save_event_target_as = lrsk_uplift_tutor
-			#				add_resource = {
-			#					minerals = 1900
-			#					energy = 1400
-			#					food = 2400
-			#					alloys = 800
-			#					consumer_goods = 1200
-			#					influence = 600
-			#				}
-			#				establish_communications_no_message = event_target:lrsk_uplift_pupil
-			#			}
-			#		}
-			#	}
-			#}
-
-			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = lrsk_uplift_tutor_species
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 7
+						event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+					}
+					create_species = {
+						name = random
+						class = MACHINE
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}	
+					create_country = {
+						species = event_target:lrsk_uplift_tutor_species
+						name_list = random
+						type = default
+						origin = "origin_default"
+						ethos = { ethic = ethic_gestalt_consciousness }
+						authority = auth_machine_intelligence
+						civics = {
+							civic = civic_machine_predictive_analysis
+							civic = civic_machine_delegated_functions
+						}
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor
+							add_resource = {
+								minerals = 2400
+								energy = 2400
+								alloys = 800
+								influence = 600
+							}
+						}
+					}
 				}
-			}
-
-			create_country = {
-				species = event_target:lrsk_uplift_tutor_species
-				name_list = random
-				type = default
-				origin = "origin_default"
-				ethos = event_target:lrsk_uplift_pupil
-				effect = {
-					save_event_target_as = lrsk_uplift_tutor
-					add_resource = {
-						minerals = 1900
-						energy = 1400
-						food = 2400
-						alloys = 800
-						consumer_goods = 1200
-						influence = 600
+				10 = {
+					modifier = {
+						factor = 7
+						event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+					}
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}		
+					create_country = {
+						species = event_target:lrsk_uplift_tutor_species
+						name_list = random
+						type = default
+						origin = "origin_default"
+						ethos = { ethic = ethic_gestalt_consciousness }
+						authority = auth_hive_mind
+						civics = {
+							civic = civic_hive_empath
+							civic = civic_hive_pooled_knowledge
+						}
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor
+							add_resource = {
+								minerals = 2400
+								energy = 1400
+								food = 2400
+								alloys = 800
+								influence = 600
+							}
+						}
+					}
+				}
+				80 = {
+					modifier = {
+						factor = 0.25
+						event_target:lrsk_uplift_pupil = { is_gestalt = yes }
+					}
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = this
+						effect = {
+							save_event_target_as = lrsk_uplift_tutor_species
+						}
+					}	
+					IF = { limit = { event_target:lrsk_uplift_pupil = { is_gestalt = no } }	
+						create_country = {
+							species = event_target:lrsk_uplift_tutor_species
+							name_list = random
+							type = default
+							origin = "origin_default"
+							ethos = event_target:lrsk_uplift_pupil
+							effect = {
+								save_event_target_as = lrsk_uplift_tutor
+								add_resource = {
+									minerals = 1900
+									energy = 1400
+									food = 2400
+									alloys = 800
+									consumer_goods = 1200
+									influence = 600
+								}
+							}
+						}
+					}
+					ELSE = {
+						create_country = {
+							species = event_target:lrsk_uplift_tutor_species
+							name_list = random
+							type = default
+							origin = "origin_default"
+							ethos = {
+								ethic = ethic_militarist
+								ethic = ethic_authoritarian
+								ethic = ethic_xenophile
+							}
+							effect = {
+								save_event_target_as = lrsk_uplift_tutor
+								add_resource = {
+									minerals = 1900
+									energy = 1400
+									food = 2400
+									alloys = 800
+									consumer_goods = 1200
+									influence = 600
+								}
+							}
+						}
 					}
 				}
 			}
+
+			#create_species = {
+			#	name = random
+			#	class = random_non_machine
+			#	portrait = random
+			#	traits = random
+			#	homeworld = this
+			#	effect = {
+			#		save_event_target_as = lrsk_uplift_tutor_species
+			#	}
+			#}
+			#
+			#create_country = {
+			#	species = event_target:lrsk_uplift_tutor_species
+			#	name_list = random
+			#	type = default
+			#	origin = "origin_default"
+			#	ethos = event_target:lrsk_uplift_pupil
+			#	effect = {
+			#		save_event_target_as = lrsk_uplift_tutor
+			#		add_resource = {
+			#			minerals = 1400
+			#			energy = 1400
+			#			food = 1400
+			#			alloys = 300
+			#			consumer_goods = 700
+			#			influence = 200
+			#		}
+			#	}
+			#}
 
 			create_colony = {
 				owner = event_target:lrsk_uplift_tutor
@@ -249,50 +284,27 @@ lrsk_uplift_1 = {
 
 			generate_lost_colony_parent_bonus = yes # just adds stuff, we can use as-is
 
-			#add_district = district_city
-			#add_district = district_city
-			#add_district = district_mining
-			#add_district = district_mining
-			#add_district = district_mining
-			#add_district = district_generator
-			#add_district = district_generator
-			#add_district = district_farming
-			#add_building = building_research_lab_1
-			#add_building = building_foundry_1
-			#add_building = building_factory_1
-			#add_building = building_holo_theatres
-			#add_building = building_precinct_house
-			#
-			#while = {
-			#	limit = { num_pops < 57 }
-			#	create_pop = {
-			#		species = owner_main_species
-			#		ethos = random
-			#	}
-			#}
-			#
-			#owner = {
-			#	create_fleet = {
-			#		effect = {
-			#			set_owner = prev
-			#			create_ship = {
-			#				name = random
-			#				random_existing_design = science
-			#			}
-			#			set_fleet_stance = evasive
-			#			set_location = prev.capital_scope.star
-			#			owner = {
-			#				create_leader = {
-			#					class = scientist
-			#					sub_type = survey
-			#					name = random
-			#					species = owner_main_species
-			#				}
-			#			}
-			#			set_leader = last_created_leader
-			#		}
-			#	}
-			#}
+			#Try to give a little more firepower			
+			create_fleet = {
+				#name = random
+				effect = {
+					set_owner = event_target:lrsk_uplift_tutor
+
+					while = {
+						count = 3
+						create_ship = {
+							name = random
+							random_existing_design = corvette
+						}
+					}
+
+					set_location = {
+						target = event_target:lrsk_uplift_tutor.capital_scope.star
+						distance = 5
+						angle = random
+					}
+				}
+			}
 
 			event_target:lrsk_uplift_tutor = {
 				set_country_flag = lrsk_uplift_tutor
@@ -489,12 +501,12 @@ lrsk_uplift_neighbor_t1_first_colony = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = ideal_planet_class
+		class = random_colonizable
 		modifiers = none
 		anomaly = none
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 12 max = 18 }
-		flags = { lrsk_uplift_tutor_planet }
+		flags = { lrsk_uplift_tutor_colony lrsk_uplift_tutor_planet }
 
 		init_effect = {
 			create_colony = {
@@ -557,12 +569,12 @@ lrsk_uplift_neighbor_t2_second_colony = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = ideal_planet_class
+		class = random_colonizable
 		modifiers = none
 		anomaly = none
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 14 max = 24 }
-		flags = { lrsk_uplift_tutor_planet }
+		flags = { lrsk_uplift_tutor_colony lrsk_uplift_tutor_planet }
 
 		init_effect = {
 			create_colony = {

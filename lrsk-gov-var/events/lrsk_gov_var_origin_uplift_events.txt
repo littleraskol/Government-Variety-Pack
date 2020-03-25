@@ -119,31 +119,6 @@ country_event = {
 			}
 		}
 
-		random_country = {
-			limit = { has_country_flag = lrsk_uplift_tutor }
-			save_event_target_as = lrsk_uplift_tutor
-		}
-
-		this.capital_scope.solar_system = {
-			closest_system = {
-				limit = {
-					any_system_planet = { habitable_planet = no }
-				}
-				create_starbase = {
-					size = starbase_starport
-					module = shipyard
-					building = listening_post
-					owner = event_target:lrsk_uplift_tutor
-					effect = {
-						set_starbase_module = {
-							slot = 1
-							module = trading_hub
-						}
-					}
-				}
-			}
-		}
-
 		#Spawn tutor - not working like this, oh well...
 		#this.capital_scope.solar_system = {
 		#	random_system = {
@@ -164,34 +139,137 @@ country_event = {
 }
 
 
-# Tutor system ownership jank
-#country_event = {
-#	id = lrsk_gov_var_uplift.100
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	immediate = {
-#		every_planet_within_border = {
-#			limit = {
-#				has_deposit_for = shipclass_mining_station
-#				has_mining_station = no
-#			}
-#			create_mining_station = {
-#				owner = this
-#			}
-#		}
-#		every_planet_within_border = {
-#			limit = {
-#				has_deposit_for = shipclass_research_station
-#				has_research_station = no
-#			}
-#			create_research_station = {
-#				owner = this
-#			}
-#		}
-#	}
-#}
-#
-#
-#
-#
+# Tutor system finalizations and watchpost system
+country_event = {
+	id = lrsk_gov_var_uplift.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+	}
+
+	immediate = {
+		random_country = {
+			limit = { has_country_flag = lrsk_uplift_tutor }
+			save_event_target_as = lrsk_my_uplift_tutor
+			if = {
+				limit = { this = { ideal_planet_class = pc_arid } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_arid
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_desert } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_desert
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_tropical } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_tropical
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_continental } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_continental
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_ocean } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_ocean
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_tundra } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_tundra
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_arctic } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_arctic
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_alpine } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_alpine
+				}
+			}
+			if = {
+				limit = { this = { ideal_planet_class = pc_savannah } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_savannah
+				}
+			}
+			every_owned_planet = {
+				limit = {  has_planet_flag = lrsk_uplift_tutor_colony }
+				planet_event = { id = game_start.21 }
+				planet_event = { id = game_start.22 }
+				planet_event = { id = game_start.23 }
+			}
+			country_event = { id = game_start.6 } #Advanced empire buffs
+		}
+
+		this.capital_scope.solar_system = {
+			closest_system = {
+				limit = {
+					any_system_planet = { habitable_planet = no }
+					has_owner = no
+				}
+			
+				create_starbase = {
+					name = "Pupil Watchpost"
+					size = starbase_starport
+					module = shipyard
+					building = listening_post
+					owner = event_target:lrsk_my_uplift_tutor
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+				star = { save_event_target_as = lrsk_uplift_watchpost_star }
+				create_fleet = {
+					name = "Overwatch Squadron"
+					effect = {
+						set_owner = event_target:lrsk_my_uplift_tutor
+
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								random_existing_design = corvette
+							}
+						}
+
+						set_location = {
+							target = event_target:lrsk_uplift_watchpost_star
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
