@@ -119,51 +119,54 @@ country_event = {
 			}
 		}
 
-		#Spawn tutor
-		this.capital_scope.solar_system = {
-			random_system = {
-				limit = {
-					has_owner = no
-					distance = {
-						source = prev
-						min_jumps = 4
-						max_jumps = 7
-					}
-				}
-				spawn_system = { initializer = "lrsk_uplift_1" } 
-			}
-		}
+		#Spawn tutor - not working like this, oh well...
+		#this.capital_scope.solar_system = {
+		#	random_system = {
+		#		limit = {
+		#			has_owner = no
+		#			distance = {
+		#				source = prev
+		#				#min_jumps = 3
+		#				#max_jumps = 5
+		#				min_distance <= 200
+		#			}
+		#			NOT = { has_star_flag = empire_cluster }
+		#		}
+		#		spawn_system = { initializer = "lrsk_uplift_1" } 
+		#	}
+		#}
 	}
 }
 
 
 # Tutor system ownership jank
-country_event = {
-	id = lrsk_gov_var_uplift.100
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		every_planet_within_border = {
-			limit = {
-				has_deposit_for = shipclass_mining_station
-				has_mining_station = no
-			}
-			create_mining_station = {
-				owner = this
-			}
-		}
-		every_planet_within_border = {
-			limit = {
-				has_deposit_for = shipclass_research_station
-				has_research_station = no
-			}
-			create_research_station = {
-				owner = this
-			}
-		}
-	}
-}
-
-
-
+#country_event = {
+#	id = lrsk_gov_var_uplift.100
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		every_planet_within_border = {
+#			limit = {
+#				has_deposit_for = shipclass_mining_station
+#				has_mining_station = no
+#			}
+#			create_mining_station = {
+#				owner = this
+#			}
+#		}
+#		every_planet_within_border = {
+#			limit = {
+#				has_deposit_for = shipclass_research_station
+#				has_research_station = no
+#			}
+#			create_research_station = {
+#				owner = this
+#			}
+#		}
+#	}
+#}
+#
+#
+#
+#
