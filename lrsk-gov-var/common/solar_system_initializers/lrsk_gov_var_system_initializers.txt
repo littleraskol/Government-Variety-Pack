@@ -26,17 +26,17 @@ lrsk_uplift_1 = {
 
 	usage_odds = {
 		base = 0
-		modifier = {
-			any_country = { 
-				has_origin = lrsk_gov_var_origin_uplift
-				NOT = {
-					has_country_flag = lrsk_uplift_tutor_system_spawned
-				#	species_portrait = human
-				}
-			}
-			NOT = { has_star_flag = empire_cluster }
-			add = 99999
-		}
+		#modifier = {
+		#	any_country = { 
+		#		has_origin = lrsk_gov_var_origin_uplift
+		#		NOT = {
+		#			has_country_flag = lrsk_uplift_tutor_system_spawned
+		#		#	species_portrait = human
+		#		}
+		#	}
+		#	NOT = { has_star_flag = empire_cluster }
+		#	add = 99999
+		#}
 	}
 
 	init_effect = {
@@ -119,23 +119,7 @@ lrsk_uplift_1 = {
 				name_list = random
 				type = default
 				origin = "origin_default"
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_xenophile"					
-					ethic = "ethic_fanatic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
-					ethic = "ethic_pacifist"
-					ethic = "ethic_fanatic_pacifist"
-					ethic = "ethic_egalitarian"
-					ethic = "ethic_fanatic_egalitarian"
-					ethic = "ethic_authoritarian"
-					ethic = "ethic_fanatic_authoritarian"
-				}
+				ethos = event_target:lrsk_uplift_child
 				effect = {
 					save_event_target_as = lrsk_uplift_tutor
 					add_resource = {
@@ -336,7 +320,7 @@ lrsk_uplift_neighbor_t1_first_colony = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = event_target:lrsk_uplift_tutor.capital_scope
+		class = ideal_planet_class
 		modifiers = none
 		anomaly = none
 		orbit_angle = { min = 90 max = 270 }
@@ -404,7 +388,7 @@ lrsk_uplift_neighbor_t2_second_colony = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = event_target:lrsk_uplift_tutor.capital_scope
+		class = ideal_planet_class
 		modifiers = none
 		anomaly = none
 		orbit_angle = { min = 90 max = 270 }

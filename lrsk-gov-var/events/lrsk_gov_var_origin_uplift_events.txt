@@ -97,24 +97,66 @@ country_event = {
 						}
 						species = { save_event_target_as = lrsk_gov_var_new_uplift_species }
 					}
-					add_modifier = lrsk_gov_var_empire_enlightened
+					set_country_flag = lrsk_gov_var_uplift_enlighten
 				}
 			}
-			default = {
-				root = {
-					set_country_flag = lrsk_gov_var_new_uplift_no_trait_swap
-					add_modifier = lrsk_gov_var_empire_enlightened
-				}
-			}
+			default = { root = { set_country_flag = lrsk_gov_var_uplift_no_trait_swap } }
 		} }
 		
-		IF = { 
-			limit = { NOT = { has_country_flag = lrsk_gov_var_new_uplift_no_trait_swap } }
+		IF = {
+			limit = { OR = { 
+				has_country_flag = lrsk_gov_var_uplift_enlighten
+				has_country_flag = lrsk_gov_var_uplift_no_trait_swap
+			} }
+			add_modifier = { modifier = lrsk_gov_var_empire_enlightened }
+		}
+				
+		IF = {
+			limit = { NOT = { has_country_flag = lrsk_gov_var_uplift_no_trait_swap } }
 			change_dominant_species = {
 				species = event_target:lrsk_gov_var_new_uplift_species
 				change_all = yes
 			}
 		}
+
+		#Spawn tutor
+		this.capital_scope.solar_system = {
+			random_system = {
+				limit = {
+					has_owner = no
+					distance = {
+						source = prev
+						min_jumps = 3
+						max_jumps = 6
+					}
+				}
+				spawn_system = { initializer = "lrsk_uplift_1" } 
+			}
+		}
 	}
 }
+
+# Establish vassalage
+#country_event = {
+#	id = lrsk_gov_var_uplift.2
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		has_origin = lrsk_gov_var_origin_uplift
+#	}
+#
+#	immediate = {
+#		set_subject_of = {
+#			who = event_target:scion_master
+#			subject_type = lrsk_gov_var_ward
+#		}
+#		add_opinion_modifier = {
+#			who = event_target:scion_master
+#			modifier = opinion_scion
+#		}
+#	}
+#}
+
+
 
