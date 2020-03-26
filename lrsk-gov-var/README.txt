@@ -173,6 +173,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.3 (03-26-20) - Deposit hotfix attempt 2
+-Added a checkup event to add back any planet deposits that might be removed by other mods.
+
+v1.6.2 (03-25-20) - Deposit hotfix attempt 1
+-Fixing possible compatibility issue: Otherworld Pocket deposit define might have conflicted needlessly with planet mods. Hopefully not anymore!
+
 v1.6.1 (03-24-20) - Namazuo Governments
 -Added 16 new governments, based on the ideas of Steam user Namazuo "Horse Poop" Toushiro posted here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/ (only took two years...)
 -Government type Proprietary Franchise now requires Merchant Guilds and either Business Lobby or Cutthroat Politics.
