@@ -44,3 +44,39 @@ event = {
 		}
 	}
 }
+
+# Fix for other mods possibly removing deposits. Should avoid the need for compatibility patches, etc.
+# Every event that adds a starting planetary feature to the capital should call this to run after 2 days.
+country_event = {
+	id = lrsk_government_variety_pack_backend.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	# Structurally, this trigger is set up to facilitate adding "origin + flag" blocks. May be logically redundant but better safe than sorry...
+	# Flags referred to here may not be used elsewhere but are pre-emptively checked in case I ever decide to add deposit-removing events, etc.
+	trigger = {
+		OR = {
+			AND = {
+				has_origin = lrsk_gov_var_origin_shroud_touched
+				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
+			}
+			# Add other checks as needed...
+		}
+	}
+
+	immediate = {
+		# Most of these will check on capitals, since that's the most likely place for mod-added features.
+		capital_scope = {
+			switch = {
+				trigger = has_planet_flag
+				# Restore Otherworld Pockets if removed
+				lrsk_gov_var_shroud_touched_capital = {
+					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
+						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				# Add other planet flags as needed...
+			}
+		}
+	}
+}
