@@ -20,7 +20,8 @@ country_event = {
 		set_country_flag = Story2 # Already encountered spacefarers
 
 		# Swap traits out. For non-hive organics, we want the species to have the actual presapient traits for job weighting purposes.
-		# Sadly, there is little we can do for mod-added traits without editing job definitions...
+		# Sadly, there is little we can do for mod-added traits without editing job definitions... 
+		# ...but all pops get these, the problem is immigration which is an edge case for gestalts tbh.
 		# If the "enlightened" trait or no trait is taken, swap it out for/give the "enlightened" empire modifier.
 		IF = { limit = { is_gestalt = yes }
 			IF = { limit = { has_authority = auth_hive_mind }
@@ -272,60 +273,78 @@ country_event = {
 					change_pc = pc_arid
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_desert } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_desert
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_tropical } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_tropical
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_continental } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_continental
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_ocean } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_ocean
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_tundra } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_tundra
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_arctic } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_arctic
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_alpine } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_alpine
 				}
 			}
-			if = {
+			else_if = {
 				limit = { this = { ideal_planet_class = pc_savannah } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
 					change_pc = pc_savannah
+				}
+			}
+			#This is a fallback in case of mod-added or other unexpected planet types.
+			else = {
+				every_owned_pop = {
+					modify_species = {
+						species = this
+						ideal_planet_class = pc_continental
+					}
+					species = { save_event_target_as = lrsk_gov_var_new_uplift_tutor_species }
+				}
+				change_dominant_species = {
+					species = event_target:lrsk_gov_var_new_uplift_tutor_species
+					change_all = yes
+				}
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = pc_continental
 				}
 			}
 			every_owned_planet = {
@@ -345,14 +364,18 @@ country_event = {
 				}
 			
 				create_starbase = {
-					name = "Pupil Watchpost"
+					#name = "Pupil Watchpost"
 					size = starbase_starport
-					module = shipyard
+					#module = shipyard
 					building = listening_post
 					owner = event_target:lrsk_my_uplift_tutor
 					effect = {
 						set_starbase_module = {
 							slot = 1
+							module = shipyard
+						}
+						set_starbase_module = {
+							slot = 2
 							module = trading_hub
 						}
 					}

@@ -202,7 +202,7 @@ lrsk_uplift_1 = {
 							name_list = random
 							type = default
 							origin = "origin_default"
-							ethos = event_target:lrsk_uplift_pupil
+							ethos = event_target:lrsk_uplift_pupil	# We assume a high degree of influence by the tutor....
 							effect = {
 								save_event_target_as = lrsk_uplift_tutor
 								add_resource = {
@@ -217,25 +217,50 @@ lrsk_uplift_1 = {
 						}
 					}
 					ELSE = {
-						create_country = {
-							species = event_target:lrsk_uplift_tutor_species
-							name_list = random
-							type = default
-							origin = "origin_default"
-							ethos = {
-								ethic = ethic_militarist
-								ethic = ethic_authoritarian
-								ethic = ethic_xenophile
+						IF = { limit = { event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind } }
+							create_country = {
+								species = event_target:lrsk_uplift_tutor_species
+								name_list = random
+								type = default
+								origin = "origin_default"
+								ethos = {
+									ethic = ethic_militarist
+									ethic = ethic_authoritarian
+									ethic = ethic_xenophile
+								}
+								effect = {
+									save_event_target_as = lrsk_uplift_tutor
+									add_resource = {
+										minerals = 1900
+										energy = 1400
+										food = 2400
+										alloys = 800
+										consumer_goods = 1200
+										influence = 600
+									}
+								}
 							}
-							effect = {
-								save_event_target_as = lrsk_uplift_tutor
-								add_resource = {
-									minerals = 1900
-									energy = 1400
-									food = 2400
-									alloys = 800
-									consumer_goods = 1200
-									influence = 600
+						}
+						ELSE = {
+							create_country = {
+								species = event_target:lrsk_uplift_tutor_species
+								name_list = random
+								type = default
+								origin = "origin_default"
+								ethos = {
+									ethic = ethic_fanatic_materialist
+									ethic = ethic_xenophile
+								}
+								effect = {
+									save_event_target_as = lrsk_uplift_tutor
+									add_resource = {
+										minerals = 1900
+										energy = 1400
+										food = 2400
+										alloys = 800
+										consumer_goods = 1200
+										influence = 600
+									}
 								}
 							}
 						}
