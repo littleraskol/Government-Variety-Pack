@@ -282,12 +282,13 @@ l_english:
 
  #### Sublight Empire: Start with several same-species vassals bound to you by the monopoly on FTL that you developed first, although this may not last...
 
+ LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_DESC:0 "This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel."
  LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_PRE:0 "- Start as the overlord of §Hthree special vassal empires of your species§!"
  LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_MID:0 "\n- These vassals will occupy any Guaranteed Habitable Worlds slots near your home system"
  LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_POST:0 "\n- One vassal is §Gloyal§! and shares your ethics, one is the result of §Ya generation ship§! and will have random ethics, the third will be composed of §Rdissidents§! with opposed ethics.\n- §RWARNING:§! There's no way to make the planet generation logic work perfectly with every possible mod-added planet type, so this origin can only be guaranteed to work properly when choosing a base game planet type for your homeworld."
  
  lrsk_gov_var_origin_sublight_empire:0 "Sublight Empire"
- lrsk_gov_var_origin_sublight_empire_desc:0 "This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies with enough strings attached to keep those offshoots under their thumbs... for now."
+ lrsk_gov_var_origin_sublight_empire_desc:0 "$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_DESC$ Once they discovered it, they shared it with their sublight colonies with enough strings attached to keep those offshoots under their thumbs... for now."
  lrsk_gov_var_origin_tooltip_sublight_empire_effects:0 "$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_PRE$, which will provide you with §Gresources via taxes§! although you will not be able to integrate them.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_MID$ and will eventually break from from your FTL monopoly.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_POST$"
 
  LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_COMMON_TEXT:0 "It has been over a hundred years since the first great colonization rush swelled and and subsided, and ironically, those first pioneers in their sub-lightspeed ships took so long to reach their destinations that we back home have lapped them. Scarcely sooner than they'd established their intended colonies, we arrived on craft fitted with newly devloped FTL drives to establish a much closer relationship with the colonies than any of the colonists had anticipated.\n\nIn that time, the world unification just beginning when the colonists departed has been perfected, although at the cost of decades of inward-facing politics and development priorities to bring all the peoples of our homeworld on board. Our colonial offspring have... differing dispositions towards this development."
@@ -295,9 +296,9 @@ l_english:
  LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_EMPIRE:0 "$LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_COMMON_TEXT$ Nonetheless, we control the secret of fast travel between the stars, letting them have limited access to it in exchange for keeping them on a short leash. The wealth of worlds is suddenly at our command."
 
  # Generic NPC text
- lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects:0 "- Starts as a §Hspecial type of vassal§! of another empire, kept in thrall by lacking the ability to create FTL drives without its overlord's assistance... for now."
- lrsk_gov_var_origin_sublight_empire_npc:0 "Sublight Vassal"
- lrsk_gov_var_origin_sublight_empire_npc_desc:0 "This civilization is the result of a sublight colonization effort. Their home planet eventually discovered FTL travel and allows them to use 'black box' versions of FTL drives, keeping the secret of FTL drive construction as leverage over them."
+ lrsk_gov_var_origin_sublight_empire_npc:0 "Sublight Colony"
+ lrsk_gov_var_origin_sublight_empire_npc_desc:0 "This civilization is the result of a sub-lightspeed colonization effort. Its home planet eventually discovered FTL travel and, through either technological coersion or diplomatic negotiation, established authority over it."
+ lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects:0 "- Starts as a §Hspecial type of vassal§! of another empire, either kept in thrall (for now) by only being able to get FTL drives its overlord, or in a consensual but unequal realtionship with the homeworld government.\n- Colonial regulations and procedural requirements keep this empire's expansion in check with a §R25% penalty§! to outpost costs, colony development time, and survey speed.\n- If a §Hvassal to a Sublight Empire§!, this empire only has access to second-rate feature-restricted hyperdrives lacking most diagnostic functions, resulting in a §R25% penalty§! to FTL wind-up and wind-down. (On the other hand, §Hsatellites of a Sublight Commonwealth§! have no such restrictions.)"
 
  # Loyal NPC text
  lrsk_gov_var_origin_tooltip_sublight_colony_loy_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n - Has §Hsame ethics§! as overlord.\n\n"
@@ -317,30 +318,30 @@ l_english:
  #### Sublight Commonwealth - more goodguy version of above
 
  lrsk_gov_var_origin_sublight_commonwealth:0 "Sublight Commonwealth"
- lrsk_gov_var_origin_sublight_commonwealth_desc:0 "This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies on the condition of their entering an interstellar commonwealth of worlds that, in theory, works for the benefit of all members, but tends to give most decision-making power to the homeworld."
- lrsk_gov_var_origin_tooltip_sublight_commonwealth_effects:0 "$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_PRE$. You will not be able to integrate them, but as the respected leader of their combined efforts, §Gyou gain Influence and Unity§! from the arrangement.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_MID$ and will eventually break from from your FTL monopoly.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_POST$"
+ lrsk_gov_var_origin_sublight_commonwealth_desc:0 "$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_DESC$ Once they discovered it, they shared it with their sublight colonies on the condition of their entering an interstellar commonwealth of worlds that, in theory, works for the benefit of all members, but tends to give most decision-making power to the homeworld."
+ lrsk_gov_var_origin_tooltip_sublight_commonwealth_effects:0 "$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_PRE$. You will not be able to integrate them, but as the respected leader of their combined efforts, §Gyou gain Influence and Unity§! from the arrangement.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_MID$.$LRSK_GOV_VAR_ORIGIN_SUBLIGHT_COMMON_POST$"
 
  LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_COMMONWEALTH:0 "$LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_COMMON_TEXT$ Regardless, while for the good of our whole species we needed to claim some central control, we have welcomed the colonies into a new commonwealth of worlds in which we all may prosper."
 
- # Generic NPC text
- lrsk_gov_var_origin_tooltip_sublight_commonwealth_npc_effects:0 "- Starts as a §Hspecial type of vassal§! of another empire with certain restrictions on expansion."
- lrsk_gov_var_origin_sublight_commonwealth_npc:0 "Sublight Satellite"
- lrsk_gov_var_origin_sublight_commonwealth_npc_desc:0 "This civilization is the result of a sublight colonization effort. Their home planet eventually discovered FTL travel and, in exchange for its free use, holds a position of diplomatic authority over the colony."
-
- # Loyal NPC text
- lrsk_gov_var_origin_tooltip_sublight_satellite_loy_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n- Has §Hsame ethics§! as overlord.\n\n"
- lrsk_gov_var_origin_sublight_satellite_loy:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Loyal"
- lrsk_gov_var_origin_sublight_satellite_loy_desc:0 "$lrsk_gov_var_origin_sublight_colony_loy_desc$"
-
- # GenShip NPC text
- lrsk_gov_var_origin_tooltip_sublight_satellite_gsp_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n - Has §Hrandom ethics§!.\n\n"
- lrsk_gov_var_origin_sublight_satellite_gsp:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Generation Ship"
- lrsk_gov_var_origin_sublight_satellite_gsp_desc:0 "$lrsk_gov_var_origin_sublight_colony_gsp_desc$"
-
- # Dissident NPC text
- lrsk_gov_var_origin_tooltip_sublight_satellite_dis_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n - Has §Hopposed ethics§! to overlord.\n\n"
- lrsk_gov_var_origin_sublight_satellite_dis:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Dissidents"
- lrsk_gov_var_origin_sublight_satellite_dis_desc:0 "$lrsk_gov_var_origin_sublight_colony_dis_desc$"
+ ## Generic NPC text
+ #lrsk_gov_var_origin_tooltip_sublight_commonwealth_npc_effects:0 "- Starts as a §Hspecial type of vassal§! of another empire with certain #restrictions on expansion."
+ #lrsk_gov_var_origin_sublight_commonwealth_npc:0 "Sublight Satellite"
+ #lrsk_gov_var_origin_sublight_commonwealth_npc_desc:0 "This civilization is the result of a sublight colonization effort. Their home planet #eventually discovered FTL travel and, in exchange for its free use, holds a position of diplomatic authority over the colony."
+ #
+ ## Loyal NPC text
+ #lrsk_gov_var_origin_tooltip_sublight_satellite_loy_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n- Has §Hsame ethics§! as #overlord.\n\n"
+ #lrsk_gov_var_origin_sublight_satellite_loy:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Loyal"
+ #lrsk_gov_var_origin_sublight_satellite_loy_desc:0 "$lrsk_gov_var_origin_sublight_colony_loy_desc$"
+ #
+ ## GenShip NPC text
+ #lrsk_gov_var_origin_tooltip_sublight_satellite_gsp_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n - Has §Hrandom #ethics§!.\n\n"
+ #lrsk_gov_var_origin_sublight_satellite_gsp:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Generation Ship"
+ #lrsk_gov_var_origin_sublight_satellite_gsp_desc:0 "$lrsk_gov_var_origin_sublight_colony_gsp_desc$"
+ #
+ ## Dissident NPC text
+ #lrsk_gov_var_origin_tooltip_sublight_satellite_dis_effects:0 "$lrsk_gov_var_origin_tooltip_sublight_empire_npc_effects$\n - Has §Hopposed ethics§! #to overlord.\n\n"
+ #lrsk_gov_var_origin_sublight_satellite_dis:0 "$lrsk_gov_var_origin_sublight_empire_npc$ - Dissidents"
+ #lrsk_gov_var_origin_sublight_satellite_dis_desc:0 "$lrsk_gov_var_origin_sublight_colony_dis_desc$"
 
  ####################################
  # Governments

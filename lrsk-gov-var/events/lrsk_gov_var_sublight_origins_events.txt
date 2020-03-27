@@ -947,13 +947,46 @@ country_event = {
 		}
 
 		# FTL monopoly break
-		#if = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
-		#	event_target:lrsk_sublight_dissident_colony = {
-		#		country_event = {
-		#			id = lrsk_gov_var_sublight_origins.2
-		#			
-		#		}
-		#	}
-		#}
+		if = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+			event_target:lrsk_sublight_dissident_colony = {
+				country_event = {
+					id = lrsk_gov_var_sublight_origins.2
+					days = 1800
+					random = 720
+					# Between 3 and 7 years from start
+				}
+			}
+			event_target:lrsk_sublight_genship_colony = {
+				country_event = {
+					id = lrsk_gov_var_sublight_origins.2
+					days = 2880
+					random = 1080
+					# Between 5 and 11 years from start
+				}
+			}
+			event_target:lrsk_sublight_loyalist_colony = {
+				country_event = {
+					id = lrsk_gov_var_sublight_origins.2
+					days = 4320
+					random = 1440
+					# Between 6 and 16 years from start
+				}
+			}
+		}
+	}
+}
+
+# FTL monopoly break
+country_event = {
+	id = lrsk_gov_var_sublight_origins.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_colony_loy
+			has_origin = lrsk_gov_var_origin_sublight_colony_loy
+			has_origin = lrsk_gov_var_origin_sublight_colony_loy
+		}
 	}
 }
