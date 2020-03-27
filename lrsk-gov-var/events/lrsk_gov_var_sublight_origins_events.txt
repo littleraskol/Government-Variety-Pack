@@ -21,10 +21,60 @@ country_event = {
 	immediate = {
 		this = { save_event_target_as = lrsk_sublight_overlord }
 		owner_species = { save_event_target_as = lrsk_sublight_overlord_species }
+
+		# Using variables to catch gauranteed ideal worlds.
+		# lrsk_gcol = number of guaranteed colonies.
+		# lrsk_rcol = number of randomly generated colonies we need to make good.
+		if = {
+			limit = { num_guaranteed_colonies > 2 }
+			set_variable = { which = lrsk_gcol value = 3 }
+			set_variable = { which = lrsk_rcol value = 0 } # Technically this does nothing but eh explicitness...
+		}
+		else_if = {
+			limit = { num_guaranteed_colonies = 2 }
+			set_variable = { which = lrsk_gcol value = 2 }
+			set_variable = { which = lrsk_rcol value = 1 }
+		}
+		else_if = {
+			limit = { num_guaranteed_colonies = 1 }
+			set_variable = { which = lrsk_gcol value = 1 }
+			set_variable = { which = lrsk_rcol value = 2 }
+		}
+		else = {
+			set_variable = { which = lrsk_gcol value = 0 } # Technically this does nothing but eh explicitness...
+			set_variable = { which = lrsk_rcol value = 3 }
+		}
+
 		capital_scope = { solar_system = {
 			# This will tag three planets as potential sublight colonies
-			# Should probably come back later and use the guarnateed colonies logic to prefer them if available...
-			while = { count = 3
+			# Will check for any ideal planets and use them first.			
+			while = {
+				limit = { check_variable = {
+					which = lrsk_gcol
+					value > 0
+				} }
+				closest_system = { 
+					limit = {
+						has_owner = no
+						NOT = { has_system_flag = lrsk_sublight_colony_system }
+						any_system_planet = { has_planet_flag = prescripted_ideal }
+					}
+					random_system_planet = { limit = { has_planet_flag = prescripted_ideal }
+						set_planet_flag = lrsk_sublight_colony_planet
+					}
+					set_system_flag = lrsk_sublight_colony_system # ensures that systems with more than one eligible world don't get more than one tagged world
+					subtract_variable = {
+						which = lrsk_gcol
+						value = 1
+					}
+				}
+			}			
+			
+			while = {
+				limit = { check_variable = {
+					which = lrsk_rcol
+					value > 0
+				} }
 				closest_system = {
 					limit = {
 						NOT = { has_system_flag = lrsk_sublight_colony_system }
@@ -36,58 +86,70 @@ country_event = {
 							is_moon = no
 						}
 					}
-					IF = {
-						limit = { any_system_planet = { has_planet_flag = prescripted_ideal } }
-						random_system_planet = { limit = { has_planet_flag = prescripted_ideal }
-							set_planet_flag = lrsk_sublight_colony_planet
-						}
-					}
-					ELSE = { random_system_planet = {
+					random_system_planet = { 
 						limit = {
 							is_ringworld = no
 							is_asteroid = no
 							is_star = no
 							is_moon = no
 						}
-						set_planet_size = 16
-						if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_arid } }
-							change_pc = pc_arid
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_desert } }
-							change_pc = pc_desert
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_tropical } }
-							change_pc = pc_tropical
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_ocean } }
-							change_pc = pc_ocean
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_tundra } }
-							change_pc = pc_tundra
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_arctic } }
-							change_pc = pc_arctic
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_alpine } }
-							change_pc = pc_alpine
-						}
-						else_if = {
-							limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_savannah } }
-							change_pc = pc_savannah
-						}
-						# If all else fails, try continental (also this will catch continental)
-						else = { change_pc = pc_continental }
-						reroll_planet = yes
 						set_planet_flag = lrsk_sublight_colony_planet
-					} }
-					set_system_flag = lrsk_sublight_colony_system # ensures that systems with more than one habitable world don't get more than one tagged world
+						set_planet_flag = lrsk_sublight_reform_planet
+					}
+					set_system_flag = lrsk_sublight_colony_system # ensures that systems with more than one eligible world don't get more than one tagged world
+					subtract_variable = {
+						which = lrsk_rcol
+						value = 1
+					}
+				}
+			}
+
+			while = { count = 3
+				closest_system = {
+					limit = { has_system_flag = lrsk_sublight_colony_system }
+					IF = {
+						limit = { any_system_planet = { has_planet_flag = lrsk_sublight_reform_planet } }
+						random_system_planet = { limit = { has_planet_flag = lrsk_sublight_reform_planet }
+							set_planet_size = 16
+							if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_arid } }
+								change_pc = pc_arid
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_desert } }
+								change_pc = pc_desert
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_tropical } }
+								change_pc = pc_tropical
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_ocean } }
+								change_pc = pc_ocean
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_tundra } }
+								change_pc = pc_tundra
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_arctic } }
+								change_pc = pc_arctic
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_alpine } }
+								change_pc = pc_alpine
+							}
+							else_if = {
+								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_savannah } }
+								change_pc = pc_savannah
+							}
+							# If all else fails, try continental (also this will catch continental)
+							else = { change_pc = pc_continental }
+							reroll_planet = yes
+							remove_planet_flag = lrsk_sublight_reform_planet
+						}
+					}
+					remove_system_flag = lrsk_sublight_colony_system
 				}
 			}
 
@@ -136,19 +198,67 @@ country_event = {
 								}
 							}
 							ethic_materialist = {
-								#
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_spiritualist"
+										ethic = "ethic_fanatic_egalitarian"
+									}
+								}
 							}
 							ethic_spiritualist = {
-								#
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_materialist"
+										ethic = "ethic_fanatic_egalitarian"
+									}
+								}
 							}
 							ethic_militarist = {
-								#
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_egalitarian"
+									}
+								}
 							}
 							ethic_pacifist = {
-								#
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_egalitarian"
+									}
+								}
 							}
 						}
-					}
+					} }
 					ELSE_IF ={
 						limit = { OR = {
 							has_ethic = ethic_egalitarian
@@ -157,194 +267,6 @@ country_event = {
 						switch = {
 							trigger = has_ethic
 							ethic_xenophobe = {
-								#
-							}
-							ethic_xenophile = {
-								#
-							}
-							ethic_materialist = {
-								#
-							}
-							ethic_spiritualist = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_xenophobe }
-						switch = {
-							trigger = has_ethic
-							ethic_materialist = {
-								#
-							}
-							ethic_spiritualist = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_xenophile }
-						switch = {
-							trigger = has_ethic
-							ethic_materialist = {
-								#
-							}
-							ethic_spiritualist = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_materialist }
-						switch = {
-							trigger = has_ethic
-							ethic_xenophobe = {
-								#
-							}
-							ethic_xenophile = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_spiritualist }
-						switch = {
-							trigger = has_ethic
-							ethic_xenophobe = {
-								#
-							}
-							ethic_xenophile = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_militarist }
-						switch = {
-							trigger = has_ethic
-							ethic_materialist = {
-								#
-							}
-							ethic_spiritualist = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE_IF ={
-						limit = { has_ethic = ethic_fanatic_pacifist }
-						switch = {
-							trigger = has_ethic
-							ethic_materialist = {
-								#
-							}
-							ethic_spiritualist = {
-								#
-							}
-							ethic_militarist = {
-								#
-							}
-							ethic_pacifist = {
-								#
-							}
-						}
-					}
-					ELSE = {
-						switch = {
-							trigger = has_ethic
-							ethic_xenophobe = {
-								switch = {
-									trigger = has_ethic
-									ethic_materialist = {
-										#
-									}
-									ethic_spiritualist = {
-										#
-									}
-									ethic_militarist = {
-										#
-									}
-									ethic_pacifist = {
-										#
-									}
-								}
-							}
-							ethic_xenophile = {
-								switch = {
-									trigger = has_ethic
-									ethic_materialist = {
-										#
-									}
-									ethic_spiritualist = {
-										#
-									}
-									ethic_militarist = {
-										#
-									}
-									ethic_pacifist = {
-										#
-									}
-								}
-							}
-							ethic_materialist = {
-								switch = {
-									trigger = has_ethic
-									ethic_militarist = {
-										#
-									}
-									ethic_pacifist = {
-										#
-									}
-								}
-							}
-							ethic_spiritualist = {
-								switch = {
-									trigger = has_ethic
-									ethic_militarist = {
-										#
-									}
-									ethic_pacifist = {
-										#
-									}
-								}
-							}
-							# fuck it, they get random if they somehow get this far...
-							default = {
 								create_country = {
 									species = event_target:lrsk_sublight_overlord_species
 									name_list = event_target:lrsk_sublight_overlord
@@ -352,11 +274,318 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									ethos = random
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_xenophile"
+										ethic = "ethic_fanatic_authoritarian"
+									}
+								}
+							}
+							ethic_xenophile = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_xenophobe"
+										ethic = "ethic_fanatic_authoritarian"
+									}
+								}
+							}
+							ethic_materialist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_spiritualist"
+										ethic = "ethic_fanatic_authoritarian"
+									}
+								}
+							}
+							ethic_spiritualist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_materialist"
+										ethic = "ethic_fanatic_authoritarian"
+									}
+								}
+							}
+							ethic_militarist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_authoritarian"
+									}
+								}
+							}
+							ethic_pacifist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_authoritarian"
+									}
 								}
 							}
 						}
-					} }
+					}
+					ELSE_IF ={
+						limit = { OR = {
+							has_ethic = ethic_xenophobe
+							has_ethic = ethic_fanatic_xenophobe 
+						} }
+						switch = {
+							trigger = has_ethic
+							ethic_materialist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_spiritualist"
+										ethic = "ethic_fanatic_xenophile"
+									}
+								}
+							}
+							ethic_spiritualist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_materialist"
+										ethic = "ethic_fanatic_xenophile"
+									}
+								}
+							}
+							ethic_militarist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_xenophile"
+									}
+								}
+							}
+							ethic_pacifist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_xenophile"
+									}
+								}
+							}
+						}
+					}
+					ELSE_IF ={
+						limit = { OR = {
+							has_ethic = ethic_xenophile
+							has_ethic = ethic_fanatic_xenophile
+						} }
+						switch = {
+							trigger = has_ethic
+							ethic_materialist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_spiritualist"
+										ethic = "ethic_fanatic_xenophobe"
+									}
+								}
+							}
+							ethic_spiritualist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_materialist"
+										ethic = "ethic_fanatic_xenophobe"
+									}
+								}
+							}
+							ethic_militarist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_xenophobe"
+									}
+								}
+							}
+							ethic_pacifist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_xenophobe"
+									}
+								}
+							}
+						}
+					}
+					ELSE_IF ={
+						limit = { OR = {
+							has_ethic = ethic_materialist
+							has_ethic = ethic_fanatic_materialist 
+						} }
+						switch = {
+							trigger = has_ethic
+							ethic_militarist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_spiritualist"
+									}
+								}
+							}
+							ethic_pacifist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_spiritualist"
+									}
+								}
+							}
+						}
+					}
+					ELSE_IF ={
+						limit = { OR = {
+							has_ethic = ethic_spiritualist
+							has_ethic = ethic_fanatic_spiritualist 
+						} }
+						switch = {
+							trigger = has_ethic
+							ethic_militarist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_pacifist"
+										ethic = "ethic_fanatic_materialist"
+									}
+								}
+							}
+							ethic_pacifist = {
+								create_country = {
+									species = event_target:lrsk_sublight_overlord_species
+									name_list = event_target:lrsk_sublight_overlord
+									type = default
+									origin = "lrsk_gov_var_origin_sublight_colony_dis"
+									ignore_initial_colony_error = yes
+									day_zero_contact = no
+									#randomize_ethos = yes
+									ethos = {
+										ethic = "ethic_militarist"
+										ethic = "ethic_fanatic_materialist"
+									}
+								}
+							}
+						}
+					}
+					ELSE = {
+						# fuck it, they get random if they somehow get this far...
+						create_country = {
+							species = event_target:lrsk_sublight_overlord_species
+							name_list = event_target:lrsk_sublight_overlord
+							type = default
+							origin = "lrsk_gov_var_origin_sublight_colony_dis"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = random
+						}
+					}
 
 					# COMMENT ALL THE FOLLOWING OUT IF NOT TESTING.
 					#create_country = {
@@ -568,3 +797,4 @@ country_event = {
 			}
 		} }
 	}
+}
