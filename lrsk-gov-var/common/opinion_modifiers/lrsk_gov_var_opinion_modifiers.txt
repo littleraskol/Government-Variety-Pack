@@ -29,19 +29,68 @@ opinion_lrsk_gov_var_uplift_pupil = {
 	}
 }
 
-# For Sublight Empire/Commonwealth vassals
+## For Sublight Empire/Commonwealth vassals
+# Loyalists have passive approval
 opinion_lrsk_gov_var_loyal_sublight = {
 	opinion = {
 		base = 25
 	}
 }
+
+# Dissidents have passive disapproval
 opinion_lrsk_gov_var_dsdnt_sublight = {
 	opinion = {
-		base = -50
+		base = -25
 	}
 }
+
+# FTL monopoly keeps them at least acting happy
 opinion_lrsk_gov_var_ftlmn_sublight = {
 	opinion = {
-		base = 300
+		base = 200
+	}
+}
+
+# Offsets initial power penalty somewhat for sublight empires, wears off in 60 years.
+opinion_lrsk_gov_var_vasag_sublight = {
+	opinion = {
+		base = 120
+	}
+
+	decay = {
+		base = 2
+	}
+}
+
+# Offsets initial power penalty somewhat for sublight commonwealths, wears off in 120 years.
+opinion_lrsk_gov_var_satag_sublight = {
+	opinion = {
+		base = 120
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Offsets any overlord distaste for vassals, wears off in 30 years.
+opinion_lrsk_gov_var_vasol_sublight = {
+	opinion = {
+		base = 120
+	}
+
+	decay = {
+		base = 4
+	}
+}
+
+# Offsets any overlord distaste for satellites, wears off in 40 years.
+opinion_lrsk_gov_var_satol_sublight = {
+	opinion = {
+		base = 120
+	}
+
+	decay = {
+		base = 1
 	}
 }

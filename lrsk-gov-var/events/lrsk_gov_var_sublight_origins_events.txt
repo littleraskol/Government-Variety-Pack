@@ -19,9 +19,6 @@ country_event = {
 	}
 
 	immediate = {
-		this = { save_event_target_as = lrsk_sublight_overlord }
-		owner_species = { save_event_target_as = lrsk_sublight_overlord_species }
-
 		# Using variables to catch gauranteed ideal worlds.
 		# lrsk_gcol = number of guaranteed colonies.
 		# lrsk_rcol = number of randomly generated colonies we need to make good.
@@ -45,73 +42,112 @@ country_event = {
 			set_variable = { which = lrsk_rcol value = 3 }
 		}
 
+		log = "Num of g. colonies = [this.lrsk_gcol]"
+		log = "Num of r. colonies =  [this.lrsk_rcol]"
+
+		this = { save_event_target_as = lrsk_sublight_overlord }
+		owner_species = { save_event_target_as = lrsk_sublight_overlord_species }
+
 		capital_scope = { solar_system = {
+			# Transferring variables
+			set_variable = { which = lrsk_gcol value = prevprev } 
+			set_variable = { which = lrsk_rcol value = prevprev }
+
+			log = "Switched to capital system [this.GetName], num of g. colonies = [this.lrsk_gcol]"
+			log = "Switched to capital system [this.GetName], num of r. colonies =  [this.lrsk_rcol]"
+
+
 			# This will flag three planets as potential sublight colonies
 			# Will check for any ideal planets and flag them first.
 			# Will make up the difference with random normal planets flagged to be reformed.		
 			while = {
-				limit = { check_variable = {
-					which = lrsk_gcol
-					value > 0
-				} }
-				closest_system = { 
+				count = 3 # The max num of times we ever want to do this
+				log = "Starting gcol flagger..."
+				IF = {
 					limit = {
-						has_owner = no
-						NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
-						any_system_planet = { has_planet_flag = prescripted_ideal }
+						check_variable = {
+							which = lrsk_gcol
+							value > 0
+						}
 					}
-					random_system_planet = { limit = { has_planet_flag = prescripted_ideal }
-						set_planet_flag = lrsk_sublight_colony_planet
+					log = "In gcol flagger, num to flag = [this.lrsk_gcol]"
+					closest_system = { 
+						limit = {
+							has_owner = no
+							NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
+							any_system_planet = { has_planet_flag = prescripted_ideal }
+						}
+
+						log = "gcol flagger: found ideal colony in [this.GetName]"
+						random_system_planet = { limit = { has_planet_flag = prescripted_ideal }
+							log = "gcol flagger: flagging planet [this.GetName]"
+							set_planet_flag = lrsk_sublight_colony_planet
+						}
+						star = { set_planet_flag = lrsk_sublight_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
 					}
-					star = { set_planet_flag = lrsk_sublight_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
 					subtract_variable = {
 						which = lrsk_gcol
 						value = 1
 					}
 				}
+				log = "gcol flagger loop completed."
 			}			
 			
 			while = {
-				limit = { check_variable = {
-					which = lrsk_rcol
-					value > 0
-				} }
-				closest_system = {
+				count = 3 # The max num of times we ever want to do this
+				log = "Starting rcol flagger..."
+				IF = {
 					limit = {
-						NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
-						has_owner = no
-						any_system_planet = {
-							is_ringworld = no
-							is_asteroid = no
-							is_star = no
-							is_moon = no
+						check_variable = {
+							which = lrsk_rcol
+							value > 0
 						}
 					}
-					random_system_planet = { 
+					log = "In rcol flagger, num to flag = [this.lrsk_rcol]"
+					closest_system = {
 						limit = {
-							is_ringworld = no
-							is_asteroid = no
-							is_star = no
-							is_moon = no
+							NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
 						}
-						set_planet_flag = lrsk_sublight_colony_planet
-						set_planet_flag = lrsk_sublight_reform_planet
+						log = "rcol flagger: found suitable colony candidate in [this.GetName]"
+						random_system_planet = { 
+							limit = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+							log = "rcol flagger: flagging planet [this.GetName]"
+							set_planet_flag = lrsk_sublight_colony_planet
+							set_planet_flag = lrsk_sublight_reform_planet
+						}
+						star = { set_planet_flag = lrsk_sublight_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
 					}
-					star = { set_planet_flag = lrsk_sublight_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
 					subtract_variable = {
 						which = lrsk_rcol
 						value = 1
 					}
 				}
+				log = "rcol flagger loop completed."
 			}
 
 			# Look at all the systems we flagged, catch and reform all planets flagged for reform.
-			while = { count = 3
+			while = {
+				count = 3
+				log = "In rcol reformer"
 				closest_system = {
 					limit = { star = { has_planet_flag = lrsk_sublight_colony_system } }
+					log = "In rcol reformer; found sublight system: [this.GetName]"
 					IF = {
 						limit = { any_system_planet = { has_planet_flag = lrsk_sublight_reform_planet } }
 						random_system_planet = { limit = { has_planet_flag = lrsk_sublight_reform_planet }
+							log = "In rcol reformer; found planet to reform: [this.GetName]"
 							set_planet_size = 16
 							if = {
 								limit = { event_target:lrsk_sublight_overlord = { ideal_planet_class = pc_arid } }
@@ -157,12 +193,15 @@ country_event = {
 
 			# Create dissidents
 			closest_system = { limit = { any_system_planet = { has_planet_flag = lrsk_sublight_colony_planet } }
+				log = "Creating dissident system: [this.GetName]"
 				random_system_planet = { limit = { has_planet_flag = lrsk_sublight_colony_planet }
+					log = "Creating dissident colony on: [this.GetName]"
 					remove_planet_flag = lrsk_sublight_colony_planet
 					set_planet_flag = lrsk_sublight_dissident_homeworld
 
 					# I can't believe I am doing this dumb shit
 					event_target:lrsk_sublight_overlord = {
+						log = "Doing total bullshit!!!!!!"
 						IF = {
 							limit = { OR = {
 								has_ethic = ethic_authoritarian
@@ -178,6 +217,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_xenophile"
 											ethic = "ethic_fanatic_egalitarian"
@@ -192,6 +232,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_xenophobe"
 											ethic = "ethic_fanatic_egalitarian"
@@ -206,6 +247,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_spiritualist"
 											ethic = "ethic_fanatic_egalitarian"
@@ -220,6 +262,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_materialist"
 											ethic = "ethic_fanatic_egalitarian"
@@ -234,6 +277,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_egalitarian"
@@ -248,6 +292,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_egalitarian"
@@ -270,8 +315,8 @@ country_event = {
 										type = default
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
-										day_zero_contact = no
-										#randomize_ethos = yes
+										day_zero_contact = no										
+										authority = random
 										ethos = {
 											ethic = "ethic_xenophile"
 											ethic = "ethic_fanatic_authoritarian"
@@ -286,7 +331,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_xenophobe"
 											ethic = "ethic_fanatic_authoritarian"
@@ -301,7 +346,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_spiritualist"
 											ethic = "ethic_fanatic_authoritarian"
@@ -316,7 +361,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_materialist"
 											ethic = "ethic_fanatic_authoritarian"
@@ -331,7 +376,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_authoritarian"
@@ -346,7 +391,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_authoritarian"
@@ -370,7 +415,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_spiritualist"
 											ethic = "ethic_fanatic_xenophile"
@@ -385,7 +430,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_materialist"
 											ethic = "ethic_fanatic_xenophile"
@@ -400,7 +445,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_xenophile"
@@ -415,7 +460,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_xenophile"
@@ -439,10 +484,15 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_spiritualist"
 											ethic = "ethic_fanatic_xenophobe"
+										}
+										#Have to preset civics so we don't get fanatic purifiers...
+										civics = {
+											civic = civic_functional_architecture
+											civic = civic_cutthroat_politics
 										}
 									}
 								}
@@ -454,7 +504,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_materialist"
 											ethic = "ethic_fanatic_xenophobe"
@@ -469,7 +519,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_xenophobe"
@@ -484,10 +534,15 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_xenophobe"
+										}
+										#Have to preset civics so we don't get fanatic purifiers...
+										civics = {
+											civic = civic_functional_architecture
+											civic = civic_cutthroat_politics
 										}
 									}
 								}
@@ -508,7 +563,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_spiritualist"
@@ -523,7 +578,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_spiritualist"
@@ -547,7 +602,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_pacifist"
 											ethic = "ethic_fanatic_materialist"
@@ -562,7 +617,7 @@ country_event = {
 										origin = "lrsk_gov_var_origin_sublight_colony_dis"
 										ignore_initial_colony_error = yes
 										day_zero_contact = no
-										#randomize_ethos = yes
+										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_materialist"
@@ -580,9 +635,11 @@ country_event = {
 								origin = "lrsk_gov_var_origin_sublight_colony_dis"
 								ignore_initial_colony_error = yes
 								day_zero_contact = no
+								authority = random
 								ethos = random
 							}
 						}
+						log = "Finsihed total bullshit!!!!!!"
 					}
 
 					# COMMENT ALL THE FOLLOWING OUT IF NOT TESTING.
@@ -599,6 +656,7 @@ country_event = {
 					last_created_country = {
 						save_event_target_as = lrsk_sublight_dissident_colony
 						establish_communications_no_message = event_target:lrsk_sublight_overlord
+						log = "Saved dissident country: [this.GetName]"
 					}
 
 					create_colony = {
@@ -627,6 +685,7 @@ country_event = {
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 						set_name = random # Fixes some naming issues
+						log = "Establishing dissident country: [this.GetName]"
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
 						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
@@ -639,24 +698,37 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_vasag_sublight
+							}
+							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_satag_sublight
+							}
+							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
 							modifier = opinion_lrsk_gov_var_dsdnt_sublight
 						}
+						log = "Done with dissident establishment"
 					}
 				}
 			}
 
 			# Create genship
 			closest_system = { limit = { any_system_planet = { has_planet_flag = lrsk_sublight_colony_planet } }
+				log = "Creating genship system: [this.GetName]"
 				random_system_planet = { limit = { has_planet_flag = lrsk_sublight_colony_planet }
+					log = "Creating genship colony on: [this.GetName]"
 					remove_planet_flag = lrsk_sublight_colony_planet
 					set_planet_flag = lrsk_sublight_genship_homeworld
 					create_country = {
@@ -666,12 +738,14 @@ country_event = {
 						origin = "lrsk_gov_var_origin_sublight_colony_gsp"
 						ignore_initial_colony_error = yes
 						day_zero_contact = no
+						authority = random
 						ethos = random
 						effect = {
 							save_event_target_as = lrsk_sublight_genship_colony
 							establish_communications_no_message = event_target:lrsk_sublight_overlord
 						}
 					}
+					log = "Saved genship country: [event_target:lrsk_sublight_genship_colony.GetName]"
 
 					create_colony = {
 						owner = event_target:lrsk_sublight_genship_colony
@@ -699,6 +773,7 @@ country_event = {
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 						set_name = random # Fixes some naming issues
+						log = "Establishing genship country: [this.GetName]"
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
 						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
@@ -711,20 +786,33 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_vasag_sublight
+							}
+							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_satag_sublight
+							}
+							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
+						log = "Done with genship establishment"
 					}
 				}
 			}
 
 			# Create loyalists
 			closest_system = { limit = { any_system_planet = { has_planet_flag = lrsk_sublight_colony_planet } }
+				log = "Creating loyalist system: [this.GetName]"
 				random_system_planet = { limit = { has_planet_flag = lrsk_sublight_colony_planet }
+					log = "Creating loyalist colony on: [this.GetName]"
 					remove_planet_flag = lrsk_sublight_colony_planet
 					set_planet_flag = lrsk_sublight_loyalist_homeworld
 					create_country = {
@@ -735,11 +823,13 @@ country_event = {
 						ignore_initial_colony_error = yes
 						day_zero_contact = no
 						ethos = event_target:lrsk_sublight_overlord
+						authority = event_target:lrsk_sublight_overlord
 						effect = {
 							save_event_target_as = lrsk_sublight_loyalist_colony
 							establish_communications_no_message = event_target:lrsk_sublight_overlord
 						}
 					}
+					log = "Saved loyalist country: [event_target:lrsk_sublight_genship_colony.GetName]"
 
 					create_colony = {
 						owner = event_target:lrsk_sublight_loyalist_colony
@@ -767,6 +857,7 @@ country_event = {
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 						set_name = random # Fixes some naming issues
+						log = "Establishing loyalist country: [this.GetName]"
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
 						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
@@ -779,17 +870,28 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_vasag_sublight
+							}
+							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord
+								modifier = opinion_lrsk_gov_var_satag_sublight
+							}
+							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
 							modifier = opinion_lrsk_gov_var_loyal_sublight
 						}
+						log = "Done with loyalist establishment"
 					}
 				}				
 			}
@@ -798,11 +900,50 @@ country_event = {
 			# This won't guarantee a route out without going through a vassal, but...
 			closest_system = {
 				limit = {
-					is_owned = no
+					has_owner = no
 					NOT = { has_hyperlane_to = prev }
 				}
+				log = "hyperlane thing"
 				add_hyperlane = { from = this to = prev }
 			}
 		} }
+
+		# Set overlord opinions
+		IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+			log = "Adding sublight empire overlord opinion of vassals for [this.GetName]"
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_dissident_colony
+				modifier = opinion_lrsk_gov_var_vasol_sublight
+			}
+			log = "Dissidents: Done."
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_genship_colony
+				modifier = opinion_lrsk_gov_var_vasol_sublight
+			}
+			log = "GenShip: Done."
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_loyalist_colony
+				modifier = opinion_lrsk_gov_var_vasol_sublight
+			}
+			log = "Loyalists: Done."
+		}
+		ELSE = {
+			log = "Adding sublight commonwealth overlord opinion of satellites for [this.GetName]"
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_dissident_colony
+				modifier = opinion_lrsk_gov_var_satol_sublight
+			}
+			log = "Dissidents: Done."
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_genship_colony
+				modifier = opinion_lrsk_gov_var_satol_sublight
+			}
+			log = "GenShip: Done."
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_loyalist_colony
+				modifier = opinion_lrsk_gov_var_satol_sublight
+			}
+			log = "Loyalists: Done."
+		}
 	}
 }
