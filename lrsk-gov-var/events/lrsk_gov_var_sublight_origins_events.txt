@@ -46,8 +46,9 @@ country_event = {
 		}
 
 		capital_scope = { solar_system = {
-			# This will tag three planets as potential sublight colonies
-			# Will check for any ideal planets and use them first.			
+			# This will flag three planets as potential sublight colonies
+			# Will check for any ideal planets and flag them first.
+			# Will make up the difference with random normal planets flagged to be reformed.		
 			while = {
 				limit = { check_variable = {
 					which = lrsk_gcol
@@ -104,6 +105,7 @@ country_event = {
 				}
 			}
 
+			# Look at all the systems we flagged, catch and reform all planets flagged for reform.
 			while = { count = 3
 				closest_system = {
 					limit = { has_system_flag = lrsk_sublight_colony_system }
@@ -175,7 +177,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_xenophile"
 										ethic = "ethic_fanatic_egalitarian"
@@ -190,7 +191,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_xenophobe"
 										ethic = "ethic_fanatic_egalitarian"
@@ -205,7 +205,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_spiritualist"
 										ethic = "ethic_fanatic_egalitarian"
@@ -220,7 +219,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_materialist"
 										ethic = "ethic_fanatic_egalitarian"
@@ -235,7 +233,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_pacifist"
 										ethic = "ethic_fanatic_egalitarian"
@@ -250,7 +247,6 @@ country_event = {
 									origin = "lrsk_gov_var_origin_sublight_colony_dis"
 									ignore_initial_colony_error = yes
 									day_zero_contact = no
-									#randomize_ethos = yes
 									ethos = {
 										ethic = "ethic_militarist"
 										ethic = "ethic_fanatic_egalitarian"
@@ -631,7 +627,7 @@ country_event = {
 						set_name = random # Fixes some naming issues
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
-						IF = { limit = { root = { has_origin = lrsk_gov_var_origin_sublight_empire } }
+						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
 							add_modifier = { modifier = lrsk_gov_var_empire_black_box_drives }
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
@@ -663,7 +659,7 @@ country_event = {
 					set_planet_flag = lrsk_sublight_genship_homeworld
 					create_country = {
 						species = event_target:lrsk_sublight_overlord_species
-						name_list = event_target:lrsk_sublight_overlord
+						name_list = random
 						type = default
 						origin = "lrsk_gov_var_origin_sublight_colony_gsp"
 						ignore_initial_colony_error = yes
@@ -703,7 +699,7 @@ country_event = {
 						set_name = random # Fixes some naming issues
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
-						IF = { limit = { root = { has_origin = lrsk_gov_var_origin_sublight_empire } }
+						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
 							add_modifier = { modifier = lrsk_gov_var_empire_black_box_drives }
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
@@ -771,7 +767,7 @@ country_event = {
 						set_name = random # Fixes some naming issues
 
 						add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
-						IF = { limit = { root = { has_origin = lrsk_gov_var_origin_sublight_empire } }
+						IF = { limit = { event_target:lrsk_sublight_overlord = { has_origin = lrsk_gov_var_origin_sublight_empire } }
 							add_modifier = { modifier = lrsk_gov_var_empire_black_box_drives }
 							set_subject_of = {
 								who = event_target:lrsk_sublight_overlord
@@ -794,6 +790,16 @@ country_event = {
 						}
 					}
 				}				
+			}
+
+			# I want to create one more hyperlane out of the home system just in case all direct neighbor systems are taken.
+			# This won't guarantee a route out without going through a vassal, but...
+			closest_system = {
+				limit = {
+					is_owned = no
+					NOT = { has_hyperlane_to = prev }
+				}
+				add_hyperlane = { from = this to = prev }
 			}
 		} }
 	}
