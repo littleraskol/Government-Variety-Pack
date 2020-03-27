@@ -459,6 +459,72 @@ l_english:
  lrsk_gov_var_distributed_planning_systems.20.name:0 "$RESULT_STRING$ Inconclusive..."
  lrsk_gov_var_distributed_planning_systems.20.desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make, seeing no obvious avenues for improvement. This audit could not optimize production on [this.GetName] at this time."
 
+ # Sublight Empire/Commonwealth
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to revers engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would be short-lived, but it's never good to feel power slipping from one's grasp."
+ lrsk_gov_var_sublight_origins.4.name:0 "FTL Monopoly Broken!"
+ lrsk_gov_var_sublight_origins.4.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they go the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.a:0 "So be it."
+ lrsk_gov_var_sublight_origins.4.a.tooltip:0 "[from.GetName] loses their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives."
+
+ lrsk_gov_var_sublight_origins.5.name:0 "Upsetting the Status Quo"
+ lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the [from.GetName] have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their expansion be lifted."
+ lrsk_gov_var_sublight_origins.5.a:0 "Outrageous! Let them fly a little faster, we will not be blackmailed."
+ lrsk_gov_var_sublight_origins.5.a.tooltip:0 "[from.GetName] will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives."
+ lrsk_gov_var_sublight_origins.5.b:0 "Perhaps making a deal is for the best..."
+ lrsk_gov_var_sublight_origins.5.b.tooltip:0 "[from.GetName] will be pleased, and will lose their 20% reduction in expansion speed."
+
+ lrsk_gov_var_sublight_origins.6.name:0 "Cutting the Red Tape?"
+ lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies, [from.GetName], has sent an envoy to complain about the colonial expansion regulations. It seems they feel that they are too onerous, outdated, and ultimately not in anyone's interest and suggest they be lifted."
+ lrsk_gov_var_sublight_origins.6.a:0 "Perhaps this is for the best..."
+ lrsk_gov_var_sublight_origins.6.a.tooltip:0 "All sublight colonies will lose their 20% reduction in expansion speed. They will be pleased."
+ lrsk_gov_var_sublight_origins.6.b:0 "The squeaky wheel gets the grease!"
+ lrsk_gov_var_sublight_origins.6.b.tooltip:0 "[from.GetName] will lose their 20% reduction in expansion speed, which they will appreciate. Other colonies will be displeased."
+ lrsk_gov_var_sublight_origins.6.c:0 "No, we need to maintain control for the good of all [this.GetSpeciesNamePlural]."
+ lrsk_gov_var_sublight_origins.6.c.tooltip:0 "No restrictions lifted. All sublight colonies will be upset."
+
+ lrsk_gov_var_sublight_origins.7.name:0 "Time for a Change?"
+ lrsk_gov_var_sublight_origins.7.desc:0 "So far, the arrangement we've maintained with our interstellar colonies has gone smoothly enough. However, it's possible that the colonial structure may become too inflexible, or deprive us of sufficient benefits. We may want to think about changing the arrangement."
+ lrsk_gov_var_sublight_origins.7.a:0 "Perhaps we should consider this."
+ lrsk_gov_var_sublight_origins.7.a.tooltip:0 "Get the Colonial Restructuring special project."
+ 
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING:0 "Colonial Restructuring"
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "We may want to consider alternatives to the current state of affairs with our sublight colonies. Set a team of social science experts to consider alternatives. This will result in some form of change. Some options may radically alter your diplomatic situation if you are part of a federation." 
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1:0 "All sublight colonies will be given the offer to be released as independent nations as part of a"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2:0 "federation with us. If we are members of a federation already, we will leave it and form a new one. Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS:0 "All sublight colonies will be given the offer to become ordinary vassals, which will allow us to integrate them. Colonies that refuse the offer will become independent"
+ lrsk_gov_var_sublight_origins.8.name:0 "Time to Decide"
+ lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to release them as independent nations but under the aegis of an international organization. This would ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to integrate the colonies as part of our nation. We would need to first change the arrangement to halt expansion entirely with the goal of negotiating the integration with each colony, one by one."
+ lrsk_gov_var_sublight_origins.8.a.empire:0 "It's time to loosen the reins a bit."
+ lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1$ Hegemony $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2$, but we will get a Subjugation CB against them."
+ lrsk_gov_var_sublight_origins.8.b.empire:0 "Time to reap the fruits of our labor."
+ lrsk_gov_var_sublight_origins.8.b.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS$, but we will get a Subjugation CB against them."
+ lrsk_gov_var_sublight_origins.8.a.commonwealth:0 "It's time to walk with the colonies as equals."
+ lrsk_gov_var_sublight_origins.8.a.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1$ Galactic Union $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2$."
+ lrsk_gov_var_sublight_origins.8.b.commonwealth:0 "Time to bring them all home."
+ lrsk_gov_var_sublight_origins.8.b.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS$."
+
+ lrsk_gov_var_sublight_origins.9.name:0 "Offer Accepted!"
+ lrsk_gov_var_sublight_origins.9.desc:0 "[from.GetName] has accepted the proposed restructuring."
+ lrsk_gov_var_sublight_origins.9.a.fed:0 "It's all coming together."
+ lrsk_gov_var_sublight_origins.9.a.fed.tooltip:0 "[from.GetName] will join our federation as an independent nation."
+ lrsk_gov_var_sublight_origins.9.b.vas:0 "$lrsk_gov_var_sublight_origins.9.a.fed$"
+ lrsk_gov_var_sublight_origins.9.b.vas.tooltip:0 "[from.GetName] will become a vassal. We will have the option to integrate them."
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE:0 "[from.GetName] becomes independent."
+ lrsk_gov_var_sublight_origins.10.name:0 "Offer Refused..."
+ lrsk_gov_var_sublight_origins.10.desc:0 "[from.GetName] has rejected the proposed restructuring."
+ lrsk_gov_var_sublight_origins.10.a.empire:0 "We'll get them for this!"
+ lrsk_gov_var_sublight_origins.10.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE$ We may declare war to vassalize them."
+ lrsk_gov_var_sublight_origins.10.a.commonwealth:0 "Unfortunate... Well, good luck out there!"
+ lrsk_gov_var_sublight_origins.10.a.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE$"
+ 
+ 
+ 
+
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
 
