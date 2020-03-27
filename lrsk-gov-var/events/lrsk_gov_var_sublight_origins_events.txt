@@ -945,5 +945,15 @@ country_event = {
 			}
 			log = "Loyalists: Done."
 		}
+
+		# FTL monopoly break
+		#if = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+		#	event_target:lrsk_sublight_dissident_colony = {
+		#		country_event = {
+		#			id = lrsk_gov_var_sublight_origins.2
+		#			
+		#		}
+		#	}
+		#}
 	}
 }

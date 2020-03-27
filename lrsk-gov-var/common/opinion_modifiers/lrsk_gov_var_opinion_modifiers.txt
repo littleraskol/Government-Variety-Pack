@@ -59,6 +59,15 @@ opinion_lrsk_gov_var_vasag_sublight = {
 
 	decay = {
 		base = 2
+		modifier = {
+			factor = 3
+			from ={
+				OR = {
+					has_valid_civic = civic_feudal_realm
+					has_valid_civic = civic_franchising
+				}
+			}
+		}
 	}
 }
 
@@ -70,6 +79,15 @@ opinion_lrsk_gov_var_satag_sublight = {
 
 	decay = {
 		base = 1
+		modifier = {
+			factor = 3
+			from ={
+				OR = {
+					has_valid_civic = civic_feudal_realm
+					has_valid_civic = civic_franchising
+				}
+			}
+		}
 	}
 }
 
@@ -91,6 +109,6 @@ opinion_lrsk_gov_var_satol_sublight = {
 	}
 
 	decay = {
-		base = 1
+		base = 3
 	}
 }
