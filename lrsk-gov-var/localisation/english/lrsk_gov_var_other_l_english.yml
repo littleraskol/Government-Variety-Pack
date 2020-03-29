@@ -228,6 +228,24 @@ l_english:
  lrsk_gov_var_empire_colony_red_tape:0 "Colonial Red Tape"
  lrsk_gov_var_empire_black_box_drives_desc:0 "Colonial regulations and procedural requirements keep this empire's expansion in check to a certain degree. All for the good of the species, of course." 
 
+ lrsk_gov_var_empire_colony_penalty:0 "Trade Penalty"
+ lrsk_gov_var_empire_colony_penalty_desc:0 "Displeased overlord in some way." 
+
+ lrsk_gov_var_empire_colony_favors:0 "Trade Favors"
+ lrsk_gov_var_empire_colony_favors_desc:0 "Overlord favors them." 
+ 
+ LRSK_GOV_VAR_COL_CORR:0 "Colonial Corruption"
+ lrsk_gov_var_empire_colonial_corruption_slight:0 "Slight $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_slight_desc:0 "What's a little grift here and there?"
+ lrsk_gov_var_empire_colonial_corruption_low:0 "Low $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_low_desc:0 "Bribery is the key that can open several doors in this colonial system."
+ lrsk_gov_var_empire_colonial_corruption_worrying:0 "Worrying $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_worrying_desc:0 "It's becoming difficult to do any kind of business without getting one's hands dirty."
+ lrsk_gov_var_empire_colonial_corruption_crippling:0 "Crippling $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_crippling_desc:0 "When everyone is on the take, being an honest official is a liability."
+ lrsk_gov_var_empire_colonial_corruption_entrenched:0 "Entrenched $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_entrenched_desc:0 "A culture of corruption pervades the colonial administration, and it seems impossible to ever uproot."
+
  ## Planet Modifiers
 
  # Direct Revelation Wild Cults
@@ -346,13 +364,24 @@ l_english:
  opinion_lrsk_gov_var_uplift_pupil:0 "Uplift Pupil"
 
  # Sublight Vasslas
- opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony"
- opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Colony"
- opinion_lrsk_gov_var_ftlmn_sublight:0 "FTL Patent License"
- opinion_lrsk_gov_var_vasag_sublight:0 "Colonial Status Treaty"
- opinion_lrsk_gov_var_satag_sublight:0 "$opinion_lrsk_gov_var_vasag_sublight$"
- opinion_lrsk_gov_var_vasol_sublight:0 "Satisfied by Colonial Treaty"
- opinion_lrsk_gov_var_satol_sublight:0 "$opinion_lrsk_gov_var_vasol_sublight$"
+ opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony" # Loyalists have passive approval
+ opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Colony" # Dissidents have passive disapproval
+ opinion_lrsk_gov_var_ftlmn_sublight:0 "FTL Patent License" # FTL monopoly keeps them at least acting happy
+ opinion_lrsk_gov_var_vasag_sublight:0 "Colonial Status Treaty" # Reduce initial power penalty for sublight empires, wears off in 60 years.
+ opinion_lrsk_gov_var_satag_sublight:0 "$opinion_lrsk_gov_var_vasag_sublight$" # Reduce initial power penalty for sublight commonwealths, wears off in 120 years.
+ opinion_lrsk_gov_var_vasol_sublight:0 "Satisfied by Colonial Treaty" # Offsets any overlord distaste for vassals, wears off in 30 years.
+ opinion_lrsk_gov_var_satol_sublight:0 "$opinion_lrsk_gov_var_vasol_sublight$" # Offsets any overlord distaste for satellites, wears off in 40 years.
+ opinion_lrsk_gov_var_oldire_sublight:0 "Impudent Wretches" # When you hate your vassal
+ opinion_lrsk_gov_var_thrall_sublight:0 "Kept Us In Thrall" # This is how dis/gsp colonies feel towards overlord after getting FTL.
+ opinion_lrsk_gov_var_thrall_sublight:0 "Freedom in our Grasp" # This is how dis colonies also feel towards overlord after getting FTL.
+ opinion_lrsk_gov_var_ftlgift_sublight:0 "Offered FTL Tech" # This is how other colonies feel towards the colony that shares FTL tech with them.
+ opinion_lrsk_gov_var_carrot_sublight:0 "Favored Us" # Every time you favor one colony.
+ opinion_lrsk_gov_var_stick_sublight:0 "Spurned Us" # Every time you punish/deny one colony.
+ opinion_lrsk_gov_var_favors_sublight:0 "Playing Favorites" # Every time you favor one colony (felt by the rest).
+ opinion_lrsk_gov_var_benev_sublight:0 "Benevolent Rule" # Every time you favor all colonies.
+ opinion_lrsk_gov_var_leader_sublight:0 "Leadership" # This is how other colonies feel towards the colony that gets benefits for everyone.
+ opinion_lrsk_gov_var_stooge_sublight:0 "Overlords Pet" # This is how other colonies feel towards the colony that gets benefits for just themselves.
+ opinion_lrsk_gov_var_colcorr_sublight:0 "$LRSK_GOV_VAR_COL_CORR$" # Every time colonial corruption rises.
 
  ## Events
 
@@ -461,29 +490,47 @@ l_english:
 
  # Sublight Empire/Commonwealth
  
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to revers engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would be short-lived, but it's never good to feel power slipping from one's grasp."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to reverse engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would not last forever, but it's never good to feel power slipping from one's grasp."
  lrsk_gov_var_sublight_origins.4.name:0 "FTL Monopoly Broken!"
  lrsk_gov_var_sublight_origins.4.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
- lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they go the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they got the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
  lrsk_gov_var_sublight_origins.4.a:0 "So be it."
- lrsk_gov_var_sublight_origins.4.a.tooltip:0 "[from.GetName] loses their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives."
+ lrsk_gov_var_sublight_origins.4.a.tooltip:0 "[from.GetName] loses their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # -50 influence
+ lrsk_gov_var_sublight_origins.4.b:0 "They will regret this!"
+ lrsk_gov_var_sublight_origins.4.b.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this, reducing their trade value by 10%. This will upset them." # +100 influence
+ lrsk_gov_var_sublight_origins.4.c:0 "Maybe we should try the carrot now that the stick is gone..."
+ lrsk_gov_var_sublight_origins.4.c.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will grant them special favors, increasing their trade value by 5%. This will please them, but displease the other colonies. §PThis may cause colonial corruption to increase!§!"
+ lrsk_gov_var_sublight_origins.4.d:0 "After we treated them so well... The impudence..."
+ lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this every way we can! This will upset them greatly." # +250 influence
 
  lrsk_gov_var_sublight_origins.5.name:0 "Upsetting the Status Quo"
- lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the [from.GetName] have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their expansion be lifted."
+ lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the [from.GetName] have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their activities be lifted."
  lrsk_gov_var_sublight_origins.5.a:0 "Outrageous! Let them fly a little faster, we will not be blackmailed."
- lrsk_gov_var_sublight_origins.5.a.tooltip:0 "[from.GetName] will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives."
+ lrsk_gov_var_sublight_origins.5.a.tooltip:0 "[from.GetName] will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # +100 influence
  lrsk_gov_var_sublight_origins.5.b:0 "Perhaps making a deal is for the best..."
  lrsk_gov_var_sublight_origins.5.b.tooltip:0 "[from.GetName] will be pleased, and will lose their 20% reduction in expansion speed."
+ lrsk_gov_var_sublight_origins.5.c:0 "$lrsk_gov_var_sublight_origins.5.b$"
+ lrsk_gov_var_sublight_origins.5.c.tooltip:0 "[from.GetName] will be pleased, and will gain a 5% bonus to trade value."
 
- lrsk_gov_var_sublight_origins.6.name:0 "Cutting the Red Tape?"
- lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies, [from.GetName], has sent an envoy to complain about the colonial expansion regulations. It seems they feel that they are too onerous, outdated, and ultimately not in anyone's interest and suggest they be lifted."
+ lrsk_gov_var_sublight_origins.6.name:0 "Colonial Negotiations"
+ lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies has sent an envoy to complain about colonial regulations. It seems the [from.GetName] feels that they are too onerous, outdated, and ultimately not in anyone's interest, and suggest they be lifted."
  lrsk_gov_var_sublight_origins.6.a:0 "Perhaps this is for the best..."
  lrsk_gov_var_sublight_origins.6.a.tooltip:0 "All sublight colonies will lose their 20% reduction in expansion speed. They will be pleased."
  lrsk_gov_var_sublight_origins.6.b:0 "The squeaky wheel gets the grease!"
  lrsk_gov_var_sublight_origins.6.b.tooltip:0 "[from.GetName] will lose their 20% reduction in expansion speed, which they will appreciate. Other colonies will be displeased."
  lrsk_gov_var_sublight_origins.6.c:0 "No, we need to maintain control for the good of all [this.GetSpeciesNamePlural]."
- lrsk_gov_var_sublight_origins.6.c.tooltip:0 "No restrictions lifted. All sublight colonies will be upset."
+ lrsk_gov_var_sublight_origins.6.c.tooltip:0 "No restrictions lifted. All sublight colonies will be upset." # +100 influence
+ lrsk_gov_var_sublight_origins.6.d:0 "Cutting some red tape may be good for us all."
+ lrsk_gov_var_sublight_origins.6.d.tooltip:0 "All sublight colonies will gain a 5% bonus to trade value. They will be pleased."
+ lrsk_gov_var_sublight_origins.6.e:0 "It's clear what the [from.GetName] is really after..."
+ lrsk_gov_var_sublight_origins.6.e.tooltip:0 "[from.GetName] will gain a 10% bonus to trade value, which they will appreciate. Other colonies will be displeased."
+ lrsk_gov_var_sublight_origins.6.f:0 "No, there are rules for a reason."
+ lrsk_gov_var_sublight_origins.6.f.tooltip:0 "All sublight colonies will be upset." # +100 influence
+ lrsk_gov_var_sublight_origins.6.g:0 "Perhaps we can work something out with the envoy..."
+ lrsk_gov_var_sublight_origins.6.g.tooltip:0 "Bribe the envoy to accept a suitable excuse. §PThis may cause colonial corruption to increase!§!"
+ lrsk_gov_var_sublight_origins.6.h:0 "It's clear we are not making the case for our leadership well enough."
+ lrsk_gov_var_sublight_origins.6.h.tooltip:0 "A mass media campaign to persuade the colonies to accept our leadership will increase their opinion of us." # -50 influence
 
  lrsk_gov_var_sublight_origins.7.name:0 "Time for a Change?"
  lrsk_gov_var_sublight_origins.7.desc:0 "So far, the arrangement we've maintained with our interstellar colonies has gone smoothly enough. However, it's possible that the colonial structure may become too inflexible, or deprive us of sufficient benefits. We may want to think about changing the arrangement."
@@ -491,13 +538,13 @@ l_english:
  lrsk_gov_var_sublight_origins.7.a.tooltip:0 "Get the Colonial Restructuring special project."
  
  LRSK_GOV_VAR_COLONIAL_RESTRUCTURING:0 "Colonial Restructuring"
- LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "We may want to consider alternatives to the current state of affairs with our sublight colonies. Set a team of social science experts to consider alternatives. This will result in some form of change. Some options may radically alter your diplomatic situation if you are part of a federation." 
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science experts to model alternatives. §HThis will result in some form of change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation." 
  
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1:0 "All sublight colonies will be given the offer to be released as independent nations as part of a"
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2:0 "federation with us. If we are members of a federation already, we will leave it and form a new one. Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2:0 "federation we will lead. If we are members of a federation already, we will leave it and form a new one. Colonies that refuse the offer will become independent"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS:0 "All sublight colonies will be given the offer to become ordinary vassals, which will allow us to integrate them. Colonies that refuse the offer will become independent"
  lrsk_gov_var_sublight_origins.8.name:0 "Time to Decide"
- lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to release them as independent nations but under the aegis of an international organization. This would ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to integrate the colonies as part of our nation. We would need to first change the arrangement to halt expansion entirely with the goal of negotiating the integration with each colony, one by one."
+ lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to release them as independent nations but under the aegis of an international organization. This would ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to integrate the colonies as part of our nation. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one."
  lrsk_gov_var_sublight_origins.8.a.empire:0 "It's time to loosen the reins a bit."
  lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1$ Hegemony $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2$, but we will get a Subjugation CB against them."
  lrsk_gov_var_sublight_origins.8.b.empire:0 "Time to reap the fruits of our labor."
