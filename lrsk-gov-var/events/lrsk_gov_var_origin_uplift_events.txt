@@ -15,12 +15,10 @@ country_event = {
 	}
 
 	immediate = {
+		log = "at uplift init event"
 		set_country_flag = lrsk_gov_var_uplift_nation
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
-
-		# Call the trait menu
-		country_event =  { id = lrsk_gov_var_uplift.30 }
 	}
 }
 
@@ -36,6 +34,7 @@ country_event = {
 	}
 
 	immediate = {
+			log = "at uplift tutor finalization event"
 		random_country = {
 			limit = { has_country_flag = lrsk_uplift_tutor }
 			save_event_target_as = lrsk_my_uplift_tutor
@@ -181,7 +180,7 @@ country_event = {
 
 # Trait menu selector
 country_event = {
-	id = lrsk_gov_var_uplift.30
+	id = lrsk_gov_var_uplift.3
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -190,16 +189,18 @@ country_event = {
 	}
 
 	immediate = {
+		log = "at trait select gate"
 		IF = { limit = { is_gestalt = yes } 
 			IF = { limit = { has_authority = auth_hive_mind }
-				country_event =  { id = lrsk_gov_var_uplift.3 }
+				log = "at hive trait branch gate"
+				country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
 			}
 			ELSE = {
-				country_event =  { id = lrsk_gov_var_uplift.4 }
+				country_event =  { id = lrsk_gov_var_uplift.5 days = 1 }
 			}
 		}
 		ELSE = {
-			country_event =  { id = lrsk_gov_var_uplift.5 }
+			country_event =  { id = lrsk_gov_var_uplift.6 days = 1 }
 		}
 	}
 }
@@ -207,9 +208,10 @@ country_event = {
 
 # Hive traits
 country_event = {
-	id = lrsk_gov_var_uplift.3
-	title = lrsk_gov_var_uplift.3.name
-	desc = lrsk_gov_var_uplift.3.desc
+	id = lrsk_gov_var_uplift.4
+	title = lrsk_gov_var_uplift.4.name
+	desc = lrsk_gov_var_uplift.4.desc
+	picture = GFX_evt_hive_mind
 
 	is_triggered_only = yes
 
@@ -217,18 +219,292 @@ country_event = {
 		has_origin = lrsk_gov_var_origin_uplift
 	}
 
-	option = {
-		name = lrsk_gov_var_origin_uplift.3.a
-		custom_tooltip = lrsk_gov_var_origin_uplift.3.a.tooltip
+	immediate = {
+		log = "in hive trait event"
+	}
 
-		tooltip = {
-			pop_growth_speed = 0.1
-			pop_resettlement_cost_mult = -0.2
-			pop_environment_tolerance = 0.1
-			leader_age = -5
-		}
+	option = {
+		name = lrsk_gov_var_uplift.4.a
+		custom_tooltip = lrsk_gov_var_uplift.4.a.tooltip
+
+		#tooltip = {
+		#	modify_species = {
+		#		species = this
+		#		add_trait = lrsk_gov_var_trait_starborn_hive
+		#	}
+		#}
 
 		hidden_effect = {
+			set_country_flag = lrsk_uplift_hive_1
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.4.b
+		custom_tooltip = lrsk_gov_var_uplift.4.b.tooltip
+
+		#tooltip = {
+		#	modify_species = {
+		#		species = this
+		#		add_trait = lrsk_gov_var_trait_earthbound_hive
+		#	}
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_hive_2
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.4.c
+		custom_tooltip = lrsk_gov_var_uplift.4.c.tooltip
+
+		#tooltip = {
+		#	modify_species = {
+		#		species = this
+		#		add_trait = lrsk_gov_var_trait_proles_hive
+		#	}
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_hive_3
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.4.d
+		custom_tooltip = lrsk_gov_var_uplift.4.d.tooltip
+
+		#tooltip = { add_modifier = { modifier = lrsk_gov_var_empire_enlightened_hive } }
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_hive_4
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+}
+
+# MI traits
+country_event = {
+	id = lrsk_gov_var_uplift.5
+	title = lrsk_gov_var_uplift.5.name
+	desc = lrsk_gov_var_uplift.5.desc
+	picture = GFX_evt_machine_sapience
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+	}
+
+	immediate = {
+		log = "in mech trait event"
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.5.a
+		custom_tooltip = lrsk_gov_var_uplift.5.a.tooltip
+
+		#tooltip = {
+		#	planet_jobs_unity_produces_mult = 0.05
+		#	planet_jobs_physics_research_produces_mult = 0.1
+		#	planet_jobs_engineering_research_produces_mult = 0.1
+		#	planet_jobs_society_research_produces_mult = 0.1
+		#	planet_jobs_simple_drone_produces_mult = -0.05
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_mech_1
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.5.b
+		custom_tooltip = lrsk_gov_var_uplift.5.b.tooltip
+
+		#tooltip = {
+		#	army_damage_mult = 0.10
+		#	planet_jobs_complex_drone_produces_mult = 0.1
+		#	species_leader_exp_gain = -0.33
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_mech_2
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.5.c
+		custom_tooltip = lrsk_gov_var_uplift.5.c.tooltip
+
+		#tooltip = {
+		#	leader_skill_levels = 2
+		#	species_leader_exp_gain = 0.33
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_mech_3
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.5.d
+		custom_tooltip = lrsk_gov_var_uplift.5.d.tooltip
+
+		#tooltip = {
+		#	ship_archeaological_site_clues_add = 1
+		#	shipclass_science_ship_disengage_mult = 0.25
+		#	ship_anomaly_research_speed_mult = 0.15
+		#	science_ship_survey_speed = 0.2
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_mech_4
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+}
+
+# Normal traits
+country_event = {
+	id = lrsk_gov_var_uplift.6
+	title = lrsk_gov_var_uplift.6.name
+	desc = lrsk_gov_var_uplift.6.desc
+	picture = GFX_evt_cybernetics
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+	}
+
+	immediate = {
+		log = "in norm trait event"
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.a
+		custom_tooltip = lrsk_gov_var_uplift.6.a.tooltip
+
+		#tooltip = {
+		#	pop_growth_from_immigration = 0.25
+		#	pop_resettlement_cost_mult = -0.25
+		#	pop_environment_tolerance = 0.1
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_1
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.b
+		custom_tooltip = lrsk_gov_var_uplift.6.b.tooltip
+
+		#tooltip = {
+		#	planet_jobs_energy_produces_mult = 0.1
+		#	army_defense_damage_mult = 0.5
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_2
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.c
+		custom_tooltip = lrsk_gov_var_uplift.6.c.tooltip
+
+		#tooltip = {
+		#	planet_jobs_unity_produces_mult = 0.05
+		#	planet_jobs_physics_research_produces_mult = 0.1
+		#	planet_jobs_engineering_research_produces_mult = 0.1
+		#	planet_jobs_society_research_produces_mult = 0.1
+		#	planet_jobs_minerals_produces_mult = -0.1
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_3
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.d
+		custom_tooltip = lrsk_gov_var_uplift.6.d.tooltip
+
+		#tooltip = {
+		#	army_damage_mult = 0.10
+		#	planet_jobs_minerals_produces_mult = 0.10
+		#	planet_jobs_food_produces_mult = 0.10
+		#	planet_jobs_physics_research_produces_mult = -0.15
+		#	planet_jobs_engineering_research_produces_mult = -0.15
+		#	planet_jobs_society_research_produces_mult = -0.15
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_4
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.e
+		custom_tooltip = lrsk_gov_var_uplift.6.e.tooltip
+
+		#tooltip = {
+		#	pop_happiness = 0.05
+		#	pop_government_ethic_attraction = 0.25
+		#	species_leader_exp_gain = -0.33
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_5
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_uplift.6.f
+		custom_tooltip = lrsk_gov_var_uplift.6.f.tooltip
+
+		#tooltip = {
+		#	envoys_add = 1
+		#	country_trust_growth = 0.1
+		#	ship_anomaly_research_speed_mult = 0.15
+		#	science_ship_survey_speed = 0.2
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_6
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+}
+
+# Actual trait select logic
+country_event = {
+	id = lrsk_gov_var_uplift.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+	}
+
+	immediate = {
+		log = "at trait selector"
+
+		IF = { limit =  { has_country_flag = lrsk_uplift_hive_1 }
+			log = "hive 1"
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -240,21 +516,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_hive_1
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.3.b
-		custom_tooltip = lrsk_gov_var_origin_uplift.3.b.tooltip
-
-		tooltip = {
-			species_empire_size_mult = -0.10
-			planet_jobs_unity_produces_mult = 0.1
-			pop_housing_usage_mult = -0.1
-			army_defense_damage_mult = 0.5
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_hive_2 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -266,20 +530,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_hive_2
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.3.c
-		custom_tooltip = lrsk_gov_var_origin_uplift.3.c.tooltip
-
-		tooltip = {
-			army_damage_mult = 0.10
-			planet_jobs_simple_drone_produces_mult = 0.05
-			planet_jobs_unity_produces_mult = -0.1
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_hive_3 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -291,51 +544,13 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_hive_3
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.3.d
-		custom_tooltip = lrsk_gov_var_origin_uplift.3.d.tooltip
-
-		tooltip = {
-			envoys_add = 1
-			country_trust_growth = 0.1
-			ship_fire_rate_mult = 0.05
-			ship_evasion_mult = 0.1
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_hive_4 }
+			add_modifier = { modifier = lrsk_gov_var_empire_enlightened_hive }
+			remove_country_flag = lrsk_uplift_hive_4
 		}
-
-		hidden_effect = {
-			add_modifier = lrsk_gov_var_empire_enlightened_hive
-		}
-	}
-}
-
-# MI traits
-country_event = {
-	id = lrsk_gov_var_uplift.3
-	title = lrsk_gov_var_uplift.3.name
-	desc = lrsk_gov_var_uplift.3.desc
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_origin = lrsk_gov_var_origin_uplift
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.4.a
-		custom_tooltip = lrsk_gov_var_origin_uplift.4.a.tooltip
-
-		tooltip = {
-			planet_jobs_unity_produces_mult = 0.05
-			planet_jobs_physics_research_produces_mult = 0.1
-			planet_jobs_engineering_research_produces_mult = 0.1
-			planet_jobs_society_research_produces_mult = 0.1
-			planet_jobs_simple_drone_produces_mult = -0.05
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_1 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -347,20 +562,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_mech_1
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.4.b
-		custom_tooltip = lrsk_gov_var_origin_uplift.4.b.tooltip
-
-		tooltip = {
-			army_damage_mult = 0.10
-			planet_jobs_complex_drone_produces_mult = 0.1
-			species_leader_exp_gain = -0.33
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_2 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -372,19 +576,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_mech_2
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.4.c
-		custom_tooltip = lrsk_gov_var_origin_uplift.4.c.tooltip
-
-		tooltip = {
-			leader_skill_levels = 2
-			species_leader_exp_gain = 0.33
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_3 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -396,49 +590,13 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_mech_3
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.4.d
-		custom_tooltip = lrsk_gov_var_origin_uplift.4.d.tooltip
-
-		tooltip = {
-			ship_archeaological_site_clues_add = 1
-			shipclass_science_ship_disengage_mult = 0.25
-			ship_anomaly_research_speed_mult = 0.15
-			science_ship_survey_speed = 0.2
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_4 }
+			add_modifier = { modifier = lrsk_gov_var_empire_enlightened_mech }
+			remove_country_flag = lrsk_uplift_mech_4
 		}
-
-		hidden_effect = {
-			add_modifier = lrsk_gov_var_empire_enlightened_mech
-		}
-	}
-}
-
-# Normal traits
-country_event = {
-	id = lrsk_gov_var_uplift.3
-	title = lrsk_gov_var_uplift.3.name
-	desc = lrsk_gov_var_uplift.3.desc
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_origin = lrsk_gov_var_origin_uplift
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.a
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.a.tooltip
-
-		tooltip = {
-			pop_growth_from_immigration = 0.25
-			pop_resettlement_cost_mult = -0.25
-			pop_environment_tolerance = 0.1
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_1 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -450,19 +608,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_norm_1
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.b
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.b.tooltip
-
-		tooltip = {
-			planet_jobs_energy_produces_mult = 0.1
-			army_defense_damage_mult = 0.5
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_2 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -474,22 +622,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_norm_2
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.c
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.c.tooltip
-
-		tooltip = {
-			planet_jobs_unity_produces_mult = 0.05
-			planet_jobs_physics_research_produces_mult = 0.1
-			planet_jobs_engineering_research_produces_mult = 0.1
-			planet_jobs_society_research_produces_mult = 0.1
-			planet_jobs_minerals_produces_mult = -0.1
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_3 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -501,23 +636,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_norm_3
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.d
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.d.tooltip
-
-		tooltip = {
-			army_damage_mult = 0.10
-			planet_jobs_minerals_produces_mult = 0.10
-			planet_jobs_food_produces_mult = 0.10
-			planet_jobs_physics_research_produces_mult = -0.15
-			planet_jobs_engineering_research_produces_mult = -0.15
-			planet_jobs_society_research_produces_mult = -0.15
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_4 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -529,20 +650,9 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_norm_4
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.e
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.e.tooltip
-
-		tooltip = {
-			pop_happiness = 0.05
-			pop_government_ethic_attraction = 0.25
-			species_leader_exp_gain = -0.33
-		}
-
-		hidden_effect = {
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_5 }
 			every_owned_pop = {
 				modify_species = {
 					species = this
@@ -554,23 +664,15 @@ country_event = {
 				species = event_target:lrsk_gov_var_new_uplift_pupil_species
 				change_all = yes
 			}
+			remove_country_flag = lrsk_uplift_norm_5
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_origin_uplift.5.f
-		custom_tooltip = lrsk_gov_var_origin_uplift.5.f.tooltip
-
-		tooltip = {
-			envoys_add = 1
-			country_trust_growth = 0.1
-			ship_anomaly_research_speed_mult = 0.15
-			science_ship_survey_speed = 0.2
+		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_6 }		
+			add_modifier = { modifier = lrsk_gov_var_empire_enlightened }
+			remove_country_flag = lrsk_uplift_norm_6
 		}
-
-		hidden_effect = {
-			add_modifier = lrsk_gov_var_empire_enlightened
+		ELSE = {
+			log = "ERROR: Uplift Trait Selector failed to catch valid flag."
 		}
+		
 	}
 }
-
