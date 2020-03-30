@@ -30,17 +30,26 @@ opinion_lrsk_gov_var_uplift_pupil = {
 }
 
 ## For Sublight Empire/Commonwealth vassals
+
 # Loyalists have passive approval
 opinion_lrsk_gov_var_loyal_sublight = {
 	opinion = {
-		base = 25
+		base = 20
+	}
+	
+	decay = {
+		base = 1
 	}
 }
 
 # Dissidents have passive disapproval
 opinion_lrsk_gov_var_dsdnt_sublight = {
 	opinion = {
-		base = -25
+		base = -20
+	}
+	
+	decay = {
+		base = 1
 	}
 }
 
@@ -258,6 +267,24 @@ opinion_lrsk_gov_var_colcorr_sublight = {
 	}
 
 	accumulative = yes
+
+	decay = {
+		base = 2
+	}
+}
+
+# Highest level of colonial corruption.
+opinion_lrsk_gov_var_endcorr_sublight = {
+	opinion = {
+		base = -20
+	}
+}
+
+# If you yeet yourself out of a hegemony by colonial reform...
+opinion_lrsk_gov_var_hegmad_sublight = {
+	opinion = {
+		base = -200
+	}
 
 	decay = {
 		base = 1

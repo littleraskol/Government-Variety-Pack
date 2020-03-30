@@ -1098,7 +1098,7 @@ country_event = {
 						add = 10
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = excellent
+							level >= excellent
 						}
 					}
 					modifier = {
@@ -1119,7 +1119,7 @@ country_event = {
 						add = -5
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = terrible
+							level <= terrible
 						}
 					}
 					# Do Nothing
@@ -1138,7 +1138,7 @@ country_event = {
 						add = -5
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = excellent
+							level >= excellent
 						}
 					}
 					modifier = {
@@ -1159,7 +1159,7 @@ country_event = {
 						add = 5
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = terrible
+							level <= terrible
 						}
 					}
 					switch = {
@@ -1291,7 +1291,7 @@ country_event = {
 						add = 5
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = excellent
+							level >= excellent
 						}
 					}
 					modifier = {
@@ -1330,7 +1330,7 @@ country_event = {
 						add = 5
 						opinion_level = {
 							who = event_target:lrsk_sublight_overlord
-							level = terrible
+							level <= terrible
 						}
 					}
 					# Take it
@@ -1374,7 +1374,7 @@ country_event = {
 		name = lrsk_gov_var_sublight_origins.4.a
 		custom_tooltip = lrsk_gov_var_sublight_origins.4.a.tooltip
 
-		add_resource = { influence = -50 }
+		add_resource = { influence = -25 }
 	}
 
 	option = {
@@ -1434,7 +1434,7 @@ country_event = {
 				# Playing favorites
 				country_event = { id = lrsk_gov_var_sublight_origins.44 }
 			}
-			# Colonial Corruption stuff goes here
+			country_event = { id = lrsk_gov_var_sublight_origins.200 }
 		}
 	}
 
@@ -1457,11 +1457,14 @@ country_event = {
 				modifier = opinion_lrsk_gov_var_oldire_sublight
 			}
 
-			from =  {
+			from = {
 				save_event_target_as = lrsk_sublight_whipping_boy
 
-				# Red tape is back
-				IF = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_colony_red_tape } }
+				# Red tape is back if applicable
+				IF = { limit = {  NOR = { 
+						has_modifier = lrsk_gov_var_empire_colony_red_tape
+						event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+					} }
 					add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
 					
 					# Make them hate us
@@ -1643,25 +1646,78 @@ country_event = {
 }
 
 # Periodic whining gatekeeper
+country_event = {
+	id = lrsk_gov_var_sublight_origins.61
+	hide_window = yes
+	mean_time_to_happen = { years = 5 }
+
+	trigger = {
+		event_target:lrsk_sublight_overlord = { NOT = { has_country_flag = lrsk_sublight_whining_cooldown } }
+		OR = {
+			is_subject_type = lrsk_gov_var_sublight_vassal
+			is_subject_type = lrsk_gov_var_sublight_satellite
+		}
+		OR = { 
+			has_modifier = lrsk_gov_var_empire_colony_red_tape
+			NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
+		}		
+	}
+
+	immediate = {
+		event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.6 } }
+	}
+}
 
 # Periodic whining event
 country_event = {
 	id = lrsk_gov_var_sublight_origins.6
 	title = lrsk_gov_var_sublight_origins.6.name
 	desc = lrsk_gov_var_sublight_origins.6.desc
-	picture = GFX_evt_civil_action
+	picture = GFX_evt_arguing_senate
 	#show_sound = event_laboratory_sound
 
 	is_triggered_only = yes
 
-	trigger = { from = { OR = { 
-			# I hope this prevents this from firing in the event that the sender is independent somehow
-			is_subject_type = lrsk_gov_var_sublight_vassal
-			is_subject_type = lrsk_gov_var_sublight_satellite
-	} } }
+	trigger = {
+		NOT = { has_country_flag = lrsk_sublight_whining_cooldown }
+		from = {
+			OR = {
+				is_subject_type = lrsk_gov_var_sublight_vassal
+				is_subject_type = lrsk_gov_var_sublight_satellite
+			}
+			OR = { 
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
+			}
+		}
+	}
 
 	immediate = {
+		set_timed_country_flag = {
+			flag = lrsk_sublight_whining_cooldown
+			days = 720 # 2 year cooldown
+		}
 		from = { save_event_target_as = lrsk_sublight_petitioner }
+		IF = { 
+			limit = { any_subject = { 
+				NOT = { is_same_value = event_target:lrsk_sublight_petitioner }
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
+			set_country_flag = lrsk_sublight_other_red_tape_beneficiaries
+		}
+		IF = { 
+			limit = { any_subject = {
+				OR = {
+					is_subject_type = lrsk_gov_var_sublight_vassal
+					is_subject_type = lrsk_gov_var_sublight_satellite
+				}
+				NOR = { 
+					is_same_value = event_target:lrsk_sublight_petitioner
+					has_modifier = lrsk_gov_var_empire_colony_favors
+				}
+			} }
+			set_country_flag = lrsk_sublight_other_trade_beneficiaries
+		}
 	}
 
 	option = {
@@ -1669,9 +1725,28 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.a.tooltip
 
 		trigger = {
-			#
+			from = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 		}
-	
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_abolished_redtape
+			#Remove any prior leadership flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_helped_all }
+				remove_country_flag = lrsk_sublight_colony_helped_all
+			}
+			# Subject Leadership
+			event_target:lrsk_sublight_petitioner = { 
+				save_event_target_as = lrsk_sublight_benefactor
+				set_country_flag = lrsk_sublight_colony_helped_all
+			}
+			every_subject = {
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+					remove_modifier = lrsk_gov_var_empire_colony_red_tape
+					set_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+				}
+				country_event = { id = lrsk_gov_var_sublight_origins.45 }
+			}
+		}
 	}
 
 	option = {
@@ -1679,9 +1754,31 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.b.tooltip
 
 		trigger = {
-			#
+			from = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+			has_country_flag = lrsk_sublight_other_red_tape_beneficiaries
 		}
-	
+
+		hidden_effect = {
+			#Remove any prior favoritism flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
+				remove_country_flag = lrsk_sublight_colony_overlord_favored
+			}
+			from =  {
+				remove_modifier = lrsk_gov_var_empire_colony_red_tape
+				set_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+				set_country_flag = lrsk_sublight_colony_overlord_favored
+				save_event_target_as = lrsk_sublight_favored_one
+			}
+			every_subject = {
+				# Playing favorites
+				country_event = { id = lrsk_gov_var_sublight_origins.44 }
+			}
+			country_event = { id = lrsk_gov_var_sublight_origins.200 }
+		}	
 	}
 
 	option = {
@@ -1689,9 +1786,23 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.c.tooltip
 
 		trigger = {
-			#
+			from = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 		}
-	
+
+		add_resource = { influence = 100 }
+
+		hidden_effect = {
+			every_subject = {
+				limit = { OR = {
+					is_subject_type = lrsk_gov_var_sublight_vassal
+					is_subject_type = lrsk_gov_var_sublight_satellite
+				} }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_stick_sublight
+				}
+			}
+		}	
 	}
 
 	option = {
@@ -1699,7 +1810,35 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.d.tooltip
 
 		trigger = {
-			#
+			from = { NOR = {
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
+		}
+
+		hidden_effect = {
+			#Remove any prior leadership flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_helped_all }
+				remove_country_flag = lrsk_sublight_colony_helped_all
+			}
+			# Subject Leadership
+			event_target:lrsk_sublight_petitioner = { 
+				save_event_target_as = lrsk_sublight_benefactor
+				set_country_flag = lrsk_sublight_colony_helped_all
+			}
+			every_subject = {
+				IF = { 
+					limit = {
+						NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
+						OR = {
+							is_subject_type = lrsk_gov_var_sublight_vassal
+							is_subject_type = lrsk_gov_var_sublight_satellite
+						}
+					}
+					add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+				}
+				country_event = { id = lrsk_gov_var_sublight_origins.45 }
+			}
 		}
 	
 	}
@@ -1709,9 +1848,33 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.e.tooltip
 
 		trigger = {
-			#
+			from = { NOR = {
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
+			has_country_flag = lrsk_sublight_other_trade_beneficiaries
 		}
-	
+
+		hidden_effect = {
+			#Remove any prior favoritism flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
+				remove_country_flag = lrsk_sublight_colony_overlord_favored
+			}
+			from =  {
+				add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+				set_country_flag = lrsk_sublight_colony_overlord_favored
+				save_event_target_as = lrsk_sublight_favored_one
+			}
+			every_subject = {
+				# Playing favorites
+				country_event = { id = lrsk_gov_var_sublight_origins.44 }
+			}
+			country_event = { id = lrsk_gov_var_sublight_origins.200 }
+		}
 	}
 
 	option = {
@@ -1719,29 +1882,576 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.f.tooltip
 
 		trigger = {
-			#
+			from = { NOR = {
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
 		}
-	
+
+		add_resource = { influence = 100 }
+
+		hidden_effect = {
+			every_subject = {
+				limit = { OR = {
+					is_subject_type = lrsk_gov_var_sublight_vassal
+					is_subject_type = lrsk_gov_var_sublight_satellite
+				} }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_stick_sublight
+				}
+			}
+		}	
 	}
 
 	option = {
 		name = lrsk_gov_var_sublight_origins.6.g
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.g.tooltip
 
-		trigger = {
-			#
+		allow = {
+			has_resource = {
+				amount > 499
+				type = energy
+			}
 		}
-	
+
+		trigger = {
+			NOT = { has_country_flag = lrsk_sublight_media_campaign_cooldown }
+			from = { OR = {
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
+		}
+
+		add_resource = { energy = -500 }
+
+		hidden_effect = {
+			country_event = { id = lrsk_gov_var_sublight_origins.200 }
+		}
 	}
 
 	option = {
 		name = lrsk_gov_var_sublight_origins.6.h
 		custom_tooltip = lrsk_gov_var_sublight_origins.6.h.tooltip
 
-		trigger = {
-			#
+		allow = {
+			has_resource = {
+				amount > 49
+				type = influence
+			}
 		}
+
+		trigger = {
+			from = { OR = {
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
+				has_modifier = lrsk_gov_var_empire_colony_red_tape
+			} }
+		}
+
+		add_resource = { influence = -50 }
+		
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = lrsk_sublight_media_campaign_cooldown
+				days = 3600
+			}
+			every_subject = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_benev_sublight
+				}
+			}
+		}
+	}
+}
+
+# Colonial Reform Start
+country_event = {
+	id = lrsk_gov_var_sublight_origins.7
+	title = lrsk_gov_var_sublight_origins.7.name
+	desc = lrsk_gov_var_sublight_origins.7.desc
+	picture = GFX_evt_board_meeting
+
+	mean_time_to_happen = { years = 100 }
+
+	# This will only happen if you actually have sublight vassals/satellites with no FTl restrictions
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+		any_subject = {
+			OR = {
+				is_subject_type = lrsk_gov_var_sublight_vassal
+				is_subject_type = lrsk_gov_var_sublight_satellite
+			}
+		}
+		NOT = { any_subject = {
+			has_modifier = lrsk_gov_var_empire_black_box_drives
+		} }	
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.7.a
+		custom_tooltip = lrsk_gov_var_sublight_origins.7.a.tooltip
+
+		hidden_effect = {
+			enable_special_project = {
+				name = "LRSK_GOV_VAR_COLONIAL_RESTRUCTURING"
+				location = this.capital_scope
+				owner = this
+			}
+		}
+	}
+}
+
+# Colonial Reform Start/Gate
+country_event = {
+	id = lrsk_gov_var_sublight_origins.80
+	hide_window = yes
 	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	immediate = {
+		IF = {
+			limit = { any_subject = {  OR = {
+				is_subject_type = lrsk_gov_var_sublight_vassal
+				is_subject_type = lrsk_gov_var_sublight_satellite
+			} } }
+			country_event = { id = lrsk_gov_var_sublight_origins.8 }	# We're good to go in this case
+		}
+		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_reform_in_place }
+			country_event = {
+				id = lrsk_gov_var_sublight_origins.80					# Tried before, will have to try again
+				days = 1800
+			}
+		}
+		ELSE = {
+			country_event = { id = lrsk_gov_var_sublight_origins.81 }	# Notify that we have to try again
+		}
+	}
+}
+
+# Colonial Reform Decision
+country_event = {
+	id = lrsk_gov_var_sublight_origins.8
+	title = lrsk_gov_var_sublight_origins.8.name
+	desc = lrsk_gov_var_sublight_origins.8.desc
+	picture = GFX_evt_partition
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.a.empire
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.a.empire.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+			every_subject = {
+				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
+				set_country_flag = lrsk_sublight_colony_offered_federation
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.b.empire
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.b.empire.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
+		
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+			every_subject = {
+				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
+				set_country_flag = lrsk_sublight_colony_offered_vassalization
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.a.commonwealth
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.a.commonwealth.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+		
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+			every_subject = {
+				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
+				set_country_flag = lrsk_sublight_colony_offered_federation
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.b.commonwealth
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.b.commonwealth.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+		
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+			every_subject = {
+				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
+				set_country_flag = lrsk_sublight_colony_offered_vassalization
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.c
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.c.tooltip
+
+		hidden_effect = {
+			country_event = {
+				id = lrsk_gov_var_sublight_origins.80
+				days = 3600
+			}
+		}
+	}
+
+	after = {		
+		# One way or another, none of this is relevant anymore
+		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_opentrade }
+			remove_modifier = lrsk_gov_var_empire_colony_opentrade
+		}
+	}
+}
+
+# Colonial Reform Holding Pattern
+country_event = {
+	id = lrsk_gov_var_sublight_origins.81
+	title = lrsk_gov_var_sublight_origins.81.name
+	desc = lrsk_gov_var_sublight_origins.81.desc
+	picture = GFX_evt_board_meeting
+	
+	is_triggered_only = yes
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.81.a
+		custom_tooltip = lrsk_gov_var_sublight_origins.81.a.tooltip
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_reform_in_place
+			country_event = {
+				id = lrsk_gov_var_sublight_origins.80
+				days = 1800
+			}
+		}
+	}
+}
+
+# Colony offer gate
+# Want a dely in notification with instant execution...
+country_event = {
+	id = lrsk_gov_var_sublight_origins.833
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	immediate = {
+		every_subject = {
+			limit = { OR = {
+				is_subject_type = lrsk_gov_var_sublight_vassal
+				is_subject_type = lrsk_gov_var_sublight_satellite
+			} }
+			country_event = {
+				id = lrsk_gov_var_sublight_origins.83
+				days = 7
+				random = 3
+			}
+		}
+	}
+}
+
+# Colony gets offer
+country_event = {
+	id = lrsk_gov_var_sublight_origins.83
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			is_subject_type = lrsk_gov_var_sublight_vassal
+			is_subject_type = lrsk_gov_var_sublight_satellite
+		}
+	}
+
+	immediate = {
+		# One way or another, none of this is relevant anymore
+		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+			remove_modifier = lrsk_gov_var_empire_colony_red_tape
+		}
+		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_penalty }
+			remove_modifier = lrsk_gov_var_empire_colony_penalty
+		}
+		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_favors }
+			remove_modifier = lrsk_gov_var_empire_colony_favors
+		}
+		IF = { limit = { has_modifier = lrsk_gov_var_empire_black_box_drives } # Shouldn't be possible but JIC
+			remove_modifier = lrsk_gov_var_empire_black_box_drives
+		}
+		random_list = {
+			# Accept
+			50 = {
+				modifier = {
+					factor = 1.5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= good
+					}
+				}
+				modifier = {
+					add = 20
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= excellent
+					}
+				}
+				modifier = {
+					factor = 0.5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= poor
+					}
+				}
+				modifier = {
+					add = -20
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= terrible
+					}
+				}
+				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
+					remove_country_flag = lrsk_sublight_colony_offered_vassalization
+					set_country_flag = lrsk_sublight_colony_accepted_federation
+					# The actual work will be done in event that should execute later.
+				}
+				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
+					remove_country_flag = lrsk_sublight_colony_offered_vassalization
+					set_country_flag = lrsk_sublight_colony_accepted_vassalization
+					set_subject_of = {
+						who = event_target:lrsk_sublight_overlord
+						subject_type = vassal
+					}
+				}
+				ELSE = {
+					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
+				}
+				set_country_flag = lrsk_sublight_colony_accepted_reform
+				event_target:lrsk_sublight_overlord = {
+					country_event = { id = lrsk_gov_var_sublight_origins.9 }
+				}
+			}
+			# Refuse
+			50 = {
+				modifier = {
+					factor = 0.5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= good
+					}
+				}
+				modifier = {
+					add = -20
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= excellent
+					}
+				}
+				modifier = {
+					factor = 1.5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= poor
+					}
+				}
+				modifier = {
+					add = 20
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= terrible
+					}
+				}
+				set_subject_of = { who = none }
+				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
+					remove_country_flag = lrsk_sublight_colony_offered_federation
+					set_country_flag = lrsk_sublight_colony_rejected_federation
+				}
+				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
+				remove_country_flag = lrsk_sublight_colony_offered_vassalization
+					set_country_flag = lrsk_sublight_colony_rejected_vassalization
+				}
+				ELSE = {
+					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
+				}
+				set_country_flag = lrsk_sublight_colony_refused_reform
+				event_target:lrsk_sublight_overlord = {
+					country_event = { id = lrsk_gov_var_sublight_origins.10 }
+				}
+			}
+		}
+	}
+}
+
+# Colonial Reform Federation Work
+# Numbers are out of order because reasons.
+# Timing of this call should put at at least 4 days after federation acceptance
+country_event = {
+	id = lrsk_gov_var_sublight_origins.82
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+		NOT = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+	}
+
+	immediate = {
+		IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_federation } }
+			# Have to leave existing fed, too complicated otherwise
+			IF = { limit = { has_federation = yes }
+				IF = { limit = { federation = { has_federation_type = hegemony_federation } } # there should be some consequences...
+					set_country_flag = lrsk_sublight_overlord_bailed_on_hegemony
+					save_event_target_as = lrsk_sublight_overlord_hegemony_quitter
+					federation = { random_member = { 
+						limit = { is_federation_leader = yes }
+						IF = { limit = { NOT = { is_same_value = event_target:lrsk_sublight_overlord_hegemony_quitter } }
+							set_country_flag = lrsk_sublight_member_bailed_suddenly
+							save_event_target_as = lrsk_sublight_overlord_hegemon_spurned
+							add_opinion_modifier = {
+								who = event_target:lrsk_sublight_overlord_hegemony_quitter
+								modifier = opinion_lrsk_gov_var_hegmad_sublight
+							}
+						}
+						ELSE = {
+							remove_country_flag = lrsk_sublight_overlord_bailed_on_hegemony # not valid if president up and quits
+						}
+					} }
+				}
+				leave_alliance = { override_requirements = yes }
+			}
+			every_subject = {
+				limit = { has_country_flag = lrsk_sublight_colony_accepted_federation } # probably redundant, all refusers should be indy
+				set_subject_of = { who = none }
+				join_alliance = {
+					who = event_target:lrsk_sublight_overlord
+					override_requirements = yes
+				}
+			}
+			IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+				federation = { 
+					set_federation_type = hegemony_federation
+					set_name = random
+				}
+			}
+			set_federation_leader = event_target:lrsk_sublight_overlord
+		}
+		ELSE_IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+			log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
+		}
+		ELSE = {
+			# Somehow this was called, fed was chosen, but nothing is ready... try again in a week?
+			country_event = {
+				id = lrsk_gov_var_sublight_origins.82
+				days = 7
+			}
+		}
+	}
+}
+
+# Acceptance message
+country_event = {
+	id = lrsk_gov_var_sublight_origins.9
+	title = lrsk_gov_var_sublight_origins.9.name
+	desc = lrsk_gov_var_sublight_origins.9.desc
+	picture = GFX_evt_signing
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.9.a.fed
+		custom_tooltip = lrsk_gov_var_sublight_origins.9.a.fed.tooltip
+
+		trigger = { from = { has_country_flag = lrsk_sublight_colony_accepted_federation } }
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.9.a.vas
+		custom_tooltip = lrsk_gov_var_sublight_origins.9.a.vas.tooltip
+
+		trigger = { from = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+	}
+}
+
+# Rejection message
+country_event = {
+	id = lrsk_gov_var_sublight_origins.10
+	title = lrsk_gov_var_sublight_origins.10.name
+	desc = lrsk_gov_var_sublight_origins.10.desc
+	picture = GFX_evt_alien_propaganda
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.10.a.empire
+		custom_tooltip = lrsk_gov_var_sublight_origins.10.a.empire.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
+
+		hidden_effect = { set_country_flag = lrsk_sublight_reform_offer_was_rejected }
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.10.a.commonwealth
+		custom_tooltip = lrsk_gov_var_sublight_origins.10.a.commonwealth.tooltip
+
+		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+
+		hidden_effect = { set_country_flag = lrsk_sublight_reform_offer_was_rejected }
 	}
 }
 
@@ -1788,7 +2498,7 @@ country_event = {
 					has_modifier = lrsk_gov_var_empire_colony_red_tape
 					has_country_flag = lrsk_sublight_overloard_cut_our_red_tape
 					event_target:lrsk_sublight_overlord = { NOR = {
-						has_country_flag = lrsk_sublight_overloard_abolished_redtape
+						has_country_flag = lrsk_sublight_overlord_abolished_redtape
 						has_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 					} }
 				} }
@@ -1826,17 +2536,89 @@ country_event = {
 	}
 }
 
-## Colonial Corruption
-#country_event = {
-#	id = lrsk_gov_var_sublight_origins.200
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		#
-#	}
-#
-#	immediate = {
-#		#
-#	}
-#}
+
+# Colonial Corruption
+country_event = {
+	id = lrsk_gov_var_sublight_origins.200
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	immediate = {
+		switch = {
+			trigger = has_modifier
+			lrsk_gov_var_empire_colonial_corruption_slight = {
+				every_subject = { add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_colcorr_sublight
+				} }
+				remove_modifier = lrsk_gov_var_empire_colonial_corruption_slight
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_colonial_corruption_low
+					days = 2160 # 6 years
+				}
+			}
+			lrsk_gov_var_empire_colonial_corruption_low = {
+				every_subject = { add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_colcorr_sublight
+				} }
+				remove_modifier = lrsk_gov_var_empire_colonial_corruption_low
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_colonial_corruption_worrying
+					days = 3240 # 9 years
+				}
+			}
+			lrsk_gov_var_empire_colonial_corruption_worrying = {
+				every_subject = { add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_colcorr_sublight
+				} }
+				remove_modifier = lrsk_gov_var_empire_colonial_corruption_worrying
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_colonial_corruption_crippling
+					days = 4860 # 13.5 years
+				}
+			}
+			lrsk_gov_var_empire_colonial_corruption_crippling = {
+				every_subject = { 
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_colcorr_sublight
+					}
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_endcorr_sublight
+					}
+				}
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_colonial_corruption_entrenched
+					days = -1
+				}
+			}
+			default = {
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_corruption_entrenched }
+					# Can't make the govt any worse, but at least people will be mad.
+					every_subject = { add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_colcorr_sublight
+					} }
+				}
+				ELSE = {
+					# No corruption yet
+					add_modifier = {
+						modifier = lrsk_gov_var_empire_colonial_corruption_slight
+						days = 1440 # 4 years
+					}
+				}
+			}		
+		}
+	}
+}
