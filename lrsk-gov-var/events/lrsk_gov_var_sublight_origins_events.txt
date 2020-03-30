@@ -988,6 +988,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In FTL monopoly break event"
 		IF = {
 			limit = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -1201,12 +1202,13 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In tech check event"
 		country_event = { id = lrsk_gov_var_sublight_origins.22 }
 	}
 }
 
 
-# Try getting FTL again (not sure I can recursively call events...
+# Try getting FTL again (not sure I can recursively call events...)
 country_event = {
 	id = lrsk_gov_var_sublight_origins.21
 	hide_window = yes
@@ -1218,6 +1220,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Try getting FTL again' event"
 		IF = {
 			limit = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -1241,6 +1244,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Common logic for gaining FTL' event"
 		IF = {
 			limit = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -1289,6 +1293,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Get FTL from other colony' event"
 		IF = {
 			limit = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -1390,6 +1395,10 @@ country_event = {
 		is_subject_type = lrsk_gov_var_sublight_vassal
 		has_modifier = lrsk_gov_var_empire_black_box_drives	
 	} }
+
+	immediate = {
+		log = "In 'Notify overlord of FTL' event"
+	}
 
 	option = {
 		name = lrsk_gov_var_sublight_origins.4.a
@@ -1541,6 +1550,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		log = "In 'Playing favorites' event"
 		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_colony_overlord_favored } }
 			add_opinion_modifier = {
 				who = event_target:lrsk_sublight_overlord
@@ -1561,6 +1571,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		log = "In 'Subject leadership' event"
 		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_colony_helped_all } }
 			add_opinion_modifier = {
 				who = event_target:lrsk_sublight_overlord
@@ -1589,6 +1600,10 @@ country_event = {
 		is_subject_type = lrsk_gov_var_sublight_vassal
 		has_modifier = lrsk_gov_var_empire_black_box_drives	
 	} }
+
+	immediate = {
+		log = "In 'Haggle over FTL' event"
+	}
 
 	option = {
 		name = lrsk_gov_var_sublight_origins.5.a
@@ -1685,6 +1700,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Periodic whining gatekeeper' event"
 		event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.6 } }
 	}
 }
@@ -1714,6 +1730,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Periodic whining' event"
 		set_timed_country_flag = {
 			flag = lrsk_sublight_whining_cooldown
 			days = 720 # 2 year cooldown
@@ -1764,8 +1781,8 @@ country_event = {
 				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 					remove_modifier = lrsk_gov_var_empire_colony_red_tape
 					set_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+					country_event = { id = lrsk_gov_var_sublight_origins.45 }
 				}
-				country_event = { id = lrsk_gov_var_sublight_origins.45 }
 			}
 		}
 	}
@@ -1819,7 +1836,7 @@ country_event = {
 					is_subject_type = lrsk_gov_var_sublight_satellite
 				} }
 				add_opinion_modifier = {
-					who = root
+					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_stick_sublight
 				}
 			}
@@ -1857,8 +1874,8 @@ country_event = {
 						}
 					}
 					add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+					country_event = { id = lrsk_gov_var_sublight_origins.45 }
 				}
-				country_event = { id = lrsk_gov_var_sublight_origins.45 }
 			}
 		}
 	
@@ -1918,7 +1935,7 @@ country_event = {
 					is_subject_type = lrsk_gov_var_sublight_satellite
 				} }
 				add_opinion_modifier = {
-					who = root
+					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_stick_sublight
 				}
 			}
@@ -1937,7 +1954,6 @@ country_event = {
 		}
 
 		trigger = {
-			NOT = { has_country_flag = lrsk_sublight_media_campaign_cooldown }
 			from = { OR = {
 				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
 				has_modifier = lrsk_gov_var_empire_colony_red_tape
@@ -1963,6 +1979,7 @@ country_event = {
 		}
 
 		trigger = {
+			NOT = { has_country_flag = lrsk_sublight_media_campaign_cooldown }
 			from = { OR = {
 				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
 				has_modifier = lrsk_gov_var_empire_colony_red_tape
@@ -1995,7 +2012,7 @@ country_event = {
 
 	mean_time_to_happen = { years = 100 }
 
-	# This will only happen if you actually have sublight vassals/satellites with no FTl restrictions
+	# This will only happen if you actually have sublight vassals/satellites with no FTL restrictions
 	trigger = {
 		OR = {
 			has_origin = lrsk_gov_var_origin_sublight_empire
@@ -2012,6 +2029,10 @@ country_event = {
 		} }	
 	}
 
+	immediate = {
+		log = "In 'Colonial Reform Start' event"
+	}
+
 	option = {
 		name = lrsk_gov_var_sublight_origins.7.a
 		custom_tooltip = lrsk_gov_var_sublight_origins.7.a.tooltip
@@ -2023,6 +2044,26 @@ country_event = {
 				owner = this
 			}
 		}
+	}
+}
+
+# I don't know if this will help but I am leery of recursive event calls, tends to crash the game!!
+country_event = {
+	id = lrsk_gov_var_sublight_origins.801
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	immediate = {
+		log = "In 'Colonial Reform pre-Gate' event"
+		country_event = { id = lrsk_gov_var_sublight_origins.80 }
 	}
 }
 
@@ -2041,6 +2082,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Colonial Reform Start/Gate' event"
 		IF = {
 			limit = { any_subject = {  OR = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -2050,7 +2092,7 @@ country_event = {
 		}
 		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_reform_in_place }
 			country_event = {
-				id = lrsk_gov_var_sublight_origins.80					# Tried before, will have to try again
+				id = lrsk_gov_var_sublight_origins.801					# Tried before, will have to try again
 				days = 1800
 			}
 		}
@@ -2076,6 +2118,10 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		log = "In 'Colonial Reform Decision' event"
+	}
+
 	option = {
 		name = lrsk_gov_var_sublight_origins.8.a.empire
 		custom_tooltip = lrsk_gov_var_sublight_origins.8.a.empire.tooltip
@@ -2083,7 +2129,6 @@ country_event = {
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
 
 		hidden_effect = {
-			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
 				set_country_flag = lrsk_sublight_colony_offered_federation
@@ -2098,7 +2143,6 @@ country_event = {
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
 		
 		hidden_effect = {
-			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
 				set_country_flag = lrsk_sublight_colony_offered_vassalization
@@ -2113,7 +2157,6 @@ country_event = {
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
 		
 		hidden_effect = {
-			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
 				set_country_flag = lrsk_sublight_colony_offered_federation
@@ -2128,7 +2171,6 @@ country_event = {
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
 		
 		hidden_effect = {
-			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
 				set_country_flag = lrsk_sublight_colony_offered_vassalization
@@ -2153,6 +2195,8 @@ country_event = {
 		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_opentrade }
 			remove_modifier = lrsk_gov_var_empire_colony_opentrade
 		}
+		country_event = { id = lrsk_gov_var_sublight_origins.833 }
+		country_event = { id = lrsk_gov_var_sublight_origins.82 days = 21 }
 	}
 }
 
@@ -2195,6 +2239,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Colony offer gate' event"
 		every_subject = {
 			limit = { OR = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -2224,6 +2269,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Colony gets offer' event"
 		# One way or another, none of this is relevant anymore
 		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 			remove_modifier = lrsk_gov_var_empire_colony_red_tape
@@ -2340,6 +2386,26 @@ country_event = {
 	}
 }
 
+# I don't know if this will help but I am leery of recursive event calls, tends to crash the game!!
+country_event = {
+	id = lrsk_gov_var_sublight_origins.821
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		}
+	}
+
+	immediate = {
+		log = "In 'Colonial Reform Fed Work bounceback' event"
+		country_event = { id = lrsk_gov_var_sublight_origins.82 }
+	}
+}
+
 # Colonial Reform Federation Work
 # Numbers are out of order because reasons.
 # Timing of this call should put at at least 4 days after federation acceptance
@@ -2358,6 +2424,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Colonial Reform Federation Work' event"
 		IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_federation } }
 			# Have to leave existing fed, too complicated otherwise
 			IF = { limit = { has_federation = yes }
@@ -2403,7 +2470,7 @@ country_event = {
 		ELSE = {
 			# Somehow this was called, fed was chosen, but nothing is ready... try again in a week?
 			country_event = {
-				id = lrsk_gov_var_sublight_origins.82
+				id = lrsk_gov_var_sublight_origins.821
 				days = 7
 			}
 		}
@@ -2426,6 +2493,10 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		log = "In 'Acceptance message' event"
+	}
+
 	option = {
 		name = lrsk_gov_var_sublight_origins.9.a.fed
 		custom_tooltip = lrsk_gov_var_sublight_origins.9.a.fed.tooltip
@@ -2438,6 +2509,12 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.9.a.vas.tooltip
 
 		trigger = { from = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+	}
+
+	after = {
+		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed } } 
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+		}
 	}
 }
 
@@ -2457,6 +2534,10 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		log = "In 'Rejection message' event"
+	}
+
 	option = {
 		name = lrsk_gov_var_sublight_origins.10.a.empire
 		custom_tooltip = lrsk_gov_var_sublight_origins.10.a.empire.tooltip
@@ -2473,6 +2554,12 @@ country_event = {
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
 
 		hidden_effect = { set_country_flag = lrsk_sublight_reform_offer_was_rejected }
+	}
+
+	after = {
+		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed } } 
+			set_country_flag = lrsk_sublight_overloard_colonial_system_reformed
+		}
 	}
 }
 
@@ -2498,6 +2585,8 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Housekeeping' event"
+
 		#Want to be able to refer to this unambiguously
 		save_event_target_as = lrsk_sublight_item_of_business
 		set_country_flag = lrsk_sublight_being_dealt_with
@@ -2573,6 +2662,8 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In 'Colonial Corruption' event"
+
 		switch = {
 			trigger = has_modifier
 			lrsk_gov_var_empire_colonial_corruption_slight = {
