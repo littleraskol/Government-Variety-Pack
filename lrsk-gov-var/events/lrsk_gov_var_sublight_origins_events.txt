@@ -1183,6 +1183,28 @@ country_event = {
 	}
 }
 
+# If a colony manages somehow to get some form of FTL tech just through research, it's over.
+country_event = {
+	id = lrsk_gov_var_sublight_origins.20
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_modifier = lrsk_gov_var_empire_black_box_drives
+		OR = {
+			last_increased_tech = "tech_hyper_drive_2"
+			last_increased_tech = "tech_hyper_drive_3"
+			last_increased_tech = "tech_jump_drive_1"
+			last_increased_tech = "tech_psi_jump_drive_1"
+		}
+	}
+
+	immediate = {
+		country_event = { id = lrsk_gov_var_sublight_origins.22 }
+	}
+}
+
 
 # Try getting FTL again (not sure I can recursively call events...
 country_event = {
@@ -1206,7 +1228,6 @@ country_event = {
 	}			
 
 }
-
 
 # Common logic for gaining FTL
 country_event = {
