@@ -1404,7 +1404,7 @@ country_event = {
 		name = lrsk_gov_var_sublight_origins.4.a
 		custom_tooltip = lrsk_gov_var_sublight_origins.4.a.tooltip
 
-		add_resource = { influence = -25 }
+		add_resource = { influence = -25 }		
 	}
 
 	option = {
@@ -1796,6 +1796,8 @@ country_event = {
 			has_country_flag = lrsk_sublight_other_red_tape_beneficiaries
 		}
 
+		add_resource = { influence = 25 }
+
 		hidden_effect = {
 			#Remove any prior favoritism flag
 			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
@@ -1892,6 +1894,8 @@ country_event = {
 			} }
 			has_country_flag = lrsk_sublight_other_trade_beneficiaries
 		}
+
+		add_resource = { influence = 25 }
 
 		hidden_effect = {
 			#Remove any prior favoritism flag
@@ -2314,6 +2318,14 @@ country_event = {
 						level <= terrible
 					}
 				}
+				modifier = {
+					add = -5
+					has_origin = lrsk_gov_var_origin_sublight_colony_dis
+				}
+				modifier = {
+					add = 5
+					has_origin = lrsk_gov_var_origin_sublight_colony_loy
+				}
 				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
 					remove_country_flag = lrsk_sublight_colony_offered_vassalization
 					set_country_flag = lrsk_sublight_colony_accepted_federation
@@ -2364,6 +2376,14 @@ country_event = {
 						who = event_target:lrsk_sublight_overlord
 						level <= terrible
 					}
+				}
+				modifier = {
+					add = 5
+					has_origin = lrsk_gov_var_origin_sublight_colony_dis
+				}
+				modifier = {
+					add = -5
+					has_origin = lrsk_gov_var_origin_sublight_colony_loy
 				}
 				set_subject_of = { who = none }
 				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
@@ -2455,6 +2475,7 @@ country_event = {
 					who = event_target:lrsk_sublight_overlord
 					override_requirements = yes
 				}
+				remove_country_flag = lrsk_sublight_colony_accepted_federation
 			}
 			IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
 				federation = { 
@@ -2462,6 +2483,7 @@ country_event = {
 					set_name = random
 				}
 			}
+			set_country_flag = lrsk_sublight_overlord_formed_fed
 			set_federation_leader = event_target:lrsk_sublight_overlord
 		}
 		ELSE_IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
@@ -2567,6 +2589,7 @@ country_event = {
 # 1) If a sublight colony becomes independent of the player, they should lose thier nerf modifiers.
 # 2) If a sublight colony under the player somehow loses red tape when they should have it, return red tape.
 # 3) If a sublight colony under the player somehow becomes some other kind of vassal prior to reforms, return to proper type.
+# 4) If a sublight colony accepted joining the overlord's fed but is not in it, join it.
 country_event = {
 	id = lrsk_gov_var_sublight_origins.100
 	hide_window = yes
@@ -2599,19 +2622,37 @@ country_event = {
 		}
 
 		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_still_player_vassal } }
+			log = "Housekeeping: Caught case where not still vassal of player."
 			IF = { limit = { has_modifier = lrsk_gov_var_empire_black_box_drives } remove_modifier = lrsk_gov_var_empire_black_box_drives }
 			IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape } remove_modifier = lrsk_gov_var_empire_colony_red_tape }
+			IF = { 
+				limit = {
+					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_formed_fed }
+					has_country_flag = lrsk_sublight_colony_accepted_federation	# This gets removed in the normal course of events for this case.
+					NOT = { is_in_federation_with = event_target:lrsk_sublight_overlord }
+				}
+				# We need this case because of the floaty way I chose to handle this process...
+				log = "Housekeeping: Caught case where needs to be added to player fed."
+				set_subject_of = { who = none } # Not sure how I feel about potentially ripping them from some other overlord... eh, edge case.
+				join_alliance = {
+					who = event_target:lrsk_sublight_overlord
+					override_requirements = yes
+				}
+				remove_country_flag = lrsk_sublight_colony_accepted_federation
+			}
 		}
 		ELSE = {
+			log = "Housekeeping: Caught case where still vassal of player."
 			IF = {
 				limit = { NOR = {
 					has_modifier = lrsk_gov_var_empire_colony_red_tape
 					has_country_flag = lrsk_sublight_overloard_cut_our_red_tape
-					event_target:lrsk_sublight_overlord = { NOR = {
+					event_target:lrsk_sublight_overlord = { OR = {
 						has_country_flag = lrsk_sublight_overlord_abolished_redtape
 						has_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 					} }
 				} }
+				log = "Housekeeping: Caught case where still vassal and needs red tape re-applied."
 				add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
 			}
 			IF = { 
@@ -2620,6 +2661,7 @@ country_event = {
 					is_subject_type = lrsk_gov_var_sublight_satellite
 					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed }
 				} }
+				log = "Housekeeping: Caught case where still vassal but not valid sublight colony type pre system reform."
 				save_event_target_as = lrsk_sublight_colony_to_reintegrate
 				event_target:lrsk_sublight_overlord = { switch = {
 					trigger = has_origin

@@ -368,6 +368,8 @@ l_english:
  # Uplift
  opinion_lrsk_gov_var_uplift_tutor:0 "Uplift Tutor"
  opinion_lrsk_gov_var_uplift_pupil:0 "Uplift Pupil"
+ opinion_lrsk_gov_var_protective_uplift_tutor:0 "Protectiveness"
+ opinion_lrsk_gov_var_protective_uplift_tutor_d:0 "$opinion_lrsk_gov_var_protective_uplift_tutor$"
 
  # Sublight Vasslas
  opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony" # Loyalists have passive approval
@@ -561,15 +563,15 @@ l_english:
  lrsk_gov_var_sublight_origins.7.a.tooltip:0 "Get the Colonial Restructuring special project."
  
  LRSK_GOV_VAR_COLONIAL_RESTRUCTURING:0 "Colonial Restructuring"
- LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science experts to model alternatives. §HThis will result in some form of change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation." 
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science experts to model alternatives. §HThis will result in some form of change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation."
  
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1:0 "All sublight colonies will be given the offer to be released as independent nations as part of a"
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2:0 "federation we will lead. If we are members of a federation already, we will leave it and form a new one. Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2:0 "federation we will lead. §PIf we are members of a federation already, we will leave it and form a new one§!. Colonies that refuse the offer will become independent"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS:0 "All sublight colonies will be given the offer to become ordinary vassals, which will allow us to integrate them. Colonies that refuse the offer will become independent"
  lrsk_gov_var_sublight_origins.8.name:0 "Time to Decide"
- lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to release them as independent nations but under the aegis of an international organization. This would ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to integrate the colonies as part of our nation. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one."
+ lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to §Hrelease them as independent nations but under the aegis of an international organization we would lead§!. This would ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to §Hintegrate the colonies as part of our nation§!. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one.\n\nBear in mind that however we choose to proceed, the colonies may or may not agree to these reforms. Any colony that does not could cite the drastic nature of this proposed change to the colonial charter as a pretext to sever ties with us. §HThe better our relationship with a colony, the less likely this will be to happen§!, however."
  lrsk_gov_var_sublight_origins.8.a.empire:0 "It's time to loosen the reins a bit."
- lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1$ Hegemony $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2$, but we will get a Subjugation CB against them."
+ lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_1$ Hegemony $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED_2$, but we will get a CB to force them to join."
  lrsk_gov_var_sublight_origins.8.b.empire:0 "Time to reap the fruits of our labor."
  lrsk_gov_var_sublight_origins.8.b.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS$, but we will get a Subjugation CB against them."
  lrsk_gov_var_sublight_origins.8.a.commonwealth:0 "It's time to walk with the colonies as equals."
@@ -589,7 +591,7 @@ l_english:
  lrsk_gov_var_sublight_origins.9.a.fed:0 "It's all coming together."
  lrsk_gov_var_sublight_origins.9.a.fed.tooltip:0 "[from.GetName] will join our federation as an independent nation. (This will take some time to execute.)"
  lrsk_gov_var_sublight_origins.9.a.vas:0 "$lrsk_gov_var_sublight_origins.9.a.fed$"
- lrsk_gov_var_sublight_origins.9.a.vas.tooltip:0 "[from.GetName] will become a vassal. We will have the option to integrate them."
+ lrsk_gov_var_sublight_origins.9.a.vas.tooltip:0 "[from.GetName] will become a normal vassal. We will have the option to integrate them."
  
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE:0 "[from.GetName] becomes independent."
  lrsk_gov_var_sublight_origins.10.name:0 "Offer Refused..."
@@ -601,8 +603,8 @@ l_english:
  
  # Uplift
  
- LRSK_UPLIFT_INTRO_COMMON:0 "has been raised to the stars by the intervention of an advanced alien tutor. How did this relationship begin? And why? What potential did your alien tutor see?"
- LRSK_UPLIFT_TOOLT_COMMON:0 "species trait, giving the following benefit:\n\n"
+ LRSK_UPLIFT_INTRO_COMMON:0 "has been raised to the stars by the intervention of an advanced alien tutor. How did this relationship begin? And why? What potential did this alien benefactor see?"
+ LRSK_UPLIFT_TOOLT_COMMON:0 "species trait, giving the following benefit to all [this.GetSpeciesName] pops:\n\n"
  LRSK_UPLIFT_TOOLT_NOUPLIFT:0 "We were not uplifted,"
  LRSK_UPLIFT_TOOLT_HIVE_UNTHINK:0 "As unthinking creatures, they called us"
  LRSK_UPLIFT_TOOLT_MECH_UNTHINK:0 "Simple learning algorithms allowing"
@@ -617,7 +619,7 @@ l_english:
  lrsk_gov_var_uplift.4.c:0 "$LRSK_UPLIFT_TOOLT_HIVE_UNTHINK$ Skirmishers..."
  lrsk_gov_var_uplift.4.c.tooltip:0 "§LOur mindless hives were always at war, and strife made us clever.§!\n\nGain the §HSkirmishers§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_proles_hive_effects$"
  lrsk_gov_var_uplift.4.d:0 "$LRSK_UPLIFT_TOOLT_NOUPLIFT$ we were trained."
- lrsk_gov_var_uplift.4.d.tooltip:0 "§LOur hive was awake and intelligent. They trained it to compete against the minds of the galaxy.§!\n\nGain the §HConditioned to Prevail§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_hive_effect$"
+ lrsk_gov_var_uplift.4.d.tooltip:0 "§LOur hive was awake and intelligent. They trained it to compete against the other minds of the galaxy.§!\n\nGain the §HConditioned to Prevail§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_hive_effect$"
  
  lrsk_gov_var_uplift.5.name:0 "$lrsk_gov_var_uplift.4.name$"
  lrsk_gov_var_uplift.5.desc:0 "Your machine intelligence $LRSK_UPLIFT_INTRO_COMMON$"
@@ -636,14 +638,26 @@ l_english:
  lrsk_gov_var_uplift.6.a.tooltip:0 "§LOur animal ancestors seemed to always be looking beyond, to the stars.§!\n\nGain the §HStarborn§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_starborn_effects$"
  lrsk_gov_var_uplift.6.b:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ Earthbound..."
  lrsk_gov_var_uplift.6.b.tooltip:0 "§LOur instinctive bias towards a home territory seemed useful.§!\n\nGain the §HEarthbound§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_earthbound_effects$"
- lrsk_gov_var_uplift.6.c:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ like Intellectuals..."
+ lrsk_gov_var_uplift.6.c:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ nearly Intellectual..."
  lrsk_gov_var_uplift.6.c.tooltip:0 "§LOur uncanny intuition and inventiveness showed great promise.§!\n\nGain the §HNatural Intellectuals§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_natural_intellectuals_effects$"
  lrsk_gov_var_uplift.6.d:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ like Proles..."
  lrsk_gov_var_uplift.6.d.tooltip:0 "§LOur great strength and tenacity could be put to work.§!\n\nGain the §HProles§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_proles_effects$"
  lrsk_gov_var_uplift.6.e:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ oddly Conservative..."
  lrsk_gov_var_uplift.6.e.tooltip:0 "§LOur beastly stubbornness seemed like a challenge.§!\n\nGain the §HConservative§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_conservative_effects$"
  lrsk_gov_var_uplift.6.f:0 "$LRSK_UPLIFT_TOOLT_NOUPLIFT$ we were enlightened."
- lrsk_gov_var_uplift.6.f.tooltip:0 "§LOur civilization was young and meeting them has left us yearning to discover more.§!\n\nGain the §HEnlightened§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_effect$"
+ lrsk_gov_var_uplift.6.f.tooltip:0 "§LOur civilization was young and meeting aliens has left us yearning to discover more.§!\n\nGain the §HEnlightened§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_effect$"
+ 
+ lrsk_gov_var_uplift.8.hive.desc:0 "[Root.GetSpeciesNamePlural]. Know that for years our collective has watched over you through countless eyes from the [lrsk_uplift_watchpost_star.GetName] system. Now that [Root.GetSpeciesNamePlural] are expanding to the stars, we have decided that this system no longer needs to be a part of the [lrsk_my_uplift_tutor.GetName]. We gift it to you."
+ lrsk_gov_var_uplift.8.mech.desc:0 "Attention [Root.GetSpeciesNamePlural]: New resources are available. Watchpost facility at [lrsk_uplift_watchpost_star.GetName] system has been designated for deprecation from the [lrsk_my_uplift_tutor.GetName] as superfluous now that [Root.GetSpeciesNamePlural] are engaged in interstellar travel. Option: The [lrsk_uplift_pupil.GetName] may assume ownership."
+ lrsk_gov_var_uplift.8.norm.desc:0 "Hello, [Root.GetSpeciesNamePlural]. We are filled with pride to see you set off into the stars for the first time as we once did. In the years our people have observed and guided you from the [lrsk_uplift_watchpost_star.GetName] system, we always knew this day would come. That said, perhaps that old watchpost facility is no longer needed. As a commencement gift, we would transfer it to you."
+ lrsk_gov_var_uplift.8.hive.a:0 "We welcome it into our collective."
+ lrsk_gov_var_uplift.8.mech.a:0 "Confirmed: New resources to be incorporated."
+ lrsk_gov_var_uplift.8.norm.a:0 "You have our thanks. We will not let you down."
+ lrsk_gov_var_uplift.8.a.tooltip:0 "We will gain control of the [lrsk_uplift_watchpost_star.GetName] system and the fleet stationed there."
+ lrsk_gov_var_uplift.8.hive.b:0 "What if our collective is unready, however?"
+ lrsk_gov_var_uplift.8.mech.b:0 "Warning: Unclear if our systems are prepared."
+ lrsk_gov_var_uplift.8.norm.b:0 "That's kind but... it's a scary galaxy out here!"
+ lrsk_gov_var_uplift.8.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will continue to protect us from the starbase in [lrsk_uplift_watchpost_star.GetName] system. The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us." # +unity
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
