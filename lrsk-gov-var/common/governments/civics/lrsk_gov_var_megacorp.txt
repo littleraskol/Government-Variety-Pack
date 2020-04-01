@@ -84,7 +84,10 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
 
 # NPC version of above
 lrsk_gov_var_civic_mc_chartered_company = {
-  potential = { has_origin = lrsk_gov_var_origin_colonial_charter } #NPC only
+  potential = { 
+    authority = { value = auth_corporate }
+    origin = { value = lrsk_gov_var_origin_colonial_charter }
+  }
 
   icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
   #description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
