@@ -8,3 +8,312 @@ opinion_lrsk_gov_var_new_feds = {
 		base = 80
 	}
 }
+
+#For Uplift
+opinion_lrsk_gov_var_uplift_tutor = {
+	opinion = {
+		base = 150
+	}
+
+	decay = {
+		base = 1
+	}
+}
+opinion_lrsk_gov_var_uplift_pupil = {
+	opinion = {
+		base = 75
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Uplift tutor feels protective
+opinion_lrsk_gov_var_protective_uplift_tutor = {
+	opinion = {
+		base = 50
+	}
+}
+opinion_lrsk_gov_var_protective_uplift_tutor_d = {
+	opinion = {
+		base = 50
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+## For Sublight Empire/Commonwealth vassals
+
+# Loyalists have passive approval
+opinion_lrsk_gov_var_loyal_sublight = {
+	opinion = {
+		base = 20
+	}
+	
+	decay = {
+		base = 1
+	}
+}
+
+# Dissidents have passive disapproval
+opinion_lrsk_gov_var_dsdnt_sublight = {
+	opinion = {
+		base = -20
+	}
+	
+	decay = {
+		base = 1
+	}
+}
+
+# FTL monopoly keeps them at least acting happy
+opinion_lrsk_gov_var_ftlmn_sublight = {
+	opinion = {
+		base = 200
+	}
+}
+
+# Offsets initial power penalty somewhat for sublight empires, wears off in 50 years.
+opinion_lrsk_gov_var_vasag_sublight = {
+	opinion = {
+		base = 150
+	}
+
+	decay = {
+		base = 3
+		modifier = {
+			add = 2
+			from ={
+				OR = {
+					has_valid_civic = civic_feudal_realm
+					has_valid_civic = civic_franchising
+				}
+			}
+		}
+	}
+}
+
+# Offsets initial power penalty somewhat for sublight commonwealths, wears off in 75 years.
+opinion_lrsk_gov_var_satag_sublight = {
+	opinion = {
+		base = 150
+	}
+
+	decay = {
+		base = 2
+		modifier = {
+			add = 1
+			from ={
+				OR = {
+					has_valid_civic = civic_feudal_realm
+					has_valid_civic = civic_franchising
+				}
+			}
+		}
+	}
+}
+
+# Offsets any overlord distaste for vassals, wears off in 25 years.
+opinion_lrsk_gov_var_vasol_sublight = {
+	opinion = {
+		base = 100
+	}
+
+	decay = {
+		base = 4
+	}
+}
+
+# Offsets any overlord distaste for satellites, wears off in 50 years.
+opinion_lrsk_gov_var_satol_sublight = {
+	opinion = {
+		base = 100
+	}
+
+	decay = {
+		base = 2
+	}
+}
+
+# When you hate your vassal
+opinion_lrsk_gov_var_oldire_sublight = {
+	opinion = {
+		base = -20
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+# This is how dis/gsp colonies feel towards overlord after getting FTL.
+opinion_lrsk_gov_var_thrall_sublight = {
+	opinion = {
+		base = -30
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# This is how dis colonies also feel towards overlord after getting FTL.
+opinion_lrsk_gov_var_ffree_sublight = {
+	opinion = {
+		base = -15
+	}
+}
+
+# This is how other colonies feel towards the colony that shares FTL tech with them.
+opinion_lrsk_gov_var_ftlgift_sublight = {
+	opinion = {
+		base = 50
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Every time you favor one colony.
+opinion_lrsk_gov_var_carrot_sublight = {
+	opinion = {
+		base = 40
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+# Every time you punish/deny one colony.
+opinion_lrsk_gov_var_stick_sublight = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 2
+		modifier = {
+			factor = 0.5
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_empire
+			}
+		}
+	}
+}
+
+# Every time you favor one colony (felt by the rest).
+opinion_lrsk_gov_var_favors_sublight = {
+	opinion = {
+		base = -20
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+		modifier = {
+			factor = 2
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_commonwealth
+			}
+		}
+	}
+}
+
+# Every time you favor all colonies.
+opinion_lrsk_gov_var_benev_sublight = {
+	opinion = {
+		base = 20
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+		modifier = {
+			factor = 2
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_empire
+			}
+		}
+	}
+}
+
+# This is how other colonies feel towards the colony that gets benefits for everyone.
+opinion_lrsk_gov_var_leader_sublight = {
+	opinion = {
+		base = 40
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+# This is how other colonies feel towards the colony that gets benefits for just themselves.
+opinion_lrsk_gov_var_stooge_sublight = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+# Every time colonial corruption rises.
+opinion_lrsk_gov_var_colcorr_sublight = {
+	opinion = {
+		base = -10
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 2
+	}
+}
+
+# Highest level of colonial corruption.
+opinion_lrsk_gov_var_endcorr_sublight = {
+	opinion = {
+		base = -20
+	}
+}
+
+# If you yeet yourself out of a hegemony by colonial reform...
+opinion_lrsk_gov_var_hegmad_sublight = {
+	opinion = {
+		base = -200
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Uplift tutor feels protective
+opinion_lrsk_gov_var_protective_uplift_tutor = {
+	opinion = {
+		base = 100
+	}
+
+	decay = {
+		base = 1
+	}
+}

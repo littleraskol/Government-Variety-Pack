@@ -42,6 +42,21 @@ event = {
 			} }
 			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
 		}
+		
+		# Uplift
+		every_playable_country = {
+			limit = { has_origin = lrsk_gov_var_origin_uplift }
+			country_event = { id = lrsk_gov_var_uplift.1 }
+		}
+		
+		# Sublight Empire/Commonwealth
+		every_playable_country = {
+			limit = { OR = { 
+				has_origin = lrsk_gov_var_origin_sublight_empire
+				has_origin = lrsk_gov_var_origin_sublight_commonwealth
+			} }
+			country_event = { id = lrsk_gov_var_sublight_origins.1 }
+		}
 	}
 }
 

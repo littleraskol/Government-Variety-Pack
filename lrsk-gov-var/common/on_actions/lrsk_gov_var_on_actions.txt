@@ -8,6 +8,13 @@ on_game_start = {
 	}
 }
 
+on_game_start_country = {
+	events = {
+		lrsk_gov_var_uplift.2
+		lrsk_gov_var_uplift.3
+	}
+}
+
 on_yearly_pulse_country = {
 	events = {
 		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
@@ -46,5 +53,11 @@ on_leader_spawned = {
 on_ruler_back_to_pre_ruler_class = {
 	events = {
 		lrsk_gov_var_shroud_touched.6 # Addes esper leader traits to demoted ruler without them
+	}
+}
+
+on_tech_increased = {
+	events = {
+		lrsk_gov_var_sublight_origins.20
 	}
 }
