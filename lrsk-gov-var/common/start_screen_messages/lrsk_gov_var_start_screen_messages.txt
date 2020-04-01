@@ -940,6 +940,44 @@ part = {
 }
 
 part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_MERCHANT_PRINCIPALITY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_merchant_principality_d
+			has_government = lrsk_gov_var_gov_merchant_principality_i
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_CRUSADING_COMPANY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_crusading_company
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_COLONIAL_CHARTER_BOARD"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_colonial_charter_board
+			has_government = lrsk_gov_var_gov_colonial_company	# JIC
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
 	location = 0
 	localization = "LRSK_GOV_VAR_START_SCREEN_GALACTIC_BACKDOOR"
 	

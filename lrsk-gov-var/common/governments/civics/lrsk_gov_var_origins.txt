@@ -344,3 +344,28 @@ lrsk_gov_var_origin_grand_alliance_npc = {
 		base = 0
 	}
 }
+
+# Flavor placeholder for NPC vassal/civic type related to Colonial Chartering
+lrsk_gov_var_origin_colonial_charter = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_blank.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	#description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
+
+	modifier = {
+    	station_gatherers_produces_mult = 0.1
+    	station_researchers_produces_mult = 0.1
+	}
+
+	random_weight = {
+		base = 0
+	}
+}

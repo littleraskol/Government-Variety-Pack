@@ -287,6 +287,30 @@ lrsk_gov_var_gov_crusader_order = {
 		}
 	}
 
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
 	weight = {
 		base = 1400
 		modifier = {
@@ -296,6 +320,45 @@ lrsk_gov_var_gov_crusader_order = {
 				has_ethic = ethic_fanatic_militarist
 			}
 		}
+	}
+}
+
+# Citizen Crusade
+lrsk_gov_var_gov_citizen_crusade = {
+	ruler_title = LRSK_GOV_VAR_RT_MP_MARSHALL
+	ruler_title_female = LRSK_GOV_VAR_RT_MP_MARSHALL
+
+	possible = {
+		has_valid_civic = civic_exalted_priesthood
+		has_valid_civic = civic_citizen_service
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
+	weight = {
+		base = 1400
 	}
 }
 
@@ -357,6 +420,30 @@ lrsk_gov_var_gov_doom_horde = {
 		has_valid_civic = civic_warrior_culture
 	}
 
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
 	weight = {
 		base = 2500
 	}
@@ -392,6 +479,30 @@ lrsk_gov_var_gov_death_cult = {
 		}
 	}
 
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+	}
+
 	weight = {
 		base = 2500
 	}
@@ -421,6 +532,30 @@ lrsk_gov_var_gov_citizen_legion = {
 	possible = {
 		has_valid_civic = civic_fanatic_purifiers
 		has_valid_civic = civic_citizen_service
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 1000
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
 	}
 
 	weight = {

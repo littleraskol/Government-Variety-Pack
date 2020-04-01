@@ -40,7 +40,7 @@ lrsk_gov_var_civic_mc_edu_corp = {
   }
 }
 
-#Gig Economics (None) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist happiness, +10% ruler happiness.)
+#Gig Economics (None) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness.)
 lrsk_gov_var_civic_mc_gig_economy = {
   potential = { authority = { value = auth_corporate } }
 
@@ -51,11 +51,11 @@ lrsk_gov_var_civic_mc_gig_economy = {
   modifier = {
     pop_resettlement_cost_mult = -0.25
     pop_cat_specialist_happiness = 0.05
-    pop_cat_ruler_happiness = 0.1
+    pop_cat_ruler_happiness = 0.05
   }
 }
 
-#Colonial Chartering (Not Pacifist or Egalitarian) - The governments of this empire's homeworld lacked the finances to exploit resources in space, and so set up a system that chartered joint-stock companies to raise investment money for space-based resource extraction. These companies eventually came to form an integral part of government above the planetary level. (+15% research and mining station output, special vassal interactions)
+#Colonial Chartering (Not Pacifist or Egalitarian) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. These companies eventually came to form an integral part of government above the planetary level. (+15% research and mining station output, special vassal interactions)
 lrsk_gov_var_civic_mc_chart_corp_board = {
   potential = { authority = { value = auth_corporate } }
 
@@ -74,7 +74,34 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = 1 } # Not sure how I feel about this in AI hands, will it be able to create vassals as needed?
+
+  modifier = {
+    station_gatherers_produces_mult = 0.15
+    station_researchers_produces_mult = 0.15
+  }
+}
+
+# NPC version of above
+lrsk_gov_var_civic_mc_chartered_company = {
+  potential = { has_origin = lrsk_gov_var_origin_colonial_charter } #NPC only
+
+  icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
+  #description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
+
+  possible = {
+    ethics = {
+			NOR = {
+				text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+    }
+  }
+
+  random_weight = { base = 0 }
 
   modifier = {
     station_gatherers_produces_mult = 0.15
