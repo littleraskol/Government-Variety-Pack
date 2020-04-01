@@ -348,6 +348,7 @@ empire_name_parts_list = {
 		"Entrepreneurial" = 1
 		"Enterprising" = 1
 		"Commercial" = 1
+		"Trading" = 1
 	}
 }
 
@@ -450,6 +451,17 @@ empire_name_parts_list = {
 		"Senate" = 1
 	}
 }
+
+## Special
+
+# Merchant Principality
+#format.lrsk_merch_prin.1: "<lrsk_business_desc><lrsk_imperial_cap> of [This.Capital.System.GetName]"
+#format.lrsk_merch_prin.2: "<lrsk_business_desc><lrsk_imperial_cap> of [This.Capital.GetName]"
+#format.lrsk_merch_prin.3: "<lrsk_business_desc><lrsk_imperial_cap> of [This.GetSpeciesName]kind"
+#format.lrsk_merch_prin.4: "<lrsk_business_desc>[This.GetSpeciesAdj] <lrsk_imperial_cap>"
+#format.lrsk_merch_prin.5: "[This.GetSpeciesAdj] <lrsk_business_desc><lrsk_imperial_cap>"
+
+# NO NEW PARTS NEEDED FOR NOW
 
 ## Libertarian-ish
 #Libertarian Freehold
@@ -558,6 +570,67 @@ empire_name_parts_list = {
 	}
 }
 
+## Colonial Company
+# format.lrsk_col_comp.1: "<lrsk_col_comp_bit> [This.Capital.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
+# format.lrsk_col_comp.2: "<lrsk_col_comp_bit> [This.Capital.System.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
+
+# Colonial Company Bits
+empire_name_parts_list = {
+	key = "lrsk_col_comp_bit"
+	parts = {
+		"Hon." = 1
+		"Ven." = 1
+		"Imperial" = 1
+		"Colonial" = 1
+		"Foreign" = 1
+		"Far" = 1
+		"Near" = 1
+	}
+}
+
+# Colonial Company Type
+empire_name_parts_list = {
+	key = "lrsk_col_comp_type"
+	parts = {
+		"Cartel" = 1
+		"Corporation" = 1
+		"Enterprise" = 1
+		"Company" = 1
+		"Guild" = 1
+	}
+}
+
+## Colonial Charter Board
+# format.lrsk_col_board.1: "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> of [This.Capital.GetName]"
+# format.lrsk_col_board.2: "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> of [This.Capital.System.GetName]"
+
+# Colonial Board Bits
+empire_name_parts_list = {
+	key = "lrsk_col_board_bit"
+	parts = {
+		"Hon." = 1
+		"Ven." = 1
+		"Imperial" = 1
+		"Colonial" = 1
+		"Foreign" = 1
+		"Interstellar" = 1
+		"Interplanetary" = 1
+		"Galactic" = 1
+	}
+}
+
+# Colonial Board Type
+empire_name_parts_list = {
+	key = "lrsk_col_board_type"
+	parts = {
+		"Board" = 1
+		"Office" = 1
+		"Ministry" = 1
+		"Department" = 1
+		"Administration" = 1
+	}
+}
+
 ## PMCs
 # format.lrsk_pmc_corp.1: "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp><lrsk_corp_bits>"
 # format.lrsk_pmc_corp.2: "[This.Capital.System.GetName]-Force <lrsk_stellar_generic_desc> <lrsk_pmc_desc><lrsk_corp_bits>"
@@ -645,6 +718,46 @@ empire_name_parts_list = {
 		"of Truth" = 1
 		"of the Spirit" = 1
 		"of Saints" = 1
+	}
+}
+
+
+## Crusading Company
+# format.lrsk_crus_comp.1: "<lrsk_crusdesc><lrsk_cruscomp> of [This.GetSpeciesAdj]kind"
+# format.lrsk_crus_comp.2: "<lrsk_crusdesc><lrsk_cruscomp> of [This.Capital.System.GetName]"
+# format.lrsk_crus_comp.3: "<lrsk_crusdesc><lrsk_cruscomp> of [This.Capital.GetName]"
+
+# Crusading Company Adj
+empire_name_parts_list = {
+	key = "lrsk_crusdesc"
+	parts = {
+		"Valorous " = 1
+		"Invincible " = 1
+		"Triumphant " = 1
+		"Glorious " = 1
+		"Brave " = 1
+		"Courageous " = 1
+		"Zealous " = 1
+		"Conquering " = 1
+		"Crusading " = 1
+		"Martyr's " = 1
+	}
+}
+
+# Crusading Company Noun
+empire_name_parts_list = {
+	key = "lrsk_cruscomp"
+	parts = {
+		"Communion" = 1
+		"Congregation" = 1
+		"Parish" = 1
+		"Church" = 1
+		"Denomination" = 1
+		"Temple" = 1
+		"Foundation" = 1
+		"Fellowship" = 1
+		"Shrine-Keepers" = 1
+		"Chapel-Guards" = 1
 	}
 }
 
@@ -1254,6 +1367,24 @@ empire_name_parts_list = {
 		"Templars" = 1
 		"Paladins" = 1
 		"Warriors" = 1
+	}
+}
+
+# Citizen Crusade
+# format.lrsk_cit_crusade.1: "<lrsk_crusord_desc> [This.GetSpeciesAdj] Citizen <lrsk_cit_crusaders>"
+# format.lrsk_cit_crusade.2: "<lrsk_crusord_desc> Citizen <lrsk_cit_crusaders> of [This.Capital.System.GetName]"
+# format.lrsk_cit_crusade.3: "<lrsk_crusord_desc> Citizen <lrsk_cit_crusaders> of [This.Capital.System.GetName]"
+
+#Citizen Crusade
+empire_name_parts_list = {
+	key = "lrsk_cit_crusaders"
+	parts = {
+		"Army" = 3
+		"Militia" = 2
+		"Crusade" = 1
+		"Jihad" = 1
+		"Order" = 2
+		"Legion" = 1
 	}
 }
 
