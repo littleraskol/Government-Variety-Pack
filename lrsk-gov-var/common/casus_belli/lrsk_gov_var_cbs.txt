@@ -45,10 +45,7 @@ cb_lrsk_gov_var_subvas = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-		OR = {
-			is_country_type = default
-			is_country_type = awakened_fallen_empire
-		}
+		is_country_type = default
 		NOT = { is_in_federation_with = from }
 		is_subject = no
 		has_origin = lrsk_gov_var_origin_sublight_empire
@@ -56,8 +53,20 @@ cb_lrsk_gov_var_subvas = {
 	}
 	is_valid = {
 		NOT = { is_overlord_to = FROM }
-		is_country_type = awakened_fallen_empire
-		NOT = { has_authority = auth_machine_intelligence }
 		from = { has_country_flag = lrsk_sublight_colony_rejected_vassalization }
+	}
+}
+
+cb_lrsk_gov_var_colony = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	potential = {
+		is_country_type = default
+		NOT = { is_in_federation_with = from }
+		is_subject = no
+		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+	}
+	is_valid = {
+		NOT = { is_overlord_to = FROM }
 	}
 }

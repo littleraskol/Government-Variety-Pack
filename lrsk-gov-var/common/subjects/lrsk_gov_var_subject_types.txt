@@ -45,9 +45,8 @@ lrsk_gov_var_ward = {
 		}
 	}
 
-	potential = {	
-		has_origin = lrsk_gov_var_origin_uplift
-		from = { has_country_flag = lrsk_gov_var_uplift_master }
+	potential = {
+		# Don't want this to be a diplo option
 	}
 	
 	effect = {
@@ -68,8 +67,8 @@ lrsk_gov_var_sublight_vassal = {
 	
 	diplo_threat = 0.5 # idk??
 
-	potential = {	
-		from = { has_origin = lrsk_gov_var_origin_sublight_empire }
+	potential = {
+		# Don't want this to be a diplo option
 	}
 	
 	subject_tax_rate = {
@@ -100,8 +99,8 @@ lrsk_gov_var_sublight_satellite = {
 	
 	diplo_threat = 0.5 # idk??
 
-	potential = {	
-		from = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+	potential = {
+		# Don't want this to be a diplo option
 	}
 
 	overlord_resources = {
@@ -114,5 +113,58 @@ lrsk_gov_var_sublight_satellite = {
 	
 	effect = {
 		#
+	}	
+}
+
+lrsk_gov_var_subject_chartered_company = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = no
+	research_sharing = no	# for tech sharing modifier
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+	
+	diplo_threat = 0.5 # idk??
+
+	potential = {	
+		from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+	
+	subject_tax_rate = {
+		minerals = 0.1
+		energy = 0.1
+	}
+	
+	effect = {
+		IF = { limit = { has_ethic = ethic_fanatic_authoritarian }
+			# hopefully this will just set them to normal authoritarian
+			shift_ethic = ethic_egalitarian
+			shift_ethic = ethic_authoritarian
+		}
+		IF = {
+			limit = { OR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			} }
+			shift_ethic = ethic_authoritarian
+		}
+		IF = {
+			limit = { OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			} }
+			shift_ethic = ethic_militarist
+		}
+		change_government = {
+			authority = auth_corporate
+			civics = {
+				civic = lrsk_gov_var_civic_mc_chartered_company
+				civic = random
+			}
+		}
 	}	
 }
