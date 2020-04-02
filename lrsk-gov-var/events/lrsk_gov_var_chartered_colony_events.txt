@@ -1,0 +1,165 @@
+# Government Variety Pack
+# Events - Chartered Colony/Company Stuff
+# Author: littleraskol
+
+namespace = lrsk_gov_var_chartered
+
+# Gate Event from Decision
+planet_event = {
+	id = lrsk_gov_var_chartered.1
+
+	is_triggered_only = yes
+
+  	hide_window = yes
+
+	trigger = {
+        is_capital = no
+        owner = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+    }
+
+	immediate = { owner = { country_event = { id = lrsk_gov_var_chartered.2 } } }
+}
+
+# Create the vassal and assign ownership
+country_event = {
+	id = lrsk_gov_var_chartered.2
+
+	is_triggered_only = yes
+
+  	hide_window = yes
+
+	trigger = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+
+	immediate = {
+		from = { save_event_target_as = lrsk_new_chartered_colony_capital }
+        save_event_target_as = lrsk_chartering_agent
+		owner_species = { save_event_target_as = lrsk_chartering_agent_species }
+
+        create_country = {
+            name_list = event_target:lrsk_chartering_agent
+            species = event_target:lrsk_chartering_agent_species
+            type = default
+            origin = "lrsk_gov_var_origin_colonial_charter"
+            ignore_initial_colony_error = yes
+            day_zero_contact = no
+            ethos = event_target:lrsk_chartering_agent
+            authority = auth_corporate
+            civics = {
+                civic = lrsk_gov_var_civic_mc_chartered_company
+                civic = random
+            }
+            effect = {
+                save_event_target_as = lrsk_new_chartered_colony
+                establish_communications_no_message = event_target:lrsk_chartering_agent
+                copy_techs_from = { target = event_target:lrsk_chartering_agent }
+            }
+        }
+        event_target:lrsk_new_chartered_colony_capital = {
+            set_owner = event_target:lrsk_new_chartered_colony
+            set_capital = yes
+            solar_system = {
+                starbase = { set_owner = event_target:lrsk_new_chartered_colony }
+            }
+        }
+        event_target:lrsk_new_chartered_colony = {
+            create_starting_leaders = yes
+            country_event = { id = game_start.9 }
+            country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+            set_name = random # Fixes some naming issues
+            set_subject_of = {
+                who = event_target:lrsk_chartering_agent
+                subject_type = lrsk_gov_var_subject_chartered_company
+            }            
+        }
+	}
+}
+
+# Whenever a country becomes a subject, determine if charter choice should be given to overlord
+country_event = {
+	id = lrsk_gov_var_chartered.3
+
+  	hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+        NOR = {
+            has_ethic = ethic_gestalt_consciousness
+            is_subject_type = lrsk_gov_var_subject_chartered_company # not sure how this would happen but...
+        }
+    }
+
+    immediate = {
+        from = { country_event = { id = lrsk_gov_var_chartered.4 days = 3 } } # delayed to help play nice with vassal mods.
+    }
+}
+
+country_event = {
+	id = lrsk_gov_var_chartered.4
+	title = lrsk_gov_var_chartered.4.name
+	desc = lrsk_gov_var_chartered.4.desc
+	picture = GFX_evt_partition
+	location = from
+
+	is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = lrsk_chartering_agent
+        owner_species = { save_event_target_as = lrsk_chartering_agent_species }
+    }
+
+    option = {
+        name = lrsk_gov_var_chartered.4.a
+        custom_tooltip = lrsk_gov_var_chartered.4.a.tooltip
+
+        hidden_effect = {
+            IF = {
+                limit = { NOR = {
+                    has_ethic = ethic_xenophile
+                    has_ethic = ethic_fanatic_xenophile
+                } }
+                from = {
+                    change_government = {
+                        ethos = event_target:lrsk_chartering_agent
+                        species = event_target:lrsk_chartering_agent_species
+                        authority = auth_corporate
+                        civics = {
+                            civic = lrsk_gov_var_civic_mc_chartered_company
+                            civic = random
+                        }
+                    }
+                }
+            }
+            ELSE = {
+                change_government = {
+                    ethos = event_target:lrsk_chartering_agent
+                    authority = auth_corporate
+                    civics = {
+                        civic = lrsk_gov_var_civic_mc_chartered_company
+                        civic = random
+                    }
+                }
+            }
+            from = {
+                set_name = random # Fixes some naming issues
+                set_subject_of = {
+                    who = event_target:lrsk_chartering_agent
+                    subject_type = lrsk_gov_var_subject_chartered_company
+                }
+            }
+        }
+
+        ai_chance = {
+            factor = 100 # AI chartered corp should always turn its vassals into this.
+        }
+    }
+
+    option = {
+        name = lrsk_gov_var_chartered.4.b
+        custom_tooltip = lrsk_gov_var_chartered.4.b.tooltip
+
+        ai_chance = {
+            factor = 0 # AI chartered corp should always turn its vassals into this.
+        }
+    }
+}

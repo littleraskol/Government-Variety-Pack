@@ -2460,6 +2460,11 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord_hegemony_quitter
 								modifier = opinion_lrsk_gov_var_hegmad_sublight
 							}
+							add_casus_belli = {
+								type = cb_lrsk_gov_var_hegemon
+								who = event_target:lrsk_sublight_overlord_hegemony_quitter
+								days = -1
+							}
 						}
 						ELSE = {
 							remove_country_flag = lrsk_sublight_overlord_bailed_on_hegemony # not valid if president up and quits
@@ -2566,7 +2571,23 @@ country_event = {
 
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
 
-		hidden_effect = { set_country_flag = lrsk_sublight_reform_offer_was_rejected }
+		hidden_effect = { 
+			set_country_flag = lrsk_sublight_reform_offer_was_rejected
+			IF = { limit = { from = { has_country_flag = lrsk_sublight_colony_rejected_federation } }
+				add_casus_belli = {
+					type = cb_lrsk_gov_var_subheg
+					who = from
+					days = -1
+				}
+			}
+			ELSE = {
+				add_casus_belli = {
+					type = cb_lrsk_gov_var_subvas
+					who = from
+					days = -1
+				}
+			}
+		}
 	}
 
 	option = {

@@ -129,7 +129,9 @@ l_english:
  SUBJECT_DESC_lrsk_gov_var_sublight_satellite:1 "\nThis type of vassal began as the colony of another, established by a sub-lightspeed interstellar venture. They are able to do most things but are not diplomatically independent. Their overlord gains §Y+2§! Unity and §Y+0.25§! Influence per month from the arrangement."
  
  SUBJECT_lrsk_gov_var_subject_chartered_company:0 "Chartered Colony"
- SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §Y10%§! of their monthly Energy and Minerals in taxes."
+ SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §Y10%§! of their monthly Energy and Minerals in taxes. Their overlord gets bonuses to Trade Value and Market Fee discounts the more of these subjects it has."
+ lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
+ lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
 
  ## Buildings
 
@@ -207,6 +209,11 @@ l_english:
  decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
  decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
  decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
+
+ # Charter Colonial Company
+ decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
+ decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital. "
+ decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
 
  # Planetmind Overseer
  job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
@@ -397,7 +404,7 @@ l_english:
  opinion_lrsk_gov_var_hegmad_sublight:0 "Left Hegemony Without Consent"
 
  ## CBs/Wargoals
- 
+
  casus_belli_cb_lrsk_gov_var_hegemon:0 "Hegemon Reaction"
  war_goal_wg_lrsk_gov_var_hegemon:0 "Reestablish Hegemony"
  war_goal_wg_lrsk_gov_var_hegemon_desc:0 "War is waged to force the enemy to return to our Hegemony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new member of our Hegemony if they include at least one planet."
@@ -666,6 +673,15 @@ l_english:
  lrsk_gov_var_uplift.8.mech.b:0 "Warning: Unclear if our systems are prepared."
  lrsk_gov_var_uplift.8.norm.b:0 "That's kind but... it's a scary galaxy out here!"
  lrsk_gov_var_uplift.8.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will continue to protect us from the starbase in [lrsk_uplift_watchpost_star.GetName] system. The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us." # +unity
+
+ # Chartered Colony Stuff
+
+ lrsk_gov_var_chartered.4.name:0 "Subjugation of the [from.GetName]"
+ lrsk_gov_var_chartered.4.desc:0 "The [from.GetName] has submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us."
+ lrsk_gov_var_chartered.4.a:0 "Make it so."
+ lrsk_gov_var_chartered.4.a.tooltip:0 "Transform [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject, which will change their form of government to a Colonial Company. This type of subject is defined as follows:$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
+ lrsk_gov_var_chartered.4.b:0 "Not necessary."
+ lrsk_gov_var_chartered.4.b.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
