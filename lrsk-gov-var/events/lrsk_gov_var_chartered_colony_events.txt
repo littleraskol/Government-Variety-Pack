@@ -4,76 +4,6 @@
 
 namespace = lrsk_gov_var_chartered
 
-## Gate Event from Decision
-#planet_event = {
-#	id = lrsk_gov_var_chartered.1
-#
-#	is_triggered_only = yes
-#
-#  	hide_window = yes
-#
-#	trigger = {
-#        is_capital = no
-#        owner = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-#    }
-#
-#	immediate = { owner = { country_event = { id = lrsk_gov_var_chartered.2 } } }
-#}
-#
-## Create the vassal and assign ownership
-#country_event = {
-#	id = lrsk_gov_var_chartered.2
-#
-#	is_triggered_only = yes
-#
-#  	hide_window = yes
-#
-#	trigger = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-#
-#	immediate = {
-#		from = { save_event_target_as = lrsk_new_chartered_colony_capital }
-#        save_event_target_as = lrsk_chartering_agent
-#		owner_species = { save_event_target_as = lrsk_chartering_agent_species }
-#
-#        create_country = {
-#            name_list = event_target:lrsk_chartering_agent
-#            species = event_target:lrsk_chartering_agent_species
-#            type = default
-#            origin = "lrsk_gov_var_origin_colonial_charter"
-#            ignore_initial_colony_error = yes
-#            day_zero_contact = no
-#            ethos = event_target:lrsk_chartering_agent
-#            authority = auth_corporate
-#            civics = {
-#                civic = lrsk_gov_var_civic_mc_chartered_company
-#                civic = random
-#            }
-#            effect = {
-#                save_event_target_as = lrsk_new_chartered_colony
-#                establish_communications_no_message = event_target:lrsk_chartering_agent
-#                copy_techs_from = { target = event_target:lrsk_chartering_agent }
-#            }
-#        }
-#        event_target:lrsk_new_chartered_colony_capital = {
-#            set_owner = event_target:lrsk_new_chartered_colony
-#            set_capital = yes
-#            solar_system = {
-#                starbase = { set_owner = event_target:lrsk_new_chartered_colony }
-#            }
-#        }
-#        event_target:lrsk_new_chartered_colony = {
-#            create_starting_leaders = yes
-#            country_event = { id = game_start.9 }
-#            country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
-#            set_name = random # Fixes some naming issues
-#            set_subject_of = {
-#                who = event_target:lrsk_chartering_agent
-#                subject_type = lrsk_gov_var_subject_chartered_company
-#            }            
-#        }
-#	}
-#}
-
 # Whenever a country becomes a subject, determine if charter choice should be given to overlord
 country_event = {
 	id = lrsk_gov_var_chartered.1
@@ -98,6 +28,17 @@ country_event = {
 
     immediate = {
         log = "In chartered colony pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+
+        from = {
+            save_event_target_as = lrsk_chartering_agent
+            owner_species = { save_event_target_as = lrsk_chartering_agent_species }
+        }
+
+        # Detect if same species to modify event text later
+        if = { limit = { owner_species = { is_same_value = event_target:lrsk_chartering_agent_species } }
+            set_country_flag = lrsk_charter_subject_same_species_as_ol
+        }
+
         from = { country_event = { id = lrsk_gov_var_chartered.4 days = 3 } } # delayed to help play nice with vassal mods.
     }
 }
@@ -105,9 +46,21 @@ country_event = {
 country_event = {
 	id = lrsk_gov_var_chartered.2
 	title = lrsk_gov_var_chartered.2.name
-	desc = lrsk_gov_var_chartered.2.desc
 	picture = GFX_evt_partition
 	location = from
+
+    desc = {
+        trigger = {
+            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
+        }
+        text = lrsk_gov_var_chartered.2.desc.a
+    }
+    desc = {
+        trigger = {
+            event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
+        }
+        text = lrsk_gov_var_chartered.2.desc.b
+    }
 
 	is_triggered_only = yes
 
@@ -115,43 +68,28 @@ country_event = {
         save_event_target_as = lrsk_chartering_agent
         owner_species = { save_event_target_as = lrsk_chartering_agent_species }
         from = { save_event_target_as = lrsk_subject_to_charter }
+
         log = "In chartered colony choice event. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
     }
 
+    # Not same species, home rule
     option = {
         name = lrsk_gov_var_chartered.2.a
         custom_tooltip = lrsk_gov_var_chartered.2.a.tooltip
 
         trigger = {
+            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
         }
 
         allow = {
-            NOR = {
-                has_ethic = ethic_fanatic_xenophobe
-                has_ethic = ethic_xenophobe
+            OR = {
+                NOT = { has_ethic = ethic_fanatic_xenophobe }
+                from = { is_ai = no } # For an edge case: player vassalized by Fanatic Xenophobe chartering agent
             }
         }
 
         hidden_effect = {
             from  = {
-                #IF = { limit = { has_ethic = ethic_fanatic_authoritarian }
-                #    shift_ethic = ethic_egalitarian
-                #    shift_ethic = ethic_authoritarian # this will hopefully set them to "normal" authoritarian
-                #}
-                #ELSE_IF = {
-                #    limit = { OR = {
-                #        has_ethic = ethic_egalitarian
-                #        has_ethic = ethic_fanatic_egalitarian
-                #    } }
-                #    shift_ethic = ethic_authoritarian
-                #}
-                #IF = {
-                #    limit = { OR = {
-                #        has_ethic = ethic_pacifist
-                #        has_ethic = ethic_fanatic_pacifist
-                #    } }
-                #    shift_ethic = ethic_militarist
-                #}
                 change_government = {
                     authority = auth_corporate
                     civics = {
@@ -166,72 +104,75 @@ country_event = {
                 }
             }
             log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
-
-            ## Sadly, "change_government" cannot change main species...
-            #IF = {
-            #    limit = { NOR = {
-            #        has_ethic = ethic_xenophile
-            #        has_ethic = ethic_fanatic_xenophile
-            #    } }
-            #    from = {
-            #        change_government = {
-            #            ethos = event_target:lrsk_chartering_agent
-            #            species = event_target:lrsk_chartering_agent_species
-            #            authority = auth_corporate
-            #            civics = {
-            #                civic = lrsk_gov_var_civic_mc_chartered_company
-            #                civic = random
-            #            }
-            #        }
-            #    }
-            #}
-            #ELSE = {
-            #    from = {
-            #        change_government = {
-            #            ethos = event_target:lrsk_chartering_agent
-            #            authority = auth_corporate
-            #            civics = {
-            #                civic = lrsk_gov_var_civic_mc_chartered_company
-            #                civic = random
-            #            }
-            #        }
-            #    }
-            #}
-            #from = {
-            #    set_name = random # Fixes some naming issues
-            #    set_subject_of = {
-            #        who = event_target:lrsk_chartering_agent
-            #        subject_type = lrsk_gov_var_subject_chartered_company
-            #    }
-            #}
         }
 
         ai_chance = {
             factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
-				add = 200
+				add = 100
 				has_ethic = ethic_egalitarian
+                NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
-				add = -90
+				add = 100
+				has_ethic = ethic_xenophile
+			}
+			modifier = {
+				add = -50
 				has_ethic = ethic_authoritarian
+			}
+			modifier = {
+				add = -50
+				has_ethic = ethic_xenophobe
 			}
         }
     }
-
+    
+    # Same species
     option = {
         name = lrsk_gov_var_chartered.2.b
         custom_tooltip = lrsk_gov_var_chartered.2.b.tooltip
 
         trigger = {
+            event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
+        }
+
+        hidden_effect = {
+            from  = {
+                change_government = {
+                    authority = auth_corporate
+                    civics = {
+                        civic = lrsk_gov_var_civic_mc_chartered_company
+                        civic = random
+                    }
+                }
+                set_name = random # Fixes some naming issues
+                set_subject_of = {
+                    who = event_target:lrsk_chartering_agent
+                    subject_type = lrsk_gov_var_subject_chartered_company
+                }
+            }
+            log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+        }
+
+        ai_chance = {
+            factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+        }
+    }
+
+    # Not same species, foreign rule
+    option = {
+        name = lrsk_gov_var_chartered.2.c
+        custom_tooltip = lrsk_gov_var_chartered.2.c.tooltip
+
+        # Checking for player status because we don't want this to be an instant game over for a player!
+        trigger = {
             from = { is_ai = yes } # JIC
+            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
         }
 
         allow = {
-            NOR = {
-                has_ethic = ethic_fanatic_xenophile
-                has_ethic = ethic_xenophile
-            }
+            NOT = { has_ethic = ethic_fanatic_xenophile }
             from = { is_ai = yes } # just in double case!!
         }
 
@@ -301,19 +242,29 @@ country_event = {
         ai_chance = {
             factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
-				add = -90
+				add = -50
 				has_ethic = ethic_egalitarian
+                NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
-				add = 200
+				add = -50
+				has_ethic = ethic_xenophile
+			}
+			modifier = {
+				add = 100
 				has_ethic = ethic_authoritarian
+			}
+			modifier = {
+				add = 100
+				has_ethic = ethic_xenophobe
 			}
         }
     }
 
+    # Leave be
     option = {
-        name = lrsk_gov_var_chartered.2.c
-        custom_tooltip = lrsk_gov_var_chartered.2.c.tooltip
+        name = lrsk_gov_var_chartered.2.d
+        custom_tooltip = lrsk_gov_var_chartered.2.d.tooltip
 
         ai_chance = {
             factor = 0 # AI chartering corp should always turn its vassals into chartered colonies if possible.
