@@ -84,29 +84,30 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
 
 # NPC version of above
 lrsk_gov_var_civic_mc_chartered_company = {
-  potential = { civics = { civic = lrsk_gov_var_civic_mc_chartered_company } }
+  potential = { civics = { value = lrsk_gov_var_civic_mc_chartered_company } }
+  modification = no
 
   icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
   #description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
 
   possible = {
     authority = { value = auth_corporate }
-    ethics = {
-			NOR = {
-				text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
-				value = ethic_egalitarian
-				value = ethic_fanatic_egalitarian
-				value = ethic_pacifist
-				value = ethic_fanatic_pacifist
-			}
-    }
+    #ethics = {
+		#	NOR = {
+		#		text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
+		#		value = ethic_egalitarian
+		#		value = ethic_fanatic_egalitarian
+		#		value = ethic_pacifist
+		#		value = ethic_fanatic_pacifist
+		#	}
+    #}
   }
 
-  random_weight = { base = 1 }
+  random_weight = { base = 0 }
 
   modifier = {
-    station_gatherers_produces_mult = 0.15
-    station_researchers_produces_mult = 0.15
+    station_gatherers_produces_mult = 0.25
+    station_researchers_produces_mult = 0.25
   }
 }
 

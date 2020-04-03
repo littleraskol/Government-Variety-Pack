@@ -36,34 +36,35 @@ decision_lrsk_gov_var_rra = {
     }
 }
 
-#Create Chartered Colony vassal
-decision_lrsk_gov_var_charter_col = {
-    owned_planets_only = yes
-    icon = decision_victorious_army
-    
-    resources = {
-        category = decisions
-        cost = {
-            influence = 75
-        }        
-    }
-
-    potential = {
-        is_capital = no
-        owner = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-    }
-
-    effect = {
-        custom_tooltip = decision_lrsk_gov_var_charter_col_effects
-		hidden_effect = {
-            planet_event = { id = lrsk_gov_var_chartered.1 }
-		}
-    }
-
-    ai_weight = {
-        weight = 1  #dunno
-    }
-}
+##Create Chartered Colony vassal
+##Considering the benefits of each such vassal, being able to make a bunch of tiny one planet vassals like this is bad.
+#decision_lrsk_gov_var_charter_col = {
+#    owned_planets_only = yes
+#    icon = decision_victorious_army
+#    
+#    resources = {
+#        category = decisions
+#        cost = {
+#            influence = 75
+#        }        
+#    }
+#
+#    potential = {
+#        is_capital = no
+#        owner = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+#    }
+#
+#    effect = {
+#        custom_tooltip = decision_lrsk_gov_var_charter_col_effects
+#		hidden_effect = {
+#            planet_event = { id = lrsk_gov_var_chartered.1 }
+#		}
+#    }
+#
+#    ai_weight = {
+#        weight = 0  # This option isn't strictly necessary as the on_become_subject events should catch it.
+#    }
+#}
 
 #Undo Opts
 #Deprecated until I am sure I want to do this...

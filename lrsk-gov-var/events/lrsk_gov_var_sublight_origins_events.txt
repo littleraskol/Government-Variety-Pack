@@ -2071,6 +2071,26 @@ country_event = {
 	}
 }
 
+# Colonial Reform pre Start/Gate
+planet_event = {
+	id = lrsk_gov_var_sublight_origins.802
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { OR = {
+			has_origin = lrsk_gov_var_origin_sublight_empire
+			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		} }
+	}
+
+	immediate = {
+		log = "In 'Colonial Reform pre Start/Gate' event"
+		owner = { country_event = { id = lrsk_gov_var_sublight_origins.80 } }
+	}
+}
+
 # Colonial Reform Start/Gate
 country_event = {
 	id = lrsk_gov_var_sublight_origins.80

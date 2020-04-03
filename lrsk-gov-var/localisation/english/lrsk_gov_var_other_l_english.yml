@@ -203,6 +203,15 @@ l_english:
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
 
+ # Planetmind Overseer
+ job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
+ job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
+ job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
+ job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§! and increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! by §G+2§!. However, they produce §R+15§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R3§! £food£ §H$food$§! and £energy£ §H$energy$§!"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
+
  ## Decisions
 
  # Run Recursive Audit
@@ -212,17 +221,8 @@ l_english:
 
  # Charter Colonial Company
  decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
- decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital. "
- decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
-
- # Planetmind Overseer
- job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
- job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
- job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
- job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§! and increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! by §G+2§!. However, they produce §R+15§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R3§! £food£ §H$food$§! and £energy£ §H$energy$§!"
- mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
- mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
- mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
+ decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital."
+ decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\nIt will have the same Ethics and main species as your empire."
 
  ## Empire Modifiers
  
@@ -261,6 +261,38 @@ l_english:
  lrsk_gov_var_empire_colonial_corruption_crippling_desc:0 "When everyone is on the take, being an honest official is a liability."
  lrsk_gov_var_empire_colonial_corruption_entrenched:0 "Entrenched $LRSK_GOV_VAR_COL_CORR$"
  lrsk_gov_var_empire_colonial_corruption_entrenched_desc:0 "A culture of corruption pervades the colonial administration, and it seems impossible to ever uproot."
+
+ lrsk_gov_var_empire_colonial_trade_1:0 "Colonial Trade Benefits"
+ lrsk_gov_var_empire_colonial_trade_2:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_3:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_4:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_5:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_6:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_7:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_8:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_9:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_10:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_11:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_12:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_13:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_14:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_15:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ 
+ lrsk_gov_var_empire_colonial_trade_1_desc:0 "Trade between the metropole and the chartered colonies yields great wealth."
+ lrsk_gov_var_empire_colonial_trade_2_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_3_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_4_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_5_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_6_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_7_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_8_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_9_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_10_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_11_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_12_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_13_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_14_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_15_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
 
  ## Planet Modifiers
 
@@ -676,12 +708,21 @@ l_english:
 
  # Chartered Colony Stuff
 
- lrsk_gov_var_chartered.4.name:0 "Subjugation of the [from.GetName]"
- lrsk_gov_var_chartered.4.desc:0 "The [from.GetName] has submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us."
- lrsk_gov_var_chartered.4.a:0 "Make it so."
- lrsk_gov_var_chartered.4.a.tooltip:0 "Transform [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject, which will change their form of government to a Colonial Company. This type of subject is defined as follows:$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
- lrsk_gov_var_chartered.4.b:0 "Not necessary."
- lrsk_gov_var_chartered.4.b.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
+ lrsk_gov_var_chartered.2.name:0 "Subjugation of the [from.GetName]"
+ lrsk_gov_var_chartered.2.desc:0 "The [from.GetSpeciesNamePlural] of the [from.GetName] have submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us."
+ lrsk_gov_var_chartered.2.a:0 "Put some trustworthy [from.GetSpeciesNamePlural] in charge."
+ lrsk_gov_var_chartered.2.a.tooltip:0 "Make [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThey will retain their governing Ethics and their main species will remain [from.GetSpeciesName]."
+ lrsk_gov_var_chartered.2.b:0 "[from.GetSpeciesNamePlural] cannot be trusted to govern themselves."
+ lrsk_gov_var_chartered.2.b.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural]."
+ lrsk_gov_var_chartered.2.c:0 "Not necessary."
+ lrsk_gov_var_chartered.2.c.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
+
+ lrsk_gov_var_chartered.4.name:0 "Balance of Colonial Trade"
+ lrsk_gov_var_chartered.4.desc:0 "The bi-yearly assessment of colonial trade benefits has been conducted. Every $SUBJECT_lrsk_gov_var_subject_chartered_company$ subject contributes a §G+2%§! £trade_value£ $TRADE_VALUE$ bonus and a §G-1%§! Market Fee discount (to a maximum of +30% and -15% respectively)."
+ lrsk_gov_var_chartered.4.a:0 "You love to see it."
+ lrsk_gov_var_chartered.4.a.tooltip:0 "Check the Empire Status screen to see the effect of this as an empire modifier."
+ lrsk_gov_var_chartered.4.b:0 "Great, but don't bug me with this again."
+ lrsk_gov_var_chartered.4.b.tooltip:0 "$lrsk_gov_var_chartered.5.a.tooltip$\n\n§PYou will not see this message again.§!"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.

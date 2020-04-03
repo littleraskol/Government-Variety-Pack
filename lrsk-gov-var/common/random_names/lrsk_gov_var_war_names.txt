@@ -10,11 +10,11 @@ war_name_format = {
 			add = 999
 			OR = {
 				using_war_goal = {
-					type = cb_lrsk_gov_var_subvas
+					type = wg_lrsk_gov_var_subvas
 					owner = attacker
 				}
 				using_war_goal = {
-					type = cb_lrsk_gov_var_subheg
+					type = wg_lrsk_gov_var_subheg
 					owner = attacker
 				}
 			}
@@ -30,27 +30,27 @@ war_name_format = {
 	format = "[This.MainAttacker.GetAdj] - [This.MainDefender.GetAdj] Reform Enforcement Action"
 }
 
-# Colonialism
-war_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 999
-			using_war_goal = {
-                type = wg_lrsk_gov_var_impchart
-                owner = attacker
-            }
-            #attacker = {
-			#	has_federation = no
-			#	NOT = { has_government = gov_megacorporation }
-			#}
-			#defender = {
-			#	has_federation = no
-			#}
-		}
-	}
-	format = "[This.MainAttacker.GetAdj] - [This.MainDefender.GetAdj] Colonization War"
-}
+## Colonialism
+#war_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 999
+#			using_war_goal = {
+#                type = wg_lrsk_gov_var_impchart
+#                owner = attacker
+#            }
+#            #attacker = {
+#			#	has_federation = no
+#			#	NOT = { has_government = gov_megacorporation }
+#			#}
+#			#defender = {
+#			#	has_federation = no
+#			#}
+#		}
+#	}
+#	format = "[This.MainAttacker.GetAdj] - [This.MainDefender.GetAdj] Colonization War"
+#}
 
 # Rare case...
 war_name_format = {
