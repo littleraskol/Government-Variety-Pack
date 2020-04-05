@@ -348,7 +348,11 @@ country_event = {
         ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 } }
         ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 } }
         
-        if = { limit = { NOT  = { has_country_flag = lrsk_chartered_no_trade_notice } }
+        if = {
+            limit = { NOR = { 
+                has_country_flag = lrsk_chartered_no_trade_notice
+                has_country_flag = lrsk_chartered_trade_notice_cooldown
+             } }
             country_event = { id = lrsk_gov_var_chartered.4 }
         }
     }
@@ -365,6 +369,14 @@ country_event = {
         name = lrsk_gov_var_chartered.4.a
         custom_tooltip = lrsk_gov_var_chartered.4.a.tooltip
 
+        hidden_effect = {
+            # 6 month notification cooldown
+            set_timed_country_flag = {
+                flag = lrsk_chartered_trade_notice_cooldown
+                days = 180
+            }
+        }
+
         ai_chance = {
             factor = 0 # meh
         }
@@ -380,6 +392,52 @@ country_event = {
 
         ai_chance = {
             factor = 1 # meh
+        }
+    }
+}
+
+# Housekeeing (Monthly):
+# Calculate trade value bonus
+# If an AI empire has charted company civic, and is not a subject to anyone, upgrade to chartering board civic.
+country_event = {
+	id = lrsk_gov_var_chartered.1000
+
+  	hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        OR ={
+            has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+            has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
+        }
+    }
+
+    immediate = {
+        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+            # Calculate trade value bonus
+            IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
+                country_event = { id = lrsk_gov_var_chartered.3 }
+            }
+        }
+        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
+            # If no overlord, promote civic (as athos appropriate)
+            IF = {
+                limit = {
+                    is_subject = no
+                    NOR = {
+                        has_ethic = ethic_egalitarian
+                        has_ethic = ethic_fanatic_egalitarian
+                        has_ethic = ethic_pacifist
+                        has_ethic = ethic_fanatic_pacifist
+                    }
+                }
+                change_government = {
+                    civics = {
+                        civic = lrsk_gov_var_civic_mc_chart_corp_board
+                        civic = random
+                    }
+                }
+            }
         }
     }
 }

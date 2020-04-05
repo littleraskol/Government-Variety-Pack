@@ -10,32 +10,40 @@ on_game_start = {
 
 on_game_start_country = {
 	events = {
-		lrsk_gov_var_uplift.2
-		lrsk_gov_var_uplift.3
+		lrsk_gov_var_uplift.2						# Tutor system finalizations and watchpost system
+		lrsk_gov_var_uplift.3						# Trait menu selector
+	}
+}
+
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		lrsk_gov_var_chartered.1000					# Chartered company housekeeping
 	}
 }
 
 on_yearly_pulse_country = {
 	events = {
-		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
-		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.8 # Not the best solution but I don't want to poll all leaders everywhere too often...
+		lrsk_gov_var_shroud_touched.4 				# This gets checked a few places, but having an occasional fallback check is good.
+		lrsk_gov_var_shroud_touched.7 				# Not the best solution but I don't want to poll all leaders everywhere too often...
+		lrsk_gov_var_shroud_touched.8 				# Not the best solution but I don't want to poll all leaders everywhere too often...
 
-		# Just in case some mod removed starting planet features. To be deprecated in future version (i.e., is immediate fix).
-		lrsk_government_variety_pack_backend.2 
+		lrsk_government_variety_pack_backend.2 		# Just in case some mod removed starting planet features. To be deprecated in future version (i.e., is immediate fix).
+
+		lrsk_gov_var_sublight_origins.1000			# Sublight housekeeping
 	}
 }
 
 on_bi_yearly_pulse = {
 	events = {
-		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.10 # Not the best solution but I don't want to poll all pops everywhere too often...
+		lrsk_gov_var_shroud_touched.9 				# Not the best solution but I don't want to poll all leaders everywhere too often...
+		lrsk_gov_var_shroud_touched.10 				# Not the best solution but I don't want to poll all pops everywhere too often...
 	}
 }
 
 on_pop_grown = {
 	events = {
-		lrsk_gov_var_shroud_touched.2 # Handles adding esper trait
+		lrsk_gov_var_shroud_touched.2 				# Handles adding esper trait
 	}
 }
 
@@ -43,7 +51,7 @@ on_pop_grown = {
 # scope: country, from: leader
 on_leader_spawned = {
 	events = {
-		lrsk_gov_var_shroud_touched.5 # Leaders get esper trait as appropriate
+		lrsk_gov_var_shroud_touched.5 				# Leaders get esper trait as appropriate
 	}
 }
 
@@ -52,13 +60,13 @@ on_leader_spawned = {
 # This = Country
 on_ruler_back_to_pre_ruler_class = {
 	events = {
-		lrsk_gov_var_shroud_touched.6 # Addes esper leader traits to demoted ruler without them
+		lrsk_gov_var_shroud_touched.6 				# Addes esper leader traits to demoted ruler without them
 	}
 }
 
 on_tech_increased = {
 	events = {
-		lrsk_gov_var_sublight_origins.20
+		lrsk_gov_var_sublight_origins.20			# An FTL obtain condition for sublight vassals
 	}
 }
 
@@ -66,6 +74,6 @@ on_tech_increased = {
 # From = subject's overlord
 on_becoming_subject = {
 	events = {
-		lrsk_gov_var_chartered.3 # Launches colony charter choice if appropriate
+		lrsk_gov_var_chartered.3 					# Launches colony charter choice if appropriate
 	}
 }
