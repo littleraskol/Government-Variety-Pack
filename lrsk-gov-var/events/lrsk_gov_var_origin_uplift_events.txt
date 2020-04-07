@@ -294,6 +294,14 @@ country_event = {
 			country_event = { id = lrsk_gov_var_uplift.7 }
 		}
 	}
+
+	after = {
+		country_event = {
+			id = lrsk_gov_var_uplift.8
+			days = 30
+			random = 10
+		}
+	}
 }
 
 # MI traits
@@ -311,6 +319,7 @@ country_event = {
 
 	immediate = {
 		log = "in mech trait event"
+		set_country_flag = lrsk_uplift_got_trait_offer
 	}
 
 	option = {
@@ -376,6 +385,14 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = lrsk_uplift_mech_4
 			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	after = {
+		country_event = {
+			id = lrsk_gov_var_uplift.8
+			days = 30
+			random = 10
 		}
 	}
 }
@@ -735,6 +752,11 @@ country_event = {
 	diplomatic = yes
 	
 	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+		NOT = { has_country_flag = lrsk_uplift_got_system_offer }
+	}
 	
 	picture_event_data = {
 		portrait = event_target:lrsk_my_uplift_tutor
@@ -747,6 +769,8 @@ country_event = {
 	immediate = {
 		overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
 		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
+		set_country_flag = lrsk_uplift_got_system_offer
+		log = "In uplift system offer"
 	}
 	
 	option = {
@@ -870,3 +894,20 @@ country_event = {
 		}
 	}
 }
+
+## System Offer fallback
+#country_event = {
+#	id = lrsk_gov_var_uplift.11
+#	hide_window = yes
+#	mean_time_to_happen = { months = 1 }
+#
+#	trigger = {
+#		has_origin = lrsk_gov_var_origin_uplift
+#		has_country_flag = lrsk_uplift_got_trait_offer
+#		NOT = { has_country_flag = lrsk_uplift_got_system_offer }
+#	}
+#
+#	immediate = {
+#		country_event = { id = lrsk_gov_var_uplift.8 }		
+#	}
+#}

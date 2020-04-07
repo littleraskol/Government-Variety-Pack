@@ -87,14 +87,16 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
 
 # NPC version of above
 lrsk_gov_var_civic_mc_chartered_company = {
-  potential = { civics = { value = lrsk_gov_var_civic_mc_chartered_company } }
+  potential = { 
+    authority = { value = auth_corporate }
+    civics = { value = lrsk_gov_var_civic_mc_chartered_company }
+  }
   modification = no
 
   icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
   #description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
 
   possible = {
-    authority = { value = auth_corporate }
     civics = { NOT = { value = lrsk_gov_var_civic_mc_chart_corp_board } }
     #ethics = { # ethos locking this just makes everything more complicated
 		#	NOR = {

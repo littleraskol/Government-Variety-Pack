@@ -346,7 +346,7 @@ lrsk_gov_var_origin_grand_alliance_npc = {
 #Uplift: Start as the "ward" (like a protectorate) of an advanced start empire, who are benefactors that uplifted you. Able to take uplift traits.
 lrsk_gov_var_origin_uplift = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/origins_enlightened.dds"
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_uplift.dds"
 	picture = GFX_lrsk_gov_var_origin_uplift
 	max_once_global = yes
 
@@ -360,6 +360,17 @@ lrsk_gov_var_origin_uplift = {
 				#value = ethic_gestalt_consciousness
 				#value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				#value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_machine_assimilator
+				value = civic_machine_servitor
 			}
 		}
 	}
