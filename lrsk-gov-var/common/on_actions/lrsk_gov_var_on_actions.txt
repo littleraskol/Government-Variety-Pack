@@ -8,6 +8,12 @@ on_game_start = {
 	}
 }
 
+on_game_start_country = {
+	events = {
+		lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
+	}
+}
+
 on_yearly_pulse_country = {
 	events = {
 		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.

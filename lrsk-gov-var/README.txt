@@ -173,6 +173,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.4 (04-16-20) - Small fixes and improvements
+-Added icons for Educational Consortium, Scientific Management, and all new origins.
+-Fix: Natural Esper costs no trait points (this prevented players using the Shroud-Touched origin from selecting as many species traits as should be possible).
+-Fix: Ported over logic to prevent origins that spawn nearby AI-controlled systems from being boxed in.
+-Fix: Grand Alliances should not spawn after game start...
+
 v1.6.3 (03-26-20) - Deposit hotfix attempt 2
 -Added a checkup event to add back any planet deposits that might be removed by other mods.
 
