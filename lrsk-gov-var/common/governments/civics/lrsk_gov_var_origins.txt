@@ -320,6 +320,10 @@ lrsk_gov_var_origin_grand_alliance = {
 
 	random_weight = {
 		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -378,9 +382,11 @@ lrsk_gov_var_origin_uplift = {
 	description = "lrsk_gov_var_origin_tooltip_uplift_effects"
 	flags = { custom_start_screen }
 
-	random_weight = {
-		base = 1
-	}
+	# Decided against allowing anything that breaks advanced empire logic to be random.
+	# Removing any weighting supposedly prevents random AI spawn per: forum.paradoxplaza.com/forum/index.php?threads/how-to-make-an-origin-player-only.1370184/
+	#random_weight = {
+	#	base = 1
+	#}
 }
 
 #Sublight Empire: Start with several same-species vassals bound to you by the monopoly on FTL that you developed first, although this may not last...
@@ -416,9 +422,9 @@ lrsk_gov_var_origin_sublight_empire = {
 	traits = {
 	}
 
-	random_weight = {
-		base = 0
-	}
+	#random_weight = {
+	#	base = 0
+	#}
 }
 
 #Sublight Commonwealth: More benign version of Sublight Empire
@@ -455,9 +461,9 @@ lrsk_gov_var_origin_sublight_commonwealth = {
 	traits = {
 	}
 
-	random_weight = {
-		base = 0
-	}
+	#random_weight = {
+	#	base = 0
+	#}
 }
 
 # NPC subject of above - Loyal

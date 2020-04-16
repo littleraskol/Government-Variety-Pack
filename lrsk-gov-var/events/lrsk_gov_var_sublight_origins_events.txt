@@ -896,16 +896,16 @@ country_event = {
 				}			
 			}
 
-			# I want to create one more hyperlane out of the home system just in case all direct neighbor systems are taken.
-			# This won't guarantee a route out without going through a vassal, but...
-			closest_system = {
-				limit = {
-					has_owner = no
-					NOT = { has_hyperlane_to = prev }
-				}
-				log = "hyperlane thing"
-				add_hyperlane = { from = this to = prev }
-			}
+			## I want to create one more hyperlane out of the home system just in case all direct neighbor systems are taken.
+			## This won't guarantee a route out without going through a vassal, but...
+			#closest_system = {
+			#	limit = {
+			#		has_owner = no
+			#		NOT = { has_hyperlane_to = prev }
+			#	}
+			#	log = "hyperlane thing"
+			#	add_hyperlane = { from = this to = prev }
+			#}
 		} }
 
 		# Set overlord opinions
