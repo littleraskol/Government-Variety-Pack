@@ -418,7 +418,10 @@ country_event = {
         IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
             # Calculate trade value bonus
             IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
-                country_event = { id = lrsk_gov_var_chartered.3 }
+                country_event = {
+                    id = lrsk_gov_var_chartered.3
+                    days = 3                        # delay to not interfere with application of bonuses.
+                }
             }
         }
         IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }

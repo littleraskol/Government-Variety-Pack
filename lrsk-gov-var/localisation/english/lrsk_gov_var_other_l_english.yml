@@ -412,6 +412,8 @@ l_english:
  opinion_lrsk_gov_var_uplift_pupil:0 "Uplift Pupil"
  opinion_lrsk_gov_var_protective_uplift_tutor:0 "Protectiveness"
  opinion_lrsk_gov_var_protective_uplift_tutor_d:0 "$opinion_lrsk_gov_var_protective_uplift_tutor$"
+ opinion_lrsk_gov_var_respected_uplift_tutor:0 "Respected by Pupil"
+ opinion_lrsk_gov_var_disrespected_uplift_tutor:0 "Uppity Pupil"
 
  # Sublight Vasslas
  opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony" # Loyalists have passive approval
@@ -705,6 +707,39 @@ l_english:
  lrsk_gov_var_uplift.8.mech.b:0 "Warning: Unclear if our systems are prepared."
  lrsk_gov_var_uplift.8.norm.b:0 "That's kind but... it's a scary galaxy out here!"
  lrsk_gov_var_uplift.8.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will continue to protect us from the starbase in [lrsk_uplift_watchpost_star.GetName] system. The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us." # +unity
+ 
+ lrsk_gov_var_uplift.11.hive.desc:0 "Curious. [Root.GetSpeciesNamePlural] have spawned a novel design... Rather than watching the planetboud from afar, they build their observation post directly above the primitives' world? The [lrsk_my_uplift_tutor.GetName] watches in all directions and sees all, but looking back, somehow we can see even more clearly."
+ lrsk_gov_var_uplift.11.mech.desc:0 "Query for [Root.GetName]: Unexpected custodial behavior. When the [lrsk_my_uplift_tutor.GetName] uplifted [Root.GetSpeciesNamePlural], the ideal vantage point was determined to be in a nearby system. Does building directly above a primitive world offer some uncalculated advantage?"
+ lrsk_gov_var_uplift.11.norm.desc:0 "Clever [Root.GetSpeciesNamePlural]! Building your watchpost for planetbound primitives directly above thier world? Instead of lightyears away? What a good idea. Why didn't we think of it!"
+ lrsk_gov_var_uplift.11.hive.a:0 "Our intellectual growth overwhelms the [lrsk_my_uplift_tutor.GetName]!"
+ lrsk_gov_var_uplift.11.mech.a:0 "Offer: To upgrade [lrsk_my_uplift_tutor.GetName] planning algorithms."
+ lrsk_gov_var_uplift.11.norm.a:0 "Perhaps the student has surpassed the master?"
+ lrsk_gov_var_uplift.11.a.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will not appreciate your attitude." # +100 influence
+ lrsk_gov_var_uplift.11.hive.b:0 "Doubt besets our billions of minds, however."
+ lrsk_gov_var_uplift.11.mech.b:0 "Risk factors within limits, but still worrying."
+ lrsk_gov_var_uplift.11.norm.b:0 "Here's hoping it doesn't backfire..."
+ lrsk_gov_var_uplift.11.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us."
+ lrsk_gov_var_uplift.11.hive.c:0 "Only with your guidance could our collective develop so far."
+ lrsk_gov_var_uplift.11.mech.c:0 "All systems upgrade based on prior designs."
+ lrsk_gov_var_uplift.11.norm.c:0 "We saw farther for standing on the shoulders of giants."
+ lrsk_gov_var_uplift.11.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will appreciate your attitude." # +50 influence
+
+ LRSK_UPLIFT_REWARD_COMMON:0 "of the [from.GetSpeciesNamePlural] reminds us of our roots and fills us with pride. We have come so far that we now raise other primitives to the stars, as our tutors once did for us."
+ LRSK_UPLIFT_REWARD_TOOLTIP:0 "get some modifier"
+
+ lrsk_gov_var_uplift.NUMX.name:0 "Uplift of the [from.GetSpeciesNamePlural]"
+ lrsk_gov_var_uplift.NUMX.desc:0 "The successful uplift $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.NUMX.a:0 "Our role in the cycle of galactic life is confirmed."
+ lrsk_gov_var_uplift.NUMX.a.tooltip:0 "$LRSK_UPLIFT_REWARD_TOOLTIP$"
+ lrsk_gov_var_uplift.NUMX.b:0 "Great, but don't bug me with this again."
+ lrsk_gov_var_uplift.NUMX.b.tooltip:0 "$lrsk_gov_var_uplift.NUMX.a.tooltip$\n\n§PYou will not see this message again.§!"
+
+ lrsk_gov_var_uplift.NUMY.name:0 "Enlightenment of the [from.GetSpeciesNamePlural]"
+ lrsk_gov_var_uplift.NUMY.desc:0 "The successful enlightenment $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.NUMY.a:0 "$lrsk_gov_var_uplift.NUMX.a$"
+ lrsk_gov_var_uplift.NUMY.a.tooltip:0 "$LRSK_UPLIFT_REWARD_TOOLTIP$"
+ lrsk_gov_var_uplift.NUMY.b:0 "$lrsk_gov_var_uplift.NUMX.b$"
+ lrsk_gov_var_uplift.NUMY.b.tooltip:0 "$lrsk_gov_var_uplift.NUMY.a.tooltip$\n\n§PYou will not see this message again.§!"
 
  # Chartered Colony Stuff
 

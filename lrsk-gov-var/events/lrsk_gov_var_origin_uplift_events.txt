@@ -756,6 +756,8 @@ country_event = {
 	trigger = {
 		has_origin = lrsk_gov_var_origin_uplift
 		NOT = { has_country_flag = lrsk_uplift_got_system_offer }
+		is_subject = yes
+		overlord = { has_country_flag = lrsk_uplift_tutor }
 	}
 	
 	picture_event_data = {
@@ -897,7 +899,7 @@ country_event = {
 
 ## System Offer fallback
 #country_event = {
-#	id = lrsk_gov_var_uplift.11
+#	id = lrsk_gov_var_uplift.81
 #	hide_window = yes
 #	mean_time_to_happen = { months = 1 }
 #
@@ -911,3 +913,337 @@ country_event = {
 #		country_event = { id = lrsk_gov_var_uplift.8 }		
 #	}
 #}
+
+# First obsv station (requires forwarding event from ship to country)
+ship_event = {
+	id = lrsk_gov_var_uplift.110
+
+  	hide_window = yes
+    is_triggered_only = yes
+
+	trigger = { owner = {
+		has_origin = lrsk_gov_var_origin_uplift
+		NOT = { has_country_flag = lrsk_uplift_obsv_station_msg }
+		is_subject = yes
+		overlord = { has_country_flag = lrsk_uplift_tutor }
+	} }
+
+	immediate = { owner = {
+		country_event = {
+			id = lrsk_gov_var_uplift.11
+			days = 1
+		}
+	} }
+
+}
+country_event = {
+	id = lrsk_gov_var_uplift.11
+	title = TRANSMISSION
+
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+		}
+		text = "lrsk_gov_var_uplift.11.hive.desc"
+	}
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+		}
+		text = "lrsk_gov_var_uplift.11.mech.desc"
+	}
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { is_gestalt = no }
+		}
+		text = "lrsk_gov_var_uplift.11.norm.desc"
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_uplift
+		NOT = { has_country_flag = lrsk_uplift_obsv_station_msg }
+		is_subject = yes
+		overlord = { has_country_flag = lrsk_uplift_tutor }
+	}
+	
+	picture_event_data = {
+		portrait = event_target:lrsk_my_uplift_tutor
+		planet_background = event_target:lrsk_my_uplift_tutor
+		graphical_culture = event_target:lrsk_my_uplift_tutor
+		city_level = event_target:lrsk_my_uplift_tutor
+		room = event_target:lrsk_my_uplift_tutor
+	}
+
+	immediate = {
+		overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
+		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
+		set_country_flag = lrsk_uplift_obsv_station_msg
+		log = "In obsv station message"
+	}
+	
+	option = {
+		name = lrsk_gov_var_uplift.11.hive.a
+		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
+
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+		}
+		add_resource = { influence = 100 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_disrespected_uplift_tutor
+				}
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.mech.a
+		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+		}
+		add_resource = { influence = 100 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_disrespected_uplift_tutor
+				}
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.norm.a
+		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { is_gestalt = no }
+		}
+		add_resource = { influence = 100 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_disrespected_uplift_tutor
+				}
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.hive.b
+		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+		}
+
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_protective_uplift_tutor
+				}
+				country_event = { id = lrsk_gov_var_uplift.10 days = 7200 }
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.mech.b
+		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+		}
+
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_protective_uplift_tutor
+				}
+				country_event = { id = lrsk_gov_var_uplift.10 days = 7200 }
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.norm.b
+		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { is_gestalt = no }
+		}
+		add_resource = { unity = 200 }
+
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_protective_uplift_tutor
+				}
+				country_event = { id = lrsk_gov_var_uplift.10 days = 7200 }
+			}
+		}
+	}
+	
+	option = {
+		name = lrsk_gov_var_uplift.11.hive.c
+		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
+
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+		}
+		add_resource = { influence = 50 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_respected_uplift_tutor
+				}
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.mech.c
+		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+		}
+		add_resource = { influence = 50 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_respected_uplift_tutor
+				}
+			}
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.11.norm.c
+		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { is_gestalt = no }
+		}
+		add_resource = { influence = 50 }
+		
+		hidden_effect = {
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_respected_uplift_tutor
+				}
+			}
+		}
+	}
+}
+
+# Catch uplift
+planet_event = {
+	id = lrsk_gov_var_uplift.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	immediate = {
+		
+	}
+}
+
+# Notify uplift
+country_event = {
+	id = lrsk_gov_var_uplift.NUMX
+	title = lrsk_gov_var_uplift.NUMX.name
+	desc = lrsk_gov_var_uplift.NUMX.desc
+	picture = GFX_lrsk_genetic_modification
+    is_triggered_only = yes
+
+    option = {
+        name = lrsk_gov_var_uplift.NUMX.a
+        custom_tooltip = lrsk_gov_var_uplift.NUMX.a.tooltip
+
+        hidden_effect = {
+			# Modifier
+        }
+
+        ai_chance = {
+            factor = 0 # meh
+        }
+    }
+
+    option = {
+        name = lrsk_gov_var_uplift.NUMX.b
+        custom_tooltip = lrsk_gov_var_uplift.NUMX.b.tooltip
+
+        hidden_effect = {
+            set_country_flag = lrsk_uplift_no_reward_notice
+        }
+
+        ai_chance = {
+            factor = 1 # meh
+        }
+    }
+
+}
+
+# Catch enlighten
+country_event = {
+	id = lrsk_gov_var_uplift.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		#has_origin = lrsk_gov_var_origin_uplift
+	}
+}
+
+# Notify enlighten
+country_event = {
+	id = lrsk_gov_var_uplift.NUMY
+	title = lrsk_gov_var_uplift.NUMY.name
+	desc = lrsk_gov_var_uplift.NUMY.desc
+	picture = GFX_lrsk_space_station
+    is_triggered_only = yes
+
+    option = {
+        name = lrsk_gov_var_uplift.NUMY.a
+        custom_tooltip = lrsk_gov_var_uplift.NUMY.a.tooltip
+
+        hidden_effect = {
+			# Modifier
+        }
+
+        ai_chance = {
+            factor = 0 # meh
+        }
+    }
+
+    option = {
+        name = lrsk_gov_var_uplift.NUMY.b
+        custom_tooltip = lrsk_gov_var_uplift.NUMY.b.tooltip
+
+        hidden_effect = {
+            set_country_flag = lrsk_uplift_no_reward_notice
+        }
+
+        ai_chance = {
+            factor = 1 # meh
+        }
+    }
+}

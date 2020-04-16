@@ -75,5 +75,19 @@ on_tech_increased = {
 on_becoming_subject = {
 	events = {
 		lrsk_gov_var_chartered.3 					# Launches colony charter choice if appropriate
+		lrsk_gov_var_uplift.13						# Apply bonus to Uplift origin empire that enlightened
+	}
+}
+
+# Triggers when a Special Project to uplift a pre-sapient species is completed.
+# Note that this will trigger once for each combination of planet & original
+# species (but for uplifting this should be only once).
+#
+# Scope = planet_event
+# This = planet scope
+# From = uplifted species (pre-modification)
+on_uplift_completion = {
+	events = {
+		lrsk_gov_var_uplift.12						# Apply bonus to Uplift origin empire that uplifted
 	}
 }
