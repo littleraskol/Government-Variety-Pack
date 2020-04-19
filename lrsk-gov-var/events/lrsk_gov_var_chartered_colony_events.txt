@@ -436,12 +436,12 @@ country_event = {
             IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
                 country_event = {
                     id = lrsk_gov_var_chartered.3
-                    days = 3                        # delay to not interfere with application of bonuses.
+                    days = 1                        # delay to not interfere with application of bonuses.
                 }
             }
         }
         IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
-            # If no overlord, promote civic (as athos appropriate)
+            # If no overlord, promote civic (as ethos appropriate)
             IF = {
                 limit = {
                     is_subject = no
@@ -458,6 +458,7 @@ country_event = {
                         civic = random
                     }
                 }
+                set_name = random # Fixes some naming issues
             }
         }
     }
