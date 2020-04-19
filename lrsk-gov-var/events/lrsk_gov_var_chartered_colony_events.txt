@@ -118,12 +118,20 @@ country_event = {
 				has_ethic = ethic_xenophile
 			}
 			modifier = {
+				add = 200
+				has_ethic = ethic_fanatic_xenophile
+			}
+			modifier = {
 				add = -50
 				has_ethic = ethic_authoritarian
 			}
 			modifier = {
 				add = -50
 				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				add = 10000
+				from = { is_ai = no }
 			}
         }
     }
@@ -257,6 +265,14 @@ country_event = {
 			modifier = {
 				add = 100
 				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				add = 200
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				factor = 0
+				from = { is_ai = no }   # Should not be possible but whatever, can't be too sure
 			}
         }
     }
