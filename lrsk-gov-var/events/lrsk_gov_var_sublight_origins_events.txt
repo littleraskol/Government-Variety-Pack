@@ -2487,22 +2487,29 @@ country_event = {
 							}
 						}
 						ELSE = {
-							remove_country_flag = lrsk_sublight_overlord_bailed_on_hegemony # not valid if president up and quits
+							remove_country_flag = lrsk_sublight_overlord_bailed_on_hegemony # not valid if heg president
+							set_country_flag = lrsk_sublight_overlord_is_hegemony_prez
 						}
 					} }
 				}
-				leave_alliance = { override_requirements = yes }
+				IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_is_hegemony_prez } }
+					leave_alliance = { override_requirements = yes }
+				}
 			}
 			every_subject = {
-				limit = { has_country_flag = lrsk_sublight_colony_accepted_federation } # probably redundant, all refusers should be indy
-				set_subject_of = { who = none }
+				limit = { has_country_flag = lrsk_sublight_colony_accepted_federation }
+				set_subject_of = { who = none } # probably redundant, all refusers should be indy
 				join_alliance = {
 					who = event_target:lrsk_sublight_overlord
 					override_requirements = yes
 				}
 				remove_country_flag = lrsk_sublight_colony_accepted_federation
 			}
-			IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+			IF = {
+				limit = {
+					has_origin = lrsk_gov_var_origin_sublight_empire
+					NOT = { has_country_flag = lrsk_sublight_overlord_is_hegemony_prez }
+				}
 				federation = { 
 					set_federation_type = hegemony_federation
 					set_name = random
