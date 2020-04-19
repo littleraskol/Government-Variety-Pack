@@ -503,6 +503,9 @@ lrsk_gov_var_origin_sublight_colony_gsp = {
 	}
 
 	possible = {
+		civics = {
+			NOT = { value = civic_fanatic_purifiers }		# Hopefully this prevents random purifiers!
+		}
 	}
 	
 	description = lrsk_gov_var_origin_tooltip_sublight_colony_gsp_effects
