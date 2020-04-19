@@ -1952,7 +1952,7 @@ country_event = {
 
 		allow = {
 			has_resource = {
-				amount > 499
+				amount >= 500
 				type = energy
 			}
 		}
@@ -1977,7 +1977,7 @@ country_event = {
 
 		allow = {
 			has_resource = {
-				amount > 49
+				amount >= 50
 				type = influence
 			}
 		}
@@ -2157,6 +2157,7 @@ country_event = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
 				set_country_flag = lrsk_sublight_colony_offered_federation
 			}
+			set_country_flag = lrsk_sublight_overlord_offered_federation
 		}
 	}
 
@@ -2171,6 +2172,7 @@ country_event = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
 				set_country_flag = lrsk_sublight_colony_offered_vassalization
 			}
+			set_country_flag = lrsk_sublight_overlord_offered_vassalization
 		}
 	}
 
@@ -2185,6 +2187,7 @@ country_event = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
 				set_country_flag = lrsk_sublight_colony_offered_federation
 			}
+			set_country_flag = lrsk_sublight_overlord_offered_federation
 		}
 	}
 
@@ -2199,6 +2202,7 @@ country_event = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_satellite }
 				set_country_flag = lrsk_sublight_colony_offered_vassalization
 			}
+			set_country_flag = lrsk_sublight_overlord_offered_vassalization
 		}
 	}
 
@@ -2411,7 +2415,7 @@ country_event = {
 					set_country_flag = lrsk_sublight_colony_rejected_federation
 				}
 				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
-				remove_country_flag = lrsk_sublight_colony_offered_vassalization
+					remove_country_flag = lrsk_sublight_colony_offered_vassalization
 					set_country_flag = lrsk_sublight_colony_rejected_vassalization
 				}
 				ELSE = {
@@ -2460,7 +2464,7 @@ country_event = {
 			has_origin = lrsk_gov_var_origin_sublight_empire
 			has_origin = lrsk_gov_var_origin_sublight_commonwealth
 		}
-		NOT = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+		has_country_flag = lrsk_sublight_overlord_offered_federation
 	}
 
 	immediate = {
@@ -2518,7 +2522,7 @@ country_event = {
 			set_country_flag = lrsk_sublight_overlord_formed_fed
 			set_federation_leader = event_target:lrsk_sublight_overlord
 		}
-		ELSE_IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_vassalization } }
+		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_overlord_offered_vassalization }
 			log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
 		}
 		ELSE = {
