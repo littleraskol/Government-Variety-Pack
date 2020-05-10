@@ -1162,25 +1162,35 @@ planet_event = {
 	}
 
 	immediate = {
-		
+		owner = {
+			if = {
+				limit = { has_modifier = lrsk_gov_var_empire_uplift_cycle }
+				remove_modifier = lrsk_gov_var_empire_uplift_cycle
+			}
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_uplift_cycle
+				days = 1800
+			}
+			add_resource = { influence = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = lrsk_uplift_no_reward_notice } }
+				country_event = { id = lrsk_gov_var_uplift.120 }
+			}
+		}
 	}
 }
 
 # Notify uplift
 country_event = {
-	id = lrsk_gov_var_uplift.NUMX
-	title = lrsk_gov_var_uplift.NUMX.name
-	desc = lrsk_gov_var_uplift.NUMX.desc
+	id = lrsk_gov_var_uplift.120
+	title = lrsk_gov_var_uplift.120.name
+	desc = lrsk_gov_var_uplift.120.desc
 	picture = GFX_lrsk_genetic_modification
     is_triggered_only = yes
 
     option = {
-        name = lrsk_gov_var_uplift.NUMX.a
-        custom_tooltip = lrsk_gov_var_uplift.NUMX.a.tooltip
-
-        hidden_effect = {
-			# Modifier
-        }
+        name = lrsk_gov_var_uplift.120.a
+        custom_tooltip = lrsk_gov_var_uplift.120.a.tooltip
 
         ai_chance = {
             factor = 0 # meh
@@ -1188,8 +1198,8 @@ country_event = {
     }
 
     option = {
-        name = lrsk_gov_var_uplift.NUMX.b
-        custom_tooltip = lrsk_gov_var_uplift.NUMX.b.tooltip
+        name = lrsk_gov_var_uplift.120.b
+        custom_tooltip = lrsk_gov_var_uplift.120.b.tooltip
 
         hidden_effect = {
             set_country_flag = lrsk_uplift_no_reward_notice
@@ -1209,25 +1219,39 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		#has_origin = lrsk_gov_var_origin_uplift
+		from = { has_origin = lrsk_gov_var_origin_uplift }
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { has_modifier = lrsk_gov_var_empire_enlighten_cycle }
+				remove_modifier = lrsk_gov_var_empire_enlighten_cycle
+			}
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_enlighten_cycle
+				days = 1800
+			}
+			add_resource = { unity = 150 }
+			if = {
+				limit = { NOT = { has_country_flag = lrsk_enlighten_no_reward_notice } }
+				country_event = { id = lrsk_gov_var_uplift.130 }
+			}
+		}
 	}
 }
 
 # Notify enlighten
 country_event = {
-	id = lrsk_gov_var_uplift.NUMY
-	title = lrsk_gov_var_uplift.NUMY.name
-	desc = lrsk_gov_var_uplift.NUMY.desc
+	id = lrsk_gov_var_uplift.130
+	title = lrsk_gov_var_uplift.130.name
+	desc = lrsk_gov_var_uplift.130.desc
 	picture = GFX_lrsk_space_station
     is_triggered_only = yes
 
     option = {
-        name = lrsk_gov_var_uplift.NUMY.a
-        custom_tooltip = lrsk_gov_var_uplift.NUMY.a.tooltip
-
-        hidden_effect = {
-			# Modifier
-        }
+        name = lrsk_gov_var_uplift.130.a
+        custom_tooltip = lrsk_gov_var_uplift.130.a.tooltip
 
         ai_chance = {
             factor = 0 # meh
@@ -1235,11 +1259,11 @@ country_event = {
     }
 
     option = {
-        name = lrsk_gov_var_uplift.NUMY.b
-        custom_tooltip = lrsk_gov_var_uplift.NUMY.b.tooltip
+        name = lrsk_gov_var_uplift.130.b
+        custom_tooltip = lrsk_gov_var_uplift.130.b.tooltip
 
         hidden_effect = {
-            set_country_flag = lrsk_uplift_no_reward_notice
+            set_country_flag = lrsk_enlighten_no_reward_notice
         }
 
         ai_chance = {

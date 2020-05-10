@@ -236,6 +236,14 @@ l_english:
  lrsk_gov_var_empire_enlightened_mech:0 "Curiosity Protocols"
  lrsk_gov_var_empire_enlightened_mech_desc:0 "This machine intellect has had its operational heuristics optimized for gathering new data about the universe."
 
+ LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON:0 ", in imitation of how our tutor meddled with our people to spur our advancement."
+ 
+ lrsk_gov_var_empire_uplift_cycle:0 "Cycle of Uplift"
+ lrsk_gov_var_empire_uplift_cycle_desc:0 "We have raised a species to sapience$LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON$"
+ 
+ lrsk_gov_var_empire_enlighten_cycle:0 "Cycle of Enlightenment"
+ lrsk_gov_var_empire_enlighten_cycle_desc:0 "We have raised a civilization to the stars$LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON$"
+
  lrsk_gov_var_empire_black_box_drives:0 "Black Box Hyperdrives"
  lrsk_gov_var_empire_black_box_drives_desc:0 "Due to restrictions enforced by its overlord, this empire only has access to second-rate feature-restricted hyperdrives lacking most diagnostic functions, which its pilots and engineers understand poorly."
 
@@ -725,22 +733,21 @@ l_english:
  lrsk_gov_var_uplift.11.norm.c:0 "We saw farther for standing on the shoulders of giants."
  lrsk_gov_var_uplift.11.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will appreciate your attitude." # +50 influence
 
- LRSK_UPLIFT_REWARD_COMMON:0 "of the [from.GetSpeciesNamePlural] reminds us of our roots and fills us with pride. We have come so far that we now raise other primitives to the stars, as our tutors once did for us."
- LRSK_UPLIFT_REWARD_TOOLTIP:0 "get some modifier"
+ LRSK_UPLIFT_REWARD_COMMON:0 "of the [from.GetSpeciesNamePlural] reminds us of our roots and fills us with pride. We have come so far that we now advance the progress of primitives, as our tutors once did for us."
 
- lrsk_gov_var_uplift.NUMX.name:0 "Uplift of the [from.GetSpeciesNamePlural]"
- lrsk_gov_var_uplift.NUMX.desc:0 "The successful uplift $LRSK_UPLIFT_REWARD_COMMON$"
- lrsk_gov_var_uplift.NUMX.a:0 "Our role in the cycle of galactic life is confirmed."
- lrsk_gov_var_uplift.NUMX.a.tooltip:0 "$LRSK_UPLIFT_REWARD_TOOLTIP$"
- lrsk_gov_var_uplift.NUMX.b:0 "Great, but don't bug me with this again."
- lrsk_gov_var_uplift.NUMX.b.tooltip:0 "$lrsk_gov_var_uplift.NUMX.a.tooltip$\n\n§PYou will not see this message again.§!"
+ lrsk_gov_var_uplift.120.name:0 "Uplift of the [from.GetSpeciesNamePlural]"
+ lrsk_gov_var_uplift.120.desc:0 "The successful uplift $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.120.a:0 "Our role in the cycle of galactic life is confirmed."
+ lrsk_gov_var_uplift.120.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_uplift_cycle$§! empire modifier for 5 years, increasing £influence£ §YInfluence§! gain by §G10%§! and £happiness£ §YHappiness§! by §G5%§!. Get §G+50§! £influence£ §YInfluence§!."
+ lrsk_gov_var_uplift.120.b:0 "Great, but don't bug me with this again."
+ lrsk_gov_var_uplift.120.b.tooltip:0 "$lrsk_gov_var_uplift.120.a.tooltip$\n\n§PYou will not see this message again.§!"
 
- lrsk_gov_var_uplift.NUMY.name:0 "Enlightenment of the [from.GetSpeciesNamePlural]"
- lrsk_gov_var_uplift.NUMY.desc:0 "The successful enlightenment $LRSK_UPLIFT_REWARD_COMMON$"
- lrsk_gov_var_uplift.NUMY.a:0 "$lrsk_gov_var_uplift.NUMX.a$"
- lrsk_gov_var_uplift.NUMY.a.tooltip:0 "$LRSK_UPLIFT_REWARD_TOOLTIP$"
- lrsk_gov_var_uplift.NUMY.b:0 "$lrsk_gov_var_uplift.NUMX.b$"
- lrsk_gov_var_uplift.NUMY.b.tooltip:0 "$lrsk_gov_var_uplift.NUMY.a.tooltip$\n\n§PYou will not see this message again.§!"
+ lrsk_gov_var_uplift.130.name:0 "Enlightenment of the [from.GetSpeciesNamePlural]"
+ lrsk_gov_var_uplift.130.desc:0 "The successful enlightenment $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.130.a:0 "$lrsk_gov_var_uplift.120.a$"
+ lrsk_gov_var_uplift.130.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_enlighten_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!. Get §G+150§! £unity£ §Y$unity$§!."
+ lrsk_gov_var_uplift.130.b:0 "$lrsk_gov_var_uplift.120.b$"
+ lrsk_gov_var_uplift.130.b.tooltip:0 "$lrsk_gov_var_uplift.130.a.tooltip$\n\n§PYou will not see this message again.§!"
 
  # Chartered Colony Stuff
 
