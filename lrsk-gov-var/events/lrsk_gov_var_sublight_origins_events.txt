@@ -2366,6 +2366,7 @@ country_event = {
 				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
 					remove_country_flag = lrsk_sublight_colony_offered_federation
 					set_country_flag = lrsk_sublight_colony_accepted_federation
+					save_event_target_as = lrsk_gov_var_new_sublight_fed_mem
 					event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.82 } }
 				}
 				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
@@ -2473,7 +2474,7 @@ country_event = {
 			has_origin = lrsk_gov_var_origin_sublight_commonwealth
 		}
 		has_country_flag = lrsk_sublight_overlord_offered_federation
-		from = { has_country_flag = lrsk_sublight_colony_accepted_federation }
+		event_target:lrsk_gov_var_new_sublight_fed_mem = { has_country_flag = lrsk_sublight_colony_accepted_federation }
 	}
 
 	immediate = {
@@ -2484,8 +2485,8 @@ country_event = {
 				has_federation = yes
 				federation = {
 					NOT = { has_federation_flag = lrsk_sublight_federation }
-					random_member = { 
-						limit = { is_federation_leader = yes }
+					any_member = { 
+						is_federation_leader = yes
 						NOT = { is_same_value = root }
 					}
 				}
@@ -2511,7 +2512,7 @@ country_event = {
 			leave_alliance = { override_requirements = yes }
 			set_country_flag = lrsk_sublight_overlord_left_prior_fed
 		}
-		from = {
+		event_target:lrsk_gov_var_new_sublight_fed_mem = {
 			set_subject_of = { who = none } # probably redundant
 			join_alliance = {
 				who = event_target:lrsk_sublight_overlord
