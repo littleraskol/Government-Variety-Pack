@@ -50,12 +50,14 @@ country_event = {
 	picture = GFX_evt_partition
 	location = from
 
+    # Desc if not same species.
     desc = {
         trigger = {
             NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
         }
         text = lrsk_gov_var_chartered.2.desc.a
     }
+    # Desc if same species.
     desc = {
         trigger = {
             event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
@@ -272,6 +274,10 @@ country_event = {
 				has_ethic = ethic_fanatic_xenophobe
 			}
 			modifier = {
+				add = -500
+				from = { is_ai = no }   # Should not be possible but whatever, can't be too sure
+			}
+			modifier = {
 				factor = 0
 				from = { is_ai = no }   # Should not be possible but whatever, can't be too sure
 			}
@@ -304,6 +310,94 @@ country_event = {
     }
 
     immediate = {
+
+        # Remove any prior flags
+        switch = {
+            trigger = has_country_flag
+            lrsk_gov_var_had_colonial_trade_1 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_1 }
+            lrsk_gov_var_had_colonial_trade_2 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_2 }
+            lrsk_gov_var_had_colonial_trade_3 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_3 }
+            lrsk_gov_var_had_colonial_trade_4 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_4 }
+            lrsk_gov_var_had_colonial_trade_5 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_5 }
+            lrsk_gov_var_had_colonial_trade_6 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_6 }
+            lrsk_gov_var_had_colonial_trade_7 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_7 }
+            lrsk_gov_var_had_colonial_trade_8 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_8 }
+            lrsk_gov_var_had_colonial_trade_9 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_9 }
+            lrsk_gov_var_had_colonial_trade_10 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_10 }
+            lrsk_gov_var_had_colonial_trade_11 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_11 }
+            lrsk_gov_var_had_colonial_trade_12 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_12 }
+            lrsk_gov_var_had_colonial_trade_13 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_13 }
+            lrsk_gov_var_had_colonial_trade_14 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_14 }
+            lrsk_gov_var_had_colonial_trade_15 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_15 }
+        }
+
+        IF = { limit = { has_country_flag = lrsk_gov_var_no_trade_status_change } remove_country_flag = lrsk_gov_var_no_trade_status_change }
+
+        # Remove previous modifier
+        switch = {
+            trigger = has_modifier
+            lrsk_gov_var_empire_colonial_trade_1 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_1
+				set_country_flag = lrsk_gov_var_had_colonial_trade_1
+			}
+            lrsk_gov_var_empire_colonial_trade_2 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_2
+				set_country_flag = lrsk_gov_var_had_colonial_trade_2
+			}
+            lrsk_gov_var_empire_colonial_trade_3 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_3
+				set_country_flag = lrsk_gov_var_had_colonial_trade_3
+			}
+            lrsk_gov_var_empire_colonial_trade_4 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_4
+				set_country_flag = lrsk_gov_var_had_colonial_trade_4
+			}
+            lrsk_gov_var_empire_colonial_trade_5 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_5
+				set_country_flag = lrsk_gov_var_had_colonial_trade_5
+			}
+            lrsk_gov_var_empire_colonial_trade_6 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_6
+				set_country_flag = lrsk_gov_var_had_colonial_trade_6
+			}
+            lrsk_gov_var_empire_colonial_trade_7 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_7
+				set_country_flag = lrsk_gov_var_had_colonial_trade_7
+			}
+            lrsk_gov_var_empire_colonial_trade_8 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_8
+				set_country_flag = lrsk_gov_var_had_colonial_trade_8
+			}
+            lrsk_gov_var_empire_colonial_trade_9 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_9
+				set_country_flag = lrsk_gov_var_had_colonial_trade_9
+			}
+            lrsk_gov_var_empire_colonial_trade_10 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_10
+				set_country_flag = lrsk_gov_var_had_colonial_trade_10
+			}
+            lrsk_gov_var_empire_colonial_trade_11 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_11
+				set_country_flag = lrsk_gov_var_had_colonial_trade_11
+			}
+            lrsk_gov_var_empire_colonial_trade_12 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_12
+				set_country_flag = lrsk_gov_var_had_colonial_trade_12
+			}
+            lrsk_gov_var_empire_colonial_trade_13 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_13
+				set_country_flag = lrsk_gov_var_had_colonial_trade_13
+			}
+            lrsk_gov_var_empire_colonial_trade_14 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_14
+				set_country_flag = lrsk_gov_var_had_colonial_trade_14
+			}
+            lrsk_gov_var_empire_colonial_trade_15 = {
+				remove_modifier = lrsk_gov_var_empire_colonial_trade_15
+				set_country_flag = lrsk_gov_var_had_colonial_trade_15
+			}
+        }
+
         # set a flag on every valid chartered company subject to mark it as "counted"
 		every_subject = {
             limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
@@ -328,47 +422,118 @@ country_event = {
             }
         }
 
-        #remove previous
-        switch = {
-            trigger = has_modifier
-            lrsk_gov_var_empire_colonial_trade_1 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_1 }
-            lrsk_gov_var_empire_colonial_trade_2 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_2 }
-            lrsk_gov_var_empire_colonial_trade_3 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_3 }
-            lrsk_gov_var_empire_colonial_trade_4 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_4 }
-            lrsk_gov_var_empire_colonial_trade_5 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_5 }
-            lrsk_gov_var_empire_colonial_trade_6 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_6 }
-            lrsk_gov_var_empire_colonial_trade_7 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_7 }
-            lrsk_gov_var_empire_colonial_trade_8 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_8 }
-            lrsk_gov_var_empire_colonial_trade_9 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_9 }
-            lrsk_gov_var_empire_colonial_trade_10 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_10 }
-            lrsk_gov_var_empire_colonial_trade_11 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_11 }
-            lrsk_gov_var_empire_colonial_trade_12 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_12 }
-            lrsk_gov_var_empire_colonial_trade_13 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_13 }
-            lrsk_gov_var_empire_colonial_trade_14 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_14 }
-            lrsk_gov_var_empire_colonial_trade_15 = { remove_modifier = lrsk_gov_var_empire_colonial_trade_15 }
-        }
-
         #add new
-        IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_1 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_2 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_3 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_4 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_5 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_6 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_7 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_8 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_9 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_10 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_11 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_12 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_13 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 } }
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } } add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 } }
+        IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_1 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_1 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_1
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_2 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_2 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_2
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_3 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_3 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_3
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_4 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_4 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_4
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_5 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_5 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_5
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_6 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_6 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_6
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_7 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_7 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_7
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_8 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_8 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_8
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_9 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_9 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_9
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_10 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_10 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_10
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_11 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_11 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_11
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_12 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_12 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_12
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_13 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_13 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_13
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_14 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_14
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
+        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } }
+			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 }
+			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_15 }
+				remove_country_flag = lrsk_gov_var_had_colonial_trade_15
+				set_country_flag = lrsk_gov_var_no_trade_status_change
+			}
+		}
         
         if = {
             limit = { NOR = { 
                 has_country_flag = lrsk_chartered_no_trade_notice
                 has_country_flag = lrsk_chartered_trade_notice_cooldown
+                has_country_flag = lrsk_gov_var_no_trade_status_change
              } }
             country_event = { id = lrsk_gov_var_chartered.4 }
         }
@@ -388,6 +553,15 @@ country_event = {
         name = lrsk_gov_var_chartered.4.a
         custom_tooltip = lrsk_gov_var_chartered.4.a.tooltip
 
+        ai_chance = {
+            factor = 0 # meh
+        }
+    }
+
+    option = {
+        name = lrsk_gov_var_chartered.4.b
+        custom_tooltip = lrsk_gov_var_chartered.4.b.tooltip
+
         hidden_effect = {
             # 6 month notification cooldown
             set_timed_country_flag = {
@@ -402,8 +576,8 @@ country_event = {
     }
 
     option = {
-        name = lrsk_gov_var_chartered.4.b
-        custom_tooltip = lrsk_gov_var_chartered.4.b.tooltip
+        name = lrsk_gov_var_chartered.4.c
+        custom_tooltip = lrsk_gov_var_chartered.4.c.tooltip
 
         hidden_effect = {
             set_country_flag = lrsk_chartered_no_trade_notice
@@ -432,6 +606,15 @@ country_event = {
     }
 
     immediate = {
+        IF = { 
+            limit = { AND {
+                has_civic = lrsk_gov_var_civic_mc_chart_corp_board
+                has_civic = lrsk_gov_var_civic_mc_chartered_company
+            } }
+            # This should not be possible but just in case...
+            log = "ERROR: Empire (name = [this.GetName]) somehow has both the Chartered Company and Chartering Board civic."
+            # 2.7 UPDATE NOTICE: In next Stellaris version, can fix with force add/remove.
+        }            
         IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
             # Calculate trade value bonus
             IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
@@ -442,18 +625,11 @@ country_event = {
             }
         }
         IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
-            # If no overlord, promote civic (as ethos appropriate)
+            # If no overlord, promote civic
             IF = {
-                limit = {
-                    is_subject = no
-                    NOR = {
-                        has_ethic = ethic_egalitarian
-                        has_ethic = ethic_fanatic_egalitarian
-                        has_ethic = ethic_pacifist
-                        has_ethic = ethic_fanatic_pacifist
-                    }
-                }
+                limit = { is_subject = no }
                 change_government = {
+                    # 2.7 UPDATE NOTICE: Should be force add/remove in future.
                     civics = {
                         civic = lrsk_gov_var_civic_mc_chart_corp_board
                         civic = random
