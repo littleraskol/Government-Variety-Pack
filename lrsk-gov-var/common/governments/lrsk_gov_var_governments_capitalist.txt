@@ -10,7 +10,10 @@ lrsk_gov_var_gov_galactic_cartel = {
 		OR = {
 			AND = {
 				has_valid_civic = civic_corporate_dominion
-				has_valid_civic = lrsk_gov_var_civic_business_lobby
+				OR = {
+					has_valid_civic = lrsk_gov_var_civic_business_lobby
+					has_valid_civic = civic_cutthroat_politics
+				}
 			}
 			AND = {
 				has_authority = auth_corporate
@@ -130,7 +133,10 @@ lrsk_gov_var_gov_corporate_neofuedalism = {
 
 	possible = {
 		has_authority = auth_oligarchic
-		has_valid_civic = lrsk_gov_var_civic_business_lobby
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_business_lobby
+			has_valid_civic = civic_merchant_guilds
+		}
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		NOT = { has_ethic = ethic_egalitarian	}
 	}
