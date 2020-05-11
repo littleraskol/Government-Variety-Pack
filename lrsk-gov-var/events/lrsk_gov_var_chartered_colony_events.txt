@@ -607,10 +607,10 @@ country_event = {
 
     immediate = {
         IF = { 
-            limit = { AND {
+            limit = {
                 has_civic = lrsk_gov_var_civic_mc_chart_corp_board
                 has_civic = lrsk_gov_var_civic_mc_chartered_company
-            } }
+            }
             # This should not be possible but just in case...
             log = "ERROR: Empire (name = [this.GetName]) somehow has both the Chartered Company and Chartering Board civic."
             # 2.7 UPDATE NOTICE: In next Stellaris version, can fix with force add/remove.

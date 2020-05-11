@@ -1229,7 +1229,6 @@ country_event = {
 			country_event = { id = lrsk_gov_var_sublight_origins.2 days = 1 }
 		}
 	}			
-
 }
 
 # Common logic for gaining FTL
@@ -1646,9 +1645,9 @@ country_event = {
 				# They will keep trying, this will come up again... 
 				country_event = {
 					id = lrsk_gov_var_sublight_origins.21
-					days = 3600
-					random = 1800
-					# Between 5 and 10 years later.						
+					days = 1800
+					random = 720
+					# Between 3 and 7 years later.						
 				}
 			}
 		} }
@@ -1672,9 +1671,9 @@ country_event = {
 				# They will keep trying, this will come up again... 
 				country_event = {
 					id = lrsk_gov_var_sublight_origins.21
-					days = 3600
-					random = 1800
-					# Between 5 and 10 years later.						
+					days = 1800
+					random = 720
+					# Between 3 and 7 years later.			
 				}
 			}
 		} }
@@ -2007,14 +2006,14 @@ country_event = {
 	}
 }
 
-# Colonial Reform Start
+# Colonial Reform Start - Avg of 40 years puts it midway to the midgame.
 country_event = {
 	id = lrsk_gov_var_sublight_origins.7
 	title = lrsk_gov_var_sublight_origins.7.name
 	desc = lrsk_gov_var_sublight_origins.7.desc
 	picture = GFX_evt_board_meeting
 
-	mean_time_to_happen = { years = 100 }
+	mean_time_to_happen = { years = 40 }
 
 	# This will only happen if you actually have sublight vassals/satellites with no FTL restrictions
 	trigger = {
@@ -2051,7 +2050,7 @@ country_event = {
 	}
 }
 
-# I don't know if this will help but I am leery of recursive event calls, tends to crash the game!!
+# This is called by the "try again" decision to come back to the decision later.
 country_event = {
 	id = lrsk_gov_var_sublight_origins.801
 	hide_window = yes
@@ -2066,12 +2065,13 @@ country_event = {
 	}
 
 	immediate = {
-		log = "In 'Colonial Reform pre-Gate' event"
+		log = "In recurring 'Colonial Reform pre-Gate' event"
 		country_event = { id = lrsk_gov_var_sublight_origins.80 }
 	}
 }
 
 # Colonial Reform pre Start/Gate
+# Called by completed LRSK_GOV_VAR_COLONIAL_RESTRUCTURING project
 planet_event = {
 	id = lrsk_gov_var_sublight_origins.802
 	hide_window = yes
@@ -2107,6 +2107,7 @@ country_event = {
 
 	immediate = {
 		log = "In 'Colonial Reform Start/Gate' event"
+		IF = { limit = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform } remove_country_flag = lrsk_sublight_overlord_waiting_on_reform }
 		IF = {
 			limit = { any_subject = {  OR = {
 				is_subject_type = lrsk_gov_var_sublight_vassal
@@ -2211,6 +2212,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.8.c.tooltip
 
 		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_waiting_on_reform
 			country_event = {
 				id = lrsk_gov_var_sublight_origins.80
 				days = 3600
@@ -2218,17 +2220,17 @@ country_event = {
 		}
 	}
 
-	after = {		
+	after = { IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform } }
 		# One way or another, none of this is relevant anymore
 		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_opentrade }
 			remove_modifier = lrsk_gov_var_empire_colony_opentrade
 		}
-		country_event = { id = lrsk_gov_var_sublight_origins.833 }
-		country_event = { id = lrsk_gov_var_sublight_origins.82 days = 21 }
-	}
+		country_event = { id = lrsk_gov_var_sublight_origins.833 } 	# Do actual offers if applicable
+		#country_event = { id = lrsk_gov_var_sublight_origins.82 days = 21 } # Deprecated, handled per offer now.
+	} }
 }
 
-# Colonial Reform Holding Pattern
+# Colonial Reform Holding Pattern - At time for decision but it is not valid.
 country_event = {
 	id = lrsk_gov_var_sublight_origins.81
 	title = lrsk_gov_var_sublight_origins.81.name
@@ -2268,16 +2270,27 @@ country_event = {
 
 	immediate = {
 		log = "In 'Colony offer gate' event"
-		every_subject = {
+		IF = {
 			limit = { OR = {
-				is_subject_type = lrsk_gov_var_sublight_vassal
-				is_subject_type = lrsk_gov_var_sublight_satellite
+				has_country_flag = lrsk_sublight_overlord_offered_federation
+				has_country_flag = lrsk_sublight_overlord_offered_vassalization
 			} }
-			country_event = {
-				id = lrsk_gov_var_sublight_origins.83
-				days = 7
-				random = 3
+			log = "Making offers..."
+			every_subject = {
+				limit = { OR = {
+					is_subject_type = lrsk_gov_var_sublight_vassal
+					is_subject_type = lrsk_gov_var_sublight_satellite
+				} }
+				country_event = {
+					id = lrsk_gov_var_sublight_origins.83
+					days = 7
+					random = 3
+				}
 			}
+		}
+		ELSE = {
+			log = "No offer to make yet."
+			# Do nothing
 		}
 	}
 }
@@ -2351,9 +2364,9 @@ country_event = {
 					has_origin = lrsk_gov_var_origin_sublight_colony_loy
 				}
 				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
-					remove_country_flag = lrsk_sublight_colony_offered_vassalization
+					remove_country_flag = lrsk_sublight_colony_offered_federation
 					set_country_flag = lrsk_sublight_colony_accepted_federation
-					# The actual work will be done in event that should execute later.
+					event_target:lrsk_sublight_overlord = { country_event = { lrsk_gov_var_sublight_origins.82 } }
 				}
 				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
 					remove_country_flag = lrsk_sublight_colony_offered_vassalization
@@ -2367,9 +2380,7 @@ country_event = {
 					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
 				}
 				set_country_flag = lrsk_sublight_colony_accepted_reform
-				event_target:lrsk_sublight_overlord = {
-					country_event = { id = lrsk_gov_var_sublight_origins.9 }
-				}
+				event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.9 } }
 			}
 			# Refuse
 			50 = {
@@ -2422,37 +2433,34 @@ country_event = {
 					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
 				}
 				set_country_flag = lrsk_sublight_colony_refused_reform
-				event_target:lrsk_sublight_overlord = {
-					country_event = { id = lrsk_gov_var_sublight_origins.10 }
-				}
+				event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.10 } }
 			}
 		}
 	}
 }
 
-# I don't know if this will help but I am leery of recursive event calls, tends to crash the game!!
-country_event = {
-	id = lrsk_gov_var_sublight_origins.821
-	hide_window = yes
-	
-	is_triggered_only = yes
-
-	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
-	}
-
-	immediate = {
-		log = "In 'Colonial Reform Fed Work bounceback' event"
-		country_event = { id = lrsk_gov_var_sublight_origins.82 }
-	}
-}
+## I don't know if this will help but I am leery of recursive event calls, tends to crash the game!!
+#country_event = {
+#	id = lrsk_gov_var_sublight_origins.821
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		OR = {
+#			has_origin = lrsk_gov_var_origin_sublight_empire
+#			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+#		}
+#	}
+#
+#	immediate = {
+#		log = "In 'Colonial Reform Fed Work bounceback' event"
+#		country_event = { id = lrsk_gov_var_sublight_origins.82 }
+#	}
+#}
 
 # Colonial Reform Federation Work
 # Numbers are out of order because reasons.
-# Timing of this call should put at at least 4 days after federation acceptance
 country_event = {
 	id = lrsk_gov_var_sublight_origins.82
 	hide_window = yes
@@ -2465,73 +2473,73 @@ country_event = {
 			has_origin = lrsk_gov_var_origin_sublight_commonwealth
 		}
 		has_country_flag = lrsk_sublight_overlord_offered_federation
+		from = { has_country_flag = lrsk_sublight_colony_accepted_federation }
 	}
 
 	immediate = {
 		log = "In 'Colonial Reform Federation Work' event"
-		IF = { limit = { any_subject = { has_country_flag = lrsk_sublight_colony_accepted_federation } }
-			# Have to leave existing fed, too complicated otherwise
-			IF = { limit = { has_federation = yes }
-				IF = { limit = { federation = { has_federation_type = hegemony_federation } } # there should be some consequences...
-					set_country_flag = lrsk_sublight_overlord_bailed_on_hegemony
-					save_event_target_as = lrsk_sublight_overlord_hegemony_quitter
-					federation = { random_member = { 
+		# Have to leave prior fed if not leader, too complicated otherwise
+		IF = {
+			limit = {
+				has_federation = yes
+				federation = {
+					NOT = { has_federation_flag = lrsk_sublight_federation }
+					random_member = { 
 						limit = { is_federation_leader = yes }
-						IF = { limit = { NOT = { is_same_value = event_target:lrsk_sublight_overlord_hegemony_quitter } }
-							set_country_flag = lrsk_sublight_member_bailed_suddenly
-							save_event_target_as = lrsk_sublight_overlord_hegemon_spurned
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord_hegemony_quitter
-								modifier = opinion_lrsk_gov_var_hegmad_sublight
-							}
-							add_casus_belli = {
-								type = cb_lrsk_gov_var_hegemon
-								who = event_target:lrsk_sublight_overlord_hegemony_quitter
-								days = -1
-							}
-						}
-						ELSE = {
-							remove_country_flag = lrsk_sublight_overlord_bailed_on_hegemony # not valid if heg president
-							set_country_flag = lrsk_sublight_overlord_is_hegemony_prez
-						}
-					} }
-				}
-				IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_is_hegemony_prez } }
-					leave_alliance = { override_requirements = yes }
+						NOT = { is_same_value = root }
+					}
 				}
 			}
-			every_subject = {
-				limit = { has_country_flag = lrsk_sublight_colony_accepted_federation }
-				set_subject_of = { who = none } # probably redundant, all refusers should be indy
-				join_alliance = {
-					who = event_target:lrsk_sublight_overlord
-					override_requirements = yes
-				}
-				remove_country_flag = lrsk_sublight_colony_accepted_federation
+			IF = { limit = { federation = { has_federation_type = hegemony_federation } } # there should be some consequences...
+				set_country_flag = lrsk_sublight_overlord_bailed_on_hegemony
+				save_event_target_as = lrsk_sublight_overlord_hegemony_quitter
+				federation = { random_member = { 
+					limit = { is_federation_leader = yes }
+					set_country_flag = lrsk_sublight_member_bailed_suddenly
+					save_event_target_as = lrsk_sublight_overlord_hegemon_spurned
+					add_opinion_modifier = {
+						who = event_target:lrsk_sublight_overlord_hegemony_quitter
+						modifier = opinion_lrsk_gov_var_hegmad_sublight
+					}
+					add_casus_belli = {
+						type = cb_lrsk_gov_var_hegemon
+						who = event_target:lrsk_sublight_overlord_hegemony_quitter
+						days = -1
+					}
+				} }
 			}
+			leave_alliance = { override_requirements = yes }
+			set_country_flag = lrsk_sublight_overlord_left_prior_fed
+		}
+		from = {
+			set_subject_of = { who = none } # probably redundant
+			join_alliance = {
+				who = event_target:lrsk_sublight_overlord
+				override_requirements = yes
+			}
+			remove_country_flag = lrsk_sublight_colony_accepted_federation
+		}
+		IF = { limit = { has_country_flag = lrsk_sublight_overlord_left_prior_fed } # This is a new federation
 			IF = {
-				limit = {
-					has_origin = lrsk_gov_var_origin_sublight_empire
-					NOT = { has_country_flag = lrsk_sublight_overlord_is_hegemony_prez }
-				}
-				federation = { 
-					set_federation_type = hegemony_federation
-					set_name = random
-				}
+				limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+				federation = { set_federation_type = hegemony_federation }				
 			}
-			set_country_flag = lrsk_sublight_overlord_formed_fed
+			federation = { set_name = random }
+			remove_country_flag = lrsk_sublight_overlord_left_prior_fed
+			set_country_flag = lrsk_sublight_overlord_formed_new_fed
 			set_federation_leader = event_target:lrsk_sublight_overlord
 		}
-		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_overlord_offered_vassalization }
-			log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
-		}
-		ELSE = {
-			# Somehow this was called, fed was chosen, but nothing is ready... try again in a week?
-			country_event = {
-				id = lrsk_gov_var_sublight_origins.821
-				days = 7
-			}
-		}
+		federation = { set_federation_flag = lrsk_sublight_federation }
+		#ELSE_IF = { limit = { has_country_flag = lrsk_sublight_overlord_offered_vassalization }
+		#	log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
+		#}
+		#ELSE = {
+		#	# Somehow this was called, fed was chosen, but nothing is ready... try again in a week?
+		#	country_event = {
+		#		id = lrsk_gov_var_sublight_origins.821
+		#		days = 7
+		#	}
+		#}
 	}
 }
 
@@ -2641,7 +2649,7 @@ country_event = {
 # 1) If a sublight colony becomes independent of the player, they should lose thier nerf modifiers.
 # 2) If a sublight colony under the player somehow loses red tape when they should have it, return red tape.
 # 3) If a sublight colony under the player somehow becomes some other kind of vassal prior to reforms, return to proper type.
-# 4) If a sublight colony accepted joining the overlord's fed but is not in it, join it.
+# 4) If a sublight colony accepted joining the overlord's fed but is not in it, join it. - deprecated
 country_event = {
 	id = lrsk_gov_var_sublight_origins.1000
 	hide_window = yes
@@ -2677,21 +2685,21 @@ country_event = {
 			log = "Housekeeping: Caught case where not still vassal of player."
 			IF = { limit = { has_modifier = lrsk_gov_var_empire_black_box_drives } remove_modifier = lrsk_gov_var_empire_black_box_drives }
 			IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape } remove_modifier = lrsk_gov_var_empire_colony_red_tape }
-			IF = { 
-				limit = {
-					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_formed_fed }
-					has_country_flag = lrsk_sublight_colony_accepted_federation	# This gets removed in the normal course of events for this case.
-					NOT = { is_in_federation_with = event_target:lrsk_sublight_overlord }
-				}
-				# We need this case because of the floaty way I chose to handle this process...
-				log = "Housekeeping: Caught case where needs to be added to player fed."
-				set_subject_of = { who = none } # Not sure how I feel about potentially ripping them from some other overlord... eh, edge case.
-				join_alliance = {
-					who = event_target:lrsk_sublight_overlord
-					override_requirements = yes
-				}
-				remove_country_flag = lrsk_sublight_colony_accepted_federation
-			}
+			#IF = { 
+			#	limit = {
+			#		event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_formed_fed }
+			#		has_country_flag = lrsk_sublight_colony_accepted_federation	# This gets removed in the normal course of events for this case.
+			#		NOT = { is_in_federation_with = event_target:lrsk_sublight_overlord }
+			#	}
+			#	# We need this case because of the floaty way I chose to handle this process...
+			#	log = "Housekeeping: Caught case where needs to be added to player fed."
+			#	set_subject_of = { who = none } # Not sure how I feel about potentially ripping them from some other overlord... eh, edge case.
+			#	join_alliance = {
+			#		who = event_target:lrsk_sublight_overlord
+			#		override_requirements = yes
+			#	}
+			#	remove_country_flag = lrsk_sublight_colony_accepted_federation
+			#}
 		}
 		ELSE = {
 			log = "Housekeeping: Caught case where still vassal of player."
