@@ -2366,7 +2366,7 @@ country_event = {
 				IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_federation }
 					remove_country_flag = lrsk_sublight_colony_offered_federation
 					set_country_flag = lrsk_sublight_colony_accepted_federation
-					event_target:lrsk_sublight_overlord = { country_event = { lrsk_gov_var_sublight_origins.82 } }
+					event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.82 } }
 				}
 				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
 					remove_country_flag = lrsk_sublight_colony_offered_vassalization
