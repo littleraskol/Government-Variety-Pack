@@ -51,7 +51,7 @@ Institutionalized Collectivism (Not Fanatic Authoritarian) - The government cont
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 
