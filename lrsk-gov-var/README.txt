@@ -1,6 +1,8 @@
 GOVERNMENT VARIETY PACK
 A grab bag of new civics and government types.
 
+This is a backup version for Stellaris v.2.6.* (Verne).
+
 1. New Civics
 
 Origins:
