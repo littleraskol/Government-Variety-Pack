@@ -37,13 +37,13 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
 
-Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
+Workers' Councils (Egalitarian, no Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% tile mineral and energy output)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -174,6 +174,14 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.6.5 (05-12-20) - 2.6.* "Verne" Backup
+-Desc. updated to reflect status.
+-Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
+-Workers' Councils not incompatible with Budgetary Thrift.
+-Corporate Neofeudalism now requires Merchant Guilds instead of Business Lobby.
+-Galactic Cartel (non-Megacorp version) now requires Cutthroat Politics or Shadow Council instead of Business Lobby.
+-Proprietary Franchise now requires Cutthroat Politics rather than a choice of that or Business Lobby.
 
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.
