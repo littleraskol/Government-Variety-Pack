@@ -268,7 +268,7 @@ lrsk_gov_var_civic_workers_councils = {
     }
     civics ={
       NOR = {
-        value = lrsk_gov_var_civic_business_lobby
+        #value = lrsk_gov_var_civic_business_lobby
         value = civic_shared_burden
       }
     }
@@ -359,7 +359,7 @@ lrsk_gov_var_civic_enlightened_liberalism  = {
   }
 }
 
-#Business Lobby (No WC) - This society's economy is dominated by entrenched business interests that benefit from lucrative government contracts and regulatory loopholes. (+5% tile mineral and energy output)
+#Business Lobby (Any) - This society's economy is dominated by entrenched business interests that benefit from lucrative government contracts and regulatory loopholes. (+5% tile mineral and energy output)
 lrsk_gov_var_civic_business_lobby  = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -368,13 +368,13 @@ lrsk_gov_var_civic_business_lobby  = {
 
   #icon = "gfx/interface/icons/governments/civics/civic_aristocratic_elite.dds"
 
-  possible = {
-    civics ={
-      NOR = {
-        value = lrsk_gov_var_civic_workers_councils
-      }
-    }
-  }
+  #possible = {
+  #  civics ={
+  #    NOR = {
+  #      value = lrsk_gov_var_civic_workers_councils
+  #    }
+  #  }
+  #}
 
   random_weight = { base = 5 }
 
@@ -616,6 +616,7 @@ lrsk_gov_var_civic_royal_absolutism = {
 
   modifier = {
     pop_ethics_shift_speed_mult = -0.5
+    country_edict_cap_add = 1
   }
 }
 
