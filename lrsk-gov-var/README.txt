@@ -1,7 +1,7 @@
 GOVERNMENT VARIETY PACK
 A grab bag of new civics and government types.
 
-This is a backup version for Stellaris v.2.6.* (Verne).
+This is a backup version for Stellaris v.2.6.* (Verne). The current version can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=901988941
 
 1. New Civics
 
