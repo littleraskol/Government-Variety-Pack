@@ -41,7 +41,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% tile mineral and energy output)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
