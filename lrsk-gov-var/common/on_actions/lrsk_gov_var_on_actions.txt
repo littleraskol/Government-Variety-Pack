@@ -92,3 +92,12 @@ on_uplift_completion = {
 		lrsk_gov_var_uplift.12						# Apply bonus to Uplift origin empire that uplifted
 	}
 }
+
+# This = construction ship
+# Fires when construction is complete,
+# immediately before station is created
+on_building_observation_station = {
+	events = {
+		lrsk_gov_var_uplift.110
+	}
+}
