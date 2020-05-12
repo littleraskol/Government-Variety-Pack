@@ -173,6 +173,22 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.7 (05-??-20) - More Origins, New "Garlic Pudding" Govts and Civic
+-Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
+-Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
+-Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
+-Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
+-GFX: Changed the preview image for Grand Alliance.
+-Added some origin icons.
+-Added three government types and a new civic based on the ideas of Steam user Garlic Pudding, posted here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/
+-New megacorp civic Gig Economics: -25% pop resettlement cost, +5% specialist and ruler happiness.
+-New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration)
+-New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
+-Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
+-Fix: Added election weights to some governments missing them.
+-Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
+-Balance: Removed "trollish" lack of empire cluster restriction on Galactic Backdoor (due to how this might affect players using other origins if this origin spawns randomly for an AI empire...)
+
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.
 -Fix: Natural Esper costs no trait points (this prevented players using the Shroud-Touched origin from selecting as many species traits as should be possible).
