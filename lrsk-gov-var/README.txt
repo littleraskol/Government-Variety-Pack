@@ -35,7 +35,7 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
 
-Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
+Workers' Councils (Egalitarian, no Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
@@ -176,9 +176,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v1.6.5 (05-12-20) Wells Update
 -Adapted Hive Mind name list to new base game version.
 -Royal Absolutism now also gives +1 Edict Cap.
--Starting the decommission of Business Lobby in favor of Merchant Guilds. Business Lobby will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
--Corporate Neofeudalism now requires either Business Lobby or Merchant Guilds instead of just Business Lobby.
--Galactic Cartel (non-Megacorp version) now requires either Business Lobby or Cutthroat Politics instead of just Business Lobby.
+-Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
+-Corporate Neofeudalism now requires Merchant Guilds instead of Business Lobby.
+-Galactic Cartel (non-Megacorp version) now requires Cutthroat Politics instead of Business Lobby.
+-Proprietary Franchise now requires Cutthroat Politics rather than a choice of that or Business Lobby.
 -Changed compatible version number to 2.7.*
 
 v1.6.4 (04-16-20) - Small fixes and improvements
