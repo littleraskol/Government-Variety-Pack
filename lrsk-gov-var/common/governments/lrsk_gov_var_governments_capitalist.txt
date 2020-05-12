@@ -10,7 +10,10 @@ lrsk_gov_var_gov_galactic_cartel = {
 		OR = {
 			AND = {
 				has_valid_civic = civic_corporate_dominion
-				has_valid_civic = civic_cutthroat_politics
+				OR = {
+					has_valid_civic = civic_cutthroat_politics
+					has_valid_civic = civic_shadow_council
+				}
 			}
 			AND = {
 				has_authority = auth_corporate
