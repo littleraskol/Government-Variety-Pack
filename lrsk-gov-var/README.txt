@@ -35,7 +35,7 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
 
-Workers' Councils (Egalitarian, no Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
+Workers' Councils (Egalitarian, no Business Lobby or Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
@@ -185,11 +185,6 @@ v1.7 (05-??-20) - More Origins, New "Garlic Pudding" Govts and Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration)
 -New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
 -Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
--Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
--Workers' Councils not incompatible with Budgetary Thrift.
--Corporate Neofeudalism now requires Merchant Guilds instead of Business Lobby.
--Galactic Cartel (non-Megacorp version) now requires Cutthroat Politics or Shadow Council instead of Business Lobby.
--Proprietary Franchise now requires Cutthroat Politics rather than a choice of that or Business Lobby.
 -Fix: Added election weights to some governments missing them.
 -Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
 -Balance: Removed "trollish" lack of empire cluster restriction on Galactic Backdoor (due to how this might affect players using other origins if this origin spawns randomly for an AI empire...)
