@@ -41,7 +41,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% tile mineral and energy output)
+Business Lobby (Not Democratic, no Workers' Councils) - This society's economy is dominated by entrenched business interests that benefit from lucrative kickback contracts, regulatory loopholes, and wage suppression. (+5% tile mineral and energy output, -5% Market Fee)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -79,7 +79,7 @@ Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would driv
 
 Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
-Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output)
+Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output, +7500 mineral storage)
 
 Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
 
@@ -117,7 +117,7 @@ Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor 
 
 Astro-Prospecting Mainframe (Machine Intelligence) - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
-Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output)
+Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output, +2.5% alloy production)
 
 Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
 
@@ -136,6 +136,16 @@ Megacorp Civics:
 Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
 
 Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+
+Gig Economics (Any) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happi
+
+Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interact
+
+Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market
+
+Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade V
+
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased happiness, production, and political power of workers and specialists)
 
 2. New Governments
 
