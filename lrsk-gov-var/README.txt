@@ -174,7 +174,6 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v1.6.5 (05-12-20) Wells Update
--Adapted Hive Mind name list to new base game version.
 -Royal Absolutism now also gives +1 Edict Cap.
 -Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
 -Workers' Councils not incompatible with Budgetary Thrift.
