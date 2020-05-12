@@ -173,6 +173,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.5 (05-12-20) Wells Update
+-Adapted Hive Mind name list to new base game version.
+-Royal Absolutism now also gives +1 Edict Cap.
+-Starting the decommission of Business Lobby in favor of Merchant Guilds. Business Lobby will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
+-Corporate Neofeudalism now requires either Business Lobby or Merchant Guilds instead of just Business Lobby.
+-Galactic Cartel (non-Megacorp version) now requires either Business Lobby or Cutthroat Politics instead of just Business Lobby.
+-Changed compatible version number to 2.7.*
+
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.
 -Fix: Natural Esper costs no trait points (this prevented players using the Shroud-Touched origin from selecting as many species traits as should be possible).
