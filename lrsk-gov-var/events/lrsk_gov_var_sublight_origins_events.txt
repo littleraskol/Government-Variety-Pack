@@ -1040,7 +1040,7 @@ country_event = {
 						has_modifier = lrsk_gov_var_empire_colony_favors
 					}
 					# Haggle for lifting of red tape
-					event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
+					overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
 				}
 				60 = {
 					modifier = {
@@ -1273,7 +1273,7 @@ country_event = {
 
 			# Informs overlord
 			IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_refused_to_haggle } }
-				event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.4 days = 1 } }
+				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.4 days = 1 } }
 			}
 		}
 	}			
@@ -1333,7 +1333,7 @@ country_event = {
 					}
 
 					# Haggle for lifting of red tape
-					event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
+					overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
 				}
 				60 = {
 					modifier = {
@@ -1687,7 +1687,6 @@ country_event = {
 	mean_time_to_happen = { years = 5 }
 
 	trigger = {
-		event_target:lrsk_sublight_overlord = { NOT = { has_country_flag = lrsk_sublight_whining_cooldown } }
 		OR = {
 			is_subject_type = lrsk_gov_var_sublight_vassal
 			is_subject_type = lrsk_gov_var_sublight_satellite
@@ -1695,12 +1694,14 @@ country_event = {
 		OR = { 
 			has_modifier = lrsk_gov_var_empire_colony_red_tape
 			NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
-		}		
+		}
+		exists = overlord
+		overlord = { NOT = { has_country_flag = lrsk_sublight_whining_cooldown } }	
 	}
 
 	immediate = {
 		log = "In 'Periodic whining gatekeeper' event"
-		event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.6 } }
+		overlord = { country_event = { id = lrsk_gov_var_sublight_origins.6 } }
 	}
 }
 
@@ -2367,7 +2368,7 @@ country_event = {
 					remove_country_flag = lrsk_sublight_colony_offered_federation
 					set_country_flag = lrsk_sublight_colony_accepted_federation
 					save_event_target_as = lrsk_gov_var_new_sublight_fed_mem
-					event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.82 } }
+					overlord = { country_event = { id = lrsk_gov_var_sublight_origins.82 } }
 				}
 				ELSE_IF = { limit = { has_country_flag = lrsk_sublight_colony_offered_vassalization }
 					remove_country_flag = lrsk_sublight_colony_offered_vassalization
@@ -2381,7 +2382,7 @@ country_event = {
 					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
 				}
 				set_country_flag = lrsk_sublight_colony_accepted_reform
-				event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.9 } }
+				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.9 } }
 			}
 			# Refuse
 			50 = {
@@ -2434,7 +2435,7 @@ country_event = {
 					log = "ERROR: Sublight colony somehow got reform offer without offer type set."
 				}
 				set_country_flag = lrsk_sublight_colony_refused_reform
-				event_target:lrsk_sublight_overlord = { country_event = { id = lrsk_gov_var_sublight_origins.10 } }
+				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.10 } }
 			}
 		}
 	}
@@ -2708,7 +2709,7 @@ country_event = {
 				limit = { NOR = {
 					has_modifier = lrsk_gov_var_empire_colony_red_tape
 					has_country_flag = lrsk_sublight_overloard_cut_our_red_tape
-					event_target:lrsk_sublight_overlord = { OR = {
+					overlord = { OR = {
 						has_country_flag = lrsk_sublight_overlord_abolished_redtape
 						has_country_flag = lrsk_sublight_overloard_colonial_system_reformed
 					} }
@@ -2720,11 +2721,11 @@ country_event = {
 				limit = { NOR = {					
 					is_subject_type = lrsk_gov_var_sublight_vassal
 					is_subject_type = lrsk_gov_var_sublight_satellite
-					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed }
+					overlord = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed }
 				} }
 				log = "Housekeeping: Caught case where still vassal but not valid sublight colony type pre system reform."
 				save_event_target_as = lrsk_sublight_colony_to_reintegrate
-				event_target:lrsk_sublight_overlord = { switch = {
+				overlord = { switch = {
 					trigger = has_origin
 					lrsk_gov_var_origin_sublight_empire = {
 						event_target:lrsk_sublight_colony_to_reintegrate = { set_subject_of = {
