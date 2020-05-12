@@ -39,6 +39,30 @@ country_event = {
             set_country_flag = lrsk_charter_subject_same_species_as_ol
         }
 
+        # TO DO: Force remove charter board civic.
+        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+            while = {
+                count = 10
+                IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+                    change_government = {
+                        civics = {
+                            civic = random
+                            civic = random
+                        }
+                    }
+                }
+            }
+        }
+        # Final Catch
+        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+            change_government = {
+                civics = {
+                    civic = civic_free_traders
+                    civic = civic_trading_posts
+                }
+            }
+        }
+
         from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
     }
 }
@@ -311,6 +335,8 @@ country_event = {
 
     immediate = {
 
+        log = "Attempting colonial trade value application."
+
         # Remove any prior flags
         switch = {
             trigger = has_country_flag
@@ -402,6 +428,7 @@ country_event = {
 		every_subject = {
             limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
             set_country_flag = lrsk_counted_chartered_company_sub
+            log = "Counting subject [this.GetName]"
         }
         set_variable = { which = lrsk_charcols value = 0 } # Technically this does nothing but eh explicitness...
 
@@ -416,11 +443,15 @@ country_event = {
                 limit = { 
                     has_country_flag = lrsk_counted_chartered_company_sub
 				    is_subject_type = lrsk_gov_var_subject_chartered_company
-                }
-                change_variable = { which = lrsk_charcols value = 1 }
+                }                
                 remove_country_flag = lrsk_counted_chartered_company_sub
+                log = "Reviewed subject [this.GetName]"
             }
+            change_variable = { which = lrsk_charcols value = 1 }
+            log = "Subjects counted = [this.lrsk_charcols]"
         }
+
+        log = "Num of counted subjects = [this.lrsk_charcols]"
 
         #add new
         IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
