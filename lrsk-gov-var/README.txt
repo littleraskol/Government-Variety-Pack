@@ -145,7 +145,7 @@ Controlling Interest (Any) - A small clique of well-connected members of the boa
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade V
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased happiness, production, and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
 2. New Governments
 
