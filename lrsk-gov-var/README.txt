@@ -19,6 +19,12 @@ Tradeways, Inc. (Megacorporation) - This global megacorporation established earl
 
 Grand Alliance (Militarist) - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
 
+Uplift (Any) - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
+
+Sublight Empire (Not Egalitarian) - This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies with enough strings attached to keep those offshoots under their thumbs... for now. (Start as the overlord of three special vassal empires of your species, which will provide you with resources via taxes although you will not be able to integrate them. These vassals will occupy any Guaranteed Habitable Worlds slots near your home system and will eventually break from from your FTL monopoly. One vassal is loyal and shares your ethics, one is the result of a generation ship and will have random ethics, the third will be composed of dissidents with opposed ethics. Unique colony interaction events culminating in the evolution of the system into new forms. WARNING: This origin can only be guaranteed to work properly when choosing a base game planet type for your homeworld.)
+
+Sublight Commonwealth (Not Authoritarian) - This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies on the condition of their entering an interstellar commonwealth of worlds that, in theory, works for the benefit of all members, but tends to give most decision-making power to the homeworld. (Start as the overlord of three special vassal empires of your species. You will not be able to integrate them, but as the respected leader of their combined efforts, you gain Influence and Unity from the arrangement. These vassals will occupy any Guaranteed Habitable Worlds slots near your home system. One vassal is loyal and shares your ethics, one is the result of a generation ship and will have random ethics, the third will be composed of dissidents with opposed ethics. Unique colony interaction events culminating in the evolution of the system into new forms. WARNING: This origin can only be guaranteed to work properly when choosing a base game planet type for your homeworld.)
+
 Normal Civics:
 
 Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
@@ -139,11 +145,11 @@ Educational Consortium (Any) - This conglomerate specializes in providing high-q
 
 Gig Economics (Any) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happi
 
-Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interact
+Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
 
-Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market
+Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
-Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade V
+Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
 Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
