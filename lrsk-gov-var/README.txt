@@ -197,8 +197,14 @@ v1.7 (05-??-20) - More Origins, New "Garlic Pudding" Govts and Civic
 -GFX: Changed the preview image for Grand Alliance.
 -Added some origin icons.
 -Added three government types and a new civic based on the ideas of Steam user Garlic Pudding, posted here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/
--New megacorp civic Gig Economics: -25% pop resettlement cost, +5% specialist and ruler happiness.
+-New megacorp civic Gig Economics: -25% pop resettlement cost, -5% Market Fee.
+-New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
+-New megacorp civic Vertical Integration: +5% Energy and Mineral production, +5% Trade Value
+-New megacorp civic Employee-Owned Co-op: Increased happiness, production, and political power of workers and specialists.
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration)
+-Civic Budgetary Thrift now also provides -5% Market Fee.
+-Civic Hoarder now also provides +7500 mineral storage.
+-Civic Self-Aware Production Targets now also provides +2.5% alloy production.
 -New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
 -Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
 -Fix: Added election weights to some governments missing them.
