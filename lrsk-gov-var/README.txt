@@ -205,6 +205,7 @@ v1.7 (05-??-20) - More Origins, New "Garlic Pudding" Govts and Civic
 -Civic Budgetary Thrift now also provides -5% Market Fee.
 -Civic Hoarder now also provides +7500 mineral storage.
 -Civic Self-Aware Production Targets now also provides +2.5% alloy production.
+-Civic Direct Revelation now has options to ignore Wild Cult popups and special interactions with the "Doomsday" Origin.
 -New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
 -Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
 -Fix: Added election weights to some governments missing them.
