@@ -69,6 +69,34 @@ opinion_lrsk_gov_var_disrespected_uplift_tutor = {
 
 ## For Sublight Empire/Commonwealth vassals
 
+# Good opening speech
+opinion_lrsk_gov_var_goodintro_sublight = {
+	opinion = {
+		base = 25
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Bad opening speech
+opinion_lrsk_gov_var_badintro_sublight = {
+	opinion = {
+		base = -25
+	}
+
+	decay = {
+		base = 2
+		modifier = {
+			factor = 0.5
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_empire
+			}
+		}
+	}
+}
+
 # Loyalists have passive approval
 opinion_lrsk_gov_var_loyal_sublight = {
 	opinion = {
@@ -199,6 +227,34 @@ opinion_lrsk_gov_var_ftlgift_sublight = {
 
 	decay = {
 		base = 1
+	}
+}
+
+# Good opening speech
+opinion_lrsk_gov_var_goodintro_sublight = {
+	opinion = {
+		base = 25
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+# Bad opening speech
+opinion_lrsk_gov_var_badintro_sublight = {
+	opinion = {
+		base = -25
+	}
+
+	decay = {
+		base = 2
+		modifier = {
+			factor = 0.5
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_empire
+			}
+		}
 	}
 }
 
