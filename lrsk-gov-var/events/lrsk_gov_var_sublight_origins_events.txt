@@ -299,6 +299,22 @@ country_event = {
 										}
 									}
 								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
 							}
 						}
 						ELSE_IF ={
@@ -398,6 +414,22 @@ country_event = {
 										}
 									}
 								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
 							}
 						}
 						ELSE_IF ={
@@ -467,6 +499,22 @@ country_event = {
 										}
 									}
 								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
+											ethic = "ethic_fanatic_xenophile"
+										}
+									}
+								}
 							}
 						}
 						ELSE_IF ={
@@ -489,11 +537,11 @@ country_event = {
 											ethic = "ethic_spiritualist"
 											ethic = "ethic_fanatic_xenophobe"
 										}
-										#Have to preset civics so we don't get fanatic purifiers...
-										civics = {
-											civic = civic_functional_architecture
-											civic = civic_cutthroat_politics
-										}
+										##Have to preset civics so we don't get fanatic purifiers... (origin req fixes)
+										#civics = {
+										#	civic = civic_functional_architecture
+										#	civic = civic_cutthroat_politics
+										#}
 									}
 								}
 								ethic_spiritualist = {
@@ -539,10 +587,26 @@ country_event = {
 											ethic = "ethic_militarist"
 											ethic = "ethic_fanatic_xenophobe"
 										}
-										#Have to preset civics so we don't get fanatic purifiers...
-										civics = {
-											civic = civic_functional_architecture
-											civic = civic_cutthroat_politics
+										##Have to preset civics so we don't get fanatic purifiers... (origin req fixes)
+										#civics = {
+										#	civic = civic_functional_architecture
+										#	civic = civic_cutthroat_politics
+										#}
+									}
+								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
+											ethic = "ethic_fanatic_xenophobe"
 										}
 									}
 								}
@@ -585,6 +649,22 @@ country_event = {
 										}
 									}
 								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
+											ethic = "ethic_fanatic_spiritualist"
+										}
+									}
+								}
 							}
 						}
 						ELSE_IF ={
@@ -620,6 +700,22 @@ country_event = {
 										authority = random
 										ethos = {
 											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_materialist"
+										}
+									}
+								}
+								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								default = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = random
 											ethic = "ethic_fanatic_materialist"
 										}
 									}
