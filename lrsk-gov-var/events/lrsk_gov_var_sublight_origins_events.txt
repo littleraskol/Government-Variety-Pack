@@ -1137,10 +1137,11 @@ country_event = {
 		add_resource = { energy = 500 }
 
 		hidden_effect = {
-			add_modifier = {
-				modifier = lrsk_gov_var_empire_colony_tradeadv
-				days = 3600
-			}
+			# Trade advantage is pointless, wiped out by corruption
+			#add_modifier = {
+			#	modifier = lrsk_gov_var_empire_colony_tradeadv
+			#	days = 3600
+			#}
 			country_event = { id = lrsk_gov_var_sublight_origins.200 }
 		}
 	}
