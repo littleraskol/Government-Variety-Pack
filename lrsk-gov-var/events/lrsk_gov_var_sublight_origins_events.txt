@@ -1011,15 +1011,15 @@ country_event = {
 		name = lrsk_gov_var_sublight_origins.101.a
 		custom_tooltip = lrsk_gov_var_sublight_origins.101.a.tooltip
 
-		trigger = {
-			NOT = { has_ethic = ethic_fanatic_authoritarian }
-		}
+		#trigger = {
+		#}
 
 		allow = {
 			has_resource = {
 				amount >= 25
 				type = influence
 			}
+			NOT = { has_ethic = ethic_fanatic_authoritarian }
 		}
 
 		add_resource = { influence = -25 }
@@ -1042,7 +1042,10 @@ country_event = {
 		name = lrsk_gov_var_sublight_origins.101.b
 		custom_tooltip = lrsk_gov_var_sublight_origins.101.b.tooltip
 
-		trigger = {
+		#trigger = {
+		#}
+
+		allow = {
 			NOT = { has_ethic = ethic_fanatic_egalitarian }
 		}
 
@@ -2018,6 +2021,10 @@ country_event = {
 		}
 
 		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_colony_opentrade
+				days = -1
+			}
 			#Remove any prior leadership flag
 			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_helped_all }
 				remove_country_flag = lrsk_sublight_colony_helped_all
@@ -2040,8 +2047,7 @@ country_event = {
 					country_event = { id = lrsk_gov_var_sublight_origins.45 }
 				}
 			}
-		}
-	
+		}	
 	}
 
 	option = {
@@ -2653,6 +2659,8 @@ country_event = {
 					}
 				}
 			}
+			leave_alliance = { override_requirements = yes }
+			set_country_flag = lrsk_sublight_overlord_left_prior_fed
 			IF = { limit = { federation = { has_federation_type = hegemony_federation } } # there should be some consequences...
 				set_country_flag = lrsk_sublight_overlord_bailed_on_hegemony
 				save_event_target_as = lrsk_sublight_overlord_hegemony_quitter
@@ -2671,8 +2679,6 @@ country_event = {
 					}
 				} }
 			}
-			leave_alliance = { override_requirements = yes }
-			set_country_flag = lrsk_sublight_overlord_left_prior_fed
 		}
 		event_target:lrsk_gov_var_new_sublight_fed_mem = {
 			set_subject_of = { who = none } # probably redundant

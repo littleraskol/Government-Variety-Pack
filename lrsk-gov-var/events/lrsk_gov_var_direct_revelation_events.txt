@@ -851,7 +851,11 @@ country_event = {
 			flag = lrsk_gov_var_wild_cult_formed_recently
 			days = 30
 		}
-		if = { limit = { has_origin = origin_doomsday }
+		if = { 
+			limit = { OR = { 
+				has_origin = origin_doomsday
+				# Leaving the door open to other superbad origin starts to apply here.
+			} }
 			# Need something to somewhat offset the penalties of doomsday cult
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_endisnigh
@@ -864,7 +868,7 @@ country_event = {
 					days = 18000
 				}
 				
-				# Heavily discourage other cults
+				# Heavily discourage other cults, though if one forms these will be reset.
 				set_timed_planet_flag = {
 					flag = lrsk_gov_var_wild_cult_planet
 					days = 18000
