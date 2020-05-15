@@ -299,7 +299,96 @@ country_event = {
 										}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_xenophobe = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_xenophile"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
+								ethic_fanatic_xenophile = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_xenophobe"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
+								ethic_fanatic_materialist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_spiritualist"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
+								ethic_fanatic_spiritualist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_materialist"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_egalitarian"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
@@ -414,7 +503,96 @@ country_event = {
 										}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_xenophobe = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_xenophile"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
+								ethic_fanatic_xenophile = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_xenophobe"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
+								ethic_fanatic_materialist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_spiritualist"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
+								ethic_fanatic_spiritualist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_materialist"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_authoritarian"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
@@ -499,7 +677,66 @@ country_event = {
 										}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_materialist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_spiritualist"
+											ethic = "ethic_fanatic_xenophile"
+										}
+									}
+								}
+								ethic_fanatic_spiritualist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_materialist"
+											ethic = "ethic_fanatic_xenophile"
+										}
+									}
+								}
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_xenophile"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_xenophile"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
@@ -594,7 +831,66 @@ country_event = {
 										#}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_materialist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_spiritualist"
+											ethic = "ethic_fanatic_xenophobe"
+										}
+									}
+								}
+								ethic_fanatic_spiritualist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_materialist"
+											ethic = "ethic_fanatic_xenophobe"
+										}
+									}
+								}
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_xenophobe"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_xenophobe"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
@@ -649,7 +945,36 @@ country_event = {
 										}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_spiritualist"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_spiritualist"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
@@ -704,7 +1029,36 @@ country_event = {
 										}
 									}
 								}
-								# Design note: This fallback is not ideal. Need to rework all this with real catches for fanatic values.
+								ethic_fanatic_militarist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_pacifist"
+											ethic = "ethic_fanatic_materialist"
+										}
+									}
+								}
+								ethic_fanatic_pacifist = {
+									create_country = {
+										species = event_target:lrsk_sublight_overlord_species
+										name_list = event_target:lrsk_sublight_overlord
+										type = default
+										origin = "lrsk_gov_var_origin_sublight_colony_dis"
+										ignore_initial_colony_error = yes
+										day_zero_contact = no
+										authority = random
+										ethos = {
+											ethic = "ethic_militarist"
+											ethic = "ethic_fanatic_materialist"
+										}
+									}
+								}
 								default = {
 									create_country = {
 										species = event_target:lrsk_sublight_overlord_species
