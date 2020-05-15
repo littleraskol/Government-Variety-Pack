@@ -974,6 +974,12 @@ country_event = {
 			}
 		}
 
+		# Hold off on the random whining a few years at start
+		set_timed_country_flag = {
+			flag = lrsk_sublight_whining_cooldown
+			days = 1800 # 5 years
+		}
+
 		# Intro event
 		country_event = {
 			id = lrsk_gov_var_sublight_origins.101
@@ -1005,6 +1011,13 @@ country_event = {
 
 	immediate = {
 		log = "In 'Sublight Intro' event"
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.101.e
+		custom_tooltip = lrsk_gov_var_sublight_origins.101.e.tooltip
+		
+		# Does nothing
 	}
 
 	option = {
@@ -1130,13 +1143,6 @@ country_event = {
 			}
 			country_event = { id = lrsk_gov_var_sublight_origins.200 }
 		}
-	}
-
-	option = {
-		name = lrsk_gov_var_sublight_origins.101.e
-		custom_tooltip = lrsk_gov_var_sublight_origins.101.e.tooltip
-		
-		# Does nothing
 	}
 }
 
