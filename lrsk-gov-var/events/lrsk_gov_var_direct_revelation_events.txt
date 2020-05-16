@@ -39,6 +39,7 @@ planet_event = {
 	#mean_time_to_happen = { months = 1 } # Testing value
 
 	immediate = {
+		log = "In Direct Revelation Wild Cult Formation gate on planet [this.GetName]."
 		#There's a base 50% chance of nothing happening. Each existing cult increases the chance of nothing happening. Any cult having recently formed will increase the overall chance of nothing happening by 33%. Any cult at all existing will increase the overall chance of nothing happening by 20%.
   		random_list = {
   			50 = {
@@ -90,6 +91,7 @@ planet_event = {
 					factor = 1.2
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
+				log = "Doing nothing."
 				# We want this outcome to create a slight buffer on the next cult formation attempt.
 				owner = {
 					#remove_country_flag = lrsk_gov_var_wild_cult_formed_recently
@@ -150,6 +152,7 @@ planet_event = {
 					factor = 0.8
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
+				log = "Forming a cult."
 
 				#Common housekeeping.
 				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
@@ -165,6 +168,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
 						}
+						log = "Divine Right"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_divine_right_cult"
 							days = 3600
@@ -191,6 +195,7 @@ planet_event = {
 							modifier = "lrsk_gov_var_statmod_children_of_heaven_cult"
 							days = 3600
 						}
+						log = "Children of Heaven"
 						if = {
 							limit = { owner = { NOR = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
@@ -209,6 +214,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_harmony_cult
 						}
+						log = "Holy War"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_holy_war_cult"
 							days = 3600
@@ -231,6 +237,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_holy_war_cult
 						}
+						log = "Harmony"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_harmony_cult"
 							days = 3600
@@ -253,6 +260,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_universal_family_cult
 						}
+						log = "Chosen Few"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_chosen_few_cult"
 							days = 3600
@@ -275,6 +283,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_chosen_few_cult
 						}
+						log = "Uni Family"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_universal_family_cult"
 							days = 3600
@@ -297,6 +306,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_golden_age_cult
 						}
+						log = "Doomsday"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_doomsday_cult"
 							days = 3600
@@ -319,6 +329,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_doomsday_cult
 						}
+						log = "Golden Age"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_golden_age_cult"
 							days = 3600
@@ -341,6 +352,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_wild_revelry_cult
 						}
+						log = "Penance"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
 							days = 3600
@@ -363,6 +375,7 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
 						}
+						log = "Revelry"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
 							days = 3600
@@ -395,6 +408,7 @@ planet_event = {
   	is_triggered_only = yes
 
 	immediate = {
+		log = "In Direct Revelation housekeeping."
 		owner = {
 			#This flag keeps multiple cults from repeatedly springing up on top of each other and provides a "grace period" to the player's attention span of 1 year.
 			set_timed_country_flag = {
@@ -443,6 +457,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Divine Right Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_divine_right_cult }
 		}
 	}
@@ -451,6 +466,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -459,6 +475,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -484,6 +501,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Children of Heaven Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_children_of_heaven_cult }
 		}
 	}
@@ -492,6 +510,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -500,6 +519,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -525,6 +545,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Holy War Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_holy_war_cult }
 		}
 	}
@@ -533,6 +554,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -541,6 +563,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -566,6 +589,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Universal Harmony Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_harmony_cult }
 		}
 	}
@@ -574,6 +598,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -582,6 +607,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -607,6 +633,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Chosen Few Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_chosen_few_cult }
 		}
 	}
@@ -615,6 +642,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -623,6 +651,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -648,6 +677,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Universal Family Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_universal_family_cult }
 		}
 	}
@@ -656,6 +686,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -664,6 +695,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -689,6 +721,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Doomsday Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_doomsday_cult }
 		}
 	}
@@ -697,6 +730,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -705,6 +739,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -730,6 +765,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Golden Age Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_golden_age_cult }
 		}
 	}
@@ -738,6 +774,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -746,6 +783,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -771,6 +809,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Penance and Redemption Cult Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_penance_and_redemption_cult }
 		}
 	}
@@ -779,6 +818,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -787,6 +827,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -812,6 +853,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore Wild Revelry Cult"
 			owner = { set_country_flag = lrsk_gov_var_ignore_wild_revelry_cult }
 		}
 	}
@@ -820,6 +862,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
 		}
 	}
@@ -828,6 +871,7 @@ planet_event = {
 		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
 
 		hidden_effect = {
+			log = "Chose to ignore ALL cults"
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
@@ -845,6 +889,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In Direct Revelation setup event."
 		# Can't get a cult randomly before 30 days go by.
 		set_timed_country_flag = {
 			flag = lrsk_gov_var_wild_cult_formed_recently
@@ -855,6 +900,7 @@ country_event = {
 				has_origin = origin_doomsday
 				# Leaving the door open to other superbad origin starts to apply here.
 			} }
+			log = "In Direct Revelation setup event; setting special doomsday properties."
 			# Need something to somewhat offset the penalties of doomsday cult
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_endisnigh
