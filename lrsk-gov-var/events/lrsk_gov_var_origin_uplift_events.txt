@@ -754,6 +754,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = event_target:lrsk_my_uplift_tutor
 		has_origin = lrsk_gov_var_origin_uplift
 		NOT = { has_country_flag = lrsk_uplift_got_system_offer }
 		is_subject = yes
@@ -964,6 +965,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = event_target:lrsk_my_uplift_tutor
 		has_origin = lrsk_gov_var_origin_uplift
 		NOT = { has_country_flag = lrsk_uplift_obsv_station_msg }
 		is_subject = yes
@@ -1173,6 +1175,16 @@ planet_event = {
 				days = 1800
 			}
 			add_resource = { influence = 50 }
+
+			if = { limit = { exists = event_target:lrsk_my_uplift_tutor }
+				event_target:lrsk_my_uplift_tutor = {
+					add_opinion_modifier = {
+						who = event_target:lrsk_uplift_pupil
+						modifier = opinion_lrsk_gov_var_impressed_uplift_tutor
+					}
+				}
+			}
+
 			if = {
 				limit = { NOT = { has_country_flag = lrsk_uplift_no_reward_notice } }
 				country_event = { id = lrsk_gov_var_uplift.120 days = 2 }
@@ -1263,6 +1275,15 @@ country_event = {
 				add_resource = { unity = 3000 }
 			}
 
+			if = { limit = { exists = event_target:lrsk_my_uplift_tutor }
+				event_target:lrsk_my_uplift_tutor = {
+					add_opinion_modifier = {
+						who = event_target:lrsk_uplift_pupil
+						modifier = opinion_lrsk_gov_var_impressed_uplift_tutor
+					}
+				}
+			}
+
 			if = {
 				limit = { NOT = { has_country_flag = lrsk_enlighten_no_reward_notice } }
 				country_event = { id = lrsk_gov_var_uplift.130 days = 2 }
@@ -1300,6 +1321,83 @@ country_event = {
             factor = 1 # meh
         }
     }
+}
+
+# Tutor noticed
+country_event = {
+	id = lrsk_gov_var_uplift.14
+	title = TRANSMISSION
+
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+		}
+		text = "lrsk_gov_var_uplift.14.hive.desc"
+	}
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+		}
+		text = "lrsk_gov_var_uplift.14.mech.desc"
+	}
+	desc = {
+		trigger = {
+			event_target:lrsk_my_uplift_tutor = { is_gestalt = no }
+		}
+		text = "lrsk_gov_var_uplift.14.norm.desc"
+	}
+	
+	diplomatic = yes
+	
+	mean_time_to_happen = { days = 5 }
+
+	trigger = {
+		exists = event_target:lrsk_my_uplift_tutor
+		has_origin = lrsk_gov_var_origin_uplift
+		NOT = { has_country_flag = lrsk_uplift_impressed_msg }
+		#is_subject = yes	# This is not really a subject interaction
+		#overlord = { has_country_flag = lrsk_uplift_tutor }
+	}
+	
+	picture_event_data = {
+		portrait = event_target:lrsk_my_uplift_tutor
+		planet_background = event_target:lrsk_my_uplift_tutor
+		graphical_culture = event_target:lrsk_my_uplift_tutor
+		city_level = event_target:lrsk_my_uplift_tutor
+		room = event_target:lrsk_my_uplift_tutor
+	}
+
+	immediate = {
+		#overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
+		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
+		set_country_flag = lrsk_uplift_impressed_msg
+		log = "In tutor impressed message"
+	}
+	
+	option = {
+		name = lrsk_gov_var_uplift.14.hive.a
+		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
+
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.14.mech.a
+		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_uplift.14.norm.a
+		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
+		
+		trigger = {
+			event_target:lrsk_uplift_pupil = { is_gestalt = no }
+		}
+	}
 }
 
 # Garbo test event: spawns presapients, assumes continental world available
