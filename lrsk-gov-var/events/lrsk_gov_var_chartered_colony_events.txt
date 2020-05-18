@@ -40,10 +40,10 @@ country_event = {
         }
 
         # TO DO: Force remove charter board civic.
-        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+        IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
             while = {
                 count = 10
-                IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+                IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
                     change_government = {
                         civics = {
                             civic = random
@@ -54,7 +54,7 @@ country_event = {
             }
         }
         # Final Catch
-        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+        IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
             change_government = {
                 civics = {
                     civic = civic_free_traders
