@@ -1148,10 +1148,10 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_vasag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_vasag_sublight
+							#}
 							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
@@ -1159,11 +1159,15 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_satag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_satag_sublight
+							#}
 							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
+						}
+						add_opinion_modifier = {
+							who = event_target:lrsk_sublight_overlord
+							modifier = opinion_lrsk_gov_var_subpow_sublight
 						}
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
@@ -1236,10 +1240,10 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_vasag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_vasag_sublight
+							#}
 							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
@@ -1247,11 +1251,15 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_satag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_satag_sublight
+							#}
 							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
+						}
+						add_opinion_modifier = {
+							who = event_target:lrsk_sublight_overlord
+							modifier = opinion_lrsk_gov_var_subpow_sublight
 						}
 						log = "Done with genship establishment"
 					}
@@ -1320,10 +1328,10 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								modifier = opinion_lrsk_gov_var_ftlmn_sublight
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_vasag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_vasag_sublight
+							#}
 							log = "Detected this is sublight vassal of: [event_target:lrsk_sublight_overlord.GetName]"
 						}
 						ELSE = {
@@ -1331,11 +1339,15 @@ country_event = {
 								who = event_target:lrsk_sublight_overlord
 								subject_type = lrsk_gov_var_sublight_satellite
 							}
-							add_opinion_modifier = {
-								who = event_target:lrsk_sublight_overlord
-								modifier = opinion_lrsk_gov_var_satag_sublight
-							}
+							#add_opinion_modifier = {
+							#	who = event_target:lrsk_sublight_overlord
+							#	modifier = opinion_lrsk_gov_var_satag_sublight
+							#}
 							log = "Detected this is sublight satellite of: [event_target:lrsk_sublight_overlord.GetName]"
+						}
+						add_opinion_modifier = {
+							who = event_target:lrsk_sublight_overlord
+							modifier = opinion_lrsk_gov_var_subpow_sublight
 						}
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
@@ -1359,42 +1371,59 @@ country_event = {
 		} }
 
 		# Set overlord opinions
-		IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
-			log = "Adding sublight empire overlord opinion of vassals for [this.GetName]"
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_dissident_colony
-				modifier = opinion_lrsk_gov_var_vasol_sublight
-			}
-			log = "Dissidents: Done."
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_genship_colony
-				modifier = opinion_lrsk_gov_var_vasol_sublight
-			}
-			log = "GenShip: Done."
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_loyalist_colony
-				modifier = opinion_lrsk_gov_var_vasol_sublight
-			}
-			log = "Loyalists: Done."
+		log = "Adding sublight overlord opinion of vassals for [this.GetName]"
+		add_opinion_modifier = {
+			who = event_target:lrsk_sublight_dissident_colony
+			modifier = opinion_lrsk_gov_var_subol_sublight
 		}
-		ELSE = {
-			log = "Adding sublight commonwealth overlord opinion of satellites for [this.GetName]"
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_dissident_colony
-				modifier = opinion_lrsk_gov_var_satol_sublight
-			}
-			log = "Dissidents: Done."
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_genship_colony
-				modifier = opinion_lrsk_gov_var_satol_sublight
-			}
-			log = "GenShip: Done."
-			add_opinion_modifier = {
-				who = event_target:lrsk_sublight_loyalist_colony
-				modifier = opinion_lrsk_gov_var_satol_sublight
-			}
-			log = "Loyalists: Done."
+		log = "Dissidents: Done."
+		add_opinion_modifier = {
+			who = event_target:lrsk_sublight_genship_colony
+			modifier = opinion_lrsk_gov_var_subol_sublight
 		}
+		log = "GenShip: Done."
+		add_opinion_modifier = {
+			who = event_target:lrsk_sublight_loyalist_colony
+			modifier = opinion_lrsk_gov_var_subol_sublight
+		}
+		log = "Loyalists: Done."
+
+		#IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
+		#	log = "Adding sublight empire overlord opinion of vassals for [this.GetName]"
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_dissident_colony
+		#		modifier = opinion_lrsk_gov_var_vasol_sublight
+		#	}
+		#	log = "Dissidents: Done."
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_genship_colony
+		#		modifier = opinion_lrsk_gov_var_vasol_sublight
+		#	}
+		#	log = "GenShip: Done."
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_loyalist_colony
+		#		modifier = opinion_lrsk_gov_var_vasol_sublight
+		#	}
+		#	log = "Loyalists: Done."
+		#}
+		#ELSE = {
+		#	log = "Adding sublight commonwealth overlord opinion of satellites for [this.GetName]"
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_dissident_colony
+		#		modifier = opinion_lrsk_gov_var_satol_sublight
+		#	}
+		#	log = "Dissidents: Done."
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_genship_colony
+		#		modifier = opinion_lrsk_gov_var_satol_sublight
+		#	}
+		#	log = "GenShip: Done."
+		#	add_opinion_modifier = {
+		#		who = event_target:lrsk_sublight_loyalist_colony
+		#		modifier = opinion_lrsk_gov_var_satol_sublight
+		#	}
+		#	log = "Loyalists: Done."
+		#}
 
 		# FTL monopoly break
 		if = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
@@ -1876,14 +1905,18 @@ country_event = {
 				who = event_target:lrsk_sublight_overlord
 				modifier = opinion_lrsk_gov_var_ftlmn_sublight
 			}
+
+			# Opinion modifiers: -15 (loyal), -30 (GSP), -45 (dissident)
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_overlord
+				modifier = opinion_lrsk_gov_var_resent_sublight
+			}
 			IF = { limit = { NOT = { has_origin = lrsk_gov_var_origin_sublight_colony_loy } }
-				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }	# If you've benefitted them in the past, no penalty now that free
-					add_opinion_modifier = {
-						who = event_target:lrsk_sublight_overlord
-						modifier = opinion_lrsk_gov_var_thrall_sublight
-					}
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_thrall_sublight
 				}
-				IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_colony_dis }	# Some folks you just can't win with
+				IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_colony_dis }
 					add_opinion_modifier = {
 						who = event_target:lrsk_sublight_overlord
 						modifier = opinion_lrsk_gov_var_ffree_sublight
@@ -2029,7 +2062,7 @@ country_event = {
 
 	option = {
 		name = lrsk_gov_var_sublight_origins.4.b
-		custom_tooltip = lrsk_gov_var_sublight_origins.4.a.tooltip
+		custom_tooltip = lrsk_gov_var_sublight_origins.4.b.tooltip
 
 		# We haven't done them any favors yet and therefore we are not big mad
 		trigger = { from = { OR = {
@@ -2638,7 +2671,7 @@ country_event = {
 	desc = lrsk_gov_var_sublight_origins.7.desc
 	picture = GFX_evt_board_meeting
 
-	mean_time_to_happen = { years = 40 }
+	mean_time_to_happen = { years = 25 }
 
 	# This will only happen if you actually have sublight vassals/satellites with no FTL restrictions
 	trigger = {
@@ -3116,29 +3149,39 @@ country_event = {
 					}
 				}
 			}
+			save_event_target_as = lrsk_sublight_overlord_federation_quitter
 			leave_alliance = { override_requirements = yes }
 			set_country_flag = lrsk_sublight_overlord_left_prior_fed
-			IF = { limit = { federation = { has_federation_type = hegemony_federation } } # there should be some consequences...
+
+			# Consequences for sudden departure...
+			# Hegemon: President hates you and has rejoin CB
+			# Others: Former federation-mates strongly dislike you
+			IF = { limit = { federation = { has_federation_type = hegemony_federation } }
 				set_country_flag = lrsk_sublight_overlord_bailed_on_hegemony
-				save_event_target_as = lrsk_sublight_overlord_hegemony_quitter
-				federation = { random_member = { 
-					limit = { is_federation_leader = yes }
+				federation = { random_member = { limit = { is_federation_leader = yes }
 					set_country_flag = lrsk_sublight_member_bailed_suddenly
 					save_event_target_as = lrsk_sublight_overlord_hegemon_spurned
 					add_opinion_modifier = {
-						who = event_target:lrsk_sublight_overlord_hegemony_quitter
+						who = event_target:lrsk_sublight_overlord_federation_quitter
 						modifier = opinion_lrsk_gov_var_hegmad_sublight
 					}
 					add_casus_belli = {
 						type = cb_lrsk_gov_var_hegemon
-						who = event_target:lrsk_sublight_overlord_hegemony_quitter
+						who = event_target:lrsk_sublight_overlord_federation_quitter
 						days = -1
 					}
 				} }
 			}
+			ELSE = { federation = { every_member = { limit = { NOT = { is_same_value = event_target:lrsk_sublight_overlord_federation_quitter } }
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord_federation_quitter
+					modifier = opinion_lrsk_gov_var_fedmad_sublight
+				}				
+			} } }
 		}
+
 		event_target:lrsk_gov_var_new_sublight_fed_mem = {
-			set_subject_of = { who = none } # probably redundant
+			set_subject_of = { who = none } # probably redundant but JIC
 			join_alliance = {
 				who = event_target:lrsk_sublight_overlord
 				override_requirements = yes
@@ -3155,7 +3198,9 @@ country_event = {
 			set_country_flag = lrsk_sublight_overlord_formed_new_fed
 			set_federation_leader = event_target:lrsk_sublight_overlord
 		}
+
 		federation = { set_federation_flag = lrsk_sublight_federation }
+		
 		#ELSE_IF = { limit = { has_country_flag = lrsk_sublight_overlord_offered_vassalization }
 		#	log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
 		#}
@@ -3402,7 +3447,7 @@ country_event = {
 				remove_modifier = lrsk_gov_var_empire_colonial_corruption_slight
 				add_modifier = {
 					modifier = lrsk_gov_var_empire_colonial_corruption_low
-					days = 2160 # 6 years
+					days = 7200 
 				}
 			}
 			lrsk_gov_var_empire_colonial_corruption_low = {
@@ -3413,7 +3458,7 @@ country_event = {
 				remove_modifier = lrsk_gov_var_empire_colonial_corruption_low
 				add_modifier = {
 					modifier = lrsk_gov_var_empire_colonial_corruption_worrying
-					days = 3240 # 9 years
+					days = 10800 
 				}
 			}
 			lrsk_gov_var_empire_colonial_corruption_worrying = {
@@ -3424,7 +3469,7 @@ country_event = {
 				remove_modifier = lrsk_gov_var_empire_colonial_corruption_worrying
 				add_modifier = {
 					modifier = lrsk_gov_var_empire_colonial_corruption_crippling
-					days = 4860 # 13.5 years
+					days = 14400
 				}
 			}
 			lrsk_gov_var_empire_colonial_corruption_crippling = {
@@ -3455,8 +3500,12 @@ country_event = {
 					# No corruption yet
 					add_modifier = {
 						modifier = lrsk_gov_var_empire_colonial_corruption_slight
-						days = 1440 # 4 years
+						days = 3600
 					}
+					every_subject = { add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_colcorr_sublight
+					} }
 				}
 			}		
 		}

@@ -435,11 +435,14 @@ l_english:
  opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony" # Loyalists have passive approval
  opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Colony" # Dissidents have passive disapproval
  opinion_lrsk_gov_var_ftlmn_sublight:0 "FTL Patent License" # FTL monopoly keeps them at least acting happy
- opinion_lrsk_gov_var_vasag_sublight:0 "Colonial Status Treaty" # Reduce initial power penalty for sublight empires, wears off in 60 years.
- opinion_lrsk_gov_var_satag_sublight:0 "$opinion_lrsk_gov_var_vasag_sublight$" # Reduce initial power penalty for sublight commonwealths, wears off in 120 years.
- opinion_lrsk_gov_var_vasol_sublight:0 "Satisfied by Colonial Treaty" # Offsets any overlord distaste for vassals, wears off in 30 years.
- opinion_lrsk_gov_var_satol_sublight:0 "$opinion_lrsk_gov_var_vasol_sublight$" # Offsets any overlord distaste for satellites, wears off in 40 years.
+ opinion_lrsk_gov_var_subpow_sublight:0 "Colonial Status Treaty" # Offsets initial power penalty somewhat for sublight origin overlords
+ #opinion_lrsk_gov_var_vasag_sublight:0 "$opinion_lrsk_gov_var_subpow_sublight$" # Reduce initial power penalty for sublight empires, wears off in 50 years.
+ #opinion_lrsk_gov_var_satag_sublight:0 "$opinion_lrsk_gov_var_subpow_sublight$" # Reduce initial power penalty for sublight commonwealths, wears off in 75 years.
+ opinion_lrsk_gov_var_subol_sublight:0 "Satisfied by Colonial Treaty" # Offsets any overlord distaste for vassals, wears off in 50 years (Commonwealth) or 25 years (Empire).
+ #opinion_lrsk_gov_var_vasol_sublight:0 "$opinion_lrsk_gov_var_subol_sublight$" # Offsets any overlord distaste for vassals, wears off in 25 years.
+ #opinion_lrsk_gov_var_satol_sublight:0 "$opinion_lrsk_gov_var_subol_sublight$" # Offsets any overlord distaste for satellites, wears off in 50 years.
  opinion_lrsk_gov_var_oldire_sublight:0 "Impudent Wretches" # When you hate your vassal
+ opinion_lrsk_gov_var_resent_sublight:0 "Lingering Resentment" # This is how all colonies feel towards overlord after getting FTL.
  opinion_lrsk_gov_var_thrall_sublight:0 "Kept Us In Thrall" # This is how dis/gsp colonies feel towards overlord after getting FTL.
  opinion_lrsk_gov_var_ffree_sublight:0 "Freedom In Our Grasp" # This is how dis colonies also feel towards overlord after getting FTL.
  opinion_lrsk_gov_var_ftlgift_sublight:0 "Offered FTL Tech" # This is how other colonies feel towards the colony that shares FTL tech with them.
@@ -451,7 +454,8 @@ l_english:
  opinion_lrsk_gov_var_stooge_sublight:0 "Overlord's Pet" # This is how other colonies feel towards the colony that gets benefits for just themselves.
  opinion_lrsk_gov_var_colcorr_sublight:0 "$LRSK_GOV_VAR_COL_CORR$" # Every time colonial corruption rises.
  opinion_lrsk_gov_var_endcorr_sublight:0 "Endemic Corruption" # Highest level of colonial corruption.
- opinion_lrsk_gov_var_hegmad_sublight:0 "Left Hegemony Without Consent"
+ opinion_lrsk_gov_var_fedmad_sublight:0 "Abandoned the Federation" # If you yeet yourself out of a (non-heg) federation by colonial reform...
+ opinion_lrsk_gov_var_hegmad_sublight:0 "Left Hegemony Without Consent" # If you yeet yourself out of a hegemony by colonial reform...
 
  ## CBs/Wargoals
 
@@ -619,7 +623,7 @@ l_english:
  lrsk_gov_var_sublight_origins.4.c:0 "Maybe we should try the carrot now that the stick is gone..."
  lrsk_gov_var_sublight_origins.4.c.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will grant them special favors, increasing their trade value by 10%. This will please them, but displease the other colonies. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
  lrsk_gov_var_sublight_origins.4.d:0 "After we treated them so well... The impudence..."
- lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this every way we can! This will upset them greatly." # +250 influence
+ lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ §HWe will penalize them for this every way we can!§! This will upset them greatly." # +250 influence
 
  lrsk_gov_var_sublight_origins.5.name:0 "Upsetting the Status Quo"
  lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the [from.GetName] have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their activities be lifted."
