@@ -1853,10 +1853,9 @@ country_event = {
 
 	immediate = {
 		log = "In tech check event"
-		country_event = { id = lrsk_gov_var_sublight_origins.22 }
+		country_event = { id = lrsk_gov_var_sublight_origins.22 days = 1 }
 	}
 }
-
 
 # Try getting FTL again (not sure I can recursively call events...)
 country_event = {
@@ -1926,9 +1925,7 @@ country_event = {
 			set_country_flag = lrsk_sublight_colony_got_FTL
 
 			# Informs overlord
-			IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_refused_to_haggle } }
-				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.4 days = 1 } }
-			}
+			overlord = { country_event = { id = lrsk_gov_var_sublight_origins.4 days = 1 } }
 		}
 	}			
 
@@ -2014,7 +2011,7 @@ country_event = {
 					}
 					# Take it
 					set_country_flag = lrsk_sublight_colony_took_gifted_FTL
-					country_event = { id = lrsk_gov_var_sublight_origins.22 days = 1 }
+					country_event = { id = lrsk_gov_var_sublight_origins.22 days = 5 }
 				}
 			}
 		}
@@ -2251,7 +2248,7 @@ country_event = {
 	trigger = { from = {
 		# I hope this prevents this from firing in the event that the sender is independent somehow
 		is_subject_type = lrsk_gov_var_sublight_vassal
-		has_modifier = lrsk_gov_var_empire_black_box_drives	
+		has_modifier = lrsk_gov_var_empire_black_box_drives
 	} }
 
 	immediate = {
