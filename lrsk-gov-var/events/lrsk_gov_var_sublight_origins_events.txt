@@ -2048,6 +2048,7 @@ country_event = {
 
 	immediate = {
 		log = "In 'Notify overlord of FTL' event"
+		save_event_target_as = lrsk_sublight_overlord	# I feel like this should not be necessary but it might clarify later targets
 	}
 
 	option = {
@@ -2382,6 +2383,8 @@ country_event = {
 
 	immediate = {
 		log = "In 'Periodic whining' event"
+		save_event_target_as = lrsk_sublight_overlord	# I feel like this should not be necessary but it might clarify later targets
+		
 		set_timed_country_flag = {
 			flag = lrsk_sublight_whining_cooldown
 			days = 720 # 2 year cooldown
