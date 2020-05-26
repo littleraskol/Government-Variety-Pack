@@ -1,0 +1,870 @@
+# New Advanced Civics
+# Events - Sortition
+# Events to control special leader traits
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_sortition
+
+# Add Unready to leaders
+country_event = {
+	id = lrsk_adv_civ_sortition.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {	this = { has_civic = lrsk_adv_civ_civic_sortition	} }
+
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					leader_class = admiral
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_adm
+						has_trait = lrsk_adv_civ_trait_groomed_adm
+						has_trait = lrsk_adv_civ_trait_tutors_adm
+						has_trait = lrsk_adv_civ_trait_ambitious_adm
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_unready_adm
+				add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = general
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gen
+						has_trait = lrsk_adv_civ_trait_groomed_gen
+						has_trait = lrsk_adv_civ_trait_tutors_gen
+						has_trait = lrsk_adv_civ_trait_ambitious_gen
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_unready_gen
+				add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = governor
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gov
+						has_trait = lrsk_adv_civ_trait_groomed_gov
+						has_trait = lrsk_adv_civ_trait_tutors_gov
+						has_trait = lrsk_adv_civ_trait_ambitious_gov
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_unready_gov
+				add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = scientist
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_sci
+						has_trait = lrsk_adv_civ_trait_groomed_sci
+						has_trait = lrsk_adv_civ_trait_tutors_sci
+						has_trait = lrsk_adv_civ_trait_ambitious_sci
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_unready_sci
+				add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_rul
+						has_trait = lrsk_adv_civ_trait_groomed_rul
+						has_trait = lrsk_adv_civ_trait_tutors_rul
+						has_trait = lrsk_adv_civ_trait_ambitious_rul
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_unready_rul
+				add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets leader-class version of Unready
+country_event = {
+	id = lrsk_adv_civ_sortition.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		this = { has_civic = lrsk_adv_civ_civic_sortition	}
+		from = {
+			has_trait = lrsk_adv_civ_trait_unready_rul
+			NOR = {
+				has_trait = lrsk_adv_civ_trait_unready_sci
+				has_trait = lrsk_adv_civ_trait_unready_gov
+				has_trait = lrsk_adv_civ_trait_unready_gen
+				has_trait = lrsk_adv_civ_trait_unready_adm
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_adv_civ_trait_unready_adm
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_adv_civ_trait_unready_gen
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_adv_civ_trait_unready_gov
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_adv_civ_trait_unready_sci
+				break = yes
+			}
+		}
+	}
+}
+
+# Add Tutors to leaders
+country_event = {
+	id = lrsk_adv_civ_sortition.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {	this = { has_civic = lrsk_adv_civ_civic_sortition	} }
+
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					leader_class = admiral
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_adm
+						has_trait = lrsk_adv_civ_trait_groomed_adm
+						has_trait = lrsk_adv_civ_trait_tutors_adm
+						has_trait = lrsk_adv_civ_trait_ambitious_adm
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_tutors_adm
+				add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = general
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gen
+						has_trait = lrsk_adv_civ_trait_groomed_gen
+						has_trait = lrsk_adv_civ_trait_tutors_gen
+						has_trait = lrsk_adv_civ_trait_ambitious_gen
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_tutors_gen
+				add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = governor
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gov
+						has_trait = lrsk_adv_civ_trait_groomed_gov
+						has_trait = lrsk_adv_civ_trait_tutors_gov
+						has_trait = lrsk_adv_civ_trait_ambitious_gov
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_tutors_gov
+				add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = scientist
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_sci
+						has_trait = lrsk_adv_civ_trait_groomed_sci
+						has_trait = lrsk_adv_civ_trait_tutors_sci
+						has_trait = lrsk_adv_civ_trait_ambitious_sci
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_tutors_sci
+				add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_rul
+						has_trait = lrsk_adv_civ_trait_groomed_rul
+						has_trait = lrsk_adv_civ_trait_tutors_rul
+						has_trait = lrsk_adv_civ_trait_ambitious_rul
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_tutors_rul
+				add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets leader-class version of Tutors
+country_event = {
+	id = lrsk_adv_civ_sortition.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		this = { has_civic = lrsk_adv_civ_civic_sortition	}
+		from = {
+			has_trait = lrsk_adv_civ_trait_tutors_rul
+			NOR = {
+				has_trait = lrsk_adv_civ_trait_tutors_sci
+				has_trait = lrsk_adv_civ_trait_tutors_gov
+				has_trait = lrsk_adv_civ_trait_tutors_gen
+				has_trait = lrsk_adv_civ_trait_tutors_adm
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_adv_civ_trait_tutors_adm
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_adv_civ_trait_tutors_gen
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_adv_civ_trait_tutors_gov
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_adv_civ_trait_tutors_sci
+				break = yes
+			}
+		}
+	}
+}
+
+# Add Groomed to leaders
+country_event = {
+	id = lrsk_adv_civ_sortition.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {	this = { has_civic = lrsk_adv_civ_civic_sortition	} }
+
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					leader_class = admiral
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_adm
+						has_trait = lrsk_adv_civ_trait_groomed_adm
+						has_trait = lrsk_adv_civ_trait_tutors_adm
+						has_trait = lrsk_adv_civ_trait_ambitious_adm
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_groomed_adm
+				add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = general
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gen
+						has_trait = lrsk_adv_civ_trait_groomed_gen
+						has_trait = lrsk_adv_civ_trait_tutors_gen
+						has_trait = lrsk_adv_civ_trait_ambitious_gen
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_groomed_gen
+				add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = governor
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gov
+						has_trait = lrsk_adv_civ_trait_groomed_gov
+						has_trait = lrsk_adv_civ_trait_tutors_gov
+						has_trait = lrsk_adv_civ_trait_ambitious_gov
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_groomed_gov
+				add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = scientist
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_sci
+						has_trait = lrsk_adv_civ_trait_groomed_sci
+						has_trait = lrsk_adv_civ_trait_tutors_sci
+						has_trait = lrsk_adv_civ_trait_ambitious_sci
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_groomed_sci
+				add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_rul
+						has_trait = lrsk_adv_civ_trait_groomed_rul
+						has_trait = lrsk_adv_civ_trait_tutors_rul
+						has_trait = lrsk_adv_civ_trait_ambitious_rul
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_groomed_rul
+				add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets leader-class version of Groomed
+country_event = {
+	id = lrsk_adv_civ_sortition.6
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		this = { has_civic = lrsk_adv_civ_civic_sortition	}
+		from = {
+			has_trait = lrsk_adv_civ_trait_groomed_rul
+			NOR = {
+				has_trait = lrsk_adv_civ_trait_groomed_sci
+				has_trait = lrsk_adv_civ_trait_groomed_gov
+				has_trait = lrsk_adv_civ_trait_groomed_gen
+				has_trait = lrsk_adv_civ_trait_groomed_adm
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_adv_civ_trait_groomed_adm
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_adv_civ_trait_groomed_gen
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_adv_civ_trait_groomed_gov
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_adv_civ_trait_groomed_sci
+				break = yes
+			}
+		}
+	}
+}
+
+# Add Ambitious to leaders
+country_event = {
+	id = lrsk_adv_civ_sortition.7
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {	this = { has_civic = lrsk_adv_civ_civic_sortition	} }
+
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					leader_class = admiral
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_adm
+						has_trait = lrsk_adv_civ_trait_groomed_adm
+						has_trait = lrsk_adv_civ_trait_tutors_adm
+						has_trait = lrsk_adv_civ_trait_ambitious_adm
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_ambitious_adm
+				add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = general
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gen
+						has_trait = lrsk_adv_civ_trait_groomed_gen
+						has_trait = lrsk_adv_civ_trait_tutors_gen
+						has_trait = lrsk_adv_civ_trait_ambitious_gen
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_ambitious_gen
+				add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = governor
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_gov
+						has_trait = lrsk_adv_civ_trait_groomed_gov
+						has_trait = lrsk_adv_civ_trait_tutors_gov
+						has_trait = lrsk_adv_civ_trait_ambitious_gov
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_ambitious_gov
+				add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = scientist
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_sci
+						has_trait = lrsk_adv_civ_trait_groomed_sci
+						has_trait = lrsk_adv_civ_trait_tutors_sci
+						has_trait = lrsk_adv_civ_trait_ambitious_sci
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_ambitious_sci
+				add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+					NOR = {
+						has_trait = lrsk_adv_civ_trait_unready_rul
+						has_trait = lrsk_adv_civ_trait_groomed_rul
+						has_trait = lrsk_adv_civ_trait_tutors_rul
+						has_trait = lrsk_adv_civ_trait_ambitious_rul
+					}
+				}
+				add_trait = lrsk_adv_civ_trait_ambitious_rul
+				add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets leader-class version of Ambitious
+country_event = {
+	id = lrsk_adv_civ_sortition.8
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		this = { has_civic = lrsk_adv_civ_civic_sortition	}
+		from = {
+			has_trait = lrsk_adv_civ_trait_ambitious_rul
+			NOR = {
+				has_trait = lrsk_adv_civ_trait_ambitious_sci
+				has_trait = lrsk_adv_civ_trait_ambitious_gov
+				has_trait = lrsk_adv_civ_trait_ambitious_gen
+				has_trait = lrsk_adv_civ_trait_ambitious_adm
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_adv_civ_trait_ambitious_adm
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_adv_civ_trait_ambitious_gen
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_adv_civ_trait_ambitious_gov
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_adv_civ_trait_ambitious_sci
+				break = yes
+			}
+		}
+	}
+}
+
+# Leader levels up
+country_event = {
+	id = lrsk_adv_civ_sortition.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = { from = {
+		save_global_event_target_as = lrsk_sortlvl_protag
+		if {
+			limit = {
+				root = { has_civic = lrsk_adv_civ_civic_sortition }
+				NOR = {
+					has_trait = lrsk_adv_civ_trait_unready_rul
+					has_trait = lrsk_adv_civ_trait_unready_sci
+					has_trait = lrsk_adv_civ_trait_unready_gov
+					has_trait = lrsk_adv_civ_trait_unready_gen
+					has_trait = lrsk_adv_civ_trait_unready_adm
+					has_trait = lrsk_adv_civ_trait_groomed_rul
+					has_trait = lrsk_adv_civ_trait_groomed_sci
+					has_trait = lrsk_adv_civ_trait_groomed_gov
+					has_trait = lrsk_adv_civ_trait_groomed_gen
+					has_trait = lrsk_adv_civ_trait_groomed_adm
+					has_trait = lrsk_adv_civ_trait_tutors_rul
+					has_trait = lrsk_adv_civ_trait_tutors_sci
+					has_trait = lrsk_adv_civ_trait_tutors_gov
+					has_trait = lrsk_adv_civ_trait_tutors_gen
+					has_trait = lrsk_adv_civ_trait_tutors_adm
+					has_trait = lrsk_adv_civ_trait_ambitious_rul
+					has_trait = lrsk_adv_civ_trait_ambitious_sci
+					has_trait = lrsk_adv_civ_trait_ambitious_gov
+					has_trait = lrsk_adv_civ_trait_ambitious_gen
+					has_trait = lrsk_adv_civ_trait_ambitious_adm
+				}
+			}
+			random_list = {
+				90 = { } # nothing
+				10 = {
+					modifier = {
+						factor = 2
+						has_level = 2
+					}
+					modifier = {
+						factor = 1.5
+						has_level = 3
+					}
+					modifier = {
+						factor = 0.5
+						has_level = 5
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+					lrsk_adv_civ_sort_get_ambition = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { OR = {
+				has_trait = lrsk_adv_civ_trait_unready_rul
+				has_trait = lrsk_adv_civ_trait_unready_sci
+				has_trait = lrsk_adv_civ_trait_unready_gov
+				has_trait = lrsk_adv_civ_trait_unready_gen
+				has_trait = lrsk_adv_civ_trait_unready_adm
+			} }
+			random_list = {
+				60 = {  } # nothing
+				20 = {
+					modifier = {
+						factor = 0.5
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 1.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 2.0
+						OR = {
+							root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+							has_level = 5
+						}
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_lost_unready
+					lrsk_adv_civ_sort_lose_unready = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+				20 = {
+					modifier = {
+						factor = 1.5
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+							has_level = 5
+						}
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
+					lrsk_adv_civ_sort_lose_unready = yes
+					lrsk_adv_civ_sort_get_tutors = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { OR = {
+				has_trait = lrsk_adv_civ_trait_groomed_rul
+				has_trait = lrsk_adv_civ_trait_groomed_sci
+				has_trait = lrsk_adv_civ_trait_groomed_gov
+				has_trait = lrsk_adv_civ_trait_groomed_gen
+				has_trait = lrsk_adv_civ_trait_groomed_adm
+			} }
+			random_list = {
+				40 = {
+					modifier = {
+						factor = 1.5
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					# nothing
+				}
+				20 = {
+					modifier = {
+						factor = 0.75
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 1.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 1.75
+						has_level = 5
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 2
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
+					lrsk_adv_civ_sort_lose_groomed = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+				20 = {
+					modifier = {
+						factor = 1.25
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0.25
+						has_level = 5
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
+					lrsk_adv_civ_sort_lose_groomed = yes
+					lrsk_adv_civ_sort_get_ambition = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { OR = {
+				has_trait = lrsk_adv_civ_trait_tutors_rul
+				has_trait = lrsk_adv_civ_trait_tutors_sci
+				has_trait = lrsk_adv_civ_trait_tutors_gov
+				has_trait = lrsk_adv_civ_trait_tutors_gen
+				has_trait = lrsk_adv_civ_trait_tutors_adm
+			} }
+			random_list = {
+				40 = {
+					modifier = {
+						factor = 0
+						has_level = 5
+					}
+					modifier = {
+						factor = 1.5
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+						NOT = { has_level = 5 }
+					}
+					#nothing
+				}
+				20 = {
+					modifier = {
+						factor = 0.75
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 1.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 4.75
+						has_level = 5
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 5
+						has_level = 5
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					modifier = {
+						factor = 2
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+						NOT = { has_level = 5 }
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
+					lrsk_adv_civ_sort_lose_tutors = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+				20 = {
+					modifier = {
+						factor = 1.25
+						has_level = 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0.5
+						has_level = 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0.25
+						has_level = 5
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
+					lrsk_adv_civ_sort_lose_tutors = yes
+					lrsk_adv_civ_sort_get_ambition = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = { OR = {
+				has_trait = lrsk_adv_civ_trait_ambitious_rul
+				has_trait = lrsk_adv_civ_trait_ambitious_sci
+				has_trait = lrsk_adv_civ_trait_ambitious_gov
+				has_trait = lrsk_adv_civ_trait_ambitious_gen
+				has_trait = lrsk_adv_civ_trait_ambitious_adm
+			} }
+			random_list = {
+				80 = {  } # nothing
+				20 = {
+					modifier = {
+						factor = 0.5
+						has_level = 2
+					}
+					modifier = {
+						factor = 1.5
+						has_level = 4
+					}
+					modifier = {
+						factor = 2
+						has_level = 5
+					}
+					set_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
+					lrsk_adv_civ_sort_lose_ambition = yes
+					country_event = { id = lrsk_adv_civ_sortition.10 }
+				}
+			}
+			break = yes
+		}
+	} }
+}
+
+country_event = {
+	id = lrsk_adv_civ_sortition.10
+	is_triggered_only = yes
+	picture = GFX_evt_arguing_senate
+	title = lrsk_adv_civ_sortition.10.name
+	desc = {
+		trigger = {
+			hidden:fromfrom = {
+				switch = {
+					trigger = has_leader_flag
+					lrsk_adv_civ_leader_level_got_ambition = {
+						text = lrsk_adv_civ_sortition.10.desc.gotambition
+						remove_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+					}
+					lrsk_adv_civ_leader_level_lost_unready = {
+						text = lrsk_adv_civ_sortition.10.desc.lostunready
+						remove_leader_flag = lrsk_adv_civ_leader_level_lost_unready
+					}
+					lrsk_adv_civ_leader_level_unready_to_tutors = {
+						text = lrsk_adv_civ_sortition.10.desc.unready2tutors
+						remove_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
+					}
+					lrsk_adv_civ_leader_level_lost_groomed = {
+						text = lrsk_adv_civ_sortition.10.desc.lostgroomed
+						remove_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
+					}
+					lrsk_adv_civ_leader_level_groomed_to_ambition = {
+						text = lrsk_adv_civ_sortition.10.desc.groomed2ambition
+						remove_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
+					}
+					lrsk_adv_civ_leader_level_lost_tutors = {
+						text = lrsk_adv_civ_sortition.10.desc.losttutors
+						remove_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
+					}
+					lrsk_adv_civ_leader_level_tutors_to_ambition = {
+						text = lrsk_adv_civ_sortition.10.desc.tutors2ambition
+						remove_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
+					}
+					lrsk_adv_civ_leader_level_lost_ambition = {
+						text = lrsk_adv_civ_sortition.10.desc.lostambition
+						remove_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
+					}
+					default = { text = "lrsk_adv_civ_sortition.10.fallback" }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.10.interesting
+	}
+
+}

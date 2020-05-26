@@ -1,0 +1,376 @@
+################
+# NAME FORMATS #
+################
+
+### Dictatorial Generic
+
+# Dictatorial Generic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_adv_civ_gov_arcane_despotism"
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_gen.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <dictatorial_gen>"
+	# Empire of Sol
+}
+
+# Dictatorial Generic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_adv_civ_gov_arcane_despotism"
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_gen.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <dictatorial_gen>"
+	# Empire of Earth
+}
+
+# Dictatorial Generic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_gen.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_gen>"
+	# Human Empire
+}
+
+# Dictatorial Generic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_gen.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_gen>"
+	# Great Human Empire
+}
+
+# Dictatorial Generic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_gen.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_gen>"
+	# Human Star Empire
+}
+
+### Dictatorial Spiritualist
+
+# Dictatorial Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_spi.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <dictatorial_spi>"
+	# Empire of Sol
+}
+
+# Dictatorial Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_spi.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <dictatorial_spi>"
+	# Empire of Earth
+}
+
+# Dictatorial Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_spi.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_spi>"
+	# Human Empire
+}
+
+# Dictatorial Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_spi.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_spi>"
+	# Great Human Empire
+}
+
+# Dictatorial Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				has_government = "lrsk_adv_civ_gov_church_of_unorthodoxy"
+				has_government = "lrsk_adv_civ_gov_machine_cult"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_spi.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_spi>"
+	# Human Star Empire
+}
+
+### Dictatorial Materialist
+
+# Dictatorial Materialist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				AND = {
+					has_government = "lrsk_adv_civ_gov_arcane_despotism"
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					has_government = "lrsk_adv_civ_gov_machine_cult"
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_mat.1"
+	noun = "[This.Capital.System.GetName]"
+	prefix_format = "[This.Capital.System.GetName] <dictatorial_mat>"
+	# Empire of Sol
+}
+
+# Dictatorial Materialist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			OR = {
+				AND = {
+					has_government = "lrsk_adv_civ_gov_arcane_despotism"
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					has_government = "lrsk_adv_civ_gov_machine_cult"
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_mat.2"
+	noun = "[This.Capital.GetName]"
+	prefix_format = "[This.Capital.GetName] <dictatorial_mat>"
+	# Empire of Earth
+}
+
+# Dictatorial Materialist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			OR = {
+				AND = {
+					has_government = "lrsk_adv_civ_gov_arcane_despotism"
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					has_government = "lrsk_adv_civ_gov_machine_cult"
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_mat.3"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_mat>"
+	# Human Empire
+}
+
+# Dictatorial Materialist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				AND = {
+					has_government = "lrsk_adv_civ_gov_arcane_despotism"
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					has_government = "lrsk_adv_civ_gov_machine_cult"
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_mat.4"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_mat>"
+	# Great Human Empire
+}
+
+# Dictatorial Materialist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			OR = {
+				AND = {
+					has_government = "lrsk_adv_civ_gov_arcane_despotism"
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					has_government = "lrsk_adv_civ_gov_machine_cult"
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "format.dict_mat.5"
+	noun = "[This.GetSpeciesName]"
+	prefix_format = "[This.GetSpeciesName] <dictatorial_mat>"
+	# Human Star Empire
+}

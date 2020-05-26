@@ -1,0 +1,307 @@
+# New Advanced Civics
+# Civics
+# Author: littleraskol
+
+lrsk_adv_civ_rev_policy = {
+
+	potential = {
+		has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	option = {
+		name = "lrsk_adv_civ_rev_encourage"
+
+		policy_flags = {
+			lrsk_adv_civ_encourage_rev
+		}
+
+    valid = {	NOT = { has_policy_flag = lrsk_adv_civ_rev_discourage } }
+
+		modifier = {
+      all_technology_research_speed = -0.05
+			country_resource_unity_mult = 0.10
+    }
+
+		AI_weight = {
+  		modifier = {
+  			factor = 1.2
+				OR = {
+					has_ethic = "ethic_egalitarian"
+					has_ethic = "ethic_xenophile"
+				}
+  		}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_rev_default"
+
+    valid = {
+      OR = {
+        #The following "NOT" block allows it as the default option at start.
+        NOT = {
+  				has_policy_flag = lrsk_adv_civ_rev_encourage
+  				has_policy_flag = lrsk_adv_civ_rev_discourage
+        }
+  			OR = {
+  				has_policy_flag = lrsk_adv_civ_rev_encourage
+  				has_policy_flag = lrsk_adv_civ_rev_discourage
+  			}
+      }
+    }
+	}
+
+	option = {
+		name = "lrsk_adv_civ_rev_discourage"
+
+		policy_flags = {
+			lrsk_adv_civ_discourage_rev
+		}
+
+    valid = {	NOT = { has_policy_flag = lrsk_adv_civ_rev_encourage } }
+
+		modifier = {
+      all_technology_research_speed = 0.05
+			country_resource_unity_mult = -0.10
+    }
+
+		AI_weight = {
+  		modifier = {
+  			factor = 1.2
+				OR = {
+					has_ethic = "ethic_authoritarian"
+					has_ethic = "ethic_xenophobe"
+				}
+  		}
+		}
+	}
+
+}
+
+lrsk_adv_civ_tech_ritual = {
+
+	potential = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	allow = {
+		is_at_war = no
+	}
+
+	option = {
+		name = "lrsk_adv_civ_full_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_full_rev
+		}
+
+    valid = {
+      OR = {
+        #The following "NOT" block allows it as the default option at start.
+        NOT = {
+  				has_policy_flag = lrsk_adv_civ_full_rev
+  				has_policy_flag = lrsk_adv_civ_lapsed_rev
+  				has_policy_flag = lrsk_adv_civ_token_rev
+    			has_policy_flag = lrsk_adv_civ_no_rev
+        }
+  			OR = {
+  				has_policy_flag = lrsk_adv_civ_full_rev
+  				has_policy_flag = lrsk_adv_civ_lapsed_rev
+  			}
+      }
+    }
+
+		modifier = {
+      #ship_hitpoints_mult = 0.15
+      #ship_shield_hp_mult = 0.15
+      #ship_armor_mult = 0.15
+      #ship_evasion_mult = 0.15
+      #weapon_type_kinetic_weapon_damage_mult = 0.15
+      #weapon_type_energy_weapon_damage_mult = 0.15
+      #weapon_type_explosive_weapon_damage_mult = 0.15
+      #weapon_type_strike_craft_weapon_damage_mult = 0.15
+	    #army_damage_mult = 0.15
+	    #army_health = 0.15
+
+			spaceport_ship_build_speed_mult = -0.3
+			planet_building_build_speed_mult = -0.15
+			planet_army_build_speed_mult = -0.15
+	    all_technology_research_speed = -0.1
+	    leader_scientist_influence_cost = 0.2
+    }
+
+		AI_weight = {
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_ai_personality = no
+					is_ai = no
+				}
+			}
+  		modifier = {
+  			factor = 3
+  			years_passed < 75
+  		}
+  		modifier = {
+  			factor = 3
+  			years_passed > 75
+  			years_passed < 125
+				OR = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+  		}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_lapsed_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_lapsed_rev
+		}
+
+    valid = {
+			OR = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+				has_policy_flag = lrsk_adv_civ_token_rev
+			}
+      OR = {
+        years_passed > 50
+        has_encountered_other_species = yes
+      }
+    }
+
+		modifier = {
+      #ship_hitpoints_mult = 0.1
+      #ship_shield_hp_mult = 0.1
+      #ship_armor_mult = 0.1
+      #ship_evasion_mult = 0.1
+      #weapon_type_kinetic_weapon_damage_mult = 0.1
+      #weapon_type_energy_weapon_damage_mult = 0.1
+      #weapon_type_explosive_weapon_damage_mult = 0.1
+      #weapon_type_strike_craft_weapon_damage_mult = 0.1
+	    #army_damage_mult = 0.1
+	    #army_health = 0.1
+
+			ship_fire_rate_mult = -0.1
+			ship_emergency_ftl_mult = 0.1
+			ship_evasion_mult = -0.1
+
+			spaceport_ship_build_speed_mult = -0.2
+			planet_building_build_speed_mult = -0.1
+			planet_army_build_speed_mult = -0.1
+	    all_technology_research_speed = -0.075
+	    leader_scientist_influence_cost = 0.15
+    }
+
+		AI_weight = {
+      modifier = {
+        factor = 1.5
+        years_passed > 75
+      }
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_token_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_token_rev
+		}
+
+    valid = {
+			OR = {
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+				has_policy_flag = lrsk_adv_civ_token_rev
+  			has_policy_flag = lrsk_adv_civ_no_rev
+			}
+      years_passed > 100
+      has_encountered_other_species = yes
+    }
+
+		modifier = {
+      #ship_hitpoints_mult = 0.05
+      #ship_shield_hp_mult = 0.05
+      #ship_armor_mult = 0.05
+      #ship_evasion_mult = 0.05
+      #weapon_type_kinetic_weapon_damage_mult = 0.05
+      #weapon_type_energy_weapon_damage_mult = 0.05
+      #weapon_type_explosive_weapon_damage_mult = 0.05
+      #weapon_type_strike_craft_weapon_damage_mult = 0.05
+	    #army_damage_mult = 0.05
+	    #army_health = 0.05
+
+			ship_fire_rate_mult = -0.15
+			ship_emergency_ftl_mult = 0.15
+			ship_evasion_mult = -0.15
+
+			spaceport_ship_build_speed_mult = -0.1
+			planet_building_build_speed_mult = -0.05
+			planet_army_build_speed_mult = -0.05
+	    all_technology_research_speed = -0.05
+	    leader_scientist_influence_cost = 0.1
+    }
+
+		AI_weight = {
+      modifier = {
+        factor = 2
+        years_passed > 125
+        years_passed < 175
+      }
+      modifier = {
+        factor = 4
+        years_passed > 175
+      }
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_no_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_no_rev
+		}
+
+    valid = {
+			OR = {
+				has_policy_flag = lrsk_adv_civ_token_rev
+  			has_policy_flag = lrsk_adv_civ_no_rev
+			}
+      years_passed > 150
+      has_encountered_other_species = yes
+    }
+
+		modifier = {
+			ship_fire_rate_mult = -0.2
+			ship_emergency_ftl_mult = 0.2
+			ship_evasion_mult = -0.2
+
+	    all_technology_research_speed = -0.025
+	    leader_scientist_influence_cost = 0.05
+			num_tech_alternatives_add = 1
+    }
+
+		AI_weight = {
+      modifier = {
+        factor = 5
+        years_passed > 175
+      }
+			modifier = {
+				factor = 0
+				OR = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+  }
+}

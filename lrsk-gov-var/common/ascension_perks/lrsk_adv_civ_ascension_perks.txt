@@ -1,0 +1,369 @@
+# Diplomatic Aspiration (Pacifist, Xenophile)
+# New Advanced Civics
+# Ascension Perks
+# Author: littleraskol
+
+# Diplomatic Aspiration (Pacifist, Xenophile)
+lrsk_adv_civ_ap_diplomatic_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+			#give_technology = { message = no tech = tech_terrestrial_sculpting }
+			#give_technology = { message = no tech = tech_archeology_lab }
+			#give_technology = { message = no tech = tech_mine_living_metal }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_diplomatic_complete"
+			AND = {
+				has_tradition = tr_diplomacy_finish
+				#has_tradition = tr_diplomacy_dynamic_ecomorphism
+				#has_tradition = tr_diplomacy_federal_unity
+				#has_tradition = tr_diplomacy_the_federation
+				#has_tradition = tr_diplomacy_entente_coordination
+				#has_tradition = tr_diplomacy_alien_tourism
+			}
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_xenophile
+		    has_ethic = ethic_fanatic_pacifist
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+# Inquisitive Aspiration (Xenophile or Materialist)
+lrsk_adv_civ_ap_inquisitive_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_discovery_complete"
+      AND = {
+				has_tradition = tr_discovery_finish
+  			#has_tradition = tr_discovery_to_boldly_go
+  			#has_tradition = tr_discovery_planetary_survey_corps
+  			#has_tradition = tr_discovery_science_division
+  			#has_tradition = tr_discovery_polytechnic_education
+  			#has_tradition = tr_discovery_faith_in_science
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_xenophile
+		    has_ethic = ethic_fanatic_materialist
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+# Dominant Aspiration (Spiritualist or Authoritarian)
+lrsk_adv_civ_ap_dominant_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_domination_complete"
+      AND = {
+				has_tradition = tr_domination_finish
+				#has_tradition = tr_domination_colonial_viceroys
+				#has_tradition = tr_domination_protection_racket
+				#has_tradition = tr_domination_star_lords
+				#has_tradition = tr_domination_fleet_levies
+				#has_tradition = tr_domination_vassal_acculturation
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_authoritarian
+		    has_ethic = ethic_fanatic_spiritualist
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+# Expansionist Aspiration (Materialist, Xenophobe, or Militarist)
+lrsk_adv_civ_ap_expansionist_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_expansion_complete"
+      AND = {
+				has_tradition = tr_expansion_finish
+				#has_tradition = tr_expansion_colonization_fever
+				#has_tradition = tr_expansion_a_new_life
+				#has_tradition = tr_expansion_courier_network
+				#has_tradition = tr_expansion_reach_for_the_stars
+				#has_tradition = tr_expansion_galactic_ambition
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_xenophobe
+		    has_ethic = ethic_fanatic_materialist
+		    has_ethic = ethic_fanatic_militarist
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+# Harmonious Aspiration (Spiritualist, Egalitarian)
+lrsk_adv_civ_ap_harmonious_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_harmony_complete"
+      AND = {
+				has_tradition = tr_harmony_finish
+				#has_tradition = tr_harmony_the_greater_good
+				#has_tradition = tr_harmony_kinship
+				#has_tradition = tr_harmony_utopian_dream
+				#has_tradition = tr_harmony_bulwark_of_harmony
+				#has_tradition = tr_harmony_mind_and_body
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_spiritualist
+		    has_ethic = ethic_fanatic_egalitarian
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+# Acquisitive Aspiration (Egalitarian or Pacifist)
+lrsk_adv_civ_ap_acquisitive_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_prosperity_complete"
+      AND = {
+				has_tradition = tr_prosperity_finish
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_pacifist
+		    has_ethic = ethic_fanatic_egalitarian
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}
+
+
+# Supremacist Aspiration (Militarist, Xenophobe, or Authoritarian)
+lrsk_adv_civ_ap_supremacist_aspiration = {
+
+	on_enabled = {
+		custom_tooltip = "lrsk_adv_civ_ap_aspiration_unlocks"
+		hidden_effect = {
+			country_event = { id = lrsk_adv_civ_aspiration.1 }
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "lrsk_adv_civ_ap_supremacy_complete"
+      AND = {
+				has_tradition = tr_supremacy_finish
+				#has_tradition = tr_supremacy_great_game
+				#has_tradition = tr_supremacy_right_of_conquest
+				#has_tradition = tr_supremacy_master_shipwrights
+				#has_tradition = tr_supremacy_war_games
+				#has_tradition = tr_supremacy_overwhelming_force
+      }
+		}
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	potential = {
+		AND = {
+		  has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		  NOR = {
+		    has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		    has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		  }
+		  OR = {
+		    has_ethic = ethic_fanatic_xenophobe
+		    has_ethic = ethic_fanatic_authoritarian
+		    has_ethic = ethic_fanatic_militarist
+		  }
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+	}
+}

@@ -1,0 +1,53 @@
+# New Advanced Civics
+# Governments - Techno-Barbarian
+# Author: littleraskol
+
+### Generic Governments
+
+# "Devicomancer Dynasty"
+lrsk_adv_civ_gov_devicomancer_dynasty = {
+	ruler_title = LRSK_ADV_CIV_RT_LORD_HIGH_SALVAGER
+	ruler_title_female = LRSK_ADV_CIV_RT_LADY_HIGH_SALVAGER
+	heir_title = LRSK_ADV_CIV_HT_LORD_GADGETEER
+	heir_title_female = LRSK_ADV_CIV_HT_LADY_GADGETEER
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+    has_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Machine Cult"
+lrsk_adv_civ_gov_machine_cult = {
+	ruler_title = LRSK_ADV_CIV_TECHNOPHANT
+
+	possible = {
+		has_authority = auth_dictatorial
+    has_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Cyber-Shaman Conclave"
+lrsk_adv_civ_gov_cybershaman_conclave = {
+	ruler_title = LRSK_ADV_CIV_HIGH_CYBERSEER
+
+	possible = {
+		has_authority = auth_oligarchic
+    has_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}

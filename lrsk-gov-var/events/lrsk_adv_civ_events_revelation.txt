@@ -1,0 +1,1028 @@
+# New Advanced Civics
+# Events - Revelation
+# Otherworldy-only events on leaders.
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_revelation
+
+# REVELATION QUEST
+
+# Likelihood of leader choice:
+#  50% Scientist
+#  20% Governor
+#  20% Admiral
+#  10% Ruler
+# Actually at this point only scientists get it...
+
+# Overall odds of outcomes
+#
+# Allow
+#  Nothing = 40%
+#  Good = 45%
+#  Bad = 15%
+#
+# Forbid
+#  Nothing = 80%
+#  Good = 7%
+#  Bad = 13%
+
+country_event = {
+	id = lrsk_adv_civ_revelation.1
+	title = lrsk_adv_civ_revelation.1.name
+	desc = lrsk_adv_civ_revelation.1.desc
+	#hide_window = yes
+	mean_time_to_happen = { days = 1800 }
+
+	trigger = {
+		is_ai = no	# Not really sure I want AI doing this at all
+		has_civic = lrsk_adv_civ_civic_otherworldly
+		NOT = { has_country_flag = lrsk_adv_civ_revquest_ongoing }
+		#any_owned_leader = { NOR = {
+		#	has_trait = lrsk_adv_civ_trait_cunning_adm
+		#	has_trait = lrsk_adv_civ_trait_insightful
+		#	has_trait = lrsk_adv_civ_trait_illuminated
+		#	has_trait = lrsk_adv_civ_trait_inspired
+		#} }
+		any_owned_leader = {
+			leader_class = scientist
+			NOT = {	has_trait = lrsk_adv_civ_trait_illuminated }
+		}
+	}
+
+	immediate = {
+		set_country_flag = lrsk_adv_civ_revquest_ongoing
+		# For testing, only do scientists
+		IF = {
+			limit = { any_owned_leader = {
+				leader_class = scientist
+				NOT = {	has_trait = lrsk_adv_civ_trait_illuminated }
+			} }
+			country_event = { id = lrsk_adv_civ_revelation.2 }
+		}
+		#random_list = {
+		#	# Scientist 50%
+		#	50 = {
+		#		modifier = {
+		#			factor = 0
+		#			NOT = { any_owned_leader = {
+		#				leader_class = scientist
+		#				NOT = {	has_trait = lrsk_adv_civ_trait_illuminated }
+		#			} }
+		#		}
+		#		country_event = { id = lrsk_adv_civ_revelation.2 }
+		#	}
+		#	# Admiral 20%
+		#	20 = {
+		#		modifier = {
+		#			factor = 0
+		#			NOT = { any_owned_leader = {
+		#				leader_class = admiral
+		#				NOT = {	has_trait = lrsk_adv_civ_trait_cunning_adm }
+		#			} }
+		#		}
+		#		country_event = { id = lrsk_adv_civ_revelation.3 }
+		#	}
+		#	# Governor 20%
+		#	20 = {
+		#		modifier = {
+		#			factor = 0
+		#			NOT = { any_owned_leader = {
+		#				leader_class = governor
+		#				NOT = {	has_trait = lrsk_adv_civ_trait_insightful }
+		#			} }
+		#		}
+		#		country_event = { id = lrsk_adv_civ_revelation.4 }
+		#	}
+		#	# Ruler 10%
+		#	10 = {
+		#		modifier = {
+		#			factor = 0
+		#			ruler = { has_trait = lrsk_adv_civ_trait_inspired	}
+		#		}
+		#		country_event = { id = lrsk_adv_civ_revelation.5 }
+		#	}
+		#}
+	}
+}
+
+# Scientist
+country_event = {
+	id = lrsk_adv_civ_revelation.2
+	title = lrsk_adv_civ_revelation.2.name
+	desc = lrsk_adv_civ_revelation.2.desc
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_physics_research
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				leader_class = scientist
+				NOT = {	has_trait = lrsk_adv_civ_trait_illuminated }
+				NOT = {	has_leader_flag = lrsk_rev_questant }
+			}
+			#save_global_event_target_as = lrsk_rev_protag
+			save_event_target_as = lrsk_rev_protag
+			set_leader_flag = lrsk_rev_questant
+		}
+	}
+
+	option = {
+		trigger = { NOT = { has_policy_flag = lrsk_adv_civ_discourage_rev } } # Can't allow if policy is to discourage
+		name = LRSK_ADV_CIV_EVENT_REVELATION_ENCOURAGE
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.6 } } # Allowed
+	}
+
+	option = {
+		trigger = { NOT = { has_policy_flag = lrsk_adv_civ_encourage_rev } } # Can't forbid if policy is to encourage
+		name = LRSK_ADV_CIV_EVENT_REVELATION_FORBID
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.8 } } # Forbade
+	}
+}
+
+## Admiral
+#country_event = {
+#	id = lrsk_adv_civ_revelation.3
+#	title = lrsk_adv_civ_revelation.3.name
+#	desc = lrsk_adv_civ_revelation.3.desc
+#	show_sound = event_mystic_reveal
+#	picture = GFX_evt_federation_fleet
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = admiral
+#				NOT = {	has_trait = lrsk_adv_civ_trait_cunning_adm }
+#				NOT = {	has_leader_flag = lrsk_rev_questant }
+#			}
+#			#save_global_event_target_as = lrsk_rev_protag
+#			save_event_target_as = lrsk_rev_protag
+#			set_leader_flag = lrsk_rev_questant
+#		}
+#	}
+#
+#	option = {
+#		name = LRSK_ADV_CIV_EVENT_REVELATION_ENCOURAGE
+#		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.6 } } # Allowed
+#	}
+#
+#	option = {
+#		name = LRSK_ADV_CIV_EVENT_REVELATION_FORBID
+#		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.8 } } # Forbade
+#	}
+#}
+#
+## Governor
+#country_event = {
+#	id = lrsk_adv_civ_revelation.4
+#	title = lrsk_adv_civ_revelation.4.name
+#	desc = lrsk_adv_civ_revelation.4.desc
+#	show_sound = event_mystic_reveal
+#	picture = GFX_evt_throne_room
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = governor
+#				NOT = {	has_trait = lrsk_adv_civ_trait_insightful }
+#				NOT = {	has_leader_flag = lrsk_rev_questant }
+#			}
+#			save_global_event_target_as = lrsk_rev_protag
+#			set_leader_flag = lrsk_rev_questant
+#		}
+#	}
+#
+#	option = {
+#		name = LRSK_ADV_CIV_EVENT_REVELATION_ENCOURAGE
+#		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.6 } } # Allowed
+#	}
+#
+#	option = {
+#		name = LRSK_ADV_CIV_EVENT_REVELATION_FORBID
+#		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.8 } } # Forbade
+#	}
+#}
+#
+## Ruler
+#country_event = {
+#	id = lrsk_adv_civ_revelation.5
+#	title = lrsk_adv_civ_revelation.5.name
+#	desc = lrsk_adv_civ_revelation.5.desc
+#	show_sound = event_mystic_reveal
+#	picture = GFX_evt_throne_room
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		ruler = {
+#			save_global_event_target_as = lrsk_rev_protag
+#			set_leader_flag = lrsk_rev_questant
+#		}
+#	}
+#
+#	option = {
+#		name = LRSK_ADV_CIV_EVENT_REVELATION_ENCOURAGE
+#		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.6 } } # Allowed
+#	}
+#	# Can't forbid ruler
+#}
+
+# Player permits attempt:
+#  40% Nothing
+#  60% Result
+#  -> 75% Good result
+#  -> 25% Bad result
+
+country_event = {
+	id = lrsk_adv_civ_revelation.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			40 = { country_event = { id = lrsk_adv_civ_revelation.7 days = 30 } } # Nothing
+			60 = {
+				random_list = {
+					75 = { country_event = { id = lrsk_adv_civ_revelation.10 days = 30 } } # Good
+					25 = { country_event = { id = lrsk_adv_civ_revelation.13 days = 30 } } # Bad
+				}
+			}
+		}
+	}
+}
+
+# Nothing happened & tell player (not forbidden)
+country_event = {
+	id = lrsk_adv_civ_revelation.7
+	title = lrsk_adv_civ_revelation.7.name
+	desc = lrsk_adv_civ_revelation.7.desc
+	picture = GFX_evt_archaeological_dig
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_NOTHING_PLAYER_ACCEPT
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.17 days = 360 } }
+	}
+}
+
+# Player forbids attempt:
+#  80% Nothing
+#  20% Result (2x chance if Stubborn?)
+#  ->65% Bad result
+#  ->35% Good result
+
+country_event = {
+	id = lrsk_adv_civ_revelation.8
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			80 = { country_event = { id = lrsk_adv_civ_revelation.17 days = 360 } } # Nothing, end quest
+			20 = {
+				modifier = {
+					factor = 2
+					event_target:lrsk_rev_protag = {
+						has_trait = leader_trait_stubborn
+					}
+				}
+				country_event = { id = lrsk_adv_civ_revelation.9 days = 5 } # Defiance
+			}
+		}
+	}
+}
+
+# Defiance
+country_event = {
+	id = lrsk_adv_civ_revelation.9
+	title = lrsk_adv_civ_revelation.9.name
+	desc = lrsk_adv_civ_revelation.9.desc
+	picture = GFX_evt_society_research
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_DEFIANT_PLAYER_ACCEPT
+		hidden_effect = { random_list = {
+			35 = { country_event = { id = lrsk_adv_civ_revelation.10 days = 25 } } # Good
+			65 = { country_event = { id = lrsk_adv_civ_revelation.13 days = 25 } } # Bad
+		} }
+	}
+}
+
+# Good results:
+#  25% Gains revelation
+#  75% Gains other positive trait
+
+country_event = {
+	id = lrsk_adv_civ_revelation.10
+	title = lrsk_adv_civ_revelation.10.name
+	desc = lrsk_adv_civ_revelation.10.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_GOOD_PLAYER_ACCEPT
+		hidden_effect = {
+			event_target:lrsk_rev_protag = {
+				random_list = {
+					25 = { set_leader_flag = lrsk_rev_enlighten }
+					25 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_resilient
+								has_trait = lrsk_adv_civ_trait_hardy
+							}
+						}
+						set_leader_flag = lrsk_rev_bonus1
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_adaptable
+								has_trait = trait_ruler_logistic_understanding
+							}
+						}
+						set_leader_flag = lrsk_rev_bonus2
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_maniacal
+								has_trait = leader_trait_intellectual
+								has_trait = leader_trait_trickster
+								has_trait = leader_trait_reformer
+							}
+						}
+						set_leader_flag = lrsk_rev_bonus3
+					}
+				}
+				IF = { limit = { has_leader_flag = lrsk_rev_enlighten }
+					country_event = { id = lrsk_adv_civ_revelation.11 }
+					else = { country_event = { id = lrsk_adv_civ_revelation.12 } }
+				}
+			}
+		}
+	}
+}
+
+
+# Revelation obtained
+
+country_event = {
+	id = lrsk_adv_civ_revelation.11
+	title = lrsk_adv_civ_revelation.11.name
+	desc = lrsk_adv_civ_revelation.11.desc
+	show_sound = event_celebration
+	picture = GFX_evt_psionics
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:lrsk_rev_protag = {
+			add_trait = lrsk_adv_civ_trait_illuminated
+			add_ruler_trait = lrsk_adv_civ_trait_inspired
+
+			#if = { limit = { leader_class = admiral }
+			#	add_trait = lrsk_adv_civ_trait_cunning_adm
+			#	add_ruler_trait = lrsk_adv_civ_trait_inspired
+			#	break = yes
+			#}
+			#if = { limit = { leader_class = governor }
+			#	add_trait = lrsk_adv_civ_trait_insightful
+			#	add_ruler_trait = lrsk_adv_civ_trait_inspired
+			#	break = yes
+			#}
+			#if = { limit = { leader_class = scientist }
+			#	add_trait = lrsk_adv_civ_trait_illuminated
+			#	add_ruler_trait = lrsk_adv_civ_trait_inspired
+			#	break = yes
+			#}
+			#if = { limit = { leader_class = ruler }
+			#	add_trait = lrsk_adv_civ_trait_inspired
+			#	add_ruler_trait = lrsk_adv_civ_trait_inspired
+			#	break = yes
+			#}
+		}
+	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_SUCCESS_PLAYER_ACCEPT
+		hidden_effect = {
+			remove_leader_flag = lrsk_rev_enlighten
+			country_event = { id = lrsk_adv_civ_revelation.17 days = 360 }
+		}
+	}
+}
+
+# Positive Traits
+# -Reslient/Hardy
+# -Adaptable/Logistic Understanding
+# -Maniacal/Intellectual/Trickster/Reformer
+
+country_event = {
+	id = lrsk_adv_civ_revelation.12
+	title = lrsk_adv_civ_revelation.12.name
+	show_sound = event_administrative_work
+	picture = GFX_evt_galactic_senate
+	is_triggered_only = yes
+
+	desc = { trigger = { hidden:event_target:lrsk_rev_protag = { switch = {
+		trigger = has_leader_flag
+		lrsk_rev_bonus1 = { text = lrsk_adv_civ_event_revelation.12.desc.health }
+		lrsk_rev_bonus2 = { text = lrsk_adv_civ_event_revelation.12.desc.adaptive }
+		lrsk_rev_bonus3 = { text = lrsk_adv_civ_event_revelation.12.desc.curious }
+		default = { text = LRSK_ADV_CIV_EVENT_ERROR }
+	}}}}
+
+	immediate = {
+		event_target:lrsk_rev_protag = {
+			switch = {
+				trigger = has_leader_flag
+				lrsk_rev_bonus1 = {
+					#if = {
+					#	limit = { leader_class = ruler }
+					#	add_trait = lrsk_adv_civ_trait_hardy
+					#	else = { add_trait = leader_trait_resilient }
+					#}
+					add_trait = leader_trait_resilient
+					add_ruler_trait = lrsk_adv_civ_trait_hardy
+					remove_leader_flag = lrsk_rev_bonus1
+				}
+				lrsk_rev_bonus2 = {
+					#if = {
+					# 	limit = { leader_class = ruler }
+					#	add_trait = trait_ruler_logistic_understanding
+					#	else = { add_trait = leader_trait_adaptable }
+					#}
+					add_trait = leader_trait_adaptable
+					add_ruler_trait = trait_ruler_logistic_understanding
+					remove_leader_flag = lrsk_rev_bonus2
+				}
+				lrsk_rev_bonus3 = {
+					#switch = {
+					#	trigger = leader_class
+					#	admiral = { add_trait = leader_trait_trickster }
+					#	governor = { add_trait = leader_trait_intellectual }
+					#	scientist = { add_trait = leader_trait_maniacal }
+					#	ruler = { add_trait = leader_trait_reformer }
+					#}
+					add_trait = leader_trait_maniacal
+					add_ruler_trait = leader_trait_reformer
+					remove_leader_flag = lrsk_rev_bonus3
+				}
+			}
+			#set_leader_flag = lrsk_rev_pos_trait_added
+		}
+	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_PLAYER_ACCEPT
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.17 days = 360 } }
+	}
+}
+
+# Bad results:
+# 90% Gains negative trait
+# 10% Death
+
+country_event = {
+	id = lrsk_adv_civ_revelation.13
+	title = lrsk_adv_civ_revelation.13.name
+	desc = lrsk_adv_civ_revelation.13.desc
+	picture = GFX_evt_cybernetics
+	is_triggered_only = yes
+
+	#immediate = {	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_BAD_PLAYER_ACCEPT
+		hidden_effect = {
+			event_target:lrsk_rev_protag = {
+				random_list = {
+					30 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_substance_abuser
+								has_trait = lrsk_adv_civ_trait_debauched
+							}
+						}
+						set_leader_flag = lrsk_rev_malus1
+					}
+					30 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_stubborn
+								has_trait = lrsk_adv_civ_trait_hidebound
+							}
+						}
+						set_leader_flag = lrsk_rev_malus2
+					}
+					30 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_trait = leader_trait_paranoid
+								has_trait = leader_trait_lethargic
+								has_trait = lrsk_adv_civ_trait_OCD
+								has_trait = lrsk_adv_civ_trait_hubris
+							}
+						}
+						set_leader_flag = lrsk_rev_malus3
+					}
+					10 = { set_leader_flag = lrsk_rev_dead }
+				}
+				IF = { limit = { has_leader_flag = lrsk_rev_dead }
+					country_event = { id = lrsk_adv_civ_revelation.15 }
+					else = { country_event = { id = lrsk_adv_civ_revelation.14 } }
+				}
+			}
+		}
+	}
+}
+
+# Negative Traits
+# -Substance Abuse/Debauched
+# -Stubborn/Hidebound
+# -Paranoid/OCD/Lethargic/Hubris
+
+country_event = {
+	id = lrsk_adv_civ_revelation.14
+	show_sound = event_conversation
+	picture = GFX_evt_smugglers_in_bar
+	is_triggered_only = yes
+
+	desc = { trigger = { hidden:event_target:lrsk_rev_protag = { switch = {
+		trigger = has_leader_flag
+		lrsk_rev_malus1 = { text = lrsk_adv_civ_event_revelation.14.desc.drugs }
+		lrsk_rev_malus2 = { text = lrsk_adv_civ_event_revelation.14.desc.stubborn }
+		lrsk_rev_malus3 = { text = lrsk_adv_civ_event_revelation.14.desc.disturbed }
+		default = { text = LRSK_ADV_CIV_EVENT_ERROR }
+	}}}}
+
+	immediate = {
+		event_target:lrsk_rev_protag = {
+			switch = {
+				trigger = has_leader_flag
+				lrsk_rev_malus1 = {
+					#if = {
+					#	limit = { leader_class = ruler }
+					#	add_trait = lrsk_adv_civ_trait_debauched
+					#	else = { add_trait = leader_trait_substance_abuser }
+					#}
+					add_trait = leader_trait_substance_abuse
+					add_ruler_trait = lrsk_adv_civ_trait_debauched
+					remove_leader_flag = lrsk_rev_malus1
+				}
+				lrsk_rev_malus2 = {
+					#if = {
+					# 	limit = { leader_class = ruler }
+					#	add_trait = lrsk_adv_civ_trait_hidebound
+					#	else = { add_trait = leader_trait_stubborn }
+					#}
+					add_trait = leader_trait_stubborn
+					add_ruler_trait = lrsk_adv_civ_trait_hidebound
+					remove_leader_flag = lrsk_rev_malus2
+				}
+				lrsk_rev_malus3 = {
+					#switch = {
+					#	trigger = leader_class
+					#	admiral = { add_trait = leader_trait_lethargic }
+					#	governor = { add_trait = lrsk_adv_civ_trait_OCD }
+					#	scientist = { add_trait = leader_trait_paranoid }
+					#	ruler = { add_trait = lrsk_adv_civ_trait_hubris }
+					#}
+					add_trait = leader_trait_paranoid
+					add_ruler_trait = lrsk_adv_civ_trait_hubris
+					remove_leader_flag = lrsk_rev_malus3
+				}
+			}
+			#set_leader_flag = lrsk_rev_neg_trait_added
+		}
+	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_PLAYER_ACCEPT
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.17 days = 360 } }
+	}
+}
+
+# Deaths
+
+country_event = {
+	id = lrsk_adv_civ_revelation.15
+	title = lrsk_adv_civ_revelation.15.name
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+
+	desc = { random_list = {
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.suicide }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.vanished }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.eaten }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.murdered }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.berserk }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.machine }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.chemical }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.fear }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.burned }
+		10 = { text = lrsk_adv_civ_event_revelation.15.desc.excess }
+	}	}
+
+	immediate = { event_target:lrsk_rev_protag = { kill_leader = { show_notification = no } } }
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_REVELATION_DEATH_PLAYER_ACCEPT
+		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.18 days = 360 } } # JIC, really.
+	}
+}
+
+#Cleanup events
+
+# Called on leader death to stop quest if needed
+country_event = {
+  id = lrsk_adv_civ_revelation.16
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { OR = {
+		This = { has_country_flag = lrsk_adv_civ_revquest_ongoing }
+		From = { has_leader_flag = lrsk_rev_questant }
+	} }
+
+  immediate = {
+		From = { if = { limit = { has_leader_flag = lrsk_rev_questant} remove_leader_flag = lrsk_rev_questant } }
+		This = { country_event = { id = lrsk_adv_civ_revelation.18 days = 360 } }
+  }
+}
+
+# End quest normal: deal with leader first.
+country_event = {
+  id = lrsk_adv_civ_revelation.17
+	hide_window = yes
+	is_triggered_only = yes
+
+  immediate = {
+		event_target:lrsk_rev_protag = { if = { limit = { has_leader_flag = lrsk_rev_questant} remove_leader_flag = lrsk_rev_questant } }
+		country_event = { id = lrsk_adv_civ_revelation.18 }
+  }
+}
+
+# Final cleanup
+country_event = {
+  id = lrsk_adv_civ_revelation.18
+	title = lrsk_adv_civ_revelation.18.name
+	desc = lrsk_adv_civ_revelation.18.desc
+	#hide_window = yes
+	is_triggered_only = yes
+
+  immediate = { if = { limit = { has_country_flag = lrsk_adv_civ_revquest_ongoing } remove_country_flag = lrsk_adv_civ_revquest_ongoing } }
+}
+
+# OTHER EVENTS
+
+# On researching forbidden knowledge (not really revelation but w/e)
+country_event = {
+	id = lrsk_adv_civ_revelation.19
+	title = lrsk_adv_civ_revelation.19.name
+	desc = lrsk_adv_civ_revelation.19.desc
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_sentient_AI
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			last_increased_tech = "tech_lrsk_adv_civ_dragon"
+			last_increased_tech = "tech_lrsk_adv_civ_suneater"
+			last_increased_tech = "tech_lrsk_adv_civ_sphere"
+			last_increased_tech = "tech_lrsk_adv_civ_doomspeaker"
+			last_increased_tech = "tech_lrsk_adv_civ_ghostship"
+			last_increased_tech = "tech_lrsk_adv_civ_gems"
+			last_increased_tech = "tech_lrsk_adv_civ_guardians"
+			last_increased_tech = "tech_lrsk_adv_civ_swarm"
+			last_increased_tech = "tech_lrsk_adv_civ_unbidden"
+			last_increased_tech = "tech_lrsk_adv_civ_ai"
+			last_increased_tech = "tech_lrsk_adv_civ_crises"
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { OR = {
+				last_increased_tech = "tech_lrsk_adv_civ_dragon"
+				last_increased_tech = "tech_lrsk_adv_civ_gems"
+				last_increased_tech = "tech_lrsk_adv_civ_ghostship"
+			}	}
+			add_engineering_research = 360
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 360 }
+			random_owned_leader = {	limit = { is_researching_area = engineering }
+				random_list = {
+					90 = { } # 6
+					10 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = {
+			limit = { OR = {
+				last_increased_tech = "tech_lrsk_adv_civ_suneater"
+				last_increased_tech = "tech_lrsk_adv_civ_sphere"
+				last_increased_tech = "tech_lrsk_adv_civ_doomspeaker"
+			}	}
+			add_physics_research = 360
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 360 }
+			random_owned_leader = {	limit = { is_researching_area = physics }
+				random_list = {
+					90 = { } # 6
+					10 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_guardians" }
+			add_society_research = 600
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 720 }
+			random_owned_leader = {	limit = { is_researching_area = society }
+				random_list = {
+					80 = { } # 6
+					20 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_swarm" }
+			add_society_research = 800
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
+			random_owned_leader = {	limit = { is_researching_area = society }
+				random_list = {
+					80 = { } # 6
+					20 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_unbidden" }
+			add_physics_research = 800
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
+			random_owned_leader = {	limit = { is_researching_area = physics }
+				random_list = {
+					80 = { } # 6
+					20 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = { limit = {last_increased_tech = "tech_lrsk_adv_civ_ai" }
+			add_engineering_research = 800
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
+			random_owned_leader = {	limit = { is_researching_area = engineering }
+				random_list = {
+					80 = { } # 6
+					20 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_crises" }
+			add_society_research = 1200
+			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
+			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1440 }
+			random_owned_leader = {	limit = { is_researching_area = society }
+				random_list = {
+					60 = { } # 6
+					40 = {
+						modifier = {
+							factor = 0
+							has_trait = lrsk_adv_civ_trait_illuminated
+						}
+						modifier = {
+							factor = 1.5
+							has_policy_flag = lrsk_adv_civ_encourage_rev
+						}
+						modifier = {
+							factor = 0.6
+							has_policy_flag = lrsk_adv_civ_discourage_rev
+						}
+						add_trait = lrsk_adv_civ_trait_illuminated
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Add Revelation trait to leaders
+country_event = {
+	id = lrsk_adv_civ_revelation.20
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = { this = { has_civic = lrsk_adv_civ_civic_otherworldly } }
+
+	immediate = {
+    random_list = {
+      85 = {  } # Nothing
+			10 = {
+				modifier = {
+					factor = 0
+					from = { NOT = { leader_class = scientist } }
+				}
+				modifier = {
+					factor = 2
+					has_policy_flag = lrsk_adv_civ_encourage_rev
+				}
+				modifier = {
+					factor = 0.6
+					has_policy_flag = lrsk_adv_civ_discourage_rev
+				}
+				add_trait = lrsk_adv_civ_trait_illuminated
+				add_ruler_trait = lrsk_adv_civ_trait_inspired
+			}
+      5 = {
+				modifier = {
+					factor = 0
+					from = { leader_class = scientist }
+				}
+				modifier = {
+					factor = 2
+					has_policy_flag = lrsk_adv_civ_encourage_rev
+				}
+				modifier = {
+					factor = 0.6
+					has_policy_flag = lrsk_adv_civ_discourage_rev
+				}
+    		from = {
+    			if = { limit = { leader_class = admiral }
+    				add_trait = lrsk_adv_civ_trait_cunning_adm
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+    				break = yes
+    			}
+    			if = { limit = { leader_class = general }
+    				add_trait = lrsk_adv_civ_trait_cunning_gen
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+    				break = yes
+    			}
+    			if = { limit = { leader_class = governor }
+    				add_trait = lrsk_adv_civ_trait_insightful
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+    				break = yes
+    			}
+    			#if = { limit = { leader_class = scientist }
+    			#	add_trait = lrsk_adv_civ_trait_illuminated
+    			#	add_ruler_trait = lrsk_adv_civ_trait_inspired
+    			#	break = yes
+    			#}
+    			if = { limit = { leader_class = ruler }
+    				add_trait = lrsk_adv_civ_trait_inspired
+    				add_ruler_trait = lrsk_adv_civ_trait_inspired
+    				break = yes
+    			}
+    		}
+      }
+    }
+	}
+}
+
+# Ruler gets leader-class version of Revelation
+country_event = {
+	id = lrsk_adv_civ_revelation.21
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		this = { has_civic = lrsk_adv_civ_civic_otherworldly	}
+		from = {
+			has_trait = lrsk_adv_civ_trait_inspired
+			NOR = {
+				has_trait = lrsk_adv_civ_trait_cunning_adm
+				has_trait = lrsk_adv_civ_trait_cunning_gen
+				has_trait = lrsk_adv_civ_trait_insightful
+				has_trait = lrsk_adv_civ_trait_illuminated
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = lrsk_adv_civ_trait_cunning_adm
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = lrsk_adv_civ_trait_cunning_gen
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = lrsk_adv_civ_trait_insightful
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = lrsk_adv_civ_trait_illuminated
+				break = yes
+			}
+		}
+	}
+}

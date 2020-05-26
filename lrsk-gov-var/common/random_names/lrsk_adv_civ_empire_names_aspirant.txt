@@ -1,0 +1,234 @@
+### AWAKENED FALLEN EMPIRES
+
+## Following copied from base game for reference
+## Xenophobe
+#empire_name_parts_list = {
+#	key = "awakened_fallen_empire_names_1"
+#	parts = {
+#		"Reclaimers" = 10
+#		"Reconquerors" = 10
+#		"Restorers" = 10
+#	}
+#}
+#
+## Materialist
+#empire_name_parts_list = {
+#	key = "awakened_fallen_empire_names_2"
+#	parts = {
+#		"Regulators" = 10
+#		"Enforcers" = 10
+#		"Directors" = 10
+#	}
+#}
+#
+## Xenophile
+#empire_name_parts_list = {
+#	key = "awakened_fallen_empire_names_3"
+#	parts = {
+#		"Peacekeepers" = 10
+#		"Arbitrators" = 10
+#		"Mediators" = 10
+#	}
+#}
+#
+## Spiritualist
+#empire_name_parts_list = {
+#	key = "awakened_fallen_empire_names_4"
+#	parts = {
+#		"Crusaders" = 10
+#		"Fanatics" = 10
+#		"Zealots" = 10
+#	}
+#}
+
+# Militarist
+empire_name_parts_list = {
+	key = "aspirant_empire_names_1"
+	parts = {
+		"Imperialists" = 10
+		"Conquerors" = 10
+		"Invaders" = 10
+	}
+}
+
+# Authoritarian
+empire_name_parts_list = {
+	key = "aspirant_empire_names_2"
+	parts = {
+		"Subjugators" = 10
+		"Redeemers" = 10
+		"Dominators" = 10
+	}
+}
+
+# Pacifist
+empire_name_parts_list = {
+	key = "aspirant_empire_names_3"
+	parts = {
+		"Ambassadors" = 10
+		"Negotiators" = 10
+		"Investors" = 10
+	}
+}
+
+# Egalitarian
+empire_name_parts_list = {
+	key = "aspirant_empire_names_4"
+	parts = {
+		"Liberators" = 10
+		"Levelers" = 10
+		"Vindicators" = 10
+	}
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_xenophobe
+		}
+	}
+	format = "format.awakened.1"
+	noun = "[This.GetSpeciesName]"
+	# Human Core Worlds
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+	format = "format.aspirant.1"
+	noun = "[This.GetSpeciesName]"
+	# Human Core Worlds
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+	format = "format.awakened.2"
+	noun = "[This.GetSpeciesName]"
+	# Human Remnant
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_authoritarian
+		}
+	}
+	format = "format.aspirant.2"
+	noun = "[This.GetSpeciesName]"
+	# Human Remnant
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+	format = "format.awakened.3"
+	noun = "[This.GetSpeciesName]"
+	# Human Ancients
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+	format = "format.aspirant.3"
+	noun = "[This.GetSpeciesName]"
+	# Human Ancients
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+	format = "format.awakened.4"
+	noun = "[This.GetSpeciesName]"
+	# Human Shard
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR ={
+				has_government = "lrsk_adv_civ_gov_rising_empire"
+				has_government = "lrsk_adv_civ_gov_audacity_regime"
+				has_government = "lrsk_adv_civ_gov_aspirational_council"
+				has_government = "lrsk_adv_civ_gov_parliament_of_ascent"
+			}
+			has_ethic = ethic_fanatic_egalitarian
+		}
+	}
+	format = "format.aspirant.4"
+	noun = "[This.GetSpeciesName]"
+	# Human Shard
+}

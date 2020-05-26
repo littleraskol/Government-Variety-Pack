@@ -1,0 +1,586 @@
+# New Advanced Civics
+# Events - Established Empire
+# Sets up start as "advanced" empire
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_estemp
+
+# 2 more colonies, 12 more ships, 1000 more minerals, 600 more energy, 100 more influence, 300 more food, bonus tech
+country_event = {
+	id = lrsk_adv_civ_estemp.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = { if = { limit = {
+			has_civic = lrsk_adv_civ_civic_established_empire
+			NOT = { has_country_flag = lrsk_adv_civ_estemp_complete } # JIC
+		}
+
+		save_event_target_as = lrsk_adv_civ_estempire
+
+		# Bonus resources
+		add_energy = 1000
+		add_minerals = 600
+		add_food = 300
+		add_influence = 100
+
+		# Bonus techs
+		country_event = { id = game_start.6 } # Base-game adv. empire tech
+
+		# Start with all weapon tech
+		if = { limit = { NOT = { has_technology = "tech_mass_drivers_1" } } give_technology = { tech = "tech_mass_drivers_1" message = no } }
+		if = { limit = { NOT = { has_technology = "tech_missiles_1" } } give_technology = { tech = "tech_missiles_1" message = no } }
+		if = { limit = { NOT = { has_technology = "tech_lasers_1" } } give_technology = { tech = "tech_lasers_1" message = no } }
+
+		# Some other random good techs
+		if = { limit = { NOT = { has_technology = "tech_spaceport_2" } } give_technology = { tech = "tech_spaceport_2" message = no } }
+		if = { limit = { NOT = { has_technology = "tech_administrative_ai" } } give_technology = { tech = "tech_administrative_ai" message = no } }
+		if = { limit = { NOT = { has_technology = "tech_frontier_health" } } give_technology = { tech = "tech_frontier_health" message = no } }
+
+
+		owner_species = {
+			save_event_target_as = lrsk_adv_civ_estemp_species
+		}
+
+		capital_scope = {
+			save_event_target_as = lrsk_adv_civ_estemp_capital
+
+			random_tile = {
+				limit = { has_blocker = yes }
+				remove_blocker = yes
+			}
+			random_tile = {
+				limit = { has_blocker = yes }
+				remove_blocker = yes
+			}
+			best_tile_for_pop = { create_pop = {
+				species = event_target:lrsk_adv_civ_estemp_species
+				ethos = owner
+			} }
+			best_tile_for_pop = { create_pop = {
+				species = event_target:lrsk_adv_civ_estemp_species
+				ethos = owner
+			} }
+			random_tile = {
+				limit = {
+					has_resource = {
+						type = energy
+						amount = 1
+					}
+					has_building = no
+				}
+				if = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_building = "building_power_plant_1"
+				create_pop = {
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				}
+			}
+
+			# Extra ships (12)
+			create_fleet = {
+				name = "1st Auxiliaries"
+				effect = {
+					set_owner = event_target:lrsk_adv_civ_estempire
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						random_existing_design = "corvette"
+						graphical_culture = root
+					}
+					set_location = event_target:lrsk_adv_civ_estempire.capital_scope
+				}
+			}
+
+			solar_system = { every_system_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = event_target:lrsk_adv_civ_estempire
+				}
+			} }
+		}
+
+		# 1st colony
+		closest_system = {
+			limit = {
+				has_owner = no
+				NOT = { has_star_flag = hostile_system }
+				any_planet = {
+					is_colony = no
+					is_ideal_planet_class = {
+						who = root
+						status = yes
+					}
+				}
+			}
+
+			every_system_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = event_target:lrsk_adv_civ_estempire
+				}
+			}
+
+			random_system_planet {
+				limit = {
+					is_ideal_planet_class = {
+						who = root
+						status = yes
+					}
+					is_colony = no
+				}
+				while = {
+					limit = { NOT = { planet_size >  14 } }
+					change_planet_size = 1
+				}
+
+				set_owner = event_target:lrsk_adv_civ_estempire
+				create_colony = {
+					owner = event_target:lrsk_adv_civ_estempire
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				}
+				random_tile = {
+					limit = { has_building = "building_colony_shelter" }
+					set_building = "building_capital_1"
+				}
+				create_spaceport = {
+					owner = root
+					initial_module = "laser_weapon" # Only weapon example
+				}
+
+				random_tile = { if = { limit = { has_blocker = yes } remove_blocker = yes } }
+				best_tile_for_pop = { create_pop = {
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				} }
+				best_tile_for_pop = { create_pop = {
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				} }
+				random_tile = {
+					limit = { has_building = no }
+					if = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}
+					create_pop = {
+						species = event_target:lrsk_adv_civ_estemp_species
+						ethos = owner
+					}
+				}
+				random_tile = {
+					limit = { has_building = no }
+					if = { limit = { has_blocker = yes } remove_blocker = yes }
+					#set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+					create_pop = {
+						species = event_target:lrsk_adv_civ_estemp_species
+						ethos = owner
+					}
+				}
+				random_tile = { limit = { has_blocker = yes } remove_blocker = yes }
+				random_tile = { limit = { has_blocker = yes } remove_blocker = yes }
+			}
+		}
+
+		# 2nd colony
+		closest_system = {
+			limit = {
+				has_owner = no
+				NOT = { has_star_flag = hostile_system }
+				any_planet = {
+					is_colony = no
+					is_ideal_planet_class = {
+						who = root
+						status = yes
+					}
+				}
+			}
+
+			every_system_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = event_target:lrsk_adv_civ_estempire
+				}
+			}
+
+			random_system_planet {
+				limit = {
+					is_ideal_planet_class = {
+						who = root
+						status = yes
+					}
+					is_colony = no
+				}
+				while = {
+					limit = { NOT = { planet_size >  14 } }
+					change_planet_size = 1
+				}
+
+				set_owner = event_target:lrsk_adv_civ_estempire
+				create_colony = {
+					owner = event_target:lrsk_adv_civ_estempire
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				}
+				#random_tile = {
+				#	limit = { has_building = "building_colony_shelter" }
+				#	set_building = "building_capital_1"
+				#}
+				#create_spaceport = {
+				#	owner = root
+				#	initial_module = "laser_weapon" # Only weapon example, might not 'make sense' for all empires
+				#}
+
+				random_tile = { if = { limit = { has_blocker = yes } remove_blocker = yes } }
+				best_tile_for_pop = { create_pop = {
+					species = event_target:lrsk_adv_civ_estemp_species
+					ethos = owner
+				} }
+				random_tile = {
+					limit = { has_building = no }
+					if = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}
+					create_pop = {
+						species = event_target:lrsk_adv_civ_estemp_species
+						ethos = owner
+					}
+				}
+				random_tile = {
+					limit = { has_building = no }
+					if = { limit = { has_blocker = yes } remove_blocker = yes }
+					#set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+					create_pop = {
+						species = event_target:lrsk_adv_civ_estemp_species
+						ethos = owner
+					}
+				}
+				random_tile = { limit = { has_blocker = yes } remove_blocker = yes }
+				#random_tile = { limit = { has_blocker = yes } remove_blocker = yes }
+			}
+		}
+
+		add_modifier = { modifier = lrsk_adv_civ_estemp_complacent }
+
+		set_country_flag = lrsk_adv_civ_estemp_complete
+
+		country_event = { id = lrsk_adv_civ_estemp.2 days = 21600 random = 3600 } # Reform option in 60 ±10 years
+	} }
+}
+
+# Reform offer/choice
+country_event = {
+	id = lrsk_adv_civ_estemp.2
+	title = lrsk_adv_civ_estemp.2.name
+	desc = lrsk_adv_civ_estemp.2.desc
+	picture = GFX_evt_arguing_senate
+	show_sound = event_conversation
+	is_triggered_only = yes
+
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_established_empire
+		has_modifier = lrsk_adv_civ_estemp_complacent
+		# JIC
+		NOR = {
+			has_country_flag = lrsk_adv_civ_estemp_reforming
+			has_country_flag = lrsk_adv_civ_estemp_reformed
+		}
+	}
+
+	# Fail chance = 15% in 15 ±10 years
+	# Progress chance = 25% in 15 ±5 years (success 20 years afterward)
+	# Success chance = 60% in 30 ±10 years
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_OVERHAUL
+		custom_tooltip = LRSK_ADV_CIV_EVENT_ESTEMP_OVERHAUL_TIP
+		add_modifier = { modifier = lrsk_adv_civ_estemp_reform }
+		hidden_effect = {
+			set_country_flag = lrsk_adv_civ_estemp_reforming
+			random_list = {
+				15 = {
+					country_event = { id = lrsk_adv_civ_estemp.5 days = 5400 random = 3600 } # 15 ±10 years
+					modifier = {
+						factor = 0.5
+						has_country_flag = lrsk_adv_civ_estemp_failedreform
+					}
+				}
+				25 = {
+					country_event = { id = lrsk_adv_civ_estemp.3 days = 5400 random = 1800 } # 15 ±5 years
+				}
+				60 = {
+					country_event = { id = lrsk_adv_civ_estemp.4 days = 10800 random = 3600 } # 30 ±10 years
+					modifier = {
+						factor = 1.25
+						has_country_flag = lrsk_adv_civ_estemp_lostwar
+					}
+				}
+			}
+		}
+	}
+
+	# Fail chance = 5% in 40 ±10 years
+	# Progress chance = 15% in 25 ±5 years, 25% in 45 ±5 years (success 20 years afterward)
+	# Success chance = 55% in 60 ±15 years
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_REFORM
+		custom_tooltip = LRSK_ADV_CIV_EVENT_ESTEMP_REFORM_TIP
+		add_modifier = { modifier = lrsk_adv_civ_estemp_reform }
+		hidden_effect = {
+			set_country_flag = lrsk_adv_civ_estemp_reforming
+			random_list = {
+				5 = {
+					country_event = { id = lrsk_adv_civ_estemp.5 days = 14400 random = 3600 } # 40 ±10
+					modifier = {
+						factor = 0.5
+						has_country_flag = lrsk_adv_civ_estemp_failedreform
+					}
+				}
+				15 = {
+					country_event = { id = lrsk_adv_civ_estemp.3 days = 9000 random = 1800 } # 25 ±5 years
+				}
+				25 = {
+					country_event = { id = lrsk_adv_civ_estemp.3 days = 16200 random = 1800 } # 45 ±5 years
+				}
+				55 = {
+					country_event = { id = lrsk_adv_civ_estemp.4 days = 21600 random = 5400 } # 60 ±15 years
+					modifier = {
+						factor = 1.2
+						has_country_flag = lrsk_adv_civ_estemp_lostwar
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_DEFER
+		custom_tooltip = LRSK_ADV_CIV_EVENT_ESTEMP_DEFER_TIP
+		hidden_effect = { country_event = { id = lrsk_adv_civ_estemp.2 days = 28800 random = 7200 } } # 80 ±20 years
+	}
+}
+
+# Reform partial success
+country_event = {
+	id = lrsk_adv_civ_estemp.3
+	title = lrsk_adv_civ_estemp.3.name
+	desc = lrsk_adv_civ_estemp.3.desc
+	picture = GFX_evt_star_chart
+	show_sound = event_administrative_work
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_PROGRESS
+		custom_tooltip = LRSK_ADV_CIV_EVENT_ESTEMP_PROGRESS_TIP
+		hidden_effect = {
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_complacent }
+				remove_modifier = lrsk_adv_civ_estemp_complacent
+				add_modifier = { modifier = lrsk_adv_civ_estemp_sluggish }
+			}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_reform }
+				remove_modifier = lrsk_adv_civ_estemp_reform
+				add_modifier = { modifier = lrsk_adv_civ_estemp_partial_reformed }
+			}
+			country_event = { id = lrsk_adv_civ_estemp.4 days = 7200 } # Success in 20 years
+		}
+	}
+}
+
+# Reform complete
+country_event = {
+	id = lrsk_adv_civ_estemp.4
+	title = lrsk_adv_civ_estemp.4.name
+	desc = lrsk_adv_civ_estemp.4.desc
+	picture = GFX_evt_galactic_senate
+	show_sound = event_celebration
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_COMPLETE
+		hidden_effect = {
+			remove_country_flag = lrsk_adv_civ_estemp_reforming
+			set_country_flag = lrsk_adv_civ_estemp_reformed
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_complacent }
+				remove_modifier = lrsk_adv_civ_estemp_complacent
+			}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_sluggish }
+				remove_modifier = lrsk_adv_civ_estemp_sluggish
+			}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_reform }
+				remove_modifier = lrsk_adv_civ_estemp_reform
+			}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_partial_reformed }
+				remove_modifier = lrsk_adv_civ_estemp_partial_reformed
+			}
+		}
+	}
+}
+
+# Reform failed
+country_event = {
+id = lrsk_adv_civ_estemp.5
+title = lrsk_adv_civ_estemp.5.name
+desc = lrsk_adv_civ_estemp.5.desc
+picture = GFX_evt_alien_propaganda
+show_sound = event_factions_01
+is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_ESTEMP_FAILURE
+		custom_tooltip = LRSK_ADV_CIV_EVENT_ESTEMP_FAILURE_TIP
+		add_modifier = { modifier = lrsk_adv_civ_estemp_failed_reform days = 1800 } # 5 years
+		hidden_effect = {
+			remove_country_flag = lrsk_adv_civ_estemp_reforming
+			if = { limit = { NOT = { has_country_flag = lrsk_adv_civ_estemp_failedreform } } set_country_flag = lrsk_adv_civ_estemp_failedreform }
+			IF = { limit = { NOT = { has_modifier = lrsk_adv_civ_estemp_complacent } } add_modifier = { modifier = lrsk_adv_civ_estemp_complacent } }
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_sluggish } remove_modifier = lrsk_adv_civ_estemp_sluggish }
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_reform } remove_modifier = lrsk_adv_civ_estemp_reform 	}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_partial_reformed } remove_modifier = lrsk_adv_civ_estemp_partial_reformed }
+			country_event = { id = lrsk_adv_civ_estemp.2 days = 19800 random = 3600 } # 55 ±10 years
+		}
+	}
+}
+
+# Get reform option on war loss
+country_event = {
+	id = lrsk_adv_civ_estemp.6
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = { if = { limit = {
+			has_civic = lrsk_adv_civ_civic_established_empire
+			has_modifier = lrsk_adv_civ_estemp_complacent
+			NOR = {
+				has_country_flag = lrsk_adv_civ_estemp_reforming
+				has_country_flag = lrsk_adv_civ_estemp_reformed
+			}
+		}
+		## We eventually want this to go away, but there's no "elegant" trigger.
+		#if = { limit = { NOT = { has_country_flag = lrsk_adv_civ_estemp_lostwar } }
+		#	set_timed_country_flag = { flag = lrsk_adv_civ_estemp_lostwar days = 120 }
+		#}
+		random_list = {
+			75 = {} # nothing
+			25 = {
+				# We eventually want this to go away, but there's no "elegant" trigger.
+				if = { limit = { NOT = { has_country_flag = lrsk_adv_civ_estemp_lostwar } }
+					set_timed_country_flag = { flag = lrsk_adv_civ_estemp_lostwar days = 120 }
+				}
+
+				country_event = { id = lrsk_adv_civ_estemp.2 days = 10 }
+
+				# Just in case, don't duplicate call.
+				modifier = {
+					factor = 0
+					has_country_flag = lrsk_adv_civ_estemp_lostwar
+				}
+				# Inceasing likelihood by steps: 30, 35, 40, 45, 50, 75, finally 100 (i.e. prompted after every war loss after 250 years)
+				modifier = {
+					factor = 1.2
+					years_passed > 50
+					years_passed < 76
+				}
+				modifier = {
+					factor = 1.4
+					years_passed > 75
+					years_passed < 101
+				}
+				modifier = {
+					factor = 1.6
+					years_passed > 100
+					years_passed < 126
+				}
+				modifier = {
+					factor = 1.8
+					years_passed > 125
+					years_passed < 151
+				}
+				modifier = {
+					factor = 2
+					years_passed > 150
+					years_passed < 201
+				}
+				modifier = {
+					factor = 3
+					years_passed > 200
+					years_passed < 251
+				}
+				modifier = {
+					factor = 4
+					years_passed > 250
+				}
+			}
+		}
+	} }
+}

@@ -1,0 +1,67 @@
+# New Advanced Civics
+# Governments - Aspirant
+# Author: littleraskol
+
+### Generic Governments
+
+# "Rising Empire"
+lrsk_adv_civ_gov_rising_empire = {
+	ruler_title = LRSK_ADV_CIV_RT_EMPEROR_ASCENDANT
+	ruler_title_female = LRSK_ADV_CIV_RT_EMPRESS_ASCENDANT
+	heir_title = LRSK_ADV_CIV_HT_PROMISED_PRINCE
+	heir_title_female = LRSK_ADV_CIV_HT_PROMISED_PRINCESS
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+    has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Audacity Regime"
+lrsk_adv_civ_gov_audacity_regime = {
+	ruler_title = LRSK_ADV_CIV_FIRST_ASCENDANT
+
+	possible = {
+		has_authority = auth_dictatorial
+    has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Aspirational Council"
+lrsk_adv_civ_gov_aspirational_council = {
+	ruler_title = LRSK_ADV_CIV_PURPOSE_ADJUDICATOR
+
+	possible = {
+		has_authority = auth_oligarchic
+    has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Parliament of Ascent"
+lrsk_adv_civ_gov_parliament_of_ascent = {
+	ruler_title = LRSK_ADV_CIV_ASPIRATIONAL_RECTOR
+
+	possible = {
+		has_authority = auth_democratic
+    has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+	}
+
+	weight = {
+		base = 9999
+	}
+}

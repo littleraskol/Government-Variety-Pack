@@ -1,0 +1,383 @@
+# New Advanced Civics
+# Events - Techno-Barbarian
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_techbarb
+
+# Creates ancient ruins on homeworld
+country_event = {
+	id = lrsk_adv_civ_techbarb.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+			home_planet = {
+				init_effect = {
+					random_tile = {
+						limit = {
+							has_blocker = no
+							has_building = no
+						}
+						set_building = "lrsk_adv_civ_building_techbarb_ruins"
+					}
+				}
+			}
+		}
+	}
+}
+
+## Ruins destroyed
+#planet_event = {
+#	id = lrsk_adv_civ_techbarb.remruins
+#	title = lrsk_adv_civ_techbarb.remruins.name
+#	desc = lrsk_adv_civ_techbarb.remruins.desc
+#	picture = GFX_evt_burning_settlement
+#	show_sound = event_structural_collapse
+#	location = root
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		from = { has_prev_building = lrsk_adv_civ_building_techbarb_ruins }
+#		owner = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+#	}
+#
+#	option = {
+#		name = lrsk_adv_civ_techbarb.remruins.doubt
+#		owner = {
+#			add_modifier = { modifier = lrsk_adv_civ_tb_sacrilege days = 3600 }
+#			country_event = { id = lrsk_adv_civ_techbarb.revolution days = 3601 }
+#		}
+#	}
+#}
+#
+## Stop being techbarb (tb revolution gate)
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.revolution
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {	this = { has_civic = lrsk_adv_civ_civic_technobarbarism } }
+#
+#	immediate = {
+#		this = {
+#			set_country_flag = lrsk_adv_civ_tb_revolution_ongoing
+#			if = { limit = { has_modifier = lrsk_adv_civ_tb_sacrilege } remove_modifier = lrsk_adv_civ_tb_sacrilege }
+#			if = { limit = { has_modifier = lrsk_adv_civ_tb_capped_scientists } remove_modifier = lrsk_adv_civ_tb_capped_scientists }
+#			switch = {
+#				trigger = has_government
+#				lrsk_adv_civ_gov_devicomancer_dynasty = {
+#					change_government = {
+#						civics = {
+#							civic = civic_imperial_cult
+#							civic = civic_police_state
+#						}
+#					}
+#					country_event = { id = lrsk_adv_civ_techbarb.revdyn }
+#				}
+#				lrsk_adv_civ_gov_machine_cult = {
+#					change_government = {
+#						civics = {
+#							civic = civic_philosopher_king
+#							civic = civic_police_state
+#						}
+#					}
+#					country_event = { id = lrsk_adv_civ_techbarb.revdic }
+#				}
+#				lrsk_adv_civ_gov_cybershaman_conclave = {
+#					change_government = {
+#						civics = {
+#							civic = civic_exalted_priesthood
+#							civic = civic_police_state
+#						}
+#					}
+#					country_event = { id = lrsk_adv_civ_techbarb.revoli }
+#				}
+#			}
+#		}
+#	}
+#}
+#
+## Dynastic authority TB revolution
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.revdyn
+#	title = lrsk_adv_civ_techbarb.revolution.name
+#	desc = lrsk_adv_civ_techbarb.revdyn.desc
+#	picture = GFX_evt_alien_propaganda
+#	show_sound = event_planetary_riot
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = lrsk_adv_civ_techbarb.revolution.rebel
+#		this = {
+#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
+#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
+#		}
+#	}
+#}
+#
+## Dictatorial authority TB revolution
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.revdic
+#	title = lrsk_adv_civ_techbarb.revolution.name
+#	desc = lrsk_adv_civ_techbarb.revdic.desc
+#	picture = GFX_evt_alien_propaganda
+#	show_sound = event_planetary_riot
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = lrsk_adv_civ_techbarb.revolution.rebel
+#		this = {
+#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
+#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
+#		}
+#	}
+#}
+#
+## Oligarchic authority TB revolution
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.revoli
+#	title = lrsk_adv_civ_techbarb.revolution.name
+#	desc = lrsk_adv_civ_techbarb.revoli.desc
+#	picture = GFX_evt_alien_propaganda
+#	show_sound = event_planetary_riot
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = lrsk_adv_civ_techbarb.revolution.rebel
+#		this = {
+#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
+#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
+#		}
+#	}
+#}
+#
+## Reformation/recovery
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.reform
+#	title = lrsk_adv_civ_techbarb.reform.name
+#	desc = lrsk_adv_civ_techbarb.reform.desc
+#	picture = GFX_evt_throne_room
+#	show_sound = event_mystic_reveal
+#	is_triggered_only = yes
+#
+#	trigger = {	this = { has_country_flag = lrsk_adv_civ_tb_revolution_ongoing } }
+#
+#	immediate = {
+#		this = {
+#			remove_country_flag = lrsk_adv_civ_tb_revolution_ongoing
+#			if = { limit = { has_modifier = lrsk_adv_civ_tb_revolution } remove_modifier = lrsk_adv_civ_tb_revolution }
+#		}
+#	}
+#
+#	option = {
+#		name = lrsk_adv_civ_techbarb.reform.hope
+#		this = { add_modifier = { modifier = lrsk_adv_civ_tb_reformation days = 1800 } }
+#	}
+#}
+
+# Tech looting on taking a planet.
+# 75% -> Nothing
+# 20% -> Some amount of research points
+# 05% -> Tech rate bonus
+planet_event = {
+	id = lrsk_adv_civ_techbarb.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { fromfrom = { has_civic = lrsk_adv_civ_civic_technobarbarism } )
+      random_list = {
+        60 = {  } #Nothing
+        30 = {
+					modifier = {
+						factor = 0.5
+						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+					}
+          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.101 } }
+        }
+        10 = {
+					modifier = {
+						factor = 0
+						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+					}
+          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.102 } }
+        }
+      }
+		}
+	}
+}
+
+# 20% -> Some amount of research points
+# 50% soc, 25% eng, 25% phys (this is because most salvage of ship debris gives phys or eng tech)
+country_event = {
+	id = lrsk_adv_civ_techbarb.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+      random_list = {
+        50 = {
+          country_event = { id = lrsk_adv_civ_techbarb.103 days = 1 }
+        }
+        25 = {
+          country_event = { id = lrsk_adv_civ_techbarb.104 days = 1 }
+        }
+        25 = {
+          country_event = { id = lrsk_adv_civ_techbarb.105 days = 1 }
+        }
+      }
+		}
+	}
+}
+
+# 50% soc
+country_event = {
+	id = lrsk_adv_civ_techbarb.103
+	title = "lrsk_adv_civ_techbarb.103"
+	desc = "lrsk_adv_civ_techbarb.103.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_society_research = 500
+	}
+}
+
+# 25% eng
+country_event = {
+	id = lrsk_adv_civ_techbarb.105
+	title = "lrsk_adv_civ_techbarb.105"
+	desc = "lrsk_adv_civ_techbarb.105.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_engineering_research = 500
+	}
+}
+
+# 25% phys
+country_event = {
+	id = lrsk_adv_civ_techbarb.104
+	title = "lrsk_adv_civ_techbarb.104"
+	desc = "lrsk_adv_civ_techbarb.104.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_physics_research = 500
+	}
+}
+
+# 05% -> Tech rate bonus
+country_event = {
+	id = lrsk_adv_civ_techbarb.102
+	title = "lrsk_adv_civ_techbarb.102"
+	desc = "lrsk_adv_civ_techbarb.102.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_activating_unknown_technology
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+			modifier = lrsk_adv_civ_tb_capped_scientists
+			days = 1800
+		}
+	}
+}
+
+# Techno-Barbarian Salvage Mission Structure
+#
+# Frequency
+# For Dictatorial and Imperial: Shortly after every new ruler takes power. For Oligarchic, every 50 years or so, but no more than once per ruler.
+#
+
+# lrsk_adv_civ_techbarb.dictorimp
+# lrsk_adv_civ_techbarb.oligarchy
+
+# Format: Special Project
+# Exclusive choice between projects that take up one of the three research paths. Each project has a different set of rewards.
+# "Salvage Thinking Machines" (physics)
+# "Salvage Art and Records" (society)
+# "Salvage Great Engines" (industry)
+#
+
+# lrsk_adv_civ_techbarb.pyssalvage
+# lrsk_adv_civ_techbarb.socsalvage
+# lrsk_adv_civ_techbarb.engsalvage
+
+# Common rewards:
+# -Progress towards tech in category
+# -Minerals or energy
+# -Restore planetary defenses to ruins
+# -Restore records for ruins
+# -Ruler trait
+# -Beneficial planet modifier
+
+# lrsk_adv_civ_techbarb.pystech
+# lrsk_adv_civ_techbarb.soctech
+# lrsk_adv_civ_techbarb.engtech
+# lrsk_adv_civ_techbarb.minerals
+# lrsk_adv_civ_techbarb.energy
+# lrsk_adv_civ_techbarb.planetdef
+# lrsk_adv_civ_techbarb.ruinsrec
+# lrsk_adv_civ_techbarb.rulerbonus
+# lrsk_adv_civ_techbarb.planetbonus
+
+#
+# Physics rewards:
+# -Scientist gets "robot assistant" trait
+# -Restore labs to ruins
+#
+
+# lrsk_adv_civ_techbarb.robotassist
+# lrsk_adv_civ_techbarb.ruinslabs
+
+# Society rewards:
+# -Recovery of 1-2 xenomorph armies
+# -Restore entertainment for ruins.
+#
+
+# lrsk_adv_civ_techbarb.xenotroop
+# lrsk_adv_civ_techbarb.ruinsent
+
+# Industry rewards:
+# -Recovery of 2-4 droid armies
+# -Restore industry to ruins
+#
+
+# lrsk_adv_civ_techbarb.droidtroop
+# lrsk_adv_civ_techbarb.ruinsind
+
+# Risks:
+# -Ruler death
+# -Ruler gets negative trait
+# -Armies to be recovered might turn hostile
+# -Release of some virus or poison that affect pops
+# -Detrimental planet modifier
+
+# lrsk_adv_civ_techbarb.rulerkill
+# lrsk_adv_civ_techbarb.rulerpenalty
+# lrsk_adv_civ_techbarb.xenohostile
+# lrsk_adv_civ_techbarb.droidhostile
+# lrsk_adv_civ_techbarb.bioweapon
+# lrsk_adv_civ_techbarb.planetpenalty
+
+# Internal switches:
+# -Society: What to try?
+# -Options for every common result at random.
+
+# Decision points:
+# -Troops found, how to proceed?

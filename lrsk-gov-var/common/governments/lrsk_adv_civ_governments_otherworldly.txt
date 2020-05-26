@@ -1,0 +1,82 @@
+# New Advanced Civics
+# Governments - Otherworldly
+# Author: littleraskol
+
+### Generic Governments
+
+# "Obscene Court"
+lrsk_adv_civ_gov_obscene_court = {
+	ruler_title = LRSK_ADV_CIV_RT_ABYSSAL_INHERITOR
+	heir_title = LRSK_ADV_CIV_HT_UNFORTUNATE_HEIR
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+    has_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Arcane Despotism"
+lrsk_adv_civ_gov_arcane_despotism = {
+	ruler_title = LRSK_ADV_CIV_RT_PROV_LISC_DICT
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_ethic = ethic_fanatic_materialist
+    has_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Church of Unorthodoxy"
+lrsk_adv_civ_gov_church_of_unorthodoxy = {
+	ruler_title = LRSK_ADV_CIV_RT_HERESIARCH
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_ethic = ethic_fanatic_spiritualist
+    has_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+#  "Occultistocracy"
+lrsk_adv_civ_gov_occultistocracy = {
+	ruler_title = LRSK_ADV_CIV_RT_INVISIBLE_PRINCE
+	ruler_title_female = LRSK_ADV_CIV_RT_INVISIBLE_PRINCEESS
+
+	possible = {
+		has_authority = auth_oligarchic
+    has_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Eldricht Illegislature"
+lrsk_adv_civ_gov_eldricht_illegislature = {
+	ruler_title = LRSK_ADV_CIV_RT_REPEALER_IN_CHIEF
+
+	possible = {
+		has_authority = auth_democratic
+    has_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}

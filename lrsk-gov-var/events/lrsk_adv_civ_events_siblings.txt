@@ -1,0 +1,628 @@
+# New Advanced Civics
+# Events - Siblings
+# Spawns sibling empire.
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_siblings
+
+@lrsk_adv_civ_sib_min_distance = 5
+@lrsk_adv_civ_sib_max_distance = 60
+
+# Create the sibling
+country_event = {
+	id = lrsk_adv_civ_siblings.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = { IF = { limit = {
+			has_civic = lrsk_adv_civ_civic_star_siblings
+			NOT = { has_country_flag = lrsk_adv_civ_created_sibling }
+		}
+
+		this = {
+			save_event_target_as = lrsk_adv_civ_needs_sibling
+			set_country_flag = lrsk_adv_civ_initial_sibling
+		}
+
+		create_species = {
+			name = random
+			class = random
+			portrait = random
+			traits = random
+		}
+		last_created_species = {
+			save_event_target_as = lrsk_adv_civ_sibling_species
+		}
+
+		create_country = {
+			name = random
+			type = default
+			ethos = event_target:lrsk_adv_civ_needs_sibling
+			authority = random
+			civics = random
+			species = event_target:lrsk_adv_civ_sibling_species
+			flag = random
+			day_zero_contact = no
+			effect = {
+				establish_communications_no_message = event_target:lrsk_adv_civ_needs_sibling
+				establish_contact = { who = event_target:lrsk_adv_civ_needs_sibling location = event_target:lrsk_adv_civ_needs_sibling.solar_system }
+			}
+		}
+
+		# Find valid home system
+		capital_scope = { solar_system = { closest_system = {
+			limit = {
+				has_owner = no
+				NOT = { has_star_flag = hostile_system }
+				any_planet = { habitable_planet = yes }
+				NOT = { any_planet = { is_colony = yes } }
+				NOT = { any_planet = { is_capital = yes } }
+			}
+			min_steps = @lrsk_adv_civ_sib_min_distance
+			#max_steps = @lrsk_adv_civ_sib_max_distance # max distance makes it more likely for the sibling generation to fail.
+			save_event_target_as = lrsk_adv_civ_sibling_star
+		} } }
+
+		last_created_country = {
+			save_event_target_as = lrsk_adv_civ_sibling_empire
+			set_country_flag = lrsk_adv_civ_created_sibling
+
+			event_target:lrsk_adv_civ_sibling_star = {
+				set_owner = event_target:lrsk_adv_civ_sibling_empire
+				random_system_planet = {
+					limit = { habitable_planet = yes }
+					save_event_target_as = lrsk_adv_civ_sibling_capital
+					while = {
+						limit = { NOT = { planet_size >  15 } }
+						change_planet_size = 1
+					}
+					set_owner = event_target:lrsk_adv_civ_sibling_empire
+					set_capital = yes
+				}
+			}
+
+			modify_species = {
+				species = event_target:lrsk_adv_civ_sibling_species
+				homeworld = event_target:lrsk_adv_civ_sibling_capital
+				ideal_planet_class = event_target:lrsk_adv_civ_sibling_capital
+			}
+
+			# Changing government implicitly renames, which we need since there was no location on which to base a name before.
+			change_government = { civics = random }
+
+			#Set buddy status
+			set_relation_flag = {
+				who = event_target:lrsk_adv_civ_needs_sibling
+				flag = lrsk_adv_civ_our_siblings
+			}
+			add_opinion_modifier = {
+				who = event_target:lrsk_adv_civ_needs_sibling
+				modifier = lrsk_adv_civ_star_siblings
+			}
+
+			# Starting resources
+			add_energy = 100
+			add_minerals = 200
+			add_food = 100
+			add_influence = 100
+
+			# Starting ships, tech
+			country_event = { id = game_start.9 } # ships
+			country_event = { id = game_start.8 } # tech
+		}
+
+		# Need to set up starting buildings and population
+		event_target:lrsk_adv_civ_sibling_capital = {
+			#every_tile = { remove_blocker = yes }
+			random_tile = {
+				limit = { num_adjacent_tiles > 3 }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+				random_neighboring_tile = {
+					limit = { has_building = no }
+					IF = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}
+				}
+				random_neighboring_tile = {
+					limit = { has_building = no }
+					IF = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}
+				}
+				random_neighboring_tile = {
+					limit = { has_building = no }
+					IF = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_neighboring_tile = {
+					limit = { has_building = no }
+					IF = { limit = { has_blocker = yes } remove_blocker = yes }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = {
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}
+					}
+					33 = {
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}
+					}
+					33 = {
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}
+					}
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no }
+				IF = { limit = { has_blocker = yes } remove_blocker = yes }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}
+			}
+
+			planet_event = { id = game_start.7 }	# Populate
+		}
+
+		# Reciprocal buddy status
+		set_relation_flag = {
+			who = event_target:lrsk_adv_civ_sibling_empire
+			flag = lrsk_adv_civ_our_siblings
+		}
+	} }
+}
+
+# First contact with sibling gate
+ship_event = {
+	id = lrsk_adv_civ_siblings.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = { exists = space_owner } # Actually an owned system
+		from = { owner = { NOT = { is_same_value = root.owner } } } # Owner of system != owner of ship
+
+		# filtering out non-valid empires makes this quicker to resolve.
+		OR = {
+			owner = { has_civic = lrsk_adv_civ_civic_star_siblings }
+			from = { owner = { has_civic = lrsk_adv_civ_civic_star_siblings } }
+		}
+		NOR = {
+			owner = { has_country_flag = lrsk_adv_civ_siblings_visit_complete }
+			from = { owner = { has_country_flag = lrsk_adv_civ_siblings_visit_complete } }
+		}
+		
+		#Check buddy status
+		OR = {
+			owner = { has_relation_flag = {
+				who = from.owner
+				flag = lrsk_adv_civ_our_siblings
+			} }
+			from = { owner = { has_relation_flag = {
+				who = root.owner
+				flag = lrsk_adv_civ_our_siblings
+			} } }
+		}
+	}
+
+	immediate = {
+		from = { owner = { country_event = { id = lrsk_adv_civ_siblings.3 } } }
+		owner = { country_event = { id = lrsk_adv_civ_siblings.4 } }
+	}
+}
+
+# Host event
+country_event = {
+	id = lrsk_adv_civ_siblings.3
+	title = lrsk_adv_civ_siblings.3.name
+	desc = lrsk_adv_civ_siblings.3.desc
+	picture = GFX_evt_fleet_good
+	show_sound = event_celebration
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_WELCOME
+		add_influence = 100
+		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
+		hidden_effect = { set_country_flag = lrsk_adv_civ_siblings_visit_complete }
+	}
+}
+
+# Guest event
+country_event = {
+	id = lrsk_adv_civ_siblings.4
+	title = lrsk_adv_civ_siblings.4.name
+	desc = lrsk_adv_civ_siblings.4.desc
+	picture = GFX_evt_news_room
+	show_sound = event_celebration
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_JOY
+		add_influence = 100
+		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
+		hidden_effect = { set_country_flag = lrsk_adv_civ_siblings_visit_complete }
+	}
+}
+
+#Battle events:
+# This = owner of fleet 1 (attacker?)
+# From = owner of fleet 2 (defender?)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+
+# Battle event gate
+country_event = {
+	id = lrsk_adv_civ_siblings.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# We only want this to trigger when a combatant who is a sibling enters battle.
+		OR = {
+			this = { has_civic = lrsk_adv_civ_civic_star_siblings }
+			this = { has_country_flag = lrsk_adv_civ_created_sibling }
+		}
+		# Skip if we've already gone through this at some point.
+		NOT = { this = { OR = {
+			has_modifier = lrsk_adv_civ_siblings_strife
+			has_modifier = lrsk_adv_civ_siblings_sbs
+		} } }
+	}
+
+	immediate = {
+		# If siblings are fighting each other
+		IF = { limit = {
+			# Is our fleet in combat with a fleet owned by sibling?
+			fromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
+				who = this
+				flag = lrsk_adv_civ_our_siblings
+			} } } } }
+
+			fromfrom = { random_combatant_fleet = {
+				limit = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } }
+				owner = { country_event = { id = lrsk_adv_civ_siblings.6 } }
+			} }
+			this = { country_event = { id = lrsk_adv_civ_siblings.6 } }
+		}
+
+		# Only check if combat state not already determined (i.e., not sibling-vs-sibling)
+		IF = { limit = { NOT = { this = { has_modifier = lrsk_adv_civ_siblings_strife } } } IF = {
+			limit = { OR = {
+				# On attacking, is defender fighting a sibling?
+				fromfromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } }
+				# Alternately, am I now in combat with anyone whose fleets are in combat with a sibling?
+				fromfrom = { any_combatant_fleet = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } } }
+			} }
+
+			this = { country_event = { id = lrsk_adv_civ_siblings.7 } }
+			fromfrom = { random_combatant_fleet = {
+				limit = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } }
+				random_combatant_fleet = {
+					limit = { owner = { has_relation_flag = {
+						who = this
+						flag = lrsk_adv_civ_our_siblings
+					} } }
+					owner = { country_event = { id = lrsk_adv_civ_siblings.7 } }
+				}
+			} } }
+		}
+	}
+}
+
+# Battle each other
+country_event = {
+	id = lrsk_adv_civ_siblings.6
+	title = lrsk_adv_civ_siblings.6.name
+	desc = lrsk_adv_civ_siblings.6.desc
+	location = fromfromfrom # Hopefully this scopes to the attacking fleet??? Or at least a fleet in the battle.
+	picture = GFX_evt_small_space_battle
+	show_sound = event_space_battle
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW
+		custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW_TIP
+		add_modifier = { modifier = lrsk_adv_civ_siblings_strife }
+	}
+}
+
+# Battle side-by-side
+country_event = {
+	id = lrsk_adv_civ_siblings.7
+	title = lrsk_adv_civ_siblings.7.name
+	id = lrsk_adv_civ_siblings.7.desc
+	location = fromfromfrom # Hopefully this scopes to the attacking fleet??? Or at least a fleet in the battle.
+	picture = GFX_evt_federation_fleet
+	show_sound = event_ship_thrusters
+	is_triggered_only = yes
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE
+		custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE_TIP
+		add_modifier = { modifier = lrsk_adv_civ_siblings_sbs }
+	}
+}
+
+# Federated
+country_event = {
+	id = lrsk_adv_civ_siblings.8
+	title = lrsk_adv_civ_siblings.8.name
+	desc = lrsk_adv_civ_siblings.8.desc
+	picture = GFX_evt_galactic_senate
+	show_sound = event_conversation
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = { limit = {
+			is_in_federation_with = root
+			has_relation_flag = {
+				who = root
+				flag = lrsk_adv_civ_our_siblings
+			}
+		} }
+	}
+
+	immediate = {
+		random_country = { limit = {
+			is_in_federation_with = root
+			has_relation_flag = {
+				who = root
+				flag = lrsk_adv_civ_our_siblings
+			} }
+			save_event_target_as = lrsk_adv_civ_siblings_them
+		}
+		root = { save_event_target_as = lrsk_adv_civ_siblings_us }
+	}
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_UNITY
+		add_influence = 200
+		add_modifier = { modifier = lrsk_adv_civ_siblings_federated }
+		# Ensure sibling also gets this if it hasn't somehow already (prevents continuous recusrive events)
+		hidden_effect = { event_target:lrsk_adv_civ_siblings_them = {
+			IF = {
+				limit = {  NOT = { has_modifier = lrsk_adv_civ_siblings_federated } }
+				country_event = { id = lrsk_adv_civ_siblings.8 }
+			} }
+		}
+	}
+}
+
+# If no longer federated
+country_event = {
+	id = lrsk_adv_civ_siblings.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_federated } remove_modifier = lrsk_adv_civ_siblings_federated }
+		random_country = { limit = {
+			has_relation_flag = {
+				who = root
+				flag = lrsk_adv_civ_our_siblings
+			} }
+			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_federated } remove_modifier = lrsk_adv_civ_siblings_federated }
+		}
+	}
+}
+
+# Remove any modifiers at end of war
+country_event = {
+	id = lrsk_adv_civ_siblings.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	# Remove relevant modifiers from any participant who is no longer in any war.
+	# Basically, this should ensure that if a sibling empire gets one of these, it will keep it until it is at peace.
+	# It's not really the BEST solution but it's what I've got for now.
+	immediate = { fromfrom = {
+		every_war_participant = {
+			limit = {
+				has_modifier = lrsk_adv_civ_siblings_sbs
+				is_at_war = no
+			}
+			remove_modifier = lrsk_adv_civ_siblings_sbs
+		}
+		every_war_participant = {
+			limit = {
+				has_modifier = lrsk_adv_civ_siblings_strife
+				is_at_war = no
+			}
+			remove_modifier = lrsk_adv_civ_siblings_strife
+		}
+	} }
+}
+
+# Sibling destroyed gate
+country_event = {
+	id = lrsk_adv_civ_siblings.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_civic = lrsk_adv_civ_civic_star_siblings # Not sure this is really neded but eh
+			has_country_flag = lrsk_adv_civ_created_sibling
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				}
+			}
+			country_event = { id = lrsk_adv_civ_siblings.11 }
+		}
+	}
+}
+
+# Sibling destroyed
+country_event = {
+	id = lrsk_adv_civ_siblings.11
+	title = lrsk_adv_civ_siblings.11.name
+	id = lrsk_adv_civ_siblings.11.desc
+	picture = GFX_evt_dead_city
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+
+	immediate = { from = { save_event_target_as = lrsk_adv_civ_siblings_dead } } # Hopefully this scopes to the dead sibling
+
+	option = {
+		name = LRSK_ADV_CIV_EVENT_SIBLINGS_GRIEF
+		#custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_GRIEF_TIP
+		add_modifier = { modifier = lrsk_adv_civ_siblings_grieving days = 18000 } # 50 years (a "generation" away from forgetting)
+		hidden_effect = {
+			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_meeting } remove_modifier = lrsk_adv_civ_siblings_meeting }
+			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_strife } remove_modifier = lrsk_adv_civ_siblings_strife }
+			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_sbs } remove_modifier = lrsk_adv_civ_siblings_sbs }
+			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_federated } remove_modifier = lrsk_adv_civ_siblings_federated }
+		}
+	}
+}
+
+# Bugfix event
+country_event = {
+	id = lrsk_adv_civ_siblings.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = { has_civic = lrsk_adv_civ_civic_star_siblings }
+
+	immediate = {
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_meeting } remove_modifier = lrsk_adv_civ_siblings_meeting }
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_strife } remove_modifier = lrsk_adv_civ_siblings_strife }
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_sbs } remove_modifier = lrsk_adv_civ_siblings_sbs }
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_federated } remove_modifier = lrsk_adv_civ_siblings_federated }
+		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_grieving } remove_modifier = lrsk_adv_civ_siblings_grieving }
+	}
+}

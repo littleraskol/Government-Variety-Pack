@@ -1,0 +1,89 @@
+# New Advanced Civics
+# Governments - Parliamentary Monarchies
+# Author: littleraskol
+
+### Generic Governments
+
+# "Indefinite Regency"
+lrsk_adv_civ_gov_indefinite_regency = {
+	ruler_title = LRSK_ADV_CIV_REGENT
+
+	possible = {
+		has_authority = auth_dictatorial
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+	}
+
+	weight = {
+		base = 5000
+	}
+}
+# "Scapegoat Regency"
+lrsk_adv_civ_gov_scapegoat_regency = {
+	ruler_title = LRSK_ADV_CIV_REGENT
+
+	possible = {
+		has_authority = auth_dictatorial
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_civic = civic_shadow_council
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Senatorial Monarchy"
+lrsk_adv_civ_gov_senatorial_monarchy = {
+	ruler_title = LRSK_ADV_CIV_PRESIDING_SENATOR
+
+	possible = {
+		has_authority = auth_oligarchic
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+	}
+
+	weight = {
+		base = 5000
+	}
+}
+# "Puppet Senate"
+lrsk_adv_civ_gov_puppet_senate = {
+	ruler_title = LRSK_ADV_CIV_PRESIDING_SENATOR
+
+	possible = {
+		has_authority = auth_oligarchic
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_civic = civic_shadow_council
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Parliamentary Monarchy"
+lrsk_adv_civ_gov_parliamentary_monarchy = {
+	ruler_title = LRSK_ADV_CIV_HEAD_OF_PARLIAMENT
+
+	possible = {
+		has_authority = auth_democratic
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+	}
+
+	weight = {
+		base = 5000
+	}
+}
+#"Puppet Parliament"
+lrsk_adv_civ_gov_puppet_parliament = {
+	ruler_title = LRSK_ADV_CIV_HEAD_OF_PARLIAMENT
+
+	possible = {
+		has_authority = auth_democratic
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_civic = civic_shadow_council
+	}
+
+	weight = {
+		base = 9999
+	}
+}
