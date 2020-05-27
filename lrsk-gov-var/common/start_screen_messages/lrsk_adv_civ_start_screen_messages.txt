@@ -40,61 +40,85 @@ part = {
 
 part = {
 	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_ARTIFICERS_GUILD"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_artificers_guild
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 0
 	localization = "LRSK_ADV_CIV_START_SCREEN_P2_ELDRICHT_ILLEGISLATURE"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_eldricht_illegislature
 		}
-		NOT = { has_country_flag = custom_start_screen }
+		#NOT = { has_country_flag = custom_start_screen }
 	}
 }
 
 part = {
-	location = 1
+	location = 0
 	localization = "LRSK_ADV_CIV_START_SCREEN_P2_OCCULTISTOCRACY"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_occultistocracy
 		}
-		NOT = { has_country_flag = custom_start_screen }
+		#NOT = { has_country_flag = custom_start_screen }
 	}
 }
 
 part = {
-	location = 1
+	location = 0
 	localization = "LRSK_ADV_CIV_START_SCREEN_P2_ARCANE_DESPOTISM"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_arcane_despotism
 		}
-		NOT = { has_country_flag = custom_start_screen }
+		#NOT = { has_country_flag = custom_start_screen }
 	}
 }
 
 part = {
-	location = 1
+	location = 0
 	localization = "LRSK_ADV_CIV_START_SCREEN_P2_CHURCH_OF_UNORTHODOXY"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_church_of_unorthodoxy
 		}
-		NOT = { has_country_flag = custom_start_screen }
+		#NOT = { has_country_flag = custom_start_screen }
 	}
 }
 
 part = {
-	location = 1
+	location = 0
 	localization = "LRSK_ADV_CIV_START_SCREEN_P2_OBSCENE_COURT"
 
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_obscene_court
 		}
-		NOT = { has_country_flag = custom_start_screen }
+		#NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 0
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_SHORTSTOCK_COMPANY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_shortstock_company
+		}
+		#NOT = { has_country_flag = custom_start_screen }
 	}
 }
 
@@ -141,6 +165,18 @@ part = {
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_rising_empire
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_APEX_ENTERPRISE"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_apex_enterprise
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}
@@ -213,6 +249,30 @@ part = {
 	trigger = {
 		OR = {
 			has_government = lrsk_adv_civ_gov_scapegoat_regency
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_ROYAL_FIRM"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_royal_firm
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_CORPORATE_VICEROYALTY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_corporate_viceroyalty
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}

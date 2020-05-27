@@ -10,7 +10,7 @@ lrsk_adv_civ_gov_indefinite_regency = {
 
 	possible = {
 		has_authority = auth_dictatorial
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
 	}
 
 	weight = {
@@ -23,8 +23,8 @@ lrsk_adv_civ_gov_scapegoat_regency = {
 
 	possible = {
 		has_authority = auth_dictatorial
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    has_civic = civic_shadow_council
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = civic_shadow_council
 	}
 
 	weight = {
@@ -38,7 +38,7 @@ lrsk_adv_civ_gov_senatorial_monarchy = {
 
 	possible = {
 		has_authority = auth_oligarchic
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
 	}
 
 	weight = {
@@ -51,8 +51,8 @@ lrsk_adv_civ_gov_puppet_senate = {
 
 	possible = {
 		has_authority = auth_oligarchic
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    has_civic = civic_shadow_council
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = civic_shadow_council
 	}
 
 	weight = {
@@ -66,7 +66,7 @@ lrsk_adv_civ_gov_parliamentary_monarchy = {
 
 	possible = {
 		has_authority = auth_democratic
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
 	}
 
 	weight = {
@@ -79,8 +79,36 @@ lrsk_adv_civ_gov_puppet_parliament = {
 
 	possible = {
 		has_authority = auth_democratic
-    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    has_civic = civic_shadow_council
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = civic_shadow_council
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Royal Firm"
+lrsk_adv_civ_gov_royal_firm = {
+	ruler_title = LRSK_ADV_CIV_VICEREGAL_EXECUTIVE
+
+	possible = {
+		has_authority = auth_corporate
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+	}
+
+	weight = {
+		base = 5000
+	}
+}
+# "Corporate Viceroyalty"
+lrsk_adv_civ_gov_corporate_viceroyalty = {
+	ruler_title = LRSK_ADV_CIV_VICEREGAL_EXECUTIVE
+
+	possible = {
+		has_authority = auth_corporate
+    	has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    	has_civic = lrsk_gov_var_civic_mc_controlling_interest
 	}
 
 	weight = {
