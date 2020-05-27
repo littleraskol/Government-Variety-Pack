@@ -8,7 +8,11 @@ lrsk_adv_civ_origin_star_siblings = {
 	icon = "gfx/interface/icons/origins/origins_common_ground.dds"
 	picture = GFX_lrsk_adv_civ_origin_star_siblings
 
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }  #Maybe this should not matter...
+  #potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }  #Maybe this should not matter...
+  
+	potential = {
+		always = yes
+	}
 
   possible = {
     ethics = {
@@ -17,6 +21,7 @@ lrsk_adv_civ_origin_star_siblings = {
         value = ethic_xenophobe
         value = ethic_fanatic_xenophobe
       }
+      NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
     }
   }
 
@@ -56,6 +61,9 @@ lrsk_adv_civ_origin_ancient_tech = {
 	}
 
 	possible = {
+    ethics = {
+      NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
+    }
 	}
 
 	random_weight = {
@@ -81,8 +89,8 @@ lrsk_adv_civ_origin_broken_reality = {
 		always = yes
 	}
 
-	possible = {
-	}
+	#possible = {
+	#}
 
 	random_weight = {
 		base = 5

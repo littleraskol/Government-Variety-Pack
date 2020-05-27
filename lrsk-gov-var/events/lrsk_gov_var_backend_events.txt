@@ -42,6 +42,22 @@ event = {
 			} }
 			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
 		}
+
+		## "Advanced" origins
+
+		# Ancient Tech
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+			country_event = { id = lrsk_adv_civ_other.100 }
+		}
+
+		# Broken Reality
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_broken_reality }
+			country_event = { id = lrsk_adv_civ_other.200 }
+		}
+
+
 	}
 }
 
@@ -60,6 +76,14 @@ country_event = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
 			}
+			AND = {
+				has_origin = lrsk_adv_civ_origin_broken_reality
+				NOT = { has_country_flag = lrsk_adv_civ_origin_broken_reality_lost_portal }
+			}
+			AND = {
+				has_origin = lrsk_adv_civ_origin_ancient_tech
+				NOT = { has_country_flag = lrsk_adv_civ_origin_ancient_tech_lost_ruins }
+			}
 			# Add other checks as needed...
 		}
 	}
@@ -73,6 +97,31 @@ country_event = {
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
 						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				# Restore Dimensional Portal if removed
+				lrsk_gov_var_broken_reality_capital = {
+					IF = {
+						limit = { NOR = {
+							has_deposit = d_portal_research_zone_gestalt
+							has_deposit = d_portal_research_zone
+						} }
+						if = { limit = { owner = { is_gestalt = yes  } }
+							add_deposit = d_portal_research_zone_gestalt
+						}
+						else = {
+							add_deposit = d_portal_research_zone
+						}
+					}
+				}
+				# Restore Techno Ruins if removed
+				lrsk_gov_var_ancient_tech_capital = {
+					IF = { 
+						limit = { NOR = {
+							has_deposit = d_lrsk_gov_var_collapsed_tech_ruins
+							has_deposit = d_lrsk_gov_var_tech_ruins				#We won't have the initial deposit if we've fixed it up...
+						} }
+						add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
 					}
 				}
 				# Add other planet flags as needed...

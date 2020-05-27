@@ -431,3 +431,240 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		weight = 1
 	}
 }
+
+## Research Buildings
+
+# Techno-Ruin Research Center
+
+lrsk_gov_var_bldg_tech_ruins = {
+	base_buildtime = 360
+	#add_to_first_building_slot = yes
+	base_cap_amount = 1
+
+	category = research
+
+	potential = {
+		owner = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+	}
+
+	allow = {
+		has_deposit = d_lrsk_gov_var_tech_ruins
+	}
+
+	planet_modifier = {
+		job_lrsk_gov_var_job_cyber_salvager_add = 1
+		job_lrsk_gov_var_job_cyber_salvager_per_pop = 0.025
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+		}
+		modifier = {
+			job_lrsk_gov_var_job_head_salvager_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 75
+			num_pops >= 15
+			free_amenities > 2 #Prevents running out of amenities
+			owner = {
+				OR = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 0
+					}
+					country_uses_consumer_goods = no
+				}
+			} # so that we don't run out of consumer goods
+		}
+		modifier = {
+			weight = 50
+			free_amenities > 2 #Prevents running out of amenities
+			owner = {
+				OR = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 0
+					}
+					country_uses_consumer_goods = no
+				}
+			} # so that we don't run out of consumer goods
+			OR = {
+				num_pops >= 40
+				owner = {
+					any_neighbor_country = {
+						is_country_type = default
+						relative_power = {
+							who = prev
+							category = technology
+							value > equivalent
+						}
+						relative_power = {
+							who = prev
+							category = all
+							value < overwhelming
+						}
+					}
+				}
+			}
+			OR = {
+				owner = {
+					is_gestalt = yes
+					has_monthly_income = {
+						resource = alloys
+						value > 6
+					}
+					has_monthly_income = {
+						resource = minerals
+						value > 50
+					}
+				}
+				AND = {
+					owner = {
+						is_regular_empire = yes
+						has_monthly_income = {
+							resource = minerals
+							value > 80
+						}
+					}
+					jobs_work_minerals_goods = yes
+				}
+				owner = {
+					is_regular_empire = yes
+					AND = {
+						has_monthly_income = {
+							resource = consumer_goods
+							value > 25
+						}
+						has_monthly_income = {
+							resource = minerals
+							value > 50
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			free_jobs > 3
+		}
+		modifier = {
+			weight = 100
+			free_building_slots = 0
+			has_building_construction = no
+		}#Repairs
+	}
+}
+
+#lrsk_adv_civ_building_techbarb_ruins = {
+#	is_listed = no
+#	icon = "lrsk_adv_civ_techbarb_ruins"
+#
+#	cost = {}
+#
+#	# Temp upkeep
+#	required_resources = {
+#		energy = 2
+#		minerals = 1
+#	}
+#
+#	produced_resources = {
+#		#food = 1
+#
+#		# Until quest works, it just gives this
+#		engineering_research = 1
+#		physics_research = 1
+#		society_research = 1
+#		unity = 1
+#		influence = 1
+#
+#	}
+#
+#  produced_resource_trigger = {
+#		modifier = {
+#			has_country_flag = lrsk_adv_civ_restored_labs
+#			resources = {
+#    		engineering_research = 4
+#    		physics_research = 4
+#    		society_research = 4
+#			}
+#		}
+#	}
+#
+#	produced_resource_trigger = {
+#		modifier = {
+#			has_country_flag = lrsk_adv_civ_restored_industry
+#			resources = {
+#				energy = 2
+#  			minerals = 2
+#			}
+#		}
+#	}
+#
+#  triggered_planet_modifier = {
+#    potential {
+#      has_country_flag = lrsk_adv_civ_restored_industry
+#    }
+#    modifier {
+#      tile_resource_energy_mult = 0.10
+#      tile_resource_minerals_mult = 0.10
+#    }
+#  }
+#
+#	produced_resource_trigger = {
+#		modifier = {
+#			has_country_flag = lrsk_adv_civ_restored_entertainment
+#			resources = {
+#        unity = 2
+#			}
+#		}
+#	}
+#
+#  triggered_planet_modifier = {
+#    potential {
+#      has_country_flag = lrsk_adv_civ_restored_entertainment
+#    }
+#    modifier {
+#      tile_resource_unity_mult = 0.10
+#    }
+#  }
+#
+#	produced_resource_trigger = {
+#		modifier = {
+#			has_country_flag = lrsk_adv_civ_restored_records
+#			resources = {
+#        influence = 1
+#			}
+#		}
+#	}
+#
+#  triggered_planet_modifier = {
+#    potential {
+#      has_country_flag = lrsk_adv_civ_restored_defences
+#    }
+#    modifier {
+#      planet_fortification_strength = 0.5
+#    }
+#  }
+#
+#	upgrades = {
+#	}
+#
+#	ai_replace = no
+#	event_building = yes
+#}

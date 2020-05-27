@@ -1,0 +1,108 @@
+# New Advanced Civics
+# Events - Other
+# Other needed events
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_other
+
+# 10X = Ancient Tech
+# 20X = Broken Reality
+
+# Start oldtech stuff
+country_event = {
+	id = lrsk_adv_civ_other.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+        has_origin = lrsk_adv_civ_origin_ancient_tech
+    }
+	
+	immediate = {
+		capital_scope = {
+            set_planet_flag = lrsk_gov_var_ancient_tech_capital
+
+            add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
+        }
+		# Semi-immediate check that some other mod did not remove the ruins
+		country_event = {
+			id = lrsk_government_variety_pack_backend.2
+			days = 2
+		}
+    }
+}
+
+# Start dimsional portal stuff
+country_event = {
+	id = lrsk_adv_civ_other.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+        has_origin = lrsk_adv_civ_origin_broken_reality
+    }
+	
+	immediate = {
+		capital_scope = {
+            set_planet_flag = dportal_event
+            set_planet_flag = lrsk_gov_var_broken_reality_capital
+            #set_planet_flag = colony_event
+            owner = { set_country_flag = dportal_country }
+            if = { limit = { owner = { is_gestalt = yes  } }
+                add_deposit = d_portal_research_zone_gestalt
+            }
+            else = {
+                add_deposit = d_portal_research_zone
+            }
+            planet_event = { id = lrsk_adv_civ_other.201 days = 3}
+        }
+		# Semi-immediate check that some other mod did not remove the portal
+		country_event = {
+			id = lrsk_government_variety_pack_backend.2
+			days = 2
+		}
+    }
+}
+
+# Portal Project
+planet_event = {
+	id = lrsk_adv_civ_other.201
+	title = "colony.3005.name"
+	desc = "colony.3005.desc"
+	picture = GFX_evt_wormhole
+	location = ROOT
+	trackable = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_owner = yes
+        owner = { has_origin = lrsk_adv_civ_origin_broken_reality }
+		#original_owner = yes # ??
+		is_homeworld = yes
+		#owner = {
+		#	is_ai = no
+		#	NOT = { has_country_flag = dportal_country }
+		#}
+		is_capital = yes
+		#has_ground_combat = no
+		#is_occupied_flag = no
+		#num_pops > 0
+		#NOR = {
+		#	is_planet_class = pc_habitat
+		#	is_planet_class = pc_ringworld_habitable
+		#	has_planet_flag = colony_event
+		#}
+	}
+	
+	#immediate = {
+	#}    
+	
+	option = {
+        name = INTRIGUING 
+        enable_special_project = {
+            name = "DPORTAL_PROJECT"
+            location = this
+            owner = root
+        }
+    }
+}

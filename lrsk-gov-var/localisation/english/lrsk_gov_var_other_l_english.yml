@@ -62,6 +62,14 @@ l_english:
  d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
 
+ LRSK_TECH_RUIN_COMMON:0 "of a more advacned, bygone age, spanning the whole planet in a great patchwork of machinery and advanced buildings."
+
+ d_lrsk_gov_var_collapsed_tech_ruins:0 "Collapsed Techno-Ruins"
+ d_lrsk_gov_var_collapsed_tech_ruins_desc:0 "The remnants and rubble $LRSK_TECH_RUIN_COMMON$ While it takes up space, our people find solace in this reminder of our past glories."
+
+ d_lrsk_gov_var_tech_ruins:0 "Techno-Ruins"
+ d_lrsk_gov_var_tech_ruins_desc:0 "The remnants $LRSK_TECH_RUIN_COMMON$ Having been cleaned out and partially restored, the curiosities within provide a boon to scientific research."
+
  ## Opinion Modifiers
 
  # New Fed Starts
@@ -89,6 +97,11 @@ l_english:
  lrsk_gov_var_bldg_planet_synaptic_core_desc:2 "This great tangled whorl of $LRSK_DESC_PLANETMIND_DESC$"
  lrsk_gov_var_bldg_planet_synaptic_nexus:0 "$LRSK_DESC_PLANETMIND_NAME$ Nexus"
  lrsk_gov_var_bldg_planet_synaptic_nexus_desc:2 "This enormous thicket of tangled $LRSK_DESC_PLANETMIND_DESC$"
+
+ # Techno-Ruins
+ lrsk_gov_var_bldg_tech_ruins:0 "Techno-Ruin Research Center"
+ lrsk_gov_var_bldg_tech_ruins_desc:2 "This research station has been assembled at one of the richest clusters of the old advanced ruins. More an expeditionary staging ground than a laboratory, its savvy salvagers risk life and limb to bring back the knowledge of the past."
+
 
  ##Jobs
 
@@ -136,6 +149,24 @@ l_english:
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
+
+ # Cyber-Salvager
+ job_lrsk_gov_var_job_cyber_salvager:0 "Cyber-Salvager"
+ job_lrsk_gov_var_job_cyber_salvager_plural:0 "$job_lrsk_gov_var_job_cyber_salvager$s"
+ job_lrsk_gov_var_job_cyber_salvager_desc:0 "These daring explorers risk life and limb to bring back the knowledge of the past."
+ job_lrsk_gov_var_job_cyber_salvager_effect_desc:0 "£job_lrsk_gov_var_job_cyber_salvager£ $job_lrsk_gov_var_job_cyber_salvager_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £physics£ £society£ £engineering£ §YResearch Points§! for new technologies and £unity£ §Y$unity$§!"
+ mod_job_lrsk_gov_var_job_cyber_salvager_add:0 "$job_lrsk_gov_var_job_cyber_salvager$ Jobs"
+ mod_job_lrsk_gov_var_job_cyber_salvager_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_cyber_salvager$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_cyber_salvager_per_pop_short:0 "\n§G+1§! £mod_lrsk_gov_var_job_cyber_salvager_add£ per $VALUE$ £pop£"
+
+ # Salvage Rite Master
+ job_lrsk_gov_var_job_head_salvager:0 "Salvage Rite Master"
+ job_lrsk_gov_var_job_head_salvager_plural:0 "$job_lrsk_gov_var_job_head_salvager$s"
+ job_lrsk_gov_var_job_head_salvager_desc:1 "Members of a priestly caste officially sanctioned to bless and oversee the rituals of slavaging holy relic tech."
+ job_lrsk_gov_var_job_head_salvager_effect_desc:1 "£job_head_salvager£ $job_lrsk_gov_var_job_head_salvager$ turn £consumer_goods£ §Y$consumer_goods$§! and £energy£ §H$energy$§! into £unity£ §Y$unity$§!, £influence£ §Y$INFLUENCE$§!, and £physics£ £society£ £engineering£ §YResearch Points§! for new technologies"
+ mod_job_head_salvager_add:0 "$job_lrsk_gov_var_job_head_salvager$ Jobs"
+ mod_job_head_salvager_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_head_salvager$ Job per $VALUE$ Pops"
+ mod_job_head_salvager_per_pop_short:0 "\n§G+1§! £mod_job_head_salvager_add£ per $VALUE$ £pop£"
 
  ## Decisions
 
