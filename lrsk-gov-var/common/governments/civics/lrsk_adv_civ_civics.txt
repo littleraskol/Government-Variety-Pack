@@ -2,6 +2,8 @@
 # Civics
 # Author: littleraskol
 
+### CIVCS
+
 #Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+15% food output, -10% genetic modification cost, +5% habitability, -5% non-society research)
 lrsk_adv_civ_civic_shapers = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
@@ -318,36 +320,3 @@ lrsk_adv_civ_civic_technobarbarism = {
     num_tech_alternatives_add = -1
   }
 }
-
-
-### TO DO: CONVERT TO ORIGINS
-
-## Star Siblings (Not Xenophobe, not Established Empire) - This species has been in irregular communications with another alien species for as long as it #has had radio technology. The two species cultures have had a lasting influence on each other, and they both look forward to the day they can meet their #sisters and brothers by another stellar mother. (Starts the game in contact and friendly relations with another alien empire.)
-#lrsk_adv_civ_civic_star_siblings = {
-#  description = "lrsk_adv_civ_civic_tooltip_star_siblings_effect"
-#  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
-#
-#  possible = {
-#    ethics = {
-#      NOR = {
-#        text = civic_tooltip_not_xenophobe
-#        value = ethic_xenophobe
-#        value = ethic_fanatic_xenophobe
-#      }
-#    }
-#  }
-#
-#  modification = no
-#
-#	random_weight = { base = 0 }
-#}
-#
-## Established Empire (Not Star Siblings, not Tech barb) - This empire has already explored much of their immediate galactic neighborhood and has #established a presence there. (Starts the game with 3 colonies, 5 more ships, 1000 more minerals, 600 more energy, 100 more influence, and 300 more food. #During the early to mid game, suffers from 'complacency' and then 'lethargy' modifiers which reduce build speed.)
-#lrsk_adv_civ_civic_established_empire = {
-#  description = "lrsk_adv_civ_civic_tooltip_established_empire_effect"
-#  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
-#
-#  modification = no
-#
-#	random_weight = { base = 0 }
-#}
