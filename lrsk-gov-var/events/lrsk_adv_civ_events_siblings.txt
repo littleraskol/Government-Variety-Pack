@@ -5,19 +5,18 @@
 
 namespace = lrsk_adv_civ_siblings
 
-@lrsk_adv_civ_sib_min_distance = 5
-@lrsk_adv_civ_sib_max_distance = 60
-
 # Create the sibling
 country_event = {
 	id = lrsk_adv_civ_siblings.1
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = { IF = { limit = {
-			has_civic = lrsk_adv_civ_civic_star_siblings
-			NOT = { has_country_flag = lrsk_adv_civ_created_sibling }
-		}
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_star_siblings
+		NOT = { has_country_flag = lrsk_adv_civ_created_sibling }		
+	}
+
+	immediate = {
 
 		this = {
 			save_event_target_as = lrsk_adv_civ_needs_sibling
@@ -26,7 +25,7 @@ country_event = {
 
 		create_species = {
 			name = random
-			class = random
+			class = random_non_machine
 			portrait = random
 			traits = random
 		}
@@ -35,14 +34,16 @@ country_event = {
 		}
 
 		create_country = {
-			name = random
+			name_list = random
 			type = default
+			origin = origin_default
 			ethos = event_target:lrsk_adv_civ_needs_sibling
 			authority = random
 			civics = random
 			species = event_target:lrsk_adv_civ_sibling_species
 			flag = random
 			day_zero_contact = no
+			ignore_initial_colony_error = yes
 			effect = {
 				establish_communications_no_message = event_target:lrsk_adv_civ_needs_sibling
 				establish_contact = { who = event_target:lrsk_adv_civ_needs_sibling location = event_target:lrsk_adv_civ_needs_sibling.solar_system }
@@ -54,14 +55,46 @@ country_event = {
 			limit = {
 				has_owner = no
 				NOT = { has_star_flag = hostile_system }
-				any_planet = { habitable_planet = yes }
-				NOT = { any_planet = { is_colony = yes } }
-				NOT = { any_planet = { is_capital = yes } }
+				any_system_planet = {
+					is_ringworld = no
+					is_asteroid = no
+					is_star = no
+					is_moon = no
+				}
+				NOT = { any_system_planet = { is_colony = yes } }
+				NOT = { any_system_planet = { is_capital = yes } }
+				NOT = { has_star_flag = empire_cluster }
+				NOT = { any_neighbor_system = {
+					has_owner = yes
+					has_star_flag = empire_cluster
+				} }
 			}
-			min_steps = @lrsk_adv_civ_sib_min_distance
-			#max_steps = @lrsk_adv_civ_sib_max_distance # max distance makes it more likely for the sibling generation to fail.
+			min_steps = 5
+			
 			save_event_target_as = lrsk_adv_civ_sibling_star
 		} } }
+
+		# Fallback with fewer restrictions if above fails...
+		IF = { limit = { NOT = { exists = event_target:lrsk_adv_civ_sibling_star } }
+			capital_scope = { solar_system = { closest_system = {
+				limit = {
+					has_owner = no
+					NOT = { has_star_flag = hostile_system }
+					any_system_planet = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					NOT = { any_system_planet = { is_colony = yes } }
+					NOT = { any_system_planet = { is_capital = yes } }
+					NOT = { has_star_flag = empire_cluster }
+				}
+				min_steps = 2
+				
+				save_event_target_as = lrsk_adv_civ_sibling_star
+			} } }
+		}
 
 		last_created_country = {
 			save_event_target_as = lrsk_adv_civ_sibling_empire
@@ -70,12 +103,26 @@ country_event = {
 			event_target:lrsk_adv_civ_sibling_star = {
 				set_owner = event_target:lrsk_adv_civ_sibling_empire
 				random_system_planet = {
-					limit = { habitable_planet = yes }
-					save_event_target_as = lrsk_adv_civ_sibling_capital
-					while = {
-						limit = { NOT = { planet_size >  15 } }
-						change_planet_size = 1
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
 					}
+					save_event_target_as = lrsk_adv_civ_sibling_capital
+					set_planet_size = 16
+					random_list = {
+						1 = { change_pc = pc_tropical }
+						1 = { change_pc = pc_arid }
+						1 = { change_pc = pc_continental }
+						1 = { change_pc = pc_ocean }
+						1 = { change_pc = pc_tundra }
+						1 = { change_pc = pc_arctic }
+						1 = { change_pc = pc_alpine }
+						1 = { change_pc = pc_savannah }
+						1 = { change_pc = pc_desert }
+					}
+					reroll_planet = yes
 					set_owner = event_target:lrsk_adv_civ_sibling_empire
 					set_capital = yes
 				}
@@ -87,8 +134,7 @@ country_event = {
 				ideal_planet_class = event_target:lrsk_adv_civ_sibling_capital
 			}
 
-			# Changing government implicitly renames, which we need since there was no location on which to base a name before.
-			change_government = { civics = random }
+			set_name = random # Fixes some naming issues
 
 			#Set buddy status
 			set_relation_flag = {
@@ -106,174 +152,33 @@ country_event = {
 			add_food = 100
 			add_influence = 100
 
-			# Starting ships, tech
-			country_event = { id = game_start.9 } # ships
-			country_event = { id = game_start.8 } # tech
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 		}
 
 		# Need to set up starting buildings and population
 		event_target:lrsk_adv_civ_sibling_capital = {
-			#every_tile = { remove_blocker = yes }
-			random_tile = {
-				limit = { num_adjacent_tiles > 3 }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_building = "building_capital_1"
-				add_resource = {
-					resource = energy
-					amount = 1
-					replace = yes
-				}
-				random_neighboring_tile = {
-					limit = { has_building = no }
-					IF = { limit = { has_blocker = yes } remove_blocker = yes }
-					set_building = "building_hydroponics_farm_1"
-					add_resource = {
-						resource = food
-						amount = 2
-						replace = yes
-					}
-				}
-				random_neighboring_tile = {
-					limit = { has_building = no }
-					IF = { limit = { has_blocker = yes } remove_blocker = yes }
-					set_building = "building_hydroponics_farm_1"
-					add_resource = {
-						resource = food
-						amount = 1
-						replace = yes
-					}
-				}
-				random_neighboring_tile = {
-					limit = { has_building = no }
-					IF = { limit = { has_blocker = yes } remove_blocker = yes }
-					set_building = "building_power_plant_1"
-					add_resource = {
-						resource = energy
-						amount = 1
-						replace = yes
-					}
-				}
-				random_neighboring_tile = {
-					limit = { has_building = no }
-					IF = { limit = { has_blocker = yes } remove_blocker = yes }
-					set_building = "building_mining_network_1"
-					add_resource = {
-						resource = minerals
-						amount = 2
-						replace = yes
-					}
-				}
+			create_colony = {
+				owner = event_target:lrsk_adv_civ_sibling_empire
 			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_building = "building_basic_science_lab_1"
-				random_list = {
-					33 = {
-						add_resource = {
-							resource = engineering_research
-							amount = 1
-							replace = yes
-						}
-					}
-					33 = {
-						add_resource = {
-							resource = physics_research
-							amount = 1
-							replace = yes
-						}
-					}
-					33 = {
-						add_resource = {
-							resource = society_research
-							amount = 1
-							replace = yes
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_adv_civ_sibling_empire
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
 						}
 					}
 				}
 			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_building = "building_mining_network_1"
-				add_resource = {
-					resource = minerals
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_failing_infrastructure"
-				add_resource = {
-					resource = engineering_research
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_failing_infrastructure"
-				add_resource = {
-					resource = society_research
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_failing_infrastructure"
-				add_resource = {
-					resource = physics_research
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_decrepit_dwellings"
-				add_resource = {
-					resource = energy
-					amount = 2
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_decrepit_dwellings"
-				add_resource = {
-					resource = food
-					amount = 2
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_blocker = "tb_decrepit_dwellings"
-				add_resource = {
-					resource = minerals
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no }
-				IF = { limit = { has_blocker = yes } remove_blocker = yes }
-				set_building = "building_power_plant_1"
-				add_resource = {
-					resource = energy
-					amount = 2
-					replace = yes
-				}
-			}
-
-			planet_event = { id = game_start.7 }	# Populate
 		}
 
 		# Reciprocal buddy status
@@ -281,7 +186,11 @@ country_event = {
 			who = event_target:lrsk_adv_civ_sibling_empire
 			flag = lrsk_adv_civ_our_siblings
 		}
-	} }
+		add_opinion_modifier = {
+			who = event_target:lrsk_adv_civ_sibling_empire
+			modifier = lrsk_adv_civ_star_siblings
+		}
+	}
 }
 
 # First contact with sibling gate
@@ -333,11 +242,14 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 
+	immediate = {
+		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
+		set_country_flag = lrsk_adv_civ_siblings_visit_complete
+	}
+
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_WELCOME
 		add_influence = 100
-		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
-		hidden_effect = { set_country_flag = lrsk_adv_civ_siblings_visit_complete }
 	}
 }
 
@@ -351,11 +263,14 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 
+	immediate = {
+		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
+		set_country_flag = lrsk_adv_civ_siblings_visit_complete
+	}
+
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_JOY
 		add_influence = 100
-		add_modifier = { modifier = lrsk_adv_civ_siblings_meeting days = 7200 }
-		hidden_effect = { set_country_flag = lrsk_adv_civ_siblings_visit_complete }
 	}
 }
 
@@ -446,10 +361,11 @@ country_event = {
 	show_sound = event_space_battle
 	is_triggered_only = yes
 
+	immediate = { add_modifier = { modifier = lrsk_adv_civ_siblings_strife } }
+
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW
 		custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW_TIP
-		add_modifier = { modifier = lrsk_adv_civ_siblings_strife }
 	}
 }
 
@@ -463,10 +379,11 @@ country_event = {
 	show_sound = event_ship_thrusters
 	is_triggered_only = yes
 
+	immediate = { add_modifier = { modifier = lrsk_adv_civ_siblings_sbs } }
+
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE
 		custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE_TIP
-		add_modifier = { modifier = lrsk_adv_civ_siblings_sbs }
 	}
 }
 
@@ -498,13 +415,14 @@ country_event = {
 			} }
 			save_event_target_as = lrsk_adv_civ_siblings_them
 		}
+		add_modifier = { modifier = lrsk_adv_civ_siblings_federated }
 		root = { save_event_target_as = lrsk_adv_civ_siblings_us }
 	}
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_UNITY
 		add_influence = 200
-		add_modifier = { modifier = lrsk_adv_civ_siblings_federated }
+		
 		# Ensure sibling also gets this if it hasn't somehow already (prevents continuous recusrive events)
 		hidden_effect = { event_target:lrsk_adv_civ_siblings_them = {
 			IF = {
@@ -595,12 +513,15 @@ country_event = {
 	show_sound = event_ghost_town
 	is_triggered_only = yes
 
-	immediate = { from = { save_event_target_as = lrsk_adv_civ_siblings_dead } } # Hopefully this scopes to the dead sibling
+	immediate = {
+		from = { save_event_target_as = lrsk_adv_civ_siblings_dead } # Hopefully this scopes to the dead sibling
+		add_modifier = { modifier = lrsk_adv_civ_siblings_grieving days = 18000 } # 50 years (a "generation" away from forgetting)
+	}
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_GRIEF
 		#custom_tooltip = LRSK_ADV_CIV_EVENT_SIBLINGS_GRIEF_TIP
-		add_modifier = { modifier = lrsk_adv_civ_siblings_grieving days = 18000 } # 50 years (a "generation" away from forgetting)
+
 		hidden_effect = {
 			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_meeting } remove_modifier = lrsk_adv_civ_siblings_meeting }
 			IF = { limit = { has_modifier = lrsk_adv_civ_siblings_strife } remove_modifier = lrsk_adv_civ_siblings_strife }
