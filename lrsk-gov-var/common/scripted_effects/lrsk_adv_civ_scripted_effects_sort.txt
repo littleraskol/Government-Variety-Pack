@@ -200,3 +200,103 @@ lrsk_adv_civ_sort_lose_unready = {
     break = yes
   }
 }
+
+lrsk_adv_civ_estemp_explorable = {
+  NOR = { 
+    exists = owner
+    has_star_flag = hostile_system
+    has_star_flag = lrsk_expansion_cluster
+  }
+}
+
+lrsk_adv_civ_estemp_expansion_ready = {
+  NOR = {
+    exists = owner
+    any_neighbor_system = {
+      #ignore_hyperlanes = no # ???
+      exists = owner
+      owner = {
+        is_country_type = fallen_empire
+        is_xenophobe = yes
+      }
+    }
+    has_star_flag = hostile_system
+    has_star_flag = empire_home_system
+    has_star_flag = empire_cluster
+    has_star_flag = lrsk_expansion_cluster
+    has_star_flag = lrsk_not_expansion_cluster
+  }
+}
+
+lrsk_adv_civ_estemp_take_system_resources = {
+  every_system_planet = {
+    limit = {
+      has_deposit_for = shipclass_mining_station
+      has_mining_station = no
+    }
+    create_mining_station = {
+      owner = ROOT
+    }
+  }
+  every_system_planet = {
+    limit = {
+      has_deposit_for = shipclass_research_station
+      has_research_station = no
+    }
+    create_research_station = {
+      owner = ROOT
+    }
+  }
+}
+
+# 8 jobs and 6 pops
+lrsk_generate_estemp_col_pops_and_districts = {
+  # 2 jobs
+  if = {
+    limit = {
+      owner = { NOT = { has_valid_civic = civic_agrarian_idyll } }
+    }
+    while = {
+      count = 2
+      add_district_and_planet_size_if_needed_effect = {
+        district = district_city
+      }
+    }
+  }
+  else = {
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_farming
+    }
+  }
+
+  # 2 jobs
+  if = { limit = { owner = { is_lithoid_empire = no } }
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_farming
+    }
+  }
+  else = {
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_mining
+    }
+  }
+
+  # 2 jobs
+  add_district_and_planet_size_if_needed_effect = {
+    district = district_mining
+  }
+
+  # 2 jobs
+  add_district_and_planet_size_if_needed_effect = {
+    district = district_generator
+  }
+
+	# 6 pops
+	while = {
+		count = 6
+		create_pop = {
+			species = owner_main_species
+			ethos = random
+		}
+	}
+}
