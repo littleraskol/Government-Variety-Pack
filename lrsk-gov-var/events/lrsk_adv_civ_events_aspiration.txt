@@ -12,44 +12,44 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-    if = {
-      limit ={
-        has_technology = tech_terrestrial_sculpting
-      }
-  		add_society_research = 200
-      else = {
-				add_research_option = tech_terrestrial_sculpting
-				add_tech_progress = {
-					tech = tech_terrestrial_sculpting
-					progress = 0.33
-				}
-      }
-    }
-    if = {
-      limit ={
-        has_technology = tech_lrsk_adv_civ_ambdesexpsys
-      }
-  		add_physics_research = 400
-      else = {
-				add_research_option = tech_lrsk_adv_civ_ambdesexpsys
-				add_tech_progress = {
-					tech = tech_lrsk_adv_civ_ambdesexpsys
-					progress = 0.20
-				}
-      }
-    }
-    if = {
-      limit ={
-        has_technology = tech_mega_engineering
-      }
-  		add_engineering_research = 500
-      else = {
-				add_research_option = tech_mega_engineering
-				add_tech_progress = {
-					tech = tech_mega_engineering
-					progress = 0.05
-				}
-      }
-    }
+		if = {
+			limit ={
+				has_technology = tech_terrestrial_sculpting
+			}
+			add_society_research = 200
+			else = {
+						add_research_option = tech_terrestrial_sculpting
+						add_tech_progress = {
+							tech = tech_terrestrial_sculpting
+							progress = 0.33
+						}
+			}
+		}
+		if = {
+			limit ={
+				has_technology = tech_lrsk_adv_civ_ambdesexpsys
+			}
+			add_physics_research = 400
+			else = {
+						add_research_option = tech_lrsk_adv_civ_ambdesexpsys
+						add_tech_progress = {
+							tech = tech_lrsk_adv_civ_ambdesexpsys
+							progress = 0.20
+						}
+			}
+		}
+		if = {
+			limit ={
+				has_technology = tech_mega_engineering
+			}
+			add_engineering_research = 500
+			else = {
+						add_research_option = tech_mega_engineering
+						add_tech_progress = {
+							tech = tech_mega_engineering
+							progress = 0.05
+						}
+			}
+		}
 	}
 }
