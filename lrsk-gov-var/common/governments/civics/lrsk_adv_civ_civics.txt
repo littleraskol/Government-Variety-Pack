@@ -22,7 +22,7 @@ lrsk_adv_civ_civic_shapers = {
   random_weight = { base = 1 }
 
   modifier = {
-    country_resource_food_mult = 0.15
+    country_food_produces_mult = 0.15
     modify_species_cost_mult = -0.1
     pop_environment_tolerance = 0.05
     #country_society_tech_research_speed = 0.05
@@ -50,8 +50,8 @@ lrsk_adv_civ_civic_artificers = {
 
   modifier = {
     country_ship_upgrade_cost_mult = -0.1
-    pop_robot_production_output = 0.1
-    country_robot_build_speed_mult = 0.1
+    planet_jobs_robotic_produces_mult = 0.1
+    planet_pop_assembly_mult = 0.1
     #country_engineering_tech_research_speed = 0.05
     country_society_tech_research_speed = -0.05
     country_physics_tech_research_speed = -0.05
@@ -76,10 +76,10 @@ lrsk_adv_civ_civic_essentialists = {
   random_weight = { base = 1 }
 
   modifier = {
-    ship_sensor_range_mult = 0.15
-    planet_sensor_range_mult = 0.15
-    ship_interstellar_speed_mult = 0.15
-  	ship_ftl_wormhole_speed_mult = 0.15
+    ship_sensor_range_add = 1
+    planet_sensor_range_add = 1
+		ship_windup_mult = -0.1
+		ship_winddown_mult = -0.1
     #country_physics_tech_research_speed = 0.05
     country_engineering_tech_research_speed = -0.05
     country_society_tech_research_speed = -0.05
@@ -120,8 +120,8 @@ lrsk_adv_civ_civic_sortition = {
 
   modifier = {
     country_leader_pool_size = 2
-		country_leader_cap = 5
-    leader_influence_cost = -0.25
+		leaders_cost_mult = -0.25
+		leaders_upkeep_mult = -0.25
     pop_citizen_happiness = 0.1
   	country_election_influence_cost_mult = 1
   }
@@ -144,54 +144,55 @@ lrsk_adv_civ_civic_figurehead_monarchy = {
   random_weight = { base = 1 }
 
   modifier = {
-    country_resource_influence_mult = 0.1
-    country_resource_unity_mult = 0.1
-		country_unrest_unhappy_pop_effect_mult = -0.1
-    country_resource_energy_mult = -0.05
-    country_resource_minerals_mult = -0.05
+    country_influence_produces_mult = 0.1
+    country_unity_produces_mult = 0.1
+		planet_stability_add = 5
+    country_energy_produces_mult = -0.05
+    country_minerals_produces_mult = -0.05
   }
 }
 
-#Exotic Graces (Fanatic Xenophile or Pacifist and Xenophile) - This culture has made it not just a point of basic ettiquette but a matter of correct ethical behavior to understand and embrace foreign ways. This can be an expensive and sometimes distruptive tendency. (+2.5% other species happiness, +25% xeno migration attraction, -5% tradition cost per alien species, +5% trade attractiveness, +1% unity per federation member, -10% governing ethos attraction, +10% consumer goods use)
-lrsk_adv_civ_civic_exotic_graces = {
-  #description = "lrsk_adv_civ_civic_tooltip_exotic_graces_effect"
-  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_free_haven.dds"
-
-  possible = {
-    ethics = {
-      OR = {
-        value = ethic_fanatic_xenophile
-        AND = {
-          value = ethic_xenophile
-    		  OR = {
-            text = civic_tooltip_pacifist
-         	  value = ethic_pacifist
-         	  value = ethic_fanatic_pacifist
-    		  }
-        }
-      }
-    }
-    civics = {
-      NOR = {
-        value = lrsk_adv_civ_civic_aspiring_ascendants
-      }
-    }
-  }
-
-  random_weight = { base = 1 }
-
-  modifier = {
-    pop_other_species_happiness = 0.025
-    planet_migration_xeno_pull = 0.25
-    tradition_cost_num_xenos_mult = -0.05
-    country_trade_attractiveness = 0.05
-    country_federation_member_resource_unity_mult = 0.01
-    pop_government_ethic_attraction = -0.1
-    pop_consumer_goods_mult = 0.1
-  }
-}
+# Redoing this as something related to liesure or excess once I figure out what...
+##Exotic Graces (Fanatic Xenophile or Pacifist and Xenophile) - This culture has made it not just a point of basic ettiquette #but a matter of correct ethical behavior to understand and embrace foreign ways. This can be an expensive and sometimes #distruptive tendency. (+2.5% other species happiness, +25% xeno migration attraction, -5% tradition cost per alien species, +5% #trade attractiveness, +1% unity per federation member, -10% governing ethos attraction, +10% consumer goods use)
+#lrsk_adv_civ_civic_exotic_graces = {
+#  #description = "lrsk_adv_civ_civic_tooltip_exotic_graces_effect"
+#  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_free_haven.dds"
+#
+#  possible = {
+#    ethics = {
+#      OR = {
+#        value = ethic_fanatic_xenophile
+#        AND = {
+#          value = ethic_xenophile
+#    		  OR = {
+#            text = civic_tooltip_pacifist
+#         	  value = ethic_pacifist
+#         	  value = ethic_fanatic_pacifist
+#    		  }
+#        }
+#      }
+#    }
+#    civics = {
+#      NOR = {
+#        value = lrsk_adv_civ_civic_aspiring_ascendants
+#      }
+#    }
+#  }
+#
+#  random_weight = { base = 1 }
+#
+#  modifier = {
+#    pop_other_species_happiness = 0.025
+#    planet_migration_xeno_pull = 0.25
+#    tradition_cost_num_xenos_mult = -0.05
+#    country_trade_attractiveness = 0.05
+#    country_federation_member_resource_unity_mult = 0.01
+#    pop_government_ethic_attraction = -0.1
+#    pop_consumer_goods_mult = 0.1
+#  }
+#}
 
 #Otherworldly (Fanatic Materialist or Fanatic Spiritualist) - This civilization seems nearly insane from an outside perspective. It's speculated that they made a discovery that broke them, socially, culturally, and psychologically. It is as if they no longer truly belong in this universe. Needless to say, dealing with them is very difficult, but they may prove useful if any outside context problems show up. (+10% FTL speed, special techs and events, -5% anomaly fail chance, +10% anomaly find chance, -10% trade attractiveness and trust growth, +10% diplomatic influence cost)
 lrsk_adv_civ_civic_otherworldly = {
@@ -224,12 +225,12 @@ lrsk_adv_civ_civic_otherworldly = {
   random_weight = { base = 1 }
 
   modifier = {
-    ship_interstellar_speed_mult = 0.1
-	  ship_ftl_wormhole_speed_mult = 0.1
-    ship_anomaly_generation_chance_mult = 0.1
-    country_trade_attractiveness = -0.1
+		ship_windup_mult = -0.1
+		ship_winddown_mult = -0.1
+    ship_anomaly_generation_chance_mult = 0.2
+    country_trade_attractiveness = -0.1 # Does this work??
     country_trust_growth = -0.1
-    diplomacy_influence_cost = 0.1
+		diplo_weight_mult = -0.15
   }
 }
 
@@ -271,10 +272,10 @@ lrsk_adv_civ_civic_aspiring_ascendants = {
 
   modifier = {
 		pop_government_ethic_attraction = 0.2
-  	country_resource_unity_mult = 0.15
-    country_expansion_distance_mult = 0.3
-    tradition_cost_num_colonies_mult = 0.2
-    mod_distance_to_capital_static_modifier_efficiency_mult = 0.25
+  	country_unity_produces_mult = 0.15
+		country_starbase_influence_cost_mult = -0.15
+    empire_size_penalty_mult = 0.25
+    country_admin_cap_mult = -0.15
   }
 }
 
