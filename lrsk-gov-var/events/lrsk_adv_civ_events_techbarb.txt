@@ -5,27 +5,27 @@
 namespace = lrsk_adv_civ_techbarb
 
 # Creates ancient ruins on homeworld
-country_event = {
-	id = lrsk_adv_civ_techbarb.1
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-			home_planet = {
-				init_effect = {
-					random_tile = {
-						limit = {
-							has_blocker = no
-							has_building = no
-						}
-						set_building = "lrsk_adv_civ_building_techbarb_ruins"
-					}
-				}
-			}
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.1
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+#			home_planet = {
+#				init_effect = {
+#					random_tile = {
+#						limit = {
+#							has_blocker = no
+#							has_building = no
+#						}
+#						set_building = "lrsk_adv_civ_building_techbarb_ruins"
+#					}
+#				}
+#			}
+#		}
+#	}
+#}
 
 ## Ruins destroyed
 #planet_event = {
@@ -180,123 +180,123 @@ country_event = {
 # 75% -> Nothing
 # 20% -> Some amount of research points
 # 05% -> Tech rate bonus
-planet_event = {
-	id = lrsk_adv_civ_techbarb.101
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		if = { limit = { fromfrom = { has_civic = lrsk_adv_civ_civic_technobarbarism } )
-      random_list = {
-        60 = {  } #Nothing
-        30 = {
-					modifier = {
-						factor = 0.5
-						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-					}
-          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.101 } }
-        }
-        10 = {
-					modifier = {
-						factor = 0
-						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-					}
-          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.102 } }
-        }
-      }
-		}
-	}
-}
+#planet_event = {
+#	id = lrsk_adv_civ_techbarb.101
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		if = { limit = { fromfrom = { has_civic = lrsk_adv_civ_civic_technobarbarism } )
+#      random_list = {
+#        60 = {  } #Nothing
+#        30 = {
+#					modifier = {
+#						factor = 0.5
+#						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+#					}
+#          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.101 } }
+#        }
+#        10 = {
+#					modifier = {
+#						factor = 0
+#						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+#					}
+#          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.102 } }
+#        }
+#      }
+#		}
+#	}
+#}
 
 # 20% -> Some amount of research points
 # 50% soc, 25% eng, 25% phys (this is because most salvage of ship debris gives phys or eng tech)
-country_event = {
-	id = lrsk_adv_civ_techbarb.101
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-      random_list = {
-        50 = {
-          country_event = { id = lrsk_adv_civ_techbarb.103 days = 1 }
-        }
-        25 = {
-          country_event = { id = lrsk_adv_civ_techbarb.104 days = 1 }
-        }
-        25 = {
-          country_event = { id = lrsk_adv_civ_techbarb.105 days = 1 }
-        }
-      }
-		}
-	}
-}
-
-# 50% soc
-country_event = {
-	id = lrsk_adv_civ_techbarb.103
-	title = "lrsk_adv_civ_techbarb.103"
-	desc = "lrsk_adv_civ_techbarb.103.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle
-
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-		add_society_research = 500
-	}
-}
-
-# 25% eng
-country_event = {
-	id = lrsk_adv_civ_techbarb.105
-	title = "lrsk_adv_civ_techbarb.105"
-	desc = "lrsk_adv_civ_techbarb.105.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle
-
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-		add_engineering_research = 500
-	}
-}
-
-# 25% phys
-country_event = {
-	id = lrsk_adv_civ_techbarb.104
-	title = "lrsk_adv_civ_techbarb.104"
-	desc = "lrsk_adv_civ_techbarb.104.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle
-
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-		add_physics_research = 500
-	}
-}
-
-# 05% -> Tech rate bonus
-country_event = {
-	id = lrsk_adv_civ_techbarb.102
-	title = "lrsk_adv_civ_techbarb.102"
-	desc = "lrsk_adv_civ_techbarb.102.desc"
-	picture = GFX_evt_star_chart
-	show_sound = event_activating_unknown_technology
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-		add_modifier = {
-			modifier = lrsk_adv_civ_tb_capped_scientists
-			days = 1800
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.101
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
+#      random_list = {
+#        50 = {
+#          country_event = { id = lrsk_adv_civ_techbarb.103 days = 1 }
+#        }
+#        25 = {
+#          country_event = { id = lrsk_adv_civ_techbarb.104 days = 1 }
+#        }
+#        25 = {
+#          country_event = { id = lrsk_adv_civ_techbarb.105 days = 1 }
+#        }
+#      }
+#		}
+#	}
+#}
+#
+## 50% soc
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.103
+#	title = "lrsk_adv_civ_techbarb.103"
+#	desc = "lrsk_adv_civ_techbarb.103.desc"
+#	picture = GFX_evt_burning_settlement
+#	show_sound = event_ground_battle
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#		add_society_research = 500
+#	}
+#}
+#
+## 25% eng
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.105
+#	title = "lrsk_adv_civ_techbarb.105"
+#	desc = "lrsk_adv_civ_techbarb.105.desc"
+#	picture = GFX_evt_burning_settlement
+#	show_sound = event_ground_battle
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#		add_engineering_research = 500
+#	}
+#}
+#
+## 25% phys
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.104
+#	title = "lrsk_adv_civ_techbarb.104"
+#	desc = "lrsk_adv_civ_techbarb.104.desc"
+#	picture = GFX_evt_burning_settlement
+#	show_sound = event_ground_battle
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#		add_physics_research = 500
+#	}
+#}
+#
+## 05% -> Tech rate bonus
+#country_event = {
+#	id = lrsk_adv_civ_techbarb.102
+#	title = "lrsk_adv_civ_techbarb.102"
+#	desc = "lrsk_adv_civ_techbarb.102.desc"
+#	picture = GFX_evt_star_chart
+#	show_sound = event_activating_unknown_technology
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#		add_modifier = {
+#			modifier = lrsk_adv_civ_tb_capped_scientists
+#			days = 1800
+#		}
+#	}
+#}
 
 # Techno-Barbarian Salvage Mission Structure
 #

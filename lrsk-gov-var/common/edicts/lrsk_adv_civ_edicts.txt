@@ -2,21 +2,37 @@
 # Edicts
 # Author: littleraskol
 
-country_edict = {
-	name = "lrsk_adv_civ_audacity_war"
-	modifier = {
-    damage_vs_country_type_fallen_empire_mult = 0.15
-    damage_vs_country_type_awakened_fallen_empire_mult = 0.15
+lrsk_adv_civ_audacity_war_edict = {
+	#name = "lrsk_adv_civ_audacity_war"
+	length = -1
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = 150
+		}
 	}
 
-	influence_cost = 1
+	modifier = {
+		damage_vs_country_type_fallen_empire_mult = 0.15
+		damage_vs_country_type_awakened_fallen_empire_mult = 0.15
+	}
 
 	potential = {
-		NOT = { has_authority = auth_hive_mind }
-    has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
 	}
 
+	allow = { custom_tooltip = {
+		fail_text = "lrsk_gov_var_tooltip_fail_war_with_fe"
+		is_at_war = yes
+		any_war = { any_war_participant = { OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		} } }
+	} }
+
 	ai_weight = {
-		weight = 1
+		weight = 10
 	}
 }
