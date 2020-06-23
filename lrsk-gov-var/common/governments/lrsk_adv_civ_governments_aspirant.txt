@@ -48,7 +48,11 @@ lrsk_adv_civ_gov_aspirational_council = {
 	}
 
 	weight = {
-		base = 9999
+		base = 9998
+		modifier = {
+			add = 10
+			has_valid_civic = civic_meritocracy
+		}
 	}
 }
 
@@ -71,7 +75,10 @@ lrsk_adv_civ_gov_apex_enterprise = {
 	ruler_title = LRSK_ADV_CIV_PARADIGM_USURPER
 
 	possible = {
-		has_authority = auth_corporate
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
     	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
 	}
 

@@ -48,7 +48,11 @@ lrsk_adv_civ_gov_cybershaman_conclave = {
 	}
 
 	weight = {
-		base = 9999
+		base = 9998
+		modifier = {
+			add = 10
+			has_valid_civic = civic_exalted_priesthood
+		}
 	}
 }
 
@@ -57,7 +61,10 @@ lrsk_adv_civ_gov_artificers_guild = {
 	ruler_title = LRSK_ADV_CIV_LOREMASTER
 
 	possible = {
-		has_authority = auth_corporate
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
     	has_valid_civic = lrsk_adv_civ_civic_technobarbarism
 	}
 

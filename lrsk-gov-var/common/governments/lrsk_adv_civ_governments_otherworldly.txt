@@ -71,7 +71,11 @@ lrsk_adv_civ_gov_occultistocracy = {
 	}
 
 	weight = {
-		base = 9999
+		base = 9998
+		modifier = {
+			add = 10
+			has_valid_civic = civic_aristocratic_elite
+		}
 	}
 }
 
@@ -98,7 +102,10 @@ lrsk_adv_civ_gov_shortstock_company = {
 	flags = { custom_start_screen }
 
 	possible = {
-		has_authority = auth_corporate
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
     	has_valid_civic = lrsk_adv_civ_civic_otherworldly
 	}
 

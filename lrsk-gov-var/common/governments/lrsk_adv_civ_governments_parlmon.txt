@@ -42,7 +42,7 @@ lrsk_adv_civ_gov_senatorial_monarchy = {
 	}
 
 	weight = {
-		base = 5000
+		base = 4999
 	}
 }
 # "Puppet Senate"
@@ -56,7 +56,7 @@ lrsk_adv_civ_gov_puppet_senate = {
 	}
 
 	weight = {
-		base = 9999
+		base = 9998
 	}
 }
 
@@ -93,7 +93,10 @@ lrsk_adv_civ_gov_royal_firm = {
 	ruler_title = LRSK_ADV_CIV_VICEREGAL_EXECUTIVE
 
 	possible = {
-		has_authority = auth_corporate
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
     	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
 	}
 
@@ -106,9 +109,15 @@ lrsk_adv_civ_gov_corporate_viceroyalty = {
 	ruler_title = LRSK_ADV_CIV_VICEREGAL_EXECUTIVE
 
 	possible = {
-		has_authority = auth_corporate
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
     	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    	has_valid_civic = lrsk_gov_var_civic_mc_controlling_interest
+		OR = {
+    		has_valid_civic = lrsk_gov_var_civic_mc_controlling_interest
+			has_valid_civic = civic_shadow_council
+		}
 	}
 
 	weight = {
