@@ -94,17 +94,13 @@ lrsk_adv_civ_civic_sortition = {
   #icon = "gfx/interface/icons/governments/civics/civic_environmentalist.dds"
 
 	possible = {
-    authority = {
-      OR = {
-        value = auth_democratic
-      }
-    }
+    #authority = {
+    #  OR = {
+    #    value = auth_democratic
+    #  }
+    #}
     ethics = {
-      OR = {
-        text = civic_tooltip_egalitarian
-        value = ethic_egalitarian
-        value = ethic_fanatic_egalitarian
-      }
+      value = ethic_fanatic_egalitarian
     }
 		civics = {
 			NOR = {
@@ -139,16 +135,22 @@ lrsk_adv_civ_civic_figurehead_monarchy = {
         value = auth_imperial
       }
     }
+    ethics = {
+      NOR = {
+        value = ethic_fanatic_egalitarian
+      }
+    }
   }
 
   random_weight = { base = 1 }
 
   modifier = {
     country_influence_produces_mult = 0.1
-    country_unity_produces_mult = 0.1
+    #country_unity_produces_mult = 0.1
 		planet_stability_add = 5
     country_energy_produces_mult = -0.05
     country_minerals_produces_mult = -0.05
+    country_consumer_goods_produces_mult = -0.1
   }
 }
 
@@ -225,9 +227,10 @@ lrsk_adv_civ_civic_otherworldly = {
   random_weight = { base = 1 }
 
   modifier = {
-		ship_windup_mult = -0.1
-		ship_winddown_mult = -0.1
+		#ship_windup_mult = -0.1
+		#ship_winddown_mult = -0.1
     ship_anomaly_generation_chance_mult = 0.2
+    ship_archeaological_site_clues_add = 1
     country_trade_attractiveness = -0.1 # Does this work??
     country_trust_growth = -0.1
 		diplo_weight_mult = -0.15
@@ -273,9 +276,57 @@ lrsk_adv_civ_civic_aspiring_ascendants = {
   modifier = {
 		pop_government_ethic_attraction = 0.2
   	country_unity_produces_mult = 0.15
-		country_starbase_influence_cost_mult = -0.15
+    all_technology_research_speed = 0.15
     empire_size_penalty_mult = 0.25
     country_admin_cap_mult = -0.15
+  }
+}
+
+#Ramanpt Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. Now they are fully committed to proving their supremacy over the galaxy.
+lrsk_adv_civ_civic_rampant_ascendants = {
+  description = "lrsk_adv_civ_civic_tooltip_aspiring_ascendants_effect"
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_rampant_ascendants } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_aspiring_ascendants.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = lrsk_adv_civ_civic_tooltip_any_fan
+        value = ethic_fanatic_xenophile
+        value = ethic_fanatic_xenophobe
+        value = ethic_fanatic_militarist
+        value = ethic_fanatic_pacifist
+        value = ethic_fanatic_spiritualist
+        value = ethic_fanatic_materialist
+        value = ethic_fanatic_authoritarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+		civics = {
+			NOR = {
+        value = lrsk_adv_civ_civic_technobarbarism
+        value = lrsk_adv_civ_civic_otherworldly
+        value = civic_citizen_service
+        value = civic_fanatic_purifiers
+        #value = civic_corporate_dominion
+			}
+		}
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+		pop_government_ethic_attraction = 0.2
+  	country_unity_produces_mult = 0.1
+    all_technology_research_speed = 0.1
+		pop_amenities_usage_mult = 0.1
+    # Conditional diplo penalties: FEs/AEs, stronger empires
   }
 }
 
@@ -318,6 +369,78 @@ lrsk_adv_civ_civic_technobarbarism = {
     #planet_building_upkeep_mult = -0.1
     #planet_building_cost_mult = -0.1
     #planet_building_build_speed_mult = 0.1
+    ship_hull_mult = 0.1
+    ship_shield_mult = 0.1
+    ship_armor_mult = 0.1
+    ship_evasion_mult = 0.1
+    ship_fire_rate_mult = 0.1
+    weapon_type_kinetic_weapon_damage_mult = 0.1
+    weapon_type_energy_weapon_damage_mult = 0.1
+    weapon_type_explosive_weapon_damage_mult = 0.1
+    weapon_type_strike_craft_weapon_damage_mult = 0.1
+    ships_upkeep_mult = -0.05
+    army_damage_mult = 0.1
+    army_health = 0.1
+    armies_upkeep_mult = -0.05
+    planet_structures_upkeep_mult = -0.05
     num_tech_alternatives_add = -1
+  }
+}
+
+#Reformed Techno-Barbarism - Once the remnant of a more scientifically advanced civilization whose knowledge of technology had regressed to mere ritual, they have cast off their ancient superstitions.
+lrsk_adv_civ_civic_ref_technobarbarism = {
+  #description = "lrsk_adv_civ_civic_tooltip_technobarbarism_effect"
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_ref_technobarbarism } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_technobarbarism.dds"
+
+  #possible = {
+  #  #ethics = {
+  #  #  OR = {
+  #  #    text = civic_tooltip_authoritarian
+  #  #    value = ethic_authoritarian
+  #  #    value = ethic_fanatic_authoritarian
+  #  #  }
+  #  #  OR = {
+  #  #    text = civic_tooltip_spiritualist
+  #  #    value = ethic_spiritualist
+  #  #    value = ethic_fanatic_spiritualist
+  #  #  }
+  #  #}
+	#	#civics = {
+	#	#	NOR = {
+  #  #    value = lrsk_adv_civ_civic_aspiring_ascendants
+  #  #    value = lrsk_adv_civ_civic_otherworldly
+  #  #    value = civic_citizen_service
+  #  #    value = lrsk_adv_civ_civic_technobarbarism
+  #  #    value = civic_fanatic_purifiers
+	#	#	}
+	#	#}
+  #}
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    ship_hull_mult = 0.1
+    ship_shield_mult = 0.1
+    ship_armor_mult = 0.1
+    ship_evasion_mult = 0.1
+    ship_fire_rate_mult = 0.1
+    weapon_type_kinetic_weapon_damage_mult = 0.1
+    weapon_type_energy_weapon_damage_mult = 0.1
+    weapon_type_explosive_weapon_damage_mult = 0.1
+    weapon_type_strike_craft_weapon_damage_mult = 0.1
+    ships_upkeep_mult = -0.05
+    army_damage_mult = 0.1
+    army_health = 0.1
+    armies_upkeep_mult = -0.05
+    planet_structures_upkeep_mult = -0.05
+		pop_government_ethic_attraction = -0.25
+		planet_stability_add = -5
   }
 }

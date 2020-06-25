@@ -17,3 +17,41 @@ lrsk_adv_civ_star_siblings_decline = {
 		base = 1
 	}
 }
+
+triggered_opinion_lrsk_adv_civ_rampant_ascendants = {
+	trigger = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			has_country_flag = fallen_empire_machine
+			is_country_type = enclave
+			relative_power = {
+				who = from
+				category = all
+				value > equivalent
+			}
+		}
+		FROM = {
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
+	}
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_audacity_war = {
+	trigger = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			has_country_flag = fallen_empire_machine
+		}
+		FROM = {
+			has_edict = lrsk_adv_civ_audacity_war_edict
+		}
+	}
+	opinion = {
+		base = -100
+	}
+}
