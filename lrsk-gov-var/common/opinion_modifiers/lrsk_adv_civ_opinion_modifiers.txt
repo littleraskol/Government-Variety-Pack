@@ -55,3 +55,21 @@ triggered_opinion_lrsk_adv_civ_audacity_war = {
 		base = -100
 	}
 }
+
+triggered_opinion_lrsk_adv_civ_const_monarch_civic = {
+	trigger = {
+		OR = {
+			has_authority = auth_imperial
+			AND = {
+				has_authority = auth_dictatorial
+				has_valid_civic = civic_philosopher_king
+			}
+		}
+		FROM = {
+			lrsk_adv_civ_has_const_monarch_civic = yes
+		}
+	}
+	opinion = {
+		base = 25
+	}
+}

@@ -8,26 +8,26 @@ lrsk_adv_civ_origin_star_siblings = {
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_interstellar_siblings.dds"
 	picture = GFX_lrsk_adv_civ_origin_star_siblings
 
-  #potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }  #Maybe this should not matter...
-  
+	#potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }  #Maybe this should not matter...
+
 	potential = {
 		always = yes
 	}
 
-  possible = {
-    ethics = {
-      NOR = {
-        text = civic_tooltip_not_xenophobe
-        value = ethic_xenophobe
-        value = ethic_fanatic_xenophobe
-      }
-      NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
-    }
-  }
+	possible = {
+	ethics = {
+		NOR = {
+			text = civic_tooltip_not_xenophobe
+			value = ethic_xenophobe
+			value = ethic_fanatic_xenophobe
+		}
+			NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
+		}
+	}
 
-  description = "lrsk_adv_civ_origin_tooltip_star_siblings_effect"
+	description = "lrsk_adv_civ_origin_tooltip_star_siblings_effect"
 
-  #modification = no
+	#modification = no
 
 	#random_weight = { base = 0 }
 }
@@ -37,15 +37,15 @@ lrsk_adv_civ_origin_established_empire = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_established_empire.dds"
 	picture = GFX_lrsk_adv_civ_origin_established_empire
-  #potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
-  
+	#potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
 	potential = {
 		always = yes
 	}
 
-  description = "lrsk_adv_civ_origin_tooltip_established_empire_effect"
+	description = "lrsk_adv_civ_origin_tooltip_established_empire_effect"
 
-  #modification = no
+	#modification = no
 
 	#random_weight = { base = 0 }
 }

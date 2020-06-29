@@ -123,11 +123,12 @@ lrsk_adv_civ_civic_sortition = {
   }
 }
 
-#Figurehead Monarchy (Not Imperial) - This society's government technically has a monarchy, but the monarch wields only indirect power, mostly through cultural influence, and is a useful (if expensive) unifying figure. (+10% unity and influence production, -10% unrest, -5% energy and mineral production)
+#Figurehead Monarchy (Not Imperial) - This society's government technically has a monarchy, but the monarch wields only indirect power, mostly through cultural influence, and is a useful (if expensive) unifying figure. (+10% influence production, +5 stability, -5% energy and mineral production, -10% consumer goods production, other special effects)
 lrsk_adv_civ_civic_figurehead_monarchy = {
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
 
   #icon = "gfx/interface/icons/governments/civics/civic_fanatic_purifiers.dds"
+  description = "lrsk_adv_civ_civic_tooltip_figurehead_monarchy_effect"
 
   possible = {
     authority = {
@@ -140,14 +141,58 @@ lrsk_adv_civ_civic_figurehead_monarchy = {
         value = ethic_fanatic_egalitarian
       }
     }
+    civics = {
+      NOR = {
+        value = lrsk_adv_civ_civic_shadow_monarchy
+      }
+    }
   }
 
   random_weight = { base = 1 }
 
   modifier = {
     country_influence_produces_mult = 0.1
-    #country_unity_produces_mult = 0.1
 		planet_stability_add = 5
+    country_energy_produces_mult = -0.05
+    country_minerals_produces_mult = -0.05
+    country_consumer_goods_produces_mult = -0.1
+  }
+}
+
+#Shadow Monarchy (Not Imperial) - This society's government technically has a monarch limited by a constitution, but in fact the monarch wields vast power through covert influence over government positions. (+10% influence production, -50% election influence cost, -5% energy and mineral production, -10% consumer goods production, other special effects)
+lrsk_adv_civ_civic_shadow_monarchy = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_shadow_monarchy } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+  description = "lrsk_adv_civ_civic_tooltip_figurehead_monarchy_effect"
+
+  possible = {
+    authority = {
+      NOR = {
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      NOR = {
+        value = ethic_fanatic_egalitarian
+      }
+    }
+    civics = {
+      NOR = {
+        value = lrsk_adv_civ_civic_figurehead_monarchy
+        value = civic_shadow_council
+      }
+    }
+  }
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_influence_produces_mult = 0.1
+    country_election_influence_cost_mult = -0.5
     country_energy_produces_mult = -0.05
     country_minerals_produces_mult = -0.05
     country_consumer_goods_produces_mult = -0.1
