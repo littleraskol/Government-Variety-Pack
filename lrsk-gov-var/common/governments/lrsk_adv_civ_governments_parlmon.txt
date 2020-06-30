@@ -23,8 +23,7 @@ lrsk_adv_civ_gov_scapegoat_regency = {
 
 	possible = {
 		has_authority = auth_dictatorial
-    	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    	has_valid_civic = civic_shadow_council
+    	has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
 	}
 
 	weight = {
@@ -51,8 +50,7 @@ lrsk_adv_civ_gov_puppet_senate = {
 
 	possible = {
 		has_authority = auth_oligarchic
-    	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    	has_valid_civic = civic_shadow_council
+    	has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
 	}
 
 	weight = {
@@ -79,8 +77,7 @@ lrsk_adv_civ_gov_puppet_parliament = {
 
 	possible = {
 		has_authority = auth_democratic
-    	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-    	has_valid_civic = civic_shadow_council
+    	has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
 	}
 
 	weight = {
@@ -113,11 +110,7 @@ lrsk_adv_civ_gov_corporate_viceroyalty = {
 			has_authority = auth_corporate
 			has_valid_civic = civic_corporate_dominion
 		}
-    	has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-		OR = {
-    		has_valid_civic = lrsk_gov_var_civic_mc_controlling_interest
-			has_valid_civic = civic_shadow_council
-		}
+    	has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
 	}
 
 	weight = {

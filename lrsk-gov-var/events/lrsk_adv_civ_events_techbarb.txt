@@ -4,28 +4,18 @@
 
 namespace = lrsk_adv_civ_techbarb
 
-# Creates ancient ruins on homeworld
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.1
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	immediate = {
-#		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-#			home_planet = {
-#				init_effect = {
-#					random_tile = {
-#						limit = {
-#							has_blocker = no
-#							has_building = no
-#						}
-#						set_building = "lrsk_adv_civ_building_techbarb_ruins"
-#					}
-#				}
-#			}
-#		}
-#	}
-#}
+# Starting tech
+country_event = {
+	id = lrsk_adv_civ_techbarb.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+        if = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+            give_technology = { message = no tech = tech_lrsk_adv_civ_ancienttech }
+        }
+	}
+}
 
 ## Ruins destroyed
 #planet_event = {

@@ -45,6 +45,18 @@ event = {
 
 		## "Advanced" origins
 
+		# Star Siblings
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_star_siblings }
+			country_event = { id = lrsk_adv_civ_siblings.1 }
+		}
+
+		# Established Empire
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_established_empire }
+			country_event = { id = lrsk_adv_civ_estemp.1 }
+		}
+
 		# Ancient Tech
 		every_playable_country = {
 			limit = { has_origin = lrsk_adv_civ_origin_ancient_tech }
@@ -57,6 +69,13 @@ event = {
 			country_event = { id = lrsk_adv_civ_other.200 }
 		}
 
+		## Other starting conditions		
+
+		# Tech-Barbs
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+			country_event = { id = lrsk_adv_civ_techbarb.1 }
+		}
 
 	}
 }

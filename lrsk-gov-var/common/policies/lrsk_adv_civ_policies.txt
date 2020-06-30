@@ -110,6 +110,7 @@ lrsk_adv_civ_tech_ritual = {
 					has_policy_flag = lrsk_adv_civ_lapsed_rev
 				}
 			}
+			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
 		}
 
 		modifier = {
@@ -157,6 +158,7 @@ lrsk_adv_civ_tech_ritual = {
 				years_passed > 25
 				has_encountered_other_species = yes
 			}
+			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
 		}
 
 		modifier = {
@@ -191,6 +193,7 @@ lrsk_adv_civ_tech_ritual = {
 			}
 			years_passed > 50
 			has_encountered_other_species = yes
+			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
 		}
 
 		modifier = {

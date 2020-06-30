@@ -12,7 +12,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_civic = lrsk_adv_civ_civic_star_siblings
+		has_origin = lrsk_adv_civ_origin_star_siblings
 		NOT = { has_country_flag = lrsk_adv_civ_created_sibling }		
 	}
 
@@ -205,8 +205,8 @@ ship_event = {
 
 		# filtering out non-valid empires makes this quicker to resolve.
 		OR = {
-			owner = { has_civic = lrsk_adv_civ_civic_star_siblings }
-			from = { owner = { has_civic = lrsk_adv_civ_civic_star_siblings } }
+			owner = { has_origin = lrsk_adv_civ_origin_star_siblings }
+			from = { owner = { has_origin = lrsk_adv_civ_origin_star_siblings } }
 		}
 		NOR = {
 			owner = { has_country_flag = lrsk_adv_civ_siblings_visit_complete }
@@ -289,7 +289,7 @@ country_event = {
 	trigger = {
 		# We only want this to trigger when a combatant who is a sibling enters battle.
 		OR = {
-			this = { has_civic = lrsk_adv_civ_civic_star_siblings }
+			this = { has_origin = lrsk_adv_civ_origin_star_siblings }
 			this = { has_country_flag = lrsk_adv_civ_created_sibling }
 		}
 		# Skip if we've already gone through this at some point.
@@ -486,7 +486,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			has_civic = lrsk_adv_civ_civic_star_siblings # Not sure this is really neded but eh
+			has_origin = lrsk_adv_civ_origin_star_siblings # Not sure this is really neded but eh
 			has_country_flag = lrsk_adv_civ_created_sibling
 		}
 	}
@@ -537,7 +537,7 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
-	trigger = { has_civic = lrsk_adv_civ_civic_star_siblings }
+	trigger = { has_origin = lrsk_adv_civ_origin_star_siblings }
 
 	immediate = {
 		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_meeting } remove_modifier = lrsk_adv_civ_siblings_meeting }

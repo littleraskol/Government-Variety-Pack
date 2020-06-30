@@ -184,6 +184,7 @@ lrsk_adv_civ_civic_shadow_monarchy = {
       NOR = {
         value = lrsk_adv_civ_civic_figurehead_monarchy
         value = civic_shadow_council
+        value = lrsk_gov_var_civic_mc_controlling_interest
       }
     }
   }
@@ -411,23 +412,22 @@ lrsk_adv_civ_civic_technobarbarism = {
   random_weight = { base = 1 }
 
   modifier = {
-    #planet_building_upkeep_mult = -0.1
-    #planet_building_cost_mult = -0.1
-    #planet_building_build_speed_mult = 0.1
-    ship_hull_mult = 0.1
-    ship_shield_mult = 0.1
-    ship_armor_mult = 0.1
-    ship_evasion_mult = 0.1
-    ship_fire_rate_mult = 0.1
-    weapon_type_kinetic_weapon_damage_mult = 0.1
-    weapon_type_energy_weapon_damage_mult = 0.1
-    weapon_type_explosive_weapon_damage_mult = 0.1
-    weapon_type_strike_craft_weapon_damage_mult = 0.1
-    ships_upkeep_mult = -0.05
-    army_damage_mult = 0.1
-    army_health = 0.1
-    armies_upkeep_mult = -0.05
-    planet_structures_upkeep_mult = -0.05
+    ## NOTE: Most modifiers given by tech
+    #ship_hull_mult = 0.1
+    #ship_shield_mult = 0.1
+    #ship_armor_mult = 0.1
+    #ship_evasion_mult = 0.1
+    #ship_fire_rate_mult = 0.1
+    #weapon_type_kinetic_weapon_damage_mult = 0.1
+    #weapon_type_energy_weapon_damage_mult = 0.1
+    #weapon_type_explosive_weapon_damage_mult = 0.1
+    #weapon_type_strike_craft_weapon_damage_mult = 0.1
+    #ships_upkeep_mult = -0.05
+    #army_damage_mult = 0.1
+    #army_health = 0.1
+    #armies_upkeep_mult = -0.05
+    #planet_structures_upkeep_mult = -0.05
+
     num_tech_alternatives_add = -1
   }
 }
@@ -471,21 +471,23 @@ lrsk_adv_civ_civic_ref_technobarbarism = {
   random_weight = { base = 0 }
 
   modifier = {
-    ship_hull_mult = 0.1
-    ship_shield_mult = 0.1
-    ship_armor_mult = 0.1
-    ship_evasion_mult = 0.1
-    ship_fire_rate_mult = 0.1
-    weapon_type_kinetic_weapon_damage_mult = 0.1
-    weapon_type_energy_weapon_damage_mult = 0.1
-    weapon_type_explosive_weapon_damage_mult = 0.1
-    weapon_type_strike_craft_weapon_damage_mult = 0.1
-    ships_upkeep_mult = -0.05
-    army_damage_mult = 0.1
-    army_health = 0.1
-    armies_upkeep_mult = -0.05
-    planet_structures_upkeep_mult = -0.05
-		pop_government_ethic_attraction = -0.25
+    ## NOTE: Most modifiers given by tech
+    #ship_hull_mult = 0.1
+    #ship_shield_mult = 0.1
+    #ship_armor_mult = 0.1
+    #ship_evasion_mult = 0.1
+    #ship_fire_rate_mult = 0.1
+    #weapon_type_kinetic_weapon_damage_mult = 0.1
+    #weapon_type_energy_weapon_damage_mult = 0.1
+    #weapon_type_explosive_weapon_damage_mult = 0.1
+    #weapon_type_strike_craft_weapon_damage_mult = 0.1
+    #ships_upkeep_mult = -0.05
+    #army_damage_mult = 0.1
+    #army_health = 0.1
+    #armies_upkeep_mult = -0.05
+    #planet_structures_upkeep_mult = -0.05
+
+		pop_government_ethic_attraction = -0.2
 		planet_stability_add = -5
   }
 }
