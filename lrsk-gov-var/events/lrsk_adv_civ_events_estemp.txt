@@ -113,7 +113,6 @@ country_event = {
 		capital_scope = {
 			save_event_target_as = lrsk_adv_civ_estemp_capital
 
-			clear_blockers = yes
 			planet_event = { id = game_start.23 } # Additional pops
 			planet_event = { id = game_start.22 } # Set up additional buildings (mines, farms, power plants)
 			planet_event = { id = game_start.20 } # Remove tile blockers on capital
@@ -128,157 +127,293 @@ country_event = {
 			} }
 		}
 
-		## TO DO: Need the nearby planet variable logic from Sublight, below will cause unpredictable results if no guarnateed habitable
-		## Also: Need to "reserve" both colony planets in that logic.
+		# Using variables to catch gauranteed ideal worlds.
+		# lrsk_gcol = number of guaranteed ideal worlds for colonies.
+		# lrsk_rcol = number of randomly generated worlds for colonies we need to make good.
+		if = {
+			limit = { num_guaranteed_colonies > 1 }
+			set_variable = { which = lrsk_gcol value = 2 }
+			set_variable = { which = lrsk_rcol value = 0 } # Technically this does nothing but eh explicitness...
+		}
+		else_if = {
+			limit = { num_guaranteed_colonies = 1 }
+			set_variable = { which = lrsk_gcol value = 1 }
+			set_variable = { which = lrsk_rcol value = 1 }
+		}
+		else = {
+			set_variable = { which = lrsk_gcol value = 0 } # Technically this does nothing but eh explicitness...
+			set_variable = { which = lrsk_rcol value = 2 }
+		}
 
-		# 1st colony
-		closest_system = {
-			limit = {
-				has_owner = no
-				NOT = { has_star_flag = hostile_system }
-				any_planet = {
-					is_colony = no
-					is_ideal_planet_class = {
-						who = root
-						status = yes
+		log = "Num of g. colonies = [this.lrsk_gcol]"
+		log = "Num of r. colonies =  [this.lrsk_rcol]"
+
+		capital_scope.solar_system = {
+			# Transferring variables
+			set_variable = { which = lrsk_gcol value = prevprev } 
+			set_variable = { which = lrsk_rcol value = prevprev }
+
+			log = "Switched to capital system [this.GetName], num of g. colonies = [this.lrsk_gcol]"
+			log = "Switched to capital system [this.GetName], num of r. colonies =  [this.lrsk_rcol]"
+
+
+			# This will flag two planets as potential established empire colonies
+			# Will check for any ideal planets and flag them first.
+			# Will make up the difference with random normal planets flagged to be reformed.		
+			while = {
+				count = 2 # The max num of times we ever want to do this
+				log = "Starting gcol flagger..."
+				IF = {
+					limit = {
+						check_variable = {
+							which = lrsk_gcol
+							value > 0
+						}
+					}
+					log = "In gcol flagger, num to flag = [this.lrsk_gcol]"
+					closest_system = { 
+						limit = {
+							has_owner = no
+							NOR = {
+								has_star_flag = hostile_system
+								any_planet = { is_colony = yes }
+								star = { has_planet_flag = lrsk_estemp_colony_system }
+							}
+							any_system_planet = { has_planet_flag = prescripted_ideal }
+						}
+
+						log = "gcol flagger: found ideal colony in [this.GetName]"
+						random_system_planet = { limit = { has_planet_flag = prescripted_ideal }
+							log = "gcol flagger: flagging planet [this.GetName]"
+							set_planet_flag = lrsk_estemp_colony_planet
+						}
+						star = { set_planet_flag = lrsk_estemp_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
+					}
+					subtract_variable = {
+						which = lrsk_gcol
+						value = 1
 					}
 				}
+				log = "gcol flagger loop completed."
+			}			
+			
+			while = {
+				count = 2 # The max num of times we ever want to do this
+				log = "Starting rcol flagger..."
+				IF = {
+					limit = {
+						check_variable = {
+							which = lrsk_rcol
+							value > 0
+						}
+					}
+					log = "In rcol flagger, num to flag = [this.lrsk_rcol]"
+					closest_system = {
+						limit = {
+							has_owner = no
+							NOR = {
+								has_star_flag = hostile_system
+								any_planet = { is_colony = yes }
+								star = { has_planet_flag = lrsk_estemp_colony_system }
+							}
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+						log = "rcol flagger: found suitable colony candidate in [this.GetName]"
+						random_system_planet = { 
+							limit = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+							log = "rcol flagger: flagging planet [this.GetName]"
+							set_planet_flag = lrsk_estemp_colony_planet
+							set_planet_flag = lrsk_estemp_reform_planet
+						}
+						star = { set_planet_flag = lrsk_estemp_colony_system } # ensures that systems with more than one eligible world don't get more than one tagged world
+					}
+					subtract_variable = {
+						which = lrsk_rcol
+						value = 1
+					}
+				}
+				log = "rcol flagger loop completed."
 			}
 
-			every_system_planet = {
-				surveyed = {
-					set_surveyed = yes
-					surveyor = event_target:lrsk_adv_civ_estempire
+			# Look at all the systems we flagged, catch and reform all planets flagged for reform.
+			while = {
+				count = 2
+				log = "In rcol reformer"
+				closest_system = {
+					limit = { star = { has_planet_flag = lrsk_estemp_colony_system } }
+					log = "In rcol reformer; found sublight system: [this.GetName]"
+					IF = {
+						limit = { any_system_planet = { has_planet_flag = lrsk_sublight_reform_planet } }
+						random_system_planet = { limit = { has_planet_flag = lrsk_sublight_reform_planet }
+							log = "In rcol reformer; found planet to reform: [this.GetName]"
+
+							IF = { limit = { planet_size < 16 }
+								set_planet_size = 16
+							}
+
+							if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_arid } }
+								change_pc = pc_arid
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_desert } }
+								change_pc = pc_desert
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_tropical } }
+								change_pc = pc_tropical
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_ocean } }
+								change_pc = pc_ocean
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_tundra } }
+								change_pc = pc_tundra
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_arctic } }
+								change_pc = pc_arctic
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_alpine } }
+								change_pc = pc_alpine
+							}
+							else_if = {
+								limit = { event_target:lrsk_adv_civ_estempire = { ideal_planet_class = pc_savannah } }
+								change_pc = pc_savannah
+							}
+							# If all else fails, try continental (also this will catch continental)
+							else = { change_pc = pc_continental }
+
+							reroll_planet = yes
+
+							remove_planet_flag = lrsk_sublight_reform_planet
+						}
+					}
+					star = { remove_planet_flag = lrsk_estemp_colony_system }
 				}
 			}
 
-			create_starbase = {
-				size = starbase_outpost
-				owner = event_target:lrsk_adv_civ_estempire
-			}
+			# 1st colony
+			closest_system = { limit = { any_system_planet = { has_planet_flag = lrsk_estemp_colony_planet } }
 
-			every_neighbor_system = {
-				IF = { limit = { lrsk_adv_civ_estemp_explorable = yes }
+				every_system_planet = {
 					surveyed = {
 						set_surveyed = yes
 						surveyor = event_target:lrsk_adv_civ_estempire
 					}
 				}
-				IF = {  limit = { lrsk_adv_civ_estemp_expansion_ready = yes }
-					set_star_flag = lrsk_expansion_cluster
-					create_starbase = {
-						size = starbase_outpost
-						owner = event_target:lrsk_adv_civ_estempire
-					}
-					lrsk_adv_civ_estemp_take_system_resources = yes
-				}
-			}
 
-			random_system_planet {
-				limit = {
-					is_ideal_planet_class = {
-						who = root
-						status = yes
-					}
-					is_colony = no
-				}
-				IF = { limit = { planet_size < 14 }
-					set_planet_size = 14
-				}
-
-				set_owner = event_target:lrsk_adv_civ_estempire
-				create_colony = { owner = event_target:lrsk_adv_civ_estempire }
-
-				# Called 2x for double effect
-				lrsk_generate_estemp_col_pops_and_districts = yes
-				lrsk_generate_estemp_col_pops_and_districts = yes
-
-				# The senior colony
-				if = {
-					limit = { has_building = building_colony_shelter }
-					remove_building = building_colony_shelter
-					add_building = building_capital
-				}
-			}
-
-			lrsk_adv_civ_estemp_take_system_resources = yes
-		}
-
-		# 2nd colony
-		closest_system = {
-			limit = {
-				has_owner = no
-				NOT = { has_star_flag = hostile_system }
-				any_planet = {
-					is_colony = no
-					is_ideal_planet_class = {
-						who = root
-						status = yes
-					}
-				}
-			}
-
-			every_system_planet = {
-				surveyed = {
-					set_surveyed = yes
-					surveyor = event_target:lrsk_adv_civ_estempire
-				}
-			}
-
-			create_starbase = {
-				size = starbase_outpost
-				owner = event_target:lrsk_adv_civ_estempire
-			}
-
-			every_neighbor_system = {
-				IF = { limit = { lrsk_adv_civ_estemp_explorable = yes }
-					surveyed = {
-						set_surveyed = yes
-						surveyor = event_target:lrsk_adv_civ_estempire
-					}
-				}
-				IF = {  limit = { lrsk_adv_civ_estemp_expansion_ready = yes }
-					set_star_flag = lrsk_expansion_cluster
-					create_starbase = {
-						size = starbase_outpost
-						owner = event_target:lrsk_adv_civ_estempire
-					}
-					lrsk_adv_civ_estemp_take_system_resources = yes
-				}
-			}
-
-			random_system_planet {
-				limit = {
-					is_ideal_planet_class = {
-						who = root
-						status = yes
-					}
-					is_colony = no
-				}
-				IF = { limit = { planet_size < 14 }
-					set_planet_size = 14
-				}
-
-				set_owner = event_target:lrsk_adv_civ_estempire
-				create_colony = { owner = event_target:lrsk_adv_civ_estempire }
-
-				lrsk_generate_estemp_col_pops_and_districts = yes
-			}
-
-			lrsk_adv_civ_estemp_take_system_resources = yes
-		}
-
-		# Fill out rest of empire cluster
-		capital_scope.solar_system = { every_neighbor_system = {
-			IF = {  limit = { has_star_flag = empire_cluster }
-				set_star_flag = lrsk_expansion_cluster
 				create_starbase = {
 					size = starbase_outpost
 					owner = event_target:lrsk_adv_civ_estempire
 				}
+
+				every_neighbor_system = {
+					IF = { limit = { lrsk_adv_civ_estemp_explorable = yes }
+						surveyed = {
+							set_surveyed = yes
+							surveyor = event_target:lrsk_adv_civ_estempire
+						}
+					}
+					IF = {  limit = { lrsk_adv_civ_estemp_expansion_ready = yes }
+						set_star_flag = lrsk_expansion_cluster
+						create_starbase = {
+							size = starbase_outpost
+							owner = event_target:lrsk_adv_civ_estempire
+						}
+						lrsk_adv_civ_estemp_take_system_resources = yes
+					}
+				}
+
+				random_system_planet { limit = { has_planet_flag = lrsk_estemp_colony_planet }
+					remove_planet_flag = lrsk_estemp_colony_planet
+
+					set_owner = event_target:lrsk_adv_civ_estempire
+					create_colony = { owner = event_target:lrsk_adv_civ_estempire }
+
+					# Called 2x for double effect
+					lrsk_generate_estemp_col_pops_and_districts = yes
+					lrsk_generate_estemp_col_pops_and_districts = yes
+
+					# The senior colony
+					if = {
+						limit = { has_building = building_colony_shelter }
+						remove_building = building_colony_shelter
+						add_building = building_capital
+					}
+				}
+
 				lrsk_adv_civ_estemp_take_system_resources = yes
 			}
-		} }
+
+			# 2nd colony
+			closest_system = { limit = { any_system_planet = { has_planet_flag = lrsk_estemp_colony_planet } }
+
+				every_system_planet = {
+					surveyed = {
+						set_surveyed = yes
+						surveyor = event_target:lrsk_adv_civ_estempire
+					}
+				}
+
+				create_starbase = {
+					size = starbase_outpost
+					owner = event_target:lrsk_adv_civ_estempire
+				}
+
+				every_neighbor_system = {
+					IF = { limit = { lrsk_adv_civ_estemp_explorable = yes }
+						surveyed = {
+							set_surveyed = yes
+							surveyor = event_target:lrsk_adv_civ_estempire
+						}
+					}
+					IF = {  limit = { lrsk_adv_civ_estemp_expansion_ready = yes }
+						set_star_flag = lrsk_expansion_cluster
+						create_starbase = {
+							size = starbase_outpost
+							owner = event_target:lrsk_adv_civ_estempire
+						}
+						lrsk_adv_civ_estemp_take_system_resources = yes
+					}
+				}
+
+				random_system_planet { limit = { has_planet_flag = lrsk_estemp_colony_planet }
+					remove_planet_flag = lrsk_estemp_colony_planet
+
+					set_owner = event_target:lrsk_adv_civ_estempire
+					create_colony = { owner = event_target:lrsk_adv_civ_estempire }
+
+					lrsk_generate_estemp_col_pops_and_districts = yes
+				}
+
+				lrsk_adv_civ_estemp_take_system_resources = yes
+			}
+
+			# Fill out rest of empire cluster
+			every_neighbor_system = {
+				IF = {  limit = { has_star_flag = empire_cluster }
+					set_star_flag = lrsk_expansion_cluster
+					create_starbase = {
+						size = starbase_outpost
+						owner = event_target:lrsk_adv_civ_estempire
+					}
+					lrsk_adv_civ_estemp_take_system_resources = yes
+				}
+			}
+		}
 
 		add_modifier = { modifier = lrsk_adv_civ_estemp_complacent }
 
@@ -479,7 +614,7 @@ is_triggered_only = yes
 			if = { limit = { NOT = { has_country_flag = lrsk_adv_civ_estemp_failedreform } } set_country_flag = lrsk_adv_civ_estemp_failedreform }
 			IF = { limit = { NOT = { has_modifier = lrsk_adv_civ_estemp_complacent } } add_modifier = { modifier = lrsk_adv_civ_estemp_complacent } }
 			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_sluggish } remove_modifier = lrsk_adv_civ_estemp_sluggish }
-			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_reform } remove_modifier = lrsk_adv_civ_estemp_reform 	}
+			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_reform } remove_modifier = lrsk_adv_civ_estemp_reform }
 			IF = { limit = { has_modifier = lrsk_adv_civ_estemp_partial_reformed } remove_modifier = lrsk_adv_civ_estemp_partial_reformed }
 			country_event = { id = lrsk_adv_civ_estemp.2 days = 19800 random = 3600 } # 55 ±10 years
 		}

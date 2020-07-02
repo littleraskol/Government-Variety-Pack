@@ -46,7 +46,7 @@ country_event = {
 			ignore_initial_colony_error = yes
 			effect = {
 				establish_communications_no_message = event_target:lrsk_adv_civ_needs_sibling
-				establish_contact = { who = event_target:lrsk_adv_civ_needs_sibling location = event_target:lrsk_adv_civ_needs_sibling.solar_system }
+				save_event_target_as = lrsk_adv_civ_sibling_empire
 			}
 		}
 
@@ -54,20 +54,22 @@ country_event = {
 		capital_scope = { solar_system = { closest_system = {
 			limit = {
 				has_owner = no
-				NOT = { has_star_flag = hostile_system }
-				any_system_planet = {
-					is_ringworld = no
+				NOR = {
+					any_system_planet = { is_colony = yes }
+					any_system_planet = { is_capital = yes }
+					any_system_planet = { is_ringworld = yes }
+					has_star_flag = empire_cluster
+					has_star_flag = hostile_system
+					any_neighbor_system = {
+						has_owner = yes
+						has_star_flag = empire_cluster
+					}
+				}
+				any_system_planet = {					
 					is_asteroid = no
 					is_star = no
 					is_moon = no
 				}
-				NOT = { any_system_planet = { is_colony = yes } }
-				NOT = { any_system_planet = { is_capital = yes } }
-				NOT = { has_star_flag = empire_cluster }
-				NOT = { any_neighbor_system = {
-					has_owner = yes
-					has_star_flag = empire_cluster
-				} }
 			}
 			min_steps = 5
 			
@@ -79,16 +81,18 @@ country_event = {
 			capital_scope = { solar_system = { closest_system = {
 				limit = {
 					has_owner = no
-					NOT = { has_star_flag = hostile_system }
+					NOR = {
+						any_system_planet = { is_colony = yes }
+						any_system_planet = { is_capital = yes }
+						any_system_planet = { is_ringworld = yes }
+						has_star_flag = empire_cluster
+						has_star_flag = hostile_system
+					}
 					any_system_planet = {
-						is_ringworld = no
 						is_asteroid = no
 						is_star = no
 						is_moon = no
 					}
-					NOT = { any_system_planet = { is_colony = yes } }
-					NOT = { any_system_planet = { is_capital = yes } }
-					NOT = { has_star_flag = empire_cluster }
 				}
 				min_steps = 2
 				
@@ -97,14 +101,12 @@ country_event = {
 		}
 
 		last_created_country = {
-			save_event_target_as = lrsk_adv_civ_sibling_empire
 			set_country_flag = lrsk_adv_civ_created_sibling
 
 			event_target:lrsk_adv_civ_sibling_star = {
 				set_owner = event_target:lrsk_adv_civ_sibling_empire
 				random_system_planet = {
 					limit = {
-						is_ringworld = no
 						is_asteroid = no
 						is_star = no
 						is_moon = no
@@ -292,16 +294,37 @@ country_event = {
 			this = { has_origin = lrsk_adv_civ_origin_star_siblings }
 			this = { has_country_flag = lrsk_adv_civ_created_sibling }
 		}
-		# Skip if we've already gone through this at some point.
-		NOT = { this = { OR = {
-			has_modifier = lrsk_adv_civ_siblings_strife
-			has_modifier = lrsk_adv_civ_siblings_sbs
-		} } }
+		# Skip if there's no new modifier to apply.
+		OR = {
+			this = { NOT = { has_modifier = lrsk_adv_civ_siblings_strife } }
+			this = { NOT = { has_modifier = lrsk_adv_civ_siblings_sbs } }
+		}
+		# Our two relevant battle conditions
+		OR = {
+			# Is our fleet in combat with a fleet owned by sibling?
+			fromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
+				who = this
+				flag = lrsk_adv_civ_our_siblings
+			} } } }
+			OR = {
+				# On attacking, is defender fighting a sibling?
+				fromfromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } }
+				# Alternately, am I now in combat with anyone whose fleets are in combat with a sibling?
+				fromfrom = { any_combatant_fleet = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } } }
+			}
+		}
 	}
 
 	immediate = {
 		# If siblings are fighting each other
 		IF = { limit = {
+			this = { NOT = { has_modifier = lrsk_adv_civ_siblings_strife } }
 			# Is our fleet in combat with a fleet owned by sibling?
 			fromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
 				who = this
@@ -317,21 +340,34 @@ country_event = {
 			} }
 			this = { country_event = { id = lrsk_adv_civ_siblings.6 } }
 		}
-
-		# Only check if combat state not already determined (i.e., not sibling-vs-sibling)
-		IF = { limit = { NOT = { this = { has_modifier = lrsk_adv_civ_siblings_strife } } } IF = {
-			limit = { OR = {
-				# On attacking, is defender fighting a sibling?
+		# On attacking, is defender fighting a sibling?
+		ELSE_IF = {
+			limit = {
+				this = { NOT = { has_modifier = lrsk_adv_civ_siblings_sbs } }
 				fromfromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
 					who = this
 					flag = lrsk_adv_civ_our_siblings
 				} } } }
-				# Alternately, am I now in combat with anyone whose fleets are in combat with a sibling?
+			}
+
+			this = { country_event = { id = lrsk_adv_civ_siblings.7 } }
+			fromfromfrom = { random_combatant_fleet = {
+				limit = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } }
+				owner = { country_event = { id = lrsk_adv_civ_siblings.7 } }
+			} }
+		}
+		# Alternately, am I now in combat with anyone whose fleets are in combat with a sibling? (I sure hope this actually makes sense!)
+		ELSE_IF = {
+			limit = {
+				this = { NOT = { has_modifier = lrsk_adv_civ_siblings_sbs } }
 				fromfrom = { any_combatant_fleet = { any_combatant_fleet = { owner = { has_relation_flag = {
 					who = this
 					flag = lrsk_adv_civ_our_siblings
 				} } } } }
-			} }
+			}
 
 			this = { country_event = { id = lrsk_adv_civ_siblings.7 } }
 			fromfrom = { random_combatant_fleet = {
@@ -346,7 +382,7 @@ country_event = {
 					} } }
 					owner = { country_event = { id = lrsk_adv_civ_siblings.7 } }
 				}
-			} } }
+			} }
 		}
 	}
 }
@@ -360,6 +396,8 @@ country_event = {
 	picture = GFX_evt_small_space_battle
 	show_sound = event_space_battle
 	is_triggered_only = yes
+
+	trigger = { NOT = { has_modifier = lrsk_adv_civ_siblings_strife } } # JIC
 
 	immediate = { add_modifier = { modifier = lrsk_adv_civ_siblings_strife } }
 
@@ -378,6 +416,8 @@ country_event = {
 	picture = GFX_evt_federation_fleet
 	show_sound = event_ship_thrusters
 	is_triggered_only = yes
+
+	trigger = { NOT = { has_modifier = lrsk_adv_civ_siblings_sbs } } # JIC
 
 	immediate = { add_modifier = { modifier = lrsk_adv_civ_siblings_sbs } }
 
@@ -403,6 +443,7 @@ country_event = {
 				who = root
 				flag = lrsk_adv_civ_our_siblings
 			}
+			NOT = { has_modifier = lrsk_adv_civ_siblings_federated }
 		} }
 	}
 
