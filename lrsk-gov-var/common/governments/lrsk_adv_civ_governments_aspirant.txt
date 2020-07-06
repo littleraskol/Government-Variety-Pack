@@ -16,7 +16,10 @@ lrsk_adv_civ_gov_rising_empire = {
 
 	possible = {
 		has_authority = auth_imperial
-    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
 	}
 
 	weight = {
@@ -30,7 +33,10 @@ lrsk_adv_civ_gov_audacity_regime = {
 
 	possible = {
 		has_authority = auth_dictatorial
-    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
 	}
 
 	weight = {
@@ -44,7 +50,10 @@ lrsk_adv_civ_gov_aspirational_council = {
 
 	possible = {
 		has_authority = auth_oligarchic
-    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
 	}
 
 	weight = {
@@ -62,7 +71,10 @@ lrsk_adv_civ_gov_parliament_of_ascent = {
 
 	possible = {
 		has_authority = auth_democratic
-    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
 	}
 
 	weight = {
@@ -79,7 +91,10 @@ lrsk_adv_civ_gov_apex_enterprise = {
 			has_authority = auth_corporate
 			has_valid_civic = civic_corporate_dominion
 		}
-    	has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
 	}
 
 	weight = {

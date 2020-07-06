@@ -69,7 +69,7 @@ event = {
 			country_event = { id = lrsk_adv_civ_other.200 }
 		}
 
-		## Other starting conditions		
+		## Other starting conditions
 
 		# Tech-Barbs
 		every_playable_country = {
@@ -77,6 +77,13 @@ event = {
 			country_event = { id = lrsk_adv_civ_techbarb.1 }
 		}
 
+		## Explainers if not called elsewhere
+
+		# Aspirants
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
+			country_event = { id = lrsk_adv_civ_aspiration.101 days = 2 }
+		}
 	}
 }
 

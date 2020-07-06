@@ -548,7 +548,7 @@ l_english:
  lrsk_adv_civ_ap_dominant_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ proper social integration, where every individual knows their place and all adhere to one vision."
 
  lrsk_adv_civ_ap_expansionist_aspiration:0 "Expansionist $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
- lrsk_adv_civ_ap_expansionist_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ securing the existence and future of our people that they may enjoy the galaxy's marvels."
+ lrsk_adv_civ_ap_expansionist_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ securing the existence and future of our people that they may enjoy the galaxy's marvels and spread our values."
 
  lrsk_adv_civ_ap_harmonious_aspiration:0 "Harmonious $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
  lrsk_adv_civ_ap_harmonious_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ a morality of mutual respect, common purpose, and a spirit of kinship."
@@ -559,22 +559,33 @@ l_english:
  lrsk_adv_civ_ap_supremacist_aspiration:0 "Supremacist $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
  lrsk_adv_civ_ap_supremacist_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ the righteous rule of those proven to be the strongest and bravest."
 
- # Aspirant Edict
+ lrsk_adv_civ_ap_idealistic_destiny:0 "Idealistic Destiny"
+ lrsk_adv_civ_ap_idealistic_destiny_desc:0 "Commit your very souls to the cause! The galaxy must see and acknowledge and submit to the superiority of our ideals. If not now, when?"
+
+ # Aspirant Edicts
  lrsk_adv_civ_audacity_war_edict:0 "War of Audacity"
  lrsk_adv_civ_audacity_war_edict_desc:0 "In the struggle to attain our aspirations, the haughty ancient empires of the galaxy must be laid low."
  lrsk_gov_var_tooltip_fail_war_with_fe:0 "$TRIGGER_FAIL$§RMust be at war with a Fallen Empire or Awakened Fallen Empire.§!"
 
+ lrsk_adv_civ_wonder_age_edict:0 "Ambition: Age of Wonders"
+ lrsk_adv_civ_wonder_age_edict_desc:0 "How can we prove our cosmic significance without works of cosmic scope?"
+
  # Special Tooltips
- #lrsk_adv_civ_ap_only_1_aspiration:0 "May have §Yonly one§! Aspiration perk."
- lrsk_adv_civ_ap_diplomatic_complete:0 "Has completed the §YDiplomacy§! Tradition tree."
- lrsk_adv_civ_ap_discovery_complete:0 "Has completed the §YDiscovery§! Tradition tree."
- lrsk_adv_civ_ap_domination_complete:0 "Has completed the §YDomination§! Tradition tree."
- lrsk_adv_civ_ap_expansion_complete:0 "Has completed the §YExpansion§! Tradition tree."
- lrsk_adv_civ_ap_harmony_complete:0 "Has completed the §YHarmony§! Tradition tree."
- lrsk_adv_civ_ap_prosperity_complete:0 "Has completed the §YProsperity§! Tradition tree."
- lrsk_adv_civ_ap_supremacy_complete:0 "Has completed the §YSupremacy§! Tradition tree."
- #lrsk_adv_civ_ap_aspiration_unlocks:0 "Gives the technologies §YTerrestrial Sculpting§!, §YCurator Archeology Lab§!, and §YLiving Metal§!."
- lrsk_adv_civ_ap_aspiration_unlocks:0 "Gives progress towards §Y$tech_terrestrial_sculpting$§!,  §Y$tech_lrsk_adv_civ_ambdesexpsys$§!, and §Y$tech_mega_engineering$§!."
+ lrsk_adv_civ_ap_diplomatic_complete:0 "$TRIGGER_FAIL$Has completed the §YDiplomacy§! Tradition tree."
+ lrsk_adv_civ_ap_discovery_complete:0 "$TRIGGER_FAIL$Has completed the §YDiscovery§! Tradition tree."
+ lrsk_adv_civ_ap_domination_complete:0 "$TRIGGER_FAIL$Has completed the §YDomination§! Tradition tree."
+ lrsk_adv_civ_ap_expansion_complete:0 "$TRIGGER_FAIL$Has completed the §YExpansion§! Tradition tree."
+ lrsk_adv_civ_ap_harmony_complete:0 "$TRIGGER_FAIL$Has completed the §YHarmony§! Tradition tree."
+ lrsk_adv_civ_ap_prosperity_complete:0 "$TRIGGER_FAIL$Has completed the §YProsperity§! Tradition tree."
+ lrsk_adv_civ_ap_supremacy_complete:0 "$TRIGGER_FAIL$Has completed the §YSupremacy§! Tradition tree."
+ lrsk_adv_civ_ap_aspiration_complete:0 "$TRIGGER_FAIL$Has any §YAspiration Perk§!."
+ lrsk_adv_civ_ap_both_trees:0 "$TRIGGER_FAIL$Has completed both Ethos-appropriate Tradition trees."
+ lrsk_adv_civ_ap_requires_ascension_perks_4:0 "$TRIGGER_FAIL$Requires four other Ascension Perks to be selected first."
+ 
+ lrsk_adv_civ_ap_aspiration_unlocks:0 "- Unlocks the §Y$lrsk_adv_civ_audacity_war_edict$§! Edict, which aids in war against Fallen and Awakened Empires.\n- Gives progress towards the §Y$tech_terrestrial_sculpting$§!, §Y$tech_lrsk_adv_civ_ambdesexpsys$§!, and §Y$tech_mega_engineering$§! techs.\n- Immediately §Gunlock one Ascension Perk§! (unless you have the §Y$tech_ascension_theory$§! tech).\n- §PNOTE:§! The §Y$tech_ascension_theory$§! tech will not unlock an Ascension Perk when you research it after taking this Perk. Instead, it will unlock the new §Y$lrsk_adv_civ_wonder_age_edict$§! Ambition, which improves megastructure construction and terraforming."
+ 
+ lrsk_adv_civ_ap_idealistic_destiny_unlocks:0 "- All pops in your empire convert to your §YFanatic Ethos§! and your empire gets a massive attraction boost to that Ethos.\n- Swaps the §Y$lrsk_adv_civ_civic_aspiring_ascendants$ Civic§! for the §Y$lrsk_adv_civ_civic_rampant_ascendants$ Civic§!, which lacks the expansion penalties of $lrsk_adv_civ_civic_aspiring_ascendants$, but also its benefits, and degrades relations with stronger empires.\n- Your non-Fanatic Ethos is dropped (replaced by a weaker modifier that expires after 10 years), leaving only your Fanatic Ethos (the effects of which are enhanced).\n- Able to construct certain §MFallen Empire-level buildings§!."
+ 
  lrsk_adv_civ_sortition_effect:0 "Leaders may spawn with special postive or negative traits and may be subject to ostracization."
 
  # Opinion Modifiers
@@ -612,6 +623,47 @@ l_english:
 
  lrsk_adv_civ_estemp_failed_reform:0 "Relapse and Disarray"
  lrsk_adv_civ_estemp_failed_reform_desc:0 "The reform process has failed and we are reeling at the political consequences."
+
+ # Ascendents modifiers
+
+ LRSK_ADV_CIV_IDEALS_ASC:0 "Ascendant"
+ LRSK_ADV_CIV_IDEALS_ASC_DESC:0 "ideals are utterly dominant in shaping this society."
+ LRSK_ADV_CIV_IDEALS_TRAD:0 "Traditions of"
+ LRSK_ADV_CIV_IDEALS_TRAD_DESC:0 "ideals have been left behind, but still exert a lingering influence."
+
+ lrsk_adv_civ_equality_ascendant:0 "Equality $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_equality_ascendant_desc:0 "Egalitarian $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_hierarchy_ascendant:0 "Hierarchy $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_hierarchy_ascendant_desc:0 "Authoritarian $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_faith_ascendant:0 "Faith $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_faith_ascendant_desc:0 "Spiritualist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_knowledge_ascendant:0 "Knowledge $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_knowledge_ascendant_desc:0 "Materialist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_supremacy_ascendant:0 "Supremacy $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_supremacy_ascendant_desc:0 "Xenophobic $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_friendship_ascendant:0 "Diversity $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_friendship_ascendant_desc:0 "Xenophilic $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_valor_ascendant:0 "Valor $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_valor_ascendant_desc:0 "Militarist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_tranquility_ascendant:0 "Tranquility $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_tranquility_ascendant_desc:0 "Pacifist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ 
+ lrsk_adv_civ_equality_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Equality"
+ lrsk_adv_civ_equality_traditions_desc:0 "Egalitarian $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_hierarchy_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Hierarchy"
+ lrsk_adv_civ_hierarchy_traditions_desc:0 "Authoritarian $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_faith_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Faith"
+ lrsk_adv_civ_faith_traditions_desc:0 "Spiritualist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_knowledge_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Knowledge"
+ lrsk_adv_civ_knowledge_traditions_desc:0 "Materialist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_supremacy_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Supremacy"
+ lrsk_adv_civ_supremacy_traditions_desc:0 "Xenophobic $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_friendship_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Diversity"
+ lrsk_adv_civ_friendship_traditions_desc:0 "Xenophilic $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_valor_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Valor"
+ lrsk_adv_civ_valor_traditions_desc:0 "Militarist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_tranquility_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Tranquility"
+ lrsk_adv_civ_tranquility_traditions_desc:0 "Pacifist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
 
  # Techs
  tech_lrsk_adv_civ_XXX:0 "Name"
@@ -842,6 +894,27 @@ l_english:
 
  lrsk_adv_civ_sortition.10.fallback:0 "$LRSK_ADV_CIV_EVENT_ERROR$ (Event: lrsk_adv_civ_sortition.10, fallback response)"
  lrsk_adv_civ_sortition.10.interesting:0 "Interesting."
+
+ ### Aspirant Events ###
+
+ # Explainer
+ lrsk_adv_civ_aspiration.101.name:0 "Grand Aspirations"
+ lrsk_adv_civ_aspiration.101.desc:0 "The §Y$lrsk_adv_civ_civic_aspiring_ascendants$§! Civic posits that your empire has strong shared convictions that your people need to see dominate the galaxy. Essentially, a society that wants to reach the status the Fallen Empires held at their 'peaks,' before they fell.\n\nIn terms of playstyle this is all about big flashy stuff, like megastructures and terraforming, and (for a time) going tall. The development of this playstyle comes from two special Ascension Perks you can take, but they require completing 'Ethos-appropriate' Tradition trees:\n\n- Fanatic Authoritarian: Domination, Harmony\n- Fanatic Egalitarian: Prosperity, Harmony\n- Fanatic Materialist: Discovery, Expansion\n- Fanatic Spiritualist: Harmony, Expansion\n- Fanatic Militarist: Supremacy, Domination\n- Fanatic Pacifist: Prosperity, Diplomacy\n- Fanatic Xenophile: Diplomacy, Discovery\n- Fanatic Xenophobe: Expansion, Supremacy\n\n§HThe Ethos-appropriate Traditions do not have to be unlocked in the listed order§!, but each unlocks a different first Perk for your playstyle's advancement, with different advantages.\n\nThe second of the two special Perks, §Y$lrsk_adv_civ_ap_idealistic_destiny$§!, will change up your playstyle to something more expansionist and aggressive while effecting a sort of 'cultural revolution' in the empire."
+ lrsk_adv_civ_aspiration.101.a:0 "Onward!"
+ lrsk_adv_civ_aspiration.101.b:0 "Show the first-level Perk bonsues..."
+ lrsk_adv_civ_aspiration.101.c:0 "Tell me about the final Perk..."
+
+ lrsk_adv_civ_aspiration.102.name:0 "Aspiration Ascension Perks"
+ lrsk_adv_civ_aspiration.102.desc:0 "The first important Ascension Perk for this playstyle is called an 'Aspiration' Perk. There are actually seven of them, it will be possible for you to select from two of them depending on your Fanatic Ethos, and §Hyou can only take one§!. Which will become available depends on which Ethos-appropriate Tradition trees you unlock. The design assumption is that you'll take whichever one goes with the first Ethos-appropriate Tradition tree you unlock first, but you can of course wait. The differing effects of these perks, and the tree that unlocks them, are below:\n\n- $lrsk_adv_civ_ap_diplomatic_aspiration$ (Diplomacy Tree): +1 Envoys, +25% Diplomatic Weight, +20% Trust Growth\n- $lrsk_adv_civ_ap_inquisitive_aspiration$ (Discovery Tree): +1 Research Alternative, +20% Research Speed, +15% Anomaly Spawn Chance\n- $lrsk_adv_civ_ap_dominant_aspiration$ (Domination Tree): -20% Crime, +5 Stability, +1% Specialist Output, +2% Worker Output\n- $lrsk_adv_civ_ap_expansionist_aspiration$ (Expansion Tree): +20% Survey Speed, -15% Starbase Influence Cost, +15% Colony Development Speed\n- $lrsk_adv_civ_ap_harmonious_aspiration$ (Harmony Tree): +5% Pop Happiness, +15% Pop Growth, -15% Empire sprawl from Pops\n- $lrsk_adv_civ_ap_acquisitive_aspiration$ (Prosperity Tree): +20% Trade Value, -10% Market Fee, +5% Energy production\n- $lrsk_adv_civ_ap_supremacist_aspiration$ (Supremacy Tree): +15% to Army Health, Damage, and Morale; +10% to Ship Fire Rate and Evasion\n\nRegardless of which you take, it will give you the following benefits:\n$lrsk_adv_civ_ap_aspiration_unlocks$"
+ lrsk_adv_civ_aspiration.102.a:0 "Understood."
+ #lrsk_adv_civ_aspiration.102.b:0 "Take me back to the basic explaination..."
+ lrsk_adv_civ_aspiration.102.c:0 "$lrsk_adv_civ_aspiration.101.c$"
+
+ lrsk_adv_civ_aspiration.103.name:0 "The $lrsk_adv_civ_ap_idealistic_destiny$ Perk"
+ lrsk_adv_civ_aspiration.103.desc:0 "The final Perk relevant to this playstyle, §Y$lrsk_adv_civ_ap_idealistic_destiny$§!, somewhat radically mixes things up. There's no going back once you take it! It requires any Aspiration Perk, both Ethos-appropriate Tradition trees complete, and four other Ascension Perks.\n\nIts effects are as follows:\n$lrsk_adv_civ_ap_idealistic_destiny_unlocks$"
+ lrsk_adv_civ_aspiration.103.a:0 "$lrsk_adv_civ_aspiration.102.a$"
+ lrsk_adv_civ_aspiration.103.b:0 "$lrsk_adv_civ_aspiration.101.b$"
+ #lrsk_adv_civ_aspiration.103.c:0 "$lrsk_adv_civ_aspiration.102.b$"
 
  ### Sibling Events ###
 

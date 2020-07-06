@@ -285,7 +285,7 @@ lrsk_adv_civ_civic_otherworldly = {
 
 #Aspiring Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. They intend to carve them there or burn out trying. (War of Audacity edict that improves damage against Fallen and Awakened Empires, special Traditions, +10% governing ethos attraction and unity production, -15% terraform cost and completion time, -10% megastructure cost and build time, +10% governing ethics attraction penalty due to distance, expansion influence cost, and expansion effect on Tradition cost.)
 lrsk_adv_civ_civic_aspiring_ascendants = {
-  description = "lrsk_adv_civ_civic_tooltip_aspiring_ascendants_effect"
+  description = "lrsk_adv_civ_civic_tooltip_rampant_ascendants_effect"
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
 
   #icon = "gfx/interface/icons/governments/civics/civic_shadow_council.dds"
@@ -320,15 +320,15 @@ lrsk_adv_civ_civic_aspiring_ascendants = {
   random_weight = { base = 1 }
 
   modifier = {
-		pop_government_ethic_attraction = 0.2
-  	country_unity_produces_mult = 0.15
-    all_technology_research_speed = 0.15
+    pop_government_ethic_attraction = 0.2
+    country_unity_produces_mult = 0.1
+    all_technology_research_speed = 0.1
     empire_size_penalty_mult = 0.25
-    country_admin_cap_mult = -0.15
+    country_admin_cap_mult = -0.25
   }
 }
 
-#Ramanpt Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. Now they are fully committed to proving their supremacy over the galaxy.
+#Rampant Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. Now they are fully committed to proving their supremacy over the galaxy.
 lrsk_adv_civ_civic_rampant_ascendants = {
   description = "lrsk_adv_civ_civic_tooltip_aspiring_ascendants_effect"
   potential = { 
@@ -367,13 +367,13 @@ lrsk_adv_civ_civic_rampant_ascendants = {
 
   random_weight = { base = 0 }
 
-  modifier = {
-		pop_government_ethic_attraction = 0.2
-  	country_unity_produces_mult = 0.1
-    all_technology_research_speed = 0.1
-		pop_amenities_usage_mult = 0.1
-    # Conditional diplo penalties: FEs/AEs, stronger empires
-  }
+  # Effect: Conditional diplo penalties: FEs/AEs, stronger empires
+
+  #modifier = {
+  #  pop_government_ethic_attraction = 0.1
+  #  #pop_amenities_usage_mult = 0.1
+  #  #planet_pops_consumer_goods_upkeep_mult = 0.1
+  #}
 }
 
 #Techno-Barbarism (Spiritualist, Authoritarian, can't have certain civics) - The superstitious heirs to an advanced civilization, they have forgotten more of science than most empires ever discover. Unfortunately, they remember little and misunderstand much of that. Fortunately, their technology was designed very well. (Techno-Ritual Reverence policies that can improve ship hull, shields, armor, evasion, and damage, -10% building upkeep, cost, and build speed, +15% army damage and health, -10% research speed, -1 research alternative, +20% scientist recruit cost)

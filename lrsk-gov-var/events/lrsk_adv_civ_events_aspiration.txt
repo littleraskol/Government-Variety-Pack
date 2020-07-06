@@ -11,11 +11,18 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
+	trigger = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants # JIC
+		}
+	}
+
 	immediate = {
+		if = { limit = { NOT = { has_technology = tech_ascension_theory } } ascension_perks_add = 1 }
+
 		if = {
-			limit ={
-				has_technology = tech_terrestrial_sculpting
-			}
+			limit = { has_technology = tech_terrestrial_sculpting }
 			add_society_research = 200
 		}
 		else = {
@@ -26,9 +33,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit ={
-				has_technology = tech_lrsk_adv_civ_ambdesexpsys
-			}
+			limit = { has_technology = tech_lrsk_adv_civ_ambdesexpsys }
 			add_physics_research = 400
 		}
 		else = {
@@ -39,9 +44,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit ={
-				has_technology = tech_mega_engineering
-			}
+			limit = { has_technology = tech_mega_engineering }
 			add_engineering_research = 500
 		}
 		else = {
@@ -52,4 +55,286 @@ country_event = {
 			}
 		}
 	}
+}
+
+# "Take back" the AP from Ascension Theory
+# Because the aspirant perks give a perk, this might be needed to prevent the player from having an unspendable perk.
+country_event = {
+	id = lrsk_adv_civ_aspiration.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
+		last_increased_tech = tech_ascension_theory
+		OR = {
+			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		}
+	}
+
+	immediate = {
+		ascension_perks_add = -1
+	}
+}
+
+# Go Rampant
+country_event = {
+	id = lrsk_adv_civ_aspiration.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		has_ascension_perk = lrsk_adv_civ_ap_idealistic_destiny
+	}
+
+	immediate = {
+		# Civics swap
+		force_add_civic = lrsk_adv_civ_civic_rampant_ascendants
+		force_remove_civic = lrsk_adv_civ_civic_aspiring_ascendants
+
+		# All pops to guiding fanatic ethos, add ethos booster
+		switch = {
+			trigger = has_ethic
+			ethic_fanatic_xenophile = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_xenophile
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_xenophile
+				}
+				add_modifier = { modifier = lrsk_adv_civ_friendship_ascendant }
+			}
+			ethic_fanatic_xenophobe = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_xenophobe
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_xenophobe
+				}
+				add_modifier = { modifier = lrsk_adv_civ_supremacy_ascendant }
+			}
+			ethic_fanatic_militarist = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_militarist
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_militarist
+				}
+				add_modifier = { modifier = lrsk_adv_civ_valor_ascendant }
+			}
+			ethic_fanatic_pacifist = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_pacifist
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_pacifist
+				}
+				add_modifier = { modifier = lrsk_adv_civ_tranquility_ascendant }
+			}
+			ethic_fanatic_spiritualist = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_spiritualist
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_spiritualist
+				}
+				add_modifier = { modifier = lrsk_adv_civ_faith_ascendant }
+			}
+			ethic_fanatic_materialist = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_materialist
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_materialist
+				}
+				add_modifier = { modifier = lrsk_adv_civ_knowledge_ascendant }
+			}
+			ethic_fanatic_authoritarian = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_authoritarian
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_authoritarian
+				}
+				add_modifier = { modifier = lrsk_adv_civ_hierarchy_ascendant }
+			}
+			ethic_fanatic_egalitarian = {
+				every_owned_pop = {
+					limit = { NOR = {
+						pop_has_ethic = ethic_egalitarian
+						pop_has_ethic = ethic_gestalt_consciousness
+					} }
+					pop_change_ethic = ethic_egalitarian
+				}
+				add_modifier = { modifier = lrsk_adv_civ_equality_ascendant }
+			}
+			default = { log = "CRITICAL ERROR: ASPIRANT EMPIRE GOING RAMPANT WITHOUT FANATIC ETHOS" }
+		}
+		
+		# Remove non-fanatic ethos, add tradition modifier
+		switch = {
+			trigger = has_ethic
+			ethic_xenophile = {
+				country_remove_ethic = ethic_xenophile
+				add_modifier = { modifier = lrsk_adv_civ_friendship_traditions days = 3600 }
+			}
+			ethic_xenophobe = {
+				country_remove_ethic = ethic_xenophobe
+				add_modifier = { modifier = lrsk_adv_civ_supremacy_traditions days = 3600 }
+			}
+			ethic_militarist = {
+				country_remove_ethic = ethic_militarist
+				add_modifier = { modifier = lrsk_adv_civ_valor_traditions days = 3600 }
+			}
+			ethic_pacifist = {
+				country_remove_ethic = ethic_pacifist
+				add_modifier = { modifier = lrsk_adv_civ_tranquility_traditions days = 3600 }
+			}
+			ethic_spiritualist = {
+				country_remove_ethic = ethic_spiritualist
+				add_modifier = { modifier = lrsk_adv_civ_faith_traditions days = 3600 }
+			}
+			ethic_materialist = {
+				country_remove_ethic = ethic_materialist
+				add_modifier = { modifier = lrsk_adv_civ_knowledge_traditions days = 3600 }
+			}
+			ethic_authoritarian = {
+				country_remove_ethic = ethic_authoritarian
+				add_modifier = { modifier = lrsk_adv_civ_hierarchy_traditions days = 3600 }
+			}
+			ethic_egalitarian = {
+				country_remove_ethic = ethic_egalitarian
+				add_modifier = { modifier = lrsk_adv_civ_equality_traditions days = 3600 }
+			}
+			default = { log = "ERROR: ASPIRANT EMPIRE GOING RAMPANT WITHOUT NON-FANATIC ETHOS" }
+		}
+	}
+}
+
+# Rampancy self-regulation buffer (allows waiting until after the monthly calcs are done to avoid issues)
+country_event = {
+	id = lrsk_adv_civ_aspiration.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants }
+
+	immediate = { country_event = { id = lrsk_adv_civ_aspiration.5 days = 1 } }
+}	
+
+# Rampancy self-regulation (removes any non-fanatic ethos if it develops)
+country_event = {
+	id = lrsk_adv_civ_aspiration.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants }
+
+	immediate = {
+		#Restore fanatic ethos if lost (based on modifier)
+		switch = {
+			trigger = has_modifier
+			lrsk_adv_civ_friendship_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_xenophile } } country_add_ethic = ethic_fanatic_xenophile } }
+			lrsk_adv_civ_supremacy_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_xenophobe } } country_add_ethic = ethic_fanatic_xenophobe } }
+			lrsk_adv_civ_valor_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_militarist } } country_add_ethic = ethic_fanatic_militarist } }
+			lrsk_adv_civ_tranquility_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_pacifist } } country_add_ethic = ethic_fanatic_pacifist } }
+			lrsk_adv_civ_faith_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_spiritualist } } country_add_ethic = ethic_fanatic_spiritualist } }
+			lrsk_adv_civ_knowledge_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_materialist } } country_add_ethic = ethic_fanatic_materialist } }
+			lrsk_adv_civ_hierarchy_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_authoritarian } } country_add_ethic = ethic_fanatic_authoritarian } }
+			lrsk_adv_civ_equality_ascendant = { if = { limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } } country_add_ethic = ethic_fanatic_egalitarian } }
+			default = { log = "ERROR: RAMPANT ASPIRANT EMPIRE WITHOUT FANATIC ETHOS BOOSTER" }
+		}
+
+		# Remove non-fanatic ethos, if present
+		if = { limit = { has_ethic = ethic_xenophile } country_remove_ethic = ethic_xenophile }
+		if = { limit = { has_ethic = ethic_xenophobe } country_remove_ethic = ethic_xenophobe }
+		if = { limit = { has_ethic = ethic_militarist } country_remove_ethic = ethic_militarist }
+		if = { limit = { has_ethic = ethic_pacifist } country_remove_ethic = ethic_pacifist }
+		if = { limit = { has_ethic = ethic_spiritualist } country_remove_ethic = ethic_spiritualist }
+		if = { limit = { has_ethic = ethic_materialist } country_remove_ethic = ethic_materialist }
+		if = { limit = { has_ethic = ethic_authoritarian } country_remove_ethic = ethic_authoritarian }
+		if = { limit = { has_ethic = ethic_egalitarian } country_remove_ethic = ethic_egalitarian }
+	}
+}
+
+# Explainers
+country_event = {
+	id = lrsk_adv_civ_aspiration.101
+	title = lrsk_adv_civ_aspiration.101.name
+	desc = lrsk_adv_civ_aspiration.101.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
+
+	option = { name = lrsk_adv_civ_aspiration.101.a }
+	option = {
+		name = lrsk_adv_civ_aspiration.101.b
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.102 } }
+	}
+	option = {
+		name = lrsk_adv_civ_aspiration.101.c
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.103 } }
+	}
+}
+country_event = {
+	id = lrsk_adv_civ_aspiration.102
+	title = lrsk_adv_civ_aspiration.102.name
+	desc = lrsk_adv_civ_aspiration.102.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
+
+	option = {
+		name = lrsk_adv_civ_aspiration.102.a
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.101 } }
+	}
+	#option = {
+	#	name = lrsk_adv_civ_aspiration.102.b
+	#	hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.101 } }
+	#}
+	option = {
+		name = lrsk_adv_civ_aspiration.102.c
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.103 } }
+	}
+}
+country_event = {
+	id = lrsk_adv_civ_aspiration.103
+	title = lrsk_adv_civ_aspiration.103.name
+	desc = lrsk_adv_civ_aspiration.103.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
+
+	option = {
+		name = lrsk_adv_civ_aspiration.103.a
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.101 } }
+	}
+	option = {
+		name = lrsk_adv_civ_aspiration.103.b
+		hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.102 } }
+	}
+	#option = {
+	#	name = lrsk_adv_civ_aspiration.103.c
+	#	hidden_effect = { country_event = { id = lrsk_adv_civ_aspiration.101 } }
+	#}
 }
