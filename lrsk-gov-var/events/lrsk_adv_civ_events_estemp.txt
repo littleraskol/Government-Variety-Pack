@@ -404,7 +404,11 @@ country_event = {
 
 			# Fill out rest of empire cluster
 			every_neighbor_system = {
-				IF = {  limit = { has_star_flag = empire_cluster }
+				IF = {
+					limit = {
+						has_star_flag = empire_cluster
+						NOT = { exists = owner }
+					}
 					set_star_flag = lrsk_expansion_cluster
 					create_starbase = {
 						size = starbase_outpost

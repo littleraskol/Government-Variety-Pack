@@ -10,3 +10,32 @@ lrsk_adv_civ_has_const_monarch_civic = {
         has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
     }
 }
+
+# Established Empire
+
+lrsk_adv_civ_estemp_explorable = {
+  NOR = { 
+    exists = owner
+    has_star_flag = hostile_system
+    has_star_flag = lrsk_expansion_cluster
+  }
+}
+
+lrsk_adv_civ_estemp_expansion_ready = {
+  NOR = {
+    exists = owner
+    any_neighbor_system = {
+      #ignore_hyperlanes = no # ???
+      exists = owner
+      owner = {
+        is_country_type = fallen_empire
+        is_xenophobe = yes
+      }
+    }
+    has_star_flag = hostile_system
+    has_star_flag = empire_home_system
+    has_star_flag = empire_cluster
+    has_star_flag = lrsk_expansion_cluster
+    has_star_flag = lrsk_not_expansion_cluster
+  }
+}
