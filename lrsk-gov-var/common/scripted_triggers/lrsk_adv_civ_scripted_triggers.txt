@@ -5,10 +5,30 @@
 # Figurehead/Shadow Monarchy
 
 lrsk_adv_civ_has_const_monarch_civic = {
-    OR = {
-        has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-        has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
-    }
+  OR = {
+    has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
+  }
+}
+
+lrsk_adv_civ_is_former_figurehead_monarchy = {
+  OR = {
+    has_civic = lrsk_adv_civ_civic_parliamentary_traditions
+    has_civic = lrsk_adv_civ_civic_senatorial_traditions
+    has_civic = lrsk_adv_civ_civic_regency_traditions
+    has_civic = lrsk_adv_civ_civic_corporate_traditions
+  }
+}
+
+lrsk_adv_civ_is_in_figurehead_monarch_scope = {
+  OR = {
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_civic = lrsk_adv_civ_civic_shadow_monarchy
+    has_civic = lrsk_adv_civ_civic_parliamentary_traditions
+    has_civic = lrsk_adv_civ_civic_senatorial_traditions
+    has_civic = lrsk_adv_civ_civic_regency_traditions
+    has_civic = lrsk_adv_civ_civic_corporate_traditions
+  }
 }
 
 # Established Empire

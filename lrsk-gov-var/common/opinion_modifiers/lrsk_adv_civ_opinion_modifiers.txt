@@ -56,7 +56,7 @@ triggered_opinion_lrsk_adv_civ_audacity_war = {
 	}
 }
 
-triggered_opinion_lrsk_adv_civ_const_monarch_civic = {
+triggered_opinion_lrsk_adv_civ_const_monarch_like = {
 	trigger = {
 		OR = {
 			has_authority = auth_imperial
@@ -71,5 +71,17 @@ triggered_opinion_lrsk_adv_civ_const_monarch_civic = {
 	}
 	opinion = {
 		base = 25
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_const_monarch_dislike = {
+	trigger = {
+		has_ethic = ethic_fanatic_egalitarian
+		FROM = {
+			lrsk_adv_civ_has_const_monarch_civic = yes
+		}
+	}
+	opinion = {
+		base = -10
 	}
 }
