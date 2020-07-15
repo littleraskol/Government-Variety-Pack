@@ -86,7 +86,7 @@ lrsk_adv_civ_civic_essentialists = {
   }
 }
 
-#Sortition (Democratic and Egalitarian, no Republicanism, Figurehead Monarchy, Meritocracy, Technocracy) - This society believes so strongly in the equality of all its citizens and the need to curb accumulations of power that it selects its leadership randomly. While there are elections for important positions, the candidates are actually chosen by lot. (Leader pool size +2, leader capacity +5, leader influence cost -25%, happiness +10%, election influence cost +100%, leaders may spawn with special postive or negative traits and may be subject to ostracization.)
+#Sortition (Fanatic Egalitarian, no Republicanism, Figurehead Monarchy, Meritocracy, Technocracy) - This society believes so strongly in the equality of all its citizens and the need to curb accumulations of power that it selects its leadership randomly. While there are elections for important positions, the candidates are actually chosen by lot. (Leader pool size +2, leader capacity +5, leader influence cost -25%, happiness +10%, election influence cost +100%, leaders may spawn with special postive or negative traits and may be subject to ostracization.)
 lrsk_adv_civ_civic_sortition = {
   description = "lrsk_adv_civ_sortition_effect"
   potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
@@ -104,22 +104,30 @@ lrsk_adv_civ_civic_sortition = {
     }
 		civics = {
 			NOR = {
-        value = lrsk_gov_var_civic_republicanism
+        #value = lrsk_gov_var_civic_republicanism
         value = lrsk_adv_civ_civic_figurehead_monarchy
         value = civic_meritocracy
-        value = civic_technocracy
+        #value = civic_technocracy # not possible w/o FanMat
+        value = civic_shadow_council
 			}
 		}
 	}
 
-  random_weight = { base = 1 }
+  random_weight = {
+    base = 1    
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+  }
 
   modifier = {
     country_leader_pool_size = 2
-		leaders_cost_mult = -0.25
-		leaders_upkeep_mult = -0.25
+		leaders_cost_mult = -0.2
+		leaders_upkeep_mult = -0.2
     pop_citizen_happiness = 0.1
   	country_election_influence_cost_mult = 1
+		planet_jobs_ruler_produces_mult = -0.1
   }
 }
 

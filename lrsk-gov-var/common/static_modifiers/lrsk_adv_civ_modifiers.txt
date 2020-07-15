@@ -32,13 +32,13 @@ lrsk_adv_civ_tb_reformation = {
 lrsk_adv_civ_ost_crisis = {
 	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"
 	country_influence_produces_mult = -0.1
-	pop_citizen_happiness = -0.2
+	pop_citizen_happiness = -0.1
 }
 
 lrsk_adv_civ_ost_abdicate = {
-	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"
-	country_influence_produces_mult = -0.05
-	pop_citizen_happiness = -0.1
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	country_influence_produces_mult = 0.1
+	pop_citizen_happiness = 0.1
 }
 
 lrsk_adv_civ_rev_tech = {
@@ -256,5 +256,15 @@ lrsk_adv_civ_tranquility_traditions = {
 	#icon = "YYY.dds"
 
 	empire_size_pops_mult = -0.075
-	planet_crime_mult = 0.25
+	planet_crime_mult = -0.25
+}
+
+lrsk_elitist_revolt_ai_buff = {
+	country_base_minerals_produces_add = 50
+	country_base_energy_produces_add = 50
+	country_naval_cap_mult = 5
+}
+
+lrsk_elitist_revolt_player_buff = {
+	country_naval_cap_mult = 5
 }

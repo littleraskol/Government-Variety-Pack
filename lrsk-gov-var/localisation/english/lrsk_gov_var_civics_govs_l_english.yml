@@ -208,7 +208,8 @@ l_english:
  ### "Advanced" Civics
 
  lrsk_adv_civ_civic_sortition:0 "Sortition"
- lrsk_adv_civ_civic_sortition_desc:0 "This society believes so strongly in the equality of all its citizens and the need to curb accumulations of power that it selects its leadership semi-randomly. While there are elections for important positions, the candidates are chosen by lot. This allows for a wide selection of diverse leaders, but there's no guarantee of quality or talent or experience."
+ lrsk_adv_civ_civic_sortition_desc:0 "This society believes so strongly in the equality of all its citizens and the need to curb accumulations of power that it selects its leadership semi-randomly. While there are elections for important positions, the candidates are chosen by lot. This allows for a wide selection of diverse leaders, but there's no guarantee of quality or talent or experience." 
+ lrsk_adv_civ_sortition_effect:0 "Leaders may spawn with special postive or negative traits and may be subject to ostracism."
 
  LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON:0 "In the philosophical-ideological dispute over the value of knowledge,"
 
@@ -1102,15 +1103,58 @@ l_english:
 
  LRSK_ADV_CIV_START_SCREEN_P2_CORPORATE_VICEROYALTY:0 "$LRSK_ADV_CIV_START_SCREEN_P2_ROYAL_FIRM$"
 
- # Other
+ # Demarchies
+
+ LRSK_ADV_CIV_START_SCREEN_COMMON_DEMARCHY:0 "Time and again, though, ambitious leaders would use their prestige and positions to accumulate power and enthrone themselves as tyrants. We came to realize that if we want liberty, we must believe in equality. And real belief in equality requires trusting that each and every one of our fellow citizens can take up or grow into the responsibilities of power. All citizens are liable to public service now. And because all citizens are equal, all candidates for office are appointed at random, stifling the ambitious and empowering the common person."
+
+ LRSK_ADV_CIV_ARCHON:0 "Archon"
 
  lrsk_adv_civ_gov_demarchy:0 "Demarchy"
- lrsk_adv_civ_gov_demarchy_desc:0 "This government elects its leadership and governing officials from a candidate pool drawn at random from the general population of all citizens, expressing a radical commitment to equality and aversion to tyrannical concentrations of power. Its supreme leader in war and diplomacy is selected in this way as well."
+ lrsk_adv_civ_gov_demarchy_desc:0 "This government elects its leadership and governing officials from a candidate pool drawn at random from the general population of all citizens, expressing a radical commitment to equality and aversion to tyrannical concentrations of power. Its overall head of government is selected in this way as well."
+ LRSK_ADV_CIV_CITARCH:0 "Civic $LRSK_ADV_CIV_ARCHON$"
+ LRSK_ADV_CIV_CITARCH:0 "$LRSK_ADV_CIV_CITARCH$"
+
+ LRSK_ADV_CIV_START_SCREEN_P2_DEMARCHY:0 "We are a liberty-loving people. $LRSK_ADV_CIV_START_SCREEN_COMMON_DEMARCHY$"
+
+ lrsk_adv_civ_gov_comdemarchy:0 "Communal $lrsk_adv_civ_gov_demarchy$"
+ lrsk_adv_civ_gov_comdemarchy_desc:0 "This government promotes total equality for all of its citizens, regardless of their jobs or assigned tasks under the principle of the equal dignity and worth of all persons. This commitment to equality extends to the election of leadership and governing officials from a candidate pool drawn at random from the general population of all citizens. Its overall head of government is selected in this way as well."
+
+ LRSK_ADV_CIV_COMMARCH:0 "Collective $LRSK_ADV_CIV_ARCHON$"
+ LRSK_ADV_CIV_COMMARCH_FEMALE:0 "$LRSK_ADV_CIV_COMMARCH$"
+ 
+ # Same start screen as base.
+
+ lrsk_adv_civ_gov_socdemarchy:0 "Social $lrsk_adv_civ_gov_demarchy$"
+ lrsk_adv_civ_gov_socdemarchy_desc:0 "This government is based on the equality and dignity of all working people and the promotion of their welfare. To prevent excesses of wealth leading to unequal power, they select leadership and governing officials from a candidate pool drawn at random from the general population of all citizens. Its overall head of government is selected in this way as well."
+
+ LRSK_ADV_CIV_ARCHTRIB:0 "$LRSK_ADV_CIV_ARCHON$-Tribune"
+ LRSK_ADV_CIV_ARCHTRIB_FEMALE:0 "$LRSK_ADV_CIV_ARCHTRIB$"
+ 
+ # Same start screen as base.
+
+ lrsk_adv_civ_gov_sacdemarchy:0 "Sacred $lrsk_adv_civ_gov_demarchy$"
+ lrsk_adv_civ_gov_sacdemarchy_desc:0 "This government is based on the holy truth that all mortal beings are equal before the divine powers. In light of this, they select leadership and governing officials from a candidate pool drawn at random from the general population of all citizens. Its overall head of government is selected in this way as well."
+
+ LRSK_ADV_CIV_REVARCH:0 "Reverend $LRSK_ADV_CIV_ARCHON$"
+ LRSK_ADV_CIV_REVARCH_FEMALE:0 "$LRSK_ADV_CIV_REVARCH$"
+
+ LRSK_ADV_CIV_START_SCREEN_P2_SACDEMARCHY:0 "We are a pious and liberty-loving people. $LRSK_ADV_CIV_START_SCREEN_COMMON_DEMARCHY$" 
+
+ lrsk_adv_civ_gov_solcitdemarchy:0 "Citizen-Soldier $lrsk_adv_civ_gov_demarchy$"
+ lrsk_adv_civ_gov_solcitdemarchy_desc:0 "This government is a warrior democracy that prizes developing all its citizens into fine soldiers, all of whom are held to be equal in honor. Accordingly, it selects leadership and governing officials from a candidate pool drawn at random from the general population of all citizens. Its overall head of government is selected in this way as well."
 
  LRSK_ADV_CIV_POLEMARCH:0 "Polemarch"
  LRSK_ADV_CIV_POLEMARCH_FEMALE:0 "$LRSK_ADV_CIV_POLEMARCH$"
 
- LRSK_ADV_CIV_START_SCREEN_P2_DEMARCHY:0 "We are a liberty-loving people. Time and again, though, ambitious leaders would use their prestige and positions to accumulate power and enthrone themselves as tyrants. We came to realize that if we want liberty, we must believe in equality. And real belief in equality requires trusting that each and every one of our fellow citizens can take up or grow into the responsibilities of power. All citizens are liable to public service now. And because all citizens are equal, all candidates for office are appointed at random, stifling the ambitious and empowering the common person."
+ LRSK_ADV_CIV_START_SCREEN_P2_SACDEMARCHY:0 "We are an honorable and liberty-loving people. $LRSK_ADV_CIV_START_SCREEN_COMMON_DEMARCHY$" 
+
+ lrsk_adv_civ_gov_banddemarchy:0 "Bandit $lrsk_adv_civ_gov_demarchy$"
+ lrsk_adv_civ_gov_banddemarchy_desc:0 "This government is organized like a massive crime syndicate, where all are considered to deserve a share in the plunder and to have an important role to play in its raids and schemes. This belief in equality among theives means that leadership and governing officials are selected from a candidate pool drawn at random from the general population of all citizens."
+
+ LRSK_ADV_CIV_RAIDARCH:0 "Raid $LRSK_ADV_CIV_ARCHON$"
+ LRSK_ADV_CIV_RAIDARCH_FEMALE:0 "$LRSK_ADV_CIV_RAIDARCH$"
+
+ LRSK_ADV_CIV_START_SCREEN_P2_SACDEMARCHY:0 "We are a people whose freedom and license cannot be contained. $LRSK_ADV_CIV_START_SCREEN_COMMON_DEMARCHY$"
 
  ####################################
  ### Namazuo

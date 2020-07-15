@@ -1,0 +1,29 @@
+# New Advanced Civics
+# War Names
+# Author: littleraskol
+
+### ELITIST UPRISING
+war_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			using_war_goal = {
+                type = wg_lrsk_gov_var_elitist_revolt
+                owner = attacker
+            }
+			attacker = {
+			}
+			defender = {
+			}
+		}
+	}
+	format = "[This.MainDefender.GetAdj] <lrsk_elitist_revolt_war_names>"
+}
+
+war_name_parts_list = {
+	key = "lrsk_elitist_revolt_war_names"
+	parts = {
+		"Machine_Revolt" = 1
+	}
+}

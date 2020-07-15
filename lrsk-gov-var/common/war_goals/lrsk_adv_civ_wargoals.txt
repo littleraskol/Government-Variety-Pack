@@ -1,0 +1,323 @@
+# New Advanced Civics
+# Wargoals
+# Author: littleraskol
+
+wg_lrsk_gov_var_elitist_revolt = {
+	casus_belli = cb_event
+	
+	total_war = yes
+
+	allowed_peace_offers = {
+		status_quo
+	}
+	
+	surrender_acceptance = -1000
+	war_exhaustion = 0.5
+	
+	set_defender_wargoal = wg_lrsk_gov_var_elitist_revolt
+
+	potential = {
+		always = no # event only
+	}
+	possible = {
+		always = yes
+	}
+
+	on_status_quo = {
+		from = {
+			if = { limit = { has_country_flag = lrsk_elitist_revolt_happening }
+				remove_country_flag = lrsk_elitist_revolt_happening
+			}
+			add_opinion_modifier = {
+				who = root
+				modifier = lrsk_adv_civ_elitist_revolt_inconclusive
+			}
+			every_system_within_border = {
+				limit = { NOT = { root = { has_claim = prev } } }
+				add_claims = { who = root }
+			}
+			set_timed_country_flag = { flag = lrsk_elitist_revolt_happened days = 3600 }
+		}
+		# I dunno how/why this would happen but w/e
+		if = { limit = { has_country_flag = lrsk_elitist_revolt_happening }
+			remove_country_flag = lrsk_elitist_revolt_happening
+		}
+		add_opinion_modifier = {
+			who = from
+			modifier = lrsk_adv_civ_elitist_revolt_inconclusive
+		}
+		every_system_within_border = {
+			limit = { NOT = { from = { has_claim = prev } } }
+			add_claims = { who = from }
+		}
+		set_timed_country_flag = { flag = lrsk_elitist_revolt_happened days = 3600 }
+
+		# Possible gov changes
+		switch = {
+			trigger = has_civic
+			# technocrats -> stay/dic/dem
+			civic_technocracy = {
+				random_list = {
+					60 = {
+						#Nothing
+						modifier = {
+							add = -10
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							add = -30
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+					}
+					30 = {
+						# dic
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						change_government = { authority = auth_dictatorial }
+					}
+					10 = {
+						#dem
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						change_government = { authority = auth_democratic }
+					}
+				}
+			}
+			# aristocrats -> stay/imp
+			civic_aristocratic_elite = {
+				random_list = {
+					40 = {
+						#Nothing
+						modifier = {
+							add = -40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							add = 60
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						# rationalize if somehow egal
+						if = {
+							limit = { OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian								
+							} }
+							change_government = { civics = random }
+						}
+					}
+					60 = {
+						#imp
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						change_government = {
+							authority = auth_imperial
+							civics = {
+								civic = civic_aristocratic_elite
+								civic = civic_police_state							
+							}
+						}
+					}
+				}
+			}
+			# meritocrats -> stay/dem
+			civic_meritocracy = {
+				random_list = {
+					60 = {
+						#Nothing
+						modifier = {
+							add = -40
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+					}
+					40 = {
+						#dem
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						change_government = { authority = auth_democratic }
+					}
+				}
+			}
+			# stratocrats -> stay/dic/dem
+			civic_citizen_service = {
+				random_list = {
+					60 = {
+						#Nothing
+						modifier = {
+							add = -10
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							add = -30
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+					}
+					30 = {
+						# dic
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						change_government = {
+							authority = auth_dictatorial
+							civics = {
+								civic = civic_nationalistic_zeal
+								civic = civic_shadow_council
+							}
+						}
+					}
+					10 = {
+						#dem
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						change_government = { authority = auth_democratic }
+					}
+				}
+			}
+			# plutocrats -> stay/corp		
+			civic_merchant_guilds = {
+				random_list = {
+					40 = {
+						#Nothing
+						modifier = {
+							add = -40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							add = 60
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+					}
+					60 = {
+						#corp
+						modifier = {
+							add = 40
+							OR = {
+								has_ethic = ethic_authoritarian
+								has_ethic = ethic_fanatic_authoritarian
+							}
+						}
+						modifier = {
+							factor = 0
+							OR = {
+								has_ethic = ethic_egalitarian
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						change_government = {
+							authority = auth_corporate
+							civics = random
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}

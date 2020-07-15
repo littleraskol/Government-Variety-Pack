@@ -14,6 +14,13 @@ on_monthly_pulse_country = {
 	}
 }
 
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		lrsk_adv_civ_sortition.1000 # Yearly kick-offs.
+	}
+}
+
 # A planets controller becomes a country not the same as the owner.
 # Root = Planet
 # From = Planet Owner
@@ -47,19 +54,16 @@ on_planet_occupied = {
 on_ruler_set = {
 	events = {
 		#techbarb dictator and monarch salvage mission
+		lrsk_adv_civ_sortition.1001
 	}
 }
 
-on_leader_spawned = {
+# Executed when a ruler has been removed
+# From = Previous Ruler
+# This = Country
+on_ruler_removed = {
 	events = {
-		lrsk_adv_civ_revelation.20
-	}
-	random_events = {
-		50 = 0
-		25 = lrsk_adv_civ_sortition.1
-		10 = lrsk_adv_civ_sortition.3
-		10 = lrsk_adv_civ_sortition.5
-		5 = lrsk_adv_civ_sortition.7
+		#
 	}
 }
 
@@ -69,10 +73,16 @@ on_leader_spawned = {
 on_ruler_back_to_pre_ruler_class = {
 	events = {
 		lrsk_adv_civ_sortition.2
-		lrsk_adv_civ_sortition.4
-		lrsk_adv_civ_sortition.6
-		lrsk_adv_civ_sortition.8
-		lrsk_adv_civ_revelation.21
+	}
+}
+
+on_leader_spawned = {
+	events = {
+		lrsk_adv_civ_revelation.20
+	}
+	random_events = {
+		50 = 0
+		50 = lrsk_adv_civ_sortition.1
 	}
 }
 
@@ -81,7 +91,7 @@ on_ruler_back_to_pre_ruler_class = {
 # From = Leader
 on_leader_level_up = {
 	events = {
-		lrsk_adv_civ_sortition.9
+		lrsk_adv_civ_sortition.3
 	}
 }
 
@@ -138,19 +148,21 @@ on_war_beginning = {
 # FromFrom = War
 on_war_won = {
 	events = {
-		lrsk_adv_civ_siblings.10
+		lrsk_adv_civ_siblings.10	# War over check
+		lrsk_adv_civ_sortition.53	# Elite Revolt wins
+		lrsk_adv_civ_sortition.54	# Demarchy wins
 	}
 }
 
-# A war has been won, by force
+# A war has been won, by force (not sure this works)
 # Root = Winner Warleader
 # From = Loser Warleader
 # FromFrom = War
-on_war_won_forced = {
-	events = {
-		lrsk_adv_civ_siblings.10
-	}
-}
+#on_war_won_forced = {
+#	events = {
+#		lrsk_adv_civ_siblings.10
+#	}
+#}
 
 # A white peace has been signed
 # Root = Recipient
