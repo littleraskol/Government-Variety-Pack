@@ -535,7 +535,7 @@ l_english:
  lrsk_adv_civ_ost_crisis:0 "Ostracism Crisis"
  lrsk_adv_civ_ost_crisis_desc:0 "The ruler retains power after a failed ostracism vote. Though the vote failed, many feared the ruler as a would-be tyrant, so this has led to worry about the $lrsk_adv_civ_gov_demarchy$'s direction."
  lrsk_adv_civ_ost_abdicate:0 "Ostracism Abdication"
- lrsk_adv_civ_ost_abdicate_desc:0 "A ruler has peacefully accepted ostracism and resigned from office, which has alleviated some unease."
+ lrsk_adv_civ_ost_abdicate_desc:0 "A ruler has resigned from office in response to suspicions raised during ostracism proceedings. This act putting the nation's equality above personal ambitions has alleviated unease and distrust."
  lrsk_elitist_revolt_player_buff:0 "$NAVY_SIZE_TITLE$"
  lrsk_elitist_revolt_player_buff_desc:0 "==5x"
 
@@ -925,8 +925,10 @@ l_english:
  lrsk_adv_civ_sortition.5.name:0 "The People Choose Ostracism"
  lrsk_adv_civ_sortition.5.desc:0 "The regular referendum 'On protecting the $lrsk_adv_civ_gov_demarchy$ from the power-hungry, the oppulent and extravagent, and all other would-be tyrants, by limited banishment' has completed... and the people have chosen to proceed with the §Hostracism§! of one of their fellow citizens! By law, three months after the citizenry at large makes this choice, any citizen may be exiled for 10 years (for any reason or no reason and without recourse or appeal) so long as a sufficient number of citizens vote for it. Although this could happen to anyone, in practice only those rich, powerful, influential, or otherwise suspicious enough to appear to be a threat to social and political equality are chosen."
  lrsk_adv_civ_sortition.5.a:0 "The high and mighty are on notice!"
- lrsk_adv_civ_sortition.5.b:0 "This expression of public vigilence derserves commendation." # -25 Influence, - threat
+ lrsk_adv_civ_sortition.5.b:0 "This expression of public vigilence derserves commendation." # -25 Influence, -threat
  lrsk_adv_civ_sortition.5.b.desc:0 "Praising the decision will cow elitists, §Greducing their inclination to scheme.§!"
+ lrsk_adv_civ_sortition.5.c:0 "The people should... carefully deliberate on this." # -25 Influence, -chance of consensus on choice
+ lrsk_adv_civ_sortition.5.c.desc:0 "Urging caution will make voters §Gless likely to select a target, leading to no ostracism.§!"
 
  # Ostracism of Ruler
  lrsk_adv_civ_sortition.6.name:0 "Ostracism of the [lrsk_sortost_protag.GetTitle]?"
@@ -943,17 +945,19 @@ l_english:
 
  # Ostracism Fails
  lrsk_adv_civ_sortition.8.name:0 "Ostracism of [lrsk_sortost_protag.GetName] Fails"
- lrsk_adv_civ_sortition.8.desc:0 "It seems that an insufficient number of citizens consider [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName] to be a potential tyrant after all. [lrsk_sortost_protag.GetSheHeCaps] may remain in the [this.GetName] and in office as [lrsk_sortost_protag.GetTitle]."
+ lrsk_adv_civ_sortition.8.desc:0 "It seems that an insufficient number of citizens consider [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName] to be a potential tyrant after all. This is surprising and, to some, disturbing because there were a number of factors making the [lrsk_sortost_protag.GetTitle] suspicious. Nonetheless, [lrsk_sortost_protag.GetSheHeCaps] may remain in the [this.GetName] and in office as [lrsk_sortost_protag.GetTitle]."
  lrsk_adv_civ_sortition.8.wellthen:0 "Well then..."
+ lrsk_adv_civ_sortition.8.wellthen.desc:0 "This surprise result §Pwill lead to some unrest and discontent.§!"
 
  # Ostracized Returns
  lrsk_adv_civ_sortition.9.name:0 "[lrsk_sortost_exile.GetName] Returns"
  lrsk_adv_civ_sortition.9.desc:0 "Having been ostracized for the good of the $lrsk_adv_civ_gov_demarchy$ and endured 10 years of exile, [lrsk_sortost_exile.GetName] has returned."
  lrsk_adv_civ_sortition.9.welcome:0 "Welcome home?"
 
- # Minor Ostracism
+ # Ostracism of non-ruler leader OR ruler who heads conspiracy
  lrsk_adv_civ_sortition.10.name:0 "Ostracism of [lrsk_sortost_protag.GetName]"
  lrsk_adv_civ_sortition.10.desc:0 "Unfortunately for [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName], a sufficient number of [lrsk_sortost_protag.GetHerHis] fellow citizens were so suspicious of [lrsk_sortost_protag.GetHerHim] that they voted to exile [lrsk_sortost_protag.GetHerHim] for 10 years."
+ lrsk_adv_civ_sortition.10.desc.ruler:0 "$lrsk_adv_civ_sortition.10.desc$ As the leader of the nation and the head of a conspiracy against it, not even resignation could ease suspicions."
  lrsk_adv_civ_sortition.10.ohwell:0 "A threat averted?"
  lrsk_adv_civ_sortition.10.paranoid:0 "Surely just a catspaw..."
  lrsk_adv_civ_sortition.10.paranoid.desc:0 "Launch an investigation into the associates of [lrsk_sortost_protag.GetName] to see if there's a deeper plot."
@@ -967,6 +971,7 @@ l_english:
  lrsk_adv_civ_sortition.32.name:0 "Elite Conspiracy Revealed!"
  LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1:0 "It seems that some of the more ambitious officers of government have been meeting in secret and hatching schemes to destroy our the $lrsk_adv_civ_gov_demarchy$, dreaming of election campaigns and prestigeous appointments by their associates once enthonred as oligarchs."
  LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2:0 "Such a scandal may be enough to launch an emergency petition to begin §Hostracism proceedings§! immediately."
+ lrsk_adv_civ_sortition.32.desc.unknown:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ Their leader is still a mystery, but investigations are ongoing. $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
  lrsk_adv_civ_sortition.32.desc.ruler:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ They are led by none other than our presiding [lrsk_sortconsp_protag.GetTitle], [lrsk_sortconsp_protag.GetName]! $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
  lrsk_adv_civ_sortition.32.desc.other:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ The culprits are a clique of disloyal officials led by [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName]. $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
  lrsk_adv_civ_sortition.32.yikes:0 "Those scoundrels!" 
@@ -980,7 +985,7 @@ l_english:
  lrsk_adv_civ_sortition.42.no:0 "Democracy will never die." 
  lrsk_adv_civ_sortition.42.no.desc:0 "Refuse to change. There is a chance that §Hostracism proceedings§! will begin in 30 days, and that the elite reformists §Pmay turn to revolt...§!" 
  lrsk_adv_civ_sortition.42.yes:0 "Perhaps some changes are in order..." 
- lrsk_adv_civ_sortition.42.yes.desc:0 "Accept a change in government with the following effects:\n- Lose the §Ylrsk_adv_civ_civic_sortition§! Civic..\n- Shift away from §Y$ethic_fanatic_egalitarian$§! to §Y$ethic_egalitarian$§!.\n- Replacement Civics and Ethos will depend on the interests of the reform leader, [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName]." 
+ lrsk_adv_civ_sortition.42.yes.desc:0 "Accept a change in government with the following effects:\n- Lose the §Y$lrsk_adv_civ_civic_sortition$§! Civic.\n- Shift away from §Y$ethic_fanatic_egalitarian$§! to §Y$ethic_egalitarian$§!.\n- Replacement Civics and Ethos will depend on the interests of the reform leader, [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName]." 
  
  # Elitist Revolt Launches
  lrsk_adv_civ_sortition.51.name:1 "§HAll Must Take A Stand§!"

@@ -488,7 +488,7 @@ country_event = {
 			limit = {
 				root = { has_civic = lrsk_adv_civ_civic_sortition }
 				NOR = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_ambition_perm
+					has_leader_flag = lrsk_leader_level_lost_ambition_perm
 					lrsk_adv_civ_sort_is_unready = yes
 					lrsk_adv_civ_sort_is_tutored = yes
 					lrsk_adv_civ_sort_is_groomed = yes
@@ -524,7 +524,7 @@ country_event = {
 						add = 10
 						has_level = 4
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+					set_leader_flag = lrsk_leader_level_got_ambition
 					lrsk_adv_civ_sort_get_ambition = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
 				}
@@ -581,7 +581,7 @@ country_event = {
 						add = 10
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_lost_unready
+					set_leader_flag = lrsk_leader_level_lost_unready
 					lrsk_adv_civ_sort_lose_unready = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
 				}
@@ -600,7 +600,7 @@ country_event = {
 						factor = 0
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
+					set_leader_flag = lrsk_leader_level_unready_to_tutors
 					lrsk_adv_civ_sort_lose_unready = yes
 					lrsk_adv_civ_sort_get_tutors = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
@@ -650,7 +650,7 @@ country_event = {
 						add = 20
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
+					set_leader_flag = lrsk_leader_level_lost_groomed
 					lrsk_adv_civ_sort_lose_groomed = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
 				}
@@ -669,7 +669,7 @@ country_event = {
 						factor = 0
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
+					set_leader_flag = lrsk_leader_level_groomed_to_ambition
 					lrsk_adv_civ_sort_lose_groomed = yes
 					lrsk_adv_civ_sort_get_ambition = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
@@ -719,7 +719,7 @@ country_event = {
 						add = 20
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
+					set_leader_flag = lrsk_leader_level_lost_tutors
 					lrsk_adv_civ_sort_lose_tutors = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
 				}
@@ -738,7 +738,7 @@ country_event = {
 						factor = 0
 						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
+					set_leader_flag = lrsk_leader_level_tutors_to_ambition
 					lrsk_adv_civ_sort_lose_tutors = yes
 					lrsk_adv_civ_sort_get_ambition = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
@@ -786,8 +786,8 @@ country_event = {
 						add = 20
 						has_level > 4
 					}
-					set_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
-					set_leader_flag = lrsk_adv_civ_leader_level_lost_ambition_perm # to prevent Ambitious coming back
+					set_leader_flag = lrsk_leader_level_lost_ambition
+					set_leader_flag = lrsk_leader_level_lost_ambition_perm # to prevent Ambitious coming back
 					lrsk_adv_civ_sort_lose_ambition = yes
 					#country_event = { id = lrsk_adv_civ_sortition.4 }
 				}
@@ -807,54 +807,54 @@ country_event = {
 
 				# We're not ignoring this leader or all development.
 				NOR = {
-					has_leader_flag = lrsk_adv_civ_leader_ignore_my_career_development
-					root = { has_country_flag = lrsk_adv_civ_ignore_all_career_development }
+					has_leader_flag = lrsk_leader_ignore_my_career_development
+					root = { has_country_flag = lrsk_ignore_all_career_development }
 				}
 
 				# There's development to report on.
 				OR = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
-					has_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
-					has_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
-					has_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_unready
-					has_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+					has_leader_flag = lrsk_leader_level_lost_ambition
+					has_leader_flag = lrsk_leader_level_tutors_to_ambition
+					has_leader_flag = lrsk_leader_level_lost_tutors
+					has_leader_flag = lrsk_leader_level_groomed_to_ambition
+					has_leader_flag = lrsk_leader_level_lost_groomed
+					has_leader_flag = lrsk_leader_level_unready_to_tutors
+					has_leader_flag = lrsk_leader_level_lost_unready
+					has_leader_flag = lrsk_leader_level_got_ambition
 				}
 
 				# We're not ignoring this kind of development.
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
-					root = { has_country_flag = lrsk_adv_civ_ignore_lost_ambition }
+					has_leader_flag = lrsk_leader_level_lost_ambition
+					root = { has_country_flag = lrsk_ignore_lost_ambition }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
-					root = { has_country_flag = lrsk_adv_civ_ignore_tutors_to_ambition }
+					has_leader_flag = lrsk_leader_level_tutors_to_ambition
+					root = { has_country_flag = lrsk_ignore_tutors_to_ambition }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
-					root = { has_country_flag = lrsk_adv_civ_ignore_lost_tutors }
+					has_leader_flag = lrsk_leader_level_lost_tutors
+					root = { has_country_flag = lrsk_ignore_lost_tutors }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
-					root = { has_country_flag = lrsk_adv_civ_ignore_groomed_to_ambition }
+					has_leader_flag = lrsk_leader_level_groomed_to_ambition
+					root = { has_country_flag = lrsk_ignore_groomed_to_ambition }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
-					root = { has_country_flag = lrsk_adv_civ_ignore_lost_groomed }
+					has_leader_flag = lrsk_leader_level_lost_groomed
+					root = { has_country_flag = lrsk_ignore_lost_groomed }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
-					root = { has_country_flag = lrsk_adv_civ_ignore_unready_to_tutors }
+					has_leader_flag = lrsk_leader_level_unready_to_tutors
+					root = { has_country_flag = lrsk_ignore_unready_to_tutors }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_lost_unready
-					root = { has_country_flag = lrsk_adv_civ_ignore_lost_unready }
+					has_leader_flag = lrsk_leader_level_lost_unready
+					root = { has_country_flag = lrsk_ignore_lost_unready }
 				}
 				NAND = {
-					has_leader_flag = lrsk_adv_civ_leader_level_got_ambition
-					root = { has_country_flag = lrsk_adv_civ_ignore_got_ambition }
+					has_leader_flag = lrsk_leader_level_got_ambition
+					root = { has_country_flag = lrsk_ignore_got_ambition }
 				}
 			}
 			root = { country_event = { id = lrsk_adv_civ_sortition.4 } }
@@ -862,25 +862,25 @@ country_event = {
 		# If we don't notify, we still need to clean up.
 		else_if = {
 			limit = { OR = {
-				has_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
-				has_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
-				has_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
-				has_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
-				has_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
-				has_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
-				has_leader_flag = lrsk_adv_civ_leader_level_lost_unready
-				has_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+				has_leader_flag = lrsk_leader_level_lost_ambition
+				has_leader_flag = lrsk_leader_level_tutors_to_ambition
+				has_leader_flag = lrsk_leader_level_lost_tutors
+				has_leader_flag = lrsk_leader_level_groomed_to_ambition
+				has_leader_flag = lrsk_leader_level_lost_groomed
+				has_leader_flag = lrsk_leader_level_unready_to_tutors
+				has_leader_flag = lrsk_leader_level_lost_unready
+				has_leader_flag = lrsk_leader_level_got_ambition
 			} } 
 			switch = {
 				trigger = has_leader_flag
-				lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_ambition }
-				lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition }
-				lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_tutors }
-				lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition }
-				lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_groomed }
-				lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors }
-				lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_unready }
-				lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_got_ambition }
+				lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+				lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+				lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+				lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+				lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+				lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+				lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+				lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
 			}
 			#root = { country_event = { id = lrsk_adv_civ_sortition.1003 days = 2 } } # Clean up flags JIC
 		}
@@ -919,7 +919,7 @@ country_event = {
 		custom_tooltip = lrsk_adv_civ_sortition.4.ignoreleader.desc
 
 		hidden_effect = {
-			fromfrom = { set_leader_flag = lrsk_adv_civ_leader_ignore_my_career_development }
+			fromfrom = { set_leader_flag = lrsk_leader_ignore_my_career_development }
 		}
 		
 		ai_chance = {
@@ -934,14 +934,14 @@ country_event = {
 		hidden_effect = {
 			fromfrom = { switch = {
 				trigger = has_leader_flag
-				lrsk_adv_civ_leader_level_lost_ambition = { root = { set_country_flag = lrsk_adv_civ_ignore_lost_ambition } }
-				lrsk_adv_civ_leader_level_tutors_to_ambition = { root = { set_country_flag = lrsk_adv_civ_ignore_tutors_to_ambition } }
-				lrsk_adv_civ_leader_level_lost_tutors = { root = { set_country_flag = lrsk_adv_civ_ignore_lost_tutors } }
-				lrsk_adv_civ_leader_level_groomed_to_ambition = { root = { set_country_flag = lrsk_adv_civ_ignore_groomed_to_ambition } }
-				lrsk_adv_civ_leader_level_lost_groomed = { root = { set_country_flag = lrsk_adv_civ_ignore_lost_groomed } }
-				lrsk_adv_civ_leader_level_unready_to_tutors = { root = { set_country_flag = lrsk_adv_civ_ignore_unready_to_tutors } }
-				lrsk_adv_civ_leader_level_lost_unready = { root = { set_country_flag = lrsk_adv_civ_ignore_lost_unready } }
-				lrsk_adv_civ_leader_level_got_ambition = { root = { set_country_flag = lrsk_adv_civ_ignore_got_ambition } }
+				lrsk_adv_civ_leader_level_lost_ambition = { root = { set_country_flag = lrsk_ignore_lost_ambition } }
+				lrsk_adv_civ_leader_level_tutors_to_ambition = { root = { set_country_flag = lrsk_ignore_tutors_to_ambition } }
+				lrsk_adv_civ_leader_level_lost_tutors = { root = { set_country_flag = lrsk_ignore_lost_tutors } }
+				lrsk_adv_civ_leader_level_groomed_to_ambition = { root = { set_country_flag = lrsk_ignore_groomed_to_ambition } }
+				lrsk_adv_civ_leader_level_lost_groomed = { root = { set_country_flag = lrsk_ignore_lost_groomed } }
+				lrsk_adv_civ_leader_level_unready_to_tutors = { root = { set_country_flag = lrsk_ignore_unready_to_tutors } }
+				lrsk_adv_civ_leader_level_lost_unready = { root = { set_country_flag = lrsk_ignore_lost_unready } }
+				lrsk_adv_civ_leader_level_got_ambition = { root = { set_country_flag = lrsk_ignore_got_ambition } }
 			} }
 		}
 		
@@ -955,7 +955,7 @@ country_event = {
 		custom_tooltip = lrsk_adv_civ_sortition.4.ignoreall.desc
 
 		hidden_effect = {
-			set_country_flag = lrsk_adv_civ_ignore_all_career_development
+			set_country_flag = lrsk_ignore_all_career_development
 		}
 		
 		ai_chance = {
@@ -966,14 +966,14 @@ country_event = {
 	after = {
 		hidden_effect = { fromfrom = { switch = {
 			trigger = has_leader_flag
-			lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_ambition }
-			lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition }
-			lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_tutors }
-			lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition }
-			lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_groomed }
-			lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors }
-			lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_unready }
-			lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_got_ambition }
+			lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+			lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+			lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+			lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+			lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+			lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+			lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+			lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
 		} } }
 	}
 }
@@ -989,8 +989,9 @@ country_event = {
 	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
 
 	immediate = {
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_recent_ost_vote } remove_country_flag = lrsk_gov_var_sort_recent_ost_vote }
-		set_timed_country_flag = lrsk_gov_var_sort_recent_ost_vote days = 360
+		if = { limit = { has_country_flag = lrsk_recent_ost_vote } remove_country_flag = lrsk_recent_ost_vote }
+		set_timed_country_flag = lrsk_recent_ost_vote days = 360
+		if = { limit = { has_country_flag = lrsk_ruler_is_target } remove_country_flag = lrsk_ruler_is_target }
 	}
 
 	option = {
@@ -1017,17 +1018,191 @@ country_event = {
 		add_resource = { influence = -25 }
 
 		hidden_effect = {
-			if = { limit = { has_country_flag = lrsk_gov_var_sort_ost_vote_praised } remove_country_flag = lrsk_gov_var_sort_ost_vote_praised }
-			set_timed_country_flag = lrsk_gov_var_sort_ost_vote_praised days = 360
+			if = { limit = { has_country_flag = lrsk_ost_vote_praised } remove_country_flag = lrsk_ost_vote_praised }
+			set_timed_country_flag = lrsk_ost_vote_praised days = 300
 		}
 		
 		ai_chance = {
 			factor = 1
 		}
 	}
+	option = {
+		name = lrsk_adv_civ_sortition.5.c
+		custom_tooltip = lrsk_adv_civ_sortition.5.c.desc
+
+		#trigger = {
+		#}
+
+		allow = {
+			has_resource = {
+				amount >= 25
+				type = influence
+			}
+		}
+
+		add_resource = { influence = -25 }
+
+		hidden_effect = {
+			if = { limit = { has_country_flag = lrsk_ost_vote_caution } remove_country_flag = lrsk_ost_vote_caution }
+			set_timed_country_flag = lrsk_ost_vote_caution days = 300
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				ruler = {
+					has_trait = lrsk_adv_civ_trait_ambitious_rul
+				}
+			}
+		}
+	}
 
 	after = {
-		# all logic for selecting a target goes here.
+		# Clear stuff
+		if = { limit = { has_country_flag = lrsk_ruler_is_target } remove_country_flag = lrsk_ruler_is_target }
+		if = { limit = { has_country_flag = lrsk_ruler_is_elite_leader } remove_country_flag = lrsk_ruler_is_elite_leader }
+		every_owned_leader = { if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root } }
+		every_owned_leader = { if = { limit = { has_leader_flag = lrsk_ost_backup@root } remove_leader_flag = lrsk_ost_backup@root } }
+
+		# ALWAYS go after an elite conspiracy leader, this bypasses everything else.
+		if = { limit = { any_owned_leader = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } }
+			random_owned_leader = { limit = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } set_leader_flag = lrsk_ost_target@root }
+			if = { limit = { ruler = { has_leader_flag = lrsk_ost_target@root } } set_country_flag = lrsk_ruler_is_elite_leader }
+		}
+		else = {
+			ruler = {
+				# determing if ruler should be target. If selected, we still look at other leaders in case a backup is required.
+
+				# clear everything out
+				if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root }
+				if = { limit = { has_leader_flag = lrsk_ost_backup@root } remove_leader_flag = lrsk_ost_backup@root }
+
+				random_list = {
+					70 = {
+						modifier = {
+							add = -20
+							lrsk_adv_civ_sort_is_ambitious = yes
+						}
+						modifier = {
+							add = -10
+							lrsk_adv_civ_sort_is_groomed = yes
+						}
+						modifier = {
+							add = 15
+							root = { has_country_flag = lrsk_ost_vote_caution }
+						}
+						modifier = {
+							factor = 0
+							has_leader_flag = lrsk_is_elite_conspirator_exposed@root
+						}
+						#nothing
+					}
+					# Rulers have a higher base chance of being chosen than other leaders.
+					30 = {
+						modifier = {
+							add = 70
+							has_leader_flag = lrsk_is_elite_conspirator_exposed@root # Ruler always targeted if elite conspirator
+						}
+						modifier = {
+							add = 20
+							lrsk_adv_civ_sort_is_ambitious = yes
+						}
+						modifier = {
+							add = 10
+							lrsk_adv_civ_sort_is_groomed = yes
+						}
+						modifier = {
+							add = -15
+							root = { has_country_flag = lrsk_ost_vote_caution }
+						}
+						set_leader_flag = lrsk_ost_target@root
+						root = { set_country_flag = lrsk_ruler_is_target }
+					}
+				}
+			}
+
+			every_owned_leader = {
+				# go through each, need a backup even if ruler chosen.
+
+				# This flag set on any non-ruler leader once chosen.
+				if = { limit = { NOT = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } } }
+					# Each leader has almost no chance of being chosen unless there is cause for suspicion
+					random_list = {
+						90 = {
+							modifier = {
+								add = -50
+								has_leader_flag = lrsk_is_elite_conspirator_exposed@root
+							}
+							modifier = {
+								add = -30
+								lrsk_adv_civ_sort_is_ambitious = yes
+							}
+							modifier = {
+								add = -15
+								lrsk_adv_civ_sort_is_groomed = yes
+							}
+							modifier = {
+								add = 8
+								OR = {
+									lrsk_adv_civ_sort_is_unready = yes
+									lrsk_adv_civ_sort_is_tutored = yes
+								}
+							}
+							modifier = {
+								factor = 2 # This throws off my nice perfect balance but meh
+								root = { has_country_flag = lrsk_ost_vote_caution }
+							}
+
+							#nothing
+						}
+						10 = {
+							modifier = {
+								add = 50
+								has_leader_flag = lrsk_is_elite_conspirator_exposed@root # likely to go after an elite conspirator
+							}
+							modifier = {
+								add = 30
+								lrsk_adv_civ_sort_is_ambitious = yes
+							}
+							modifier = {
+								add = 15
+								lrsk_adv_civ_sort_is_groomed = yes
+							}
+							modifier = {
+								add = -8
+								OR = {
+									lrsk_adv_civ_sort_is_unready = yes
+									lrsk_adv_civ_sort_is_tutored = yes
+								}
+							}
+							modifier = {
+								factor = 0.5
+								root = { has_country_flag = lrsk_ost_vote_caution }
+							}
+
+							if = { limit = { root = { has_country_flag = lrsk_ruler_is_target } }
+								set_leader_flag = lrsk_ost_backup@root
+							}
+							else = {
+								set_leader_flag = lrsk_ost_target@root
+								set_leader_flag = lrsk_ost_backup@root # this flag is used to check this whole block.
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if = { limit = { root = { has_country_flag = lrsk_ruler_is_target } }
+			country_event = { id = lrsk_adv_civ_sortition.6 days = 20 random = 10 }
+		}
+		else_if = { limit = { any_owned_leader = { has_leader_flag = lrsk_ost_target@root } }
+			country_event = { id = lrsk_adv_civ_sortition.10 days = 40 random = 10 }
+		}
+		else = {			
+			country_event = { id = lrsk_adv_civ_sortition.11 days = 40 random = 10 }
+		}	
 	}
 }
 
@@ -1052,6 +1227,15 @@ country_event = {
 		hidden_effect = {
 			unassign_leader = event_target:lrsk_sortost_protag
 			add_modifier = { modifier = lrsk_adv_civ_ost_abdicate days = 720 }
+
+			ruler = { if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root } }
+
+			if = { limit = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } }
+				random_owned_leader = { limit = { has_leader_flag = lrsk_ost_backup@root } set_leader_flag = lrsk_ost_target@root }
+				country_event = { id = lrsk_adv_civ_sortition.10 days = 20 random = 5 }
+			}
+			else = { country_event = { id = lrsk_adv_civ_sortition.11 days = 20 random = 5 } }
+			
 		}
 		
 		ai_chance = {
@@ -1064,14 +1248,59 @@ country_event = {
 		custom_tooltip = lrsk_adv_civ_sortition.6.refuse.desc
 
 		hidden_effect = {
-			# Stuff
+			random_list = {
+				95 = {
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 3 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 6 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 9 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 12 }
+					}
+					country_event = { id = lrsk_adv_civ_sortition.7 days = 20 random = 5 } # exiled
+				}
+				5 = {
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 3 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 6 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 9 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 12 }
+					}
+					country_event = { id = lrsk_adv_civ_sortition.8 days = 20 random = 5 } # escapes
+				}
+			}
 		}
 		
 		ai_chance = {
 			factor = 1
 			modifier = {
 				factor = 2
-				event_target:lrsk_sortost_protag = {
+				ruler = {
+					has_trait = lrsk_adv_civ_trait_groomed_rul
+				}
+			}
+			modifier = {
+				factor = 3
+				ruler = {
 					has_trait = lrsk_adv_civ_trait_ambitious_rul
 				}
 			}
@@ -1079,7 +1308,7 @@ country_event = {
 	}
 }
 
-# Ostracism Succeeds
+# Ostracism of Ruler Succeeds
 country_event = {
 	id = lrsk_adv_civ_sortition.7
 	title = lrsk_adv_civ_sortition.7.name
@@ -1089,12 +1318,21 @@ country_event = {
 
 	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
 
+	immediate = {
+		ruler = { save_event_target_as = lrsk_sortost_protag }
+	}
+
 	option = {
 		name = lrsk_adv_civ_sortition.7.sobeit
 	}
+
+	after = {
+		event_target:lrsk_sortost_protag = { set_leader_flag = lrsk_to_be_exiled_from@root }
+		country_event = { id = lrsk_adv_civ_sortition.12 }
+	}
 }
 
-# Ostracism Fails
+# Ostracism of Ruler Fails
 country_event = {
 	id = lrsk_adv_civ_sortition.8
 	title = lrsk_adv_civ_sortition.8.name
@@ -1104,8 +1342,17 @@ country_event = {
 
 	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
 
+	immediate = {
+		ruler = { save_event_target_as = lrsk_sortost_protag }
+	}
+
 	option = {
 		name = lrsk_adv_civ_sortition.8.wellthen
+		custom_tooltip = lrsk_adv_civ_sortition.8.wellthen.desc
+
+		hidden_effect = {
+			add_modifier = { modifier = lrsk_adv_civ_ost_crisis days = 720 }
+		}
 	}
 }
 
@@ -1129,22 +1376,22 @@ country_event = {
 		random_country = {
 			limit = {
 				any_owned_leader = {
-					has_leader_flag = lrsk_sort_ostracized_by@root
-					NOT = { has_leader_flag = lrsk_sort_ostracism_timer@root }
+					has_leader_flag = lrsk_ostracized_by@root
+					NOT = { has_leader_flag = lrsk_ostracism_timer@root }
 				}
 				random_owned_leader = {
 					limit = {
-						has_leader_flag = lrsk_sort_ostracized_by@root
-						NOT = { has_leader_flag = lrsk_sort_ostracism_timer@root }
+						has_leader_flag = lrsk_ostracized_by@root
+						NOT = { has_leader_flag = lrsk_ostracism_timer@root }
 					}
-					remove_leader_flag = lrsk_sort_ostracized_by@root
+					remove_leader_flag = lrsk_ostracized_by@root
 					save_event_target_as = lrsk_sortost_exile_returning
 					root = {
 						clone_leader = {
 							target = event_target:lrsk_sortost_exile_returning
 							effect = {
-								set_leader_flag = lrsk_sort_returning_to@root
-								if = { limit = { has_leader_flag = lrsk_sort_ostracized_by@root } remove_leader_flag = lrsk_sort_ostracized_by@root }
+								set_leader_flag = lrsk_returning_to@root
+								if = { limit = { has_leader_flag = lrsk_ostracized_by@root } remove_leader_flag = lrsk_ostracized_by@root }
 								if = { limit = { NOT  = { has_trait = lrsk_adv_civ_trait_exile } } add_trait = lrsk_adv_civ_trait_exile }
 							}
 						}
@@ -1153,8 +1400,11 @@ country_event = {
 				}
 			}
 		}
-						
-		country_event = { id = lrsk_adv_civ_sortition.9 }
+
+		if = { limit = { any_owned_leader = { has_leader_flag = lrsk_returning_to@root } }
+			country_event = { id = lrsk_adv_civ_sortition.9 }
+		}
+		# else a notification?
 	}
 }
 
@@ -1170,9 +1420,9 @@ country_event = {
 
 	immediate = {
 		random_owned_leader = {
-			limit = { has_leader_flag = lrsk_sort_returning_to@root }
+			limit = { has_leader_flag = lrsk_returning_to@root }
 			save_event_target_as = lrsk_sortost_exile
-			if = { limit = { has_leader_flag = lrsk_sort_returning_to@root } remove_leader_flag = lrsk_sort_returning_to@root }
+			if = { limit = { has_leader_flag = lrsk_returning_to@root } remove_leader_flag = lrsk_returning_to@root }
 		}
 	}
 
@@ -1181,11 +1431,18 @@ country_event = {
 	}
 }
 
-# Minor Ostracism
+# Ostracism of non-ruler leader OR ruler who heads conspiracy
 country_event = {
 	id = lrsk_adv_civ_sortition.10
 	title = lrsk_adv_civ_sortition.10.name
-	title = lrsk_adv_civ_sortition.10.desc
+	desc = {
+		trigger = { has_country_flag = lrsk_ruler_is_elite_leader }
+		text = lrsk_adv_civ_sortition.10.desc.ruler
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = lrsk_ruler_is_elite_leader } }
+		text = lrsk_adv_civ_sortition.10.desc
+	}
 	is_triggered_only = yes
 	picture = GFX_evt_alien_segregation
 
@@ -1193,7 +1450,7 @@ country_event = {
 
 	immediate = {
 		random_owned_leader = {
-			limit = { has_leader_flag = lrsk_sort_ost_target@root }
+			limit = { has_leader_flag = lrsk_ost_target@root }
 			save_event_target_as = lrsk_sortost_protag
 		}
 	}
@@ -1209,8 +1466,12 @@ country_event = {
 		name = lrsk_adv_civ_sortition.10.paranoid
 		custom_tooltip = lrsk_adv_civ_sortition.10.paranoid.desc
 
-		#trigger = {
-		#}
+		# Conspiracy leader getting exiled is not cause for further suspicion...
+		trigger = {
+			event_target:lrsk_sortost_protag = {
+				NOT = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root }
+			}
+		}
 
 		allow = {
 			has_resource = {
@@ -1229,6 +1490,11 @@ country_event = {
 			factor = 1
 		}
 	}
+
+	after = {
+		event_target:lrsk_sortost_protag = { set_leader_flag = lrsk_to_be_exiled_from@root }
+		country_event = { id = lrsk_adv_civ_sortition.12 }
+	}
 }
 
 # Ostracism Averted
@@ -1243,6 +1509,34 @@ country_event = {
 
 	option = {
 		name = lrsk_adv_civ_sortition.11.ohwell
+	}
+}
+
+# Ostracism Exile Gate
+country_event = {
+	id = lrsk_adv_civ_sortition.12
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = lrsk_to_be_exiled_from@root }
+
+			set_leader_flag = lrsk_ostracized_by@root
+			set_timed_leader_flag = { lrsk_ostracism_timer@root days = 3595 }
+
+			exile_leader_as = lrsk_sortost_exile_key # This key will not be used tbh
+
+			# A few options:
+			# 1. Leader may die?
+			# 2. Leader may defect forever
+			# 3. Leader should likely show up in some other country for a time.
+		}
+
+		country_event = { id = lrsk_adv_civ_sortition.90 days = 3600 } # By this point, only this leader should lack the timer flag.
 	}
 }
 
@@ -1279,6 +1573,9 @@ country_event = {
 # Launching the revolt right away is very unlikely and general only happens if conspiracy power is very high and ostracism chance is very high.
 # If the reforms are accepted, it removes sortition and the country becomes a regular democracy. If not, there's a higher chance of ostracism, but
 # also a later check for elite revolt that will be much higher.
+#
+# At stages 5 and 6, and after reforms are denied but revolt is not chosen, there is a chance that a planet with high numbers of authoritarians
+# or few egalitarians will have a "rebellion" using the create_rebels command.
 
 # Elite Reforms
 
@@ -1293,10 +1590,10 @@ country_event = {
 
 	immediate = {
 		force_remove_civic = lrsk_adv_civ_civic_sortition
-		if = { limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } } set_country_flag = lrsk_sort_reform_error } # theoretically possibe...
+		if = { limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } } set_country_flag = lrsk_reform_error } # theoretically possibe...
 		else = { country_remove_ethic = ethic_fanatic_egalitarian }
 
-		if = { limit = { has_country_flag = lrsk_sort_reform_error } change_government = { civics = random } } # just... change it somehow
+		if = { limit = { has_country_flag = lrsk_reform_error } change_government = { civics = random } } # just... change it somehow
 		else = {
 			# If we're here, we started with FanEgal, need to step it down a notch
 			country_add_ethic = ethic_egalitarian
@@ -1659,7 +1956,7 @@ country_event = {
 
 	immediate = {
 		set_country_flag = lrsk_elitist_revolt_happening
-		if = { limit = { has_country_flag = lrsk_adv_civ_elite_leader_rul }
+		if = { limit = { has_country_flag = lrsk_elite_leader_rul }
 			# coup d'etat, former cap goes rebel, set random other planet (with most egals) new capital
 		}
 		else = {
@@ -1667,7 +1964,7 @@ country_event = {
 		}
 		random_owned_planet = {
 			limit = { is_capital = no }
-			#limit = { has_planet_flag = lrsk_adv_civ_elitist_revolt_rallypoint }
+			#limit = { has_planet_flag = lrsk_elitist_revolt_rallypoint }
 			planet_event = { id = lrsk_adv_civ_sortition.51 }
 		}
 	}
@@ -1678,11 +1975,11 @@ planet_event = {
 	id = lrsk_adv_civ_sortition.51
 	title = lrsk_adv_civ_sortition.51.name
 	desc = {
-		trigger = { from = { has_country_flag = lrsk_adv_civ_elite_leader_rul } }
+		trigger = { from = { has_country_flag = lrsk_elite_leader_rul } }
 		text = lrsk_adv_civ_sortition.51.coup
 	}
 	desc = {
-		trigger = { NOT = { from = { has_country_flag = lrsk_adv_civ_elite_leader_rul } } }
+		trigger = { NOT = { from = { has_country_flag = lrsk_elite_leader_rul } } }
 		text = lrsk_adv_civ_sortition.51.revolt
 	}
 	picture = GFX_evt_alien_propaganda
@@ -1773,11 +2070,11 @@ planet_event = {
 			20 = {
 				modifier = {
 					add = 10
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_sci }
+					owner = { has_country_flag = lrsk_elite_leader_sci }
 				}
 				modifier = {
 					factor = 0
-					owner = { NOT = { has_country_flag = lrsk_adv_civ_elite_consp_has_sci } }
+					owner = { NOT = { has_country_flag = lrsk_elite_consp_has_sci } }
 				}
 				modifier = {
 					add = 10
@@ -1794,8 +2091,8 @@ planet_event = {
 				modifier = {
 					add = -5
 					owner = { OR = {
-						has_country_flag = lrsk_adv_civ_elite_leader_gen
-						has_country_flag = lrsk_adv_civ_elite_leader_adm
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
 					} }
 				}
 				owner = {
@@ -1831,7 +2128,7 @@ planet_event = {
 				}
 				modifier = {
 					add = 10
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_rul }
+					owner = { has_country_flag = lrsk_elite_leader_rul }
 				}
 				modifier = {
 					add = -10
@@ -1864,17 +2161,17 @@ planet_event = {
 				modifier = {
 					add = -5
 					owner = { OR = {
-						has_country_flag = lrsk_adv_civ_elite_leader_gen
-						has_country_flag = lrsk_adv_civ_elite_leader_adm
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
 					} }
 				}
 				modifier = {
 					add = -10
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_rul }
+					owner = { has_country_flag = lrsk_elite_leader_rul }
 				}
 				modifier = {
 					add = 10
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_gov }
+					owner = { has_country_flag = lrsk_elite_leader_gov }
 				}
 				owner = {
 					create_country = {
@@ -1906,11 +2203,11 @@ planet_event = {
 				}
 				modifier = {
 					add = -5
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_sci }
+					owner = { has_country_flag = lrsk_elite_leader_sci }
 				}
 				modifier = {
 					add = -5
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_gov }
+					owner = { has_country_flag = lrsk_elite_leader_gov }
 				}
 				modifier = {
 					add = 10
@@ -1923,15 +2220,15 @@ planet_event = {
 				modifier = {
 					add = 10
 					owner = { OR = {
-						has_country_flag = lrsk_adv_civ_elite_leader_gen
-						has_country_flag = lrsk_adv_civ_elite_leader_adm
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
 					} }
 				}
 				modifier = {
 					factor = 0
 					owner = { NOR = {
-						has_country_flag = lrsk_adv_civ_elite_consp_has_gen
-						has_country_flag = lrsk_adv_civ_elite_consp_has_adm
+						has_country_flag = lrsk_elite_consp_has_gen
+						has_country_flag = lrsk_elite_consp_has_adm
 					} }
 				}
 				owner = {
@@ -1963,11 +2260,11 @@ planet_event = {
 			20 = {
 				modifier = {
 					add = -5
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_sci }
+					owner = { has_country_flag = lrsk_elite_leader_sci }
 				}
 				modifier = {
 					add = -5
-					owner = { has_country_flag = lrsk_adv_civ_elite_leader_gov }
+					owner = { has_country_flag = lrsk_elite_leader_gov }
 				}
 				modifier = {
 					add = -5
@@ -2597,14 +2894,14 @@ country_event = {
 	trigger = { has_civic = lrsk_adv_civ_civic_sortition }
 
 	immediate = {
-		if = { limit = { has_country_flag = lrsk_adv_civ_ruler_unfit_elitist } remove_country_flag = lrsk_adv_civ_ruler_unfit_elitist }
-		if = { limit = { has_country_flag = lrsk_adv_civ_ruler_fit_elitist } remove_country_flag = lrsk_adv_civ_ruler_fit_elitist }
+		if = { limit = { has_country_flag = lrsk_ruler_unfit_elitist } remove_country_flag = lrsk_ruler_unfit_elitist }
+		if = { limit = { has_country_flag = lrsk_ruler_fit_elitist } remove_country_flag = lrsk_ruler_fit_elitist }
 		ruler = { switch = {
 			trigger = has_ruler_trait
-			lrsk_adv_civ_trait_unready_rul = { root = { set_country_flag = lrsk_adv_civ_ruler_unfit_elitist } }
-			lrsk_adv_civ_trait_tutors_rul = { root = { set_country_flag = lrsk_adv_civ_ruler_unfit_elitist } }
-			lrsk_adv_civ_trait_groomed_rul = { root = { set_country_flag = lrsk_adv_civ_ruler_fit_elitist } }
-			lrsk_adv_civ_trait_ambitious_rul = { root = { set_country_flag = lrsk_adv_civ_ruler_fit_elitist } }
+			lrsk_adv_civ_trait_unready_rul = { root = { set_country_flag = lrsk_ruler_unfit_elitist } }
+			lrsk_adv_civ_trait_tutors_rul = { root = { set_country_flag = lrsk_ruler_unfit_elitist } }
+			lrsk_adv_civ_trait_groomed_rul = { root = { set_country_flag = lrsk_ruler_fit_elitist } }
+			lrsk_adv_civ_trait_ambitious_rul = { root = { set_country_flag = lrsk_ruler_fit_elitist } }
 		} }
 	}
 }
@@ -2653,8 +2950,8 @@ country_event = {
 			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_consp_thrt value = 3 } } }
 
 			root = { 
-				if = { limit = { has_country_flag = lrsk_adv_civ_ruler_unfit_elitist } change_variable = { which = lrsk_consp_thrt value = 1 } }
-				if = { limit = { has_country_flag = lrsk_adv_civ_ruler_fit_elitist } subtract_variable = { which = lrsk_consp_thrt value = 1 } }
+				if = { limit = { has_country_flag = lrsk_ruler_unfit_elitist } change_variable = { which = lrsk_consp_thrt value = 1 } }
+				if = { limit = { has_country_flag = lrsk_ruler_fit_elitist } subtract_variable = { which = lrsk_consp_thrt value = 1 } }
 			}
 		}
 
@@ -2689,19 +2986,19 @@ country_event = {
 			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 1 } } subtract_variable = { which = lrsk_consp_thrt value = 2 } }
 			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
 		}
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_recent_ost_vote }
+		if = { limit = { has_country_flag = lrsk_recent_ost_vote }
 			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
 			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
 		}
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_ost_vote_praised }
+		if = { limit = { has_country_flag = lrsk_ost_vote_praised }
 			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
 			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
 		}
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_recent_exile }
+		if = { limit = { has_country_flag = lrsk_recent_exile }
 			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
 			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
 		}
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_recent_resignation }
+		if = { limit = { has_country_flag = lrsk_recent_resignation }
 			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
 			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
 		}
@@ -2731,14 +3028,14 @@ country_event = {
 
 	trigger = {
 		has_civic = lrsk_adv_civ_civic_sortition
-		NOT = { has_country_flag = lrsk_adv_civ_emergency_ostracism_happened }
+		NOT = { has_country_flag = lrsk_emergency_ostracism_happened }
 	}
 
 	immediate = {
 		set_variable = { which = lrsk_ost_chance value = 0 }
 		
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_consp_revealed } change_variable = { which = lrsk_ost_chance value = 5 } }
-		if = { limit = { has_country_flag = lrsk_gov_var_sort_elite_reform } change_variable = { which = lrsk_ost_chance value = 5 } }
+		if = { limit = { has_country_flag = lrsk_consp_revealed } change_variable = { which = lrsk_ost_chance value = 5 } }
+		if = { limit = { has_country_flag = lrsk_elite_reform } change_variable = { which = lrsk_ost_chance value = 5 } }
 
 		every_owned_leader = {
 			limit = { OR = {
@@ -2753,8 +3050,8 @@ country_event = {
 		ruler = {
 			if = { limit = { lrsk_adv_civ_sort_is_groomed = yes } root = { change_variable = { which = lrsk_ost_chance value = 3 } } }
 			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_ost_chance value = 4 } } }
-			if = { limit = { has_leader_flag = lrsk_is_elite_conspirator_exposed } root = { change_variable = { which = lrsk_ost_chance value = 7 } } }
-			if = { limit = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed } root = { change_variable = { which = lrsk_ost_chance value = 9 } } }
+			if = { limit = { has_leader_flag = lrsk_is_elite_conspirator_exposed@root } root = { change_variable = { which = lrsk_ost_chance value = 7 } } }
+			if = { limit = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } root = { change_variable = { which = lrsk_ost_chance value = 9 } } }
 		}
 
 		# random increments
@@ -2849,25 +3146,25 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = { fromfrom = { OR = {
-		has_leader_flag = lrsk_adv_civ_leader_level_lost_ambition
-		has_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition
-		has_leader_flag = lrsk_adv_civ_leader_level_lost_tutors
-		has_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition
-		has_leader_flag = lrsk_adv_civ_leader_level_lost_groomed
-		has_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors
-		has_leader_flag = lrsk_adv_civ_leader_level_lost_unready
-		has_leader_flag = lrsk_adv_civ_leader_level_got_ambition
+		has_leader_flag = lrsk_leader_level_lost_ambition
+		has_leader_flag = lrsk_leader_level_tutors_to_ambition
+		has_leader_flag = lrsk_leader_level_lost_tutors
+		has_leader_flag = lrsk_leader_level_groomed_to_ambition
+		has_leader_flag = lrsk_leader_level_lost_groomed
+		has_leader_flag = lrsk_leader_level_unready_to_tutors
+		has_leader_flag = lrsk_leader_level_lost_unready
+		has_leader_flag = lrsk_leader_level_got_ambition
 	} } }
 
 	immediate = { fromfrom = { switch = {
 		trigger = has_leader_flag
-		lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_ambition }
-		lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_tutors_to_ambition }
-		lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_tutors }
-		lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_groomed_to_ambition }
-		lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_groomed }
-		lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_adv_civ_leader_level_unready_to_tutors }
-		lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_adv_civ_leader_level_lost_unready }
-		lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_adv_civ_leader_level_got_ambition }
+		lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+		lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+		lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+		lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+		lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+		lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+		lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+		lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
 	} } }
 }
