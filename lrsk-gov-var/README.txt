@@ -173,6 +173,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.5.1 (07-17-20) QCC, SC Fix
+-Fixed localization of Quasi-Collective Consciousness diplo lines.
+-Removed unused diplo prompts/actions, added new.
+-Added "Simple Chinese" synced localization file for empire formats.
+
 v1.6.5 (05-12-20) Wells Update
 -Royal Absolutism now also gives +1 Edict Cap.
 -Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.

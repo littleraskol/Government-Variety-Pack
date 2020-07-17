@@ -261,25 +261,30 @@ greetings = {
 			is_disloyal_to = FROM
 		}
 	}
+	LRSK_QCC_OVERLORD_GREETING_01 = {
+		trigger = {
+			is_overlord_to = FROM
+			has_authority = auth_hive_mind
+		}
+	}
 }
 
 ############# War Declaration #############
 
 action_declare_war = {
-  select = {
-	#Apparently these are not in use??
-    ### QCC - Quasi-Collective Consciousness ###
-	#
-	#LRSK_QCC_DOW_SELECT = {
-	#	trigger = {
-	#		has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-	#	}
-	#}
-	#####
-  }
-  propose = {
-    ### QCC - Quasi-Collective Consciousness ###
-
+	select = {
+		#Apparently these are not in use??
+		### QCC - Quasi-Collective Consciousness ###
+		#
+		#LRSK_QCC_DOW_SELECT = {
+		#	trigger = {
+		#		has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+		#	}
+		#}
+		#####
+	}
+	propose = {
+	### QCC - Quasi-Collective Consciousness ###
 		LRSK_QCC_DOW_PROPOSE = {
 			weight = {
 				weight = 5
@@ -287,18 +292,26 @@ action_declare_war = {
 			trigger = {
 				FROM = {
 					has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-					NOT = {
-						OR = {
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
-						}
-					}
 				}
 			}
 		}
 
-    ###
-  }
+	###
+	}
+	accept = {
+		LRSK_QCC_DOW_ACCEPT = {
+			trigger = {
+				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+			}
+		}
+	}
+	propose_vote = {
+		LRSK_QCC_DOW_VOTE_PROPOSE = {
+			trigger = {
+				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+			}
+		}
+	}
 }
 
 ############# Peace Proposal #############
@@ -312,11 +325,11 @@ action_offer_peace = {
 		}
 	}
 	select = {
-		LRSK_QCC_PEACE_SELECT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
+		#LRSK_QCC_PEACE_SELECT = {
+		#	trigger = {
+		#		has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+		#	}
+		#}
 	}
 	propose = {
 		LRSK_QCC_PEACE_PROPOSE = {
@@ -390,7 +403,7 @@ action_invite_to_federation = {
 		}
 	}
 	propose_vote = {
-		LRSK_QCC_ITOA_VOTE_PROPOSE = {
+		LRSK_QCC_ITOA_VOTE_PROPOSELRSK_QCC_ITOA_VOTE_PROPOSE = {
 			trigger = {
 				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
 			}
@@ -757,120 +770,120 @@ action_request_war = {
 			}
 		}
 	}
-	propose = {
-		LRSK_QCC_REQUEST_WAR_PROPOSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_REQUEST_WAR_ACCEPT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	refuse = {
-		LRSK_QCC_REQUEST_WAR_REFUSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
+	#propose = {
+	#	LRSK_QCC_REQUEST_WAR_PROPOSE = {
+	#		trigger = {
+	#			has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+	#		}
+	#	}
+	#}
+	#accept = {
+	#	LRSK_QCC_REQUEST_WAR_ACCEPT = {
+	#		trigger = {
+	#			has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+	#		}
+	#	}
+	#}
+	#refuse = {
+	#	LRSK_QCC_REQUEST_WAR_REFUSE = {
+	#		trigger = {
+	#			has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+	#		}
+	#	}
+	#}
 }
 
 ############# Propose Invitation #############
 
-action_propose_invite = {
-	select = {
-		LRSK_QCC_PROPOSE_INVITE_SELECT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	propose = {
-		LRSK_QCC_PROPOSE_INVITE_PROPOSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_PROPOSE_INVITE_ACCEPT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	refuse = {
-		LRSK_QCC_PROPOSE_INVITE_REFUSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	consider = {
-		LRSK_QCC_CONSIDER_04 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
+#action_propose_invite = {
+#	select = {
+#		LRSK_QCC_PROPOSE_INVITE_SELECT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	propose = {
+#		LRSK_QCC_PROPOSE_INVITE_PROPOSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_PROPOSE_INVITE_ACCEPT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	refuse = {
+#		LRSK_QCC_PROPOSE_INVITE_REFUSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	consider = {
+#		LRSK_QCC_CONSIDER_04 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
 
 ############# War Inactivity Warning #############
 
-warning_not_active_in_war = {
-	select = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	propose = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
-
-############# War Inactivity... Scolding? #############
-
-action_not_active_in_war = {
-	select = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	propose = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
+#warning_not_active_in_war = {
+#	select = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	propose = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR_WARNING = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
+#
+############## War Inactivity... Scolding? #############
+#
+#action_not_active_in_war = {
+#	select = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	propose = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_NOT_ACTIVE_IN_WAR = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
 
 ############# Offer Trade Deal #############
 
@@ -909,22 +922,22 @@ action_offer_trade_deal = {
 
 ############# Cancel Trade Deal #############
 
-action_cancel_trade_deal = {
-	propose = {
-		LRSK_QCC_CANCEL_TRADE_DEAL_PROPOSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_CANCEL_TRADE_DEAL_ACCEPT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
+#action_cancel_trade_deal = {
+#	propose = {
+#		LRSK_QCC_CANCEL_TRADE_DEAL_PROPOSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_CANCEL_TRADE_DEAL_ACCEPT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
 
 ############# Make Rival #############
 
@@ -1001,7 +1014,7 @@ action_make_rival = {
 	}
 }
 
-############# End Rivalry  #############
+############# End Rivalry	#############
 
 action_end_rivalry = {
 	select = {
