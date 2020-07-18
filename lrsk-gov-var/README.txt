@@ -41,7 +41,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -79,7 +79,7 @@ Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would driv
 
 Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
-Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output)
+Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output, +7500 mineral storage)
 
 Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
 
@@ -117,7 +117,7 @@ Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor 
 
 Astro-Prospecting Mainframe (Machine Intelligence) - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
-Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output)
+Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output, +2.5% alloy production)
 
 Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
 
@@ -136,6 +136,14 @@ Megacorp Civics:
 Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
 
 Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+
+Gig Economics (Any) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
+
+Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
+
+Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
+
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
 2. New Governments
 
@@ -172,6 +180,29 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v1.6.6 (07-??-20) Minor New Content and Feature Improvements
+-This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
+-New megacorp civic Gig Economics: -25% pop resettlement cost, +5% ruler and specialist happiness.
+-New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
+-New megacorp civic Vertical Integration: +5% Energy and Mineral production, +5% Trade Value
+-New megacorp civic Employee-Owned Co-op: Increased production political power of workers and specialists.
+-Added some origin icons.
+-Added two government types (more to come) based on the ideas of Steam user Garlic Pudding, Crusading Company and Merchant Principality (see original post here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/ ).
+-Civic Budgetary Thrift now also provides -5% Market Fee.
+-Civic Hoarder now also provides +7500 mineral storage.
+-Civic Self-Aware Production Targets now also provides +2.5% alloy production.
+-Civic Direct Revelation now has special interactions with the "Doomsday" Origin and a grace period at game start.
+-New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
+-Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
+-Fix: Added election weights to some governments missing them.
+-Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
+-Fix: Shroud Touched trait marked as improving leaders.
+-Balance: Removed "trollish" lack of empire cluster restriction on Galactic Backdoor (due to how this might affect players using other origins if this origin spawns randomly for an AI empire...)
+-Tweak: Improved hyperlane logic for origins that have nearby other empires.
+-Tweak: Slight improvements/additions to name gen.
+-GFX: Included graphic for Run Recursive Audit decision.
+-GFX: Changed the preview image for Grand Alliance.
 
 v1.6.5.1 (07-17-20) QCC, SC Fix
 -Fixed localization of Quasi-Collective Consciousness diplo lines.

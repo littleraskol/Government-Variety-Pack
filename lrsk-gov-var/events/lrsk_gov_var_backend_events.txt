@@ -100,7 +100,7 @@ country_event = {
 			#has_origin = lrsk_gov_var_origin_other
 		}
 	}
-
+	
 	immediate = {
 		if = {
 			limit = {
@@ -138,7 +138,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -169,7 +169,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -200,7 +200,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -231,43 +231,114 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
 				}
 			}
-			if = {
-				limit = {
-					exists = event_target:lrsk_hyperlane_system
-					event_target:lrsk_hyperlane_system = {
-						NOT = {
-							any_neighbor_system = {
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
+				event_target:lrsk_hyperlane_system_1 = {
+					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 25
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_1
+										type = euclidean
+										min_distance >= 1
+										max_distance <= 25
+									}
+									NOT = { has_hyperlane_to = this }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+							}
+						}
+						else_if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance > 25
+									max_distance <= 50
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_1
+										type = euclidean
+										min_distance > 25
+										max_distance <= 50
+									}
+									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+							}
+						}					
+					}
+				}
+			}
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
+				event_target:lrsk_hyperlane_system_2 = {
+					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_2
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 25
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
+								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_2
+										type = euclidean
+										min_distance >= 1
+										max_distance <= 25
+									}
+									NOT = { has_hyperlane_to = this }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_3
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
 							}
 						}
 					}
-				}
-				event_target:lrsk_hyperlane_system = {
-					random_system = {
-						limit = {
-							distance = {
-								source = prev
-								type = euclidean
-								min_distance >= 1
-								max_distance <= 25
-							}
-							NOT = { has_hyperlane_to = prev }
-							NOT = { exists = owner }
-						}
-						add_hyperlane = {
-							from = this
-							to = prev
-						}
-					}
-				}
+				}					
 			}
 		}
 	}
+}
+
 }
