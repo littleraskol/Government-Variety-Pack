@@ -180,6 +180,28 @@ lrsk_gov_var_origin_for_discovery_npc = {
 		}
 	}
 }
+lrsk_gov_var_origin_for_discovery_mi_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_for_discovery_mi.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
+
+	random_weight = {
+		base = 0
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
 
 #Tradeways: Start in trade league. 
 lrsk_gov_var_origin_tradeways = {
