@@ -143,7 +143,7 @@ Controlling Interest (Any) - A small clique of well-connected members of the boa
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
 2. New Governments
 
@@ -193,8 +193,9 @@ v1.6.6 (07-??-20) Minor New Content and Feature Improvements
 -Civic Hoarder now also provides +7500 mineral storage.
 -Civic Self-Aware Production Targets now also provides +2.5% alloy production.
 -Civic Direct Revelation now has special interactions with the "Doomsday" Origin and a grace period at game start.
--New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
--Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
+-New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood.
+-New government type Cooperative Enterprise: Corporate authority, Employee-Owned Co-op.
+-Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism).
 -Fix: Added election weights to some governments missing them.
 -Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
 -Fix: Shroud Touched trait marked as improving leaders.

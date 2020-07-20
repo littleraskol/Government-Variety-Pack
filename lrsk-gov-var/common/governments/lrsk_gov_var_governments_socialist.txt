@@ -348,6 +348,34 @@ lrsk_gov_var_gov_market_socialism = {
 	}
 }
 
+# Cooperative Enterprise (Corp, EO Coop)
+lrsk_gov_var_gov_coop_enterprise = {
+	ruler_title = LRSK_GOV_VAR_RT_COORDINATING_OFFICER
+
+	possible = {
+		has_valid_civic = lrsk_gov_var_civic_mc_workers_councils
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 500
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
 # Syndicalist Conference (Oligarchy + WC)
 lrsk_gov_var_gov_syndicalist_conference = {
 	ruler_title = LRSK_GOV_VAR_RT_CHIEF_STEERING_OFFICER
