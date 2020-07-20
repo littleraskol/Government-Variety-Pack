@@ -181,12 +181,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.6.6 (07-??-20) Minor New Content and Feature Improvements
+v1.6.6 (07-20-20) Minor New Content and Feature Improvements
 -This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
 -New megacorp civic Gig Economics: -25% pop resettlement cost, +5% ruler and specialist happiness.
 -New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
 -New megacorp civic Vertical Integration: +5% Energy and Mineral production, +5% Trade Value
--New megacorp civic Employee-Owned Co-op: Increased production political power of workers and specialists.
+-New megacorp civic Employee-Owned Co-op: Increased production and political power of workers and specialists.
 -Added some origin icons.
 -Added two government types (more to come) based on the ideas of Steam user Garlic Pudding, Crusading Company and Merchant Principality (see original post here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/ ).
 -Civic Budgetary Thrift now also provides -5% Market Fee.
