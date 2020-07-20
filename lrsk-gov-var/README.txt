@@ -194,7 +194,8 @@ v1.6.6 (07-20-20) Minor New Content and Feature Improvements
 -Civic Self-Aware Production Targets now also provides +2.5% alloy production.
 -Civic Direct Revelation now has special interactions with the "Doomsday" Origin and a grace period at game start.
 -New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood.
--New government type Cooperative Enterprise: Corporate authority, Employee-Owned Co-op.
+-New government type Cooperative Enterprise: Corporate authority and Employee-Owned Co-op OR Corporate Dominion and Workers' Councils.
+-Government Market Socialism now only a combination of Merchant Guilds and Workers' Councils.
 -Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism).
 -Fix: Added election weights to some governments missing them.
 -Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
