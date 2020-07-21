@@ -57,7 +57,7 @@ Institutionalized Collectivism (Not Fanatic Authoritarian) - The government cont
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 
@@ -143,7 +143,7 @@ Scientific Management (Not Egalitarian) - This business grew through precise and
 
 Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
 
-Gig Economics (Any) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happi
+Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happi
 
 Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
 
@@ -151,7 +151,7 @@ Controlling Interest (Any) - A small clique of well-connected members of the boa
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masse) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
 2. New Governments
 
@@ -189,28 +189,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.7 (05-??-20) - More Origins, New "Garlic Pudding" Govts and Civic
+v1.7 (07-??-20) - More Origins, Colonial Chartering Civic
 -Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
 -Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
 -Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
--GFX: Changed the preview image for Grand Alliance.
--Added some origin icons.
--Added three government types and a new civic based on the ideas of Steam user Garlic Pudding, posted here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/
--New megacorp civic Gig Economics: -25% pop resettlement cost, -5% Market Fee.
--New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
--New megacorp civic Vertical Integration: +5% Energy and Mineral production, +5% Trade Value
--New megacorp civic Employee-Owned Co-op: Increased happiness, production, and political power of workers and specialists.
--New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration)
--Civic Budgetary Thrift now also provides -5% Market Fee.
--Civic Hoarder now also provides +7500 mineral storage.
--Civic Self-Aware Production Targets now also provides +2.5% alloy production.
--Civic Direct Revelation now has options to ignore Wild Cult popups and special interactions with the "Doomsday" Origin.
--New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood
--Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism)
--Fix: Added election weights to some governments missing them.
--Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
--Balance: Removed "trollish" lack of empire cluster restriction on Galactic Backdoor (due to how this might affect players using other origins if this origin spawns randomly for an AI empire...)
+-New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
+-Added new government type "Colonial Charter Board" based on the above civic.
+-Civic Direct Revelation now has options to ignore Wild Cult popups.
 
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.

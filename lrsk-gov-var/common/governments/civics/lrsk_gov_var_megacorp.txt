@@ -48,6 +48,16 @@ lrsk_gov_var_civic_mc_gig_economy = {
 
   random_weight = { base = 5 }
 
+  possible = {
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+  }
+
   modifier = {
     pop_resettlement_cost_mult = -0.25
     pop_cat_specialist_happiness = 0.05
@@ -123,7 +133,6 @@ lrsk_gov_var_civic_mc_chartered_company = {
 #Controlling Interest (Any) - A clique of members of the board major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 lrsk_gov_var_civic_mc_controlling_interest = {
   potential = { authority = { value = auth_corporate } }
-  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_mc_controlling_interest.dds"
 
 	random_weight = { base = 5 }
 	modifier = {
@@ -135,7 +144,6 @@ lrsk_gov_var_civic_mc_controlling_interest = {
 #Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 lrsk_gov_var_civic_mc_vertical_integration = {
   potential = { authority = { value = auth_corporate } }
-  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_mc_vertical_integration.dds"
 
 	random_weight = { base = 5 }
 	modifier = {
@@ -148,7 +156,6 @@ lrsk_gov_var_civic_mc_vertical_integration = {
 #Employee-Owned Co-op (Egalitarian, no Criminal Heritage) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists.)
 lrsk_gov_var_civic_mc_workers_councils = {
   potential = { authority = { value = auth_corporate } }
-  icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_mc_workers_councils.dds"
   description = "civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects"
 
   possible = {
@@ -160,7 +167,10 @@ lrsk_gov_var_civic_mc_workers_councils = {
       }
     }
     civics ={
-      NOT = { value = civic_criminal_heritage }
+      NOR = {
+        value = civic_criminal_heritage
+        value = civic_gospel_of_the_masses
+      }
     }
   }
 
