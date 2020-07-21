@@ -9,62 +9,58 @@ country_event = {
 	id = lrsk_gov_var_chartered.1
 
   	hide_window = yes
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    trigger = {
-        from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-        NOR = {
-            has_ethic = ethic_gestalt_consciousness
-            is_subject_type = lrsk_gov_var_subject_chartered_company    # not sure how this would happen but...
-            has_origin = lrsk_gov_var_origin_uplift                     # prevent immediate change in subject status etc. if tutor can use chartered company subjects
-            # Prevent sublight colonies from being chartered
-            OR = {
-                has_origin = lrsk_gov_var_origin_sublight_colony_loy
-                has_origin = lrsk_gov_var_origin_sublight_colony_gsp
-                has_origin = lrsk_gov_var_origin_sublight_colony_dis
-            }
-        }
-    }
+	trigger = {
+		from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+		NOR = {
+			has_ethic = ethic_gestalt_consciousness
+			is_subject_type = lrsk_gov_var_subject_chartered_company    # not sure how this would happen but...
+			has_origin = lrsk_gov_var_origin_uplift                     # prevent immediate change in subject status etc. if tutor can use chartered company subjects
+			# Prevent sublight colonies from being chartered
+			lrsk_gov_var_has_sublight_colony_origin = yes
+		}
+	}
 
-    immediate = {
-        log = "In chartered colony pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+	immediate = {
+		log = "In chartered colony pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
 
-        from = {
-            save_event_target_as = lrsk_chartering_agent
-            owner_species = { save_event_target_as = lrsk_chartering_agent_species }
-        }
+		from = {
+			save_event_target_as = lrsk_chartering_agent
+			owner_species = { save_event_target_as = lrsk_chartering_agent_species }
+		}
 
-        # Detect if same species to modify event text later
-        if = { limit = { owner_species = { is_same_value = event_target:lrsk_chartering_agent_species } }
-            set_country_flag = lrsk_charter_subject_same_species_as_ol
-        }
+		# Detect if same species to modify event text later
+		if = { limit = { owner_species = { is_same_value = event_target:lrsk_chartering_agent_species } }
+			set_country_flag = lrsk_charter_subject_same_species_as_ol
+		}
 
-        # TO DO: Force remove charter board civic.
-        IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-            while = {
-                count = 10
-                IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-                    change_government = {
-                        civics = {
-                            civic = random
-                            civic = random
-                        }
-                    }
-                }
-            }
-        }
-        # Final Catch
-        IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-            change_government = {
-                civics = {
-                    civic = civic_free_traders
-                    civic = civic_trading_posts
-                }
-            }
-        }
+		# TO DO: Force remove charter board civic.
+		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			while = {
+				count = 10
+				IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+					change_government = {
+						civics = {
+							civic = random
+							civic = random
+						}
+					}
+				}
+			}
+		}
+		# Final Catch
+		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			change_government = {
+				civics = {
+					civic = civic_free_traders
+					civic = civic_trading_posts
+				}
+			}
+		}
 
-        from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
-    }
+		from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
+	}
 }
 
 # Chartering choice for overlord
@@ -74,71 +70,71 @@ country_event = {
 	picture = GFX_evt_partition
 	location = from
 
-    # Desc if not same species.
-    desc = {
-        trigger = {
-            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
-        }
-        text = lrsk_gov_var_chartered.2.desc.a
-    }
-    # Desc if same species.
-    desc = {
-        trigger = {
-            event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
-        }
-        text = lrsk_gov_var_chartered.2.desc.b
-    }
+	# Desc if not same species.
+	desc = {
+		trigger = {
+			NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
+		}
+		text = lrsk_gov_var_chartered.2.desc.a
+	}
+	# Desc if same species.
+	desc = {
+		trigger = {
+			event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
+		}
+		text = lrsk_gov_var_chartered.2.desc.b
+	}
 
 	is_triggered_only = yes
 
-    immediate = {
-        save_event_target_as = lrsk_chartering_agent
-        owner_species = { save_event_target_as = lrsk_chartering_agent_species }
-        from = { save_event_target_as = lrsk_subject_to_charter }
+	immediate = {
+		save_event_target_as = lrsk_chartering_agent
+		owner_species = { save_event_target_as = lrsk_chartering_agent_species }
+		from = { save_event_target_as = lrsk_subject_to_charter }
 
-        log = "In chartered colony choice event. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
-    }
+		log = "In chartered colony choice event. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+	}
 
-    # Not same species, home rule
-    option = {
-        name = lrsk_gov_var_chartered.2.a
-        custom_tooltip = lrsk_gov_var_chartered.2.a.tooltip
+	# Not same species, home rule
+	option = {
+		name = lrsk_gov_var_chartered.2.a
+		custom_tooltip = lrsk_gov_var_chartered.2.a.tooltip
 
-        trigger = {
-            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
-        }
+		trigger = {
+			NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
+		}
 
-        allow = {
-            OR = {
-                NOT = { has_ethic = ethic_fanatic_xenophobe }
-                from = { is_ai = no } # For an edge case: player vassalized by Fanatic Xenophobe chartering agent
-            }
-        }
+		allow = {
+			OR = {
+				NOT = { has_ethic = ethic_fanatic_xenophobe }
+				from = { is_ai = no } # For an edge case: player vassalized by Fanatic Xenophobe chartering agent
+			}
+		}
 
-        hidden_effect = {
-            from  = {
-                change_government = {
-                    authority = auth_corporate
-                    civics = {
-                        civic = lrsk_gov_var_civic_mc_chartered_company
-                        civic = random
-                    }
-                }
-                set_name = random # Fixes some naming issues
-                set_subject_of = {
-                    who = event_target:lrsk_chartering_agent
-                    subject_type = lrsk_gov_var_subject_chartered_company
-                }
-            }
-            log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
-        }
+		hidden_effect = {
+			from  = {
+				change_government = {
+					authority = auth_corporate
+					civics = {
+						civic = lrsk_gov_var_civic_mc_chartered_company
+						civic = random
+					}
+				}
+				set_name = random # Fixes some naming issues
+				set_subject_of = {
+					who = event_target:lrsk_chartering_agent
+					subject_type = lrsk_gov_var_subject_chartered_company
+				}
+			}
+			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+		}
 
-        ai_chance = {
-            factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+		ai_chance = {
+			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				add = 100
 				has_ethic = ethic_egalitarian
-                NOT = { has_ethic = ethic_xenophobe }
+				NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
 				add = 100
@@ -160,126 +156,126 @@ country_event = {
 				add = 10000
 				from = { is_ai = no }
 			}
-        }
-    }
-    
-    # Same species
-    option = {
-        name = lrsk_gov_var_chartered.2.b
-        custom_tooltip = lrsk_gov_var_chartered.2.b.tooltip
+		}
+	}
+	
+	# Same species
+	option = {
+		name = lrsk_gov_var_chartered.2.b
+		custom_tooltip = lrsk_gov_var_chartered.2.b.tooltip
 
-        trigger = {
-            event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
-        }
+		trigger = {
+			event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol }
+		}
 
-        hidden_effect = {
-            from  = {
-                change_government = {
-                    authority = auth_corporate
-                    civics = {
-                        civic = lrsk_gov_var_civic_mc_chartered_company
-                        civic = random
-                    }
-                }
-                set_name = random # Fixes some naming issues
-                set_subject_of = {
-                    who = event_target:lrsk_chartering_agent
-                    subject_type = lrsk_gov_var_subject_chartered_company
-                }
-            }
-            log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
-        }
+		hidden_effect = {
+			from  = {
+				change_government = {
+					authority = auth_corporate
+					civics = {
+						civic = lrsk_gov_var_civic_mc_chartered_company
+						civic = random
+					}
+				}
+				set_name = random # Fixes some naming issues
+				set_subject_of = {
+					who = event_target:lrsk_chartering_agent
+					subject_type = lrsk_gov_var_subject_chartered_company
+				}
+			}
+			log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+		}
 
-        ai_chance = {
-            factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
-        }
-    }
+		ai_chance = {
+			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+		}
+	}
 
-    # Not same species, foreign rule
-    option = {
-        name = lrsk_gov_var_chartered.2.c
-        custom_tooltip = lrsk_gov_var_chartered.2.c.tooltip
+	# Not same species, foreign rule
+	option = {
+		name = lrsk_gov_var_chartered.2.c
+		custom_tooltip = lrsk_gov_var_chartered.2.c.tooltip
 
-        # Checking for player status because we don't want this to be an instant game over for a player!
-        trigger = {
-            from = { is_ai = yes } # JIC
-            NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
-        }
+		# Checking for player status because we don't want this to be an instant game over for a player!
+		trigger = {
+			from = { is_ai = yes } # JIC
+			NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
+		}
 
-        allow = {
-            NOT = { has_ethic = ethic_fanatic_xenophile }
-            from = { is_ai = yes } # just in double case!!
-        }
+		allow = {
+			NOT = { has_ethic = ethic_fanatic_xenophile }
+			from = { is_ai = yes } # just in double case!!
+		}
 
-        hidden_effect = {
-            create_country = {
-                name_list = event_target:lrsk_chartering_agent
-                species = event_target:lrsk_chartering_agent_species
-                type = default
-                origin = "lrsk_gov_var_origin_colonial_charter"
-                ignore_initial_colony_error = yes
-                day_zero_contact = no
-                ethos = event_target:lrsk_chartering_agent
-                authority = auth_corporate
-                civics = {
-                    civic = lrsk_gov_var_civic_mc_chartered_company
-                    civic = random
-                }
-                effect = {
-                    copy_techs_from = { target = event_target:lrsk_subject_to_charter }
-                    save_event_target_as = lrsk_new_chartered_company
-                    establish_communications_no_message = event_target:lrsk_chartering_agent
-                }
-            }
-            event_target:lrsk_subject_to_charter = {
-                every_owned_fleet = { set_owner = event_target:lrsk_new_chartered_company }
-                every_owned_planet = {
-                    set_owner = event_target:lrsk_new_chartered_company
-                    set_controller = event_target:lrsk_new_chartered_company
-                }
-                every_system_within_border = {
-                    limit = { exists = starbase }
-                    starbase = {
-                        set_owner = event_target:lrsk_new_chartered_company
-                    }
-                }
-            }
-            every_country = {
-                limit = { has_communications = event_target:lrsk_subject_to_charter }
-                establish_communications_no_message = event_target:lrsk_new_chartered_company
-            }
-            event_target:lrsk_new_chartered_company = {
-                add_resource = {
-                    minerals = 2000
-                    energy = 2000
-                    alloys = 750
-                    consumer_goods = 750
-                    food = 2000
-                    influence = 200
-                }
-                every_planet_within_border = {
-                    surveyed = {
-                        set_surveyed = yes
-                        surveyor = event_target:lrsk_new_chartered_company
-                    }
-                }
-                create_starting_leaders = yes
-                set_name = random # Fixes some naming issues
-                set_subject_of = {
-                    who = event_target:lrsk_chartering_agent
-                    subject_type = lrsk_gov_var_subject_chartered_company
-                }
-            }
-            event_target:lrsk_subject_to_charter = { destroy_country = yes }
-            log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
-        }
+		hidden_effect = {
+			create_country = {
+				name_list = event_target:lrsk_chartering_agent
+				species = event_target:lrsk_chartering_agent_species
+				type = default
+				origin = "lrsk_gov_var_origin_colonial_charter"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos = event_target:lrsk_chartering_agent
+				authority = auth_corporate
+				civics = {
+					civic = lrsk_gov_var_civic_mc_chartered_company
+					civic = random
+				}
+				effect = {
+					copy_techs_from = { target = event_target:lrsk_subject_to_charter }
+					save_event_target_as = lrsk_new_chartered_company
+					establish_communications_no_message = event_target:lrsk_chartering_agent
+				}
+			}
+			event_target:lrsk_subject_to_charter = {
+				every_owned_fleet = { set_owner = event_target:lrsk_new_chartered_company }
+				every_owned_planet = {
+					set_owner = event_target:lrsk_new_chartered_company
+					set_controller = event_target:lrsk_new_chartered_company
+				}
+				every_system_within_border = {
+					limit = { exists = starbase }
+					starbase = {
+						set_owner = event_target:lrsk_new_chartered_company
+					}
+				}
+			}
+			every_country = {
+				limit = { has_communications = event_target:lrsk_subject_to_charter }
+				establish_communications_no_message = event_target:lrsk_new_chartered_company
+			}
+			event_target:lrsk_new_chartered_company = {
+				add_resource = {
+					minerals = 2000
+					energy = 2000
+					alloys = 750
+					consumer_goods = 750
+					food = 2000
+					influence = 200
+				}
+				every_planet_within_border = {
+					surveyed = {
+						set_surveyed = yes
+						surveyor = event_target:lrsk_new_chartered_company
+					}
+				}
+				create_starting_leaders = yes
+				set_name = random # Fixes some naming issues
+				set_subject_of = {
+					who = event_target:lrsk_chartering_agent
+					subject_type = lrsk_gov_var_subject_chartered_company
+				}
+			}
+			event_target:lrsk_subject_to_charter = { destroy_country = yes }
+			log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+		}
 
-        ai_chance = {
-            factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+		ai_chance = {
+			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				add = -50
 				has_ethic = ethic_egalitarian
-                NOT = { has_ethic = ethic_xenophobe }
+				NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
 				add = -50
@@ -305,18 +301,18 @@ country_event = {
 				factor = 0
 				from = { is_ai = no }   # Should not be possible but whatever, can't be too sure
 			}
-        }
-    }
+		}
+	}
 
-    # Leave be
-    option = {
-        name = lrsk_gov_var_chartered.2.d
-        custom_tooltip = lrsk_gov_var_chartered.2.d.tooltip
+	# Leave be
+	option = {
+		name = lrsk_gov_var_chartered.2.d
+		custom_tooltip = lrsk_gov_var_chartered.2.d.tooltip
 
-        ai_chance = {
-            factor = 0 # AI chartering corp should always turn its vassals into chartered colonies if possible.
-        }
-    }
+		ai_chance = {
+			factor = 0 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+		}
+	}
 }
 
 # Calculate number of chartered colony subjects and apply appropriate trade bonus
@@ -324,251 +320,251 @@ country_event = {
 	id = lrsk_gov_var_chartered.3
 
   	hide_window = yes
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	trigger = {
-        has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
 		any_subject = {
 			is_subject_type = lrsk_gov_var_subject_chartered_company
 		}
-    }
+	}
 
-    immediate = {
+	immediate = {
 
-        log = "Attempting colonial trade value application."
+		log = "Attempting colonial trade value application."
 
-        # Remove any prior flags
-        switch = {
-            trigger = has_country_flag
-            lrsk_gov_var_had_colonial_trade_1 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_1 }
-            lrsk_gov_var_had_colonial_trade_2 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_2 }
-            lrsk_gov_var_had_colonial_trade_3 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_3 }
-            lrsk_gov_var_had_colonial_trade_4 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_4 }
-            lrsk_gov_var_had_colonial_trade_5 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_5 }
-            lrsk_gov_var_had_colonial_trade_6 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_6 }
-            lrsk_gov_var_had_colonial_trade_7 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_7 }
-            lrsk_gov_var_had_colonial_trade_8 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_8 }
-            lrsk_gov_var_had_colonial_trade_9 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_9 }
-            lrsk_gov_var_had_colonial_trade_10 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_10 }
-            lrsk_gov_var_had_colonial_trade_11 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_11 }
-            lrsk_gov_var_had_colonial_trade_12 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_12 }
-            lrsk_gov_var_had_colonial_trade_13 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_13 }
-            lrsk_gov_var_had_colonial_trade_14 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_14 }
-            lrsk_gov_var_had_colonial_trade_15 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_15 }
-        }
+		# Remove any prior flags
+		switch = {
+			trigger = has_country_flag
+			lrsk_gov_var_had_colonial_trade_1 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_1 }
+			lrsk_gov_var_had_colonial_trade_2 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_2 }
+			lrsk_gov_var_had_colonial_trade_3 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_3 }
+			lrsk_gov_var_had_colonial_trade_4 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_4 }
+			lrsk_gov_var_had_colonial_trade_5 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_5 }
+			lrsk_gov_var_had_colonial_trade_6 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_6 }
+			lrsk_gov_var_had_colonial_trade_7 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_7 }
+			lrsk_gov_var_had_colonial_trade_8 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_8 }
+			lrsk_gov_var_had_colonial_trade_9 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_9 }
+			lrsk_gov_var_had_colonial_trade_10 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_10 }
+			lrsk_gov_var_had_colonial_trade_11 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_11 }
+			lrsk_gov_var_had_colonial_trade_12 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_12 }
+			lrsk_gov_var_had_colonial_trade_13 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_13 }
+			lrsk_gov_var_had_colonial_trade_14 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_14 }
+			lrsk_gov_var_had_colonial_trade_15 = { remove_country_flag = lrsk_gov_var_had_colonial_trade_15 }
+		}
 
-        IF = { limit = { has_country_flag = lrsk_gov_var_no_trade_status_change } remove_country_flag = lrsk_gov_var_no_trade_status_change }
+		IF = { limit = { has_country_flag = lrsk_gov_var_no_trade_status_change } remove_country_flag = lrsk_gov_var_no_trade_status_change }
 
-        # Remove previous modifier
-        switch = {
-            trigger = has_modifier
-            lrsk_gov_var_empire_colonial_trade_1 = {
+		# Remove previous modifier
+		switch = {
+			trigger = has_modifier
+			lrsk_gov_var_empire_colonial_trade_1 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_1
 				set_country_flag = lrsk_gov_var_had_colonial_trade_1
 			}
-            lrsk_gov_var_empire_colonial_trade_2 = {
+			lrsk_gov_var_empire_colonial_trade_2 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_2
 				set_country_flag = lrsk_gov_var_had_colonial_trade_2
 			}
-            lrsk_gov_var_empire_colonial_trade_3 = {
+			lrsk_gov_var_empire_colonial_trade_3 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_3
 				set_country_flag = lrsk_gov_var_had_colonial_trade_3
 			}
-            lrsk_gov_var_empire_colonial_trade_4 = {
+			lrsk_gov_var_empire_colonial_trade_4 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_4
 				set_country_flag = lrsk_gov_var_had_colonial_trade_4
 			}
-            lrsk_gov_var_empire_colonial_trade_5 = {
+			lrsk_gov_var_empire_colonial_trade_5 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_5
 				set_country_flag = lrsk_gov_var_had_colonial_trade_5
 			}
-            lrsk_gov_var_empire_colonial_trade_6 = {
+			lrsk_gov_var_empire_colonial_trade_6 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_6
 				set_country_flag = lrsk_gov_var_had_colonial_trade_6
 			}
-            lrsk_gov_var_empire_colonial_trade_7 = {
+			lrsk_gov_var_empire_colonial_trade_7 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_7
 				set_country_flag = lrsk_gov_var_had_colonial_trade_7
 			}
-            lrsk_gov_var_empire_colonial_trade_8 = {
+			lrsk_gov_var_empire_colonial_trade_8 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_8
 				set_country_flag = lrsk_gov_var_had_colonial_trade_8
 			}
-            lrsk_gov_var_empire_colonial_trade_9 = {
+			lrsk_gov_var_empire_colonial_trade_9 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_9
 				set_country_flag = lrsk_gov_var_had_colonial_trade_9
 			}
-            lrsk_gov_var_empire_colonial_trade_10 = {
+			lrsk_gov_var_empire_colonial_trade_10 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_10
 				set_country_flag = lrsk_gov_var_had_colonial_trade_10
 			}
-            lrsk_gov_var_empire_colonial_trade_11 = {
+			lrsk_gov_var_empire_colonial_trade_11 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_11
 				set_country_flag = lrsk_gov_var_had_colonial_trade_11
 			}
-            lrsk_gov_var_empire_colonial_trade_12 = {
+			lrsk_gov_var_empire_colonial_trade_12 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_12
 				set_country_flag = lrsk_gov_var_had_colonial_trade_12
 			}
-            lrsk_gov_var_empire_colonial_trade_13 = {
+			lrsk_gov_var_empire_colonial_trade_13 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_13
 				set_country_flag = lrsk_gov_var_had_colonial_trade_13
 			}
-            lrsk_gov_var_empire_colonial_trade_14 = {
+			lrsk_gov_var_empire_colonial_trade_14 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_14
 				set_country_flag = lrsk_gov_var_had_colonial_trade_14
 			}
-            lrsk_gov_var_empire_colonial_trade_15 = {
+			lrsk_gov_var_empire_colonial_trade_15 = {
 				remove_modifier = lrsk_gov_var_empire_colonial_trade_15
 				set_country_flag = lrsk_gov_var_had_colonial_trade_15
 			}
-        }
+		}
 
-        # set a flag on every valid chartered company subject to mark it as "counted"
+		# set a flag on every valid chartered company subject to mark it as "counted"
 		every_subject = {
-            limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
-            set_country_flag = lrsk_counted_chartered_company_sub
-            log = "Counting subject [this.GetName]"
-        }
-        set_variable = { which = lrsk_charcols value = 0 } # Technically this does nothing but eh explicitness...
+			limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
+			set_country_flag = lrsk_counted_chartered_company_sub
+			log = "Counting subject [this.GetName]"
+		}
+		set_variable = { which = lrsk_charcols value = 0 } # Technically this does nothing but eh explicitness...
 
-        # check for each subject with the above flag, increment a counter and remove it
-        while = {
-            count = 15 #max bonus
-            limit = { any_subject = {
-                has_country_flag = lrsk_counted_chartered_company_sub
+		# check for each subject with the above flag, increment a counter and remove it
+		while = {
+			count = 15 #max bonus
+			limit = { any_subject = {
+				has_country_flag = lrsk_counted_chartered_company_sub
 				is_subject_type = lrsk_gov_var_subject_chartered_company
-            } }
-            random_subject = {
-                limit = { 
-                    has_country_flag = lrsk_counted_chartered_company_sub
-				    is_subject_type = lrsk_gov_var_subject_chartered_company
-                }                
-                remove_country_flag = lrsk_counted_chartered_company_sub
-                log = "Reviewed subject [this.GetName]"
-            }
-            change_variable = { which = lrsk_charcols value = 1 }
-            log = "Subjects counted = [this.lrsk_charcols]"
-        }
+			} }
+			random_subject = {
+				limit = { 
+					has_country_flag = lrsk_counted_chartered_company_sub
+					is_subject_type = lrsk_gov_var_subject_chartered_company
+				}                
+				remove_country_flag = lrsk_counted_chartered_company_sub
+				log = "Reviewed subject [this.GetName]"
+			}
+			change_variable = { which = lrsk_charcols value = 1 }
+			log = "Subjects counted = [this.lrsk_charcols]"
+		}
 
-        log = "Num of counted subjects = [this.lrsk_charcols]"
+		log = "Num of counted subjects = [this.lrsk_charcols]"
 
-        #add new
-        IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
+		#add new
+		IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_1 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_1 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_1
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_2 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_2 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_2
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_3 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_3 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_3
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_4 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_4 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_4
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_5 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_5 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_5
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_6 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_6 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_6
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_7 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_7 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_7
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_8 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_8 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_8
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_9 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_9 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_9
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_10 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_10 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_10
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_11 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_11 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_11
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_12 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_12 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_12
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_13 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_13 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_13
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_14 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_14
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } }
+		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } }
 			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 }
 			IF = { limit = { has_country_flag = lrsk_gov_var_had_colonial_trade_15 }
 				remove_country_flag = lrsk_gov_var_had_colonial_trade_15
 				set_country_flag = lrsk_gov_var_no_trade_status_change
 			}
 		}
-        
-        if = {
-            limit = { NOR = { 
-                has_country_flag = lrsk_chartered_no_trade_notice
-                has_country_flag = lrsk_chartered_trade_notice_cooldown
-                has_country_flag = lrsk_gov_var_no_trade_status_change
-             } }
-            country_event = { id = lrsk_gov_var_chartered.4 }
-        }
-    }
+		
+		if = {
+			limit = { NOR = { 
+				has_country_flag = lrsk_chartered_no_trade_notice
+				has_country_flag = lrsk_chartered_trade_notice_cooldown
+				has_country_flag = lrsk_gov_var_no_trade_status_change
+			 } }
+			country_event = { id = lrsk_gov_var_chartered.4 }
+		}
+	}
 }
 
 # Notify about newly applied bonus
@@ -578,46 +574,46 @@ country_event = {
 	desc = lrsk_gov_var_chartered.4.desc
 	picture = GFX_lrsk_financial_instruments
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    option = {
-        name = lrsk_gov_var_chartered.4.a
-        custom_tooltip = lrsk_gov_var_chartered.4.a.tooltip
+	option = {
+		name = lrsk_gov_var_chartered.4.a
+		custom_tooltip = lrsk_gov_var_chartered.4.a.tooltip
 
-        ai_chance = {
-            factor = 0 # meh
-        }
-    }
+		ai_chance = {
+			factor = 0 # meh
+		}
+	}
 
-    option = {
-        name = lrsk_gov_var_chartered.4.b
-        custom_tooltip = lrsk_gov_var_chartered.4.b.tooltip
+	option = {
+		name = lrsk_gov_var_chartered.4.b
+		custom_tooltip = lrsk_gov_var_chartered.4.b.tooltip
 
-        hidden_effect = {
-            # 6 month notification cooldown
-            set_timed_country_flag = {
-                flag = lrsk_chartered_trade_notice_cooldown
-                days = 180
-            }
-        }
+		hidden_effect = {
+			# 6 month notification cooldown
+			set_timed_country_flag = {
+				flag = lrsk_chartered_trade_notice_cooldown
+				days = 180
+			}
+		}
 
-        ai_chance = {
-            factor = 0 # meh
-        }
-    }
+		ai_chance = {
+			factor = 0 # meh
+		}
+	}
 
-    option = {
-        name = lrsk_gov_var_chartered.4.c
-        custom_tooltip = lrsk_gov_var_chartered.4.c.tooltip
+	option = {
+		name = lrsk_gov_var_chartered.4.c
+		custom_tooltip = lrsk_gov_var_chartered.4.c.tooltip
 
-        hidden_effect = {
-            set_country_flag = lrsk_chartered_no_trade_notice
-        }
+		hidden_effect = {
+			set_country_flag = lrsk_chartered_no_trade_notice
+		}
 
-        ai_chance = {
-            factor = 1 # meh
-        }
-    }
+		ai_chance = {
+			factor = 1 # meh
+		}
+	}
 }
 
 # Housekeeing (Monthly):
@@ -627,47 +623,47 @@ country_event = {
 	id = lrsk_gov_var_chartered.1000
 
   	hide_window = yes
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    trigger = {
-        OR ={
-            has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
-            has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
-        }
-    }
+	trigger = {
+		OR ={
+			has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+			has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
+		}
+	}
 
-    immediate = {
-        IF = { 
-            limit = {
-                has_civic = lrsk_gov_var_civic_mc_chart_corp_board
-                has_civic = lrsk_gov_var_civic_mc_chartered_company
-            }
-            # This should not be possible but just in case...
-            log = "ERROR: Empire (name = [this.GetName]) somehow has both the Chartered Company and Chartering Board civic."
-            # 2.7 UPDATE NOTICE: In next Stellaris version, can fix with force add/remove.
-        }            
-        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-            # Calculate trade value bonus
-            IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
-                country_event = {
-                    id = lrsk_gov_var_chartered.3
-                    days = 1                        # delay to not interfere with application of bonuses.
-                }
-            }
-        }
-        IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
-            # If no overlord, promote civic
-            IF = {
-                limit = { is_subject = no }
-                change_government = {
-                    # 2.7 UPDATE NOTICE: Should be force add/remove in future.
-                    civics = {
-                        civic = lrsk_gov_var_civic_mc_chart_corp_board
-                        civic = random
-                    }
-                }
-                set_name = random # Fixes some naming issues
-            }
-        }
-    }
+	immediate = {
+		IF = { 
+			limit = {
+				has_civic = lrsk_gov_var_civic_mc_chart_corp_board
+				has_civic = lrsk_gov_var_civic_mc_chartered_company
+			}
+			# This should not be possible but just in case...
+			log = "ERROR: Empire (name = [this.GetName]) somehow has both the Chartered Company and Chartering Board civic."
+			# 2.7 UPDATE NOTICE: In next Stellaris version, can fix with force add/remove.
+		}            
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			# Calculate trade value bonus
+			IF = { limit = {  any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
+				country_event = {
+					id = lrsk_gov_var_chartered.3
+					days = 1                        # delay to not interfere with application of bonuses.
+				}
+			}
+		}
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
+			# If no overlord, promote civic
+			IF = {
+				limit = { is_subject = no }
+				change_government = {
+					# 2.7 UPDATE NOTICE: Should be force add/remove in future.
+					civics = {
+						civic = lrsk_gov_var_civic_mc_chart_corp_board
+						civic = random
+					}
+				}
+				set_name = random # Fixes some naming issues
+			}
+		}
+	}
 }
