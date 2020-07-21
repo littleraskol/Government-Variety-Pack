@@ -36,10 +36,11 @@ country_event = {
 	}
 
 	immediate = {
-			log = "at uplift tutor finalization event"
+		log = "at uplift tutor finalization event"
 		random_country = {
 			limit = { has_country_flag = lrsk_uplift_tutor }
 			save_event_target_as = lrsk_my_uplift_tutor
+			set_relation_flag = { who = root flag = lrsk_uplift_tutor_of }
 			# For future: Convert to random list weighted by existing PC?
 			if = {
 				limit = { this = { ideal_planet_class = pc_arid } }
@@ -130,6 +131,8 @@ country_event = {
 			}
 			country_event = { id = game_start.6 } #Advanced empire buffs
 		}
+		
+		set_relation_flag = { who = event_target:lrsk_my_uplift_tutor flag = lrsk_uplift_pupil_of }
 
 		this.capital_scope.solar_system = {
 			closest_system = {
@@ -754,11 +757,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		exists = event_target:lrsk_my_uplift_tutor
 		has_origin = lrsk_gov_var_origin_uplift
 		NOT = { has_country_flag = lrsk_uplift_got_system_offer }
 		is_subject = yes
-		overlord = { has_country_flag = lrsk_uplift_tutor }
+		overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 	}
 	
 	picture_event_data = {
@@ -935,8 +937,8 @@ ship_event = {
 			days = 1
 		}
 	} }
-
 }
+
 country_event = {
 	id = lrsk_gov_var_uplift.11
 	title = TRANSMISSION
@@ -965,11 +967,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		exists = event_target:lrsk_my_uplift_tutor
 		has_origin = lrsk_gov_var_origin_uplift
 		NOT = { has_country_flag = lrsk_uplift_obsv_station_msg }
 		is_subject = yes
-		overlord = { has_country_flag = lrsk_uplift_tutor }
+		overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 	}
 	
 	picture_event_data = {
@@ -1174,9 +1175,19 @@ planet_event = {
 				modifier = lrsk_gov_var_empire_uplift_cycle
 				days = 1800
 			}
-			add_resource = { influence = 50 }
 
-			if = { limit = { exists = event_target:lrsk_my_uplift_tutor }
+			set_country_flag = lrsk_senpai_notice_me
+
+			add_100_unity_per_year_passed = yes
+
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+				}
+				overlord = { save_event_target_as = lrsk_my_uplift_tutor }
+				save_event_target_as = lrsk_uplift_pupil
+				
 				event_target:lrsk_my_uplift_tutor = {
 					add_opinion_modifier = {
 						who = event_target:lrsk_uplift_pupil
@@ -1222,7 +1233,6 @@ country_event = {
             factor = 1 # meh
         }
     }
-
 }
 
 # Catch enlighten
@@ -1255,27 +1265,18 @@ country_event = {
 				days = 1800
 			}
 
-			add_resource = { unity = 150 }
-			if = { limit = { years_passed > 50 }
-				add_resource = { unity = 250 }
-			}
-			if = { limit = { years_passed > 100 }
-				add_resource = { unity = 500 }
-			}
-			if = { limit = { years_passed > 150 }
-				add_resource = { unity = 1000 }
-			}
-			if = { limit = { years_passed > 200 }
-				add_resource = { unity = 1500 }
-			}
-			if = { limit = { years_passed > 250 }
-				add_resource = { unity = 2000 }
-			}
-			if = { limit = { years_passed > 300 }
-				add_resource = { unity = 3000 }
-			}
+			set_country_flag = lrsk_senpai_notice_me
 
-			if = { limit = { exists = event_target:lrsk_my_uplift_tutor }
+			add_100_unity_per_year_passed = yes
+
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+				}
+				overlord = { save_event_target_as = lrsk_my_uplift_tutor }
+				save_event_target_as = lrsk_uplift_pupil
+				
 				event_target:lrsk_my_uplift_tutor = {
 					add_opinion_modifier = {
 						who = event_target:lrsk_uplift_pupil
@@ -1352,11 +1353,11 @@ country_event = {
 	mean_time_to_happen = { days = 5 }
 
 	trigger = {
-		exists = event_target:lrsk_my_uplift_tutor
 		has_origin = lrsk_gov_var_origin_uplift
+		has_country_flag = lrsk_senpai_notice_me
 		NOT = { has_country_flag = lrsk_uplift_impressed_msg }
-		#is_subject = yes	# This is not really a subject interaction
-		#overlord = { has_country_flag = lrsk_uplift_tutor }
+		is_subject = yes
+		overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 	}
 	
 	picture_event_data = {
@@ -1368,8 +1369,8 @@ country_event = {
 	}
 
 	immediate = {
-		#overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
-		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
+		overlord = { save_event_target_as = lrsk_my_uplift_tutor }
+		save_event_target_as = lrsk_uplift_pupil
 		set_country_flag = lrsk_uplift_impressed_msg
 		log = "In tutor impressed message"
 	}

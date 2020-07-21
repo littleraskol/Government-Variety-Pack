@@ -1128,6 +1128,12 @@ country_event = {
 					}
 
 					event_target:lrsk_sublight_dissident_colony = {
+						# Final check for FanPur
+						IF = { limit = { has_civic = civic_fanatic_purifiers }
+							force_remove_civic = civic_fanatic_purifiers
+							force_add_civic = civic_cutthroat_politics
+						}
+
 						create_starting_leaders = yes
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
@@ -1169,6 +1175,10 @@ country_event = {
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
 							modifier = opinion_lrsk_gov_var_dsdnt_sublight
+						}
+						set_relation_flag = {
+							who = event_target:lrsk_sublight_overlord
+							flag = lrsk_sublight_underling_of
 						}
 						log = "Done with dissident establishment"
 					}
@@ -1220,6 +1230,12 @@ country_event = {
 					}
 
 					event_target:lrsk_sublight_genship_colony = {
+						# Final check for FanPur
+						IF = { limit = { has_civic = civic_fanatic_purifiers }
+							force_remove_civic = civic_fanatic_purifiers
+							force_add_civic = civic_cutthroat_politics
+						}
+
 						create_starting_leaders = yes
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
@@ -1257,6 +1273,10 @@ country_event = {
 						add_opinion_modifier = {
 							who = event_target:lrsk_sublight_overlord
 							modifier = opinion_lrsk_gov_var_subpow_sublight
+						}
+						set_relation_flag = {
+							who = event_target:lrsk_sublight_overlord
+							flag = lrsk_sublight_underling_of
 						}
 						log = "Done with genship establishment"
 					}
@@ -1308,6 +1328,12 @@ country_event = {
 					}
 
 					event_target:lrsk_sublight_loyalist_colony = {
+						# Final check for FanPur
+						IF = { limit = { has_civic = civic_fanatic_purifiers }
+							force_remove_civic = civic_fanatic_purifiers
+							force_add_civic = civic_cutthroat_politics
+						}
+						
 						create_starting_leaders = yes
 						country_event = { id = game_start.9 }
 						country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
@@ -1350,6 +1376,10 @@ country_event = {
 							who = event_target:lrsk_sublight_overlord
 							modifier = opinion_lrsk_gov_var_loyal_sublight
 						}
+						set_relation_flag = {
+							who = event_target:lrsk_sublight_overlord
+							flag = lrsk_sublight_underling_of
+						}
 						log = "Done with loyalist establishment"
 					}
 				}			
@@ -1367,21 +1397,35 @@ country_event = {
 			#}
 		} }
 
-		# Set overlord opinions
+		# Set overlord opinions, relation flags
 		log = "Adding sublight overlord opinion of vassals for [this.GetName]"
 		add_opinion_modifier = {
 			who = event_target:lrsk_sublight_dissident_colony
 			modifier = opinion_lrsk_gov_var_subol_sublight
 		}
+		set_relation_flag = {
+			who = event_target:lrsk_sublight_dissident_colony
+			flag = lrsk_sublight_overlord_of
+		}
 		log = "Dissidents: Done."
+
 		add_opinion_modifier = {
 			who = event_target:lrsk_sublight_genship_colony
 			modifier = opinion_lrsk_gov_var_subol_sublight
 		}
+		set_relation_flag = {
+			who = event_target:lrsk_sublight_genship_colony
+			flag = lrsk_sublight_overlord_of
+		}
 		log = "GenShip: Done."
+
 		add_opinion_modifier = {
 			who = event_target:lrsk_sublight_loyalist_colony
 			modifier = opinion_lrsk_gov_var_subol_sublight
+		}
+		set_relation_flag = {
+			who = event_target:lrsk_sublight_loyalist_colony
+			flag = lrsk_sublight_overlord_of
 		}
 		log = "Loyalists: Done."
 
@@ -1480,10 +1524,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = { OR = {
-		has_origin = lrsk_gov_var_origin_sublight_empire
-		has_origin = lrsk_gov_var_origin_sublight_commonwealth
-	} }
+	trigger = { lrsk_gov_var_has_sublight_overlord_origin = yes }
 
 	immediate = {
 		log = "In 'Sublight Intro' event"
@@ -1515,10 +1556,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_goodintro_sublight
@@ -1542,10 +1580,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_badintro_sublight
@@ -1560,10 +1595,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_goodintro_sublight
@@ -1586,10 +1618,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_badintro_sublight
@@ -2336,10 +2365,7 @@ country_event = {
 	mean_time_to_happen = { years = 5 }
 
 	trigger = {
-		OR = {
-			is_subject_type = lrsk_gov_var_sublight_vassal
-			is_subject_type = lrsk_gov_var_sublight_satellite
-		}
+		lrsk_gov_var_is_sublight_subject = yes
 		OR = { 
 			has_modifier = lrsk_gov_var_empire_colony_red_tape
 			NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
@@ -2367,10 +2393,7 @@ country_event = {
 	trigger = {
 		NOT = { has_country_flag = lrsk_sublight_whining_cooldown }
 		from = {
-			OR = {
-				is_subject_type = lrsk_gov_var_sublight_vassal
-				is_subject_type = lrsk_gov_var_sublight_satellite
-			}
+			lrsk_gov_var_is_sublight_subject = yes
 			OR = { 
 				has_modifier = lrsk_gov_var_empire_colony_red_tape
 				NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
@@ -2396,10 +2419,7 @@ country_event = {
 		}
 		IF = { 
 			limit = { any_subject = {
-				OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				}
+				lrsk_gov_var_is_sublight_subject = yes
 				NOR = { 
 					is_same_value = event_target:lrsk_sublight_petitioner
 					has_modifier = lrsk_gov_var_empire_colony_favors
@@ -2484,10 +2504,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_stick_sublight
@@ -2525,10 +2542,7 @@ country_event = {
 				IF = { 
 					limit = {
 						NOT = { has_modifier = lrsk_gov_var_empire_colony_favors }
-						OR = {
-							is_subject_type = lrsk_gov_var_sublight_vassal
-							is_subject_type = lrsk_gov_var_sublight_satellite
-						}
+						lrsk_gov_var_is_sublight_subject = yes
 					}
 					add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
 					country_event = { id = lrsk_gov_var_sublight_origins.45 }
@@ -2588,10 +2602,7 @@ country_event = {
 
 		hidden_effect = {
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_stick_sublight
@@ -2672,19 +2683,9 @@ country_event = {
 
 	# This will only happen if you actually have sublight vassals/satellites with no FTL restrictions
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
-		any_subject = {
-			OR = {
-				is_subject_type = lrsk_gov_var_sublight_vassal
-				is_subject_type = lrsk_gov_var_sublight_satellite
-			}
-		}
-		NOT = { any_subject = {
-			has_modifier = lrsk_gov_var_empire_black_box_drives
-		} }	
+		lrsk_gov_var_has_sublight_overlord_origin = yes
+		any_subject = { lrsk_gov_var_is_sublight_subject = yes }
+		NOT = { any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives } }	
 	}
 
 	immediate = {
@@ -2713,10 +2714,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
@@ -2734,10 +2732,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		owner = { OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		} }
+		owner = { lrsk_gov_var_has_sublight_overlord_origin = yes }
 	}
 
 	immediate = {
@@ -2754,20 +2749,14 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
 		log = "In 'Colonial Reform Start/Gate' event"
 		IF = { limit = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform } remove_country_flag = lrsk_sublight_overlord_waiting_on_reform }
 		IF = {
-			limit = { any_subject = {  OR = {
-				is_subject_type = lrsk_gov_var_sublight_vassal
-				is_subject_type = lrsk_gov_var_sublight_satellite
-			} } }
+			limit = { any_subject = { lrsk_gov_var_is_sublight_subject = yes } }
 			country_event = { id = lrsk_gov_var_sublight_origins.8 }	# We're good to go in this case
 		}
 		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_reform_in_place }
@@ -2792,10 +2781,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
@@ -2917,10 +2903,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
@@ -2932,10 +2915,7 @@ country_event = {
 			} }
 			log = "Making offers..."
 			every_subject = {
-				limit = { OR = {
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
-				} }
+				limit = { lrsk_gov_var_is_sublight_subject = yes }
 				country_event = {
 					id = lrsk_gov_var_sublight_origins.83
 					days = 7
@@ -2958,10 +2938,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			is_subject_type = lrsk_gov_var_sublight_vassal
-			is_subject_type = lrsk_gov_var_sublight_satellite
-		}
+		lrsk_gov_var_is_sublight_subject = yes
 	}
 
 	immediate = {
@@ -3124,10 +3101,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 		has_country_flag = lrsk_sublight_overlord_offered_federation
 		event_target:lrsk_gov_var_new_sublight_fed_mem = { has_country_flag = lrsk_sublight_colony_accepted_federation }
 	}
@@ -3221,10 +3195,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
@@ -3262,10 +3233,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
 	}
 
 	immediate = {
@@ -3324,15 +3292,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_colony_loy
-			has_origin = lrsk_gov_var_origin_sublight_colony_gsp
-			has_origin = lrsk_gov_var_origin_sublight_colony_dis
-		}
-		NOR = {
-			is_subject_type = lrsk_gov_var_sublight_vassal
-			is_subject_type = lrsk_gov_var_sublight_satellite
-		}
+		lrsk_gov_var_has_sublight_colony_origin = yes
+		lrsk_gov_var_is_sublight_subject = no
 	}
 
 	immediate = {
@@ -3385,8 +3346,7 @@ country_event = {
 			}
 			IF = { 
 				limit = { NOR = {					
-					is_subject_type = lrsk_gov_var_sublight_vassal
-					is_subject_type = lrsk_gov_var_sublight_satellite
+					lrsk_gov_var_is_sublight_subject = yes
 					overlord = { has_country_flag = lrsk_sublight_overloard_colonial_system_reformed }
 				} }
 				log = "Housekeeping: Caught case where still vassal but not valid sublight colony type pre system reform."
@@ -3425,10 +3385,7 @@ country_event = {
 
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
-		}
+		lrsk_gov_var_has_sublight_colony_origin = yes
 	}
 
 	immediate = {

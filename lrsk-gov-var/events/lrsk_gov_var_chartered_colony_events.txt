@@ -14,9 +14,15 @@ country_event = {
 	trigger = {
 		from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 		NOR = {
+			# This just would not make sense...
 			has_ethic = ethic_gestalt_consciousness
-			is_subject_type = lrsk_gov_var_subject_chartered_company    # not sure how this would happen but...
-			has_origin = lrsk_gov_var_origin_uplift                     # prevent immediate change in subject status etc. if tutor can use chartered company subjects
+
+			# Not sure how this would happen but...
+			is_subject_type = lrsk_gov_var_subject_chartered_company
+
+			# Uplift: Prevent immediate change in subject status etc. if tutor can use chartered company subjects
+			from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_for } }
+
 			# Prevent sublight colonies from being chartered
 			lrsk_gov_var_has_sublight_colony_origin = yes
 		}
@@ -35,28 +41,10 @@ country_event = {
 			set_country_flag = lrsk_charter_subject_same_species_as_ol
 		}
 
-		# TO DO: Force remove charter board civic.
+		Remove overlord-only civic, replace with subject civic
 		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-			while = {
-				count = 10
-				IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-					change_government = {
-						civics = {
-							civic = random
-							civic = random
-						}
-					}
-				}
-			}
-		}
-		# Final Catch
-		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-			change_government = {
-				civics = {
-					civic = civic_free_traders
-					civic = civic_trading_posts
-				}
-			}
+			force_remove_civic = lrsk_gov_var_civic_mc_chart_corp_board
+			force_add_civic = lrsk_gov_var_civic_mc_chartered_company
 		}
 
 		from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
@@ -626,10 +614,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR ={
-			has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
-			has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
-		}
+		lrsk_gov_var_is_chartered_colony_type_gov = yes
 	}
 
 	immediate = {
@@ -640,7 +625,12 @@ country_event = {
 			}
 			# This should not be possible but just in case...
 			log = "ERROR: Empire (name = [this.GetName]) somehow has both the Chartered Company and Chartering Board civic."
-			# 2.7 UPDATE NOTICE: In next Stellaris version, can fix with force add/remove.
+			if = { limit = { is_subject = yes }
+				force_remove_civic = lrsk_gov_var_civic_mc_chart_corp_board
+			}
+			else = {
+				force_remove_civic = lrsk_gov_var_civic_mc_chartered_company
+			}
 		}            
 		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 			# Calculate trade value bonus
@@ -653,16 +643,9 @@ country_event = {
 		}
 		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
 			# If no overlord, promote civic
-			IF = {
-				limit = { is_subject = no }
-				change_government = {
-					# 2.7 UPDATE NOTICE: Should be force add/remove in future.
-					civics = {
-						civic = lrsk_gov_var_civic_mc_chart_corp_board
-						civic = random
-					}
-				}
-				set_name = random # Fixes some naming issues
+			IF = { limit = { is_subject = no }
+				force_remove_civic = lrsk_gov_var_civic_mc_chartered_company
+				force_add_civic = lrsk_gov_var_civic_mc_chart_corp_board
 			}
 		}
 	}
