@@ -46,8 +46,6 @@ lrsk_gov_var_civic_mc_gig_economy = {
 
   #icon = "gfx/interface/icons/governments/civics/civic_free_traders.dds"
 
-  random_weight = { base = 5 }
-
   possible = {
     ethics = {
       NOR = {
@@ -57,6 +55,8 @@ lrsk_gov_var_civic_mc_gig_economy = {
       }
     }
   }
+
+  random_weight = { base = 5 }
 
   modifier = {
     pop_resettlement_cost_mult = -0.25
@@ -135,6 +135,7 @@ lrsk_gov_var_civic_mc_controlling_interest = {
   potential = { authority = { value = auth_corporate } }
 
 	random_weight = { base = 5 }
+
 	modifier = {
 		country_election_influence_cost_mult = -0.75
     country_trade_fee = -0.05
@@ -146,6 +147,7 @@ lrsk_gov_var_civic_mc_vertical_integration = {
   potential = { authority = { value = auth_corporate } }
 
 	random_weight = { base = 5 }
+
 	modifier = {
     country_energy_produces_mult = 0.05
     country_minerals_produces_mult = 0.05

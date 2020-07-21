@@ -143,7 +143,7 @@ Scientific Management (Not Egalitarian) - This business grew through precise and
 
 Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
 
-Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happi
+Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
 
 Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
 
@@ -151,7 +151,7 @@ Controlling Interest (Any) - A small clique of well-connected members of the boa
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masse) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
 
 2. New Governments
 
@@ -197,6 +197,36 @@ v1.7 (07-??-20) - More Origins, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
+
+v1.6.6 (07-20-20) Minor New Content and Feature Improvements
+-This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
+-New megacorp civic Gig Economics: -25% pop resettlement cost, +5% ruler and specialist happiness.
+-New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
+-New megacorp civic Vertical Integration: +5% Energy and Mineral production, +5% Trade Value
+-New megacorp civic Employee-Owned Co-op: Increased production and political power of workers and specialists.
+-Added some origin icons.
+-Added two government types (more to come) based on the ideas of Steam user Garlic Pudding, Crusading Company and Merchant Principality (see original post here: https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/ ).
+-Civic Budgetary Thrift now also provides -5% Market Fee.
+-Civic Hoarder now also provides +7500 mineral storage.
+-Civic Self-Aware Production Targets now also provides +2.5% alloy production.
+-Civic Direct Revelation now has special interactions with the "Doomsday" Origin and a grace period at game start.
+-New government type Citizen Crusade: Combination of Citizen Service and Exalted Priesthood.
+-New government type Cooperative Enterprise: Corporate authority and Employee-Owned Co-op OR Corporate Dominion and Workers' Councils.
+-Government Market Socialism now only a combination of Merchant Guilds and Workers' Councils.
+-Two government types renamed (Social Imperialism -> Imperial Socialism, Socialism In One State -> Exemplary Socialism).
+-Fix: Added election weights to some governments missing them.
+-Fix: Minor change to Warrior Caste jobs-per-pop to bring more in line with intent.
+-Fix: Shroud Touched trait marked as improving leaders.
+-Balance: Removed "trollish" lack of empire cluster restriction on Galactic Backdoor (due to how this might affect players using other origins if this origin spawns randomly for an AI empire...)
+-Tweak: Improved hyperlane logic for origins that have nearby other empires.
+-Tweak: Slight improvements/additions to name gen.
+-GFX: Included graphic for Run Recursive Audit decision.
+-GFX: Changed the preview image for Grand Alliance.
+
+v1.6.5.1 (07-17-20) QCC, SC Fix
+-Fixed localization of Quasi-Collective Consciousness diplo lines.
+-Removed unused diplo prompts/actions, added new.
+-Added "Simple Chinese" synced localization file for empire formats.
 
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.
