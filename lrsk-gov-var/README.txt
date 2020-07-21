@@ -228,6 +228,15 @@ v1.6.5.1 (07-17-20) QCC, SC Fix
 -Removed unused diplo prompts/actions, added new.
 -Added "Simple Chinese" synced localization file for empire formats.
 
+v1.6.5 (05-12-20) Wells Update
+-Royal Absolutism now also gives +1 Edict Cap.
+-Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
+-Workers' Councils not incompatible with Budgetary Thrift.
+-Corporate Neofeudalism now requires Merchant Guilds instead of Business Lobby.
+-Galactic Cartel (non-Megacorp version) now requires Cutthroat Politics or Shadow Council instead of Business Lobby.
+-Proprietary Franchise now requires Cutthroat Politics rather than a choice of that or Business Lobby.
+-Changed compatible version number to 2.7.*
+
 v1.6.4 (04-16-20) - Small fixes and improvements
 -Added icons for Educational Consortium, Scientific Management, and all new origins.
 -Fix: Natural Esper costs no trait points (this prevented players using the Shroud-Touched origin from selecting as many species traits as should be possible).
