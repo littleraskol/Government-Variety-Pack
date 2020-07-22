@@ -1397,6 +1397,44 @@ country_event = {
 			#}
 		} }
 
+		# Inter-colonial relations setup
+		event_target:lrsk_sublight_dissident_colony = {
+			establish_communications_no_message = event_target:lrsk_sublight_genship_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_genship_colony
+				flag = lrsk_sublight_fellow_underlings
+			}
+			establish_communications_no_message = event_target:lrsk_sublight_loyalist_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_loyalist_colony
+				flag = lrsk_sublight_fellow_underlings
+			}
+		}
+		event_target:lrsk_sublight_genship_colony = {
+			establish_communications_no_message = event_target:lrsk_sublight_dissident_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_dissident_colony
+				flag = lrsk_sublight_fellow_underlings
+			}
+			establish_communications_no_message = event_target:lrsk_sublight_loyalist_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_loyalist_colony
+				flag = lrsk_sublight_fellow_underlings
+			}	
+		}
+		event_target:lrsk_sublight_loyalist_colony = {
+			establish_communications_no_message = event_target:lrsk_sublight_genship_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_genship_colony
+				flag = lrsk_sublight_fellow_underlings
+			}
+			establish_communications_no_message = event_target:lrsk_sublight_dissident_colony
+			set_relation_flag = {
+				who = event_target:lrsk_sublight_dissident_colony
+				flag = lrsk_sublight_fellow_underlings
+			}
+		}
+
 		# Set overlord opinions, relation flags
 		log = "Adding sublight overlord opinion of vassals for [this.GetName]"
 		add_opinion_modifier = {

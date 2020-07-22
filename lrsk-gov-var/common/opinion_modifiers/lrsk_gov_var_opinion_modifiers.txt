@@ -82,6 +82,31 @@ opinion_lrsk_gov_var_impressed_uplift_tutor = {
 
 ## For Sublight Empire/Commonwealth vassals
 
+# Dissident/Loyalist relations
+triggered_opinion_lrsk_gov_var_subject_rivals = {
+	trigger = {
+		OR = {
+			AND = {
+				this = {
+					has_origin = lrsk_gov_var_origin_sublight_colony_dis
+					has_relation_flag = { who = from flag = lrsk_sublight_fellow_underlings }
+				}
+				from = { has_origin = lrsk_gov_var_origin_sublight_colony_loy }
+			}
+			AND = {
+				this = {
+					has_origin = lrsk_gov_var_origin_sublight_colony_loy
+					has_relation_flag = { who = from flag = lrsk_sublight_fellow_underlings }
+				}
+				from = { has_origin = lrsk_gov_var_origin_sublight_colony_dis }
+			}
+		}
+	}
+	opinion = {
+		base = -40
+	}
+}
+
 # Good opening speech
 opinion_lrsk_gov_var_goodintro_sublight = {
 	opinion = {
@@ -111,9 +136,20 @@ opinion_lrsk_gov_var_badintro_sublight = {
 }
 
 # Loyalists have passive approval
+triggered_opinion_lrsk_gov_var_loyal_sublight = {
+	trigger = {
+		has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
+		has_origin = lrsk_gov_var_origin_sublight_colony_loy
+	}
+	opinion = {
+		base = 20
+	}
+}
+
+# Loyalists have passive approval (decaying)
 opinion_lrsk_gov_var_loyal_sublight = {
 	opinion = {
-		base = 40
+		base = 30
 	}
 	
 	decay = {
@@ -122,9 +158,20 @@ opinion_lrsk_gov_var_loyal_sublight = {
 }
 
 # Dissidents have passive disapproval
+triggered_opinion_lrsk_gov_var_dsdnt_sublight = {
+	trigger = {
+		has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
+		has_origin = lrsk_gov_var_origin_sublight_colony_dis
+	}
+	opinion = {
+		base = -20
+	}
+}
+
+# Dissidents have passive disapproval (decaying)
 opinion_lrsk_gov_var_dsdnt_sublight = {
 	opinion = {
-		base = -40
+		base = -30
 	}
 	
 	decay = {
