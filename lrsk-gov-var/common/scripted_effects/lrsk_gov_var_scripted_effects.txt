@@ -1,4 +1,19 @@
-### THIS FILE SLATED TO BE DEPRECATED
+# Government Variety Pack
+# Scripted Triggers
+# Author: littleraskol
+
+# Refreshes event tagets for sublight subjects in current context
+# CONTEXT: country scope, if caller has no subjects or no subjects that are sublight colonies this does nothing
+lrsk_gov_var_sublight_subjects_mark = {
+	every_subject = {
+		switch = {
+			trigger = has_origin
+			lrsk_gov_var_origin_sublight_colony_loy = { save_event_target_as = lrsk_sublight_loyalist_colony }
+			lrsk_gov_var_origin_sublight_colony_gsp = { save_event_target_as = lrsk_sublight_genship_colony }
+			lrsk_gov_var_origin_sublight_colony_dis = { save_event_target_as = lrsk_sublight_dissident_colony }
+		}
+	}
+}
 
 #lrsk_create_for_discovery_member_1 = {
 #	random_list = {
