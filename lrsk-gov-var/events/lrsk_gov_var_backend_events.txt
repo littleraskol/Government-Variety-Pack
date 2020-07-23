@@ -57,6 +57,15 @@ event = {
 			} }
 			country_event = { id = lrsk_gov_var_sublight_origins.1 }
 		}
+
+		## Explainers if not called elsewhere
+
+		# Colonial Chartering
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
+		}
+
 	}
 }
 

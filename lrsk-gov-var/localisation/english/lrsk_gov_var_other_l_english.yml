@@ -129,7 +129,7 @@ l_english:
  SUBJECT_DESC_lrsk_gov_var_sublight_satellite:1 "\nThis type of vassal began as the colony of another, established by a sub-lightspeed interstellar venture. They are able to do most things but are not diplomatically independent. Their overlord gains §Y+2§! £unity£ Unity and §Y+0.25§! £influence£ Influence per month from the arrangement."
  
  SUBJECT_lrsk_gov_var_subject_chartered_company:0 "Chartered Colony"
- SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §Y10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. Their overlord gets bonuses to £trade_value£ Trade Value and Market Fee discounts the more of these subjects it has."
+ SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. Their overlord gets bonuses to £trade_value£ Trade Value and Market Fee discounts the more of these subjects it has."
  lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
  lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
 
@@ -461,6 +461,9 @@ l_english:
  opinion_lrsk_gov_var_fedmad_sublight:0 "Abandoned the Federation" # If you yeet yourself out of a (non-heg) federation by colonial reform...
  opinion_lrsk_gov_var_hegmad_sublight:0 "Left Hegemony Without Consent" # If you yeet yourself out of a hegemony by colonial reform...
 
+ # Chartered Colony vassals
+ triggered_opinion_lrsk_gov_var_colonial_mission:0 "Shared Colonial Mission" # Inherent trust, to offset power penalties
+
  ## CBs/Wargoals
 
  casus_belli_cb_lrsk_gov_var_hegemon:0 "Hegemon Reaction"
@@ -781,14 +784,14 @@ l_english:
  lrsk_gov_var_uplift.120.name:0 "Uplift of the [from.GetSpeciesNamePlural]"
  lrsk_gov_var_uplift.120.desc:0 "The successful uplift $LRSK_UPLIFT_REWARD_COMMON$"
  lrsk_gov_var_uplift.120.a:0 "Our role in the cycle of galactic life is confirmed."
- lrsk_gov_var_uplift.120.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_uplift_cycle$§! empire modifier for 5 years, increasing £influence£ §YInfluence§! gain by §G10%§! and £happiness£ §YHappiness§! by §G5%§!. Get §G+50§! £influence£ §YInfluence§!."
+ lrsk_gov_var_uplift.120.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_uplift_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!."
  lrsk_gov_var_uplift.120.b:0 "Great, but don't bug me with this again."
  lrsk_gov_var_uplift.120.b.tooltip:0 "$lrsk_gov_var_uplift.120.a.tooltip$\n\n§PYou will not see this message again.§!"
 
  lrsk_gov_var_uplift.130.name:0 "Enlightenment of the [from.GetSpeciesNamePlural]"
  lrsk_gov_var_uplift.130.desc:0 "The successful enlightenment $LRSK_UPLIFT_REWARD_COMMON$"
  lrsk_gov_var_uplift.130.a:0 "$lrsk_gov_var_uplift.120.a$"
- lrsk_gov_var_uplift.130.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_enlighten_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!. Get §G+150§! £unity£ §Y$unity$§!."
+ lrsk_gov_var_uplift.130.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_enlighten_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!."
  lrsk_gov_var_uplift.130.b:0 "$lrsk_gov_var_uplift.120.b$"
  lrsk_gov_var_uplift.130.b.tooltip:0 "$lrsk_gov_var_uplift.130.a.tooltip$\n\n§PYou will not see this message again.§!"
 
@@ -823,6 +826,11 @@ l_english:
  lrsk_gov_var_chartered.4.b.tooltip:0 "$LRSK_GOV_VAR_TRADE_NOTICE_COMMON$ §YYou will not be notified about this again for six months.§!"
  lrsk_gov_var_chartered.4.c:0 "Great, but don't bug me with this again."
  lrsk_gov_var_chartered.4.c.tooltip:0 "$LRSK_GOV_VAR_TRADE_NOTICE_COMMON$ §PYou will not see this message ever again.§!"
+
+ # Explainers
+ lrsk_gov_var_chartered.101.name:0 "The 'Honorable Old Company'"
+ lrsk_gov_var_chartered.101.desc:0 "The §Y$lrsk_gov_var_civic_mc_chart_corp_board$§! Civic is designed to emulate historical colonial joint-stock corporations like the British East India Company. Many European nations created companies like this in the early age of exploration and colonization. These nations did not actually have the funds to finance colonial ventures nor the administrative capacity to govern distant lands, so they created these companies as a form of indirect control over extraction: by selling stock in the company, they could raise the initial money (with the promise of a return to the initial investors) while also taxing all the trade between the colonies they created and the mother country.\n\nSince early game Stellaris is set in a new 'age of exploration and colonization,' this seemed like a good fit for a civic with its own playstyle. It puts you in the role of a mixed private/public entity called a §Y$lrsk_gov_var_gov_colonial_charter_board$§!, a kind of public holding corporation that 'charters' colonial companies. The way this works is: whenever you obtain or create a vassal, you will eventually be given a choice to turn them into a §Y$SUBJECT_lrsk_gov_var_subject_chartered_company$§! vassal. These pay you §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. You also get §G+2%§! £trade_value£ Trade Value and §G-1%§! Market Fee discount for each $SUBJECT_lrsk_gov_var_subject_chartered_company$ under your control (though this maxes out at 15 such vassals). They also inherently like you more as an overlord, so you will have an easier time maintaining control over several of them."
+ lrsk_gov_var_chartered.101.a:0 "Let's get down to business!"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.

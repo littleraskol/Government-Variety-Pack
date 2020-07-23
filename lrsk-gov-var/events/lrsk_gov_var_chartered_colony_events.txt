@@ -114,6 +114,7 @@ country_event = {
 					subject_type = lrsk_gov_var_subject_chartered_company
 				}
 			}
+			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
@@ -171,6 +172,7 @@ country_event = {
 					subject_type = lrsk_gov_var_subject_chartered_company
 				}
 			}
+			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
@@ -247,6 +249,7 @@ country_event = {
 						surveyor = event_target:lrsk_new_chartered_company
 					}
 				}
+				add_100_unity_per_year_passed = yes
 				create_starting_leaders = yes
 				set_name = random # Fixes some naming issues
 				set_subject_of = {
@@ -255,6 +258,7 @@ country_event = {
 				}
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
+			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
@@ -601,6 +605,24 @@ country_event = {
 		ai_chance = {
 			factor = 1 # meh
 		}
+	}
+}
+
+# Explainer
+country_event = {
+	id = lrsk_gov_var_chartered.101
+	title = lrsk_gov_var_chartered.101.name
+	desc = lrsk_gov_var_chartered.101.desc
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+	}
+
+	option = {
+		name = lrsk_gov_var_chartered.101.a
 	}
 }
 
