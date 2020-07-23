@@ -1178,7 +1178,12 @@ planet_event = {
 
 			set_country_flag = lrsk_senpai_notice_me
 
-			add_100_unity_per_year_passed = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 10
+				min = 200
+				max = 2000
+			}
 
 			if = {
 				limit = {
@@ -1267,7 +1272,12 @@ country_event = {
 
 			set_country_flag = lrsk_senpai_notice_me
 
-			add_100_unity_per_year_passed = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 10
+				min = 200
+				max = 2000
+			}
 
 			if = {
 				limit = {
