@@ -1005,6 +1005,30 @@ part = {
 
 part = {
 	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_STAKEHOLDER_POLITY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_stakeholder_polity
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_SHAREHOLDER_COMMONWEALTH"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_shareholder_commonwealth
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_CRUSADING_COMPANY"
 
 	trigger = {
