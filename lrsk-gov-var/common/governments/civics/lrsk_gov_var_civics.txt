@@ -67,6 +67,10 @@ lrsk_gov_var_civic_republicanism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
+    #authority = { NOR = {
+    #  value = auth_corporate
+    #  value = auth_oligarchic
+    #} }
   }
 
   #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
@@ -90,7 +94,7 @@ lrsk_gov_var_civic_republicanism_oli = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOR = {
       value = auth_corporate
-      value = auth_democratic # This has to be reflected above if this version implemented
+      value = auth_democratic
     } }
     civics = { value = lrsk_gov_var_civic_republicanism_oli } # not in use, just a possibility...
   }
@@ -543,6 +547,9 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
     #}
     ethics = {
 			NOT = { value = ethic_fanatic_authoritarian }
+    }
+    civics = {
+			NOT = { value = civic_merchant_guilds }
     }
   }
 
