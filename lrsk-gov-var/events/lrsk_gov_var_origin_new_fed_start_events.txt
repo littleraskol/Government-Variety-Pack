@@ -41,7 +41,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { num_guaranteed_colonies >= 1 }
+			limit = { num_guaranteed_colonies = 1 }
 			capital_scope = {
 				solar_system = {
 					closest_system = {
@@ -171,10 +171,7 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { root = { or = { 
-					has_origin = lrsk_gov_var_origin_for_discovery
-					has_origin = lrsk_gov_var_origin_for_discovery_mi
-				} } }
+				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
 					20 = {
 						modifier = {
@@ -310,52 +307,20 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { root = { or = { 
-					has_origin = lrsk_gov_var_origin_tradeways
-					has_origin = lrsk_gov_var_origin_tradeways_mc
-				} } }
+				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
 					35 = {
-						create_country = {
-							name_list = random
-							species = event_target:lrsk_next_fed_planet_species
-							type = default
-							origin = "lrsk_gov_var_origin_tradeways_npc"
-							ignore_initial_colony_error = yes
-							day_zero_contact = no
-							randomize_ethos = yes
-							ethos = {
-								ethic = "ethic_xenophile"
-								ethic = "ethic_fanatic_xenophile"
-							}
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-							effect = {
-								save_event_target_as = lrsk_fed_member_1
-								establish_communications_no_message = root
-							}
+						lrsk_create_tradeways_member_mg = yes
+						last_created_country = {
+							save_event_target_as = lrsk_fed_member_1
+							establish_communications_no_message = root
 						}
 					}
 					65 = {	
-						create_country = {
-							name_list = random
-							species = event_target:lrsk_next_fed_planet_species
-							type = default
-							origin = "lrsk_gov_var_origin_tradeways_npc"
-							ignore_initial_colony_error = yes
-							day_zero_contact = no
-							authority = auth_corporate
-							randomize_ethos = yes
-							ethos = {
-								ethic = "ethic_xenophile"
-								ethic = "ethic_fanatic_xenophile"
-							}
-							effect = {
-								save_event_target_as = lrsk_fed_member_1
-								establish_communications_no_message = root
-							}
+						lrsk_create_tradeways_member_mc = yes
+						last_created_country = {
+							save_event_target_as = lrsk_fed_member_1
+							establish_communications_no_message = root
 						}
 					}
 				}
@@ -417,10 +382,7 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { root = { or = { 
-					has_origin = lrsk_gov_var_origin_for_discovery
-					has_origin = lrsk_gov_var_origin_for_discovery_mi
-				} } }
+				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
 					20 = {
 						modifier = {
@@ -559,60 +521,28 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { root = { or = { 
-					has_origin = lrsk_gov_var_origin_tradeways
-					has_origin = lrsk_gov_var_origin_tradeways_mc
-				} } }
+				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
 					40 = {
 						modifier = {
 							factor = 1.375
 							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
-						}
-						create_country = {
-							name_list = random
-							species = event_target:lrsk_next_fed_planet_species
-							type = default
-							origin = "lrsk_gov_var_origin_tradeways_npc"
-							ignore_initial_colony_error = yes
-							day_zero_contact = no
-							randomize_ethos = yes
-							ethos = {
-								ethic = "ethic_xenophile"
-								ethic = "ethic_fanatic_xenophile"
-							}
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-							effect = {
-								save_event_target_as = lrsk_fed_member_2
-								establish_communications_no_message = root
-							}
+						}						
+						lrsk_create_tradeways_member_mg = yes
+						last_created_country = {
+							save_event_target_as = lrsk_fed_member_2
+							establish_communications_no_message = root
 						}
 					}
 					60 = {
 						modifier = {
 							factor = 0.75
 							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
-						}
-						create_country = {
-							name_list = random
-							species = event_target:lrsk_next_fed_planet_species
-							type = default
-							origin = "lrsk_gov_var_origin_tradeways_npc"
-							ignore_initial_colony_error = yes
-							day_zero_contact = no
-							authority = auth_corporate
-							randomize_ethos = yes
-							ethos = {
-								ethic = "ethic_xenophile"
-								ethic = "ethic_fanatic_xenophile"
-							}
-							effect = {
-								save_event_target_as = lrsk_fed_member_2
-								establish_communications_no_message = root
-							}
+						}						
+						lrsk_create_tradeways_member_mc = yes
+						last_created_country = {
+							save_event_target_as = lrsk_fed_member_2
+							establish_communications_no_message = root
 						}
 					}
 				}
@@ -675,20 +605,14 @@ country_event = {
 			set_name = random # Fixes some naming issues
 		}
 		if = {
-			limit = { or = { 
-				has_origin = lrsk_gov_var_origin_for_discovery
-				has_origin = lrsk_gov_var_origin_for_discovery_mi
-			} }
+			limit = { lrsk_gov_var_has_discovery_origin = yes }
 			federation = { 
 				set_federation_type = research_federation
 				set_name = random
 			}
 		}
 		if = {
-			limit = { or = { 
-				has_origin = lrsk_gov_var_origin_tradeways
-				has_origin = lrsk_gov_var_origin_tradeways_mc
-			} }
+			limit = { lrsk_gov_var_has_tradeways_origin = yes }
 			federation = { 
 				set_federation_type = trade_federation
 				set_name = random

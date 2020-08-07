@@ -19,6 +19,22 @@ event = {
 		
 		## Origins Setup
 
+		# Fed start fix for GVP govs
+		every_playable_country = {
+			limit = {
+				is_gestalt = no # probably unneeded but eh
+				has_federation = yes # This is real JIC shit
+				OR = {
+					has_origin = origin_common_ground
+					has_origin = origin_hegemon
+				}
+				is_authoritarian = no
+				is_egalitarian = no
+				lrsk_has_any_gvp_gov = yes
+			}
+			country_event = { id = lrsk_gov_var_galactic_backdoor.4 days = 1 }
+		}
+
 		# Galactic Backdoor
 		every_playable_country = {
 			limit = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
@@ -337,6 +353,169 @@ country_event = {
 					}
 				}					
 			}
+		}
+	}
+}
+
+# Catches problem with base game fed starts checking for base game governments...
+country_event = {
+	id = lrsk_government_variety_pack_backend.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_gestalt = no # probably unneeded but eh
+		has_federation = yes # This is real JIC shit
+		OR = {
+			has_origin = origin_common_ground
+			has_origin = origin_hegemon
+		}
+		is_authoritarian = no
+		is_egalitarian = no
+		lrsk_has_any_gvp_gov = yes
+	}
+
+	immediate = {
+		if = {
+			limit = { OR = {
+				has_ethic = ethic_fanatic_pacifist
+				AND = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} }
+			set_country_flag = lrsk_fedfix_tag_pacifist
+		}
+		else_if = {
+			limit = { OR = {
+				has_ethic = ethic_fanatic_materialist
+				AND = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} }
+			set_country_flag = lrsk_fedfix_tag_materialist
+		}
+		else_if = {
+			limit = { OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				AND = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} }
+			set_country_flag = lrsk_fedfix_tag_spiritualist
+		}
+		else_if = {
+			limit = { OR = {
+				has_ethic = ethic_fanatic_militarist
+				AND = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_xenophile
+				}
+			} }
+			set_country_flag = lrsk_fedfix_tag_militarist
+		}
+		# This is a failsafe to get SOME matching ethos if none of the above apply...
+		# ...which could happen with two non-fanatic of the above + xenophile.
+		else_if = {
+			limit = { OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_militarist
+				has_ethic = ethic_materialist
+			} }
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_pacifist }
+					}
+					set_country_flag = lrsk_fedfix_tag_pacifist
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_spiritualist }
+					}
+					set_country_flag = lrsk_fedfix_tag_spiritualist
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_militarist }
+					}
+					set_country_flag = lrsk_fedfix_tag_militarist
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_materialist }
+					}
+					set_country_flag = lrsk_fedfix_tag_materialist
+				}
+			}
+		}
+
+		# Dunno if we can reach this point without one of the flags but...
+		IF = {
+			limit = { OR = {
+				has_country_flag = lrsk_fedfix_tag_pacifist
+				has_country_flag = lrsk_fedfix_tag_spiritualist
+				has_country_flag = lrsk_fedfix_tag_militarist
+				has_country_flag = lrsk_fedfix_tag_materialist
+			} }
+			federation = { every_member = {
+				limit = {
+					OR = {
+						has_origin = origin_common_ground_npc
+						has_origin = origin_hegemon_npc
+					}
+					NOT = { has_country_flag = lrsk_fed_npc_fixed }
+				}
+
+				# force remove all ethics
+				country_remove_ethic = ethic_pacifist
+				country_remove_ethic = ethic_fanatic_pacifist
+				country_remove_ethic = ethic_militarist
+				country_remove_ethic = ethic_fanatic_militarist
+				country_remove_ethic = ethic_materialist
+				country_remove_ethic = ethic_fanatic_materialist
+				country_remove_ethic = ethic_spiritualist
+				country_remove_ethic = ethic_fanatic_spiritualist
+				country_remove_ethic = ethic_egalitarian
+				country_remove_ethic = ethic_fanatic_egalitarian
+				country_remove_ethic = ethic_authoritarian
+				country_remove_ethic = ethic_fanatic_authoritarian
+				country_remove_ethic = ethic_xenophile
+				country_remove_ethic = ethic_fanatic_xenophile
+				country_remove_ethic = ethic_xenophobe
+				country_remove_ethic = ethic_fanatic_xenophobe
+
+				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_pacifist } }
+					country_add_ethic = ethic_xenophile
+					country_add_ethic = ethic_fanatic_pacifist
+				}
+				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_spiritualist } }
+					country_add_ethic = ethic_xenophile
+					country_add_ethic = ethic_fanatic_spiritualist
+				}
+				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_militarist } }
+					country_add_ethic = ethic_xenophile
+					country_add_ethic = ethic_fanatic_militarist
+				}
+				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_materialist } }
+					country_add_ethic = ethic_xenophile
+					country_add_ethic = ethic_fanatic_materialist
+				}
+						
+				change_government = {
+					civics = random
+				}
+				set_name = random
+
+				set_country_flag = lrsk_fed_npc_fixed
+			} }
 		}
 	}
 }
