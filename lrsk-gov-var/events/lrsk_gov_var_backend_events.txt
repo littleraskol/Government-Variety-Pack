@@ -58,6 +58,16 @@ event = {
 			} }
 			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
 		}
+
+		### Diagnostic checks
+		every_playable_country = {
+			limit = { lrsk_has_any_gvp_gov = yes }
+			country_event = { id = lrsk_government_variety_pack_backend.2001 days = 3 }
+		}
+		every_playable_country = {
+			limit = { lrsk_has_any_gvp_civic = yes }
+			country_event = { id = lrsk_government_variety_pack_backend.2002 days = 3 }
+		}
 	}
 }
 
@@ -360,8 +370,10 @@ country_event = {
 # Catches problem with base game fed starts checking for base game governments...
 country_event = {
 	id = lrsk_government_variety_pack_backend.4
+	title = lrsk_government_variety_pack_backend.4.name
+	desc = lrsk_government_variety_pack_backend.4.desc
 	is_triggered_only = yes
-	hide_window = yes
+	#hide_window = yes
 
 	trigger = {
 		is_gestalt = no # probably unneeded but eh
@@ -493,24 +505,99 @@ country_event = {
 				country_remove_ethic = ethic_fanatic_xenophobe
 
 				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_pacifist } }
-					country_add_ethic = ethic_xenophile
-					country_add_ethic = ethic_fanatic_pacifist
+					random_list = {
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_fanatic_pacifist
+						}
+						1 = {
+							country_add_ethic = ethic_fanatic_xenophile
+							country_add_ethic = ethic_pacifist
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_pacifist
+							country_add_ethic = ethic_egalitarian
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_pacifist
+							country_add_ethic = ethic_authoritarian
+						}
+					}
 				}
 				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_spiritualist } }
+					random_list = {
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_fanatic_spiritualist
+						}
+						1 = {
+							country_add_ethic = ethic_fanatic_xenophile
+							country_add_ethic = ethic_spiritualist
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_spiritualist
+							country_add_ethic = ethic_egalitarian
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_spiritualist
+							country_add_ethic = ethic_authoritarian
+						}
+					}
 					country_add_ethic = ethic_xenophile
 					country_add_ethic = ethic_fanatic_spiritualist
 				}
 				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_militarist } }
-					country_add_ethic = ethic_xenophile
-					country_add_ethic = ethic_fanatic_militarist
+					random_list = {
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_fanatic_militarist
+						}
+						1 = {
+							country_add_ethic = ethic_fanatic_xenophile
+							country_add_ethic = ethic_militarist
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_militarist
+							country_add_ethic = ethic_egalitarian
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_militarist
+							country_add_ethic = ethic_authoritarian
+						}
+					}
 				}
 				IF = { limit = { root = { has_country_flag = lrsk_fedfix_tag_materialist } }
-					country_add_ethic = ethic_xenophile
-					country_add_ethic = ethic_fanatic_materialist
+					random_list = {
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_fanatic_materialist
+						}
+						1 = {
+							country_add_ethic = ethic_fanatic_xenophile
+							country_add_ethic = ethic_materialist
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_materialist
+							country_add_ethic = ethic_egalitarian
+						}
+						1 = {
+							country_add_ethic = ethic_xenophile
+							country_add_ethic = ethic_materialist
+							country_add_ethic = ethic_authoritarian
+						}
+					}
 				}
 						
 				change_government = {
 					civics = random
+					authority = random
 				}
 				set_name = random
 
@@ -518,4 +605,24 @@ country_event = {
 			} }
 		}
 	}
+}
+
+# Diagnostic: Check to see if player has GVP govtype
+country_event = {
+	id = lrsk_government_variety_pack_backend.2001
+	title = lrsk_government_variety_pack_backend.2001.name
+	desc = lrsk_government_variety_pack_backend.2001.desc
+	is_triggered_only = yes
+
+	option = { name = OK }
+}
+
+# Diagnostic: Check to see if player has GVP civic
+country_event = {
+	id = lrsk_government_variety_pack_backend.2002
+	title = lrsk_government_variety_pack_backend.2002.name
+	desc = lrsk_government_variety_pack_backend.2002.desc
+	is_triggered_only = yes
+
+	option = { name = OK }
 }
