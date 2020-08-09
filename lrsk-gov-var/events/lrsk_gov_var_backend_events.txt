@@ -60,14 +60,14 @@ event = {
 		}
 
 		### Diagnostic checks
-		every_playable_country = {
-			limit = { lrsk_has_any_gvp_gov = yes }
-			country_event = { id = lrsk_government_variety_pack_backend.2001 days = 3 }
-		}
-		every_playable_country = {
-			limit = { lrsk_has_any_gvp_civic = yes }
-			country_event = { id = lrsk_government_variety_pack_backend.2002 days = 3 }
-		}
+		#every_playable_country = {
+		#	limit = { lrsk_has_any_gvp_gov = yes }
+		#	country_event = { id = lrsk_government_variety_pack_backend.2001 days = 3 }
+		#}
+		#every_playable_country = {
+		#	limit = { lrsk_has_any_gvp_civic = yes }
+		#	country_event = { id = lrsk_government_variety_pack_backend.2002 days = 3 }
+		#}
 	}
 }
 
@@ -370,10 +370,10 @@ country_event = {
 # Catches problem with base game fed starts checking for base game governments...
 country_event = {
 	id = lrsk_government_variety_pack_backend.4
-	title = lrsk_government_variety_pack_backend.4.name
-	desc = lrsk_government_variety_pack_backend.4.desc
+	#title = lrsk_government_variety_pack_backend.4.name
+	#desc = lrsk_government_variety_pack_backend.4.desc
 	is_triggered_only = yes
-	#hide_window = yes
+	hide_window = yes
 
 	trigger = {
 		is_gestalt = no # probably unneeded but eh
@@ -444,7 +444,7 @@ country_event = {
 					1 = { 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_pacifist } } }
+							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_pacifist } }
 						}
 						random_list = {
 							1 = {
@@ -470,7 +470,7 @@ country_event = {
 					1 = { 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_spiritualist } } }
+							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_spiritualist } }
 						}
 						random_list = {
 							1 = {
@@ -498,7 +498,7 @@ country_event = {
 					1 = { 					 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_militarist } } }
+							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_militarist } }
 						}
 						random_list = {
 							1 = {
@@ -524,7 +524,7 @@ country_event = {
 					1 = { 					 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_materialist } } }
+							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_materialist } }
 						}
 						random_list = {
 							1 = {
