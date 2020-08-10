@@ -388,30 +388,13 @@ country_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = { is_pacifist = yes }
-			set_country_flag = lrsk_fedfix_tag_pacifist
-		}
-		if = {
-			limit = { is_materialist = yes }
-			set_country_flag = lrsk_fedfix_tag_materialist
-		}
-		if = {
-			limit = { is_spiritualist = yes }
-			set_country_flag = lrsk_fedfix_tag_spiritualist
-		}
-		if = {
-			limit = { is_militarist = yes }
-			set_country_flag = lrsk_fedfix_tag_militarist
-		}
-
-		# Dunno if we can reach this point without one of the flags but...
+		# Dunno if we can reach this point without one of these being true but...
 		IF = {
 			limit = { OR = {
-				has_country_flag = lrsk_fedfix_tag_pacifist
-				has_country_flag = lrsk_fedfix_tag_spiritualist
-				has_country_flag = lrsk_fedfix_tag_militarist
-				has_country_flag = lrsk_fedfix_tag_materialist
+				is_pacifist = yes
+				is_materialist = yes
+				is_spiritualist = yes
+				is_militarist = yes
 			} }
 			federation = { every_member = {
 				limit = {
@@ -444,7 +427,11 @@ country_event = {
 					1 = { 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_pacifist } }
+							root = { is_pacifist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_pacifist }
 						}
 						random_list = {
 							1 = {
@@ -470,7 +457,11 @@ country_event = {
 					1 = { 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_spiritualist } }
+							root = { is_spiritualist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_spiritualist }
 						}
 						random_list = {
 							1 = {
@@ -498,7 +489,11 @@ country_event = {
 					1 = { 					 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_militarist } }
+							root = { is_militarist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_militarist }
 						}
 						random_list = {
 							1 = {
@@ -524,7 +519,11 @@ country_event = {
 					1 = { 					 
 						modifier = {
 							factor = 0
-							NOT  = { root = { has_country_flag = lrsk_fedfix_tag_materialist } }
+							root = { is_materialist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_materialist }
 						}
 						random_list = {
 							1 = {
@@ -557,23 +556,6 @@ country_event = {
 
 				set_country_flag = lrsk_fed_npc_fixed
 			} }
-		}
-
-		if = {
-			limit = { has_country_flag = lrsk_fedfix_tag_pacifist }
-			remove_country_flag = lrsk_fedfix_tag_pacifist
-		}
-		if = {
-			limit = { has_country_flag = lrsk_fedfix_tag_materialist }
-			remove_country_flag = lrsk_fedfix_tag_materialist
-		}
-		if = {
-			limit = { has_country_flag = lrsk_fedfix_tag_spiritualist }
-			remove_country_flag = lrsk_fedfix_tag_spiritualist
-		}
-		if = {
-			limit = { has_country_flag = lrsk_fedfix_tag_militarist }
-			remove_country_flag = lrsk_fedfix_tag_militarist
 		}
 	}
 }
