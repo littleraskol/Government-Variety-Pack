@@ -190,7 +190,7 @@ country_event = {
 						}
 						#Need to use this semi-random selection to exclude some of the less savory options...
 						random_list = {
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -212,7 +212,7 @@ country_event = {
 									}
 								}
 							}
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -234,7 +234,7 @@ country_event = {
 									}
 								}
 							}
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -256,28 +256,28 @@ country_event = {
 									}
 								}
 							}
-							25 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_servitor
-										civic = random
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_1
-										establish_communications_no_message = root
-									}
-								}
-							}
+							#1 = {
+							#	create_country = {
+							#		name_list = random
+							#		species = event_target:lrsk_next_fed_planet_species
+							#		type = default
+							#		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+							#		ignore_initial_colony_error = yes
+							#		day_zero_contact = no
+							#		ethos = {
+							#			ethic = ethic_gestalt_consciousness
+							#		}
+							#		authority = auth_machine_intelligence
+							#		civics = {
+							#			civic = civic_machine_servitor
+							#			civic = random
+							#		}
+							#		effect = {
+							#			save_event_target_as = lrsk_fed_member_1
+							#			establish_communications_no_message = root
+							#		}
+							#	}
+							#}
 						}
 					}
 					80 = {
@@ -350,20 +350,20 @@ country_event = {
 				owner = event_target:lrsk_fed_member_1
 			}
 
-			if = {
-				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_fed_1_organic_species
-						set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_1
-					}
-				}
-			}
+			#if = {
+			#	limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			#	create_species = {
+			#		name = random
+			#		class = random_non_machine
+			#		portrait = random
+			#		traits = random
+			#		homeworld = this
+			#		effect = {
+			#			save_event_target_as = lrsk_fed_1_organic_species
+			#			set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_1
+			#		}
+			#	}
+			#}
 
 			generate_start_deposits_and_blockers = yes
 			generate_start_buildings_and_districts = yes
@@ -418,7 +418,7 @@ country_event = {
 						}
 						#Need to use this semi-random selection to exclude some of the less savory options...
 						random_list = {
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -440,7 +440,7 @@ country_event = {
 									}
 								}
 							}
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -462,7 +462,7 @@ country_event = {
 									}
 								}
 							}
-							25 = {
+							1 = {
 								create_country = {
 									name_list = random
 									species = event_target:lrsk_next_fed_planet_species
@@ -484,28 +484,28 @@ country_event = {
 									}
 								}
 							}
-							25 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_servitor
-										civic = random
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_2
-										establish_communications_no_message = root
-									}
-								}
-							}
+							#1 = {
+							#	create_country = {
+							#		name_list = random
+							#		species = event_target:lrsk_next_fed_planet_species
+							#		type = default
+							#		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+							#		ignore_initial_colony_error = yes
+							#		day_zero_contact = no
+							#		ethos = {
+							#			ethic = ethic_gestalt_consciousness
+							#		}
+							#		authority = auth_machine_intelligence
+							#		civics = {
+							#			civic = civic_machine_servitor
+							#			civic = random
+							#		}
+							#		effect = {
+							#			save_event_target_as = lrsk_fed_member_2
+							#			establish_communications_no_message = root
+							#		}
+							#	}
+							#}
 						}
 					}
 					80 = {
@@ -589,20 +589,20 @@ country_event = {
 				owner = event_target:lrsk_fed_member_2
 			}
 
-			if = {
-				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_fed_2_servitor_species
-						set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_2
-					}
-				}
-			}
+			#if = {
+			#	limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			#	create_species = {
+			#		name = random
+			#		class = random_non_machine
+			#		portrait = random
+			#		traits = random
+			#		homeworld = this
+			#		effect = {
+			#			save_event_target_as = lrsk_fed_2_servitor_species
+			#			set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_2
+			#		}
+			#	}
+			#}
 
 			generate_start_deposits_and_blockers = yes
 			generate_start_buildings_and_districts = yes
