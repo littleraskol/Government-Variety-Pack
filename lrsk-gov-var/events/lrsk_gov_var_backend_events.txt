@@ -22,6 +22,7 @@ event = {
 		# Fed start fix for GVP govs
 		every_playable_country = {
 			limit = {
+				NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
 				is_gestalt = no # probably unneeded but eh
 				has_federation = yes # This is real JIC shit
 				OR = {
@@ -376,6 +377,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
 		is_gestalt = no # probably unneeded but eh
 		has_federation = yes # This is real JIC shit
 		OR = {
