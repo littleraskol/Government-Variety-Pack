@@ -407,24 +407,6 @@ country_event = {
 					NOT = { has_country_flag = lrsk_fed_npc_fixed }
 				}
 
-				# force remove all ethics
-				country_remove_ethic = ethic_pacifist
-				country_remove_ethic = ethic_fanatic_pacifist
-				country_remove_ethic = ethic_militarist
-				country_remove_ethic = ethic_fanatic_militarist
-				country_remove_ethic = ethic_materialist
-				country_remove_ethic = ethic_fanatic_materialist
-				country_remove_ethic = ethic_spiritualist
-				country_remove_ethic = ethic_fanatic_spiritualist
-				country_remove_ethic = ethic_egalitarian
-				country_remove_ethic = ethic_fanatic_egalitarian
-				country_remove_ethic = ethic_authoritarian
-				country_remove_ethic = ethic_fanatic_authoritarian
-				country_remove_ethic = ethic_xenophile
-				country_remove_ethic = ethic_fanatic_xenophile
-				country_remove_ethic = ethic_xenophobe
-				country_remove_ethic = ethic_fanatic_xenophobe
-
 				random_list = {
 					1 = { 
 						modifier = {
@@ -435,6 +417,8 @@ country_event = {
 							factor = 2
 							root = { has_ethic = ethic_fanatic_pacifist }
 						}
+
+						lrsk_remove_all_ethics = yes
 						random_list = {
 							1 = {
 								country_add_ethic = ethic_xenophile
@@ -465,6 +449,8 @@ country_event = {
 							factor = 2
 							root = { has_ethic = ethic_fanatic_spiritualist }
 						}
+
+						lrsk_remove_all_ethics = yes
 						random_list = {
 							1 = {
 								country_add_ethic = ethic_xenophile
@@ -497,6 +483,8 @@ country_event = {
 							factor = 2
 							root = { has_ethic = ethic_fanatic_militarist }
 						}
+
+						lrsk_remove_all_ethics = yes
 						random_list = {
 							1 = {
 								country_add_ethic = ethic_xenophile
@@ -527,6 +515,8 @@ country_event = {
 							factor = 2
 							root = { has_ethic = ethic_fanatic_materialist }
 						}
+						
+						lrsk_remove_all_ethics = yes
 						random_list = {
 							1 = {
 								country_add_ethic = ethic_xenophile
