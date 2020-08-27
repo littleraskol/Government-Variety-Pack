@@ -192,6 +192,7 @@ v1.6.6.2 (08-XX-20) New Fed Start Tuneup, Other Housekeeping
 -Removed redundant backend check for empire starts that might lack sufficient exploration avenues (was called twice).
 -Minor tweak to fed start colony detection (1 guaranteed habitable no longer overlaps with 2 or more).
 -Randomly spawned Rogue Servitor federation mates had bugged pops that I could not fix (i.e., machine bio trophies) so I removed them...
+-Enlightened Liberalism not compatible with either Workers' Councils or Institutionalized Collectivism.
 
 v1.6.6 (07-20-20) Minor New Content and Feature Improvements
 -This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
