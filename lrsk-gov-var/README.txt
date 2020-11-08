@@ -181,7 +181,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.6.6.2 (11-XX-20) New Fed Start Tuneup, Other Housekeeping
+v1.6.6.2 (11-08-20) New Fed Start Tuneup, Other Housekeeping
 -Added scripted triggers to simplify checks for Research Fed and Trade Fed origins.
 -Better companion empire generation for Trade Fed origins.
 -Added NPC version of Tradways, Inc.
