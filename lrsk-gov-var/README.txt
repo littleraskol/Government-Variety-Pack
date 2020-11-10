@@ -198,6 +198,23 @@ v1.7 (07-??-20) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
+v1.6.2.3 (11-10-20) Minor format fix.
+-The Entrepreneurial Council government lacked a valid female ruler title, was overriding the Enterprise Society female ruler title.
+
+v1.6.6.2 (11-08-20) New Fed Start Tuneup, Other Housekeeping
+-Added scripted triggers to simplify checks for Research Fed and Trade Fed origins.
+-Better companion empire generation for Trade Fed origins.
+-Added NPC version of Tradways, Inc.
+-Fixed companion empire gen to add correct NPC origins.
+-Added scripted triggers to detect whether an empire is using mod-added content.
+-Addressed vanilla issue where Common Ground and Hegemon origins can't always match custom empires with federation mate ethics.
+-Fixed democratic Cosmic Choir lacking a Xenophile requirement option.
+-Removed redundant backend check for empire starts that might lack sufficient exploration avenues (was called twice).
+-Minor tweak to fed start colony detection (1 guaranteed habitable no longer overlaps with 2 or more).
+-Randomly spawned Rogue Servitor federation mates had bugged pops that I could not fix (i.e., machine bio trophies) so I removed them...
+-Enlightened Liberalism not compatible with either Workers' Councils or Institutionalized Collectivism.
+-Updated compat version number to 2.8 (Butler) - could not verify any reports of incompatibility.
+
 v1.6.6 (07-20-20) Minor New Content and Feature Improvements
 -This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
 -New megacorp civic Gig Economics: -25% pop resettlement cost, +5% ruler and specialist happiness.

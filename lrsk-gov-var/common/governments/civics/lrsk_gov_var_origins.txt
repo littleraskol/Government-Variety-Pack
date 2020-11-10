@@ -160,7 +160,29 @@ lrsk_gov_var_origin_for_discovery_mi = {
 #NPC Member of above
 lrsk_gov_var_origin_for_discovery_npc = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_blank.dds"
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_for_discovery.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
+
+	random_weight = {
+		base = 0
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+lrsk_gov_var_origin_for_discovery_mi_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_for_discovery_mi.dds"
 	picture = GFX_lrsk_gov_var_origin_generic
 
 	playable = {
@@ -265,6 +287,24 @@ lrsk_gov_var_origin_tradeways_mc = {
 lrsk_gov_var_origin_tradeways_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+lrsk_gov_var_origin_tradeways_mc_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways_mc.dds"
 	picture = GFX_lrsk_gov_var_origin_generic
 
 	playable = {

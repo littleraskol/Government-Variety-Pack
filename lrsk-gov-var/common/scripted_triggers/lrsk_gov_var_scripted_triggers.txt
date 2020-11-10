@@ -30,3 +30,17 @@ lrsk_gov_var_is_chartered_colony_type_gov = {
 		has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
 	}
 }
+
+lrsk_gov_var_has_discovery_origin = {
+	or = { 
+		has_origin = lrsk_gov_var_origin_for_discovery
+		has_origin = lrsk_gov_var_origin_for_discovery_mi
+	}
+}
+
+lrsk_gov_var_has_tradeways_origin = {
+	or = { 
+		has_origin = lrsk_gov_var_origin_tradeways
+		has_origin = lrsk_gov_var_origin_tradeways_mc
+	}
+}
