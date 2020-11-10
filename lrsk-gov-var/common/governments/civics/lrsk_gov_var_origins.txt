@@ -34,7 +34,6 @@ lrsk_gov_var_origin_galactic_backdoor = {
 			has_global_flag = game_started
 		}
 	}
-
 }
 
 #Shroud-Touched: A psychic ascendency start (like mechanists or sync evo)
@@ -73,7 +72,6 @@ lrsk_gov_var_origin_shroud_touched = {
 	random_weight = {
 		base = 10
 	}
-
 }
 
 #For Discovery: Start in research co-op. 
@@ -162,7 +160,29 @@ lrsk_gov_var_origin_for_discovery_mi = {
 #NPC Member of above
 lrsk_gov_var_origin_for_discovery_npc = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_blank.dds"
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_for_discovery.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
+
+	random_weight = {
+		base = 0
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+lrsk_gov_var_origin_for_discovery_mi_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_for_discovery_mi.dds"
 	picture = GFX_lrsk_gov_var_origin_generic
 
 	playable = {
@@ -196,7 +216,7 @@ lrsk_gov_var_origin_tradeways = {
 
 	possible = {
 		ethics = {
-			NOT = {
+			NOR = {
 				value = ethic_gestalt_consciousness
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
@@ -241,7 +261,7 @@ lrsk_gov_var_origin_tradeways_mc = {
 	possible = {
 		authority = { value = auth_corporate }
 		ethics = {
-			NOT = {
+			NOR = {
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
@@ -266,7 +286,25 @@ lrsk_gov_var_origin_tradeways_mc = {
 #NPC Member of above
 lrsk_gov_var_origin_tradeways_npc = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_blank.dds"
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways.dds"
+	picture = GFX_lrsk_gov_var_origin_generic
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+lrsk_gov_var_origin_tradeways_mc_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways_mc.dds"
 	picture = GFX_lrsk_gov_var_origin_generic
 
 	playable = {
@@ -296,7 +334,7 @@ lrsk_gov_var_origin_grand_alliance = {
 
 	possible = {
 		ethics = {
-			NOT = {
+			NOR = {
 				value = ethic_gestalt_consciousness
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
@@ -332,7 +370,7 @@ lrsk_gov_var_origin_grand_alliance = {
 #NPC Member of above
 lrsk_gov_var_origin_grand_alliance_npc = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_blank.dds"
+	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_grand_alliance.dds"
 	picture = GFX_lrsk_gov_var_origin_generic
 
 	playable = {

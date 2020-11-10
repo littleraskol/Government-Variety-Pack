@@ -1,0 +1,396 @@
+# Government Variety Pack
+# Scripted Effects
+# Author: littleraskol
+
+# Create Tradeways NPC empire w/ Merchant Guilds.
+lrsk_create_tradeways_member_mg = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_pacifist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_pacifist }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_pacifist"
+					ethic = "ethic_fanatic_pacifist"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_materialist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_materialist }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_spiritualist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_spiritualist }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_militarist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_militarist }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_authoritarian = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_authoritarian }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_authoritarian"
+					ethic = "ethic_fanatic_authoritarian"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_egalitarian }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_egalitarian"
+					ethic = "ethic_fanatic_egalitarian"
+				}
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+		1 = {
+			# This will only happen with mod-added ethics. There's a limit to how much I can accomodate that!
+			modifier = {
+				factor = 0
+				root = { OR = {
+					is_pacifist = yes
+					is_materialist = yes
+					is_spiritualist = yes
+					is_militarist = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+				} }
+			}
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos = root
+				civics = {
+					civic = civic_merchant_guilds
+					civic = random
+				}
+			}
+		}
+	}
+}
+
+
+# Create Tradeways NPC empire w/ Corp authority.
+lrsk_create_tradeways_member_mc = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_pacifist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_pacifist }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_pacifist"
+					ethic = "ethic_fanatic_pacifist"
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_materialist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_materialist }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_spiritualist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_spiritualist }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_militarist = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_militarist }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_authoritarian = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_authoritarian }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_authoritarian"
+					ethic = "ethic_fanatic_xenophile"
+				}
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = no }
+			}
+			modifier = {
+				factor = 2
+				root = { has_ethic = ethic_fanatic_egalitarian }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_egalitarian"
+					ethic = "ethic_fanatic_xenophile"
+				}
+			}
+		}
+		1 = {
+			# This will only happen with mod-added ethics. There's a limit to how much I can accomodate that!
+			modifier = {
+				factor = 0
+				root = { OR = {
+					is_pacifist = yes
+					is_materialist = yes
+					is_spiritualist = yes
+					is_militarist = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+				} }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_tradeways_mc_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_corporate
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_fanatic_xenophile"
+				}
+			}
+		}
+	}
+}

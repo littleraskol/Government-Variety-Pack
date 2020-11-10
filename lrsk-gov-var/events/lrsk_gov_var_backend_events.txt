@@ -19,6 +19,23 @@ event = {
 		
 		## Origins Setup
 
+		# Fed start fix for GVP govs
+		every_playable_country = {
+			limit = {
+				NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
+				is_gestalt = no # probably unneeded but eh
+				has_federation = yes # This is real JIC shit
+				OR = {
+					has_origin = origin_common_ground
+					has_origin = origin_hegemon
+				}
+				is_authoritarian = no
+				is_egalitarian = no
+				lrsk_has_any_gvp_gov = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.4 }
+		}
+
 		# Galactic Backdoor
 		every_playable_country = {
 			limit = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
@@ -84,6 +101,16 @@ event = {
 			limit = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
 			country_event = { id = lrsk_adv_civ_aspiration.101 days = 2 }
 		}
+		
+		### Diagnostic checks
+		#every_playable_country = {
+		#	limit = { lrsk_has_any_gvp_gov = yes }
+		#	country_event = { id = lrsk_government_variety_pack_backend.2001 days = 3 }
+		#}
+		#every_playable_country = {
+		#	limit = { lrsk_has_any_gvp_civic = yes }
+		#	country_event = { id = lrsk_government_variety_pack_backend.2002 days = 3 }
+		#}
 	}
 }
 
@@ -175,7 +202,7 @@ country_event = {
 			#has_origin = lrsk_gov_var_origin_other
 		}
 	}
-
+	
 	immediate = {
 		if = {
 			limit = {
@@ -213,7 +240,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -244,7 +271,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -275,7 +302,7 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
@@ -306,43 +333,318 @@ country_event = {
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						NOT = { exists = owner }
 					}
-					save_event_target_as = lrsk_hyperlane_system
+					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
 				}
 			}
-			if = {
-				limit = {
-					exists = event_target:lrsk_hyperlane_system
-					event_target:lrsk_hyperlane_system = {
-						NOT = {
-							any_neighbor_system = {
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
+				event_target:lrsk_hyperlane_system_1 = {
+					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 25
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_1
+										type = euclidean
+										min_distance >= 1
+										max_distance <= 25
+									}
+									NOT = { has_hyperlane_to = this }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+							}
+						}
+						else_if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance > 25
+									max_distance <= 50
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_1
+										type = euclidean
+										min_distance > 25
+										max_distance <= 50
+									}
+									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+							}
+						}					
+					}
+				}
+			}
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
+				event_target:lrsk_hyperlane_system_2 = {
+					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_2
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 25
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
+								NOT = { exists = owner }
+							} }
+							random_system = {
+								limit = { 
+									distance = {
+										source = event_target:lrsk_hyperlane_system_2
+										type = euclidean
+										min_distance >= 1
+										max_distance <= 25
+									}
+									NOT = { has_hyperlane_to = this }
+									NOT = { exists = owner }
+								}
+								save_event_target_as = lrsk_hyperlane_system_3
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
 							}
 						}
 					}
-				}
-				event_target:lrsk_hyperlane_system = {
-					random_system = {
-						limit = {
-							distance = {
-								source = prev
-								type = euclidean
-								min_distance >= 1
-								max_distance <= 25
-							}
-							NOT = { has_hyperlane_to = prev }
-							NOT = { exists = owner }
-						}
-						add_hyperlane = {
-							from = this
-							to = prev
-						}
-					}
-				}
+				}					
 			}
 		}
 	}
+}
+
+# Catches problem with base game fed starts checking for base game governments...
+country_event = {
+	id = lrsk_government_variety_pack_backend.4
+	#title = lrsk_government_variety_pack_backend.4.name
+	#desc = lrsk_government_variety_pack_backend.4.desc
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
+		is_gestalt = no # probably unneeded but eh
+		has_federation = yes # This is real JIC shit
+		OR = {
+			has_origin = origin_common_ground
+			has_origin = origin_hegemon
+		}
+		is_authoritarian = no
+		is_egalitarian = no
+		lrsk_has_any_gvp_gov = yes
+	}
+
+	immediate = {
+		# Dunno if we can reach this point without one of these being true but...
+		IF = {
+			limit = { OR = {
+				is_pacifist = yes
+				is_materialist = yes
+				is_spiritualist = yes
+				is_militarist = yes
+			} }
+			federation = { every_member = {
+				limit = {
+					OR = {
+						has_origin = origin_common_ground_npc
+						has_origin = origin_hegemon_npc
+					}
+					NOT = { has_country_flag = lrsk_fed_npc_fixed }
+				}
+
+				random_list = {
+					1 = { 
+						modifier = {
+							factor = 0
+							root = { is_pacifist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_pacifist }
+						}
+
+						lrsk_remove_all_ethics = yes
+						random_list = {
+							2 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_fanatic_pacifist
+							}
+							2 = {
+								country_add_ethic = ethic_fanatic_xenophile
+								country_add_ethic = ethic_pacifist
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_pacifist
+								country_add_ethic = ethic_egalitarian
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_pacifist
+								country_add_ethic = ethic_authoritarian
+							}
+						}
+					}
+					1 = { 
+						modifier = {
+							factor = 0
+							root = { is_spiritualist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_spiritualist }
+						}
+
+						lrsk_remove_all_ethics = yes
+						random_list = {
+							2 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_fanatic_spiritualist
+							}
+							2 = {
+								country_add_ethic = ethic_fanatic_xenophile
+								country_add_ethic = ethic_spiritualist
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_spiritualist
+								country_add_ethic = ethic_egalitarian
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_spiritualist
+								country_add_ethic = ethic_authoritarian
+							}
+						}
+						country_add_ethic = ethic_xenophile
+						country_add_ethic = ethic_fanatic_spiritualist
+					}
+					1 = { 					 
+						modifier = {
+							factor = 0
+							root = { is_militarist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_militarist }
+						}
+
+						lrsk_remove_all_ethics = yes
+						random_list = {
+							2 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_fanatic_militarist
+							}
+							2 = {
+								country_add_ethic = ethic_fanatic_xenophile
+								country_add_ethic = ethic_militarist
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_militarist
+								country_add_ethic = ethic_egalitarian
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_militarist
+								country_add_ethic = ethic_authoritarian
+							}
+						}
+					}
+					1 = { 					 
+						modifier = {
+							factor = 0
+							root = { is_materialist = no }
+						}
+						modifier = {
+							factor = 2
+							root = { has_ethic = ethic_fanatic_materialist }
+						}
+						
+						lrsk_remove_all_ethics = yes
+						random_list = {
+							2 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_fanatic_materialist
+							}
+							2 = {
+								country_add_ethic = ethic_fanatic_xenophile
+								country_add_ethic = ethic_materialist
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_materialist
+								country_add_ethic = ethic_egalitarian
+							}
+							1 = {
+								country_add_ethic = ethic_xenophile
+								country_add_ethic = ethic_materialist
+								country_add_ethic = ethic_authoritarian
+							}
+						}
+					}
+				}
+
+				change_government = {
+					authority = random
+					civics = random
+				}
+				set_name = random
+
+				set_country_flag = lrsk_fed_npc_fixed
+			} }
+		}
+	}
+}
+
+# Diagnostic: Check to see if player has GVP govtype
+country_event = {
+	id = lrsk_government_variety_pack_backend.2001
+	title = lrsk_government_variety_pack_backend.2001.name
+	desc = lrsk_government_variety_pack_backend.2001.desc
+	picture = GFX_evt_surreal_visions
+	is_triggered_only = yes
+
+	option = { name = OK }
+}
+
+# Diagnostic: Check to see if player has GVP civic
+country_event = {
+	id = lrsk_government_variety_pack_backend.2002
+	title = lrsk_government_variety_pack_backend.2002.name
+	desc = lrsk_government_variety_pack_backend.2002.desc
+	picture = GFX_evt_surreal_visions
+	is_triggered_only = yes
+
+	option = { name = OK }
 }
