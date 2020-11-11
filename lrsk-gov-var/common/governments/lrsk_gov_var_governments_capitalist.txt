@@ -214,6 +214,68 @@ lrsk_gov_var_gov_entrepreneurial_council = {
 	}
 }
 
+# Merchant Republic
+lrsk_gov_var_gov_merchant_republic = {
+	ruler_title = LRSK_GOV_VAR_RT_SERENE_DOGE
+	ruler_title_female = LRSK_GOV_VAR_RT_SERENE_DOGARESSA
+
+	election_candidates = {
+		modifier = {
+			factor = 0
+			leader_class = admiral
+		}
+		modifier = {
+			factor = 0
+			leader_class = general
+		}
+	}
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = civic_meritocracy
+		has_valid_civic = civic_merchant_guilds
+		NOR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+		}
+	}
+
+	weight = {
+		base = 1800
+	}
+}
+
+# Constitutional Plutocracy
+lrsk_gov_var_gov_constitutional_plutocracy = {
+	ruler_title = LRSK_GOV_VAR_RT_PROP_PRES
+	ruler_title_female = LRSK_GOV_VAR_RT_PROP_PRES_FEMALE
+
+	election_candidates = {
+		modifier = {
+			factor = 0
+			leader_class = admiral
+		}
+		modifier = {
+			factor = 0
+			leader_class = general
+		}
+	}
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = civic_meritocracy
+		has_valid_civic = civic_merchant_guilds
+		NOR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+		}
+	}
+
+	weight = {
+		base = 1800
+	}
+}
+
 # Enterprise Society
 lrsk_gov_var_gov_enterprise_society = {
 	ruler_title = LRSK_GOV_VAR_RT_FRANCHISE_MINISTER
