@@ -66,11 +66,10 @@ lrsk_gov_var_civic_ascetic_virtues = {
 lrsk_gov_var_civic_republicanism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOT = { value = auth_corporate } }
-    #authority = { NOR = {
-    #  value = auth_corporate
-    #  value = auth_oligarchic
-    #} }
+    authority = { NOR = {
+      value = auth_corporate
+      value = auth_oligarchic
+    } }
   }
 
   #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
