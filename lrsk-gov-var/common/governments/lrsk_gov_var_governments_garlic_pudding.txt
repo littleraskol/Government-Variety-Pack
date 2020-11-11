@@ -51,6 +51,60 @@ lrsk_gov_var_gov_merchant_principality_i = {
 	}
 }
 
+# Stakeholder Polity - Requires a change to how Republicanism works or a different civic...
+lrsk_gov_var_gov_stakeholder_polity = {
+	ruler_title = LRSK_GOV_VAR_RT_CHEIF_OMBUDS
+	ruler_title_female = LRSK_GOV_VAR_RT_CHEIF_OMBUDS_FEMALE
+
+	election_candidates = {
+		modifier = {
+			factor = 0
+			leader_class = admiral
+		}
+		modifier = {
+			factor = 0
+			leader_class = general
+		}
+	}
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+		has_valid_civic = civic_merchant_guilds
+	}
+
+	weight = {
+		base = 1800
+	}
+}
+
+# Shareholder Commonwealth
+lrsk_gov_var_gov_shareholder_commonwealth = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_ARBITRATOR
+	ruler_title_female = LRSK_GOV_VAR_RT_CHIEF_ARBITRATOR_FEMALE
+
+	election_candidates = {
+		modifier = {
+			factor = 0
+			leader_class = admiral
+		}
+		modifier = {
+			factor = 0
+			leader_class = general
+		}
+	}
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		has_valid_civic = civic_merchant_guilds
+	}
+
+	weight = {
+		base = 1800
+	}
+}
+
 # Crusading Company (FanMil or FanSpi, Corp, GoM & PMC/NC)
 lrsk_gov_var_gov_crusading_company = {
 	ruler_title = LRSK_GOV_VAR_RT_CHAPLAINMARTIAL

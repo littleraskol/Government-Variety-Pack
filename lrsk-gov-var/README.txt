@@ -31,7 +31,7 @@ Elected Clergy (Democratic, Spiritualist) - In this society's religion, local pr
 
 Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
 
-Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
+Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 
 Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
 
@@ -41,11 +41,11 @@ Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) 
 
 Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
 
-Workers' Councils (Egalitarian, no Shared Burdens) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
+Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
 Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
 
-Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
+Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
 Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
 
@@ -53,7 +53,7 @@ Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of mart
 
 Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
 
-Institutionalized Collectivism (Not Fanatic Authoritarian) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
+Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
@@ -141,7 +141,7 @@ Megacorp Civics:
 
 Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
 
-Educational Consortium (Any) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
 
 Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
 
@@ -189,7 +189,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.7 (07-??-20) - More Origins, Colonial Chartering Civic
+v1.7 (11-??-20) - More Origins, Colonial Chartering Civic
 -Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
 -Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
@@ -198,10 +198,19 @@ v1.7 (07-??-20) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
-v1.6.2.3 (11-10-20) Minor format fix.
+v1.6.7 (11-11-20) - More Merchantry
+-Added two governments based on the ideas of Steam user Garlic Pudding: Stakeholder Polity and Shareholder Commonwealth.
+-Added new governments: Merchant Republic and Constitutional Plutocracy.
+-Republicanism now available to Egalitarian Oligarchies.
+-Institutionalized Collectivism incompatible with Merchant Guilds.
+-Educational Consortium requires some degree of Materialist.
+-Updated documentation.
+-Fix: Porting localization that had been neglected.
+
+v1.6.6.3 (11-10-20) - Minor format fix.
 -The Entrepreneurial Council government lacked a valid female ruler title, was overriding the Enterprise Society female ruler title.
 
-v1.6.6.2 (11-08-20) New Fed Start Tuneup, Other Housekeeping
+v1.6.6.2 (11-08-20) - New Fed Start Tuneup, Other Housekeeping
 -Added scripted triggers to simplify checks for Research Fed and Trade Fed origins.
 -Better companion empire generation for Trade Fed origins.
 -Added NPC version of Tradways, Inc.
@@ -215,7 +224,7 @@ v1.6.6.2 (11-08-20) New Fed Start Tuneup, Other Housekeeping
 -Enlightened Liberalism not compatible with either Workers' Councils or Institutionalized Collectivism.
 -Updated compat version number to 2.8 (Butler) - could not verify any reports of incompatibility.
 
-v1.6.6 (07-20-20) Minor New Content and Feature Improvements
+v1.6.6 (07-20-20) - Minor New Content and Feature Improvements
 -This update ports over some smaller improvements and pieces of new content from the future version 1.7, because other content in that version is extensive and requires a great deal of testing. I don't want to wait on releasing this much less intensive stuff.
 -New megacorp civic Gig Economics: -25% pop resettlement cost, +5% ruler and specialist happiness.
 -New megacorp civic Controlling Interest: -75% election influence cost, -5% Market Fee.
@@ -240,12 +249,12 @@ v1.6.6 (07-20-20) Minor New Content and Feature Improvements
 -GFX: Included graphic for Run Recursive Audit decision.
 -GFX: Changed the preview image for Grand Alliance.
 
-v1.6.5.1 (07-17-20) QCC, SC Fix
+v1.6.5.1 (07-17-20) - QCC, SC Fix
 -Fixed localization of Quasi-Collective Consciousness diplo lines.
 -Removed unused diplo prompts/actions, added new.
 -Added "Simple Chinese" synced localization file for empire formats.
 
-v1.6.5 (05-12-20) Wells Update
+v1.6.5 (05-12-20) - Wells Update
 -Royal Absolutism now also gives +1 Edict Cap.
 -Business Lobby has become "Budgetary Thrift" and will be reworked into something more interesting (hopefully) in a future update, but Merchant Guilds just makes it thematically redundant.
 -Workers' Councils not incompatible with Budgetary Thrift.

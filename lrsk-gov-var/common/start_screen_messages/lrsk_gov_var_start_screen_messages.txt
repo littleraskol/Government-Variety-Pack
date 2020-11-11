@@ -445,6 +445,32 @@ part = {
 	}
 }
 
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_MERCHANT_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_merchant_republic
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+# Default catch-all
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_CONST_PLUT"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_constitutional_plutocracy
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
 part = {
 	location = 1
 	localization = "LRSK_GOV_VAR_START_SCREEN_P2_ABSOLUTE_MONARCHY"
@@ -972,6 +998,30 @@ part = {
 		OR = {
 			has_government = lrsk_gov_var_gov_merchant_principality_d
 			has_government = lrsk_gov_var_gov_merchant_principality_i
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_STAKEHOLDER_POLITY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_stakeholder_polity
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GOV_VAR_START_SCREEN_P2_SHAREHOLDER_COMMONWEALTH"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gov_var_gov_shareholder_commonwealth
 		}
 		NOT = { has_country_flag = custom_start_screen }
 	}
