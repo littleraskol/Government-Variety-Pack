@@ -11,7 +11,11 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
-	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
 
 	immediate = {
 		 from = { random_list = {
@@ -411,6 +415,8 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		#has_civic = lrsk_adv_civ_civic_sortition
 		from = { OR = {
 			has_trait = lrsk_adv_civ_trait_unready_rul
@@ -470,6 +476,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		OR = {
 			root = { has_civic = lrsk_adv_civ_civic_sortition }
 			from = { OR = {
@@ -2673,6 +2681,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		is_country_type = default
 		has_country_flag = lrsk_elitist_revolt_country
 		has_relation_flag = {
@@ -2742,6 +2752,8 @@ country_event = {
 	#show_sound = event_mystic_reveal
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		is_country_type = default
 		has_relation_flag = {
 			who = from
@@ -2874,7 +2886,11 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { has_civic = lrsk_adv_civ_civic_sortition }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
 
 	immediate = {
 		country_event = { id = lrsk_adv_civ_sortition.1002 } 			# Month 1: Threat level
@@ -2891,7 +2907,11 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { has_civic = lrsk_adv_civ_civic_sortition }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
 
 	immediate = {
 		if = { limit = { has_country_flag = lrsk_ruler_unfit_elitist } remove_country_flag = lrsk_ruler_unfit_elitist }

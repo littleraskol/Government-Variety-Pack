@@ -12,8 +12,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		has_origin = lrsk_adv_civ_origin_star_siblings
-		NOT = { has_country_flag = lrsk_adv_civ_created_sibling }		
+		NOT = { has_country_flag = lrsk_adv_civ_created_sibling }
 	}
 
 	immediate = {
@@ -202,6 +204,8 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
 		from = { exists = space_owner } # Actually an owned system
 		from = { owner = { NOT = { is_same_value = root.owner } } } # Owner of system != owner of ship
 
@@ -289,6 +293,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		# We only want this to trigger when a combatant who is a sibling enters battle.
 		OR = {
 			this = { has_origin = lrsk_adv_civ_origin_star_siblings }
@@ -437,6 +443,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		any_country = { limit = {
 			is_in_federation_with = root
 			has_relation_flag = {
@@ -480,7 +488,11 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = {
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+	}
+
+	immediate = {		
 		IF = { limit = { has_modifier = lrsk_adv_civ_siblings_federated } remove_modifier = lrsk_adv_civ_siblings_federated }
 		random_country = { limit = {
 			has_relation_flag = {
@@ -497,6 +509,10 @@ country_event = {
 	id = lrsk_adv_civ_siblings.10
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+	}
 
 	# Remove relevant modifiers from any participant who is no longer in any war.
 	# Basically, this should ensure that if a sibling empire gets one of these, it will keep it until it is at peace.
@@ -526,6 +542,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		OR = {
 			has_origin = lrsk_adv_civ_origin_star_siblings # Not sure this is really neded but eh
 			has_country_flag = lrsk_adv_civ_created_sibling

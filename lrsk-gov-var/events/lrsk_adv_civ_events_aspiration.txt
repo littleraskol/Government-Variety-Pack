@@ -12,6 +12,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		OR = {
 			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
 			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants # JIC
@@ -65,6 +67,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		OR = {
 			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
 			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
@@ -93,6 +97,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
 		has_ascension_perk = lrsk_adv_civ_ap_idealistic_destiny
 	}
@@ -234,7 +240,11 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants }
+	trigger = { 
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+	}
 
 	immediate = { country_event = { id = lrsk_adv_civ_aspiration.5 days = 1 } }
 }	
@@ -245,7 +255,10 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+	}
 
 	immediate = {
 		#Restore fanatic ethos if lost (based on modifier)

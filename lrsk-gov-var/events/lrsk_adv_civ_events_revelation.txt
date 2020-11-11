@@ -34,6 +34,8 @@ country_event = {
 	mean_time_to_happen = { days = 1800 }
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		is_ai = no	# Not really sure I want AI doing this at all
 		has_civic = lrsk_adv_civ_civic_otherworldly
 		NOT = { has_country_flag = lrsk_adv_civ_revquest_ongoing }
@@ -656,10 +658,14 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { OR = {
-		This = { has_country_flag = lrsk_adv_civ_revquest_ongoing }
-		From = { has_leader_flag = lrsk_rev_questant }
-	} }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
+		OR = {
+			This = { has_country_flag = lrsk_adv_civ_revquest_ongoing }
+			From = { has_leader_flag = lrsk_rev_questant }
+		}
+	}
 
 	immediate = {
 		From = { if = { limit = { has_leader_flag = lrsk_rev_questant} remove_leader_flag = lrsk_rev_questant } }
@@ -703,6 +709,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		OR = {
 			last_increased_tech = "tech_lrsk_adv_civ_dragon"
 			last_increased_tech = "tech_lrsk_adv_civ_suneater"
@@ -924,7 +932,11 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
-	trigger = { this = { has_civic = lrsk_adv_civ_civic_otherworldly } }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
+		this = { has_civic = lrsk_adv_civ_civic_otherworldly }
+	}
 
 	immediate = {
 		random_list = {

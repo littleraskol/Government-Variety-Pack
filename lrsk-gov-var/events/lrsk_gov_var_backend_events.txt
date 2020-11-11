@@ -17,6 +17,9 @@ event = {
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		
+		# The following can be checked for (or, rather, for its absence) in any event's triggers to prevent it from firing.
+		set_global_flag = lrsk_gvp_safety_lock
+		
 		## Origins Setup
 
 		# Fed start fix for GVP govs

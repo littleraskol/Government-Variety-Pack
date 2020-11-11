@@ -12,6 +12,8 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
 		has_origin = lrsk_adv_civ_origin_established_empire
 		NOT = { has_country_flag = lrsk_adv_civ_estemp_complete } # JIC
 	}
@@ -632,6 +634,8 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
 		has_origin = lrsk_adv_civ_origin_established_empire
 		has_modifier = lrsk_adv_civ_estemp_complacent
 		NOR = {
