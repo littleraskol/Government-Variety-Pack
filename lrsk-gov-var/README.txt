@@ -181,6 +181,23 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.8 (??-??-??) - Megacorp Expansion
+-Scientific Management civic now allows the Managerial Technique Institute branch building, which provides the host planet with two Functionary jobs (produces +3 admin cap and +3 trade value) and provides the megacorp with ???
+-Educational Consortium civic now allows the Learnarium Dome branch building, which provides the host planet with +50% Materialist attraction and two Info-Guide jobs (produces +1 all research and +3 amenities), and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Materialist.
+-Employee-Owned Co-op civic now allows the Organizing Hub branch building, which provides the host planet with +50% Egalitarian attraction, +25% Worker power, and +5% Worker happiness, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Egalitarian.
+-Gig Economics civic now allows the Odd Jobs Emporium branch building, which provides the host planet with two Gofer jobs (produces +3 Amenities and +2 Trade Value), and provides the megacorp with +15% Branch Office Value.
+-Naval Contractors and Private Military Companies civics now allow the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
+-Indentured Assets civic now allows the Reformatory Workhouse branch building, which provides the host planet with +x Stability and +x Worker/Slave output, and provides the megacorp with +x trade value. Ciminal megacorps with this building occasionally steal and enslave pops from the planet!
+-Private Prospectors civic now allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +x Trade Value and +y energy), and provides the megacorp with improved Colony growth speed and station output.
+-Media Conglomerate civic now allows the Local News Office branch building, which provides the host planet with +x Ruler output and +x Specialist power and happiness (???), and provides the megacorp with a chance to occasionally get favors from the host empire.
+-New Casino Mysticism civic (Not Materialist) provides -x pop demotion time, +x colony development speed, and allows the Grand Casino branch building, which provides the host planet with XXXXX, and provides the megacorp with +x Trade Value and +y energy.
+-New Vacation Experience Planning civic (Xenophile) provides misc diplo bonuses (??) and -x pop amenities usage, and allows the Galactic Excursions Office branch building, which provides the host planet with +50% Xenophile attraction and -x pop amenities usage, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Xenophile.
+-New Heritage Trust civic (Xenophobe) provides +x citizen pop happiness, and allows the Heritage Museum branch building, which provides the host planet with +50% Xenophobe attraction and +x citizen pop happiness, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Xenophobe.
+-New Conflict Resolution Specialists civic (Pacifist) provides +x Stability and ???, and allows the Mediation Retreat branch building, which provides the host planet with +50% Pacifist attraction and +x Stability, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Pacifist.
+-New Investigation & Security Services civic (Authoritarian) provides -x% Crime, and allows the Professional Protection Office branch building, which provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Authoritarian. The host planet gets +50% Authoritarian attraction and either two Investigator jobs (produces -20 crime) or (if the providing corp is criminal) two Suppressor jobs (produces -10% Worker power, +5% Worker output).
+-New governments Private Intelligence Agency (Investigation & Security Services) and Protection Racket (Investigation & Security Services with Criminal Heritage).
+
+
 v1.6.7 (11-11-20) - More Merchantry
 -Added two governments based on the ideas of Steam user Garlic Pudding: Stakeholder Polity and Shareholder Commonwealth.
 -Added new governments: Merchant Republic and Constitutional Plutocracy.
