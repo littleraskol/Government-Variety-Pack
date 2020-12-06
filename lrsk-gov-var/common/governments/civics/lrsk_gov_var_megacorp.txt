@@ -133,3 +133,27 @@ lrsk_gov_var_civic_mc_workers_councils = {
     pop_cat_specialist_political_power = 0.25
   }
 }
+
+#Casino Mysticism (Not Materialist) - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
+lrsk_gov_var_civic_mc_casino_mystic = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects"
+
+  possible = {
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+    pop_demotion_time_mult = -0.25
+    planet_colony_development_speed_mult = 0.25
+  }
+}
