@@ -182,3 +182,26 @@ lrsk_gov_var_civic_mc_vacay_planning = {
     pop_amenities_usage_mult = -0.10
   }
 }
+
+#Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
+lrsk_gov_var_civic_mc_heritage_trust = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+		planet_stability_add = 5
+  }
+}
