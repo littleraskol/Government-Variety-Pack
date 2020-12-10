@@ -158,7 +158,7 @@ lrsk_gov_var_civic_mc_casino_mystic = {
   }
 }
 
-#Vacation Experience Planning (Xenophile) - This megacorp specialized in travel agency (tbd) (+15% trust growth rate and +20 trust cap, -10% pop amenities usage, build Galactic Excursions Office)
+#Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
 lrsk_gov_var_civic_mc_vacay_planning = {
   potential = { authority = { value = auth_corporate } }
   #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
@@ -177,8 +177,6 @@ lrsk_gov_var_civic_mc_vacay_planning = {
   random_weight = { base = 5 }
 
   modifier = {
-		country_trust_cap_add = 20
-		country_trust_growth = 0.15
     pop_amenities_usage_mult = -0.10
   }
 }
@@ -187,7 +185,7 @@ lrsk_gov_var_civic_mc_vacay_planning = {
 lrsk_gov_var_civic_mc_heritage_trust = {
   potential = { authority = { value = auth_corporate } }
   #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
-  description = "civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_heritage_trust_effects"
 
   possible = {
     ethics = {
@@ -203,5 +201,29 @@ lrsk_gov_var_civic_mc_heritage_trust = {
 
   modifier = {
 		planet_stability_add = 5
+  }
+}
+
+#Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
+lrsk_gov_var_civic_mc_crs = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_crs_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.15
   }
 }
