@@ -92,6 +92,18 @@ l_english:
 
  # Branch Office Buildings
 
+ LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "+5% Branch Office Value for every 10% of pops on planet that are"
+ LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2:0 "(minimum +5% if any, maximum +50%)"
+
+ lrsk_scaling_branch_value_authoritarian:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Authoritarian $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_egalitarian:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Egalitarian $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_materialist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Materialist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_militarist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Militarist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_pacifist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Pacifist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_spiritualist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Spiritualist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_xenophile:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Xenophilic $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_xenophobe:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Xenophobic $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+
  lrsk_gov_var_bldg_managerial_technique_institute:0 "Managerial Technique Institute"
  lrsk_gov_var_bldg_managerial_technique_institute_desc:0 "At this technical institute, managerial science interns learn important project management and fiscal rightsizing techniques through hands-on real world applications, gaining valuable experience."
 
@@ -122,14 +134,26 @@ l_english:
  lrsk_gov_var_bldg_military_excellence_academy:0 "Military Excellence Academy"
  lrsk_gov_var_bldg_military_excellence_academy_office_desc:0 "Vision. Leadership. Cunning. Daring. The prowess of a people must be well tempered before battle is joined. Here, the finest strategic minds will tutor your officer corps in the art of war."
 
+ LRSK_MILITARY_EXCELLENCE_COMMON:0 "get +20% chance of gaining a positive trait when spawned or on level up, +10% more per $lrsk_gvp_building_military_excellence_academy$ in empire beyond the first (max +100%)."
+
+ lrsk_military_excellence_naval_effect:0 "Admirals $LRSK_MILITARY_EXCELLENCE_COMMON$"
+ lrsk_military_excellence_army_effect:0 "Generals $LRSK_MILITARY_EXCELLENCE_COMMON$"
+ lrsk_military_excellence_both_effect:0 "Military leaders $LRSK_MILITARY_EXCELLENCE_COMMON$"
+
  lrsk_gov_var_bldg_reformatory_workhouse:0 "Reformatory Workhouse"
  lrsk_gov_var_bldg_reformatory_workhouse_desc:0 "At this combination of prison and manufacturing facility debtors toil to repay their creditors, whether their debts are in money or to society."
+
+ lrsk_crim_workhouse_pop_steal_chance:0 "Owner has a 5% chance per year per $lrsk_gov_var_bldg_reformatory_workhouse$ owned to steal and enslave a £pop£ pop from the host planet. This is more likely the more pops a planet has."
 
  lrsk_gov_var_bldg_offworld_jobs_placement:0 "Offworld Jobs Placement"
  lrsk_gov_var_bldg_offworld_jobs_placement_desc:0 "Opportunity awaits in the Offworld Development Corps! Travel to distant new worlds, make them work, and bring home the money for your family. 95% of employees return safely from placements."
 
+ lrsk_offworld_work_effect:0 "Megacorp gets +10% colony development speed and +5% station output (max 100% and 50% respectively) per $lrsk_gov_var_bldg_offworld_jobs_placement$ owned."
+
  lrsk_gov_var_bldg_local_news_office:0 "Local News Station"
  lrsk_gov_var_bldg_local_news_office_desc:0 "Boradcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
+
+ lrsk_media_favor_chance:0 "Owner has a 5% chance per year per $lrsk_gov_var_bldg_local_news_office$ owned to get a favor from the host empire. This is much more likely on the capital world."
 
  ##Jobs
 
