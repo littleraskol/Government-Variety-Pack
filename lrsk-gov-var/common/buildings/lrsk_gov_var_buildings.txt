@@ -1613,30 +1613,25 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	
 	# Effect is by event: Better chance of positive military leader traits
-	# THIS IS INSUFFICIENT: Does not deal with case where host has academies from more than one corp...
 	on_built = {
 		owner = {
-			change_variable = { which = lrsk_military_leader_training_bonus value = 1 }
-		}
-		branch_office_owner = {
-			if = { limit = { NOT = { has_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus } } }
-				set_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
+			if ={ limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
+				change_variable = { which = lrsk_general_training_bonus value = 1 }
 			}
+			if ={ limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
+				change_variable = { which = lrsk_admiral_training_bonus value = 1 }
+			}			
 		}
 	}
     
 	on_destroy = {
 		owner = {
-			subtract_variable = { which = lrsk_military_leader_training_bonus value = 1 }
-		}
-		branch_office_owner = {
-			if = {
-				limit = { AND = {
-					has_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
-					prev = { check_variable = { which = lrsk_military_leader_training_bonus value <= 0 } }
-				} }
-				remove_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
+			if ={ limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
+				subtract_variable = { which = lrsk_general_training_bonus value = 1 }
 			}
+			if ={ limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
+				subtract_variable = { which = lrsk_admiral_training_bonus value = 1 }
+			}	
 		}
 	}
 	
