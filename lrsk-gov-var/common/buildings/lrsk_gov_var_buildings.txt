@@ -1617,20 +1617,24 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 		owner = {
 			if ={ limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
 				change_variable = { which = lrsk_general_training_bonus value = 1 }
+				set_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
 			}
 			if ={ limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
 				change_variable = { which = lrsk_admiral_training_bonus value = 1 }
+				set_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
 			}			
 		}
 	}
     
 	on_destroy = {
 		owner = {
-			if ={ limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
+			if ={ limit = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
 				subtract_variable = { which = lrsk_general_training_bonus value = 1 }
+				remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
 			}
-			if ={ limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
+			if ={ limit = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
 				subtract_variable = { which = lrsk_admiral_training_bonus value = 1 }
+				remove_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
 			}	
 		}
 	}
