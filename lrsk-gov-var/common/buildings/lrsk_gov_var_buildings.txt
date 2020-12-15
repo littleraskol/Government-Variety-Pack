@@ -431,3 +431,1502 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		weight = 1
 	}
 }
+
+## Branch Office Buildings
+
+# Managerial Technique Institute
+lrsk_gvp_bldg_managerial_technique_institute = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt }
+	}
+
+	planet_modifier = {
+		lrsk_gov_var_job_functionary_add = 2
+		branch_office_value_mult = 0.15
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Learnarium Dome
+lrsk_gvp_bldg_learnarium_dome = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_edu_corp }
+	}
+
+	planet_modifier = {
+		lrsk_gov_var_job_infoguide_add = 2
+		pop_ethic_materialist_attraction_mult = 0.5
+	}
+	
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_materialist
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_materialist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Odd Jobs Emporium
+lrsk_gvp_bldg_odd_jobs_emporium = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_gig_economy }
+	}
+
+	planet_modifier = {
+		lrsk_gov_var_job_gofer_add = 2
+		branch_office_value_mult = 0.15
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Organizing Hub
+lrsk_gvp_bldg_organizing_hub = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_workers_councils }
+	}
+	
+	planet_modifier = {
+		pop_cat_worker_happiness = 0.1
+		pop_cat_worker_political_power = 0.2
+		pop_ethic_egalitarian_attraction_mult = 0.5
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_egalitarian
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_egalitarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Professional Protection Office
+lrsk_gov_var_bldg_professional_protection_office = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_police_state }
+	}
+
+	planet_modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { branch_office_owner = { has_valid_civic = civic_criminal_heritage } }
+		}
+		lrsk_gov_var_job_investigator_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		lrsk_gov_var_job_suppressor_add = 1
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_authoritarian
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_authoritarian = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Mediation Retreat
+lrsk_gov_var_bldg_mediation_retreat = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_conflict_res }
+	}
+
+	planet_modifier = {
+		stability_add = 5
+		pop_ethic_pacifist_attraction_mult = 0.5
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_pacifist
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_perentage = {
+				percentage >= 0.7
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_pacifist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Heritage Museum
+lrsk_gov_var_bldg_heritage_museum = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_heritage_trust }
+	}
+	
+	planet_modifier = {
+		pop_citizen_happiness = 0.1
+		pop_ethic_xenophobe_attraction_mult = 0.5
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_xenophobe
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_xenophobe = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Galactic Excursions Office
+lrsk_gov_var_bldg_galactic_excursions_office = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_vacay_planning }
+	}
+
+	planet_modifier = {
+		pop_amenities_usage_mult = -0.15
+		pop_ethic_xenophile_attraction_mult = 0.5
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_xenophile
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_xenophile = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Military Excellence Academy
+lrsk_gov_var_bldg_military_excellence_academy = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { OR = {
+			has_valid_civic = civic_naval_contractors
+			has_valid_civic = civic_private_military_companies
+		} }
+	}
+
+	planet_modifier = {
+		pop_ethic_militarist_attraction_mult = 0.5
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = {
+				has_valid_civic = civic_naval_contractors
+				NOT = { has_valid_civic = civic_private_military_companies }
+			}		
+		}
+		text = lrsk_military_excellence_naval_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = {
+				has_valid_civic = civic_private_military_companies
+				NOT = { has_valid_civic = civic_naval_contractors }
+			}		
+		}
+		text = lrsk_military_excellence_army_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = {
+				has_valid_civic = civic_private_military_companies
+				has_valid_civic = civic_naval_contractors
+			}			
+		}
+		text = lrsk_military_excellence_both_effect
+	}
+	
+	# Effect is by event: Better chance of positive military leader traits
+	# THIS IS INSUFFICIENT: Does not deal with case where host has academies from more than one corp...
+	on_built = {
+		owner = {
+			change_variable = { which = lrsk_military_leader_training_bonus value = 1 }
+		}
+		branch_office_owner = {
+			if = { limit = { NOT = { has_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus } } }
+				set_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
+			}
+		}
+	}
+    
+	on_destroy = {
+		owner = {
+			subtract_variable = { which = lrsk_military_leader_training_bonus value = 1 }
+		}
+		branch_office_owner = {
+			if = {
+				limit = { AND = {
+					has_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
+					prev = { check_variable = { which = lrsk_military_leader_training_bonus value <= 0 } }
+				} }
+				remove_relation_flag = { who = prev.owner flag = lrsk_providing_military_training_bonus }
+			}
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		text = lrsk_scaling_branch_value_militarist
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.1
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.2
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.3
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.4
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.5
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.6
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.7
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.8
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			pop_percentage = {
+				percentage >= 0.9
+				limit = {
+					is_militarist = yes
+				}
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Reformatory Workhouse
+lrsk_gov_var_bldg_reformatory_workhouse = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = civic_indentured_assets }
+	}
+
+	planet_modifier = {	
+		planet_jobs_slave_produces_mult = 0.1
+		planet_jobs_worker_produces_mult = 0.1
+		branch_office_value_mult = 0.15
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_crim_workhouse_pop_steal_chance
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Local News Station
+lrsk_gov_var_bldg_local_news_office = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = civic_media_conglomerate }
+	}
+
+	planet_modifier = {	
+		#tbd
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_media_conglomerate }
+		}
+		text = lrsk_media_favor_chance
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+# Offworld Jobs Placement
+lrsk_gov_var_bldg_offworld_jobs_placement = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = civic_private_prospectors }
+	}
+
+	planet_modifier = {	
+		job_lrsk_gov_var_job_offworld_worker = 2
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_private_prospectors }
+		}
+		text = lrsk_offworld_work_effect
+	}
+
+	#provide owner more stuff
+	on_built = {
+		branch_office_owner = {
+			change_variable = { which = lrsk_offworld_workers_bonus value = 1 }
+		}
+	}
+    
+	on_destroy = {
+		branch_office_owner = {
+			subtract_variable = { which = lrsk_offworld_workers_bonus value = 1 }
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
+
+
+
