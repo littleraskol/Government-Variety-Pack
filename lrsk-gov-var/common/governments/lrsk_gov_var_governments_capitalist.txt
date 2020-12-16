@@ -430,3 +430,84 @@ lrsk_gov_var_gov_rationalist_managerial_firm = {
 		}
 	}
 }
+
+# Private Intelligence Agency
+lrsk_gov_var_gov_private_intel_agency = {
+	ruler_title = LRSK_GOV_VAR_RT_CE_DIRECTOR
+
+	possible = {		
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_iss
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+		modifier = {
+			add = 500
+			leader_class = ruler
+		}
+		modifier = {
+			add = 250
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 250
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+		modifier = {
+			add = 100
+			has_ethic = ethic_authoritarian
+		}
+	}
+}
+
+# Protection Racket
+lrsk_gov_var_gov_protection_racket = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_ENFORCER
+
+	possible = {		
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_iss
+		has_valid_civic = civic_criminal_heritage
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+		modifier = {
+			add = 500
+			leader_class = ruler
+		}
+		modifier = {
+			add = 250
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 250
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1100
+		modifier = {
+			add = 100
+			has_ethic = ethic_authoritarian
+		}
+	}
+}
