@@ -133,17 +133,39 @@ Optimized Expansion (Machine Intelligence) - The civilization that designed the 
 
 Megacorp Civics:
 
-Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
+Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output, build Managerial Technique Institute)
 
-Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
 
-Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
+Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
 
 Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists, build Organizing Hub)
+
+Casino Mysticism (Not Materialist) - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
+
+Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
+
+Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
+
+Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
+
+Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+
+Enhanced Civics
+
+(These are civics from the base game that have had new features added to them.)
+
+Naval Contractors and Private Military Companies - Allows the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
+
+Indentured Assets - Allows the Reformatory Workhouse branch building, which provides the host planet with +10% Worker/Slave output and provides the megacorp with +15% Branch Office Value. Ciminal megacorps with this building occasionally steal and enslave pops from the planet!
+
+Private Prospectors - Allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and station output.
+
+Media Conglomerate - Allows the Local News Office branch building, which provides the host planet with +x Ruler output and +x Specialist power and happiness (???), and provides the megacorp with a chance to occasionally get favors from the host empire.
 
 2. New Governments
 
