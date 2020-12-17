@@ -1,0 +1,66 @@
+# Government Variety Pack
+# Events - Megacorp Branch Building Events
+# Author: littleraskol
+
+# These events are for certain special building effects
+
+namespace = lrsk_gvp_mc_bldg_special
+
+# Handle special military leader bonus from Military Excellence Academy
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	# Only fire if leader's empire has a bonus and the leader is appropriate
+	trigger = {
+		from.owner = { OR = {
+			check_variable = { which = lrsk_general_training_bonus value > 0 }
+			check_variable = { which = lrsk_admiral_training_bonus value > 0 }
+		} }
+		from = {
+			leader_class = general
+			leader_class = admiral
+		}
+	}
+}
+
+# Handle pop steal from Reformatory Workhouse
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.20
+	hide_window = yes
+	mean_time_to_happen = { months = 12 }
+
+	# Only fire if a criminal slaver corp with built workhouses
+	trigger = {
+		has_valid_civic = civic_criminal_heritage
+		has_valid_civic = civic_indentured_assets
+		check_variable = { which = lrsk_num_built_workhouses value > 0 }
+	}
+}
+
+# Handle favor gain chance from Local News Station
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.30
+	hide_window = yes
+	mean_time_to_happen = { months = 12 }
+
+	# Only fire if a media corp with built local news stations
+	trigger = {
+		has_valid_civic = civic_media_conglomerate
+		check_variable = { which = lrsk_num_built_localmedia value > 0 }
+	}
+}
+
+# Handle bonuses from Offworld Jobs Placement
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.40
+	hide_window = yes
+	is_triggered_only = yes
+
+	# Only fire if a prospector corp with built offworld jobs hubs
+	trigger = {
+		has_valid_civic = civic_private_prospectors
+		check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
+	}
+}

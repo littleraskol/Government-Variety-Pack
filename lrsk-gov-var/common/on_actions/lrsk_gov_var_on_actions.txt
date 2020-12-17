@@ -26,6 +26,13 @@ on_yearly_pulse_country = {
 	}
 }
 
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		lrsk_gvp_mc_bldg_special.40
+	}
+}
+
 on_bi_yearly_pulse = {
 	events = {
 		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
@@ -44,6 +51,16 @@ on_pop_grown = {
 on_leader_spawned = {
 	events = {
 		lrsk_gov_var_shroud_touched.5 # Leaders get esper trait as appropriate
+		lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
+	}
+}
+
+# A leader leveled up.
+# Scope = Country
+# From = Leader
+on_leader_level_up = {
+	events = {
+		lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
 	}
 }
 
