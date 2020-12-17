@@ -6,7 +6,7 @@
 
 namespace = lrsk_gvp_mc_bldg_special
 
-# Handle special military leader bonus from Military Excellence Academy
+# Handle special military leader bonus from Military Excellence Academy (Gate for delay)
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.10
 	hide_window = yes
@@ -14,13 +14,262 @@ country_event = {
 
 	# Only fire if leader's empire has a bonus and the leader is appropriate
 	trigger = {
-		from.owner = { OR = {
-			check_variable = { which = lrsk_general_training_bonus value > 0 }
-			check_variable = { which = lrsk_admiral_training_bonus value > 0 }
-		} }
-		from = {
-			leader_class = general
-			leader_class = admiral
+		OR = {
+			AND = {
+				check_variable = { which = lrsk_general_training_bonus value > 0 }
+				from = { leader_class = general }
+			}
+			AND = {
+				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
+				from = { leader_class = admiral }
+			}
+		}
+	}
+
+	immediate = {
+		# we want to give the default level up event a chance to run
+		country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 2 }
+	}
+}
+
+# Handle special military leader bonus from Military Excellence Academy
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	# Only fire if leader's empire has a bonus and the leader is appropriate
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = { which = lrsk_general_training_bonus value > 0 }
+				from = { leader_class = general }
+			}
+			AND = {
+				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
+				from = { leader_class = admiral }
+			}
+		}
+	}
+
+	immediate = {
+		random_list = {
+			20 = {
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 1 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 2 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 3 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 4 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 5 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 6 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 7 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = 10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 8 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+
+				from = { lrsk_add_random_good_leader_trait = yes }
+			}
+			80 = {
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 1 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 2 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 3 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 4 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 5 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 6 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 7 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+				modifier = {
+					add = -10
+					OR = {
+						AND = {
+							check_variable = { which = lrsk_general_training_bonus value > 8 }
+							from = { leader_class = general }
+						}
+						AND = {
+							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
+							from = { leader_class = admiral }
+						}
+					}
+				}
+
+				# Do nothing
+			}
 		}
 	}
 }
@@ -31,11 +280,108 @@ country_event = {
 	hide_window = yes
 	mean_time_to_happen = { months = 12 }
 
-	# Only fire if a criminal slaver corp with built workhouses
+	# Only fire if a criminal slaver corp with built workhouses, and if there are applicable planets/empires
 	trigger = {
 		has_valid_civic = civic_criminal_heritage
 		has_valid_civic = civic_indentured_assets
 		check_variable = { which = lrsk_num_built_workhouses value > 0 }
+		
+		any_country = {
+			NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
+			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
+			any_owned_planet = { has_planet_flag = lrsk_could_lose_pops_to@root }
+		}
+	}
+
+	immediate = {
+		save_event_target_as = lrsk_slaver_corp_to_steal
+
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
+				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
+				any_owned_planet = { has_planet_flag = lrsk_could_lose_pops_to@root }
+			}
+
+			while = {
+				limit = {
+					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
+					any_owned_planet = {
+						has_planet_flag = lrsk_could_lose_pops_to@root
+						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+					}
+				}
+
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = lrsk_could_lose_pops_to@root
+						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+					}
+
+					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 10 } # marks this planet
+
+					random_list = {
+						5 = {
+							modifier = {
+								add = -4
+								num_pops < 5
+							}
+							modifier = {
+								add = 5
+								num_pops > 15
+							}
+							modifier = {
+								add = 5
+								num_pops > 45
+							}
+							modifier = {
+								add = 5
+								planet_crime > 20
+							}
+							modifier = {
+								add = 5
+								planet_crime > 40
+							}
+							modifier = {
+								add = 5
+								planet_crime > 60
+							}
+
+							# Do the steal
+							owner = { set_timed_country_flag = { flag = lrsk_pop_stolen_cooldown days = 1800 } } # 5 year cooldown
+						}
+						95 = {
+							modifier = {
+								add = 4
+								num_pops < 5
+							}
+							modifier = {
+								add = -5
+								num_pops > 15
+							}
+							modifier = {
+								add = -5
+								num_pops > 45
+							}
+							modifier = {
+								add = -5
+								planet_crime > 20
+							}
+							modifier = {
+								add = -5
+								planet_crime > 40
+							}
+							modifier = {
+								add = -5
+								planet_crime > 60
+							}
+							
+							# Do nothing
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -45,10 +391,107 @@ country_event = {
 	hide_window = yes
 	mean_time_to_happen = { months = 12 }
 
-	# Only fire if a media corp with built local news stations
+	# Only fire if a media corp with built local news stations, and if there are applicable planets/empires
 	trigger = {
 		has_valid_civic = civic_media_conglomerate
 		check_variable = { which = lrsk_num_built_localmedia value > 0 }
+		
+		any_country = {
+			NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
+			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
+			any_owned_planet = { has_planet_flag = lrsk_could_leak_scandal_to@root }
+		}
+	}
+
+	immediate = {
+		save_event_target_as = lrsk_media_corp_to_scoop
+
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
+				check_variable = { which = lrsk_num_owned_localmedia value > 0 }
+				any_owned_planet = { has_planet_flag = lrsk_could_leak_scandal_to@root }
+			}
+
+			while = {
+				limit = {
+					NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
+					any_owned_planet = {
+						has_planet_flag = lrsk_could_leak_scandal_to@root
+						NOT = { has_planet_flag = lrsk_scandal_rolled }
+					}
+				}
+
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = lrsk_could_leak_scandal_to@root
+						NOT = { has_planet_flag = lrsk_scandal_rolled }
+					}
+
+					set_timed_planet_flag = { flag = lrsk_scandal_rolled days = 10 } # marks this planet
+
+					random_list = {
+						5 = {
+							modifier = {
+								add = 5
+								planet_stability < 90
+							}
+							modifier = {
+								add = 5
+								planet_stability < 70
+							}
+							modifier = {
+								add = 5
+								planet_crime > 20
+							}
+							modifier = {
+								add = 5
+								planet_crime > 40
+							}
+							modifier = {
+								add = 5
+								planet_crime > 60
+							}
+							modifier = {
+								add = 10
+								is_capital = yes
+							}
+
+							# Send the favor
+							owner = { set_timed_country_flag = { flag = lrsk_scandal_favor_cooldown days = 1800 } } # 5 year cooldown
+						}
+						95 = {
+							modifier = {
+								add = -5
+								planet_stability < 90
+							}
+							modifier = {
+								add = -5
+								planet_stability < 70
+							}
+							modifier = {
+								add = -5
+								planet_crime > 20
+							}
+							modifier = {
+								add = -5
+								planet_crime > 40
+							}
+							modifier = {
+								add = -5
+								planet_crime > 60
+							}
+							modifier = {
+								add = -10
+								is_capital = yes
+							}
+							
+							# Do nothing
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
