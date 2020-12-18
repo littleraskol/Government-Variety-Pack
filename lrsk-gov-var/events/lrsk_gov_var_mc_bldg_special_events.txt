@@ -506,4 +506,57 @@ country_event = {
 		has_valid_civic = civic_private_prospectors
 		check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
 	}
+
+	immediate = {
+		log = "Attempting offworld work bonus application."
+
+		# Remove previous modifier
+		switch = {
+			trigger = has_modifier
+			lrsk_gvp_empire_offworld_work_bonus_1 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
+			lrsk_gvp_empire_offworld_work_bonus_2 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
+			lrsk_gvp_empire_offworld_work_bonus_3 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
+			lrsk_gvp_empire_offworld_work_bonus_4 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
+			lrsk_gvp_empire_offworld_work_bonus_5 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
+			lrsk_gvp_empire_offworld_work_bonus_6 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
+			lrsk_gvp_empire_offworld_work_bonus_7 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
+			lrsk_gvp_empire_offworld_work_bonus_8 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
+			lrsk_gvp_empire_offworld_work_bonus_9 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
+			lrsk_gvp_empire_offworld_work_bonus_10 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
+		}
+
+		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 1 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 2 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 3 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 4 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 5 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 6 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 7 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 8 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 9 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
+		}
+		ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value >= 10 } }
+			add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
+		}
+		ELSE = {
+			# Do nothing?
+		}
+	}
 }

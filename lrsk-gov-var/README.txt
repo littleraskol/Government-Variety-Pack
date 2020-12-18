@@ -163,7 +163,7 @@ Naval Contractors and Private Military Companies - Allows the Military Excellenc
 
 Indentured Assets - Allows the Reformatory Workhouse branch building, which provides the host planet with +10% Worker/Slave output and provides the megacorp with +15% Branch Office Value. Ciminal megacorps with this building occasionally steal and enslave pops from the planet!
 
-Private Prospectors - Allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and station output.
+Private Prospectors - Allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and mining station output.
 
 Media Conglomerate - Allows the Local News Office branch building, which provides the host planet with +x Ruler output and +x Specialist power and happiness (???), and provides the megacorp with a chance to occasionally get favors from the host empire.
 
