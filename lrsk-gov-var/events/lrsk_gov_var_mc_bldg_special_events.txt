@@ -316,6 +316,7 @@ country_event = {
 					limit = {
 						has_planet_flag = lrsk_could_lose_pops_to@root
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						num_pops > 2 # don't want to steal last pop...
 					}
 
 					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 10 } # marks this planet
@@ -348,7 +349,51 @@ country_event = {
 							}
 
 							# Do the steal
-							owner = { set_timed_country_flag = { flag = lrsk_pop_stolen_cooldown days = 1800 } } # 5 year cooldown
+
+							owner = {
+								set_timed_country_flag = { flag = lrsk_pop_stolen_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_slaver_corp_abduct_gov
+							}
+							save_event_target_as = lrsk_slaver_corp_abduct_location
+
+							# Choice of pop to enslave starts with those who would be "least missed" or are most desperate.
+							IF = {
+								limit = { any_pop = { OR = { 
+									is_unemployed = yes
+									is_pop_category = slave
+									is_pop_category = purge
+								} } }
+								random_pop = {
+									limit = { OR = { 
+										is_unemployed = yes
+										is_pop_category = slave
+										is_pop_category = purge
+									} }
+									set_pop_flag = lrsk_pop_to_abduct
+								}
+							}
+							ELSE_IF = { limit = { any_pop = { is_pop_category = worker } }
+								random_pop = { limit = { is_pop_category = worker } set_pop_flag = lrsk_pop_to_abduct }
+							}
+							ELSE_IF = { limit = { any_pop = { is_pop_category = specialist } }
+								random_pop = { limit = { is_pop_category = specialist } set_pop_flag = lrsk_pop_to_abduct }
+							}
+							ELSE = { random_pop = { set_pop_flag = lrsk_pop_to_abduct } }
+
+							
+							IF = {
+								limit = { any_pop = { has_pop_flag = lrsk_pop_to_abduct } }
+								random_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct } }
+									remove_pop_flag = lrsk_pop_to_abduct
+									resettle_pop = {
+										pop = this
+										planet = root.capital_scope
+									}
+								}
+
+								root = { country_event = { id = lrsk_gvp_mc_bldg_special.21 } }
+								prevprev = { country_event = { id = lrsk_gvp_mc_bldg_special.22 } }
+							}
 						}
 						95 = {
 							modifier = {
@@ -382,6 +427,35 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+# Inform slaver corp of abduction
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.21
+	title = lrsk_gvp_mc_bldg_special.21.name
+	desc = lrsk_gvp_mc_bldg_special.21.desc
+	is_triggered_only = yes
+	location = event_target:lrsk_slaver_corp_abduct_location
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.21.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.21.a.tooltip
+	}
+}
+
+# Inform victim gov of abduction
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.22
+	title = lrsk_gvp_mc_bldg_special.22.name
+	desc = lrsk_gvp_mc_bldg_special.22.desc
+	is_triggered_only = yes
+	location = event_target:lrsk_slaver_corp_abduct_location
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.22.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.22.a.tooltip
+		hidden_effect = { add_opinion_modifier = { modifier = opinion_lrsk_gvp_slaver_corp_raid who = event_target:lrsk_slaver_corp_to_steal } }
 	}
 }
 
@@ -457,8 +531,15 @@ country_event = {
 								is_capital = yes
 							}
 
-							# Send the favor
-							owner = { set_timed_country_flag = { flag = lrsk_scandal_favor_cooldown days = 1800 } } # 5 year cooldown
+							# Send the favor event
+
+							owner = {
+								set_timed_country_flag = { flag = lrsk_scandal_favor_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_media_corp_victim
+							}
+							save_event_target_as = lrsk_media_corp_scoop_location
+
+							root = { country_event = { id = lrsk_gvp_mc_bldg_special.31 } }
 						}
 						95 = {
 							modifier = {
@@ -492,6 +573,81 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+# Favor choice
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.31
+	title = lrsk_gvp_mc_bldg_special.31.name
+	desc = lrsk_gvp_mc_bldg_special.31.desc
+	is_triggered_only = yes
+	location = event_target:lrsk_media_corp_scoop_location
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.31.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.31.a.tooltip
+		hidden_effect = {
+			event_target:lrsk_media_corp_victim = { set_timed_country_flag = { flag = lrsk_media_corp_got_favor days = 5 } }
+			add_favor = {
+				target = event_target:lrsk_media_corp_victim
+				value = 1
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.31.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.31.b.tooltip
+		hidden_effect = {
+			event_target:lrsk_media_corp_victim = {
+				set_timed_country_flag = { flag = lrsk_media_corp_shamed_us days = 5 }
+				add_modifier = { modifier = lrsk_gvp_empire_scandal_wracked days = 360 }
+				add_opinion_modifier = { modifier = lrsk_gvp_empire_scandal_inflicted who = root }
+			}
+		}
+	}
+
+	after = {
+		event_target:lrsk_media_corp_victim = { country_event = { id = lrsk_gvp_mc_bldg_special.32 } }
+	}
+}
+
+# Favor inform victim
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.32
+	title = lrsk_gvp_mc_bldg_special.32.name
+	is_triggered_only = yes
+	location = event_target:lrsk_media_corp_scoop_location
+
+	desc = {
+		trigger = { has_country_flag = lrsk_media_corp_got_favor }
+		text = lrsk_gvp_mc_bldg_special.32.desc.favor
+	}
+	desc = {
+		trigger = { has_country_flag = lrsk_media_corp_shamed_us }
+		text = lrsk_gvp_mc_bldg_special.32.desc.favor
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_media_corp_got_favor }
+		name = lrsk_gvp_mc_bldg_special.32.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.32.a.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_media_corp_shamed_us }
+		name = lrsk_gvp_mc_bldg_special.32.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.32.b.tooltip
+	}
+
+	#dumb JIC shit
+	option = {
+		trigger = { NOR = {
+			has_country_flag = lrsk_media_corp_got_favor
+			has_country_flag = lrsk_media_corp_shamed_us
+		} }
+		name = OK
 	}
 }
 

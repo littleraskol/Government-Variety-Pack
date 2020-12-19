@@ -67,6 +67,10 @@ l_english:
  # New Fed Starts
  opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
 
+ # Corp building specials
+ opinion_lrsk_gvp_scandal_inflicted:0 "Exposed Our Scandals"
+ opinion_lrsk_gvp_slaver_corp_raid:0 "Enslaved Our People"
+
  ## Buildings
 
  # Warrior Hall line
@@ -277,6 +281,20 @@ l_english:
  lrsk_gov_var_empire_endisnigh:0 "The End Is Nigh"
  lrsk_gov_var_empire_endisnigh_desc:0 "Doomsday cultists run rampant, given... well. You know. We have to prove them wrong!"
 
+ lrsk_gvp_empire_scandal_wracked:0 "Scandal-Wracked"
+ lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
+
+ lrsk_gvp_empire_offworld_work_bonus_1:0 "Offworld Worker Bonus"
+ lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+
  ## Planet Modifiers
 
  # Direct Revelation Wild Cults
@@ -403,6 +421,34 @@ l_english:
  lrsk_government_variety_pack_backend.101.media:0 "$LRSK_GVP_BACKEND_EPLAIN_COMMON_1$ $civic_media_conglomerate$ $LRSK_GVP_BACKEND_EPLAIN_COMMON_2$Allows the £building£ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+x Ruler output§! and §G+x Specialist power and happiness§! (???), and provides the megacorp with §Ga chance to occasionally get Favors from the host empire.§!"
  lrsk_government_variety_pack_backend.101.prosp:0 "$LRSK_GVP_BACKEND_EPLAIN_COMMON_1$ $civic_private_prospectors$  $LRSK_GVP_BACKEND_EPLAIN_COMMON_2$Allows the £building£ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_workerr$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§!."
  lrsk_government_variety_pack_backend.101.indent:0 "$LRSK_GVP_BACKEND_EPLAIN_COMMON_1$ $civic_indentured_assets$  $LRSK_GVP_BACKEND_EPLAIN_COMMON_2$Allows the £building£ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! Worker/Slave output, and provides the megacorp with §G+15% Branch Office Value§!. §HA criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!§!"
+
+ # Megacorp building special effects
+
+ lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
+ lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, risky loan schemes, and outright trickery, we have ensared enough of the wretches of §Y[event_targe:lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our enternally indebted workforce."
+ lrsk_gvp_mc_bldg_special.21.a:0 "Get to work!"
+ lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and setting as appropriate.) The government of §H[event_target:lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
+
+ lrsk_gvp_mc_bldg_special.22.name:0 "Detestable Slavers!"
+ lrsk_gvp_mc_bldg_special.22.desc:0 "The underhanded corporate bandits of §H[event_target:lrsk_slaver_corp_to_steal.GetName]§! have sunk to a new low, ensnaring and abducting our people on §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! to toil on their worlds!"
+ lrsk_gvp_mc_bldg_special.22.a:0 "This will NOT stand."
+ lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[event_target:lrsk_slaver_corp_to_steal.GetName]§!, and §Rwe won't forget this!§!"
+
+ lrsk_gvp_mc_bldg_special.31.name:0 "A Juicy Story..."
+ lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[event_target:lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the [event_target:lrsk_media_corp_victim.GetName]."
+ lrsk_gvp_mc_bldg_special.31.a:0 "What a scoop!"
+ lrsk_gvp_mc_bldg_special.31.a.tooltip:0 "Gain §G1 Favor§! with §H[event_target:lrsk_media_corp_victim.GetName]§!"
+ lrsk_gvp_mc_bldg_special.31.b:0 "The people deserve to know."
+ lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[event_target:lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their £mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £mod_pop_citizen_happiness£ §YPop Happiness§! for §Y1§! year. They will §Rnot be happy with us...§!"
+
+ lrsk_gvp_mc_bldg_special.32.name:0 "We Got Scooped!"
+ lrsk_gvp_mc_bldg_special.32.desc.favor:0 "PR specialists from §H[event_target:lrsk_media_corp_to_scoop.GetName]§! corporate HQ informed us that their reporters on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§! discovered something that would be deeply embarrassing for us. 'Fortunately,' they said, 'we prefer to see this as a business opportunity...'"
+ lrsk_gvp_mc_bldg_special.32.a:0 "We really stepped in it."
+ lrsk_gvp_mc_bldg_special.32.a.tooltip:0 "§H[event_target:lrsk_media_corp_to_scoop.GetName]§! gets §R1 Favor§! from us."
+ lrsk_gvp_mc_bldg_special.32.desc.scandal:0 "Reporters from §H[event_target:lrsk_media_corp_to_scoop.GetName]§! on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§! discovered and reported on an item of national disgrace. It will take some time now to recover our good name with our citizens and the galactic community."
+ lrsk_gvp_mc_bldg_special.32.b:0 "Damn the meddling lying press!"
+ lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "National embarrassment reduces our £mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £mod_pop_citizen_happiness£ §YPop Happiness§! for §Y1§! year. We are not happy with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
+
 
 
  lrsk_government_variety_pack_backend.2001.name:0 "Using GVP Gov Type"
