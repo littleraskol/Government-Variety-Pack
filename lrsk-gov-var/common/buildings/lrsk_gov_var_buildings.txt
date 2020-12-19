@@ -1584,63 +1584,6 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = {
-				has_valid_civic = civic_naval_contractors
-				NOT = { has_valid_civic = civic_private_military_companies }
-			}		
-		}
-		text = lrsk_military_excellence_naval_effect
-	}
-	
-	triggered_desc = {
-		trigger = {
-			branch_office_owner = {
-				has_valid_civic = civic_private_military_companies
-				NOT = { has_valid_civic = civic_naval_contractors }
-			}		
-		}
-		text = lrsk_military_excellence_army_effect
-	}
-	
-	triggered_desc = {
-		trigger = {
-			branch_office_owner = {
-				has_valid_civic = civic_private_military_companies
-				has_valid_civic = civic_naval_contractors
-			}			
-		}
-		text = lrsk_military_excellence_both_effect
-	}
-	
-	# Effect is by event: Better chance of positive military leader traits
-	on_built = {
-		owner = {
-			if = { limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
-				change_variable = { which = lrsk_general_training_bonus value = 1 }
-				set_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-			}
-			if = { limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
-				change_variable = { which = lrsk_admiral_training_bonus value = 1 }
-				set_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-			}			
-		}
-	}
-    
-	on_destroy = {
-		owner = {
-			if = { limit = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
-				subtract_variable = { which = lrsk_general_training_bonus value = 1 }
-				remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-			}
-			if = { limit = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
-				subtract_variable = { which = lrsk_admiral_training_bonus value = 1 }
-				remove_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-			}	
-		}
-	}
-	
-	triggered_desc = {
-		trigger = {
 			pop_percentage = {
 				percentage >= 0
 				limit = {
@@ -1781,6 +1724,57 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 			branch_office_value_mult = 0.05
 		}
 	}
+	
+	triggered_desc = {
+		trigger = {
+			has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+			NOT = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
+		}
+		text = lrsk_military_excellence_naval_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+			NOT = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
+		}
+		text = lrsk_military_excellence_army_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+			has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+		}
+		text = lrsk_military_excellence_both_effect
+	}
+	
+	# Effect is by event: Better chance of positive military leader traits
+	on_built = {
+		owner = {
+			if = { limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
+				change_variable = { which = lrsk_general_training_bonus value = 1 }
+				set_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+			}
+			if = { limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
+				change_variable = { which = lrsk_admiral_training_bonus value = 1 }
+				set_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+			}			
+		}
+	}
+    
+	on_destroy = {
+		owner = {
+			if = { limit = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
+				subtract_variable = { which = lrsk_general_training_bonus value = 1 }
+				remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+			}
+			if = { limit = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
+				subtract_variable = { which = lrsk_admiral_training_bonus value = 1 }
+				remove_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+			}	
+		}
+	}
 
 	resources = {
 		category = planet_branch_office_buildings
@@ -1826,8 +1820,8 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 		owner = {
 			if = { limit = { branch_office_owner = { has_valid_civic = civic_criminal_heritage } }
 				set_planet_flag = lrsk_could_lose_pops_to@branch_office_owner
-				change_variable = { which = lrsk_num_owned_workhouses value = 1 }
-			}			
+			}
+			change_variable = { which = lrsk_num_owned_workhouses value = 1 }	
 		}
 		branch_office_owner = {
 			change_variable = { which = lrsk_num_built_workhouses value = 1 }
@@ -1838,8 +1832,8 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 		owner = {
 			if = { limit = { has_planet_flag = lrsk_could_lose_pops_to@branch_office_owner }
 				remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-				change_variable = { which = lrsk_num_owned_workhouses value = 1 }
 			}
+			change_variable = { which = lrsk_num_owned_workhouses value = 1 }
 		}
 		branch_office_owner = {
 			subtract_variable = { which = lrsk_num_built_workhouses value = 1 }
@@ -1886,10 +1880,8 @@ lrsk_gov_var_bldg_local_news_office = {
 	
 	on_built = {
 		owner = {
-			if ={ limit = { branch_office_owner = { has_valid_civic = civic_media_conglomerate } }
-				set_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner
-				change_variable = { which = lrsk_num_owned_localmedia value = 1 }
-			}
+			set_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner
+			change_variable = { which = lrsk_num_owned_localmedia value = 1 }
 		}
 		branch_office_owner = {
 			change_variable = { which = lrsk_num_built_localmedia value = 1 }
@@ -1898,10 +1890,10 @@ lrsk_gov_var_bldg_local_news_office = {
     
 	on_destroy = {
 		owner = {
-			if ={ limit = { has_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner }
+			if = { limit = { has_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner }
 				remove_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner
-				change_variable = { which = lrsk_num_owned_workhouses value = 1 }
 			}
+			change_variable = { which = lrsk_num_owned_workhouses value = 1 }
 		}
 		branch_office_owner = {
 			subtract_variable = { which = lrsk_num_built_localmedia value = 1 }
@@ -1946,16 +1938,31 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		text = lrsk_offworld_work_effect
 	}
 
-	#provide owner more stuff
+	# The queue logic controls how many the AI builds, so ai_weight below
+
+	on_queued = {
+		branch_office_owner = {
+			change_variable = { which = lrsk_offworld_placement_built value = 1 }
+		}
+	}
+    
+	on_unqueued = {
+		branch_office_owner = {
+			subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
+		}
+	}
+
 	on_built = {
 		branch_office_owner = {
 			change_variable = { which = lrsk_offworld_workers_bonus value = 1 }
+			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
 	}
     
 	on_destroy = {
 		branch_office_owner = {
 			subtract_variable = { which = lrsk_offworld_workers_bonus value = 1 }
+			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
 	}
 
@@ -1971,6 +1978,11 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 
 	ai_weight = {
 		weight = 250
+		modifier = {
+			factor = 0
+			# No advantage to corp past 10 of these...
+			branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
+		}
 	}
 }
 
