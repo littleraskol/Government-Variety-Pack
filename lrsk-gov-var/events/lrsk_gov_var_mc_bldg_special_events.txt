@@ -316,7 +316,7 @@ country_event = {
 					limit = {
 						has_planet_flag = lrsk_could_lose_pops_to@root
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
-						num_pops > 2 # don't want to steal last pop...
+						num_pops > 1 # don't want to steal last pop...
 					}
 
 					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 10 } # marks this planet
@@ -346,6 +346,18 @@ country_event = {
 							modifier = {
 								add = 5
 								planet_crime > 60
+							}
+							modifier = {
+								add = 5
+								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+							}
+							modifier = {
+								add = 5
+								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+							}
+							modifier = {
+								add = 5
+								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 
 							# Do the steal
@@ -419,6 +431,18 @@ country_event = {
 							modifier = {
 								add = -5
 								planet_crime > 60
+							}
+							modifier = {
+								add = -5
+								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+							}
+							modifier = {
+								add = -5
+								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+							}
+							modifier = {
+								add = -5
+								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							
 							# Do nothing
@@ -527,8 +551,32 @@ country_event = {
 								planet_crime > 60
 							}
 							modifier = {
-								add = 10
+								add = 15
 								is_capital = yes
+							}
+							modifier = {
+								add = 10
+								has_modifier = anticrime_campaign
+							}
+							modifier = {
+								add = 10
+								has_modifier = crime_lord_deal
+							}
+							modifier = {
+								add = 10
+								has_modifier = planet_population_expelled
+							}
+							modifier = {
+								add = 10
+								has_modifier = planet_population_control
+							}
+							modifier = {
+								add = 10
+								has_modifier = planet_growth_discouraged
+							}
+							modifier = {
+								add = 10
+								has_modifier = martial_law
 							}
 
 							# Send the favor event
@@ -563,8 +611,32 @@ country_event = {
 								planet_crime > 60
 							}
 							modifier = {
-								add = -10
+								add = -15
 								is_capital = yes
+							}
+							modifier = {
+								add = -10
+								has_modifier = anticrime_campaign
+							}
+							modifier = {
+								add = -10
+								has_modifier = crime_lord_deal
+							}
+							modifier = {
+								add = -10
+								has_modifier = planet_population_expelled
+							}
+							modifier = {
+								add = -10
+								has_modifier = planet_population_control
+							}
+							modifier = {
+								add = -10
+								has_modifier = planet_growth_discouraged
+							}
+							modifier = {
+								add = -10
+								has_modifier = martial_law
 							}
 							
 							# Do nothing
