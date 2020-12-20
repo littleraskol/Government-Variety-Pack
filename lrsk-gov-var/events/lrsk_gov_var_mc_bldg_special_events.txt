@@ -27,8 +27,8 @@ country_event = {
 	}
 
 	immediate = {
-		# we want to give the default level up event a chance to run
-		country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 2 }
+		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
+		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
 	}
 }
 
@@ -40,6 +40,7 @@ country_event = {
 
 	# Only fire if leader's empire has a bonus and the leader is appropriate
 	trigger = {
+		from = { NOT = { has_leader_flag = has_gained_trait } }	# JIC
 		OR = {
 			AND = {
 				check_variable = { which = lrsk_general_training_bonus value > 0 }
@@ -289,7 +290,10 @@ country_event = {
 		any_country = {
 			NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
-			any_owned_planet = { has_planet_flag = lrsk_could_lose_pops_to@root }
+			any_owned_planet = {
+				num_pops > 1 # don't want to steal last pop...
+				has_planet_flag = lrsk_could_lose_pops_to@root
+			}
 		}
 	}
 
@@ -300,13 +304,17 @@ country_event = {
 			limit = {
 				NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
-				any_owned_planet = { has_planet_flag = lrsk_could_lose_pops_to@root }
+				any_owned_planet = {
+					num_pops > 1 # don't want to steal last pop...
+					has_planet_flag = lrsk_could_lose_pops_to@root
+				}
 			}
 
 			while = {
 				limit = {
 					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 					any_owned_planet = {
+						num_pops > 1 # don't want to steal last pop...
 						has_planet_flag = lrsk_could_lose_pops_to@root
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
 					}
@@ -314,12 +322,12 @@ country_event = {
 
 				random_owned_planet = {
 					limit = {
+						num_pops > 1 # don't want to steal last pop...
 						has_planet_flag = lrsk_could_lose_pops_to@root
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
-						num_pops > 1 # don't want to steal last pop...
 					}
 
-					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 10 } # marks this planet
+					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 7 } # marks this planet
 
 					random_list = {
 						5 = {
@@ -330,6 +338,10 @@ country_event = {
 							modifier = {
 								add = 5
 								num_pops > 15
+							}
+							modifier = {
+								add = 5
+								num_pops > 30
 							}
 							modifier = {
 								add = 5
@@ -401,10 +413,12 @@ country_event = {
 										pop = this
 										planet = root.capital_scope
 									}
+									# Note: I don't think it makes sense to try to force any slavery category by event.
+									# Instead the player is notified that they should check the species rights of the pop.
 								}
 
 								root = { country_event = { id = lrsk_gvp_mc_bldg_special.21 } }
-								prevprev = { country_event = { id = lrsk_gvp_mc_bldg_special.22 } }
+								event_target:lrsk_slaver_corp_abduct_gov = { country_event = { id = lrsk_gvp_mc_bldg_special.22 } }
 							}
 						}
 						95 = {
@@ -415,6 +429,10 @@ country_event = {
 							modifier = {
 								add = -5
 								num_pops > 15
+							}
+							modifier = {
+								add = -5
+								num_pops > 30
 							}
 							modifier = {
 								add = -5
@@ -497,7 +515,10 @@ country_event = {
 		any_country = {
 			NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
-			any_owned_planet = { has_planet_flag = lrsk_could_leak_scandal_to@root }
+			any_owned_planet = {
+				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				has_planet_flag = lrsk_could_leak_scandal_to@root
+			}
 		}
 	}
 
@@ -508,13 +529,17 @@ country_event = {
 			limit = {
 				NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 				check_variable = { which = lrsk_num_owned_localmedia value > 0 }
-				any_owned_planet = { has_planet_flag = lrsk_could_leak_scandal_to@root }
+				any_owned_planet = {
+					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					has_planet_flag = lrsk_could_leak_scandal_to@root
+				}
 			}
 
 			while = {
 				limit = {
 					NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 					any_owned_planet = {
+						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_planet_flag = lrsk_could_leak_scandal_to@root
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
@@ -522,11 +547,12 @@ country_event = {
 
 				random_owned_planet = {
 					limit = {
+						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_planet_flag = lrsk_could_leak_scandal_to@root
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
 
-					set_timed_planet_flag = { flag = lrsk_scandal_rolled days = 10 } # marks this planet
+					set_timed_planet_flag = { flag = lrsk_scandal_rolled days = 7 } # marks this planet
 
 					random_list = {
 						5 = {
@@ -537,6 +563,10 @@ country_event = {
 							modifier = {
 								add = 5
 								planet_stability < 70
+							}
+							modifier = {
+								add = 5
+								planet_stability < 50
 							}
 							modifier = {
 								add = 5
@@ -600,6 +630,10 @@ country_event = {
 							}
 							modifier = {
 								add = -5
+								planet_stability < 50
+							}
+							modifier = {
+								add = -5
 								planet_crime > 20
 							}
 							modifier = {
@@ -658,13 +692,10 @@ country_event = {
 
 	option = {
 		name = lrsk_gvp_mc_bldg_special.31.a
-		custom_tooltip = lrsk_gvp_mc_bldg_special.31.a.tooltip
+		#custom_tooltip = lrsk_gvp_mc_bldg_special.31.a.tooltip
+		add_favor = { target = event_target:lrsk_media_corp_victim value = 1 }
 		hidden_effect = {
 			event_target:lrsk_media_corp_victim = { set_timed_country_flag = { flag = lrsk_media_corp_got_favor days = 5 } }
-			add_favor = {
-				target = event_target:lrsk_media_corp_victim
-				value = 1
-			}
 		}
 	}
 
@@ -734,10 +765,10 @@ country_event = {
 		has_valid_civic = civic_private_prospectors
 
 		# Skip if no change
-		OR = {
-			check_variable = { which = lrsk_offworld_workers_bonus value > lrsk_offworld_workers_bonus_prev }
-			check_variable = { which = lrsk_offworld_workers_bonus value < lrsk_offworld_workers_bonus_prev }
-		}
+		#OR = {
+		#	check_variable = { which = lrsk_offworld_workers_bonus value > lrsk_offworld_workers_bonus_prev }
+		#	check_variable = { which = lrsk_offworld_workers_bonus value < lrsk_offworld_workers_bonus_prev }
+		#}
 	}
 
 	immediate = {
@@ -796,6 +827,6 @@ country_event = {
 		}
 
 		# Remember for next time	
-		set_variable = { which = lrsk_offworld_workers_bonus_prev value = lrsk_offworld_workers_bonus }
+		#set_variable = { which = lrsk_offworld_workers_bonus_prev value = lrsk_offworld_workers_bonus }
 	}
 }
