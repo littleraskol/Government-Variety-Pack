@@ -394,3 +394,286 @@ lrsk_create_tradeways_member_mc = {
 		}
 	}
 }
+
+# Random good trait for mil leaders
+
+# Adds a trait to a leader
+lrsk_add_random_good_leader_trait = {
+	if = {
+		limit = {
+			leader_class = admiral
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_resilient
+								owner = { has_ethic = ethic_gestalt_consciousness }
+								species = { has_trait = trait_mechanical }
+							}
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_trickster }
+						}
+						add_trait = leader_trait_trickster
+						set_timed_leader_flag = { flag = gained_leader_trait_trickster days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_fleet_logistician
+								has_trait = leader_trait_maintenance_loop
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_fleet_logistician
+							set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_maintenance_loop
+							set_timed_leader_flag = { flag = gained_leader_trait_maintenance_loop days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_engineer }
+						}
+						add_trait = leader_trait_engineer
+						set_timed_leader_flag = { flag = gained_leader_trait_engineer days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_aggressive }
+						}
+						add_trait = leader_trait_aggressive
+						set_timed_leader_flag = { flag = gained_leader_trait_aggressive days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_cautious }
+						}
+						add_trait = leader_trait_cautious
+						set_timed_leader_flag = { flag = gained_leader_trait_cautious days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_scout }
+						}
+						add_trait = leader_trait_scout
+						set_timed_leader_flag = { flag = gained_leader_trait_scout days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_unyielding }
+						}
+						add_trait = leader_trait_unyielding
+						set_timed_leader_flag = { flag = gained_leader_trait_unyielding days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_gale_speed }
+						}
+						add_trait = leader_trait_gale_speed
+						set_timed_leader_flag = { flag = gained_leader_trait_gale_speed days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.22} }
+	}
+
+	if = {
+		limit = {
+			leader_class = general
+		}
+		while = {
+			limit = {
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			random_list = {
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_adaptable
+						set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_resilient }
+							NOT = { owner = { has_ethic = "ethic_gestalt_consciousness" } }
+						}
+						add_trait = leader_trait_resilient
+						set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							owner = {
+								NOT = { has_authority = "auth_machine_intelligence" }
+							}
+							NOT = { has_trait = leader_trait_butcher }
+							NOT = { has_trait = leader_trait_restrained }
+						}
+						add_trait = leader_trait_restrained
+						set_timed_leader_flag = { flag = gained_leader_trait_restrained days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_charismatic
+								has_trait = leader_trait_demoralizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_charismatic
+							set_timed_leader_flag = { flag = gained_leader_trait_charismatic days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_demoralizer
+							set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOT = { has_trait = leader_trait_butcher }
+							NOT = { has_trait = leader_trait_restrained }
+						}
+						add_trait = leader_trait_butcher
+						set_timed_leader_flag = { flag = gained_leader_trait_butcher days = 7 }
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_glory_seeker
+								has_trait = leader_trait_demoralizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_glory_seeker
+							set_timed_leader_flag = { flag = gained_leader_trait_glory_seeker days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_demoralizer
+							set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+				5 = {
+					if = {
+						limit = {
+							NOR = {
+								has_trait = leader_trait_army_logistician
+								has_trait = leader_trait_parts_cannibalizer
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									NOT = { has_authority = "auth_machine_intelligence" }
+								}
+							}
+							add_trait = leader_trait_army_logistician
+							set_timed_leader_flag = { flag = gained_leader_trait_army_logistician days = 7 }
+						}
+						if = {
+							limit = {
+								owner = { has_authority = "auth_machine_intelligence" }
+							}
+							add_trait = leader_trait_parts_cannibalizer
+							set_timed_leader_flag = { flag = gained_leader_trait_parts_cannibalizer days = 7 }
+						}
+						set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+					}
+				}
+			}
+		}
+		owner = { country_event = { id = leader.24} }
+	}
+}
