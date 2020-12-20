@@ -123,6 +123,8 @@ l_english:
  lrsk_gov_var_bldg_grand_casino:0 "Grand Casino"
  lrsk_gov_var_bldg_grand_casino_desc:0 "From mega-slots to high stakes competative gaming to on-site sports betting, this opulent temple to chance and fortune lets thousands wager their cash for the thrill of testing their luck every day."
 
+ lrsk_casino_events_desc:0 "The winds of fortune and fate may blow in many different ways for both the host and the corp. §HExpect Lady Luck to capriciously smile or frown on you from time to time!§!"
+
  lrsk_gov_var_bldg_galactic_excursions_office:0 "Galactic Excursions Office"
  lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "The galaxy is yours to explore! Plan your perfect insterstellar getaway with us, competative package deals available for all destinations."
 
@@ -422,6 +424,15 @@ l_english:
  lrsk_government_variety_pack_backend.101.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$  $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§!."
  lrsk_government_variety_pack_backend.101.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$  $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ $pop_cat_worker$ and £pop_cat_slave£ $pop_cat_slave$ job output§!, and provides the megacorp with §G+15% Branch Office Value§!. §HA criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!§!"
 
+ lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
+ lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."
+
+ lrsk_government_variety_pack_backend.2001.name:0 "Using GVP Gov Type"
+ lrsk_government_variety_pack_backend.2001.desc:0 "Detected that [this.GetName] has GVP added government of type: '[this.GetGovernmentName]'"
+
+ lrsk_government_variety_pack_backend.2002.name:0 "Using GVP Civics"
+ lrsk_government_variety_pack_backend.2002.desc:0 "Detected that [this.GetName] has one or more GVP added civic(s)."
+
  # Megacorp building special effects
 
  lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
@@ -449,14 +460,11 @@ l_english:
  lrsk_gvp_mc_bldg_special.32.b:0 "Damn the meddling lying press!"
  lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "National embarrassment reduces our £mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £mod_pop_citizen_happiness£ §YPop Happiness§! for §Y1§! year. We are not happy with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
 
- lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
- lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."
+ lrsk_gvp_mc_bldg_special.51.name:0 "The Winds of Fortune"
+ 
+ lrsk_gvp_mc_bldg_special.52.name:0 "$lrsk_gvp_mc_bldg_special.51.name$"
 
- lrsk_government_variety_pack_backend.2001.name:0 "Using GVP Gov Type"
- lrsk_government_variety_pack_backend.2001.desc:0 "Detected that [this.GetName] has GVP added government of type: '[this.GetGovernmentName]'"
 
- lrsk_government_variety_pack_backend.2002.name:0 "Using GVP Civics"
- lrsk_government_variety_pack_backend.2002.desc:0 "Detected that [this.GetName] has one or more GVP added civic(s)."
 
  # Direct Revelation
  lrsk_gov_var_direct_revelation.1.name:0 "Direct Revelation - Wild Cult Gate Event Fired"

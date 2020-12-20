@@ -830,3 +830,182 @@ country_event = {
 		#set_variable = { which = lrsk_offworld_workers_bonus_prev value = lrsk_offworld_workers_bonus }
 	}
 }
+
+# Handle luck events for casinos
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.50
+	hide_window = yes
+	mean_time_to_happen = { months = 12 }
+
+	# Only fire if a casino corp with built local casinos, and if there are applicable planets/empires
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
+		NOT = { has_country_flag = lrsk_casino_luck_cooldown }
+		check_variable = { which = lrsk_num_built_casinos value > 0 }
+		
+		any_country = {
+			NOT = { has_country_flag = lrsk_casino_luck_cooldown }
+			check_variable = { which = lrsk_num_owned_casinos value > 0 }
+			any_owned_planet = {
+				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				has_planet_flag = lrsk_can_get_casino_events_from@root
+			}
+		}
+	}
+
+	immediate = {
+		save_event_target_as = lrsk_casino_corp_testing_luck
+
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = lrsk_casino_luck_cooldown }
+				check_variable = { which = lrsk_num_owned_casinos value > 0 }
+				any_owned_planet = {
+					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					has_planet_flag = lrsk_can_get_casino_events_from@root
+				}
+			}
+
+			while = {
+				limit = {
+					NOT = {
+						has_country_flag = lrsk_casino_luck_cooldown
+						root = { has_country_flag = lrsk_casino_luck_cooldown }
+					}
+					any_owned_planet = {
+						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						has_planet_flag = lrsk_can_get_casino_events_from@root
+						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
+					}
+				}
+
+				random_owned_planet = {
+					limit = {
+						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						has_planet_flag = lrsk_can_get_casino_events_from@root
+						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
+					}
+
+					set_timed_planet_flag = { flag = lrsk_casino_luck_rolled days = 7 } # marks this planet
+
+					random_list = {
+						5 = {
+							# Event: both template
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							owner = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_casino_corp_host_player
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+							}
+
+							root = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
+							}
+						}
+						5 = {
+							# Event: both template
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							owner = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_casino_corp_host_player
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+							}
+
+							root = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
+							}
+						}
+						5 = {
+							# Event: planet template
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							owner = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_casino_corp_host_player
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+							}
+						}
+						5 = {
+							# Event: planet template
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							owner = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								save_event_target_as = lrsk_casino_corp_host_player
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+							}
+						}
+						5 = {
+							# Event: corp template
+
+							root = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
+							}
+						}
+						5 = {
+							# Event: corp template
+
+							root = {
+								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
+							}
+						}
+						60 = {							
+							# Do nothing (set this to twice the total weight of an event happening for 33% chance)
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Casino luck host planet owner event
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.51
+	title = lrsk_gvp_mc_bldg_special.51.name	
+	is_triggered_only = yes
+	location = event_target:lrsk_casino_corp_play_location
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_a }
+		text = lrsk_gvp_mc_bldg_special.51.desc.a
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_a }
+		name = lrsk_gvp_mc_bldg_special.51.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.51.a.tooltip
+	}
+}
+
+# Casino luck corp owner event
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.52
+	title = lrsk_gvp_mc_bldg_special.52.name	
+	is_triggered_only = yes
+	location = event_target:lrsk_casino_corp_play_location
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_a }
+		text = lrsk_gvp_mc_bldg_special.52.desc.a
+	}
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.52.a
+		custom_tooltip = lrsk_gvp_mc_bldg_special.52.a.tooltip
+	}
+}

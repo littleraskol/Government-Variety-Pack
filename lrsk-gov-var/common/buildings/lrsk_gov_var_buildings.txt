@@ -850,6 +850,69 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 }
 
+# Grand Casino
+lrsk_gov_var_bldg_grand_casino = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	branch_office_building = yes
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic }
+	}
+
+	planet_modifier = {
+		planet_crime_mult = 0.1
+		planet_amenities_add = 10
+		trade_value_mult = 0.05
+		branch_office_value_mult = 0.15
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic }
+		}
+		text = lrsk_casino_events_desc
+	}
+	
+	on_built = {
+		owner = {
+			set_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
+			change_variable = { which = lrsk_num_owned_casinos value = 1 }
+		}
+		branch_office_owner = {
+			change_variable = { which = lrsk_num_built_casinos value = 1 }
+		}
+	}
+    
+	on_destroy = {
+		owner = {
+			if = { limit = { has_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner }
+				remove_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
+			}
+			change_variable = { which = lrsk_num_owned_casinos value = 1 }
+		}
+		branch_office_owner = {
+			subtract_variable = { which = lrsk_num_built_casinos value = 1 }
+		}
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			energy = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 250
+	}
+}
+
 # Professional Protection Office
 lrsk_gov_var_bldg_professional_protection_office = {
 	base_buildtime = @b1_time
