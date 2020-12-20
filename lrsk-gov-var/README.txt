@@ -218,6 +218,7 @@ v1.6.8 (??-??-??) - Megacorp Expansion
 -New Conflict Resolution Specialists civic (Pacifist) provides +15% trust growth rate and +20 trust cap, and allows the Mediation Retreat branch building, which provides the host planet with +50% Pacifist attraction and +5 Stability, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Pacifist.
 -New Investigation & Security Services civic (Authoritarian) provides -15% crime, and allows the Professional Protection Office branch building, which provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Authoritarian. The host planet gets +50% Authoritarian attraction and either an Investigator job (produces -25 crime, -15% Worker power) or (if the providing corp is criminal) a Suppressor job (produces -25% Worker power, +10% Worker output).
 -New governments Private Intelligence Agency (Investigation & Security Services) and Protection Racket (Investigation & Security Services with Criminal Heritage).
+-Backend: Added "general test" diagnostic event.
 
 
 v1.6.7 (11-11-20) - More Merchantry
