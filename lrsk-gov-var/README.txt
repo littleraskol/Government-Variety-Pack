@@ -165,7 +165,7 @@ Indentured Assets - Allows the Reformatory Workhouse branch building, which prov
 
 Private Prospectors - Allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and mining station output.
 
-Media Conglomerate - Allows the Local News Office branch building, which provides the host planet with +x Ruler output and +x Specialist power and happiness (???), and provides the megacorp with a chance to occasionally get favors from the host empire.
+Media Conglomerate - Allows the Local News Office branch building, which provides the host planet with +10% Ruler output, +20% Specialist political power, and +5% Specialist happiness. It provides the megacorp with a chance to occasionally get favors from the host empire.
 
 2. New Governments
 
