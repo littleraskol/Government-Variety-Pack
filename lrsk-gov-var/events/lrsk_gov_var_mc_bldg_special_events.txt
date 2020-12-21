@@ -697,6 +697,25 @@ country_event = {
 		hidden_effect = {
 			event_target:lrsk_media_corp_victim = { set_timed_country_flag = { flag = lrsk_media_corp_got_favor days = 5 } }
 		}
+		ai_chance = {
+			factor = 6
+			modifier = {
+				add = 1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = superior
+				}
+			}
+			modifier = {
+				add = 1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = overwhelming
+				}
+			}
+		}
 	}
 
 	option = {
@@ -707,6 +726,25 @@ country_event = {
 				set_timed_country_flag = { flag = lrsk_media_corp_shamed_us days = 5 }
 				add_modifier = { modifier = lrsk_gvp_empire_scandal_wracked days = 360 }
 				add_opinion_modifier = { modifier = lrsk_gvp_empire_scandal_inflicted who = root }
+			}
+		}
+		ai_chance = {
+			factor = 3
+			modifier = {
+				add = -1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = superior
+				}
+			}
+			modifier = {
+				add = -1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = overwhelming
+				}
 			}
 		}
 	}
