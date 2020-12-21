@@ -2026,6 +2026,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
     
 	on_destroy = {
 		branch_office_owner = {
+			subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
 			subtract_variable = { which = lrsk_offworld_workers_bonus value = 1 }
 			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
