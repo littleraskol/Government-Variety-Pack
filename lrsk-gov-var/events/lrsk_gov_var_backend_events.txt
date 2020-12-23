@@ -62,13 +62,16 @@ event = {
 
 		# Enhanced base game explainers
 		every_playable_country = {
-			limit = { OR = { 
-				has_valid_civic = civic_naval_contractors
-				has_valid_civic = civic_media_conglomerate
-				has_valid_civic = civic_private_prospectors
-				has_valid_civic = civic_private_military_companies
-				has_valid_civic = civic_indentured_assets
-			} }
+			limit = { 
+				NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+				OR = { 
+					has_valid_civic = civic_naval_contractors
+					has_valid_civic = civic_media_conglomerate
+					has_valid_civic = civic_private_prospectors
+					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_indentured_assets
+				}
+			}
 			country_event = { id = lrsk_government_variety_pack_backend.101 days = 3 }
 		}
 

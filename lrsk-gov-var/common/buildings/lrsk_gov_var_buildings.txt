@@ -1634,6 +1634,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	branch_office_building = yes
 
 	potential = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
 		branch_office_owner = { OR = {
 			has_valid_civic = civic_naval_contractors
@@ -1862,6 +1863,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 	branch_office_building = yes
 
 	potential = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
 		branch_office_owner = { has_valid_civic = civic_indentured_assets }
 	}
@@ -1926,6 +1928,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	branch_office_building = yes
 
 	potential = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
 		branch_office_owner = { has_valid_civic = civic_media_conglomerate }
 	}
@@ -1988,6 +1991,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	branch_office_building = yes
 
 	potential = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
 		branch_office_owner = { has_valid_civic = civic_private_prospectors }
 	}
