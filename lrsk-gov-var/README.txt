@@ -220,6 +220,7 @@ v1.6.8 (??-??-??) - Megacorp Expansion
 -New governments Private Intelligence Agency (Investigation & Security Services) and Protection Racket (Investigation & Security Services with Criminal Heritage).
 -Update: Due to addition of "death cult" themed things to the game w/ the Necroids pack, changed "Death Cult" government to be named "Church of Slaughter"
 -Backend: Added "general test" diagnostic event.
+-Fixed some localization typos here and there.
 
 
 v1.6.7 (11-11-20) - More Merchantry
