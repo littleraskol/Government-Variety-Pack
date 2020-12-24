@@ -928,76 +928,124 @@ country_event = {
 
 					random_list = {
 						5 = {
-							# Event: both template
+							# Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
 
 							save_event_target_as = lrsk_casino_corp_play_location
+
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_lost_trade"
+								days = 720
+							}
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_lost_branch_val"
+								days = 720
+							}
+
+
 							owner = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_1 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
 							}
 
 							root = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_1 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
 						5 = {
-							# Event: both template
+							# Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
 
 							save_event_target_as = lrsk_casino_corp_play_location
+							
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_happy"
+								days = 360
+							}
+
 							owner = {
+								add_opinion_modifier = {
+									modifier = opinion_lrsk_gvp_casino_corp_approval
+									who = root
+								}
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_2 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
 							}
 
 							root = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_2 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
 						5 = {
-							# Event: planet template
+							# Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
 
 							save_event_target_as = lrsk_casino_corp_play_location
+							
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_lost_stability"
+								days = 360
+							}
+							add_planet_devastation = 15
+
 							owner = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_3 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
 							}
 						}
 						5 = {
-							# Event: planet template
+							# Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
 
 							save_event_target_as = lrsk_casino_corp_play_location
+							
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_gain_trade"
+								days = 720
+							}
+
 							owner = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_4 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
 							}
 						}
 						5 = {
-							# Event: corp template
+							# Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_lost_branch_val"
+								days = 720
+							}
 
 							root = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_5 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
 						5 = {
-							# Event: corp template
+							# Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
+
+							save_event_target_as = lrsk_casino_corp_play_location
+							
+							add_modifier = {
+								modifier = "lrsk_gov_var_statmod_casino_gain_branch_val"
+								days = 720
+							}
 
 							root = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
-								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_x days = 7 }
+								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_6 days = 7 }
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
@@ -1014,7 +1062,8 @@ country_event = {
 # Casino luck host planet owner event
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.51
-	title = lrsk_gvp_mc_bldg_special.51.name	
+	title = lrsk_gvp_mc_bldg_special.51.name
+	#picture = GFX_evt_lrsk_gvp_casino_exterior
 	is_triggered_only = yes
 	location = event_target:lrsk_casino_corp_play_location
 
@@ -1023,17 +1072,57 @@ country_event = {
 		text = lrsk_gvp_mc_bldg_special.51.desc.a
 	}
 
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_2 }
+		text = lrsk_gvp_mc_bldg_special.51.desc.b
+	}
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_3 }
+		text = lrsk_gvp_mc_bldg_special.51.desc.c
+	}
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_4 }
+		text = lrsk_gvp_mc_bldg_special.51.desc.d
+	}
+
 	option = {
 		trigger = { has_country_flag = lrsk_casino_luck_event_flag_1 }
 		name = lrsk_gvp_mc_bldg_special.51.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.51.a.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_2 }
+		name = lrsk_gvp_mc_bldg_special.51.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.51.b.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_3 }
+		name = lrsk_gvp_mc_bldg_special.51.c
+		custom_tooltip = lrsk_gvp_mc_bldg_special.51.c.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_4 }
+		name = lrsk_gvp_mc_bldg_special.51.d
+		custom_tooltip = lrsk_gvp_mc_bldg_special.51.d.tooltip
+		add_monthly_resource_mult = {
+			resource = energy
+			value = 50
+			min = 250
+			max = 2000
+		}
 	}
 }
 
 # Casino luck corp owner event
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.52
-	title = lrsk_gvp_mc_bldg_special.52.name	
+	title = lrsk_gvp_mc_bldg_special.52.name
+	#picture = GFX_evt_lrsk_gvp_casino_interior
 	is_triggered_only = yes
 	location = event_target:lrsk_casino_corp_play_location
 
@@ -1042,9 +1131,54 @@ country_event = {
 		text = lrsk_gvp_mc_bldg_special.52.desc.a
 	}
 
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_2 }
+		text = lrsk_gvp_mc_bldg_special.52.desc.b
+	}
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_5 }
+		text = lrsk_gvp_mc_bldg_special.52.desc.c
+	}
+
+	desc = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_6 }
+		text = lrsk_gvp_mc_bldg_special.52.desc.d
+	}
+
 	option = {
 		trigger = { has_country_flag = lrsk_casino_luck_event_flag_1 }
 		name = lrsk_gvp_mc_bldg_special.52.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.52.a.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_2 }
+		name = lrsk_gvp_mc_bldg_special.52.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.52.b.tooltip
+		add_monthly_resource_mult = {
+			resource = energy
+			value = 25
+			min = 150
+			max = 1000
+		}
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_5 }
+		name = lrsk_gvp_mc_bldg_special.52.c
+		custom_tooltip = lrsk_gvp_mc_bldg_special.52.c.tooltip
+	}
+
+	option = {
+		trigger = { has_country_flag = lrsk_casino_luck_event_flag_6 }
+		name = lrsk_gvp_mc_bldg_special.52.d
+		custom_tooltip = lrsk_gvp_mc_bldg_special.52.d.tooltip
+		add_monthly_resource_mult = {
+			resource = energy
+			value = 50
+			min = 250
+			max = 2000
+		}
 	}
 }

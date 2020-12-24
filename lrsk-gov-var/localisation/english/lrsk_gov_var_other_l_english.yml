@@ -480,44 +480,44 @@ l_english:
  # Casino luck random events
  lrsk_gvp_mc_bldg_special.51.name:0 "The Winds of Fortune"
 
- # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value)
+ # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
  lrsk_gvp_mc_bldg_special.51.desc.a:0 "The opening of the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! has not been met with universal approval. Moral reformers alarmed at the spread of vice are protesting its very existence and have organized a boycott."
  lrsk_gvp_mc_bldg_special.51.a:0 "How annoying..."
  lrsk_gvp_mc_bldg_special.51.desc.a.tooltip:0 "§R-10% £trade_value£ $TRADE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
 
- # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp)
+ # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
  lrsk_gvp_mc_bldg_special.51.desc.b:0 "What a bout! Tens, if not hundreds, of thousands of patrons bet on the outcome of the recent prize fight at the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, and it was the spectacle of the century for the planet's inhabitants."
  lrsk_gvp_mc_bldg_special.51.b:0 "To the victor goes the spoils!"
- lrsk_gvp_mc_bldg_special.51.desc.b.tooltip:0 "§G+5% £mod_pop_citizen_happiness£ Pop Happiness§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.51.desc.b.tooltip:0 "§G+5% £mod_pop_citizen_happiness£ Pop Happiness§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for one year."
  
- # Host event: Riot over sports betting outcome (negative: stability loss, devastation?)
+ # Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
  lrsk_gvp_mc_bldg_special.51.desc.c:0 "In what's being called the most wild and rowdy after-game brawl in the history of §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, the streets are filled with sports fans who are... Furious? Elated? Filled with strong emotions, at any rate, over the outcome of the latest sports gambling event at the $lrsk_gov_var_bldg_grand_casino$. The property damage may take months to repair."
  lrsk_gvp_mc_bldg_special.51.c:0 "Get a grip, it's just a game!"
  lrsk_gvp_mc_bldg_special.51.desc.c.tooltip:0 "§R-5 £stability£ $PLANET_STABILITY_TITLE$§! for one year, and some amount of §RDevastation§! to clean up."
  
- # Host event: Higher tourism (positive: temp boost to trade value, energy reward)
+ # Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
  lrsk_gvp_mc_bldg_special.51.desc.d:0 "Ever since the $lrsk_gov_var_bldg_grand_casino$ finished construction on §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, interest in visiting the planet for vacation or other recreation has increased. We can say that for now, a proper tourism boom is lifting the local economy thanks to it, and the first surplus is already rolling in."
  lrsk_gvp_mc_bldg_special.51.d:0 "Welcome to [event_target:lrsk_casino_corp_play_location.GetName], beloved tourists!"
  lrsk_gvp_mc_bldg_special.51.desc.d.tooltip:0 "§G+10% £trade_value£ $TRADE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
  
  lrsk_gvp_mc_bldg_special.52.name:0 "$lrsk_gvp_mc_bldg_special.51.name$"
 
- # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value)
+ # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
  lrsk_gvp_mc_bldg_special.52.desc.a:0 "$lrsk_gvp_mc_bldg_special.51.desc.a$"
  lrsk_gvp_mc_bldg_special.52.a:0 "Bad for business!"
  lrsk_gvp_mc_bldg_special.52.desc.a.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
 
- # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp)
+ # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
  lrsk_gvp_mc_bldg_special.52.desc.b:0 "$lrsk_gvp_mc_bldg_special.51.desc.b$"
  lrsk_gvp_mc_bldg_special.52.b:0 "$lrsk_gvp_mc_bldg_special.51.b$"
  lrsk_gvp_mc_bldg_special.52.desc.b.tooltip:0 "§H[event_target:lrsk_casino_corp_host_player.GetName]§! has a §Gboosted opinion§! of us for the next four years."
 
- # Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss)
+ # Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
  lrsk_gvp_mc_bldg_special.52.desc.c:0 "Security at the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! can't explain how or why, but... one overwhelmingly lucky patron has nearly cleaned the house out! From Giga-Craps to Galactic Roulette to 10th-Dimensional Poker, this roving gambler could not help but win, seemingly guided from game to game by unseen forces. It will take time to recover what we've lost."
  lrsk_gvp_mc_bldg_special.52.c:0 "Must have been a cheater!"
  lrsk_gvp_mc_bldg_special.52.desc.c.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
 
- # Corp event: The house wins big (positive: temp boost to branch office value, energy reward)
+ # Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
  lrsk_gvp_mc_bldg_special.52.desc.d:0 "Games of chance over a long enough period tend to smooth out to an expected rate of return. That is the basis of gambling as a business venture. Sometimes, though, the whims of chance are even more stacked in our favor than we expected: the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! has provided us a tidy little bounty."
  lrsk_gvp_mc_bldg_special.52.d:0 "The house always wins."
  lrsk_gvp_mc_bldg_special.52.desc.d.tooltip:0 "§G+10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
