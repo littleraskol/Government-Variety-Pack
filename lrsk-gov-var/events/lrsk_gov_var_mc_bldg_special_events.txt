@@ -27,7 +27,7 @@ country_event = {
 	}
 
 	immediate = {
-		from = { save_event_target_as = lrsk_leader_to_levelup }
+		from = { set_timed_leader_flag = lrsk_leveling_up_mil_leader days = 3 }
 		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
 		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
 	}
@@ -41,20 +41,30 @@ country_event = {
 
 	# Only fire if leader's empire has a bonus and the leader is appropriate
 	trigger = {
-		event_target:lrsk_leader_to_levelup = { NOT = { has_leader_flag = has_gained_trait } }	# JIC
-		OR = {
-			AND = {
-				check_variable = { which = lrsk_general_training_bonus value > 0 }
-				event_target:lrsk_leader_to_levelup = { leader_class = general }
-			}
-			AND = {
-				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
-				event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+		any_owned_leader = {
+			has_leader_flag = lrsk_leveling_up_mil_leader
+			NOT = { has_leader_flag = has_gained_trait }
+			OR = {
+				AND = {
+					owner = { check_variable = { which = lrsk_general_training_bonus value > 0 } }
+					leader_class = general
+				}
+				AND = {
+					owner = { check_variable = { which = lrsk_admiral_training_bonus value > 0 } }
+					leader_class = admiral
+				}
 			}
 		}
 	}
 
 	immediate = {
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = lrsk_leveling_up_mil_leader
+				NOT = { has_leader_flag = has_gained_trait }
+			}
+			save_event_target_as = lrsk_leader_to_levelup
+		}
 		random_list = {
 			20 = {
 				modifier = {
