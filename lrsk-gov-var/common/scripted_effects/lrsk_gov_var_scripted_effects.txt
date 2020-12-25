@@ -540,7 +540,10 @@ lrsk_add_random_good_leader_trait = {
 			}
 		}
 
-		owner = { country_event = { id = leader.22} }
+		IF = { limit = { has_leader_flag = has_gained_trait }
+			save_event_target_as = lrsk_leader_to_levelup # JIC
+			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
+		}
 	}
 
 	if = {
@@ -697,6 +700,9 @@ lrsk_add_random_good_leader_trait = {
 			}
 		}
 
-		owner = { country_event = { id = leader.24} }
+		IF = { limit = { has_leader_flag = has_gained_trait }
+			save_event_target_as = lrsk_leader_to_levelup # JIC
+			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
+		}
 	}
 }
