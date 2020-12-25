@@ -27,6 +27,7 @@ country_event = {
 	}
 
 	immediate = {
+		from = { save_event_target_as = lrsk_leader_to_levelup }
 		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
 		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
 	}
@@ -40,15 +41,15 @@ country_event = {
 
 	# Only fire if leader's empire has a bonus and the leader is appropriate
 	trigger = {
-		from = { NOT = { has_leader_flag = has_gained_trait } }	# JIC
+		event_target:lrsk_leader_to_levelup = { NOT = { has_leader_flag = has_gained_trait } }	# JIC
 		OR = {
 			AND = {
 				check_variable = { which = lrsk_general_training_bonus value > 0 }
-				from = { leader_class = general }
+				event_target:lrsk_leader_to_levelup = { leader_class = general }
 			}
 			AND = {
 				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
-				from = { leader_class = admiral }
+				event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 			}
 		}
 	}
@@ -61,11 +62,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 1 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -74,11 +75,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 2 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -87,11 +88,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 3 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -100,11 +101,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 4 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -113,11 +114,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 5 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -126,11 +127,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 6 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -139,11 +140,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 7 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -152,16 +153,16 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 8 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
 
-				from = { lrsk_add_random_good_leader_trait = yes }
+				event_target:lrsk_leader_to_levelup = { lrsk_add_random_good_leader_trait = yes }
 			}
 			80 = {
 				modifier = {
@@ -169,11 +170,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 1 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -182,11 +183,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 2 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -195,11 +196,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 3 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -208,11 +209,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 4 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -221,11 +222,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 5 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -234,11 +235,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 6 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -247,11 +248,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 7 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
@@ -260,11 +261,11 @@ country_event = {
 					OR = {
 						AND = {
 							check_variable = { which = lrsk_general_training_bonus value > 8 }
-							from = { leader_class = general }
+							event_target:lrsk_leader_to_levelup = { leader_class = general }
 						}
 						AND = {
 							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-							from = { leader_class = admiral }
+							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
 						}
 					}
 				}
