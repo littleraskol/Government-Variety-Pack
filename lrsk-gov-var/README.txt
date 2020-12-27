@@ -220,6 +220,7 @@ v1.6.8 (??-??-??) - Megacorp Expansion
 -New governments Private Intelligence Agency (Investigation & Security Services) and Protection Racket (Investigation & Security Services with Criminal Heritage).
 -Every non-ethics based new branch office building has a different bonus for criminal empires.
 -Update: Due to addition of "death cult" themed things to the game w/ the Necroids pack, changed "Death Cult" government to be named "Church of Slaughter"
+-Employee-Owned Co-op civic no longer has civic restrictions (neither do any other ethos-special civics, afterall).
 -Backend: Added "general test" diagnostic event.
 -Fixed some localization typos here and there.
 
