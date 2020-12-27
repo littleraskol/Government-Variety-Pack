@@ -540,7 +540,11 @@ lrsk_add_random_good_leader_trait = {
 			}
 		}
 
-		IF = { limit = { has_leader_flag = has_gained_trait }
+		IF = {
+			limit = {
+				has_leader_flag = has_gained_trait				
+				has_level > 1 # Only show message on levelup.
+			}
 			save_event_target_as = lrsk_leader_to_levelup # JIC
 			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
 		}
@@ -700,7 +704,11 @@ lrsk_add_random_good_leader_trait = {
 			}
 		}
 
-		IF = { limit = { has_leader_flag = has_gained_trait }
+		IF = {
+			limit = {
+				has_leader_flag = has_gained_trait				
+				has_level > 1 # Only show message on levelup.
+			}
 			save_event_target_as = lrsk_leader_to_levelup # JIC
 			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
 		}
