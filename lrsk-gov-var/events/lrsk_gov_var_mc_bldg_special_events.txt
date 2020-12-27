@@ -622,57 +622,61 @@ country_event = {
 					set_timed_planet_flag = { flag = lrsk_scandal_rolled days = 7 } # marks this planet
 
 					random_list = {
-						5 = {
+						10 = {
 							modifier = {
-								add = 5
+								add = -5
+								root = { has_valid_civic = civic_criminal_heritage }
+							}
+							modifier = {
+								add = 10
 								planet_stability < 90
 							}
 							modifier = {
-								add = 5
+								add = 10
 								planet_stability < 70
 							}
 							modifier = {
-								add = 5
+								add = 10
 								planet_stability < 50
 							}
 							modifier = {
-								add = 5
+								add = 10
 								planet_crime > 20
 							}
 							modifier = {
-								add = 5
+								add = 10
 								planet_crime > 40
 							}
 							modifier = {
-								add = 5
+								add = 10
 								planet_crime > 60
 							}
 							modifier = {
-								add = 15
+								add = 30
 								is_capital = yes
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = anticrime_campaign
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = crime_lord_deal
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = planet_population_expelled
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = planet_population_control
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = planet_growth_discouraged
 							}
 							modifier = {
-								add = 10
+								add = 20
 								has_modifier = martial_law
 							}
 
@@ -686,57 +690,61 @@ country_event = {
 
 							root = { country_event = { id = lrsk_gvp_mc_bldg_special.31 } }
 						}
-						95 = {
+						190 = {
 							modifier = {
-								add = -5
+								add = 5
+								root = { has_valid_civic = civic_criminal_heritage }
+							}
+							modifier = {
+								add = -10
 								planet_stability < 90
 							}
 							modifier = {
-								add = -5
+								add = -10
 								planet_stability < 70
 							}
 							modifier = {
-								add = -5
+								add = -10
 								planet_stability < 50
 							}
 							modifier = {
-								add = -5
+								add = -10
 								planet_crime > 20
 							}
 							modifier = {
-								add = -5
+								add = -10
 								planet_crime > 40
 							}
 							modifier = {
-								add = -5
+								add = -10
 								planet_crime > 60
 							}
 							modifier = {
-								add = -15
+								add = -30
 								is_capital = yes
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = anticrime_campaign
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = crime_lord_deal
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = planet_population_expelled
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = planet_population_control
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = planet_growth_discouraged
 							}
 							modifier = {
-								add = -10
+								add = -20
 								has_modifier = martial_law
 							}
 							

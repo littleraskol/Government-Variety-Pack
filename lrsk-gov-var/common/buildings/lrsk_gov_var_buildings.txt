@@ -448,7 +448,73 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 
 	planet_modifier = {
 		lrsk_gov_var_job_functionary_add = 2
-		branch_office_value_mult = 0.15
+		branch_office_value_mult = 0.1
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_legit_mgmt_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_functionary }
+				count = 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_functionary }
+				count > 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_crim_mgmt_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_functionary }
+				count = 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_functionary }
+				count > 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.2
+		}
 	}
 
 	resources = {
@@ -481,8 +547,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	planet_modifier = {
 		lrsk_gov_var_job_infoguide_add = 2
 		pop_ethic_materialist_attraction_mult = 0.5
-	}
-	
+	}	
 	
 	triggered_desc = {
 		trigger = {
@@ -656,7 +721,73 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 
 	planet_modifier = {
 		lrsk_gov_var_job_gofer_add = 2
-		branch_office_value_mult = 0.15
+		branch_office_value_mult = 0.1
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_legit_gofer_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_gofer }
+				count = 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_gofer }
+				count > 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_crim_courier_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_gofer }
+				count = 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_gofer }
+				count > 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.2
+		}
 	}
 
 	resources = {
@@ -863,10 +994,40 @@ lrsk_gov_var_bldg_grand_casino = {
 	}
 
 	planet_modifier = {
-		planet_crime_mult = 0.1
 		planet_amenities_add = 10
 		trade_value_mult = 0.05
-		branch_office_value_mult = 0.15
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_legit_gamble_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_crim_gamble_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			planet_crime_mult = 0.15
+		}
 	}
 	
 	triggered_desc = {
@@ -1941,9 +2102,25 @@ lrsk_gov_var_bldg_local_news_office = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_media_conglomerate }
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
 		}
-		text = lrsk_media_favor_chance
+		text = lrsk_media_legit_favor_chance
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_media_crim_favor_chance
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			planet_crime_mult = 0.15
+		}
 	}
 	
 	on_built = {
@@ -2002,6 +2179,72 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	
 	triggered_desc = {
 		trigger = {
+			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_legit_worker_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_offworld_worker }
+				count = 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_offworld_worker }
+				count > 1
+			}
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_crim_smuggle_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_offworld_worker }
+				count = 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			count_pops = {
+				limit = { has_job = lrsk_gov_var_job_offworld_worker }
+				count > 1
+			}
+		}
+		modifier = {			
+			planet_crime_mult = 0.2
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
 			branch_office_owner = { has_valid_civic = civic_private_prospectors }
 		}
 		text = lrsk_offworld_work_effect
@@ -2049,8 +2292,8 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	ai_weight = {
 		weight = 250
 		modifier = {
-			factor = 0
-			# No advantage to corp past 10 of these...
+			add = -249
+			# Little advantage to corp past 10 of these...
 			branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
 		}
 	}
