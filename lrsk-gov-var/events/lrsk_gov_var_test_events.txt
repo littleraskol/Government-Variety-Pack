@@ -17,9 +17,9 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {        
+	trigger = {
 		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }   
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
 	}
 
 	immediate = {
@@ -273,9 +273,9 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {        
+	trigger = {
 		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }   
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
 	}
 
 	immediate = {
@@ -517,6 +517,60 @@ event = {
 					}
 				}
 			}
+		}
+	}
+}
+
+# Selects random level 1 admiral and levels them up - for use when testing mil acad effect
+event = {
+	id = lrsk_gvp_testing.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		any_owned_leader = {
+			leader_class = admiral
+			has_level < 2
+		}
+	}
+
+	immediate = {
+		any_owned_leader = {
+			limit = {
+				leader_class = admiral
+				has_level < 2
+			}
+			add_experience = 201
+		}
+	}
+}
+
+# Selects random level 1 general and levels them up - for use when testing mil acad effect
+event = {
+	id = lrsk_gvp_testing.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		any_owned_leader = {
+			leader_class = general
+			has_level < 2
+		}
+	}
+
+	immediate = {
+		any_owned_leader = {
+			limit = {
+				leader_class = general
+				has_level < 2
+			}
+			add_experience = 201
 		}
 	}
 }
