@@ -22,6 +22,249 @@ lrsk_remove_all_ethics = {
 	country_remove_ethic = ethic_fanatic_xenophobe 
 }
 
+# Randomize ethics
+lrsk_randomize_ethics = {
+	lrsk_remove_all_ethics = yes
+
+	while = {
+		limit = { check_variable = { which = lrsk_ethos_points value < 3 } }
+		random_list = {
+			# ethic_fanatic_xenophile
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_xenophobe
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_xenophile
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_fanatic_xenophobe
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_xenophobe
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_xenophobe
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_xenophile
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_xenophobe
+					}
+				}
+				country_add_ethic = ethic_xenophile
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_xenophobe
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_xenophobe
+					}
+				}
+				country_add_ethic = ethic_xenophobe
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_fanatic_militarist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_militarist
+						has_ethic = ethic_pacifist
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_militarist
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_fanatic_pacifist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_militarist
+						has_ethic = ethic_pacifist
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_pacifist
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_militarist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_militarist
+						has_ethic = ethic_pacifist
+					}
+				}
+				country_add_ethic = ethic_militarist
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_pacifist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_militarist
+						has_ethic = ethic_pacifist
+					}
+				}
+				country_add_ethic = ethic_pacifist
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_fanatic_spiritualist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_materialist
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_spiritualist
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_fanatic_materialist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_materialist
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_materialist
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_spiritualist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_materialist
+					}
+				}
+				country_add_ethic = ethic_spiritualist
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_materialist
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_materialist
+					}
+				}
+				country_add_ethic = ethic_fanatic_spiritualist
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_fanatic_authoritarian
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_egalitarian
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_authoritarian
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_fanatic_egalitarian
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_egalitarian
+						check_variable = { which = lrsk_ethos_points value > 1 }
+					}
+				}
+				country_add_ethic = ethic_fanatic_egalitarian
+				change_variable = { which = lrsk_ethos_points value = 2 }
+			}
+			# ethic_authoritarian
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_egalitarian
+					}
+				}
+				country_add_ethic = ethic_authoritarian
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+			# ethic_egalitarian
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_egalitarian
+					}
+				}
+				country_add_ethic = ethic_egalitarian
+				change_variable = { which = lrsk_ethos_points value = 1 }
+			}
+		}
+	}
+}
+
 # Randomize civics
 lrsk_randomize_civics = {
 	change_government = { civics = random }
@@ -45,4 +288,9 @@ lrsk_null_civics = {
 			civic = lrsk_gov_var_civic_test_2
 		}
 	}
+}
+
+# Set to default origin
+lrsk_null_origin = {
+	IF = { limit = { NOT = { has_origin = origin_default } } set_origin = origin_default }
 }
