@@ -572,29 +572,9 @@ country_event = {
 country_event = {
 	id = lrsk_government_variety_pack_backend.101
 	title = lrsk_government_variety_pack_backend.101.name
+	desc = lrsk_government_variety_pack_backend.101.desc
 	is_triggered_only = yes
 	location = this.capital_scope
-
-	desc = {
-		trigger = { OR = {
-			has_valid_civic = civic_naval_contractors
-			has_valid_civic = civic_media_conglomerate
-			has_valid_civic = civic_private_prospectors
-			has_valid_civic = civic_private_military_companies
-			has_valid_civic = civic_indentured_assets
-		} }
-		text = lrsk_government_variety_pack_backend.101.megacorp1
-	}
-	desc = {
-		trigger = { NOR = {
-			has_valid_civic = civic_naval_contractors
-			has_valid_civic = civic_media_conglomerate
-			has_valid_civic = civic_private_prospectors
-			has_valid_civic = civic_private_military_companies
-			has_valid_civic = civic_indentured_assets
-		} }
-		text = lrsk_government_variety_pack_backend.101.error
-	}
 
 	trigger = { OR = {
 		has_valid_civic = civic_naval_contractors
@@ -604,7 +584,84 @@ country_event = {
 		has_valid_civic = civic_indentured_assets
 	} }
 
-	option = { name = OK }
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.milcorp
+		trigger = { OR = {
+			has_valid_civic = civic_naval_contractors
+			has_valid_civic = civic_private_military_companies
+		} }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_milcorp
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.media
+		trigger = { has_valid_civic = civic_media_conglomerate }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_media
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.prosp
+		trigger = { has_valid_civic = civic_private_prospectors }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_prosp
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.indent
+		trigger = { has_valid_civic = civic_indentured_assets }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_indent
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.end
+	}
+}
+country_event = {
+	id = lrsk_government_variety_pack_backend.102
+	title = lrsk_government_variety_pack_backend.102.name
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	desc = {
+		trigger = {
+			hidden:root = {
+				switch = {
+					trigger = has_country_flag
+					lrsk_explainer_milcorp = { text = lrsk_government_variety_pack_backend.102.milcorp }
+					lrsk_explainer_media = { text = lrsk_government_variety_pack_backend.102.media }
+					lrsk_explainer_prosp = { text = lrsk_government_variety_pack_backend.102.prosp }
+					lrsk_explainer_indent = { text = lrsk_government_variety_pack_backend.102.indent }
+					default = { text = lrsk_government_variety_pack_backend.101.error }
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = OK
+		hidden_effect = {
+			switch = {
+				trigger = has_country_flag
+				lrsk_explainer_milcorp = { remove_country_flag = lrsk_explainer_milcorp }
+				lrsk_explainer_media = { remove_country_flag = lrsk_explainer_media }
+				lrsk_explainer_prosp = { remove_country_flag = lrsk_explainer_prosp }
+				lrsk_explainer_indent = { remove_country_flag = lrsk_explainer_indent }
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.101 }
+		}
+	}
+	
 }
 
 # Diagnostic: General test event mostly to test when events can be called.

@@ -451,14 +451,31 @@ l_english:
  lrsk_government_variety_pack_backend.4.name:0 "Origin Fix: Success"
  lrsk_government_variety_pack_backend.4.desc:0 "Origin fix logic successfully executed for [this.GetName]."
 
- LRSK_GVP_BACKEND_EXPLAIN_INTRO:0 "Because you're using an §HEnhanced Civic§! - a base game civic that has expanded functionality from the §HGovernment Variety Pack§! mod - this is an explanation of new features you should be aware of."
- LRSK_GVP_BACKEND_EXPLAIN_COMMON_1:0 "The civic §Y"
- LRSK_GVP_BACKEND_EXPLAIN_COMMON_2:0 "§!"
- LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED:0 "enables construction of the £building£"
+ LRSK_GVP_BACKEND_EXPLAIN_TELLME_1:0 "Tell me about changes to the §Y"
+ LRSK_GVP_BACKEND_EXPLAIN_TELLME_2:0 "§! civic."
 
  lrsk_government_variety_pack_backend.101.name:0 "Enhanced Civic Explanation"
+ lrsk_government_variety_pack_backend.101.desc:0 "Because you're using an §Henhanced civic§! - a base game civic that has expanded functionality from the §HGovernment Variety Pack§! mod - this is an explanation of new features you should be aware of."
  lrsk_government_variety_pack_backend.101.error:0 "§RNo enhanced civic detected. This is an error. Please alert mod author.§!"
- lrsk_government_variety_pack_backend.101.megacorp1:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$ and/or $civic_private_military_companies$ $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with §Gan improved chance of military leaders gaining positive traits§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!.\n\n$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$ $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ §YPolitical Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire.§!\n\n$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$  $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.\n\n$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$  $LRSK_GVP_BACKEND_EXPLAIN_COMMON_2$ $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.\n\nNote that if you have taken the §Y$civic_criminal_heritage$§! Civic, some of these effects may be different..."
+ lrsk_government_variety_pack_backend.101.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_naval_contractors$§! and/or §Y$civic_private_military_companies$ $LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_media_conglomerate$ $LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_private_prospectors$ $LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_indentured_assets$ $LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.end:0 "Let's start the game."
+
+ LRSK_GVP_BACKEND_EXPLAIN_COMMON_1:0 "The civic §Y"
+ LRSK_GVP_BACKEND_EXPLAIN_COMMON_2:0 ""
+ LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED:0 "enables construction of the £building£"
+ LRSK_CRIM_CHANGES_EXPLAIN:0 "\n\nNote that if you have taken the §H$civic_criminal_heritage$§! Civic, some of these effects may be different..."
+  
+ lrsk_government_variety_pack_backend.102.name:0 "$lrsk_government_variety_pack_backend.101.name$"
+ lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §Y$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with §Gan improved chance of military leaders gaining positive traits§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
+ 
+ lrsk_government_variety_pack_backend.102.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ Political Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire§!.$LRSK_CRIM_CHANGES_EXPLAIN$"
+ 
+ lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
+ 
+ lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output§!, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: §Ha criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!§!" 
 
  lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
  lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."
