@@ -45,6 +45,9 @@ event = {
 		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
 		lrsk_null_civics = yes # Might help with some gov change weirdness
 
+		# Might prevent shifting to xenophobe causing some kind of issue
+		IF = { limit = { NOT = { has_origin = default } } set_origin = default }
+
 		switch = {
 			trigger = has_country_flag
 			lrsk_test_legit_step_1 = {
@@ -316,6 +319,9 @@ event = {
 
 		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
 		lrsk_null_civics = yes # Might help with some gov change weirdness
+
+		# Might prevent shifting to xenophobe causing some kind of issue
+		IF = { limit = { NOT = { has_origin = default } } set_origin = default }
 
 		switch = {
 			trigger = has_country_flag
