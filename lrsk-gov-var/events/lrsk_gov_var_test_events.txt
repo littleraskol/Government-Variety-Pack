@@ -46,7 +46,7 @@ event = {
 		lrsk_null_civics = yes # Might help with some gov change weirdness
 
 		# Might prevent shifting to xenophobe causing some kind of issue
-		IF = { limit = { NOT = { has_origin = default } } set_origin = default }
+		IF = { limit = { NOT = { has_origin = origin_default } } set_origin = origin_default }
 
 		switch = {
 			trigger = has_country_flag
@@ -321,7 +321,7 @@ event = {
 		lrsk_null_civics = yes # Might help with some gov change weirdness
 
 		# Might prevent shifting to xenophobe causing some kind of issue
-		IF = { limit = { NOT = { has_origin = default } } set_origin = default }
+		IF = { limit = { NOT = { has_origin = origin_default } } set_origin = origin_default }
 
 		switch = {
 			trigger = has_country_flag
