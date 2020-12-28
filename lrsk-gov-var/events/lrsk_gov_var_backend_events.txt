@@ -576,6 +576,16 @@ country_event = {
 	location = this.capital_scope
 
 	desc = {
+		trigger = { OR = {
+			has_valid_civic = civic_naval_contractors
+			has_valid_civic = civic_media_conglomerate
+			has_valid_civic = civic_private_prospectors
+			has_valid_civic = civic_private_military_companies
+			has_valid_civic = civic_indentured_assets
+		} }
+		text = lrsk_government_variety_pack_backend.101.megacorp1
+	}
+	desc = {
 		trigger = { NOR = {
 			has_valid_civic = civic_naval_contractors
 			has_valid_civic = civic_media_conglomerate
@@ -584,25 +594,6 @@ country_event = {
 			has_valid_civic = civic_indentured_assets
 		} }
 		text = lrsk_government_variety_pack_backend.101.error
-	}
-	desc = {
-		trigger = { OR = {
-			has_valid_civic = civic_naval_contractors
-			has_valid_civic = civic_private_military_companies
-		} }
-		text = lrsk_government_variety_pack_backend.101.milcorp
-	}
-	desc = {
-		trigger = { has_valid_civic = civic_media_conglomerate }
-		text = lrsk_government_variety_pack_backend.101.media
-	}
-	desc = {
-		trigger = { has_valid_civic = civic_private_prospectors }
-		text = lrsk_government_variety_pack_backend.101.prosp
-	}
-	desc = {
-		trigger = { has_valid_civic = civic_indentured_assets }
-		text = lrsk_government_variety_pack_backend.101.indent
 	}
 
 	trigger = { OR = {
