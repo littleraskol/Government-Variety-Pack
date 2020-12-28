@@ -37,10 +37,16 @@ event = {
 			}
 		}
 
+		IF = { limit = { NOT = { has_country_flag = lrsk_legit_mc_test_runonce } }
+			set_country_flag = lrsk_legit_mc_test_runonce
+			set_country_flag = lrsk_test_legit_step_1
+		}
+
 		switch = {
 			trigger = has_country_flag
-			default = {
+			lrsk_test_legit_step_1 = {
 				# Start of test - Sci Mgmt
+				remove_country_flag = lrsk_test_legit_step_1
 
 				shift_ethic = ethic_authoritarian # ensure validity
 				change_government = {
@@ -248,6 +254,7 @@ event = {
 			lrsk_test_legit_step_15 = {
 				# Indent 
 				remove_country_flag = lrsk_test_legit_step_15
+				remove_country_flag = lrsk_legit_mc_test_runonce # Allows restart
 
 				change_government = {
 					authority = auth_corporate
@@ -293,17 +300,23 @@ event = {
 			}
 		}
 
+		IF = { limit = { NOT = { has_country_flag = lrsk_crim_mc_test_runonce } }
+			set_country_flag = lrsk_crim_mc_test_runonce
+			set_country_flag = lrsk_test_crim_step_1
+		}
+
 		switch = {
 			trigger = has_country_flag
-			default = {
+			lrsk_test_crim_step_1 = {
 				# Start of test - Sci Mgmt
+				remove_country_flag = lrsk_test_crim_step_1
 
 				shift_ethic = ethic_authoritarian # ensure validity
 				change_government = {
 					authority = auth_corporate
 					civics = {
 						civic = lrsk_gov_var_civic_mc_sci_mgnt
-						civic = civic_criminal_heritage
+						civic = civic_criminal_heritage 
 					}
 				}
 
@@ -505,6 +518,7 @@ event = {
 			lrsk_test_crim_step_15 = {
 				# Naval and PMC
 				remove_country_flag = lrsk_test_crim_step_15
+				remove_country_flag = lrsk_crim_mc_test_runonce # Allows restart
 
 				give_technology = { tech = tech_galactic_administration message = no } # allow 3 civics
 				shift_ethic = ethic_militarist # ensure validity
@@ -572,5 +586,59 @@ event = {
 			}
 			add_experience = 201
 		}
+	}
+}
+
+# Triggers the pop steal event - will this even work on a MTTH?
+event = {
+	id = lrsk_gvp_testing.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = civic_criminal_heritage
+		has_valid_civic = civic_indentured_assets
+		check_variable = { which = lrsk_num_built_workhouses value > 0 }
+		
+		any_country = {
+			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
+			any_owned_planet = {
+				num_pops > 1 # don't want to steal last pop...
+				has_planet_flag = lrsk_could_lose_pops_to@root
+			}
+		}
+	}
+
+	immediate = {
+		country_event = { id = lrsk_gvp_mc_bldg_special.20 }
+	}
+}
+
+# Triggers the favor event - will this even work on a MTTH?
+event = {
+	id = lrsk_gvp_testing.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = civic_media_conglomerate
+		check_variable = { which = lrsk_num_built_localmedia value > 0 }
+		
+		any_country = {
+			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
+			any_owned_planet = {
+				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				has_planet_flag = lrsk_could_leak_scandal_to@root
+			}
+		}
+
+	immediate = {
+		country_event = { id = lrsk_gvp_mc_bldg_special.30 }
 	}
 }
