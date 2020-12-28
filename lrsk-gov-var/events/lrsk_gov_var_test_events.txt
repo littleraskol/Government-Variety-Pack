@@ -42,6 +42,9 @@ event = {
 			set_country_flag = lrsk_test_legit_step_1
 		}
 
+		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
+		lrsk_null_civics = yes # Might help with some gov change weirdness
+
 		switch = {
 			trigger = has_country_flag
 			lrsk_test_legit_step_1 = {
@@ -49,6 +52,7 @@ event = {
 				remove_country_flag = lrsk_test_legit_step_1
 
 				shift_ethic = ethic_authoritarian # ensure validity
+				lrsk_randomize_civics = yes # 
 				change_government = {
 					authority = auth_corporate
 					civics = {
@@ -304,6 +308,9 @@ event = {
 			set_country_flag = lrsk_crim_mc_test_runonce
 			set_country_flag = lrsk_test_crim_step_1
 		}
+
+		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
+		lrsk_null_civics = yes # Might help with some gov change weirdness
 
 		switch = {
 			trigger = has_country_flag
