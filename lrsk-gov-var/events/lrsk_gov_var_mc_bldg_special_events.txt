@@ -27,7 +27,8 @@ country_event = {
 	}
 
 	immediate = {
-		from = { set_timed_leader_flag = lrsk_leveling_up_mil_leader days = 3 }
+		log = "Handling special military leader bonus from Military Excellence Academy  (Gate for delay)"
+		from = { set_timed_leader_flag = { flag = lrsk_leveling_up_mil_leader days = 3 } }
 		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
 		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
 	}
@@ -58,6 +59,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "Handling special military leader bonus from Military Excellence Academy"
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = lrsk_leveling_up_mil_leader
@@ -296,6 +298,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		log = "Informing of gained trait"
 		event_target:lrsk_leader_to_levelup = {
 			if = {
 				limit = { exists = fleet }
@@ -364,6 +367,7 @@ country_event = {
 
 	immediate = {
 		save_event_target_as = lrsk_slaver_corp_to_steal
+		log = "Handling pop steal from Reformatory Workhouse"
 
 		every_country = {
 			limit = {
@@ -472,7 +476,7 @@ country_event = {
 							
 							IF = {
 								limit = { any_pop = { has_pop_flag = lrsk_pop_to_abduct } }
-								random_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct } }
+								random_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct }
 									remove_pop_flag = lrsk_pop_to_abduct
 									resettle_pop = {
 										pop = this
@@ -546,6 +550,10 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:lrsk_slaver_corp_abduct_location
 
+	immediate = {		
+		log = "Inform slaver corp of abduction"
+	}
+
 	option = {
 		name = lrsk_gvp_mc_bldg_special.21.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.21.a.tooltip
@@ -560,6 +568,10 @@ country_event = {
 	picture = GFX_evt_assembly_fight
 	is_triggered_only = yes
 	location = event_target:lrsk_slaver_corp_abduct_location
+
+	immediate = {		
+		log = "Inform victim gov of abduction"
+	}
 
 	option = {
 		name = lrsk_gvp_mc_bldg_special.22.a
@@ -591,6 +603,7 @@ country_event = {
 
 	immediate = {
 		save_event_target_as = lrsk_media_corp_to_scoop
+		log = "Handling favor gain chance from Local News Station"
 
 		every_country = {
 			limit = {
@@ -762,9 +775,14 @@ country_event = {
 	id = lrsk_gvp_mc_bldg_special.31
 	title = lrsk_gvp_mc_bldg_special.31.name
 	desc = lrsk_gvp_mc_bldg_special.31.desc
-	#picture = GFX_evt_smugglers_in_bar
+	picture = GFX_evt_smugglers_in_bar
 	is_triggered_only = yes
 	location = event_target:lrsk_media_corp_scoop_location
+
+	immediate = {
+		save_event_target_as = lrsk_media_corp_to_scoop # JIC
+		log = "Favor choice"
+	}
 
 	option = {
 		name = lrsk_gvp_mc_bldg_special.31.a
@@ -834,12 +852,19 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:lrsk_media_corp_scoop_location
 
+	immediate = {
+		log = "Favor inform victim"
+	}
+
 	option = {
 		name = lrsk_gvp_mc_bldg_special.32.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.32.a.tooltip		
-		hidden_effect = { 
+		hidden_effect = {
 			event_target:lrsk_media_corp_to_scoop = {
-				add_favor = { target = event_target:lrsk_media_corp_victim value = 1 }
+				add_favors = {
+					target = event_target:lrsk_media_corp_victim
+					value = 1
+				}
 			}
 		}
 		ai_chance = {
@@ -898,6 +923,10 @@ country_event = {
 	is_triggered_only = yes
 	location = event_target:lrsk_media_corp_scoop_location
 
+	immediate = {
+		log = "Scoop scandal inform victim"
+	}
+
 	option = {
 		name = lrsk_gvp_mc_bldg_special.33.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.33.a.tooltip
@@ -912,6 +941,10 @@ country_event = {
 	picture = GFX_evt_announcement
 	is_triggered_only = yes
 	location = event_target:lrsk_media_corp_scoop_location
+
+	immediate = {
+		log = "Favor offer refusal"
+	}
 
 	option = {
 		name = lrsk_gvp_mc_bldg_special.34.a
@@ -1019,6 +1052,8 @@ country_event = {
 	}
 
 	immediate = {
+		log = "Handling luck events for casinos"
+
 		save_event_target_as = lrsk_casino_corp_testing_luck
 
 		every_country = {
@@ -1073,7 +1108,7 @@ country_event = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
 								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_1 days = 7 }
-								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 
 							root = {
@@ -1100,7 +1135,7 @@ country_event = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
 								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_2 days = 7 }
-								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 
 							root = {
@@ -1124,7 +1159,7 @@ country_event = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
 								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_3 days = 7 }
-								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 						}
 						5 = {
@@ -1141,7 +1176,7 @@ country_event = {
 								set_timed_country_flag = { flag = lrsk_casino_luck_cooldown days = 1800 } # 5 year cooldown
 								save_event_target_as = lrsk_casino_corp_host_player
 								set_timed_country_flag = { flag = lrsk_casino_luck_event_flag_4 days = 7 }
-								country_event = { id = lrsk_gvp_mc_bldg_special.51 } }
+								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 						}
 						5 = {
@@ -1190,7 +1225,7 @@ country_event = {
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.51
 	title = lrsk_gvp_mc_bldg_special.51.name
-	#picture = GFX_evt_lrsk_gvp_casino_exterior
+	picture = GFX_evt_lrsk_gvp_casino_exterior
 	is_triggered_only = yes
 	location = event_target:lrsk_casino_corp_play_location
 
@@ -1212,6 +1247,10 @@ country_event = {
 	desc = {
 		trigger = { has_country_flag = lrsk_casino_luck_event_flag_4 }
 		text = lrsk_gvp_mc_bldg_special.51.desc.d
+	}
+
+	immediate = {		
+		log = "Casino luck host planet owner event"
 	}
 
 	option = {
@@ -1249,7 +1288,7 @@ country_event = {
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.52
 	title = lrsk_gvp_mc_bldg_special.52.name
-	#picture = GFX_evt_lrsk_gvp_casino_interior
+	picture = GFX_evt_lrsk_gvp_casino_interior
 	is_triggered_only = yes
 	location = event_target:lrsk_casino_corp_play_location
 
@@ -1277,6 +1316,10 @@ country_event = {
 		trigger = { has_country_flag = lrsk_casino_luck_event_flag_1 }
 		name = lrsk_gvp_mc_bldg_special.52.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.52.a.tooltip
+	}
+
+	immediate = {		
+		log = "Casino luck corp owner event"
 	}
 
 	option = {

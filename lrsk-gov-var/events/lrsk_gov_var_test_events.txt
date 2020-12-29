@@ -7,7 +7,7 @@
 namespace = lrsk_gvp_testing
 
 # Give Stuff
-event = {
+country_event = {
 	id = lrsk_gvp_testing.1
 	hide_window = yes
 	is_triggered_only = yes
@@ -15,6 +15,7 @@ event = {
 	trigger = {
 		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
 		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
 
 	immediate = {
 		add_resource = { minerals = 10000 }
@@ -25,13 +26,40 @@ event = {
 	}
 }
 
+# Testing start case is using the MC trade fed start.
+# This gets rid of other megacorps in the fed so that we don't have to worry about branch offices getting sniped from us...
+country_event = {
+	id = lrsk_gvp_testing.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		IF = { limit = { any_federation_ally = { NOT = { has_valid_civic = civic_merchant_guilds } } }
+			every_federation_ally = { limit = { NOT = { has_valid_civic = civic_merchant_guilds } }
+				change_government = {
+					authority = random
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+				}
+			}
+		}
+	}
+}
+
 # Testing all new buildings in v1.6.8 - cycles through the relevant civics (non-criminal)
 # Start with Tradeways, Inc Origin.
 # Call event from console for each test, then manual save at that step.
 # To test, set instant build on and then open a branch office and build the building to test.
 # Then switch to the host empire and test the effects on that end.
 # Then reload your last manual save.
-event = {
+country_event = {
 	id = lrsk_gvp_testing.11
 	hide_window = yes
 	is_triggered_only = yes
@@ -42,30 +70,16 @@ event = {
 	}
 
 	immediate = {
-		# Testing start case is using the MC trade fed start.
-		# This gets rid of other megacorps in the fed so that we don't have to worry about branch offices getting sniped from us...
-		IF = { limit = { any_federation_ally = { NOT = { has_valid_civic = civic_merchant_guilds } } }
-			every_federation_ally = { limit = { NOT = { has_valid_civic = civic_merchant_guilds } }
-				change_government = {
-					authority = auth_oligarchic
-					civics = {
-						civic = civic_merchant_guilds
-						civic = random
-					}
-				}
-			}
-		}
-
 		IF = { limit = { NOT = { has_country_flag = lrsk_legit_mc_test_runonce } }
 			set_country_flag = lrsk_legit_mc_test_runonce
 			set_country_flag = lrsk_test_legit_step_1
 		}
 
-		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
-		lrsk_null_civics = yes # Might help with some gov change weirdness
-
 		# Might prevent shifting to xenophobe causing some kind of issue
 		lrsk_null_origin = yes
+
+		lrsk_null_civics = yes # Might help with some gov change weirdness
+		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
 
 		switch = {
 			trigger = has_country_flag
@@ -306,7 +320,7 @@ event = {
 # To test, set instant build on and then open a branch office and build the building to test.
 # Then switch to the host empire and test the effects on that end.
 # Then reload your last manual save.
-event = {
+country_event = {
 	id = lrsk_gvp_testing.12
 	hide_window = yes
 	is_triggered_only = yes
@@ -317,30 +331,16 @@ event = {
 	}
 
 	immediate = {
-		# Testing start case is using the MC trade fed start.
-		# This gets rid of other megacorps in the fed so that we don't have to worry about branch offices getting sniped from us...
-		IF = { limit = { any_federation_ally = { NOT = { has_valid_civic = civic_merchant_guilds } } }
-			every_federation_ally = { limit = { NOT = { has_valid_civic = civic_merchant_guilds } }
-				change_government = {
-					authority = auth_oligarchic
-					civics = {
-						civic = civic_merchant_guilds
-						civic = random
-					}
-				}
-			}
-		}
-
 		IF = { limit = { NOT = { has_country_flag = lrsk_crim_mc_test_runonce } }
 			set_country_flag = lrsk_crim_mc_test_runonce
 			set_country_flag = lrsk_test_crim_step_1
 		}
 
-		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
-		lrsk_null_civics = yes # Might help with some gov change weirdness
-
 		# Might prevent shifting to xenophobe causing some kind of issue
 		lrsk_null_origin = yes
+
+		lrsk_null_civics = yes # Might help with some gov change weirdness
+		lrsk_remove_all_ethics = yes # Might help with some shift ethic weirdness
 
 		switch = {
 			trigger = has_country_flag
@@ -576,7 +576,7 @@ event = {
 }
 
 # Selects random level 1 admiral and levels them up - for use when testing mil acad effect
-event = {
+country_event = {
 	id = lrsk_gvp_testing.13
 	hide_window = yes
 	is_triggered_only = yes
@@ -592,7 +592,7 @@ event = {
 	}
 
 	immediate = {
-		any_owned_leader = {
+		random_owned_leader = {
 			limit = {
 				leader_class = admiral
 				has_level < 2
@@ -603,7 +603,7 @@ event = {
 }
 
 # Selects random level 1 general and levels them up - for use when testing mil acad effect
-event = {
+country_event = {
 	id = lrsk_gvp_testing.14
 	hide_window = yes
 	is_triggered_only = yes
@@ -619,7 +619,7 @@ event = {
 	}
 
 	immediate = {
-		any_owned_leader = {
+		random_owned_leader = {
 			limit = {
 				leader_class = general
 				has_level < 2
@@ -630,7 +630,7 @@ event = {
 }
 
 # Triggers the pop steal event - will this even work on a MTTH?
-event = {
+country_event = {
 	id = lrsk_gvp_testing.15
 	hide_window = yes
 	is_triggered_only = yes
@@ -658,7 +658,7 @@ event = {
 }
 
 # Triggers the favor event - will this even work on a MTTH?
-event = {
+country_event = {
 	id = lrsk_gvp_testing.16
 	hide_window = yes
 	is_triggered_only = yes
@@ -677,8 +677,41 @@ event = {
 				has_planet_flag = lrsk_could_leak_scandal_to@root
 			}
 		}
+	}
 
 	immediate = {
 		country_event = { id = lrsk_gvp_mc_bldg_special.30 }
+	}
+}
+
+# Creates 20 leaders (10 admirals, 10 generals)
+country_event = {
+	id = lrsk_gvp_testing.17
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		while = {
+			count = 10
+			create_leader = {
+				name = random
+				species = root
+				gender = random
+				type = admiral
+				skill = 1
+			}
+			create_leader = {
+				name = random
+				species = root
+				gender = random
+				type = general
+				skill = 1
+			}
+		}
 	}
 }

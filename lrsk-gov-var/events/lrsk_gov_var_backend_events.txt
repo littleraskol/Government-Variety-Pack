@@ -573,16 +573,20 @@ country_event = {
 	id = lrsk_government_variety_pack_backend.101
 	title = lrsk_government_variety_pack_backend.101.name
 	desc = lrsk_government_variety_pack_backend.101.desc
+	picture = GFX_evt_lrsk_gvp_explain_enhanced_civics
 	is_triggered_only = yes
 	location = this.capital_scope
 
-	trigger = { OR = {
-		has_valid_civic = civic_naval_contractors
-		has_valid_civic = civic_media_conglomerate
-		has_valid_civic = civic_private_prospectors
-		has_valid_civic = civic_private_military_companies
-		has_valid_civic = civic_indentured_assets
-	} }
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+		OR = {
+			has_valid_civic = civic_naval_contractors
+			has_valid_civic = civic_media_conglomerate
+			has_valid_civic = civic_private_prospectors
+			has_valid_civic = civic_private_military_companies
+			has_valid_civic = civic_indentured_assets
+		}
+	}
 
 	option = { 
 		name = lrsk_government_variety_pack_backend.101.milcorp
@@ -630,6 +634,7 @@ country_event = {
 country_event = {
 	id = lrsk_government_variety_pack_backend.102
 	title = lrsk_government_variety_pack_backend.102.name
+	picture = GFX_evt_lrsk_gvp_explain_enhanced_civics
 	is_triggered_only = yes
 	location = this.capital_scope
 
