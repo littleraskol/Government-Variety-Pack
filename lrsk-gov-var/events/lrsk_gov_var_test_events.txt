@@ -6,6 +6,27 @@
 
 namespace = lrsk_gvp_testing
 
+# Give Stuff
+event = {
+	id = lrsk_gvp_testing.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+	immediate = {
+		add_resource = {
+			minerals = 10000
+			energy = 10000
+			alloys = 5000
+			consumer_goods = 5000			
+			influence = 500
+		}
+	}
+}
+
 # Testing all new buildings in v1.6.8 - cycles through the relevant civics (non-criminal)
 # Start with Tradeways, Inc Origin.
 # Call event from console for each test, then manual save at that step.
@@ -13,7 +34,7 @@ namespace = lrsk_gvp_testing
 # Then switch to the host empire and test the effects on that end.
 # Then reload your last manual save.
 event = {
-	id = lrsk_gvp_testing.1
+	id = lrsk_gvp_testing.11
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -288,7 +309,7 @@ event = {
 # Then switch to the host empire and test the effects on that end.
 # Then reload your last manual save.
 event = {
-	id = lrsk_gvp_testing.2
+	id = lrsk_gvp_testing.12
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -558,7 +579,7 @@ event = {
 
 # Selects random level 1 admiral and levels them up - for use when testing mil acad effect
 event = {
-	id = lrsk_gvp_testing.3
+	id = lrsk_gvp_testing.13
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -585,7 +606,7 @@ event = {
 
 # Selects random level 1 general and levels them up - for use when testing mil acad effect
 event = {
-	id = lrsk_gvp_testing.4
+	id = lrsk_gvp_testing.14
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -612,7 +633,7 @@ event = {
 
 # Triggers the pop steal event - will this even work on a MTTH?
 event = {
-	id = lrsk_gvp_testing.5
+	id = lrsk_gvp_testing.15
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -640,7 +661,7 @@ event = {
 
 # Triggers the favor event - will this even work on a MTTH?
 event = {
-	id = lrsk_gvp_testing.6
+	id = lrsk_gvp_testing.16
 	hide_window = yes
 	is_triggered_only = yes
 
