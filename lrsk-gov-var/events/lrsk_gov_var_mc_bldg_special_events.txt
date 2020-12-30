@@ -28,6 +28,10 @@ country_event = {
 
 	immediate = {
 		log = "Handling special military leader bonus from Military Excellence Academy  (Gate for delay)"
+		log = "Leader = [from.GetTitle] [from.GetName]"
+		log = "General training bonus = [this.lrsk_general_training_bonus]"
+		log = "Admiral training bonus = [this.lrsk_admiral_training_bonus]"
+		log_lrsk_scopes = yes
 		from = { set_timed_leader_flag = { flag = lrsk_leveling_up_mil_leader days = 3 } }
 		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
 		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
@@ -60,12 +64,16 @@ country_event = {
 
 	immediate = {
 		log = "Handling special military leader bonus from Military Excellence Academy"
+		log = "General training bonus = [this.lrsk_general_training_bonus]"
+		log = "Admiral training bonus = [this.lrsk_admiral_training_bonus]"
+		log_lrsk_scopes = yes
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = lrsk_leveling_up_mil_leader
 				NOT = { has_leader_flag = has_gained_trait }
 			}
 			save_event_target_as = lrsk_leader_to_levelup
+			log = "Leader = [this.GetTitle] [this.GetName]"
 		}
 		random_list = {
 			20 = {

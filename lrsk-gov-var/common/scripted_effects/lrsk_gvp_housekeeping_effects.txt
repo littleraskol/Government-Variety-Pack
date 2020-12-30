@@ -2,6 +2,21 @@
 # Scripted Effects - Housekeeping
 # Author: littleraskol
 
+# Log all scope data
+log_lrsk_scopes = {
+	log = "===LOGGING RELATIVE SCOPES START==="
+	log = "this is '[this.GetName]'"
+	log = "root is '[root.GetName]'"
+	log = "owner is '[owner.GetName]'"
+	log = "prev is '[prev.GetName]'"
+	log = "prevprev is '[prevprev.GetName]'"
+	log = "prevprevprev is '[prevprevprev.GetName]'"
+	log = "from is '[from.GetName]'"
+	log = "fromfrom is '[fromfrom.GetName]'"
+	log = "fromfromfrom is '[fromfromfrom.GetName]'"
+	log = "===LOGGING RELATIVE SCOPES END==="
+}
+
 # Force remove all ethics
 lrsk_remove_all_ethics = {
 	country_remove_ethic = ethic_pacifist
