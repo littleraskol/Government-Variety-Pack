@@ -302,6 +302,10 @@ country_event = {
 	picture = GFX_evt_throne_room
 	is_triggered_only = yes
 
+	trigger = {
+		NOT = { has_country_flag = lrsk_no_leader_improvement_notice }
+	}
+
 	immediate = {
 		log = "Informing of gained trait"
 		event_target:lrsk_leader_to_levelup = {
@@ -345,6 +349,12 @@ country_event = {
 				}
 			}
 		}
+	}
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.12.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.12.b.tooltip
+		hidden_effect = { set_country_flag = lrsk_no_leader_improvement_notice }
 	}
 }
 
