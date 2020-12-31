@@ -924,7 +924,7 @@ country_event = {
 		custom_tooltip = lrsk_gvp_mc_bldg_special.32.b.tooltip
 		hidden_effect = {
 			add_modifier = { modifier = lrsk_gvp_empire_scandal_wracked days = 360 }
-			add_opinion_modifier = { modifier = lrsk_gvp_empire_scandal_inflicted who = event_target:lrsk_media_corp_to_scoop }
+			add_opinion_modifier = { modifier = opinion_lrsk_gvp_scandal_inflicted who = event_target:lrsk_media_corp_to_scoop }
 			event_target:lrsk_media_corp_to_scoop = { country_event = { id = lrsk_gvp_mc_bldg_special.34 days = 3 } }
 		}
 		ai_chance = {
