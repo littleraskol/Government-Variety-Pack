@@ -657,27 +657,27 @@ country_event = {
 							}
 							modifier = {
 								add = 10
-								planet_stability < 90
-							}
-							modifier = {
-								add = 10
-								planet_stability < 70
-							}
-							modifier = {
-								add = 10
 								planet_stability < 50
 							}
 							modifier = {
 								add = 10
-								planet_crime > 20
+								planet_stability < 40
 							}
 							modifier = {
 								add = 10
-								planet_crime > 40
+								planet_stability < 30
 							}
 							modifier = {
 								add = 10
-								planet_crime > 60
+								planet_crime > 15
+							}
+							modifier = {
+								add = 10
+								planet_crime > 30
+							}
+							modifier = {
+								add = 10
+								planet_crime > 45
 							}
 							modifier = {
 								add = 30
@@ -709,6 +709,7 @@ country_event = {
 							}
 
 							# Send the favor event
+							log = "Favor event chain triggered"
 
 							owner = {
 								set_timed_country_flag = { flag = lrsk_scandal_favor_cooldown days = 1800 } # 5 year cooldown
@@ -725,27 +726,27 @@ country_event = {
 							}
 							modifier = {
 								add = -10
-								planet_stability < 90
-							}
-							modifier = {
-								add = -10
-								planet_stability < 70
-							}
-							modifier = {
-								add = -10
 								planet_stability < 50
 							}
 							modifier = {
 								add = -10
-								planet_crime > 20
+								planet_stability < 40
 							}
 							modifier = {
 								add = -10
-								planet_crime > 40
+								planet_stability < 30
 							}
 							modifier = {
 								add = -10
-								planet_crime > 60
+								planet_crime > 15
+							}
+							modifier = {
+								add = -10
+								planet_crime > 30
+							}
+							modifier = {
+								add = -10
+								planet_crime > 45
 							}
 							modifier = {
 								add = -30
@@ -777,6 +778,7 @@ country_event = {
 							}
 							
 							# Do nothing
+							log = "Favor check: nothing happened"
 						}
 					}
 				}
