@@ -457,7 +457,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 20
-								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+								root = { has_country_flag = lrsk_gvp_testcall }
 							}
 
 							# Do the steal
@@ -551,8 +551,8 @@ country_event = {
 								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							modifier = {
-								factor = 0.05
-								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+								factor = 0
+								root = { has_country_flag = lrsk_gvp_testcall }
 							}
 							
 							# Do nothing
@@ -717,7 +717,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 20
-								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+								root = { has_country_flag = lrsk_gvp_testcall }
 							}
 
 							# Send the favor event
@@ -789,8 +789,8 @@ country_event = {
 								has_modifier = martial_law
 							}
 							modifier = {
-								factor = 0.05
-								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+								factor = 0
+								root = { has_country_flag = lrsk_gvp_testcall }
 							}
 							
 							# Do nothing
