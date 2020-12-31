@@ -715,3 +715,24 @@ country_event = {
 		}
 	}
 }
+
+# Run entire test series on military leaders
+country_event = {
+	id = lrsk_gvp_testing.18
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		country_event = { id = lrsk_gvp_testing.17 }
+		while = {
+			count = 10
+			country_event = { id = lrsk_gvp_testing.13 }
+			country_event = { id = lrsk_gvp_testing.14 }
+		}
+	}
+}
