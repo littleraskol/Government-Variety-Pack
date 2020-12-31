@@ -1244,7 +1244,11 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
-						60 = {							
+						60 = {
+							modifier = {
+								factor = 0
+								root = { has_country_flag = lrsk_gvp_testcall }
+							}						
 							# Do nothing (set this to twice the total weight of an event happening for 33% chance)
 						}
 					}

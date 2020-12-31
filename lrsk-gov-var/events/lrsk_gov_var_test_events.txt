@@ -738,3 +738,34 @@ country_event = {
 		}
 	}
 }
+
+
+# Triggers casino luck
+country_event = {
+	id = lrsk_gvp_testing.19
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
+		NOT = { has_country_flag = lrsk_casino_luck_cooldown }
+		check_variable = { which = lrsk_num_built_casinos value > 0 }
+		
+		any_country = {
+			NOT = { has_country_flag = lrsk_casino_luck_cooldown }
+			check_variable = { which = lrsk_num_owned_casinos value > 0 }
+			any_owned_planet = {
+				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				has_planet_flag = lrsk_can_get_casino_events_from@root
+			}
+		}
+	}
+
+	immediate = {
+		set_timed_country_flag = { flag =  lrsk_gvp_testcall days = 3 } # Guarantees the event fires
+		country_event = { id = lrsk_gvp_mc_bldg_special.50 }
+	}
+}
