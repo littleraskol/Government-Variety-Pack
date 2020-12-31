@@ -455,6 +455,10 @@ country_event = {
 								add = 5
 								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
+							modifier = {
+								factor = 20
+								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+							}
 
 							# Do the steal
 
@@ -545,6 +549,10 @@ country_event = {
 							modifier = {
 								add = -5
 								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+							}
+							modifier = {
+								factor = 0.05
+								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
 							}
 							
 							# Do nothing
@@ -707,6 +715,10 @@ country_event = {
 								add = 20
 								has_modifier = martial_law
 							}
+							modifier = {
+								factor = 20
+								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+							}
 
 							# Send the favor event
 							log = "Favor event chain triggered"
@@ -775,6 +787,10 @@ country_event = {
 							modifier = {
 								add = -20
 								has_modifier = martial_law
+							}
+							modifier = {
+								factor = 0.05
+								NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
 							}
 							
 							# Do nothing
