@@ -8,6 +8,8 @@
 @lrsk_pastor_job_weight = 11
 @lrsk_planetmind_job_weight = 100
 @lrsk_regcoord_job_weight = 20
+@lrsk_corpworker_job_weight = 1.2
+@lrsk_corpspec_job_weight = 12
 
 ## Worker Jobs
 
@@ -175,7 +177,7 @@ lrsk_gov_var_job_functionary = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_corpworker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -258,7 +260,7 @@ lrsk_gov_var_job_infoguide = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_corpworker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -387,7 +389,7 @@ lrsk_gov_var_job_gofer = {
 	}	
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_corpworker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -473,7 +475,7 @@ lrsk_gov_var_job_offworld_worker = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_corpworker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -922,7 +924,7 @@ lrsk_gov_var_job_investigator = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @lrsk_corpspec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -1019,7 +1021,7 @@ lrsk_gov_var_job_suppressor = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @lrsk_corpspec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
