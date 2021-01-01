@@ -79,6 +79,16 @@ This government is actually a kind of business enterprise that operates accordin
 
 [i]Ruler:[/i] Process Efficiency Director
 
+[b]Private Intelligence Agency[/b]
+If knowledge is power, then selling control over the flow and content of knowledge was this corporation's road to capturing sovereign power. Its indispensable security and spying operations have subsumed any formal state.
+
+[i]Ruler:[/i] Chief Executive Director
+
+[b]Protection Racket[/b]
+Criminals, as a rule, can't depend on the law, and the criminal underworld has its own rules enforced by brutality. This enterprise mastered enforcement of the informal criminal codes until it was powerful enough to define its own predations as the law.
+
+[i]Ruler:[/i] Chief Enforcement Officer
+
 [b]Innovation Initiative[/b]
 This government, from the outside, seems to be like a university or laboratory that has absorbed the functions of a state. Internally, its politics are like a series of experiments in governmental and social organizational forms.
 
@@ -278,7 +288,7 @@ This government is a rabidly xenophobic tribal confederation. Under the leadersh
 [i]Ruler (Male):[/i] Death Khagan
 [i]Ruler (Female):[/i] Death Khatun
 
-[b]Death Cult[/b]
+[b]Church of Slaughter[/b]
 This government is a rabidly xenophobic church. Under the leadership of its prophets of death and gurus of bloodshed, these fanatics will slay all the wicked aliens of the galaxy and send them screaming to hell.
 
 [i]Ruler (Male):[/i] Blood Abbot

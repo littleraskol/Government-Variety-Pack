@@ -7,6 +7,7 @@ lrsk_gov_var_civic_mc_sci_mgnt = {
   potential = { authority = { value = auth_corporate } }
   
   #icon = "gfx/interface/icons/governments/civics/civic_indentured_assets.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_sci_mgnt_effects"
 
   possible = {
     ethics = {
@@ -31,6 +32,7 @@ lrsk_gov_var_civic_mc_edu_corp = {
   potential = { authority = { value = auth_corporate } }
 
   #icon = "gfx/interface/icons/governments/civics/civic_media_conglomerate.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_edu_corp_effects"
 
   random_weight = { base = 5 }
 
@@ -55,6 +57,7 @@ lrsk_gov_var_civic_mc_gig_economy = {
   potential = { authority = { value = auth_corporate } }
 
   #icon = "gfx/interface/icons/governments/civics/civic_free_traders.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_gig_economy_effects"
 
   possible = {
     ethics = {
@@ -178,12 +181,6 @@ lrsk_gov_var_civic_mc_workers_councils = {
         value = ethic_fanatic_egalitarian
       }
     }
-    civics ={
-      NOR = {
-        value = civic_criminal_heritage
-        value = civic_gospel_of_the_masses
-      }
-    }
   }
 
   random_weight = { base = 5 }
@@ -198,3 +195,119 @@ lrsk_gov_var_civic_mc_workers_councils = {
   }
 }
 
+#Casino Mysticism (Not Materialist) - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
+lrsk_gov_var_civic_mc_casino_mystic = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects"
+
+  possible = {
+    ethics = {
+      NOR = {
+        text = civic_tooltip_not_materialist
+        value = ethic_materialist
+        value = ethic_fanatic_materialist
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+    pop_demotion_time_mult = -0.25
+    planet_colony_development_speed_mult = 0.25
+  }
+}
+
+#Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
+lrsk_gov_var_civic_mc_vacay_planning = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+    pop_amenities_usage_mult = -0.10
+  }
+}
+
+#Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
+lrsk_gov_var_civic_mc_heritage_trust = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_heritage_trust_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+		planet_stability_add = 5
+  }
+}
+
+#Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
+lrsk_gov_var_civic_mc_conflict_res = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_conflict_res_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.15
+  }
+}
+
+#Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+lrsk_gov_var_civic_mc_police_state = {
+  potential = { authority = { value = auth_corporate } }
+  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+  description = "civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects"
+
+  possible = {
+    ethics = {
+      OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+      }
+    }
+  }
+
+  random_weight = { base = 5 }
+
+  modifier = {
+		planet_crime_mult = -0.15
+  }
+}

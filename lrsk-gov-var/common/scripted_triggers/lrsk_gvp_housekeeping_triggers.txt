@@ -101,6 +101,8 @@ lrsk_has_gvp_auth_gov = {
 		has_government = lrsk_gov_var_gov_absolute_monarchy
 		has_government = lrsk_gov_var_gov_solar_monarchy
 		has_government = lrsk_gov_var_gov_occult_franchise
+		has_government = lrsk_gov_var_gov_protection_racket
+		has_government = lrsk_gov_var_gov_private_intel_agency
 	}
 }
 
@@ -187,6 +189,8 @@ lrsk_has_gvp_cap_gov = {
 		has_government = lrsk_gov_var_gov_colonial_charter_board
 		has_government = lrsk_gov_var_gov_merchant_republic
 		has_government = lrsk_gov_var_gov_constitutional_plutocracy
+		has_government = lrsk_gov_var_gov_protection_racket
+		has_government = lrsk_gov_var_gov_private_intel_agency
 	}
 }
 
@@ -388,6 +392,11 @@ lrsk_has_gvp_corp_civic = {
 		has_civic = lrsk_gov_var_civic_mc_workers_councils
 		has_civic = lrsk_gov_var_civic_mc_chart_corp_board
 		has_civic = lrsk_gov_var_civic_mc_chartered_company
+		has_civic = lrsk_gov_var_civic_mc_casino_mystic
+		has_civic = lrsk_gov_var_civic_mc_vacay_planning
+		has_civic = lrsk_gov_var_civic_mc_heritage_trust
+		has_civic = lrsk_gov_var_civic_mc_conflict_res
+		has_civic = lrsk_gov_var_civic_mc_police_state
 	}
 }
 
@@ -396,6 +405,16 @@ lrsk_has_any_gvp_civic = {
 		lrsk_has_gvp_normal_civic = yes
 		lrsk_has_gvp_gestalt_civic = yes
 		lrsk_has_gvp_corp_civic = yes
+	}
+}
+
+lrsk_has_enhanced_civic = {
+	OR = {
+		has_civic = civic_naval_contractors
+		has_civic = civic_media_conglomerate
+		has_civic = civic_private_prospectors
+		has_civic = civic_private_military_companies
+		has_civic = civic_indentured_assets
 	}
 }
 
@@ -486,6 +505,11 @@ lrsk_has_gvp_corp_valid_civic = {
 		has_valid_civic = lrsk_gov_var_civic_mc_workers_councils
 		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
 		has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
+		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
+		has_valid_civic = lrsk_gov_var_civic_mc_vacay_planning
+		has_valid_civic = lrsk_gov_var_civic_mc_heritage_trust
+		has_valid_civic = lrsk_gov_var_civic_mc_conflict_res
+		has_valid_civic = lrsk_gov_var_civic_mc_police_state
 	}
 }
 
@@ -494,6 +518,16 @@ lrsk_has_any_gvp_valid_civic = {
 		lrsk_has_gvp_normal_valid_civic = yes
 		lrsk_has_gvp_gestalt_valid_civic = yes
 		lrsk_has_gvp_corp_valid_civic = yes
+	}
+}
+
+lrsk_has_enhanced_valid_civic = {
+	OR = {
+		has_valid_civic = civic_naval_contractors
+		has_valid_civic = civic_media_conglomerate
+		has_valid_civic = civic_private_prospectors
+		has_valid_civic = civic_private_military_companies
+		has_valid_civic = civic_indentured_assets
 	}
 }
 

@@ -43,6 +43,12 @@ Note: When I say the name of an ethos, assume either normal or Fanatic is fine (
 [b]Rationalist-Managerial Firm[/b]
 [i]Requirements:[/i] Corporate Dominion and Technocracy [i]or[/i] Corporate authority, Scientific Management
 
+[b]Private Intelligence Agency[/b]
+[i]Requirements:[/i] Corporate authority, Investigation & Security Services
+
+[b]Protection Racket[/b]
+[i]Requirements:[/i] Corporate authority, Investigation & Security Services and Criminal Heritage
+
 [b]Innovation Initiative[/b]
 [i]Requirements:[/i] Corporate Dominion and Enlightened Liberalism [i]or[/i] Corporate authority, Scientific Management and Educational Consortium
 
@@ -148,7 +154,7 @@ Requirements: Universal Sovereignty and Imperial Economy, Imperial authority, Mi
 [b]Doom Horde[/b]
 [i]Requirements:[/i] Fanatical Purifiers and Warrior Culture
 
-[b]Death Cult[/b]
+[b]Church of Slaughter[/b]
 [i]Requirements:[/i] Fanatical Purifiers and either Exalted Priesthood or Elected Clergy
 
 [b]Citizen Legion[/b]
