@@ -573,13 +573,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
-		OR = {
-			has_valid_civic = civic_naval_contractors
-			has_valid_civic = civic_media_conglomerate
-			has_valid_civic = civic_private_prospectors
-			has_valid_civic = civic_private_military_companies
-			has_valid_civic = civic_indentured_assets
-		}
+		lrsk_has_enhanced_valid_civic = yes
 	}
 
 	option = { 
