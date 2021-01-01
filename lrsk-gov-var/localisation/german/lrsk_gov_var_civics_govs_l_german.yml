@@ -91,6 +91,12 @@ l_german:
  lrsk_gov_var_civic_tooltip_not_xenophile_or_not_militarist:0 "Is neither §YXenophile§! to any degree nor §YMilitarist§! to any degree"
  lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist:0 "Is neither §YPacifist§! to any degree nor §YEgalitarian§! to any degree"
 
+ ## Test Civics (values should never appear to players) 
+ lrsk_gov_var_civic_test_1:0 "Test Civic 1"
+ lrsk_gov_var_civic_test_1_desc:0 "§RERROR§!: You should not be seeing this, please alert mod author."
+ lrsk_gov_var_civic_test_2:0 "Test Civic 2"
+ lrsk_gov_var_civic_test_2_desc:0 "§RERROR§!: You should not be seeing this, please alert mod author."
+
  ####################################
  ### Hive Mind
 
@@ -201,17 +207,23 @@ l_german:
  ####################################
  ### Megacorp
 
+ LRSK_GVP_MEGACORP_SCALING_COMMON:0 "§Gincreased $BRANCH_OFFICE_VALUE$§! that scales with the proportion of the £pop£ planetary population that is"
+
  lrsk_gov_var_civic_mc_sci_mgnt:0 "Scientific Management"
  lrsk_gov_var_civic_mc_sci_mgnt_desc:0 "This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave."
+ civic_tooltip_lrsk_gov_var_civic_mc_sci_mgnt_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_managerial_technique_institute$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+2§! §Y£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary$ Jobs§! ($job_lrsk_gov_var_job_functionary_effect_desc$) and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n"
 
  lrsk_gov_var_civic_mc_edu_corp:0 "Educational Consortium"
  lrsk_gov_var_civic_mc_edu_corp_desc:0 "This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old."
+ civic_tooltip_lrsk_gov_var_civic_mc_edu_corp_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_learnarium_dome$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Materialist attraction§! and §G+2§! §Y£job_lrsk_gov_var_job_infoguide£ $job_lrsk_gov_var_job_infoguide$ Jobs§! ($job_lrsk_gov_var_job_infoguide_effect_desc$) and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMaterialist§!.\n\n"
+
  lrsk_gov_var_civic_mc_gig_economy:0 "Gig Economics"
  lrsk_gov_var_civic_mc_gig_economy_desc:0 "This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time."
+ civic_tooltip_lrsk_gov_var_civic_mc_gig_economy_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_odd_jobs_emporium$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+2§! §Y£job_lrsk_gov_var_job_gofer£ $job_lrsk_gov_var_job_gofer$ Jobs§! ($job_lrsk_gov_var_job_gofer_effect_desc$) and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n"
 
  lrsk_gov_var_civic_mc_chart_corp_board:0 "Colonial Chartering"
  lrsk_gov_var_civic_mc_chart_corp_board_desc:0 "A system of chartered joint-stock companies to raise investment money for space-based resource extraction."
- civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "Turn ordinary vassals into special §YChartered Company§! vassals that provide £energy£ £minerals£ resource taxes. Each such vassal also provides bonuses to £trade_value£ $TRADE_VALUE$ and discounted Market Fees.\n\n"
+ civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "Turn ordinary vassals into special §YChartered Company§! vassals that provide £energy£ £minerals£ resource taxes. Each such vassal also provides bonuses to £trade_value£ §Y$TRADE_VALUE$§! and discounted §YMarket Fees§!.\n\n"
 
  lrsk_gov_var_civic_mc_chartered_company:0 "Chartered Company"
  lrsk_gov_var_civic_mc_chartered_company_desc:0 "A chartered joint-stock company set up to raise investment money for space-based resource extraction."
@@ -224,7 +236,27 @@ l_german:
 
  lrsk_gov_var_civic_mc_workers_councils:0 "Employee-Owned Co-op"
  lrsk_gov_var_civic_mc_workers_councils_desc:0 "All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company."
- civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "$civic_tooltip_lrsk_gov_var_civic_workers_councils_effects$"
+ civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_organizing_hub$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Egalitarian attraction§!, and §Y+25% £political_power£ Political Power§! and §G+5%§! §Y$HAPPINESS$§! of $WORKERS$, and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YEgalitarian§!.\n\n$civic_tooltip_lrsk_gov_var_civic_workers_councils_effects$"
+
+ lrsk_gov_var_civic_mc_casino_mystic:0 "Casino Mysticism"
+ lrsk_gov_var_civic_mc_casino_mystic_desc:0 "This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values."
+ civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_grand_casino$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+5%§! £mod_trade_value_add£ §Y$TRADE_VALUE$§!, and provides the megacorp with either §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! or (if criminal) increases £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet by §G15%§!.\n\n"
+
+ lrsk_gov_var_civic_mc_vacay_planning:0 "Vacation Experience Planning"
+ lrsk_gov_var_civic_mc_vacay_planning_desc:0 "The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it."
+ civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_galactic_excursions_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Xenophile attraction§! and §G-15%§! £amenities£ §Y$MOD_POP_AMENITIES_USAGE_BASE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophile§!.\n\n"
+
+ lrsk_gov_var_civic_mc_heritage_trust:0 "Heritage Trust"
+ lrsk_gov_var_civic_mc_heritage_trust_desc:0 "The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations."
+ civic_tooltip_lrsk_gov_var_civic_mc_heritage_trust_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_heritage_museum$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Xenophobe attraction§! and §G+5%§! §Y$MOD_POP_CITIZEN_HAPPINESS$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophobe§!.\n\n"
+
+ lrsk_gov_var_civic_mc_conflict_res:0 "Conflict Resolution Specialists"
+ lrsk_gov_var_civic_mc_conflict_res_desc:0 "This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself."
+ civic_tooltip_lrsk_gov_var_civic_mc_conflict_res_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_mediation_retreat$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Pacifist attraction§! and §G+5§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YPacifist§!.\n\n"
+
+ lrsk_gov_var_civic_mc_police_state:0 "Investigation & Security Services"
+ lrsk_gov_var_civic_mc_police_state_desc:0 "This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments."
+ civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_professional_protection_office$§! $BRANCH_OFFICE_BUILDING$, which provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! §Y£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator$ Job§! ($job_lrsk_gov_var_job_investigator_effect_desc$) or (if the providing corp is criminal) §G+1§! §Y£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor$ Job§! ($job_lrsk_gov_var_job_suppressor_effect_desc$).\n\n"
 
  ####################################
  # Origins
@@ -414,6 +446,22 @@ l_german:
  LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR_FEMALE:0 "$LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR$"
 
  LRSK_GOV_VAR_START_SCREEN_P2_RMF:0 "Our society was once composed of huge, inefficient states interacting with irrationally structured businesses. This state of affairs is what makes our whole history a tragedy of wasted productivity and potential. In modern times, though, we learned the value of scientific management. At first, this was limited to precise coordination of industrial workflows and the design of tools. Soon, it encompassed lifestyle guidelines and dietary requirements. Today the most successful firm has applied the most efficient standards to all involved in the interchange of resources, labor, and marketing, and naturally its interests guide our whole political system."
+
+ lrsk_gov_var_gov_private_intel_agency:0 "Private Intelligence Agency"
+ lrsk_gov_var_gov_private_intel_agency_desc:0 "If knowledge is power, then selling control over the flow and content of knowledge was this corporation's road to capturing sovereign power. Its indispensable security and spying operations have subsumed any formal state."
+
+ LRSK_GOV_VAR_RT_CE_DIRECTOR:0 "Chief Executive Director"
+ LRSK_GOV_VAR_RT_CE_DIRECTOR_FEMALE:0 "$LRSK_GOV_VAR_RT_CE_DIRECTOR$"
+
+ LRSK_GOV_VAR_START_SCREEN_P2_PIA:0 "Our people have always valued two things: wealth accumulation as the measure of success and both the social stability and personal security necessary to enjoy that wealth. Consequently, businesses arose to meet the needs for surveillance and security for individuals, businesses, and governments. Only in recent history has the optimal combination of these two values been found in the private intelligence agency, the merger of state policing powers with private investigators backed by a high-tech and efficient spying apparatus. Today, governments collectively decide on which contractor to entrust with providing security and threat management services for our whole civilization. "
+
+ lrsk_gov_var_gov_protection_racket:0 "Protection Racket"
+ lrsk_gov_var_gov_protection_racket_desc:0 "Criminals, as a rule, can't depend on the law, and the criminal underworld has its own rules enforced by brutality. This enterprise mastered enforcement of the informal criminal codes until it was powerful enough to define its own predations as the law."
+
+ LRSK_GOV_VAR_RT_CHIEF_ENFORCER:0 "Chief Enforcement Officer"
+ LRSK_GOV_VAR_RT_CHIEF_ENFORCER_FEMALE:0 "$LRSK_GOV_VAR_RT_CHIEF_ENFORCER$"
+
+ LRSK_GOV_VAR_START_SCREEN_P2_PROCRACK:0 "Our first governments were weak and ineffective. Crime flourished to the point where the criminal underworld was large enough to develop its own formal and informal rules to handle conflicts over turf. The most vicious and conniving of these exploited the niche this created, becoming the indispensable 'court of crime' that all other syndicates applied to for protection of their operations. In a final act of consolidation, the old governments, existing in name only by now, were abolished and the syndicate emerged as the de facto ruling body of our homeworld."
  
  ####################################
  ### Science-y

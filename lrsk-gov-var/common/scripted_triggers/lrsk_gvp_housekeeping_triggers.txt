@@ -404,6 +404,16 @@ lrsk_has_any_gvp_civic = {
 	}
 }
 
+lrsk_has_enhanced_civic = {
+	OR = {
+		has_civic = civic_naval_contractors
+		has_civic = civic_media_conglomerate
+		has_civic = civic_private_prospectors
+		has_civic = civic_private_military_companies
+		has_civic = civic_indentured_assets
+	}
+}
+
 lrsk_has_gvp_normal_valid_civic = {
 	OR = {
 		has_valid_civic = lrsk_gov_var_civic_elected_clergy
@@ -502,6 +512,16 @@ lrsk_has_any_gvp_valid_civic = {
 		lrsk_has_gvp_normal_valid_civic = yes
 		lrsk_has_gvp_gestalt_valid_civic = yes
 		lrsk_has_gvp_corp_valid_civic = yes
+	}
+}
+
+lrsk_has_enhanced_valid_civic = {
+	OR = {
+		has_valid_civic = civic_naval_contractors
+		has_valid_civic = civic_media_conglomerate
+		has_valid_civic = civic_private_prospectors
+		has_valid_civic = civic_private_military_companies
+		has_valid_civic = civic_indentured_assets
 	}
 }
 

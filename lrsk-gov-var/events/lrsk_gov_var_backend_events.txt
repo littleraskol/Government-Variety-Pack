@@ -16,7 +16,7 @@ event = {
 	
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
-		#set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
+		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
 		
 		## Origins Setup
 
@@ -65,13 +65,7 @@ event = {
 		every_playable_country = {
 			limit = { 
 				NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
-				OR = { 
-					has_valid_civic = civic_naval_contractors
-					has_valid_civic = civic_media_conglomerate
-					has_valid_civic = civic_private_prospectors
-					has_valid_civic = civic_private_military_companies
-					has_valid_civic = civic_indentured_assets
-				}
+				lrsk_has_enhanced_valid_civic = yes
 			}
 			country_event = { id = lrsk_government_variety_pack_backend.101 days = 1 }
 		}
