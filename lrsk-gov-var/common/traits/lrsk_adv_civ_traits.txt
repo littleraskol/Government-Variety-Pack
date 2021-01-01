@@ -1,0 +1,545 @@
+# New Advanced Civics
+# Traits
+# Author: littleraskol
+
+# Illuminated, Inspired, Cunning, and Insightful are all traits gained by the Otherworldly-only "Revelation" events.
+# "Unready", "Groomed...", "Tutors", and "Ambitious" are from the Sortition civic.
+
+#####################
+# Generic Traits    #
+#####################
+
+lrsk_adv_civ_trait_exile = {
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_exile.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.15
+		leaders_upkeep_mult = -0.2
+	}
+	leader_class = { admiral scientist general governor ruler }
+	leader_trait = all
+	initial = no
+}
+
+#####################
+# Scientist Traits    #
+#####################
+
+lrsk_adv_civ_trait_illuminated = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
+	modifier = {
+		all_technology_research_speed = 0.1
+		ship_anomaly_research_speed_mult = 0.2
+		science_ship_survey_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+}
+
+lrsk_adv_civ_trait_unready_sci = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		all_technology_research_speed = -0.05
+		science_ship_survey_speed = -0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+}
+
+lrsk_adv_civ_trait_groomed_sci = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		all_technology_research_speed = 0.05
+		science_ship_survey_speed = 0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+}
+
+lrsk_adv_civ_trait_tutors_sci = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		all_technology_research_speed = -0.05
+		science_ship_survey_speed = -0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+}
+
+lrsk_adv_civ_trait_ambitious_sci = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_ambitious.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		all_technology_research_speed = 0.05
+		science_ship_survey_speed = 0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+}
+
+#####################
+# Governor Traits    #
+#####################
+
+lrsk_adv_civ_trait_insightful = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
+	modifier = {
+		planet_stability_add = 5
+		planet_crime_add = -20
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+lrsk_adv_civ_trait_unready_gov = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		planet_crime_add = 15
+		planet_buildings_cost_mult = 0.1
+		planet_districts_cost_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+lrsk_adv_civ_trait_groomed_gov = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		planet_crime_add = -15
+		planet_buildings_cost_mult = -0.1
+		planet_districts_cost_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+lrsk_adv_civ_trait_tutors_gov = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		planet_crime_add = 15
+		planet_buildings_cost_mult = 0.1
+		planet_districts_cost_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+lrsk_adv_civ_trait_ambitious_gov = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_ambitious.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		planet_crime_add = -15
+		planet_buildings_cost_mult = -0.1
+		planet_districts_cost_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+lrsk_adv_civ_trait_OCD = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_OCD.dds"
+	modifier = {
+		starbase_shipyard_build_speed_mult = -0.05
+		planet_army_build_speed_mult = -0.05
+		planet_building_cost_mult = -0.05
+		planet_districts_cost_mult = -0.05
+	}
+	leader_trait = yes
+	leader_class = { governor }
+}
+
+#####################
+# Admiral Traits    #
+#####################
+
+lrsk_adv_civ_trait_cunning_adm = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
+	modifier = {
+		ship_weapon_range_mult = 0.1
+		ship_evasion_mult = 0.15
+		ship_emergency_ftl_mult = -0.25
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+lrsk_adv_civ_trait_unready_adm = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		ship_fire_rate_mult = -0.05
+		ship_upkeep_mult = 0.05
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+lrsk_adv_civ_trait_groomed_adm = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_upkeep_mult = -0.05
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+lrsk_adv_civ_trait_tutors_adm = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		ship_fire_rate_mult = -0.05
+		ship_upkeep_mult = 0.05
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+lrsk_adv_civ_trait_ambitious_adm = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_upkeep_mult = -0.05
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+#####################
+# General Traits    #
+#####################
+
+lrsk_adv_civ_trait_cunning_gen = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
+	modifier = {
+		armies_upkeep_mult = -0.15
+		army_damage_mult = 0.15
+		army_disengage_chance_mult = 0.15
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+}
+
+lrsk_adv_civ_trait_unready_gen = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		army_morale = -0.05
+		armies_upkeep_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+}
+
+lrsk_adv_civ_trait_groomed_gen = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		army_morale = 0.05
+		armies_upkeep_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+}
+
+lrsk_adv_civ_trait_tutors_gen = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		army_morale = -0.05
+		armies_upkeep_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+}
+
+lrsk_adv_civ_trait_ambitious_gen = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_ambitious.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		army_morale = 0.05
+		armies_upkeep_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+}
+
+#####################
+# Ruler Traits    #
+#####################
+
+lrsk_adv_civ_trait_inspired = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	potential = {
+		NOT = { from = { has_ethic = "ethic_hive_mind" } }
+	}
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
+	modifier = {
+		pop_government_ethic_attraction = 0.15
+		country_unity_produces_mult = 0.1
+		edicts_cost_mult = -0.1
+		leaders_cost_mult = -0.1
+		pop_citizen_happiness = 0.05
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+}
+
+lrsk_adv_civ_trait_unready_rul = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		country_influence_produces_mult = -0.1
+		country_unity_produces_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+}
+
+lrsk_adv_civ_trait_groomed_rul = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.1
+	}
+	modifier = {
+		country_influence_produces_mult = 0.1
+		country_unity_produces_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+}
+
+lrsk_adv_civ_trait_tutors_rul = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		country_influence_produces_mult = -0.1
+		country_unity_produces_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+}
+
+lrsk_adv_civ_trait_ambitious_rul = {
+	cost = 1
+	initial = no
+	modification = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_ambitious.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+	}
+	modifier = {
+		country_influence_produces_mult = 0.1
+		country_unity_produces_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+}
+
+lrsk_adv_civ_trait_hardy = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_hardy.dds"
+	self_modifier = {
+		leader_age = 20
+	}
+	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
+	leader_trait = yes
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+lrsk_adv_civ_trait_debauched = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_substance_abuser.dds"
+	self_modifier = {
+		leader_age = -20
+	}
+	modifier = {
+		country_influence_produces_mult = -0.1
+	}
+	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
+	leader_trait = yes
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+lrsk_adv_civ_trait_hubris = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_hubris.dds"
+	modifier = {
+		pop_citizen_happiness = -0.1
+	}
+	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
+	leader_trait = yes
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+lrsk_adv_civ_trait_hidebound = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_stubborn.dds"
+	modifier = {
+		all_technology_research_speed = -0.05
+	}
+	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
+	leader_trait = yes
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}

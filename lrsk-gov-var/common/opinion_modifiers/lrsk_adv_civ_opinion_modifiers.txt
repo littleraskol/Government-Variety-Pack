@@ -1,0 +1,151 @@
+# New Advanced Civics
+# Opinion Modifiers
+# Author: littleraskol
+
+lrsk_adv_civ_star_siblings = {
+	opinion = {
+		base = 50
+	}
+}
+
+lrsk_adv_civ_star_siblings_decline = {
+	opinion = {
+		base = 50
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_rampant_ascendants = {
+	trigger = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			has_country_flag = fallen_empire_machine
+			is_country_type = enclave
+			relative_power = {
+				who = from
+				category = all
+				value > equivalent
+			}
+		}
+		FROM = {
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
+	}
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_audacity_war = {
+	trigger = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			has_country_flag = fallen_empire_machine
+		}
+		FROM = {
+			has_edict = lrsk_adv_civ_audacity_war_edict
+		}
+	}
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_const_monarch_like = {
+	trigger = {
+		OR = {
+			has_authority = auth_imperial
+			AND = {
+				has_authority = auth_dictatorial
+				has_valid_civic = civic_philosopher_king
+			}
+		}
+		FROM = {
+			lrsk_adv_civ_has_const_monarch_civic = yes
+		}
+	}
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_lrsk_adv_civ_const_monarch_dislike = {
+	trigger = {
+		has_ethic = ethic_fanatic_egalitarian
+		FROM = {
+			lrsk_adv_civ_has_const_monarch_civic = yes
+		}
+	}
+	opinion = {
+		base = -10
+	}
+}
+
+# Elitist Revolt's opinion of former Demarchy
+lrsk_opinion_elitist_revolt_originator = {
+	opinion = {
+		base = -1000
+	}
+}
+
+# Former Demarchy's opinion of Elitist Revolt
+lrsk_opinion_elitist_revolt = {
+	opinion = {
+		base = -1000
+	}
+}
+
+# Egalitarians respect putting down the Elitist Revolt
+lrsk_adv_civ_elitist_revolt_defeated = {
+	opinion = {
+		base = 60
+	}
+	decay = {
+		base = 1
+	}
+}
+
+# Authoritarians disapprove putting down the Elitist Revolt
+lrsk_adv_civ_elitist_revolt_elitist_comrades_defeated = {
+	opinion = {
+		base = -60
+	}
+	decay = {
+		base = 1
+	}
+}
+
+# Egalitarians fear the victorious Elitist Revolt
+lrsk_adv_civ_elitist_revolt_victorious = {
+	opinion = {
+		base = -60
+	}
+	decay = {
+		base = 1
+	}
+}
+
+# Authoritarians respect the victorious Elitist Revolt
+lrsk_adv_civ_elitist_revolt_elitist_comrades_victorious = {
+	opinion = {
+		base = 60
+	}
+	decay = {
+		base = 1
+	}
+}
+
+# Status Quo Resentment
+lrsk_adv_civ_elitist_revolt_inconclusive = {
+	opinion = {
+		base = -200
+	}
+	decay = {
+		base = 1
+	}
+}

@@ -1,0 +1,231 @@
+# called during empire initialization when starting a new game
+# scope: country
+#empire_init_add_technologies = {
+#	events = {
+#		lrsk_adv_civ_estemp.1
+#		lrsk_adv_civ_siblings.1
+#		lrsk_adv_civ_techbarb.1
+#	}
+#}
+
+on_monthly_pulse_country = {
+	events = {
+		lrsk_adv_civ_aspiration.4	# Removes any non-fanatic ethos if it develops
+	}
+}
+
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		lrsk_adv_civ_sortition.1000 # Yearly kick-offs.
+	}
+}
+
+# A planets controller becomes a country not the same as the owner.
+# Root = Planet
+# From = Planet Owner
+# FromFrom = Planet Controller (the one occupying)
+on_planet_occupied = {
+	events = {
+		lrsk_adv_civ_techbarb.101
+	}
+}
+
+# A building construction has demolished.
+# This = Planet
+# From = Tile
+#on_building_demolished = {
+#	events = {
+#		#lrsk_adv_civ_techbarb.remruins
+#	}
+#}
+#
+## A building construction has finished, replacing another building.
+## This = Planet
+## From = Tile
+#on_building_replaced = {
+#	events = {
+#		#lrsk_adv_civ_techbarb.remruins
+#	}
+#}
+
+# Executed as new ruler has been set
+# This = Country
+on_ruler_set = {
+	events = {
+		#techbarb dictator and monarch salvage mission
+		lrsk_adv_civ_sortition.1001
+	}
+}
+
+# Executed when a ruler has been removed
+# From = Previous Ruler
+# This = Country
+on_ruler_removed = {
+	events = {
+		#
+	}
+}
+
+# Executed when the ruler is ousted and goes back to their pre-ruler class
+# From = Previous Ruler, already has the new class
+# This = Country
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		lrsk_adv_civ_sortition.2
+	}
+}
+
+on_leader_spawned = {
+	events = {
+		lrsk_adv_civ_revelation.20
+	}
+	random_events = {
+		50 = 0
+		50 = lrsk_adv_civ_sortition.1
+	}
+}
+
+# A leader leveled up.
+# Scope = Country
+# From = Leader
+on_leader_level_up = {
+	events = {
+		lrsk_adv_civ_sortition.3
+	}
+}
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+	  lrsk_adv_civ_revelation.16
+	}
+}
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		lrsk_adv_civ_revelation.19
+		lrsk_adv_civ_aspiration.2	# "Take back" the AP from Ascension Theory
+	}
+}
+
+# Triggers event when a system is entered by ships from a country (not pirates or monsters) for the first time
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+	events = {
+		lrsk_adv_civ_siblings.2
+	}
+}
+
+# This = owner of fleet 1 (attacker?)
+# From = owner of fleet 2 (defender?)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_entering_battle = {
+	events = {
+		lrsk_adv_civ_siblings.5
+	}
+}
+
+# A war is beginning, executed for every country in the war.
+# Root = Country
+# From = War
+on_war_beginning = {
+	events = {
+		#
+	}
+}
+
+# A war has been won
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+on_war_won = {
+	events = {
+		lrsk_adv_civ_siblings.10	# War over check
+		lrsk_adv_civ_sortition.53	# Elite Revolt wins
+		lrsk_adv_civ_sortition.54	# Demarchy wins
+	}
+}
+
+# A war has been won, by force (not sure this works)
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+#on_war_won_forced = {
+#	events = {
+#		lrsk_adv_civ_siblings.10
+#	}
+#}
+
+# A white peace has been signed
+# Root = Recipient
+# From = Actor
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_white_peace = {
+	events = {
+		lrsk_adv_civ_siblings.10
+	}
+}
+
+# A white peace has been signed, by force
+# Root = Recipient
+# From = Actor
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_white_peace_forced = {
+	events = {
+		lrsk_adv_civ_siblings.10
+	}
+}
+
+# A war has been lost
+# Root = Loser Warleader
+# From = Winner Warleader
+# FromFrom = War
+on_war_lost = {
+	events = {
+		lrsk_adv_civ_estemp.6
+	}
+}
+
+# A war has been lost, by force
+# Root = Loser Warleader
+# From = Winner Warleader
+# FromFrom = War
+on_war_lost_forced = {
+	events = {
+		lrsk_adv_civ_estemp.6
+	}
+}
+
+#This = Country scope
+on_join_alliance = {
+	events = {
+		lrsk_adv_civ_siblings.8
+	}
+}
+
+#This = Country scope
+on_leave_alliance = {
+	events = {
+		lrsk_adv_civ_siblings.9
+	}
+}
+
+#This = destroyed country
+#From = optional, destroyer (country)
+on_country_destroyed = {
+	events = {
+		lrsk_adv_civ_siblings.10
+	}
+}

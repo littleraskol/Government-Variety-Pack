@@ -33,3 +33,81 @@ d_lrsk_gov_var_shroud_pockets = {
 		weight = 0
 	}
 }
+
+d_lrsk_gov_var_collapsed_tech_ruins = {
+	time = 720
+	#icon = d_broken_spire
+	
+	#is_for_colonizeable = yes
+	category = deposit_cat_rare_blocker
+	
+	should_swap_deposit_on_terraforming = no
+	
+	potential = { always = no }
+	
+	planet_modifier = { 
+		planet_max_districts_add = -2
+		planet_jobs_unity_produces_mult = 0.2
+	}
+
+	use_weights_for_blocker_swap_types = no
+
+	blocker_swap_types = {
+		d_lrsk_gov_var_tech_ruins
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+			influence = 250
+		}
+	}
+}
+
+d_lrsk_gov_var_tech_ruins = {
+	#is_for_colonizeable = yes
+	#icon = d_central_spire
+	category = deposit_cat_rare
+
+	potential = { always = no }
+	
+	should_swap_deposit_on_terraforming = no
+	
+	planet_modifier = { 
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.1
+	}
+
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		exists = owner
+	#		owner = { is_regular_empire = yes }
+	#	}
+	#	modifier = {
+	#		job_researcher_add = 8
+	#	}
+	#}
+	#
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		exists = owner
+	#		owner = { is_hive_empire = yes }
+	#	}
+	#	modifier = {
+	#		job_brain_drone_add = 8
+	#	}
+	#}
+	#
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		exists = owner
+	#		owner = { is_machine_empire = yes }
+	#	}
+	#	modifier = {	
+	#		job_calculator_add = 8
+	#	}
+	#}
+}

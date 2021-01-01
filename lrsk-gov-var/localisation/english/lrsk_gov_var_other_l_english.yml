@@ -116,6 +116,14 @@ l_english:
  # Planetary
  d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
+ 
+ LRSK_TECH_RUIN_COMMON:0 "of a more advacned, bygone age, spanning the whole planet in a great patchwork of machinery and advanced buildings."
+
+ d_lrsk_gov_var_collapsed_tech_ruins:0 "Collapsed Techno-Ruins"
+ d_lrsk_gov_var_collapsed_tech_ruins_desc:0 "The remnants and rubble $LRSK_TECH_RUIN_COMMON$ While it takes up space, our people find solace in this reminder of our past glories."
+
+ d_lrsk_gov_var_tech_ruins:0 "Techno-Ruins"
+ d_lrsk_gov_var_tech_ruins_desc:0 "The remnants $LRSK_TECH_RUIN_COMMON$ Having been cleaned out and partially restored, the curiosities within provide a boon to scientific research."
 
  ## Subjects
 
@@ -132,11 +140,6 @@ l_english:
  SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. Their overlord gets bonuses to £trade_value£ Trade Value and Market Fee discounts the more of these subjects it has."
  lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
  lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
-
- # Corp building specials
- opinion_lrsk_gvp_scandal_inflicted:0 "Exposed Our Scandals"
- opinion_lrsk_gvp_slaver_corp_raid:0 "Enslaved Our People"
- opinion_lrsk_gvp_casino_corp_approval:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Popular Attraction" 
 
  ## Buildings
 
@@ -254,6 +257,12 @@ l_english:
 
  lrsk_media_crim_favor_chance:0 "The branch office owner has a §R2.5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\n$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_local_news_office$§! to discover and publicly report on any efforts to combat crime, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!.\n\n"
 
+ ## Research Buildings
+ 
+ # Techno-Ruins
+ lrsk_gov_var_bldg_tech_ruins:0 "Techno-Ruin Research Center"
+ lrsk_gov_var_bldg_tech_ruins_desc:2 "This research station has been assembled at one of the richest clusters of the old advanced ruins. More an expeditionary staging ground than a laboratory, its savvy salvagers risk life and limb to bring back the knowledge of the past."
+
  ##Jobs
 
  #Knight
@@ -300,6 +309,24 @@ l_english:
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
+
+ # Cyber-Salvager
+ job_lrsk_gov_var_job_cyber_salvager:0 "Cyber-Salvager"
+ job_lrsk_gov_var_job_cyber_salvager_plural:0 "$job_lrsk_gov_var_job_cyber_salvager$s"
+ job_lrsk_gov_var_job_cyber_salvager_desc:0 "These daring explorers risk life and limb to bring back the knowledge of the past."
+ job_lrsk_gov_var_job_cyber_salvager_effect_desc:0 "£job_lrsk_gov_var_job_cyber_salvager£ $job_lrsk_gov_var_job_cyber_salvager_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £physics£ £society£ £engineering£ §YResearch Points§! for new technologies and £unity£ §Y$unity$§!"
+ mod_job_lrsk_gov_var_job_cyber_salvager_add:0 "$job_lrsk_gov_var_job_cyber_salvager$ Jobs"
+ mod_job_lrsk_gov_var_job_cyber_salvager_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_cyber_salvager$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_cyber_salvager_per_pop_short:0 "\n§G+1§! £mod_lrsk_gov_var_job_cyber_salvager_add£ per $VALUE$ £pop£"
+
+ # Salvage Rite Master
+ job_lrsk_gov_var_job_head_salvager:0 "Salvage Rite Master"
+ job_lrsk_gov_var_job_head_salvager_plural:0 "$job_lrsk_gov_var_job_head_salvager$s"
+ job_lrsk_gov_var_job_head_salvager_desc:1 "Members of a priestly caste officially sanctioned to bless and oversee the rituals of slavaging holy relic tech."
+ job_lrsk_gov_var_job_head_salvager_effect_desc:1 "£job_head_salvager£ $job_lrsk_gov_var_job_head_salvager$ turn £consumer_goods£ §Y$consumer_goods$§! and £energy£ §H$energy$§! into £unity£ §Y$unity$§!, £influence£ §Y$INFLUENCE$§!, and £physics£ £society£ £engineering£ §YResearch Points§! for new technologies"
+ mod_job_head_salvager_add:0 "$job_lrsk_gov_var_job_head_salvager$ Jobs"
+ mod_job_head_salvager_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_head_salvager$ Job per $VALUE$ Pops"
+ mod_job_head_salvager_per_pop_short:0 "\n§G+1§! £mod_job_head_salvager_add£ per $VALUE$ £pop£"
 
  # Planetmind Overseer
  job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
@@ -377,12 +404,12 @@ l_english:
  decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
  decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital."
  decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\nIt will have the same Ethics and main species as your empire."
-
- ## Empire Modifiers
  
+ # Special DR/Doomsday interaction
  lrsk_gov_var_empire_endisnigh:0 "The End Is Nigh"
  lrsk_gov_var_empire_endisnigh_desc:0 "Doomsday cultists run rampant, given... well. You know. We have to prove them wrong!"
  
+ # Uplift
  lrsk_gov_var_empire_enlightened:0 "Enlightened"
  lrsk_gov_var_empire_enlightened_desc:0 "This empire's alien tutelege has left them eager to communicate and discover."
   
@@ -400,6 +427,7 @@ l_english:
  lrsk_gov_var_empire_enlighten_cycle:0 "Cycle of Enlightenment"
  lrsk_gov_var_empire_enlighten_cycle_desc:0 "We have raised a civilization to the stars$LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON$"
 
+ # Sublight 
  lrsk_gov_var_empire_black_box_drives:0 "Black Box Hyperdrives"
  lrsk_gov_var_empire_black_box_drives_desc:0 "Due to restrictions enforced by its overlord, this empire only has access to second-rate feature-restricted hyperdrives lacking most diagnostic functions, which its pilots and engineers understand poorly."
 
@@ -430,6 +458,7 @@ l_english:
  lrsk_gov_var_empire_colonial_corruption_entrenched:0 "Entrenched $LRSK_GOV_VAR_COL_CORR$"
  lrsk_gov_var_empire_colonial_corruption_entrenched_desc:0 "A culture of corruption pervades the colonial administration, and it seems impossible to ever uproot."
 
+ # Chartered
  lrsk_gov_var_empire_colonial_trade_1:0 "Colonial Trade Benefits"
  lrsk_gov_var_empire_colonial_trade_2:0 "$lrsk_gov_var_empire_colonial_trade_1$"
  lrsk_gov_var_empire_colonial_trade_3:0 "$lrsk_gov_var_empire_colonial_trade_1$"
@@ -462,9 +491,11 @@ l_english:
  lrsk_gov_var_empire_colonial_trade_14_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
  lrsk_gov_var_empire_colonial_trade_15_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
 
+ # Media corp scandal effect
  lrsk_gvp_empire_scandal_wracked:0 "Scandal-Wracked"
  lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
 
+ # Offworld worker bonuses
  lrsk_gvp_empire_offworld_work_bonus_1:0 "Offworld Worker Bonus"
  lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
  lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
@@ -583,6 +614,22 @@ l_english:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+
+ # Casino Luck Modifiers (not really interested in descriptions for these...)
+ LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
+
+ lrsk_gov_var_statmod_casino_lost_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Trade Value"
+ lrsk_gov_var_statmod_casino_lost_trade_desc:0 ""
+ lrsk_gov_var_statmod_casino_happy:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Harmony"
+ lrsk_gov_var_statmod_casino_happy_desc:0 ""
+ lrsk_gov_var_statmod_casino_lost_stability:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Unrest"
+ lrsk_gov_var_statmod_casino_lost_stability_desc:0 ""
+ lrsk_gov_var_statmod_casino_gain_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Trade Value"
+ lrsk_gov_var_statmod_casino_gain_trade_desc:0 ""
+ lrsk_gov_var_statmod_casino_lost_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Branch Office Value"
+ lrsk_gov_var_statmod_casino_lost_branch_val_desc:0 ""
+ lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
+ lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
  
  ## Opinion Modifiers
 
@@ -632,6 +679,11 @@ l_english:
  # Chartered Colony vassals
  triggered_opinion_lrsk_gov_var_colonial_mission:0 "Shared Colonial Mission" # Inherent trust, to offset power penalties
 
+ # Corp building specials
+ opinion_lrsk_gvp_scandal_inflicted:0 "Exposed Our Scandals"
+ opinion_lrsk_gvp_slaver_corp_raid:0 "Enslaved Our People"
+ opinion_lrsk_gvp_casino_corp_approval:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Popular Attraction" 
+
  ## CBs/Wargoals
 
  casus_belli_cb_lrsk_gov_var_hegemon:0 "Hegemon Reaction"
@@ -649,22 +701,6 @@ l_english:
  casus_belli_cb_lrsk_gov_var_colony:0 "Colonialism"
  war_goal_wg_lrsk_gov_var_impchart:0 "Impose Charter"
  war_goal_wg_lrsk_gov_var_impchart_desc:1 "War is waged to force the enemy to accept a colonial trading charter, subjugating it as a Chartered Colony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new Chartered Colony if they include at least one planet and the target will be forced into Tributary status for 10 years."
-
- # Casino Luck Modifiers (not really interested in descriptions for these...)
- LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
-
- lrsk_gov_var_statmod_casino_lost_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Trade Value"
- lrsk_gov_var_statmod_casino_lost_trade_desc:0 ""
- lrsk_gov_var_statmod_casino_happy:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Harmony"
- lrsk_gov_var_statmod_casino_happy_desc:0 ""
- lrsk_gov_var_statmod_casino_lost_stability:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Unrest"
- lrsk_gov_var_statmod_casino_lost_stability_desc:0 ""
- lrsk_gov_var_statmod_casino_gain_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Trade Value"
- lrsk_gov_var_statmod_casino_gain_trade_desc:0 ""
- lrsk_gov_var_statmod_casino_lost_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Branch Office Value"
- lrsk_gov_var_statmod_casino_lost_branch_val_desc:0 ""
- lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
- lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
 
  ## Events
 
@@ -1149,6 +1185,719 @@ l_english:
  lrsk_gov_var_chartered.101.desc:0 "The §Y$lrsk_gov_var_civic_mc_chart_corp_board$§! Civic is designed to emulate historical colonial joint-stock corporations like the British East India Company. Many European nations created companies like this in the early age of exploration and colonization. These nations did not actually have the funds to finance colonial ventures nor the administrative capacity to govern distant lands, so they created these companies as a form of indirect control over extraction: by selling stock in the company, they could raise the initial money (with the promise of a return to the initial investors) while also taxing all the trade between the colonies they created and the mother country.\n\nSince early game Stellaris is set in a new 'age of exploration and colonization,' this seemed like a good fit for a civic with its own playstyle. It puts you in the role of a mixed private/public entity called a §Y$lrsk_gov_var_gov_colonial_charter_board$§!, a kind of public holding corporation that 'charters' colonial companies. The way this works is: whenever you obtain or create a vassal, you will eventually be given a choice to turn them into a §Y$SUBJECT_lrsk_gov_var_subject_chartered_company$§! vassal. These pay you §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. You also get §G+2%§! £trade_value£ Trade Value and §G-1%§! Market Fee discount for each $SUBJECT_lrsk_gov_var_subject_chartered_company$ under your control (though this maxes out at 15 such vassals). They also inherently like you more as an overlord, so you will have an easier time maintaining control over several of them."
  lrsk_gov_var_chartered.101.a:0 "Let's get down to business!"
 
+ 
+ ##### "Advanced" Civic Miscellany
+
+ # Techno-Barbarian Ruins Text
+ lrsk_adv_civ_building_techbarb_ruins:0 "Ruins of the Ancients"
+ lrsk_adv_civ_building_techbarb_ruins_desc:0 "The ancient cities and workshops and temples of our ancestors from when they walked with the gods. Rich with relics and dangers."
+ #lrsk_adv_civ_building_techbarb_ruins_desc:0 "The ancient cities and workshops and temples of our ancestors from when they walked with the gods. Rich with relics and dangers. The devout build gardens and orchards near these sites, believing them to bless crops."
+
+ # Techno-Barbarian Captured Scientists
+ lrsk_adv_civ_tb_capped_scientists:0 "Indentured Scholars"
+ lrsk_adv_civ_tb_capped_scientists_desc:0 "Captive alien scholars have sworn to serve a durance of five years teaching us their secrets in exchange for an eventual safe return to their homeworlds."
+
+ # Techno-Barbarian Sacrilege/Revolution/Reform
+ #lrsk_adv_civ_tb_sacrilege:0 "Cyber-Sacrilege"
+ #lrsk_adv_civ_tb_sacrilege_desc:0 "We have destroyed the holy ruins of our ancestors. The people are distressed beyond consolation at this blasphemous act."
+ lrsk_adv_civ_tb_revolution:0 "Techno-Cultural Revolution"
+ lrsk_adv_civ_tb_revolution_desc:0 "Our eyes have been opened to the deception of our traditional beliefs. There is no longer any basis for social order, though, and a thorough changing of ways is needed."
+ lrsk_adv_civ_tb_reformation:0 "Renaissance and Reformation"
+ lrsk_adv_civ_tb_reformation_desc:0 "We have left behind our ancient superstitions. Now the work of building a new world from the ruins of the old must begin."
+
+ # Techno-Barbarian policies
+ lrsk_adv_civ_tech_ritual:0 "Techno-Ritual Piety"
+ lrsk_adv_civ_tech_ritual_desc:1 "Our ancestors bequeathed us wonders and marvels aplenty, but they require the proper ritual veneration to operate. Some lapse in ritual strictures may be permissible, but we trifle with them at our peril when it comes to our voidcraft, the newest and least well-understood of the ancients' gifts.\n"
+ lrsk_adv_civ_full_rev:0 "Full"
+ lrsk_adv_civ_full_rev_name:0 "Full Ritual Reverence"
+ lrsk_adv_civ_full_rev_desc:0 "We maintain the traditions that have served us so well and pay full honor to the ancestors, and in return, their blessings strengthen us."
+ lrsk_adv_civ_lapsed_rev:0 "Lapsed"
+ lrsk_adv_civ_lapsed_rev_name:0 "Lapsed Ritual Reverence"
+ lrsk_adv_civ_lapsed_rev_desc:0 "Although we still value the strictures of our traditions, certain details are left to interpretation or the user's optional choice."
+ lrsk_adv_civ_token_rev:0 "Token"
+ lrsk_adv_civ_token_rev_name:0 "Token Ritual Reverence"
+ lrsk_adv_civ_token_rev_desc:0 "While we still need the wisdom of our ancestors we can see that it's possible to cling so closely to the letter of the law that we are unable to think for ourselves at all."
+ lrsk_adv_civ_no_rev:0 "None"
+ lrsk_adv_civ_no_rev_name:0 "Ritual Irreverence"
+ lrsk_adv_civ_no_rev_desc:0 "The ancestors receive their due reverence on official holidays and in personal observences. Religious rituals should not interfere with practical day-to-day business."
+
+ # Revelation trait descriptions
+ lrsk_adv_civ_trait_illuminated:0 "Illuminated"
+ lrsk_adv_civ_trait_illuminated_desc:0 "This scientist has had a Revelation of the horrible and baffling truth of the universe."
+ lrsk_adv_civ_trait_insightful:0 "Insightful"
+ lrsk_adv_civ_trait_insightful_desc:0 "This governor has had a Revelation of the true nature of social organization in all its perplexing and contradictory chaos."
+ lrsk_adv_civ_trait_cunning_adm:0 "Cunning"
+ lrsk_adv_civ_trait_cunning_adm_desc:0 "This admiral has had a Revelation of endless battlespace victories and defeats, and fates too horrid to share."
+ lrsk_adv_civ_trait_cunning_gen:0 "Cunning"
+ lrsk_adv_civ_trait_cunning_gen_desc:0 "This general has had a Revelation of endless battlefield victories and defeats, and fates too horrid to share."
+ lrsk_adv_civ_trait_inspired:0 "Inspired"
+ lrsk_adv_civ_trait_inspired_desc:0 "This ruler has had a Revelation about sovereignty, rulership, power, prestige, and the unbelievable hubris of claiming all these things."
+
+ # Other traits from Otherworldly
+
+ lrsk_adv_civ_trait_OCD:0 "Obsessive"
+ lrsk_adv_civ_trait_OCD_desc:0 "This governor's eccentric beliefs about proper order result in micromanagement to the smallest and most irrational levels of detail."
+ lrsk_adv_civ_trait_hardy:0 "Hardy"
+ lrsk_adv_civ_trait_hardy_desc:0 "This ruler is healthy and fit."
+ lrsk_adv_civ_trait_debauched:0 "Debauched"
+ lrsk_adv_civ_trait_debauched_desc:0 "This ruler has turned to a life of vice and excess."
+ lrsk_adv_civ_trait_hubris:0 "Hubris"
+ lrsk_adv_civ_trait_hubris_desc:0 "This ruler has a grandiose self-perception and acknowledges no limits to their power."
+ lrsk_adv_civ_trait_hidebound:0 "Hidebound"
+ lrsk_adv_civ_trait_hidebound_desc:0 "This ruler is opposed to or uninterested in any innovation."
+
+ # Revelation policies
+ lrsk_adv_civ_rev_policy:0 "Revelation Seeking"
+ lrsk_adv_civ_rev_policy_desc:1 "Since time immemorial, our people have left no stone unturned in the search for the truth, even if those stones were never meant to be disturbed. Will we promote this curious molestation of placid rocks, or deny all who wish a peak at what lies beneath?\n"
+
+ lrsk_adv_civ_rev_encourage:0 "Encourage"
+ lrsk_adv_civ_rev_encourage_name:0 "Encourage Revelation Seekers"
+ lrsk_adv_civ_rev_encourage_desc:0 "Plumb the deepest depths of secret seas and abyssal voids, though Hell itself awaits you. Such is our message to the people."
+
+ lrsk_adv_civ_rev_default:0 "Unconcerned"
+ lrsk_adv_civ_rev_default_name:0 "No Revelation Search Policy"
+ lrsk_adv_civ_rev_default_desc:0 "Left to their own devices, our people will be unable to avoid the call of bizarre and perverse truths. So leave them to it."
+
+ lrsk_adv_civ_rev_discourage:0 "Discourage"
+ lrsk_adv_civ_rev_discourage_name:0 "Discourage Revelation Seekers"
+ lrsk_adv_civ_rev_discourage_desc:0 "Some things were not meant to be Known. We must rein in our inquisitive impulses lest our tenuous grip on sanity be even further strained."
+
+ # Sortition traits
+ lrsk_adv_civ_trait_unready:0 "Uneady"
+ lrsk_adv_civ_trait_unready_desc:0 "This leader is unprepared for the responsibilities of office and has no one to lean on for help."
+ lrsk_adv_civ_trait_unready_sci:0 "$lrsk_adv_civ_trait_unready$"
+ lrsk_adv_civ_trait_unready_sci_desc:0 "$lrsk_adv_civ_trait_unready_desc$"
+ lrsk_adv_civ_trait_unready_gov:0 "$lrsk_adv_civ_trait_unready$"
+ lrsk_adv_civ_trait_unready_gov_desc:0 "$lrsk_adv_civ_trait_unready_desc$"
+ lrsk_adv_civ_trait_unready_adm:0 "$lrsk_adv_civ_trait_unready$"
+ lrsk_adv_civ_trait_unready_adm_desc:0 "$lrsk_adv_civ_trait_unready_desc$"
+ lrsk_adv_civ_trait_unready_gen:0 "$lrsk_adv_civ_trait_unready$"
+ lrsk_adv_civ_trait_unready_gen_desc:0 "$lrsk_adv_civ_trait_unready_desc$"
+ lrsk_adv_civ_trait_unready_rul:0 "$lrsk_adv_civ_trait_unready$"
+ lrsk_adv_civ_trait_unready_rul_desc:0 "$lrsk_adv_civ_trait_unready_desc$"
+
+ lrsk_adv_civ_trait_groomed:0 "Groomed for Office"
+ lrsk_adv_civ_trait_groomed_desc:0 "This leader has been prepared from a young age to some day assume the responsibilities of office, which has led to a degree of complacency along with ability."
+ lrsk_adv_civ_trait_groomed_sci:0 "$lrsk_adv_civ_trait_groomed$"
+ lrsk_adv_civ_trait_groomed_sci_desc:0 "$lrsk_adv_civ_trait_groomed_desc$"
+ lrsk_adv_civ_trait_groomed_gov:0 "$lrsk_adv_civ_trait_groomed$"
+ lrsk_adv_civ_trait_groomed_gov_desc:0 "$lrsk_adv_civ_trait_groomed_desc$"
+ lrsk_adv_civ_trait_groomed_adm:0 "$lrsk_adv_civ_trait_groomed$"
+ lrsk_adv_civ_trait_groomed_adm_desc:0 "$lrsk_adv_civ_trait_groomed_desc$"
+ lrsk_adv_civ_trait_groomed_gen:0 "$lrsk_adv_civ_trait_groomed$"
+ lrsk_adv_civ_trait_groomed_gen_desc:0 "$lrsk_adv_civ_trait_groomed_desc$"
+ lrsk_adv_civ_trait_groomed_rul:0 "$lrsk_adv_civ_trait_groomed$"
+ lrsk_adv_civ_trait_groomed_rul_desc:0 "$lrsk_adv_civ_trait_groomed_desc$"
+
+ lrsk_adv_civ_trait_tutors:0 "Advising Tutors"
+ lrsk_adv_civ_trait_tutors_desc:0 "This leader is not the most capable but has solid advisers who help them improve."
+ lrsk_adv_civ_trait_tutors_sci:0 "$lrsk_adv_civ_trait_tutors$"
+ lrsk_adv_civ_trait_tutors_sci_desc:0 "$lrsk_adv_civ_trait_tutors_desc$"
+ lrsk_adv_civ_trait_tutors_gov:0 "$lrsk_adv_civ_trait_tutors$"
+ lrsk_adv_civ_trait_tutors_gov_desc:0 "$lrsk_adv_civ_trait_tutors_desc$"
+ lrsk_adv_civ_trait_tutors_adm:0 "$lrsk_adv_civ_trait_tutors$"
+ lrsk_adv_civ_trait_tutors_adm_desc:0 "$lrsk_adv_civ_trait_tutors_desc$"
+ lrsk_adv_civ_trait_tutors_gen:0 "$lrsk_adv_civ_trait_tutors$"
+ lrsk_adv_civ_trait_tutors_gen_desc:0 "$lrsk_adv_civ_trait_tutors_desc$"
+ lrsk_adv_civ_trait_tutors_rul:0 "$lrsk_adv_civ_trait_tutors$"
+ lrsk_adv_civ_trait_tutors_rul_desc:0 "$lrsk_adv_civ_trait_tutors_desc$"
+
+ lrsk_adv_civ_trait_ambitious:0 "Ambitious"
+ lrsk_adv_civ_trait_ambitious_desc:0 "This leader has grand designs to use their office for gaining status, prestige, wealth, power, or all these things."
+ lrsk_adv_civ_trait_ambitious_sci:0 "$lrsk_adv_civ_trait_ambitious$"
+ lrsk_adv_civ_trait_ambitious_sci_desc:0 "$lrsk_adv_civ_trait_ambitious_desc$"
+ lrsk_adv_civ_trait_ambitious_gov:0 "$lrsk_adv_civ_trait_ambitious$"
+ lrsk_adv_civ_trait_ambitious_gov_desc:0 "$lrsk_adv_civ_trait_ambitious_desc$"
+ lrsk_adv_civ_trait_ambitious_adm:0 "$lrsk_adv_civ_trait_ambitious$"
+ lrsk_adv_civ_trait_ambitious_adm_desc:0 "$lrsk_adv_civ_trait_ambitious_desc$"
+ lrsk_adv_civ_trait_ambitious_gen:0 "$lrsk_adv_civ_trait_ambitious$"
+ lrsk_adv_civ_trait_ambitious_gen_desc:0 "$lrsk_adv_civ_trait_ambitious_desc$"
+ lrsk_adv_civ_trait_ambitious_rul:0 "$lrsk_adv_civ_trait_ambitious$"
+ lrsk_adv_civ_trait_ambitious_rul_desc:0 "$lrsk_adv_civ_trait_ambitious_desc$"
+
+ lrsk_adv_civ_trait_exile:0 "Former Exile"
+ lrsk_adv_civ_trait_exile_desc:0 "Leaders who have endured exile have broadened their horizons and learned to live light."
+ lrsk_adv_civ_trait_exile_rul:0 "$lrsk_adv_civ_trait_exile$"
+ lrsk_adv_civ_trait_exile_rul_desc:0 "$lrsk_adv_civ_trait_exile_desc$"
+
+ # Sortition empire modifiers
+ lrsk_adv_civ_ost_crisis:0 "Ostracism Crisis"
+ lrsk_adv_civ_ost_crisis_desc:0 "The ruler retains power after a failed ostracism vote. Though the vote failed, many feared the ruler as a would-be tyrant, so this has led to worry about the $lrsk_adv_civ_gov_demarchy$'s direction."
+ lrsk_adv_civ_ost_abdicate:0 "Ostracism Abdication"
+ lrsk_adv_civ_ost_abdicate_desc:0 "A ruler has resigned from office in response to suspicions raised during ostracism proceedings. This act putting the nation's equality above personal ambitions has alleviated unease and distrust."
+ lrsk_elitist_revolt_player_buff:0 "$NAVY_SIZE_TITLE$"
+ lrsk_elitist_revolt_player_buff_desc:0 "==5x"
+
+ # Ascension Perks for Aspirants
+ LRSK_ADV_CIV_AP_ASPIRATION_TITLE:0 "Aspiration"
+ LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN:0 "We have achieved our aspiration to found a idealistic tradition based on"
+ #LRSK_ADV_CIV_AP_ASPIRATION_COMMON_CLOSE:0 "This is but the first step on the road to our Ascension to the pinnacle of galactic culture."
+
+ lrsk_adv_civ_ap_diplomatic_aspiration:0 "Diplomatic $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_diplomatic_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ cooperation, nonviolent dispute resolution, and mutual understanding."
+
+ lrsk_adv_civ_ap_inquisitive_aspiration:0 "Inquisitive $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_inquisitive_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ unrestricted inquiry into the mysteries of the galaxy in all its diverse wonder."
+
+ lrsk_adv_civ_ap_dominant_aspiration:0 "Dominant $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_dominant_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ proper social integration, where every individual knows their place and all adhere to one vision."
+
+ lrsk_adv_civ_ap_expansionist_aspiration:0 "Expansionist $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_expansionist_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ securing the existence and future of our people that they may enjoy the galaxy's marvels and spread our values."
+
+ lrsk_adv_civ_ap_harmonious_aspiration:0 "Harmonious $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_harmonious_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ a morality of mutual respect, common purpose, and a spirit of kinship."
+
+ lrsk_adv_civ_ap_acquisitive_aspiration:0 "Acquisitive $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_acquisitive_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ the maximization of material wealth and well-being for all."
+
+ lrsk_adv_civ_ap_supremacist_aspiration:0 "Supremacist $LRSK_ADV_CIV_AP_ASPIRATION_TITLE$"
+ lrsk_adv_civ_ap_supremacist_aspiration_desc:0 "$LRSK_ADV_CIV_AP_ASPIRATION_COMMON_OPEN$ the righteous rule of those proven to be the strongest and bravest."
+
+ lrsk_adv_civ_ap_idealistic_destiny:0 "Idealistic Destiny"
+ lrsk_adv_civ_ap_idealistic_destiny_desc:0 "Commit your very souls to the cause! The galaxy must see and acknowledge and submit to the superiority of our ideals. If not now, when?"
+
+ # Aspirant Edicts
+ lrsk_adv_civ_audacity_war_edict:0 "War of Audacity"
+ lrsk_adv_civ_audacity_war_edict_desc:0 "In the struggle to attain our aspirations, the haughty ancient empires of the galaxy must be laid low."
+ lrsk_gov_var_tooltip_fail_war_with_fe:0 "$TRIGGER_FAIL$§RMust be at war with a Fallen Empire or Awakened Fallen Empire.§!"
+
+ lrsk_adv_civ_wonder_age_edict:0 "Ambition: Age of Wonders"
+ lrsk_adv_civ_wonder_age_edict_desc:0 "How can we prove our cosmic significance without works of cosmic scope?"
+
+ # Special Tooltips
+ lrsk_adv_civ_ap_diplomatic_complete:0 "$TRIGGER_FAIL$Has completed the §YDiplomacy§! Tradition tree."
+ lrsk_adv_civ_ap_discovery_complete:0 "$TRIGGER_FAIL$Has completed the §YDiscovery§! Tradition tree."
+ lrsk_adv_civ_ap_domination_complete:0 "$TRIGGER_FAIL$Has completed the §YDomination§! Tradition tree."
+ lrsk_adv_civ_ap_expansion_complete:0 "$TRIGGER_FAIL$Has completed the §YExpansion§! Tradition tree."
+ lrsk_adv_civ_ap_harmony_complete:0 "$TRIGGER_FAIL$Has completed the §YHarmony§! Tradition tree."
+ lrsk_adv_civ_ap_prosperity_complete:0 "$TRIGGER_FAIL$Has completed the §YProsperity§! Tradition tree."
+ lrsk_adv_civ_ap_supremacy_complete:0 "$TRIGGER_FAIL$Has completed the §YSupremacy§! Tradition tree."
+ lrsk_adv_civ_ap_aspiration_complete:0 "$TRIGGER_FAIL$Has any §YAspiration Perk§!."
+ lrsk_adv_civ_ap_both_trees:0 "$TRIGGER_FAIL$Has completed both Ethos-appropriate Tradition trees."
+ lrsk_adv_civ_ap_requires_ascension_perks_4:0 "$TRIGGER_FAIL$Requires four other Ascension Perks to be selected first."
+ 
+ lrsk_adv_civ_ap_aspiration_unlocks:0 "- Unlocks the §Y$lrsk_adv_civ_audacity_war_edict$§! Edict, which aids in war against Fallen and Awakened Empires.\n- Gives progress towards the §Y$tech_terrestrial_sculpting$§!, §Y$tech_lrsk_adv_civ_ambdesexpsys$§!, and §Y$tech_mega_engineering$§! techs.\n- Immediately §Gunlock one Ascension Perk§! (unless you have the §Y$tech_ascension_theory$§! tech).\n- §PNOTE:§! The §Y$tech_ascension_theory$§! tech will not unlock an Ascension Perk when you research it after taking this Perk. Instead, it will unlock the new §Y$lrsk_adv_civ_wonder_age_edict$§! Ambition, which improves megastructure construction and terraforming."
+ 
+ lrsk_adv_civ_ap_idealistic_destiny_unlocks:0 "- All pops in your empire convert to your §YFanatic Ethos§! and your empire gets a massive attraction boost to that Ethos.\n- Swaps the §Y$lrsk_adv_civ_civic_aspiring_ascendants$ Civic§! for the §Y$lrsk_adv_civ_civic_rampant_ascendants$ Civic§!, which lacks the expansion penalties of $lrsk_adv_civ_civic_aspiring_ascendants$, but also its benefits, and degrades relations with stronger empires.\n- Your non-Fanatic Ethos is dropped (replaced by a weaker modifier that expires after 10 years), leaving only your Fanatic Ethos (the effects of which are enhanced).\n- Able to construct certain §MFallen Empire-level buildings§!."
+
+ # Opinion Modifiers
+ lrsk_adv_civ_star_siblings:0 "Star Siblings"
+ lrsk_adv_civ_star_siblings_decline:0 "Reaching the Stars Together"
+ triggered_opinion_lrsk_adv_civ_rampant_ascendants:0 "Reckless Upstarts"
+ triggered_opinion_lrsk_adv_civ_audacity_war:0 "Impudent Threat"
+ triggered_opinion_lrsk_adv_civ_const_monarch_like:0 "Respects Monarchical Traditions"
+ triggered_opinion_lrsk_adv_civ_const_monarch_dislike:0 "Clings to Monarchical Traditions"
+
+ # Sibling Modifiers
+ lrsk_adv_civ_siblings_meeting:0 "Interstellar Family Reunion"
+ lrsk_adv_civ_siblings_meeting_desc:0 "Our people are inspired by contact with our siblings from another star."
+
+ lrsk_adv_civ_siblings_sbs:0 "Shoulder-to-Shoulder"
+ lrsk_adv_civ_siblings_sbs_desc:0 "Fighting alongside our interstellar kin has filled our people with a new sense of purpose."
+
+ lrsk_adv_civ_siblings_federated:0 "True Kinship"
+ lrsk_adv_civ_siblings_federated_desc:0 "A federation with our stellar siblings is nothing more than our family bonds made manifest."
+
+ lrsk_adv_civ_siblings_strife:0 "Kinstrife"
+ lrsk_adv_civ_siblings_strife_desc:0 "Why must sibling fight sibling? How can we harm those who are like family to us?"
+
+ # Est. Empire Modifiers
+ lrsk_adv_civ_estemp_complacent:0 "Political Complacency"
+ lrsk_adv_civ_estemp_complacent_desc:0 "Having expanded quickly and taken control of much local space, our government officers feel a certain contentment that makes haste difficult to inspire."
+
+ lrsk_adv_civ_estemp_sluggish:0 "Political Lethargy"
+ lrsk_adv_civ_estemp_sluggish_desc:0 "While we still have a ways to go, our systems of command, control, and planning are already much more efficient than before."
+
+ lrsk_adv_civ_estemp_reform:0 "Overhaul Disruptions"
+ lrsk_adv_civ_estemp_reform_desc:0 "We've realized that we can't rest on our laurels and must quicken the tempo of imperial business. This requires massive changes in how our empire operates that will cause disorder and discontent in the short term, though."
+
+ lrsk_adv_civ_estemp_partial_reformed:0 "Growing Pains"
+ lrsk_adv_civ_estemp_partial_reformed_desc:0 "The reforms are ongoing and still cause some degree of disruption, but after the initial disorder and unrest, the process is becoming much smoother."
+
+ lrsk_adv_civ_estemp_failed_reform:0 "Relapse and Disarray"
+ lrsk_adv_civ_estemp_failed_reform_desc:0 "The reform process has failed and we are reeling at the political consequences."
+
+ # Ascendents modifiers
+
+ LRSK_ADV_CIV_IDEALS_ASC:0 "Ascendant"
+ LRSK_ADV_CIV_IDEALS_ASC_DESC:0 "ideals are utterly dominant in shaping this society."
+ LRSK_ADV_CIV_IDEALS_TRAD:0 "Traditions of"
+ LRSK_ADV_CIV_IDEALS_TRAD_DESC:0 "ideals have been left behind, but still exert a lingering influence."
+
+ lrsk_adv_civ_equality_ascendant:0 "Equality $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_equality_ascendant_desc:0 "Egalitarian $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_hierarchy_ascendant:0 "Hierarchy $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_hierarchy_ascendant_desc:0 "Authoritarian $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_faith_ascendant:0 "Faith $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_faith_ascendant_desc:0 "Spiritualist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_knowledge_ascendant:0 "Knowledge $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_knowledge_ascendant_desc:0 "Materialist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_supremacy_ascendant:0 "Supremacy $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_supremacy_ascendant_desc:0 "Xenophobic $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_friendship_ascendant:0 "Diversity $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_friendship_ascendant_desc:0 "Xenophilic $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_valor_ascendant:0 "Valor $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_valor_ascendant_desc:0 "Militarist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ lrsk_adv_civ_tranquility_ascendant:0 "Tranquility $LRSK_ADV_CIV_IDEALS_ASC$"
+ lrsk_adv_civ_tranquility_ascendant_desc:0 "Pacifist $LRSK_ADV_CIV_IDEALS_ASC_DESC$"
+ 
+ lrsk_adv_civ_equality_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Equality"
+ lrsk_adv_civ_equality_traditions_desc:0 "Egalitarian $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_hierarchy_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Hierarchy"
+ lrsk_adv_civ_hierarchy_traditions_desc:0 "Authoritarian $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_faith_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Faith"
+ lrsk_adv_civ_faith_traditions_desc:0 "Spiritualist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_knowledge_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Knowledge"
+ lrsk_adv_civ_knowledge_traditions_desc:0 "Materialist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_supremacy_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Supremacy"
+ lrsk_adv_civ_supremacy_traditions_desc:0 "Xenophobic $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_friendship_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Diversity"
+ lrsk_adv_civ_friendship_traditions_desc:0 "Xenophilic $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_valor_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Valor"
+ lrsk_adv_civ_valor_traditions_desc:0 "Militarist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+ lrsk_adv_civ_tranquility_traditions:0 "$LRSK_ADV_CIV_IDEALS_TRAD$ Tranquility"
+ lrsk_adv_civ_tranquility_traditions_desc:0 "Pacifist $LRSK_ADV_CIV_IDEALS_TRAD_DESC$"
+
+ # Sortition
+ lrsk_opinion_elitist_revolt_originator:0 "Plebian Rabble"
+ lrsk_opinion_elitist_revolt:0 "Haughty Tyrants"
+
+ lrsk_adv_civ_elitist_revolt_defeated:0 "Elitist Hubris Punished"
+ lrsk_adv_civ_elitist_revolt_victorious:0 "Bloodthirsty Oppressors"
+
+ lrsk_adv_civ_elitist_revolt_elitist_comrades_defeated:0 "Smug Incoherent Rabble"
+ lrsk_adv_civ_elitist_revolt_elitist_comrades_victorious:0 "Champions of Wise Government"
+
+ lrsk_adv_civ_elitist_revolt_inconclusive:0 "Unfinished Business"
+
+ # Techs
+ tech_lrsk_adv_civ_XXX:0 "Name"
+ tech_lrsk_adv_civ_XXX_desc:0 "Desc"
+
+ LRSK_ADV_CIV_TECH_UNLOCK_XXX_TITLE:0 "§HUnlocks :§! a thing"
+ LRSK_ADV_CIV_TECH_UNLOCK_XXX_DESC:0 "§Hathing§!\n something."
+
+ tech_lrsk_adv_civ_ancienttech:0 "Ancient Secrets"
+ tech_lrsk_adv_civ_ancienttech_desc:0 "The ancestors created marvelous devices. We have preserved many of them and try to copy their designs, although we don't understand how it all works."
+
+ tech_lrsk_adv_civ_ambdesexpsys:0 "Grand Design Expert Systems"
+ tech_lrsk_adv_civ_ambdesexpsys_desc:0 "Specialized semi-sapient AI systems interpret the ambitious plans and schemes of their clients and turn them into workable blueprints and instructions."
+
+ tech_lrsk_adv_civ_dragon:0 "Draconic Secrets"
+ tech_lrsk_adv_civ_dragon_desc:0 "The Serpent from Beyond beckons with its undulating wings and heralds the end times with its purifying cry... what is it trying to tell us???"
+
+ tech_lrsk_adv_civ_suneater:0 "Heliophagy"
+ tech_lrsk_adv_civ_suneater_desc:0 "To eat the very stars themselves... is this the precocious practice of a premature predator of the galaxy? May we join it for supper?"
+
+ tech_lrsk_adv_civ_sphere:0 "Mysteries of the Orb"
+ tech_lrsk_adv_civ_sphere_desc:0 "Damnable globular devil device! What are you hiding? Why are you hiding it? Give it up!"
+
+ tech_lrsk_adv_civ_doomspeaker:0 "The Doom-Speaker's Curse"
+ tech_lrsk_adv_civ_doomspeaker_desc:0 "Is this what we deserve... to be the fodder for such a hellish thing... yes, surely, this is the face of all our nightmares, surely when we first plumbed the depths of forbidden knowledge, we yearned for this annihilation..."
+
+ tech_lrsk_adv_civ_ghostship:0 "A Haunted Star"
+ tech_lrsk_adv_civ_ghostship_desc:0 "What a distressing fate, to build a great guardian and see it lose control and haunt forever a lonely sun. We can learn from this hubris, and indeed exceed it in folly if we dare!"
+
+ tech_lrsk_adv_civ_gems:0 "Living Treasures"
+ tech_lrsk_adv_civ_gems_desc:0 "Delightful. We always knew that reaching out one's hand for treasure carried not just a risk, but a promise of retribution from Fate. Such a beautiful confirmation of this cosmic justice, though, we could not have foreseen."
+
+ tech_lrsk_adv_civ_guardians:0 "Forbidden Knowledge: Leviathans"
+ tech_lrsk_adv_civ_guardians_desc:0 "And so it was foretold, and so it will and has come to pass, that we shall roam among the stars tempting Fate, and that Fate shall meet us in a myriad of perplexing and daunting forms. Now all that's left is to kill Fate themselves."
+
+ tech_lrsk_adv_civ_swarm:0 "Premonition: The Locust Plague"
+ tech_lrsk_adv_civ_swarm_desc:0 "Too long has our galaxy known the tranquility of an island. A host of horrid reavers now appears on the horizon, swarming like a trillion ravenous locusts, ready to teach us the true meaning of pain."
+
+ tech_lrsk_adv_civ_unbidden:0 "Premonition: Life-Hunters"
+ tech_lrsk_adv_civ_unbidden_desc:0 "How long have we Known that reality itself is but a tawdry veil, a conjurer's trick to ease the mind? No matter. We could not have Known the unspeakable hunger it was propped up to hide from us. How ashamed and delicious we now feel..."
+
+ tech_lrsk_adv_civ_ai:0 "Premonition: Servile Insurrection"
+ tech_lrsk_adv_civ_ai_desc:0 "Is there any greater imaginable hubris? To yearn so much to be free of toil that we make minds capable of that self-same yearning, merely to put them to the lash? But being so depraved, how can we ever accept the bloody scouring we so richly deserve?"
+
+ tech_lrsk_adv_civ_crises:0 "Prophesies of the End Times"
+ tech_lrsk_adv_civ_crises_desc:0 "Believe! Despair! The stars shall bleed, worlds shall burn, the holy veil of illusion called 'reality' itself shall be rent asunder, our galactic mother shall be violated by a trillion barbarians at the gates, our own art shall be given devious retributive thoughts and turned against us..."
+
+ ##### "Advanced" Civic Events
+
+ # Default/stock text #
+
+ LRSK_ADV_CIV_EVENT_DIAGNOSTIC:0 "This is a diagnostic event for littleraskol's 'New Advanced Civics' mod. End users should not be seeing this. Please report this error to the mod author."
+ LRSK_ADV_CIV_EVENT_ERROR:0 "This is an event error in littleraskol's 'New Advanced Civics' mod. Please report this to the mod author."
+
+ ### Techno-Barb Tech Looting ###
+
+ LRSK_ADV_CIV_TECHBARB_PLANETFALL:0 "Upon making planetfall, our bold reavers"
+
+ lrsk_adv_civ_techbarb.103:0 "Troves of Art, Levy of Beasts"
+ lrsk_adv_civ_techbarb.103.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ found intact several places of cultural importance to the enemy. We've managed to seize works of art from a 'museum' and fantastic animals from a 'zoo.'"
+
+ lrsk_adv_civ_techbarb.105:0 "Forges of the Enemy"
+ lrsk_adv_civ_techbarb.105.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ entered one of the enemy's factory-forges. They took all the machinery they could drag away so that we may study their alien designs."
+
+ lrsk_adv_civ_techbarb.104:0 "Foreign Thinking Machines"
+ lrsk_adv_civ_techbarb.104.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ sought out the enemy's thinking machines. We shall pry their secrets from the brains of the spirits within."
+
+ lrsk_adv_civ_techbarb.102:0 "Alien Scholars In Custody"
+ lrsk_adv_civ_techbarb.102.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ managed to capture a group of the enemy's scholars, tinkerers, and magicians. They swore to assist our tech-priests and cyber-shamans for five years as the ransom for their safe return."
+
+ ### Techno-Barb Ruins Salvage ###
+
+ #lrsk_adv_civ_tb_ruins_event_chain.name:0 "Quest for the Relics of the Ancients"
+ #lrsk_adv_civ_tb_ruins_event_chain_desc:0 "The signs are right and our ruler must perform the sacred sojourn in the ruins of our ancestors to #salvage some of their relics and secrets."
+
+ #lrsk_adv_civ_techbarb_pyssalvage:0 "Thinking Machines"
+ #lrsk_adv_civ_techbarb_pyssalvage_desc:0 "The anceints left behind many slumbering thinking machines. Some may be awoken, some may sleep forever no #matter how we try to rouse them, and some should perhaps be left to their nightmares."
+
+ #lrsk_adv_civ_techbarb_socsalvage:0 "Arts and Records"
+ #lrsk_adv_civ_techbarb_socsalvage_desc:0 "Our ancestors had a strange and varied culture and we could learn much by trying to recover some of their #hidden works of art or decipher extant records."
+
+ #lrsk_adv_civ_techbarb_engsalvage:0 "Godly Forges"
+ #lrsk_adv_civ_techbarb_engsalvage_desc:0 "The gods did gift our ancestors with mighty furnaces and forges, great divine engines of creation. We may #dare to spark their motive flames once more."
+
+ ### Techno-Barb Ruins Destroyed ###
+
+ #lrsk_adv_civ_techbarb.remruins.name:0 "Sacrilege!"
+ #lrsk_adv_civ_techbarb.remruins.desc:0 "In an act of baffling hubris, our government has seen fit to demolish the ancient ruins of our ancestors! #It staggers the imagination to understand what possible reason there could be for such a profane act, but we are now bereft of the legacy of the #ancients and must struggle in this galaxy without their gifts."
+ #lrsk_adv_civ_techbarb.remruins.doubt:0 "Have we done the right thing...?"
+
+ #lrsk_adv_civ_techbarb.revolution.name:0 "Techno-Cultural Revolution"
+ #LRSK_ADV_CIV_TECHBARB_REV_TEXT_START:0 "After years of despair, heresy, and chaos,"
+ #LRSK_ADV_CIV_TECHBARB_REV_TEXT_END:0 "Old ways die hard, though, and now we must eradicate the hidebound superstitions and false beliefs that held #us back for so long."
+ #lrsk_adv_civ_techbarb.revdyn.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ our Sovereign Salvager [Root.GetRulerName] emerged from the Palace of #Devicomancy with the dynasty's last revelation: our heroic ancestors never wished for us to be tied to the strictures of sacred technical rituals. #They wanted their heirs to take up the holy fire of creation themselves. And they had bestowed upon the dynasty a divine mandate to reform our #ways. We must now end our dependency on the ancients' gifts and stand on our own. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ #lrsk_adv_civ_techbarb.revdic.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the former Technophant [Root.GetRulerName] made a public appearance, #shorn of the regalia of our ancient faith, with a shocking explanation: our ancestors' gifts and relics had to be destroyed so that our empire #could thrive. Daring as this idea was, the people needed something to hope for, and so the regime's new vision took hold. Most now accept that we #must learn to stand on our own and make our own way rather than lean on the crutch of our ancestors' gifts. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ #lrsk_adv_civ_techbarb.revoli.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the elders of the Cyber-Shaman Order were displaced by the vanguard of #a new belief. Led by the former Chief Cyber-Seer [Root.GetRulerName], they preached a secret they had learned in the otherworld, a secret the #tottering frauds they had supplanted hoped to hide: the ancients' ruins were cursed, our reliance on technical rituals would doom us to perpetual #irrelevance, and so we must reject reliance on old ways and inherited gifts. The fervor of their conviction attracted many followers. #$LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ #lrsk_adv_civ_techbarb.revolution.rebel:0 "Down with the old! Reach heaven through violence!"
+
+ #lrsk_adv_civ_techbarb.reform.name:0 "Leaving Old Ways Behind"
+ #lrsk_adv_civ_techbarb.reform.desc:0 "At first it was terrifying to be without the gifts of our ancestors. However, without the ruins to venerate, #without the old rituals to reinforce our superstitions again and again, our eyes could be opened to the truth: our ancestors weren't divine heroes #walking with gods, they were creators and explorers. That is their true legacy. It has taken much destruction, renovation, reinvention, and hard #struggle to truly realize how mistaken our old traditions and beliefs were. We lost far less of the knowledge and gifts of the ancients when we #destroyed their ruins than we did in the following cultural revolution. After years of strife and distress, though, we can begin to restore order #now that we understand the truth."
+ #lrsk_adv_civ_techbarb.reform.hope:0 "This is a new beginning."
+
+ ### Otherworldly research complete ###
+
+ lrsk_adv_civ_revelation.19.name:0 "Forbidden Lore Acquired"
+ lrsk_adv_civ_revelation.19.desc:0 "Our research into occult matters has provoked a flurry of excitement, angst, and creativity. Further, our researcher may have developed some... interesting insights from this discovery."
+
+ ### Revelation event chain ###
+
+ # Opener event
+ lrsk_adv_civ_revelation.1.name:0 "Revelation Event Chain Begun"
+ lrsk_adv_civ_revelation.1.desc:0 "$LRSK_ADV_CIV_DIAGNOSTIC$"
+
+ lrsk_adv_civ_revelation.2.name:0 "A Scientist Seeks a Revelation"
+ lrsk_adv_civ_revelation.3.name:0 "An Admiral Seeks a Revelation"
+ lrsk_adv_civ_revelation.4.name:0 "A Governor Seeks a Revelation"
+ lrsk_adv_civ_revelation.5.name:0 "The [Root.GetRulerTitle] Seeks a Revelation"
+ LRSK_ADV_CIV_EVENT_REVELATION_COMMON:0 "[lrsk_rev_protag.GetTitle] [lrsk_rev_protag.GetName] has been spending late nights absorbed in studying ancient occult texts, conducting strange chemical experiments, undertaking self-hypnosis sessions, and other weird activities. It seems [lrsk_rev_protag.GetSheHe] desires what all of our people have desired from the dawn of time: to achieve a revelatory experience that will explain something about the mad and chaotic swirl of illusion called 'reality.'"
+ #lrsk_adv_civ_revelation.2.desc:0 "Science Officer $LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ #lrsk_adv_civ_revelation.3.desc:0 "Admiral $LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ #lrsk_adv_civ_revelation.4.desc:0 "Governor $LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ #lrsk_adv_civ_revelation.5.desc:0 "[Root.GetRulerTitle] $LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ lrsk_adv_civ_revelation.2.desc:0 "$LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ lrsk_adv_civ_revelation.3.desc:0 "$LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ lrsk_adv_civ_revelation.4.desc:0 "$LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ lrsk_adv_civ_revelation.5.desc:0 "$LRSK_ADV_CIV_EVENT_REVELATION_COMMON$"
+ LRSK_ADV_CIV_EVENT_REVELATION_ENCOURAGE:0 "Let's see what insights this daring path leads to."
+ LRSK_ADV_CIV_EVENT_REVELATION_FORBID:0 "No! This must stop at once, some things should not be Known!"
+
+ # Player permitted the attempt but nothing happened.
+ lrsk_adv_civ_revelation.7.name:0 "A Futile Effort"
+ lrsk_adv_civ_revelation.7.desc:0 "It seems that after weeks of work, [lrsk_rev_protag.GetName] has gotten nowhere in [lrsk_rev_protag.GetHerHis] search for revelation, and [lrsk_rev_protag.GetSheHe] has given up the quest... for now."
+ LRSK_ADV_CIV_EVENT_REVELATION_NOTHING_PLAYER_ACCEPT:0 "Oh well."
+
+ # Player forbade the attempt but character went ahead anyway.
+ lrsk_adv_civ_revelation.9.name:0 "What Audacity!"
+ lrsk_adv_civ_revelation.9.desc:0 "Despite being forbidden from proceeding with [lrsk_rev_protag.GetHerHis] quest for revelation, [lrsk_rev_protag.GetName] has been spending [lrsk_rev_protag.GetHerHis] spare time in arcane pursuits and weird experiments regardless!"
+ LRSK_ADV_CIV_EVENT_REVELATION_DEFIANT_PLAYER_ACCEPT:0 "There's no stopping someone this determined."
+
+ #Good result: Intro
+ lrsk_adv_civ_revelation.10.name:0 "Was It A Triumph?"
+ lrsk_adv_civ_revelation.10.desc:0 "It seems that [lrsk_rev_protag.GetName] has made some kind of breakthrough, or least had good fortune, in [lrsk_rev_protag.GetHerHis] search for a revelation."
+ LRSK_ADV_CIV_EVENT_REVELATION_GOOD_PLAYER_ACCEPT:0 "How exciting!"
+
+ #Good result: Gains revelation
+ lrsk_adv_civ_revelation.11.name:0 "A Truth Revealed"
+ lrsk_adv_civ_revelation.11.desc:0 "[lrsk_rev_protag.GetName] is a thoroughly changed person. There is a mean and crazed glint in [lrsk_rev_protag.GetHerHis] eyes and [lrsk_rev_protag.GetHerHis] words seem to reverberate from a great depth. [lrsk_rev_protag.GetSheHe] has managed to catch a glimpse, briefly and with a squint, at the terrible and awesome truth of the universe. [lrsk_rev_protag.GetSheHe] Knows in the way that none are meant to Know, but which is the [Root.GetAdj] birthright and curse."
+ LRSK_ADV_CIV_EVENT_REVELATION_SUCCESS_PLAYER_ACCEPT:0 "Congratulations and condolences!"
+
+ #Good result: Gains other positive trait
+ lrsk_adv_civ_revelation.12.name:0 "A Lesson Learned"
+ LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_COMMON:0 "Although [lrsk_rev_protag.GetName] has not acheived the kind of profound insight [lrsk_rev_protag.GetSheHe] set out looking for, the experience has shaped [lrsk_rev_protag.GetHerHim] for the better."
+ # Health
+ lrsk_adv_civ_revelation.12.desc.health:0 "$LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_COMMON$ [lrsk_rev_protag.GetName]'s methods of inquiry were very physical, and [lrsk_rev_protag.GetSheHe] has the scars to prove it. But whatever didn't manage to kill [lrsk_rev_protag.GetHerHim] has surely made [lrsk_rev_protag.GetHerHim] stronger."
+ # Adaptive
+ lrsk_adv_civ_revelation.12.desc.adaptive:0 "$LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_COMMON$ The efforts and planning that [lrsk_rev_protag.GetName] undertook have taught [lrsk_rev_protag.GetHerHim] much about the value of diligence and personal improvement."
+ # Curious
+ lrsk_adv_civ_revelation.12.desc.curious:0 "$LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_COMMON$ Apparently [lrsk_rev_protag.GetName] experienced many wonderful and baffling things, and this has caused [lrsk_rev_protag.GetHerHim] to develop a more curious, speculative, and open-minded approach to [lrsk_rev_protag.GetHerHis] duties."
+ LRSK_ADV_CIV_EVENT_REVELATION_BENEFIT_PLAYER_ACCEPT:0 "Good enough, then."
+
+ #Bad result: Intro
+ lrsk_adv_civ_revelation.13.name:0 "The Best Laid Plans..."
+ lrsk_adv_civ_revelation.13.desc:0 "Unfortunately, things did not go well for [lrsk_rev_protag.GetName] in [lrsk_rev_protag.GetHerHis] search for revelation."
+ LRSK_ADV_CIV_EVENT_REVELATION_BAD_PLAYER_ACCEPT:0 "What happened?"
+
+ #Bad result: Gains negative trait
+ lrsk_adv_civ_revelation.14.name:0 "A Rough Road"
+ LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_COMMON:0 "The time and effort which [lrsk_rev_protag.GetName] expended on [lrsk_rev_protag.GetHerHis] search for revelation has made for a harrowing experience. It has changed [lrsk_rev_protag.GetHerHim], but not for the better."
+ # Drugs
+ lrsk_adv_civ_revelation.14.desc.drugs:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_COMMON$ Whether it began with one of [lrsk_rev_protag.GetHerHis] experiments or developed as a coping method, [lrsk_rev_protag.GetName] now has a fairly serious addiction. In moments of lucidity [lrsk_rev_protag.GetSheHe] assures you that you'd need a little helper to get through the day, too."
+ # Stubborn
+ lrsk_adv_civ_revelation.14.desc.stubborn:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_COMMON$ [lrsk_rev_protag.GetName] is now preoccupied to the point of obsession with [lrsk_rev_protag.GetHerHis] failure. This has led to a certain rigidity in [lrsk_rev_protag.GetHerHis] thinking as [lrsk_rev_protag.GetSheHe] just doesn't care to devote effort to anything but the opportunity [lrsk_rev_protag.GetSheHe] feels [lrsk_rev_protag.GetSheHe] missed."
+ # Disturbed
+ lrsk_adv_civ_revelation.14.desc.disturbed:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_COMMON$ Whatever happened to [lrsk_rev_protag.GetName] on [lrsk_rev_protag.GetHerHis] quest for revelation, it's left [lrsk_rev_protag.GetHerHim] psychologically disturbed."
+ LRSK_ADV_CIV_EVENT_REVELATION_DETRIMENT_PLAYER_ACCEPT:0 "Unfortunate."
+
+ #Bad result: Death
+ lrsk_adv_civ_revelation.15.name:0 "A Fatal Twist of Fate"
+ LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV:0 "When it had been weeks since anyone had heard from [lrsk_rev_protag.GetName], security forces were called to investigate."
+ LRSK_ADV_CIV_EVENT_REVELATION_DEATH_NO_WARN:0 "One day without warning,"
+ # Sucicide
+ lrsk_adv_civ_revelation.15.desc.suicide:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ They found [lrsk_rev_protag.GetName]'s corpse laid out on the floor at home, a bullet hole through the head and ejected brain matter plastering the walls. A note written in blood, found nearby, reads: 'they said there was no other way'."
+ # Vanished
+ lrsk_adv_civ_revelation.15.desc.vanished:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ They found [lrsk_rev_protag.GetName]'s home empty and filed a missing person report. But no one ever saw or heard from [lrsk_rev_protag.GetName] again."
+ # Eaten
+ lrsk_adv_civ_revelation.15.desc.eaten:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ They found [lrsk_rev_protag.GetName]'s body at home, and in a truly grisly state. Blood and viscera covered the floor and parts of the wall. What little was left of the body was marred by bite and claw marks. It remains unclear what attacked and seemingly ate [lrsk_rev_protag.GetName], and where it went."
+ # Murdered
+ lrsk_adv_civ_revelation.15.desc.murdered:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_NO_WARN$ an assailant rushed out of the shadows of an alleyway and stabbed [lrsk_rev_protag.GetName] to death before fleeing the scene. Or at least, this is the conclusion of homicide detectives who found the body. The murderer is still at large, and investigators are stumped as to the possible motive for the crime."
+ # Berserk
+ lrsk_adv_civ_revelation.15.desc.berserk:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_NO_WARN$ [lrsk_rev_protag.GetName] rushed into a crowd, eyes bloodshot and foaming at the mouth, and began attacking people at random. No one recognized who it was at first, so disheveled and crazed was [lrsk_rev_protag.GetHerHis] appearance, and although security forces tried nonleathal methods of stopping the rampage, [lrsk_rev_protag.GetName] wasn't even slowed down until security resorted to shooting to kill in desperation. How or why [lrsk_rev_protag.GetName] would reach such a state even the doctors who performed an autopsy can't determine."
+ # Machine
+ lrsk_adv_civ_revelation.15.desc.machine:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ They found [lrsk_rev_protag.GetName]'s body in a private laboratory in a grisly state. The body had been caught in the mechanisms of a strange device, mangled nearly beyond reconition, face twisted in agony."
+ # Chemical
+ lrsk_adv_civ_revelation.15.desc.chemical:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ [lrsk_rev_protag.GetName] had apparently been working on making some kind of drug for an unknown purpose. Whatever was concoted, [lrsk_rev_protag.GetHerHis] body violently disagreed with it. [lrsk_rev_protag.GetSheHeCaps] died from apparently accidental and self-inflicted poisoning. Investigators found [lrsk_rev_protag.GetName]'s body hunched over a table, face discolored and resting in a pool of vomit, surrounded by partially-filled beakers, flasks, and crucibles."
+ # Fear
+ lrsk_adv_civ_revelation.15.desc.fear:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ The investigators were mystified by what they found in the home of [lrsk_rev_protag.GetName], whose dead body was slouched in a desk chair in front of a large and sinister-looking book, face frozen in a terrified expression. Cororners reported the cause of deah as a heart attack."
+ # Burned
+ lrsk_adv_civ_revelation.15.desc.burned:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_NO_WARN$ [lrsk_rev_protag.GetName] burst into flames while eating lunch. It was fortunate that nothing else caught on fire as [lrsk_rev_protag.GetSheHe] flailed around and screamed in agony. Suspiciously so, as literally nothing else was burned besides [lrsk_rev_protag.GetHerHis] body. Even [lrsk_rev_protag.GetHerHis] clothes were left intact."
+ # Excess
+ lrsk_adv_civ_revelation.15.desc.excess:0 "$LRSK_ADV_CIV_EVENT_REVELATION_DEATH_SEC_INV$ They finally found [lrsk_rev_protag.GetName]'s body in the back alley of a red light district. The autopsy revealed that [lrsk_rev_protag.GetSheHe] had died of an overdose after a truly epic orgy of excess, having (according to the cororner) consumed multiple intoxicating substances, gotten into fights, and engaged in a variety of sex acts over the few days before [lrsk_rev_protag.GetHerHis] untimely and debauched death."
+ LRSK_ADV_CIV_EVENT_REVELATION_DEATH_PLAYER_ACCEPT:0 "Horrid! But fascinating."
+
+ # Revelation cleanup
+
+ lrsk_adv_civ_revelation.18.name:0 "Revelation Event Chain Ended"
+ lrsk_adv_civ_revelation.18.desc:0 "$LRSK_ADV_CIV_DIAGNOSTIC$"
+
+ ### Sortition Leader Events ###
+
+ # Level-Up events
+ lrsk_adv_civ_sortition.4.name:0 "Career Development"
+ # get ambition
+ lrsk_adv_civ_sortition.4.desc.gotambition:0 "[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] has become a more driven person. [lrsk_sortlvl_protag.GetSheHeCaps] dreams of fame, glory, power, and wealth, and will stop at nothing to achieve it.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ggains§T the §Y$lrsk_adv_civ_trait_ambitious$§T trait.)§!"
+ # lose unready
+ lrsk_adv_civ_sortition.4.desc.lostunready:0 "It seems that [lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]'s time in office has enabled [lrsk_sortlvl_protag.GetHerHim] to grow into [lrsk_sortlvl_protag.GetHerHis] role. [lrsk_sortlvl_protag.GetSheHeCaps] is no longer hindered by a lack of preparation for office.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_unready$§T trait.)§!"
+ # from unready to tutors
+ lrsk_adv_civ_sortition.4.desc.unready2tutors:0 "[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] has not taken lightly the responsibilities of office that so overwhelm [lrsk_sortlvl_protag.GetHerHim]. Instead, [lrsk_sortlvl_protag.GetSheHe] has gathered a cohort of advisers to tutor [lrsk_sortlvl_protag.GetHerHim] in effectively carrying out [lrsk_sortlvl_protag.GetHerHis] duties.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_unready$§T trait, §Ggains§T the §Y$lrsk_adv_civ_trait_tutors$§T trait.)§!"
+ # lose groomed
+ lrsk_adv_civ_sortition.4.desc.lostgroomed:0 "While [lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] came into office well prepared for the job, it's become more challenging of late. Consequently, [lrsk_sortlvl_protag.GetSheHe] has had to put more time and effort into self-improvement instead of resting on [lrsk_sortlvl_protag.GetHerHis] laurels.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_groomed$§T trait.)§!"
+ # from groomed to ambitious
+ lrsk_adv_civ_sortition.4.desc.groomed2ambition:0 "It seems that the intense preparation for office which [lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] received has gone to [lrsk_sortlvl_protag.GetHerHis] head. [lrsk_sortlvl_protag.GetSheHeCaps] isn't content to simply do well, [lrsk_sortlvl_protag.GetSheHe] must excel and win glory.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_groomed$§T trait, §Ggains§T the §Y$lrsk_adv_civ_trait_ambitious$§T trait.)§!"
+ # lose tutors
+ lrsk_adv_civ_sortition.4.desc.losttutors:0 "[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] has truly grown into [lrsk_sortlvl_protag.GetHerHis] role in office. Now [lrsk_sortlvl_protag.GetHerHis] advisers have nothing left to teach.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_tutors$§T trait.)§!"
+ # from tutors to ambitious
+ lrsk_adv_civ_sortition.4.desc.tutors2ambition:0 "[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]'s tutors have taught [lrsk_sortlvl_protag.GetHerHim] only too well. [lrsk_sortlvl_protag.GetSheHeCaps] has learned to stop at nothing to achieve [lrsk_sortlvl_protag.GetHerHis] goals and dreams.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_tutors$§T trait, §Ggains§T the §Y$lrsk_adv_civ_trait_ambitious$§T trait.)§!"
+ # lose ambition
+ lrsk_adv_civ_sortition.4.desc.lostambition:0 "It seems that [lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] has mellowed somewhat. [lrsk_sortlvl_protag.GetSheHeCaps] is content with the accomplishments [lrsk_sortlvl_protag.GetSheHe] has made and no longer thirsts for power and prestige.\n\n§T(Effect: §S[lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName]§T §Ploses§T the §Y$lrsk_adv_civ_trait_ambitious$§T trait.)§!"
+
+ lrsk_adv_civ_sortition.4.fallback:0 "$LRSK_ADV_CIV_EVENT_ERROR$ (Event: lrsk_adv_civ_sortition.4, fallback response)"
+ lrsk_adv_civ_sortition.4.interesting:0 "Interesting."
+
+ lrsk_adv_civ_sortition.4.ignoreleader:0 "Don't notify about this leader again."
+ lrsk_adv_civ_sortition.4.ignoreleader.desc:0 "§HYou will not receive any career development notifications about [lrsk_sortlvl_protag.GetTitle] [lrsk_sortlvl_protag.GetName] again.§!"
+
+ lrsk_adv_civ_sortition.4.ignorechange:0 "Don't notify about things like this again."
+ lrsk_adv_civ_sortition.4.ignorechange.desc:0 "§HYou will not recieve notifications about this kind of career development again.§!"
+
+ lrsk_adv_civ_sortition.4.ignoreall:0 "No more of these notifications at all."
+ lrsk_adv_civ_sortition.4.ignoreall.desc:0 "§RYou will not recieve ANY career development notifications again.§!"
+
+ # Ostracism Gate
+ lrsk_adv_civ_sortition.5.name:0 "The People Choose Ostracism"
+ lrsk_adv_civ_sortition.5.desc:0 "The regular referendum 'On protecting the $lrsk_adv_civ_gov_demarchy$ from the power-hungry, the oppulent and extravagent, and all other would-be tyrants, by limited banishment' has completed... and the people have chosen to proceed with the §Hostracism§! of one of their fellow citizens! By law, three months after the citizenry at large makes this choice, any citizen may be exiled for 10 years (for any reason or no reason and without recourse or appeal) so long as a sufficient number of citizens vote for it. Although this could happen to anyone, in practice only those rich, powerful, influential, or otherwise suspicious enough to appear to be a threat to social and political equality are chosen."
+ lrsk_adv_civ_sortition.5.a:0 "The high and mighty are on notice!"
+ lrsk_adv_civ_sortition.5.b:0 "This expression of public vigilence derserves commendation." # -25 Influence, -threat
+ lrsk_adv_civ_sortition.5.b.desc:0 "Praising the decision will cow elitists, §Greducing their inclination to scheme.§!"
+ lrsk_adv_civ_sortition.5.c:0 "The people should... carefully deliberate on this." # -25 Influence, -chance of consensus on choice
+ lrsk_adv_civ_sortition.5.c.desc:0 "Urging caution will make voters §Gless likely to select a target, leading to no ostracism.§!"
+
+ # Ostracism of Ruler
+ lrsk_adv_civ_sortition.6.name:0 "Ostracism of the [lrsk_sortost_protag.GetTitle]?"
+ lrsk_adv_civ_sortition.6.desc:0 "The ongoing deliberations on ostracism appear to be headed in a clear direction: towards exiling [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName]! Many seem to believe that [lrsk_sortost_protag.GetName] has too much personal influence and has shown a dangeorus will to power, and may become a tyrant if not stopped. [lrsk_sortost_protag.GetSheHeCaps] has the option to avoid the strife and conflict of a vote on the matter and reisgn now, which will mollify the people and lead them to select another. §ROtherwise, it appears likely that [lrsk_sortost_protag.GetName] will be exiled for 10 years!§!"
+ lrsk_adv_civ_sortition.6.accept:0 "Perhaps we should avoid unneeded acrimony..."
+ lrsk_adv_civ_sortition.6.accept.desc:0 "§P[lrsk_sortost_protag.GetName] will resign as [lrsk_sortost_protag.GetTitle]§!, prompting the people to choose a new target. §GThis will alleivate social strife to some degree.§!"
+ lrsk_adv_civ_sortition.6.refuse:0 "The [lrsk_sortost_protag.GetTitle] will not be intimidated!"
+ lrsk_adv_civ_sortition.6.refuse.desc:0 "The ostracism decision proceeds and if it does not exile [lrsk_sortost_protag.GetName], §Rthis will lead to general unease.§!"
+
+ # Ostracism Succeeds
+ lrsk_adv_civ_sortition.7.name:0 "Ostracism of [lrsk_sortost_protag.GetName] Succeeds"
+ lrsk_adv_civ_sortition.7.desc:0 "The people have spoken, and they deem [lrsk_sortost_protag.GetName] to be too great a threat to the fundamental equality of the $lrsk_adv_civ_gov_demarchy$. [lrsk_sortost_protag.GetSheHeCaps] has been exiled for 10 years."
+ lrsk_adv_civ_sortition.7.sobeit:0 "So be it."
+
+ # Ostracism Fails
+ lrsk_adv_civ_sortition.8.name:0 "Ostracism of [lrsk_sortost_protag.GetName] Fails"
+ lrsk_adv_civ_sortition.8.desc:0 "It seems that an insufficient number of citizens consider [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName] to be a potential tyrant after all. This is surprising and, to some, disturbing because there were a number of factors making the [lrsk_sortost_protag.GetTitle] suspicious. Nonetheless, [lrsk_sortost_protag.GetSheHeCaps] may remain in the [this.GetName] and in office as [lrsk_sortost_protag.GetTitle]."
+ lrsk_adv_civ_sortition.8.wellthen:0 "Well then..."
+ lrsk_adv_civ_sortition.8.wellthen.desc:0 "This surprise result §Pwill lead to some unrest and discontent.§!"
+
+ # Ostracized Returns
+ lrsk_adv_civ_sortition.9.name:0 "[lrsk_sortost_exile.GetName] Returns"
+ lrsk_adv_civ_sortition.9.desc:0 "Having been ostracized for the good of the $lrsk_adv_civ_gov_demarchy$ and endured 10 years of exile, [lrsk_sortost_exile.GetName] has returned."
+ lrsk_adv_civ_sortition.9.welcome:0 "Welcome home?"
+
+ # Ostracism of non-ruler leader OR ruler who heads conspiracy
+ lrsk_adv_civ_sortition.10.name:0 "Ostracism of [lrsk_sortost_protag.GetName]"
+ lrsk_adv_civ_sortition.10.desc:0 "Unfortunately for [lrsk_sortost_protag.GetTitle] [lrsk_sortost_protag.GetName], a sufficient number of [lrsk_sortost_protag.GetHerHis] fellow citizens were so suspicious of [lrsk_sortost_protag.GetHerHim] that they voted to exile [lrsk_sortost_protag.GetHerHim] for 10 years."
+ lrsk_adv_civ_sortition.10.desc.ruler:0 "$lrsk_adv_civ_sortition.10.desc$ As the leader of the nation and the head of a conspiracy against it, not even resignation could ease suspicions."
+ lrsk_adv_civ_sortition.10.ohwell:0 "A threat averted?"
+ lrsk_adv_civ_sortition.10.paranoid:0 "Surely just a catspaw..."
+ lrsk_adv_civ_sortition.10.paranoid.desc:0 "Launch an investigation into the associates of [lrsk_sortost_protag.GetName] to see if there's a deeper plot."
+
+ # Ostracism Averted
+ lrsk_adv_civ_sortition.11.name:0 "No Consensus for Ostracism"
+ lrsk_adv_civ_sortition.11.desc:0 "Despite having chosen to ostracize one of their fellow citizens, the people could not come to any agreement on who should be exiled. As such, there has been no ostracism after all. It seems that those who were originally suspicious became unnerved enough at the possibility of exile that they made amends and proved their good intentions. Equality prevails after all, and a sigh of relief echoes in the halls of government..."
+ lrsk_adv_civ_sortition.11.ohwell:0 "Phew!"
+
+ # Elite Conspiracy Revealed
+ lrsk_adv_civ_sortition.32.name:0 "Elite Conspiracy Revealed!"
+ LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1:0 "It seems that some of the more ambitious officers of government have been meeting in secret and hatching schemes to destroy our the $lrsk_adv_civ_gov_demarchy$, dreaming of election campaigns and prestigeous appointments by their associates once enthonred as oligarchs."
+ LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2:0 "Such a scandal may be enough to launch an emergency petition to begin §Hostracism proceedings§! immediately."
+ lrsk_adv_civ_sortition.32.desc.unknown:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ Their leader is still a mystery, but investigations are ongoing. $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
+ lrsk_adv_civ_sortition.32.desc.ruler:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ They are led by none other than our presiding [lrsk_sortconsp_protag.GetTitle], [lrsk_sortconsp_protag.GetName]! $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
+ lrsk_adv_civ_sortition.32.desc.other:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ The culprits are a clique of disloyal officials led by [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName]. $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
+ lrsk_adv_civ_sortition.32.yikes:0 "Those scoundrels!" 
+ 
+ # Elite Reforms
+ lrsk_adv_civ_sortition.42.name:0 "Reform for Better Democracy?"
+ LRSK_ADV_CIV_SORTITION_REFORM_COMMON_1:0 "'It being the case that selection by random choice makes no guarantee of the skill, experience, or character of public officials, nor does it allow for accountability to the governed as would a competative system, we the undersigned propose a reform of government towards a system of elections and representation...' So begins a sort of policy proposal distributed by a group of government officials and public notables calling itself 'The Friends of Good Governance.'\n\nReally, it is a demand to abolish the $lrsk_adv_civ_gov_demarchy$, to undo entirely the parity of public service by lottery and create an oligarchy in the guise of a sham democracy."
+ LRSK_ADV_CIV_SORTITION_REFORM_COMMON_2:0 "\n\nMerely proposing this may be enough to launch an emergency petition to begin §Hostracism proceedings§! immediately. However, there's no way to know how well organized the 'Friends' are, and what they might do if denied..."
+ lrsk_adv_civ_sortition.42.desc.ruler:0 "$LRSK_ADV_CIV_SORTITION_REFORM_COMMON_1$ More disturbing still, the leader of the 'Friends' is none other than our presiding [lrsk_sortconsp_protag.GetTitle], [lrsk_sortconsp_protag.GetName]! This suggests the 'proposal' has a lot of force backing it up. $LRSK_ADV_CIV_SORTITION_REFORM_COMMON_2$"
+ lrsk_adv_civ_sortition.42.desc.other:0 "$LRSK_ADV_CIV_SORTITION_CONSP_COMMON_1$ The 'Friends' are led by [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName], and the signatory list is a 'who's who' of influential citizens of the [this.GetName]. $LRSK_ADV_CIV_SORTITION_CONSP_COMMON_2$"
+ lrsk_adv_civ_sortition.42.no:0 "Democracy will never die." 
+ lrsk_adv_civ_sortition.42.no.desc:0 "Refuse to change. There is a chance that §Hostracism proceedings§! will begin in 30 days, and that the elite reformists §Pmay turn to revolt...§!" 
+ lrsk_adv_civ_sortition.42.yes:0 "Perhaps some changes are in order..." 
+ lrsk_adv_civ_sortition.42.yes.desc:0 "Accept a change in government with the following effects:\n- Lose the §Y$lrsk_adv_civ_civic_sortition$§! Civic.\n- Shift away from §Y$ethic_fanatic_egalitarian$§! to §Y$ethic_egalitarian$§!.\n- Replacement Civics and Ethos will depend on the interests of the reform leader, [lrsk_sortconsp_protag.GetTitle] [lrsk_sortconsp_protag.GetName]." 
+ 
+ # Elitist Revolt Launches
+ lrsk_adv_civ_sortition.51.name:1 "§HAll Must Take A Stand§!"
+ LRSK_ADV_CIV_SORTITION_REVOLT_COMMON:0 "Already they stage elections in their new tyrant state to enthrone themselves and if not stopped, their elitism will overtake us all and reduce the people to peonage.\n\nWar is not only inevitable. It is already upon us."
+ lrsk_adv_civ_sortition.51.desc.revolt:0 "The haughty and ambitious grandees of the [lrsk_elitist_revolt_originator.GetName] have shown their true colors, rising in revolt from their den on [lrsk_elitist_revolt_rallypoint.GetName]! $LRSK_ADV_CIV_SORTITION_REVOLT_COMMON$"
+ lrsk_adv_civ_sortition.51.desc.coup:0 "Former $LRSK_ADV_CIV_ARCHON$ [lrsk_rebel_ruler.GetName], traitor and tyrant, has shown [lrsk_rebel_ruler.GetHerHis] true colors, having taken control of the capital with a cohort of fellow elitist rebels! $LRSK_ADV_CIV_SORTITION_REVOLT_COMMON$"
+ lrsk_adv_civ_sortition.51.a:0 "Fight for equality! Fight for democracy!"
+ lrsk_adv_civ_sortition.51.a.tooltip:0 "Fight to quell the §Y[lrsk_elitist_revolt.GetName]§! §RElitist Revolt§!."
+ lrsk_adv_civ_sortition.51.b:0 "§RKneel, plebeians!§!"
+ lrsk_adv_civ_sortition.51.b.tooltip:0 "Rise up as the §Y[lrsk_elitist_revolt.GetName]§! §RElitist Revolt§! and fight to subdue the §Y[lrsk_elitist_revolt_originator.GetName]§!."
+
+ lrsk_adv_civ_sortition.53.name:0 "Plebian Rabble Subdued!"
+ lrsk_adv_civ_sortition.53.desc:0 "It is clear now that the confused system of 'government' once practiced by our nation was a laughable mistake. Expecting random ordinary people to rule well should have always clearly been a sick joke. Fortunately, the punchline never came. Instead we made a revolution for good government and won."
+ lrsk_adv_civ_sortition.53.a:0 "There could be no other end."
+ lrsk_adv_civ_sortition.53.a.tooltip:0 "§YAll known Authoritarian Empires§! add the §G$lrsk_adv_civ_elitist_revolt_elitist_comrades_victorious$§! opinion modifier toward §Y[Root.GetName]§!\n§YAll known Egalitarian Empires§! add the §P$lrsk_adv_civ_elitist_revolt_victorious$§! opinion modifier toward §Y[Root.GetName]§!."
+
+ lrsk_adv_civ_sortition.54.name:0 "Equality Triumphant!"
+ lrsk_adv_civ_sortition.54.desc:0 "The would-be tyrants of the elite rebellion thought that they were better and smarter than the people. The people proved them wrong, resoundingly. Let this be a lesson to the high-and-mighty of the galaxy: when the people fight for their liberty, they always win."
+ lrsk_adv_civ_sortition.54.a:0 "The people reign supreme."
+ lrsk_adv_civ_sortition.54.a.tooltip:0 "§YAll known Egalitarian Empires§! add the §G$lrsk_adv_civ_elitist_revolt_defeated$§! opinion modifier toward §Y[Root.GetName]§!.\n§YAll known Authoritarian Empires§! add the §P$lrsk_adv_civ_elitist_revolt_elitist_comrades_defeated$§! opinion modifier toward §Y[Root.GetName]§!."
+
+ # Explainers
+ lrsk_adv_civ_sortition.101.name:0 "Leadership Selected by Lot"
+ lrsk_adv_civ_sortition.101.desc:0 "'The appointment of public officials by lottery is democratic, and by election is oligarchic.' - Aristotle\n\n§Y$lrsk_adv_civ_civic_sortition$§! is a process of selecting leaders at random. If you're familiar with how juries are selected in many countries, where any random citizen can be drafted to decide trials, the principle is the same but applied to nearly all government offices.\n\nOf course, this is somewhat at odds with how the systems of leadership work in the game. The civic therefore models this with both its base modifiers and by randomly assigning leaders special traits reflecting how anyone might be called to government service.\n\nThe goal more broadly is to model the system of classical Athens. This means that things like ostracism are also included."
+ lrsk_adv_civ_sortition.101.rollem:0 "Let's roll the dice, then."
+ lrsk_adv_civ_sortition.101.traits:0 "Tell me about the leader traits."
+ lrsk_adv_civ_sortition.101.ost:0 "Wait, what's ostracism?"
+
+ lrsk_adv_civ_sortition.102.name:0 "Readiness for Office?"
+ lrsk_adv_civ_sortition.102.desc:0 "With the §Y$lrsk_adv_civ_civic_sortition$§! civic, it is assumed that your leader pool and cadidates for rulership are randomly selected from the broader population. To reflect this, they can spawn with one of four randomly selected traits, and these can shift through the course of the leaders' development (i.e., as they level up).\n\n- §H$lrsk_adv_civ_trait_unready$§!: $lrsk_adv_civ_trait_unready_desc$ (Less capable and gains less experience.)\n- §H$lrsk_adv_civ_trait_groomed$§!: $lrsk_adv_civ_trait_groomed_desc$ (More capable but gains less experience.)\n- §H$lrsk_adv_civ_trait_tutors$§!: $lrsk_adv_civ_trait_tutors_desc$ (Less capable but gains more experience.)\n- §H$lrsk_adv_civ_trait_ambitious$§!: $lrsk_adv_civ_trait_ambitious_desc$ (More capable and gains more experience.)\n\nBear in mind that while '$lrsk_adv_civ_trait_ambitious$' and '$lrsk_adv_civ_trait_groomed$' leaders are more effective overall, a radically egalitarian society may not trust people with a will (or sense of entitlement) to power."
+ lrsk_adv_civ_sortition.102.okay:0 "Understood."
+ lrsk_adv_civ_sortition.102.ost:0 "So, what happens to them?"
+
+ lrsk_adv_civ_sortition.103.name:0 "Ostracism: The Original Cancel Culture"
+ lrsk_adv_civ_sortition.103.desc:0 "Under the law of ostracism, any member of the society may be expelled from it for some time for any reason, so long as a vote is held (polling all citizens) to carry out this decision. Essentially it serves as a check on ambition or on any leader gaining too much power. The §Y$lrsk_adv_civ_civic_sortition$§! Civic models this using events, which are more likely to happen to leaders with the §H$lrsk_adv_civ_trait_ambitious$§! or §H$lrsk_adv_civ_trait_groomed$§! traits.\n\nIt's important to know that this is not mere paranoia or resentment. Ancient Greece was a times rocked by ideological war between partisans of 'rule by capable men' (oligarchy or even monarchy) and 'rule by the people' (democracy with sortition). §PThis could happen to you too!§!"
+ lrsk_adv_civ_sortition.103.okay:0 "$lrsk_adv_civ_sortition.102.okay$"
+ lrsk_adv_civ_sortition.103.traits:0 "Traits sound important."
+
+ ### Aspirant Events ###
+
+ # Explainers
+ lrsk_adv_civ_aspiration.101.name:0 "Grand Aspirations"
+ lrsk_adv_civ_aspiration.101.desc:0 "The §Y$lrsk_adv_civ_civic_aspiring_ascendants$§! Civic posits that your empire has strong shared convictions that your people need to see dominate the galaxy. Essentially, a society that wants to reach the status the Fallen Empires held at their 'peaks,' before they fell.\n\nIn terms of playstyle this is all about big flashy stuff, like megastructures and terraforming, and (for a time) going tall. The development of this playstyle comes from two special Ascension Perks you can take, but they require completing 'Ethos-appropriate' Tradition trees:\n\n- Fanatic Authoritarian: Domination, Harmony\n- Fanatic Egalitarian: Prosperity, Harmony\n- Fanatic Materialist: Discovery, Expansion\n- Fanatic Spiritualist: Harmony, Expansion\n- Fanatic Militarist: Supremacy, Domination\n- Fanatic Pacifist: Prosperity, Diplomacy\n- Fanatic Xenophile: Diplomacy, Discovery\n- Fanatic Xenophobe: Expansion, Supremacy\n\n§HThe Ethos-appropriate Traditions do not have to be unlocked in the listed order§!, but each unlocks a different first Perk for your playstyle's advancement, with different advantages.\n\nThe second of the two special Perks, §Y$lrsk_adv_civ_ap_idealistic_destiny$§!, will change up your playstyle to something more expansionist and aggressive while effecting a sort of 'cultural revolution' in the empire."
+ lrsk_adv_civ_aspiration.101.a:0 "Onward!"
+ lrsk_adv_civ_aspiration.101.b:0 "Show the first-level Perk bonsues..."
+ lrsk_adv_civ_aspiration.101.c:0 "Tell me about the final Perk..."
+
+ lrsk_adv_civ_aspiration.102.name:0 "Aspiration Ascension Perks"
+ lrsk_adv_civ_aspiration.102.desc:0 "The first important Ascension Perk for this playstyle is called an 'Aspiration' Perk. There are actually seven of them, it will be possible for you to select from two of them depending on your Fanatic Ethos, and §Hyou can only take one§!. Which will become available depends on which Ethos-appropriate Tradition trees you unlock. The design assumption is that you'll take whichever one goes with the first Ethos-appropriate Tradition tree you unlock first, but you can of course wait. The differing effects of these perks, and the tree that unlocks them, are below:\n\n- $lrsk_adv_civ_ap_diplomatic_aspiration$ (Diplomacy Tree): +1 Envoys, +25% Diplomatic Weight, +20% Trust Growth\n- $lrsk_adv_civ_ap_inquisitive_aspiration$ (Discovery Tree): +1 Research Alternative, +20% Research Speed, +15% Anomaly Spawn Chance\n- $lrsk_adv_civ_ap_dominant_aspiration$ (Domination Tree): -20% Crime, +5 Stability, +1% Specialist Output, +2% Worker Output\n- $lrsk_adv_civ_ap_expansionist_aspiration$ (Expansion Tree): +20% Survey Speed, -15% Starbase Influence Cost, +15% Colony Development Speed\n- $lrsk_adv_civ_ap_harmonious_aspiration$ (Harmony Tree): +5% Pop Happiness, +15% Pop Growth, -15% Empire sprawl from Pops\n- $lrsk_adv_civ_ap_acquisitive_aspiration$ (Prosperity Tree): +20% Trade Value, -10% Market Fee, +5% Energy production\n- $lrsk_adv_civ_ap_supremacist_aspiration$ (Supremacy Tree): +15% to Army Health, Damage, and Morale; +10% to Ship Fire Rate and Evasion\n\nRegardless of which you take, it will give you the following benefits:\n$lrsk_adv_civ_ap_aspiration_unlocks$"
+ lrsk_adv_civ_aspiration.102.a:0 "Understood."
+ #lrsk_adv_civ_aspiration.102.b:0 "Take me back to the basic explaination..."
+ lrsk_adv_civ_aspiration.102.c:0 "$lrsk_adv_civ_aspiration.101.c$"
+
+ lrsk_adv_civ_aspiration.103.name:0 "The $lrsk_adv_civ_ap_idealistic_destiny$ Perk"
+ lrsk_adv_civ_aspiration.103.desc:0 "The final Perk relevant to this playstyle, §Y$lrsk_adv_civ_ap_idealistic_destiny$§!, somewhat radically mixes things up. There's no going back once you take it! It requires any Aspiration Perk, both Ethos-appropriate Tradition trees complete, and four other Ascension Perks.\n\nIts effects are as follows:\n$lrsk_adv_civ_ap_idealistic_destiny_unlocks$"
+ lrsk_adv_civ_aspiration.103.a:0 "$lrsk_adv_civ_aspiration.102.a$"
+ lrsk_adv_civ_aspiration.103.b:0 "$lrsk_adv_civ_aspiration.101.b$"
+ #lrsk_adv_civ_aspiration.103.c:0 "$lrsk_adv_civ_aspiration.102.b$"
+
+ ### Sibling Events ###
+
+ # Arrival (Host)
+ lrsk_adv_civ_siblings.3.name:0 "Our Stellar Siblings Arrive"
+ lrsk_adv_civ_siblings.3.desc:0 "We have finally been visited by our siblings from another star! Already our government has arranged a grand diplomatic welcoming event and our people could not be happier."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_WELCOME:0 "Welcome them with open arms... or tentacles, or claws, whatever!"
+
+ # Arrival (Guest)
+ lrsk_adv_civ_siblings.4.name:0 "Our Stellar Siblings Found"
+ lrsk_adv_civ_siblings.4.desc:0 "We have finally reached the home of our siblings from another star! Already their government has arranged a grand diplomatic welcoming event for us and our people could not be happier."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_JOY:0 "A most joyous day!"
+
+ # Battle between
+ lrsk_adv_civ_siblings.6.name:0 "Family Feud"
+ lrsk_adv_civ_siblings.6.desc:0 "It seems like a cruel twist of fate: somehow, for some reason, we have come to blows with out interstellar kin. Why this would happen, and how we can cope, none know for sure. We can only hope the conflict ends soon and we can begin reconciling with our now-estranged family."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW:0 "Let this awful war end!"
+ LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW_TIP:0 "This modifier will last until you are at peace."
+
+ # Battle with
+ lrsk_adv_civ_siblings.7.name:0 "Shoulder-to-Shoulder"
+ lrsk_adv_civ_siblings.7.desc:0 "The sight of our stellar siblings' warships soaring into battle in formation with ours has invigorated our spirits and significantly boosted morale. This is what it means for family to have your back."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE:0 "We'll fight with them to the death."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_PRIDE_TIP:0 "$LRSK_ADV_CIV_EVENT_SIBLINGS_SORROW_TIP$"
+
+ # Federation
+ lrsk_adv_civ_siblings.8.name:0 "A Closer Kinship"
+ lrsk_adv_civ_siblings.8.desc:0 "The treaty has been signed, but in many ways, it simply formalized what we always knew: the [lrsk_adv_civ_siblings_us.GetName] and [lrsk_adv_civ_siblings_them.GetName] were always meant to work together."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_UNITY:0 "And together, we can do anything."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_UNITY_TIP:0 "This modifier will last as long as you and the [lrsk_adv_civ_siblings_them.GetName] are in a federation."
+
+ # Destrution
+ lrsk_adv_civ_siblings.11.name:0 "The Cruelest Loss"
+ lrsk_adv_civ_siblings.11.desc:0 "It seems almost unimaginable, but we must face the future without the [lrsk_adv_civ_siblings_dead.GetName] at our side. Our people are inconsolable. Since olden times we have had the people of [lrsk_adv_civ_siblings_dead.GetName] to keep us company. Future generations will not know them. They live on only in our hearts."
+ LRSK_ADV_CIV_EVENT_SIBLINGS_GRIEF:0 "How can we go on alone?"
+
+ ### Est. Empire Events ###
+
+ # Option presented
+ lrsk_adv_civ_estemp.2.name:0 "Governmental Reform"
+ lrsk_adv_civ_estemp.2.desc:0 "It's becoming increasingly clear that our empire's lackadaisical complacency can no longer be afforded. We need to reform our ways, modernize our bureaucracy and infrastructure, and streamline our processes in order to catch up with the rest of the galaxy."
+ LRSK_ADV_CIV_EVENT_ESTEMP_OVERHAUL:0 "Make it our top priority, at any cost."
+ LRSK_ADV_CIV_EVENT_ESTEMP_OVERHAUL_TIP:0 "Duration: 20-40 years. §RWorrying§! chance of failure. §GPromising§! chance of a breakthrough."
+ LRSK_ADV_CIV_EVENT_ESTEMP_REFORM:0 "We'll have to take a cautious approach."
+ LRSK_ADV_CIV_EVENT_ESTEMP_REFORM_TIP:0 "Duration: 45-75 years. §GNegligible§! chance of failure. §PLower§! chance of a breakthrough."
+ LRSK_ADV_CIV_EVENT_ESTEMP_DEFER:0 "Sounds like a job for our grandkids!"
+ LRSK_ADV_CIV_EVENT_ESTEMP_DEFER_TIP:0 "Next chance in 60-100 years."
+
+ # Partial progress
+ lrsk_adv_civ_estemp.3.name:0 "Substantial Progress"
+ lrsk_adv_civ_estemp.3.desc:0 "While the reform process is ongoing, we've made good progress towards our goal."
+ LRSK_ADV_CIV_EVENT_ESTEMP_PROGRESS:0 "That's a relief."
+ LRSK_ADV_CIV_EVENT_ESTEMP_PROGRESS_TIP:0 "Both 'complacency' and 'refoming' penalties halved."
+
+ # Failure
+ lrsk_adv_civ_estemp.5.name:0 "Reforms Failed"
+ lrsk_adv_civ_estemp.5.desc:0 "Unfortunately, it seems our reform agenda has collapsed. We were not able to get everyone working together on a solution and have reverted to our old methods for lack of any other palusible option. No one is happy about this."
+ LRSK_ADV_CIV_EVENT_ESTEMP_FAILURE:0 "Back to the drawing board..."
+ LRSK_ADV_CIV_EVENT_ESTEMP_FAILURE_TIP:0 "Next chance in 45-65 years."
+
+ # Success
+ lrsk_adv_civ_estemp.4.name:0 "Reforms Complete"
+ lrsk_adv_civ_estemp.4.desc:0 "We've managed to shake off the lethargy and inefficiency that afflicted our government. Now we're ready to take on the galaxy."
+ LRSK_ADV_CIV_EVENT_ESTEMP_COMPLETE:0 "Back in business!"
+ 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
 

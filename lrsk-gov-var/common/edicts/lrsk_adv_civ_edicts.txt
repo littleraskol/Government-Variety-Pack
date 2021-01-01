@@ -1,0 +1,99 @@
+# New Advanced Civics
+# Edicts
+# Author: littleraskol
+
+lrsk_adv_civ_audacity_war_edict = {
+	length = -1
+	edict_cap_usage = 1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = 150
+		}
+	}
+
+	modifier = {
+		damage_vs_country_type_fallen_empire_mult = 0.2
+		damage_vs_country_type_awakened_fallen_empire_mult = 0.2
+		ship_home_territory_fire_rate_mult = 0.15
+	}
+
+	potential = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
+		OR = {
+			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		}
+	}
+
+	# Not sure this makes sense for a continuous-until-deactivated edict.
+	#allow = { custom_tooltip = {
+	#	fail_text = "lrsk_gov_var_tooltip_fail_war_with_fe"
+	#	is_at_war = yes
+	#	any_war = { any_war_participant = { OR = {
+	#		is_country_type = fallen_empire
+	#		is_country_type = awakened_fallen_empire
+	#	} } }
+	#} }
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			is_at_war = yes
+			any_war = { any_war_participant = { OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			} } }
+		}
+	}
+}
+
+lrsk_adv_civ_wonder_age_edict = {
+	icon = "GFX_edict_type_time"
+
+	is_ambition = yes
+
+	resources = {
+		category = edicts
+	}
+
+	modifier = {
+		megastructure_build_speed_mult = 0.66
+		mod_megastructure_build_cost_mult = -0.15
+		country_megastructure_build_cap_add = 1
+		terraforming_cost_mult = -0.25
+		terraform_speed_mult = 0.25
+	}
+
+	potential = {
+		has_technology = tech_ascension_theory
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		}
+		OR = {
+			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}

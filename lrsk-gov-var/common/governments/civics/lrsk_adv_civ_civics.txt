@@ -1,0 +1,643 @@
+# New Advanced Civics
+# Civics
+# Author: littleraskol
+
+### CIVCS
+
+#Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+15% food output, -10% genetic modification cost, +5% habitability, -5% non-society research)
+lrsk_adv_civ_civic_shapers = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_environmentalist.dds"
+
+	possible = {
+		civics = {
+			NOR = {
+				value = lrsk_adv_civ_civic_artificers
+        value = lrsk_adv_civ_civic_essentialists
+			}
+		}
+	}
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_food_produces_mult = 0.15
+    modify_species_cost_mult = -0.1
+    pop_environment_tolerance = 0.05
+    #country_society_tech_research_speed = 0.05
+    country_engineering_tech_research_speed = -0.05
+    country_physics_tech_research_speed = -0.05
+  }
+}
+
+#Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship upgrade cost, +10% robot output, +10% robot build speed, -5% non-engineering research)
+lrsk_adv_civ_civic_artificers = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_mechanists.dds"
+
+	possible = {
+		civics = {
+			NOR = {
+				value = lrsk_adv_civ_civic_shapers
+        value = lrsk_adv_civ_civic_essentialists
+			}
+		}
+	}
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_ship_upgrade_cost_mult = -0.1
+    planet_jobs_robotic_produces_mult = 0.1
+    planet_pop_assembly_mult = 0.1
+    #country_engineering_tech_research_speed = 0.05
+    country_society_tech_research_speed = -0.05
+    country_physics_tech_research_speed = -0.05
+  }
+}
+
+#Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+15% sensor range and FTL speed, -5% non-physics research)
+lrsk_adv_civ_civic_essentialists = {
+  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_syncretic_evolution.dds"
+
+	possible = {
+		civics = {
+			NOR = {
+				value = lrsk_adv_civ_civic_shapers
+        value = lrsk_adv_civ_civic_artificers
+			}
+		}
+	}
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    ship_sensor_range_add = 1
+    planet_sensor_range_add = 1
+		ship_windup_mult = -0.1
+		ship_winddown_mult = -0.1
+    #country_physics_tech_research_speed = 0.05
+    country_engineering_tech_research_speed = -0.05
+    country_society_tech_research_speed = -0.05
+  }
+}
+
+#Sortition (Fanatic Egalitarian, no Republicanism, Figurehead Monarchy, Meritocracy, Technocracy) - This society believes so strongly in the equality of all its citizens and the need to curb accumulations of power that it selects its leadership randomly. While there are elections for important positions, the candidates are actually chosen by lot. (Leader pool size +2, leader capacity +5, leader influence cost -25%, happiness +10%, election influence cost +100%, leaders may spawn with special postive or negative traits and may be subject to ostracization.)
+lrsk_adv_civ_civic_sortition = {
+  description = "lrsk_adv_civ_sortition_effect"
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_sortition }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_environmentalist.dds"
+
+	possible = {
+    #authority = {
+    #  OR = {
+    #    value = auth_democratic
+    #  }
+    #}
+    ethics = {
+      value = ethic_fanatic_egalitarian
+    }
+		civics = {
+			NOR = {
+        #value = lrsk_gov_var_civic_republicanism
+        value = lrsk_adv_civ_civic_figurehead_monarchy
+        value = civic_meritocracy
+        #value = civic_technocracy # not possible w/o FanMat
+        value = civic_shadow_council
+			}
+		}
+	}
+
+  random_weight = {
+    base = 1    
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+  }
+
+  modifier = {
+    country_leader_pool_size = 2
+		leaders_cost_mult = -0.2
+		leaders_upkeep_mult = -0.2
+    pop_citizen_happiness = 0.1
+  	country_election_influence_cost_mult = 1
+		planet_jobs_ruler_produces_mult = -0.1
+  }
+}
+
+#Figurehead Monarchy (Not Imperial) - This society's government technically has a monarchy, but the monarch wields only indirect power, mostly through cultural influence, and is a useful (if expensive) unifying figure. (+10% influence production, +5 stability, -5% energy and mineral production, -10% consumer goods production, other special effects)
+lrsk_adv_civ_civic_figurehead_monarchy = {
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_figurehead_monarchy }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_fanatic_purifiers.dds"
+  description = "lrsk_adv_civ_civic_tooltip_figurehead_monarchy_effect"
+
+  possible = {
+    authority = { NOT = { value = auth_imperial } }
+    ethics = {
+      NOR = {
+        value = ethic_fanatic_egalitarian
+        value = ethic_fanatic_authoritarian
+      }
+    }
+    civics = {
+      NOR = {
+        value = lrsk_adv_civ_civic_technobarbarism
+        value = lrsk_adv_civ_civic_aspiring_ascendants
+        #value = lrsk_adv_civ_civic_figurehead_monarchy
+        value = lrsk_adv_civ_civic_otherworldly
+        value = civic_fanatic_purifiers
+        value = civic_inwards_perfection
+        value = civic_barbaric_despoilers
+        value = civic_criminal_heritage
+      }
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    country_influence_produces_mult = 0.1
+		planet_stability_add = 5
+    country_energy_produces_mult = -0.05
+    country_minerals_produces_mult = -0.05
+    country_consumer_goods_produces_mult = -0.1
+  }
+}
+
+#Shadow Monarchy (Not Imperial) - This society's government technically has a monarch limited by a constitution, but in fact the monarch wields vast power through covert influence over government positions. (+10% influence production, -50% election influence cost, -5% energy and mineral production, -10% consumer goods production, other special effects)
+lrsk_adv_civ_civic_shadow_monarchy = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_shadow_monarchy } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+  description = "lrsk_adv_civ_civic_tooltip_figurehead_monarchy_effect"
+
+  possible = {
+    authority = {
+      NOR = {
+        value = auth_imperial
+      }
+    }
+    ethics = {
+      NOR = {
+        value = ethic_fanatic_egalitarian
+      }
+    }
+    civics = {
+      NOR = {
+        #value = lrsk_adv_civ_civic_technobarbarism
+        #value = lrsk_adv_civ_civic_aspiring_ascendants
+        #value = lrsk_adv_civ_civic_figurehead_monarchy
+        #value = lrsk_adv_civ_civic_otherworldly
+        #value = civic_fanatic_purifiers
+        #value = civic_inwards_perfection
+        #value = civic_barbaric_despoilers
+        #value = civic_criminal_heritage
+        value = civic_shadow_council
+        value = lrsk_gov_var_civic_mc_controlling_interest
+      }
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    country_influence_produces_mult = 0.1
+    country_election_influence_cost_mult = -0.5
+    country_energy_produces_mult = -0.05
+    country_minerals_produces_mult = -0.05
+    country_consumer_goods_produces_mult = -0.1
+  }
+}
+
+# The following are "remnant" civics for if a figurehead monarchy empire actually goes Imperial, they will be swapped for the figurehead/shadow monarchy civic.
+
+# Parliamentary Traditions (Imperial) - Though a monarch reigns here now, this empire once had a democratic system of government with an elected parliament making laws. The parliament still meets, and though it has little real power, its influence lingers.
+lrsk_adv_civ_civic_parliamentary_traditions = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_parliamentary_traditions } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+
+  possible = {
+    authority = {
+      value = auth_imperial
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    country_unity_produces_mult = 0.1
+    pop_factions_produces_mult = 0.1
+  }
+}
+# Senatorial Traditions (Imperial) - Though a monarch reigns here now, this empire once had a system of government based on a small representative senate. The senate still meets, and though it has little real power, its influence lingers.
+lrsk_adv_civ_civic_senatorial_traditions = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_senatorial_traditions } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+
+  possible = {
+    authority = {
+      value = auth_imperial
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    country_unity_produces_mult = 0.1
+    edicts_cost_mult = -0.1
+  }
+}
+# Regency Traditions (Imperial) - Though a monarch reigns here now, this empire's government was once led by a regent under a constitutional perogative. Though the regent is no more, the offices of state which served that position still exert a lingering influence.
+lrsk_adv_civ_civic_regency_traditions = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_regency_traditions } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+
+  possible = {
+    authority = {
+      value = auth_imperial
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    country_unity_produces_mult = 0.1
+    planet_crime_mult = -0.1
+  }
+}
+# Corporate Traditions (Imperial) - Though a monarch reigns here now, this empire once ceded most of its functions of government to a massive commerical enterprise. Though diminished in power, that company still operates and has some influence.
+lrsk_adv_civ_civic_corporate_traditions = {
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_corporate_traditions } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_figurehead_monarchy.dds"
+  
+  possible = {
+    authority = {
+      value = auth_imperial
+    }
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    country_unity_produces_mult = 0.1
+    trade_value_mult = 0.1
+  }
+}
+
+# Redoing this as something related to liesure or excess once I figure out what...
+##Exotic Graces (Fanatic Xenophile or Pacifist and Xenophile) - This culture has made it not just a point of basic ettiquette #but a matter of correct ethical behavior to understand and embrace foreign ways. This can be an expensive and sometimes #distruptive tendency. (+2.5% other species happiness, +25% xeno migration attraction, -5% tradition cost per alien species, +5% #trade attractiveness, +1% unity per federation member, -10% governing ethos attraction, +10% consumer goods use)
+#lrsk_adv_civ_civic_exotic_graces = {
+#  #description = "lrsk_adv_civ_civic_tooltip_exotic_graces_effect"
+#  potential = { ethics = { NOT = { value = ethic_gestalt_consciousness } } }
+#
+#  #icon = "gfx/interface/icons/governments/civics/civic_free_haven.dds"
+#
+#  possible = {
+#    ethics = {
+#      OR = {
+#        value = ethic_fanatic_xenophile
+#        AND = {
+#          value = ethic_xenophile
+#    		  OR = {
+#            text = civic_tooltip_pacifist
+#         	  value = ethic_pacifist
+#         	  value = ethic_fanatic_pacifist
+#    		  }
+#        }
+#      }
+#    }
+#    civics = {
+#      NOR = {
+#        value = lrsk_adv_civ_civic_aspiring_ascendants
+#      }
+#    }
+#  }
+#
+#  random_weight = { base = 1 }
+#
+#  modifier = {
+#    pop_other_species_happiness = 0.025
+#    planet_migration_xeno_pull = 0.25
+#    tradition_cost_num_xenos_mult = -0.05
+#    country_trade_attractiveness = 0.05
+#    country_federation_member_resource_unity_mult = 0.01
+#    pop_government_ethic_attraction = -0.1
+#    pop_consumer_goods_mult = 0.1
+#  }
+#}
+
+#Otherworldly (Fanatic Materialist or Fanatic Spiritualist) - This civilization seems nearly insane from an outside perspective. It's speculated that they made a discovery that broke them, socially, culturally, and psychologically. It is as if they no longer truly belong in this universe. Needless to say, dealing with them is very difficult, but they may prove useful if any outside context problems show up. (+10% FTL speed, special techs and events, -5% anomaly fail chance, +10% anomaly find chance, -10% trade attractiveness and trust growth, +10% diplomatic influence cost)
+lrsk_adv_civ_civic_otherworldly = {
+  description = "lrsk_adv_civ_civic_tooltip_existentially_weird_effect"
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_otherworldly }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_free_haven.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = lrsk_adv_civ_civic_tooltip_fan_mat_spi
+        value = ethic_fanatic_materialist
+        value = ethic_fanatic_spiritualist
+      }
+    }
+		civics = {
+			NOR = {
+        value = lrsk_adv_civ_civic_technobarbarism
+        value = lrsk_adv_civ_civic_aspiring_ascendants
+        value = lrsk_adv_civ_civic_figurehead_monarchy
+        #value = lrsk_adv_civ_civic_otherworldly
+        value = civic_fanatic_purifiers
+        value = civic_inwards_perfection
+        value = civic_barbaric_despoilers
+        value = civic_criminal_heritage
+			}
+		}
+  }
+
+  modification = no
+
+  random_weight = { base = 1 }
+
+  modifier = {
+		#ship_windup_mult = -0.1
+		#ship_winddown_mult = -0.1
+    ship_anomaly_generation_chance_mult = 0.2
+    ship_archeaological_site_clues_add = 1
+    country_trade_attractiveness = -0.1 # Does this work??
+    country_trust_growth = -0.1
+		diplo_weight_mult = -0.15
+  }
+}
+
+#Aspiring Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. They intend to carve them there or burn out trying. (War of Audacity edict that improves damage against Fallen and Awakened Empires, special Traditions, +10% governing ethos attraction and unity production, -15% terraform cost and completion time, -10% megastructure cost and build time, +10% governing ethics attraction penalty due to distance, expansion influence cost, and expansion effect on Tradition cost.)
+lrsk_adv_civ_civic_aspiring_ascendants = {
+  description = "lrsk_adv_civ_civic_tooltip_rampant_ascendants_effect"
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_aspiring_ascendants }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_shadow_council.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = lrsk_adv_civ_civic_tooltip_any_fan
+        value = ethic_fanatic_xenophile
+        value = ethic_fanatic_xenophobe
+        value = ethic_fanatic_militarist
+        value = ethic_fanatic_pacifist
+        value = ethic_fanatic_spiritualist
+        value = ethic_fanatic_materialist
+        value = ethic_fanatic_authoritarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+		civics = {
+			NOR = {
+        value = lrsk_adv_civ_civic_technobarbarism
+        #value = lrsk_adv_civ_civic_aspiring_ascendants
+        value = lrsk_adv_civ_civic_figurehead_monarchy
+        value = lrsk_adv_civ_civic_otherworldly
+        value = civic_fanatic_purifiers
+        value = civic_inwards_perfection
+        value = civic_barbaric_despoilers
+        value = civic_criminal_heritage
+			}
+		}
+  }
+
+  modification = no
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    pop_government_ethic_attraction = 0.2
+    country_unity_produces_mult = 0.1
+    all_technology_research_speed = 0.1
+    empire_size_penalty_mult = 0.25
+    country_admin_cap_mult = -0.25
+  }
+}
+
+#Rampant Ascendants (Any fanatical ethos) - This civilization has ardent convictions and grandiose ambitions. They believe, with a solar intensity, that their values are meant to be written in the laws of the universe. Now they are fully committed to proving their supremacy over the galaxy.
+lrsk_adv_civ_civic_rampant_ascendants = {
+  description = "lrsk_adv_civ_civic_tooltip_aspiring_ascendants_effect"
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_rampant_ascendants } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_aspiring_ascendants.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = lrsk_adv_civ_civic_tooltip_any_fan
+        value = ethic_fanatic_xenophile
+        value = ethic_fanatic_xenophobe
+        value = ethic_fanatic_militarist
+        value = ethic_fanatic_pacifist
+        value = ethic_fanatic_spiritualist
+        value = ethic_fanatic_materialist
+        value = ethic_fanatic_authoritarian
+        value = ethic_fanatic_egalitarian
+      }
+    }
+		#civics = {
+		#	NOR = {
+    #    value = lrsk_adv_civ_civic_technobarbarism
+    #    #value = lrsk_adv_civ_civic_aspiring_ascendants
+    #    value = lrsk_adv_civ_civic_figurehead_monarchy
+    #    value = lrsk_adv_civ_civic_otherworldly
+    #    value = civic_fanatic_purifiers
+    #    value = civic_inwards_perfection
+    #    value = civic_barbaric_despoilers
+    #    value = civic_criminal_heritage
+		#	}
+		#}
+  }
+
+  modification = no
+
+  random_weight = { base = 0 }
+
+  # Effect: Conditional diplo penalties: FEs/AEs, stronger empires
+
+  #modifier = {
+  #  pop_government_ethic_attraction = 0.1
+  #  #pop_amenities_usage_mult = 0.1
+  #  #planet_pops_consumer_goods_upkeep_mult = 0.1
+  #}
+}
+
+#Techno-Barbarism (Spiritualist, Authoritarian, can't have certain civics) - The superstitious heirs to an advanced civilization, they have forgotten more of science than most empires ever discover. Unfortunately, they remember little and misunderstand much of that. Fortunately, their technology was designed very well. (Techno-Ritual Reverence policies that can improve ship hull, shields, armor, evasion, and damage, -10% building upkeep, cost, and build speed, +15% army damage and health, -10% research speed, -1 research alternative, +20% scientist recruit cost)
+lrsk_adv_civ_civic_technobarbarism = {
+  description = "lrsk_adv_civ_civic_tooltip_technobarbarism_effect"
+  potential = {
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_technobarbarism }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_fanatic_purifiers.dds"
+
+  possible = {
+    ethics = {
+      OR = {
+        text = civic_tooltip_authoritarian
+        value = ethic_authoritarian
+        value = ethic_fanatic_authoritarian
+      }
+      OR = {
+        text = civic_tooltip_spiritualist
+        value = ethic_spiritualist
+        value = ethic_fanatic_spiritualist
+      }
+    }
+		civics = {
+			NOR = {
+        #value = lrsk_adv_civ_civic_technobarbarism
+        value = lrsk_adv_civ_civic_aspiring_ascendants
+        value = lrsk_adv_civ_civic_figurehead_monarchy
+        value = lrsk_adv_civ_civic_otherworldly
+        value = civic_fanatic_purifiers
+        value = civic_inwards_perfection
+        value = civic_barbaric_despoilers
+        value = civic_criminal_heritage
+			}
+		}
+  }
+
+  modification = no
+
+  random_weight = { base = 1 }
+
+  modifier = {
+    ## NOTE: Most modifiers given by tech
+    #ship_hull_mult = 0.1
+    #ship_shield_mult = 0.1
+    #ship_armor_mult = 0.1
+    #ship_evasion_mult = 0.1
+    #ship_fire_rate_mult = 0.1
+    #weapon_type_kinetic_weapon_damage_mult = 0.1
+    #weapon_type_energy_weapon_damage_mult = 0.1
+    #weapon_type_explosive_weapon_damage_mult = 0.1
+    #weapon_type_strike_craft_weapon_damage_mult = 0.1
+    #ships_upkeep_mult = -0.05
+    #army_damage_mult = 0.1
+    #army_health = 0.1
+    #armies_upkeep_mult = -0.05
+    #planet_structures_upkeep_mult = -0.05
+
+    num_tech_alternatives_add = -1
+  }
+}
+
+#Reformed Techno-Barbarism - Once the remnant of a more scientifically advanced civilization whose knowledge of technology had regressed to mere ritual, they have cast off their ancient superstitions.
+lrsk_adv_civ_civic_ref_technobarbarism = {
+  #description = "lrsk_adv_civ_civic_tooltip_technobarbarism_effect"
+  potential = { 
+    ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    civics = { value = lrsk_adv_civ_civic_ref_technobarbarism } # event-added
+  }
+
+  icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_technobarbarism.dds"
+
+  #possible = {
+  #  #ethics = {
+  #  #  OR = {
+  #  #    text = civic_tooltip_authoritarian
+  #  #    value = ethic_authoritarian
+  #  #    value = ethic_fanatic_authoritarian
+  #  #  }
+  #  #  OR = {
+  #  #    text = civic_tooltip_spiritualist
+  #  #    value = ethic_spiritualist
+  #  #    value = ethic_fanatic_spiritualist
+  #  #  }
+  #  #}
+	#	#civics = {
+	#	#	NOR = {
+  #  #    value = lrsk_adv_civ_civic_aspiring_ascendants
+  #  #    value = lrsk_adv_civ_civic_otherworldly
+  #  #    value = civic_citizen_service
+  #  #    value = lrsk_adv_civ_civic_technobarbarism
+  #  #    value = civic_fanatic_purifiers
+	#	#	}
+	#	#}
+  #}
+
+  # Doesn't really do anything, so why not let them gather the influence to remove?
+  #modification = no 
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    ## NOTE: Most modifiers given by tech
+    #ship_hull_mult = 0.1
+    #ship_shield_mult = 0.1
+    #ship_armor_mult = 0.1
+    #ship_evasion_mult = 0.1
+    #ship_fire_rate_mult = 0.1
+    #weapon_type_kinetic_weapon_damage_mult = 0.1
+    #weapon_type_energy_weapon_damage_mult = 0.1
+    #weapon_type_explosive_weapon_damage_mult = 0.1
+    #weapon_type_strike_craft_weapon_damage_mult = 0.1
+    #ships_upkeep_mult = -0.05
+    #army_damage_mult = 0.1
+    #army_health = 0.1
+    #armies_upkeep_mult = -0.05
+    #planet_structures_upkeep_mult = -0.05
+
+		pop_government_ethic_attraction = -0.2
+		planet_stability_add = -5
+  }
+}

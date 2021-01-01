@@ -1,0 +1,670 @@
+# New Advanced Civics
+# Technology - Forbidden Knowledge
+# Otherworldy-only techs related to special threats.
+# Author: littleraskol
+
+# Anti-guardian tech:
+# Individual = T2
+# All = T3
+#
+# Anti-crisis tech:
+# Individual = T3
+# All = T4
+
+##################
+### TECH COSTS ###
+##################
+
+@lrskgindcost = 360
+@lrskgallcost = 600
+
+@lrskcindcost = 800
+@lrskcallcost = 1200
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@lrskgindwght = 85
+@lrskgallwght = 70
+
+@lrskcindwght = 60
+@lrskcallwght = 45
+
+# Draconic Secrets
+tech_lrsk_adv_civ_dragon = {
+	cost = @lrskgindcost
+	area = engineering
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_dragon_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			has_country_flag = dragon_slayer
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = dragon_encounter
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# Heliophagy
+tech_lrsk_adv_civ_suneater = {
+	cost = @lrskgindcost
+	area = physics
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_stellarite_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_country_flag = stellarite_trophy_allowed
+				has_country_flag = stellarite_project_success
+			}
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = guardians_stellarite_encountered
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# Mysteries of the Orb
+tech_lrsk_adv_civ_sphere = {
+	cost = @lrskgindcost
+	area = physics
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_sphere_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			has_country_flag = technosphere_sabotaged
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = guardians_technosphere_encountered
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# The Doom-Speaker's Curse
+tech_lrsk_adv_civ_doomspeaker = {
+	cost = @lrskgindcost
+	area = physics
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_horror_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			has_country_flag = horror_killed
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = encountered_horror
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+    	}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# A Haunted Star
+tech_lrsk_adv_civ_ghostship = {
+	cost = @lrskgindcost
+	area = engineering
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_dreadnought_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			has_country_flag = restored_dreadnought
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = encountered_dreadnought
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# Living Treasures
+tech_lrsk_adv_civ_gems = {
+	cost = @lrskgindcost
+	area = engineering
+	tier = 2
+	weight = @lrskgindwght
+
+	modifier = {
+    	damage_vs_country_type_guardian_hiver_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_valid_civic = lrsk_adv_civ_civic_otherworldly }
+		}
+		modifier = {
+			factor = 0
+			any_system = { star = { has_star_flag = hivers_defeated } }
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = encountered_hivers
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = provoked_hivers
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+	}
+}
+
+# Forbidden Knowledge: Leviathans
+tech_lrsk_adv_civ_guardians = {
+	cost = @lrskgallcost
+	area = society
+	tier = 3
+	is_rare = yes
+	weight = @lrskgallwght
+
+	modifier = {
+		damage_vs_country_type_guardian_dragon_mult = 0.1
+		damage_vs_country_type_guardian_stellarite_mult = 0.1
+		damage_vs_country_type_guardian_sphere_mult = 0.1
+		damage_vs_country_type_guardian_horror_mult = 0.1
+		damage_vs_country_type_guardian_dreadnought_mult = 0.1
+		damage_vs_country_type_guardian_hiver_mult = 0.1
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_valid_civic = lrsk_adv_civ_civic_otherworldly
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				has_country_flag = dragon_slayer
+				OR = {
+					has_country_flag = stellarite_trophy_allowed
+					has_country_flag = stellarite_project_success
+				}
+				has_country_flag = technosphere_sabotaged
+				has_country_flag = horror_killed
+				has_country_flag = restored_dreadnought
+				any_system = { star = { has_star_flag = hivers_defeated } }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+    	modifier = {
+			factor = 0.9
+			NOR = {
+				has_technology = tech_lrsk_adv_civ_dragon
+				has_technology = tech_lrsk_adv_civ_suneater
+				has_technology = tech_lrsk_adv_civ_sphere
+				has_technology = tech_lrsk_adv_civ_doomspeaker
+				has_technology = tech_lrsk_adv_civ_ghostship
+				has_technology = tech_lrsk_adv_civ_gems
+			}
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_dragon
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_suneater
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_sphere
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_doomspeaker
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_ghostship
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = tech_lrsk_adv_civ_gems
+		}
+	}
+}
+
+# Premonition: The Locust Plague
+tech_lrsk_adv_civ_swarm = {
+	cost = @lrskcindcost
+	area = society
+	tier = 3
+	weight = @lrskcindwght
+
+	modifier = {
+    	damage_vs_country_type_swarm_mult = 0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_valid_civic = lrsk_adv_civ_civic_otherworldly
+			}
+		}
+		modifier = {
+			factor = 0
+			has_global_flag = prethoryn_invasion_defeated
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 100 }
+		}
+		modifier = {
+			factor = 1.1
+			years_passed > 125
+		}
+		modifier = {
+			factor = 1.2
+			years_passed > 150
+		}
+		modifier = {
+			factor = 1.3
+			years_passed > 175
+		}
+		modifier = {
+			factor = 1.4
+			years_passed > 200
+		}
+		modifier = {
+			factor = 2
+			has_global_flag = prethoryn_invasion_happened
+		}
+	}
+}
+
+# Premonition: Life-Hunters
+tech_lrsk_adv_civ_unbidden = {
+	cost = @lrskcindcost
+	area = physics
+	tier = 3
+	weight = @lrskcindwght
+
+	modifier = {
+		damage_vs_country_type_extradimensional_mult = 0.2
+		damage_vs_country_type_extradimensional_2_mult = 0.2
+		damage_vs_country_type_extradimensional_3_mult = 0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_valid_civic = lrsk_adv_civ_civic_otherworldly
+			}
+		}
+		modifier = {
+			factor = 0
+			has_global_flag = extradimensional_invasion_defeated
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+  		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 100 }
+		}
+  		modifier = {
+			factor = 1.1
+			years_passed > 125
+		}
+  		modifier = {
+			factor = 1.2
+			years_passed > 150
+		}
+  		modifier = {
+			factor = 1.3
+			years_passed > 175
+		}
+  		modifier = {
+			factor = 1.4
+			years_passed > 200
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_technology = tech_jump_drive_1
+				has_technology = tech_psi_jump_drive_1
+			}
+		}
+		modifier = {
+			factor = 1.25
+			any_neighbor_country = {
+				OR = {
+					has_technology = tech_jump_drive_1
+					has_technology = tech_psi_jump_drive_1
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+      		has_global_flag = extradimensional_invasion_happened
+		}
+	}
+}
+
+# Premonition: Servile Insurrection
+tech_lrsk_adv_civ_ai = {
+	cost = @lrskcindcost
+	area = engineering
+	tier = 3
+	weight = @lrskcindwght
+
+	modifier = {
+    	damage_vs_country_type_ai_empire_mult = 0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_valid_civic = lrsk_adv_civ_civic_otherworldly
+			}
+		}
+		modifier = {
+			factor = 0
+			has_global_flag = ai_invasion_defeated
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+  		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 100 }
+		}
+  		modifier = {
+			factor = 1.1
+			years_passed > 125
+		}
+  		modifier = {
+			factor = 1.2
+			years_passed > 150
+		}
+  		modifier = {
+			factor = 1.3
+			years_passed > 175
+		}
+  		modifier = {
+			factor = 1.4
+			years_passed > 200
+		}
+		modifier = {
+			factor = 1.1
+      		has_technology = tech_sentient_ai
+		}
+		modifier = {
+			factor = 1.05
+			any_neighbor_country = {
+				has_technology = tech_sentient_ai
+			}
+		}
+		modifier = {
+			factor = 1.3
+      		has_technology = tech_synthetic_workers
+		}
+		modifier = {
+			factor = 1.15
+      		any_neighbor_country = {
+        		has_technology = tech_synthetic_workers
+			}
+		}
+		modifier = {
+			factor = 2
+      		has_global_flag = ai_revolt_happened
+		}
+	}
+}
+
+# Prophesies of the End Times
+tech_lrsk_adv_civ_crises = {
+	cost = @lrskcallcost
+	area = society
+	tier = 4
+	is_rare = yes
+	weight = @lrskcallwght
+
+	modifier = {
+		damage_vs_country_type_swarm_mult = 0.15
+		damage_vs_country_type_extradimensional_mult = 0.15
+		damage_vs_country_type_extradimensional_2_mult = 0.15
+		damage_vs_country_type_extradimensional_3_mult = 0.15
+		damage_vs_country_type_ai_empire_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_valid_civic = lrsk_adv_civ_civic_otherworldly
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = prethoryn_invasion_defeated
+				has_global_flag = extradimensional_invasion_defeated
+				has_global_flag = ai_invasion_defeated
+			}
+		}
+		modifier = {
+			factor = 1.1
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "lrsk_adv_civ_trait_illuminated"
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOR = {
+				has_technology = tech_lrsk_adv_civ_ai
+				has_technology = tech_lrsk_adv_civ_swarm
+				has_technology = tech_lrsk_adv_civ_unbidden
+			}
+		}
+		modifier = {
+			factor = 1.1
+			has_technology = tech_lrsk_adv_civ_ai
+		}
+		modifier = {
+			factor = 1.1
+			has_technology = tech_lrsk_adv_civ_swarm
+		}
+		modifier = {
+			factor = 1.1
+			has_technology = tech_lrsk_adv_civ_unbidden
+		}
+	}
+}

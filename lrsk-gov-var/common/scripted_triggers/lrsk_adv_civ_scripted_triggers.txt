@@ -1,0 +1,107 @@
+# New Advanced Civics
+# Scripted Triggers
+# Author: littleraskol
+
+# Figurehead/Shadow Monarchy
+
+lrsk_adv_civ_has_const_monarch_civic = {
+  OR = {
+    has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
+  }
+}
+
+lrsk_adv_civ_is_former_figurehead_monarchy = {
+  OR = {
+    has_civic = lrsk_adv_civ_civic_parliamentary_traditions
+    has_civic = lrsk_adv_civ_civic_senatorial_traditions
+    has_civic = lrsk_adv_civ_civic_regency_traditions
+    has_civic = lrsk_adv_civ_civic_corporate_traditions
+  }
+}
+
+lrsk_adv_civ_is_in_figurehead_monarch_scope = {
+  OR = {
+    has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+    has_civic = lrsk_adv_civ_civic_shadow_monarchy
+    has_civic = lrsk_adv_civ_civic_parliamentary_traditions
+    has_civic = lrsk_adv_civ_civic_senatorial_traditions
+    has_civic = lrsk_adv_civ_civic_regency_traditions
+    has_civic = lrsk_adv_civ_civic_corporate_traditions
+  }
+}
+
+# Established Empire
+
+lrsk_adv_civ_estemp_explorable = {
+  NOR = { 
+    exists = owner
+    has_star_flag = hostile_system
+    has_star_flag = lrsk_expansion_cluster
+  }
+}
+
+lrsk_adv_civ_estemp_expansion_ready = {
+  NOR = {
+    exists = owner
+    any_neighbor_system = {
+      #ignore_hyperlanes = no # ???
+      exists = owner
+      owner = {
+        is_country_type = fallen_empire
+        is_xenophobe = yes
+      }
+    }
+    has_star_flag = hostile_system
+    has_star_flag = empire_home_system
+    has_star_flag = empire_cluster
+    has_star_flag = lrsk_expansion_cluster
+    has_star_flag = lrsk_not_expansion_cluster
+  }
+}
+
+# Sortition
+
+lrsk_adv_civ_sort_is_unready = {
+  OR = {
+    has_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    has_trait = lrsk_adv_civ_trait_unready_rul
+    has_trait = lrsk_adv_civ_trait_unready_sci
+    has_trait = lrsk_adv_civ_trait_unready_gov
+    has_trait = lrsk_adv_civ_trait_unready_gen
+    has_trait = lrsk_adv_civ_trait_unready_adm
+  }
+}
+
+lrsk_adv_civ_sort_is_tutored = {
+  OR = {
+    has_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    has_trait = lrsk_adv_civ_trait_tutors_rul
+    has_trait = lrsk_adv_civ_trait_tutors_sci
+    has_trait = lrsk_adv_civ_trait_tutors_gov
+    has_trait = lrsk_adv_civ_trait_tutors_gen
+    has_trait = lrsk_adv_civ_trait_tutors_adm
+  }
+}
+
+lrsk_adv_civ_sort_is_groomed = {
+  OR = {
+    has_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    has_trait = lrsk_adv_civ_trait_groomed_rul
+    has_trait = lrsk_adv_civ_trait_groomed_sci
+    has_trait = lrsk_adv_civ_trait_groomed_gov
+    has_trait = lrsk_adv_civ_trait_groomed_gen
+    has_trait = lrsk_adv_civ_trait_groomed_adm
+  }
+}
+
+lrsk_adv_civ_sort_is_ambitious = {
+  OR = {
+    has_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    has_trait = lrsk_adv_civ_trait_ambitious_rul
+    has_trait = lrsk_adv_civ_trait_ambitious_sci
+    has_trait = lrsk_adv_civ_trait_ambitious_gov
+    has_trait = lrsk_adv_civ_trait_ambitious_gen
+    has_trait = lrsk_adv_civ_trait_ambitious_adm
+  }
+}

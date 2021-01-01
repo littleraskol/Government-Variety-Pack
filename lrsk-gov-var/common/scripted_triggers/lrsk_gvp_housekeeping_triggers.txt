@@ -44,6 +44,11 @@ lrsk_has_gvp_spi_gov = {
 		has_government = lrsk_gov_var_gov_citizen_crusade
 		has_government = lrsk_gov_var_gov_crusader_order
 		has_government = lrsk_gov_var_gov_crusader_kingdom
+		has_government = lrsk_adv_civ_gov_devicomancer_dynasty
+		has_government = lrsk_adv_civ_gov_machine_cult
+		has_government = lrsk_adv_civ_gov_cybershaman_conclave
+		has_government = lrsk_adv_civ_gov_artificers_guild
+		has_government = lrsk_adv_civ_gov_church_of_unorthodoxy
 	}
 }
 
@@ -53,6 +58,7 @@ lrsk_has_gvp_mat_gov = {
 		has_government = lrsk_gov_var_gov_innovation_initiative
 		has_government = lrsk_gov_var_gov_academy_state
 		has_government = lrsk_gov_var_gov_scholastic_commonwealth
+		has_government = lrsk_adv_civ_gov_arcane_despotism
 	}
 }
 
@@ -75,6 +81,12 @@ lrsk_has_gvp_egal_gov = {
 		has_government = lrsk_gov_var_gov_market_socialism
 		has_government = lrsk_gov_var_gov_coop_enterprise
 		has_government = lrsk_gov_var_gov_entrepreneurial_council
+		has_government = lrsk_adv_civ_gov_demarchy
+		has_government = lrsk_adv_civ_gov_comdemarchy
+		has_government = lrsk_adv_civ_gov_socdemarchy
+		has_government = lrsk_adv_civ_gov_sacdemarchy
+		has_government = lrsk_adv_civ_gov_solcitdemarchy
+		has_government = lrsk_adv_civ_gov_banddemarchy
 	}
 }
 
@@ -103,6 +115,10 @@ lrsk_has_gvp_auth_gov = {
 		has_government = lrsk_gov_var_gov_occult_franchise
 		has_government = lrsk_gov_var_gov_protection_racket
 		has_government = lrsk_gov_var_gov_private_intel_agency
+		has_government = lrsk_adv_civ_gov_devicomancer_dynasty
+		has_government = lrsk_adv_civ_gov_machine_cult
+		has_government = lrsk_adv_civ_gov_cybershaman_conclave
+		has_government = lrsk_adv_civ_gov_artificers_guild
 	}
 }
 
@@ -248,6 +264,14 @@ lrsk_has_gvp_royal_gov = {
 		has_government = lrsk_gov_var_gov_constitutional_monarchy
 		has_government = lrsk_gov_var_gov_revolutionary_empire
 		has_government = lrsk_gov_var_gov_crusader_kingdom
+		has_government = lrsk_adv_civ_gov_indefinite_regency
+		has_government = lrsk_adv_civ_gov_scapegoat_regency
+		has_government = lrsk_adv_civ_gov_senatorial_monarchy
+		has_government = lrsk_adv_civ_gov_puppet_senate
+		has_government = lrsk_adv_civ_gov_parliamentary_monarchy
+		has_government = lrsk_adv_civ_gov_puppet_parliament
+		has_government = lrsk_adv_civ_gov_royal_firm
+		has_government = lrsk_adv_civ_gov_corporate_viceroyalty
 	}
 }
 
@@ -283,6 +307,40 @@ lrsk_has_gvp_namazou_gov = {
 	}
 }
 
+lrsk_has_gvp_advanced_gov = {
+	OR = {
+		has_government = lrsk_adv_civ_gov_devicomancer_dynasty
+		has_government = lrsk_adv_civ_gov_machine_cult
+		has_government = lrsk_adv_civ_gov_cybershaman_conclave
+		has_government = lrsk_adv_civ_gov_artificers_guild
+		has_government = lrsk_adv_civ_gov_demarchy
+		has_government = lrsk_adv_civ_gov_comdemarchy
+		has_government = lrsk_adv_civ_gov_socdemarchy
+		has_government = lrsk_adv_civ_gov_sacdemarchy
+		has_government = lrsk_adv_civ_gov_solcitdemarchy
+		has_government = lrsk_adv_civ_gov_banddemarchy
+		has_government = lrsk_adv_civ_gov_indefinite_regency
+		has_government = lrsk_adv_civ_gov_scapegoat_regency
+		has_government = lrsk_adv_civ_gov_senatorial_monarchy
+		has_government = lrsk_adv_civ_gov_puppet_senate
+		has_government = lrsk_adv_civ_gov_parliamentary_monarchy
+		has_government = lrsk_adv_civ_gov_puppet_parliament
+		has_government = lrsk_adv_civ_gov_royal_firm
+		has_government = lrsk_adv_civ_gov_corporate_viceroyalty
+		has_government = lrsk_adv_civ_gov_obscene_court
+		has_government = lrsk_adv_civ_gov_arcane_despotism
+		has_government = lrsk_adv_civ_gov_church_of_unorthodoxy
+		has_government = lrsk_adv_civ_gov_occultistocracy
+		has_government = lrsk_adv_civ_gov_eldricht_illegislature
+		has_government = lrsk_adv_civ_gov_shortstock_company
+		has_government = lrsk_adv_civ_gov_rising_empire
+		has_government = lrsk_adv_civ_gov_audacity_regime
+		has_government = lrsk_adv_civ_gov_aspirational_council
+		has_government = lrsk_adv_civ_gov_parliament_of_ascent
+		has_government = lrsk_adv_civ_gov_apex_enterprise
+	}
+}
+
 lrsk_has_any_gvp_gov = {
 	OR = {
 		lrsk_has_gvp_mil_gov = yes
@@ -302,6 +360,7 @@ lrsk_has_any_gvp_gov = {
 		lrsk_has_gvp_royal_gov = yes
 		lrsk_has_gvp_garlic_gov = yes
 		lrsk_has_gvp_namazou_gov = yes
+		lrsk_has_gvp_advanced_gov = yes
 	}
 }
 
@@ -400,11 +459,32 @@ lrsk_has_gvp_corp_civic = {
 	}
 }
 
+lrsk_has_gvp_advacned_civic = {
+	OR = {
+		has_civic = lrsk_adv_civ_civic_shapers
+		has_civic = lrsk_adv_civ_civic_artificers
+		has_civic = lrsk_adv_civ_civic_essentialists
+		has_civic = lrsk_adv_civ_civic_sortition
+		has_civic = lrsk_adv_civ_civic_figurehead_monarchy
+		has_civic = lrsk_adv_civ_civic_shadow_monarchy
+		has_civic = lrsk_adv_civ_civic_parliamentary_traditions
+		has_civic = lrsk_adv_civ_civic_senatorial_traditions
+		has_civic = lrsk_adv_civ_civic_regency_traditions
+		has_civic = lrsk_adv_civ_civic_corporate_traditions
+		has_civic = lrsk_adv_civ_civic_otherworldly
+		has_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		has_civic = lrsk_adv_civ_civic_rampant_ascendants
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		has_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+}
+
 lrsk_has_any_gvp_civic = {
 	OR = {
 		lrsk_has_gvp_normal_civic = yes
 		lrsk_has_gvp_gestalt_civic = yes
 		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advacned_civic = yes
 	}
 }
 
@@ -513,11 +593,32 @@ lrsk_has_gvp_corp_valid_civic = {
 	}
 }
 
+lrsk_has_gvp_advacned_valid_civic = {
+	OR = {
+		has_valid_civic = lrsk_adv_civ_civic_shapers
+		has_valid_civic = lrsk_adv_civ_civic_artificers
+		has_valid_civic = lrsk_adv_civ_civic_essentialists
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
+		has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
+		has_valid_civic = lrsk_adv_civ_civic_parliamentary_traditions
+		has_valid_civic = lrsk_adv_civ_civic_senatorial_traditions
+		has_valid_civic = lrsk_adv_civ_civic_regency_traditions
+		has_valid_civic = lrsk_adv_civ_civic_corporate_traditions
+		has_valid_civic = lrsk_adv_civ_civic_otherworldly
+		has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
+		has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+}
+
 lrsk_has_any_gvp_valid_civic = {
 	OR = {
 		lrsk_has_gvp_normal_valid_civic = yes
 		lrsk_has_gvp_gestalt_valid_civic = yes
 		lrsk_has_gvp_corp_valid_civic = yes
+		lrsk_has_gvp_advacned_valid_civic = yes
 	}
 }
 
@@ -543,6 +644,7 @@ lrsk_has_gvp_origin = {
 		has_origin = lrsk_gov_var_origin_uplift
 		has_origin = lrsk_gov_var_origin_sublight_empire
 		has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		lrsk_has_advanced_origin = yes
 	}
 }
 
@@ -557,5 +659,14 @@ lrsk_has_gvp_npc_origin = {
 		has_origin = lrsk_gov_var_origin_sublight_colony_gsp
 		has_origin = lrsk_gov_var_origin_sublight_colony_dis
 		has_origin = lrsk_gov_var_origin_colonial_charter
+	}
+}
+
+lrsk_has_advanced_origin = {
+	OR = {
+		has_origin = lrsk_adv_civ_origin_star_siblings
+		has_origin = lrsk_adv_civ_origin_established_empire
+		has_origin = lrsk_adv_civ_origin_ancient_tech
+		has_origin = lrsk_adv_civ_origin_broken_reality
 	}
 }

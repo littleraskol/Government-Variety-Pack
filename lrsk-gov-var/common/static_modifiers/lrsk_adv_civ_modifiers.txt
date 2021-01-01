@@ -1,0 +1,270 @@
+# New Advanced Civics
+# Static Modifiers
+# Author: littleraskol
+
+lrsk_adv_civ_tb_capped_scientists = {
+	icon = "gfx/interface/icons/modifiers/mod_country_all_tech_research_speed.dds"
+	all_technology_research_speed = 0.05
+}
+
+#lrsk_adv_civ_tb_sacrilege = {
+#	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+#	pop_citizen_happiness = -0.5
+#	country_influence_produces_mult = -0.2
+#	country_unity_produces_mult = -0.2
+#}
+
+lrsk_adv_civ_tb_revolution = {
+	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+	pop_citizen_happiness = 0.5
+	all_technology_research_speed = -0.05
+	country_influence_produces_mult = -0.1
+	country_unity_produces_mult = -0.1
+}
+
+lrsk_adv_civ_tb_reformation = {
+	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+	country_influence_produces_mult = -0.05
+	country_unity_produces_mult = -0.05
+	all_technology_research_speed = 0.1
+}
+
+lrsk_adv_civ_ost_crisis = {
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"
+	country_influence_produces_mult = -0.1
+	pop_citizen_happiness = -0.1
+}
+
+lrsk_adv_civ_ost_abdicate = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	country_influence_produces_mult = 0.1
+	pop_citizen_happiness = 0.1
+}
+
+lrsk_adv_civ_rev_tech = {
+	icon = "gfx/interface/icons/modifiers/country_resource_unity_mult.dds"
+	country_unity_produces_mult = 0.15
+}
+
+lrsk_adv_civ_estemp_complacent = {
+	icon = "gfx/interface/icons/modifiers/mod_planet_building_build_speed_mult.dds"
+
+	planet_colony_development_speed_mult = -0.3
+	science_ship_survey_speed = -0.3
+	starbase_shipyard_build_speed_mult -0.2
+    planet_building_build_speed_mult = -0.2
+    starbase_building_build_speed_mult = -0.2
+	planet_army_build_speed_mult = -0.2
+}
+
+lrsk_adv_civ_estemp_sluggish = {
+	icon = "gfx/interface/icons/modifiers/mod_planet_building_build_speed_mult.dds"
+
+	planet_colony_development_speed_mult = -0.15
+	science_ship_survey_speed = -0.15
+	starbase_shipyard_build_speed_mult -0.1
+    planet_building_build_speed_mult = -0.1
+    starbase_building_build_speed_mult = -0.1
+	planet_army_build_speed_mult = -0.1
+}
+
+lrsk_adv_civ_estemp_reform = {
+	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+
+	all_technology_research_speed = -0.05
+	country_energy_produces_mult = -0.05
+	country_minerals_produces_mult = -0.05
+	country_influence_produces_mult = -0.1
+	pop_citizen_happiness = -0.1
+}
+
+lrsk_adv_civ_estemp_partial_reformed = {
+	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+
+	all_technology_research_speed = -0.025
+	country_energy_produces_mult = -0.025
+	country_minerals_produces_mult = -0.025
+	country_influence_produces_mult = -0.05
+	pop_citizen_happiness = -0.05
+}
+
+lrsk_adv_civ_estemp_failed_reform = {
+	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+
+	all_technology_research_speed = -0.1
+	country_energy_produces_mult = -0.1
+	country_minerals_produces_mult = -0.1
+	country_influence_produces_mult = -0.2
+	pop_citizen_happiness = -0.2
+}
+
+lrsk_adv_civ_siblings_meeting = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+
+	pop_citizen_happiness = 0.15
+	country_unity_produces_mult = 0.15
+}
+
+lrsk_adv_civ_siblings_strife = {
+	icon = "gfx/interface/icons/modifiers/mod_army_morale.dds"
+
+	pop_citizen_happiness = -0.1
+	ship_fire_rate_mult = -0.1
+	army_morale = -0.2
+}
+
+lrsk_adv_civ_siblings_sbs = {
+	icon = "gfx/interface/icons/modifiers/mod_army_morale.dds"
+
+	pop_citizen_happiness = 0.1
+	country_unity_produces_mult = 0.1
+	ship_fire_rate_mult = 0.1
+	army_morale = 0.2
+}
+
+lrsk_adv_civ_siblings_federated = {
+	icon = "gfx/interface/icons/modifiers/mod_country_max_embassies.dds"
+
+	pop_citizen_happiness = 0.05
+	country_unity_produces_mult = 0.05
+	country_influence_produces_mult = 0.05
+	country_energy_produces_mult = 0.05
+}
+
+lrsk_adv_civ_siblings_grieving = {
+	icon = "gfx/interface/icons/modifiers/mod_unity_loss_mult.dds"
+
+	pop_citizen_happiness = -0.2
+	country_influence_produces_mult = -0.2
+	country_energy_produces_mult = -0.1
+}
+
+lrsk_adv_civ_equality_ascendant = {
+	#icon = "XXX.dds"
+
+	pop_factions_produces_mult = 0.25
+	planet_jobs_specialist_produces_mult = 0.05
+	pop_ethic_egalitarian_attraction_mult = 10
+}
+
+lrsk_adv_civ_hierarchy_ascendant = {
+	#icon = "XXX.dds"
+	
+	country_base_influence_produces_add = 0.5
+	planet_jobs_worker_produces_mult = 0.05
+	pop_ethic_authoritarian_attraction_mult = 10
+}
+
+lrsk_adv_civ_faith_ascendant = {
+	#icon = "XXX.dds"
+
+	country_unity_produces_mult = 0.10
+	edicts_cost_mult = -0.05
+	pop_ethic_spiritualist_attraction_mult = 10
+}
+
+lrsk_adv_civ_knowledge_ascendant = {
+	#icon = "XXX.dds"
+
+	planet_pops_robotics_upkeep_mult = -0.1
+	all_technology_research_speed = 0.05
+	pop_ethic_materialist_attraction_mult = 10
+}
+
+lrsk_adv_civ_supremacy_ascendant = {
+	#icon = "XXX.dds"
+
+	country_starbase_influence_cost_mult = -0.2
+	pop_growth_speed = 0.10
+	pop_ethic_xenophobe_attraction_mult = 10
+}
+
+lrsk_adv_civ_friendship_ascendant = {
+	#icon = "XXX.dds"
+
+	trade_value_mult = 0.10
+	envoys_add = 1
+	pop_ethic_xenophile_attraction_mult = 10
+}
+
+lrsk_adv_civ_valor_ascendant = {
+	#icon = "XXX.dds"
+
+	country_claim_influence_cost_mult = -0.1
+	ship_fire_rate_mult = 0.10
+	pop_ethic_militarist_attraction_mult = 10
+}
+
+lrsk_adv_civ_tranquility_ascendant = {
+	#icon = "XXX.dds"
+
+	empire_size_pops_mult = -0.15
+	planet_stability_add = 5
+	pop_ethic_pacifist_attraction_mult = 10
+}
+
+lrsk_adv_civ_equality_traditions = {
+	#icon = "YYY.dds"
+
+	pop_factions_produces_mult = 0.125
+	planet_jobs_specialist_produces_mult = 0.025
+}
+
+lrsk_adv_civ_hierarchy_traditions = {
+	#icon = "YYY.dds"
+	
+	country_base_influence_produces_add = 0.25
+	planet_jobs_worker_produces_mult = 0.025
+}
+
+lrsk_adv_civ_faith_traditions = {
+	#icon = "YYY.dds"
+
+	country_unity_produces_mult = 0.05
+	edicts_cost_mult = -0.025
+}
+
+lrsk_adv_civ_knowledge_traditions = {
+	#icon = "YYY.dds"
+
+	planet_pops_robotics_upkeep_mult = -0.05
+	all_technology_research_speed = 0.025
+}
+
+lrsk_adv_civ_supremacy_traditions = {
+	#icon = "YYY.dds"
+
+	country_starbase_influence_cost_mult = -0.1
+	pop_growth_speed = 0.05
+}
+
+lrsk_adv_civ_friendship_traditions = {
+	#icon = "YYY.dds"
+
+	trade_value_mult = 0.05
+	diplo_weight_mult = 0.15
+}
+
+lrsk_adv_civ_valor_traditions = {
+	#icon = "YYY.dds"
+
+	country_claim_influence_cost_mult = -0.05
+	ship_fire_rate_mult = 0.05
+}
+
+lrsk_adv_civ_tranquility_traditions = {
+	#icon = "YYY.dds"
+
+	empire_size_pops_mult = -0.075
+	planet_crime_mult = -0.25
+}
+
+lrsk_elitist_revolt_ai_buff = {
+	country_base_minerals_produces_add = 50
+	country_base_energy_produces_add = 50
+	country_naval_cap_mult = 5
+}
+
+lrsk_elitist_revolt_player_buff = {
+	country_naval_cap_mult = 5
+}

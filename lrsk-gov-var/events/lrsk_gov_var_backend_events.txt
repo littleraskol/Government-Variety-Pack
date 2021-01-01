@@ -18,6 +18,9 @@ event = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
 		
+		# The following can be checked for (or, rather, for its absence) in any event's triggers to prevent it from firing.
+		set_global_flag = lrsk_gvp_safety_lock
+		
 		## Origins Setup
 
 		# Fed start fix for GVP govs
@@ -94,6 +97,48 @@ event = {
 			country_event = { id = lrsk_government_variety_pack_backend.101 days = 1 }
 		}
 
+		## "Advanced" origins
+
+		# Star Siblings
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_star_siblings }
+			country_event = { id = lrsk_adv_civ_siblings.1 }
+		}
+
+		# Established Empire
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_established_empire }
+			country_event = { id = lrsk_adv_civ_estemp.1 }
+		}
+
+		# Ancient Tech
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+			country_event = { id = lrsk_adv_civ_other.100 }
+		}
+
+		# Broken Reality
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_broken_reality }
+			country_event = { id = lrsk_adv_civ_other.200 }
+		}
+
+		## Other starting conditions
+
+		# Tech-Barbs
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+			country_event = { id = lrsk_adv_civ_techbarb.1 }
+		}
+
+		## Explainers if not called elsewhere
+
+		# Aspirants
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants }
+			country_event = { id = lrsk_adv_civ_aspiration.101 days = 2 }
+		}
+		
 		### Diagnostic checks
 		#every_playable_country = {
 		#	limit = { lrsk_has_any_gvp_gov = yes }
@@ -121,6 +166,14 @@ country_event = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
 			}
+			AND = {
+				has_origin = lrsk_adv_civ_origin_broken_reality
+				NOT = { has_country_flag = lrsk_adv_civ_origin_broken_reality_lost_portal }
+			}
+			AND = {
+				has_origin = lrsk_adv_civ_origin_ancient_tech
+				NOT = { has_country_flag = lrsk_adv_civ_origin_ancient_tech_lost_ruins }
+			}
 			# Add other checks as needed...
 		}
 	}
@@ -134,6 +187,31 @@ country_event = {
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
 						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				# Restore Dimensional Portal if removed
+				lrsk_gov_var_broken_reality_capital = {
+					IF = {
+						limit = { NOR = {
+							has_deposit = d_portal_research_zone_gestalt
+							has_deposit = d_portal_research_zone
+						} }
+						if = { limit = { owner = { is_gestalt = yes  } }
+							add_deposit = d_portal_research_zone_gestalt
+						}
+						else = {
+							add_deposit = d_portal_research_zone
+						}
+					}
+				}
+				# Restore Techno Ruins if removed
+				lrsk_gov_var_ancient_tech_capital = {
+					IF = { 
+						limit = { NOR = {
+							has_deposit = d_lrsk_gov_var_collapsed_tech_ruins
+							has_deposit = d_lrsk_gov_var_tech_ruins				#We won't have the initial deposit if we've fixed it up...
+						} }
+						add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
 					}
 				}
 				# Add other planet flags as needed...

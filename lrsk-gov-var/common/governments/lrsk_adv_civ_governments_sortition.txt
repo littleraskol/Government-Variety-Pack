@@ -1,0 +1,242 @@
+# New Advanced Civics
+# Governments - Other Governments
+# Author: littleraskol
+
+# "Demarchy"
+lrsk_adv_civ_gov_demarchy = {
+	ruler_title = LRSK_ADV_CIV_CITARCH
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			leader_class = governor
+		}
+		modifier = {
+			add = 200
+			leader_class = scientist
+		}
+		modifier = {
+			add = 200
+			leader_class = admiral
+		}
+		modifier = {
+			add = 100
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+	}
+}
+
+# "Communal Demarchy"
+lrsk_adv_civ_gov_comdemarchy = {
+	ruler_title = LRSK_ADV_CIV_COMMARCH
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		has_valid_civic = civic_shared_burden
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			leader_class = governor
+		}
+		modifier = {
+			add = 300
+			leader_class = scientist
+		}
+		modifier = {
+			add = 200
+			leader_class = admiral
+		}
+		modifier = {
+			add = 100
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 11000
+	}
+}
+
+# "Social Demarchy"
+lrsk_adv_civ_gov_socdemarchy = {
+	ruler_title = LRSK_ADV_CIV_ARCHTRIB
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_workers_councils
+			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			leader_class = governor
+		}
+		modifier = {
+			add = 300
+			leader_class = scientist
+		}
+		modifier = {
+			add = 200
+			leader_class = admiral
+		}
+		modifier = {
+			add = 100
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1500
+		modifier = {
+			add = 1000
+			AND = {
+				has_valid_civic = lrsk_gov_var_civic_workers_councils
+				has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+			}
+		}
+	}
+}
+
+# "Sacred Demarchy"
+lrsk_adv_civ_gov_sacdemarchy = {
+	ruler_title = LRSK_ADV_CIV_REVARCH
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		has_valid_civic = lrsk_gov_var_civic_elected_clergy
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 500
+			leader_class = governor
+		}
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+		modifier = {
+			add = 100
+			leader_class = admiral
+		}
+		modifier = {
+			add = 100
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1500
+	}
+}
+
+# "Citizen-Soldier Demarchy"
+lrsk_adv_civ_gov_solcitdemarchy = {
+	ruler_title = LRSK_ADV_CIV_POLEMARCH
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		has_valid_civic = civic_citizen_service
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 100
+			leader_class = governor
+		}
+		modifier = {
+			add = 50
+			leader_class = scientist
+		}
+		modifier = {
+			add = 300
+			leader_class = admiral
+		}
+		modifier = {
+			add = 300
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1500
+		modifier = {
+			add = 500
+			has_valid_civic = civic_distinguished_admiralty
+		}
+		modifier = {
+			add = 500
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+}
+
+# "Bandit Demarchy"
+lrsk_adv_civ_gov_banddemarchy = {
+	ruler_title = LRSK_ADV_CIV_RAIDARCH
+
+	possible = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		has_valid_civic = civic_barbaric_despoilers
+	}
+
+	election_candidates = {
+		modifier = {
+			factor = 0.5
+			leader_class = ruler
+		}
+		modifier = {
+			add = 50
+			leader_class = governor
+		}
+		modifier = {
+			factor = 0
+			leader_class = scientist
+		}
+		modifier = {
+			add = 300
+			leader_class = admiral
+		}
+		modifier = {
+			add = 400
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1500
+	}
+}

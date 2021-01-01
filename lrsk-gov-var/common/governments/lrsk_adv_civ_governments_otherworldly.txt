@@ -1,0 +1,115 @@
+# New Advanced Civics
+# Governments - Otherworldly
+# Author: littleraskol
+
+### Generic Governments
+
+# "Obscene Court"
+lrsk_adv_civ_gov_obscene_court = {
+	ruler_title = LRSK_ADV_CIV_RT_ABYSSAL_INHERITOR
+	heir_title = LRSK_ADV_CIV_HT_UNFORTUNATE_HEIR
+
+	flags = { custom_start_screen }
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Arcane Despotism"
+lrsk_adv_civ_gov_arcane_despotism = {
+	ruler_title = LRSK_ADV_CIV_RT_PROV_LISC_DICT
+	
+	flags = { custom_start_screen }
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_ethic = ethic_fanatic_materialist
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Church of Unorthodoxy"
+lrsk_adv_civ_gov_church_of_unorthodoxy = {
+	ruler_title = LRSK_ADV_CIV_RT_HERESIARCH
+	
+	flags = { custom_start_screen }
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_ethic = ethic_fanatic_spiritualist
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+#  "Occultistocracy"
+lrsk_adv_civ_gov_occultistocracy = {
+	ruler_title = LRSK_ADV_CIV_RT_INVISIBLE_PRINCE
+	ruler_title_female = LRSK_ADV_CIV_RT_INVISIBLE_PRINCEESS
+	
+	flags = { custom_start_screen }
+
+	possible = {
+		has_authority = auth_oligarchic
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9998
+		modifier = {
+			add = 10
+			has_valid_civic = civic_aristocratic_elite
+		}
+	}
+}
+
+# "Eldricht Illegislature"
+lrsk_adv_civ_gov_eldricht_illegislature = {
+	ruler_title = LRSK_ADV_CIV_RT_REPEALER_IN_CHIEF
+	
+	flags = { custom_start_screen }
+
+	possible = {
+		has_authority = auth_democratic
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+#  "Short-Stock Company" (ehhhh change it probably)
+lrsk_adv_civ_gov_shortstock_company = {
+	ruler_title = LRSK_ADV_CIV_RT_LOSS_ENHANCEMENT_OFFICER
+	
+	flags = { custom_start_screen }
+
+	possible = {
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
+    	has_valid_civic = lrsk_adv_civ_civic_otherworldly
+	}
+
+	weight = {
+		base = 9999
+	}
+}

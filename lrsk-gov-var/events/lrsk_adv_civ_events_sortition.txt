@@ -1,0 +1,3190 @@
+# New Advanced Civics
+# Events - Sortition
+# Events to control special leader traits
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_sortition
+
+# Add Sortition-exclusive traits to leaders on spawn
+country_event = {
+	id = lrsk_adv_civ_sortition.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
+
+	immediate = {
+		 from = { random_list = {
+			# Unready
+			50 = {
+				modifier = {
+					add = -10
+					root = { has_valid_civic = lrsk_gov_var_civic_republicanism }
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = lrsk_gov_var_civic_lifelong_learning }
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = civic_distinguished_admiralty }
+					leader_class = admiral
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = civic_warrior_culture }
+					leader_class = general
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = civic_citizen_service }
+					OR = {
+						leader_class = general
+						leader_class = admiral
+					}
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = lrsk_gov_var_civic_elected_clergy }
+					leader_class = governor
+				}
+				modifier = {
+					add = -10
+					root = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+					leader_class = governor
+				}
+				if = {
+					limit = {
+						leader_class = admiral
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_adm
+							has_trait = lrsk_adv_civ_trait_groomed_adm
+							has_trait = lrsk_adv_civ_trait_tutors_adm
+							has_trait = lrsk_adv_civ_trait_ambitious_adm
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_unready_adm
+					add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = general
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gen
+							has_trait = lrsk_adv_civ_trait_groomed_gen
+							has_trait = lrsk_adv_civ_trait_tutors_gen
+							has_trait = lrsk_adv_civ_trait_ambitious_gen
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_unready_gen
+					add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = governor
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gov
+							has_trait = lrsk_adv_civ_trait_groomed_gov
+							has_trait = lrsk_adv_civ_trait_tutors_gov
+							has_trait = lrsk_adv_civ_trait_ambitious_gov
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_unready_gov
+					add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = scientist
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_sci
+							has_trait = lrsk_adv_civ_trait_groomed_sci
+							has_trait = lrsk_adv_civ_trait_tutors_sci
+							has_trait = lrsk_adv_civ_trait_ambitious_sci
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_unready_sci
+					add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = ruler
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_rul
+							has_trait = lrsk_adv_civ_trait_groomed_rul
+							has_trait = lrsk_adv_civ_trait_tutors_rul
+							has_trait = lrsk_adv_civ_trait_ambitious_rul
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_unready_rul
+					add_ruler_trait = lrsk_adv_civ_trait_unready_rul
+					country_event = { id = lrsk_adv_civ_sortition.1001 }
+					break = yes
+				}
+			}
+			# Tutors
+			20 = {
+				modifier = {
+					add = 5
+					root = { has_valid_civic = lrsk_gov_var_civic_lifelong_learning }
+				}
+				modifier = {
+					add = 10
+					root = { has_valid_civic = lrsk_gov_var_civic_elected_clergy }
+					leader_class = governor
+				}
+				if = {
+					limit = {
+						leader_class = admiral
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_adm
+							has_trait = lrsk_adv_civ_trait_groomed_adm
+							has_trait = lrsk_adv_civ_trait_tutors_adm
+							has_trait = lrsk_adv_civ_trait_ambitious_adm
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_tutors_adm
+					add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = general
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gen
+							has_trait = lrsk_adv_civ_trait_groomed_gen
+							has_trait = lrsk_adv_civ_trait_tutors_gen
+							has_trait = lrsk_adv_civ_trait_ambitious_gen
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_tutors_gen
+					add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = governor
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gov
+							has_trait = lrsk_adv_civ_trait_groomed_gov
+							has_trait = lrsk_adv_civ_trait_tutors_gov
+							has_trait = lrsk_adv_civ_trait_ambitious_gov
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_tutors_gov
+					add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = scientist
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_sci
+							has_trait = lrsk_adv_civ_trait_groomed_sci
+							has_trait = lrsk_adv_civ_trait_tutors_sci
+							has_trait = lrsk_adv_civ_trait_ambitious_sci
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_tutors_sci
+					add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = ruler
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_rul
+							has_trait = lrsk_adv_civ_trait_groomed_rul
+							has_trait = lrsk_adv_civ_trait_tutors_rul
+							has_trait = lrsk_adv_civ_trait_ambitious_rul
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_tutors_rul
+					add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+					country_event = { id = lrsk_adv_civ_sortition.1001 }
+					break = yes
+				}
+			}
+			# Groomed
+			20 = {
+				modifier = {
+					add = 10
+					root = { has_valid_civic = lrsk_gov_var_civic_republicanism }
+				}
+				modifier = {
+					add = 5
+					root = { has_valid_civic = lrsk_gov_var_civic_lifelong_learning }
+				}
+				modifier = {
+					add = 5
+					root = { has_valid_civic = civic_warrior_culture }
+					leader_class = general
+				}
+				modifier = {
+					add = 10
+					root = { has_valid_civic = civic_citizen_service }
+					OR = {
+						leader_class = general
+						leader_class = admiral
+					}
+				}
+				modifier = {
+					add = 10
+					root = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+					leader_class = governor
+				}
+				if = {
+					limit = {
+						leader_class = admiral
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_adm
+							has_trait = lrsk_adv_civ_trait_groomed_adm
+							has_trait = lrsk_adv_civ_trait_tutors_adm
+							has_trait = lrsk_adv_civ_trait_ambitious_adm
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_groomed_adm
+					add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = general
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gen
+							has_trait = lrsk_adv_civ_trait_groomed_gen
+							has_trait = lrsk_adv_civ_trait_tutors_gen
+							has_trait = lrsk_adv_civ_trait_ambitious_gen
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_groomed_gen
+					add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = governor
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gov
+							has_trait = lrsk_adv_civ_trait_groomed_gov
+							has_trait = lrsk_adv_civ_trait_tutors_gov
+							has_trait = lrsk_adv_civ_trait_ambitious_gov
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_groomed_gov
+					add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = scientist
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_sci
+							has_trait = lrsk_adv_civ_trait_groomed_sci
+							has_trait = lrsk_adv_civ_trait_tutors_sci
+							has_trait = lrsk_adv_civ_trait_ambitious_sci
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_groomed_sci
+					add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = ruler
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_rul
+							has_trait = lrsk_adv_civ_trait_groomed_rul
+							has_trait = lrsk_adv_civ_trait_tutors_rul
+							has_trait = lrsk_adv_civ_trait_ambitious_rul
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_groomed_rul
+					add_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+					country_event = { id = lrsk_adv_civ_sortition.1001 }
+					break = yes
+				}
+			}
+			# Ambitious
+			10 = {
+				modifier = {
+					add = 10
+					root = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+				}
+				modifier = {
+					add = 10
+					root = { has_valid_civic = civic_distinguished_admiralty }
+					leader_class = admiral
+				}
+				modifier = {
+					add = 5
+					root = { has_valid_civic = civic_warrior_culture }
+					leader_class = general
+				}
+				if = {
+					limit = {
+						leader_class = admiral
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_adm
+							has_trait = lrsk_adv_civ_trait_groomed_adm
+							has_trait = lrsk_adv_civ_trait_tutors_adm
+							has_trait = lrsk_adv_civ_trait_ambitious_adm
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_ambitious_adm
+					add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = general
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gen
+							has_trait = lrsk_adv_civ_trait_groomed_gen
+							has_trait = lrsk_adv_civ_trait_tutors_gen
+							has_trait = lrsk_adv_civ_trait_ambitious_gen
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_ambitious_gen
+					add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = governor
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_gov
+							has_trait = lrsk_adv_civ_trait_groomed_gov
+							has_trait = lrsk_adv_civ_trait_tutors_gov
+							has_trait = lrsk_adv_civ_trait_ambitious_gov
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_ambitious_gov
+					add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = scientist
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_sci
+							has_trait = lrsk_adv_civ_trait_groomed_sci
+							has_trait = lrsk_adv_civ_trait_tutors_sci
+							has_trait = lrsk_adv_civ_trait_ambitious_sci
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_ambitious_sci
+					add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+					break = yes
+				}
+				if = {
+					limit = {
+						leader_class = ruler
+						NOR = {
+							has_trait = lrsk_adv_civ_trait_unready_rul
+							has_trait = lrsk_adv_civ_trait_groomed_rul
+							has_trait = lrsk_adv_civ_trait_tutors_rul
+							has_trait = lrsk_adv_civ_trait_ambitious_rul
+						}
+					}
+					add_trait = lrsk_adv_civ_trait_ambitious_rul
+					add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+					country_event = { id = lrsk_adv_civ_sortition.1001 }
+					break = yes
+				}
+			}
+		} }
+	}
+}
+
+# Ruler gets leader-class version of Sortition-exclusive ruler traits
+country_event = {
+	id = lrsk_adv_civ_sortition.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		#has_civic = lrsk_adv_civ_civic_sortition
+		from = { OR = {
+			has_trait = lrsk_adv_civ_trait_unready_rul
+			has_trait = lrsk_adv_civ_trait_tutors_rul
+			has_trait = lrsk_adv_civ_trait_groomed_rul
+			has_trait = lrsk_adv_civ_trait_ambitious_rul
+		} }
+	}
+
+	immediate = { from = {
+		switch = {
+			trigger = has_trait
+			lrsk_adv_civ_trait_unready_rul = {
+				switch = {
+					trigger = leader_class
+					admiral = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_unready_adm } } add_trait = lrsk_adv_civ_trait_unready_adm } }
+					general = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_unready_gen } } add_trait = lrsk_adv_civ_trait_unready_gen } }
+					governor = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_unready_gov } } add_trait = lrsk_adv_civ_trait_unready_gov } }
+					scientist = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_unready_sci } } add_trait = lrsk_adv_civ_trait_unready_sci } }
+				}
+			}
+			lrsk_adv_civ_trait_tutors_rul = {
+				switch = {
+					trigger = leader_class
+					admiral = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_tutors_adm } } add_trait = lrsk_adv_civ_trait_tutors_adm } }
+					general = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_tutors_gen } } add_trait = lrsk_adv_civ_trait_tutors_gen } }
+					governor = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_tutors_gov } } add_trait = lrsk_adv_civ_trait_tutors_gov } }
+					scientist = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_tutors_sci } } add_trait = lrsk_adv_civ_trait_tutors_sci } }
+				}
+			}
+			lrsk_adv_civ_trait_groomed_rul = {
+				switch = {
+					trigger = leader_class
+					admiral = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_groomed_adm } } add_trait = lrsk_adv_civ_trait_groomed_adm } }
+					general = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_groomed_gen } } add_trait = lrsk_adv_civ_trait_groomed_gen } }
+					governor = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_groomed_gov } } add_trait = lrsk_adv_civ_trait_groomed_gov } }
+					scientist = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_groomed_sci } } add_trait = lrsk_adv_civ_trait_groomed_sci } }
+				}
+			}
+			lrsk_adv_civ_trait_ambitious_rul = {
+				switch = {
+					trigger = leader_class
+					admiral = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_ambitious_adm } } add_trait = lrsk_adv_civ_trait_ambitious_adm } }
+					general = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_ambitious_gen } } add_trait = lrsk_adv_civ_trait_ambitious_gen } }
+					governor = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_ambitious_gov } } add_trait = lrsk_adv_civ_trait_ambitious_gov } }
+					scientist = { if = { limit = { NOT = { has_trait = lrsk_adv_civ_trait_ambitious_sci } } add_trait = lrsk_adv_civ_trait_ambitious_sci } }
+				}
+			}
+		}
+	}
+} }
+
+# Leader levels up
+country_event = {
+	id = lrsk_adv_civ_sortition.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		OR = {
+			root = { has_civic = lrsk_adv_civ_civic_sortition }
+			from = { OR = {
+				lrsk_adv_civ_sort_is_unready = yes
+				lrsk_adv_civ_sort_is_tutored = yes
+				lrsk_adv_civ_sort_is_groomed = yes
+				lrsk_adv_civ_sort_is_ambitious = yes
+			} }
+		}
+	}
+
+	immediate = { from = {
+		save_event_target_as = lrsk_sortlvl_protag
+		# Get Ambitious if no other Sortition-exclusive trait and have not already lost it
+		if {
+			limit = {
+				root = { has_civic = lrsk_adv_civ_civic_sortition }
+				NOR = {
+					has_leader_flag = lrsk_leader_level_lost_ambition_perm
+					lrsk_adv_civ_sort_is_unready = yes
+					lrsk_adv_civ_sort_is_tutored = yes
+					lrsk_adv_civ_sort_is_groomed = yes
+					lrsk_adv_civ_sort_is_ambitious = yes
+				}
+			}
+			random_list = {
+				90 = {
+					modifier = {
+						add = -20
+						has_level = 2
+					}
+					modifier = {
+						add = -15
+						has_level = 3
+					}
+					modifier = {
+						add = -10
+						has_level = 4
+					}
+					# nothing
+				}
+				10 = {
+					modifier = {
+						add = 20
+						has_level = 2
+					}
+					modifier = {
+						add = 15
+						has_level = 3
+					}
+					modifier = {
+						add = 10
+						has_level = 4
+					}
+					set_leader_flag = lrsk_leader_level_got_ambition
+					lrsk_adv_civ_sort_get_ambition = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+			}
+			break = yes
+		}
+		# Lose Unready, may get Tutors
+		if = {
+			limit = { lrsk_adv_civ_sort_is_unready = yes }
+			random_list = {
+				60 = {
+					modifier = {
+						add = -10
+						has_level > 1
+					}
+					modifier = {
+						add = -10
+						has_level > 2
+					}
+					modifier = {
+						add = -20
+						has_level > 4
+					}
+					modifier = {
+						add = -10
+						has_level > 1
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = -10
+						has_level > 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					# nothing
+				} 
+				20 = {
+					modifier = {
+						add = 10
+						has_level > 1
+					}
+					modifier = {
+						add = 10
+						has_level > 2
+					}
+					modifier = {
+						add = 20
+						has_level > 4
+					}
+					modifier = {
+						add = 10
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_lost_unready
+					lrsk_adv_civ_sort_lose_unready = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+				20 = {
+					modifier = {
+						add = 10
+						has_level > 1
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						has_level > 2
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_unready_to_tutors
+					lrsk_adv_civ_sort_lose_unready = yes
+					lrsk_adv_civ_sort_get_tutors = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+			}
+			break = yes
+		}
+		# Lose Groomed, may get Ambition
+		if = {
+			limit = { lrsk_adv_civ_sort_is_groomed = yes }
+			random_list = {
+				40 = {
+					modifier = {
+						add = 5
+						has_level < 3
+					}
+					modifier = {
+						add = -10
+						has_level > 4
+					}
+					modifier = {
+						add = 5
+						has_level < 3
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = -10
+						has_level > 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					# nothing
+				}
+				30 = {
+					modifier = {
+						add = -5
+						has_level < 3
+					}
+					modifier = {
+						add = 10
+						has_level > 4
+					}
+					modifier = {
+						add = 20
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_lost_groomed
+					lrsk_adv_civ_sort_lose_groomed = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+				30 = {
+					modifier = {
+						add = -5
+						has_level < 3
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						has_level > 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_groomed_to_ambition
+					lrsk_adv_civ_sort_lose_groomed = yes
+					lrsk_adv_civ_sort_get_ambition = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+			}
+			break = yes
+		}
+		# Lose Tutors, may get Ambitious
+		if = {
+			limit = { lrsk_adv_civ_sort_is_tutored = yes }
+			random_list = {
+				40 = {
+					modifier = {
+						add = 5
+						has_level < 3
+					}
+					modifier = {
+						add = -10
+						has_level > 4
+					}
+					modifier = {
+						add = 5
+						has_level < 3
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = -10
+						has_level > 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					# nothing
+				}
+				30 = {
+					modifier = {
+						add = -5
+						has_level < 3
+					}
+					modifier = {
+						add = 10
+						has_level > 4
+					}
+					modifier = {
+						add = 20
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_lost_tutors
+					lrsk_adv_civ_sort_lose_tutors = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+				30 = {
+					modifier = {
+						add = -5
+						has_level < 3
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						add = 10
+						has_level > 4
+						root = { has_civic = lrsk_adv_civ_civic_sortition }
+					}
+					modifier = {
+						factor = 0
+						root = { NOT = { has_civic = lrsk_adv_civ_civic_sortition } }
+					}
+					set_leader_flag = lrsk_leader_level_tutors_to_ambition
+					lrsk_adv_civ_sort_lose_tutors = yes
+					lrsk_adv_civ_sort_get_ambition = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+			}
+			break = yes
+		}
+		# Lose Ambitious
+		if = {
+			limit = { lrsk_adv_civ_sort_is_ambitious = yes }
+			random_list = {
+				80 = {
+					modifier = {
+						add = 20
+						has_level < 2
+					}
+					modifier = {
+						add = -20
+						has_level > 2
+					}
+					modifier = {
+						add = -10
+						has_level > 3
+					}
+					modifier = {
+						add = -20
+						has_level > 4
+					}
+					# nothing
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						has_level < 2
+					}
+					modifier = {
+						add = 20
+						has_level > 2
+					}
+					modifier = {
+						add = 10
+						has_level > 3
+					}
+					modifier = {
+						add = 20
+						has_level > 4
+					}
+					set_leader_flag = lrsk_leader_level_lost_ambition
+					set_leader_flag = lrsk_leader_level_lost_ambition_perm # to prevent Ambitious coming back
+					lrsk_adv_civ_sort_lose_ambition = yes
+					#country_event = { id = lrsk_adv_civ_sortition.4 }
+				}
+			}
+			break = yes
+		}
+
+		root = { if = { limit = { has_civic = lrsk_adv_civ_civic_sortition }
+			country_event = { id = lrsk_adv_civ_sortition.1001 } # Check if ruler traits changed
+		} }
+
+		# Should we notify player?
+		if = {
+			limit = {
+				# This is a human player.
+				is_ai = no
+
+				# We're not ignoring this leader or all development.
+				NOR = {
+					has_leader_flag = lrsk_leader_ignore_my_career_development
+					root = { has_country_flag = lrsk_ignore_all_career_development }
+				}
+
+				# There's development to report on.
+				OR = {
+					has_leader_flag = lrsk_leader_level_lost_ambition
+					has_leader_flag = lrsk_leader_level_tutors_to_ambition
+					has_leader_flag = lrsk_leader_level_lost_tutors
+					has_leader_flag = lrsk_leader_level_groomed_to_ambition
+					has_leader_flag = lrsk_leader_level_lost_groomed
+					has_leader_flag = lrsk_leader_level_unready_to_tutors
+					has_leader_flag = lrsk_leader_level_lost_unready
+					has_leader_flag = lrsk_leader_level_got_ambition
+				}
+
+				# We're not ignoring this kind of development.
+				NAND = {
+					has_leader_flag = lrsk_leader_level_lost_ambition
+					root = { has_country_flag = lrsk_ignore_lost_ambition }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_tutors_to_ambition
+					root = { has_country_flag = lrsk_ignore_tutors_to_ambition }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_lost_tutors
+					root = { has_country_flag = lrsk_ignore_lost_tutors }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_groomed_to_ambition
+					root = { has_country_flag = lrsk_ignore_groomed_to_ambition }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_lost_groomed
+					root = { has_country_flag = lrsk_ignore_lost_groomed }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_unready_to_tutors
+					root = { has_country_flag = lrsk_ignore_unready_to_tutors }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_lost_unready
+					root = { has_country_flag = lrsk_ignore_lost_unready }
+				}
+				NAND = {
+					has_leader_flag = lrsk_leader_level_got_ambition
+					root = { has_country_flag = lrsk_ignore_got_ambition }
+				}
+			}
+			root = { country_event = { id = lrsk_adv_civ_sortition.4 } }
+		}
+		# If we don't notify, we still need to clean up.
+		else_if = {
+			limit = { OR = {
+				has_leader_flag = lrsk_leader_level_lost_ambition
+				has_leader_flag = lrsk_leader_level_tutors_to_ambition
+				has_leader_flag = lrsk_leader_level_lost_tutors
+				has_leader_flag = lrsk_leader_level_groomed_to_ambition
+				has_leader_flag = lrsk_leader_level_lost_groomed
+				has_leader_flag = lrsk_leader_level_unready_to_tutors
+				has_leader_flag = lrsk_leader_level_lost_unready
+				has_leader_flag = lrsk_leader_level_got_ambition
+			} } 
+			switch = {
+				trigger = has_leader_flag
+				lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+				lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+				lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+				lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+				lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+				lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+				lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+				lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
+			}
+			#root = { country_event = { id = lrsk_adv_civ_sortition.1003 days = 2 } } # Clean up flags JIC
+		}
+	} }
+}
+
+country_event = {
+	id = lrsk_adv_civ_sortition.4
+	title = lrsk_adv_civ_sortition.4.name
+	is_triggered_only = yes
+	picture = GFX_evt_arguing_senate
+
+	desc = { trigger = { hidden:fromfrom = { switch = {
+		trigger = has_leader_flag
+		lrsk_adv_civ_leader_level_got_ambition = { text = lrsk_adv_civ_sortition.4.desc.gotambition }
+		lrsk_adv_civ_leader_level_lost_unready = { text = lrsk_adv_civ_sortition.4.desc.lostunready }
+		lrsk_adv_civ_leader_level_unready_to_tutors = { text = lrsk_adv_civ_sortition.4.desc.unready2tutors }
+		lrsk_adv_civ_leader_level_lost_groomed = { text = lrsk_adv_civ_sortition.4.desc.lostgroomed }
+		lrsk_adv_civ_leader_level_groomed_to_ambition = { text = lrsk_adv_civ_sortition.4.desc.groomed2ambition }
+		lrsk_adv_civ_leader_level_lost_tutors = { text = lrsk_adv_civ_sortition.4.desc.losttutors }
+		lrsk_adv_civ_leader_level_tutors_to_ambition = { text = lrsk_adv_civ_sortition.4.desc.tutors2ambition }
+		lrsk_adv_civ_leader_level_lost_ambition = { text = lrsk_adv_civ_sortition.4.desc.lostambition }
+		default = { text = "lrsk_adv_civ_sortition.4.fallback" }
+	} } } }
+
+	option = {
+		name = lrsk_adv_civ_sortition.4.interesting
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.4.ignoreleader
+		custom_tooltip = lrsk_adv_civ_sortition.4.ignoreleader.desc
+
+		hidden_effect = {
+			fromfrom = { set_leader_flag = lrsk_leader_ignore_my_career_development }
+		}
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.4.ignorechange
+		custom_tooltip = lrsk_adv_civ_sortition.4.ignorechange.desc
+
+		hidden_effect = {
+			fromfrom = { switch = {
+				trigger = has_leader_flag
+				lrsk_adv_civ_leader_level_lost_ambition = { root = { set_country_flag = lrsk_ignore_lost_ambition } }
+				lrsk_adv_civ_leader_level_tutors_to_ambition = { root = { set_country_flag = lrsk_ignore_tutors_to_ambition } }
+				lrsk_adv_civ_leader_level_lost_tutors = { root = { set_country_flag = lrsk_ignore_lost_tutors } }
+				lrsk_adv_civ_leader_level_groomed_to_ambition = { root = { set_country_flag = lrsk_ignore_groomed_to_ambition } }
+				lrsk_adv_civ_leader_level_lost_groomed = { root = { set_country_flag = lrsk_ignore_lost_groomed } }
+				lrsk_adv_civ_leader_level_unready_to_tutors = { root = { set_country_flag = lrsk_ignore_unready_to_tutors } }
+				lrsk_adv_civ_leader_level_lost_unready = { root = { set_country_flag = lrsk_ignore_lost_unready } }
+				lrsk_adv_civ_leader_level_got_ambition = { root = { set_country_flag = lrsk_ignore_got_ambition } }
+			} }
+		}
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.4.ignoreall
+		custom_tooltip = lrsk_adv_civ_sortition.4.ignoreall.desc
+
+		hidden_effect = {
+			set_country_flag = lrsk_ignore_all_career_development
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	after = {
+		hidden_effect = { fromfrom = { switch = {
+			trigger = has_leader_flag
+			lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+			lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+			lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+			lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+			lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+			lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+			lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+			lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
+		} } }
+	}
+}
+
+# Ostracism Gate
+country_event = {
+	id = lrsk_adv_civ_sortition.5
+	title = lrsk_adv_civ_sortition.5.name
+	title = lrsk_adv_civ_sortition.5.desc
+	is_triggered_only = yes
+	picture = GFX_evt_arguing_senate
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		if = { limit = { has_country_flag = lrsk_recent_ost_vote } remove_country_flag = lrsk_recent_ost_vote }
+		set_timed_country_flag = lrsk_recent_ost_vote days = 360
+		if = { limit = { has_country_flag = lrsk_ruler_is_target } remove_country_flag = lrsk_ruler_is_target }
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.5.a
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.5.b
+		custom_tooltip = lrsk_adv_civ_sortition.5.b.desc
+
+		#trigger = {
+		#}
+
+		allow = {
+			has_resource = {
+				amount >= 25
+				type = influence
+			}
+		}
+
+		add_resource = { influence = -25 }
+
+		hidden_effect = {
+			if = { limit = { has_country_flag = lrsk_ost_vote_praised } remove_country_flag = lrsk_ost_vote_praised }
+			set_timed_country_flag = lrsk_ost_vote_praised days = 300
+		}
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.5.c
+		custom_tooltip = lrsk_adv_civ_sortition.5.c.desc
+
+		#trigger = {
+		#}
+
+		allow = {
+			has_resource = {
+				amount >= 25
+				type = influence
+			}
+		}
+
+		add_resource = { influence = -25 }
+
+		hidden_effect = {
+			if = { limit = { has_country_flag = lrsk_ost_vote_caution } remove_country_flag = lrsk_ost_vote_caution }
+			set_timed_country_flag = lrsk_ost_vote_caution days = 300
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				ruler = {
+					has_trait = lrsk_adv_civ_trait_ambitious_rul
+				}
+			}
+		}
+	}
+
+	after = {
+		# Clear stuff
+		if = { limit = { has_country_flag = lrsk_ruler_is_target } remove_country_flag = lrsk_ruler_is_target }
+		if = { limit = { has_country_flag = lrsk_ruler_is_elite_leader } remove_country_flag = lrsk_ruler_is_elite_leader }
+		every_owned_leader = { if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root } }
+		every_owned_leader = { if = { limit = { has_leader_flag = lrsk_ost_backup@root } remove_leader_flag = lrsk_ost_backup@root } }
+
+		# ALWAYS go after an elite conspiracy leader, this bypasses everything else.
+		if = { limit = { any_owned_leader = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } }
+			random_owned_leader = { limit = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } set_leader_flag = lrsk_ost_target@root }
+			if = { limit = { ruler = { has_leader_flag = lrsk_ost_target@root } } set_country_flag = lrsk_ruler_is_elite_leader }
+		}
+		else = {
+			ruler = {
+				# determing if ruler should be target. If selected, we still look at other leaders in case a backup is required.
+
+				# clear everything out
+				if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root }
+				if = { limit = { has_leader_flag = lrsk_ost_backup@root } remove_leader_flag = lrsk_ost_backup@root }
+
+				random_list = {
+					70 = {
+						modifier = {
+							add = -20
+							lrsk_adv_civ_sort_is_ambitious = yes
+						}
+						modifier = {
+							add = -10
+							lrsk_adv_civ_sort_is_groomed = yes
+						}
+						modifier = {
+							add = 15
+							root = { has_country_flag = lrsk_ost_vote_caution }
+						}
+						modifier = {
+							factor = 0
+							has_leader_flag = lrsk_is_elite_conspirator_exposed@root
+						}
+						#nothing
+					}
+					# Rulers have a higher base chance of being chosen than other leaders.
+					30 = {
+						modifier = {
+							add = 70
+							has_leader_flag = lrsk_is_elite_conspirator_exposed@root # Ruler always targeted if elite conspirator
+						}
+						modifier = {
+							add = 20
+							lrsk_adv_civ_sort_is_ambitious = yes
+						}
+						modifier = {
+							add = 10
+							lrsk_adv_civ_sort_is_groomed = yes
+						}
+						modifier = {
+							add = -15
+							root = { has_country_flag = lrsk_ost_vote_caution }
+						}
+						set_leader_flag = lrsk_ost_target@root
+						root = { set_country_flag = lrsk_ruler_is_target }
+					}
+				}
+			}
+
+			every_owned_leader = {
+				# go through each, need a backup even if ruler chosen.
+
+				# This flag set on any non-ruler leader once chosen.
+				if = { limit = { NOT = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } } }
+					# Each leader has almost no chance of being chosen unless there is cause for suspicion
+					random_list = {
+						90 = {
+							modifier = {
+								add = -50
+								has_leader_flag = lrsk_is_elite_conspirator_exposed@root
+							}
+							modifier = {
+								add = -30
+								lrsk_adv_civ_sort_is_ambitious = yes
+							}
+							modifier = {
+								add = -15
+								lrsk_adv_civ_sort_is_groomed = yes
+							}
+							modifier = {
+								add = 8
+								OR = {
+									lrsk_adv_civ_sort_is_unready = yes
+									lrsk_adv_civ_sort_is_tutored = yes
+								}
+							}
+							modifier = {
+								factor = 2 # This throws off my nice perfect balance but meh
+								root = { has_country_flag = lrsk_ost_vote_caution }
+							}
+
+							#nothing
+						}
+						10 = {
+							modifier = {
+								add = 50
+								has_leader_flag = lrsk_is_elite_conspirator_exposed@root # likely to go after an elite conspirator
+							}
+							modifier = {
+								add = 30
+								lrsk_adv_civ_sort_is_ambitious = yes
+							}
+							modifier = {
+								add = 15
+								lrsk_adv_civ_sort_is_groomed = yes
+							}
+							modifier = {
+								add = -8
+								OR = {
+									lrsk_adv_civ_sort_is_unready = yes
+									lrsk_adv_civ_sort_is_tutored = yes
+								}
+							}
+							modifier = {
+								factor = 0.5
+								root = { has_country_flag = lrsk_ost_vote_caution }
+							}
+
+							if = { limit = { root = { has_country_flag = lrsk_ruler_is_target } }
+								set_leader_flag = lrsk_ost_backup@root
+							}
+							else = {
+								set_leader_flag = lrsk_ost_target@root
+								set_leader_flag = lrsk_ost_backup@root # this flag is used to check this whole block.
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if = { limit = { root = { has_country_flag = lrsk_ruler_is_target } }
+			country_event = { id = lrsk_adv_civ_sortition.6 days = 20 random = 10 }
+		}
+		else_if = { limit = { any_owned_leader = { has_leader_flag = lrsk_ost_target@root } }
+			country_event = { id = lrsk_adv_civ_sortition.10 days = 40 random = 10 }
+		}
+		else = {			
+			country_event = { id = lrsk_adv_civ_sortition.11 days = 40 random = 10 }
+		}	
+	}
+}
+
+# Ostracism of Ruler
+country_event = {
+	id = lrsk_adv_civ_sortition.6
+	title = lrsk_adv_civ_sortition.6.name
+	title = lrsk_adv_civ_sortition.6.desc
+	is_triggered_only = yes
+	picture = GFX_evt_civil_action
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		ruler = { save_event_target_as = lrsk_sortost_protag }
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.6.accept
+		custom_tooltip = lrsk_adv_civ_sortition.6.accept.desc
+
+		hidden_effect = {
+			unassign_leader = event_target:lrsk_sortost_protag
+			add_modifier = { modifier = lrsk_adv_civ_ost_abdicate days = 720 }
+
+			ruler = { if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root } }
+
+			if = { limit = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } }
+				random_owned_leader = { limit = { has_leader_flag = lrsk_ost_backup@root } set_leader_flag = lrsk_ost_target@root }
+				country_event = { id = lrsk_adv_civ_sortition.10 days = 20 random = 5 }
+			}
+			else = { country_event = { id = lrsk_adv_civ_sortition.11 days = 20 random = 5 } }
+			
+		}
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.6.refuse
+		custom_tooltip = lrsk_adv_civ_sortition.6.refuse.desc
+
+		hidden_effect = {
+			random_list = {
+				95 = {
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 3 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 6 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 9 }
+					}
+					modifier = {
+						add = -5
+						check_variable = { which = lrsk_consp_pow value > 12 }
+					}
+					country_event = { id = lrsk_adv_civ_sortition.7 days = 20 random = 5 } # exiled
+				}
+				5 = {
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 3 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 6 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 9 }
+					}
+					modifier = {
+						add = 5
+						check_variable = { which = lrsk_consp_pow value > 12 }
+					}
+					country_event = { id = lrsk_adv_civ_sortition.8 days = 20 random = 5 } # escapes
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				ruler = {
+					has_trait = lrsk_adv_civ_trait_groomed_rul
+				}
+			}
+			modifier = {
+				factor = 3
+				ruler = {
+					has_trait = lrsk_adv_civ_trait_ambitious_rul
+				}
+			}
+		}
+	}
+}
+
+# Ostracism of Ruler Succeeds
+country_event = {
+	id = lrsk_adv_civ_sortition.7
+	title = lrsk_adv_civ_sortition.7.name
+	title = lrsk_adv_civ_sortition.7.desc
+	is_triggered_only = yes
+	picture = GFX_evt_assembly_fight
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		ruler = { save_event_target_as = lrsk_sortost_protag }
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.7.sobeit
+	}
+
+	after = {
+		event_target:lrsk_sortost_protag = { set_leader_flag = lrsk_to_be_exiled_from@root }
+		country_event = { id = lrsk_adv_civ_sortition.12 }
+	}
+}
+
+# Ostracism of Ruler Fails
+country_event = {
+	id = lrsk_adv_civ_sortition.8
+	title = lrsk_adv_civ_sortition.8.name
+	title = lrsk_adv_civ_sortition.8.desc
+	is_triggered_only = yes
+	picture = GFX_evt_voting
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		ruler = { save_event_target_as = lrsk_sortost_protag }
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.8.wellthen
+		custom_tooltip = lrsk_adv_civ_sortition.8.wellthen.desc
+
+		hidden_effect = {
+			add_modifier = { modifier = lrsk_adv_civ_ost_crisis days = 720 }
+		}
+	}
+}
+
+# Ostracized Returns Gate
+# Called 3600 days after the ostracism happens, checks for this combination of flags on leaders in all countries:
+# 1. Has 'lrsk_sort_ostracized_by@root' - Marks leader as having been ostracized by the calling country.
+# 2. Does not have 'lrsk_sort_ostracism_timer@root' - 3595 day timed flag, should be gone by the time this is called.
+# These two flags are set on all ostracized leaders. They are tagged with a ref to their home country.
+# The second flag should only be missing on one leader with the first flag, that one leader is the returning leader.
+country_event = {
+	id = lrsk_adv_civ_sortition.90
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+
+		# Leaders may be exiled to elsewhere, need to find them to call them back
+		random_country = {
+			limit = {
+				any_owned_leader = {
+					has_leader_flag = lrsk_ostracized_by@root
+					NOT = { has_leader_flag = lrsk_ostracism_timer@root }
+				}
+				random_owned_leader = {
+					limit = {
+						has_leader_flag = lrsk_ostracized_by@root
+						NOT = { has_leader_flag = lrsk_ostracism_timer@root }
+					}
+					remove_leader_flag = lrsk_ostracized_by@root
+					save_event_target_as = lrsk_sortost_exile_returning
+					root = {
+						clone_leader = {
+							target = event_target:lrsk_sortost_exile_returning
+							effect = {
+								set_leader_flag = lrsk_returning_to@root
+								if = { limit = { has_leader_flag = lrsk_ostracized_by@root } remove_leader_flag = lrsk_ostracized_by@root }
+								if = { limit = { NOT  = { has_trait = lrsk_adv_civ_trait_exile } } add_trait = lrsk_adv_civ_trait_exile }
+							}
+						}
+					}
+					kill_leader = { show_notification = no }
+				}
+			}
+		}
+
+		if = { limit = { any_owned_leader = { has_leader_flag = lrsk_returning_to@root } }
+			country_event = { id = lrsk_adv_civ_sortition.9 }
+		}
+		# else a notification?
+	}
+}
+
+# Ostracized Returns
+country_event = {
+	id = lrsk_adv_civ_sortition.9
+	title = lrsk_adv_civ_sortition.9.name
+	title = lrsk_adv_civ_sortition.9.desc
+	is_triggered_only = yes
+	picture = GFX_evt_alien_segregation
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = lrsk_returning_to@root }
+			save_event_target_as = lrsk_sortost_exile
+			if = { limit = { has_leader_flag = lrsk_returning_to@root } remove_leader_flag = lrsk_returning_to@root }
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.9.welcome
+	}
+}
+
+# Ostracism of non-ruler leader OR ruler who heads conspiracy
+country_event = {
+	id = lrsk_adv_civ_sortition.10
+	title = lrsk_adv_civ_sortition.10.name
+	desc = {
+		trigger = { has_country_flag = lrsk_ruler_is_elite_leader }
+		text = lrsk_adv_civ_sortition.10.desc.ruler
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = lrsk_ruler_is_elite_leader } }
+		text = lrsk_adv_civ_sortition.10.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_alien_segregation
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = lrsk_ost_target@root }
+			save_event_target_as = lrsk_sortost_protag
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.10.ohwell
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.10.paranoid
+		custom_tooltip = lrsk_adv_civ_sortition.10.paranoid.desc
+
+		# Conspiracy leader getting exiled is not cause for further suspicion...
+		trigger = {
+			event_target:lrsk_sortost_protag = {
+				NOT = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root }
+			}
+		}
+
+		allow = {
+			has_resource = {
+				amount >= 500
+				type = energy
+			}
+		}
+
+		add_resource = { energy = -500 }
+
+		hidden_effect = {
+			# Launch investigation check.
+		}
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		event_target:lrsk_sortost_protag = { set_leader_flag = lrsk_to_be_exiled_from@root }
+		country_event = { id = lrsk_adv_civ_sortition.12 }
+	}
+}
+
+# Ostracism Averted
+country_event = {
+	id = lrsk_adv_civ_sortition.11
+	title = lrsk_adv_civ_sortition.11.name
+	title = lrsk_adv_civ_sortition.11.desc
+	is_triggered_only = yes
+	picture = GFX_evt_assembly_fight
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	option = {
+		name = lrsk_adv_civ_sortition.11.ohwell
+	}
+}
+
+# Ostracism Exile Gate
+country_event = {
+	id = lrsk_adv_civ_sortition.12
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = lrsk_to_be_exiled_from@root }
+
+			set_leader_flag = lrsk_ostracized_by@root
+			set_timed_leader_flag = { lrsk_ostracism_timer@root days = 3595 }
+
+			exile_leader_as = lrsk_sortost_exile_key # This key will not be used tbh
+
+			# A few options:
+			# 1. Leader may die?
+			# 2. Leader may defect forever
+			# 3. Leader should likely show up in some other country for a time.
+		}
+
+		country_event = { id = lrsk_adv_civ_sortition.90 days = 3600 } # By this point, only this leader should lack the timer flag.
+	}
+}
+
+## Elite Conspiracy System
+# Behind the scenes, the conspiracy's power is determined by two events, one following the other, that happen twice every year:
+#
+# lrsk_adv_civ_sortition.1002 - Checks the "threat level," a measure of how motivated "elitists" are going to be to organize against the demarchy.
+# 	It basically makes the elite conspiracy better at recruiting conspirators and advancing their agenda.
+# lrsk_adv_civ_sortition.1004 - Recruits conspirators, i.e., checks the likelihood of leaders joining based on threat level and traits.
+# 	From threat level and makeup of conspirators, determines a "power level" of the conspiracy.
+#
+# The main engine of the conspiracy is a MTTH event whose likelihood increases with "power level." This event advances the conspiracy's plan each
+# time it runs. The plan must advance six times before the point of crisis. Each time it advances, there is a chance of three plots being executed.
+# Each provides the player a chance to respond. These responses may increase ostracism chance, lower threat level, attempt to expose the conspiracy
+# and conspirators, or trigger a chance to set back the plan one step.
+#
+# 	1. Coordinated public statements subtly undermining sortition. (Effect: Stability loss.) Responses:
+#		a. No response. (Costs nothing, does not hinder conspiracy.)
+#		b. Political education. (Costs influence, increases ostracism chance, small chance to hinder conspiracy.)
+#		c. Investigation. (Costs energy, chance to expose conspiracy and/or conspirators.)
+#	2. Offer of voluntary public works. (Effect: Production bonus, less ostracism chance. These are permenant. Can only happen once.)
+#		a. Reject it. (Undoes the effects, possible for this to happen again.)
+#		b. Profuse thanks. (Costs influence, decreases threat level, decent chance to hinder conspiracy.)
+#		c. Investigation. (Costs energy, chance to expose conspiracy and/or conspirators.)
+#	3. Staged scandal involving an 'unfit' leader. (Effect: Stability loss, less ostracism chance.)
+#		a. No response. (Costs nothing, does not hinder conspiracy.)
+#		b. Defense/Rehab of leader. (Costs influence, small chance to hinder conspiracy, makes people unhappy.)
+#		c. Investigation. (Costs energy, chance to expose conspiracy and/or conspirators.)
+#
+# Note that at the same time as the conspiracy is advancing, there is a MTTH event (that can also be called) to have a chance of exposing
+# the conspiracy or conspirators. The chance increases with ostracism chance and size of the conspiracy.
+#
+# After the conspiracy advances six times, a new MTTH event unlocks which when fired will either demand reforms or launch a revolt right away.
+# Launching the revolt right away is very unlikely and general only happens if conspiracy power is very high and ostracism chance is very high.
+# If the reforms are accepted, it removes sortition and the country becomes a regular democracy. If not, there's a higher chance of ostracism, but
+# also a later check for elite revolt that will be much higher.
+#
+# At stages 5 and 6, and after reforms are denied but revolt is not chosen, there is a chance that a planet with high numbers of authoritarians
+# or few egalitarians will have a "rebellion" using the create_rebels command.
+
+# Elite Reforms
+
+# Reform Accepted
+country_event = {
+	id = lrsk_adv_civ_sortition.43
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {	has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		force_remove_civic = lrsk_adv_civ_civic_sortition
+		if = { limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } } set_country_flag = lrsk_reform_error } # theoretically possibe...
+		else = { country_remove_ethic = ethic_fanatic_egalitarian }
+
+		if = { limit = { has_country_flag = lrsk_reform_error } change_government = { civics = random } } # just... change it somehow
+		else = {
+			# If we're here, we started with FanEgal, need to step it down a notch
+			country_add_ethic = ethic_egalitarian
+			
+			# New gov based on leader type
+			switch = {
+				has_country_flag
+				lrsk_adv_civ_elite_leader_sci = {
+					switch = {
+						trigger = has_ethic
+						ethic_materialist = { country_remove_ethic = ethic_materialist }
+						ethic_spiritualist = { country_remove_ethic = ethic_spiritualist }
+						ethic_militarist = { country_remove_ethic = ethic_militarist }
+						ethic_pacifist = { country_remove_ethic = ethic_pacifist }
+						ethic_xenophobe = { country_remove_ethic = ethic_xenophobe }
+						ethic_xenophile = { country_remove_ethic = ethic_xenophile }
+					}
+					country_add_ethic = ethic_fanatic_materialist
+					switch = {
+						trigger = has_civic
+						civic_merchant_guilds = {
+							force_remove_civic = civic_merchant_guilds
+							change_government = { civics = {
+								civic = civic_technocracy
+								civic = random
+							} }
+						}
+						civic_shared_burden = {
+							force_remove_civic = civic_shared_burden
+							change_government = { civics = {
+								civic = civic_technocracy
+								civic = random
+							} }
+						}
+						default = {
+							force_add_civic = civic_technocracy
+						}
+					}					
+				}
+				lrsk_adv_civ_elite_leader_gen = {
+					switch = {
+						trigger = has_ethic
+						ethic_materialist = { country_remove_ethic = ethic_materialist }
+						ethic_spiritualist = { country_remove_ethic = ethic_spiritualist }
+						ethic_militarist = { country_remove_ethic = ethic_militarist }
+						ethic_pacifist = { country_remove_ethic = ethic_pacifist }
+						ethic_xenophobe = { country_remove_ethic = ethic_xenophobe }
+						ethic_xenophile = { country_remove_ethic = ethic_xenophile }
+					}
+					country_add_ethic = ethic_fanatic_militarist
+					random_list = {
+						3 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_warrior_culture
+							}
+							force_add_civic = civic_warrior_culture
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_citizen_service
+							}
+							force_add_civic = civic_citizen_service
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_nationalistic_zeal
+							}
+							force_add_civic = civic_nationalistic_zeal
+						}
+					}
+				}
+				lrsk_adv_civ_elite_leader_adm = {
+					switch = {
+						trigger = has_ethic
+						ethic_materialist = { country_remove_ethic = ethic_materialist }
+						ethic_spiritualist = { country_remove_ethic = ethic_spiritualist }
+						ethic_militarist = { country_remove_ethic = ethic_militarist }
+						ethic_pacifist = { country_remove_ethic = ethic_pacifist }
+						ethic_xenophobe = { country_remove_ethic = ethic_xenophobe }
+						ethic_xenophile = { country_remove_ethic = ethic_xenophile }
+					}
+					country_add_ethic = ethic_fanatic_militarist
+					random_list = {
+						3 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_distinguished_admiralty
+							}
+							force_add_civic = civic_distinguished_admiralty
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_citizen_service
+							}
+							force_add_civic = civic_citizen_service
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_nationalistic_zeal
+							}
+							force_add_civic = civic_nationalistic_zeal
+						}
+					}
+				}
+				lrsk_adv_civ_elite_leader_rul = {
+					random_list = {
+						1 = {
+							force_add_civic = civic_police_state
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_parliamentary_system
+							}
+							force_add_civic = civic_parliamentary_system
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_idealistic_foundation
+							}
+							force_add_civic = civic_idealistic_foundation
+						}
+					}		
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}								
+							}
+							country_add_ethic = ethic_materialist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}	
+							}
+							country_add_ethic = ethic_spiritualist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_militarist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_pacifist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophobe
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophile
+						}
+					}
+				}
+				lrsk_adv_civ_elite_leader_gov = {
+					random_list = {
+						1 = {
+							force_add_civic = civic_meritocracy
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_idealistic_foundation
+							}
+							force_add_civic = civic_idealistic_foundation
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								has_civic = civic_parliamentary_system
+							}
+							force_add_civic = civic_parliamentary_system
+						}
+					}
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}								
+							}
+							country_add_ethic = ethic_materialist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}	
+							}
+							country_add_ethic = ethic_spiritualist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_militarist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_pacifist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophobe
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophile
+						}
+					}
+				}
+				default = {
+					#meh
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}								
+							}
+							country_add_ethic = ethic_materialist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_materialist
+									has_ethic = ethic_spiritualist
+								}	
+							}
+							country_add_ethic = ethic_spiritualist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_militarist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_militarist
+									has_ethic = ethic_pacifist
+								}
+							}
+							country_add_ethic = ethic_pacifist
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophobe
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									has_ethic = ethic_xenophile
+									has_ethic = ethic_xenophobe
+								}
+							}
+							country_add_ethic = ethic_xenophile
+						}
+					}
+
+					change_government = { civics = random }
+				}
+			}
+		}
+	}
+}
+
+# Elite Revolt Launcher
+country_event = {
+	id = lrsk_adv_civ_sortition.50
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		NOT = { has_country_flag = lrsk_elitist_revolt_happening }
+		num_owned_planets > 2
+	}
+
+	immediate = {
+		set_country_flag = lrsk_elitist_revolt_happening
+		if = { limit = { has_country_flag = lrsk_elite_leader_rul }
+			# coup d'etat, former cap goes rebel, set random other planet (with most egals) new capital
+		}
+		else = {
+			# find random planet (with most auths) for uprising capital
+		}
+		random_owned_planet = {
+			limit = { is_capital = no }
+			#limit = { has_planet_flag = lrsk_elitist_revolt_rallypoint }
+			planet_event = { id = lrsk_adv_civ_sortition.51 }
+		}
+	}
+}
+
+# Elitist uprising on planet
+planet_event = { 
+	id = lrsk_adv_civ_sortition.51
+	title = lrsk_adv_civ_sortition.51.name
+	desc = {
+		trigger = { from = { has_country_flag = lrsk_elite_leader_rul } }
+		text = lrsk_adv_civ_sortition.51.coup
+	}
+	desc = {
+		trigger = { NOT = { from = { has_country_flag = lrsk_elite_leader_rul } } }
+		text = lrsk_adv_civ_sortition.51.revolt
+	}
+	picture = GFX_evt_alien_propaganda
+	#show_sound = event_ai_started
+	is_triggered_only = yes
+	location = this
+
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	#trigger = {
+	#	host_has_dlc = "Synthetic Dawn Story Pack"
+	#}
+	
+	immediate = {
+		save_event_target_as = lrsk_elitist_revolt_rallypoint
+		owner = {
+			save_event_target_as = lrsk_demarchy_facing_elite_revolt
+			set_country_flag = lrsk_elitist_revolt_happening
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.51.a
+		custom_tooltip = lrsk_adv_civ_sortition.51.a.tooltip
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.51.b
+		trigger = {
+			owner = { is_ai = no }
+		}
+		custom_tooltip = lrsk_adv_civ_sortition.51.b.tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:lrsk_sortition_country_in_revolt = { num_owned_planets > 0 }
+				}
+				event_target:lrsk_elitist_revolt = {
+					set_player = event_target:lrsk_elitist_revolt_originator
+				}			
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			event_target:lrsk_elitist_revolt_originator = {
+				every_owned_fleet = {
+					set_event_locked = no
+				}
+			}
+		}
+	}
+
+	immediate = {
+		owner = { save_event_target_as = lrsk_elitist_revolt_originator }
+		set_planet_flag = lrsk_elitist_revolt_capital@root.owner
+		# event lock all fleets to prevent exploits
+		owner = { every_owned_fleet = { set_event_locked = yes } }
+		# find and flag planets
+		# change this logic up to look for planets w/ lots of authoritarians first
+		owner = {
+			effect_on_blob = {
+				center = root.solar_system
+				owned_planets_percentage = 0.5
+				planet_limit = {
+					OR = {
+						controller = { is_same_value = root.owner }
+						solar_system = {
+							exists = starbase
+							starbase = { owner = { is_same_value = root.owner } }
+						}
+					}
+					solar_system = { # never flip any planets in the capital system
+						NOT = { any_system_planet = { is_same_value = root.owner.capital_scope } }
+					}
+				}
+				effect = {
+					set_star_flag = lrsk_eliterev_system_flip
+				}
+			}
+		}
+		# create elitist country
+		random_list = {
+			# technocrats
+			20 = {
+				modifier = {
+					add = 10
+					owner = { has_country_flag = lrsk_elite_leader_sci }
+				}
+				modifier = {
+					factor = 0
+					owner = { NOT = { has_country_flag = lrsk_elite_consp_has_sci } }
+				}
+				modifier = {
+					add = 10
+					owner = { has_ethic = ethic_materialist }
+				}
+				modifier = {
+					add = -5
+					owner = { has_ethic = ethic_militarist }
+				}
+				modifier = {
+					add = -5
+					owner = { has_valid_civic = civic_citizen_service }
+				}
+				modifier = {
+					add = -5
+					owner = { OR = {
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
+					} }
+				}
+				owner = {
+					create_country = {
+						name = random
+						type = default
+						species = this
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						ethos = {
+							ethic = ethic_fanatic_materialist
+							ethic = random
+						}
+						authority = auth_oligarchic
+						origin = origin_separatists
+						civics = {
+							civic = civic_technocracy
+							civic = civic_shadow_council
+						}
+						flag = random
+						effect = {
+							save_event_target_as = lrsk_elitist_revolt
+							country_event = { id = lrsk_adv_civ_sortition.52 } # setup happens here now
+						}
+					}
+				}
+			}
+			# aristocrats
+			20 = {
+				modifier = {
+					add = -5
+					owner = { has_ethic = ethic_materialist }
+				}
+				modifier = {
+					add = 10
+					owner = { has_country_flag = lrsk_elite_leader_rul }
+				}
+				modifier = {
+					add = -10
+					owner = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+				}
+				owner = {
+					create_country = {
+						name = random
+						type = default
+						species = this
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						ethos = random
+						authority = auth_oligarchic
+						origin = origin_separatists
+						civics = {
+							civic = civic_aristocratic_elite
+							civic = civic_shadow_council
+						}
+						flag = random
+						effect = {
+							save_event_target_as = lrsk_elitist_revolt
+							country_event = { id = lrsk_adv_civ_sortition.52 } # setup happens here now
+						}
+					}
+				}
+			}
+			# meritocrats
+			20 = {
+				modifier = {
+					add = -5
+					owner = { OR = {
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
+					} }
+				}
+				modifier = {
+					add = -10
+					owner = { has_country_flag = lrsk_elite_leader_rul }
+				}
+				modifier = {
+					add = 10
+					owner = { has_country_flag = lrsk_elite_leader_gov }
+				}
+				owner = {
+					create_country = {
+						name = random
+						type = default
+						species = this
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						ethos = random
+						authority = auth_oligarchic
+						origin = origin_separatists
+						civics = {
+							civic = civic_meritocracy
+							civic = civic_shadow_council
+						}
+						flag = random
+						effect = {
+							save_event_target_as = lrsk_elitist_revolt
+							country_event = { id = lrsk_adv_civ_sortition.52 } # setup happens here now
+						}
+					}
+				}
+			}
+			# stratocrats
+			20 = {
+				modifier = {
+					add = -5
+					owner = { has_ethic = ethic_materialist }
+				}
+				modifier = {
+					add = -5
+					owner = { has_country_flag = lrsk_elite_leader_sci }
+				}
+				modifier = {
+					add = -5
+					owner = { has_country_flag = lrsk_elite_leader_gov }
+				}
+				modifier = {
+					add = 10
+					owner = { has_ethic = ethic_militarist }
+				}
+				modifier = {
+					add = 10
+					owner = { has_valid_civic = civic_citizen_service }
+				}
+				modifier = {
+					add = 10
+					owner = { OR = {
+						has_country_flag = lrsk_elite_leader_gen
+						has_country_flag = lrsk_elite_leader_adm
+					} }
+				}
+				modifier = {
+					factor = 0
+					owner = { NOR = {
+						has_country_flag = lrsk_elite_consp_has_gen
+						has_country_flag = lrsk_elite_consp_has_adm
+					} }
+				}
+				owner = {
+					create_country = {
+						name = random
+						type = default
+						species = this
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						ethos = {
+							ethic = ethic_fanatic_militarist
+							ethic = random
+						}
+						authority = auth_oligarchic
+						origin = origin_separatists
+						civics = {
+							civic = civic_citizen_service
+							civic = civic_shadow_council
+						}
+						flag = random
+						effect = {
+							save_event_target_as = lrsk_elitist_revolt
+							country_event = { id = lrsk_adv_civ_sortition.52 } # setup happens here now
+						}
+					}
+				}
+			}
+			# plutocrats
+			20 = {
+				modifier = {
+					add = -5
+					owner = { has_country_flag = lrsk_elite_leader_sci }
+				}
+				modifier = {
+					add = -5
+					owner = { has_country_flag = lrsk_elite_leader_gov }
+				}
+				modifier = {
+					add = -5
+					owner = { has_ethic = ethic_militarist }
+				}
+				modifier = {
+					add = -5
+					owner = { has_valid_civic = civic_citizen_service }
+				}
+				modifier = {
+					add = 10
+					owner = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+				}
+				owner = {
+					create_country = {
+						name = random
+						type = default
+						species = this
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						ethos = random
+						authority = auth_oligarchic
+						origin = origin_separatists
+						civics = {
+							civic = civic_merchant_guilds
+							civic = civic_shadow_council
+						}
+						flag = random
+						effect = {
+							save_event_target_as = lrsk_elitist_revolt
+							country_event = { id = lrsk_adv_civ_sortition.52 } # setup happens here now
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lrsk_adv_civ_sortition.52
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# saving uprising and host as event targets
+		save_event_target_as = lrsk_elitist_revolt
+		from.owner = { save_event_target_as = lrsk_elitist_revolt_originator }
+
+		# setting flags
+		set_country_flag = lrsk_elitist_revolt_country@from.owner
+		set_country_flag = lrsk_elitist_revolt_country
+		set_relation_flag = {
+			who = event_target:lrsk_elitist_revolt_originator
+			flag = lrsk_elitist_revolt_to_host_flag
+		}
+		from.owner = {
+			set_country_flag = lrsk_elitist_revolt_originator@root
+			set_country_flag = lrsk_elitist_revolt_originator
+			set_relation_flag = {
+				who = root
+				flag = lrsk_host_to_elitist_revolt_flag
+			}
+		}
+
+		# setting graphical culture
+		set_graphical_culture = event_target:lrsk_elitist_revolt_originator
+
+		# establish comms
+		every_country = {
+			limit = { has_communications = event_target:lrsk_elitist_revolt_originator }
+			#	OR = {
+			#		has_communications = event_target:lrsk_elitist_revolt_originator
+			#		intel_level = {
+			#			level > low
+			#			system = event_target:lrsk_elitist_revolt_originator.capital_scope.solar_system
+			#		}
+			#		any_system = {
+			#			has_star_flag = lrsk_eliterev_system_flip
+			#			prev = {
+			#				intel_level = {
+			#					level > low
+			#					system = prev
+			#				}
+			#			}
+			#		}
+			#	}
+			#}
+			establish_communications_no_message = root
+			establish_contact = { who = root location = from }
+		}
+
+		# baseline resource stockpile
+		add_resource = {
+			energy = 5000
+			minerals = 5000
+			influence = 500
+			alloys = 5000
+		}
+		add_100_unity_per_year_passed = yes # scripted effect
+
+		# Elitist Revolt opinion modifier
+		add_opinion_modifier = {
+			who = event_target:lrsk_elitist_revolt_originator
+			modifier = lrsk_opinion_elitist_revolt_originator
+		}
+
+		event_target:lrsk_elitist_revolt_originator = {
+			add_opinion_modifier = {
+				who = root
+				modifier = lrsk_opinion_elitist_revolt
+			}
+		}
+
+		# clear new contact opinion modifier
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = event_target:lrsk_elitist_revolt_originator
+					modifier = opinion_new_contact
+				}
+			}
+			remove_opinion_modifier = {
+				who = event_target:lrsk_elitist_revolt_originator
+				modifier = opinion_new_contact
+			}
+		}
+
+		# flip revolt capital planet
+		from = {
+			# flip military stations
+			solar_system = {
+				every_fleet_in_system = {
+					limit = {
+						exists = owner
+						owner = { is_same_value = event_target:lrsk_elitist_revolt_originator }
+						any_owned_ship = { is_ship_class = shipclass_military_station }
+					}
+					set_owner = root
+				}
+			}
+			set_owner = root
+			set_controller = root
+			set_capital = yes
+
+			solar_system = {
+				if = {
+					limit = {
+						exists = starbase
+					}
+					starbase = { set_owner = root }
+				}
+				else = {
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						owner = root
+					}
+				}
+			}
+
+			# create armies
+			if = {
+				limit = { root = { has_civic = civic_citizen_service } }
+				# more armies if stratocrat
+				while = {
+					count = 12
+					create_army = {
+						owner = root
+						type = assault_army
+					}
+				}
+			}
+			else = {
+				# regular armies
+				while = {
+					count = 6
+					create_army = {
+						owner = root
+						type = assault_army
+					}
+				}
+			}
+
+			# flip remaining flagged planets
+			while = {
+				count = 100
+				limit = {
+					any_system = {
+						has_star_flag = lrsk_eliterev_system_flip
+						exists = starbase
+						starbase = {
+							owner = { is_same_value = event_target:lrsk_elitist_revolt_originator }
+						}
+					}
+				}
+				random_system = {
+					limit = {
+						has_star_flag = lrsk_eliterev_system_flip
+						exists = starbase
+						starbase = {
+							owner = { is_same_value = event_target:lrsk_elitist_revolt_originator }
+						}
+					}
+					starbase = { set_owner = root }
+				}
+			}
+			event_target:lrsk_elitist_revolt_originator = {
+				every_owned_planet = {
+					limit = {
+						solar_system = {
+							#has_star_flag = lrsk_eliterev_system_flip@event_target:lrsk_elitist_revolt_originator
+							has_star_flag = lrsk_eliterev_system_flip
+						}
+					}
+
+					# flip military stations
+					solar_system = {
+						every_fleet_in_system = {
+							limit = {
+								exists = owner
+								owner = { is_same_value = event_target:lrsk_elitist_revolt_originator }
+								any_owned_ship = { is_ship_class = shipclass_military_station }
+							}
+							set_owner = root
+						}
+					}
+
+					set_planet_flag = been_flipped
+					set_owner = root
+					set_controller = root
+
+					## create armies on planets
+					if = {
+						limit = { root = { has_civic = civic_citizen_service } }
+						# more armies if stratocrat
+						while = {
+							count = 6
+							create_army = {
+								owner = root
+								type = assault_army
+							}
+						}
+					}
+					else = {
+						# regular armies
+						while = {
+							count = 3
+							create_army = {
+								owner = root
+								type = assault_army
+							}
+						}
+					}
+				}
+			}
+			every_system = {
+				limit = {
+					has_star_flag = lrsk_eliterev_system_flip
+				}
+				remove_star_flag = lrsk_eliterev_system_flip
+			}
+		}
+
+		# get host's technologies
+		copy_techs_from = { target = event_target:lrsk_elitist_revolt_originator }
+
+		# survey host's surveyed planets
+		every_planet = {
+			limit = {
+				is_surveyed = {
+					who = event_target:lrsk_elitist_revolt_originator
+					status = yes
+				}
+			}
+			surveyed = {
+				set_surveyed = yes
+				surveyor = root
+			}
+		}
+
+		# declare war on host 
+		declare_war = {
+			target = event_target:lrsk_elitist_revolt_originator
+			name = "NAME_LRSK_Elitist_Revolt_War"
+			# "[This.MainDefender.GetAdj] Elitist Revolt"
+			attacker_war_goal = "wg_lrsk_gov_var_elitist_revolt"
+		}
+
+		# create fleets
+		if = {
+			limit = { has_civic = civic_citizen_service }
+			
+			# stratocrat fleets, 120% naval cap
+
+			create_fleet_from_naval_cap = 0.3
+			random_owned_planet = {
+				last_created_fleet = {
+					set_location = prev
+				}
+			}
+
+			create_fleet_from_naval_cap = 0.3
+			random_owned_planet = {
+				last_created_fleet = {
+					set_location = prev
+				}
+			}
+
+			create_fleet_from_naval_cap = 0.6
+			random_owned_planet = {
+				last_created_fleet = {
+					set_location = prev
+				}
+			}
+		}
+		else = {
+			# regular fleets, 60% naval cap
+			
+			create_fleet_from_naval_cap = 0.2
+			random_owned_planet = {
+				last_created_fleet = {
+					set_location = prev
+				}
+			}
+			create_fleet_from_naval_cap = 0.4
+			random_owned_planet = {
+				last_created_fleet = {
+					set_location = prev
+				}
+			}
+		}
+		
+		# add modifier for AI, including 5x naval cap
+		if = {
+			limit = { is_ai = yes }
+			add_modifier = {
+				modifier = lrsk_elitist_revolt_ai_buff
+				days = 1800
+			}
+		}
+		# add modifier for player, 5x naval cap
+		else = {
+			add_modifier = {
+				modifier = lrsk_elitist_revolt_player_buff
+				days = 1800
+			}
+		}
+		#science
+		create_fleet = {
+			effect = {
+				set_owner = root
+
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+
+				set_fleet_stance = evasive				
+				set_location = root.capital_scope
+				
+				owner = {
+					create_leader = {
+						class = scientist
+						sub_type = survey
+						name = random
+						species = owner_main_species
+					}
+				}
+				set_leader = last_created_leader
+			}			
+		}
+			
+		#constructor
+		create_fleet = {
+			effect = {
+				set_owner = root
+				
+				create_ship = {
+					name = random
+					random_existing_design = constructor
+				}
+				
+				set_fleet_stance = evasive
+				set_location = root.capital_scope
+			}
+		}
+
+		every_owned_fleet = {
+			#limit = { event_locked = yes }
+			set_event_locked = no
+		}
+	}
+}
+
+# Elitist Revolt wins
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+country_event = {
+	id = lrsk_adv_civ_sortition.53
+	title = lrsk_adv_civ_sortition.53.name
+	desc = lrsk_adv_civ_sortition.53.desc
+	picture = GFX_evt_board_meeting
+	#hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		is_country_type = default
+		has_country_flag = lrsk_elitist_revolt_country
+		has_relation_flag = {
+			who = from
+			flag = lrsk_elitist_revolt_to_host_flag
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.53.a
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 120
+			min = 2000
+			max = 6000
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 120
+			min = 200
+			max = 600
+		}
+		custom_tooltip = "lrsk_adv_civ_sortition.53.a.tooltip"
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					has_communications = root
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = lrsk_adv_civ_elitist_revolt_victorious
+				}
+			}
+			every_playable_country = {
+				limit = {
+					has_communications = root
+					OR = {
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_fanatic_authoritarian
+					}
+					NOT = { is_same_value = root }
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = lrsk_adv_civ_elitist_revolt_elitist_comrades_victorious
+				}
+			}
+		}
+	}
+}
+
+# Demarchy wins
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+country_event = {
+	id = lrsk_adv_civ_sortition.54
+	title = lrsk_adv_civ_sortition.54.name
+	desc = lrsk_adv_civ_sortition.54.desc
+	picture = GFX_evt_victorious_army
+	#hide_window = yes
+	is_triggered_only = yes
+	#show_sound = event_mystic_reveal
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		is_country_type = default
+		has_relation_flag = {
+			who = from
+			flag = lrsk_host_to_elitist_revolt_flag
+		}
+	}
+	
+	immediate = { remove_country_flag = lrsk_elitist_revolt_happening }
+
+	option = {
+		name = lrsk_adv_civ_sortition.54.a
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 120
+			min = 2000
+			max = 6000
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 120
+			min = 200
+			max = 600
+		}
+		custom_tooltip = lrsk_adv_civ_sortition.54.a.tooltip
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					has_communications = root
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = lrsk_adv_civ_elitist_revolt_defeated
+				}
+			}
+			every_playable_country = {
+				limit = {
+					has_communications = root
+					OR = {
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_fanatic_authoritarian
+					}
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = lrsk_adv_civ_elitist_revolt_elitist_comrades_defeated
+				}
+			}
+		}
+	}
+}
+
+
+# Explainers
+country_event = {
+	id = lrsk_adv_civ_sortition.101
+	title = lrsk_adv_civ_sortition.101.name
+	desc = lrsk_adv_civ_sortition.101.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		is_ai = no
+	}
+
+	option = { name = lrsk_adv_civ_sortition.101.rollem }
+	option = {
+		name = lrsk_adv_civ_sortition.101.traits
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.102 } }
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.101.ost
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.103 } }
+	}
+}
+country_event = {
+	id = lrsk_adv_civ_sortition.102
+	title = lrsk_adv_civ_sortition.102.name
+	desc = lrsk_adv_civ_sortition.102.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		is_ai = no
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.102.okay
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.101 } }
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.102.ost
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.103 } }
+	}
+}
+country_event = {
+	id = lrsk_adv_civ_sortition.103
+	title = lrsk_adv_civ_sortition.103.name
+	desc = lrsk_adv_civ_sortition.103.desc
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_sortition
+		is_ai = no
+	}
+
+	option = {
+		name = lrsk_adv_civ_sortition.103.okay
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.101 } }
+	}
+	option = {
+		name = lrsk_adv_civ_sortition.103.traits
+		hidden_effect = { country_event = { id = lrsk_adv_civ_sortition.102 } }
+	}
+}
+
+# Housekeeping 1: Yearly kick-offs.
+# Month 1: Ostracism chance, threat level
+# Month 3: Conspiracy recruitment
+# Month 6: Threat level
+# Month 9: Conspiracy recruitment
+country_event = {
+	id = lrsk_adv_civ_sortition.1000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
+
+	immediate = {
+		country_event = { id = lrsk_adv_civ_sortition.1002 } 			# Month 1: Threat level
+		country_event = { id = lrsk_adv_civ_sortition.1003 days = 3}	# Month 1: Ostracism chance
+		country_event = { id = lrsk_adv_civ_sortition.1004 days = 90 } 	# Month 3: Conspiracy recruitment
+		country_event = { id = lrsk_adv_civ_sortition.1002 days = 180 }	# Month 6: Threat level
+		country_event = { id = lrsk_adv_civ_sortition.1004 days = 270 }	# Month 9: Conspiracy recruitment
+	}
+}
+
+# Housekeeping 2: Ruler status check (fit or unfit from "elitist" pov)
+country_event = {
+	id = lrsk_adv_civ_sortition.1001
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
+		
+		has_civic = lrsk_adv_civ_civic_sortition
+	}
+
+	immediate = {
+		if = { limit = { has_country_flag = lrsk_ruler_unfit_elitist } remove_country_flag = lrsk_ruler_unfit_elitist }
+		if = { limit = { has_country_flag = lrsk_ruler_fit_elitist } remove_country_flag = lrsk_ruler_fit_elitist }
+		ruler = { switch = {
+			trigger = has_ruler_trait
+			lrsk_adv_civ_trait_unready_rul = { root = { set_country_flag = lrsk_ruler_unfit_elitist } }
+			lrsk_adv_civ_trait_tutors_rul = { root = { set_country_flag = lrsk_ruler_unfit_elitist } }
+			lrsk_adv_civ_trait_groomed_rul = { root = { set_country_flag = lrsk_ruler_fit_elitist } }
+			lrsk_adv_civ_trait_ambitious_rul = { root = { set_country_flag = lrsk_ruler_fit_elitist } }
+		} }
+	}
+}
+
+# Housekeeping 3: Check conspiracy threat level (every 6 months)
+# "Conspiracy threat level" is basically a measure of how motivated "elitists" are going to be to organize against the demarchy.
+#	It basically makes the elite conspiracy better at recruiting conspirators and advancing their agenda.
+# Every Groomed leader = +2 threat
+# Every Ambitious leader = +3 threat
+# Every Groomed/Ambitious leader + unfit Ruler = +1 threat
+# Every Groomed/Ambitious leader + fit Ruler = -1 threat
+# Civics EnLib, DisAdm, WarCul = +2 threat each
+# Civics Repub, CitServ, ElCler, WorkCou = -2 threat each
+# Ruler is Groomed = +4 threat
+# Ruler is Ambitious = +6 threat
+# Recent vote for ostracism = -3 threat
+# Ostracism vote praised = -3 threat
+# Recent actual exile = -3 threat
+# Ruler recently resigned = -3 threat
+# At war = -5 threat
+# Recently lost war = +5 threat
+# Random = +0-5 threat
+country_event = {
+	id = lrsk_adv_civ_sortition.1002
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_civic = lrsk_adv_civ_civic_sortition }
+
+	immediate = {
+		set_variable = { which = lrsk_consp_thrt value = 0 }
+
+		# Increments done before decrements because I don't want negative values (no idea if they work)
+		if = { limit = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism } change_variable = { which = lrsk_consp_thrt value = 2 } }
+		if = { limit = { has_valid_civic = civic_warrior_culture } change_variable = { which = lrsk_consp_thrt value = 2 } }
+		if = { limit = { has_valid_civic = civic_distinguished_admiralty } change_variable = { which = lrsk_consp_thrt value = 2 } }
+		if = { limit = { recently_lost_war = yes } change_variable = { which = lrsk_consp_thrt value = 5 } }
+
+		every_owned_leader = {
+			limit = { OR = {
+				lrsk_adv_civ_sort_is_groomed = yes
+				lrsk_adv_civ_sort_is_ambitious = yes
+			} }
+
+			if = { limit = { lrsk_adv_civ_sort_is_groomed = yes } root = { change_variable = { which = lrsk_consp_thrt value = 2 } } }
+			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_consp_thrt value = 3 } } }
+
+			root = { 
+				if = { limit = { has_country_flag = lrsk_ruler_unfit_elitist } change_variable = { which = lrsk_consp_thrt value = 1 } }
+				if = { limit = { has_country_flag = lrsk_ruler_fit_elitist } subtract_variable = { which = lrsk_consp_thrt value = 1 } }
+			}
+		}
+
+		ruler = {
+			if = { limit = { lrsk_adv_civ_sort_is_groomed = yes } root = { change_variable = { which = lrsk_consp_thrt value = 4 } } }
+			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_consp_thrt value = 6 } } }
+		}
+
+		# random increments
+		random_list = {
+			1 = { } #none
+			1 = { change_variable = { which = lrsk_consp_thrt value = 1 }
+			1 = { change_variable = { which = lrsk_consp_thrt value = 2 }
+			1 = { change_variable = { which = lrsk_consp_thrt value = 3 }
+			1 = { change_variable = { which = lrsk_consp_thrt value = 4 }
+			1 = { change_variable = { which = lrsk_consp_thrt value = 5 }
+		}
+		
+		if = { limit = { has_valid_civic = lrsk_gov_var_civic_republicanism } 
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 1 } } subtract_variable = { which = lrsk_consp_thrt value = 2 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_valid_civic = civic_citizen_service }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 1 } } subtract_variable = { which = lrsk_consp_thrt value = 2 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_valid_civic = lrsk_gov_var_civic_elected_clergy }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 1 } } subtract_variable = { which = lrsk_consp_thrt value = 2 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 1 } } subtract_variable = { which = lrsk_consp_thrt value = 2 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_country_flag = lrsk_recent_ost_vote }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_country_flag = lrsk_ost_vote_praised }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_country_flag = lrsk_recent_exile }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { has_country_flag = lrsk_recent_resignation }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 3 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+		if = { limit = { is_at_war = yes }
+			if = { limit = { check_variable = { which = lrsk_consp_thrt value > 4 } } subtract_variable = { which = lrsk_consp_thrt value = 5 } }
+			else = { set_variable = { which = lrsk_consp_thrt value = 0 } }
+		}
+	}
+}
+
+# Housekeeping 4: Check ostracism chance (yearly or as needed)
+# "Ostracism chance" is the level of suspicion among the general populace that the above organizing is happening.
+#	The higher this is, the higher the chance of people voting for ostracism this year.
+# Every Groomed leader = +1 ost
+# Every Ambitious leader = +2 ost
+# Ruler is Groomed = +3 ost
+# Ruler is Ambitious = +4 ost
+# Conspiracy revealed = +5 ost
+# Elite reform demanded = +5 ost
+# Ruler is known to be in conspiracy = +7 ost
+# Ruler is known to lead conspiracy = +9 ost
+# Random = +0-3 ost
+country_event = {
+	id = lrsk_adv_civ_sortition.1003
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_sortition
+		NOT = { has_country_flag = lrsk_emergency_ostracism_happened }
+	}
+
+	immediate = {
+		set_variable = { which = lrsk_ost_chance value = 0 }
+		
+		if = { limit = { has_country_flag = lrsk_consp_revealed } change_variable = { which = lrsk_ost_chance value = 5 } }
+		if = { limit = { has_country_flag = lrsk_elite_reform } change_variable = { which = lrsk_ost_chance value = 5 } }
+
+		every_owned_leader = {
+			limit = { OR = {
+				lrsk_adv_civ_sort_is_groomed = yes
+				lrsk_adv_civ_sort_is_ambitious = yes
+			} }
+
+			if = { limit = { lrsk_adv_civ_sort_is_groomed = yes } root = { change_variable = { which = lrsk_ost_chance value = 1 } } }
+			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_ost_chance value = 2 } } }
+		}
+
+		ruler = {
+			if = { limit = { lrsk_adv_civ_sort_is_groomed = yes } root = { change_variable = { which = lrsk_ost_chance value = 3 } } }
+			if = { limit = { lrsk_adv_civ_sort_is_ambitious = yes } root = { change_variable = { which = lrsk_ost_chance value = 4 } } }
+			if = { limit = { has_leader_flag = lrsk_is_elite_conspirator_exposed@root } root = { change_variable = { which = lrsk_ost_chance value = 7 } } }
+			if = { limit = { has_leader_flag = lrsk_elite_conspiracy_leader_exposed@root } root = { change_variable = { which = lrsk_ost_chance value = 9 } } }
+		}
+
+		# random increments
+		random_list = {
+			1 = { } #none
+			1 = { change_variable = { which = lrsk_ost_chance value = 1 }
+			1 = { change_variable = { which = lrsk_ost_chance value = 2 }
+			1 = { change_variable = { which = lrsk_ost_chance value = 3 }
+		}
+
+		# Chance of ostracism resolved
+		random_list = {
+			# Do not ostracize
+			80 = {
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 0 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 3 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 7 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 11 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 15 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 19 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 23 }
+				}
+				modifier = {
+					add = -10
+					check_variable = { which = lrsk_ost_chance value > 27 }
+				}
+			}
+			# Do ostracize
+			20 = {
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 0 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 3 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 7 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 11 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 15 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 19 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 23 }
+				}
+				modifier = {
+					add = 10
+					check_variable = { which = lrsk_ost_chance value > 27 }
+				}
+				country_event = { id = lrsk_adv_civ_sortition.5 days = 30 random = 20 }
+			}
+		}
+	}
+}
+
+# Housekeeping X: Level up clean up (JIC)
+country_event = {
+	id = lrsk_adv_civ_sortition.1009
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { fromfrom = { OR = {
+		has_leader_flag = lrsk_leader_level_lost_ambition
+		has_leader_flag = lrsk_leader_level_tutors_to_ambition
+		has_leader_flag = lrsk_leader_level_lost_tutors
+		has_leader_flag = lrsk_leader_level_groomed_to_ambition
+		has_leader_flag = lrsk_leader_level_lost_groomed
+		has_leader_flag = lrsk_leader_level_unready_to_tutors
+		has_leader_flag = lrsk_leader_level_lost_unready
+		has_leader_flag = lrsk_leader_level_got_ambition
+	} } }
+
+	immediate = { fromfrom = { switch = {
+		trigger = has_leader_flag
+		lrsk_adv_civ_leader_level_lost_ambition = { remove_leader_flag = lrsk_leader_level_lost_ambition }
+		lrsk_adv_civ_leader_level_tutors_to_ambition = { remove_leader_flag = lrsk_leader_level_tutors_to_ambition }
+		lrsk_adv_civ_leader_level_lost_tutors = { remove_leader_flag = lrsk_leader_level_lost_tutors }
+		lrsk_adv_civ_leader_level_groomed_to_ambition = { remove_leader_flag = lrsk_leader_level_groomed_to_ambition }
+		lrsk_adv_civ_leader_level_lost_groomed = { remove_leader_flag = lrsk_leader_level_lost_groomed }
+		lrsk_adv_civ_leader_level_unready_to_tutors = { remove_leader_flag = lrsk_leader_level_unready_to_tutors }
+		lrsk_adv_civ_leader_level_lost_unready = { remove_leader_flag = lrsk_leader_level_lost_unready }
+		lrsk_adv_civ_leader_level_got_ambition = { remove_leader_flag = lrsk_leader_level_got_ambition }
+	} } }
+}

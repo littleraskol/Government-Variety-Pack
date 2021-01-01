@@ -1,0 +1,235 @@
+# New Advanced Civics
+# Scripted Effects
+# Author: littleraskol
+
+# Sortition (Events to control special leader traits)
+lrsk_adv_civ_sort_get_ambition = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      add_trait = lrsk_adv_civ_trait_ambitious_rul
+      add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    scientist = {
+      add_trait = lrsk_adv_civ_trait_ambitious_sci
+      add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    governor = {
+      add_trait = lrsk_adv_civ_trait_ambitious_gov
+      add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    general = {
+      add_trait = lrsk_adv_civ_trait_ambitious_gen
+      add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    admiral = {
+      add_trait = lrsk_adv_civ_trait_ambitious_adm
+      add_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+  }
+}
+
+lrsk_adv_civ_sort_get_tutors = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      add_trait = lrsk_adv_civ_trait_tutors_rul
+      add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    scientist = {
+      add_trait = lrsk_adv_civ_trait_tutors_sci
+      add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    governor = {
+      add_trait = lrsk_adv_civ_trait_tutors_gov
+      add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    general = {
+      add_trait = lrsk_adv_civ_trait_tutors_gen
+      add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    admiral = {
+      add_trait = lrsk_adv_civ_trait_tutors_adm
+      add_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+  }
+}
+
+lrsk_adv_civ_sort_lose_ambition = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      remove_trait = lrsk_adv_civ_trait_ambitious_rul
+      remove_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    scientist = {
+      remove_trait = lrsk_adv_civ_trait_ambitious_sci
+      remove_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    governor = {
+      remove_trait = lrsk_adv_civ_trait_ambitious_gov
+      remove_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    general = {
+      remove_trait = lrsk_adv_civ_trait_ambitious_gen
+      remove_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+    admiral = {
+      remove_trait = lrsk_adv_civ_trait_ambitious_adm
+      remove_ruler_trait = lrsk_adv_civ_trait_ambitious_rul
+    }
+  }
+}
+
+lrsk_adv_civ_sort_lose_tutors = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      remove_trait = lrsk_adv_civ_trait_tutors_rul
+      remove_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    scientist = {
+      remove_trait = lrsk_adv_civ_trait_tutors_sci
+      remove_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    governor = {
+      remove_trait = lrsk_adv_civ_trait_tutors_gov
+      remove_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    general = {
+      remove_trait = lrsk_adv_civ_trait_tutors_gen
+      remove_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+    admiral = {
+      remove_trait = lrsk_adv_civ_trait_tutors_adm
+      remove_ruler_trait = lrsk_adv_civ_trait_tutors_rul
+    }
+  }
+}
+
+lrsk_adv_civ_sort_lose_groomed = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      remove_trait = lrsk_adv_civ_trait_groomed_rul
+      remove_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    }
+    scientist = {
+      remove_trait = lrsk_adv_civ_trait_groomed_sci
+      remove_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    }
+    governor = {
+      remove_trait = lrsk_adv_civ_trait_groomed_gov
+      remove_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    }
+    general = {
+      remove_trait = lrsk_adv_civ_trait_groomed_gen
+      remove_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    }
+    admiral = {
+      remove_trait = lrsk_adv_civ_trait_groomed_adm
+      remove_ruler_trait = lrsk_adv_civ_trait_groomed_rul
+    }
+  }
+}
+
+lrsk_adv_civ_sort_lose_unready = {
+  switch = {
+    trigger = leader_class
+    ruler = {
+      remove_trait = lrsk_adv_civ_trait_unready_rul
+      remove_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    }
+    scientist = {
+      remove_trait = lrsk_adv_civ_trait_unready_sci
+      remove_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    }
+    governor = {
+      remove_trait = lrsk_adv_civ_trait_unready_gov
+      remove_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    }
+    general = {
+      remove_trait = lrsk_adv_civ_trait_unready_gen
+      remove_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    }
+    admiral = {
+      remove_trait = lrsk_adv_civ_trait_unready_adm
+      remove_ruler_trait = lrsk_adv_civ_trait_unready_rul
+    }
+  }
+}
+
+# Established Empire
+
+lrsk_adv_civ_estemp_take_system_resources = {
+  every_system_planet = {
+    limit = {
+      has_deposit_for = shipclass_mining_station
+      has_mining_station = no
+    }
+    create_mining_station = {
+      owner = ROOT
+    }
+  }
+  every_system_planet = {
+    limit = {
+      has_deposit_for = shipclass_research_station
+      has_research_station = no
+    }
+    create_research_station = {
+      owner = ROOT
+    }
+  }
+}
+
+# 8 jobs and 6 pops
+lrsk_generate_estemp_col_pops_and_districts = {
+  # 2 jobs
+  if = {
+    limit = {
+      owner = { NOT = { has_valid_civic = civic_agrarian_idyll } }
+    }
+    while = {
+      count = 2
+      add_district_and_planet_size_if_needed_effect = {
+        district = district_city
+      }
+    }
+  }
+  else = {
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_farming
+    }
+  }
+
+  # 2 jobs
+  if = { limit = { owner = { is_lithoid_empire = no } }
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_farming
+    }
+  }
+  else = {
+    add_district_and_planet_size_if_needed_effect = {
+      district = district_mining
+    }
+  }
+
+  # 2 jobs
+  add_district_and_planet_size_if_needed_effect = {
+    district = district_mining
+  }
+
+  # 2 jobs
+  add_district_and_planet_size_if_needed_effect = {
+    district = district_generator
+  }
+
+	# 6 pops
+	while = {
+		count = 6
+		create_pop = {
+			species = owner_main_species
+			ethos = random
+		}
+	}
+}
