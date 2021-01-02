@@ -91,6 +91,10 @@ planet_event = {
 					factor = 1.2
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = lrsk_gvp_testcall }
+				}
 				log = "Doing nothing."
 				# We want this outcome to create a slight buffer on the next cult formation attempt.
 				owner = {
@@ -151,6 +155,14 @@ planet_event = {
 				modifier = {
 					factor = 0.8
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
+				}
+				modifier = {
+					add = 1
+					owner = { has_country_flag = lrsk_gvp_testcall }
+				}
+				modifier = {
+					factor = 2
+					owner = { has_country_flag = lrsk_gvp_testcall }
 				}
 				log = "Forming a cult."
 
