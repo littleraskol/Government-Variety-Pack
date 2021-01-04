@@ -29,13 +29,6 @@ lrsk_uplift_1 = {
 			any_country = { 
 				has_origin = lrsk_gov_var_origin_uplift
 				NOT = { has_country_flag = lrsk_uplift_tutor_system_spawned }
-				#solar_system = {
-				#	distance = {
-				#		source = this
-				#		min_jumps = 3
-				#		max_jumps = 5
-				#	}
-				#}
 			}
 			NOT = { has_star_flag = empire_cluster }
 			add = 99999
@@ -133,7 +126,6 @@ lrsk_uplift_1 = {
 							civic = civic_machine_delegated_functions
 						}
 						effect = {
-							save_event_target_as = lrsk_uplift_tutor
 							add_resource = {
 								minerals = 2400
 								energy = 2400
@@ -170,7 +162,6 @@ lrsk_uplift_1 = {
 							civic = civic_hive_pooled_knowledge
 						}
 						effect = {
-							save_event_target_as = lrsk_uplift_tutor
 							add_resource = {
 								minerals = 2400
 								energy = 1400
@@ -205,7 +196,6 @@ lrsk_uplift_1 = {
 							ethos = event_target:lrsk_uplift_pupil	# We assume a high degree of influence by the tutor....
 							authority = random
 							effect = {
-								save_event_target_as = lrsk_uplift_tutor
 								add_resource = {
 									minerals = 1900
 									energy = 1400
@@ -231,7 +221,6 @@ lrsk_uplift_1 = {
 								}
 								authority = random
 								effect = {
-									save_event_target_as = lrsk_uplift_tutor
 									add_resource = {
 										minerals = 1900
 										energy = 1400
@@ -255,7 +244,6 @@ lrsk_uplift_1 = {
 								}
 								authority = random
 								effect = {
-									save_event_target_as = lrsk_uplift_tutor
 									add_resource = {
 										minerals = 1900
 										energy = 1400
@@ -270,6 +258,13 @@ lrsk_uplift_1 = {
 					}
 				}
 			}
+
+			# Establish relational flags
+			last_created_country = {
+				save_event_target_as = lrsk_uplift_tutor
+				set_relation_flag = { who = event_target:lrsk_uplift_pupil flag = lrsk_uplift_tutor_of }
+			}
+			event_target:lrsk_uplift_pupil = { set_relation_flag = { who = last_created_country flag = lrsk_uplift_pupil_of } }
 
 			#create_species = {
 			#	name = random

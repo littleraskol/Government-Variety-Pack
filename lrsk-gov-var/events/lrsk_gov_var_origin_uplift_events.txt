@@ -33,14 +33,14 @@ country_event = {
 
 	trigger = {
 		has_origin = lrsk_gov_var_origin_uplift
+		any_country = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 	}
 
 	immediate = {
 		log = "at uplift tutor finalization event"
 		random_country = {
-			limit = { has_country_flag = lrsk_uplift_tutor }
+			limit = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 			save_event_target_as = lrsk_my_uplift_tutor
-			set_relation_flag = { who = root flag = lrsk_uplift_tutor_of }
 			# For future: Convert to random list weighted by existing PC?
 			if = {
 				limit = { this = { ideal_planet_class = pc_arid } }
@@ -132,8 +132,6 @@ country_event = {
 			country_event = { id = game_start.6 } #Advanced empire buffs
 		}
 		
-		set_relation_flag = { who = event_target:lrsk_my_uplift_tutor flag = lrsk_uplift_pupil_of }
-
 		this.capital_scope.solar_system = {
 			closest_system = {
 				limit = {
