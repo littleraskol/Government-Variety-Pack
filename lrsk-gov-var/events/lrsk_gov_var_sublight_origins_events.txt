@@ -2931,6 +2931,15 @@ country_event = {
 		}
 	}
 
+	option = {
+		name = lrsk_gov_var_sublight_origins.8.d
+		custom_tooltip = lrsk_gov_var_sublight_origins.8.d.tooltip
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_waiting_on_reform
+		}
+	}
+
 	after = { IF = { limit = { NOT = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform } }
 		# One way or another, none of this is relevant anymore
 		IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_opentrade }
