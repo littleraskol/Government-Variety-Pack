@@ -2836,6 +2836,20 @@ country_event = {
 
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_empire }
 
+		# Only allowed if we have Federation tradition (can make our own) or are the leader of a federation.
+		allow = {
+			OR = {
+				has_tradition = tr_diplomacy_the_federation
+				AND  = {
+					has_federation = yes
+					federation = { any_member = { 
+						is_federation_leader = yes
+						is_same_value = root
+					} }
+				}
+			}
+		}
+
 		hidden_effect = {
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_sublight_vassal }
@@ -2865,6 +2879,20 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.8.a.commonwealth.tooltip
 
 		trigger = { has_origin = lrsk_gov_var_origin_sublight_commonwealth }
+
+		# Only allowed if we have Federation tradition (can make our own) or are the leader of a federation.
+		allow = {
+			OR = {
+				has_tradition = tr_diplomacy_the_federation
+				AND  = {
+					has_federation = yes
+					federation = { any_member = { 
+						is_federation_leader = yes
+						is_same_value = root
+					} }
+				}
+			}
+		}
 		
 		hidden_effect = {
 			every_subject = {
