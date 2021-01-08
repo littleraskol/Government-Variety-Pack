@@ -874,6 +874,15 @@ country_event = {
 			}
 		}
 	}
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.31.c
+		custom_tooltip = lrsk_gvp_mc_bldg_special.31.c.tooltip
+
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 # Favor inform victim
@@ -923,8 +932,6 @@ country_event = {
 		name = lrsk_gvp_mc_bldg_special.32.b
 		custom_tooltip = lrsk_gvp_mc_bldg_special.32.b.tooltip
 		hidden_effect = {
-			add_modifier = { modifier = lrsk_gvp_empire_scandal_wracked days = 360 }
-			add_opinion_modifier = { modifier = opinion_lrsk_gvp_scandal_inflicted who = event_target:lrsk_media_corp_to_scoop }
 			event_target:lrsk_media_corp_to_scoop = { country_event = { id = lrsk_gvp_mc_bldg_special.34 days = 3 } }
 		}
 		ai_chance = {
@@ -982,6 +989,57 @@ country_event = {
 	option = {
 		name = lrsk_gvp_mc_bldg_special.34.a
 		custom_tooltip = lrsk_gvp_mc_bldg_special.34.a.tooltip
+		hidden_effect = {
+			event_target:lrsk_media_corp_victim = {
+				add_modifier = { modifier = lrsk_gvp_empire_scandal_wracked days = 360 }
+				add_opinion_modifier = { modifier = opinion_lrsk_gvp_scandal_inflicted who = root }
+				event_target:lrsk_media_corp_victim = { country_event = { id = lrsk_gvp_mc_bldg_special.33 days = 3 } }
+			}
+		}
+		ai_chance = {
+			factor = 3
+			modifier = {
+				add = -1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = superior
+				}
+			}
+			modifier = {
+				add = -1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = overwhelming
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gvp_mc_bldg_special.34.b
+		custom_tooltip = lrsk_gvp_mc_bldg_special.34.b.tooltip
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				add = 1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = superior
+				}
+			}
+			modifier = {
+				add = 1
+				relative_power = {
+					who = event_target:lrsk_media_corp_victim
+					category = all
+					value = overwhelming
+				}
+			}
+		}
 	}
 }
 
