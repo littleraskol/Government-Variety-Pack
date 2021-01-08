@@ -203,8 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.6.8.1 (01-XX-21) - Minor new feature
+v1.6.8.1 (01-08-21) - New features and fixes
 -Added option for media corp favor events: corp can bail out with no effect if desired.
+-Fix: Incorrectly marked Braz/Port localization as French.
 
 v1.6.8 (01-01-21) - Megacorp Expansion
 -Scientific Management civic now allows the Managerial Technique Institute branch building, which provides the host planet with two Functionary jobs (produces +3 admin cap and +3 trade value) and provides the megacorp with +10% Branch Office Value, +5% more per Functionary job filled (which becomes +10% crime on planet per job for criminal corps).
