@@ -514,12 +514,13 @@ l_english:
  lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[event_target:lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
 
  # Media corp favor choice
+ LRSK_GVP_SCANDAL_COMMON:0 "£mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year."
  lrsk_gvp_mc_bldg_special.31.name:0 "A Juicy Story..."
- lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[event_target:lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the [event_target:lrsk_media_corp_victim.GetName]."
+ lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[event_target:lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the §H[event_target:lrsk_media_corp_victim.GetName]§!."
  lrsk_gvp_mc_bldg_special.31.a:0 "What a scoop!"
  lrsk_gvp_mc_bldg_special.31.a.tooltip:0 "Gain §G1 Favor§! with §H[event_target:lrsk_media_corp_victim.GetName]§!, although they might refuse..."
  lrsk_gvp_mc_bldg_special.31.b:0 "The people deserve to know."
- lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[event_target:lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their £mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year. They will §Rnot be happy with us...§!"
+ lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[event_target:lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their $LRSK_GVP_SCANDAL_COMMON$ They will §Rnot be happy with us...§!"
  lrsk_gvp_mc_bldg_special.31.c:0 "Maybe we should just... let this one go."
  lrsk_gvp_mc_bldg_special.31.c.tooltip:0 "Nothing will happen this time."
 
@@ -529,13 +530,13 @@ l_english:
  lrsk_gvp_mc_bldg_special.32.a:0 "We really stepped in it."
  lrsk_gvp_mc_bldg_special.32.a.tooltip:0 "§H[event_target:lrsk_media_corp_to_scoop.GetName]§! gets §R1 Favor§! from us."
  lrsk_gvp_mc_bldg_special.32.b:0 "We won't be blackmailed!"
- lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "If §H[event_target:lrsk_media_corp_to_scoop.GetName]§! releases the story, national embarrassment will reduce our £mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year. We will §Rnot be happy§! with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
+ lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "If §H[event_target:lrsk_media_corp_to_scoop.GetName]§! releases the story, national embarrassment will reduce our $LRSK_GVP_SCANDAL_COMMON$ We will §Rnot be happy§! with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
  
  # Inform media corp host of choice: Scandal
  lrsk_gvp_mc_bldg_special.33.name:0 "We Got Scooped!"
  lrsk_gvp_mc_bldg_special.33.desc:0 "Reporters from §H[event_target:lrsk_media_corp_to_scoop.GetName]§! on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§! discovered and reported on an item of national disgrace. It will take some time now to recover our good name with our citizens and the galactic community."
  lrsk_gvp_mc_bldg_special.33.a:0 "Damn the meddling lying press!"
- lrsk_gvp_mc_bldg_special.33.a.tooltip:0 "$lrsk_gvp_mc_bldg_special.32.b.tooltip$"
+ lrsk_gvp_mc_bldg_special.33.a.tooltip:0 "National embarrassment reduces our $LRSK_GVP_SCANDAL_COMMON$ We are §Rnot happy§! with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
  
  # Inform media corp of offer refusal
  lrsk_gvp_mc_bldg_special.34.name:0 "Offer Refused..."
