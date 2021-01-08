@@ -220,6 +220,10 @@ v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
+v1.6.8.1 (01-08-21) - New features and fixes
+-Added option for media corp favor events: corp can bail out with no effect if desired.
+-Fix: Incorrectly marked Braz/Port localization as French.
+
 v1.6.8 (01-01-21) - Megacorp Expansion
 -Scientific Management civic now allows the Managerial Technique Institute branch building, which provides the host planet with two Functionary jobs (produces +3 admin cap and +3 trade value) and provides the megacorp with +10% Branch Office Value, +5% more per Functionary job filled (which becomes +10% crime on planet per job for criminal corps).
 -Educational Consortium civic now allows the Learnarium Dome branch building, which provides the host planet with +50% Materialist attraction and two Info-Guide jobs (produces +2 all research and +2 amenities), and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Materialist.
