@@ -16,18 +16,7 @@ planet_event = {
 	trigger = {		
 		num_pops > 2
 		any_pop = { has_ethic = "ethic_spiritualist" }
-		OR = {
-			NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
-		}
+		lrsk_gvp_planet_can_get_wild_cult = yes
 		owner = {
 			has_valid_civic = lrsk_gov_var_civic_direct_revelation
 			NOT = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently }
@@ -936,102 +925,6 @@ country_event = {
 				}
 							
 				planet_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
-
-				# Thought about doing this random but eh
-				#random_list = {
-				#	60 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_doomsday_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	30 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	10 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
-				#			days = -1
-				#		}
-				#	}
-				#}
-			}
-		}
-	}
-}
-
-# Starting restrictions and special interactions.
-country_event = {
-	id = lrsk_gov_var_direct_revelation.1000
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_valid_civic = lrsk_gov_var_civic_direct_revelation
-	}
-
-	immediate = {
-		log = "In Direct Revelation setup event."
-		# Can't get a cult randomly before 30 days go by.
-		set_timed_country_flag = {
-			flag = lrsk_gov_var_wild_cult_formed_recently
-			days = 30
-		}
-		if = { 
-			limit = { OR = { 
-				has_origin = origin_doomsday
-				# Leaving the door open to other superbad origin starts to apply here.
-			} }
-			log = "In Direct Revelation setup event; setting special doomsday properties."
-			# Need something to somewhat offset the penalties of doomsday cult
-			add_modifier = {
-				modifier = lrsk_gov_var_empire_endisnigh
-				days = 18000
-			}
-
-			capital_scope = {
-				add_modifier = {
-					modifier = "lrsk_gov_var_statmod_doomsday_cult"
-					days = 18000
-				}
-				
-				# Heavily discourage other cults, though if one forms these will be reset.
-				set_timed_planet_flag = {
-					flag = lrsk_gov_var_wild_cult_planet
-					days = 18000
-				}
-				set_timed_planet_flag = {
-					flag = lrsk_gov_var_new_wild_cult_on_planet
-					days = 18000
-				}
-							
-				#planet_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
-
-				# Thought about doing this random but eh
-				#random_list = {
-				#	60 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_doomsday_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	30 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	10 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
-				#			days = -1
-				#		}
-				#	}
-				#}
 			}
 		}
 	}
