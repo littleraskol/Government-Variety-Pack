@@ -782,3 +782,23 @@ lrsk_remove_colonial_trade_bonus = {
 		}
 	}
 }
+
+# Removes all wild cults (planet scope)
+lrsk_gvp_remove_every_wild_cult = {
+	while = {
+		limit = { lrsk_gvp_planet_has_no_wild_cult = no }
+		switch = {
+			trigger = has_modifier
+			lrsk_gov_var_statmod_divine_right_cult = { remove_modifier = lrsk_gov_var_statmod_divine_right_cult }
+			lrsk_gov_var_statmod_children_of_heaven_cult = { remove_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
+			lrsk_gov_var_statmod_holy_war_cult = { remove_modifier = lrsk_gov_var_statmod_holy_war_cult }
+			lrsk_gov_var_statmod_harmony_cult = { remove_modifier = lrsk_gov_var_statmod_harmony_cult }
+			lrsk_gov_var_statmod_chosen_few_cult = { remove_modifier = lrsk_gov_var_statmod_chosen_few_cult }
+			lrsk_gov_var_statmod_universal_family_cult = { remove_modifier = lrsk_gov_var_statmod_universal_family_cult }
+			lrsk_gov_var_statmod_doomsday_cult = { remove_modifier = lrsk_gov_var_statmod_doomsday_cult }
+			lrsk_gov_var_statmod_golden_age_cult = { remove_modifier = lrsk_gov_var_statmod_golden_age_cult }
+			lrsk_gov_var_statmod_wild_revelry_cult = { remove_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
+			lrsk_gov_var_statmod_penance_and_redemption_cult = { remove_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
+		}
+	}
+}

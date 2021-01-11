@@ -829,6 +829,9 @@ country_event = {
 	immediate = {
 		set_timed_country_flag = { flag =  lrsk_gvp_testcall days = 3 } # Guarantees the event fires
 		IF = { limit = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently } remove_country_flag = lrsk_gov_var_wild_cult_formed_recently }
-		capital_scope = { planet_event = { id = lrsk_gov_var_direct_revelation.1 } }
+		capital_scope = {
+			lrsk_gvp_remove_every_wild_cult = yes
+			planet_event = { id = lrsk_gov_var_direct_revelation.1 }
+		}
 	}
 }
