@@ -44,3 +44,33 @@ lrsk_gov_var_has_tradeways_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways_mc
 	}
 }
+
+lrsk_gvp_planet_can_get_wild_cult = {
+	OR = {
+		NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
+		NOT = { has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
+	}	
+}
+
+lrsk_gvp_planet_has_no_wild_cult = {
+	NOR = {
+		has_modifier = lrsk_gov_var_statmod_divine_right_cult
+		has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
+		has_modifier = lrsk_gov_var_statmod_holy_war_cult
+		has_modifier = lrsk_gov_var_statmod_harmony_cult
+		has_modifier = lrsk_gov_var_statmod_chosen_few_cult
+		has_modifier = lrsk_gov_var_statmod_universal_family_cult
+		has_modifier = lrsk_gov_var_statmod_doomsday_cult
+		has_modifier = lrsk_gov_var_statmod_golden_age_cult
+		has_modifier = lrsk_gov_var_statmod_wild_revelry_cult
+		has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
+	}	
+}
