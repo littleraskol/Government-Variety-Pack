@@ -19,6 +19,12 @@ Tradeways, Inc. (Megacorporation) - This global megacorporation established earl
 
 Grand Alliance (Militarist) - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
 
+Uplift (Any) - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
+
+Sublight Empire (Not Egalitarian) - This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies with enough strings attached to keep those offshoots under their thumbs... for now. (Start as the overlord of three special vassal empires of your species, which will provide you with resources via taxes although you will not be able to integrate them. These vassals will occupy any Guaranteed Habitable Worlds slots near your home system and will eventually break from from your FTL monopoly. One vassal is loyal and shares your ethics, one is the result of a generation ship and will have random ethics, the third will be composed of dissidents with opposed ethics. Unique colony interaction events culminating in the evolution of the system into new forms. WARNING: This origin can only be guaranteed to work properly when choosing a base game planet type for your homeworld.)
+
+Sublight Commonwealth (Not Authoritarian) - This civilization started their efforts at interstellar colonization before even unlocking the secrets of FTL travel. Once they discovered it, they shared it with their sublight colonies on the condition of their entering an interstellar commonwealth of worlds that, in theory, works for the benefit of all members, but tends to give most decision-making power to the homeworld. (Start as the overlord of three special vassal empires of your species. You will not be able to integrate them, but as the respected leader of their combined efforts, you gain Influence and Unity from the arrangement. These vassals will occupy any Guaranteed Habitable Worlds slots near your home system. One vassal is loyal and shares your ethics, one is the result of a generation ship and will have random ethics, the third will be composed of dissidents with opposed ethics. Unique colony interaction events culminating in the evolution of the system into new forms. WARNING: This origin can only be guaranteed to work properly when choosing a base game planet type for your homeworld.)
+
 Normal Civics:
 
 Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
@@ -139,6 +145,8 @@ Educational Consortium (Materialist) - This conglomerate specializes in providin
 
 Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
 
+Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
+
 Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
@@ -203,6 +211,15 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
+-Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
+-Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
+-Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
+-Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
+-New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
+-Added new government type "Colonial Charter Board" based on the above civic.
+-Civic Direct Revelation now has options to ignore Wild Cult popups.
+
 v1.6.8.1 (01-08-21) - New features and fixes
 -Added option for media corp favor events: corp can bail out with no effect if desired.
 -Fix: Incorrectly marked Braz/Port localization as French.
@@ -228,7 +245,6 @@ v1.6.8 (01-01-21) - Megacorp Expansion
 -Backend: Added "general test" diagnostic event.
 -Backend: Numerous testing tools in scripted effects/triggers.
 -Fixed some localization typos here and there.
-
 
 v1.6.7 (11-11-20) - More Merchantry
 -Added two governments based on the ideas of Steam user Garlic Pudding: Stakeholder Polity and Shareholder Commonwealth.
