@@ -203,6 +203,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v1.6.8.2 (01-08-21) - Misc fixes
+-Removed defunct diplo phrase.
+-Misnamed planet modifier (DPS building focus should now work)
+-AI chances for options in events needed factors, not additions.
+
 v1.6.8.1 (01-08-21) - New features and fixes
 -Added option for media corp favor events: corp can bail out with no effect if desired.
 -Fix: Incorrectly marked Braz/Port localization as French.
