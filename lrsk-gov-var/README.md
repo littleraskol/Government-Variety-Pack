@@ -220,6 +220,11 @@ v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
+v1.6.8.2 (01-08-21) - Misc fixes
+-Removed defunct diplo phrase.
+-Misnamed planet modifier (DPS building focus should now work)
+-AI chances for options in events needed factors, not additions.
+
 v1.6.8.1 (01-08-21) - New features and fixes
 -Added option for media corp favor events: corp can bail out with no effect if desired.
 -Fix: Incorrectly marked Braz/Port localization as French.

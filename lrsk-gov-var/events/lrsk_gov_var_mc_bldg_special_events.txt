@@ -824,9 +824,9 @@ country_event = {
 			event_target:lrsk_media_corp_victim = { country_event = { id = lrsk_gvp_mc_bldg_special.32 days = 3 } }
 		}
 		ai_chance = {
-			factor = 6
+			factor = 8
 			modifier = {
-				add = 1
+				factor = 1.25
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -834,7 +834,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				add = 1
+				factor = 1.5
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -855,9 +855,9 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 3
+			factor = 4
 			modifier = {
-				add = -1
+				factor = 0.5
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -865,7 +865,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				add = -1
+				factor = 0.25
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -910,16 +910,16 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 5
+			factor = 16
 			modifier = {
-				add = -2
+				factor = 0.5
 				opinion_level = {
 					who = event_target:lrsk_media_corp_to_scoop
 					level <= poor
 				}
 			}
 			modifier = {
-				add = -2
+				factor = 0.25
 				opinion_level = {
 					who = event_target:lrsk_media_corp_to_scoop
 					level <= terrible
@@ -935,16 +935,16 @@ country_event = {
 			event_target:lrsk_media_corp_to_scoop = { country_event = { id = lrsk_gvp_mc_bldg_special.34 days = 3 } }
 		}
 		ai_chance = {
-			factor = 1
+			factor = 4
 			modifier = {
-				add = 2
+				factor = 2
 				opinion_level = {
 					who = event_target:lrsk_media_corp_to_scoop
 					level <= poor
 				}
 			}
 			modifier = {
-				add = 2
+				factor = 4
 				opinion_level = {
 					who = event_target:lrsk_media_corp_to_scoop
 					level <= terrible
@@ -999,7 +999,7 @@ country_event = {
 		ai_chance = {
 			factor = 3
 			modifier = {
-				add = -1
+				factor = 0.66
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -1007,7 +1007,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				add = -1
+				factor = 0.33
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -1024,7 +1024,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				add = 1
+				factor = 2
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -1032,7 +1032,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				add = 1
+				factor = 3
 				relative_power = {
 					who = event_target:lrsk_media_corp_victim
 					category = all
@@ -1159,7 +1159,7 @@ country_event = {
 
 			while = {
 				limit = {
-					NOT = {
+					NOR = {
 						has_country_flag = lrsk_casino_luck_cooldown
 						root = { has_country_flag = lrsk_casino_luck_cooldown }
 					}
