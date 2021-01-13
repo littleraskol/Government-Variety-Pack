@@ -2,11 +2,11 @@ A grab bag of new civics and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]72 new civics[/b], broken down into 7 origins, 20 normal civics, 19 hive civics, 14 machine civics, and 11 megacorp civics. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1692662484253758433/]the dedicated civics thread[/url] for detailed descriptions.
+A total of [b]78 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, and 13 megacorp civics. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1692662484253758433/]the dedicated civics thread[/url] for detailed descriptions.
 
 [i][b]New Governments[/b][/i]
 
-Around [b]80 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
+Around [b]85-90 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
 
 [i][b]Special Thanks[/b][/i]
 
@@ -16,7 +16,7 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 [b]Other Contributors[/b]
 [list]
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198025179504]Namazuo "Horse Poop" Toushiro[/url] came up with something like 17 new government suggestions that were all awesome, I added them and they served as the inspiration for a few more.
-[*]Steam user [url=https://steamcommunity.com/profiles/76561198019142950]Garlic Pudding[/url] came up with four government ideas I incorporated, and one I have yet to incorporate but a new Civic is WIP for it.
+[*]Steam user [url=https://steamcommunity.com/profiles/76561198019142950]Garlic Pudding[/url] came up with five government ideas I incorporated, and one I have yet to incorporate but a new Civic is WIP for it.
 [/list]
 
 [i][b]Compatibility and Patches[/b][/i]
