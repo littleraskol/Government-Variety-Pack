@@ -1402,36 +1402,36 @@ country_event = {
 			establish_communications_no_message = event_target:lrsk_sublight_genship_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_genship_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}
 			establish_communications_no_message = event_target:lrsk_sublight_loyalist_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_loyalist_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}
 		}
 		event_target:lrsk_sublight_genship_colony = {
 			establish_communications_no_message = event_target:lrsk_sublight_dissident_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_dissident_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}
 			establish_communications_no_message = event_target:lrsk_sublight_loyalist_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_loyalist_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}	
 		}
 		event_target:lrsk_sublight_loyalist_colony = {
 			establish_communications_no_message = event_target:lrsk_sublight_genship_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_genship_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}
 			establish_communications_no_message = event_target:lrsk_sublight_dissident_colony
 			set_relation_flag = {
 				who = event_target:lrsk_sublight_dissident_colony
-				flag = lrsk_sublight_fellow_underlings_of@event_target:lrsk_sublight_overlord
+				flag = lrsk_sublight_fellow_underlings
 			}
 		}
 
@@ -2766,14 +2766,18 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		owner = { lrsk_gov_var_has_sublight_overlord_origin = yes }
-		has_country_flag = lrsk_sublight_reform_triggered
+		owner = {
+			lrsk_gov_var_has_sublight_overlord_origin = yes
+			has_country_flag = lrsk_sublight_reform_triggered
+		}
 	}
 
 	immediate = {
 		log = "In 'Colonial Reform pre Start/Gate' event"
-		set_country_flag = lrsk_sublight_reform_project_completed
-		owner = { country_event = { id = lrsk_gov_var_sublight_origins.80 } }
+		owner = {
+			set_country_flag = lrsk_sublight_reform_project_completed
+			country_event = { id = lrsk_gov_var_sublight_origins.80 }
+		}
 	}
 }
 

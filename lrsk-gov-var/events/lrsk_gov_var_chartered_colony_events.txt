@@ -21,7 +21,7 @@ country_event = {
 			is_subject_type = lrsk_gov_var_subject_chartered_company
 
 			# Uplift: Prevent immediate change in subject status etc. if tutor can use chartered company subjects
-			from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_for } }
+			from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 
 			# Prevent sublight colonies from being chartered
 			lrsk_gov_var_has_sublight_colony_origin = yes
@@ -41,7 +41,7 @@ country_event = {
 			set_country_flag = lrsk_charter_subject_same_species_as_ol
 		}
 
-		Remove overlord-only civic, replace with subject civic
+		#Remove overlord-only civic, replace with subject civic
 		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 			force_remove_civic = lrsk_gov_var_civic_mc_chart_corp_board
 			force_add_civic = lrsk_gov_var_civic_mc_chartered_company
@@ -121,28 +121,28 @@ country_event = {
 		ai_chance = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
-				add = 100
+				factor = 2
 				has_ethic = ethic_egalitarian
 				NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
-				add = 100
+				factor = 2
 				has_ethic = ethic_xenophile
 			}
 			modifier = {
-				add = 200
+				factor = 3
 				has_ethic = ethic_fanatic_xenophile
 			}
 			modifier = {
-				add = -50
+				factor = 0.5
 				has_ethic = ethic_authoritarian
 			}
 			modifier = {
-				add = -50
+				factor = 0.5
 				has_ethic = ethic_xenophobe
 			}
 			modifier = {
-				add = 10000
+				factor = 10
 				from = { is_ai = no }
 			}
 		}
@@ -265,29 +265,25 @@ country_event = {
 		ai_chance = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
-				add = -50
+				factor = 0.5
 				has_ethic = ethic_egalitarian
 				NOT = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
-				add = -50
+				factor = 0.5
 				has_ethic = ethic_xenophile
 			}
 			modifier = {
-				add = 100
+				factor = 2
 				has_ethic = ethic_authoritarian
 			}
 			modifier = {
-				add = 100
+				factor = 2
 				has_ethic = ethic_xenophobe
 			}
 			modifier = {
-				add = 200
+				factor = 3
 				has_ethic = ethic_fanatic_xenophobe
-			}
-			modifier = {
-				add = -500
-				from = { is_ai = no }   # Should not be possible but whatever, can't be too sure
 			}
 			modifier = {
 				factor = 0
@@ -370,10 +366,6 @@ country_event = {
 
 		# Remove previous modifier
 		lrsk_remove_colonial_trade_bonus = yes
-
-		IF = { limit = { has_country_flag = lrsk_gov_var_no_trade_status_change }
-			remove_country_flag = lrsk_gov_var_no_trade_status_change
-		}
 
 		#add new
 		IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }

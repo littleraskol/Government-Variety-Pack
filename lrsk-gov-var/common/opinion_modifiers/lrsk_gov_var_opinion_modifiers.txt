@@ -118,6 +118,12 @@ opinion_lrsk_gov_var_impressed_uplift_tutor = {
 # Dissident/Loyalist relations
 triggered_opinion_lrsk_gov_var_subject_rivals = {
 	trigger = {
+		is_subject = yes
+		overlord = {
+			lrsk_gov_var_has_sublight_overlord_origin = yes
+			has_relation_flag = { who = this flag = lrsk_sublight_overlord_of }
+			has_relation_flag = { who = from flag = lrsk_sublight_overlord_of }
+		}
 		OR = {
 			AND = {
 				this = {
