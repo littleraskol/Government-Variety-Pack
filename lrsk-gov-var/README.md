@@ -220,7 +220,7 @@ v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
-v1.6.8.2 (01-08-21) - Misc fixes
+v1.6.8.2 (01-14-21) - Misc fixes
 -Removed defunct diplo phrase.
 -Misnamed planet modifier (DPS building focus should now work)
 -AI chances for options in events needed factors, not additions.

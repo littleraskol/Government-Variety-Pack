@@ -496,51 +496,51 @@ l_simp_chinese:
 
  # Inform player of Military Academy bonus
  lrsk_gvp_mc_bldg_special.12.name:0 "Martial Excellence"
- lrsk_gvp_mc_bldg_special.12.desc:0 "A §Y$lrsk_gov_var_bldg_military_excellence_academy$§! operated by one of our corporate trade partners is clearly making a positive impact on the professionalism of our officers. §H[event_target:lrsk_leader_to_levelup.GetTitle] [event_target:lrsk_leader_to_levelup.GetName]§! is a better and more effective leader for having trained there."
+ lrsk_gvp_mc_bldg_special.12.desc:0 "A §Y$lrsk_gov_var_bldg_military_excellence_academy$§! operated by one of our corporate trade partners is clearly making a positive impact on the professionalism of our officers. §H[lrsk_leader_to_levelup.GetTitle] lrsk_leader_to_levelup.GetName]§! is a better and more effective leader for having trained there."
  lrsk_gvp_mc_bldg_special.12.a:0 "Good to hear."
  lrsk_gvp_mc_bldg_special.12.b:0 "Good, but don't bother me with this again."
  lrsk_gvp_mc_bldg_special.12.b.tooltip:0 "You will not get an update when this happens again."
 
  # Slaver corp gets pop from workhouse (inform corp)
  lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
- lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensared enough of the wretches of §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our enternally indebted workforce."
+ lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensared enough of the wretches of §Y[lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our enternally indebted workforce."
  lrsk_gvp_mc_bldg_special.21.a:0 "Get to work!"
- lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[event_target:lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
+ lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
 
  # Slaver corp gets pop from workhouse (inform victim)
  lrsk_gvp_mc_bldg_special.22.name:0 "Detestable Slavers!"
- lrsk_gvp_mc_bldg_special.22.desc:0 "The underhanded corporate bandits of §H[event_target:lrsk_slaver_corp_to_steal.GetName]§! have sunk to a new low, ensnaring and abducting our people on §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! to toil on their worlds!"
+ lrsk_gvp_mc_bldg_special.22.desc:0 "The underhanded corporate bandits of §H[lrsk_slaver_corp_to_steal.GetName]§! have sunk to a new low, ensnaring and abducting our people on §Y[lrsk_slaver_corp_abduct_location.GetName]§! to toil on their worlds!"
  lrsk_gvp_mc_bldg_special.22.a:0 "This will NOT stand."
- lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[event_target:lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[event_target:lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
+ lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
 
  # Media corp favor choice
  LRSK_GVP_SCANDAL_COMMON:0 "£mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year."
  lrsk_gvp_mc_bldg_special.31.name:0 "A Juicy Story..."
- lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[event_target:lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the §H[event_target:lrsk_media_corp_victim.GetName]§!."
+ lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the §H[lrsk_media_corp_victim.GetName]§!."
  lrsk_gvp_mc_bldg_special.31.a:0 "What a scoop!"
- lrsk_gvp_mc_bldg_special.31.a.tooltip:0 "Gain §G1 Favor§! with §H[event_target:lrsk_media_corp_victim.GetName]§!, although they might refuse..."
+ lrsk_gvp_mc_bldg_special.31.a.tooltip:0 "Gain §G1 Favor§! with §H[lrsk_media_corp_victim.GetName]§!, although they might refuse..."
  lrsk_gvp_mc_bldg_special.31.b:0 "The people deserve to know."
- lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[event_target:lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their $LRSK_GVP_SCANDAL_COMMON$ They will §Rnot be happy with us...§!"
+ lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their $LRSK_GVP_SCANDAL_COMMON$ They will §Rnot be happy with us...§!"
  lrsk_gvp_mc_bldg_special.31.c:0 "Maybe we should just... let this one go."
  lrsk_gvp_mc_bldg_special.31.c.tooltip:0 "Nothing will happen this time."
 
  # Inform media corp host of choice: Favor
  lrsk_gvp_mc_bldg_special.32.name:0 "Avoiding a Scandal"
- lrsk_gvp_mc_bldg_special.32.desc:0 "PR specialists from §H[event_target:lrsk_media_corp_to_scoop.GetName]§! corporate HQ informed us that their reporters on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§! discovered something that would be deeply embarrassing for us. 'Fortunately,' they said, 'we prefer to see this as a business opportunity...'"
+ lrsk_gvp_mc_bldg_special.32.desc:0 "PR specialists from §H[lrsk_media_corp_to_scoop.GetName]§! corporate HQ informed us that their reporters on §Y[lrsk_media_corp_scoop_location.GetName]§! discovered something that would be deeply embarrassing for us. 'Fortunately,' they said, 'we prefer to see this as a business opportunity...'"
  lrsk_gvp_mc_bldg_special.32.a:0 "We really stepped in it."
- lrsk_gvp_mc_bldg_special.32.a.tooltip:0 "§H[event_target:lrsk_media_corp_to_scoop.GetName]§! gets §R1 Favor§! from us."
+ lrsk_gvp_mc_bldg_special.32.a.tooltip:0 "§H[lrsk_media_corp_to_scoop.GetName]§! gets §R1 Favor§! from us."
  lrsk_gvp_mc_bldg_special.32.b:0 "We won't be blackmailed!"
- lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "If §H[event_target:lrsk_media_corp_to_scoop.GetName]§! releases the story, national embarrassment will reduce our $LRSK_GVP_SCANDAL_COMMON$ We will §Rnot be happy§! with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
+ lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "If §H[lrsk_media_corp_to_scoop.GetName]§! releases the story, national embarrassment will reduce our $LRSK_GVP_SCANDAL_COMMON$ We will §Rnot be happy§! with the §H[lrsk_media_corp_to_scoop.GetName]§!."
  
  # Inform media corp host of choice: Scandal
  lrsk_gvp_mc_bldg_special.33.name:0 "We Got Scooped!"
- lrsk_gvp_mc_bldg_special.33.desc:0 "Reporters from §H[event_target:lrsk_media_corp_to_scoop.GetName]§! on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§! discovered and reported on an item of national disgrace. It will take some time now to recover our good name with our citizens and the galactic community."
+ lrsk_gvp_mc_bldg_special.33.desc:0 "Reporters from §H[lrsk_media_corp_to_scoop.GetName]§! on §Y[lrsk_media_corp_scoop_location.GetName]§! discovered and reported on an item of national disgrace. It will take some time now to recover our good name with our citizens and the galactic community."
  lrsk_gvp_mc_bldg_special.33.a:0 "Damn the meddling lying press!"
- lrsk_gvp_mc_bldg_special.33.a.tooltip:0 "National embarrassment reduces our $LRSK_GVP_SCANDAL_COMMON$ We are §Rnot happy§! with the §H[event_target:lrsk_media_corp_to_scoop.GetName]§!."
+ lrsk_gvp_mc_bldg_special.33.a.tooltip:0 "National embarrassment reduces our $LRSK_GVP_SCANDAL_COMMON$ We are §Rnot happy§! with the §H[lrsk_media_corp_to_scoop.GetName]§!."
  
  # Inform media corp of offer refusal
  lrsk_gvp_mc_bldg_special.34.name:0 "Offer Refused..."
- lrsk_gvp_mc_bldg_special.34.desc:0 "We tried to be reasonable. We strove for good diplomatic relations. We wanted to avoid any unneeded embarrassment for anyone. However, the government of §H[event_target:lrsk_media_corp_victim.GetName]§! has refused our very kind and fair offer, leaving us no choice but to report the truth, the whole truth, and nothing but the truth about their indiscretions on §Y[event_target:lrsk_media_corp_scoop_location.GetName]§!."
+ lrsk_gvp_mc_bldg_special.34.desc:0 "We tried to be reasonable. We strove for good diplomatic relations. We wanted to avoid any unneeded embarrassment for anyone. However, the government of §H[lrsk_media_corp_victim.GetName]§! has refused our very kind and fair offer, leaving us no choice but to report the truth, the whole truth, and nothing but the truth about their indiscretions on §Y[lrsk_media_corp_scoop_location.GetName]§!."
  lrsk_gvp_mc_bldg_special.34.a:0 "Their loss."
  lrsk_gvp_mc_bldg_special.34.a.tooltip:0 "$lrsk_gvp_mc_bldg_special.31.b.tooltip$"
  lrsk_gvp_mc_bldg_special.34.b:0 "$lrsk_gvp_mc_bldg_special.31.c$"
@@ -550,46 +550,46 @@ l_simp_chinese:
  lrsk_gvp_mc_bldg_special.51.name:0 "The Winds of Fortune"
 
  # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
- lrsk_gvp_mc_bldg_special.51.desc.a:0 "The opening of the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! has not been met with universal approval. Moral reformers alarmed at the spread of vice are protesting its very existence and have organized a boycott."
+ lrsk_gvp_mc_bldg_special.51.desc.a:0 "The opening of the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! has not been met with universal approval. Moral reformers alarmed at the spread of vice are protesting its very existence and have organized a boycott."
  lrsk_gvp_mc_bldg_special.51.a:0 "How annoying..."
- lrsk_gvp_mc_bldg_special.51.a.tooltip:0 "§R-10% £trade_value£ $TRADE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.51.a.tooltip:0 "§R-10% £trade_value£ $TRADE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
 
  # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
- lrsk_gvp_mc_bldg_special.51.desc.b:0 "What a bout! Tens, if not hundreds, of thousands of patrons bet on the outcome of the recent prize fight at the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, and it was the spectacle of the century for the planet's inhabitants."
+ lrsk_gvp_mc_bldg_special.51.desc.b:0 "What a bout! Tens, if not hundreds, of thousands of patrons bet on the outcome of the recent prize fight at the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§!, and it was the spectacle of the century for the planet's inhabitants."
  lrsk_gvp_mc_bldg_special.51.b:0 "To the victor goes the spoils!"
- lrsk_gvp_mc_bldg_special.51.b.tooltip:0 "§G+5% £happiness£ Pop Happiness§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for one year."
+ lrsk_gvp_mc_bldg_special.51.b.tooltip:0 "§G+5% £happiness£ Pop Happiness§! on §Y[lrsk_casino_corp_play_location.GetName]§! for one year."
  
  # Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
- lrsk_gvp_mc_bldg_special.51.desc.c:0 "In what's being called the most wild and rowdy after-game brawl in the history of §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, the streets are filled with sports fans who are... Furious? Elated? Filled with strong emotions, at any rate, over the outcome of the latest sports gambling event at the $lrsk_gov_var_bldg_grand_casino$. The property damage may take months to repair."
+ lrsk_gvp_mc_bldg_special.51.desc.c:0 "In what's being called the most wild and rowdy after-game brawl in the history of §Y[lrsk_casino_corp_play_location.GetName]§!, the streets are filled with sports fans who are... Furious? Elated? Filled with strong emotions, at any rate, over the outcome of the latest sports gambling event at the $lrsk_gov_var_bldg_grand_casino$. The property damage may take months to repair."
  lrsk_gvp_mc_bldg_special.51.c:0 "Get a grip, it's just a game!"
  lrsk_gvp_mc_bldg_special.51.c.tooltip:0 "§R-5 £stability£ $PLANET_STABILITY_TITLE$§! for one year, and some amount of §RDevastation§! to clean up."
  
  # Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
- lrsk_gvp_mc_bldg_special.51.desc.d:0 "Ever since the $lrsk_gov_var_bldg_grand_casino$ finished construction on §Y[event_target:lrsk_casino_corp_play_location.GetName]§!, interest in visiting the planet for vacation or other recreation has increased. We can say that for now, a proper tourism boom is lifting the local economy thanks to it, and the first surplus is already rolling in."
- lrsk_gvp_mc_bldg_special.51.d:0 "Welcome to [event_target:lrsk_casino_corp_play_location.GetName], beloved tourists!"
- lrsk_gvp_mc_bldg_special.51.d.tooltip:0 "§G+10% £trade_value£ $TRADE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.51.desc.d:0 "Ever since the $lrsk_gov_var_bldg_grand_casino$ finished construction on §Y[lrsk_casino_corp_play_location.GetName]§!, interest in visiting the planet for vacation or other recreation has increased. We can say that for now, a proper tourism boom is lifting the local economy thanks to it, and the first surplus is already rolling in."
+ lrsk_gvp_mc_bldg_special.51.d:0 "Welcome to lrsk_casino_corp_play_location.GetName], beloved tourists!"
+ lrsk_gvp_mc_bldg_special.51.d.tooltip:0 "§G+10% £trade_value£ $TRADE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
  
  lrsk_gvp_mc_bldg_special.52.name:0 "$lrsk_gvp_mc_bldg_special.51.name$"
 
  # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
  lrsk_gvp_mc_bldg_special.52.desc.a:0 "$lrsk_gvp_mc_bldg_special.51.desc.a$"
  lrsk_gvp_mc_bldg_special.52.a:0 "Bad for business!"
- lrsk_gvp_mc_bldg_special.52.a.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.52.a.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
 
  # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
  lrsk_gvp_mc_bldg_special.52.desc.b:0 "$lrsk_gvp_mc_bldg_special.51.desc.b$"
  lrsk_gvp_mc_bldg_special.52.b:0 "$lrsk_gvp_mc_bldg_special.51.b$"
- lrsk_gvp_mc_bldg_special.52.b.tooltip:0 "§H[event_target:lrsk_casino_corp_host_player.GetName]§! has a §Gboosted opinion§! of us for the next four years."
+ lrsk_gvp_mc_bldg_special.52.b.tooltip:0 "§H[lrsk_casino_corp_host_player.GetName]§! has a §Gboosted opinion§! of us for the next four years."
 
  # Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
- lrsk_gvp_mc_bldg_special.52.desc.c:0 "Security at the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! can't explain how or why, but... one overwhelmingly lucky patron has nearly cleaned the house out! From Giga-Craps to Galactic Roulette to 10th-Dimensional Poker, this roving gambler could not help but win, seemingly guided from game to game by unseen forces. It will take time to recover what we've lost."
+ lrsk_gvp_mc_bldg_special.52.desc.c:0 "Security at the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! can't explain how or why, but... one overwhelmingly lucky patron has nearly cleaned the house out! From Giga-Craps to Galactic Roulette to 10th-Dimensional Poker, this roving gambler could not help but win, seemingly guided from game to game by unseen forces. It will take time to recover what we've lost."
  lrsk_gvp_mc_bldg_special.52.c:0 "Must have been a cheater!"
- lrsk_gvp_mc_bldg_special.52.c.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.52.c.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
 
  # Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
- lrsk_gvp_mc_bldg_special.52.desc.d:0 "Games of chance over a long enough period tend to smooth out to an expected rate of return. That is the basis of gambling as a business venture. Sometimes, though, the whims of chance are even more stacked in our favor than we expected: the $lrsk_gov_var_bldg_grand_casino$ on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! has provided us a tidy little bounty."
+ lrsk_gvp_mc_bldg_special.52.desc.d:0 "Games of chance over a long enough period tend to smooth out to an expected rate of return. That is the basis of gambling as a business venture. Sometimes, though, the whims of chance are even more stacked in our favor than we expected: the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! has provided us a tidy little bounty."
  lrsk_gvp_mc_bldg_special.52.d:0 "The house always wins."
- lrsk_gvp_mc_bldg_special.52.d.tooltip:0 "§G+10% $BRANCH_OFFICE_VALUE$§! on §Y[event_target:lrsk_casino_corp_play_location.GetName]§! for two years."
+ lrsk_gvp_mc_bldg_special.52.d.tooltip:0 "§G+10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
 
 
  # Direct Revelation
