@@ -203,6 +203,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v2.0 (04-1X-21) - Dick Update
+-Fixed what was needed for compatibility with Stellaris 3.* (Dick)
+-Changed compat version number.
+-Going forward, mod version numbers will change the major number with each Stellaris update that wrecks backwards compatibility (i.e. actual good version numbering practice)
+-Some fixes to localization fixes.
+
 v1.6.8.2 (01-14-21) - Misc fixes
 -Removed defunct diplo phrase.
 -Misnamed planet modifier (DPS building focus should now work)
