@@ -203,7 +203,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v2.0 (04-1X-21) - Dick Update
+v2.0 (04-18-21) - Dick Update
 -Fixed what was needed for compatibility with Stellaris 3.* (Dick)
 -Changed compat version number.
 -Going forward, mod version numbers will change the major number with each Stellaris update that wrecks backwards compatibility (i.e. actual good version numbering practice)
