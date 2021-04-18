@@ -208,6 +208,7 @@ v2.0 (04-1X-21) - Dick Update
 -Changed compat version number.
 -Going forward, mod version numbers will change the major number with each Stellaris update that wrecks backwards compatibility (i.e. actual good version numbering practice)
 -Some fixes to localization fixes.
+-Enlightened Liberalism is not compatible with Shared Burdens.
 
 v1.6.8.2 (01-14-21) - Misc fixes
 -Removed defunct diplo phrase.
