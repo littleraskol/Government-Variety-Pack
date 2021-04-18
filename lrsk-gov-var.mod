@@ -1,4 +1,4 @@
-supported_version="3.*"
+supported_version="3.0.*"
 tags={
 	"Gameplay"
 }
