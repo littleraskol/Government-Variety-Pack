@@ -203,6 +203,15 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v2.1 (04-18-21) - Dick Expansion (lol)
+-Supremacist Demagoguery: Now gets +30% army morale damage (up from +20%).
+-Combat Data: Now gets +30% army morale damage (up from +20%).
+-Boundless Spite: Now gets +50% purge speed.
+-Gestalt Extroversion: Now gets +10% first contact speed instead of +20 trust cap.
+-Diplomatic Protocols: Now gets +1 first contact clues instead of +10% trust growth.
+-Megacorp civics now available with Galactic Soveriegn civic.
+-Removed now thematically redundant "galactic empire" govtypes.
+
 v2.0 (04-18-21) - Dick Update
 -Fixed what was needed for compatibility with Stellaris 3.* (Dick)
 -Changed compat version number.
