@@ -74,3 +74,15 @@ lrsk_gvp_planet_has_no_wild_cult = {
 		has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
 	}	
 }
+
+# Deprecated in 3.0, don't feel like interrogating this fact much tbh
+lrsk_complex_worker_job_check_trigger = {
+	worker_job_check_trigger = yes
+	hidden_trigger = {
+		exists = owner
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			owner = { has_technology = tech_droid_workers }
+		}
+	}
+}

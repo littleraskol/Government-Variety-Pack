@@ -470,12 +470,12 @@ country_event = {
 
 							# Choice of pop to enslave starts with those who would be "least missed" or are most desperate.
 							IF = {
-								limit = { any_pop = { OR = { 
+								limit = { any_owned_pop = { OR = { 
 									is_unemployed = yes
 									is_pop_category = slave
 									is_pop_category = purge
 								} } }
-								random_pop = {
+								random_owned_pop = {
 									limit = { OR = { 
 										is_unemployed = yes
 										is_pop_category = slave
@@ -484,18 +484,18 @@ country_event = {
 									set_pop_flag = lrsk_pop_to_abduct
 								}
 							}
-							ELSE_IF = { limit = { any_pop = { is_pop_category = worker } }
-								random_pop = { limit = { is_pop_category = worker } set_pop_flag = lrsk_pop_to_abduct }
+							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = worker } }
+								random_owned_pop = { limit = { is_pop_category = worker } set_pop_flag = lrsk_pop_to_abduct }
 							}
-							ELSE_IF = { limit = { any_pop = { is_pop_category = specialist } }
-								random_pop = { limit = { is_pop_category = specialist } set_pop_flag = lrsk_pop_to_abduct }
+							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = specialist } }
+								random_owned_pop = { limit = { is_pop_category = specialist } set_pop_flag = lrsk_pop_to_abduct }
 							}
-							ELSE = { random_pop = { set_pop_flag = lrsk_pop_to_abduct } }
+							ELSE = { random_owned_pop = { set_pop_flag = lrsk_pop_to_abduct } }
 
 							
 							IF = {
-								limit = { any_pop = { has_pop_flag = lrsk_pop_to_abduct } }
-								random_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct }
+								limit = { any_owned_pop = { has_pop_flag = lrsk_pop_to_abduct } }
+								random_owned_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct }
 									remove_pop_flag = lrsk_pop_to_abduct
 									resettle_pop = {
 										pop = this

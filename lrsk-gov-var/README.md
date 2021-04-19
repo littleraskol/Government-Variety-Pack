@@ -211,7 +211,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
+v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
 -Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
 -Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
@@ -219,6 +219,22 @@ v1.6.9 (01-??-21) - More Origins, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
+
+v2.1 (04-18-21) - Dick Expansion (lol)
+-Supremacist Demagoguery: Now gets +30% army morale damage (up from +20%).
+-Combat Data: Now gets +30% army morale damage (up from +20%).
+-Boundless Spite: Now gets +50% purge speed.
+-Gestalt Extroversion: Now gets +10% first contact speed instead of +20 trust cap.
+-Diplomatic Protocols: Now gets +1 first contact clues instead of +10% trust growth.
+-Megacorp civics now available with Galactic Soveriegn civic.
+-Removed now thematically redundant "galactic empire" govtypes.
+
+v2.0 (04-18-21) - Dick Update
+-Fixed what was needed for compatibility with Stellaris 3.* (Dick)
+-Changed compat version number.
+-Going forward, mod version numbers will change the major number with each Stellaris update that wrecks backwards compatibility (i.e. actual good version numbering practice)
+-Some fixes to localization fixes.
+-Enlightened Liberalism is not compatible with Shared Burdens.
 
 v1.6.8.2 (01-14-21) - Misc fixes
 -Removed defunct diplo phrase.
