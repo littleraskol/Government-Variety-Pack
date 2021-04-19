@@ -38,12 +38,12 @@ d_lrsk_gov_var_collapsed_tech_ruins = {
 	time = 720
 	#icon = d_broken_spire
 	
-	#is_for_colonizeable = yes
+	is_for_colonizeable = yes
 	category = deposit_cat_rare_blocker
 	
 	should_swap_deposit_on_terraforming = no
 	
-	potential = { always = no }
+	#potential = { always = no }
 	
 	planet_modifier = { 
 		planet_max_districts_add = -2
@@ -63,14 +63,18 @@ d_lrsk_gov_var_collapsed_tech_ruins = {
 			influence = 250
 		}
 	}
+	
+	drop_weight = {
+		weight = 0
+	}
 }
 
 d_lrsk_gov_var_tech_ruins = {
-	#is_for_colonizeable = yes
+	is_for_colonizeable = yes
 	#icon = d_central_spire
 	category = deposit_cat_rare
 
-	potential = { always = no }
+	#potential = { always = no }
 	
 	should_swap_deposit_on_terraforming = no
 	
@@ -79,6 +83,10 @@ d_lrsk_gov_var_tech_ruins = {
 		planet_jobs_engineering_research_produces_mult = 0.1
 		planet_jobs_physics_research_produces_mult = 0.1
 		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	drop_weight = {
+		weight = 0
 	}
 
 	#triggered_planet_modifier = {

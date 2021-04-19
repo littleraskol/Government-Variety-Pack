@@ -9,8 +9,17 @@ lrsk_adv_civ_audacity_war_edict = {
 
 	resources = {
 		category = edicts
-		cost = {
+		cost = { #Activation Cost
+			trigger = {
+				NOT = { has_edict = lrsk_adv_civ_audacity_war_edict }
+			}
 			influence = 150
+		}
+		cost = { #Deactivation Cost
+			trigger = {
+				has_edict = lrsk_adv_civ_audacity_war_edict
+			}
+			influence = 50
 		}
 	}
 
@@ -27,7 +36,7 @@ lrsk_adv_civ_audacity_war_edict = {
 		}
 		OR = {
 			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_inquisitive_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
@@ -60,6 +69,7 @@ lrsk_adv_civ_audacity_war_edict = {
 }
 
 lrsk_adv_civ_wonder_age_edict = {
+	length = 3600
 	icon = "GFX_edict_type_time"
 
 	is_ambition = yes
@@ -70,7 +80,7 @@ lrsk_adv_civ_wonder_age_edict = {
 
 	modifier = {
 		megastructure_build_speed_mult = 0.66
-		mod_megastructure_build_cost_mult = -0.15
+		#mod_megastructure_build_cost_mult = -0.15
 		country_megastructure_build_cap_add = 1
 		terraforming_cost_mult = -0.25
 		terraform_speed_mult = 0.25
@@ -84,7 +94,7 @@ lrsk_adv_civ_wonder_age_edict = {
 		}
 		OR = {
 			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
+			has_ascension_perk = lrsk_adv_civ_ap_inquisitive_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
 			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
