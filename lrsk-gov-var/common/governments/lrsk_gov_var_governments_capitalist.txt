@@ -2,46 +2,46 @@
 # Governments - Capitalistic
 # Author: littleraskol
 
-# Galactic Cartel (CD + CoI / MC, RC + BL)
-lrsk_gov_var_gov_galactic_cartel = {
-	ruler_title = LRSK_GOV_VAR_RT_COSEO
-
-	possible = {
-		OR = {
-			AND = {
-				has_valid_civic = civic_corporate_dominion
-				OR = {
-					has_valid_civic = civic_cutthroat_politics
-					has_valid_civic = civic_shadow_council
-				}
-			}
-			AND = {
-				has_authority = auth_corporate
-				has_valid_civic = civic_ruthless_competition
-				has_valid_civic = civic_brand_loyalty
-			}
-		}
-		OR = {
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_militarist
-		}
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 1000
-			leader_class = ruler
-		}
-		modifier = {
-			add = 500
-			leader_class = governor
-		}
-	}
-
-	weight = {
-		base = 1000
-	}
-}
+## Galactic Cartel (CD + CoI / MC, RC + BL)
+#lrsk_gov_var_gov_galactic_cartel = {
+#	ruler_title = LRSK_GOV_VAR_RT_COSEO
+#
+#	possible = {
+#		OR = {
+#			AND = {
+#				has_valid_civic = civic_corporate_dominion
+#				OR = {
+#					has_valid_civic = civic_cutthroat_politics
+#					has_valid_civic = civic_shadow_council
+#				}
+#			}
+#			AND = {
+#				has_authority = auth_corporate
+#				has_valid_civic = civic_ruthless_competition
+#				has_valid_civic = civic_brand_loyalty
+#			}
+#		}
+#		OR = {
+#			has_ethic = ethic_fanatic_militarist
+#			has_ethic = ethic_militarist
+#		}
+#	}
+#
+#	election_candidates = {
+#		modifier = {
+#			add = 1000
+#			leader_class = ruler
+#		}
+#		modifier = {
+#			add = 500
+#			leader_class = governor
+#		}
+#	}
+#
+#	weight = {
+#		base = 1000
+#	}
+#}
 
 #pacifism for next two
 # Libertarian Freehold (Democracy + Mer/CoI)
@@ -428,5 +428,82 @@ lrsk_gov_var_gov_rationalist_managerial_firm = {
 			add = 100
 			has_ethic = ethic_authoritarian
 		}
+	}
+}
+
+# Private Intelligence Agency
+lrsk_gov_var_gov_private_intel_agency = {
+	ruler_title = LRSK_GOV_VAR_RT_CE_DIRECTOR
+
+	possible = {		
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_police_state
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+		modifier = {
+			add = 500
+			leader_class = ruler
+		}
+		modifier = {
+			add = 250
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 250
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1000
+		modifier = {
+			factor = 0.8
+			has_valid_civic = civic_gospel_of_the_masses
+		}
+	}
+}
+
+# Protection Racket
+lrsk_gov_var_gov_protection_racket = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_ENFORCER
+
+	possible = {		
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_police_state
+		has_valid_civic = civic_criminal_heritage
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = scientist
+		}
+		modifier = {
+			add = 500
+			leader_class = ruler
+		}
+		modifier = {
+			add = 250
+			OR = {
+				leader_class = governor
+			}
+		}
+		modifier = {
+			add = 250
+			leader_class = admiral
+			leader_class = general
+		}
+	}
+
+	weight = {
+		base = 1750
 	}
 }

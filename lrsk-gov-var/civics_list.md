@@ -29,7 +29,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
 
-[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
+[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -20% defense platform cost, +1 Encryption)
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
@@ -37,7 +37,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
+[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage)
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -77,7 +77,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Reclamation Pools (Hive Mind)[/i] - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage)
+[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed)
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
@@ -97,7 +97,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Benign Overmind (Hive Mind, not Devouring Swarm)[/i] - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (-25% Subject Power Penalty, +20% vassal naval capacity contribution)
 
-[*][i]Gestalt Extroversion (Hive Mind, not Devouring Swarm)[/i] - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap)
+[*][i]Gestalt Extroversion (Hive Mind, not Devouring Swarm)[/i] - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate, +10% first contact speed)
 
 [*][i]Frenzy (Hive Mind)[/i] - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+10% fire rate, +10% evasion)
 
@@ -115,9 +115,9 @@ This is the full listing of civics with descriptions.
 
 [*][i]Architect Expert Systems (Machine Intelligence)[/i] - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
-[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage)
+[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +30% army morale damage)
 
-[*][i]Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator)[/i] - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness and trust growth)
+[*][i]Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator)[/i] - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness, +1 first contact clues)
 
 [*][i]Astro-Prospecting Mainframe (Machine Intelligence)[/i] - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
@@ -139,15 +139,39 @@ This is the full listing of civics with descriptions.
 [b]Megacorp Civics[/b]
 
 [list]
-[*][i]Scientific Management (Not Egalitarian)[/i] - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
+[*][i]Scientific Management (Not Egalitarian)[/i] - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output, build Managerial Technique Institute)
 
-[*][i]Educational Consortium (Materialist)[/i] - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+[*][i]Educational Consortium (Materialist)[/i] - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
 
-[*][i]Gig Economics (Not Egalitarian)[/i] - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
+[*][i]Gig Economics (Not Egalitarian)[/i] - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
 
 [*][i]Controlling Interest (Any)[/i] - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
 [*][i]Vertical Integration (Any)[/i] - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-[*][i]Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses)[/i] - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+[*][i]Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses)[/i] - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists, build Organizing Hub)
+
+[*][i]Casino Mysticism (Not Materialist)[/i] - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
+
+[*][i]Vacation Experience Planning (Xenophile)[/i] - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
+
+[*][i]Heritage Trust (Xenophobe)[/i] - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
+
+[*][i]Conflict Resolution Specialists (Pacifist)[/i] - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
+
+[*][i]Investigation & Security Services (Authoritarian)[/i] - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-10% crime, +1 Encryption and Codebreaking, build Professional Protection Office)
 [/list]
+
+[b]Enhanced Civics[/b]
+These are civics from the base game that have had new features added to them.
+[list]
+[*][i]Naval Contractors and Private Military Companies[/i] - Enables the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
+
+[*][i]Indentured Assets[/i] - Enables the Reformatory Workhouse branch building, which provides the host planet with +10% worker/slave output and provides the megacorp with +15% Branch Office Value. Criminal megacorps with this building occasionally steal and enslave pops from the planet!
+
+[*][i]Private Prospectors[/i] - Enables the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and mining station output.
+
+[*][i]Media Conglomerate[/i] - Enables the Local News Office branch building, which provides the host planet with +10% ruler output, +20% specialist political power, and +5% specialist happiness. It provides the megacorp with a chance to occasionally get favors from the host empire.
+[/list]
+
+

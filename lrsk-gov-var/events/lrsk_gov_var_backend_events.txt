@@ -16,6 +16,7 @@ event = {
 	
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
+		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
 		
 		# The following can be checked for (or, rather, for its absence) in any event's triggers to prevent it from firing.
 		set_global_flag = lrsk_gvp_safety_lock
@@ -105,6 +106,15 @@ event = {
 			country_event = { id = lrsk_adv_civ_aspiration.101 days = 2 }
 		}
 		
+		# Enhanced base game explainers
+		every_playable_country = {
+			limit = { 
+				NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+				lrsk_has_enhanced_valid_civic = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.101 days = 1 }
+		}
+
 		### Diagnostic checks
 		#every_playable_country = {
 		#	limit = { lrsk_has_any_gvp_gov = yes }
@@ -628,6 +638,112 @@ country_event = {
 			} }
 		}
 	}
+}
+
+# Explainers
+country_event = {
+	id = lrsk_government_variety_pack_backend.101
+	title = lrsk_government_variety_pack_backend.101.name
+	desc = lrsk_government_variety_pack_backend.101.desc
+	picture = GFX_evt_lrsk_gvp_explain_enhanced_civics
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	trigger = {
+		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+		lrsk_has_enhanced_valid_civic = yes
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.milcorp
+		trigger = { OR = {
+			has_valid_civic = civic_naval_contractors
+			has_valid_civic = civic_private_military_companies
+		} }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_milcorp
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.media
+		trigger = { has_valid_civic = civic_media_conglomerate }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_media
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.prosp
+		trigger = { has_valid_civic = civic_private_prospectors }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_prosp
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.indent
+		trigger = { has_valid_civic = civic_indentured_assets }
+		hidden_effect = {
+			set_country_flag = lrsk_explainer_indent
+			country_event = { id = lrsk_government_variety_pack_backend.102 }
+		}
+	}
+
+	option = { 
+		name = lrsk_government_variety_pack_backend.101.end
+	}
+}
+country_event = {
+	id = lrsk_government_variety_pack_backend.102
+	title = lrsk_government_variety_pack_backend.102.name
+	picture = GFX_evt_lrsk_gvp_explain_enhanced_civics
+	is_triggered_only = yes
+	location = this.capital_scope
+
+	desc = {
+		trigger = {
+			hidden:root = {
+				switch = {
+					trigger = has_country_flag
+					lrsk_explainer_milcorp = { text = lrsk_government_variety_pack_backend.102.milcorp }
+					lrsk_explainer_media = { text = lrsk_government_variety_pack_backend.102.media }
+					lrsk_explainer_prosp = { text = lrsk_government_variety_pack_backend.102.prosp }
+					lrsk_explainer_indent = { text = lrsk_government_variety_pack_backend.102.indent }
+					default = { text = lrsk_government_variety_pack_backend.101.error }
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = OK
+		hidden_effect = {
+			switch = {
+				trigger = has_country_flag
+				lrsk_explainer_milcorp = { remove_country_flag = lrsk_explainer_milcorp }
+				lrsk_explainer_media = { remove_country_flag = lrsk_explainer_media }
+				lrsk_explainer_prosp = { remove_country_flag = lrsk_explainer_prosp }
+				lrsk_explainer_indent = { remove_country_flag = lrsk_explainer_indent }
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.101 }
+		}
+	}
+	
+}
+
+# Diagnostic: General test event mostly to test when events can be called.
+country_event = {
+	id = lrsk_government_variety_pack_backend.2000
+	title = lrsk_government_variety_pack_backend.2000.name
+	desc = lrsk_government_variety_pack_backend.2000.desc
+	picture = GFX_evt_surreal_visions
+	is_triggered_only = yes
+
+	option = { name = OK }
 }
 
 # Diagnostic: Check to see if player has GVP govtype

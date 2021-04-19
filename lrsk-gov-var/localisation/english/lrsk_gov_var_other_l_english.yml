@@ -40,7 +40,7 @@ l_english:
  #_desc:0 ""
 
  lrsk_gov_var_leader_trait_governor_esper:0 "$LRSK_GOV_VAR_ESPER$"
- lrsk_gov_var_leader_trait_governor_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ improves day-today administration with preternaturally guided directives."
+ lrsk_gov_var_leader_trait_governor_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ improves day-to-day administration with preternaturally guided directives."
 
  # ruler
  #:0 ""
@@ -75,6 +75,11 @@ l_english:
  # New Fed Starts
  opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
 
+ # Corp building specials
+ opinion_lrsk_gvp_scandal_inflicted:0 "Exposed Our Scandals"
+ opinion_lrsk_gvp_slaver_corp_raid:0 "Enslaved Our People"
+ opinion_lrsk_gvp_casino_corp_approval:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Popular Attraction" 
+
  ## Buildings
 
  # Warrior Hall line
@@ -101,6 +106,99 @@ l_english:
  # Techno-Ruins
  lrsk_gov_var_bldg_tech_ruins:0 "Techno-Ruin Research Center"
  lrsk_gov_var_bldg_tech_ruins_desc:2 "This research station has been assembled at one of the richest clusters of the old advanced ruins. More an expeditionary staging ground than a laboratory, its savvy salvagers risk life and limb to bring back the knowledge of the past."
+ 
+ # Branch Office Buildings
+
+ LRSK_CRIME_OPTION_COMMON_1:0 "Because the corporate branch office owner is a §Hcriminal enterprise§! without any scruples, they will use"
+ LRSK_CRIME_OPTION_COMMON_2:0 "which increases crime on the planet by"
+
+ LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! for every 10% of pops on the planet that are§Y"
+ LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2:0 "§!(minimum +5% if any, maximum +50%)\n\n"
+
+ lrsk_scaling_branch_value_authoritarian:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Authoritarian $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_egalitarian:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Egalitarian $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_materialist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Materialist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_militarist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Militarist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_pacifist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Pacifist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_spiritualist:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Spiritualist $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_xenophile:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Xenophilic $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_scaling_branch_value_xenophobe:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Xenophobic $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
+
+ lrsk_gvp_bldg_managerial_technique_institute:0 "Managerial Technique Institute"
+ lrsk_gvp_bldg_managerial_technique_institute_desc:0 "At this technical institute, managerial science interns learn important project management and fiscal rightsizing techniques through hands-on real world applications, gaining valuable experience."
+
+ lrsk_legit_mgmt_bonus:0 "Additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+
+ lrsk_crim_mgmt_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary_plural$§! to manage the books of their illegal dealings $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+
+ lrsk_gvp_bldg_learnarium_dome:0 "Learnarium Dome"
+ lrsk_gvp_bldg_learnarium_dome_desc:0 "Billing educational adventures for knowledge seekers young and old, this combination of museum and theme park aims to make learning §GFUN§!damental!"
+
+ lrsk_gvp_bldg_odd_jobs_emporium:0 "Odd Jobs Emporium"
+ lrsk_gvp_bldg_odd_jobs_emporium_desc:0 "Less a workplace than a local networking hub for a suite of apps and social media marketplaces that empower ordinary people to trade their time and skills in a disruptive, fast-paced, independent way, unburdened by cumbersome employee protections."
+
+ lrsk_legit_gofer_bonus:0 "Additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_gofer£ §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
+
+ lrsk_crim_courier_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_gofer_plural$§! to act as discrete couriers for illicit communications and transactions $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
+
+ lrsk_gvp_bldg_organizing_hub:0 "Organizing Hub"
+ lrsk_gvp_bldg_organizing_hub_desc:0 "The cooperative movement sees the employee-owned enterprise as the ideal resolution to most social conflict over power in the workplace, and will spread the techniques of worker self-organization for modest fees."
+
+ lrsk_gov_var_bldg_grand_casino:0 "Grand Casino"
+ lrsk_gov_var_bldg_grand_casino_desc:0 "From mega-slots to high stakes competative gaming to on-site sports betting, this opulent temple to chance and fortune lets thousands wager their cash for the thrill of testing their luck every day."
+
+ lrsk_casino_events_desc:0 "The winds of fortune and fate may blow in many different ways for both the host and the corp. §HExpect Lady Luck to capriciously smile or frown on you from time to time!§!\n\n"
+
+ lrsk_legit_gamble_bonus:0 "Professional commitment to providing a quality and responsible entertainment experience increases §Y$BRANCH_OFFICE_VALUE$§! by §G10%§!.\n\n"
+
+ lrsk_crim_gamble_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_grand_casino$§! to secretly host all kinds of forbidden and often deadly games of chance (among other vices) by employing the unlucky and indebted, $LRSK_CRIME_OPTION_COMMON_2$ §R15%§!.\n\n"
+
+ lrsk_gov_var_bldg_galactic_excursions_office:0 "Galactic Excursions Office"
+ lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "The galaxy is yours to explore! Plan your perfect insterstellar getaway with us, competative package deals available for all destinations."
+
+ lrsk_gov_var_bldg_heritage_museum:0 "Heritage Museum"
+ lrsk_gov_var_bldg_heritage_museum_desc:0 "All peoples of the galaxy have a proud heritage, something special that sets them apart. Our genius is to help bring it forth. The Heritage Museum is a temple to the genius and glory of your people, and we invite you to cherish it."
+
+ lrsk_gov_var_bldg_mediation_retreat:0 "Mediation Retreat"
+ lrsk_gov_var_bldg_mediation_retreat_desc:0 "This beautiful, secluded retreat provides the perfect environment for interested parties to let our professional dispute mediation and arbitration specialists work out their conflicts through non-violent means and to mutual benefit."
+
+ lrsk_gov_var_bldg_professional_protection_office:0 "Professional Protection Office"
+ lrsk_gov_var_bldg_professional_protection_office_desc:0 "Dedicated security service professionals stand ready to solve all kinds of problems, from suspicions of marital infidelity, to potential unwanted criminal activity, to rumors of worker agitation."
+
+ lrsk_gov_var_bldg_military_excellence_academy:0 "Military Excellence Academy"
+ lrsk_gov_var_bldg_military_excellence_academy_desc:0 "Vision. Leadership. Cunning. Daring. The prowess of a people must be well tempered before battle is joined. Here, the finest strategic minds will tutor your officer corps in the art of war."
+
+ LRSK_MILITARY_EXCELLENCE_COMMON_1:0 "The host emipire's"
+ LRSK_MILITARY_EXCELLENCE_COMMON_2:0 "get §G+20%§! chance of gaining a positive trait when spawned or on level up, §G+10%§! more per §Y$lrsk_gov_var_bldg_military_excellence_academy$§! in empire beyond the first (max +100%).\n\n"
+
+ lrsk_military_excellence_naval_effect:0 "$LRSK_MILITARY_EXCELLENCE_COMMON_1$ §Yadmirals§! $LRSK_MILITARY_EXCELLENCE_COMMON_2$"
+ lrsk_military_excellence_army_effect:0 "$LRSK_MILITARY_EXCELLENCE_COMMON_1$ §Ygenerals§! $LRSK_MILITARY_EXCELLENCE_COMMON_2$"
+ lrsk_military_excellence_both_effect:0 "$LRSK_MILITARY_EXCELLENCE_COMMON_1$ §Ymilitary leaders§! $LRSK_MILITARY_EXCELLENCE_COMMON_2$"
+
+ lrsk_gov_var_bldg_reformatory_workhouse:0 "Reformatory Workhouse"
+ lrsk_gov_var_bldg_reformatory_workhouse_desc:0 "At this combination of prison and manufacturing facility debtors toil to repay their creditors, whether their debts are in money or to society."
+
+ lrsk_legit_debt_repay_bonus:0 "Efficient workforce asset optimizations increase §Y$BRANCH_OFFICE_VALUE$§! by §G15%§!.\n\n"
+
+ lrsk_crim_workhouse_pop_steal_chance:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! as a staging gorund for enslavement: they have a §R5%§! chance per year to steal a £pop£ §YPop§! from this planet! This is more likely the more pops, unemployment, and crime the planet has. It can happen in the host empire at most once every 5 years. The corp will also offer... alternative ways for its inmates to pay off their debts, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!\n\n"
+
+ lrsk_gov_var_bldg_offworld_jobs_placement:0 "Offworld Jobs Placement"
+ lrsk_gov_var_bldg_offworld_jobs_placement_desc:0 "Opportunity awaits in the Offworld Development Corps! Travel to distant new worlds, make them work, and bring home the money for your family. 95% of employees return safely from placements."
+
+ lrsk_offworld_work_effect:0 "The branch office owner gets §G+10%§! §Ycolony development speed§! and §G+5%§! §Ymining station output§! (max 100% and 50% respectively) per $lrsk_gov_var_bldg_offworld_jobs_placement$ owned.\n\n"
+
+ lrsk_legit_worker_bonus:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_offworld_worker£ §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
+
+ lrsk_crim_smuggle_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_offworld_worker_plural$§! to smuggle contraband, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
+
+ lrsk_gov_var_bldg_local_news_office:0 "Local News Station"
+ lrsk_gov_var_bldg_local_news_office_desc:0 "Boradcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
+
+ LRSK_MEDIA_FAVOR_COMMON:0 "chance per year to get a §YFavor§! from the host empire when it uncovers a national scandal on this planet to use as blackmail! This is more likely on the capital world, on worlds with high crime and/or low stability, and on worlds with certain decision-based modifiers (i.e., §Y$anticrime_campaign$§!, §Y$crime_lord_deal$§!, §Y$planet_population_expelled$§!, §Y$planet_population_control$§!, §Y$planet_growth_discouraged$§!, and §Y$martial_law$§!). It can happen in the host empire at most once every 5 years."
+
+ lrsk_media_legit_favor_chance:0 "The branch office owner has a §R5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\nQuality subscription options and subscriber services increase §Y$BRANCH_OFFICE_VALUE$§! by §G5%§!.\n\n"
+
+ lrsk_media_crim_favor_chance:0 "The branch office owner has a §R2.5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\n$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_local_news_office$§! to discover and publicly report on any efforts to combat crime, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!.\n\n"
 
  ##Jobs
 
@@ -126,7 +224,7 @@ l_english:
  job_lrsk_gov_var_job_otherworld_guide:0 "Otherworld Guide"
  job_lrsk_gov_var_job_otherworld_guide_plural:0 "$job_lrsk_gov_var_job_otherworld_guide$s"
  job_lrsk_gov_var_job_otherworld_guide_desc:0 "Communities of seers and witches made up of those mentally resiliant (or ill) enough to live near the Otherworld Pockets. Their fortunes and foretellings not only help people feel more confident about their place in the world, they provide a common cultural focus point for society."
- job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into §G+1§! £unity£ §Y$unity$§! (more with better psionic traits) and increase £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §G+3§!."
+ job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into §G+1§! £unity£ §Y$unity$§! (more with better psionic traits) and increase £stability£ §Y$PLANET_STABILITY_TITLE$§! by §G+3§!."
  mod_job_lrsk_gov_var_job_otherworld_guide_add:0 "$job_lrsk_gov_var_job_otherworld_guide$ Jobs"
  mod_job_lrsk_gov_var_job_otherworld_guide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_otherworld_guide$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_otherworld_guide_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_otherworld_guide_add£ per $VALUE$ £pop£"
@@ -144,7 +242,7 @@ l_english:
  job_lrsk_gov_var_job_regional_coordinator:0 "Regional Coordinator"
  job_lrsk_gov_var_job_regional_coordinator_plural:0 "$job_lrsk_gov_var_job_regional_coordinator$s"
  job_lrsk_gov_var_job_regional_coordinator_desc:0 "Regional administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
- job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ produce §G+6§! £unity£ §Y$unity$§! and §G+5§! £mod_planet_amenities_no_happiness_add£ §Y$PLANET_AMENITIES_TITLE$§!. However, they decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R5§! £energy£ §H$energy$§!."
+ job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ produce §G+6§! £unity£ §Y$unity$§! and §G+5§! £mod_planet_amenities_no_happiness_add£ §Y$PLANET_AMENITIES_TITLE$§!. However, they decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-2§!. They consume §R5§! £energy£ §H$energy$§!."
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
@@ -178,15 +276,90 @@ l_english:
  job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
  job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
  job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
- job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§! and increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! by §G+2§!. However, they produce §R+15§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$MOD_PLANET_STABILITY_ADD$§! by §R-2§!. They consume §R3§! £food£ §H$food$§! and £energy£ §H$energy$§!"
+ job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§! and increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! by §G+2§!. However, they produce §R+15§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-2§!. They consume §R3§! £food£ §H$food$§! and £energy£ §H$energy$§!"
  mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
+
+ # Functionary
+ job_lrsk_gov_var_job_functionary:0 "Functionary"
+ job_lrsk_gov_var_job_functionary_plural:0 "Functionaries"
+ job_lrsk_gov_var_job_functionary_desc:0 "Sure, the hours are long, the paperwork is tedious, and you're paying for the privilege, but think of how great this will look on your resume!"
+ job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ increase £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! and produce £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ mod_job_lrsk_gov_var_job_functionary_add:0 "$job_lrsk_gov_var_job_functionary$ Jobs"
+ mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_functionary_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_functionary_add£ per $VALUE$ £pop£"
+
+ # Info-Guide
+ job_lrsk_gov_var_job_infoguide:0 "Info-Guide"
+ job_lrsk_gov_var_job_infoguide_plural:0 "$job_lrsk_gov_var_job_infoguide$s"
+ job_lrsk_gov_var_job_infoguide_desc:0 "Experienced tour guides and educators keep the learning attractions running and help pupil-patrons find the most relevant and interesting experiences on their quest for knowledge."
+ job_lrsk_gov_var_job_infoguide_effect_desc:0 "£job_lrsk_gov_var_job_infoguide£ $job_lrsk_gov_var_job_infoguide_plural$ produce £physics£ £society£ £engineering£ §YResearch Points§! and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!"
+ mod_job_lrsk_gov_var_job_infoguide_add:0 "$job_lrsk_gov_var_job_infoguide$ Jobs"
+ mod_job_lrsk_gov_var_job_infoguide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_infoguide$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_infoguide_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_infoguide_add£ per $VALUE$ £pop£"
+
+ # Gofer
+ job_lrsk_gov_var_job_gofer:0 "Gofer"
+ job_lrsk_gov_var_job_gofer_plural:0 "$job_lrsk_gov_var_job_gofer$s"
+ job_lrsk_gov_var_job_gofer_desc:0 "Need some food? A ride? To figure out how to fix your damn bleeping computer? Need it in 1 hour tops? Gofers are here, there, and everywhere to satisfy whatever whims can be expressed in an app-based social marketplace. Tipping optional."
+ job_lrsk_gov_var_job_gofer_effect_desc:0 "£job_lrsk_gov_var_job_gofer£ $job_lrsk_gov_var_job_gofer_plural$ produce £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and £consumer_goods£ §Y$consumer_goods$§!"
+ mod_job_lrsk_gov_var_job_gofer_add:0 "$job_lrsk_gov_var_job_gofer$ Jobs"
+ mod_job_lrsk_gov_var_job_gofer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_gofer$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_gofer_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_gofer_add£ per $VALUE$ £pop£"
+
+ # Offworld Worker
+ job_lrsk_gov_var_job_offworld_worker:0 "Offworld Worker"
+ job_lrsk_gov_var_job_offworld_worker_plural:0 "$job_lrsk_gov_var_job_offworld_worker$s"
+ job_lrsk_gov_var_job_offworld_worker_desc:0 "Industrious transitory workers who roam the galaxy to get done the jobs that need doing."
+ job_lrsk_gov_var_job_offworld_worker_effect_desc:0 "£job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker_plural$ produce £energy£ §Y$energy$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ mod_job_lrsk_gov_var_job_offworld_worker_add:0 "$job_lrsk_gov_var_job_offworld_worker$ Jobs"
+ mod_job_lrsk_gov_var_job_offworld_worker_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_offworld_worker$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_offworld_worker_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_offworld_worker_add£ per $VALUE$ £pop£"
+
+ # Investigator
+ job_lrsk_gov_var_job_investigator:0 "Investigator"
+ job_lrsk_gov_var_job_investigator_plural:0 "$job_lrsk_gov_var_job_investigator$s"
+ job_lrsk_gov_var_job_investigator_desc:0 "Detectives who can be hired by private citizens, businesses, or even the government to find and expose unwanted clandestine behavior. Can be outfitted with trenchcoats and smoking pipes at customer request."
+ job_lrsk_gov_var_job_investigator_effect_desc:0 "£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator_plural$ reduce £crime£ §YCrime§! and also the £political_power£ §YPolitical Power§! of $WORKERS$"
+ mod_job_lrsk_gov_var_job_investigator_add:0 "$job_lrsk_gov_var_job_investigator$ Jobs"
+ mod_job_lrsk_gov_var_job_investigator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_investigator$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_investigator_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_investigator_add£ per $VALUE$ £pop£"
+
+ # Suppressor
+ job_lrsk_gov_var_job_suppressor:0 "Suppressor"
+ job_lrsk_gov_var_job_suppressor_plural:0 "$job_lrsk_gov_var_job_suppressor$s"
+ job_lrsk_gov_var_job_suppressor_desc:0 "For those problems that can't be solved within the bounds of the law, these unofficial enforcers can make a point even with a blunt object. Whether it's outlawed trade on your turf or employees banding together to demand their 'rights,' these brutes get the job done."
+ job_lrsk_gov_var_job_suppressor_effect_desc:0 "£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor_plural$ reduce the £political_power£ §YPolitical Power§! of $WORKERS$ while increasing the output of $WORKERS$"
+ mod_job_lrsk_gov_var_job_suppressor_add:0 "$job_lrsk_gov_var_job_suppressor$ Jobs"
+ mod_job_lrsk_gov_var_job_suppressor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_suppressor$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_suppressor_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_suppressor_add£ per $VALUE$ £pop£"
+
+ ## Decisions
+
+ # Run Recursive Audit
+ decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
+ decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
+ decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
 
  ## Empire Modifiers
 
  lrsk_gov_var_empire_endisnigh:0 "The End Is Nigh"
  lrsk_gov_var_empire_endisnigh_desc:0 "Doomsday cultists run rampant, given... well. You know. We have to prove them wrong!"
+
+ lrsk_gvp_empire_scandal_wracked:0 "Scandal-Wracked"
+ lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
+
+ lrsk_gvp_empire_offworld_work_bonus_1:0 "Offworld Worker Bonus"
+ lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
 
  ## Planet Modifiers
 
@@ -296,6 +469,22 @@ l_english:
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
 
+ # Casino Luck Modifiers (not really interested in descriptions for these...)
+ LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
+
+ lrsk_gov_var_statmod_casino_lost_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Trade Value"
+ lrsk_gov_var_statmod_casino_lost_trade_desc:0 ""
+ lrsk_gov_var_statmod_casino_happy:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Harmony"
+ lrsk_gov_var_statmod_casino_happy_desc:0 ""
+ lrsk_gov_var_statmod_casino_lost_stability:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Social Unrest"
+ lrsk_gov_var_statmod_casino_lost_stability_desc:0 ""
+ lrsk_gov_var_statmod_casino_gain_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Trade Value"
+ lrsk_gov_var_statmod_casino_gain_trade_desc:0 ""
+ lrsk_gov_var_statmod_casino_lost_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Branch Office Value"
+ lrsk_gov_var_statmod_casino_lost_branch_val_desc:0 ""
+ lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
+ lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
+
  ## Events
 
  # Backend
@@ -305,11 +494,140 @@ l_english:
  lrsk_government_variety_pack_backend.4.name:0 "Origin Fix: Success"
  lrsk_government_variety_pack_backend.4.desc:0 "Origin fix logic successfully executed for [this.GetName]."
 
+ LRSK_GVP_BACKEND_EXPLAIN_TELLME_1:0 "Tell me about§Y"
+ LRSK_GVP_BACKEND_EXPLAIN_TELLME_2:0 "§!."
+
+ lrsk_government_variety_pack_backend.101.name:0 "Enhanced Civic Explanation"
+ lrsk_government_variety_pack_backend.101.desc:0 "Because you're using an §Henhanced civic§! - a base game civic that has expanded functionality from the §HGovernment Variety Pack§! mod - this is an explanation of new features you should be aware of."
+ lrsk_government_variety_pack_backend.101.error:0 "§RNo enhanced civic detected. This is an error. Please alert mod author.§!"
+ lrsk_government_variety_pack_backend.101.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_naval_contractors$§!/§Y$civic_private_military_companies$$LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_media_conglomerate$$LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_private_prospectors$$LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_TELLME_1$ $civic_indentured_assets$$LRSK_GVP_BACKEND_EXPLAIN_TELLME_2$"
+ lrsk_government_variety_pack_backend.101.end:0 "Let's start the game."
+
+ LRSK_GVP_BACKEND_EXPLAIN_COMMON_1:0 "The civic§H"
+ LRSK_GVP_BACKEND_EXPLAIN_COMMON_2:0 ""
+ LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED:0 "enables construction of the £building£"
+ LRSK_CRIM_CHANGES_EXPLAIN:0 "\n\nNote that if you have taken the §H$civic_criminal_heritage$§! Civic, some of these effects may be different..."
+  
+ lrsk_government_variety_pack_backend.102.name:0 "$lrsk_government_variety_pack_backend.101.name$"
+ lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §H$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with §Gan improved chance of military leaders gaining positive traits§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
+ 
+ lrsk_government_variety_pack_backend.102.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ Political Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire§!.$LRSK_CRIM_CHANGES_EXPLAIN$"
+ 
+ lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
+ 
+ lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
+
+ lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
+ lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."
+
  lrsk_government_variety_pack_backend.2001.name:0 "Using GVP Gov Type"
- lrsk_government_variety_pack_backend.2001.desc:0 "Detected that [this.GetName] has GVP added government of type: '[this.GetGovernmentName]''"
+ lrsk_government_variety_pack_backend.2001.desc:0 "Detected that [this.GetName] has GVP added government of type: '[this.GetGovernmentName]'"
 
  lrsk_government_variety_pack_backend.2002.name:0 "Using GVP Civics"
  lrsk_government_variety_pack_backend.2002.desc:0 "Detected that [this.GetName] has one or more GVP added civic(s)."
+
+ # Megacorp building special effects
+
+ # Inform player of Military Academy bonus
+ lrsk_gvp_mc_bldg_special.12.name:0 "Martial Excellence"
+ lrsk_gvp_mc_bldg_special.12.desc:0 "A §Y$lrsk_gov_var_bldg_military_excellence_academy$§! operated by one of our corporate trade partners is clearly making a positive impact on the professionalism of our officers. §H[lrsk_leader_to_levelup.GetTitle] [lrsk_leader_to_levelup.GetName]§! is a better and more effective leader for having trained there."
+ lrsk_gvp_mc_bldg_special.12.a:0 "Good to hear."
+ lrsk_gvp_mc_bldg_special.12.b:0 "Good, but don't bother me with this again."
+ lrsk_gvp_mc_bldg_special.12.b.tooltip:0 "You will not get an update when this happens again."
+
+ # Slaver corp gets pop from workhouse (inform corp)
+ lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
+ lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensared enough of the wretches of §Y[lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our enternally indebted workforce."
+ lrsk_gvp_mc_bldg_special.21.a:0 "Get to work!"
+ lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
+
+ # Slaver corp gets pop from workhouse (inform victim)
+ lrsk_gvp_mc_bldg_special.22.name:0 "Detestable Slavers!"
+ lrsk_gvp_mc_bldg_special.22.desc:0 "The underhanded corporate bandits of §H[lrsk_slaver_corp_to_steal.GetName]§! have sunk to a new low, ensnaring and abducting our people on §Y[lrsk_slaver_corp_abduct_location.GetName]§! to toil on their worlds!"
+ lrsk_gvp_mc_bldg_special.22.a:0 "This will NOT stand."
+ lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
+
+ # Media corp favor choice
+ LRSK_GVP_SCANDAL_COMMON:0 "£mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year."
+ lrsk_gvp_mc_bldg_special.31.name:0 "A Juicy Story..."
+ lrsk_gvp_mc_bldg_special.31.desc:0 "It seems that the government of the §H[lrsk_media_corp_victim.GetName]§! has been involved in some shady business on §Y[lrsk_media_corp_scoop_location.GetName]§!, where our intrepid local media reporters discovered it. Promising to withhold this embarrassment will give us some diplomatic leverage over the §H[lrsk_media_corp_victim.GetName]§!."
+ lrsk_gvp_mc_bldg_special.31.a:0 "What a scoop!"
+ lrsk_gvp_mc_bldg_special.31.a.tooltip:0 "Gain §G1 Favor§! with §H[lrsk_media_corp_victim.GetName]§!, although they might refuse..."
+ lrsk_gvp_mc_bldg_special.31.b:0 "The people deserve to know."
+ lrsk_gvp_mc_bldg_special.31.b.tooltip:0 "§H[lrsk_media_corp_victim.GetName]§! will be embarrassed, reducing their $LRSK_GVP_SCANDAL_COMMON$ They will §Rnot be happy with us...§!"
+ lrsk_gvp_mc_bldg_special.31.c:0 "Maybe we should just... let this one go."
+ lrsk_gvp_mc_bldg_special.31.c.tooltip:0 "Nothing will happen this time."
+
+ # Inform media corp host of choice: Favor
+ lrsk_gvp_mc_bldg_special.32.name:0 "Avoiding a Scandal"
+ lrsk_gvp_mc_bldg_special.32.desc:0 "PR specialists from §H[lrsk_media_corp_to_scoop.GetName]§! corporate HQ informed us that their reporters on §Y[lrsk_media_corp_scoop_location.GetName]§! discovered something that would be deeply embarrassing for us. 'Fortunately,' they said, 'we prefer to see this as a business opportunity...'"
+ lrsk_gvp_mc_bldg_special.32.a:0 "We really stepped in it."
+ lrsk_gvp_mc_bldg_special.32.a.tooltip:0 "§H[lrsk_media_corp_to_scoop.GetName]§! gets §R1 Favor§! from us."
+ lrsk_gvp_mc_bldg_special.32.b:0 "We won't be blackmailed!"
+ lrsk_gvp_mc_bldg_special.32.b.tooltip:0 "If §H[lrsk_media_corp_to_scoop.GetName]§! releases the story, national embarrassment will reduce our $LRSK_GVP_SCANDAL_COMMON$ We will §Rnot be happy§! with the §H[lrsk_media_corp_to_scoop.GetName]§!."
+ 
+ # Inform media corp host of choice: Scandal
+ lrsk_gvp_mc_bldg_special.33.name:0 "We Got Scooped!"
+ lrsk_gvp_mc_bldg_special.33.desc:0 "Reporters from §H[lrsk_media_corp_to_scoop.GetName]§! on §Y[lrsk_media_corp_scoop_location.GetName]§! discovered and reported on an item of national disgrace. It will take some time now to recover our good name with our citizens and the galactic community."
+ lrsk_gvp_mc_bldg_special.33.a:0 "Damn the meddling lying press!"
+ lrsk_gvp_mc_bldg_special.33.a.tooltip:0 "National embarrassment reduces our $LRSK_GVP_SCANDAL_COMMON$ We are §Rnot happy§! with the §H[lrsk_media_corp_to_scoop.GetName]§!."
+ 
+ # Inform media corp of offer refusal
+ lrsk_gvp_mc_bldg_special.34.name:0 "Offer Refused..."
+ lrsk_gvp_mc_bldg_special.34.desc:0 "We tried to be reasonable. We strove for good diplomatic relations. We wanted to avoid any unneeded embarrassment for anyone. However, the government of §H[lrsk_media_corp_victim.GetName]§! has refused our very kind and fair offer, leaving us no choice but to report the truth, the whole truth, and nothing but the truth about their indiscretions on §Y[lrsk_media_corp_scoop_location.GetName]§!."
+ lrsk_gvp_mc_bldg_special.34.a:0 "Their loss."
+ lrsk_gvp_mc_bldg_special.34.a.tooltip:0 "$lrsk_gvp_mc_bldg_special.31.b.tooltip$"
+ lrsk_gvp_mc_bldg_special.34.b:0 "$lrsk_gvp_mc_bldg_special.31.c$"
+ lrsk_gvp_mc_bldg_special.34.b.tooltip:0 "$lrsk_gvp_mc_bldg_special.31.c.tooltip$"
+
+ # Casino luck random events
+ lrsk_gvp_mc_bldg_special.51.name:0 "The Winds of Fortune"
+
+ # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
+ lrsk_gvp_mc_bldg_special.51.desc.a:0 "The opening of the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! has not been met with universal approval. Moral reformers alarmed at the spread of vice are protesting its very existence and have organized a boycott."
+ lrsk_gvp_mc_bldg_special.51.a:0 "How annoying..."
+ lrsk_gvp_mc_bldg_special.51.a.tooltip:0 "§R-10% £trade_value£ $TRADE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
+
+ # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
+ lrsk_gvp_mc_bldg_special.51.desc.b:0 "What a bout! Tens, if not hundreds, of thousands of patrons bet on the outcome of the recent prize fight at the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§!, and it was the spectacle of the century for the planet's inhabitants."
+ lrsk_gvp_mc_bldg_special.51.b:0 "To the victor goes the spoils!"
+ lrsk_gvp_mc_bldg_special.51.b.tooltip:0 "§G+5% £happiness£ Pop Happiness§! on §Y[lrsk_casino_corp_play_location.GetName]§! for one year."
+ 
+ # Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
+ lrsk_gvp_mc_bldg_special.51.desc.c:0 "In what's being called the most wild and rowdy after-game brawl in the history of §Y[lrsk_casino_corp_play_location.GetName]§!, the streets are filled with sports fans who are... Furious? Elated? Filled with strong emotions, at any rate, over the outcome of the latest sports gambling event at the $lrsk_gov_var_bldg_grand_casino$. The property damage may take months to repair."
+ lrsk_gvp_mc_bldg_special.51.c:0 "Get a grip, it's just a game!"
+ lrsk_gvp_mc_bldg_special.51.c.tooltip:0 "§R-5 £stability£ $PLANET_STABILITY_TITLE$§! for one year, and some amount of §RDevastation§! to clean up."
+ 
+ # Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
+ lrsk_gvp_mc_bldg_special.51.desc.d:0 "Ever since the $lrsk_gov_var_bldg_grand_casino$ finished construction on §Y[lrsk_casino_corp_play_location.GetName]§!, interest in visiting the planet for vacation or other recreation has increased. We can say that for now, a proper tourism boom is lifting the local economy thanks to it, and the first surplus is already rolling in."
+ lrsk_gvp_mc_bldg_special.51.d:0 "Welcome to lrsk_casino_corp_play_location.GetName], beloved tourists!"
+ lrsk_gvp_mc_bldg_special.51.d.tooltip:0 "§G+10% £trade_value£ $TRADE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
+ 
+ lrsk_gvp_mc_bldg_special.52.name:0 "$lrsk_gvp_mc_bldg_special.51.name$"
+
+ # Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
+ lrsk_gvp_mc_bldg_special.52.desc.a:0 "$lrsk_gvp_mc_bldg_special.51.desc.a$"
+ lrsk_gvp_mc_bldg_special.52.a:0 "Bad for business!"
+ lrsk_gvp_mc_bldg_special.52.a.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
+
+ # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
+ lrsk_gvp_mc_bldg_special.52.desc.b:0 "$lrsk_gvp_mc_bldg_special.51.desc.b$"
+ lrsk_gvp_mc_bldg_special.52.b:0 "$lrsk_gvp_mc_bldg_special.51.b$"
+ lrsk_gvp_mc_bldg_special.52.b.tooltip:0 "§H[lrsk_casino_corp_host_player.GetName]§! has a §Gboosted opinion§! of us for the next four years."
+
+ # Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
+ lrsk_gvp_mc_bldg_special.52.desc.c:0 "Security at the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! can't explain how or why, but... one overwhelmingly lucky patron has nearly cleaned the house out! From Giga-Craps to Galactic Roulette to 10th-Dimensional Poker, this roving gambler could not help but win, seemingly guided from game to game by unseen forces. It will take time to recover what we've lost."
+ lrsk_gvp_mc_bldg_special.52.c:0 "Must have been a cheater!"
+ lrsk_gvp_mc_bldg_special.52.c.tooltip:0 "§R-10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
+
+ # Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
+ lrsk_gvp_mc_bldg_special.52.desc.d:0 "Games of chance over a long enough period tend to smooth out to an expected rate of return. That is the basis of gambling as a business venture. Sometimes, though, the whims of chance are even more stacked in our favor than we expected: the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§! has provided us a tidy little bounty."
+ lrsk_gvp_mc_bldg_special.52.d:0 "The house always wins."
+ lrsk_gvp_mc_bldg_special.52.d.tooltip:0 "§G+10% $BRANCH_OFFICE_VALUE$§! on §Y[lrsk_casino_corp_play_location.GetName]§! for two years."
+
 
  # Direct Revelation
  lrsk_gov_var_direct_revelation.1.name:0 "Direct Revelation - Wild Cult Gate Event Fired"

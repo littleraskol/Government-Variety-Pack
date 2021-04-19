@@ -133,17 +133,39 @@ Optimized Expansion (Machine Intelligence) - The civilization that designed the 
 
 Megacorp Civics:
 
-Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output)
+Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output, build Managerial Technique Institute)
 
-Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain)
+Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
 
-Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness)
+Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
 
 Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
 Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
 
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists)
+Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists, build Organizing Hub)
+
+Casino Mysticism (Not Materialist) - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
+
+Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
+
+Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
+
+Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
+
+Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+
+Enhanced Civics
+
+(These are civics from the base game that have had new features added to them.)
+
+Naval Contractors and Private Military Companies - Enables the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
+
+Indentured Assets - Enables the Reformatory Workhouse branch building, which provides the host planet with +10% worker/slave output and provides the megacorp with +15% Branch Office Value. Criminal megacorps with this building occasionally steal and enslave pops from the planet!
+
+Private Prospectors - Enables the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and mining station output.
+
+Media Conglomerate - Enables the Local News Office branch building, which provides the host planet with +10% ruler output, +20% specialist political power, and +5% specialist happiness. It provides the megacorp with a chance to occasionally get favors from the host empire.
 
 2. New Governments
 
@@ -180,6 +202,59 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v2.1.1 (04-19-21) - Spy Stuff
+-Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.
+-Siege Mentality gets +1 Encryption instead of +5% station hull points
+-Siege Mentality gets -20% military platform build cost (doubled from -10%)
+
+v2.1 (04-18-21) - Dick Expansion (lol)
+-Supremacist Demagoguery: Now gets +30% army morale damage (up from +20%).
+-Combat Data: Now gets +30% army morale damage (up from +20%).
+-Boundless Spite: Now gets +50% purge speed.
+-Gestalt Extroversion: Now gets +10% first contact speed instead of +20 trust cap.
+-Diplomatic Protocols: Now gets +1 first contact clues instead of +10% trust growth.
+-Megacorp civics now available with Galactic Soveriegn civic.
+-Removed now thematically redundant "galactic empire" govtypes.
+
+v2.0 (04-18-21) - Dick Update
+-Fixed what was needed for compatibility with Stellaris 3.* (Dick)
+-Changed compat version number.
+-Going forward, mod version numbers will change the major number with each Stellaris update that wrecks backwards compatibility (i.e. actual good version numbering practice)
+-Some fixes to localization fixes.
+-Enlightened Liberalism is not compatible with Shared Burdens.
+
+v1.6.8.2 (01-14-21) - Misc fixes
+-Removed defunct diplo phrase.
+-Misnamed planet modifier (DPS building focus should now work)
+-AI chances for options in events needed factors, not additions.
+
+v1.6.8.1 (01-08-21) - New features and fixes
+-Added option for media corp favor events: corp can bail out with no effect if desired.
+-Fix: Incorrectly marked Braz/Port localization as French.
+
+v1.6.8 (01-01-21) - Megacorp Expansion
+-Scientific Management civic now allows the Managerial Technique Institute branch building, which provides the host planet with two Functionary jobs (produces +3 admin cap and +3 trade value) and provides the megacorp with +10% Branch Office Value, +5% more per Functionary job filled (which becomes +10% crime on planet per job for criminal corps).
+-Educational Consortium civic now allows the Learnarium Dome branch building, which provides the host planet with +50% Materialist attraction and two Info-Guide jobs (produces +2 all research and +2 amenities), and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Materialist.
+-Employee-Owned Co-op civic now allows the Organizing Hub branch building, which provides the host planet with +50% Egalitarian attraction, +20% Worker power, and +10% Worker happiness, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Egalitarian.
+-Gig Economics civic now allows the Odd Jobs Emporium branch building, which provides the host planet with two Gofer jobs (produces +4 amenities and +2 consumer goods), and provides the megacorp with +10% Branch Office Value, +5% more per Gofer job filled (which becomes +10% crime on planet per job for criminal corps).
+-Naval Contractors and Private Military Companies civics now allow the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
+-Indentured Assets civic now allows the Reformatory Workhouse branch building, which provides the host planet with +10% worker/slave output, and provides the megacorp with +15% Branch Office Value. Criminal megacorps with this building occasionally steal and enslave pops from the planet!
+-Private Prospectors civic now allows the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 trade value and +2 energy), and provides the megacorp with improved colony growth speed and station output, and +5% Branch Office Value per Offworld Worker job filled (which becomes +10% crime on planet per job for criminal corps).
+-Media Conglomerate civic now allows the Local News Office branch building, which provides the host planet with +10% ruler output, +20% specialist political power, and +5% specialist happiness. It provides the megacorp with a chance to occasionally get favors from the host empire.
+-New Casino Mysticism civic (Not Materialist) provides -25% pop demotion time, +25% colony development speed, and allows the Grand Casino branch building, which provides the host planet with +10 amenities and +5% trade value, while enabling random beneficial and detrimental events for both the planet and the corp. It provides the megacorp with either +10% Branch Office Value or adds +15% crime (for criminal corps).
+-New Vacation Experience Planning civic (Xenophile) provides -10% pop amenities usage, and allows the Galactic Excursions Office branch building, which provides the host planet with +50% Xenophile attraction and -15% pop amenities usage, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Xenophile.
+-New Heritage Trust civic (Xenophobe) provides +5 stability, and allows the Heritage Museum branch building, which provides the host planet with +50% Xenophobe attraction and +10% citizen pop happiness, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Xenophobe.
+-New Conflict Resolution Specialists civic (Pacifist) provides +15% trust growth rate and +20 trust cap, and allows the Mediation Retreat branch building, which provides the host planet with +50% Pacifist attraction and +5 Stability, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Pacifist.
+-New Investigation & Security Services civic (Authoritarian) provides -15% crime, and allows the Professional Protection Office branch building, which provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Authoritarian. The host planet gets +50% Authoritarian attraction and either an Investigator job (produces -25 crime, -15% Worker power) or (if the providing corp is criminal) a Suppressor job (produces -25% Worker power, +10% Worker output).
+-New governments Private Intelligence Agency (Investigation & Security Services) and Protection Racket (Investigation & Security Services with Criminal Heritage).
+-Every non-ethics based new branch office building has a different bonus for criminal empires.
+-Update: Due to addition of "death cult" themed things to the game w/ the Necroids pack, changed "Death Cult" government to be named "Church of Slaughter"
+-Employee-Owned Co-op civic no longer has civic restrictions (neither do any other ethos-special civics, afterall).
+-Backend: Added "general test" diagnostic event.
+-Backend: Numerous testing tools in scripted effects/triggers.
+-Fixed some localization typos here and there.
+
 
 v1.6.7 (11-11-20) - More Merchantry
 -Added two governments based on the ideas of Steam user Garlic Pudding: Stakeholder Polity and Shareholder Commonwealth.
