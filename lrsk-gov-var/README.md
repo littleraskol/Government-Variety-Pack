@@ -220,6 +220,11 @@ v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 
+v2.1.1 (04-19-21) - Spy Stuff
+-Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.
+-Siege Mentality gets +1 Encryption instead of +5% station hull points
+-Siege Mentality gets -20% military platform build cost (doubled from -10%)
+
 v2.1 (04-18-21) - Dick Expansion (lol)
 -Supremacist Demagoguery: Now gets +30% army morale damage (up from +20%).
 -Combat Data: Now gets +30% army morale damage (up from +20%).

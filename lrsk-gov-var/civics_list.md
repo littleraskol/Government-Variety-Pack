@@ -35,7 +35,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
 
-[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
+[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -20% defense platform cost, +1 Encryption)
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
@@ -167,7 +167,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Conflict Resolution Specialists (Pacifist)[/i] - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
 
-[*][i]Investigation & Security Services (Authoritarian)[/i] - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+[*][i]Investigation & Security Services (Authoritarian)[/i] - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-10% crime, +1 Encryption and Codebreaking, build Professional Protection Office)
 [/list]
 
 [b]Enhanced Civics[/b]
