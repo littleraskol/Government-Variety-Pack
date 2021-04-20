@@ -38,7 +38,7 @@ country_event = {
 		create_country = {
 			name_list = random
 			type = default
-			origin = origin_default
+			origin = origin_default	#Should eventually be an NPC version of Star Sibs
 			ethos = event_target:lrsk_adv_civ_needs_sibling
 			authority = random
 			civics = random
@@ -134,7 +134,7 @@ country_event = {
 
 			modify_species = {
 				species = event_target:lrsk_adv_civ_sibling_species
-				homeworld = event_target:lrsk_adv_civ_sibling_capital
+				#homeworld = event_target:lrsk_adv_civ_sibling_capital
 				ideal_planet_class = event_target:lrsk_adv_civ_sibling_capital
 			}
 
@@ -151,10 +151,14 @@ country_event = {
 			}
 
 			# Starting resources
-			add_energy = 100
-			add_minerals = 200
-			add_food = 100
-			add_influence = 100
+			
+			add_resource = {
+				energy = 100
+				minerals = 200
+				food = 100
+				influence = 100
+				alloys = 100
+			}
 
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
@@ -255,7 +259,12 @@ country_event = {
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_WELCOME
-		add_influence = 100
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 30
+			min = 90
+			max = 300
+		}
 	}
 }
 
@@ -276,7 +285,12 @@ country_event = {
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_JOY
-		add_influence = 100
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 30
+			min = 90
+			max = 300
+		}
 	}
 }
 
@@ -329,13 +343,15 @@ country_event = {
 
 	immediate = {
 		# If siblings are fighting each other
-		IF = { limit = {
-			this = { NOT = { has_modifier = lrsk_adv_civ_siblings_strife } }
-			# Is our fleet in combat with a fleet owned by sibling?
-			fromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
-				who = this
-				flag = lrsk_adv_civ_our_siblings
-			} } } } }
+		IF = {
+			limit = {
+				this = { NOT = { has_modifier = lrsk_adv_civ_siblings_strife } }
+				# Is our fleet in combat with a fleet owned by sibling?
+				fromfrom = { any_combatant_fleet = { owner = { has_relation_flag = {
+					who = this
+					flag = lrsk_adv_civ_our_siblings
+				} } } }
+			}
 
 			fromfrom = { random_combatant_fleet = {
 				limit = { owner = { has_relation_flag = {
@@ -357,14 +373,17 @@ country_event = {
 			}
 
 			this = { country_event = { id = lrsk_adv_civ_siblings.7 } }
-			fromfromfrom = { random_combatant_fleet = {
-				limit = { owner = { has_relation_flag = {
-					who = this
-					flag = lrsk_adv_civ_our_siblings
-				} } } }
+			fromfromfrom = {
+				random_combatant_fleet = {
+					limit = { owner = { has_relation_flag = {
+						who = this
+						flag = lrsk_adv_civ_our_siblings
+					} } }
+				}
 				owner = { country_event = { id = lrsk_adv_civ_siblings.7 } }
-			} }
+			}
 		}
+		
 		# Alternately, am I now in combat with anyone whose fleets are in combat with a sibling? (I sure hope this actually makes sense!)
 		ELSE_IF = {
 			limit = {
@@ -445,14 +464,14 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
 		
-		any_country = { limit = {
+		any_country = {
 			is_in_federation_with = root
 			has_relation_flag = {
 				who = root
 				flag = lrsk_adv_civ_our_siblings
 			}
 			NOT = { has_modifier = lrsk_adv_civ_siblings_federated }
-		} }
+		}
 	}
 
 	immediate = {
@@ -470,7 +489,12 @@ country_event = {
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_UNITY
-		add_influence = 200
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 60
+			min = 180
+			max = 600
+		}
 		
 		# Ensure sibling also gets this if it hasn't somehow already (prevents continuous recusrive events)
 		hidden_effect = { event_target:lrsk_adv_civ_siblings_them = {

@@ -6,13 +6,39 @@
 tech_lrsk_adv_civ_ambdesexpsys = {
 	cost = 2000
 	area = physics
+	category = { computing }
 	tier = 4
 	weight = 0
 
 	modifier = {
 		terraforming_cost_mult = -0.15
 		terraform_speed_mult = 0.15
-		megastructure_build_speed_mult = 0.1
-		mod_megastructure_build_cost_mult = -0.1
+		megastructure_build_speed_mult = 0.2
+	}
+}
+
+# There appears to be no way to add AP by event anymore, so this kludge is needed.
+tech_lrsk_adv_civ_rampant_ascend = {
+	cost = 2000
+	area = society
+	category = { statecraft }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+#Can't remove techs either, have to add one that cancels out the other......
+tech_lrsk_adv_civ_ascension_plateau = {
+	cost = 2000
+	area = society
+	category = { statecraft }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		ascension_perks_add = -1
 	}
 }

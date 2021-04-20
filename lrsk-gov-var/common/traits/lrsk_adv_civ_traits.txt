@@ -37,7 +37,7 @@ lrsk_adv_civ_trait_illuminated = {
 		science_ship_survey_speed = 0.1
 		ship_anomaly_generation_chance_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { scientist }
 	leader_class = { scientist }
 }
 
@@ -54,7 +54,7 @@ lrsk_adv_civ_trait_unready_sci = {
 		all_technology_research_speed = -0.05
 		science_ship_survey_speed = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { scientist }
 	leader_class = { scientist }
 }
 
@@ -71,7 +71,7 @@ lrsk_adv_civ_trait_groomed_sci = {
 		all_technology_research_speed = 0.05
 		science_ship_survey_speed = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { scientist }
 	leader_class = { scientist }
 }
 
@@ -88,7 +88,7 @@ lrsk_adv_civ_trait_tutors_sci = {
 		all_technology_research_speed = -0.05
 		science_ship_survey_speed = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { scientist }
 	leader_class = { scientist }
 }
 
@@ -105,7 +105,7 @@ lrsk_adv_civ_trait_ambitious_sci = {
 		all_technology_research_speed = 0.05
 		science_ship_survey_speed = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { scientist }
 	leader_class = { scientist }
 }
 
@@ -127,7 +127,7 @@ lrsk_adv_civ_trait_insightful = {
 		planet_jobs_society_research_produces_mult = 0.05
 		planet_jobs_unity_produces_mult = 0.05
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -145,7 +145,7 @@ lrsk_adv_civ_trait_unready_gov = {
 		planet_buildings_cost_mult = 0.1
 		planet_districts_cost_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -163,7 +163,7 @@ lrsk_adv_civ_trait_groomed_gov = {
 		planet_buildings_cost_mult = -0.1
 		planet_districts_cost_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -181,7 +181,7 @@ lrsk_adv_civ_trait_tutors_gov = {
 		planet_buildings_cost_mult = 0.1
 		planet_districts_cost_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -199,7 +199,7 @@ lrsk_adv_civ_trait_ambitious_gov = {
 		planet_buildings_cost_mult = -0.1
 		planet_districts_cost_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -212,10 +212,10 @@ lrsk_adv_civ_trait_OCD = {
 	modifier = {
 		starbase_shipyard_build_speed_mult = -0.05
 		planet_army_build_speed_mult = -0.05
-		planet_building_cost_mult = -0.05
+		planet_buildings_cost_mult = -0.05
 		planet_districts_cost_mult = -0.05
 	}
-	leader_trait = yes
+	leader_trait = { governor }
 	leader_class = { governor }
 }
 
@@ -234,7 +234,7 @@ lrsk_adv_civ_trait_cunning_adm = {
 		ship_evasion_mult = 0.15
 		ship_emergency_ftl_mult = -0.25
 	}
-	leader_trait = yes
+	leader_trait = { admiral }
 	leader_class = { admiral }
 }
 
@@ -249,9 +249,9 @@ lrsk_adv_civ_trait_unready_adm = {
 	}
 	modifier = {
 		ship_fire_rate_mult = -0.05
-		ship_upkeep_mult = 0.05
+		ships_upkeep_mult = 0.05
 	}
-	leader_trait = yes
+	leader_trait = { admiral }
 	leader_class = { admiral }
 }
 
@@ -266,9 +266,9 @@ lrsk_adv_civ_trait_groomed_adm = {
 	}
 	modifier = {
 		ship_fire_rate_mult = 0.05
-		ship_upkeep_mult = -0.05
+		ships_upkeep_mult = -0.05
 	}
-	leader_trait = yes
+	leader_trait = { admiral }
 	leader_class = { admiral }
 }
 
@@ -283,9 +283,9 @@ lrsk_adv_civ_trait_tutors_adm = {
 	}
 	modifier = {
 		ship_fire_rate_mult = -0.05
-		ship_upkeep_mult = 0.05
+		ships_upkeep_mult = 0.05
 	}
-	leader_trait = yes
+	leader_trait = { admiral }
 	leader_class = { admiral }
 }
 
@@ -300,9 +300,9 @@ lrsk_adv_civ_trait_ambitious_adm = {
 	}
 	modifier = {
 		ship_fire_rate_mult = 0.05
-		ship_upkeep_mult = -0.05
+		ships_upkeep_mult = -0.05
 	}
-	leader_trait = yes
+	leader_trait = { admiral }
 	leader_class = { admiral }
 }
 
@@ -321,8 +321,8 @@ lrsk_adv_civ_trait_cunning_gen = {
 		army_damage_mult = 0.15
 		army_disengage_chance_mult = 0.15
 	}
-	leader_trait = yes
-	leader_class = { admiral }
+	leader_trait = { general }
+	leader_class = { general }
 }
 
 lrsk_adv_civ_trait_unready_gen = {
@@ -338,7 +338,7 @@ lrsk_adv_civ_trait_unready_gen = {
 		army_morale = -0.05
 		armies_upkeep_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { general }
 	leader_class = { general }
 }
 
@@ -355,7 +355,7 @@ lrsk_adv_civ_trait_groomed_gen = {
 		army_morale = 0.05
 		armies_upkeep_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { general }
 	leader_class = { general }
 }
 
@@ -372,7 +372,7 @@ lrsk_adv_civ_trait_tutors_gen = {
 		army_morale = -0.05
 		armies_upkeep_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { general }
 	leader_class = { general }
 }
 
@@ -389,7 +389,7 @@ lrsk_adv_civ_trait_ambitious_gen = {
 		army_morale = 0.05
 		armies_upkeep_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { general }
 	leader_class = { general }
 }
 
@@ -402,9 +402,7 @@ lrsk_adv_civ_trait_inspired = {
 	initial = no
 	modification = no
 	randomized = no
-	potential = {
-		NOT = { from = { has_ethic = "ethic_hive_mind" } }
-	}
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
 	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_leader_trait_revelation.dds"
 	modifier = {
 		pop_government_ethic_attraction = 0.15
@@ -413,7 +411,7 @@ lrsk_adv_civ_trait_inspired = {
 		leaders_cost_mult = -0.1
 		pop_citizen_happiness = 0.05
 	}
-	leader_trait = yes
+	leader_trait = { ruler }
 	leader_class = { ruler }
 }
 
@@ -422,6 +420,7 @@ lrsk_adv_civ_trait_unready_rul = {
 	initial = no
 	modification = no
 	randomized = no
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
 	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_unready.dds"
 	self_modifier = {
 		species_leader_exp_gain = -0.1
@@ -430,7 +429,7 @@ lrsk_adv_civ_trait_unready_rul = {
 		country_influence_produces_mult = -0.1
 		country_unity_produces_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { ruler }
 	leader_class = { ruler }
 }
 
@@ -439,6 +438,7 @@ lrsk_adv_civ_trait_groomed_rul = {
 	initial = no
 	modification = no
 	randomized = no
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
 	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_groomed.dds"
 	self_modifier = {
 		species_leader_exp_gain = -0.1
@@ -447,7 +447,7 @@ lrsk_adv_civ_trait_groomed_rul = {
 		country_influence_produces_mult = 0.1
 		country_unity_produces_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { ruler }
 	leader_class = { ruler }
 }
 
@@ -456,6 +456,7 @@ lrsk_adv_civ_trait_tutors_rul = {
 	initial = no
 	modification = no
 	randomized = no
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
 	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_tutors.dds"
 	self_modifier = {
 		species_leader_exp_gain = 0.1
@@ -464,7 +465,7 @@ lrsk_adv_civ_trait_tutors_rul = {
 		country_influence_produces_mult = -0.1
 		country_unity_produces_mult = -0.1
 	}
-	leader_trait = yes
+	leader_trait = { ruler }
 	leader_class = { ruler }
 }
 
@@ -473,6 +474,7 @@ lrsk_adv_civ_trait_ambitious_rul = {
 	initial = no
 	modification = no
 	randomized = no
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
 	icon = "gfx/interface/icons/traits/leader_traits/lrsk_adv_civ_trait_ambitious.dds"
 	self_modifier = {
 		species_leader_exp_gain = 0.1
@@ -481,7 +483,7 @@ lrsk_adv_civ_trait_ambitious_rul = {
 		country_influence_produces_mult = 0.1
 		country_unity_produces_mult = 0.1
 	}
-	leader_trait = yes
+	leader_trait = { ruler }
 	leader_class = { ruler }
 }
 
@@ -492,8 +494,8 @@ lrsk_adv_civ_trait_hardy = {
 	self_modifier = {
 		leader_age = 20
 	}
-	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
-	leader_trait = yes
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
+	leader_trait = { ruler }
 	leader_class = { ruler }
 	initial = no
 	randomized = no
@@ -509,8 +511,8 @@ lrsk_adv_civ_trait_debauched = {
 	modifier = {
 		country_influence_produces_mult = -0.1
 	}
-	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
-	leader_trait = yes
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
+	leader_trait = { ruler }
 	leader_class = { ruler }
 	initial = no
 	randomized = no
@@ -523,8 +525,8 @@ lrsk_adv_civ_trait_hubris = {
 	modifier = {
 		pop_citizen_happiness = -0.1
 	}
-	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
-	leader_trait = yes
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
+	leader_trait = { ruler }
 	leader_class = { ruler }
 	initial = no
 	randomized = no
@@ -537,8 +539,8 @@ lrsk_adv_civ_trait_hidebound = {
 	modifier = {
 		all_technology_research_speed = -0.05
 	}
-	potential = { NOT = { from = { has_ethic = "ethic_hive_mind" } } }
-	leader_trait = yes
+	leader_potential_add = { NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } } }
+	leader_trait = { ruler }
 	leader_class = { ruler }
 	initial = no
 	randomized = no

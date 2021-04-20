@@ -21,11 +21,16 @@ country_event = {
 	}
 
 	immediate = {
-		if = { limit = { NOT = { has_technology = tech_ascension_theory } } ascension_perks_add = 1 }
+		if = { limit = { NOT = { has_technology = tech_ascension_theory } }
+			give_technology = {
+				tech = tech_lrsk_adv_civ_rampant_ascend
+				message = no
+			}
+		}
 
 		if = {
 			limit = { has_technology = tech_terrestrial_sculpting }
-			add_society_research = 200
+			add_resource = { society_research = 200 }
 		}
 		else = {
 			add_research_option = tech_terrestrial_sculpting
@@ -36,7 +41,7 @@ country_event = {
 		}
 		if = {
 			limit = { has_technology = tech_lrsk_adv_civ_ambdesexpsys }
-			add_physics_research = 400
+			add_resource = { physics_research = 400 }
 		}
 		else = {
 			add_research_option = tech_lrsk_adv_civ_ambdesexpsys
@@ -47,7 +52,7 @@ country_event = {
 		}
 		if = {
 			limit = { has_technology = tech_mega_engineering }
-			add_engineering_research = 500
+			add_resource = { engineering_research = 500 }
 		}
 		else = {
 			add_research_option = tech_mega_engineering
@@ -59,7 +64,7 @@ country_event = {
 	}
 }
 
-# "Take back" the AP from Ascension Theory
+# "Take back" the AP from Rampant Ascension if getting Ascension Theory
 # Because the aspirant perks give a perk, this might be needed to prevent the player from having an unspendable perk.
 country_event = {
 	id = lrsk_adv_civ_aspiration.2
@@ -74,19 +79,23 @@ country_event = {
 			has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
 		}
 		last_increased_tech = tech_ascension_theory
-		OR = {
-			has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_inquisative_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
-			has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
-		}
+		has_technology = tech_lrsk_adv_civ_rampant_ascend
+		#OR = {
+		#	has_ascension_perk = lrsk_adv_civ_ap_diplomatic_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_inquisitive_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_dominant_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_expansionist_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_harmonious_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_acquisitive_aspiration
+		#	has_ascension_perk = lrsk_adv_civ_ap_supremacist_aspiration
+		#}
 	}
 
 	immediate = {
-		ascension_perks_add = -1
+		give_technology = {
+			tech = tech_lrsk_adv_civ_ascension_plateau
+			message = no
+		}
 	}
 }
 

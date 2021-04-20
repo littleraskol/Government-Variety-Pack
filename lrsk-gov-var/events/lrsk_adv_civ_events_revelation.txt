@@ -584,7 +584,7 @@ country_event = {
 					#	add_trait = lrsk_adv_civ_trait_debauched
 					#	else = { add_trait = leader_trait_substance_abuser }
 					#}
-					add_trait = leader_trait_substance_abuse
+					add_trait = leader_trait_substance_abuser
 					add_ruler_trait = lrsk_adv_civ_trait_debauched
 					remove_leader_flag = lrsk_rev_malus1
 				}
@@ -629,24 +629,52 @@ country_event = {
 	picture = GFX_evt_news_room
 	is_triggered_only = yes
 
-	desc = { random_list = {
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.suicide }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.vanished }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.eaten }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.murdered }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.berserk }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.machine }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.chemical }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.fear }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.burned }
-		10 = { text = lrsk_adv_civ_event_revelation.15.desc.excess }
-	}	}
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_suicide } text = lrsk_adv_civ_revelation.15.desc.suicide }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_vanished } text = lrsk_adv_civ_revelation.15.desc.vanished }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_eaten } text = lrsk_adv_civ_revelation.15.desc.eaten }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_murdered } text = lrsk_adv_civ_revelation.15.desc.murdered }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_berserk } text = lrsk_adv_civ_revelation.15.desc.berserk }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_machine } text = lrsk_adv_civ_revelation.15.desc.machine }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_chemical } text = lrsk_adv_civ_revelation.15.desc.chemical }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_fear } text = lrsk_adv_civ_revelation.15.desc.fear }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_burned } text = lrsk_adv_civ_revelation.15.desc.burned }
+	desc = { trigger = { has_country_flag = lrsk_adv_civ_revelation_dabbler_excess } text = lrsk_adv_civ_revelation.15.desc.excess }
 
-	immediate = { event_target:lrsk_rev_protag = { kill_leader = { show_notification = no } } }
+	immediate = { 
+		random_list = {
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_suicide }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_vanished }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_eaten }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_murdered }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_berserk }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_machine }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_chemical }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_fear }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_burned }
+			1 = { set_country_flag = lrsk_adv_civ_revelation_dabbler_excess }
+		}
+		event_target:lrsk_rev_protag = { kill_leader = { show_notification = no } }
+	}
 
 	option = {
 		name = LRSK_ADV_CIV_EVENT_REVELATION_DEATH_PLAYER_ACCEPT
 		hidden_effect = { country_event = { id = lrsk_adv_civ_revelation.18 days = 360 } } # JIC, really.
+	}
+
+	after = {
+		switch = {
+			trigger = has_country_flag
+			lrsk_adv_civ_revelation_dabbler_suicide = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_suicide }
+			lrsk_adv_civ_revelation_dabbler_vanished = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_vanished }
+			lrsk_adv_civ_revelation_dabbler_eaten = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_eaten }
+			lrsk_adv_civ_revelation_dabbler_murdered = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_murdered }
+			lrsk_adv_civ_revelation_dabbler_berserk = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_berserk }
+			lrsk_adv_civ_revelation_dabbler_machine = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_machine }
+			lrsk_adv_civ_revelation_dabbler_chemical = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_chemical }
+			lrsk_adv_civ_revelation_dabbler_fear = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_fear }
+			lrsk_adv_civ_revelation_dabbler_burned = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_burned }
+			lrsk_adv_civ_revelation_dabbler_excess = { remove_country_flag = lrsk_adv_civ_revelation_dabbler_excess }
+		}
 	}
 }
 
@@ -704,7 +732,7 @@ country_event = {
 	title = lrsk_adv_civ_revelation.19.name
 	desc = lrsk_adv_civ_revelation.19.desc
 	show_sound = event_mystic_reveal
-	picture = GFX_evt_sentient_AI
+	#picture = GFX_evt_sentient_AI
 
 	is_triggered_only = yes
 
@@ -733,7 +761,7 @@ country_event = {
 				last_increased_tech = "tech_lrsk_adv_civ_gems"
 				last_increased_tech = "tech_lrsk_adv_civ_ghostship"
 			}	}
-			add_engineering_research = 360
+			add_resource = { engineering_research = 360 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 360 }
 			random_owned_leader = {	limit = { is_researching_area = engineering }
@@ -764,7 +792,7 @@ country_event = {
 				last_increased_tech = "tech_lrsk_adv_civ_sphere"
 				last_increased_tech = "tech_lrsk_adv_civ_doomspeaker"
 			}	}
-			add_physics_research = 360
+			add_resource = { physics_research = 360 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 360 }
 			random_owned_leader = {	limit = { is_researching_area = physics }
@@ -790,7 +818,7 @@ country_event = {
 			}
 		}
 		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_guardians" }
-			add_society_research = 600
+			add_resource = { society_research = 600 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 720 }
 			random_owned_leader = {	limit = { is_researching_area = society }
@@ -816,7 +844,7 @@ country_event = {
 			}
 		}
 		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_swarm" }
-			add_society_research = 800
+			add_resource = { society_research = 800 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
 			random_owned_leader = {	limit = { is_researching_area = society }
@@ -842,7 +870,7 @@ country_event = {
 			}
 		}
 		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_unbidden" }
-			add_physics_research = 800
+			add_resource = { physics_research = 800 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
 			random_owned_leader = {	limit = { is_researching_area = physics }
@@ -868,7 +896,7 @@ country_event = {
 			}
 		}
 		if = { limit = {last_increased_tech = "tech_lrsk_adv_civ_ai" }
-			add_engineering_research = 800
+			add_resource = { engineering_research = 800 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1080 }
 			random_owned_leader = {	limit = { is_researching_area = engineering }
@@ -894,7 +922,7 @@ country_event = {
 			}
 		}
 		if = { limit = { last_increased_tech = "tech_lrsk_adv_civ_crises" }
-			add_society_research = 1200
+			add_resource = { society_research = 1200 }
 			if = { limit = { has_modifier = lrsk_adv_civ_rev_tech } remove_modifier = lrsk_adv_civ_rev_tech }
 			add_modifier = { modifier = lrsk_adv_civ_rev_tech days = 1440 }
 			random_owned_leader = {	limit = { is_researching_area = society }
