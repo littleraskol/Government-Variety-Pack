@@ -35,6 +35,7 @@
 tech_lrsk_adv_civ_dragon = {
 	cost = @lrskgindcost
 	area = engineering
+	category = { materials }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -76,6 +77,7 @@ tech_lrsk_adv_civ_dragon = {
 tech_lrsk_adv_civ_suneater = {
 	cost = @lrskgindcost
 	area = physics
+	category = { particles }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -120,6 +122,7 @@ tech_lrsk_adv_civ_suneater = {
 tech_lrsk_adv_civ_sphere = {
 	cost = @lrskgindcost
 	area = physics
+	category = { computing }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -161,6 +164,7 @@ tech_lrsk_adv_civ_sphere = {
 tech_lrsk_adv_civ_doomspeaker = {
 	cost = @lrskgindcost
 	area = physics
+	category = { field_manipulation }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -202,6 +206,7 @@ tech_lrsk_adv_civ_doomspeaker = {
 tech_lrsk_adv_civ_ghostship = {
 	cost = @lrskgindcost
 	area = engineering
+	category = { voidcraft }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -243,6 +248,7 @@ tech_lrsk_adv_civ_ghostship = {
 tech_lrsk_adv_civ_gems = {
 	cost = @lrskgindcost
 	area = engineering
+	category = { materials }
 	tier = 2
 	weight = @lrskgindwght
 
@@ -288,6 +294,7 @@ tech_lrsk_adv_civ_gems = {
 tech_lrsk_adv_civ_guardians = {
 	cost = @lrskgallcost
 	area = society
+	category = { military_theory }
 	tier = 3
 	is_rare = yes
 	weight = @lrskgallwght
@@ -378,6 +385,7 @@ tech_lrsk_adv_civ_guardians = {
 tech_lrsk_adv_civ_swarm = {
 	cost = @lrskcindcost
 	area = society
+	category = { biology }
 	tier = 3
 	weight = @lrskcindwght
 
@@ -441,6 +449,7 @@ tech_lrsk_adv_civ_swarm = {
 tech_lrsk_adv_civ_unbidden = {
 	cost = @lrskcindcost
 	area = physics
+	category = { particles }
 	tier = 3
 	weight = @lrskcindwght
 
@@ -522,6 +531,7 @@ tech_lrsk_adv_civ_unbidden = {
 tech_lrsk_adv_civ_ai = {
 	cost = @lrskcindcost
 	area = engineering
+	category = { industry }
 	tier = 3
 	weight = @lrskcindwght
 
@@ -576,12 +586,12 @@ tech_lrsk_adv_civ_ai = {
 		}
 		modifier = {
 			factor = 1.1
-      		has_technology = tech_sentient_ai
+      		has_technology = tech_sapient_ai
 		}
 		modifier = {
 			factor = 1.05
 			any_neighbor_country = {
-				has_technology = tech_sentient_ai
+				has_technology = tech_sapient_ai
 			}
 		}
 		modifier = {
@@ -605,6 +615,7 @@ tech_lrsk_adv_civ_ai = {
 tech_lrsk_adv_civ_crises = {
 	cost = @lrskcallcost
 	area = society
+	category = { military_theory }
 	tier = 4
 	is_rare = yes
 	weight = @lrskcallwght
