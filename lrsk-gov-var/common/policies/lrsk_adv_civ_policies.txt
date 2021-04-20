@@ -15,7 +15,7 @@ lrsk_adv_civ_rev_policy = {
 			lrsk_adv_civ_encourage_rev
 		}
 
-    	valid = { NOT = { has_policy_flag = lrsk_adv_civ_rev_discourage } }
+    	valid = { NOT = { has_policy_flag = lrsk_adv_civ_discourage_rev } }
 
 		modifier = {
 			all_technology_research_speed = -0.05
@@ -41,12 +41,12 @@ lrsk_adv_civ_rev_policy = {
 			OR = {
 				#The following "NOR" block allows it as the default option at start.
 				NOR = {
-					has_policy_flag = lrsk_adv_civ_rev_encourage
-					has_policy_flag = lrsk_adv_civ_rev_discourage
+					has_policy_flag = lrsk_adv_civ_encourage_rev
+					has_policy_flag = lrsk_adv_civ_discourage_rev
 				}
 				OR = {
-					has_policy_flag = lrsk_adv_civ_rev_encourage
-					has_policy_flag = lrsk_adv_civ_rev_discourage
+					has_policy_flag = lrsk_adv_civ_encourage_rev
+					has_policy_flag = lrsk_adv_civ_discourage_rev
 				}
 			}
 		}
@@ -59,7 +59,7 @@ lrsk_adv_civ_rev_policy = {
 			lrsk_adv_civ_discourage_rev
 		}
 
-    	valid = { NOT = { has_policy_flag = lrsk_adv_civ_rev_encourage } }
+    	valid = { NOT = { has_policy_flag = lrsk_adv_civ_encourage_rev } }
 
 		modifier = {
       		all_technology_research_speed = 0.05
