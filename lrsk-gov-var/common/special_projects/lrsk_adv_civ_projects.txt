@@ -4,60 +4,60 @@
 
 ##### Techno-Barb Ruins Salvage Mission #####
 
-# Physics Research
-special_project = {
-	key = "lrsk_adv_civ_techbarb_pyssalvage"
-	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
-	cost = 0
-	days_to_research = 30
-	tech_department = physics_technology
-	timelimit = 360
-
-	event_scope = country_event
-
-	on_success = {
-		owner = { country_event = { id = lrsk_adv_civ_techbarb.pyssalvage } }
-	}
-
-	on_fail = {	country_event = { id = lrsk_adv_civ_techbarb.salvagefail } }
-}
-
-# Society Research
-special_project = {
-	key = "lrsk_adv_civ_techbarb_socsalvage"
-	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
-	cost = 0
-	days_to_research = 30
-	tech_department = society_technology
-	timelimit = 360
-
-	event_scope = country_event
-
-	same_option_group_as = { lrsk_adv_civ_techbarb_pyssalvage }
-
-	on_success = {
-		owner = { country_event = { id = lrsk_adv_civ_techbarb.socsalvage } }
-	}
-
-	on_fail = { }
-}
-
-# Engineering Research
-special_project = {
-	key = "lrsk_adv_civ_techbarb_engsalvage"
-	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
-	cost = 0
-	days_to_research = 30
-	tech_department = engineering_technology
-	timelimit = 360
-
-	event_scope = country_event
-
-	same_option_group_as = { lrsk_adv_civ_techbarb_pyssalvage }
-
-	on_success = {
-		owner = { country_event = { id = lrsk_adv_civ_techbarb.engsalvage } }
-	}
-
-	on_fail = { }
-}
+## Physics Research
+#special_project = {
+#	key = "lrsk_adv_civ_techbarb_pyssalvage"
+#	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
+#	cost = 0
+#	days_to_research = 30
+#	tech_department = physics_technology
+#	timelimit = 360
+#
+#	event_scope = country_event
+#
+#	on_success = {
+#		owner = { country_event = { id = lrsk_adv_civ_techbarb.pyssalvage } }
+#	}
+#
+#	on_fail = {	country_event = { id = lrsk_adv_civ_techbarb.salvagefail } }
+#}
+#
+## Society Research
+#special_project = {
+#	key = "lrsk_adv_civ_techbarb_socsalvage"
+#	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
+#	cost = 0
+#	days_to_research = 30
+#	tech_department = society_technology
+#	timelimit = 360
+#
+#	event_scope = country_event
+#
+#	same_option_group_as = { lrsk_adv_civ_techbarb_pyssalvage }
+#
+#	on_success = {
+#		owner = { country_event = { id = lrsk_adv_civ_techbarb.socsalvage } }
+#	}
+#
+#	on_fail = { }
+#}
+#
+## Engineering Research
+#special_project = {
+#	key = "lrsk_adv_civ_techbarb_engsalvage"
+#	event_chain = "lrsk_adv_civ_tb_ruins_event_chain"
+#	cost = 0
+#	days_to_research = 30
+#	tech_department = engineering_technology
+#	timelimit = 360
+#
+#	event_scope = country_event
+#
+#	same_option_group_as = { lrsk_adv_civ_techbarb_pyssalvage }
+#
+#	on_success = {
+#		owner = { country_event = { id = lrsk_adv_civ_techbarb.engsalvage } }
+#	}
+#
+#	on_fail = { }
+#}
