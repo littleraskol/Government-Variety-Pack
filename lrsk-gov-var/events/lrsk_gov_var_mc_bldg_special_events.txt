@@ -1063,8 +1063,17 @@ country_event = {
 	immediate = {
 		log = "Attempting offworld work bonus application."
 
-		# Remove previous modifier
-		remove_modifier = lrsk_gvp_empire_offworld_work_bonus
+		# Remove previous modifier as needed
+		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value < 1 }
+			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
+		}
+		# Add modifier if needed
+		ELSE_IF = { limit = { NOT = { has_modifier = lrsk_gvp_empire_offworld_work_bonus } }
+			add_modifier = {
+				modifier = lrsk_gvp_empire_offworld_work_bonus
+				multiplier = lrsk_offworld_workers_bonus
+			}
+		}
 
 		#switch = {
 		#	trigger = has_modifier
@@ -1081,46 +1090,46 @@ country_event = {
 		#}
 
 		# Only add a modifier back if there is a bonus to apply
-		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
-			add_modifier = {
-				modifier = lrsk_gvp_empire_offworld_work_bonus
-				multiplier = lrsk_offworld_workers_bonus
-			}
-
-			#IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 1 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 2 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 3 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 4 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 5 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 6 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 7 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 8 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 9 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
-			#}
-			#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value >= 10 } }
-			#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
-			#}
-			#ELSE = {
-			#	# Do nothing?
-			#}
-		}
+		#IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
+		#	add_modifier = {
+		#		modifier = lrsk_gvp_empire_offworld_work_bonus
+		#		multiplier = lrsk_offworld_workers_bonus
+		#	}
+		#
+		#	#IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 1 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 2 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 3 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 4 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 5 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 6 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 7 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 8 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 9 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
+		#	#}
+		#	#ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value >= 10 } }
+		#	#	add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
+		#	#}
+		#	#ELSE = {
+		#	#	# Do nothing?
+		#	#}
+		#}
 
 		# Remember for next time	
 		#set_variable = { which = lrsk_offworld_workers_bonus_prev value = lrsk_offworld_workers_bonus }
