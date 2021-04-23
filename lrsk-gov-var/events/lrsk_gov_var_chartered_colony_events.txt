@@ -368,7 +368,7 @@ country_event = {
 			#	
 			#}
 		}
-		ELSE = {
+		ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
 			# Remove any bonus, there are no colonies and can therefore be no bonus
 			remove_modifier = lrsk_gov_var_empire_colonial_trade
 		}
