@@ -303,13 +303,25 @@ country_event = {
 	}
 
 	after = {
-		overlord = { country_event = { id = lrsk_gov_var_chartered.30 }	} # immediate recalc of colony bonus
+		overlord = {
+			# prevent being immediately spammed with a notification
+			set_timed_country_flag = {
+				flag = lrsk_chartered_trade_notice_cooldown
+				days = 7
+			}
+
+			# to stop notifications in some future version, uncomment the line below
+			#set_country_flag = lrsk_chartered_no_trade_notice
+
+			# immediate recalc of colony bonus
+			country_event = { id = lrsk_gov_var_chartered.3 }
+		}
 	}
 }
 
 # Calculate number of chartered colony subjects and determine whether to change the bonus
 country_event = {
-	id = lrsk_gov_var_chartered.30
+	id = lrsk_gov_var_chartered.3
 
   	hide_window = yes
 	is_triggered_only = yes
@@ -321,7 +333,7 @@ country_event = {
 	immediate = {
 		IF = { limit = { any_subject = { is_subject_type = lrsk_gov_var_subject_chartered_company } }
 		
-			set_variable = { which = lrsk_charcols_prev value = lrsk_charcols } # Store for comparison
+			#set_variable = { which = lrsk_charcols_prev value = lrsk_charcols } # Store for comparison
 
 			set_variable = { which = lrsk_charcols value = 0 } # Start count from 0
 
@@ -334,10 +346,27 @@ country_event = {
 
 			log = "Num of counted subjects = [this.lrsk_charcols]"
 
-			# If there's a new bonus to apply, call application logic.
-			IF = { limit = { NOT = { check_variable = { which = lrsk_charcols value = lrsk_charcols_prev } } }
-				country_event = { id = lrsk_gov_var_chartered.3 }
+			IF = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_colonial_trade } }
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_colonial_trade
+					multiplier = lrsk_charcols
+				}
 			}
+		
+			if = {
+				limit = { NOR = { 
+					has_country_flag = lrsk_chartered_no_trade_notice
+					has_country_flag = lrsk_chartered_trade_notice_cooldown
+					is_ai = yes
+				} }
+				country_event = { id = lrsk_gov_var_chartered.4 }
+			}
+
+			# If there's a new bonus to apply, call application logic.
+			#IF = { limit = { NOT = { check_variable = { which = lrsk_charcols value = lrsk_charcols_prev } } }
+			#	#country_event = { id = lrsk_gov_var_chartered.3 }
+			#	
+			#}
 		}
 		ELSE = {
 			# Remove any bonus, there are no colonies and can therefore be no bonus
@@ -346,9 +375,9 @@ country_event = {
 	}
 }
 
-# Apply appropriate trade bonus
+# Apply appropriate trade bonus - TO BE DEPRECATED
 country_event = {
-	id = lrsk_gov_var_chartered.3
+	id = lrsk_gov_var_chartered.30
 
   	hide_window = yes
 	is_triggered_only = yes
@@ -433,7 +462,7 @@ country_event = {
 	}
 }
 
-# Notify about newly applied bonus
+# Notify about newly applied bonus - possibly worth deprecating, since this is auto multiplied by variable...
 country_event = {
 	id = lrsk_gov_var_chartered.4
 	title = lrsk_gov_var_chartered.4.name
@@ -501,7 +530,7 @@ country_event = {
 }
 
 # Housekeeing (Monthly):
-# Calculate trade value bonus
+# Calculate trade value bonus - cleans up modifier if no applicable subjects.
 # If an AI empire has charted company civic, and is not a subject to anyone, upgrade to chartering board civic.
 country_event = {
 	id = lrsk_gov_var_chartered.1000
@@ -527,10 +556,10 @@ country_event = {
 			else = {
 				force_remove_civic = lrsk_gov_var_civic_mc_chartered_company
 			}
-		}            
+		}
 		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 			# Calculate trade value bonus - event will determine whether it is needed
-			country_event = { id = lrsk_gov_var_chartered.30  days = 28 }
+			country_event = { id = lrsk_gov_var_chartered.3 }
 		}
 		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company }
 			# If no overlord, promote civic
