@@ -1064,7 +1064,7 @@ country_event = {
 		log = "Attempting offworld work bonus application."
 
 		# Remove previous modifier as needed
-		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value < 1 }
+		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value < 1 } }
 			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
 		}
 		# Add modifier if needed
