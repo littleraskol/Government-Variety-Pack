@@ -731,56 +731,57 @@ lrsk_add_random_good_leader_trait = {
 	}
 }
 
-# Remove any colonial trade bonus
+# Remove any colonial trade bonus (TBD: Remove?)
 lrsk_remove_colonial_trade_bonus = {
-	switch = {
-		trigger = has_modifier
-		lrsk_gov_var_empire_colonial_trade_1 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_1
-		}
-		lrsk_gov_var_empire_colonial_trade_2 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_2
-		}
-		lrsk_gov_var_empire_colonial_trade_3 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_3
-		}
-		lrsk_gov_var_empire_colonial_trade_4 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_4
-		}
-		lrsk_gov_var_empire_colonial_trade_5 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_5
-		}
-		lrsk_gov_var_empire_colonial_trade_6 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_6
-		}
-		lrsk_gov_var_empire_colonial_trade_7 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_7
-		}
-		lrsk_gov_var_empire_colonial_trade_8 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_8
-		}
-		lrsk_gov_var_empire_colonial_trade_9 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_9
-		}
-		lrsk_gov_var_empire_colonial_trade_10 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_10
-		}
-		lrsk_gov_var_empire_colonial_trade_11 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_11
-		}
-		lrsk_gov_var_empire_colonial_trade_12 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_12
-		}
-		lrsk_gov_var_empire_colonial_trade_13 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_13
-		}
-		lrsk_gov_var_empire_colonial_trade_14 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_14
-		}
-		lrsk_gov_var_empire_colonial_trade_15 = {
-			remove_modifier = lrsk_gov_var_empire_colonial_trade_15
-		}
-	}
+	remove_modifier = lrsk_gov_var_empire_colonial_trade
+	#switch = {
+	#	trigger = has_modifier
+	#	lrsk_gov_var_empire_colonial_trade_1 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_1
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_2 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_2
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_3 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_3
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_4 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_4
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_5 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_5
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_6 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_6
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_7 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_7
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_8 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_8
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_9 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_9
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_10 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_10
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_11 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_11
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_12 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_12
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_13 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_13
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_14 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_14
+	#	}
+	#	lrsk_gov_var_empire_colonial_trade_15 = {
+	#		remove_modifier = lrsk_gov_var_empire_colonial_trade_15
+	#	}
+	#}
 }
 
 # Removes all wild cults (planet scope)

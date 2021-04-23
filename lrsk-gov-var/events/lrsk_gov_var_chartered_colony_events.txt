@@ -341,7 +341,7 @@ country_event = {
 		}
 		ELSE = {
 			# Remove any bonus, there are no colonies and can therefore be no bonus
-			lrsk_remove_colonial_trade_bonus = yes
+			remove_modifier = lrsk_gov_var_empire_colonial_trade
 		}
 	}
 }
@@ -365,54 +365,62 @@ country_event = {
 		log = "Attempting colonial trade value application."
 
 		# Remove previous modifier
-		lrsk_remove_colonial_trade_bonus = yes
+		remove_modifier = lrsk_gov_var_empire_colonial_trade
 
-		#add new
-		IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_1 }
+		#add new if applicable (should always be...)
+		IF = { limit = { check_variable = { which = lrsk_charcols value > 0 } }
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_colonial_trade_1
+				multiplier = lrsk_charcols
+			}
 		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_2 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_3 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_4 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_5 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_6 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_7 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_8 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_9 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_10 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_11 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_12 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_13 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 }
-		}
-		ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } }
-			add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 }
-		}
+
+		##add new
+		#IF = { limit = { check_variable = { which = lrsk_charcols value = 1 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_1 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 2 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_2 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 3 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_3 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 4 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_4 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 5 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_5 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 6 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_6 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 7 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_7 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 8 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_8 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 9 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_9 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 10 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_10 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 11 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_11 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 12 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_12 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 13 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_13 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value = 14 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_14 }
+		#}
+		#ELSE_IF = { limit = { check_variable = { which = lrsk_charcols value >= 15 } }
+		#	add_modifier = { modifier = lrsk_gov_var_empire_colonial_trade_15 }
+		#}
 		
 		if = {
 			limit = { NOR = { 
