@@ -448,7 +448,7 @@ lrsk_uplift_neighbor_t1 = {
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
-
+	
 	planet = {
 		count = 1
 		class = star
@@ -477,6 +477,7 @@ lrsk_uplift_neighbor_t1 = {
 	}
 
 	init_effect = {
+		set_star_flag = lrsk_uplift_tutor_wormhole_system
 		create_starbase = {
 			size = starbase_outpost
 			owner = event_target:lrsk_uplift_tutor

@@ -24,7 +24,6 @@ country_event = {
 	}
 }
 
-
 # Tutor system finalizations and watchpost system
 country_event = {
 	id = lrsk_gov_var_uplift.2
@@ -181,6 +180,31 @@ country_event = {
 					}
 				}
 				last_created_fleet = { save_event_target_as = lrsk_uplift_overwatch_fleet }
+
+				event_target:lrsk_my_uplift_tutor = {
+					random_system_within_border = { 
+						limit = { has_star_flag = lrsk_uplift_tutor_wormhole_system }
+						save_event_target_as = lrsk_uplift_tutor_wormhole_target
+					}
+					set_country_flag = encountered_first_wormhole
+					add_seen_bypass_type = wormhole
+					give_technology = { tech = tech_wormhole_stabilization message = no }
+				}
+				event_target:lrsk_uplift_tutor_wormhole_target = {
+					prev = { # done this way to ensure we don't spawn "orphan wormholes (wormholes that aren't linked to anything)
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = no
+							orbit_angle = 360
+						}
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = no
+						orbit_angle = 270
+					}
+					link_wormholes = prev					
+				}
 			}
 		}
 	}
