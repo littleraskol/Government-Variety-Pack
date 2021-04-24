@@ -45,7 +45,7 @@ country_event = {
 		this = { save_event_target_as = lrsk_sublight_overlord }
 		owner_species = { save_event_target_as = lrsk_sublight_overlord_species }
 
-		capital_scope = { solar_system = {
+		capital_scope.solar_system = {
 			# Transferring variables
 			set_variable = { which = lrsk_gcol value = prevprev } 
 			set_variable = { which = lrsk_rcol value = prevprev }
@@ -1395,7 +1395,7 @@ country_event = {
 			#	log = "hyperlane thing"
 			#	add_hyperlane = { from = this to = prev }
 			#}
-		} }
+		}
 
 		# Inter-colonial relations setup
 		event_target:lrsk_sublight_dissident_colony = {

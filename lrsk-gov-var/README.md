@@ -219,6 +219,7 @@ v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
+-Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
 
 v2.1.1 (04-19-21) - Spy Stuff
 -Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.
