@@ -1705,7 +1705,7 @@ country_event = {
 			lrsk_gov_var_sublight_subjects_mark = yes
 		}
 		
-		# Haggle over it or take right away
+		# Decide what to do.
 		random_list = {
 			0 = {
 				# Mothball FTL for now.
@@ -2025,18 +2025,39 @@ country_event = {
 	immediate = {
 		log = "In 'Get FTL from other colony' event"
 		overlord = { save_event_target_as = lrsk_sublight_overlord }
-		add_opinion_modifier = { 
-			who = from
-			modifier = opinion_lrsk_gov_var_ftlgift_sublight
-		}
+		from  = { save_event_target_as = lsrk_sublight_ftl_giver }
+		
 		random_list = {
-			40 = {
+			0 = {
+				# Do nothing
 				modifier = {
-					factor = 0.25
+					add = 40
+					has_origin = lrsk_gov_var_origin_sublight_colony_loy
+				}
+				modifier = {
+					add = 5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= excellent
+					}
+				}
+				modifier = {
+					add = 5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= good
+					}
+				}
+				# TBD: tattle?
+			}
+			40 = {
+				# Haggle for lifting of red tape
+				modifier = {
+					add = -20
 					has_origin = lrsk_gov_var_origin_sublight_colony_dis
 				}
 				modifier = {
-					factor = 1.75
+					add = -10
 					has_origin = lrsk_gov_var_origin_sublight_colony_loy
 				}
 				modifier = {
@@ -2054,22 +2075,53 @@ country_event = {
 					}
 				}
 				modifier = {
+					add = -5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= poor
+					}
+				}
+				modifier = {
+					add = -5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level <= terrible
+					}
+				}
+				modifier = {
 					factor = 0
 					NOT = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 					has_modifier = lrsk_gov_var_empire_colony_favors
 				}
-
-				# Haggle for lifting of red tape
+				add_opinion_modifier = { 
+					who = from
+					modifier = opinion_lrsk_gov_var_ftlgift_sublight
+				}
 				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
 			}
 			60 = {
+				# Take it
 				modifier = {
-					factor = 1.5
+					add = 20
 					has_origin = lrsk_gov_var_origin_sublight_colony_dis
 				}
 				modifier = {
-					factor = 0.5
+					add = -30
 					has_origin = lrsk_gov_var_origin_sublight_colony_loy
+				}
+				modifier = {
+					add = -10
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= excellent
+					}
+				}
+				modifier = {
+					add = -10
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= good
+					}
 				}
 				modifier = {
 					add = 5
@@ -2085,7 +2137,10 @@ country_event = {
 						level <= terrible
 					}
 				}
-				# Take it
+				add_opinion_modifier = { 
+					who = from
+					modifier = opinion_lrsk_gov_var_ftlgift_sublight
+				}
 				set_country_flag = lrsk_sublight_colony_took_gifted_FTL
 				country_event = { id = lrsk_gov_var_sublight_origins.22 days = 5 }
 			}
