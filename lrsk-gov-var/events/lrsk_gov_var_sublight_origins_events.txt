@@ -1707,24 +1707,54 @@ country_event = {
 		
 		# Haggle over it or take right away
 		random_list = {
-			40 = {
+			0 = {
+				# Mothball FTL for now.
 				modifier = {
-					add = -20
-					has_origin = lrsk_gov_var_origin_sublight_colony_dis
-				}
-				modifier = {
-					add = 20
+					add = 40
 					has_origin = lrsk_gov_var_origin_sublight_colony_loy
 				}
 				modifier = {
-					add = 10
+					add = 5
 					opinion_level = {
 						who = event_target:lrsk_sublight_overlord
 						level >= excellent
 					}
 				}
 				modifier = {
-					add = 10
+					add = 5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= good
+					}
+				}
+				set_timed_country_flag = { flag = lrsk_sublight_mothballed_ftl days = 7 }
+				# They will keep trying, this will come up again... 
+				country_event = {
+					id = lrsk_gov_var_sublight_origins.21
+					days = 1800
+					random = 720
+					# Between 3 and 7 years later.						
+				}
+			}
+			40 = {
+				# Haggle for lifting of red tape
+				modifier = {
+					add = -20
+					has_origin = lrsk_gov_var_origin_sublight_colony_dis
+				}
+				modifier = {
+					add = -10
+					has_origin = lrsk_gov_var_origin_sublight_colony_loy
+				}
+				modifier = {
+					add = 5
+					opinion_level = {
+						who = event_target:lrsk_sublight_overlord
+						level >= excellent
+					}
+				}
+				modifier = {
+					add = 5
 					opinion_level = {
 						who = event_target:lrsk_sublight_overlord
 						level >= good
@@ -1749,16 +1779,16 @@ country_event = {
 					NOT = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 					has_modifier = lrsk_gov_var_empire_colony_favors
 				}
-				# Haggle for lifting of red tape
 				overlord = { country_event = { id = lrsk_gov_var_sublight_origins.5 days = 30 } }
 			}
 			60 = {
+				# Get FTL
 				modifier = {
 					add = 20
 					has_origin = lrsk_gov_var_origin_sublight_colony_dis
 				}
 				modifier = {
-					add = -20
+					add = -30
 					has_origin = lrsk_gov_var_origin_sublight_colony_loy
 				}
 				modifier = {
@@ -1789,7 +1819,6 @@ country_event = {
 						level <= terrible
 					}
 				}
-				# Get FTL
 				country_event = { id = lrsk_gov_var_sublight_origins.22 days = 1 }
 			}
 		}
@@ -1872,6 +1901,10 @@ country_event = {
 						who = event_target:lrsk_sublight_overlord
 						level <= terrible
 					}
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = lrsk_sublight_mothballed_ftl
 				}
 				switch = {
 					trigger = has_origin
