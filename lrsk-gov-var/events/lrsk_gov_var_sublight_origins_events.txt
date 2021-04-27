@@ -2571,7 +2571,7 @@ country_event = {
 			every_subject = {
 				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
 					remove_modifier = lrsk_gov_var_empire_colony_red_tape
-					set_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+					set_country_flag = lrsk_sublight_overlord_cut_our_red_tape
 					country_event = { id = lrsk_gov_var_sublight_origins.45 }
 				}
 			}
@@ -2596,7 +2596,7 @@ country_event = {
 			}
 			from =  {
 				remove_modifier = lrsk_gov_var_empire_colony_red_tape
-				set_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+				set_country_flag = lrsk_sublight_overlord_cut_our_red_tape
 				add_opinion_modifier = {
 					who = event_target:lrsk_sublight_overlord
 					modifier = opinion_lrsk_gov_var_carrot_sublight
@@ -2792,6 +2792,154 @@ country_event = {
 	}
 }
 
+# Voluntary reform choice. Gives player option to initiate changes after some time has passed.
+country_event = {
+	id = lrsk_gov_var_sublight_origins.70
+	title = lrsk_gov_var_sublight_origins.70.name
+	picture = GFX_evt_arguing_senate
+	desc = {
+		trigger = { any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape } }
+		text = lrsk_gov_var_sublight_origins.70.desc.a
+	}
+	desc = {
+		trigger = { any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives } }
+		text = lrsk_gov_var_sublight_origins.70.desc.b
+	}
+	desc = {
+		trigger = { AND = { 
+			any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+			any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+		} }
+		text = lrsk_gov_var_sublight_origins.70.desc.c
+	}
+
+	mean_time_to_happen = { years = 10 }
+
+	trigger = {
+		years_passed = 30
+		NOR = {
+			has_country_flag = lrsk_sublight_no_voluntary_change
+			has_country_flag = lrsk_sublight_revision_cooldown
+		}
+		lrsk_gov_var_has_sublight_overlord_origin = yes
+		any_subject = { lrsk_gov_var_is_sublight_subject = yes }
+		OR = {
+			any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+			any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+		}
+	}
+
+	immediate = {
+		log = "In 'Voluntary revision' event"
+		save_event_target_as = lrsk_sublight_overlord	# I feel like this should not be necessary but it might clarify later targets
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.70.a
+		custom_tooltip = lrsk_gov_var_sublight_origins.70.a.tooltip
+
+		trigger = {
+			any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+		}
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_abolished_redtape
+			every_subject = {				
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+					remove_modifier = lrsk_gov_var_empire_colony_red_tape
+					set_country_flag = lrsk_sublight_overlord_cut_our_red_tape
+				}
+				IF = { limit = { lrsk_gov_var_has_sublight_colony_origin = yes }
+					add_opinion_modifier = {
+						who = event_target:lrsk_sublight_overlord
+						modifier = opinion_lrsk_gov_var_benev_sublight
+					}
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.70.b
+		custom_tooltip = lrsk_gov_var_sublight_origins.70.b.tooltip
+
+		trigger = {
+			any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+		}
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_spread_FTL
+			every_subject = {
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+					remove_modifier = lrsk_gov_var_empire_black_box_drives
+					set_country_flag = lrsk_sublight_overlord_allowed_FTL
+				}
+				IF = { limit = { lrsk_gov_var_has_sublight_colony_origin = yes }
+					add_opinion_modifier = {
+						who = event_target:lrsk_sublight_overlord
+						modifier = opinion_lrsk_gov_var_benev_sublight
+					}
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.70.c
+		custom_tooltip = lrsk_gov_var_sublight_origins.70.c.tooltip
+
+		trigger = {
+			any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+			any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+		}
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_overlord_abolished_redtape
+			set_country_flag = lrsk_sublight_overlord_spread_FTL
+			every_subject = {
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+					remove_modifier = lrsk_gov_var_empire_black_box_drives
+					set_country_flag = lrsk_sublight_overlord_allowed_FTL
+				}
+				IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+					remove_modifier = lrsk_gov_var_empire_colony_red_tape
+					set_country_flag = lrsk_sublight_overlord_cut_our_red_tape
+				}
+				IF = { limit = { lrsk_gov_var_has_sublight_colony_origin = yes }
+					add_opinion_modifier = {
+						who = event_target:lrsk_sublight_overlord
+						modifier = opinion_lrsk_gov_var_benev_sublight
+					}
+					add_opinion_modifier = {
+						who = event_target:lrsk_sublight_overlord
+						modifier = opinion_lrsk_gov_var_benev_sublight
+					}
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.70.d
+		custom_tooltip = lrsk_gov_var_sublight_origins.70.d.tooltip
+
+		hidden_effect = {
+			set_timed_country_flag = { flag = lrsk_sublight_revision_cooldown days = 720 }
+			# Do nothing. After 2 years this can pop up in ~10 years.
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.70.e
+		custom_tooltip = lrsk_gov_var_sublight_origins.70.e.tooltip
+
+		hidden_effect = {
+			set_country_flag = lrsk_sublight_no_voluntary_change
+			# Do nothing. Never get this again.
+		}
+	}
+}
+
 # Colonial Reform Start - Avg of 25 years.
 country_event = {
 	id = lrsk_gov_var_sublight_origins.7
@@ -2805,7 +2953,10 @@ country_event = {
 	trigger = {
 		lrsk_gov_var_has_sublight_overlord_origin = yes
 		any_subject = { lrsk_gov_var_is_sublight_subject = yes }
-		NOT = { any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives } }	
+		NOR = {
+			any_subject = { has_modifier = lrsk_gov_var_empire_black_box_drives }
+			any_subject = { has_modifier = lrsk_gov_var_empire_colony_red_tape }
+		}
 	}
 
 	immediate = {
@@ -3520,7 +3671,7 @@ country_event = {
 			IF = {
 				limit = { NOR = {
 					has_modifier = lrsk_gov_var_empire_colony_red_tape
-					has_country_flag = lrsk_sublight_overloard_cut_our_red_tape
+					has_country_flag = lrsk_sublight_overlord_cut_our_red_tape
 					overlord = { OR = {
 						has_country_flag = lrsk_sublight_overlord_abolished_redtape
 						has_country_flag = lrsk_sublight_overlord_colonial_system_reformed
