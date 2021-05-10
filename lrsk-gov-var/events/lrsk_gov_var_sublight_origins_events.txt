@@ -2998,27 +2998,27 @@ country_event = {
 
 # Colonial Reform pre Start/Gate
 # Called by completed LRSK_GOV_VAR_COLONIAL_RESTRUCTURING project
-planet_event = {
-	id = lrsk_gov_var_sublight_origins.802
-	hide_window = yes
-	
-	is_triggered_only = yes
-
-	trigger = {
-		owner = {
-			lrsk_gov_var_has_sublight_overlord_origin = yes
-			has_country_flag = lrsk_sublight_reform_triggered
-		}
-	}
-
-	immediate = {
-		log = "In 'Colonial Reform pre Start/Gate' event"
-		owner = {
-			set_country_flag = lrsk_sublight_reform_project_completed
-			country_event = { id = lrsk_gov_var_sublight_origins.80 }
-		}
-	}
-}
+#planet_event = {
+#	id = lrsk_gov_var_sublight_origins.802
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		owner = {
+#			lrsk_gov_var_has_sublight_overlord_origin = yes
+#			has_country_flag = lrsk_sublight_reform_triggered
+#		}
+#	}
+#
+#	immediate = {
+#		log = "In 'Colonial Reform pre Start/Gate' event"
+#		owner = {
+#			set_country_flag = lrsk_sublight_reform_project_completed
+#			country_event = { id = lrsk_gov_var_sublight_origins.80 }
+#		}
+#	}
+#}
 
 # Colonial Reform Start/Gate
 # Tries to give a reform choice if any subjects are sublight colonies.
@@ -3032,14 +3032,22 @@ country_event = {
 
 	trigger = {
 		lrsk_gov_var_has_sublight_overlord_origin = yes
-		has_country_flag = lrsk_sublight_reform_project_completed
+		has_country_flag = lrsk_sublight_reform_triggered
+		#has_country_flag = lrsk_sublight_reform_project_completed
 	}
 
 	immediate = {
 		log = "In 'Colonial Reform Start/Gate' event"
-		IF = { limit = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform } remove_country_flag = lrsk_sublight_overlord_waiting_on_reform }
-		IF = {
-			limit = { any_subject = { lrsk_gov_var_is_sublight_subject = yes } }
+
+		IF = { limit = { NOT = { has_country_flag = lrsk_sublight_reform_project_completed } }
+			set_country_flag = lrsk_sublight_reform_project_completed
+		}
+
+		IF = { limit = { has_country_flag = lrsk_sublight_overlord_waiting_on_reform }
+			remove_country_flag = lrsk_sublight_overlord_waiting_on_reform
+		}
+
+		IF = { limit = { any_subject = { lrsk_gov_var_is_sublight_subject = yes } }
 			country_event = { id = lrsk_gov_var_sublight_origins.8 }	# We're good to go in this case
 		}
 		ELSE_IF = { limit = { has_country_flag = lrsk_sublight_reform_in_place }
