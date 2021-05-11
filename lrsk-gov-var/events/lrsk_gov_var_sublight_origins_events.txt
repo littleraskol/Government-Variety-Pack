@@ -1728,6 +1728,10 @@ country_event = {
 					}
 				}
 				set_timed_country_flag = { flag = lrsk_sublight_mothballed_ftl days = 7 }
+				
+				#Brag about it
+				country_event = { id = lrsk_gov_var_sublight_origins.43 }
+
 				# They will keep trying, this will come up again... 
 				country_event = {
 					id = lrsk_gov_var_sublight_origins.21
@@ -2048,7 +2052,10 @@ country_event = {
 						level >= good
 					}
 				}
-				# TBD: tattle?
+
+				# Tattle
+				event_target:lsrk_sublight_ftl_giver = { set_timed_country_flag = { flag = lrsk_sublight_spread_ftl days = 7 } }
+				country_event = { id = lrsk_gov_var_sublight_origins.43 }
 			}
 			40 = {
 				# Haggle for lifting of red tape
@@ -2321,6 +2328,288 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+# Tattle/Brag Notice on FTL denial
+country_event = {
+	id = lrsk_gov_var_sublight_origins.43
+	title = lrsk_gov_var_sublight_origins.43.name
+	#desc = 
+	picture = GFX_evt_arguing_senate
+	#show_sound = event_laboratory_sound
+	desc = {
+		trigger = {
+			from = { has_country_flag = lrsk_sublight_mothballed_ftl }
+		}
+		text = lrsk_gov_var_sublight_origins.43.desc.a
+	}
+	desc = {
+		trigger = {
+			from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } }
+		}
+		text = lrsk_gov_var_sublight_origins.43.desc.b
+	}
+
+	is_triggered_only = yes
+
+	trigger = { from = {
+		# I hope this prevents this from firing in the event that the sender is independent somehow
+		is_subject_type = lrsk_gov_var_sublight_vassal	
+	} }
+
+	immediate = {
+		log = "In 'Tattle/Brag Notice on FTL denial' event"
+		save_event_target_as = lrsk_sublight_overlord	# I feel like this should not be necessary but it might clarify later targets
+		random_subject = {
+			limit = { has_country_flag = lrsk_sublight_spread_ftl }
+			save_event_target_as = lrsk_sublight_ftl_cheater
+			remove_country_flag = lrsk_sublight_spread_ftl
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.a
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.a.tooltip
+
+		trigger = { from = { has_country_flag = lrsk_sublight_mothballed_ftl } }
+
+		allow = { from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } } }
+
+		# Reward petitioner, favoritism resentment
+
+		hidden_effect = {
+			#Remove any prior favoritism flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
+				remove_country_flag = lrsk_sublight_colony_overlord_favored
+			}
+			from =  {
+				add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+				set_country_flag = lrsk_sublight_colony_overlord_favored
+				save_event_target_as = lrsk_sublight_favored_one
+			}
+			every_subject = {
+				# Playing favorites
+				country_event = { id = lrsk_gov_var_sublight_origins.44 }
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.b
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.b.tooltip
+
+		trigger = { from = { has_country_flag = lrsk_sublight_mothballed_ftl } }
+
+		# Ignore and disappoint petitioner
+
+		add_resource = { influence = 100 }
+
+		hidden_effect = {
+			from = { add_opinion_modifier = {
+				who = root
+				modifier = opinion_lrsk_gov_var_stick_sublight
+			} }
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.c
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.c.tooltip
+
+		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
+
+		allow = { from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } } }
+
+		# Reward petitioner, favoritism resentment
+
+		hidden_effect = {
+			# Anger at FTL spreader
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_ftl_cheater
+				modifier = opinion_lrsk_gov_var_oldire_sublight
+			}
+
+			#Remove any prior favoritism flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
+				remove_country_flag = lrsk_sublight_colony_overlord_favored
+			}
+			from =  {
+				add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+				set_country_flag = lrsk_sublight_colony_overlord_favored
+				save_event_target_as = lrsk_sublight_favored_one
+			}
+			every_subject = {
+				# Playing favorites
+				country_event = { id = lrsk_gov_var_sublight_origins.44 }
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.d
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.d.tooltip
+
+		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
+
+		# Ignore and disappoint petitioner, punish and anger FTL spreader
+
+		add_resource = { influence = 150 }
+
+		hidden_effect = {
+			from = { add_opinion_modifier = {
+				who = root
+				modifier = opinion_lrsk_gov_var_stick_sublight
+			} }
+
+			# Anger at FTL spreader
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_ftl_cheater
+				modifier = opinion_lrsk_gov_var_oldire_sublight
+			}
+
+			# Contingent punishment
+			event_target:lrsk_sublight_ftl_cheater = {
+				# Red tape is back if applicable
+				IF = { limit = {  NOR = { 
+						has_modifier = lrsk_gov_var_empire_colony_red_tape
+						event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+					} }
+					add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				# No more favors
+				ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_favors }
+					remove_modifier = lrsk_gov_var_empire_colony_favors
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				# Actual penalty applied
+				ELSE_IF = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty } }
+					add_modifier = { modifier = lrsk_gov_var_empire_colony_penalty }
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				ELSE = {
+					# Can't do much more, just make them dislike us more.
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.e
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.e.tooltip
+
+		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
+
+		allow = { from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } } }
+
+		# Reward petitioner, favoritism resentment; punish and anger FTL spreader
+
+		add_resource = { influence = 50 }
+
+		hidden_effect = {
+			# Anger at FTL spreader
+			add_opinion_modifier = {
+				who = event_target:lrsk_sublight_ftl_cheater
+				modifier = opinion_lrsk_gov_var_oldire_sublight
+			}
+
+			#Remove any prior favoritism flag
+			every_subject = { limit = { has_country_flag = lrsk_sublight_colony_overlord_favored }
+				remove_country_flag = lrsk_sublight_colony_overlord_favored
+			}
+			from =  {
+				add_modifier = { modifier = lrsk_gov_var_empire_colony_favors }
+				add_opinion_modifier = {
+					who = event_target:lrsk_sublight_overlord
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+				set_country_flag = lrsk_sublight_colony_overlord_favored
+				save_event_target_as = lrsk_sublight_favored_one
+			}
+			every_subject = {
+				# Playing favorites
+				country_event = { id = lrsk_gov_var_sublight_origins.44 }
+			}
+
+			# Contingent punishment
+			event_target:lrsk_sublight_ftl_cheater = {
+				# Red tape is back if applicable
+				IF = { limit = {  NOR = { 
+						has_modifier = lrsk_gov_var_empire_colony_red_tape
+						event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+					} }
+					add_modifier = { modifier = lrsk_gov_var_empire_colony_red_tape }
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				# No more favors
+				ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colony_favors }
+					remove_modifier = lrsk_gov_var_empire_colony_favors
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				# Actual penalty applied
+				ELSE_IF = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty } }
+					add_modifier = { modifier = lrsk_gov_var_empire_colony_penalty }
+					
+					# Make them dislike us
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+				ELSE = {
+					# Can't do much more, just make them dislike us more.
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gov_var_stick_sublight
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_gov_var_sublight_origins.43.f
+		custom_tooltip = lrsk_gov_var_sublight_origins.43.f.tooltip
+
+		# Nothing happens.
 	}
 }
 
