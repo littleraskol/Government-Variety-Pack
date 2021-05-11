@@ -24,7 +24,7 @@ country_event = {
 			from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 
 			# Prevent sublight colonies from being chartered
-			lrsk_gov_var_has_sublight_colony_origin = yes
+			has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
 		}
 	}
 
