@@ -2423,7 +2423,18 @@ country_event = {
 
 		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
 
-		allow = { from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } } }
+		allow = {
+			from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } }
+
+			event_target:lrsk_sublight_ftl_cheater = { OR = {
+				NOR = { 
+					has_modifier = lrsk_gov_var_empire_colony_red_tape
+					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+				}
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty }
+			} }
+		}
 
 		# Reward petitioner, favoritism resentment
 
@@ -2479,7 +2490,7 @@ country_event = {
 			# Contingent punishment
 			event_target:lrsk_sublight_ftl_cheater = {
 				# Red tape is back if applicable
-				IF = { limit = {  NOR = { 
+				IF = { limit = { NOR = { 
 						has_modifier = lrsk_gov_var_empire_colony_red_tape
 						event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
 					} }
@@ -2528,7 +2539,18 @@ country_event = {
 
 		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
 
-		allow = { from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } } }
+		allow = {
+			from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } }
+
+			event_target:lrsk_sublight_ftl_cheater = { OR = {
+				NOR = { 
+					has_modifier = lrsk_gov_var_empire_colony_red_tape
+					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+				}
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty }
+			} }
+		}
 
 		# Reward petitioner, favoritism resentment; punish and anger FTL spreader
 
@@ -2562,7 +2584,7 @@ country_event = {
 			# Contingent punishment
 			event_target:lrsk_sublight_ftl_cheater = {
 				# Red tape is back if applicable
-				IF = { limit = {  NOR = { 
+				IF = { limit = { NOR = { 
 						has_modifier = lrsk_gov_var_empire_colony_red_tape
 						event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
 					} }
