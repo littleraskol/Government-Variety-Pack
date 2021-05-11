@@ -177,6 +177,8 @@ opinion_lrsk_gov_var_badintro_sublight = {
 # Loyalists have passive approval
 triggered_opinion_lrsk_gov_var_loyal_sublight = {
 	trigger = {
+		is_subject = yes
+		overlord = { lrsk_gov_var_has_sublight_overlord_origin = yes }
 		has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
 		has_origin = lrsk_gov_var_origin_sublight_colony_loy
 	}
@@ -199,6 +201,8 @@ opinion_lrsk_gov_var_loyal_sublight = {
 # Dissidents have passive disapproval
 triggered_opinion_lrsk_gov_var_dsdnt_sublight = {
 	trigger = {
+		is_subject = yes
+		overlord = { lrsk_gov_var_has_sublight_overlord_origin = yes }
 		has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
 		has_origin = lrsk_gov_var_origin_sublight_colony_dis
 	}
@@ -388,6 +392,12 @@ opinion_lrsk_gov_var_carrot_sublight = {
 
 	decay = {
 		base = 1
+		modifier = {
+			add = 1
+			from ={
+				has_origin = lrsk_gov_var_origin_sublight_empire
+			}
+		}
 	}
 }
 
