@@ -943,6 +943,20 @@ l_english:
  lrsk_gov_var_sublight_origins.101.e.tooltip:0 "No special effect."
  lrsk_gov_var_sublight_origins.101.f:0 "Slyly insinuate our openness to special deals." # trade bonus for us, +500 energy, colonial corruption
  lrsk_gov_var_sublight_origins.101.f.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to reverse engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would not last forever, but it's never good to feel power slipping from one's grasp."
+ lrsk_gov_var_sublight_origins.4.name:0 "FTL Monopoly Broken!"
+ lrsk_gov_var_sublight_origins.4.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they got the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.a:0 "So be it."
+ lrsk_gov_var_sublight_origins.4.a.tooltip:0 "§H[from.GetName]§! loses their 20% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # -25 influence
+ lrsk_gov_var_sublight_origins.4.b:0 "They will regret this!"
+ lrsk_gov_var_sublight_origins.4.b.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this, reducing their trade value by 10%. This will upset them." # +100 influence
+ lrsk_gov_var_sublight_origins.4.c:0 "Maybe we should try the carrot now that the stick is gone..."
+ lrsk_gov_var_sublight_origins.4.c.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will grant them special favors, increasing their trade value by 10%. This will please them, but displease the other colonies. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.4.d:0 "After we treated them so well... The impudence..."
+ lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ §HWe will penalize them for this every way we can!§! This will upset them greatly." # +250 influence
 
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PRE:0 "A message from the §H[from.GetName]§! has arrived:" 
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_POS:0 "From the tone of the message, it's clear they expect some kind of recognition for this."
@@ -961,43 +975,29 @@ l_english:
  lrsk_gov_var_sublight_origins.43.e:0 "All involved will get what they deserve."
  lrsk_gov_var_sublight_origins.43.e.tooltip:0 "$lrsk_gov_var_sublight_origins.43.a.tooltip$ $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PUNISH$" # +50 influence
  lrsk_gov_var_sublight_origins.43.f:0 "Well then, prepare some appropriate... remarks."
- lrsk_gov_var_sublight_origins.43.f.tooltip:0 "No effect."
- 
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to reverse engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would not last forever, but it's never good to feel power slipping from one's grasp."
- lrsk_gov_var_sublight_origins.4.name:0 "FTL Monopoly Broken!"
- lrsk_gov_var_sublight_origins.4.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
- lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they got the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
- lrsk_gov_var_sublight_origins.4.a:0 "So be it."
- lrsk_gov_var_sublight_origins.4.a.tooltip:0 "[from.GetName] loses their 20% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # -25 influence
- lrsk_gov_var_sublight_origins.4.b:0 "They will regret this!"
- lrsk_gov_var_sublight_origins.4.b.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this, reducing their trade value by 10%. This will upset them." # +100 influence
- lrsk_gov_var_sublight_origins.4.c:0 "Maybe we should try the carrot now that the stick is gone..."
- lrsk_gov_var_sublight_origins.4.c.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will grant them special favors, increasing their trade value by 10%. This will please them, but displease the other colonies. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
- lrsk_gov_var_sublight_origins.4.d:0 "After we treated them so well... The impudence..."
- lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ §HWe will penalize them for this every way we can!§! This will upset them greatly." # +250 influence
+ lrsk_gov_var_sublight_origins.43.f.tooltip:0 "No special effect."
 
  lrsk_gov_var_sublight_origins.5.name:0 "Upsetting the Status Quo"
- lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the [from.GetName] have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their activities be lifted."
+ lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings the §H[from.GetName]§! have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their activities be lifted."
  lrsk_gov_var_sublight_origins.5.a:0 "Outrageous! Let them fly a little faster, we will not be blackmailed."
- lrsk_gov_var_sublight_origins.5.a.tooltip:0 "[from.GetName] will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # +100 influence
+ lrsk_gov_var_sublight_origins.5.a.tooltip:0 "§H[from.GetName]§! will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # +100 influence
  lrsk_gov_var_sublight_origins.5.b:0 "Perhaps making a deal is for the best..."
- lrsk_gov_var_sublight_origins.5.b.tooltip:0 "[from.GetName] will be pleased, and will lose their 20% reduction in expansion speed."
+ lrsk_gov_var_sublight_origins.5.b.tooltip:0 "§H[from.GetName]§! will be pleased, and will lose their 20% reduction in expansion speed."
  lrsk_gov_var_sublight_origins.5.c:0 "$lrsk_gov_var_sublight_origins.5.b$"
- lrsk_gov_var_sublight_origins.5.c.tooltip:0 "[from.GetName] will be pleased, and will gain a 5% bonus to trade value."
+ lrsk_gov_var_sublight_origins.5.c.tooltip:0 "§H[from.GetName]§! will be pleased, and will gain a 5% bonus to trade value."
 
  lrsk_gov_var_sublight_origins.6.name:0 "Colonial Negotiations"
- lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies has sent an envoy to complain about colonial regulations. It seems the [from.GetName] feels that they are too onerous, outdated, and ultimately not in anyone's interest, and suggest they be lifted."
+ lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies has sent an envoy to complain about colonial regulations. It seems the §H[from.GetName]§! feels that they are too onerous, outdated, and ultimately not in anyone's interest, and suggest they be lifted."
  lrsk_gov_var_sublight_origins.6.a:0 "Perhaps this is for the best..."
  lrsk_gov_var_sublight_origins.6.a.tooltip:0 "All sublight colonies will lose their 20% reduction in expansion speed. They will be pleased."
  lrsk_gov_var_sublight_origins.6.b:0 "The squeaky wheel gets the grease!"
- lrsk_gov_var_sublight_origins.6.b.tooltip:0 "[from.GetName] will lose their 20% reduction in expansion speed, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.6.b.tooltip:0 "§H[from.GetName]§! will lose their 20% reduction in expansion speed, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
  lrsk_gov_var_sublight_origins.6.c:0 "No, we need to maintain control for the good of all [this.GetSpeciesName]kind."
  lrsk_gov_var_sublight_origins.6.c.tooltip:0 "No restrictions lifted. All sublight colonies will be upset." # +100 influence
  lrsk_gov_var_sublight_origins.6.d:0 "Cutting some red tape may be good for us all."
  lrsk_gov_var_sublight_origins.6.d.tooltip:0 "All sublight colonies will gain a 10% bonus to trade value. They will be pleased. We will lose 5% of our trade value."
- lrsk_gov_var_sublight_origins.6.e:0 "It's clear what the [from.GetName] is really after..."
- lrsk_gov_var_sublight_origins.6.e.tooltip:0 "[from.GetName] will gain a 10% bonus to trade value, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.6.e:0 "It's clear what the §H[from.GetName]§! is really after..."
+ lrsk_gov_var_sublight_origins.6.e.tooltip:0 "§H[from.GetName]§! will gain a 10% bonus to trade value, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
  lrsk_gov_var_sublight_origins.6.f:0 "No, there are rules for a reason."
  lrsk_gov_var_sublight_origins.6.f.tooltip:0 "All sublight colonies will be upset." # +100 influence
  lrsk_gov_var_sublight_origins.6.g:0 "Perhaps we can work something out with the envoy..."
@@ -1008,7 +1008,7 @@ l_english:
  lrsk_gov_var_sublight_origins.70.name:0 "Revising the Deal"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1:0 "Certain voices in our government are calling into question aspects of the sublight colonial arrangement."
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_C:0 "colonial exploration and colonization regulations, originally intended for colonist safety, are just stifling our own economic growth and potential now that the galaxy is better known."
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_F:0 "FTL patent is a paranoid measure that limits our colonies' ability to contribute to mutual defense."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_F:0 "hyperdrive patent is a paranoid measure that limits our colonies' ability to contribute to mutual defense."
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2:0 "In any case, restrictions like this are hindering relations with the colonies that prevent more advanced forms of organization. Is it time to make a change?"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_N:0 "§HThis is necessary for deeper reforms of the system.§!"
  lrsk_gov_var_sublight_origins.70.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1$ They say that the $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_C$\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2$"
@@ -1025,21 +1025,20 @@ l_english:
  lrsk_gov_var_sublight_origins.70.e:0 "Don't bother me with this whining again."
  lrsk_gov_var_sublight_origins.70.e.tooltip:0 "Nothing will change, and §Ryou will not be asked about this again.§!"
 
-
  lrsk_gov_var_sublight_origins.7.name:0 "Time for a Change?"
  lrsk_gov_var_sublight_origins.7.desc:0 "So far, the arrangement we've maintained with our interstellar sublight colonies has gone smoothly enough. However, it's possible that the colonial structure may become too inflexible, or deprive us of sufficient benefits. We may want to think about changing the arrangement."
  lrsk_gov_var_sublight_origins.7.a:0 "Perhaps we should consider this."
  lrsk_gov_var_sublight_origins.7.a.tooltip:0 "Get the Colonial Restructuring special project."
  
  LRSK_GOV_VAR_COLONIAL_RESTRUCTURING:0 "Colonial Restructuring"
- LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science and history experts to model alternatives. (§HThis will result in some form of major diplomatic change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation but not its leader.)"
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science and history experts to model alternatives. §HThis will result in some form of major diplomatic change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation but not its leader. However, you will not have to make any final decision immediately."
  
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED:0 "All sublight colonies will be given the offer to be released as independent nations as part of a federation we will lead. §PIf we are members of a federation already but not the leader, we will leave it and form a new one. If we are already the leader of a federation, they will join it.§! Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED:0 "All sublight colonies will be given the offer to be released as independent nations as part of a federation we will lead. If we are members of a federation already but not the leader, §Pwe will leave it and form a new one.§! If we are already the leader of a federation, §Hthey will join it.§! Colonies that refuse the offer will become independent"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FEDTYPE:0 "If we form a new federation, it will be a"
  LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS:0 "All sublight colonies will be given the offer to become ordinary vassals, §Hwhich will allow us to integrate them.§! Colonies that refuse the offer will become independent"
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VASTYPE:0 "\n\n(Note: If we have the ability to change their vassal type, this would also allow for that. Integration is optional.)"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VASTYPE:0 "\n\n(Note: Integration is optional. If we have the ability to change their vassal type, this would also allow for that.)"
  lrsk_gov_var_sublight_origins.8.name:0 "Time to Decide"
- lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to §Hrelease them as independent nations but under the aegis of an interstellar organization we would lead§!. This would sate their need for autonomy and ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to §Hintegrate the colonies as part of our nation§!. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one.\n\nBear in mind that however we choose to proceed, the colonies may or may not agree to these reforms. Any colony that does not could cite the drastic nature of this proposed change to the colonial charter as a pretext to sever ties with us. §HThe better our relationship with a colony, the less likely this will be to happen§!, however."
+ lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to §Hrelease them as independent nations but under the aegis of an interstellar organization we would lead§!. This would sate their need for autonomy and ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to §Hintegrate the colonies as part of our nation§!. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one.\n\nBear in mind that, however we choose to proceed, the colonies may or may not agree to these reforms. Any colony that does not could cite the drastic nature of this proposed change to the colonial charter as a pretext to sever ties with us. However, the better our relationship with a colony, the less likely this will be to happen."
  lrsk_gov_var_sublight_origins.8.a.empire:0 "It's time to loosen the reins a bit."
  lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED$, but we will get a CB to force them to join. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FEDTYPE$ §HHegemony§!."
  lrsk_gov_var_sublight_origins.8.b.empire:0 "Time to reap the fruits of our labor."
@@ -1059,15 +1058,15 @@ l_english:
  lrsk_gov_var_sublight_origins.81.a.tooltip:0 "We will be prompted to engage in colonial reform sometime after we have valid sublight colonies again."
 
  lrsk_gov_var_sublight_origins.9.name:0 "Offer Accepted!"
- lrsk_gov_var_sublight_origins.9.desc:0 "[from.GetName] has accepted the proposed restructuring."
+ lrsk_gov_var_sublight_origins.9.desc:0 "§H[from.GetName]§! has accepted the proposed restructuring."
  lrsk_gov_var_sublight_origins.9.a.fed:0 "It's all coming together."
- lrsk_gov_var_sublight_origins.9.a.fed.tooltip:0 "[from.GetName] will join our federation as an independent nation."
+ lrsk_gov_var_sublight_origins.9.a.fed.tooltip:0 "§H[from.GetName]§! will join our federation as an independent nation."
  lrsk_gov_var_sublight_origins.9.a.vas:0 "$lrsk_gov_var_sublight_origins.9.a.fed$"
- lrsk_gov_var_sublight_origins.9.a.vas.tooltip:0 "[from.GetName] will become a normal vassal. We will have the option to integrate them."
+ lrsk_gov_var_sublight_origins.9.a.vas.tooltip:0 "§H[from.GetName]§! will become a normal vassal. We will have the option to integrate them."
  
- LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE:0 "[from.GetName] becomes independent."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE:0 "§H[from.GetName]§! becomes independent."
  lrsk_gov_var_sublight_origins.10.name:0 "Offer Refused..."
- lrsk_gov_var_sublight_origins.10.desc:0 "[from.GetName] has rejected the proposed restructuring."
+ lrsk_gov_var_sublight_origins.10.desc:0 "§H[from.GetName]§! has rejected the proposed restructuring."
  lrsk_gov_var_sublight_origins.10.a.empire:0 "We'll get them for this!"
  lrsk_gov_var_sublight_origins.10.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE$ We may declare war to force their compliance."
  lrsk_gov_var_sublight_origins.10.a.commonwealth:0 "Unfortunate... Well, good luck out there!"
