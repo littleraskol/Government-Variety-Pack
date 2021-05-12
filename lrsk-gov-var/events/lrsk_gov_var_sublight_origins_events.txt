@@ -2423,19 +2423,6 @@ country_event = {
 
 		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
 
-		allow = {
-			from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } }
-
-			event_target:lrsk_sublight_ftl_cheater = { OR = {
-				NOR = { 
-					has_modifier = lrsk_gov_var_empire_colony_red_tape
-					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
-				}
-				has_modifier = lrsk_gov_var_empire_colony_favors
-				NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty }
-			} }
-		}
-
 		# Reward petitioner, favoritism resentment
 
 		hidden_effect = {
@@ -2470,6 +2457,19 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_sublight_origins.43.d.tooltip
 
 		trigger = { from = { NOT = { has_country_flag = lrsk_sublight_mothballed_ftl } } }
+
+		allow = {
+			from = { NOT = { has_modifier = lrsk_gov_var_empire_colony_favors } }
+
+			event_target:lrsk_sublight_ftl_cheater = { OR = {
+				NOR = { 
+					has_modifier = lrsk_gov_var_empire_colony_red_tape
+					event_target:lrsk_sublight_overlord = { has_country_flag = lrsk_sublight_overlord_abolished_redtape }
+				}
+				has_modifier = lrsk_gov_var_empire_colony_favors
+				NOT = { has_modifier = lrsk_gov_var_empire_colony_penalty }
+			} }
+		}
 
 		# Ignore and disappoint petitioner, punish and anger FTL spreader
 
