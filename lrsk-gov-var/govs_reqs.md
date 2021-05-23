@@ -208,7 +208,7 @@ Requirements: Universal Sovereignty and Imperial Economy, Imperial authority, Mi
 [b]Imperial Socialism[/b]
 [i]Requirements:[/i] Imperial Economy and Institutionalized Collectivism, Dictatorial authority
 
-[b]Pure Social Republic[/b]
+[b]Purity Collective[/b]
 [i]Requirements:[/i] Institutionalized Collectivism and Fanatic Purifiers
 
 [b]Exemplary Socialism[/b]

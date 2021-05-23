@@ -390,7 +390,7 @@ This socialist dictatorship maintains stability by the widespread distribution o
 [i]Ruler (Male):[/i] Interplanetary Chairman
 [i]Ruler (Female):[/i] Interplanetary Chairwoman
 
-[b]Pure Social Republic[/b]
+[b]Purity Collective[/b]
 The emancipated proletarians of this master-race worker's state are interested in breaking only one kind of chain - the chains binding the souls of degenerate aliens to their living bodies!
 
 [i]Ruler:[/i] People's Champion
