@@ -220,7 +220,8 @@ v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 -Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
--Renamed "Pure Social Republic" to "Purity Collective"
+-Renamed "Pure Social Republic" to "Purity Collective".
+-Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
 -Bugfix: Technocracy prefix_formats used wrong part key.
 
 v2.1.1 (04-19-21) - Spy Stuff
