@@ -745,6 +745,33 @@ planet_event = {
 			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
 		}
 	}
+	after = {
+		hidden_effect = { IF = {
+			limit = { root.owner = { 
+				has_modifier = lrsk_gov_var_empire_endisnigh
+				NOT = { has_country_flag = lrsk_dirrev_doom_notified }
+			} }
+			root.owner = { country_event = { id = lrsk_gov_var_direct_revelation.90 days = 1 } }
+		} }
+	}
+}
+
+#End is Nigh notifier
+country_event = {
+	id = lrsk_gov_var_direct_revelation.90
+	title = lrsk_gov_var_direct_revelation.90.name
+	desc = lrsk_gov_var_direct_revelation.90.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lrsk_dirrev_doom_notified
+	}
+
+	option = {
+		name = lrsk_gov_var_direct_revelation.90.a
+		custom_tooltip = lrsk_gov_var_direct_revelation.90.a.tooltip
+	}
 }
 
 #Golden Age Cult
@@ -898,10 +925,7 @@ country_event = {
 			days = 30
 		}
 		if = { 
-			limit = { OR = { 
-				has_origin = origin_doomsday
-				# Leaving the door open to other superbad origin starts to apply here.
-			} }
+			limit = { has_origin = origin_doomsday }
 			log = "In Direct Revelation setup event; setting special doomsday properties."
 			# Need something to somewhat offset the penalties of doomsday cult
 			add_modifier = {
