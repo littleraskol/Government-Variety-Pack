@@ -37,6 +37,7 @@ lrsk_uplift_1 = {
 
 	init_effect = {
 		generate_home_system_resources = yes
+		set_star_flag = lrsk_uplift_tutor_init
 	}
 	
 	planet = {
@@ -261,8 +262,7 @@ lrsk_uplift_1 = {
 
 			# Establish relational flags
 			last_created_country = {
-				save_event_target_as = lrsk_uplift_tutor
-				set_country_flag = lrsk_uplift_tutor_init
+				save_event_target_as = lrsk_uplift_tutor				
 				set_relation_flag = { who = event_target:lrsk_uplift_pupil flag = lrsk_uplift_tutor_of }
 			}
 			event_target:lrsk_uplift_pupil = { set_relation_flag = { who = last_created_country flag = lrsk_uplift_pupil_of } }
@@ -446,7 +446,7 @@ lrsk_uplift_neighbor_t1 = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
@@ -495,7 +495,7 @@ lrsk_uplift_neighbor_t1_first_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
@@ -569,13 +569,14 @@ lrsk_uplift_neighbor_t2_second_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
 			size = starbase_outpost
 			owner = event_target:lrsk_uplift_tutor
 		}
+		set_star_flag = lrsk_uplift_tutor_wormhole_system
 	}
 
 	planet = {
