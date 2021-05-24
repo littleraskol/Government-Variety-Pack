@@ -446,7 +446,11 @@ lrsk_uplift_neighbor_t1 = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
+		closest_system = {
+			limit = {
+				has_star_flag = lrsk_uplift_tutor_init
+				exists = owner
+			}
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
@@ -495,7 +499,11 @@ lrsk_uplift_neighbor_t1_first_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
+		closest_system = {
+			limit = {
+				has_star_flag = lrsk_uplift_tutor_init
+				exists = owner
+			}
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
@@ -569,7 +577,11 @@ lrsk_uplift_neighbor_t2_second_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
-		closest_system = { limit = { has_star_flag = lrsk_uplift_tutor_init }
+		closest_system = {
+			limit = {
+				has_star_flag = lrsk_uplift_tutor_init
+				exists = owner
+			}
 			owner = { save_event_target_as = lrsk_uplift_tutor }
 		}
 		create_starbase = {
