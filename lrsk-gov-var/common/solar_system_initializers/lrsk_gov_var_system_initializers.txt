@@ -262,6 +262,7 @@ lrsk_uplift_1 = {
 			# Establish relational flags
 			last_created_country = {
 				save_event_target_as = lrsk_uplift_tutor
+				set_country_flag = lrsk_uplift_tutor_init
 				set_relation_flag = { who = event_target:lrsk_uplift_pupil flag = lrsk_uplift_tutor_of }
 			}
 			event_target:lrsk_uplift_pupil = { set_relation_flag = { who = last_created_country flag = lrsk_uplift_pupil_of } }
@@ -306,6 +307,21 @@ lrsk_uplift_1 = {
 			clear_blockers = yes
 
 			generate_lost_colony_parent_bonus = yes # just adds stuff, we can use as-is
+
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_uplift_tutor
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+			}
 
 			#Try to give a little more firepower			
 			create_fleet = {
@@ -413,23 +429,6 @@ lrsk_uplift_1 = {
 		}
 	}
 
-	init_effect = {
-		solar_system = {
-			create_starbase = {
-				size = starbase_starport
-				module = shipyard
-				building = crew_quarters
-				owner = event_target:lrsk_uplift_tutor
-				effect = {
-					set_starbase_module = {
-						slot = 1
-						module = trading_hub
-					}
-				}
-			}
-		}
-	}
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "lrsk_uplift_neighbor_t1"
@@ -447,6 +446,13 @@ lrsk_uplift_neighbor_t1 = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
+		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+			owner = { save_event_target_as = lrsk_uplift_tutor }
+		}
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
 	}
 	
 	planet = {
@@ -475,14 +481,6 @@ lrsk_uplift_neighbor_t1 = {
 		count = { min = 2 max = 5 }
 		orbit_distance = 20
 	}
-
-	init_effect = {
-		set_star_flag = lrsk_uplift_tutor_wormhole_system
-		create_starbase = {
-			size = starbase_outpost
-			owner = event_target:lrsk_uplift_tutor
-		}
-	}
 	
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
@@ -497,6 +495,13 @@ lrsk_uplift_neighbor_t1_first_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
+		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+			owner = { save_event_target_as = lrsk_uplift_tutor }
+		}
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
 	}
 
 	planet = {
@@ -550,13 +555,6 @@ lrsk_uplift_neighbor_t1_first_colony = {
 			orbit_distance = 5
 		}
 	}
-
-	init_effect = {
-		create_starbase = {
-			size = starbase_outpost
-			owner = event_target:lrsk_uplift_tutor
-		}
-	}
 	
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
@@ -571,6 +569,13 @@ lrsk_uplift_neighbor_t2_second_colony = {
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
+		closest_system = { limit = { owner = { has_country_flag = lrsk_uplift_tutor_init } }
+			owner = { save_event_target_as = lrsk_uplift_tutor }
+		}
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:lrsk_uplift_tutor
+		}
 	}
 
 	planet = {
@@ -635,12 +640,5 @@ lrsk_uplift_neighbor_t2_second_colony = {
 		count = { min = 0 max = 2 }
 		orbit_angle = { min = 90 max = 270 }
 		orbit_distance = 20
-	}
-
-	init_effect = {
-		create_starbase = {
-			size = starbase_outpost
-			owner = event_target:lrsk_uplift_tutor
-		}
 	}
 }
