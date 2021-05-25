@@ -266,7 +266,7 @@ country_event = {
 							source = root.capital_scope.solar_system
 							type = euclidean
 							min_distance >= 25
-							max_distance <= 40
+							max_distance <= 100
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
 						lrsk_is_hyperlane_escape_route = yes
@@ -341,7 +341,7 @@ country_event = {
 										source = event_target:lrsk_hyperlane_system_1
 										type = euclidean
 										min_distance > 25
-										max_distance <= 50
+										max_distance <= 100
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 									lrsk_is_hyperlane_escape_route = yes
@@ -371,7 +371,7 @@ country_event = {
 									source = event_target:lrsk_hyperlane_system_2
 									type = euclidean
 									min_distance >= 1
-									max_distance <= 25
+									max_distance <= 100
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
 								lrsk_is_hyperlane_escape_route = yes
