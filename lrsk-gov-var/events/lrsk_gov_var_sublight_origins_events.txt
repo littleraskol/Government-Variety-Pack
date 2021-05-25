@@ -1471,6 +1471,10 @@ country_event = {
 		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_genship_colony }
 		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_loyalist_colony }
 		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_dissident_colony }
+		# Useful for figuring out what they think of the player...
+		add_intel_report = { category = diplomacy level = 2 days = 360 who = event_target:lrsk_sublight_genship_colony }
+		add_intel_report = { category = diplomacy level = 2 days = 360 who = event_target:lrsk_sublight_loyalist_colony }
+		add_intel_report = { category = diplomacy level = 2 days = 360 who = event_target:lrsk_sublight_dissident_colony }
 
 		#IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
 		#	log = "Adding sublight empire overlord opinion of vassals for [this.GetName]"
