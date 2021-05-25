@@ -160,9 +160,9 @@ country_event = {
 		}
 	}
 	
-	immediate = {
+	immediate = { capital_scope.solar_system = {
 		if = {
-			limit = { capital_scope.solar_system = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } } }
+			limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
 			if = {
 				limit = {
 					any_system = {
@@ -193,6 +193,7 @@ country_event = {
 						to = root.capital_scope.solar_system
 					}
 					set_star_flag = lrsk_escape_route
+					lrsk_mark_hyperlane_escape_routes = yes
 				}
 			}
 			else_if = {
@@ -225,6 +226,7 @@ country_event = {
 						to = root.capital_scope.solar_system
 					}
 					set_star_flag = lrsk_escape_route
+					lrsk_mark_hyperlane_escape_routes = yes
 				}
 			}
 			else_if = {
@@ -257,6 +259,7 @@ country_event = {
 						to = root.capital_scope.solar_system
 					}
 					set_star_flag = lrsk_escape_route
+					lrsk_mark_hyperlane_escape_routes = yes
 				}
 			}
 			else_if = {
@@ -289,6 +292,7 @@ country_event = {
 						to = root.capital_scope.solar_system
 					}
 					set_star_flag = lrsk_escape_route
+					lrsk_mark_hyperlane_escape_routes = yes
 				}
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
@@ -353,16 +357,13 @@ country_event = {
 								}
 								set_star_flag = lrsk_escape_route
 							}
-						}					
+						}
 					}
 				}
 			}
 			# This last reach for an escape route is for human players only
 			if = {
-				limit = {
-					exists = event_target:lrsk_hyperlane_system_2
-					lrsk_has_gvp_npc_origin = no
-				}
+				limit = { exists = event_target:lrsk_hyperlane_system_2 }
 				event_target:lrsk_hyperlane_system_2 = {
 					if = { limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
 						if = {
@@ -399,7 +400,17 @@ country_event = {
 				}					
 			}
 		}
-	}
+		else = {
+			closest_system = {
+				limit = {
+					lrsk_is_hyperlane_escape_route = yes
+					NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } }
+				}
+				lrsk_make_hyperlane_escape_route = yes
+			}
+			lrsk_mark_hyperlane_escape_routes = yes
+		}
+	} }
 }
 
 # Catches problem with base game fed starts checking for base game governments...
