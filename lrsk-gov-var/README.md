@@ -220,6 +220,7 @@ v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Civic Direct Revelation now has options to ignore Wild Cult popups.
 -Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
+-Much better "hyperlane escape route" logic for origins that add nearby empires.
 -Renamed "Pure Social Republic" to "Purity Collective".
 -Returned "Galactic" governments as "Cosmic" governments
 -Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.

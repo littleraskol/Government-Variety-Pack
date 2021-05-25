@@ -149,10 +149,10 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		# These are all starting conditions that create close-by neighbors
 		OR = {
-			lrsk_gov_var_has_discovery_origin = yes
-			lrsk_gov_var_has_tradeways_origin = yes
-			has_origin = lrsk_gov_var_origin_grand_alliance
+			lrsk_gov_var_has_newfed_origin = yes
+			lrsk_gov_var_has_newfed_npc_origin = yes
 			has_origin = lrsk_gov_var_origin_uplift 			# very unlikely but eh
 			lrsk_gov_var_has_sublight_overlord_origin = yes
 			lrsk_gov_var_has_sublight_colony_origin = yes
@@ -162,17 +162,7 @@ country_event = {
 	
 	immediate = {
 		if = {
-			limit = {
-				capital_scope = {
-					solar_system = {
-						NOT = {
-							any_neighbor_system = {
-								NOT = { exists = owner }
-							}
-						}
-					}
-				}
-			}
+			limit = { capital_scope.solar_system = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } } }
 			if = {
 				limit = {
 					any_system = {
@@ -183,7 +173,7 @@ country_event = {
 							max_distance <= 15
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -195,13 +185,14 @@ country_event = {
 							max_distance <= 15
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_escape_route
 				}
 			}
 			else_if = {
@@ -214,7 +205,7 @@ country_event = {
 							max_distance <= 20
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -226,13 +217,14 @@ country_event = {
 							max_distance <= 20
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_escape_route
 				}
 			}
 			else_if = {
@@ -245,7 +237,7 @@ country_event = {
 							max_distance <= 25
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -257,13 +249,14 @@ country_event = {
 							max_distance <= 25
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_escape_route
 				}
 			}
 			else_if = {
@@ -276,7 +269,7 @@ country_event = {
 							max_distance <= 40
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -288,18 +281,19 @@ country_event = {
 							max_distance <= 40
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_is_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_escape_route
 				}
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
 				event_target:lrsk_hyperlane_system_1 = {
-					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -309,7 +303,7 @@ country_event = {
 									max_distance <= 25
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-								NOT = { exists = owner }
+								lrsk_is_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -320,13 +314,14 @@ country_event = {
 										max_distance <= 25
 									}
 									NOT = { has_hyperlane_to = this }
-									NOT = { exists = owner }
+									lrsk_is_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_2
 								add_hyperlane = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_escape_route
 							}
 						}
 						else_if = {
@@ -338,7 +333,7 @@ country_event = {
 									max_distance <= 50
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-								NOT = { exists = owner }
+								lrsk_is_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -349,21 +344,27 @@ country_event = {
 										max_distance <= 50
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-									NOT = { exists = owner }
+									lrsk_is_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_2
 								add_hyperlane = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_escape_route
 							}
 						}					
 					}
 				}
 			}
-			if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
+			# This last reach for an escape route is for human players only
+			if = {
+				limit = {
+					exists = event_target:lrsk_hyperlane_system_2
+					lrsk_has_gvp_npc_origin = no
+				}
 				event_target:lrsk_hyperlane_system_2 = {
-					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -373,7 +374,7 @@ country_event = {
 									max_distance <= 25
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
-								NOT = { exists = owner }
+								lrsk_is_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -384,13 +385,14 @@ country_event = {
 										max_distance <= 25
 									}
 									NOT = { has_hyperlane_to = this }
-									NOT = { exists = owner }
+									lrsk_is_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_3
 								add_hyperlane = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_escape_route
 							}
 						}
 					}

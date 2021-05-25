@@ -45,6 +45,24 @@ lrsk_gov_var_has_tradeways_origin = {
 	}
 }
 
+lrsk_gov_var_has_newfed_origin = {
+	or = {
+		lrsk_gov_var_has_discovery_origin = yes
+		lrsk_gov_var_has_tradeways_origin = yes
+		has_origin = lrsk_gov_var_origin_grand_alliance
+	}
+}
+
+lrsk_gov_var_has_newfed_npc_origin = {
+	or = { 
+		has_origin = lrsk_gov_var_origin_for_discovery_npc
+		has_origin = lrsk_gov_var_origin_for_discovery_mi_npc
+		has_origin = lrsk_gov_var_origin_tradeways_npc
+		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
+		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+	}
+}
+
 lrsk_gvp_planet_can_get_wild_cult = {
 	OR = {
 		NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
@@ -85,4 +103,16 @@ lrsk_complex_worker_job_check_trigger = {
 			owner = { has_technology = tech_droid_workers }
 		}
 	}
+}
+
+# Checks if a system is an "escape route," meaning:
+# 1. It lacks an owner.
+# 2. It has not been marked as an escape route already.
+# 3. It has at least one unowned neighbor
+lrsk_is_hyperlane_escape_route = {
+	NOR = { 
+		exists = owner
+		has_star_flag = lrsk_escape_route
+	}
+	any_neighbor_system = { NOT = { exists = owner } }
 }
