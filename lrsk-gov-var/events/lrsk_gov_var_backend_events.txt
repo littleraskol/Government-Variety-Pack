@@ -150,14 +150,12 @@ country_event = {
 
 	trigger = {
 		OR = {
-			has_origin = lrsk_gov_var_origin_for_discovery
-			has_origin = lrsk_gov_var_origin_for_discovery_mi
-			has_origin = lrsk_gov_var_origin_tradeways
-			has_origin = lrsk_gov_var_origin_tradeways_mc
+			lrsk_gov_var_has_discovery_origin = yes
+			lrsk_gov_var_has_tradeways_origin = yes
 			has_origin = lrsk_gov_var_origin_grand_alliance
 			has_origin = lrsk_gov_var_origin_uplift 			# very unlikely but eh
-			has_origin = lrsk_gov_var_origin_sublight_empire
-			has_origin = lrsk_gov_var_origin_sublight_commonwealth
+			lrsk_gov_var_has_sublight_overlord_origin = yes
+			lrsk_gov_var_has_sublight_colony_origin = yes
 			#has_origin = lrsk_gov_var_origin_other
 		}
 	}
