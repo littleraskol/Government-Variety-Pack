@@ -1467,6 +1467,11 @@ country_event = {
 		}
 		log = "Loyalists: Done."
 
+		# Overlord should get at least this government info to start with (I only want to reveal origins but eh)
+		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_genship_colony }
+		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_loyalist_colony }
+		add_intel_report = { category = government level = 2 days = 360 who = event_target:lrsk_sublight_dissident_colony }
+
 		#IF = { limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
 		#	log = "Adding sublight empire overlord opinion of vassals for [this.GetName]"
 		#	add_opinion_modifier = {
