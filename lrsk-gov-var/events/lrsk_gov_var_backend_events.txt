@@ -173,8 +173,10 @@ country_event = {
 	}
 	
 	immediate = { capital_scope.solar_system = {
+		log = "Finding more escape routes for [root.GetName]"
 		if = {
 			limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
+			log = "[this.GetName] has no escape route."
 			if = {
 				limit = {
 					any_system = {
@@ -188,6 +190,7 @@ country_event = {
 						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
+				log = "Found possible escape route..."
 				closest_system = {
 					limit = {
 						distance = {
@@ -206,6 +209,7 @@ country_event = {
 					}
 					set_star_flag = lrsk_visited
 					lrsk_mark_hyperlane_escape_routes = yes
+					log = "Created route from [this.GetName] to [root.capital_scope.solar_system.GetName]"
 				}
 			}
 			else_if = {
@@ -221,6 +225,7 @@ country_event = {
 						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
+				log = "Found possible escape route..."
 				closest_system = {
 					limit = {
 						distance = {
@@ -239,6 +244,7 @@ country_event = {
 					}
 					set_star_flag = lrsk_visited
 					lrsk_mark_hyperlane_escape_routes = yes
+					log = "Created route from [this.GetName] to [root.capital_scope.solar_system.GetName]"
 				}
 			}
 			else_if = {
@@ -254,6 +260,7 @@ country_event = {
 						lrsk_is_hyperlane_escape_route = yes
 					}
 				}
+				log = "Found possible escape route..."
 				closest_system = {
 					limit = {
 						distance = {
@@ -272,11 +279,14 @@ country_event = {
 					}
 					set_star_flag = lrsk_visited
 					lrsk_mark_hyperlane_escape_routes = yes
+					log = "Created route from [this.GetName] to [root.capital_scope.solar_system.GetName]"
 				}
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
+				log = "[event_target:lrsk_hyperlane_system_1.GetName] is the first escape route system."
 				event_target:lrsk_hyperlane_system_1 = {
 					if = { limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
+					log = "[this.GetName] has no escape route."
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -289,6 +299,7 @@ country_event = {
 								NOT = { has_star_flag = lrsk_visited }
 								lrsk_is_hyperlane_escape_route = yes
 							} }
+							log = "Found possible escape route..."
 							closest_system = {
 								limit = { 
 									distance = {
@@ -308,6 +319,7 @@ country_event = {
 								}
 								set_star_flag = lrsk_visited
 								lrsk_mark_hyperlane_escape_routes = yes
+								log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_1.GetName]"
 							}
 						}
 						else_if = {
@@ -322,6 +334,7 @@ country_event = {
 								NOT = { has_star_flag = lrsk_visited }
 								lrsk_is_hyperlane_escape_route = yes
 							} }
+							log = "Found possible escape route..."
 							closest_system = {
 								limit = { 
 									distance = {
@@ -341,11 +354,13 @@ country_event = {
 								}
 								set_star_flag = lrsk_visited
 								lrsk_mark_hyperlane_escape_routes = yes
+								log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_1.GetName]"
 							}
 						}
 					}
 					# Even if this new escape route has an escape route, we want to make sure they have more.
 					else = {
+						log = "[this.GetName] has an escape route, expanding network..."
 						every_neighbor_system = {
 							limit = { lrsk_is_hyperlane_escape_route = yes }
 							save_event_target_as = lrsk_hyperlane_system_2
@@ -364,6 +379,7 @@ country_event = {
 										lrsk_is_hyperlane_escape_route = yes
 									}
 								}
+								log = "Found possible escape route from [this.GetName]..."
 								closest_system = {
 									limit = { 
 										distance = {
@@ -381,6 +397,7 @@ country_event = {
 										to = event_target:lrsk_hyperlane_system_2
 									}
 									set_star_flag = lrsk_visited
+									log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_2.GetName]"
 								}
 							}
 							lrsk_mark_hyperlane_escape_routes = yes
@@ -391,8 +408,10 @@ country_event = {
 			}
 			if = {
 				limit = { exists = event_target:lrsk_hyperlane_system_2 }
+				log = "[event_target:lrsk_hyperlane_system_2.GetName] is the second escape route system."
 				event_target:lrsk_hyperlane_system_2 = {
 					if = { limit = { NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } } }
+					log = "[this.GetName] has no escape route."
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -405,6 +424,7 @@ country_event = {
 								NOT = { has_star_flag = lrsk_visited }
 								lrsk_is_hyperlane_escape_route = yes
 							} }
+							log = "Found possible escape route..."
 							closest_system = {
 								limit = { 
 									distance = {
@@ -422,6 +442,7 @@ country_event = {
 									to = event_target:lrsk_hyperlane_system_2
 								}
 								set_star_flag = lrsk_visited
+								log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_2.GetName]"
 							}
 						}
 						lrsk_mark_hyperlane_escape_routes = yes
@@ -431,6 +452,7 @@ country_event = {
 		}
 		# Want to make sure that, even if we start with an escape route, they lead to more.
 		else = {
+			log = "[this.GetName] has an escape route, expanding network..."
 			every_neighbor_system = {
 				limit = { lrsk_is_hyperlane_escape_route = yes }
 				set_star_flag = lrsk_visited
@@ -450,6 +472,7 @@ country_event = {
 							lrsk_is_hyperlane_escape_route = yes
 						}
 					}
+					log = "Found possible escape route from [this.GetName]..."
 					closest_system = {
 						limit = { 
 							distance = {
@@ -467,6 +490,7 @@ country_event = {
 							to = event_target:lrsk_hyperlane_system_1
 						}
 						set_star_flag = lrsk_visited
+						log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_1.GetName]"
 					}
 				}
 				every_neighbor_system = {
@@ -487,6 +511,7 @@ country_event = {
 								lrsk_is_hyperlane_escape_route = yes
 							}
 						}
+						log = "Found possible escape route from [this.GetName]..."
 						closest_system = {
 							limit = { 
 								distance = {
@@ -504,6 +529,7 @@ country_event = {
 								to = event_target:lrsk_hyperlane_system_2
 							}
 							set_star_flag = lrsk_visited
+							log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_2.GetName]"
 						}
 					}
 					lrsk_mark_hyperlane_escape_routes = yes
@@ -522,6 +548,7 @@ country_event = {
 					limit = { NOT = { exists = owner } }
 				}
 			}
+			log = "Only one unowned neighbor system found for player [root.GetName]"
 			closest_system = {
 				limit = { 
 					distance = {
@@ -538,6 +565,7 @@ country_event = {
 					to = root.capital_scope.solar_system
 				}
 				set_star_flag = lrsk_escape_route
+				log = "Created route from [this.GetName] to [root.capital_scope.solar_system.GetName]"
 			}
 		}
 
