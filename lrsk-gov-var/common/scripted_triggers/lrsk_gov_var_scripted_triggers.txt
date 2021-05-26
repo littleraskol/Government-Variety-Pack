@@ -63,6 +63,17 @@ lrsk_gov_var_has_newfed_npc_origin = {
 	}
 }
 
+# These are all starting conditions that create close-by neighbors
+lrsk_gvp_has_boxed_in_origin = {
+	OR = {
+		lrsk_gov_var_has_newfed_origin = yes
+		lrsk_gov_var_has_newfed_npc_origin = yes
+		has_origin = lrsk_gov_var_origin_uplift 			# very unlikely but eh
+		lrsk_gov_var_has_sublight_overlord_origin = yes
+		lrsk_gov_var_has_sublight_colony_origin = yes
+	}
+}
+
 lrsk_gvp_planet_can_get_wild_cult = {
 	OR = {
 		NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }

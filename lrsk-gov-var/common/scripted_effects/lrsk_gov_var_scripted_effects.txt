@@ -755,16 +755,16 @@ lrsk_gvp_remove_every_wild_cult = {
 lrsk_mark_hyperlane_escape_routes = {
 	every_neighbor_system = {
 		limit = { lrsk_is_hyperlane_escape_route = yes }
-		set_star_flag = lrsk_escape_route_just_marked
+		set_star_flag = lrsk_visited
 	}
 }
 
 # Cleanup task; actually reserves marked escape routes to future searches for escape routes ignore them
 lrsk_reserve_hyperlane_escape_routes = {
 	every_system = {
-		limit = { has_star_flag = lrsk_escape_route_just_marked }
-		remove_star_flag = lrsk_escape_route_just_marked
+		limit = { has_star_flag = lrsk_visited }
 		set_star_flag = lrsk_escape_route
+		remove_star_flag = lrsk_visited
 	}
 }
 
