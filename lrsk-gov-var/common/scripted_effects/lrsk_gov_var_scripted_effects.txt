@@ -750,11 +750,20 @@ lrsk_gvp_remove_every_wild_cult = {
 		}
 	}
 }
-			
-# Mark any neighbor systems satisfying the "escape route" criteria as such. (system scope)
+
+# Mark any neighbor systems satisfying the "escape route" criteria as such. Must be "reserved" later. (system scope)
 lrsk_mark_hyperlane_escape_routes = {
 	every_neighbor_system = {
 		limit = { lrsk_is_hyperlane_escape_route = yes }
+		set_star_flag = lrsk_escape_route_just_marked
+	}
+}
+
+# Cleanup task; actually reserves marked escape routes to future searches for escape routes ignore them
+lrsk_reserve_hyperlane_escape_routes = {
+	every_system = {
+		limit = { has_star_flag = lrsk_escape_route_just_marked }
+		remove_star_flag = lrsk_escape_route_just_marked
 		set_star_flag = lrsk_escape_route
 	}
 }
