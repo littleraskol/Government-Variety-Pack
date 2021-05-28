@@ -20,17 +20,6 @@ event = {
 		
 		## Origins Setup
 
-		## Escape routes for possible boxed-in starts
-
-		# Find escape routes for human players first
-		every_playable_country = {
-			limit = {
-				lrsk_gvp_has_boxed_in_origin = yes
-				lrsk_has_gvp_npc_origin = no
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
-
 		# Fed start fix for GVP govs
 		every_playable_country = {
 			limit = {
@@ -87,14 +76,25 @@ event = {
 			country_event = { id = lrsk_gov_var_sublight_origins.1 }
 		}
 
+		## Escape routes for possible boxed-in starts
+
+		# Find escape routes for human players first
+		every_playable_country = {
+			limit = {
+				lrsk_gvp_has_boxed_in_origin = yes
+				lrsk_has_gvp_npc_origin = no
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.3 }
+		}
+
 		# Find escape routes for AI players last
-		#every_playable_country = {
-		#	limit = {
-		#		lrsk_gvp_has_boxed_in_origin = yes
-		#		lrsk_has_gvp_npc_origin = yes
-		#	}
-		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
-		#}
+		every_playable_country = {
+			limit = {
+				lrsk_gvp_has_boxed_in_origin = yes
+				lrsk_has_gvp_npc_origin = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.3 }
+		}
 
 		## Explainers if not called elsewhere
 
@@ -453,10 +453,36 @@ country_event = {
 		# Want to make sure that, even if we start with an escape route, they lead to more.
 		else = {
 			log = "[this.GetName] has an escape route, expanding network..."
-			every_neighbor_system = {
-				limit = { lrsk_is_hyperlane_escape_route = yes }
+			every_neighbor_system = { limit = { lrsk_is_hyperlane_escape_route = yes }				
 				set_star_flag = lrsk_visited
 				save_event_target_as = lrsk_hyperlane_system_1
+				log = "[this.GetName] under consideration for expansion."
+					
+				IF = { limit = { has_owner = no }
+					log = ".....[this.GetName] has no owner."
+				}
+				ELSE = {
+					log = ".....Owner of [this.GetName] is [owner.GetName]"
+				}
+				IF = { limit = { has_star_flag = lrsk_escape_route }
+					log = ".....[this.GetName] has been marked as escape route."
+				}
+				ELSE = {
+					log = ".....[this.GetName] HAS NOT BEEN marked as escape route."
+				}
+				IF = { limit = { any_neighbor_system = { NOT = { exists = owner } } }
+					random_neighbor_system = {
+						limit = { NOT = { exists = owner } }
+						log = ".....[this.GetName] (neighbor of [prev.GetName]) has no owner."
+					}
+				}
+				ELSE = {
+					random_neighbor_system = {
+						limit = { exists = owner }
+						log = ".....[this.GetName] (neighbor of [prev.GetName]) is owned by [owner.GetName]"
+					}
+				}
+
 				if = {
 					limit = {
 						NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } }
@@ -493,9 +519,35 @@ country_event = {
 						log = "Created route from [this.GetName] to [event_target:lrsk_hyperlane_system_1.GetName]"
 					}
 				}
-				every_neighbor_system = {
-					limit = { lrsk_is_hyperlane_escape_route = yes }
+				every_neighbor_system = { limit = { lrsk_is_hyperlane_escape_route = yes }
 					save_event_target_as = lrsk_hyperlane_system_2
+					log = "[this.GetName] (neighbor of [prev.GetName]) under consideration for expansion."
+
+					IF = { limit = { has_owner = no }
+						log = ".....[this.GetName] has no owner."
+					}
+					ELSE = {
+						log = ".....Owner of [this.GetName] is [owner.GetName]"
+					}
+					IF = { limit = { has_star_flag = lrsk_escape_route }
+						log = ".....[this.GetName] has been marked as escape route."
+					}
+					ELSE = {
+						log = ".....[this.GetName] HAS NOT BEEN marked as escape route."
+					}
+					IF = { limit = { any_neighbor_system = { NOT = { exists = owner } } }
+						random_neighbor_system = {
+							limit = { NOT = { exists = owner } }
+							log = ".....[this.GetName] (neighbor of [prev.GetName]) has no owner."
+						}
+					}
+					ELSE = {
+						random_neighbor_system = {
+							limit = { exists = owner }
+							log = ".....[this.GetName] (neighbor of [prev.GetName]) is owned by [owner.GetName]"
+						}
+					}
+
 					if = {
 						limit = {
 							NOT = { any_neighbor_system = { lrsk_is_hyperlane_escape_route = yes } }

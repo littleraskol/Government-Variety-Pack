@@ -121,9 +121,9 @@ lrsk_complex_worker_job_check_trigger = {
 # 2. It has not been marked as an escape route already.
 # 3. It has at least one unowned neighbor
 lrsk_is_hyperlane_escape_route = {
-	NOR = { 
-		exists = owner
-		has_star_flag = lrsk_escape_route
+	AND = {
+		has_owner = no
+		NOT = { has_star_flag = lrsk_escape_route }
+		any_neighbor_system = { NOT = { exists = owner } }
 	}
-	any_neighbor_system = { NOT = { exists = owner } }
 }

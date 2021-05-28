@@ -767,12 +767,3 @@ lrsk_reserve_hyperlane_escape_routes = {
 		remove_star_flag = lrsk_visited
 	}
 }
-
-# Sweeps galaxy for systems recently marked as escape routes and prema-marks them
-lrsk_recognize_new_hyperlane_escape_routes = {
-	every_system = {
-		limit = { has_star_flag = lrsk_escape_route_just_marked }
-		remove_star_flag = lrsk_escape_route_just_marked
-		set_star_flag = lrsk_escape_route
-	}
-}
