@@ -125,17 +125,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		OR = {
-			has_origin = lrsk_gov_var_origin_for_discovery
-			has_origin = lrsk_gov_var_origin_for_discovery_mi
-			has_origin = lrsk_gov_var_origin_tradeways
-			has_origin = lrsk_gov_var_origin_tradeways_mc
-			has_origin = lrsk_gov_var_origin_grand_alliance
-			#has_origin = lrsk_gov_var_origin_uplift 			# very unlikely but eh
-			#has_origin = lrsk_gov_var_origin_sublight_empire
-			#has_origin = lrsk_gov_var_origin_sublight_commonwealth
-			#has_origin = lrsk_gov_var_origin_other
-		}
+		lrsk_gvp_has_boxed_in_origin = yes
 	}
 	
 	immediate = {
@@ -145,7 +135,7 @@ country_event = {
 					solar_system = {
 						NOT = {
 							any_neighbor_system = {
-								NOT = { exists = owner }
+								lrsk_can_be_my_hyperlane_escape_route = yes
 							}
 						}
 					}
@@ -161,7 +151,7 @@ country_event = {
 							max_distance <= 15
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -173,7 +163,7 @@ country_event = {
 							max_distance <= 15
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
@@ -192,7 +182,7 @@ country_event = {
 							max_distance <= 20
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -204,7 +194,7 @@ country_event = {
 							max_distance <= 20
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
@@ -223,7 +213,7 @@ country_event = {
 							max_distance <= 25
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -235,7 +225,7 @@ country_event = {
 							max_distance <= 25
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
@@ -254,7 +244,7 @@ country_event = {
 							max_distance <= 40
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
 				random_system = {
@@ -266,7 +256,7 @@ country_event = {
 							max_distance <= 40
 						}
 						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-						NOT = { exists = owner }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 					save_event_target_as = lrsk_hyperlane_system_1
 					add_hyperlane = {
@@ -277,7 +267,7 @@ country_event = {
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
 				event_target:lrsk_hyperlane_system_1 = {
-					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -287,7 +277,7 @@ country_event = {
 									max_distance <= 25
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-								NOT = { exists = owner }
+								lrsk_can_be_my_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -297,8 +287,8 @@ country_event = {
 										min_distance >= 1
 										max_distance <= 25
 									}
-									NOT = { has_hyperlane_to = this }
-									NOT = { exists = owner }
+									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+									lrsk_can_be_my_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_2
 								add_hyperlane = {
@@ -316,7 +306,7 @@ country_event = {
 									max_distance <= 50
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-								NOT = { exists = owner }
+								lrsk_can_be_my_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -327,7 +317,7 @@ country_event = {
 										max_distance <= 50
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-									NOT = { exists = owner }
+									lrsk_can_be_my_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_2
 								add_hyperlane = {
@@ -341,7 +331,7 @@ country_event = {
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
 				event_target:lrsk_hyperlane_system_2 = {
-					if = { limit = { NOT = { any_neighbor_system = { NOT = { exists = owner } } } }
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
 						if = {
 							limit = { any_system = {
 								distance = {
@@ -351,7 +341,7 @@ country_event = {
 									max_distance <= 25
 								}
 								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
-								NOT = { exists = owner }
+								lrsk_can_be_my_hyperlane_escape_route = yes
 							} }
 							random_system = {
 								limit = { 
@@ -361,8 +351,8 @@ country_event = {
 										min_distance >= 1
 										max_distance <= 25
 									}
-									NOT = { has_hyperlane_to = this }
-									NOT = { exists = owner }
+									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
+									lrsk_can_be_my_hyperlane_escape_route = yes
 								}
 								save_event_target_as = lrsk_hyperlane_system_3
 								add_hyperlane = {

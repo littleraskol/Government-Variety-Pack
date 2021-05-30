@@ -16,6 +16,32 @@ lrsk_gov_var_has_tradeways_origin = {
 	}
 }
 
+lrsk_gov_var_has_newfed_origin = {
+	or = {
+		lrsk_gov_var_has_discovery_origin = yes
+		lrsk_gov_var_has_tradeways_origin = yes
+		has_origin = lrsk_gov_var_origin_grand_alliance
+	}
+}
+
+lrsk_gov_var_has_newfed_npc_origin = {
+	or = { 
+		has_origin = lrsk_gov_var_origin_for_discovery_npc
+		has_origin = lrsk_gov_var_origin_for_discovery_mi_npc
+		has_origin = lrsk_gov_var_origin_tradeways_npc
+		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
+		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+	}
+}
+
+# These are all starting conditions that create close-by neighbors
+lrsk_gvp_has_boxed_in_origin = {
+	OR = {
+		lrsk_gov_var_has_newfed_origin = yes
+		lrsk_gov_var_has_newfed_npc_origin = yes
+	}
+}
+
 # Deprecated in 3.0, don't feel like interrogating this fact much tbh
 lrsk_complex_worker_job_check_trigger = {
 	worker_job_check_trigger = yes
@@ -26,4 +52,34 @@ lrsk_complex_worker_job_check_trigger = {
 			owner = { has_technology = tech_droid_workers }
 		}
 	}
+}
+
+# Checks if a system is an "escape route," meaning it has neither:
+# 1. An owner,
+# 2. A current controller,
+# 3. Any fleets present,
+# 4. A flag marking it as another empire's escape route, nor
+# 5. A flag marking it as owned.
+lrsk_is_hyperlane_escape_route = {
+	NOR = {
+		has_owner = yes
+		exists = space_owner
+		has_presence = yes
+		has_star_flag = lrsk_marked_escape_route
+		has_star_flag = lrsk_marked_owned_system
+
+	}
+}
+
+# A system has an escape route if it has at least one neighbor that is an escape route.
+lrsk_has_hyperlane_escape_route = {
+	any_neighbor_system = {
+		lrsk_is_hyperlane_escape_route = yes		
+	}
+}
+
+# A system can be an escape route for another if it is an escape route and has an escape route.
+lrsk_can_be_my_hyperlane_escape_route = {
+	lrsk_is_hyperlane_escape_route = yes
+	lrsk_has_hyperlane_escape_route = yes
 }
