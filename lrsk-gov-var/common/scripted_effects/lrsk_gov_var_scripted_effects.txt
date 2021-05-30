@@ -719,3 +719,10 @@ lrsk_add_random_good_leader_trait = {
 		}
 	}
 }
+
+# Sets ownership mark (system scope)
+lrsk_mark_owned_system = {
+	IF = { limit = { NOT = { has_star_flag = lrsk_marked_owned_system } }
+		set_star_flag = lrsk_marked_owned_system
+	}
+}
