@@ -65,8 +65,10 @@ event = {
 
 		# Extreme cludge alert: explicitly mark initially owned systems...
 		every_country = {
-			capital_scope.solar_system = {
-				lrsk_mark_owned_system = yes
+			if = { limit = { exists = capital_scope }
+				capital_scope.solar_system = {
+					lrsk_mark_owned_system = yes
+				}
 			}
 			every_system_within_border = {
 				lrsk_mark_owned_system = yes
