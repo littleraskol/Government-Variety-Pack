@@ -200,6 +200,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_marked_escape_route
 				}
 			}
 			else_if = {
@@ -231,6 +232,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_marked_escape_route
 				}
 			}
 			else_if = {
@@ -262,6 +264,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_marked_escape_route
 				}
 			}
 			else_if = {
@@ -293,6 +296,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
+					set_star_flag = lrsk_marked_escape_route
 				}
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
@@ -325,6 +329,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_marked_escape_route
 							}
 						}
 						else_if = {
@@ -354,6 +359,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_marked_escape_route
 							}
 						}					
 					}
@@ -389,10 +395,17 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
+								set_star_flag = lrsk_marked_escape_route
 							}
 						}
 					}
 				}					
+			}
+		}
+		else = {
+			every_neighbor_system = {
+				limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
+				set_star_flag = lrsk_marked_escape_route				
 			}
 		}
 	}
