@@ -45,13 +45,13 @@ This is the full listing of civics with descriptions.
 
 [*][i]Chivalry (Imperial authority or Aristocratic Elite, Militarist)[/i] - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
-[*][i]Lifelong Learning (Democratic and Pacifist)[/i] - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to an edict that gives special researcher jobs per pop)
+[*][i]Lifelong Learning (Democratic and Pacifist)[/i] - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop)
 
 [*][i]Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds)[/i] - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 [*][i]Direct Revelation (Egalitarian and Spiritualist)[/i] - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
+[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that resets policy cooldowns)
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 

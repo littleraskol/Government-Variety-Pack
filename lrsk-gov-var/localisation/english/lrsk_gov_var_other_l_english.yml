@@ -316,6 +316,12 @@ l_english:
  lrsk_gvp_citschol_edict_no_suitable_planets:0 "Because this gives 1 job per 25 pops, there is no effect if none of your planets have at least 25 pops."
  lrsk_gvp_citschol_edict_effects_common:0 "§Y1§! £job_lrsk_gvp_job_citscholar£ §Y$job_lrsk_gvp_job_citscholar$ Job§! per §Y25§! £pop£ Pops. $job_lrsk_gvp_job_citscholar_effect_desc$"
 
+ # Royal Absolutism - Proclamation of Justice
+ lrsk_gvp_royjustice_edict:0 "Proclamation of Justice"
+ lrsk_gvp_royjustice_edict_desc:0 "To better dispense justice throughout the realm, our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's laws and instruct the police and courts in their implementation."
+ lrsk_gvp_royjustice_edict_tooltip:0 "$lrsk_gvp_royjustice_edict_effects_common$ (Economic Policy, Food Policy, and War Doctrine cannot be reset due to technical limitations.)"
+ lrsk_gvp_royjustice_edict_effects_common:0 "§YPolicy cooldowns§! of most policies §Gare reset§!."
+
  ## Decisions
 
  # Run Recursive Audit
@@ -515,6 +521,15 @@ l_english:
  lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
  lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
+
+ # Royal Absolutism: Reset all policy cooldowns notice
+ lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
+ lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and [this.GetHeirTitle] [this.GetHeirName] attending along with all the other grandees of the realm, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before five years have passed."
+ lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
+ lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
+ lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
+
+ # Test events, etc.
 
  lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
  lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."

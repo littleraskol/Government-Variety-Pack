@@ -2,6 +2,7 @@
 # Edicts
 # Author: littleraskol
 
+# Lifelong Learning - Promote Citizen Scholarship
 lrsk_gvp_citschol_edict = {
 	length = -1
 	edict_cap_usage = 1
@@ -105,4 +106,28 @@ lrsk_gvp_citschol_edict = {
 			}
 		}
 	}
+}
+
+# Royal Absolutism - Proclamation of Justice
+lrsk_gvp_royjustice_edict = {
+	length = 1800
+	icon = "GFX_edict_type_time"
+
+	potential = {
+		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
+	}
+
+	resources = {
+		category = edicts
+		cost = { influence = 250 }
+	}
+
+	effect = {
+		country_event = { id = lrsk_government_variety_pack_backend.1001 days = 0 }
+	}
+
+	ai_weight = {
+		weight = 1 # meh
+	}
+
 }
