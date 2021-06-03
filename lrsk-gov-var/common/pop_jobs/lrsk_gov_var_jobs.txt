@@ -8,8 +8,10 @@
 @lrsk_pastor_job_weight = 11
 @lrsk_planetmind_job_weight = 100
 @lrsk_regcoord_job_weight = 20
-@lrsk_corpworker_job_weight = 1.2
-@lrsk_corpspec_job_weight = 12
+@lrsk_desirable_worker_job_weight = 1.2
+@lrsk_undesirable_worker_job_weight = 0.8
+@lrsk_desirable_spec_job_weight = 12
+@lrsk_undesirable_spec_job_weight = 8
 
 ## Worker Jobs
 
@@ -62,7 +64,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -180,7 +182,7 @@ job_lrsk_gvp_job_citscholar = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -325,7 +327,7 @@ lrsk_gov_var_job_functionary = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -408,7 +410,7 @@ lrsk_gov_var_job_infoguide = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -537,7 +539,7 @@ lrsk_gov_var_job_gofer = {
 	}	
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -623,7 +625,7 @@ lrsk_gov_var_job_offworld_worker = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -968,7 +970,7 @@ lrsk_gov_var_job_otherworld_guide = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0
 			NOR = {
@@ -1072,7 +1074,7 @@ lrsk_gov_var_job_investigator = {
 	}
 
 	weight = {
-		weight = @lrsk_corpspec_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -1169,7 +1171,7 @@ lrsk_gov_var_job_suppressor = {
 	}
 
 	weight = {
-		weight = @lrsk_corpspec_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
