@@ -305,6 +305,15 @@ l_english:
  decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
  decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
 
+ # Work Allocation Plan
+ decision_lrsk_gvp_work_allocation_plan:0 "Work Allocation Plan"
+ decision_lrsk_gvp_work_allocation_plan_desc:1 "Due to high unemployment, the planetary government designs, implements, and continually improves a plan to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This will have some regretable impact on the local economy."
+ decision_lrsk_gvp_work_allocation_plan_effects:0 "Adds the §H$lrsk_gvp_statmod_work_plan$§! modifier, which gives $lrsk_gvp_statmod_work_plan_effects_common$."
+
+ decision_lrsk_gvp_end_work_allocation_plan:0 "End Work Allocation Plan"
+ decision_lrsk_gvp_end_work_allocation_plan_desc:1 "Due to satisfactory planetary employment levels, the plan to alleviate unemployment can come to an end."
+ decision_lrsk_gvp_end_work_allocation_plan_effects:0 "Removes the §H$lrsk_gvp_statmod_work_plan$§! modifier, ending $lrsk_gvp_statmod_work_plan_effects_common$."
+
  ## Empire Modifiers
 
  lrsk_gov_var_empire_endisnigh:0 "The End Is Nigh"
@@ -324,7 +333,13 @@ l_english:
  lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
  lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
 
- ## Planet Modifiers
+ ### Planet Modifiers
+
+ ## Utilitarian Planning - Work Allocation Plan
+
+ lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
+ lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
+ lrsk_gvp_statmod_work_plan_effects_common:0 "§G+25%§! Automatic Resettlement Chance and §G-20%§! Pop Demotion Time at the cost of §R-33%§! £trade_value£ Trade Value"
 
  # Direct Revelation Wild Cults
 

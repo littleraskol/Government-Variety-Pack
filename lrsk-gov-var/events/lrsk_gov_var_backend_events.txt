@@ -657,6 +657,37 @@ country_event = {
 	
 }
 
+## Civic Cleanup Tasks
+
+# Utilitarian Planning: Remove work plan if no unemployment
+country_event = {
+	id = lrsk_government_variety_pack_backend.1000
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_planet = {
+			has_modifier = lrsk_gvp_statmod_work_plan
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count < 1
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_modifier = lrsk_gvp_statmod_work_plan
+				count_owned_pop = {
+					limit = { is_unemployed = yes  }
+					count < 1
+				}
+			}
+			remove_modifier = lrsk_gvp_statmod_work_plan
+		}
+	}
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000
