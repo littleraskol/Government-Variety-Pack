@@ -773,7 +773,13 @@ lrsk_gov_var_civic_automated_indolence = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = {
+    base = 1
+		modifier = {
+			factor = 5
+			has_origin = origin_mechanists
+		}
+  }
 
   modifier = {
     planet_jobs_robotic_produces_mult = 0.10
