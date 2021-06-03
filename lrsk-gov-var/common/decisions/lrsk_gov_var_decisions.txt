@@ -69,6 +69,31 @@ decision_lrsk_gvp_work_allocation_plan = {
 			}
 		}
 	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 0
+			}
+		}
+		modifier = {
+			weight = 5
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 1
+			}
+		}
+		modifier = {
+			weight = 10
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 3
+			}
+		}
+	}
 }
 
 decision_lrsk_gvp_end_work_allocation_plan = {
@@ -90,6 +115,31 @@ decision_lrsk_gvp_end_work_allocation_plan = {
 		custom_tooltip = decision_lrsk_gvp_end_work_allocation_plan_effects
 		hidden_effect = {
 			remove_modifier = lrsk_gvp_statmod_work_plan
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count < 1
+			}
+		}
+		modifier = {
+			weight = 10
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count < 2
+			}
+		}
+		modifier = {
+			weight = 1
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count < 3
+			}
 		}
 	}
 }

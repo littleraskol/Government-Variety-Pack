@@ -1,0 +1,108 @@
+# Government Variety Pack
+# Edicts
+# Author: littleraskol
+
+lrsk_gvp_citschol_edict = {
+	length = -1
+	edict_cap_usage = 1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = { #Activation Cost
+			trigger = {
+				NOT = { has_edict = lrsk_gvp_citschol_edict }
+			}
+			influence = 75
+		}
+		cost = { #Deactivation Cost
+			trigger = {
+				has_edict = lrsk_gvp_citschol_edict
+			}
+			influence = 25
+		}
+	}
+
+	modifier = {
+		job_lrsk_gvp_job_citscholar_per_pop = 0.04
+	}
+
+	potential = {
+		has_valid_civic = lrsk_gov_var_civic_lifelong_learning
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "lrsk_gvp_citschol_edict_no_suitable_planets"
+			any_owned_planet = {
+				num_pops > 24
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1			
+			any_owned_planet = {
+				AND = {
+					count_owned_pop = {
+						limit = { is_unemployed = yes  }
+						count > 0
+					}
+					num_pops > 24
+				}
+			}
+		}
+		modifier = {
+			weight = 3			
+			any_owned_planet = {
+				AND = {
+					count_owned_pop = {
+						limit = { is_unemployed = yes  }
+						count > 1
+					}
+					num_pops > 49
+				}
+			}
+		}
+		modifier = {
+			weight = 5			
+			any_owned_planet = {
+				AND = {
+					count_owned_pop = {
+						limit = { is_unemployed = yes  }
+						count > 2
+					}
+					num_pops > 74
+				}
+			}
+		}
+		modifier = {
+			weight = 5			
+			count_owned_planet = {
+				limit = {
+					count_owned_pop = {
+						limit = { is_unemployed = yes  }
+						count > 0
+					}
+					num_pops > 24
+				}
+				count > 1
+			}
+		}
+		modifier = {
+			weight = 10			
+			count_owned_planet = {
+				limit = {
+					count_owned_pop = {
+						limit = { is_unemployed = yes  }
+						count > 0
+					}
+					num_pops > 24
+				}
+				count > 4
+			}
+		}
+	}
+}
