@@ -67,6 +67,11 @@ decision_lrsk_gvp_work_allocation_plan = {
 				modifier = lrsk_gvp_statmod_work_plan
 				days = -1
 			}
+			# Check every 30 days if still needed.
+			planet_event = {
+				id = lrsk_government_variety_pack_backend.1000
+				days = 30
+			}
 		}
 	}
 
