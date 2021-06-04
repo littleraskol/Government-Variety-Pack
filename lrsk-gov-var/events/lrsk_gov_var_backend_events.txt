@@ -847,3 +847,28 @@ country_event = {
 
 	option = { name = OK }
 }
+
+# Diagnostic: Find and replace invalid civics, or give human player influence to reform
+country_event = {
+	id = lrsk_government_variety_pack_backend.2003
+	title = lrsk_government_variety_pack_backend.2003.name
+	desc = lrsk_government_variety_pack_backend.2003.desc
+	picture = GFX_evt_announcement
+	is_triggered_only = yes
+
+	trigger = {
+		lrsk_has_gvp_possible_invalidated_civic = yes
+	}
+
+	immediate = {
+		IF = { limit = { is_ai = yes }
+			change_government = { civics = random }
+		}
+		ELSE = {
+			set_government_cooldown = no
+			add_resource = { influence = 250 }
+		}
+	}
+
+	option = { name = OK }
+}
