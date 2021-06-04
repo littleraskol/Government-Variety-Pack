@@ -857,6 +857,7 @@ country_event = {
 
 	trigger = {
 		lrsk_has_gvp_possible_invalidated_civic = yes
+		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v22 } # Update this for every version.
 	}
 
 	immediate = {
@@ -867,6 +868,7 @@ country_event = {
 			set_government_cooldown = no
 			add_resource = { influence = 250 }
 		}
+		set_country_flag = lrsk_fixed_invalid_civics_v22
 	}
 
 	option = { name = OK }
