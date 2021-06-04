@@ -810,3 +810,26 @@ country_event = {
 		}
 	}
 }
+
+# Triggers wild cult - capital world
+country_event = {
+	id = lrsk_gvp_testing.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+	}
+
+	immediate = {
+		set_timed_country_flag = { flag =  lrsk_gvp_testcall days = 3 } # Guarantees the event fires
+		IF = { limit = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently } remove_country_flag = lrsk_gov_var_wild_cult_formed_recently }
+		capital_scope = {
+			lrsk_gvp_remove_every_wild_cult = yes
+			planet_event = { id = lrsk_gov_var_direct_revelation.1 }
+		}
+	}
+}

@@ -127,13 +127,13 @@ Note: When I say the name of an ethos, assume either normal or Fanatic is fine (
 [b]Absolute Monarchy[/b]
 [i]Requirements:[/i] Royal Absolutism, not Enlightened Liberalism, Imperial authority
 
-[b]Galactic Dominion[/b]
+[b]Cosmic Dominion[/b]
 Requirements: Universal Sovereignty and Imperial Economy, Dictatorial authority, Militarism
 
-[b]Galactic Imperium[/b]
+[b]Cosmic Imperium[/b]
 Requirements: Universal Sovereignty and Imperial Economy, Imperial authority, Militarism
 
-[b]Galactic Cartel[/b]
+[b]Cosmic Cartel[/b]
 [i]Requirements:[/i] Militarism; either Cutthroat Politics or Shadow Council, and Corporate Dominion [i]or[/i] Corporate authority, Ruthless Competition and Brand Loyalty.
 
 [b]Pretender Hive[/b]
@@ -208,7 +208,7 @@ Requirements: Universal Sovereignty and Imperial Economy, Imperial authority, Mi
 [b]Imperial Socialism[/b]
 [i]Requirements:[/i] Imperial Economy and Institutionalized Collectivism, Dictatorial authority
 
-[b]Pure Social Republic[/b]
+[b]Purity Collective[/b]
 [i]Requirements:[/i] Institutionalized Collectivism and Fanatic Purifiers
 
 [b]Exemplary Socialism[/b]
