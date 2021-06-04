@@ -160,175 +160,185 @@ country_event = {
 		lrsk_gvp_has_boxed_in_origin = yes
 	}
 	
-	immediate = {
-		capital_scope.solar_system = {
+	immediate = { capital_scope.solar_system = {
+		if = {
+			limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
 			if = {
-				limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
-				if = {
-					limit = {
-						any_system = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 1
-								max_distance <= 15
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+				limit = {
+					any_system = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 15
 						}
-					}
-					random_system = {
-						limit = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 1
-								max_distance <= 15
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
-						}
-						save_event_target_as = lrsk_hyperlane_system_1
-						add_hyperlane = {
-							from = this
-							to = root.capital_scope.solar_system
-						}
-						set_star_flag = lrsk_marked_escape_route
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
-				else_if = {
+				random_system = {
 					limit = {
-						any_system = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 15
-								max_distance <= 20
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 15
 						}
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
-					random_system = {
-						limit = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 15
-								max_distance <= 20
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+					save_event_target_as = lrsk_hyperlane_system_1
+					add_hyperlane = {
+						from = this
+						to = root.capital_scope.solar_system
+					}
+					set_star_flag = lrsk_marked_escape_route
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 15
+							max_distance <= 20
 						}
-						save_event_target_as = lrsk_hyperlane_system_1
-						add_hyperlane = {
-							from = this
-							to = root.capital_scope.solar_system
-						}
-						set_star_flag = lrsk_marked_escape_route
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
-				else_if = {
+				random_system = {
 					limit = {
-						any_system = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 20
-								max_distance <= 25
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 15
+							max_distance <= 20
 						}
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
-					random_system = {
-						limit = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 20
-								max_distance <= 25
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+					save_event_target_as = lrsk_hyperlane_system_1
+					add_hyperlane = {
+						from = this
+						to = root.capital_scope.solar_system
+					}
+					set_star_flag = lrsk_marked_escape_route
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 20
+							max_distance <= 25
 						}
-						save_event_target_as = lrsk_hyperlane_system_1
-						add_hyperlane = {
-							from = this
-							to = root.capital_scope.solar_system
-						}
-						set_star_flag = lrsk_marked_escape_route
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
-				else_if = {
+				random_system = {
 					limit = {
-						any_system = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 25
-								max_distance <= 40
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 20
+							max_distance <= 25
 						}
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
-					random_system = {
-						limit = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 25
-								max_distance <= 40
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+					save_event_target_as = lrsk_hyperlane_system_1
+					add_hyperlane = {
+						from = this
+						to = root.capital_scope.solar_system
+					}
+					set_star_flag = lrsk_marked_escape_route
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 25
+							max_distance <= 40
 						}
-						save_event_target_as = lrsk_hyperlane_system_1
-						add_hyperlane = {
-							from = this
-							to = root.capital_scope.solar_system
-						}
-						set_star_flag = lrsk_marked_escape_route
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
-				else_if = {
+				random_system = {
 					limit = {
-						any_system = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 40
-								max_distance <= 4000
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 25
+							max_distance <= 40
 						}
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
-					random_system = {
-						limit = {
-							distance = {
-								source = root.capital_scope.solar_system
-								type = euclidean
-								min_distance >= 40
-								max_distance <= 4000
-							}
-							NOT = { has_hyperlane_to = root.capital_scope.solar_system }
-							lrsk_can_be_my_hyperlane_escape_route = yes
+					save_event_target_as = lrsk_hyperlane_system_1
+					add_hyperlane = {
+						from = this
+						to = root.capital_scope.solar_system
+					}
+					set_star_flag = lrsk_marked_escape_route
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 40
+							max_distance <= 4000
 						}
-						save_event_target_as = lrsk_hyperlane_system_1
-						add_hyperlane = {
-							from = this
-							to = root.capital_scope.solar_system
-						}
-						set_star_flag = lrsk_marked_escape_route
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
 					}
 				}
-				if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
-					event_target:lrsk_hyperlane_system_1 = {
-						if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
-							if = {
-								limit = { any_system = {
+				random_system = {
+					limit = {
+						distance = {
+							source = root.capital_scope.solar_system
+							type = euclidean
+							min_distance >= 40
+							max_distance <= 4000
+						}
+						NOT = { has_hyperlane_to = root.capital_scope.solar_system }
+						lrsk_can_be_my_hyperlane_escape_route = yes
+					}
+					save_event_target_as = lrsk_hyperlane_system_1
+					add_hyperlane = {
+						from = this
+						to = root.capital_scope.solar_system
+					}
+					set_star_flag = lrsk_marked_escape_route
+				}
+			}
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
+				event_target:lrsk_hyperlane_system_1 = {
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 25
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+								lrsk_can_be_my_hyperlane_escape_route = yes
+							} }
+							random_system = {
+								limit = { 
 									distance = {
 										source = event_target:lrsk_hyperlane_system_1
 										type = euclidean
@@ -337,28 +347,28 @@ country_event = {
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 									lrsk_can_be_my_hyperlane_escape_route = yes
-								} }
-								random_system = {
-									limit = { 
-										distance = {
-											source = event_target:lrsk_hyperlane_system_1
-											type = euclidean
-											min_distance >= 1
-											max_distance <= 25
-										}
-										NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-										lrsk_can_be_my_hyperlane_escape_route = yes
-									}
-									save_event_target_as = lrsk_hyperlane_system_2
-									add_hyperlane = {
-										from = this
-										to = event_target:lrsk_hyperlane_system_1
-									}
-									set_star_flag = lrsk_marked_escape_route
 								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+								set_star_flag = lrsk_marked_escape_route
 							}
-							else_if = {
-								limit = { any_system = {
+						}
+						else_if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance > 25
+									max_distance <= 50
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+								lrsk_can_be_my_hyperlane_escape_route = yes
+							} }
+							random_system = {
+								limit = { 
 									distance = {
 										source = event_target:lrsk_hyperlane_system_1
 										type = euclidean
@@ -367,28 +377,28 @@ country_event = {
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 									lrsk_can_be_my_hyperlane_escape_route = yes
-								} }
-								random_system = {
-									limit = { 
-										distance = {
-											source = event_target:lrsk_hyperlane_system_1
-											type = euclidean
-											min_distance > 25
-											max_distance <= 50
-										}
-										NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-										lrsk_can_be_my_hyperlane_escape_route = yes
-									}
-									save_event_target_as = lrsk_hyperlane_system_2
-									add_hyperlane = {
-										from = this
-										to = event_target:lrsk_hyperlane_system_1
-									}
-									set_star_flag = lrsk_marked_escape_route
 								}
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+								set_star_flag = lrsk_marked_escape_route
 							}
-							else_if = {
-								limit = { any_system = {
+						}
+						else_if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_1
+									type = euclidean
+									min_distance > 50
+									max_distance <= 5000
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+								lrsk_can_be_my_hyperlane_escape_route = yes
+							} }
+							random_system = {
+								limit = { 
 									distance = {
 										source = event_target:lrsk_hyperlane_system_1
 										type = euclidean
@@ -397,34 +407,34 @@ country_event = {
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
 									lrsk_can_be_my_hyperlane_escape_route = yes
-								} }
-								random_system = {
-									limit = { 
-										distance = {
-											source = event_target:lrsk_hyperlane_system_1
-											type = euclidean
-											min_distance > 50
-											max_distance <= 5000
-										}
-										NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
-										lrsk_can_be_my_hyperlane_escape_route = yes
-									}
-									save_event_target_as = lrsk_hyperlane_system_2
-									add_hyperlane = {
-										from = this
-										to = event_target:lrsk_hyperlane_system_1
-									}
-									set_star_flag = lrsk_marked_escape_route
 								}
-							}					
+								save_event_target_as = lrsk_hyperlane_system_2
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+								set_star_flag = lrsk_marked_escape_route
+							}
 						}
 					}
 				}
-				if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
-					event_target:lrsk_hyperlane_system_2 = {
-						if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
-							if = {
-								limit = { any_system = {
+			}
+			if = { limit = { exists = event_target:lrsk_hyperlane_system_2 }
+				event_target:lrsk_hyperlane_system_2 = {
+					if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
+						if = {
+							limit = { any_system = {
+								distance = {
+									source = event_target:lrsk_hyperlane_system_2
+									type = euclidean
+									min_distance >= 1
+									max_distance <= 75
+								}
+								NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
+								lrsk_can_be_my_hyperlane_escape_route = yes
+							} }
+							random_system = {
+								limit = { 
 									distance = {
 										source = event_target:lrsk_hyperlane_system_2
 										type = euclidean
@@ -433,38 +443,122 @@ country_event = {
 									}
 									NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
 									lrsk_can_be_my_hyperlane_escape_route = yes
-								} }
-								random_system = {
-									limit = { 
-										distance = {
-											source = event_target:lrsk_hyperlane_system_2
-											type = euclidean
-											min_distance >= 1
-											max_distance <= 75
-										}
-										NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_2 }
-										lrsk_can_be_my_hyperlane_escape_route = yes
-									}
-									save_event_target_as = lrsk_hyperlane_system_3
-									add_hyperlane = {
-										from = this
-										to = event_target:lrsk_hyperlane_system_1
-									}
-									set_star_flag = lrsk_marked_escape_route
 								}
+								save_event_target_as = lrsk_hyperlane_system_3
+								add_hyperlane = {
+									from = this
+									to = event_target:lrsk_hyperlane_system_1
+								}
+								set_star_flag = lrsk_marked_escape_route
 							}
 						}
-					}					
+					}
+				}					
+			}
+		}
+		else = { every_neighbor_system = { limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
+			if = { limit = { NOT = { any_neighbor_system = { lrsk_can_be_my_hyperlane_escape_route = yes } } }
+				save_event_target_as = lrsk_hyperlane_system_1
+				if = {
+					limit = { any_system = {
+						distance = {
+							source = event_target:lrsk_hyperlane_system_1
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 25
+						}
+						NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+						lrsk_can_be_my_hyperlane_escape_route = yes
+					} }
+					random_system = {
+						limit = { 
+							distance = {
+								source = event_target:lrsk_hyperlane_system_1
+								type = euclidean
+								min_distance >= 1
+								max_distance <= 25
+							}
+							NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+							lrsk_can_be_my_hyperlane_escape_route = yes
+						}
+						save_event_target_as = lrsk_hyperlane_system_2
+						add_hyperlane = {
+							from = this
+							to = event_target:lrsk_hyperlane_system_1
+						}
+						set_star_flag = lrsk_marked_escape_route
+					}
+				}
+				else_if = {
+					limit = { any_system = {
+						distance = {
+							source = event_target:lrsk_hyperlane_system_1
+							type = euclidean
+							min_distance > 25
+							max_distance <= 50
+						}
+						NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+						lrsk_can_be_my_hyperlane_escape_route = yes
+					} }
+					random_system = {
+						limit = { 
+							distance = {
+								source = event_target:lrsk_hyperlane_system_1
+								type = euclidean
+								min_distance > 25
+								max_distance <= 50
+							}
+							NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+							lrsk_can_be_my_hyperlane_escape_route = yes
+						}
+						save_event_target_as = lrsk_hyperlane_system_2
+						add_hyperlane = {
+							from = this
+							to = event_target:lrsk_hyperlane_system_1
+						}
+						set_star_flag = lrsk_marked_escape_route
+					}
+				}
+				else_if = {
+					limit = { any_system = {
+						distance = {
+							source = event_target:lrsk_hyperlane_system_1
+							type = euclidean
+							min_distance > 50
+							max_distance <= 5000
+						}
+						NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+						lrsk_can_be_my_hyperlane_escape_route = yes
+					} }
+					random_system = {
+						limit = { 
+							distance = {
+								source = event_target:lrsk_hyperlane_system_1
+								type = euclidean
+								min_distance > 50
+								max_distance <= 5000
+							}
+							NOT = { has_hyperlane_to = event_target:lrsk_hyperlane_system_1 }
+							lrsk_can_be_my_hyperlane_escape_route = yes
+						}
+						save_event_target_as = lrsk_hyperlane_system_2
+						add_hyperlane = {
+							from = this
+							to = event_target:lrsk_hyperlane_system_1
+						}
+						set_star_flag = lrsk_marked_escape_route
+					}
 				}
 			}
 			else = {
 				every_neighbor_system = {
 					limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
-					set_star_flag = lrsk_marked_escape_route				
-				}
+					set_star_flag = lrsk_marked_escape_route	
+				}						
 			}
-		}
-	}
+			set_star_flag = lrsk_marked_escape_route				
+		} }
+	} }
 }
 
 # Catches problem with base game fed starts checking for base game governments...
