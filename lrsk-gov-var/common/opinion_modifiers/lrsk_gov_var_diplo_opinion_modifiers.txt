@@ -2,28 +2,248 @@
 # Opinion Modifiers (Civic Diplomacy)
 # Author: littleraskol
 
-# UniSov: Better opinion from weaker empires.
-triggered_opinion_lrsk_gvp_unisov_potential_vassals_1 = {
+triggered_opinion_lrsk_gvp_civic_minded_spirit = {
 	trigger = {
-		is_subject = no
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_republicanism
+			has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+		}
 		from = {
-			relative_power = { who = root value = superior }
-			has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
+			OR = {
+				has_valid_civic = lrsk_gov_var_civic_republicanism
+				has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+			}
 		}
 	}
 	opinion = {
-		base = 75
+		base = 15
 	}
 }
-triggered_opinion_lrsk_gvp_unisov_potential_vassals_2 = {
+
+triggered_opinion_lrsk_gvp_unaccountable_tyrants = {
 	trigger = {
-		is_subject = no
+		OR = {
+			has_valid_civic = lrsk_gov_var_civic_republicanism
+			has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+		}
+		from = { has_valid_civic = lrsk_gov_var_civic_royal_absolutism }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_irrational_bigots = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
+		from = { has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_foolish_tolerance = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
+		from = { has_valid_civic = lrsk_gov_var_civic_universal_sovereignty }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_corporate_nightmare = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
 		from = {
-			relative_power = { who = root value = overwhelming }
-			has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
+			has_authority = auth_corporate
+			NOT = { has_valid_civic = lrsk_gov_var_civic_mc_workers_councils }
 		}
 	}
 	opinion = {
-		base = 150
+		base = -20
+	}
+}
+
+#triggered_opinion_lrsk_gvp_unaccountable_bosses = {  }
+
+triggered_opinion_lrsk_gvp_feckless_liberals = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_workers_councils
+		from = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_comrades = {
+	trigger = {
+		OR = {
+			AND  = {
+				has_valid_civic = lrsk_gov_var_civic_workers_councils
+				from = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+			}
+			AND  = {
+				has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+				from = { has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism }
+			}
+			AND  = {
+				has_valid_civic = lrsk_gov_var_civic_mc_workers_councils
+				from = { has_valid_civic = lrsk_gov_var_civic_mc_workers_councils }
+			}
+			AND  = {
+				has_valid_civic = lrsk_gov_var_civic_workers_councils
+				has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+				from = {
+					has_valid_civic = lrsk_gov_var_civic_workers_councils
+					has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+				}
+			}
+		}
+	}
+	opinion = {
+		base = 15
+		modifier = {
+			add = 5
+			has_valid_civic = lrsk_gov_var_civic_workers_councils
+			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+			from = {
+				has_valid_civic = lrsk_gov_var_civic_workers_councils
+				has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+			}
+		}
+	}
+}
+
+#triggered_opinion_lrsk_gvp_misguided_comrades = {}
+
+#triggered_opinion_lrsk_gvp_model_comrades = {  }
+
+#triggered_opinion_lrsk_gvp_fledgling_comrades = {  }
+
+#triggered_opinion_lrsk_gvp_business_innovation = {  }
+
+#triggered_opinion_lrsk_gvp_peculiar_enterprise = {  }
+
+triggered_opinion_lrsk_gvp_collectivist_nightmare = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		from = { has_valid_civic = civic_shared_burden }
+	}
+	opinion = {
+		base = -30
+	}
+
+}
+
+#triggered_opinion_lrsk_gvp_admirable_enterprise = {  }
+
+triggered_opinion_lrsk_gvp_meddling_expropriators = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		from = { has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_intrepid_freedom_lovers = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		from = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+	}
+	opinion = {
+		base = 15
+	}
+}
+
+triggered_opinion_lrsk_gvp_uppity_underlings = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
+		from = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+#triggered_opinion_lrsk_gvp_unbounded_greed = {  }
+
+triggered_opinion_lrsk_gvp_greedy_peddlers = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		from = {
+			has_valid_civic = civic_merchant_guilds
+			NOT = { has_valid_civic = lrsk_gov_var_civic_workers_councils }
+		}
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_irrational_privatization = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		from = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_respectable_sovereigns = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
+		from = { has_valid_civic = lrsk_gov_var_civic_royal_absolutism }
+	}
+	opinion = {
+		base = 15
+	}
+}
+
+triggered_opinion_lrsk_gvp_naive_populists = {
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
+		from = {
+			OR = {
+				has_valid_civic = lrsk_gov_var_civic_republicanism
+				has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+			}
+		}
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_lrsk_gvp_ruthless_expropriators = {
+	trigger = {
+		has_authority = auth_corporate
+		from = { has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism }
+	}
+	opinion = {
+		base = -20
+		modifier = {
+			add = -5
+			has_valid_civic = lrsk_gov_var_civic_mc_workers_councils
+		}
+	}
+}
+
+#triggered_opinion_lrsk_gvp_captains_of_industry = {  }
+
+#triggered_opinion_lrsk_gvp_reckless_hr_policy = {  }
+
+triggered_opinion_lrsk_gvp_individualist_nightmare = {
+	trigger = {
+		has_valid_civic = civic_shared_burden
+		from = { has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism }
+	}
+	opinion = {
+		base = -30
 	}
 }

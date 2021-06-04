@@ -9,6 +9,7 @@ opinion_lrsk_gov_var_new_feds = {
 	}
 }
 
+# Special MC interactions
 opinion_lrsk_gvp_scandal_inflicted = {
 	opinion = {
 		base = -25
@@ -36,5 +37,31 @@ opinion_lrsk_gvp_casino_corp_approval = {
 
 	decay = {
 		base = 10
+	}
+}
+
+# UniSov: Better opinion from weaker empires.
+triggered_opinion_lrsk_gvp_unisov_potential_vassals_1 = {
+	trigger = {
+		is_subject = no
+		from = {
+			relative_power = { who = root value = superior }
+			has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
+		}
+	}
+	opinion = {
+		base = 75
+	}
+}
+triggered_opinion_lrsk_gvp_unisov_potential_vassals_2 = {
+	trigger = {
+		is_subject = no
+		from = {
+			relative_power = { who = root value = overwhelming }
+			has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
+		}
+	}
+	opinion = {
+		base = 150
 	}
 }
