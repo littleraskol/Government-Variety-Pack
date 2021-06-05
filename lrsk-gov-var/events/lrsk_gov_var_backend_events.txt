@@ -550,12 +550,10 @@ country_event = {
 					}
 				}
 			}
-			else = {
-				every_neighbor_system = {
-					limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
-					set_star_flag = lrsk_marked_escape_route	
-				}						
-			}
+			else = { every_neighbor_system = {
+				limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
+				set_star_flag = lrsk_marked_escape_route	
+			} }
 			set_star_flag = lrsk_marked_escape_route				
 		} }
 	} }
