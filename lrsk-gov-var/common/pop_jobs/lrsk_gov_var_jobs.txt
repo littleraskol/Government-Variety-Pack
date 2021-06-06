@@ -171,6 +171,27 @@ job_lrsk_gvp_job_citscholar = {
 
 	triggered_planet_modifier = {
 		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 0.2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -0.2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = {
 				has_edict = research_subsidies
@@ -252,6 +273,28 @@ job_lrsk_gvp_job_citscholar = {
 				has_trait = trait_enigmatic_intelligence
 				has_trait = trait_enigmatic_intelligence_poor
 			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_quarrelsome
 		}
 		modifier = {
 			factor = 1.5
