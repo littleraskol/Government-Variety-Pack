@@ -697,6 +697,11 @@ country_event = {
 	}
 
 	immediate = {
+		set_timed_country_flag = {
+			flag = lrsk_gvp_royjustice_cooldown
+			days = 1800
+		}
+
 		IF = { limit = { NOT = { can_change_policy = trade_policy } }
 			IF = { limit = { has_policy_flag = trade_conversion_consumer_goods } set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = no } }
 			IF = { limit = { has_policy_flag = trade_conversion_unity } set_policy = { policy = trade_policy option = trade_policy_unity cooldown = no } }
