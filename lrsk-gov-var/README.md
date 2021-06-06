@@ -203,7 +203,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v2.1.2 (04-19-21) - Localization Hotfix
+v2.1.2 (06-06-21) - Localization Hotfix
 -Fixed incorrect localization in a "casino luck" event (tourism bonus).
 
 v2.1.1 (04-19-21) - Spy Stuff
