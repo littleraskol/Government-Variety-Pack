@@ -192,7 +192,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
-					set_star_flag = lrsk_marked_escape_route
+					lrsk_mark_escape_route = yes
 				}
 			}
 			else_if = {
@@ -224,7 +224,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
-					set_star_flag = lrsk_marked_escape_route
+					lrsk_mark_escape_route = yes
 				}
 			}
 			else_if = {
@@ -256,7 +256,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
-					set_star_flag = lrsk_marked_escape_route
+					lrsk_mark_escape_route = yes
 				}
 			}
 			else_if = {
@@ -288,7 +288,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
-					set_star_flag = lrsk_marked_escape_route
+					lrsk_mark_escape_route = yes
 				}
 			}
 			else_if = {
@@ -320,7 +320,7 @@ country_event = {
 						from = this
 						to = root.capital_scope.solar_system
 					}
-					set_star_flag = lrsk_marked_escape_route
+					lrsk_mark_escape_route = yes
 				}
 			}
 			if = { limit = { exists = event_target:lrsk_hyperlane_system_1 }
@@ -353,7 +353,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
-								set_star_flag = lrsk_marked_escape_route
+								lrsk_mark_escape_route = yes
 							}
 						}
 						else_if = {
@@ -383,7 +383,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
-								set_star_flag = lrsk_marked_escape_route
+								lrsk_mark_escape_route = yes
 							}
 						}
 						else_if = {
@@ -413,7 +413,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
-								set_star_flag = lrsk_marked_escape_route
+								lrsk_mark_escape_route = yes
 							}
 						}
 					}
@@ -447,7 +447,7 @@ country_event = {
 										from = this
 										to = event_target:lrsk_hyperlane_system_4
 									}
-									set_star_flag = lrsk_marked_escape_route
+									lrsk_mark_escape_route = yes
 								}
 							}
 							else_if = {
@@ -477,7 +477,7 @@ country_event = {
 										from = this
 										to = event_target:lrsk_hyperlane_system_4
 									}
-									set_star_flag = lrsk_marked_escape_route
+									lrsk_mark_escape_route = yes
 								}
 							}
 							else_if = {
@@ -507,15 +507,15 @@ country_event = {
 										from = this
 										to = event_target:lrsk_hyperlane_system_4
 									}
-									set_star_flag = lrsk_marked_escape_route
+									lrsk_mark_escape_route = yes
 								}
 							}
 						}
 						else = { every_neighbor_system = {
 							limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
-							set_star_flag = lrsk_marked_escape_route	
+							lrsk_mark_escape_route = yes	
 						} }
-						set_star_flag = lrsk_marked_escape_route				
+						lrsk_mark_escape_route = yes				
 					} }
 				}
 			}
@@ -549,7 +549,7 @@ country_event = {
 									from = this
 									to = event_target:lrsk_hyperlane_system_1
 								}
-								set_star_flag = lrsk_marked_escape_route
+								lrsk_mark_escape_route = yes
 							}
 						}
 					}
@@ -586,7 +586,7 @@ country_event = {
 							from = this
 							to = event_target:lrsk_hyperlane_system_1
 						}
-						set_star_flag = lrsk_marked_escape_route
+						lrsk_mark_escape_route = yes
 					}
 				}
 				else_if = {
@@ -616,7 +616,7 @@ country_event = {
 							from = this
 							to = event_target:lrsk_hyperlane_system_1
 						}
-						set_star_flag = lrsk_marked_escape_route
+						lrsk_mark_escape_route = yes
 					}
 				}
 				else_if = {
@@ -646,15 +646,15 @@ country_event = {
 							from = this
 							to = event_target:lrsk_hyperlane_system_1
 						}
-						set_star_flag = lrsk_marked_escape_route
+						lrsk_mark_escape_route = yes
 					}
 				}
 			}
 			else = { every_neighbor_system = {
 				limit = { lrsk_can_be_my_hyperlane_escape_route = yes }
-				set_star_flag = lrsk_marked_escape_route	
+				lrsk_mark_escape_route = yes	
 			} }
-			set_star_flag = lrsk_marked_escape_route				
+			lrsk_mark_escape_route = yes				
 		} }
 	} }
 }
