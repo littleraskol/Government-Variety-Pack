@@ -203,6 +203,19 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+-Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
+-Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
+-Royal Absolutism: Gets access to the Proclamation of Justice edict that ends policy cooldowns.
+-Imperial Economy: Incompatible with Fanatical Purifiers and Inward Perfection.
+-Direct Revelation: Now has options to ignore Wild Cult popups.
+-Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
+-Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
+-New federation origins: Copied over trust and intel boosts from base game.
+-Returned the "Galactic Empire" joke governments under new, even more bombastic names.
+-Pure Social Republic government: renamed Purity Collective.
+-Bugfix: Technocracy prefix_formats used wrong part key.
+-Various other small improvements and fixes.
+
 v2.1.1 (04-19-21) - Spy Stuff
 -Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.
 -Siege Mentality gets +1 Encryption instead of +5% station hull points
