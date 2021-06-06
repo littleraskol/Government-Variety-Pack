@@ -211,7 +211,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v2.2 (04-??-21) - More Origins, Colonial Chartering Civic
+v2.3 (06-??-21) - More Origins, Colonial Chartering Civic
 -Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
 -Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
