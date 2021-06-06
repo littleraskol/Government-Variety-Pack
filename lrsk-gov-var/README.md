@@ -208,6 +208,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 -Royal Absolutism: Gets access to the Proclamation of Justice edict that ends policy cooldowns.
 -Direct Revelation: Now has options to ignore Wild Cult popups.
 -Returned the "Galactic Empire" joke governments under new, even more bombastic names.
+-New federation origins: Copied over trust and intel boosts from base game.
 -Various other small improvements and fixes.
 
 v2.1.1 (04-19-21) - Spy Stuff
