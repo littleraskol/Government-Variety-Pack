@@ -204,6 +204,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 -Universal Sovereignty: Gets an opinion boost with weaker independent empires.
+-Universal Sovereignty incompatible with Supremacist Demagoguery.
+-Various civic combinations have triggered diplomatic opinion modifiers.
+
 -Added many triggered opinion modifiers to tilt various civics towards or against each other.
 
 v2.1.1 (04-19-21) - Spy Stuff
