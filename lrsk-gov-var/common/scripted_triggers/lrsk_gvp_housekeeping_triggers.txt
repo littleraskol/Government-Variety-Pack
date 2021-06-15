@@ -550,6 +550,12 @@ lrsk_has_gvp_npc_origin = {
 # Used by a backend event that will change the civics of any AI if rendered invalid, and give human player influence to change gov
 lrsk_has_gvp_possible_invalidated_civic = {
 	OR = {
-		has_invalid_civic = lrsk_gov_var_civic_imperial_economy
+		AND = {
+			has_civic = lrsk_gov_var_civic_imperial_economy
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_inwards_perfection
+			}
+		}
 	}
 }
