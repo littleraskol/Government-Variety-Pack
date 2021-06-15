@@ -132,20 +132,6 @@ decision_lrsk_gvp_end_work_allocation_plan = {
 				count < 1
 			}
 		}
-		modifier = {
-			weight = 10
-			count_owned_pop = {
-				limit = { is_unemployed = yes  }
-				count < 2
-			}
-		}
-		modifier = {
-			weight = 1
-			count_owned_pop = {
-				limit = { is_unemployed = yes  }
-				count < 3
-			}
-		}
 	}
 }
 
