@@ -34,7 +34,7 @@ lrsk_gvp_citschol_edict = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = "lrsk_gvp_citschol_edict_no_suitable_planets"
+			fail_text = "edict_lrsk_gvp_citschol_edict_no_suitable_planets"
 			any_owned_planet = {
 				num_pops > 24
 			}
@@ -110,7 +110,7 @@ lrsk_gvp_citschol_edict = {
 
 # Royal Absolutism - Proclamation of Justice
 lrsk_gvp_royjustice_edict = {
-	length = 1800
+	length = 1
 	icon = "GFX_edict_type_time"
 
 	potential = {
@@ -119,7 +119,7 @@ lrsk_gvp_royjustice_edict = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = lrsk_gvp_royjustice_edict_no_cooldown
+			fail_text = edict_lrsk_gvp_royjustice_edict_no_cooldown
 			OR = {
 				NOT = { can_change_policy = trade_policy }
 				NOT = { can_change_policy = robot_pop_policy }
@@ -143,7 +143,7 @@ lrsk_gvp_royjustice_edict = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = lrsk_gvp_royjustice_edict_5_years
+			fail_text = edict_lrsk_gvp_royjustice_edict_5_years
 			NOT = { has_country_flag = lrsk_gvp_royjustice_cooldown }
 		}
 	}
@@ -154,7 +154,7 @@ lrsk_gvp_royjustice_edict = {
 	}
 
 	effect = {
-		country_event = { id = lrsk_government_variety_pack_backend.1001 days = 0 }
+		country_event = { id = lrsk_government_variety_pack_backend.1001 days = 7 }
 	}
 
 	ai_weight = {
