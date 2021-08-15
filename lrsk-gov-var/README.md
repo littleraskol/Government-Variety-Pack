@@ -203,6 +203,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v2.2 (08-??-21) - Civic Improvements 1
 -Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
 -Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
 -Royal Absolutism: Gets access to the Proclamation of Justice edict that ends policy cooldowns.
@@ -216,9 +217,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 -New federation origins: Copied over trust and intel boosts from base game.
 -Returned the "Galactic Empire" joke governments under new, even more bombastic names.
 -Pure Social Republic government: renamed Purity Collective.
+-Improved logic for finding "escape routes" for origins that start with nearby AI players.
 -Bugfix: Technocracy prefix_formats used wrong part key.
 -Various other small improvements and fixes.
-
 
 v2.1.1 (04-19-21) - Spy Stuff
 -Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.

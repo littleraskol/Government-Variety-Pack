@@ -739,3 +739,17 @@ lrsk_gvp_remove_every_wild_cult = {
 		}
 	}
 }
+
+# Sets ownership mark (system scope)
+lrsk_mark_owned_system = {
+	IF = { limit = { NOT = { has_star_flag = lrsk_marked_owned_system } }
+		set_star_flag = lrsk_marked_owned_system
+	}
+}
+
+# Sets escape route mark (system scope)
+lrsk_mark_escape_route = {
+	IF = { limit = { NOT = { has_star_flag = lrsk_marked_escape_route } }
+		set_star_flag = lrsk_marked_escape_route
+	}
+}
