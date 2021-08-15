@@ -33,7 +33,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
-[*][i]Universal Sovereignty (Dictatorial or Imperial, not Xenophobic)[/i] - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
+[*][i]Universal Sovereignty (Dictatorial or Imperial, not Xenophobic)[/i] - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 

@@ -33,7 +33,7 @@ Siege Mentality (Not Militarist or Xenophile) - The government's defense policy 
 
 Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
-Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
+Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
 Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
@@ -210,11 +210,15 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 -Direct Revelation: Now has options to ignore Wild Cult popups.
 -Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
 -Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
+-Universal Sovereignty: Gets an opinion boost with weaker independent empires.
+-Universal Sovereignty incompatible with Supremacist Demagoguery.
+-Various civic combinations have triggered diplomatic opinion modifiers.
 -New federation origins: Copied over trust and intel boosts from base game.
 -Returned the "Galactic Empire" joke governments under new, even more bombastic names.
 -Pure Social Republic government: renamed Purity Collective.
 -Bugfix: Technocracy prefix_formats used wrong part key.
 -Various other small improvements and fixes.
+
 
 v2.1.1 (04-19-21) - Spy Stuff
 -Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.
