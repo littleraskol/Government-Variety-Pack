@@ -318,11 +318,13 @@ l_english:
 
  # Royal Absolutism - Proclamation of Justice
  lrsk_gvp_royjustice_edict:0 "Proclamation of Justice"
- lrsk_gvp_royjustice_edict_desc:0 "To better dispense justice throughout the realm, our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's laws and instruct the police and courts in their implementation."
- lrsk_gvp_royjustice_edict_tooltip:0 "$lrsk_gvp_royjustice_edict_effects_common$ (This will only affect base game policies. Food Policy, War Doctrine, and Economic Policy cooldowns cannot be ended early due to technical limitations.)"
- lrsk_gvp_royjustice_edict_effects_common:0 "§YPolicy cooldowns§! of most policies §Gwill be ended immediately§!."
+ lrsk_gvp_royjustice_edict_desc:0 "To better dispense justice throughout the realm, our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's governing practices."
+ #lrsk_gvp_royjustice_edict_tooltip:0 "$lrsk_gvp_royjustice_edict_effects_common$ (This will only affect base game policies. Food Policy, War Doctrine, and Economic Policy cooldowns cannot be ended early due to technical limitations.)"
+ #lrsk_gvp_royjustice_edict_effects_common:0 "§YPolicy cooldowns§! of most policies §Gwill be ended immediately§!."
+ lrsk_gvp_royjustice_edict_tooltip:0 "This edict $lrsk_gvp_royjustice_edict_effects_common$ (Note that when a new ruler comes to power, previous effects end and this edict becomes available again.)"
+ lrsk_gvp_royjustice_edict_effects_common:0 "gives the player a choice of different effects on empire governance that last 15 years."
  lrsk_gvp_royjustice_edict_no_cooldown:0 "§RAt least one policy whose cooldown could be ended by this edict must be on cooldown.§!"
- lrsk_gvp_royjustice_edict_5_years:0 "§RCan only use this edict once every 5 years.§!"
+ lrsk_gvp_royjustice_edict_15_years:0 "§RCan only use this edict once every 15 years.§!"
 
  ## Decisions
 
@@ -526,19 +528,19 @@ l_english:
 
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
- #lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and [this.GetHeirTitle] [this.GetHeirName] attending along with all the other grandees of the realm, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
+ #lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
  #lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
  #lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
  #lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
- lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed.\n\nHow will (TBD)"
- lrsk_government_variety_pack_backend.1002.a:0 "The spectacle of the court is enough."
- lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effect. (Work out what this means later)"
- lrsk_government_variety_pack_backend.1002.b:0 "Centralize the legal code!"
- lrsk_government_variety_pack_backend.1002.b.tooltip:0 "No major effect. (Work out what this means later)"
+ lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the government of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. \n\nOnce [this.Leader.GetSheHe] completes the opening ceremony and [this.Leader.GetHerHis] memorial speech, what will [this.GetRulerTitle] [this.GetRulerName] declare?"
+ lrsk_government_variety_pack_backend.1002.a:0 "My chancellor will tell you the rest..."
+ lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +150 influence
+ lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
+ lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our colony worlds will chafe at these upstarts." # -1000 consumer goods
  lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
- lrsk_government_variety_pack_backend.1002.c.tooltip:0 "No major effect. (Work out what this means later)"
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all major social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between classes." # -500 unity
  lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
- lrsk_government_variety_pack_backend.1002.d.tooltip:0 "No major effect. (Work out what this means later)"
+ lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement." # -200 influence
 
 
  # Test events, etc.
