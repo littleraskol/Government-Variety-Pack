@@ -795,11 +795,11 @@ country_event = {
 		#	IF = { limit = { has_policy_flag = purge_displacement_only } set_policy = { policy = purge option = purge_displacement_only cooldown = no } }
 		#	IF = { limit = { has_policy_flag = purge_allowed } set_policy = { policy = purge option = purge_allowed cooldown = no } }
 		#}
-		#
-		#IF = {
-		#	limit = { NOT = { has_country_flag = lrsk_no_justice_ceremony_notice } }
-		#	country_event = { id = lrsk_government_variety_pack_backend.1002 }
-		#}
+
+		IF = {
+			limit = { NOT = { has_country_flag = lrsk_no_justice_ceremony_notice } }
+			country_event = { id = lrsk_government_variety_pack_backend.1002 }
+		}
 	}
 }
 country_event = {
@@ -809,13 +809,55 @@ country_event = {
 	picture = GFX_evt_arguing_senate
 	is_triggered_only = yes
 
-	option = { name = lrsk_government_variety_pack_backend.1002.a }
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.a
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.a.tooltip
+		add_resource = { influence = 150 }
+	}
 	
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.b
-		custom_tooltip = lrsk_government_variety_pack_backend.1002.b.tooltip
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.b.tooltip	
 
-		hidden_effect = { set_country_flag = lrsk_no_justice_ceremony_notice }
+		allow = {
+			has_resource = {
+				amount >= 1000
+				type = consumer_goods
+			}
+		}
+		add_resource = { consumer_goods = -1000 }
+
+		#hidden_effect = { TBD }
+	}
+	
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.c
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip	
+
+		allow = {
+			has_resource = {
+				amount >= 1500
+				type = energy
+			}
+		}
+		add_resource = { energy = -1500 }
+
+		#hidden_effect = { TBD }
+	}
+	
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.d
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.d.tooltip	
+
+		allow = {
+			has_resource = {
+				amount >= 200
+				type = influence
+			}
+		}
+		add_resource = { influence = -200 }
+
+		#hidden_effect = { TBD }
 	}
 }
 
