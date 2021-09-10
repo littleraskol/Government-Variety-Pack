@@ -812,12 +812,20 @@ country_event = {
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.a
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.a.tooltip
-		add_resource = { influence = 150 }
+		add_resource = { influence = 50 }
 	}
 	
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.b
-		custom_tooltip = lrsk_government_variety_pack_backend.1002.b.tooltip	
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.b.tooltip
+
+		trigger = {
+			any_owned_planet = {
+				is_capital = no
+				num_pops > 2
+				NOT = { has_building = building_colony_shelter }
+			}
+		}
 
 		allow = {
 			has_resource = {
@@ -827,7 +835,29 @@ country_event = {
 		}
 		add_resource = { consumer_goods = -1000 }
 
-		#hidden_effect = { TBD }
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_empire_new_aristos
+				days = 1800
+			}
+			capital_scope = {
+				add_modifier = {
+					modifier = lrsk_gvp_statmod_pleased_new_aristos
+					days = 1800
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					is_capital = no
+					num_pops > 2
+					NOT = { has_building = building_colony_shelter }
+				}
+				add_modifier = {
+					modifier = lrsk_gvp_statmod_resent_new_aristos
+					days = 1800
+				}
+			}
+		}
 	}
 	
 	option = {
@@ -842,12 +872,28 @@ country_event = {
 		}
 		add_resource = { energy = -1500 }
 
-		#hidden_effect = { TBD }
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_empire_estates_general
+				days = 1800
+			}
+			capital_scope = {
+				add_modifier = {
+					modifier = lrsk_gvp_statmod_estates_session
+					days = 1800
+				}
+			}
+		}
 	}
 	
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.d
-		custom_tooltip = lrsk_government_variety_pack_backend.1002.d.tooltip	
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.d.tooltip
+
+		trigger = {
+			is_at_war = no
+			NOT  = { any_owned_planet = { planet_crime >= 30 } }
+		}
 
 		allow = {
 			has_resource = {
@@ -857,7 +903,37 @@ country_event = {
 		}
 		add_resource = { influence = -200 }
 
-		#hidden_effect = { TBD }
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_empire_national_peril
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.e
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.e.tooltip
+
+		trigger = { OR = {
+			is_at_war = yes
+			any_owned_planet = { planet_crime >= 30 }
+		} }
+
+		allow = {
+			has_resource = {
+				amount >= 100
+				type = influence
+			}
+		}
+		add_resource = { influence = -100 }
+
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_empire_national_peril
+				days = 1800
+			}
+		}
 	}
 }
 
