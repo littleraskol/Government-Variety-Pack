@@ -833,3 +833,32 @@ country_event = {
 		}
 	}
 }
+
+# Gives comms to all normal empires and understand their diplo stance
+country_event = {
+	id = lrsk_gvp_testing.22
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { has_ethic = ethic_gestalt_consciousness	}
+			}
+			establish_communications_no_message = root
+			save_event_target_as = lrsk_tmp_comms
+			root = {				
+				add_intel = {
+					amount = 60
+					who = event_target:lrsk_tmp_comms
+				}
+			}
+		}
+	}
+}
