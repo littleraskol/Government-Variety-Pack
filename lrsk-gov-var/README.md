@@ -205,7 +205,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 -Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
 -Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
--Royal Absolutism: Gets access to the Proclamation of Justice edict that ends policy cooldowns.
+-Royal Absolutism: Gets access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance.
 -Imperial Economy: Incompatible with Fanatical Purifiers and Inward Perfection.
 -Direct Revelation: Now has options to ignore Wild Cult popups.
 -Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
