@@ -3,7 +3,7 @@
 # Author: littleraskol
 
 # Lifelong Learning - Promote Citizen Scholarship
-lrsk_gvp_citschol_edict = {
+lrsk_gvp_citschol = {
 	length = -1
 	edict_cap_usage = 1
 	icon = "GFX_edict_type_policy"
@@ -12,13 +12,13 @@ lrsk_gvp_citschol_edict = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = lrsk_gvp_citschol_edict }
+				NOT = { has_edict = lrsk_gvp_citschol }
 			}
 			influence = 75
 		}
 		cost = { #Deactivation Cost
 			trigger = {
-				has_edict = lrsk_gvp_citschol_edict
+				has_edict = lrsk_gvp_citschol
 			}
 			influence = 25
 		}
@@ -109,52 +109,47 @@ lrsk_gvp_citschol_edict = {
 }
 
 # Royal Absolutism - Proclamation of Justice
-lrsk_gvp_royjustice_edict = {
-	length = 1
+lrsk_gvp_royjustice = {
+	length = 1800
 	icon = "GFX_edict_type_time"
 
 	potential = {
 		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
 	}
 
-	allow = {
-		custom_tooltip = {
-			fail_text = edict_lrsk_gvp_royjustice_edict_no_cooldown
-			OR = {
-				NOT = { can_change_policy = trade_policy }
-				NOT = { can_change_policy = robot_pop_policy }
-				NOT = { can_change_policy = diplomatic_stance }
-				NOT = { can_change_policy = war_philosophy }
-				NOT = { can_change_policy = orbital_bombardment }
-				NOT = { can_change_policy = interference }
-				NOT = { can_change_policy = enlightenment }
-				NOT = { can_change_policy = resettlement }
-				NOT = { can_change_policy = appropriation }
-				NOT = { can_change_policy = leader_enhancement }
-				NOT = { can_change_policy = first_contact_protocol }
-				NOT = { can_change_policy = border_policy }
-				#NOT = { can_change_policy = economic_policy }
-				NOT = { can_change_policy = artificial_intelligence_policy }
-				NOT = { can_change_policy = pre_sapients }
-				NOT = { can_change_policy = refugees }
-				NOT = { can_change_policy = population_controls }
-				NOT = { can_change_policy = slavery }
-				NOT = { can_change_policy = purge }
-			}
-		}
-		custom_tooltip = {
-			fail_text = edict_lrsk_gvp_royjustice_edict_5_years
-			NOT = { has_country_flag = lrsk_gvp_royjustice_cooldown }
-		}
-	}
-
-	resources = {
-		category = edicts
-		cost = { influence = 250 }
-	}
+	#allow = {
+		#custom_tooltip = {
+		#	fail_text = lrsk_gvp_royjustice_edict_no_cooldown
+		#	OR = {
+		#		NOT = { can_change_policy = trade_policy }
+		#		NOT = { can_change_policy = robot_pop_policy }
+		#		NOT = { can_change_policy = diplomatic_stance }
+		#		NOT = { can_change_policy = war_philosophy }
+		#		NOT = { can_change_policy = orbital_bombardment }
+		#		NOT = { can_change_policy = interference }
+		#		NOT = { can_change_policy = enlightenment }
+		#		NOT = { can_change_policy = resettlement }
+		#		NOT = { can_change_policy = appropriation }
+		#		NOT = { can_change_policy = leader_enhancement }
+		#		NOT = { can_change_policy = first_contact_protocol }
+		#		NOT = { can_change_policy = border_policy }
+		#		#NOT = { can_change_policy = economic_policy }
+		#		NOT = { can_change_policy = artificial_intelligence_policy }
+		#		NOT = { can_change_policy = pre_sapients }
+		#		NOT = { can_change_policy = refugees }
+		#		NOT = { can_change_policy = population_controls }
+		#		NOT = { can_change_policy = slavery }
+		#		NOT = { can_change_policy = purge }
+		#	}
+		#}
+		#custom_tooltip = {
+		#	fail_text = edict_lrsk_gvp_royjustice_15_years
+		#	NOT = { has_country_flag = lrsk_gvp_royjustice_cooldown }
+		#}
+	#}
 
 	effect = {
-		country_event = { id = lrsk_government_variety_pack_backend.1001 days = 7 }
+		country_event = { id = lrsk_government_variety_pack_backend.1002 days = 1 }
 	}
 
 	ai_weight = {

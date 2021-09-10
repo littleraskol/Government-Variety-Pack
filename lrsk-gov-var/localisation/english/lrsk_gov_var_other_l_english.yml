@@ -346,19 +346,21 @@ l_english:
  ## Edicts
 
  # Lifelong Learning - Promote Citizen Scholarship
- edict_lrsk_gvp_citschol_edict:0 "Promote Citizen Scholarship"
- edict_lrsk_gvp_citschol_edict_desc:0 "We must enable our citizens to pursue their intellectual interests and enrich their communities thereby."
- edict_lrsk_gvp_citschol_edict_tooltip:0 "Gives planets $edict_lrsk_gvp_citschol_edict_effects_common$"
- edict_lrsk_gvp_citschol_edict_no_suitable_planets:0 "§RBecause this gives 1 job per 25 pops, there is no effect if none of your planets have at least 25 pops.§!"
- edict_lrsk_gvp_citschol_edict_effects_common:0 "§Y1§! £job_lrsk_gvp_job_citscholar£ §Y$job_lrsk_gvp_job_citscholar$ Job§! per §Y25§! £pop£ Pops. $job_lrsk_gvp_job_citscholar_effect_desc$"
+ edict_lrsk_gvp_citschol:0 "Promote Citizen Scholarship"
+ edict_lrsk_gvp_citschol_desc:0 "We must enable our citizens to pursue their intellectual interests and enrich their communities thereby."
+ edict_lrsk_gvp_citschol_tooltip:0 "Gives planets $edict_lrsk_gvp_citschol_effects_common$"
+ edict_lrsk_gvp_citschol_no_suitable_planets:0 "§RBecause this gives 1 job per 25 pops, there is no effect if none of your planets have at least 25 pops.§!"
+ edict_lrsk_gvp_citschol_effects_common:0 "§Y1§! £job_lrsk_gvp_job_citscholar£ §Y$job_lrsk_gvp_job_citscholar$ Job§! per §Y25§! £pop£ Pops. $job_lrsk_gvp_job_citscholar_effect_desc$"
 
  # Royal Absolutism - Proclamation of Justice
- edict_lrsk_gvp_royjustice_edict:0 "Proclamation of Justice"
- edict_lrsk_gvp_royjustice_edict_desc:0 "To better dispense justice throughout the realm, in one week our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's laws and instruct the police and courts in their implementation."
- edict_lrsk_gvp_royjustice_edict_tooltip:0 "$edict_lrsk_gvp_royjustice_edict_effects_common$ (This will only affect base game policies. Food Policy, War Doctrine, and Economic Policy cooldowns cannot be ended early due to technical limitations.)"
- edict_lrsk_gvp_royjustice_edict_effects_common:0 "§YPolicy cooldowns§! of most policies §Gwill be ended 7 days after using this edict§!."
- edict_lrsk_gvp_royjustice_edict_no_cooldown:0 "§RAt least one policy whose cooldown could be ended by this edict must be on cooldown.§!"
- edict_lrsk_gvp_royjustice_edict_5_years:0 "§RCan only use this edict once every 5 years.§!"
+ edict_lrsk_gvp_royjustice:0 "Proclamation of Justice"
+ edict_lrsk_gvp_royjustice_desc:0 "To better dispense justice throughout the realm, our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's governing practices."
+ #edict_lrsk_gvp_royjustice_tooltip:0 "$edict_lrsk_gvp_royjustice_effects_common$ (This will only affect base game policies. Food Policy, War Doctrine, and Economic Policy cooldowns cannot be ended early due to technical limitations.)"
+ #edict_lrsk_gvp_royjustice_effects_common:0 "§YPolicy cooldowns§! of most policies §Gwill be ended immediately§!."
+ edict_lrsk_gvp_royjustice_tooltip:0 "This edict $edict_lrsk_gvp_royjustice_effects_common$ (Note that when a new ruler comes to power, previous effects end and this edict becomes available again.)"
+ edict_lrsk_gvp_royjustice_effects_common:0 "gives the player a choice of different effects on empire governance."
+ edict_lrsk_gvp_royjustice_no_cooldown:0 "§RAt least one policy whose cooldown could be ended by this edict must be on cooldown.§!"
+ edict_lrsk_gvp_royjustice_15_years:0 "§RCan only use this edict once every 15 years.§!"
 
  ## Decisions
 
@@ -385,16 +387,26 @@ l_english:
  lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
 
  lrsk_gvp_empire_offworld_work_bonus:0 "Offworld Worker Bonus"
- #lrsk_gvp_empire_offworld_work_bonus_1:0 "Offworld Worker Bonus"
- #lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- #lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus_desc:0 "Contract laborers from our commercial partners are hard at work."
+ lrsk_gvp_empire_offworld_work_bonus_1:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+
+ lrsk_gvp_empire_new_aristos:0 "New Cadre of Aristocrats"
+ lrsk_gvp_empire_new_aristos_desc:0 "Educated and loyal officials have been granted noble status."
+
+ lrsk_gvp_empire_estates_general:0 "Assembly of the Estates of the Realm"
+ lrsk_gvp_empire_estates_general_desc:0 "The advisory 'legislature' is assembled to provide some governing flexibility."
+
+ lrsk_gvp_empire_national_peril:0 "The Nation in Peril"
+ lrsk_gvp_empire_national_peril_desc:0 "The state is on guard against all threats, internal and external."
 
  ### Planet Modifiers
 
@@ -402,7 +414,18 @@ l_english:
 
  lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
  lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
- lrsk_gvp_statmod_work_plan_effects_common:0 "§G+25%§! Automatic Resettlement Chance and §G-20%§! Pop Demotion Time at the cost of §R-15%§! £trade_value£ Trade Value"
+ lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! Pop Demotion Time at the cost of §R-15%§! £trade_value£ Trade Value"
+
+ ## Royal Absolutism - New Aristos
+
+ lrsk_gvp_statmod_pleased_new_aristos:0 "Pleased New Aristocrats"
+ lrsk_gvp_statmod_pleased_new_aristos_desc:0 "The newly ennobled courtiers assembled at the capital are grateful for the recognition."
+
+ lrsk_gvp_statmod_resent_new_aristos:0 "Resentment of Upjumped Commoners"
+ lrsk_gvp_statmod_resent_new_aristos_desc:0 "The crown's decision to ennoble commoners, no matter how supposedly deserving they are, has sparked resentment in the old, established noble families."
+
+ lrsk_gvp_statmod_estates_session:0 "Estates Assembly in Session"
+ lrsk_gvp_statmod_estates_session_desc:0 "Convening delegates of all the classes of the empire is no small task, and keeping them in the lifestyle their station deserves is taxing."
 
  # Direct Revelation Wild Cults
 
@@ -561,12 +584,25 @@ l_english:
  
  lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
 
- # Royal Absolutism: Reset all policy cooldowns notice
+ # Royal Absolutism: Special effects
+ lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
  lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
- lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm attending, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
- lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
- lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
- lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
+ #lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
+ #lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
+ #lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
+ #lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
+ lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the government of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. \n\nOnce [this.Leader.GetSheHe] completes the opening ceremony and [this.Leader.GetHerHis] memorial speech, what will [this.GetRulerTitle] [this.GetRulerName] declare?"
+ lrsk_government_variety_pack_backend.1002.a:0 "My chancellor will tell you the rest..."
+ lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +50 influence
+ lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
+ lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts." # -1000 consumer goods
+ lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all major social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between classes." # -1500 energy
+ lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
+ lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
+ lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
+ lrsk_government_variety_pack_backend.1002.e.tooltip:0 "$lrsk_government_variety_pack_backend.1002.d.tooltip$" # -100 influence
+
 
  # Test events, etc.
 
