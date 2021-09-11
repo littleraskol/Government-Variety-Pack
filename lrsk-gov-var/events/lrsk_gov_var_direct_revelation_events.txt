@@ -15,19 +15,9 @@ planet_event = {
 	#Can only happen on planets which lack at least one wild cult and where there are at least 3 pops (at least one of is Spiritualist) and which are in an empire with DR where a wild cult hasn't formed recently.
 	trigger = {		
 		num_pops > 2
-		any_owned_pop = { has_ethic = "ethic_spiritualist" }
-		OR = {
-			NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_holy_war_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_harmony_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_chosen_few_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_universal_family_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_doomsday_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_golden_age_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_wild_revelry_cult }
-			NOT = { has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult }
-		}
+		any_owned_pop = { has_ethic = ethic_spiritualist }
+		lrsk_gvp_planet_can_get_wild_cult = yes
+		
 		owner = {
 			has_valid_civic = lrsk_gov_var_civic_direct_revelation
 			NOT = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently }
@@ -39,6 +29,7 @@ planet_event = {
 	#mean_time_to_happen = { months = 1 } # Testing value
 
 	immediate = {
+		log = "In Direct Revelation Wild Cult Formation gate on planet [this.GetName]."
 		#There's a base 50% chance of nothing happening. Each existing cult increases the chance of nothing happening. Any cult having recently formed will increase the overall chance of nothing happening by 33%. Any cult at all existing will increase the overall chance of nothing happening by 20%.
   		random_list = {
   			50 = {
@@ -90,6 +81,11 @@ planet_event = {
 					factor = 1.2
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = lrsk_gvp_testcall }
+				}
+				log = "Doing nothing."
 				# We want this outcome to create a slight buffer on the next cult formation attempt.
 				owner = {
 					#remove_country_flag = lrsk_gov_var_wild_cult_formed_recently
@@ -150,6 +146,15 @@ planet_event = {
 					factor = 0.8
 					has_planet_flag = lrsk_gov_var_wild_cult_planet
 				}
+				modifier = {
+					add = 1
+					owner = { has_country_flag = lrsk_gvp_testcall }
+				}
+				modifier = {
+					factor = 2
+					owner = { has_country_flag = lrsk_gvp_testcall }
+				}
+				log = "Forming a cult."
 
 				#Common housekeeping.
 				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
@@ -165,7 +170,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_children_of_heaven_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.3 }
+						log = "Divine Right"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_divine_right_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_divine_right_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.3 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -176,7 +193,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_divine_right_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.4 }
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_children_of_heaven_cult"
+							days = 3600
+						}
+						log = "Children of Heaven"
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_children_of_heaven_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.4 }
+						}
 					  }
 					10 = {
 						modifier = {
@@ -187,7 +216,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_harmony_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.5 }
+						log = "Holy War"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_holy_war_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_holy_war_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.5 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -198,7 +239,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_holy_war_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.6 }
+						log = "Harmony"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_harmony_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_harmony_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.6 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -209,7 +262,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_universal_family_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.7 }
+						log = "Chosen Few"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_chosen_few_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_chosen_few_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.7 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -220,7 +285,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_chosen_few_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.8 }
+						log = "Uni Family"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_universal_family_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_universal_family_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.8 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -231,7 +308,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_golden_age_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.9 }
+						log = "Doomsday"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_doomsday_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_doomsday_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.9 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -242,7 +331,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_doomsday_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.10 }
+						log = "Golden Age"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_golden_age_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_golden_age_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.10 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -253,7 +354,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_wild_revelry_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.11 }
+						log = "Penance"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_penance_and_redemption_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.11 }
+						}
 					}
 					10 = {
 						modifier = {
@@ -264,7 +377,19 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_penance_and_redemption_cult
 						}
-						planet_event = { id = lrsk_gov_var_direct_revelation.12 }
+						log = "Revelry"
+						add_modifier = {
+							modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
+							days = 3600
+						}
+						if = {
+							limit = { owner = { NOR = {
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_all
+								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
+								has_country_flag = lrsk_gov_var_ignore_wild_revelry_cult
+							} } }
+							planet_event = { id = lrsk_gov_var_direct_revelation.12 }
+						}
 					}
 				}
 			}
@@ -285,6 +410,7 @@ planet_event = {
   	is_triggered_only = yes
 
 	immediate = {
+		log = "In Direct Revelation housekeeping."
 		owner = {
 			#This flag keeps multiple cults from repeatedly springing up on top of each other and provides a "grace period" to the player's attention span of 1 year.
 			set_timed_country_flag = {
@@ -327,13 +453,34 @@ planet_event = {
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_divine_right_cult"
-      		days = 3600
-    	}
-	}
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Divine Right Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_divine_right_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Children of Heaven Cult
@@ -349,14 +496,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_children_of_heaven_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Children of Heaven Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_children_of_heaven_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Holy War Cult
@@ -372,14 +540,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_holy_war_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Holy War Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_holy_war_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Harmony Cult
@@ -395,15 +584,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_harmony_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
-	
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Universal Harmony Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_harmony_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Chosen Few Cult
@@ -419,14 +628,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_chosen_few_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Chosen Few Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_chosen_few_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Universal Family Cult
@@ -442,14 +672,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_universal_family_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Universal Family Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_universal_family_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Doomsday Cult
@@ -466,13 +717,61 @@ planet_event = {
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_doomsday_cult"
-      		days = 3600
-    	}
-	}
 	option = { name = DISCONCERTING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Doomsday Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_doomsday_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
+	after = {
+		hidden_effect = { IF = {
+			limit = { root.owner = { 
+				has_modifier = lrsk_gov_var_empire_endisnigh
+				NOT = { has_country_flag = lrsk_dirrev_doom_notified }
+			} }
+			root.owner = { country_event = { id = lrsk_gov_var_direct_revelation.90 days = 1 } }
+		} }
+	}
+}
+
+#End is Nigh notifier
+country_event = {
+	id = lrsk_gov_var_direct_revelation.90
+	title = lrsk_gov_var_direct_revelation.90.name
+	desc = lrsk_gov_var_direct_revelation.90.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lrsk_dirrev_doom_notified
+	}
+
+	option = {
+		name = lrsk_gov_var_direct_revelation.90.a
+		custom_tooltip = lrsk_gov_var_direct_revelation.90.a.tooltip
+	}
 }
 
 #Golden Age Cult
@@ -489,13 +788,34 @@ planet_event = {
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_golden_age_cult"
-      		days = 3600
-    	}
-	}
 	option = { name = MARVELOUS }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Golden Age Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_golden_age_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Penance and Redemption Cult
@@ -511,14 +831,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Penance and Redemption Cult Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_penance_and_redemption_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 #Wild Revelry Cult
@@ -534,14 +875,35 @@ planet_event = {
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
   	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
-
-	immediate = {
-    	add_modifier = {
-      		modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
-      		days = 3600
-    	}
-	}
+	  
 	option = { name = INTRIGUING }
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignorethis
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignorethis.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore Wild Revelry Cult"
+			owner = { set_country_flag = lrsk_gov_var_ignore_wild_revelry_cult }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreplanet
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreplanet.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore planet [this.GetName]"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root }
+		}
+	}
+	option = {
+		name = lrsk_gov_var_direct_revelation.ignoreall
+		custom_tooltip = lrsk_gov_var_direct_revelation.ignoreall.tooltip
+
+		hidden_effect = {
+			log = "Chose to ignore ALL cults"
+			owner = { set_country_flag = lrsk_gov_var_wild_cult_ignore_all }
+		}
+	}
 }
 
 # Starting restrictions and special interactions.
@@ -563,10 +925,7 @@ country_event = {
 			days = 30
 		}
 		if = { 
-			limit = { OR = { 
-				has_origin = origin_doomsday
-				# Leaving the door open to other superbad origin starts to apply here.
-			} }
+			limit = { has_origin = origin_doomsday }
 			log = "In Direct Revelation setup event; setting special doomsday properties."
 			# Need something to somewhat offset the penalties of doomsday cult
 			add_modifier = {
@@ -590,29 +949,7 @@ country_event = {
 					days = 18000
 				}
 							
-				#planet_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
-
-				# Thought about doing this random but eh
-				#random_list = {
-				#	60 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_doomsday_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	30 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_penance_and_redemption_cult"
-				#			days = -1
-				#		}
-				#	}
-				#	10 = {
-				#		add_modifier = {
-				#			modifier = "lrsk_gov_var_statmod_wild_revelry_cult"
-				#			days = -1
-				#		}
-				#	}
-				#}
+				planet_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
 			}
 		}
 	}

@@ -72,6 +72,42 @@ l_polish:
  opinion_lrsk_gvp_slaver_corp_raid:0 "Enslaved Our People"
  opinion_lrsk_gvp_casino_corp_approval:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Popular Attraction" 
 
+ # UniSov possible vassals bonus
+ triggered_opinion_lrsk_gvp_unisov_potential_vassals_1:0 "Possible Benevolent Protector"
+ triggered_opinion_lrsk_gvp_unisov_potential_vassals_2:0 "$triggered_opinion_lrsk_gvp_unisov_potential_vassals_1$"
+
+ # Other civic interactions
+ triggered_opinion_lrsk_gvp_civic_minded_spirit:0 "Civic-Minded Spirit"
+ triggered_opinion_lrsk_gvp_unaccountable_tyrants:0 "Unaccountable Despots"
+ triggered_opinion_lrsk_gvp_irrational_bigots:0 "Irrational Bigots"
+ triggered_opinion_lrsk_gvp_foolish_tolerance:0 "Foolish Tolerance"
+ triggered_opinion_lrsk_gvp_misguided_comrades:0 "Misguided Comrades"
+ triggered_opinion_lrsk_gvp_corporate_nightmare:0 "Corporate Nightmare"
+ triggered_opinion_lrsk_gvp_model_comrades:0 "Model Comrades"
+ triggered_opinion_lrsk_gvp_unaccountable_bosses:0 "Unaccountable Bosses"
+ triggered_opinion_lrsk_gvp_feckless_liberals:0 "Feckless Liberals"
+ triggered_opinion_lrsk_gvp_comrades:0 "Comrades"
+ triggered_opinion_lrsk_gvp_business_innovation:0 "Business Innovation"
+ triggered_opinion_lrsk_gvp_peculiar_enterprise:0 "Peculiar Enterprise"
+ triggered_opinion_lrsk_gvp_collectivist_nightmare:0 "Collectivist Nightmare"
+ triggered_opinion_lrsk_gvp_admirable_enterprise:0 "Admirable Enterprise"
+ triggered_opinion_lrsk_gvp_meddling_expropriators:0 "Meddling Bureacrats"
+ triggered_opinion_lrsk_gvp_intrepid_freedom_lovers:0 "Intrepid Freedom-Lovers"
+ triggered_opinion_lrsk_gvp_uppity_underlings:0 "Uppity Underlings"
+ triggered_opinion_lrsk_gvp_unbounded_greed:0 "Unbounded Greed"
+ triggered_opinion_lrsk_gvp_greedy_peddlers:0 "Greedy Peddlers"
+ triggered_opinion_lrsk_gvp_irrational_privatization:0 "Irrational Privatization"
+ triggered_opinion_lrsk_gvp_respectable_sovereigns:0 "Respectable Sovereigns"
+ triggered_opinion_lrsk_gvp_naive_populists:0 "Naive Populists"
+ triggered_opinion_lrsk_gvp_ruthless_expropriators:0 "Ruthless Expropriators"
+ triggered_opinion_lrsk_gvp_captains_of_industry:0 "Captains of Industry"
+ triggered_opinion_lrsk_gvp_reckless_hr_policy:0 "Reckless HR Policy"
+ triggered_opinion_lrsk_gvp_fledgling_comrades:0 "Fledgling Comrades"
+ triggered_opinion_lrsk_gvp_individualist_nightmare:0 "Individualist Nightmare"
+ triggered_opinion_lrsk_gvp_workers_benefits:0 "Benefits for Workers"
+ triggered_opinion_lrsk_gvp_entrepreneurial_spirit:0 "Entrepreneurial Spirit"
+ triggered_opinion_lrsk_gvp_workers_forgotten:0 "Workers Forgotten"
+
  ## Buildings
 
  # Warrior Hall line
@@ -226,6 +262,15 @@ l_polish:
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_hedge_preacher_add£ per $VALUE$ £pop£"
  
+ # Citizen Scholar
+ job_lrsk_gvp_job_citscholar:0 "Citizen Scholar"
+ job_lrsk_gvp_job_citscholar_plural:0 "$job_lrsk_gvp_job_citscholar$s"
+ job_lrsk_gvp_job_citscholar_desc:0 "These bright and curious ordinary citizens are subsidized by the government to pursue their varied academic interests and share them with their communities."
+ job_lrsk_gvp_job_citscholar_effect_desc:0 "£job_lrsk_gvp_job_citscholar£ $job_lrsk_gvp_job_citscholar_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £physics£ £society£ £engineering£ §YResearch Points§!, £unity£ §Y$unity$§!, and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!"
+ mod_job_lrsk_gvp_job_citscholar_add:0 "$job_lrsk_gvp_job_citscholar$ Jobs"
+ mod_job_lrsk_gvp_job_citscholar_per_pop:0 "§G+1§! $job_lrsk_gvp_job_citscholar$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gvp_job_citscholar_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gvp_job_citscholar_add£ per $VALUE$ £pop£"
+
  # Regional Coordinator
  job_lrsk_gov_var_job_regional_coordinator:0 "Regional Coordinator"
  job_lrsk_gov_var_job_regional_coordinator_plural:0 "$job_lrsk_gov_var_job_regional_coordinator$s"
@@ -298,12 +343,40 @@ l_polish:
  mod_job_lrsk_gov_var_job_suppressor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_suppressor$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_suppressor_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_suppressor_add£ per $VALUE$ £pop£"
 
+ ## Edicts
+
+ # Lifelong Learning - Promote Citizen Scholarship
+ edict_lrsk_gvp_citschol:0 "Promote Citizen Scholarship"
+ edict_lrsk_gvp_citschol_desc:0 "We must enable our citizens to pursue their intellectual interests and enrich their communities thereby."
+ edict_lrsk_gvp_citschol_tooltip:0 "Gives planets $edict_lrsk_gvp_citschol_effects_common$"
+ edict_lrsk_gvp_citschol_no_suitable_planets:0 "§RBecause this gives 1 job per 25 pops, there is no effect if none of your planets have at least 25 pops.§!"
+ edict_lrsk_gvp_citschol_effects_common:0 "§Y1§! £job_lrsk_gvp_job_citscholar£ §Y$job_lrsk_gvp_job_citscholar$ Job§! per §Y25§! £pop£ Pops. $job_lrsk_gvp_job_citscholar_effect_desc$"
+
+ # Royal Absolutism - Proclamation of Justice
+ edict_lrsk_gvp_royjustice:0 "Proclamation of Justice"
+ edict_lrsk_gvp_royjustice_desc:0 "To better dispense justice throughout the realm, our sovereign monarch will convene a grand ceremony. Attendance is mandatory for all jurists and magistrates involved in the enforcement of the law. At this ceremony, the monarch will proclaim a general revision of the empire's governing practices."
+ #edict_lrsk_gvp_royjustice_tooltip:0 "$edict_lrsk_gvp_royjustice_effects_common$ (This will only affect base game policies. Food Policy, War Doctrine, and Economic Policy cooldowns cannot be ended early due to technical limitations.)"
+ #edict_lrsk_gvp_royjustice_effects_common:0 "§YPolicy cooldowns§! of most policies §Gwill be ended immediately§!."
+ edict_lrsk_gvp_royjustice_tooltip:0 "This edict $edict_lrsk_gvp_royjustice_effects_common$ (Note that when a new ruler comes to power, previous effects end and this edict becomes available again.)"
+ edict_lrsk_gvp_royjustice_effects_common:0 "gives the player a choice of different effects on empire governance."
+ edict_lrsk_gvp_royjustice_no_cooldown:0 "§RAt least one policy whose cooldown could be ended by this edict must be on cooldown.§!"
+ edict_lrsk_gvp_royjustice_15_years:0 "§RCan only use this edict once every 15 years.§!"
+
  ## Decisions
 
  # Run Recursive Audit
  decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
  decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
  decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
+
+ # Work Allocation Plan
+ decision_lrsk_gvp_work_allocation_plan:0 "Work Allocation Plan"
+ decision_lrsk_gvp_work_allocation_plan_desc:1 "Due to high unemployment, the planetary government designs, implements, and continually improves a plan to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This will have some regretable impact on the local economy."
+ decision_lrsk_gvp_work_allocation_plan_effects:0 "Adds the §H$lrsk_gvp_statmod_work_plan$§! modifier, which gives $lrsk_gvp_statmod_work_plan_effects_common$."
+
+ decision_lrsk_gvp_end_work_allocation_plan:0 "End Work Allocation Plan"
+ decision_lrsk_gvp_end_work_allocation_plan_desc:1 "Due to satisfactory planetary employment levels, the plan to alleviate unemployment can come to an end."
+ decision_lrsk_gvp_end_work_allocation_plan_effects:0 "Removes the §H$lrsk_gvp_statmod_work_plan$§! modifier, ending $lrsk_gvp_statmod_work_plan_effects_common$."
 
  ## Empire Modifiers
 
@@ -313,18 +386,46 @@ l_polish:
  lrsk_gvp_empire_scandal_wracked:0 "Scandal-Wracked"
  lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
 
- lrsk_gvp_empire_offworld_work_bonus_1:0 "Offworld Worker Bonus"
- lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
- lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus_1$"
+ lrsk_gvp_empire_offworld_work_bonus:0 "Offworld Worker Bonus"
+ lrsk_gvp_empire_offworld_work_bonus_desc:0 "Contract laborers from our commercial partners are hard at work."
+ lrsk_gvp_empire_offworld_work_bonus_1:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_4:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_5:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_6:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_7:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_8:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_9:0 "$lrsk_gvp_empire_offworld_work_bonus$"
+ lrsk_gvp_empire_offworld_work_bonus_10:0 "$lrsk_gvp_empire_offworld_work_bonus$"
 
- ## Planet Modifiers
+ lrsk_gvp_empire_new_aristos:0 "New Cadre of Aristocrats"
+ lrsk_gvp_empire_new_aristos_desc:0 "Educated and loyal officials have been granted noble status."
+
+ lrsk_gvp_empire_estates_general:0 "Assembly of the Estates of the Realm"
+ lrsk_gvp_empire_estates_general_desc:0 "The advisory 'legislature' is assembled to provide some governing flexibility."
+
+ lrsk_gvp_empire_national_peril:0 "The Nation in Peril"
+ lrsk_gvp_empire_national_peril_desc:0 "The state is on guard against all threats, internal and external."
+
+ ### Planet Modifiers
+
+ ## Utilitarian Planning - Work Allocation Plan
+
+ lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
+ lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
+ lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! Pop Demotion Time at the cost of §R-15%§! £trade_value£ Trade Value"
+
+ ## Royal Absolutism - New Aristos
+
+ lrsk_gvp_statmod_pleased_new_aristos:0 "Pleased New Aristocrats"
+ lrsk_gvp_statmod_pleased_new_aristos_desc:0 "The newly ennobled courtiers assembled at the capital are grateful for the recognition."
+
+ lrsk_gvp_statmod_resent_new_aristos:0 "Resentment of Upjumped Commoners"
+ lrsk_gvp_statmod_resent_new_aristos_desc:0 "The crown's decision to ennoble commoners, no matter how supposedly deserving they are, has sparked resentment in the old, established noble families."
+
+ lrsk_gvp_statmod_estates_session:0 "Estates Assembly in Session"
+ lrsk_gvp_statmod_estates_session_desc:0 "Convening delegates of all the classes of the empire is no small task, and keeping them in the lifestyle their station deserves is taxing."
 
  # Direct Revelation Wild Cults
 
@@ -483,6 +584,28 @@ l_polish:
  
  lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
 
+ # Royal Absolutism: Special effects
+ lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
+ lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
+ #lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
+ #lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
+ #lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
+ #lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
+ lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the government of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. \n\nOnce [this.Leader.GetSheHe] completes the opening ceremony and [this.Leader.GetHerHis] memorial speech, what will [this.GetRulerTitle] [this.GetRulerName] declare?"
+ lrsk_government_variety_pack_backend.1002.a:0 "My chancellor will tell you the rest..."
+ lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +50 influence
+ lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
+ lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts." # -1000 consumer goods
+ lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all major social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between classes." # -1500 energy
+ lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
+ lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
+ lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
+ lrsk_government_variety_pack_backend.1002.e.tooltip:0 "$lrsk_government_variety_pack_backend.1002.d.tooltip$" # -100 influence
+
+
+ # Test events, etc.
+
  lrsk_government_variety_pack_backend.2000.name:0 "Test Event"
  lrsk_government_variety_pack_backend.2000.desc:0 "This is a general test event. Players should not ever see this, please alert mod author if you do."
 
@@ -491,6 +614,9 @@ l_polish:
 
  lrsk_government_variety_pack_backend.2002.name:0 "Using GVP Civics"
  lrsk_government_variety_pack_backend.2002.desc:0 "Detected that [this.GetName] has one or more GVP added civic(s)."
+
+ lrsk_government_variety_pack_backend.2003.name:0 "Invalid Civic(s) Detected"
+ lrsk_government_variety_pack_backend.2003.desc:0 "Due to an update to §HGovernment Variety Pack§!, some combination of your civics §Rhas become invalid§!. In 30 days, you will be gifted §G250§! £influence£ §Y$INFLUENCE$§! to reform your government (spend it now if you have it!). If government reform was on cooldown, it has been reset."
 
  # Megacorp building special effects
 
@@ -624,6 +750,11 @@ l_polish:
  lrsk_gov_var_direct_revelation.9.name:0 "$lrsk_gov_var_direct_revelation_generic_title$"
  lrsk_gov_var_direct_revelation.9.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_doomsday_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"
 
+ lrsk_gov_var_direct_revelation.90.name:0 "Restoring Faith"
+ lrsk_gov_var_direct_revelation.90.desc:0 "Our people have always been drawn to various spiritual trends and new visions, but the revelation that a cataclysm will destroy [this.capital_scope.GetName] has inflicted a spiritual wound on our collective psyche. Now, [this.species.GetNamePlural] flock in droves to the nihilistic comfort of a rampant §R$lrsk_gov_var_statmod_doomsday_cult$§! that shows no signs of subsiding. It is on us, as the secular and spiritual leaders of the [this.GetName], to prove that the fate of [this.species.GetName]kind is not yet sealed!"
+ lrsk_gov_var_direct_revelation.90.a:0 "Our destiny is yet to be written!"
+ lrsk_gov_var_direct_revelation.90.a.tooltip:0 "Your empire has the §G$lrsk_gov_var_empire_endisnigh$§! modifier, imrpoving survey speed and colony development speed by 20%"
+
  lrsk_gov_var_direct_revelation.10.name:0 "$lrsk_gov_var_direct_revelation_generic_title$"
  lrsk_gov_var_direct_revelation.10.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_golden_age_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"
 
@@ -632,6 +763,13 @@ l_polish:
 
  lrsk_gov_var_direct_revelation.12.name:0 "$lrsk_gov_var_direct_revelation_generic_title$"
  lrsk_gov_var_direct_revelation.12.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_wild_revelry_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"
+
+ lrsk_gov_var_direct_revelation.ignorethis:0 "Don't notify me about this development again."
+ lrsk_gov_var_direct_revelation.ignorethis.tooltip:0 "§PWe won't be notified if this kind of cult forms again.§!"
+ lrsk_gov_var_direct_revelation.ignoreplanet:0 "Don't notify me about cults on this planet again."
+ lrsk_gov_var_direct_revelation.ignoreplanet.tooltip:0 "§PWe won't be notified if a cult forms on [this.GetName] again.§!"
+ lrsk_gov_var_direct_revelation.ignoreall:0 "Don't notify me about any wild cults again."
+ lrsk_gov_var_direct_revelation.ignoreall.tooltip:0 "§RWe won't be notified about any wild cult formation ever again.§!"
  
  # Distributed Planning Systems
 
@@ -832,3 +970,6 @@ l_polish:
  LRSK_QCC_INSULT_ACCEPT_FRIENDLY:0 "We wish we could forget such hard words, but as long as one [Root.GetSpeciesName] lives, the memory of your cruelty will live on."
  LRSK_QCC_INSULT_ACCEPT_HOSTILE:0 "Do not mistake our great capacity for thought as a lack of emotion. Our rage is greater than you can imagine, and we will make you feel its full extent."
 
+ #### OTHER/MISC
+
+ TBD:0 "To Be Done (fix this!)"

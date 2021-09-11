@@ -10,9 +10,9 @@ lrsk_has_gvp_mil_gov = {
 		has_government = lrsk_gov_var_gov_doom_horde
 		has_government = lrsk_gov_var_gov_doom_horde_imp
 		has_government = lrsk_gov_var_gov_citizen_legion
-		#has_government = lrsk_gov_var_gov_galactic_dominion
-		#has_government = lrsk_gov_var_gov_galactic_imperium
-		#has_government = lrsk_gov_var_gov_galactic_cartel
+		has_government = lrsk_gov_var_gov_galactic_dominion
+		has_government = lrsk_gov_var_gov_galactic_imperium
+		has_government = lrsk_gov_var_gov_galactic_cartel
 		has_government = lrsk_gov_var_gov_folkish_commonwealth
 		has_government = lrsk_gov_var_gov_folkish_league
 		has_government = lrsk_gov_var_gov_folkish_regime
@@ -163,7 +163,7 @@ lrsk_has_gvp_soc_gov = {
 
 lrsk_has_gvp_cap_gov = {
 	OR = {
-		#has_government = lrsk_gov_var_gov_galactic_cartel
+		has_government = lrsk_gov_var_gov_galactic_cartel
 		has_government = lrsk_gov_var_gov_libertarian_freehold
 		has_government = lrsk_gov_var_gov_anarcho_capitalism
 		has_government = lrsk_gov_var_gov_corporate_neofuedalism
@@ -544,5 +544,22 @@ lrsk_has_gvp_npc_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways_npc
 		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
 		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+	}
+}
+
+# Used by a backend event that will change the civics of any AI if rendered invalid, and give human player influence to change gov
+lrsk_has_gvp_possible_invalidated_civic = {
+	OR = {
+		AND = {
+			has_civic = lrsk_gov_var_civic_imperial_economy
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_inwards_perfection
+			}
+		}
+		AND = {
+			has_civic = lrsk_gov_var_civic_universal_sovereignty
+			has_civic = lrsk_gov_var_civic_supremacist_demagoguery
+		}
 	}
 }

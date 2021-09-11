@@ -36,6 +36,105 @@ decision_lrsk_gov_var_rra = {
     }
 }
 
+decision_lrsk_gvp_work_allocation_plan = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 25
+		}
+	}
+
+	potential = {
+		owner = { 
+			has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
+		}
+	}
+
+	allow  = {
+		count_owned_pop = {
+			limit = { is_unemployed = yes  }
+			count > 0
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_lrsk_gvp_work_allocation_plan_effects
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_statmod_work_plan
+				days = -1
+			}
+			# Check every 30 days if still needed.
+			planet_event = {
+				id = lrsk_government_variety_pack_backend.1000
+				days = 30
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 0
+			}
+		}
+		modifier = {
+			weight = 5
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 1
+			}
+		}
+		modifier = {
+			weight = 10
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count > 3
+			}
+		}
+	}
+}
+
+decision_lrsk_gvp_end_work_allocation_plan = {
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		has_modifier = lrsk_gvp_statmod_work_plan
+	}
+
+	allow  = {
+		has_modifier = lrsk_gvp_statmod_work_plan
+	}
+
+	effect = {
+		custom_tooltip = decision_lrsk_gvp_end_work_allocation_plan_effects
+		hidden_effect = {
+			remove_modifier = lrsk_gvp_statmod_work_plan
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			count_owned_pop = {
+				limit = { is_unemployed = yes  }
+				count < 1
+			}
+		}
+	}
+}
+
 #Undo Opts
 #Deprecated until I am sure I want to do this...
 #decision_lrsk_gov_var_undo_rra = {

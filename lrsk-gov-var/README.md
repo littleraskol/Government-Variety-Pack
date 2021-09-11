@@ -27,13 +27,13 @@ Ascetic Virtues (Not Materialist) - This culture's religious beliefs include str
 
 Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 
-Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
+Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
 Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
-Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
+Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
 Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
@@ -45,13 +45,13 @@ Budgetary Thrift (Any) - This society prizes cutting waste and operational effic
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
-Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
+Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop)
 
 Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 
@@ -202,6 +202,24 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v2.2 (09-11-21) - Civic Improvements 1
+-Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
+-Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
+-Royal Absolutism: Gets access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance.
+-Imperial Economy: Incompatible with Fanatical Purifiers and Inward Perfection.
+-Direct Revelation: Now has options to ignore Wild Cult popups.
+-Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
+-Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
+-Universal Sovereignty: Gets an opinion boost with weaker independent empires.
+-Universal Sovereignty incompatible with Supremacist Demagoguery.
+-Various civic combinations have triggered diplomatic opinion modifiers.
+-New federation origins: Copied over trust and intel boosts from base game.
+-Returned the "Galactic Empire" joke governments under new, even more bombastic names.
+-Pure Social Republic government: renamed Purity Collective.
+-Improved logic for finding "escape routes" for origins that start with nearby AI players.
+-Bugfix: Technocracy prefix_formats used wrong part key.
+-Various other small improvements and fixes.
 
 v2.1.2 (06-06-21) - Localization Hotfix
 -Fixed incorrect localization in a "casino luck" event (tourism bonus).

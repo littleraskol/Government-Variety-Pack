@@ -23,7 +23,11 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 
 This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files, and will only conflict with other mods if for some reason another mod has files with the exact same names in the same places as this in mod. However, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best. There's also no guarantee that combinations of mod-added features will "play nice" or be balanced against/with each other in game.
 
-There is one compatibility patch: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods.
+Compaitibility patches exist for a few mods. Some are maintained by me, and some by the other mod's author. They are:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods. (Maintained by me.)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461985481]More Authorities - GVP Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2158334880]More Authorities mod[/url]. (Maintained by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url], author of More Authorities.)
+[/list]
 
 There are a few patches and other versions of this mod. These all require the main GVP mod (this), and do nothing but selectively remove features. [b]If you want all the features of this mod, you don't need any of these patches/alternate versions.[/b] They do not add anything and only provide options for users who for whatever reason want to exclude some features.
 
@@ -35,6 +39,7 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029864772]No Origins Patch[/url] - Removes all origins.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
