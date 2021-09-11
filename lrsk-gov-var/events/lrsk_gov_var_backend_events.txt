@@ -1181,6 +1181,7 @@ country_event = {
 		trigger = {
 			is_at_war = no
 			NOT  = { any_owned_planet = { planet_crime >= 30 } }
+			NOT  = { any_owned_planet = { planet_stability <= 40 } }
 		}
 
 		allow = {
@@ -1206,6 +1207,7 @@ country_event = {
 		trigger = { OR = {
 			is_at_war = yes
 			any_owned_planet = { planet_crime >= 30 }
+			any_owned_planet = { planet_stability <= 40 }
 		} }
 
 		allow = {
