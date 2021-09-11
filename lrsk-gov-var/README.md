@@ -203,7 +203,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v2.2 (08-??-21) - Civic Improvements 1
+v2.2 (09-11-21) - Civic Improvements 1
 -Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
 -Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
 -Royal Absolutism: Gets access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance.

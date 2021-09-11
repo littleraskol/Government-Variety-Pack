@@ -1279,10 +1279,19 @@ country_event = {
 		}
 		ELSE = {
 			set_government_cooldown = no
-			add_resource = { influence = 250 }
+			country_event = { id = lrsk_government_variety_pack_backend.20031 days = 30 }
 		}
 		set_country_flag = lrsk_fixed_invalid_civics_v22
 	}
 
 	option = { name = OK }
+}
+country_event = {
+	id = lrsk_government_variety_pack_backend.20031
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		add_resource = { influence = 250 }
+	}
 }
