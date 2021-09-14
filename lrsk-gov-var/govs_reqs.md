@@ -128,10 +128,10 @@ Note: When I say the name of an ethos, assume either normal or Fanatic is fine (
 [i]Requirements:[/i] Royal Absolutism, not Enlightened Liberalism, Imperial authority
 
 [b]Cosmic Dominion[/b]
-Requirements: Universal Sovereignty and Imperial Economy, Dictatorial authority, Militarism
+[i]Requirements:[/i] Universal Sovereignty and Imperial Economy, Dictatorial authority, Militarism
 
 [b]Cosmic Imperium[/b]
-Requirements: Universal Sovereignty and Imperial Economy, Imperial authority, Militarism
+[i]Requirements:[/i] Universal Sovereignty and Imperial Economy, Imperial authority, Militarism
 
 [b]Cosmic Cartel[/b]
 [i]Requirements:[/i] Militarism; either Cutthroat Politics or Shadow Council, and Corporate Dominion [i]or[/i] Corporate authority, Ruthless Competition and Brand Loyalty.
