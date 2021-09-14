@@ -2,11 +2,11 @@ A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]72 new civics[/b], broken down into 7 origins, 20 normal civics, 19 hive civics, 14 machine civics, and 11 megacorp civics. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1692662484253758433/]the dedicated civics thread[/url] for detailed descriptions.
+A total of [b]72 new civics[/b], broken down into 7 origins, 20 normal civics, 19 hive civics, 14 machine civics, and 11 megacorp civics. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2601883293/3041607712767147161/]the dedicated civics thread[/url] for detailed descriptions.
 
 [i][b]New Governments[/b][/i]
 
-Around [b]80 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/901988941/1318835718938058107/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
+Around [b]80 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2601883293/3041607712767149436/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
 
 [i][b]Special Thanks[/b][/i]
 
@@ -40,7 +40,7 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (Dick)[/url] - Older version of the mod for 3.0 Dick. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
