@@ -1,4 +1,4 @@
-A grab bag of new civics and government types.
+A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
@@ -40,7 +40,12 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (Dick)[/url] - Older version of the mod for 3.0 Dick. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
+
+[i][b]Problems?[/b][/i]
+
+Report any bugs, issues, or other unexpected/undesired behavior [url=https://airtable.com/shr57DnP3u6lzJ4D9]using this form[/url].
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]

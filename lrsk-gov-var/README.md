@@ -187,15 +187,7 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 
 -In the base game, certain events (the Prethoryn and Unbidden crises, most critically) check to see if the player has certain set defined governments to determine what response to give. However, the default "OK" response doesn't start the crisis events. This means that if you're using any mod-added governments, it doesn't seem that you can start the crises. Fortunately, there is a mod out there that fixes this: Event Bugfixes by ECHO (http://steamcommunity.com/sharedfiles/filedetails/?id=785269836)
 
-4. Future Plans
-
--More customization: start screen text, name lists, AI personalities. Basically I want this mod to inject a huge amount of flavor into the game, and that means a gradual process of adding new things. It's fun! But time consuming.
-
--More of a focus on government types that are just variations on ones in the base game, using just ethos combinations and maybe a few base game civics.
-
--Adding "advanced" civics that should radically change the way you play.
-
--Eventually I'd like to include some events for specific governments, like succession crises and such. But this is a long ways off.
+Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
