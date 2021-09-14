@@ -79,3 +79,23 @@ on_ruler_back_to_pre_ruler_class = {
 		lrsk_gov_var_shroud_touched.6 # Addes esper leader traits to demoted ruler without them
 	}
 }
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		lrsk_gov_var_combat_data.1
+	}
+}
+
+# This = owner of fleet 1 (loser)
+# From = owner of fleet 2 (winner)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_lost = {
+	events = {
+		lrsk_gov_var_combat_data.2
+	}
+}
