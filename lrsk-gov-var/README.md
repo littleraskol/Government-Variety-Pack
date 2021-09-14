@@ -196,7 +196,8 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v3.0 (09-14-21) - Lem Update
--Made necessary updates due to code changes.
+-Fixed what was needed for compatibility with Stellaris 3.1.* (Lem)
+-Changed compat version number.
 
 v2.2 (09-11-21) - Civic Improvements 1
 -Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
