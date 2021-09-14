@@ -195,6 +195,13 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.1 (??-??-??) - Civic Improvements 2
+-Combat Data now has a chance to improve military intel on an empire after the end of a space battle with that empire.
+-Colonial Fiefs now has a policy to enocurage pops to start vassal empires on nearby habitable worlds.
+-Imperial Economy now has the option to specialize vassals for different kinds of production.
+-Public Works now has a policy to allow different job-per-pop granting decisions on planets, which will improve their habitability, blocker clear time, and/or amenities, at an economic price.
+-Fixed a documentation typo.
+
 v3.0 (09-14-21) - Lem Update
 -Fixed what was needed for compatibility with Stellaris 3.1.* (Lem)
 -Changed compat version number.
