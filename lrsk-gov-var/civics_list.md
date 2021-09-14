@@ -33,13 +33,13 @@ This is the full listing of civics with descriptions.
 
 [*][i]Republicanism (Democratic, or both Oligarchic and Egalitarian)[/i] - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 
-[*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
+[*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
 [*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -20% defense platform cost, +1 Encryption)
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
-[*][i]Universal Sovereignty (Dictatorial or Imperial, not Xenophobic)[/i] - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
+[*][i]Universal Sovereignty (Dictatorial or Imperial, not Xenophobic)[/i] - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
@@ -51,13 +51,13 @@ This is the full listing of civics with descriptions.
 
 [*][i]Chivalry (Imperial authority or Aristocratic Elite, Militarist)[/i] - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
-[*][i]Lifelong Learning (Democratic and Pacifist)[/i] - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
+[*][i]Lifelong Learning (Democratic and Pacifist)[/i] - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop)
 
 [*][i]Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds)[/i] - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 [*][i]Direct Revelation (Egalitarian and Spiritualist)[/i] - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
+[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
 

@@ -12,6 +12,7 @@ on_game_start_country = {
 	events = {
 		lrsk_gov_var_uplift.2						# Tutor system finalizations and watchpost system
 		lrsk_gov_var_uplift.3						# Trait menu selector
+		#lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
 		lrsk_gov_var_direct_revelation.1000			# Starting grace period, special interactions
 		#lrsk_government_variety_pack_backend.3		# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
 	}
@@ -33,6 +34,13 @@ on_yearly_pulse_country = {
 		lrsk_government_variety_pack_backend.2 		# Just in case some mod removed mandatory starting planet features.
 
 		lrsk_gov_var_sublight_origins.1000			# Sublight housekeeping
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		#lrsk_government_variety_pack_backend.1000 # Changed to looping planet event...
+		lrsk_government_variety_pack_backend.2003
 	}
 }
 
