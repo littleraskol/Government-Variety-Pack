@@ -448,7 +448,6 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 
 	planet_modifier = {
 		job_lrsk_gov_var_job_functionary_add = 2
-		branch_office_value_mult = 0.1
 	}
 	
 	triggered_desc = {
@@ -456,6 +455,16 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
 		}
 		text = lrsk_legit_mgmt_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -491,6 +500,16 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
 		}
 		text = lrsk_crim_mgmt_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			planet_crime_add = 20
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -550,8 +569,44 @@ lrsk_gvp_bldg_learnarium_dome = {
 
 	planet_modifier = {
 		job_lrsk_gov_var_job_infoguide_add = 2
-		pop_ethic_materialist_attraction_mult = 0.5
-	}	
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_branch_value_legit_materialist
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			pop_ethic_materialist_attraction_mult = 0.5
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_branch_value_crime_materialist
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			pop_ethic_materialist_attraction_mult = 0.25
+			planet_crime_add = 20
+		}
+	}
 	
 	triggered_desc = {
 		trigger = {
@@ -725,7 +780,43 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 
 	planet_modifier = {
 		job_lrsk_gov_var_job_gofer_add = 2
-		branch_office_value_mult = 0.1
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		text = lrsk_generic_legit_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		text = lrsk_generic_crime_bonus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+			planet_crime_add = 20
+		}
 	}
 	
 	triggered_desc = {
@@ -779,7 +870,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 				count = 1
 			}
 		}
-		modifier = {			
+		modifier = {
 			planet_crime_mult = 0.1
 		}
 	}
@@ -793,7 +884,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 				count > 1
 			}
 		}
-		modifier = {			
+		modifier = {
 			planet_crime_mult = 0.2
 		}
 	}
@@ -1003,7 +1094,6 @@ lrsk_gov_var_bldg_grand_casino = {
 
 	planet_modifier = {
 		planet_amenities_add = 10
-		trade_value_mult = 0.05
 	}
 	
 	triggered_desc = {
@@ -1036,7 +1126,7 @@ lrsk_gov_var_bldg_grand_casino = {
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
 		}
 		modifier = {
-			planet_crime_mult = 0.15
+			planet_crime_add = 20
 		}
 	}
 	
@@ -2076,7 +2166,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
 		}
 		modifier = {
-			planet_crime_mult = 0.1
+			planet_crime_add = 20
 		}
 	}
 
@@ -2125,9 +2215,29 @@ lrsk_gov_var_bldg_local_news_office = {
 	}
 
 	planet_modifier = {	
-		planet_jobs_ruler_produces_mult = 0.1
 		pop_cat_specialist_political_power = 0.2
 		pop_cat_specialist_happiness = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			planet_jobs_ruler_produces_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			planet_jobs_ruler_produces_mult = 0.05
+			planet_crime_add = 20
+		}
 	}
 	
 	triggered_desc = {
@@ -2208,6 +2318,27 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 
 	planet_modifier = {	
 		job_lrsk_gov_var_job_offworld_worker_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			branch_office_value_mult = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+		}
+		modifier = {
+			branch_office_value_mult = 0.05
+			planet_crime_add = 20
+		}
 	}
 	
 	triggered_desc = {

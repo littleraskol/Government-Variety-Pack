@@ -136,6 +136,33 @@ l_english:
  LRSK_CRIME_OPTION_COMMON_1:0 "Because the corporate branch office owner is a §Hcriminal enterprise§! without any scruples, they will use"
  LRSK_CRIME_OPTION_COMMON_2:0 "which increases crime on the planet by"
 
+ lrsk_generic_legit_bonus:0 "As a legitimate business, this branch office also §Gimproves general corporate operations§! (exact bonus varies).\n\n"
+ lrsk_generic_crime_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ illegal methods to enrich themselves, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!.\n\n"
+
+ LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_1:0 "§G+50%§! §Y"
+ LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_2:0 "§! ethos attraction."
+
+ lrsk_branch_value_legit_authoritarian:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Authoritarian $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_egalitarian:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Egalitarian $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_materialist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Materialist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_militarist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Militarist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_pacifist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Pacifist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_spiritualist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Spiritualist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_xenophile:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Xenophilic $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_xenophobe:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Xenophobic $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+
+ LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1:0 "§G+25%§! §Y"
+ LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2:0 "$LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_2$ $lrsk_generic_crime_bonus$"
+
+ lrsk_branch_value_crime_authoritarian:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Authoritarian $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_egalitarian:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Egalitarian $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_materialist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Materialist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_militarist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Militarist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_pacifist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Pacifist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_spiritualist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Spiritualist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_xenophile:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophilic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_xenophobe:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophobic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+
  LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! for every 10% of pops on the planet that are§Y"
  LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2:0 "§!(minimum +5% if any, maximum +50%)\n\n"
 
@@ -151,9 +178,9 @@ l_english:
  lrsk_gvp_bldg_managerial_technique_institute:0 "Managerial Technique Institute"
  lrsk_gvp_bldg_managerial_technique_institute_desc:0 "At this technical institute, managerial science interns learn important project management and fiscal rightsizing techniques through hands-on real world applications, gaining valuable experience."
 
- lrsk_legit_mgmt_bonus:0 "Additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+ lrsk_legit_mgmt_bonus:0 "§G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, and an additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
 
- lrsk_crim_mgmt_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary_plural$§! to manage the books of their illegal dealings $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+ lrsk_crim_mgmt_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary_plural$§! to manage the books of their illegal dealings $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and §R10%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
 
  lrsk_gvp_bldg_learnarium_dome:0 "Learnarium Dome"
  lrsk_gvp_bldg_learnarium_dome_desc:0 "Billing educational adventures for knowledge seekers young and old, this combination of museum and theme park aims to make learning §GFUN§!damental!"
@@ -175,7 +202,7 @@ l_english:
 
  lrsk_legit_gamble_bonus:0 "Professional commitment to providing a quality and responsible entertainment experience increases §Y$BRANCH_OFFICE_VALUE$§! by §G10%§!.\n\n"
 
- lrsk_crim_gamble_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_grand_casino$§! to secretly host all kinds of forbidden and often deadly games of chance (among other vices) by employing the unlucky and indebted, $LRSK_CRIME_OPTION_COMMON_2$ §R15%§!.\n\n"
+ lrsk_crim_gamble_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_grand_casino$§! to secretly host all kinds of forbidden and often deadly games of chance (among other vices) by employing the unlucky and indebted, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!.\n\n"
 
  lrsk_gov_var_bldg_galactic_excursions_office:0 "Galactic Excursions Office"
  lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "The galaxy is yours to explore! Plan your perfect insterstellar getaway with us, competative package deals available for all destinations."
@@ -204,7 +231,7 @@ l_english:
 
  lrsk_legit_debt_repay_bonus:0 "Efficient workforce asset optimizations increase §Y$BRANCH_OFFICE_VALUE$§! by §G15%§!.\n\n"
 
- lrsk_crim_workhouse_pop_steal_chance:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! as a staging gorund for enslavement: they have a §R5%§! chance per year to steal a £pop£ §YPop§! from this planet! This is more likely the more pops, unemployment, and crime the planet has. It can happen in the host empire at most once every 5 years. The corp will also offer... alternative ways for its inmates to pay off their debts, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!\n\n"
+ lrsk_crim_workhouse_pop_steal_chance:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! as a staging gorund for enslavement: they have a §R5%§! chance per year to steal a £pop£ §YPop§! from this planet! This is more likely the more pops, unemployment, and crime the planet has. It can happen in the host empire at most once every 5 years. The corp will also offer... alternative ways for its inmates to pay off their debts, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!\n\n"
 
  lrsk_gov_var_bldg_offworld_jobs_placement:0 "Offworld Jobs Placement"
  lrsk_gov_var_bldg_offworld_jobs_placement_desc:0 "Opportunity awaits in the Offworld Development Corps! Travel to distant new worlds, make them work, and bring home the money for your family. 95% of employees return safely from placements."
