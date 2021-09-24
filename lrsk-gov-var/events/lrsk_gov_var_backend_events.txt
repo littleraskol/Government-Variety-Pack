@@ -1097,10 +1097,38 @@ country_event = {
 		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
 	}
 
+	immediate = {
+		# Calculate factors
+		
+		set_variable = { which = lrsk_num_rj_applicable_planets value = 0 }
+		every_owned_planet = {
+			limit = {
+				is_capital = no
+				num_pops > 2
+				NOT = { has_building = building_colony_shelter }
+			}
+			change_variable = { which = root.lrsk_num_rj_applicable_planets value = 1 }
+		}
+
+		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
+		every_owned_pop = {
+			limit = {
+				is_enslaved = no
+			}
+			change_variable = { which = root.lrsk_num_rj_empire_pops value = 1 }
+		}
+	}
+
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.a
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.a.tooltip
-		add_resource = { influence = 150 }
+		
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 50
+			min = 125
+			max = 300
+		}
 	}
 	
 	option = {
@@ -1116,12 +1144,17 @@ country_event = {
 		}
 
 		allow = {
-			has_resource = {
-				amount >= 1000
-				type = consumer_goods
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value > 300
+				mult = lrsk_num_rj_applicable_planets
 			}
 		}
-		add_resource = { consumer_goods = -1000 }
+
+		add_resource = {
+			consumer_goods = -300
+			mult = lrsk_num_rj_applicable_planets
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1150,15 +1183,26 @@ country_event = {
 	
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.c
-		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip	
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip
 
-		allow = {
-			has_resource = {
-				amount >= 1500
-				type = energy
+		trigger = {
+			any_owned_pop = {
+				is_enslaved = no	# Almost certainly true but eh
 			}
 		}
-		add_resource = { energy = -1500 }
+
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 20
+				mult = lrsk_num_rj_empire_pops
+			}
+		}
+
+		add_resource = {
+			energy = -20
+			mult = lrsk_num_rj_empire_pops
+		}
 
 		hidden_effect = {
 			add_modifier = {
