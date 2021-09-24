@@ -81,7 +81,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
-[*][i]Hoarder (Hive Mind)[/i] - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output, +7500 mineral storage)
+[*][i]Hoarder (Hive Mind)[/i] - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy production, +7500 mineral storage)
 
 [*][i]Eusocial Rhythm (Hive Mind)[/i] - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
 
@@ -121,7 +121,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Astro-Prospecting Mainframe (Machine Intelligence)[/i] - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
-[*][i]Self-Aware Production Targets (Machine Intelligence)[/i] - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output, +2.5% alloy production)
+[*][i]Self-Aware Production Targets (Machine Intelligence)[/i] - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy production, +2.5% alloy production)
 
 [*][i]Recursive Efficiency Analysis (Machine Intelligence)[/i] - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
 
