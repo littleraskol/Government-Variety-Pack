@@ -1107,7 +1107,7 @@ country_event = {
 				num_pops > 2
 				NOT = { has_building = building_colony_shelter }
 			}
-			change_variable = { which = root.lrsk_num_rj_applicable_planets value = 1 }
+			root = { change_variable = { which = lrsk_num_rj_applicable_planets value = 1 } }
 		}
 
 		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
@@ -1115,7 +1115,7 @@ country_event = {
 			limit = {
 				is_enslaved = no
 			}
-			change_variable = { which = root.lrsk_num_rj_empire_pops value = 1 }
+			root = { change_variable = { which = lrsk_num_rj_empire_pops value = 1 } }
 		}
 	}
 
