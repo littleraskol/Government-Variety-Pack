@@ -41,7 +41,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-[*][i]Budgetary Thrift (Any)[/i] - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
+[*][i]Budgetary Thrift (Any)[/i] - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 
 [*][i]Chivalry (Imperial authority or Aristocratic Elite, Militarist)[/i] - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
