@@ -195,6 +195,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.1 (10-??-21) - Civic Improvements 3
+-Imperial Economy is allowed to change vassals into specialized subjects).
+
 v3.1 (09-28-21) - Civic Improvements 2
 -Combat Data now has a chance to improve military intel on an empire after the end of a space battle with that empire.
 -Fixed an issue where mod-added branch office buildings were not useful for criminal syndicate empires. Now all branch office buildings added by this mod will give a flat +20 crime for criminal syndicates. This is balanced by legit megacorps having a better "normal" bonus.
