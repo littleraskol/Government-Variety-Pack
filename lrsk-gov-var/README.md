@@ -41,7 +41,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -53,7 +53,7 @@ Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
-Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
+Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
 Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
 
@@ -125,7 +125,7 @@ Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence wa
 
 Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
 
-Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
+Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
 Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
 
