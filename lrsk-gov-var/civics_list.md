@@ -115,7 +115,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Architect Expert Systems (Machine Intelligence)[/i] - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
-[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +30% army morale damage)
+[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +30% army morale damage, chance to raise military intel on opponents after space battles)
 
 [*][i]Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator)[/i] - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness, +1 first contact clues)
 
