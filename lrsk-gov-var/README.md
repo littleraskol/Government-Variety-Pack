@@ -195,13 +195,13 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v3.1 (??-??-??) - Civic Improvements 2
+v3.1 (09-28-21) - Civic Improvements 2
 -Combat Data now has a chance to improve military intel on an empire after the end of a space battle with that empire.
--Fixed an issue where mod-added branch office buildings were not useful for criminal empires. Now all branch office buildings added by this mod will give a flat +20 crime for criminal syndicates. This is balanced by legit megacorps having a better "normal" bonus.
+-Fixed an issue where mod-added branch office buildings were not useful for criminal syndicate empires. Now all branch office buildings added by this mod will give a flat +20 crime for criminal syndicates. This is balanced by legit megacorps having a better "normal" bonus.
 -Royal Justice event option cost change: Ennobling officials costs 300 consumer goods per "established" (more than 2 pops, no Colony Shelter) colony.
 -Royal Justice event option cost change: The Assembly of the Estates costs 20 energy per free pop in the empire.
 -Royal Justice event option reward change: "My chancellor will tell you the rest..." gives reward as a multiple of influence production.
--Fixed a documentation typo.
+-Fixed a documentation and localization typos.
 
 v3.0 (09-14-21) - Lem Update
 -Fixed what was needed for compatibility with Stellaris 3.1.* (Lem)

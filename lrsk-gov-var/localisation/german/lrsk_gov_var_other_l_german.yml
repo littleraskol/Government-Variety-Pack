@@ -136,6 +136,33 @@ l_german:
  LRSK_CRIME_OPTION_COMMON_1:0 "Because the corporate branch office owner is a §Hcriminal enterprise§! without any scruples, they will use"
  LRSK_CRIME_OPTION_COMMON_2:0 "which increases crime on the planet by"
 
+ lrsk_generic_legit_bonus:0 "As a legitimate business, this branch office also §Gimproves general corporate operations§! (exact bonus varies).\n\n"
+ lrsk_generic_crime_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ illegal methods to enrich themselves, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!.\n\n"
+
+ LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_1:0 "§G+50%§! §Y"
+ LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_2:0 "§! ethos attraction."
+
+ lrsk_branch_value_legit_authoritarian:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Authoritarian $LRSK_BRANCH_VAL_ETHOS_COMMON_2$ Gives §G+1§! £job_lrsk_gov_var_job_investigator£ §Y$job_lrsk_gov_var_job_investigator$ Job§!. $job_lrsk_gov_var_job_investigator_effect_desc$\n\n"
+ lrsk_branch_value_legit_egalitarian:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Egalitarian $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_materialist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Materialist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_militarist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Militarist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_pacifist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Pacifist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_spiritualist:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Spiritualist $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_xenophile:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Xenophilic $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+ lrsk_branch_value_legit_xenophobe:0 "$LRSK_BRANCH_VAL_ETHOS_COMMON_1$ Xenophobic $LRSK_BRANCH_VAL_ETHOS_COMMON_2$"
+
+ LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1:0 "§G+25%§! §Y"
+ LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2:0 "$LRSK_BRANCH_VAL_ETHOS_LEGIT_COMMON_2$ $lrsk_generic_crime_bonus$"
+
+ lrsk_branch_value_crime_authoritarian:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Authoritarian $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$ Gives §G+1§! £job_lrsk_gov_var_job_suppressor£ §Y$job_lrsk_gov_var_job_suppressor$ Job§!. $job_lrsk_gov_var_job_suppressor_effect_desc$\n\n"
+ lrsk_branch_value_crime_egalitarian:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Egalitarian $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_materialist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Materialist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_militarist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Militarist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_pacifist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Pacifist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_spiritualist:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Spiritualist $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_xenophile:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophilic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+ lrsk_branch_value_crime_xenophobe:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophobic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
+
  LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! for every 10% of pops on the planet that are§Y"
  LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2:0 "§!(minimum +5% if any, maximum +50%)\n\n"
 
@@ -151,9 +178,9 @@ l_german:
  lrsk_gvp_bldg_managerial_technique_institute:0 "Managerial Technique Institute"
  lrsk_gvp_bldg_managerial_technique_institute_desc:0 "At this technical institute, managerial science interns learn important project management and fiscal rightsizing techniques through hands-on real world applications, gaining valuable experience."
 
- lrsk_legit_mgmt_bonus:0 "Additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+ lrsk_legit_mgmt_bonus:0 "§G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, and an additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
 
- lrsk_crim_mgmt_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary_plural$§! to manage the books of their illegal dealings $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
+ lrsk_crim_mgmt_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ £job_lrsk_gov_var_job_functionary£ §Y$job_lrsk_gov_var_job_functionary_plural$§! to manage the books of their illegal dealings $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and §R10%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled.\n\n"
 
  lrsk_gvp_bldg_learnarium_dome:0 "Learnarium Dome"
  lrsk_gvp_bldg_learnarium_dome_desc:0 "Billing educational adventures for knowledge seekers young and old, this combination of museum and theme park aims to make learning §GFUN§!damental!"
@@ -161,9 +188,9 @@ l_german:
  lrsk_gvp_bldg_odd_jobs_emporium:0 "Odd Jobs Emporium"
  lrsk_gvp_bldg_odd_jobs_emporium_desc:0 "Less a workplace than a local networking hub for a suite of apps and social media marketplaces that empower ordinary people to trade their time and skills in a disruptive, fast-paced, independent way, unburdened by cumbersome employee protections."
 
- lrsk_legit_gofer_bonus:0 "Additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_gofer£ §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
+ lrsk_legit_gofer_bonus:0 "§G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, and an additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_gofer£ §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
 
- lrsk_crim_courier_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_gofer_plural$§! to act as discrete couriers for illicit communications and transactions $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
+ lrsk_crim_courier_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_gofer_plural$§! to act as discrete couriers for illicit communications and transactions $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and per §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
 
  lrsk_gvp_bldg_organizing_hub:0 "Organizing Hub"
  lrsk_gvp_bldg_organizing_hub_desc:0 "The cooperative movement sees the employee-owned enterprise as the ideal resolution to most social conflict over power in the workplace, and will spread the techniques of worker self-organization for modest fees."
@@ -175,7 +202,7 @@ l_german:
 
  lrsk_legit_gamble_bonus:0 "Professional commitment to providing a quality and responsible entertainment experience increases §Y$BRANCH_OFFICE_VALUE$§! by §G10%§!.\n\n"
 
- lrsk_crim_gamble_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_grand_casino$§! to secretly host all kinds of forbidden and often deadly games of chance (among other vices) by employing the unlucky and indebted, $LRSK_CRIME_OPTION_COMMON_2$ §R15%§!.\n\n"
+ lrsk_crim_gamble_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_grand_casino$§! to secretly host all kinds of forbidden and often deadly games of chance (among other vices) by employing the unlucky and indebted, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!.\n\n"
 
  lrsk_gov_var_bldg_galactic_excursions_office:0 "Galactic Excursions Office"
  lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "The galaxy is yours to explore! Plan your perfect insterstellar getaway with us, competative package deals available for all destinations."
@@ -204,25 +231,25 @@ l_german:
 
  lrsk_legit_debt_repay_bonus:0 "Efficient workforce asset optimizations increase §Y$BRANCH_OFFICE_VALUE$§! by §G15%§!.\n\n"
 
- lrsk_crim_workhouse_pop_steal_chance:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! as a staging gorund for enslavement: they have a §R5%§! chance per year to steal a £pop£ §YPop§! from this planet! This is more likely the more pops, unemployment, and crime the planet has. It can happen in the host empire at most once every 5 years. The corp will also offer... alternative ways for its inmates to pay off their debts, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!\n\n"
+ lrsk_crim_workhouse_pop_steal_chance:0 "$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! as a staging gorund for enslavement: they have a §R5%§! chance per year to steal a £pop£ §YPop§! from this planet! This is more likely the more pops, unemployment, and crime the planet has. It can happen in the host empire at most once every 5 years. The corp will also offer... alternative ways for its inmates to pay off their debts, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!\n\n"
 
  lrsk_gov_var_bldg_offworld_jobs_placement:0 "Offworld Jobs Placement"
  lrsk_gov_var_bldg_offworld_jobs_placement_desc:0 "Opportunity awaits in the Offworld Development Corps! Travel to distant new worlds, make them work, and bring home the money for your family. 95% of employees return safely from placements."
 
  lrsk_offworld_work_effect:0 "The branch office owner gets §G+10%§! §Ycolony development speed§! and §G+5%§! §Ymining station output§! (max 100% and 50% respectively) per $lrsk_gov_var_bldg_offworld_jobs_placement$ owned.\n\n"
 
- lrsk_legit_worker_bonus:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_offworld_worker£ §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
+ lrsk_legit_worker_bonus:0 "§G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, and an additional §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per £job_lrsk_gov_var_job_offworld_worker£ §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
 
- lrsk_crim_smuggle_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_offworld_worker_plural$§! to smuggle contraband, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§! per §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
+ lrsk_crim_smuggle_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_offworld_worker_plural$§! to smuggle contraband, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and increases it by §R10%§! per §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
 
  lrsk_gov_var_bldg_local_news_office:0 "Local News Station"
  lrsk_gov_var_bldg_local_news_office_desc:0 "Boradcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
 
  LRSK_MEDIA_FAVOR_COMMON:0 "chance per year to get a §YFavor§! from the host empire when it uncovers a national scandal on this planet to use as blackmail! This is more likely on the capital world, on worlds with high crime and/or low stability, and on worlds with certain decision-based modifiers (i.e., §Y$anticrime_campaign$§!, §Y$crime_lord_deal$§!, §Y$planet_population_expelled$§!, §Y$planet_population_control$§!, §Y$planet_growth_discouraged$§!, and §Y$martial_law$§!). It can happen in the host empire at most once every 5 years."
 
- lrsk_media_legit_favor_chance:0 "The branch office owner has a §R5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\nQuality subscription options and subscriber services increase §Y$BRANCH_OFFICE_VALUE$§! by §G5%§!.\n\n"
+ lrsk_media_legit_favor_chance:0 "The branch office owner has a §R5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\nQuality subscription options and subscriber services increase §Y$BRANCH_OFFICE_VALUE$§! by §G10%§!.\n\n"
 
- lrsk_media_crim_favor_chance:0 "The branch office owner has a §R2.5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\n$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_local_news_office$§! to discover and publicly report on any efforts to combat crime, $LRSK_CRIME_OPTION_COMMON_2$ §R10%§!.\n\n"
+ lrsk_media_crim_favor_chance:0 "The branch office owner has a §R2.5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\n$LRSK_CRIME_OPTION_COMMON_1$ this §Y$lrsk_gov_var_bldg_local_news_office$§! to discover and publicly report on any efforts to combat crime, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!.\n\n"
 
  ##Jobs
 
@@ -584,6 +611,22 @@ l_german:
  
  lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
 
+ # Combat Data: New Post-Data Intel
+
+ lrsk_gov_var_combat_data.3.name:0 "New Military Intel"
+ lrsk_gov_var_combat_data.3.desc:0 "After our battle with the §H[lrsk_cd_anttag.GetName]§!, we have extrapolated the high-level strategy of their forces from their tactical decisions, giving us new insights into their broader military operations."
+ lrsk_gov_var_combat_data.3.a:0 "Incorporating new combat data."
+ lrsk_gov_var_combat_data.3.a.tooltip:0 "You have gained the next level of military intel on §Y[lrsk_cd_anttag.GetName]§!, which will be fresh for 30 days."
+ lrsk_gov_var_combat_data.3.b:0 "No more notifications about this."
+ lrsk_gov_var_combat_data.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!"
+
+ lrsk_gov_var_combat_data.4.name:0 "Military Intel Refreshed"
+ lrsk_gov_var_combat_data.4.desc:0 "Our encounter with the §H[lrsk_cd_anttag.GetName]§! fleet has corroborated some of our previous information about their combat capabilities while forcing revisions elsewhere. In any case, we can maintain our current level of understanding of their military operations."
+ lrsk_gov_var_combat_data.4.a:0 "Confirmed."
+ lrsk_gov_var_combat_data.4.a.tooltip:0 "You maintained your current level of military intel on §Y[lrsk_cd_anttag.GetName]§! for another 30 days."
+ lrsk_gov_var_combat_data.4.b:0 "$lrsk_gov_var_combat_data.3.b$"
+ lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.3.b.tooltip$"
+
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
  lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
@@ -593,11 +636,11 @@ l_german:
  #lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
  lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the government of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. \n\nOnce [this.Leader.GetSheHe] completes the opening ceremony and [this.Leader.GetHerHis] memorial speech, what will [this.GetRulerTitle] [this.GetRulerName] declare?"
  lrsk_government_variety_pack_backend.1002.a:0 "My chancellor will tell you the rest..."
- lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +50 influence
+ lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +scaling influence
  lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
- lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts." # -1000 consumer goods
+ lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts. (The cost of this option scales with the number of 'established' colonies.)" # -scaling consumer goods
  lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
- lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all major social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between classes." # -1500 energy
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all free social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between social classes. (The cost of this option scales with the number of free pops in the empire.)" # -scaling energy
  lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
  lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
  lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
