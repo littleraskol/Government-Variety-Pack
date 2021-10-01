@@ -1,0 +1,108 @@
+# Government Variety Pack
+# Events - Imperial Economy
+# Author: littleraskol
+
+namespace = lrsk_gov_var_impecon
+
+# Whenever a country becomes a subject, determine if charter choice should be given to overlord
+# This = subject
+# From = subject's overlord
+country_event = {
+	id = lrsk_gov_var_impecon.1
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+
+			# Can only have one of each... This will not fire if OL has one of each already.
+			NAND = {
+				any_subject = { is_subject_type = lrsk_gvp_vassal_foundry }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_market }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_trophy }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_prospector }
+			}
+		}
+		NOR = {
+			# Not sure how this would happen but eh
+			is_subject_type = lrsk_gvp_vassal_foundry
+			is_subject_type = lrsk_gvp_vassal_market
+			is_subject_type = lrsk_gvp_vassal_trophy
+			is_subject_type = lrsk_gvp_vassal_prospector
+
+			# Uplift: Prevent immediate change in subject status etc. if tutor can use chartered company subjects
+			#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+
+			# Prevent sublight colonies from being chartered
+			#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
+		}
+	}
+
+	immediate = {
+		log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+		from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+	}
+}
+
+country_event = {
+	id = lrsk_gov_var_impecon.2
+	title = lrsk_gov_var_impecon.2.name
+	desc  = lrsk_gov_var_impecon.2.desc
+	picture = GFX_evt_partition
+	location = from
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = lrsk_impecon_colonizer
+		from = { save_event_target_as = lrsk_impecon_colonized }
+		log = "In Imperial Economy special vassals choice event. Overlord = [lrsk_impecon_colonizer.GetName], subject = [lrsk_impecon_colonized.GetName]"
+	}
+
+	# Foundry
+	option = {
+		name = lrsk_gov_var_impecon.2.a
+		custom_tooltip = lrsk_gov_var_impecon.2.a.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+		}
+	}
+
+	# Market
+	option = {
+		name = lrsk_gov_var_impecon.2.b
+		custom_tooltip = lrsk_gov_var_impecon.2.b.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+		}
+	}
+
+	# Trophy
+	option = {
+		name = lrsk_gov_var_impecon.2.c
+		custom_tooltip = lrsk_gov_var_impecon.2.c.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+		}
+	}
+
+	# Prospector
+	option = {
+		name = lrsk_gov_var_impecon.2.d
+		custom_tooltip = lrsk_gov_var_impecon.2.d.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+		}
+	}
+
+	# Nothing
+	option = {
+		name = lrsk_gov_var_impecon.2.e
+		custom_tooltip = lrsk_gov_var_impecon.2.e.tooltip
+	}
+}
