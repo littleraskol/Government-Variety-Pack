@@ -54,6 +54,10 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy	# JIC
+	}
+
 	immediate = {
 		save_event_target_as = lrsk_impecon_colonizer
 		from = { save_event_target_as = lrsk_impecon_colonized }
@@ -68,6 +72,36 @@ country_event = {
 		allow = {
 			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
 		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_foundry
+				}
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_militarist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_militarist
+			}
+			modifier = {
+				factor = 0.6
+				has_ethic = ethic_pacifist
+			}
+			modifier = {
+				factor = 0.3
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
 	}
 
 	# Market
@@ -77,6 +111,36 @@ country_event = {
 
 		allow = {
 			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_market
+				}
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_pacifist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_pacifist
+			}
+			modifier = {
+				factor = 0.6
+				has_ethic = ethic_militarist
+			}
+			modifier = {
+				factor = 0.3
+				has_ethic = ethic_fanatic_militarist
+			}
 		}
 	}
 
@@ -88,6 +152,28 @@ country_event = {
 		allow = {
 			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
 		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_trophy
+				}
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Trophy Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
 	}
 
 	# Prospector
@@ -98,11 +184,76 @@ country_event = {
 		allow = {
 			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
 		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_prospector
+				}
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_materialist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
 	}
 
 	# Nothing
 	option = {
 		name = lrsk_gov_var_impecon.2.e
 		custom_tooltip = lrsk_gov_var_impecon.2.e.tooltip
+		
+		log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
+		
+		ai_chance = {
+			factor = 1 # dunno
+		}
+	}
+		
+	after = {
+		# call event to recalc legitimacy variable
+		country_event = { id = lrsk_gov_var_impecon.3 }
+	}
+}
+
+# Recalculates the "legitimacy" variable for imperial economy's stability modifier from having these vassals
+country_event = {
+	id = lrsk_gov_var_impecon.3
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy	# JIC
+	}
+	
+	immediate = {
+		set_variable = { which = lrsk_impecon_legit value = 0 }	# reset to recalc
+		
+		if = { limit = {any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
+		
+		if = { limit = {any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
+		
+		if = { limit = {any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
+		
+		if = { limit = {any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
 	}
 }
