@@ -227,14 +227,14 @@ country_event = {
 		
 		log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
 		
+		hidden_effect = {
+			# call event to recalc legitimacy variable - this happens on vassalization effect otherwise.
+			country_event = { id = lrsk_gov_var_impecon.3 }
+		}
+		
 		ai_chance = {
 			factor = 1 # dunno
 		}
-	}
-		
-	after = {
-		# call event to recalc legitimacy variable
-		country_event = { id = lrsk_gov_var_impecon.3 }
 	}
 }
 
