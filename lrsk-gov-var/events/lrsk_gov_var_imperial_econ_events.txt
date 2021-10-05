@@ -79,6 +79,8 @@ country_event = {
 					who = event_target:lrsk_impecon_colonizer
 					subject_type = lrsk_gvp_vassal_foundry
 				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_alloysub_of@root
 			}
 			log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
 		}
@@ -119,7 +121,10 @@ country_event = {
 					who = event_target:lrsk_impecon_colonizer
 					subject_type = lrsk_gvp_vassal_market
 				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_tradesub_of@root
 			}
+			add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
 			log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
@@ -159,7 +164,11 @@ country_event = {
 					who = event_target:lrsk_impecon_colonizer
 					subject_type = lrsk_gvp_vassal_trophy
 				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_trophysub_of@root
+				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 			}
+			add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
 			log = "[lrsk_impecon_colonized.GetName] set to Trophy Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
@@ -191,6 +200,8 @@ country_event = {
 					who = event_target:lrsk_impecon_colonizer
 					subject_type = lrsk_gvp_vassal_prospector
 				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_raressub_of@root
 			}
 			log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
 		}
@@ -268,7 +279,7 @@ country_event = {
 		}
 		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
 			remove_modifier = lrsk_gov_var_empire_impecon_trophy_ol
-			random_subject = { limit = { is_subject_type = lrsk_gvp_vassal_trophy }
+			random_subject = { limit = { has_country_flag = lrsk_gvp_impecon_trophysub_of@root }
 				if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 					remove_modifier = lrsk_gov_var_empire_impecon_trophy_vs
 				}
