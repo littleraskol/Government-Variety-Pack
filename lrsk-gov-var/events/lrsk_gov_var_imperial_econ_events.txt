@@ -25,25 +25,49 @@ country_event = {
 				any_subject = { is_subject_type = lrsk_gvp_vassal_prospector }
 			}
 		}
-		NOR = {
-			# Not sure how this would happen but eh
-			is_subject_type = lrsk_gvp_vassal_foundry
-			is_subject_type = lrsk_gvp_vassal_market
-			is_subject_type = lrsk_gvp_vassal_trophy
-			is_subject_type = lrsk_gvp_vassal_prospector
-			has_country_flag = lrsk_gvp_impecon_specsub_of@from
-
-			# Uplift: Prevent immediate change in subject status etc. if tutor can use chartered company subjects
-			#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
-
-			# Prevent sublight colonies from being chartered
-			#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
-		}
+		lrsk_special_vassal_allowed = yes
 	}
 
 	immediate = {
 		log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
-		from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+
+		# check and see if there should already be an applied type somehow; apply it.
+		if = { limit = { has_country_flag = lrsk_gvp_impecon_specsub_of@from }
+			switch = {
+				trigger = has_country_flag
+				lrsk_gvp_impecon_alloysub_of@from = {
+					set_subject_of = {
+						who = from
+						subject_type = lrsk_gvp_vassal_foundry
+					}
+				}
+				lrsk_gvp_impecon_tradesub_of@from = {
+					set_subject_of = {
+						who = from
+						subject_type = lrsk_gvp_vassal_market
+					}
+				}
+				lrsk_gvp_impecon_trophysub_of@from = {
+					set_subject_of = {
+						who = from
+						subject_type = lrsk_gvp_vassal_trophy
+					}
+				}
+				lrsk_gvp_impecon_raressub_of@from = {
+					set_subject_of = {
+						who = from
+						subject_type = lrsk_gvp_vassal_prospector
+					}
+				}
+				default = {
+					# This should never happen, but if there's no type flag, ask player what to do
+					from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+				}
+			}
+		}
+		else = {
+			from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+		}
 	}
 }
 
