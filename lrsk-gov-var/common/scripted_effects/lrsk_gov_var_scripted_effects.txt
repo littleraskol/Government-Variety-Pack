@@ -753,39 +753,3 @@ lrsk_mark_escape_route = {
 		set_star_flag = lrsk_marked_escape_route
 	}
 }
-
-# Performs the needed transformations on vassal type for the ImpEcon special vassals.
-# Basically, if an ImpEcon empire loses one of its special vassals, this restores its status if it regains it later.
-lrsk_impecon_specsub_transform = {
-	lrsk_basic_vassal_transformations = yes
-	if = { limit = { has_country_flag = lrsk_gvp_impecon_specsub_of@from }
-		switch = {
-			trigger = has_country_flag
-			lrsk_gvp_impecon_alloysub_of@from = {
-				set_subject_of = {
-					who = from
-					subject_type = lrsk_gvp_vassal_foundry
-				}
-			}
-			lrsk_gvp_impecon_tradesub_of@from = {
-				set_subject_of = {
-					who = from
-					subject_type = lrsk_gvp_vassal_market
-				}
-			}
-			lrsk_gvp_impecon_trophysub_of@from = {
-				set_subject_of = {
-					who = from
-					subject_type = lrsk_gvp_vassal_trophy
-				}
-			}
-			lrsk_gvp_impecon_raressub_of@from = {
-				set_subject_of = {
-					who = from
-					subject_type = lrsk_gvp_vassal_prospector
-				}
-			}
-		}
-		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
-	}
-}

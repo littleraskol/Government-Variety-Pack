@@ -416,4 +416,14 @@ lrsk_basic_vassal_transformations = {
 		}
 		#break = yes
 	}
+	else_if = {
+		limit = {
+			from = { lrsk_has_special_vassals = no }
+		}
+		set_subject_of = {
+			who = from
+			subject_type = vassal
+		}
+		#break = yes
+	}
 }

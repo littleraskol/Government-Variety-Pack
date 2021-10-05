@@ -563,3 +563,10 @@ lrsk_has_gvp_possible_invalidated_civic = {
 		}
 	}
 }
+
+# Checks to see if an overlord should have special vassal types
+lrsk_has_special_vassals = {
+	or = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy
+	}
+}
