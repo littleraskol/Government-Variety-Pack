@@ -295,10 +295,10 @@ country_event = {
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol } }
 				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
-				random_subject = { limit = { is_subject_type = lrsk_gvp_vassal_trophy }
-					if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
-						add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
-					}
+			}
+			random_subject = { limit = { is_subject_type = lrsk_gvp_vassal_trophy }
+				if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
+					add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 				}
 			}
 		}
