@@ -62,6 +62,22 @@ l_simp_chinese:
  d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
 
+ ## Subjects
+
+ # Imperial Economy special subjects
+
+ SUBJECT_lrsk_gvp_vassal_foundry:0 "Foundry Colony"
+ SUBJECT_DESC_lrsk_gvp_vassal_foundry:1 "\nFor better military preparedness, this vassal has been forced to render a quarter of its alloy production to its overlord. (Taxed 25% of alloys produced.)"
+
+ SUBJECT_lrsk_gvp_vassal_market:0 "Market Colony"
+ SUBJECT_DESC_lrsk_gvp_vassal_market:1 "\nFor greater prosperity, this vassal has been forced to render a quarter of its consumer goods production to its overlord and provide the overlord with commercial opportunities. (Taxed 25% of consumer goods produced, overlord gets +10% trade value and -5% market fee.)"
+
+ SUBJECT_lrsk_gvp_vassal_trophy:0 "Trophy Colony"
+ SUBJECT_DESC_lrsk_gvp_vassal_trophy:1 "\nFor the glory of the overlord, this vassal has been made an object lesson in proper deference to a superior. (Taxed 10% of Unity and Influence; gets a happiness penalty. Overlord gets +15% diplomatic power.)"
+
+ SUBJECT_lrsk_gvp_vassal_prospector:0 "Prospecting Colony"
+ SUBJECT_DESC_lrsk_gvp_vassal_prospector:1 "\nFor advanced development, this vassal has been tasked to find rare materials and turn over one-fifth of them to the overlord. (Taxed 20% of rare materials produced.)"
+
  ## Opinion Modifiers
 
  # New Fed Starts
@@ -435,6 +451,18 @@ l_simp_chinese:
  lrsk_gvp_empire_national_peril:0 "The Nation in Peril"
  lrsk_gvp_empire_national_peril_desc:0 "The state is on guard against all threats, internal and external."
 
+ lrsk_gov_var_empire_impecon_market:0 "Market Colony"
+ lrsk_gov_var_empire_impecon_market_desc:0 "Our mercantile vassal is providing us with expanded and favorable trade opportunities."
+
+ lrsk_gov_var_empire_impecon_trophy_ol:0 "Trophy Colony"
+ lrsk_gov_var_empire_impecon_trophy_ol_desc:0 "By devoting their public reputation to glorifying us, our trophy vassal increases our diplomatic clout."
+ 
+ lrsk_gov_var_empire_impecon_trophy_vs:0 "$lrsk_gov_var_empire_impecon_trophy_ol$"
+ lrsk_gov_var_empire_impecon_trophy_vs_desc:0 "The humiliation of being a mere galactic toady to another empire causes popular discontent."
+
+ lrsk_gov_var_empire_impecon_legit:0 "Imperial Legitimacy"
+ lrsk_gov_var_empire_impecon_legit_desc:0 "Organizing the economies and societies of our vassals for particular uses raises the confidence of the people in our rule."
+ 
  ### Planet Modifiers
 
  ## Utilitarian Planning - Work Allocation Plan
@@ -559,6 +587,22 @@ l_simp_chinese:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+ 
+ # Imperial Economy
+ LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special vassal you create will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+2§!"
+ LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
+ lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
+ lrsk_gov_var_impecon.2.desc:0 "The [lrsk_impecon_colonized.GetName] has submitted to us, as is right and proper. Our people expect to reap the benefits of our overlordship, and so we have the option of restructuring their economy and society for our benefit."
+ lrsk_gov_var_impecon.2.a:0 "Make them forge materials for our fleets."
+ lrsk_gov_var_impecon.2.a.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$SUBJECT_lrsk_gvp_vassal_foundry$§!, which is defined as follows:\n$SUBJECT_DESC_lrsk_gvp_vassal_foundry$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
+ lrsk_gov_var_impecon.2.b:0 "Make of them a source of cheap goods."
+ lrsk_gov_var_impecon.2.b.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$SUBJECT_lrsk_gvp_vassal_market$§!, which is defined as follows:\n$SUBJECT_DESC_lrsk_gvp_vassal_market$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
+ lrsk_gov_var_impecon.2.c:0 "Make them an object lesson on our glory."
+ lrsk_gov_var_impecon.2.c.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$SUBJECT_lrsk_gvp_vassal_trophy$§!, which is defined as follows:\n$SUBJECT_DESC_lrsk_gvp_vassal_trophy$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
+ lrsk_gov_var_impecon.2.d:0 "Make them find valuable rarities for us."
+ lrsk_gov_var_impecon.2.d.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$SUBJECT_lrsk_gvp_vassal_prospector$§!, which is defined as follows:\n$SUBJECT_DESC_lrsk_gvp_vassal_prospector$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
+ lrsk_gov_var_impecon.2.e:0 "Not necessary."
+ lrsk_gov_var_impecon.2.e.tooltip:0 "Leave them in their current state of servitude. $LRSK_GOV_VAR_IMPECON_PERM$"
 
  # Casino Luck Modifiers (not really interested in descriptions for these...)
  LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
