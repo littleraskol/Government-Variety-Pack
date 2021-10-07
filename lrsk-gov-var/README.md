@@ -55,7 +55,7 @@ Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose wil
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
+Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
 
 Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
@@ -195,7 +195,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v3.1 (10-??-21) - Civic Improvements 3
+v3.1 (10-07-21) - Civic Improvements 3
 -Imperial Economy is allowed to change vassals into specialized subjects.
 -Minor fix: Sanity checks for 'esper' traits only being called every 2 years, every year preferable.
 
