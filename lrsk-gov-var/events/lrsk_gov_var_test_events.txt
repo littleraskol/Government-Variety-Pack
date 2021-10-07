@@ -930,7 +930,6 @@ country_event = {
 					generate_start_deposits_and_blockers = yes
 					generate_start_buildings_and_districts = yes
 					generate_start_pops = yes
-					create_starting_leaders = yes
 				}
 				create_starbase = {
 					size = starbase_starport
@@ -945,6 +944,7 @@ country_event = {
 					}
 				}
 				event_target:lrsk_test_vassal = {
+					create_starting_leaders = yes
 					country_event = { id = game_start.9 }
 					country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 					set_name = random # Fixes some naming issues
