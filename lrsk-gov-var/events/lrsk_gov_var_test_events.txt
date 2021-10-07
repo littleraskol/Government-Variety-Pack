@@ -862,3 +862,98 @@ country_event = {
 		}
 	}
 }
+
+# Creates a nearby vassal
+country_event = {
+	id = lrsk_gvp_testing.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		capital_scope.solar_system = { 
+			closest_system = {
+				limit = {
+					has_owner = no
+					any_system_planet = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+				}
+				random_system_planet = { 
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					set_planet_size = 16
+					change_pc = pc_continental	#whatever
+					reroll_planet = yes
+					save_event_target_as = lrsk_test_vassal_home
+
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = event_target:lrsk_test_vassal_home
+						effect = {
+							save_event_target_as = lrsk_test_vassal_species
+						}
+					}
+					
+					create_country = {
+						species = event_target:lrsk_test_vassal_species
+						name_list = random
+						type = default
+						origin = origin_default
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = random
+						ethos = random
+						civics = random
+						effect = {
+							save_event_target_as = lrsk_test_vassal
+							establish_communications_no_message = root
+						}
+					}
+					create_colony = {
+						owner = event_target:lrsk_test_vassal
+					}
+					generate_start_deposits_and_blockers = yes
+					generate_start_buildings_and_districts = yes
+					generate_start_pops = yes
+					create_starting_leaders = yes
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_test_vassal
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+				event_target:lrsk_test_vassal = {
+					country_event = { id = game_start.9 }
+					country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+					set_name = random # Fixes some naming issues
+					set_subject_of = {
+						who = root
+						subject_type = vassal
+					}
+				}
+			}
+		}
+	}
+}
