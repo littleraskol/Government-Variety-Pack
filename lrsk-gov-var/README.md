@@ -195,6 +195,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3 (??-??-??) - Civic Improvements 4
+-Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
+
 v3.2 (10-07-21) - Civic Improvements 3
 -Imperial Economy is allowed to change vassals into specialized subjects.
 -Minor fix: Sanity checks for 'esper' traits only being called every 2 years, every year preferable.
