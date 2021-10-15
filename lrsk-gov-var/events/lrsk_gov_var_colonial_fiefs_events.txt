@@ -14,6 +14,13 @@ country_event = {
 	trigger = {
 		from = { has_valid_civic = lrsk_gov_var_civic_colonial_fiefs }
 		has_origin = lrsk_gov_var_origin_colonial_venture
+		nor = {
+			has_relation_flag = {
+				who = from
+				flag = lrsk_colony_hails_from
+			}
+			has_country_flag = lrsk_colony_hails_from@from
+		}
 	}
 
 	immediate = {
