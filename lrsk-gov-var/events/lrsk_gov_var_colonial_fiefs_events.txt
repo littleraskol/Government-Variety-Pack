@@ -1,0 +1,26 @@
+# Government Variety Pack
+# Events - Colonial Fiefs
+# Author: littleraskol
+
+namespace = lrsk_gov_var_colfief
+
+# Basic housekeeping to set proper flags on random vassals
+country_event = {
+	id = lrsk_gov_var_colfief.1000
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = { has_valid_civic = lrsk_gov_var_civic_colonial_fiefs }
+		has_origin = lrsk_gov_var_origin_viceroyalty
+	}
+
+	immediate = {
+		set_relation_flag = {
+			who = from
+			flag = lrsk_colony_hails_from
+		}
+		set_country_flag = lrsk_colony_hails_from@from
+	}
+}

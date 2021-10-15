@@ -54,3 +54,84 @@ lrsk_gov_var_gov_pretender_hive_imp = {
 		base = 1000
 	}
 }
+
+
+#test
+lrsk_gov_var_gov_colonial_viceroyalty_imp = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_VICEROY
+	ruler_title_female = LRSK_GOV_VAR_RT_COL_VICEREINE
+	heir_title = LRSK_GOV_VAR_HT_DEP_VICEROY
+	heir_title_female = LRSK_GOV_VAR_HT_DEP_VICEREINE
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		#has_authority = auth_imperial
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	weight = {
+		base = 1008
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_dic = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_REGENT
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		#has_authority = auth_dictatorial
+		has_origin = lrsk_gov_var_origin_colonial_venture
+		is_subject = yes
+	}
+
+	weight = {
+		base = 1009
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_oli = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_OVERSEER
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		or = {
+			has_authority = auth_oligarchic
+			has_authority = auth_democratic
+		}
+		has_origin = lrsk_gov_var_origin_colonial_venture
+		is_subject = yes
+		has_relation_flag = {
+			who = overlord
+			flag = lrsk_colony_hails_from
+		}
+	}
+
+	weight = {
+		base = 1010
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_dem = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_GOVERNOR
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		#has_authority = auth_democratic
+		nor = {
+			has_authority = auth_oligarchic
+			has_authority = auth_democratic
+		}
+		has_origin = lrsk_gov_var_origin_colonial_venture
+		is_subject = yes
+		has_country_flag = lrsk_colony_hails_from@overlord
+	}
+
+	weight = {
+		base = 1010
+	}
+}

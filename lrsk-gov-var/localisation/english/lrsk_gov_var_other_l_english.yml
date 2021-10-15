@@ -587,6 +587,26 @@ l_english:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+
+ ## Policies
+
+ # Colonial Fiefs
+ lrsk_gvp_colfief_policy:0 "Explorer Colonies"
+ lrsk_gvp_colfief_policy_desc:1 "Within the course of our colonization efforts, our government grants fiefholding rights to encourage growth and development. But we could expand the scope of these efforts, allowing or encouraging explorers to settle new worlds in our name. Surely, if given the chance, some groups of our subjects would venture forth and create new vassal colonies to serve the greater empire.\n"
+
+ lrsk_gvp_colfief_prohibit:0 "Prohibited"
+ lrsk_gvp_colfief_prohibit_name:0 "Forbid $lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_prohibit_desc:0 "We do not need the disorder that would be caused by allowing any group of subjects to simply venture off and create their own vassal territories."
+
+ lrsk_gvp_colfief_permit:0 "Permitted"
+ lrsk_gvp_colfief_permit_name:0 "Allow $lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_permit_desc:0 "Though we see no reason to stop any group of loyal subjects from creating new vassal colonies, nor do we feel the need to encourage them."
+
+ lrsk_gvp_colfief_promote:0 "Promoted"
+ lrsk_gvp_colfief_promote_name:0 "Encourage $lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_promote_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opporunities on new worlds."
+
+ ## Events
  
  # Imperial Economy
  LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special vassal you create will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+2§!"
@@ -624,8 +644,6 @@ l_english:
  lrsk_gov_var_statmod_casino_lost_branch_val_desc:0 ""
  lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
  lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
-
- ## Events
 
  # Backend
  lrsk_government_variety_pack_backend.3.name:0 "WARNING: Mod Conflict Detected"
