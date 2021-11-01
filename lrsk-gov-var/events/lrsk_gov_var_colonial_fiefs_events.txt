@@ -95,21 +95,58 @@ country_event = {
 						days = 2
 					}
 				}
-				if = { limit = { happiness < 60 }
+				if = { limit = { happiness < 50 }
 					set_timed_pop_flag = {
 						flag = lrsk_colfief_unhappy
 						days = 2
 					}
 				}
+				else_if = { limit = { happiness < 60 }
+					random = {
+						chance = 75
+						set_timed_pop_flag = {
+							flag = lrsk_colfief_unhappy
+							days = 2
+						}
+					}
+				}
+				else_if = { limit = { happiness < 70 }
+					random = {
+						chance = 50
+						set_timed_pop_flag = {
+							flag = lrsk_colfief_unhappy
+							days = 2
+						}
+					}
+				}
+				else_if = { limit = { happiness < 80 }
+					random = {
+						chance = 25
+						set_timed_pop_flag = {
+							flag = lrsk_colfief_unhappy
+							days = 2
+						}
+					}
+				}
+				
+				# This is an "aristocratic" system. So long as there is some possible founder somewhere,
+				# we want it to be more likely for a "higher class" pop to start a whole new empire.
+				# TBD!
 			}
 		}
 
 		# Mark every unowned, empty system that root has surveyed with a planet that some species in root can settle.
 		every_system = {
 			limit = {
-				is_surveyed = {
-					who = root
-					status = yes
+				or = {
+					is_surveyed = {
+						who = root
+						status = yes
+					}
+					distance_to_empire = {
+						who = root
+						distance = 8
+					}
 				}
 				has_owner = no
 				has_presence = no
@@ -180,6 +217,8 @@ country_event = {
 					has_planet_flag = lrsk_colfief_possible_source_world
 					any_owned_pop = { has_pop_flag = lrsk_colfief_possible_founder }
 				}
+				
+				save_event_target_as = lrsk_colfief_new_vassal_founder_homeworld
 
 				# Want to prioritize the unemployed and unhappy as "motivated" to leave and found a new colony
 				if = {
@@ -251,6 +290,8 @@ country_event = {
 						}
 					}
 				}
+				save_event_target_as = lrsk_colfief_new_vassal_star
+				
 				random_system_planet = {
 					limit = {
 						has_planet_flag = lrsk_colfief_possible_dest_world
@@ -495,6 +536,11 @@ country_event = {
 					who = root
 					subject_type = vassal
 				}
+				set_relation_flag = {
+					who = root
+					flag = lrsk_colony_hails_from
+				}
+				set_country_flag = lrsk_colony_hails_from@root
 			}
 
 			# delay this for X years
