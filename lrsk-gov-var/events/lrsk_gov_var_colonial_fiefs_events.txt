@@ -30,15 +30,13 @@ country_event = {
 			9 = {
 				modifier = {
 					add = -1
-					# TBD: Create policies w/ their flags. Change these to has_policy_flag
-					has_country_flag = lrsk_gvp_colfief_promoted
+					has_policy_flag = lrsk_gvp_colfief_promoted
 				}
 			}
 			1 = {
 				modifier = {
 					add = 1
-					# TBD: Create policies w/ their flags. Change these to has_policy_flag
-					has_country_flag = lrsk_gvp_colfief_promoted
+					has_policy_flag = lrsk_gvp_colfief_promoted
 				}
 				country_event = {
 					id = lrsk_gov_var_colfief.2
@@ -516,8 +514,7 @@ country_event = {
 				}
 				
 				# 25% chance with promotion policy that colony starts with 2 pops
-				# TBD: Create policies w/ their flags. Change these to has_policy_flag
-				if = { limit = { root = { has_country_flag = lrsk_gvp_colfief_promoted } }
+				if = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted } }
 					random = {
 						chance = 25
 						create_pop = {
