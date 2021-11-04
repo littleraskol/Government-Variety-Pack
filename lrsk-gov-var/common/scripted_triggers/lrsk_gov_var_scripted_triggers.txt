@@ -122,8 +122,7 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 	not = { has_country_flag = lrsk_colfief_venture_cooldown }
 
 	# Requires policies in effect.
-	# TBD: Create policies w/ their flags. Change these to has_policy_flag
-	not = { has_country_flag = lrsk_gvp_colfief_prohibited }
+	not = { has_policy_flag = lrsk_gvp_colfief_prohibited }
 
 	# Pop that starts new empire must be free, not subject to purge, not "second class" species
 	any_owned_pop = {
