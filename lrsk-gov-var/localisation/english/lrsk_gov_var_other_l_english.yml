@@ -608,7 +608,7 @@ l_english:
 
  ## Events
  
- # Imperial Economy
+ ## Imperial Economy
  LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special vassal you create will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+2§!"
  LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
  lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
@@ -629,7 +629,17 @@ l_english:
  lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. Note that you can only have one of each type. The event that gives you this choice will explain the different types, but note that unlike most vassals, they are able to expand and will not join your wars, as they are purely economic assets (and would not be very good ones if they could never expand)."
  lrsk_gov_var_impecon.101.a:0 "Crack the whip!"
 
- # Casino Luck Modifiers (not really interested in descriptions for these...)
+ ## Colonial Fiefs
+
+ # Inform player of explorer colony
+ lrsk_gov_var_colfief.3.name:0 "A Viceroyal Vassal Joins the Fold"
+ lrsk_gov_var_colfief.3.desc:0 "Explorers from [lrsk_colfief_new_vassal_founder_homeworld.GetName] have struck out to found a new colony on §Y[lrsk_colfief_new_vassal_world.GetName]§! in the [lrsk_colfief_new_vassal_star.GetName] system. Calling themselves the §Y[lrsk_colfief_new_vassal_empire.GetName]§!, they pledge to serve our greater empire under the loyal watch of [lrsk_colfief_new_vassal_empire.ruler.GetTitle] [lrsk_colfief_new_vassal_empire.ruler.GetName]."
+ lrsk_gov_var_colfief.3.a:0 "We accept their fealty."
+ lrsk_gov_var_colfief.3.a.tooltip:0 "You can prevent further random vassals from spawning by setting your §H$policy_lrsk_gvp_colfief_policy$§! Policy to §R$lrsk_gvp_colfief_prohibited$§!"
+ lrsk_gov_var_colfief.3.b:0 "Handle this without bothering me next time."
+ lrsk_gov_var_colfief.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!\n\n$lrsk_gov_var_colfief.3.a.tooltip$"
+
+ ## Casino Luck Modifiers (not really interested in descriptions for these...)
  LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
 
  lrsk_gov_var_statmod_casino_lost_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Trade Value"
@@ -645,7 +655,7 @@ l_english:
  lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
  lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
 
- # Backend
+ ## Backend
  lrsk_government_variety_pack_backend.3.name:0 "WARNING: Mod Conflict Detected"
  lrsk_government_variety_pack_backend.3.desc:0 "It appears that you are running both the 'Government Variety Pack' and 'Civics Variety Pack' mods. As the author of both of these mods, I warn that they are not intended to be used together. I can't guarantee the stability of your game if you keep playing with both!"
 
