@@ -541,7 +541,35 @@ country_event = {
 				flag = lrsk_colfief_venture_cooldown
 				days = 720
 			}
+
+			if = { limit = { not = { has_country_flag = lrsk_no_colfief_random_vassal_notice } } country_event = { id = lrsk_gov_var_colfief.3 } }
 		}
+	}
+}
+
+# Inform player of explorer colony
+country_event = {
+	id = lrsk_gov_var_colfief.3
+	title = lrsk_gov_var_colfief.3.name
+	desc = lrsk_gov_var_colfief.3.desc
+	location = event_target:lrsk_colfief_new_vassal_world
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_colonial_fiefs	#JIC
+		NOT = { has_country_flag = lrsk_no_colfief_random_vassal_notice }
+	}
+
+	option = {
+		name = lrsk_gov_var_colfief.3.a
+		custom_tooltip = lrsk_gov_var_colfief.3.a.tooltip
+	}
+
+	option = {
+		name = lrsk_gov_var_colfief.3.b
+		custom_tooltip = lrsk_gov_var_colfief.3.b.tooltip
+		hidden_effect = { set_country_flag = lrsk_no_colfief_random_vassal_notice }
 	}
 }
 
