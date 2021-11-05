@@ -1,0 +1,88 @@
+# Government Variety Pack
+# Policies
+# Author: littleraskol
+
+lrsk_gvp_colfief_policy = {
+
+	potential = {
+		has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
+	}
+
+	option = {
+		name = "lrsk_gvp_colfief_prohibited"
+
+		policy_flags = {
+			lrsk_gvp_colfief_prohibited
+		}
+
+		valid = {
+			OR = {
+				has_policy_flag = lrsk_gvp_colfief_permited
+				has_policy_flag = lrsk_gvp_colfief_promoted
+			}
+		}	
+
+		AI_weight = {
+			modifier = {
+				factor = 100 # idk
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_gvp_colfief_permited"
+
+		policy_flags = {
+			lrsk_gvp_colfief_permited
+		}
+
+		valid = {
+			OR = {
+				#The following block allows it as the default option.
+				NOR = {
+					has_policy_flag = lrsk_gvp_colfief_prohibited
+					has_policy_flag = lrsk_gvp_colfief_promoted
+				}
+				OR = {
+					has_policy_flag = lrsk_gvp_colfief_prohibited
+					has_policy_flag = lrsk_gvp_colfief_promoted
+				}
+			}
+		}
+
+		modifier = {
+			# + happiness
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 1 # idk
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_gvp_colfief_promoted"
+
+		policy_flags = {
+			lrsk_gvp_colfief_promoted
+		}
+
+		valid = {
+			OR = {
+				has_policy_flag = lrsk_gvp_colfief_permited
+				has_policy_flag = lrsk_gvp_colfief_prohibited
+			}
+		}
+
+		modifier = {
+      		# ++ happiness, - unity?
+    	}
+
+		AI_weight = {
+			modifier = {
+				factor = 1 # idk
+			}
+		}
+	}
+}

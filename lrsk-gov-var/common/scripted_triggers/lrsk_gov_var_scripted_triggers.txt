@@ -139,15 +139,13 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 	# This can happen in any unowned, empty system that root has surveyed with a planet that some species in root can settle.
 	# Note: there is the edge case that only enslaved/being-purged pops have the needed habitability, in which case later effects will fail.
 	any_system = {
-		or = {
-			is_surveyed = {
-				who = root
-				status = yes
-			}
-			distance_to_empire = {
-				who = root
-				distance = 8
-			}
+		is_surveyed = {
+			who = root
+			status = no
+		}
+		distance_to_empire = {
+			who = root
+			distance = 8
 		}
 		has_owner = no
 		has_presence = no

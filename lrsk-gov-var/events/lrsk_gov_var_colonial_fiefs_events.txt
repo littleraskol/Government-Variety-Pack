@@ -19,9 +19,7 @@ country_event = {
 
 		# Need the right civic
 		has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
-
-		# TBD: Create policies w/ their flags. Change these to has_policy_flag
-		not = { has_country_flag = lrsk_gvp_colfief_prohibited }
+		not = { has_policy_flag = lrsk_gvp_colfief_prohibited }
 	}
 
 	immediate = {
@@ -136,15 +134,13 @@ country_event = {
 		# Mark every unowned, empty system that root has surveyed with a planet that some species in root can settle.
 		every_system = {
 			limit = {
-				or = {
-					is_surveyed = {
-						who = root
-						status = yes
-					}
-					distance_to_empire = {
-						who = root
-						distance = 8
-					}
+				is_surveyed = {
+					who = root
+					status = no
+				}
+				distance_to_empire = {
+					who = root
+					distance = 8
 				}
 				has_owner = no
 				has_presence = no
