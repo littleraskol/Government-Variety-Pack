@@ -131,7 +131,7 @@ country_event = {
 			}
 		}
 
-		# Mark every unowned, empty system that root has surveyed with a planet that some species in root can settle.
+		# Mark every unowned, empty system that root has not surveyed at least 3 jumps away with a planet that some species in root can settle.
 		every_system = {
 			limit = {
 				is_surveyed = {
@@ -140,7 +140,7 @@ country_event = {
 				}
 				distance_to_empire = {
 					who = root
-					distance = 8
+					distance > 2
 				}
 				has_owner = no
 				has_presence = no
