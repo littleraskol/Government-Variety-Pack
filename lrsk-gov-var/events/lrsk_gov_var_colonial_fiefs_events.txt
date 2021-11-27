@@ -23,6 +23,7 @@ country_event = {
 	}
 
 	immediate = {
+		log = "In colonial fiefs gate"
 		random_list = {
 			# nothing
 			9 = {
@@ -59,6 +60,7 @@ country_event = {
 
 	# This is a complex series of many-to-many relations. It is mediated by temporary flags to mark everything with potential and then combine them.
 	immediate = {
+		log = "In colonial fiefs vassal spawner"
 		# Mark all empire planets from which a colony founder can emigrate.
 		every_owned_planet = {
 			limit = {
