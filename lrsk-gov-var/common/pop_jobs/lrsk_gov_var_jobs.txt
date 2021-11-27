@@ -26,11 +26,10 @@ lrsk_gov_var_job_hedge_preacher = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_priests
@@ -128,11 +127,10 @@ lrsk_gvp_job_citscholar = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		lrsk_complex_worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	resources = {
 		category = planet_researchers
@@ -318,11 +316,10 @@ lrsk_gov_var_job_functionary = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		lrsk_complex_worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	country_modifier = {
 		country_admin_cap_add = 3
@@ -433,11 +430,10 @@ lrsk_gov_var_job_infoguide = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		lrsk_complex_worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	resources = {
 		category = planet_researchers
@@ -542,13 +538,14 @@ lrsk_gov_var_job_gofer = {
 	building_icon = lrsk_gvp_bldg_odd_jobs_emporium
 	clothes_texture_index = 2
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
 	}
+
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_artisans
@@ -637,13 +634,14 @@ lrsk_gov_var_job_offworld_worker = {
 	building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
 	clothes_texture_index = 2
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
 	}
+
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_technician
@@ -726,11 +724,10 @@ lrsk_gov_var_job_knight = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	country_modifier = {
 		country_naval_cap_add = 3
@@ -880,11 +877,10 @@ lrsk_gov_var_job_pastor = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_priests
@@ -984,11 +980,10 @@ lrsk_gov_var_job_otherworld_guide = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_telepaths
@@ -1084,11 +1079,10 @@ lrsk_gov_var_job_investigator = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		battle_thrall_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_enforcers
@@ -1202,11 +1196,10 @@ lrsk_gov_var_job_suppressor = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		battle_thrall_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	planet_modifier = {		
 		pop_cat_worker_political_power = -0.25
@@ -1303,11 +1296,12 @@ lrsk_gov_var_job_planetmind_overseer = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_jobs
@@ -1347,11 +1341,12 @@ lrsk_gov_var_job_regional_coordinator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_jobs

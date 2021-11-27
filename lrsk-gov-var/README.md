@@ -195,6 +195,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.2.1 (11-27-21) - Herbert Update
+-Fixed job calculations for compatibility with Stellaris 3.2.* (Herbert)
+-Changed compat version number.
+
 v3.2 (10-07-21) - Civic Improvements 3
 -Imperial Economy is allowed to change vassals into specialized subjects.
 -Minor fix: Sanity checks for 'esper' traits only being called every 2 years, every year preferable.
