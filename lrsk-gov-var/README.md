@@ -195,6 +195,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.2.1.1 (11-27-21) - "Cosmic" Empires fix
+-The re-instated "galactic" governments never got their names back...
+
 v3.2.1 (11-27-21) - Herbert Update
 -Fixed job calculations for compatibility with Stellaris 3.2.* (Herbert)
 -Changed compat version number.
