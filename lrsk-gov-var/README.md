@@ -198,6 +198,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v3.3 (??-??-??) - Civic Improvements 4
 -Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
 
+v3.2.1.1 (11-27-21) - "Cosmic" Empires fix
+-The re-instated "galactic" governments never got their names back...
+
 v3.2.1 (11-27-21) - Herbert Update
 -Fixed job calculations for compatibility with Stellaris 3.2.* (Herbert)
 -Changed compat version number.
