@@ -141,6 +141,10 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 			who = root
 			distance > 2
 		}
+		distance_to_empire = {
+			who = root
+			distance < 15
+		}
 		has_owner = no
 		has_presence = no
 		root = {
@@ -150,7 +154,7 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 					any_system_planet = {
 						habitability = {
 							who = prevprev
-							value >= 0.4
+							value >= 0.5
 						}
 					}
 				}

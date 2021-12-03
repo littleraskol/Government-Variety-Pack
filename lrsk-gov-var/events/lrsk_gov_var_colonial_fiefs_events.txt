@@ -144,6 +144,10 @@ country_event = {
 					who = root
 					distance > 2
 				}
+				distance_to_empire = {
+					who = root
+					distance < 15
+				}
 				has_owner = no
 				has_presence = no
 				root = {
@@ -153,7 +157,7 @@ country_event = {
 							any_system_planet = {
 								habitability = {
 									who = prevprev
-									value >= 0.4
+									value >= 0.5
 								}
 							}
 						}
@@ -172,7 +176,7 @@ country_event = {
 							prevprev = {
 								habitability = {
 									who = prev
-									value >= 0.4
+									value >= 0.5
 								}
 							}
 						}
@@ -195,7 +199,7 @@ country_event = {
 							has_planet_flag = lrsk_colfief_possible_dest_world
 							habitability = {
 								who = prevprev
-								value >= 0.4
+								value >= 0.5
 							}
 						}
 					}
@@ -275,14 +279,14 @@ country_event = {
 			}
 
 			# Find the destination planet
-			random_system = {
+			closest_system = {
 				limit = {
 					star = { has_planet_flag = lrsk_colfief_possible_dest_system }
 					any_system_planet = {
 						has_planet_flag = lrsk_colfief_possible_dest_world
 						habitability = {
 							who = event_target:lrsk_colfief_new_vassal_founder
-							value >= 0.4
+							value >= 0.5
 						}
 					}
 				}
@@ -293,7 +297,7 @@ country_event = {
 						has_planet_flag = lrsk_colfief_possible_dest_world
 						habitability = {
 							who = event_target:lrsk_colfief_new_vassal_founder
-							value >= 0.4
+							value >= 0.5
 						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_world
