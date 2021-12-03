@@ -12,7 +12,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		# Note: These are the only requirements because this is a very light event that just rolls a d10 and calls another event,
+		# Note: These are the only requirements because this is a very light event that just rolls a d8 and calls another event,
 		# and the conditions allowing the spawning to occur may change between when this check is made and when the spawn occurs.
 		# This does mean there is a "lag time" between setting the appropriate policy and when the effect can happen, since this
 		# only goes off yearly.
@@ -26,7 +26,7 @@ country_event = {
 		log = "In colonial fiefs gate"
 		random_list = {
 			# nothing
-			9 = {
+			7 = {
 				modifier = {
 					add = -1
 					has_policy_flag = lrsk_gvp_colfief_promoted
@@ -143,10 +143,6 @@ country_event = {
 				distance_to_empire = {
 					who = root
 					distance > 2
-				}
-				distance_to_empire = {
-					who = root
-					distance < 15
 				}
 				has_owner = no
 				has_presence = no
