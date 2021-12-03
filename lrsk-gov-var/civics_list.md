@@ -162,6 +162,16 @@ This is the full listing of civics with descriptions.
 [*][i]Investigation & Security Services (Authoritarian)[/i] - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-10% crime, +1 Encryption and Codebreaking, build Professional Protection Office)
 [/list]
 
+[b]"Advanced" Civics[/b]
+
+[list]
+[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+
+[*][i]Artificers (Not Essentialists or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+
+[*][i]Essentialists (Not Artificers or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+[/list]
+
 [b]Enhanced Civics[/b]
 These are civics from the base game that have had new features added to them.
 [list]

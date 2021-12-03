@@ -155,6 +155,14 @@ Conflict Resolution Specialists (Pacifist) - This business specialized in provid
 
 Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
 
+"Advanced" Civics
+
+Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+
+Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+
+Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+
 Enhanced Civics
 
 (These are civics from the base game that have had new features added to them.)
@@ -197,6 +205,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v3.3 (??-??-??) - Civic Improvements 4
 -Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
+-Added three new "advanced" mutually-exclusive and antagonistic starting-only civics focused on the idea of cultures that specialized in different domains of knowledge. Any non-gestalt empire can start with them.
+-New Civic: Shapers (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+-New Civic: Artificers (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+-New Civic: Essentialists (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
 
 v3.2.1.1 (11-27-21) - "Cosmic" Empires fix
 -The re-instated "galactic" governments never got their names back...
