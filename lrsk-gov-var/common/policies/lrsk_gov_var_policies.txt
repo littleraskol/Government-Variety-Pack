@@ -17,15 +17,8 @@ lrsk_gvp_colfief_policy = {
 
 		valid = {
 			OR = {
-				#The following block allows it as the default option.
-				NOR = {
-					has_policy_flag = lrsk_gvp_colfief_permited
-					has_policy_flag = lrsk_gvp_colfief_promoted
-				}
-				OR = {
-					has_policy_flag = lrsk_gvp_colfief_permited
-					has_policy_flag = lrsk_gvp_colfief_promoted
-				}
+				has_policy_flag = lrsk_gvp_colfief_prohibited
+				has_policy_flag = lrsk_gvp_colfief_permited
 			}
 		}
 
@@ -48,6 +41,7 @@ lrsk_gvp_colfief_policy = {
 		valid = {
 			OR = {
 				has_policy_flag = lrsk_gvp_colfief_prohibited
+				has_policy_flag = lrsk_gvp_colfief_permited
 				has_policy_flag = lrsk_gvp_colfief_promoted
 			}
 		}
@@ -75,7 +69,7 @@ lrsk_gvp_colfief_policy = {
 		valid = {
 			OR = {
 				has_policy_flag = lrsk_gvp_colfief_permited
-				has_policy_flag = lrsk_gvp_colfief_prohibited
+				has_policy_flag = lrsk_gvp_colfief_promoted
 			}
 		}
 
