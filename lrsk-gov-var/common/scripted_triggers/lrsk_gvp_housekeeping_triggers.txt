@@ -396,11 +396,26 @@ lrsk_has_gvp_corp_civic = {
 	}
 }
 
+lrsk_has_gvp_techideology_civic = {
+	OR = {
+		has_civic = lrsk_adv_civ_civic_shapers
+		has_civic = lrsk_adv_civ_civic_artificers
+		has_civic = lrsk_adv_civ_civic_essentialists
+	}
+}
+
+lrsk_has_gvp_advanced_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_civic = yes
+	}
+}
+
 lrsk_has_any_gvp_civic = {
 	OR = {
 		lrsk_has_gvp_normal_civic = yes
 		lrsk_has_gvp_gestalt_civic = yes
 		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advanced_civic = yes
 	}
 }
 
@@ -507,11 +522,26 @@ lrsk_has_gvp_corp_valid_civic = {
 	}
 }
 
+lrsk_has_gvp_techideology_valid_civic = {
+	OR = {
+		has_valid_civic = lrsk_adv_civ_civic_shapers
+		has_valid_civic = lrsk_adv_civ_civic_artificers
+		has_valid_civic = lrsk_adv_civ_civic_essentialists
+	}
+}
+
+lrsk_has_gvp_advanced_valid_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_valid_civic = yes
+	}
+}
+
 lrsk_has_any_gvp_valid_civic = {
 	OR = {
-		lrsk_has_gvp_normal_valid_civic = yes
-		lrsk_has_gvp_gestalt_valid_civic = yes
-		lrsk_has_gvp_corp_valid_civic = yes
+		lrsk_has_gvp_normal_civic = yes
+		lrsk_has_gvp_gestalt_civic = yes
+		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advanced_valid_civic = yes
 	}
 }
 

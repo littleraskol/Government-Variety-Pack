@@ -17,6 +17,16 @@ event = {
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
+
+		## Starting Civics setup
+
+		# Shapers/Artificers/Essentialists
+		every_playable_country = {
+			limit = {
+				lrsk_has_gvp_techideology_valid_civic = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.5 }
+		}
 		
 		## Origins Setup
 
@@ -839,6 +849,26 @@ country_event = {
 
 				set_country_flag = lrsk_fed_npc_fixed
 			} }
+		}
+	}
+}
+
+# Add the required starting tech for Shapers/Artificers/Mechanists
+country_event = {
+	id = lrsk_government_variety_pack_backend.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		lrsk_has_gvp_techideology_valid_civic = yes
+	}
+
+	immediate = {
+		switch = {
+			trigger = has_valid_civic
+			lrsk_adv_civ_civic_shapers = { give_technology = { message = no tech = tech_eco_simulation } }
+			lrsk_adv_civ_civic_artificers = { give_technology = { message = no tech = tech_powered_exoskeletons } }
+			lrsk_adv_civ_civic_essentialists = { give_technology = { message = no tech = tech_fusion_power } }
 		}
 	}
 }
