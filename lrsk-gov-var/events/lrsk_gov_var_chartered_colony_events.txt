@@ -41,13 +41,15 @@ country_event = {
 			set_country_flag = lrsk_charter_subject_same_species_as_ol
 		}
 
-		#Remove overlord-only civic, replace with subject civic
+		#Remove overlord-only civic, replace with subject civic - Not totally clear why this happens but I have seen it in testing.
 		IF = { limit = { has_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 			force_remove_civic = lrsk_gov_var_civic_mc_chart_corp_board
 			force_add_civic = lrsk_gov_var_civic_mc_chartered_company
 		}
-
-		from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
+		# No point in asking to turn into a CC if it's already done, as it would be in the prior case.
+		ELSE = {
+			from = { country_event = { id = lrsk_gov_var_chartered.2 days = 3 } } # delayed to help play nice with vassal mods.
+		}		
 	}
 }
 
