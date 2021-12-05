@@ -112,13 +112,6 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 	# Requires policies in effect.
 	not = { has_policy_flag = lrsk_gvp_colfief_prohibited }
 
-	# Pop that starts new empire must be free, not subject to purge, not "second class" species
-	any_owned_pop = {
-		is_enslaved = no
-		is_being_purged = no
-		not = { pop_has_trait = trait_syncretic_proles }
-	}
-
 	# Don't want to poach pops from planets with few pops
 	any_owned_planet = {
 		num_pops > 9
@@ -133,10 +126,6 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 	# This can happen in any unowned, empty system that root has not surveyed at least 3 jumps from the home empire with a planet that some species in root can settle.
 	# Note: there is the edge case that only enslaved/being-purged pops have the needed habitability, in which case later effects will fail.
 	any_system = {
-		is_surveyed = {
-			who = root
-			status = no
-		}
 		distance_to_empire = {
 			who = root
 			distance > 2
@@ -148,6 +137,10 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 				not = { has_trait = trait_syncretic_proles }
 				prevprev = {
 					any_system_planet = {
+						is_surveyed = {
+							who = root
+							status = no
+						}
 						habitability = {
 							who = prevprev
 							value >= 0.5
