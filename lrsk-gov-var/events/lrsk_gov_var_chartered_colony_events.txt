@@ -77,6 +77,10 @@ country_event = {
 
 	is_triggered_only = yes
 
+	trigger = {
+		from = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } # JIC, no point in this if already CC
+	}
+
 	immediate = {
 		save_event_target_as = lrsk_chartering_agent
 		owner_species = { save_event_target_as = lrsk_chartering_agent_species }
