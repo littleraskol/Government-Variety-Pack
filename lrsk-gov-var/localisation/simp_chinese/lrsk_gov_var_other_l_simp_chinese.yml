@@ -92,6 +92,9 @@ l_simp_chinese:
  triggered_opinion_lrsk_gvp_unisov_potential_vassals_1:0 "Possible Benevolent Protector"
  triggered_opinion_lrsk_gvp_unisov_potential_vassals_2:0 "$triggered_opinion_lrsk_gvp_unisov_potential_vassals_1$"
 
+ # Colonial Fiefs
+ opinion_lrsk_gvp_loyal_explorer_vassal:0 "Grateful for New Start"
+
  # Other civic interactions
  triggered_opinion_lrsk_gvp_civic_minded_spirit:0 "Civic-Minded Spirit"
  triggered_opinion_lrsk_gvp_unaccountable_tyrants:0 "Unaccountable Despots"
@@ -123,6 +126,12 @@ l_simp_chinese:
  triggered_opinion_lrsk_gvp_workers_benefits:0 "Benefits for Workers"
  triggered_opinion_lrsk_gvp_entrepreneurial_spirit:0 "Entrepreneurial Spirit"
  triggered_opinion_lrsk_gvp_workers_forgotten:0 "Workers Forgotten"
+ triggered_opinion_lrsk_gvp_flex_shapers:0 "Flexible Shapers"
+ triggered_opinion_lrsk_gvp_indust_artificers:0 "Industrious Artificers"
+ triggered_opinion_lrsk_gvp_insight_essentialists:0 "Insightful Essentialists"
+ triggered_opinion_lrsk_gvp_devious_essentialists:0 "Devious Essentialists"
+ triggered_opinion_lrsk_gvp_reckless_artificers:0 "Reckless Artificers"
+ triggered_opinion_lrsk_gvp_obscene_shapers:0 "Obscene Shapers"
 
  ## Buildings
 
@@ -587,8 +596,29 @@ l_simp_chinese:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+
+ ## Policies
+
+ # Colonial Fiefs
+ policy_lrsk_gvp_colfief_policy:0 "Explorer Colonies"
+ policy_lrsk_gvp_colfief_policy_desc:1 "Within the course of our colonization efforts, our government grants fiefholding rights to encourage growth and development. But we could expand the scope of these efforts, allowing or encouraging explorers to settle new worlds in our name. Surely, if given the chance, some groups of our subjects would venture forth and create new vassal colonies to serve the greater empire.\n"
+ LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON:0 "chance per year that one of your £pop£ pops will found a §Ynew vassal empire§! in some distant system."
+
+ lrsk_gvp_colfief_prohibited:0 "Prohibited"
+ lrsk_gvp_colfief_prohibited_name:0 "Forbid $policy_lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_prohibited_desc:0 "We do not need the disorder that would be caused by allowing any group of subjects to simply venture off and create their own vassal territories."
+
+ lrsk_gvp_colfief_permited:0 "Permitted"
+ lrsk_gvp_colfief_permited_name:0 "Allow $policy_lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_permited_desc:0 "Though we see no reason to stop any group of loyal subjects from creating new vassal colonies, nor do we feel the need to encourage them.\n\n§G12.5%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$"
+
+ lrsk_gvp_colfief_promoted:0 "Promoted"
+ lrsk_gvp_colfief_promoted_name:0 "Encourage $policy_lrsk_gvp_colfief_policy$"
+ lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opporunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ pop."
+
+ ## Events
  
- # Imperial Economy
+ ## Imperial Economy
  LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special vassal you create will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+2§!"
  LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
  lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
@@ -609,10 +639,22 @@ l_simp_chinese:
  lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. Note that you can only have one of each type. The event that gives you this choice will explain the different types, but note that unlike most vassals, they are able to expand and will not join your wars, as they are purely economic assets (and would not be very good ones if they could never expand)."
  lrsk_gov_var_impecon.101.a:0 "Crack the whip!"
 
- # Casino Luck Modifiers (not really interested in descriptions for these...)
- LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
+ ## Colonial Fiefs
 
- # Casino Luck Modifiers (not really interested in descriptions for these...)
+ # Inform player of explorer colony
+ lrsk_gov_var_colfief.3.name:0 "A Viceroyal Vassal Joins the Fold"
+ lrsk_gov_var_colfief.3.desc:0 "Explorers from [lrsk_colfief_new_vassal_founder_homeworld.GetName] have struck out to found a new colony on §Y[lrsk_colfief_new_vassal_world.GetName]§! in the [lrsk_colfief_new_vassal_star.GetName] system. Calling themselves the §Y[lrsk_colfief_new_vassal_empire.GetName]§!, they pledge to serve our greater empire under the loyal watch of [lrsk_colfief_new_vassal_empire.ruler.GetTitle] [lrsk_colfief_new_vassal_empire.ruler.GetName]."
+ lrsk_gov_var_colfief.3.a:0 "We accept their fealty."
+ lrsk_gov_var_colfief.3.a.tooltip:0 "You can prevent further random vassals from spawning by setting your §H$policy_lrsk_gvp_colfief_policy$§! Policy to §R$lrsk_gvp_colfief_prohibited$§!"
+ lrsk_gov_var_colfief.3.b:0 "Handle this without bothering me next time."
+ lrsk_gov_var_colfief.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!\n\n$lrsk_gov_var_colfief.3.a.tooltip$"
+
+ # Explainer
+ lrsk_gov_var_colfief.101.name:0 "Explorer Colonies and Viceroyal Vassals"
+ lrsk_gov_var_colfief.101.desc:0 "The §Y$lrsk_gov_var_civic_colonial_fiefs$§! Civic grants access to the 'Explorer Colonies' policy tree. By default, the initially selected option does nothing. You can select other policy options that will allow your pops to start new empires on unexplored worlds which will become vassals to your empire. Note that you must have an inhabited planet with at least 10 pops and at least one of those pops must be free, not in the process of being purged, and not have the 'Serviles' trait. Additionally, there must be a world in an unowned, unoccupied system at a bit of a distance to your empire with an unsurveyed world that has at least some degree of decent (at least 50%) habitability for one of the pops meeting the prior criteria. AI players will not use any of this to cut down on player frustration."
+ lrsk_gov_var_colfief.101.a:0 "For gold and glory!"
+
+ ## Casino Luck Modifiers (not really interested in descriptions for these...)
  LRSK_GOV_VAR_STATMOD_CASINO_COMMON:0 "Winds of Fortune:"
 
  lrsk_gov_var_statmod_casino_lost_trade:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Lost Trade Value"
@@ -628,9 +670,7 @@ l_simp_chinese:
  lrsk_gov_var_statmod_casino_gain_branch_val:0 "$LRSK_GOV_VAR_STATMOD_CASINO_COMMON$ Improved Branch Office Value"
  lrsk_gov_var_statmod_casino_gain_branch_val_desc:0 ""
 
- ## Events
-
- # Backend
+ ## Backend
  lrsk_government_variety_pack_backend.3.name:0 "WARNING: Mod Conflict Detected"
  lrsk_government_variety_pack_backend.3.desc:0 "It appears that you are running both the 'Government Variety Pack' and 'Civics Variety Pack' mods. As the author of both of these mods, I warn that they are not intended to be used together. I can't guarantee the stability of your game if you keep playing with both!"
 

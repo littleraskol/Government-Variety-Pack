@@ -165,7 +165,7 @@ This is the full listing of civics with descriptions.
 [b]"Advanced" Civics[/b]
 
 [list]
-[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, +10% growth, -10% non-society research, start with "Eco Simulation" tech.)
 
 [*][i]Artificers (Not Essentialists or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
 
