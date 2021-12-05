@@ -494,3 +494,72 @@ triggered_opinion_lrsk_gvp_individualist_nightmare = {
 		base = -20
 	}
 }
+
+triggered_opinion_lrsk_gvp_flex_shapers = {
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_shapers
+		from = { has_valid_civic = lrsk_adv_civ_civic_shapers }
+	}
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_lrsk_gvp_indust_artificers = {
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_artificers
+		from = { has_valid_civic = lrsk_adv_civ_civic_artificers }
+	}
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_lrsk_gvp_insight_essentialists = {
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_essentialists
+		from = { has_valid_civic = lrsk_adv_civ_civic_essentialists }
+	}
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_lrsk_gvp_devious_essentialists = {
+	trigger = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_shapers
+			has_valid_civic = lrsk_adv_civ_civic_artificers
+		}
+		from = { has_valid_civic = lrsk_adv_civ_civic_essentialists }
+	}
+	opinion = {
+		base = -25
+	}
+}
+
+triggered_opinion_lrsk_gvp_reckless_artificers = {
+	trigger = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_shapers
+			has_valid_civic = lrsk_adv_civ_civic_essentialists
+		}
+		from = { has_valid_civic = lrsk_adv_civ_civic_artificers }
+	}
+	opinion = {
+		base = -25
+	}
+}
+
+triggered_opinion_lrsk_gvp_obscene_shapers = {
+	trigger = {
+		OR = {
+			has_valid_civic = lrsk_adv_civ_civic_artificers
+			has_valid_civic = lrsk_adv_civ_civic_essentialists
+		}
+		from = { has_valid_civic = lrsk_adv_civ_civic_shapers }
+	}
+	opinion = {
+		base = -25
+	}
+}

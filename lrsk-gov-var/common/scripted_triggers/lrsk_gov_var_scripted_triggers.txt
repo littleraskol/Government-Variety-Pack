@@ -74,18 +74,6 @@ lrsk_gvp_has_boxed_in_origin = {
 	}
 }
 
-# Deprecated in 3.0, don't feel like interrogating this fact much tbh
-lrsk_complex_worker_job_check_trigger = {
-	worker_job_check_trigger = yes
-	hidden_trigger = {
-		exists = owner
-		OR = {
-			NOT = { has_trait = trait_mechanical }
-			owner = { has_technology = tech_droid_workers }
-		}
-	}
-}
-
 lrsk_gvp_planet_can_get_wild_cult = {
 	OR = {
 		NOT = { has_modifier = lrsk_gov_var_statmod_divine_right_cult }
@@ -143,4 +131,55 @@ lrsk_has_hyperlane_escape_route = {
 lrsk_can_be_my_hyperlane_escape_route = {
 	lrsk_is_hyperlane_escape_route = yes
 	lrsk_has_hyperlane_escape_route = yes
+}
+
+# The prerequisite conditions for a viceroly colony empire to spawn for Colonial Fiefs
+lrsk_can_spawn_viceroyal_colony_vassal = {
+	# Need the right civic
+	has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
+	
+	# This effect can only happen so often...
+	not = { has_country_flag = lrsk_colfief_venture_cooldown }
+
+	# Requires policies in effect.
+	not = { has_policy_flag = lrsk_gvp_colfief_prohibited }
+
+	# Don't want to poach pops from planets with few pops
+	any_owned_planet = {
+		num_pops > 9
+		# Pop that starts new empire must be free, not subject to purge, not "second class" species
+		any_owned_pop = {
+			is_enslaved = no
+			is_being_purged = no
+			not = { pop_has_trait = trait_syncretic_proles }
+		}
+	}
+
+	# This can happen in any unowned, empty system that root has not surveyed at least 3 jumps from the home empire with a planet that some species in root can settle.
+	# Note: there is the edge case that only enslaved/being-purged pops have the needed habitability, in which case later effects will fail.
+	any_system = {
+		distance_to_empire = {
+			who = root
+			distance > 2
+		}
+		has_owner = no
+		has_presence = no
+		root = {
+			any_owned_pop_species = {
+				not = { has_trait = trait_syncretic_proles }
+				prevprev = {
+					any_system_planet = {
+						is_surveyed = {
+							who = root
+							status = no
+						}
+						habitability = {
+							who = prevprev
+							value >= 0.5
+						}
+					}
+				}
+			}
+		}
+	}
 }

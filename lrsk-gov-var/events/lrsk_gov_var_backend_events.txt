@@ -16,7 +16,17 @@ event = {
 	
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
-		#set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
+		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
+
+		## Starting Civics setup
+
+		# Shapers/Artificers/Essentialists
+		every_playable_country = {
+			limit = {
+				lrsk_has_gvp_techideology_valid_civic = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.5 }
+		}
 		
 		## Origins Setup
 
@@ -890,6 +900,26 @@ country_event = {
 	}
 }
 
+# Add the required starting tech for Shapers/Artificers/Mechanists
+country_event = {
+	id = lrsk_government_variety_pack_backend.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		lrsk_has_gvp_techideology_valid_civic = yes
+	}
+
+	immediate = {
+		switch = {
+			trigger = has_valid_civic
+			lrsk_adv_civ_civic_shapers = { give_technology = { message = no tech = tech_eco_simulation } }
+			lrsk_adv_civ_civic_artificers = { give_technology = { message = no tech = tech_powered_exoskeletons } }
+			lrsk_adv_civ_civic_essentialists = { give_technology = { message = no tech = tech_fusion_power } }
+		}
+	}
+}
+
 # Explainers
 country_event = {
 	id = lrsk_government_variety_pack_backend.101
@@ -1144,10 +1174,38 @@ country_event = {
 		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
 	}
 
+	immediate = {
+		# Calculate factors
+		
+		set_variable = { which = lrsk_num_rj_applicable_planets value = 0 }
+		every_owned_planet = {
+			limit = {
+				is_capital = no
+				num_pops > 2
+				NOT = { has_building = building_colony_shelter }
+			}
+			root = { change_variable = { which = lrsk_num_rj_applicable_planets value = 1 } }
+		}
+
+		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
+		every_owned_pop = {
+			limit = {
+				is_enslaved = no
+			}
+			root = { change_variable = { which = lrsk_num_rj_empire_pops value = 1 } }
+		}
+	}
+
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.a
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.a.tooltip
-		add_resource = { influence = 150 }
+		
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 50
+			min = 125
+			max = 300
+		}
 	}
 	
 	option = {
@@ -1163,12 +1221,17 @@ country_event = {
 		}
 
 		allow = {
-			has_resource = {
-				amount >= 1000
-				type = consumer_goods
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value > 300
+				mult = lrsk_num_rj_applicable_planets
 			}
 		}
-		add_resource = { consumer_goods = -1000 }
+
+		add_resource = {
+			consumer_goods = -300
+			mult = lrsk_num_rj_applicable_planets
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1197,15 +1260,26 @@ country_event = {
 	
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.c
-		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip	
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip
 
-		allow = {
-			has_resource = {
-				amount >= 1500
-				type = energy
+		trigger = {
+			any_owned_pop = {
+				is_enslaved = no	# Almost certainly true but eh
 			}
 		}
-		add_resource = { energy = -1500 }
+
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 20
+				mult = lrsk_num_rj_empire_pops
+			}
+		}
+
+		add_resource = {
+			energy = -20
+			mult = lrsk_num_rj_empire_pops
+		}
 
 		hidden_effect = {
 			add_modifier = {

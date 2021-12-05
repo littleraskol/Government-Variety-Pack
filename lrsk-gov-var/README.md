@@ -47,7 +47,7 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -59,9 +59,9 @@ Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
-Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
+Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
+Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
 
 Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
@@ -117,7 +117,7 @@ Reflective Polymorphism (Machine Intelligence) - All the highest-level decision 
 
 Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
-Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage)
+Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage, chance to raise military intel on opponents after space battles)
 
 Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness and trust growth)
 
@@ -131,7 +131,7 @@ Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence wa
 
 Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
 
-Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
+Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
 Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
 
@@ -162,6 +162,14 @@ Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative 
 Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
 
 Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+
+"Advanced" Civics
+
+Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+
+Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+
+Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
 
 Enhanced Civics
 
@@ -210,13 +218,32 @@ v3.? (06-??-21) - More Origins, Colonial Chartering Civic
 -Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
--Civic Direct Revelation now has options to ignore Wild Cult popups.
--Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
--Much better "hyperlane escape route" logic for origins that add nearby empires.
--Renamed "Pure Social Republic" to "Purity Collective".
--Returned "Galactic" governments as "Cosmic" governments
--Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
--Bugfix: Technocracy prefix_formats used wrong part key.
+
+v3.3 (12-05-21) - Civic Improvements 4
+-Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
+-Added three new "advanced" mutually-exclusive and antagonistic starting-only civics focused on the idea of cultures that specialized in different domains of knowledge. Any non-gestalt empire can start with them.
+-New Civic: Shapers (+5 leader age, -10% genetic modification cost, +10% habitability, +10% growth, -10% non-society research, start with "Eco Simulation" tech.)
+-New Civic: Artificers (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+-New Civic: Essentialists (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+
+v3.2.1.1 (11-27-21) - "Cosmic" Empires fix
+-The re-instated "galactic" governments never got their names back...
+
+v3.2.1 (11-27-21) - Herbert Update
+-Fixed job calculations for compatibility with Stellaris 3.2.* (Herbert)
+-Changed compat version number.
+
+v3.2 (10-07-21) - Civic Improvements 3
+-Imperial Economy is allowed to change vassals into specialized subjects.
+-Minor fix: Sanity checks for 'esper' traits only being called every 2 years, every year preferable.
+
+v3.1 (09-28-21) - Civic Improvements 2
+-Combat Data now has a chance to improve military intel on an empire after the end of a space battle with that empire.
+-Fixed an issue where mod-added branch office buildings were not useful for criminal syndicate empires. Now all branch office buildings added by this mod will give a flat +20 crime for criminal syndicates. This is balanced by legit megacorps having a better "normal" bonus.
+-Royal Justice event option cost change: Ennobling officials costs 300 consumer goods per "established" (more than 2 pops, no Colony Shelter) colony.
+-Royal Justice event option cost change: The Assembly of the Estates costs 20 energy per free pop in the empire.
+-Royal Justice event option reward change: "My chancellor will tell you the rest..." gives reward as a multiple of influence production.
+-Fixed a documentation and localization typos.
 
 v3.0 (09-14-21) - Lem Update
 -Fixed what was needed for compatibility with Stellaris 3.1.* (Lem)

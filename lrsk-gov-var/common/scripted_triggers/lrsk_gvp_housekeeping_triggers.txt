@@ -402,11 +402,26 @@ lrsk_has_gvp_corp_civic = {
 	}
 }
 
+lrsk_has_gvp_techideology_civic = {
+	OR = {
+		has_civic = lrsk_adv_civ_civic_shapers
+		has_civic = lrsk_adv_civ_civic_artificers
+		has_civic = lrsk_adv_civ_civic_essentialists
+	}
+}
+
+lrsk_has_gvp_advanced_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_civic = yes
+	}
+}
+
 lrsk_has_any_gvp_civic = {
 	OR = {
 		lrsk_has_gvp_normal_civic = yes
 		lrsk_has_gvp_gestalt_civic = yes
 		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advanced_civic = yes
 	}
 }
 
@@ -515,11 +530,26 @@ lrsk_has_gvp_corp_valid_civic = {
 	}
 }
 
+lrsk_has_gvp_techideology_valid_civic = {
+	OR = {
+		has_valid_civic = lrsk_adv_civ_civic_shapers
+		has_valid_civic = lrsk_adv_civ_civic_artificers
+		has_valid_civic = lrsk_adv_civ_civic_essentialists
+	}
+}
+
+lrsk_has_gvp_advanced_valid_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_valid_civic = yes
+	}
+}
+
 lrsk_has_any_gvp_valid_civic = {
 	OR = {
-		lrsk_has_gvp_normal_valid_civic = yes
-		lrsk_has_gvp_gestalt_valid_civic = yes
-		lrsk_has_gvp_corp_valid_civic = yes
+		lrsk_has_gvp_normal_civic = yes
+		lrsk_has_gvp_gestalt_civic = yes
+		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advanced_valid_civic = yes
 	}
 }
 
@@ -576,5 +606,29 @@ lrsk_has_gvp_possible_invalidated_civic = {
 			has_civic = lrsk_gov_var_civic_universal_sovereignty
 			has_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		}
+	}
+}
+
+# Checks to see if an overlord should have special vassal types
+lrsk_has_special_vassals = {
+	or = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy
+	}
+}
+
+# Specifies conditions that would block an event that alters vassal type for various special vassal type civcs etc.
+lrsk_special_vassal_allowed = {
+	NOR = {
+		# Prevents any existing ImpEcon special vassal from being changed.
+		is_subject_type = lrsk_gvp_vassal_foundry
+		is_subject_type = lrsk_gvp_vassal_market
+		is_subject_type = lrsk_gvp_vassal_trophy
+		is_subject_type = lrsk_gvp_vassal_prospector			
+
+		# Uplift: Prevent immediate change in subject status etc. if tutor can create special vassals
+		#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+
+		# Prevent sublight colonies from being changed
+		#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
 	}
 }

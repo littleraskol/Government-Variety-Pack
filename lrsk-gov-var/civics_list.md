@@ -47,7 +47,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-[*][i]Budgetary Thrift (Any)[/i] - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
+[*][i]Budgetary Thrift (Any)[/i] - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 
 [*][i]Chivalry (Imperial authority or Aristocratic Elite, Militarist)[/i] - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
@@ -59,9 +59,9 @@ This is the full listing of civics with descriptions.
 
 [*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
 
-[*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
+[*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
+[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
 
 [*][i]Colonial Fiefs (Imperial, not Militarist)[/i] - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
@@ -87,7 +87,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
-[*][i]Hoarder (Hive Mind)[/i] - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output, +7500 mineral storage)
+[*][i]Hoarder (Hive Mind)[/i] - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy production, +7500 mineral storage)
 
 [*][i]Eusocial Rhythm (Hive Mind)[/i] - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
 
@@ -121,13 +121,13 @@ This is the full listing of civics with descriptions.
 
 [*][i]Architect Expert Systems (Machine Intelligence)[/i] - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
-[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +30% army morale damage)
+[*][i]Combat Data (Machine Intelligence)[/i] - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +30% army morale damage, chance to raise military intel on opponents after space battles)
 
 [*][i]Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator)[/i] - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness, +1 first contact clues)
 
 [*][i]Astro-Prospecting Mainframe (Machine Intelligence)[/i] - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
 
-[*][i]Self-Aware Production Targets (Machine Intelligence)[/i] - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output, +2.5% alloy production)
+[*][i]Self-Aware Production Targets (Machine Intelligence)[/i] - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy production, +2.5% alloy production)
 
 [*][i]Recursive Efficiency Analysis (Machine Intelligence)[/i] - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
 
@@ -135,7 +135,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
 
-[*][i]Geosurvey Heuristics (Machine Intelligence)[/i] - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
+[*][i]Geosurvey Heuristics (Machine Intelligence)[/i] - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
 [*][i]Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator)[/i] - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
 
@@ -168,6 +168,16 @@ This is the full listing of civics with descriptions.
 [*][i]Conflict Resolution Specialists (Pacifist)[/i] - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
 
 [*][i]Investigation & Security Services (Authoritarian)[/i] - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-10% crime, +1 Encryption and Codebreaking, build Professional Protection Office)
+[/list]
+
+[b]"Advanced" Civics[/b]
+
+[list]
+[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, +10% growth, -10% non-society research, start with "Eco Simulation" tech.)
+
+[*][i]Artificers (Not Essentialists or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+
+[*][i]Essentialists (Not Artificers or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
 [/list]
 
 [b]Enhanced Civics[/b]

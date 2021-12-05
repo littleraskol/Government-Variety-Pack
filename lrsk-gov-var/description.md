@@ -2,7 +2,7 @@ A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]78 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, and 13 megacorp civics. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2601883293/3041607712767147161/]the dedicated civics thread[/url] for detailed descriptions.
+A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2601883293/3041607712767147161/]the dedicated civics thread[/url] for detailed descriptions.
 
 [i][b]New Governments[/b][/i]
 
@@ -25,11 +25,11 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 Compaitibility patches exist for a few mods. Some are maintained by me, and some by the other mod's author. They are:
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods. (Maintained by me.)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods. It will likely work on any fork of these mods as well. (Maintained by me.)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461985481]More Authorities - GVP Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2158334880]More Authorities mod[/url]. (Maintained by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url], author of More Authorities.)
 [/list]
 
-There are a few patches and other versions of this mod. These all require the main GVP mod (this), and do nothing but selectively remove features. [b]If you want all the features of this mod, you don't need any of these patches/alternate versions.[/b] They do not add anything and only provide options for users who for whatever reason want to exclude some features.
+There are a few patches and other versions of this mod. These all require the main GVP mod (this), and do nothing but selectively remove features. [b]If you want all the features of this mod, you don't need any of these patches/alternate versions.[/b] They do not add anything and only provide options for users who for whatever reason want to exclude some features. Since all they do is replace files from GVP with identically-named blank files, there isn't typically much need to update them and tbh it's kind of a chore to update the version number on all these so I'm slow to do it. Bottom line, [b]you can almost certainly ignore the compatible version number for them[/b].
 
 The patches and alternate versions are:
 [list]
@@ -38,6 +38,10 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1591858476]Lesser Names Patch[/url] - Removes the "Better Names" functionality from base game governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029864772]No Origins Patch[/url] - Removes all origins.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
+[/list]
+
+There are also "backup" versions of this mod for older versions of Stellaris:
+[list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
