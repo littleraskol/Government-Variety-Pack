@@ -78,7 +78,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } # JIC, no point in this if already CC
+		# JIC, no point in this if already CC
+		event_target:lrsk_subject_to_charter = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } 
 	}
 
 	immediate = {
