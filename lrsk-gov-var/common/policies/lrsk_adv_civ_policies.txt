@@ -79,7 +79,7 @@ lrsk_adv_civ_rev_policy = {
 		}
 
 		modifier = {
-      		all_technology_research_speed = 0.05
+			all_technology_research_speed = 0.05
 			country_unity_produces_mult = -0.10
 			science_ship_survey_speed = 0.1
     		}
@@ -215,10 +215,12 @@ lrsk_adv_civ_tech_ritual = {
 			modifier = {
 				factor = 3
 				years_passed > 60
+				years_passed < 80
+				
 			}
 			modifier = {
 				factor = 4
-				years_passed > 80
+				years_passed > 79
 			}
 			modifier = {
 				factor = 0.5
