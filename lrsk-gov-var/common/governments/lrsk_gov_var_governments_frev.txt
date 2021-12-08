@@ -69,24 +69,20 @@ lrsk_gov_var_gov_republic_of_virtue = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = governor
-			}
+			add = 30
+			leader_class = governor
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = scientist
-				leader_class = admiral
-				leader_class = general
-			}
+			add = 10
+			leader_class = scientist
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -108,27 +104,16 @@ lrsk_gov_var_gov_federal_republic = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
-			add = 100
-			OR = {
-				leader_class = scientist
-			}
-		}
-		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 50
+			leader_class = governor
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 100
@@ -147,24 +132,24 @@ lrsk_gov_var_gov_revolutionary_republic = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = scientist
-				leader_class = governor
-			}
+			add = 50
+			leader_class = governor
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
+			add = 10
+			leader_class = admiral
+		}
+		modifier = {
+			add = 10
+			leader_class = general
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -184,20 +169,24 @@ lrsk_gov_var_gov_republican_directory = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
+			add = 100
+			leader_class = ruler
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = scientist
-				leader_class = governor
-			}
+			add = 50
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = admiral
+		}
+		modifier = {
+			add = 10
+			leader_class = general
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -225,23 +214,20 @@ lrsk_gov_var_gov_republican_protectorate = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = governor
-			}
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			OR = {
-				leader_class = scientist
-			}
+			add = 50
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = admiral
+		}
+		modifier = {
+			add = 10
+			leader_class = general
 		}
 	}
 

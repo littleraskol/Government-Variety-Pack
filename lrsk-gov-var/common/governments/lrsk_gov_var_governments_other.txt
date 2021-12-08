@@ -16,20 +16,16 @@ lrsk_gov_var_gov_pretender_hive = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
+			add = 50
 			leader_class = governor
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = admiral
-				leader_class = general
-				leader_class = scientist
-			}
+			add = 10
+			leader_class = scientist
 		}
 	}
 
@@ -101,6 +97,8 @@ lrsk_gov_var_gov_colonial_viceroyalty_oli = {
 		has_origin = lrsk_gov_var_origin_colonial_venture
 	}
 
+	leader_class = governor
+
 	weight = {
 		base = 110000
 	}
@@ -116,6 +114,8 @@ lrsk_gov_var_gov_colonial_viceroyalty_dem = {
 		has_origin = lrsk_gov_var_origin_colonial_venture
 	}
 
+	leader_class = governor
+
 	weight = {
 		base = 110000
 	}
@@ -130,6 +130,8 @@ lrsk_gov_var_gov_colonial_viceroyalty_cmp = {
 		has_authority = auth_corporate
 		has_origin = lrsk_gov_var_origin_colonial_venture
 	}
+
+	leader_class = governor
 
 	weight = {
 		base = 110000
