@@ -79,7 +79,7 @@ country_event = {
 
 	trigger = {
 		# JIC, no point in this if already CC
-		event_target:lrsk_subject_to_charter = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } 
+		from = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } 
 	}
 
 	immediate = {
@@ -310,19 +310,8 @@ country_event = {
 	}
 
 	after = {
-		overlord = {
-			# prevent being immediately spammed with a notification
-			set_timed_country_flag = {
-				flag = lrsk_chartered_trade_notice_cooldown
-				days = 7
-			}
-
-			# to stop notifications in some future version, uncomment the line below
-			#set_country_flag = lrsk_chartered_no_trade_notice
-
-			# immediate recalc of colony bonus
-			country_event = { id = lrsk_gov_var_chartered.3 }
-		}
+		# immediate recalc of colony bonus
+		country_event = { id = lrsk_gov_var_chartered.3 }
 	}
 }
 
@@ -344,6 +333,7 @@ country_event = {
 
 			set_variable = { which = lrsk_charcols value = 0 } # Start count from 0
 
+			# Not working? Need while & flags?
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
 				log = "Counting subject [this.GetName]"

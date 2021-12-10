@@ -1007,7 +1007,7 @@ country_event = {
 	}
 }
 
-# Creates a nearby empire to beat up, gives you a stick to beat it up with
+# Creates a nearby empire to beat up
 country_event = {
 	id = lrsk_gvp_testing.24
 	hide_window = yes
@@ -1018,32 +1018,7 @@ country_event = {
 		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
 	}
 
-	immediate = {		
-		# your stick
-		create_fleet = {
-			effect = {
-				set_owner = root
-
-				while = {
-					count = 20
-					create_ship = {
-						name = random
-						random_existing_design = corvette
-					}
-				}
-				while = {
-					count = 1
-					create_fallen_empire_large_ship = yes
-				}
-				while = {
-					count = 3
-					create_fallen_empire_small_ship = yes
-				}
-
-				set_location = root.capital_star
-			}
-		}
-
+	immediate = {
 		capital_scope.solar_system = { 
 			closest_system = {
 				limit = {
@@ -1082,7 +1057,7 @@ country_event = {
 						species = event_target:lrsk_test_target_species
 						name_list = random
 						type = default
-						origin = origin_default
+						origin = lrsk_gov_var_origin_npc_test
 						ignore_initial_colony_error = yes
 						day_zero_contact = no
 						authority = random
@@ -1121,29 +1096,9 @@ country_event = {
 			}
 		}
 
-		# your stick
-		create_fleet = {
-			effect = {
-				set_owner = root
-
-				while = {
-					count = 20
-					create_ship = {
-						name = random
-						random_existing_design = corvette
-					}
-				}
-				while = {
-					count = 1
-					create_fallen_empire_large_ship = yes
-				}
-				while = {
-					count = 3
-					create_fallen_empire_small_ship = yes
-				}
-
-				set_location = root.capital_star
-			}
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_test_target
 		}
 	}
 }
@@ -1160,31 +1115,6 @@ country_event = {
 	}
 
 	immediate = {
-		# your stick
-		create_fleet = {
-			effect = {
-				set_owner = root
-
-				while = {
-					count = 20
-					create_ship = {
-						name = random
-						random_existing_design = corvette
-					}
-				}
-				while = {
-					count = 1
-					create_fallen_empire_large_ship = yes
-				}
-				while = {
-					count = 3
-					create_fallen_empire_small_ship = yes
-				}
-
-				set_location = root.capital_star
-			}
-		}
-
 		capital_scope.solar_system = { 
 			closest_system = {
 				limit = {
@@ -1212,7 +1142,7 @@ country_event = {
 						species = root
 						name_list = random
 						type = default
-						origin = origin_default
+						origin = lrsk_gov_var_origin_npc_test
 						ignore_initial_colony_error = yes
 						day_zero_contact = no
 						authority = random
@@ -1249,6 +1179,60 @@ country_event = {
 					set_name = random # Fixes some naming issues
 				}
 			}
+		}
+
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_test_target
+		}
+	}
+}
+
+# A stick to beat things up with
+country_event = {
+	id = lrsk_gvp_testing.26
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		create_fleet = {
+			effect = {
+				set_owner = root
+
+				while = {
+					count = 1
+					create_fallen_empire_large_ship = yes
+				}
+				while = {
+					count = 3
+					create_fallen_empire_small_ship = yes
+				}
+
+				set_location = root.capital_star
+			}
+		}
+
+		capital_scope = {
+			while = {
+				count = 10
+				create_army = {
+					name = "asskickers"
+					owner = root
+					species = root
+					type = gene_warrior_army
+				}
+			}
+		}
+
+		add_resource = {
+			energy = 20000			
+			minerals = 20000			
+			alloys = 20000
 		}
 	}
 }
