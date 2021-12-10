@@ -211,13 +211,20 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v3.? (06-??-21) - More Origins, Colonial Chartering Civic
+v3.? (??-??-2?) - More Origins, Colonial Chartering Civic
 -Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
 -Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
 -Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
+
+v3.3.1 (12-10-21) - Backend Fixes/Updates
+-Colonial Fiefs has special effect tooltip.
+-Changed some localization to use keys rather than user-facing text.
+-Created NPC namelist so "Lesser Names Patch" won't let NPC-only govs go nameless.
+-Democratic and Oligarchic initial rulers that get voted out should have a leader class to change careers into rather than vanishing (so long as this feature works...)
+-Revised election weights in all electoral governments to have more vanilla values (some were downright weird).
 
 v3.3 (12-05-21) - Civic Improvements 4
 -Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.

@@ -29,14 +29,16 @@ lrsk_gov_var_gov_galactic_cartel = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
+			add = 10
 			leader_class = governor
 		}
 	}
+
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -60,27 +62,16 @@ lrsk_gov_var_gov_libertarian_freehold = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = scientist
-			}
-		}
-		modifier = {
-			add = 100
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 10
+			leader_class = governor
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -101,25 +92,19 @@ lrsk_gov_var_gov_anarcho_capitalism = {
 		}
 	}
 
+
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = scientist
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = governor
-			}
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 10
+			leader_class = governor
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -140,18 +125,16 @@ lrsk_gov_var_gov_corporate_neofuedalism = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = governor
-				leader_class = scientist
-			}
+			add = 100
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 10
+			leader_class = governor
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -191,23 +174,16 @@ lrsk_gov_var_gov_entrepreneurial_council = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = scientist
-			}
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 10
+			leader_class = governor
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -219,17 +195,6 @@ lrsk_gov_var_gov_merchant_republic = {
 	ruler_title = LRSK_GOV_VAR_RT_SERENE_DOGE
 	ruler_title_female = LRSK_GOV_VAR_RT_SERENE_DOGARESSA
 
-	election_candidates = {
-		modifier = {
-			factor = 0
-			leader_class = admiral
-		}
-		modifier = {
-			factor = 0
-			leader_class = general
-		}
-	}
-
 	possible = {
 		has_authority = auth_oligarchic
 		has_valid_civic = civic_meritocracy
@@ -239,6 +204,19 @@ lrsk_gov_var_gov_merchant_republic = {
 			has_ethic = ethic_fanatic_egalitarian
 		}
 	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = governor
+		}
+	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1800
@@ -250,17 +228,6 @@ lrsk_gov_var_gov_constitutional_plutocracy = {
 	ruler_title = LRSK_GOV_VAR_RT_PROP_PRES
 	ruler_title_female = LRSK_GOV_VAR_RT_PROP_PRES_FEMALE
 
-	election_candidates = {
-		modifier = {
-			factor = 0
-			leader_class = admiral
-		}
-		modifier = {
-			factor = 0
-			leader_class = general
-		}
-	}
-
 	possible = {
 		has_authority = auth_democratic
 		has_valid_civic = civic_meritocracy
@@ -270,6 +237,19 @@ lrsk_gov_var_gov_constitutional_plutocracy = {
 			has_ethic = ethic_fanatic_egalitarian
 		}
 	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = governor
+		}
+	}
+
+	leader_class = governor
 
 	weight = {
 		base = 1800
@@ -288,25 +268,16 @@ lrsk_gov_var_gov_enterprise_society = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
-			add = 250
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = scientist
-			}
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = governor
 		}
 	}
+
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -325,23 +296,24 @@ lrsk_gov_var_gov_enterprise_junta = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = governor
-			}
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = scientist
+			add = 10
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = admiral
+		}
+		modifier = {
+			add = 10
+			leader_class = general
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -360,21 +332,20 @@ lrsk_gov_var_gov_enterprise_authority = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
 			add = 100
-			OR = {
-				leader_class = governor
-			}
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = scientist
+			add = 10
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = admiral
+		}
+		modifier = {
+			add = 10
+			leader_class = general
 		}
 	}
 
@@ -402,25 +373,20 @@ lrsk_gov_var_gov_rationalist_managerial_firm = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
-			leader_class = scientist
-		}
-		modifier = {
-			add = 500
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = governor
-			}
+			add = 10
+			leader_class = governor
 		}
 		modifier = {
-			factor = 0
-			leader_class = admiral
-			leader_class = general
+			add = 40
+			leader_class = scientist
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -443,24 +409,23 @@ lrsk_gov_var_gov_private_intel_agency = {
 	election_candidates = {
 		modifier = {
 			add = 100
-			leader_class = scientist
-		}
-		modifier = {
-			add = 500
 			leader_class = ruler
 		}
 		modifier = {
-			add = 250
-			OR = {
-				leader_class = governor
-			}
+			add = 10
+			leader_class = governor
 		}
 		modifier = {
-			add = 250
+			add = 10
 			leader_class = admiral
+		}
+		modifier = {
+			add = 10
 			leader_class = general
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1000
@@ -484,24 +449,23 @@ lrsk_gov_var_gov_protection_racket = {
 	election_candidates = {
 		modifier = {
 			add = 100
-			leader_class = scientist
-		}
-		modifier = {
-			add = 500
 			leader_class = ruler
 		}
 		modifier = {
-			add = 250
-			OR = {
-				leader_class = governor
-			}
+			add = 10
+			leader_class = governor
 		}
 		modifier = {
-			add = 250
+			add = 10
 			leader_class = admiral
+		}
+		modifier = {
+			add = 10
 			leader_class = general
 		}
 	}
+	
+	leader_class = governor
 
 	weight = {
 		base = 1750

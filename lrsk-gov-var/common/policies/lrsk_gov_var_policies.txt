@@ -2,6 +2,7 @@
 # Policies
 # Author: littleraskol
 
+# Note: AI weight will always be 0 for any but prohibit. We don't want AI randos snagging worlds the player was eyeing.
 lrsk_gvp_colfief_policy = {
 
 	potential = {
@@ -25,9 +26,7 @@ lrsk_gvp_colfief_policy = {
 		modifier = {} # nothing
 
 		AI_weight = {
-			modifier = {
-				factor = 100 # idk
-			}
+			weight = 100
 		}
 	}
 
@@ -53,9 +52,7 @@ lrsk_gvp_colfief_policy = {
 		}
 
 		AI_weight = {
-			modifier = {
-				factor = 1 # idk
-			}
+			weight = 0
 		}
 	}
 
@@ -81,9 +78,7 @@ lrsk_gvp_colfief_policy = {
     	}
 
 		AI_weight = {
-			modifier = {
-				factor = 1 # idk
-			}
+			weight = 0
 		}
 	}
 }
