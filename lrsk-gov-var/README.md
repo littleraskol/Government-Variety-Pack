@@ -203,6 +203,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3.1 (12-10-21) - Backend Fixes/Updates
+-Changed some localization to use keys rather than user-facing text.
+-Created NPC namelist so "Lesser Names Patch" won't let NPC-only govs go nameless.
+-Democratic and Oligarchic initial rulers that get voted out should have a leader class to change careers into rather than vanishing (so long as this feature works...)
+-Revised election weights in all electoral governments to have more vanilla values (some were downright weird).
+
 v3.3 (12-05-21) - Civic Improvements 4
 -Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
 -Added three new "advanced" mutually-exclusive and antagonistic starting-only civics focused on the idea of cultures that specialized in different domains of knowledge. Any non-gestalt empire can start with them.
