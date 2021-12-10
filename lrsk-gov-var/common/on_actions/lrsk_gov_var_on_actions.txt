@@ -14,16 +14,6 @@ on_game_start_country = {
 		lrsk_gov_var_uplift.3						# Trait menu selector
 		#lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
 		lrsk_gov_var_direct_revelation.1000			# Starting grace period, special interactions
-		#lrsk_government_variety_pack_backend.3		# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
-	}
-}
-
-# this = country
-on_monthly_pulse_country = {
-	events = {
-		lrsk_gov_var_chartered.1000					# Chartered company housekeeping
-		lrsk_gov_var_impecon.101 					# ImpEcon explainer
-		lrsk_gov_var_colfief.101 					# ColFief explainer
 	}
 }
 
@@ -49,6 +39,7 @@ on_yearly_pulse_country = {
 on_monthly_pulse_country = {
 	events = {
 		#lrsk_government_variety_pack_backend.1000 # Changed to looping planet event...
+		lrsk_gov_var_chartered.1000					# Chartered company housekeeping
 		lrsk_government_variety_pack_backend.2003
 		lrsk_gov_var_impecon.3 # Recalc legit bonus in case a vassal is lost
 	}
