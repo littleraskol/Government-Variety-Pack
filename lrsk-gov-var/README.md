@@ -203,6 +203,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3.1.2 (12-10-21) - Small improvement
+-Explainers now have a delay.
+-Some small degree of process efficiency.
+
 v3.3.1.1 (12-10-21) - Backend Fixes/Updates (continued...)
 -Missed some election weights!!!
 
