@@ -203,6 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3.1.1 (12-10-21) - Backend Fixes/Updates (continued...)
+-Missed some election weights!!!
+
 v3.3.1 (12-10-21) - Backend Fixes/Updates
 -Colonial Fiefs has special effect tooltip.
 -Changed some localization to use keys rather than user-facing text.
