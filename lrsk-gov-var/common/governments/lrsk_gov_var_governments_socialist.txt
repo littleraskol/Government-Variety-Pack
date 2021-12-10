@@ -14,18 +14,15 @@ lrsk_gov_var_gov_proletarian_dictatorship = {
 
 	election_candidates = {
 		modifier = {
-			add = 500
+			add = 100
 			OR = {
 				leader_class = admiral
 				leader_class = general
 			}
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = governor
-				leader_class = scientist
-			}
+			add = 10
+			leader_class = governor
 		}
 	}
 
