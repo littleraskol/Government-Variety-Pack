@@ -810,3 +810,155 @@ country_event = {
 		}
 	}
 }
+
+# Triggers wild cult - capital world
+country_event = {
+	id = lrsk_gvp_testing.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+	}
+
+	immediate = {
+		set_timed_country_flag = { flag =  lrsk_gvp_testcall days = 3 } # Guarantees the event fires
+		IF = { limit = { has_country_flag = lrsk_gov_var_wild_cult_formed_recently } remove_country_flag = lrsk_gov_var_wild_cult_formed_recently }
+		capital_scope = {
+			lrsk_gvp_remove_every_wild_cult = yes
+			planet_event = { id = lrsk_gov_var_direct_revelation.1 }
+		}
+	}
+}
+
+# Gives comms to all normal empires and understand their diplo stance
+country_event = {
+	id = lrsk_gvp_testing.22
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { has_ethic = ethic_gestalt_consciousness	}
+			}
+			establish_communications_no_message = root
+			save_event_target_as = lrsk_tmp_comms
+			root = {				
+				add_intel = {
+					amount = 60
+					who = event_target:lrsk_tmp_comms
+				}
+			}
+		}
+	}
+}
+
+# Creates a nearby vassal
+country_event = {
+	id = lrsk_gvp_testing.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		capital_scope.solar_system = { 
+			closest_system = {
+				limit = {
+					has_owner = no
+					any_system_planet = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+				}
+				random_system_planet = { 
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					set_planet_size = 16
+					change_pc = pc_continental	#whatever
+					reroll_planet = yes
+					save_event_target_as = lrsk_test_vassal_home
+
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = random
+						homeworld = event_target:lrsk_test_vassal_home
+						effect = {
+							save_event_target_as = lrsk_test_vassal_species
+						}
+					}
+					
+					create_country = {
+						species = event_target:lrsk_test_vassal_species
+						name_list = random
+						type = default
+						origin = lrsk_gov_var_origin_colonial_venture # testing ColFief stuff
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = random
+						ethos = random
+						civics = random
+						effect = {
+							save_event_target_as = lrsk_test_vassal
+							establish_communications_no_message = root
+						}
+					}
+					create_colony = {
+						owner = event_target:lrsk_test_vassal
+					}
+					generate_start_deposits_and_blockers = yes
+					generate_start_buildings_and_districts = yes
+					generate_start_pops = yes
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_test_vassal
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+				event_target:lrsk_test_vassal = {
+					create_starting_leaders = yes
+					country_event = { id = game_start.9 }
+					country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+					set_name = random # Fixes some naming issues
+					set_subject_of = {
+						who = root
+						subject_type = vassal
+					}
+					set_relation_flag = {
+						who = root
+						flag = lrsk_colony_hails_from
+					}
+					set_country_flag = lrsk_colony_hails_from@root
+				}
+			}
+		}
+	}
+}

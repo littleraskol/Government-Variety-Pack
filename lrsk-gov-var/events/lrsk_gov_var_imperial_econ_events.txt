@@ -1,0 +1,359 @@
+# Government Variety Pack
+# Events - Imperial Economy
+# Author: littleraskol
+
+namespace = lrsk_gov_var_impecon
+
+# Whenever a country becomes a subject, determine if charter choice should be given to overlord
+# This = subject
+# From = subject's overlord
+country_event = {
+	id = lrsk_gov_var_impecon.1
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+
+			# Can only have one of each... This will not fire if OL has one of each already.
+			NAND = {
+				any_subject = { is_subject_type = lrsk_gvp_vassal_foundry }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_market }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_trophy }
+				any_subject = { is_subject_type = lrsk_gvp_vassal_prospector }
+			}
+		}
+		lrsk_special_vassal_allowed = yes
+	}
+
+	immediate = {
+		log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+
+		# check and see if there should already be an applied type somehow; apply it.
+		if = { limit = { has_country_flag = lrsk_gvp_impecon_specsub_of@from }
+			switch = {
+				trigger = has_country_flag
+				lrsk_gvp_impecon_alloysub_of@from = { 
+					if = { limit = { from = { not = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } } } }
+						set_subject_of = {
+							who = from
+							subject_type = lrsk_gvp_vassal_foundry
+						}
+					}
+				}
+				lrsk_gvp_impecon_tradesub_of@from = {
+					if = { limit = { from = { not = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } } } }
+						set_subject_of = {
+							who = from
+							subject_type = lrsk_gvp_vassal_market
+						}
+					}
+				}
+				lrsk_gvp_impecon_trophysub_of@from = {
+					if = { limit = { from = { not = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } } } }
+						set_subject_of = {
+							who = from
+							subject_type = lrsk_gvp_vassal_trophy
+						}
+					}
+				}
+				lrsk_gvp_impecon_raressub_of@from = {
+					if = { limit = { from = { not = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } } } }
+						set_subject_of = {
+							who = from
+							subject_type = lrsk_gvp_vassal_prospector
+						}
+					}
+				}
+				default = {
+					# This should never happen, but if there's no type flag, ask player what to do
+					from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+				}
+			}
+		}
+		else = {
+			from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
+		}
+	}
+}
+
+country_event = {
+	id = lrsk_gov_var_impecon.2
+	title = lrsk_gov_var_impecon.2.name
+	desc  = lrsk_gov_var_impecon.2.desc
+	picture = GFX_evt_partition
+	location = from
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy	# JIC
+	}
+
+	immediate = {
+		save_event_target_as = lrsk_impecon_colonizer
+		from = { save_event_target_as = lrsk_impecon_colonized }
+		log = "In Imperial Economy special vassals choice event. Overlord = [lrsk_impecon_colonizer.GetName], subject = [lrsk_impecon_colonized.GetName]"
+	}
+
+	# Foundry
+	option = {
+		name = lrsk_gov_var_impecon.2.a
+		custom_tooltip = lrsk_gov_var_impecon.2.a.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_foundry
+				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_alloysub_of@root
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_militarist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_militarist
+			}
+			modifier = {
+				factor = 0.6
+				has_ethic = ethic_pacifist
+			}
+			modifier = {
+				factor = 0.3
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+	}
+
+	# Market
+	option = {
+		name = lrsk_gov_var_impecon.2.b
+		custom_tooltip = lrsk_gov_var_impecon.2.b.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_market
+				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_tradesub_of@root
+			}
+			add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
+			log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_pacifist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_pacifist
+			}
+			modifier = {
+				factor = 0.6
+				has_ethic = ethic_militarist
+			}
+			modifier = {
+				factor = 0.3
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+
+	# Trophy
+	option = {
+		name = lrsk_gov_var_impecon.2.c
+		custom_tooltip = lrsk_gov_var_impecon.2.c.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_trophy
+				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_trophysub_of@root
+				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+			}
+			add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
+			log = "[lrsk_impecon_colonized.GetName] set to Trophy Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_xenophobe
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+
+	# Prospector
+	option = {
+		name = lrsk_gov_var_impecon.2.d
+		custom_tooltip = lrsk_gov_var_impecon.2.d.tooltip
+
+		allow = {
+			not = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+		}
+		
+		hidden_effect = {
+			event_target:lrsk_impecon_colonized = {
+				set_subject_of = {
+					who = event_target:lrsk_impecon_colonizer
+					subject_type = lrsk_gvp_vassal_prospector
+				}
+				set_country_flag = lrsk_gvp_impecon_specsub_of@root
+				set_country_flag = lrsk_gvp_impecon_raressub_of@root
+			}
+			log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				has_ethic = ethic_materialist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+	}
+
+	# Nothing
+	option = {
+		name = lrsk_gov_var_impecon.2.e
+		custom_tooltip = lrsk_gov_var_impecon.2.e.tooltip
+		
+		log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
+		
+		hidden_effect = {
+			# call event to recalc legitimacy variable - this happens on vassalization effect otherwise.
+			country_event = { id = lrsk_gov_var_impecon.3 }
+		}
+		
+		ai_chance = {
+			factor = 1 # dunno
+		}
+	}
+}
+
+# Recalculates the "legitimacy" variable for imperial economy's stability modifier from having these vassals
+# Applies all relevant modifiers or removes them as needed
+country_event = {
+	id = lrsk_gov_var_impecon.3
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy	# JIC
+	}
+	
+	immediate = {
+		set_variable = { which = lrsk_impecon_legit value = 0 }	# reset to recalc
+		
+		if = { limit = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
+		
+		if = { limit = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_market } }
+				add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
+			}
+		}
+		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
+			remove_modifier = lrsk_gov_var_empire_impecon_market
+		}
+		
+		if = { limit = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol } }
+				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
+			}
+			random_subject = { limit = { is_subject_type = lrsk_gvp_vassal_trophy }
+				if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
+					add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+				}
+			}
+		}
+		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
+			remove_modifier = lrsk_gov_var_empire_impecon_trophy_ol
+			random_subject = { limit = { has_country_flag = lrsk_gvp_impecon_trophysub_of@root }
+				if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+					remove_modifier = lrsk_gov_var_empire_impecon_trophy_vs
+				}
+			}
+		}
+		
+		if = { limit = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+			change_variable = { which = lrsk_impecon_legit value = 1 }
+		}
+
+		if = { limit = { check_variable = { which = lrsk_impecon_legit value < 1 } }
+			if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
+				remove_modifier = lrsk_gov_var_empire_impecon_legit
+			}
+		}
+		else = {
+			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_legit } }
+				add_modifier = {
+					modifier = lrsk_gov_var_empire_impecon_legit
+					multiplier = lrsk_impecon_legit
+				}
+			}
+		}
+	}
+}
+
+# Explainer
+country_event = {
+	id = lrsk_gov_var_impecon.101
+	title = lrsk_gov_var_impecon.101.name
+	desc = lrsk_gov_var_impecon.101.desc
+	picture = GFX_evt_alien_segregation
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy
+	}
+
+	option = {
+		name = lrsk_gov_var_impecon.101.a
+	}
+}

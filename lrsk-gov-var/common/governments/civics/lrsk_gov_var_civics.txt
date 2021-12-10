@@ -128,7 +128,7 @@ lrsk_gov_var_civic_utilitarian_planning = {
     authority = { NOT = { value = auth_corporate } }
   }
 
-  #description = "civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects"
+  description = "civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_idealistic_foundation.dds"
 
   possible = {
@@ -259,7 +259,7 @@ lrsk_gov_var_civic_universal_sovereignty = {
     authority = { NOT = { value = auth_corporate } }
   }
 
-  #description = "civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects"
+  description = "civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds"
 
   possible = {
@@ -275,6 +275,11 @@ lrsk_gov_var_civic_universal_sovereignty = {
         text = civic_tooltip_not_xenophobe
         value = ethic_xenophobe
         value = ethic_fanatic_xenophobe
+      }
+    }
+    civics = {
+      NOR = {
+        value = lrsk_gov_var_civic_supremacist_demagoguery
       }
     }
   }
@@ -355,6 +360,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
     civics ={
       NOR = {
         value = civic_fanatic_purifiers
+        value = lrsk_gov_var_civic_universal_sovereignty
       }
     }
   }
@@ -368,7 +374,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
 }
 
 #Enlightened Liberalism (not Spiritualist, not Fanatic Authoritarian) - This society values personal rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
-lrsk_gov_var_civic_enlightened_liberalism  = {
+lrsk_gov_var_civic_enlightened_liberalism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
@@ -403,7 +409,7 @@ lrsk_gov_var_civic_enlightened_liberalism  = {
 }
 
 #Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% trade fee)
-lrsk_gov_var_civic_business_lobby  = {
+lrsk_gov_var_civic_business_lobby = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
@@ -503,6 +509,7 @@ lrsk_gov_var_civic_lifelong_learning = {
     authority = { NOT = { value = auth_corporate } }
   }
 
+  description = "civic_tooltip_lrsk_gov_var_civic_lifelong_learning_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_meritocracy.dds"
 
   possible = {
@@ -572,7 +579,7 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 }
 
 #Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values personal revelation of the divine. (Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs. 1 Hedge Preacher per 25 pops.)
-lrsk_gov_var_civic_direct_revelation  = {
+lrsk_gov_var_civic_direct_revelation = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
@@ -601,7 +608,7 @@ lrsk_gov_var_civic_direct_revelation  = {
   modifier = { job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.04 }
 }
 ## This version deprecated, keeping in comments for, uh, sentimentality's sake?
-#lrsk_gov_var_civic_direct_revelation  = {
+#lrsk_gov_var_civic_direct_revelation = {
 #  potential = {
 #    ethics = { NOT = { value = ethic_gestalt_consciousness } }
 #    civics = { value = lrsk_gov_var_civic_direct_revelation }
@@ -645,6 +652,7 @@ lrsk_gov_var_civic_royal_absolutism = {
     authority = { NOT = { value = auth_corporate } }
   }
 
+  description = "civic_tooltip_lrsk_gov_var_civic_royal_absolutism_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_philosopher_king.dds"
 
   possible = {
@@ -711,6 +719,12 @@ lrsk_gov_var_civic_imperial_economy = {
         value = ethic_fanatic_xenophile
       }
     }
+    civics = {
+      NOR = {
+        value = civic_fanatic_purifiers
+        value = civic_inwards_perfection
+      }
+    }
   }
 
   random_weight = { base = 5 }
@@ -727,6 +741,8 @@ lrsk_gov_var_civic_colonial_fiefs = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
+
+  description = "civic_tooltip_lrsk_gov_var_civic_colonial_fiefs_effects"
 
   #icon = "gfx/interface/icons/governments/civics/civic_nationalistic_zeal.dds"
 
@@ -772,7 +788,13 @@ lrsk_gov_var_civic_automated_indolence = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = {
+    base = 1
+		modifier = {
+			factor = 5
+			has_origin = origin_mechanists
+		}
+  }
 
   modifier = {
     planet_jobs_robotic_produces_mult = 0.10

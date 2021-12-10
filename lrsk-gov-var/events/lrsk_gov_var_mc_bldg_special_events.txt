@@ -1052,71 +1052,26 @@ country_event = {
 	# Only fire if a prospector corp
 	trigger = {
 		has_valid_civic = civic_private_prospectors
-
-		# Skip if no change
-		#OR = {
-		#	check_variable = { which = lrsk_offworld_workers_bonus value > lrsk_offworld_workers_bonus_prev }
-		#	check_variable = { which = lrsk_offworld_workers_bonus value < lrsk_offworld_workers_bonus_prev }
-		#}
 	}
 
 	immediate = {
 		log = "Attempting offworld work bonus application."
 
-		# Remove previous modifier
-		switch = {
-			trigger = has_modifier
-			lrsk_gvp_empire_offworld_work_bonus_1 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
-			lrsk_gvp_empire_offworld_work_bonus_2 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
-			lrsk_gvp_empire_offworld_work_bonus_3 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
-			lrsk_gvp_empire_offworld_work_bonus_4 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
-			lrsk_gvp_empire_offworld_work_bonus_5 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
-			lrsk_gvp_empire_offworld_work_bonus_6 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
-			lrsk_gvp_empire_offworld_work_bonus_7 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
-			lrsk_gvp_empire_offworld_work_bonus_8 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
-			lrsk_gvp_empire_offworld_work_bonus_9 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
-			lrsk_gvp_empire_offworld_work_bonus_10 = { remove_modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
+		# Remove previous modifier as needed
+		IF = {
+			limit = {
+				check_variable = { which = lrsk_offworld_workers_bonus value < 1 }
+				has_modifier = lrsk_gvp_empire_offworld_work_bonus
+			}
+			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
 		}
-
-		# Only add a modifier back if there is a bonus to apply
-		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
-			IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 1 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_1 }
+		# Add modifier if needed
+		ELSE_IF = { limit = { NOT = { has_modifier = lrsk_gvp_empire_offworld_work_bonus } }
+			add_modifier = {
+				modifier = lrsk_gvp_empire_offworld_work_bonus
+				multiplier = lrsk_offworld_workers_bonus
 			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 2 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_2 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 3 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_3 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 4 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_4 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 5 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_5 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 6 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_6 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 7 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_7 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 8 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_8 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value = 9 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_9 }
-			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value >= 10 } }
-				add_modifier = { modifier = lrsk_gvp_empire_offworld_work_bonus_10 }
-			}
-			#ELSE = {
-			#	# Do nothing?
-			#}
 		}
-
-		# Remember for next time	
-		#set_variable = { which = lrsk_offworld_workers_bonus_prev value = lrsk_offworld_workers_bonus }
 	}
 }
 

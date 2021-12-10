@@ -8,8 +8,10 @@
 @lrsk_pastor_job_weight = 11
 @lrsk_planetmind_job_weight = 100
 @lrsk_regcoord_job_weight = 20
-@lrsk_corpworker_job_weight = 1.2
-@lrsk_corpspec_job_weight = 12
+@lrsk_desirable_worker_job_weight = 1.2
+@lrsk_undesirable_worker_job_weight = 0.8
+@lrsk_desirable_spec_job_weight = 12
+@lrsk_undesirable_spec_job_weight = 8
 
 ## Worker Jobs
 
@@ -24,11 +26,10 @@ lrsk_gov_var_job_hedge_preacher = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_priests
@@ -62,7 +63,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 
 	weight = {
-		weight = @worker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -114,6 +115,196 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 }
 
+
+# Citizen Scholar
+lrsk_gvp_job_citscholar = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_residence
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			energy = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 0.2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -0.2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = research_subsidies
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+		}
+	}
+
+	weight = {
+		weight = @lrsk_desirable_worker_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_natural_sociologists
+				has_trait = trait_natural_engineers
+				has_trait = trait_natural_physicists
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_job = lrsk_gvp_job_citscholar
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_brainslug
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_presapient_natural_intellectuals
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_erudite
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 1.4
+			OR = {
+				has_trait = trait_robot_logic_engines
+				has_trait = trait_intelligent
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_presapient_proles
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_latent_psionic
+		}
+		modifier = {
+			factor = 1.2
+			has_trait = trait_psionic
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_enigmatic_intelligence_failed
+		}
+		modifier = {
+			factor = 1.4
+			OR = {
+				has_trait = trait_enigmatic_intelligence
+				has_trait = trait_enigmatic_intelligence_poor
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_quarrelsome
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_void_dweller_1
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_necrophage
+		}
+	}
+}
+
 # Functionary
 lrsk_gov_var_job_functionary = {
 	category = worker
@@ -125,11 +316,10 @@ lrsk_gov_var_job_functionary = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		lrsk_complex_worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	country_modifier = {
 		country_admin_cap_add = 3
@@ -177,7 +367,7 @@ lrsk_gov_var_job_functionary = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -240,11 +430,10 @@ lrsk_gov_var_job_infoguide = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		lrsk_complex_worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	resources = {
 		category = planet_researchers
@@ -260,7 +449,7 @@ lrsk_gov_var_job_infoguide = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -349,13 +538,14 @@ lrsk_gov_var_job_gofer = {
 	building_icon = lrsk_gvp_bldg_odd_jobs_emporium
 	clothes_texture_index = 2
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
 	}
+
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_artisans
@@ -389,7 +579,7 @@ lrsk_gov_var_job_gofer = {
 	}	
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -444,13 +634,14 @@ lrsk_gov_var_job_offworld_worker = {
 	building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
 	clothes_texture_index = 2
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
 	}
+
+	possible_precalc = can_fill_worker_job
 	
 	resources = {
 		category = planet_technician
@@ -475,7 +666,7 @@ lrsk_gov_var_job_offworld_worker = {
 	}
 
 	weight = {
-		weight = @lrsk_corpworker_job_weight
+		weight = @lrsk_desirable_worker_job_weight
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -533,11 +724,10 @@ lrsk_gov_var_job_knight = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	country_modifier = {
 		country_naval_cap_add = 3
@@ -607,7 +797,7 @@ lrsk_gov_var_job_knight = {
 
 	triggered_planet_modifier = {
 		potential = {
-			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
+			owner = { has_active_tradition = tr_domination_judgment_corps }
 		}
 		modifier = {
 			planet_crime_add = -5
@@ -687,11 +877,10 @@ lrsk_gov_var_job_pastor = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_priests
@@ -791,11 +980,10 @@ lrsk_gov_var_job_otherworld_guide = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_telepaths
@@ -820,7 +1008,7 @@ lrsk_gov_var_job_otherworld_guide = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0
 			NOR = {
@@ -891,11 +1079,10 @@ lrsk_gov_var_job_investigator = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		battle_thrall_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_enforcers
@@ -924,7 +1111,7 @@ lrsk_gov_var_job_investigator = {
 	}
 
 	weight = {
-		weight = @lrsk_corpspec_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -1009,11 +1196,10 @@ lrsk_gov_var_job_suppressor = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		battle_thrall_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	planet_modifier = {		
 		pop_cat_worker_political_power = -0.25
@@ -1021,7 +1207,7 @@ lrsk_gov_var_job_suppressor = {
 	}
 
 	weight = {
-		weight = @lrsk_corpspec_job_weight
+		weight = @lrsk_desirable_spec_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -1609,11 +1795,12 @@ lrsk_gov_var_job_planetmind_overseer = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_jobs
@@ -1653,11 +1840,12 @@ lrsk_gov_var_job_regional_coordinator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_jobs

@@ -4,10 +4,9 @@
 
 lrsk_gov_var_empire_endisnigh = {
   icon = "gfx/interface/icons/modifiers/mod_pop_decline_speed.dds"
-  science_ship_survey_speed = 0.25
-  planet_colony_development_speed_mult = 0.25
+  science_ship_survey_speed = 0.2
+  planet_colony_development_speed_mult = 0.2
 }
-
 
 lrsk_gvp_empire_scandal_wracked = {
 	country_influence_produces_mult = -0.1
@@ -15,53 +14,115 @@ lrsk_gvp_empire_scandal_wracked = {
 	pop_happiness = -0.05
 }
 
-lrsk_gvp_empire_offworld_work_bonus_1 = {
+lrsk_gvp_empire_offworld_work_bonus = {
 	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
 	planet_colony_development_speed_mult = 0.1
 	station_gatherers_produces_mult = 0.05
 }
-lrsk_gvp_empire_offworld_work_bonus_2 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.2
-	station_gatherers_produces_mult = 0.1
+
+#lrsk_gvp_empire_offworld_work_bonus_1 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.1
+#	station_gatherers_produces_mult = 0.05
+#}
+#lrsk_gvp_empire_offworld_work_bonus_2 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.2
+#	station_gatherers_produces_mult = 0.1
+#}
+#lrsk_gvp_empire_offworld_work_bonus_3 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.3
+#	station_gatherers_produces_mult = 0.15
+#}
+#lrsk_gvp_empire_offworld_work_bonus_4 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.4
+#	station_gatherers_produces_mult = 0.2
+#}
+#lrsk_gvp_empire_offworld_work_bonus_5 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.5
+#	station_gatherers_produces_mult = 0.25
+#}
+#lrsk_gvp_empire_offworld_work_bonus_6 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.6
+#	station_gatherers_produces_mult = 0.3
+#}
+#lrsk_gvp_empire_offworld_work_bonus_7 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.7
+#	station_gatherers_produces_mult = 0.35
+#}
+#lrsk_gvp_empire_offworld_work_bonus_8 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.8
+#	station_gatherers_produces_mult = 0.4
+#}
+#lrsk_gvp_empire_offworld_work_bonus_9 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 0.9
+#	station_gatherers_produces_mult = 0.45
+#}
+#lrsk_gvp_empire_offworld_work_bonus_10 = {
+#	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
+#	planet_colony_development_speed_mult = 1.0
+#	station_gatherers_produces_mult = 0.5
+#}
+
+lrsk_gvp_empire_new_aristos = {
+	icon = "gfx/interface/icons/modifiers/mod_planet_stability_mult.dds"
+	pop_cat_specialist_happiness = 0.05
+	pop_cat_specialist_political_power = -0.5
+	pop_cat_ruler_political_power = -0.25
+	planet_stability_add = 5
+	country_admin_cap_mult = 0.2
+	pop_factions_influence_produces_mult = -0.2
 }
-lrsk_gvp_empire_offworld_work_bonus_3 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.3
-	station_gatherers_produces_mult = 0.15
+
+lrsk_gvp_empire_estates_general = {
+	icon = "gfx/interface/icons/modifiers/mod_country_faction_influence_mult.dds"
+	pop_cat_specialist_happiness = 0.1
+	pop_cat_specialist_political_power = 1.5
+	pop_cat_worker_happiness = 0.05
+	pop_cat_worker_political_power = 1.25	
+	pop_cat_ruler_happiness = -0.1
+	pop_factions_influence_produces_mult = 0.2
+	edict_length_mult = 0.15
+	country_edict_cap_add = 1
+	pop_government_ethic_attraction = -0.5
 }
-lrsk_gvp_empire_offworld_work_bonus_4 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.4
-	station_gatherers_produces_mult = 0.2
+
+lrsk_gvp_empire_national_peril = {
+	icon = "gfx/interface/icons/modifiers/mod_planet_ship_build_speed_mult.dds"
+	pop_cat_specialist_happiness = -0.1
+	pop_cat_worker_happiness = -0.15
+	pop_cat_slave_happiness = -0.2
+	intel_encryption_add = 2
+	planet_crime_mult = -0.2
+	pop_government_ethic_attraction = 0.5
+	planet_army_build_speed_mult = 0.2
+	starbase_shipyard_build_speed_mult = 0.2
 }
-lrsk_gvp_empire_offworld_work_bonus_5 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.5
-	station_gatherers_produces_mult = 0.25
+
+lrsk_gov_var_empire_impecon_market = {
+  icon = "gfx/interface/icons/modifiers/mod_trade_value_mult.dds"
+  trade_value_mult = 0.1
+  country_trade_fee = -0.05
 }
-lrsk_gvp_empire_offworld_work_bonus_6 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.6
-	station_gatherers_produces_mult = 0.3
+
+lrsk_gov_var_empire_impecon_trophy_ol = {
+  icon = "gfx/interface/icons/modifiers/mod_diplo_weight_mult.dds"
+  diplo_weight_mult = 0.15
 }
-lrsk_gvp_empire_offworld_work_bonus_7 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.7
-	station_gatherers_produces_mult = 0.35
+
+lrsk_gov_var_empire_impecon_trophy_vs = {
+  icon = "gfx/interface/icons/modifiers/mod_influence_negative.dds"
+  pop_happiness = -0.1
 }
-lrsk_gvp_empire_offworld_work_bonus_8 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.8
-	station_gatherers_produces_mult = 0.4
-}
-lrsk_gvp_empire_offworld_work_bonus_9 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 0.9
-	station_gatherers_produces_mult = 0.45
-}
-lrsk_gvp_empire_offworld_work_bonus_10 = {
-	icon = "gfx/interface/icons/modifiers/mod_planet_colony_development_speed_mult.dds"
-	planet_colony_development_speed_mult = 1.0
-	station_gatherers_produces_mult = 0.5
+
+lrsk_gov_var_empire_impecon_legit = {
+  icon = "gfx/interface/icons/modifiers/mod_planet_stability_add.dds"
+  planet_stability_add = 2
 }

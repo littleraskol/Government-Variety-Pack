@@ -235,21 +235,21 @@ This government is a powerful, centralized monarchy. Its ruling dynasty seeks to
 [i]Heir (Male):[/i] Prince of the Blood
 [i]Heir (Female):[/i] Princess of the Blood
 
-[b]Galactic Dominion[/b]
-This government is a staggeringly ambitious dictatorship with designs on total galactic domination. Its fleets are vast, its factories roaring at all hours, its officer cadre hardened and loyal. Any who are not yet under its control tremble at its power, or so the leader believes.
+[b]Cosmic Dominion[/b]
+This government is a staggeringly ambitious dictatorship with designs on total domination. Its fleets are vast, its factories roaring at all hours, its officer cadre hardened and loyal. Any who are not yet under its control tremble at its power, or so the leader believes.
 
 [i]Ruler:[/i] Cosmic Autarch
 
-[b]Galactic Imperium[/b]
-This government is a staggeringly ambitious monarchy with designs on total galactic rule. Its court is resplendent, its holdings abundant, its nobility fierce and faithful. Any who have yet to bend the knee before the throne nonetheless stand in awe of its glory, or so the monarch believes.
+[b]Cosmic Imperium[/b]
+This government is a staggeringly ambitious monarchy with designs on total rulership. Its court is resplendent, its holdings abundant, its nobility fierce and faithful. Any who have yet to bend the knee before the throne nonetheless stand in awe of its glory, or so the monarch believes.
 
 [i]Ruler (Male):[/i] Cosmic Emperor
-[i]Ruler (Male):[/i] Cosmic Empress
+[i]Ruler (Female):[/i] Cosmic Empress
 [i]Heir (Male):[/i] Star Prince
 [i]Heir (Female):[/i] Star Princess
 
-[b]Galactic Cartel[/b]
-This government is a staggeringly ambitious business with designs on total galactic monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe.
+[b]Cosmic Cartel[/b]
+This government is a staggeringly ambitious business with designs on total monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe.
 
 [i]Ruler:[/i] Cosmic Executive Officer
 
@@ -390,7 +390,7 @@ This socialist dictatorship maintains stability by the widespread distribution o
 [i]Ruler (Male):[/i] Interplanetary Chairman
 [i]Ruler (Female):[/i] Interplanetary Chairwoman
 
-[b]Pure Social Republic[/b]
+[b]Purity Collective[/b]
 The emancipated proletarians of this master-race worker's state are interested in breaking only one kind of chain - the chains binding the souls of degenerate aliens to their living bodies!
 
 [i]Ruler:[/i] People's Champion

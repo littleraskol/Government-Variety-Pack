@@ -29,7 +29,7 @@ l_braz_por:
 
  lrsk_gov_var_civic_utilitarian_planning:0 "Utilitarian Planning"
  lrsk_gov_var_civic_utilitarian_planning_desc:0 "The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation."
- #civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Pop Food Upkeep: §G-5%§!\nShip, Building, and District Upkeep: §G-2.5%§!"
+ civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Able to use the §H$decision_lrsk_gvp_work_allocation_plan$§! planetary decision on planets with unemployment, which gives $lrsk_gvp_statmod_work_plan_effects_common$ (can be ended any time, will automatically end when no pops are unemployed for one month).\n\n"
 
  lrsk_gov_var_civic_siege_mentality:0 "Siege Mentality"
  lrsk_gov_var_civic_siege_mentality_desc:0 "The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
@@ -39,7 +39,7 @@ l_braz_por:
 
  lrsk_gov_var_civic_universal_sovereignty:0 "Universal Sovereignty"
  lrsk_gov_var_civic_universal_sovereignty_desc:0 "The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects."
- #civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects:0 "Subject Integration Influence Cost: §G-10%§!\nSubject Integration Time: §G-20%§!"
+ civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects:0 "Gets an opinion boost with weaker independent empires (i.e., potential vassals)."
 
  lrsk_gov_var_civic_workers_councils:0 "Workers' Councils"
  lrsk_gov_var_civic_workers_councils_desc:0 "Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government."
@@ -62,6 +62,7 @@ l_braz_por:
 
  lrsk_gov_var_civic_lifelong_learning:0 "Lifelong Learning"
  lrsk_gov_var_civic_lifelong_learning_desc:0 "This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives."
+ civic_tooltip_lrsk_gov_var_civic_lifelong_learning_effects:0 "Can use the §H$edict_lrsk_gvp_citschol$§! edict that gives planets $edict_lrsk_gvp_citschol_effects_common$\n\n"
 
  lrsk_gov_var_civic_institutionalized_collectivism:0 "Institutionalized Collectivism"
  lrsk_gov_var_civic_institutionalized_collectivism_desc:0 "The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met."
@@ -72,6 +73,7 @@ l_braz_por:
 
  lrsk_gov_var_civic_royal_absolutism:0 "Royal Absolutism"
  lrsk_gov_var_civic_royal_absolutism_desc:0 "The monarch is the state, whose will is law without limit."
+ civic_tooltip_lrsk_gov_var_civic_royal_absolutism_effects:0 "Can use the §H$edict_lrsk_gvp_royjustice$§! edict which $edict_lrsk_gvp_royjustice_effects_common$"
 
  lrsk_gov_var_civic_public_works:0 "Public Works"
  lrsk_gov_var_civic_public_works_desc:0 "A system of public employment makes labor power available for many tasks."
@@ -81,7 +83,7 @@ l_braz_por:
 
  lrsk_gov_var_civic_colonial_fiefs:0 "Colonial Fiefs"
  lrsk_gov_var_civic_colonial_fiefs_desc:0 "The monarch is willing to grant landholding rights to those bold enough to colonize new worlds."
-
+ civic_tooltip_lrsk_gov_var_civic_colonial_fiefs_effects:0 "Can use the §H$policy_lrsk_gvp_colfief_policy$§! policy tree to allow pops to start new vassal empires on unexplored worlds."
  lrsk_gov_var_civic_automated_indolence:0 "Automated Indolence"
  lrsk_gov_var_civic_automated_indolence_desc:0 "This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match."
 
@@ -259,6 +261,26 @@ l_braz_por:
  civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_professional_protection_office$§! $BRANCH_OFFICE_BUILDING$, which provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! §Y£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator$ Job§! ($job_lrsk_gov_var_job_investigator_effect_desc$) or (if the providing corp is criminal) §G+1§! §Y£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor$ Job§! ($job_lrsk_gov_var_job_suppressor_effect_desc$).\n\n"
 
  ####################################
+ ### "Advanced" Civics
+
+ LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON:0 "In the philosophical-ideological dispute over the value of knowledge,"
+ LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1:0 "Start with the§Y"
+ LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2:0 "§!technology." 
+
+ lrsk_adv_civ_civic_shapers:0 "Shapers"
+ lrsk_adv_civ_civic_shapers_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that it is life itself that matters most to living beings, and its careful cultivation is the highest purpose of knowledge."
+ lrsk_adv_civ_civic_shapers_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_eco_simulation$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$\n"
+
+ lrsk_adv_civ_civic_artificers:0 "Artificers"
+ lrsk_adv_civ_civic_artificers_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that the things sapient beings create, their devices and crafts, matter most."
+ lrsk_adv_civ_civic_artificers_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_powered_exoskeletons$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$"
+
+ lrsk_adv_civ_civic_essentialists:0 "Essentialists"
+ lrsk_adv_civ_civic_essentialists_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality is the true purpose of knowledge."
+ lrsk_adv_civ_civic_essentialists_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_fusion_power$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$"
+
+
+ ####################################
  # Origins
  ####################################
 
@@ -325,6 +347,11 @@ l_braz_por:
  
  LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to military excellence and glory.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would be allies bound for mutual defense, and when we were ready to spread out into the cosmos, face whatever threats arose there as a strong united front."
 
+ #### Other
+
+ #Colonial Venture: Flavor placeholder for NPC vassal/civic type related to Colonial Fiefs
+ lrsk_gov_var_origin_colonial_venture:0 "Colonial Venture"
+ lrsk_gov_var_origin_colonial_venture_desc:0 "This empire began when adventurers from a nearby monarchy sought out a new world to tame and settle for the glory of their sovereign."
 
  ####################################
  # Governments
@@ -691,16 +718,16 @@ l_braz_por:
  ####################################
  ### Other
 
- lrsk_gov_var_gov_galactic_dominion:0 "Galactic Dominion"
- lrsk_gov_var_gov_galactic_dominion_desc:0 "This government is a staggeringly ambitious dictatorship with designs on total galactic domination. Its fleets are vast, its factories roaring at all hours, its officer cadre hardened and loyal. Any who are not yet under its control tremble at its power, or so the leader believes."
+ lrsk_gov_var_gov_galactic_dominion:0 "Cosmic Dominion"
+ lrsk_gov_var_gov_galactic_dominion_desc:0 "This government is a staggeringly ambitious dictatorship with designs on total domination. Its fleets are vast, its factories roaring at all hours, its officer cadre hardened and loyal. Any who are not yet under its control tremble at its power, or so the leader believes."
 
  LRSK_GOV_VAR_RT_COS_AUTARCH:0 "Cosmic Autarch"
  LRSK_GOV_VAR_RT_COS_AUTARCH_FEMALE:0 "$LRSK_GOV_VAR_RT_COS_AUTARCH$"
 
  LRSK_GOV_VAR_START_SCREEN_P2_GALACTIC_DOMINION:0 "The early chaotic periods of our history saw many nation states vying with each other for power, until we were at last united under the strongest of these. Its single, burning vision drove our people to bring order at last to all civilizations, everywhere. Let the rabble of the stars tremble, for we are coming to deliver them to their rightful place as subjects of the strong."
 
- lrsk_gov_var_gov_galactic_imperium:0 "Galactic Imperium"
- lrsk_gov_var_gov_galactic_imperium_desc:0 "This government is a staggeringly ambitious monarchy with designs on total galactic rule. Its court is resplendent, its holdings abundant, its nobility fierce and faithful. Any who have yet to bend the knee before the throne nonetheless stand in awe of its glory, or so the monarch believes."
+ lrsk_gov_var_gov_galactic_imperium:0 "Cosmic Imperium"
+ lrsk_gov_var_gov_galactic_imperium_desc:0 "This government is a staggeringly ambitious monarchy with designs on total rulership. Its court is resplendent, its holdings abundant, its nobility fierce and faithful. Any who have yet to bend the knee before the throne nonetheless stand in awe of its glory, or so the monarch believes."
 
  LRSK_GOV_VAR_RT_COS_EMPEROR:0 "Cosmic Emperor"
  LRSK_GOV_VAR_RT_COS_EMPRESS:0 "Cosmic Empress"
@@ -709,8 +736,8 @@ l_braz_por:
 
  LRSK_GOV_VAR_START_SCREEN_P2_GALACTIC_IMPERIUM:0 "The early chaotic periods of our history saw many nation states vying with each other for power, until we were at last united under the most glorious and honorable monarch in history, whose single, burning vision is to see every knee bent before the throne. Let the barbarians of the stars stare in awe, for we are coming to show them true glory."
 
- lrsk_gov_var_gov_galactic_cartel:0 "Galactic Cartel"
- lrsk_gov_var_gov_galactic_cartel_desc:0 "This government is a staggeringly ambitious business with designs on total galactic monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe."
+ lrsk_gov_var_gov_galactic_cartel:0 "Cosmic Cartel"
+ lrsk_gov_var_gov_galactic_cartel_desc:0 "This government is a staggeringly ambitious business with designs on total monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe."
 
  LRSK_GOV_VAR_RT_COSEO:0 "Cosmic Executive Officer"
  LRSK_GOV_VAR_RT_COSEO_FEMALE:0 "$LRSK_GOV_VAR_RT_COSEO$"
@@ -960,7 +987,7 @@ l_braz_por:
 
  LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_IMPERIALISM:0 "After ages of slaving for bloody kings and greedy merchants, the people finally rose up in revolution. Workers' parties have captured the governments of the majority of nations and put them to the task of social development. The International system on [Capital.GetName] worked well at empowering the vanguard nation of the revolution to free the world with solidarity contributions from its associate workers' states."
 
- lrsk_gov_var_gov_pure_social_republic:0 "Pure Social Republic"
+ lrsk_gov_var_gov_pure_social_republic:0 "Purity Collective"
  lrsk_gov_var_gov_pure_social_republic_desc:0 "The emancipated proletarians of this master-race worker's state are interested in breaking only one kind of chain - the chains binding the souls of degenerate aliens to their living bodies!"
 
  LRSK_GOV_VAR_RT_PEOPLES_CHAMPION:0 "People's Champion"
@@ -1106,6 +1133,41 @@ l_braz_por:
  lrsk_gov_var_gov_colonial_company_desc:0 "$lrsk_gov_var_civic_mc_chartered_company_desc$ The challenges of administering an interstellar empire leave considerable governing authority in its hands."
 
  LRSK_GOV_VAR_RT_GOV_PRES:0 "Governor-President"
+
+ ####################################
+ ### NPC
+
+ # Couldn't get any of this to work... sad.
+ LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON:0 "from which its founders hailed."
+ 
+ lrsk_gov_var_gov_colonial_viceroyalty_imp:0 "Viceroyal Dynasty"
+ lrsk_gov_var_gov_colonial_viceroyalty_imp_desc:0 "This government began as a hereditary aristocracy that owed its original allegiance to the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+
+ LRSK_GOV_VAR_RT_COL_VICEROY:0 "Colonial Viceroy"
+ LRSK_GOV_VAR_RT_COL_VICEREINE:0 "Colonial Vicreine"
+ LRSK_GOV_VAR_HT_DEP_VICEROY:0 "Deputy Viceroy"
+ LRSK_GOV_VAR_HT_DEP_VICEREINE:0 "Deputy Vicreine"
+
+ lrsk_gov_var_gov_colonial_viceroyalty_dic:0 "Viceroyal Dominion"
+ lrsk_gov_var_gov_colonial_viceroyalty_dic_desc:0 "This government is controlled by a single directing officer who officially acts in the name of the sovereign of the empire $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+
+ LRSK_GOV_VAR_RT_COL_REGENT:0 "Colonial Regent"
+
+ lrsk_gov_var_gov_colonial_viceroyalty_oli:0 "Viceroyal Council"
+ lrsk_gov_var_gov_colonial_viceroyalty_oli_desc:0 "This government is managed by a council of colonial trustees officially serving the interests of the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+
+ LRSK_GOV_VAR_RT_COL_OVERSEER:0 "Colonial Overseer"
+
+ lrsk_gov_var_gov_colonial_viceroyalty_dem:0 "Viceroyal Commonwealth"
+ lrsk_gov_var_gov_colonial_viceroyalty_dem_desc:0 "This government, despite being democratically elected, began as the colonial agent of the sovereign of the empire $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+
+ LRSK_GOV_VAR_RT_COL_GOVERNOR:0 "Colonial Governor"
+
+ lrsk_gov_var_gov_colonial_viceroyalty_cmp:0 "Viceroyal Company"
+ lrsk_gov_var_gov_colonial_viceroyalty_cmp_desc:0 "This government is a commercial venture which officially has a fiduciary duty to enrich the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+
+ LRSK_GOV_VAR_RT_COL_EXEC:0 "Colonial Executive Officer"
+
 
  ####################################
  ### Start Screen Leftovers

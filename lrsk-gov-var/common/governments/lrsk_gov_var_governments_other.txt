@@ -16,20 +16,16 @@ lrsk_gov_var_gov_pretender_hive = {
 
 	election_candidates = {
 		modifier = {
-			add = 1000
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 500
+			add = 50
 			leader_class = governor
 		}
 		modifier = {
-			add = 100
-			OR = {
-				leader_class = admiral
-				leader_class = general
-				leader_class = scientist
-			}
+			add = 10
+			leader_class = scientist
 		}
 	}
 
@@ -52,5 +48,92 @@ lrsk_gov_var_gov_pretender_hive_imp = {
 
 	weight = {
 		base = 1000
+	}
+}
+
+
+#test
+lrsk_gov_var_gov_colonial_viceroyalty_imp = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_VICEROY
+	ruler_title_female = LRSK_GOV_VAR_RT_COL_VICEREINE
+	heir_title = LRSK_GOV_VAR_HT_DEP_VICEROY
+	heir_title_female = LRSK_GOV_VAR_HT_DEP_VICEREINE
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	weight = {
+		base = 110000
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_dic = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_REGENT
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_dictatorial
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	weight = {
+		base = 110000
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_oli = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_OVERSEER
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	leader_class = governor
+
+	weight = {
+		base = 110000
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_dem = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_GOVERNOR
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_democratic
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	leader_class = governor
+
+	weight = {
+		base = 110000
+	}
+}
+lrsk_gov_var_gov_colonial_viceroyalty_cmp = {
+	ruler_title = LRSK_GOV_VAR_RT_COL_EXEC
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_corporate
+		has_origin = lrsk_gov_var_origin_colonial_venture
+	}
+
+	leader_class = governor
+
+	weight = {
+		base = 110000
 	}
 }

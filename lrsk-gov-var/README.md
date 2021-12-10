@@ -27,13 +27,13 @@ Ascetic Virtues (Not Materialist) - This culture's religious beliefs include str
 
 Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
 
-Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep)
+Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
 Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 
 Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
-Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
+Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
 Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
@@ -41,21 +41,21 @@ Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifier
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
-Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% Market Fee)
+Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 
 Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
 
-Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)
+Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop)
 
 Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
-Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear tile blocker cost, +5% habitability)
+Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income)
+Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
 
 Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
@@ -111,7 +111,7 @@ Reflective Polymorphism (Machine Intelligence) - All the highest-level decision 
 
 Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
 
-Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage)
+Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage, chance to raise military intel on opponents after space battles)
 
 Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness and trust growth)
 
@@ -125,7 +125,7 @@ Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence wa
 
 Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
 
-Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear tile blocker cost, terraform cost, and terraform completion time)
+Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
 Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
 
@@ -154,6 +154,14 @@ Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative 
 Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
 
 Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
+
+"Advanced" Civics
+
+Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+
+Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+
+Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
 
 Enhanced Civics
 
@@ -187,21 +195,71 @@ NOTE: The spiritualist faction will demand that you be running specific named go
 
 -In the base game, certain events (the Prethoryn and Unbidden crises, most critically) check to see if the player has certain set defined governments to determine what response to give. However, the default "OK" response doesn't start the crisis events. This means that if you're using any mod-added governments, it doesn't seem that you can start the crises. Fortunately, there is a mod out there that fixes this: Event Bugfixes by ECHO (http://steamcommunity.com/sharedfiles/filedetails/?id=785269836)
 
-4. Future Plans
-
--More customization: start screen text, name lists, AI personalities. Basically I want this mod to inject a huge amount of flavor into the game, and that means a gradual process of adding new things. It's fun! But time consuming.
-
--More of a focus on government types that are just variations on ones in the base game, using just ethos combinations and maybe a few base game civics.
-
--Adding "advanced" civics that should radically change the way you play.
-
--Eventually I'd like to include some events for specific governments, like succession crises and such. But this is a long ways off.
+Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v3.3.1 (12-10-21) - Backend Fixes/Updates
+-Colonial Fiefs has special effect tooltip.
+-Changed some localization to use keys rather than user-facing text.
+-Created NPC namelist so "Lesser Names Patch" won't let NPC-only govs go nameless.
+-Democratic and Oligarchic initial rulers that get voted out should have a leader class to change careers into rather than vanishing (so long as this feature works...)
+-Revised election weights in all electoral governments to have more vanilla values (some were downright weird).
+
+v3.3 (12-05-21) - Civic Improvements 4
+-Colonial Fiefs now has a policy that allows for pops to migrate and start new vassal empires.
+-Added three new "advanced" mutually-exclusive and antagonistic starting-only civics focused on the idea of cultures that specialized in different domains of knowledge. Any non-gestalt empire can start with them.
+-New Civic: Shapers (+5 leader age, -10% genetic modification cost, +10% habitability, +10% growth, -10% non-society research, start with "Eco Simulation" tech.)
+-New Civic: Artificers (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+-New Civic: Essentialists (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+
+v3.2.1.1 (11-27-21) - "Cosmic" Empires fix
+-The re-instated "galactic" governments never got their names back...
+
+v3.2.1 (11-27-21) - Herbert Update
+-Fixed job calculations for compatibility with Stellaris 3.2.* (Herbert)
+-Changed compat version number.
+
+v3.2 (10-07-21) - Civic Improvements 3
+-Imperial Economy is allowed to change vassals into specialized subjects.
+-Minor fix: Sanity checks for 'esper' traits only being called every 2 years, every year preferable.
+
+v3.1 (09-28-21) - Civic Improvements 2
+-Combat Data now has a chance to improve military intel on an empire after the end of a space battle with that empire.
+-Fixed an issue where mod-added branch office buildings were not useful for criminal syndicate empires. Now all branch office buildings added by this mod will give a flat +20 crime for criminal syndicates. This is balanced by legit megacorps having a better "normal" bonus.
+-Royal Justice event option cost change: Ennobling officials costs 300 consumer goods per "established" (more than 2 pops, no Colony Shelter) colony.
+-Royal Justice event option cost change: The Assembly of the Estates costs 20 energy per free pop in the empire.
+-Royal Justice event option reward change: "My chancellor will tell you the rest..." gives reward as a multiple of influence production.
+-Fixed a documentation and localization typos.
+
+v3.0 (09-14-21) - Lem Update
+-Fixed what was needed for compatibility with Stellaris 3.1.* (Lem)
+-Changed compat version number.
+
+v2.2 (09-11-21) - Civic Improvements 1
+-Lifelong Learning: Gets access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop.
+-Utilitarian Planning: Gets access to the Work Allocation Plan planetary decision, which alleviates unemployment.
+-Royal Absolutism: Gets access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance.
+-Imperial Economy: Incompatible with Fanatical Purifiers and Inward Perfection.
+-Direct Revelation: Now has options to ignore Wild Cult popups.
+-Direct Revelation + Doomsday origin special modifier reduced in effectiveness to 20% from 25%.
+-Using new modifier multipliers, the Offworld Worker bonus now scales without limit.
+-Universal Sovereignty: Gets an opinion boost with weaker independent empires.
+-Universal Sovereignty incompatible with Supremacist Demagoguery.
+-Various civic combinations have triggered diplomatic opinion modifiers.
+-New federation origins: Copied over trust and intel boosts from base game.
+-Returned the "Galactic Empire" joke governments under new, even more bombastic names.
+-Pure Social Republic government: renamed Purity Collective.
+-Improved logic for finding "escape routes" for origins that start with nearby AI players.
+-Bugfix: Technocracy prefix_formats used wrong part key.
+-Various other small improvements and fixes.
+
+v2.1.2 (06-06-21) - Localization Hotfix
+-Fixed incorrect localization in a "casino luck" event (tourism bonus).
 
 v2.1.1 (04-19-21) - Spy Stuff
 -Investigation & Security Services gets +1 Encryption and Codebreaking, crime mult reduction down to -10% from -15%.

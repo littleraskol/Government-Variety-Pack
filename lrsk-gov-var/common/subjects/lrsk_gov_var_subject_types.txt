@@ -1,0 +1,147 @@
+# Government Variety Pack
+# Subjects
+# Author: littleraskol
+#
+# can_expand = allowed to build outposts to expand borders
+# potential = if possible to select in diplomatic interactions
+# become_vassal = trigger when it converts into a vassal
+# tech_cost_mult = tech cost multiplier if overlord has a tech
+# overlord_resources = resources cost, upkeep and production paid by and to the overlord
+# subject_resources = resources cost, upkeep and production paid by and to the subject
+# joins_overlord_wars = Joins in if overlord goes to war (Defensive or Offensive)
+# calls_overlord_to_war Calls overlord to war (Defensive only)
+# can_do_diplomacy Can do some limited diplomacy
+# overlord_becomes_warleader, if overlord takes over as warleader. Default true
+# gets_sensor(yes): gets overlords sensors
+# gets_access(yes): gets overlords access
+# can_be_integrated(no): the overlord is able to integrate the subject
+# can_switch_to: a list of other subject types this type can switch to.
+# diplo_threat: threat generated from diplomatically vassalizing this type of subject
+# effect: executes when subject relation is created
+
+# Taxed 25% of alloys produced
+lrsk_gvp_vassal_foundry  = {
+	can_expand = yes
+	can_be_integrated = yes
+
+	research_agreement = yes
+	research_sharing = yes	# for tech sharing modifier
+
+	joins_overlord_wars = no
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	diplo_threat = 0
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	subject_tax_rate = {
+		alloys = 0.25
+	}
+
+	effect = {
+		lrsk_basic_vassal_transformations = yes
+		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
+	}
+}
+
+# Taxed 25% of consumer goods and provides OL with +10% trade value.
+lrsk_gvp_vassal_market  = {
+	can_expand = yes
+	can_be_integrated = yes
+
+	research_agreement = yes
+	research_sharing = yes	# for tech sharing modifier
+
+	joins_overlord_wars = no
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	diplo_threat = 0
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	subject_tax_rate = {
+		consumer_goods = 0.25
+	}
+
+	effect = {
+		lrsk_basic_vassal_transformations = yes
+		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
+	}
+}
+
+# Taxed 10% of Unity and Influence. Gets a happiness penalty. OL gets +15% diplo power.
+lrsk_gvp_vassal_trophy  = {
+	can_expand = yes
+	can_be_integrated = yes
+
+	research_agreement = yes
+	research_sharing = yes	# for tech sharing modifier
+
+	joins_overlord_wars = no
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	diplo_threat = 0
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	subject_tax_rate = {
+		unity = 0.1
+		influence = 0.1
+	}
+
+	effect = {
+		lrsk_basic_vassal_transformations = yes
+		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
+	}
+}
+ 
+# Taxed 20% of rare materials.
+lrsk_gvp_vassal_prospector  = {
+	can_expand = yes
+	can_be_integrated = yes
+
+	research_agreement = yes
+	research_sharing = yes	# for tech sharing modifier
+
+	joins_overlord_wars = no
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	diplo_threat = 0
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	subject_tax_rate = {
+		exotic_gases = 0.2
+		rare_crystals = 0.2
+		volatile_motes = 0.2		
+	}
+
+	effect = {
+		lrsk_basic_vassal_transformations = yes
+		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
+	}
+}

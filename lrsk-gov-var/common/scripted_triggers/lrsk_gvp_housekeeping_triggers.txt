@@ -10,9 +10,9 @@ lrsk_has_gvp_mil_gov = {
 		has_government = lrsk_gov_var_gov_doom_horde
 		has_government = lrsk_gov_var_gov_doom_horde_imp
 		has_government = lrsk_gov_var_gov_citizen_legion
-		#has_government = lrsk_gov_var_gov_galactic_dominion
-		#has_government = lrsk_gov_var_gov_galactic_imperium
-		#has_government = lrsk_gov_var_gov_galactic_cartel
+		has_government = lrsk_gov_var_gov_galactic_dominion
+		has_government = lrsk_gov_var_gov_galactic_imperium
+		has_government = lrsk_gov_var_gov_galactic_cartel
 		has_government = lrsk_gov_var_gov_folkish_commonwealth
 		has_government = lrsk_gov_var_gov_folkish_league
 		has_government = lrsk_gov_var_gov_folkish_regime
@@ -179,7 +179,7 @@ lrsk_has_gvp_soc_gov = {
 
 lrsk_has_gvp_cap_gov = {
 	OR = {
-		#has_government = lrsk_gov_var_gov_galactic_cartel
+		has_government = lrsk_gov_var_gov_galactic_cartel
 		has_government = lrsk_gov_var_gov_libertarian_freehold
 		has_government = lrsk_gov_var_gov_anarcho_capitalism
 		has_government = lrsk_gov_var_gov_corporate_neofuedalism
@@ -455,23 +455,17 @@ lrsk_has_gvp_corp_civic = {
 	}
 }
 
-lrsk_has_gvp_advacned_civic = {
+lrsk_has_gvp_techideology_civic = {
 	OR = {
 		has_civic = lrsk_adv_civ_civic_shapers
 		has_civic = lrsk_adv_civ_civic_artificers
 		has_civic = lrsk_adv_civ_civic_essentialists
-		has_civic = lrsk_adv_civ_civic_sortition
-		has_civic = lrsk_adv_civ_civic_figurehead_monarchy
-		has_civic = lrsk_adv_civ_civic_shadow_monarchy
-		has_civic = lrsk_adv_civ_civic_parliamentary_traditions
-		has_civic = lrsk_adv_civ_civic_senatorial_traditions
-		has_civic = lrsk_adv_civ_civic_regency_traditions
-		has_civic = lrsk_adv_civ_civic_corporate_traditions
-		has_civic = lrsk_adv_civ_civic_otherworldly
-		has_civic = lrsk_adv_civ_civic_aspiring_ascendants
-		has_civic = lrsk_adv_civ_civic_rampant_ascendants
-		has_civic = lrsk_adv_civ_civic_technobarbarism
-		has_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+}
+
+lrsk_has_gvp_advanced_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_civic = yes
 	}
 }
 
@@ -480,7 +474,7 @@ lrsk_has_any_gvp_civic = {
 		lrsk_has_gvp_normal_civic = yes
 		lrsk_has_gvp_gestalt_civic = yes
 		lrsk_has_gvp_corp_civic = yes
-		lrsk_has_gvp_advacned_civic = yes
+		lrsk_has_gvp_advanced_civic = yes
 	}
 }
 
@@ -587,32 +581,26 @@ lrsk_has_gvp_corp_valid_civic = {
 	}
 }
 
-lrsk_has_gvp_advacned_valid_civic = {
+lrsk_has_gvp_techideology_valid_civic = {
 	OR = {
 		has_valid_civic = lrsk_adv_civ_civic_shapers
 		has_valid_civic = lrsk_adv_civ_civic_artificers
 		has_valid_civic = lrsk_adv_civ_civic_essentialists
-		has_valid_civic = lrsk_adv_civ_civic_sortition
-		has_valid_civic = lrsk_adv_civ_civic_figurehead_monarchy
-		has_valid_civic = lrsk_adv_civ_civic_shadow_monarchy
-		has_valid_civic = lrsk_adv_civ_civic_parliamentary_traditions
-		has_valid_civic = lrsk_adv_civ_civic_senatorial_traditions
-		has_valid_civic = lrsk_adv_civ_civic_regency_traditions
-		has_valid_civic = lrsk_adv_civ_civic_corporate_traditions
-		has_valid_civic = lrsk_adv_civ_civic_otherworldly
-		has_valid_civic = lrsk_adv_civ_civic_aspiring_ascendants
-		has_valid_civic = lrsk_adv_civ_civic_rampant_ascendants
-		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
-		has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+}
+
+lrsk_has_gvp_advanced_valid_civic = {
+	OR = {
+		lrsk_has_gvp_techideology_valid_civic = yes
 	}
 }
 
 lrsk_has_any_gvp_valid_civic = {
 	OR = {
-		lrsk_has_gvp_normal_valid_civic = yes
-		lrsk_has_gvp_gestalt_valid_civic = yes
-		lrsk_has_gvp_corp_valid_civic = yes
-		lrsk_has_gvp_advacned_valid_civic = yes
+		lrsk_has_gvp_normal_civic = yes
+		lrsk_has_gvp_gestalt_civic = yes
+		lrsk_has_gvp_corp_civic = yes
+		lrsk_has_gvp_advanced_valid_civic = yes
 	}
 }
 
@@ -655,5 +643,46 @@ lrsk_has_advanced_origin = {
 		has_origin = lrsk_adv_civ_origin_established_empire
 		has_origin = lrsk_adv_civ_origin_ancient_tech
 		has_origin = lrsk_adv_civ_origin_broken_reality
+	}
+}
+
+# Used by a backend event that will change the civics of any AI if rendered invalid, and give human player influence to change gov
+lrsk_has_gvp_possible_invalidated_civic = {
+	OR = {
+		AND = {
+			has_civic = lrsk_gov_var_civic_imperial_economy
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_inwards_perfection
+			}
+		}
+		AND = {
+			has_civic = lrsk_gov_var_civic_universal_sovereignty
+			has_civic = lrsk_gov_var_civic_supremacist_demagoguery
+		}
+	}
+}
+
+# Checks to see if an overlord should have special vassal types
+lrsk_has_special_vassals = {
+	or = {
+		has_valid_civic = lrsk_gov_var_civic_imperial_economy
+	}
+}
+
+# Specifies conditions that would block an event that alters vassal type for various special vassal type civcs etc.
+lrsk_special_vassal_allowed = {
+	NOR = {
+		# Prevents any existing ImpEcon special vassal from being changed.
+		is_subject_type = lrsk_gvp_vassal_foundry
+		is_subject_type = lrsk_gvp_vassal_market
+		is_subject_type = lrsk_gvp_vassal_trophy
+		is_subject_type = lrsk_gvp_vassal_prospector			
+
+		# Uplift: Prevent immediate change in subject status etc. if tutor can create special vassals
+		#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+
+		# Prevent sublight colonies from being changed
+		#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
 	}
 }

@@ -662,11 +662,43 @@ country_event = {
 				who = root
 				modifier = opinion_lrsk_gov_var_new_feds
 			}
+			add_trust = {
+				amount = 50
+				who = root
+			}
+			add_trust = {
+				amount = 50
+				who = event_target:lrsk_fed_member_2
+			}
+			add_intel = {
+				amount = 60
+				who = root
+			}
+			add_intel = {
+				amount = 60
+				who = event_target:lrsk_fed_member_2
+			}
 		}
 		event_target:lrsk_fed_member_2 = {
 			add_opinion_modifier = {
 				who = root
 				modifier = opinion_lrsk_gov_var_new_feds
+			}
+			add_trust = {
+				amount = 50
+				who = root
+			}
+			add_trust = {
+				amount = 50
+				who = event_target:lrsk_fed_member_1
+			}
+			add_intel = {
+				amount = 60
+				who = root
+			}
+			add_intel = {
+				amount = 60
+				who = event_target:lrsk_fed_member_1
 			}
 		}
 		add_opinion_modifier = {
@@ -676,6 +708,22 @@ country_event = {
 		add_opinion_modifier = {
 			who = event_target:lrsk_fed_member_2
 			modifier = opinion_lrsk_gov_var_new_feds
+		}
+		add_trust = {
+			amount = 50
+			who = event_target:lrsk_fed_member_1
+		}
+		add_trust = {
+			amount = 50
+			who = event_target:lrsk_fed_member_2
+		}
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_fed_member_1
+		}
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_fed_member_2
 		}
 		set_federation_leader = root
 	}
