@@ -1,0 +1,63 @@
+################
+# NAME FORMATS #
+################
+
+## Innovators
+pop_faction_name_parts_list = {
+	key = "lrsk_gvp_innovator_names"
+	parts = {
+		Technical_Improvement_Movement = 1
+		Movement_for_Scholarly_Reform = 1
+		Movement_for_Intellectual_Curiosity = 1
+		Technical_Improvement_Society = 1
+		Scholarly_Reform_Society = 1
+		Intellectual_Curiosity_Society = 1
+		Friends_of_Technical_Improvement = 1
+		Friends_of_Scholarly_Reform = 1
+		Friends_of_Intellectual_Curiosity = 1
+		Technical_Improvement_Study_Group = 1
+		Scholarly_Reform_Study_Group = 1
+		Intellectual_Curiosity_Study_Group = 1
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			is_pop_faction_type = "pft_gvp_tb_innovator"
+		}
+	}
+	format = "format.pop_faction.lrsk_gvp_innovator"
+}
+
+## Ritualists
+pop_faction_name_parts_list = {
+	key = "lrsk_gvp_ritualist_names"
+	parts = {
+		Circle_of_Ritual_Purity = 1
+		Ancestral_Honor_Circle = 1
+		Circle_of_the_Sacred = 1
+		Lodge_of_Ritual_Purity = 1
+		Ancestral_Honor_Lodge = 1
+		Great_Sacred_Lodge = 1
+		Guardians_of_Ritual_Purity = 1
+		Ancestral_Honor_Guardians = 1
+		Guardians_of_the_Sacred = 1
+		Order_of_Ritual_Purity = 1
+		Order_for_Honoring_the_Ancestors = 1
+		Great_Sacred_Order = 1
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			is_pop_faction_type = "pft_gvp_tb_ritualist"
+		}
+	}
+	format = "format.pop_faction.lrsk_gvp_ritualist"
+}
