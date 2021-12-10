@@ -1123,3 +1123,109 @@ country_event = {
 
 	}
 }
+
+# As above, same species
+country_event = {
+	id = lrsk_gvp_testing.25
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		capital_scope.solar_system = { 
+			closest_system = {
+				limit = {
+					has_owner = no
+					any_system_planet = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+				}
+				random_system_planet = { 
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					set_planet_size = 16
+					change_pc = pc_continental	#whatever
+					reroll_planet = yes
+					save_event_target_as = lrsk_test_target_home
+					
+					create_country = {
+						species = root
+						name_list = random
+						type = default
+						origin = origin_default
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = random
+						ethos = random
+						civics = random
+						effect = {
+							save_event_target_as = lrsk_test_target
+							establish_communications_no_message = root
+						}
+					}
+					create_colony = {
+						owner = event_target:lrsk_test_target
+					}
+					generate_start_deposits_and_blockers = yes
+					generate_start_buildings_and_districts = yes
+					generate_start_pops = yes
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_test_target
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+					}
+				}
+				event_target:lrsk_test_target = {
+					create_starting_leaders = yes
+					#country_event = { id = game_start.9 } # exist to get dunked on, don't give them ships
+					country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+					set_name = random # Fixes some naming issues
+				}
+			}
+		}
+
+		# your stick
+		create_fleet = {
+			effect = {
+				set_owner = root
+
+				while = {
+					count = 20
+					create_ship = {
+						name = random
+						random_existing_design = corvette
+					}
+				}
+				while = {
+					count = 1
+					create_fallen_empire_large_ship = yes
+				}
+				while = {
+					count = 3
+					create_fallen_empire_small_ship = yes
+				}
+
+				set_location = root.capital_star
+			}
+		}
+
+	}
+}
