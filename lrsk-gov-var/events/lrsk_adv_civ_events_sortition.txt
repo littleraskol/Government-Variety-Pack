@@ -1134,7 +1134,7 @@ country_event = {
 				# go through each, need a backup even if ruler chosen.
 
 				# This flag set on any non-ruler leader once chosen.
-				if = { limit = { NOT = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } } }
+				if = { limit = { NOT = { root = { any_owned_leader = { has_leader_flag = lrsk_ost_backup@root } } } }
 					# Each leader has almost no chance of being chosen unless there is cause for suspicion
 					random_list = {
 						90 = {
@@ -1233,7 +1233,8 @@ country_event = {
 		custom_tooltip = lrsk_adv_civ_sortition.6.accept.desc
 
 		hidden_effect = {
-			unassign_leader = event_target:lrsk_sortost_protag
+			# TBD: figure out how this works actually
+			#unassign_leader = event_target:lrsk_sortost_protag 
 			add_modifier = { modifier = lrsk_adv_civ_ost_abdicate days = 720 }
 
 			ruler = { if = { limit = { has_leader_flag = lrsk_ost_target@root } remove_leader_flag = lrsk_ost_target@root } }

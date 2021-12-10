@@ -152,8 +152,8 @@ country_event = {
 
 		capital_scope.solar_system = {
 			# Transferring variables
-			set_variable = { which = lrsk_gcol value = prevprev } 
-			set_variable = { which = lrsk_rcol value = prevprev }
+			set_variable = { which = lrsk_gcol value = owner.lrsk_gcol } 
+			set_variable = { which = lrsk_rcol value = owner.lrsk_rcol }
 
 			log = "Switched to capital system [this.GetName], num of g. colonies = [this.lrsk_gcol]"
 			log = "Switched to capital system [this.GetName], num of r. colonies =  [this.lrsk_rcol]"

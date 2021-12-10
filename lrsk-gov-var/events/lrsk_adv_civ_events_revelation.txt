@@ -421,7 +421,7 @@ country_event = {
 	option = {
 		name = LRSK_ADV_CIV_EVENT_REVELATION_SUCCESS_PLAYER_ACCEPT
 		hidden_effect = {
-			remove_leader_flag = lrsk_rev_enlighten
+			event_target:lrsk_rev_protag = { remove_leader_flag = lrsk_rev_enlighten }
 			country_event = { id = lrsk_adv_civ_revelation.17 days = 360 }
 		}
 	}
@@ -774,11 +774,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -805,11 +805,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -831,11 +831,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -857,11 +857,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -883,11 +883,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -909,11 +909,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -935,11 +935,11 @@ country_event = {
 						}
 						modifier = {
 							factor = 1.5
-							has_policy_flag = lrsk_adv_civ_encourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_encourage_rev }
 						}
 						modifier = {
 							factor = 0.6
-							has_policy_flag = lrsk_adv_civ_discourage_rev
+							owner = { has_policy_flag = lrsk_adv_civ_discourage_rev }
 						}
 						add_trait = lrsk_adv_civ_trait_illuminated
     					add_ruler_trait = lrsk_adv_civ_trait_inspired
@@ -982,8 +982,10 @@ country_event = {
 					factor = 0.6
 					has_policy_flag = lrsk_adv_civ_discourage_rev
 				}
-				add_trait = lrsk_adv_civ_trait_illuminated
-				add_ruler_trait = lrsk_adv_civ_trait_inspired
+				from = { 
+					add_trait = lrsk_adv_civ_trait_illuminated
+					add_ruler_trait = lrsk_adv_civ_trait_inspired
+				}
 			}
 			5 = {
 				modifier = {
