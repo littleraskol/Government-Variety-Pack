@@ -204,6 +204,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v3.3.1 (12-10-21) - Backend Fixes/Updates
+-Colonial Fiefs has special effect tooltip.
 -Changed some localization to use keys rather than user-facing text.
 -Created NPC namelist so "Lesser Names Patch" won't let NPC-only govs go nameless.
 -Democratic and Oligarchic initial rulers that get voted out should have a leader class to change careers into rather than vanishing (so long as this feature works...)
