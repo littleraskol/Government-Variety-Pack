@@ -11,282 +11,396 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-        if = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
-            give_technology = { message = no tech = tech_lrsk_adv_civ_ancienttech }
-        }
+		if = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancienttheory }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancientlearning }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancientcraft }
+		}
 	}
 }
 
-## Ruins destroyed
-#planet_event = {
-#	id = lrsk_adv_civ_techbarb.remruins
-#	title = lrsk_adv_civ_techbarb.remruins.name
-#	desc = lrsk_adv_civ_techbarb.remruins.desc
-#	picture = GFX_evt_burning_settlement
-#	show_sound = event_structural_collapse
-#	location = root
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		from = { has_prev_building = lrsk_adv_civ_building_techbarb_ruins }
-#		owner = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-#	}
-#
-#	option = {
-#		name = lrsk_adv_civ_techbarb.remruins.doubt
-#		owner = {
-#			add_modifier = { modifier = lrsk_adv_civ_tb_sacrilege days = 3600 }
-#			country_event = { id = lrsk_adv_civ_techbarb.revolution days = 3601 }
-#		}
-#	}
-#}
-#
-## Stop being techbarb (tb revolution gate)
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.revolution
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	trigger = {	this = { has_civic = lrsk_adv_civ_civic_technobarbarism } }
-#
-#	immediate = {
-#		this = {
-#			set_country_flag = lrsk_adv_civ_tb_revolution_ongoing
-#			if = { limit = { has_modifier = lrsk_adv_civ_tb_sacrilege } remove_modifier = lrsk_adv_civ_tb_sacrilege }
-#			if = { limit = { has_modifier = lrsk_adv_civ_tb_capped_scientists } remove_modifier = lrsk_adv_civ_tb_capped_scientists }
-#			switch = {
-#				trigger = has_government
-#				lrsk_adv_civ_gov_devicomancer_dynasty = {
-#					change_government = {
-#						civics = {
-#							civic = civic_imperial_cult
-#							civic = civic_police_state
-#						}
-#					}
-#					country_event = { id = lrsk_adv_civ_techbarb.revdyn }
-#				}
-#				lrsk_adv_civ_gov_machine_cult = {
-#					change_government = {
-#						civics = {
-#							civic = civic_philosopher_king
-#							civic = civic_police_state
-#						}
-#					}
-#					country_event = { id = lrsk_adv_civ_techbarb.revdic }
-#				}
-#				lrsk_adv_civ_gov_cybershaman_conclave = {
-#					change_government = {
-#						civics = {
-#							civic = civic_exalted_priesthood
-#							civic = civic_police_state
-#						}
-#					}
-#					country_event = { id = lrsk_adv_civ_techbarb.revoli }
-#				}
-#			}
-#		}
-#	}
-#}
-#
-## Dynastic authority TB revolution
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.revdyn
-#	title = lrsk_adv_civ_techbarb.revolution.name
-#	desc = lrsk_adv_civ_techbarb.revdyn.desc
-#	picture = GFX_evt_alien_propaganda
-#	show_sound = event_planetary_riot
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = lrsk_adv_civ_techbarb.revolution.rebel
-#		this = {
-#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
-#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
-#		}
-#	}
-#}
-#
-## Dictatorial authority TB revolution
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.revdic
-#	title = lrsk_adv_civ_techbarb.revolution.name
-#	desc = lrsk_adv_civ_techbarb.revdic.desc
-#	picture = GFX_evt_alien_propaganda
-#	show_sound = event_planetary_riot
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = lrsk_adv_civ_techbarb.revolution.rebel
-#		this = {
-#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
-#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
-#		}
-#	}
-#}
-#
-## Oligarchic authority TB revolution
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.revoli
-#	title = lrsk_adv_civ_techbarb.revolution.name
-#	desc = lrsk_adv_civ_techbarb.revoli.desc
-#	picture = GFX_evt_alien_propaganda
-#	show_sound = event_planetary_riot
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = lrsk_adv_civ_techbarb.revolution.rebel
-#		this = {
-#			add_modifier = { modifier = lrsk_adv_civ_tb_revolution days = 1800 }
-#			country_event = { id = lrsk_adv_civ_techbarb.reform days = 1801 }
-#		}
-#	}
-#}
-#
-## Reformation/recovery
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.reform
-#	title = lrsk_adv_civ_techbarb.reform.name
-#	desc = lrsk_adv_civ_techbarb.reform.desc
-#	picture = GFX_evt_throne_room
-#	show_sound = event_mystic_reveal
-#	is_triggered_only = yes
-#
-#	trigger = {	this = { has_country_flag = lrsk_adv_civ_tb_revolution_ongoing } }
-#
-#	immediate = {
-#		this = {
-#			remove_country_flag = lrsk_adv_civ_tb_revolution_ongoing
-#			if = { limit = { has_modifier = lrsk_adv_civ_tb_revolution } remove_modifier = lrsk_adv_civ_tb_revolution }
-#		}
-#	}
-#
-#	option = {
-#		name = lrsk_adv_civ_techbarb.reform.hope
-#		this = { add_modifier = { modifier = lrsk_adv_civ_tb_reformation days = 1800 } }
-#	}
-#}
+# TB Sacrilege
+country_event = {
+	id = lrsk_adv_civ_techbarb.prerev
+	title = lrsk_adv_civ_techbarb.prerev.name
+	desc = lrsk_adv_civ_techbarb.prerev.desc
+	picture = GFX_evt_burning_settlement # TBD change (bar scene?)
+	show_sound = event_structural_collapse # TBD change
+	location = root.capital_scope
+	
+	mean_time_to_happen = { days = 7 }
+
+	trigger = {
+		has_invalid_civic = lrsk_adv_civ_civic_technobarbarism
+		has_policy_flag = lrsk_adv_civ_no_rev
+	}
+
+	option = {
+		name = lrsk_adv_civ_techbarb.prerev.pride
+		custom_tooltip = lrsk_adv_civ_techbarb.prerev.pride.desc
+		hidden_effect = {
+			add_modifier = { modifier = lrsk_adv_civ_tb_sacrilege days = 271 }
+			country_event = {
+				id = lrsk_adv_civ_techbarb.rev
+				days = 180
+				random = 90
+			}
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_techbarb.prerev.doubt
+		custom_tooltip = lrsk_adv_civ_techbarb.prerev.doubt.desc
+		hidden_effect = {
+			set_policy = {
+				policy = lrsk_adv_civ_tech_ritual
+				option = lrsk_adv_civ_token_rev
+				cooldown = yes
+			}
+		}
+	}
+}
+
+# TB revolution
+country_event = {
+	id = lrsk_adv_civ_techbarb.rev
+	title = lrsk_adv_civ_techbarb.revolution.name
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_planetary_riot
+	is_triggered_only = yes
+	location = this.capital_scope
+	
+	desc = {
+		trigger = { has_authority = auth_imperial }
+		text = lrsk_adv_civ_techbarb.revdyn.desc
+	}
+	desc = {
+		trigger = { has_authority = auth_dictatorial }
+		text = lrsk_adv_civ_techbarb.revdic.desc
+	}
+	desc = {
+		trigger = { has_authority = auth_oligarchic }
+		text = lrsk_adv_civ_techbarb.revoli.desc
+	}
+	desc = {
+		trigger = { has_authority = auth_corporate }
+		text = lrsk_adv_civ_techbarb.revcorp.desc
+	}
+	
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+	
+	immediate = {
+		remove_modifier = lrsk_adv_civ_tb_sacrilege
+	
+		add_modifier = {
+			modifier = lrsk_adv_civ_tb_revolution
+			days = 2521
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_techbarb.revolution.rebel
+		custom_tooltip = lrsk_adv_civ_techbarb.revolution.rebel.desc
+	}
+	
+	after = {		
+		force_remove_civic = lrsk_adv_civ_civic_technobarbarism
+		
+		force_add_civic = lrsk_adv_civ_civic_ref_technobarbarism
+		
+		give_technology = {
+			message = yes
+			tech = tech_lrsk_adv_civ_scireformation
+		}
+		
+		country_event = {
+			id = lrsk_adv_civ_techbarb.reform
+			days = 1800
+			random = 720
+		}
+	}
+}
+
+# TB revolution ends
+country_event = {
+	id = lrsk_adv_civ_techbarb.reform
+	title = lrsk_adv_civ_techbarb.reform.name
+	desc = lrsk_adv_civ_techbarb.reform.desc
+	picture = GFX_evt_alien_propaganda # TBD change
+	show_sound = event_planetary_riot # TBD change
+	is_triggered_only = yes
+	location = this.capital_scope
+	
+	trigger = {
+		has_modifier = lrsk_adv_civ_tb_revolution
+	}
+	
+	immediate = {
+		remove_modifier = lrsk_adv_civ_tb_revolution
+		add_modifier = {
+			modifier = lrsk_adv_civ_tb_reformation
+			days = 360
+		}
+	}
+
+	option = {
+		name = lrsk_adv_civ_techbarb.reform.hope
+	}
+}
 
 # Tech looting on taking a planet.
-# 75% -> Nothing
-# 20% -> Some amount of research points
+# 30% -> Nothing
+# 65% -> Some amount of research points 
+# 	40% soc, 30% eng, 30% phys (this is because most salvage of ship debris gives phys or eng tech))
 # 05% -> Tech rate bonus
-#planet_event = {
-#	id = lrsk_adv_civ_techbarb.101
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	immediate = {
-#		if = { limit = { fromfrom = { has_civic = lrsk_adv_civ_civic_technobarbarism } )
-#      random_list = {
-#        60 = {  } #Nothing
-#        30 = {
-#					modifier = {
-#						factor = 0.5
-#						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-#					}
-#          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.101 } }
-#        }
-#        10 = {
-#					modifier = {
-#						factor = 0
-#						from = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-#					}
-#          fromfrom = { country_event = { id = lrsk_adv_civ_techbarb.102 } }
-#        }
-#      }
-#		}
-#	}
-#}
+# 25% -> Tech rate bonus & kidnap scientist (enemy cap only)
+planet_event = {
+	id = lrsk_adv_civ_techbarb.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		fromfrom = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+	}
 
-# 20% -> Some amount of research points
-# 50% soc, 25% eng, 25% phys (this is because most salvage of ship debris gives phys or eng tech)
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.101
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	immediate = {
-#		if = { limit = { has_civic = lrsk_adv_civ_civic_technobarbarism }
-#      random_list = {
-#        50 = {
-#          country_event = { id = lrsk_adv_civ_techbarb.103 days = 1 }
-#        }
-#        25 = {
-#          country_event = { id = lrsk_adv_civ_techbarb.104 days = 1 }
-#        }
-#        25 = {
-#          country_event = { id = lrsk_adv_civ_techbarb.105 days = 1 }
-#        }
-#      }
-#		}
-#	}
-#}
-#
-## 50% soc
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.103
-#	title = "lrsk_adv_civ_techbarb.103"
-#	desc = "lrsk_adv_civ_techbarb.103.desc"
-#	picture = GFX_evt_burning_settlement
-#	show_sound = event_ground_battle
-#
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = EXCELLENT
-#		add_society_research = 500
-#	}
-#}
-#
-## 25% eng
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.105
-#	title = "lrsk_adv_civ_techbarb.105"
-#	desc = "lrsk_adv_civ_techbarb.105.desc"
-#	picture = GFX_evt_burning_settlement
-#	show_sound = event_ground_battle
-#
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = EXCELLENT
-#		add_engineering_research = 500
-#	}
-#}
-#
-## 25% phys
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.104
-#	title = "lrsk_adv_civ_techbarb.104"
-#	desc = "lrsk_adv_civ_techbarb.104.desc"
-#	picture = GFX_evt_burning_settlement
-#	show_sound = event_ground_battle
-#
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = EXCELLENT
-#		add_physics_research = 500
-#	}
-#}
-#
-## 05% -> Tech rate bonus
-#country_event = {
-#	id = lrsk_adv_civ_techbarb.102
-#	title = "lrsk_adv_civ_techbarb.102"
-#	desc = "lrsk_adv_civ_techbarb.102.desc"
-#	picture = GFX_evt_star_chart
-#	show_sound = event_activating_unknown_technology
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = EXCELLENT
-#		add_modifier = {
-#			modifier = lrsk_adv_civ_tb_capped_scientists
-#			days = 1800
-#		}
-#	}
-#}
+	immediate = {
+		save_event_target_as = lrsk_tb_looting_target
+		from = { save_event_target_as = lrsk_tb_enemy_country }
+		fromfrom = {
+			# Add a flag, but remove it immediately if the nothing option is chosen.
+			set_timed_country_flag = {
+				flag = lrsk_gvp_tb_tech_stolen
+				days = 180
+			}
+			random_list = {
+				30 = {
+					modifier = {
+						add = -15
+						root = { is_capital = yes } # ???
+					}
+					# Nothing, don't "credit" with any theft
+					remove_country_flag = lrsk_gvp_tb_tech_stolen
+				}
+				65 = {
+					modifier = {
+						add = -5
+						root = { is_capital = yes } # ???
+					}
+					random_list = {
+						40 = {
+							country_event = { id = lrsk_adv_civ_techbarb.201 days = 1 }
+						}
+						30 = {
+							country_event = { id = lrsk_adv_civ_techbarb.202 days = 1 }
+						}
+						30 = {
+							country_event = { id = lrsk_adv_civ_techbarb.203 days = 1 }
+						}
+					}
+				}
+				5 = {
+					modifier = {
+						add = -5
+						root = { is_capital = yes } # ???
+					}
+					country_event = { id = lrsk_adv_civ_techbarb.204 }
+					#root.owner = { country_event = { id = lrsk_adv_civ_techbarb.206 } } #event to notify?
+				}
+				0 = {
+					modifier = {
+						add = 25
+						root = { is_capital = yes } # ???
+					}
+					country_event = { id = lrsk_adv_civ_techbarb.205 }
+					#root.owner = { country_event = { id = lrsk_adv_civ_techbarb.207 } } #event to notify?
+				}
+			}
+		}
+	}
+}
+
+# 40% soc
+country_event = {
+	id = lrsk_adv_civ_techbarb.201
+	title = "lrsk_adv_civ_techbarb.201"
+	desc = "lrsk_adv_civ_techbarb.201.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = event_target:lrsk_tb_looting_target
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	option = {
+		name = EXCELLENT
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = 1.2
+			max = 300
+			min = 3000
+		}
+	}
+}
+
+# 30% phys
+country_event = {
+	id = lrsk_adv_civ_techbarb.202
+	title = "lrsk_adv_civ_techbarb.202"
+	desc = "lrsk_adv_civ_techbarb.202.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = event_target:lrsk_tb_looting_target
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	option = {
+		name = EXCELLENT
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = 1.2
+			max = 300
+			min = 3000
+		}
+	}
+}
+
+# 30% eng
+country_event = {
+	id = lrsk_adv_civ_techbarb.203
+	title = "lrsk_adv_civ_techbarb.203"
+	desc = "lrsk_adv_civ_techbarb.203.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = event_target:lrsk_tb_looting_target
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	option = {
+		name = EXCELLENT
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = 1.2
+			max = 300
+			min = 3000
+		}
+	}
+}
+
+# 05% -> Tech rate bonus
+country_event = {
+	id = lrsk_adv_civ_techbarb.204
+	title = "lrsk_adv_civ_techbarb.204"
+	desc = "lrsk_adv_civ_techbarb.204.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_activating_unknown_technology
+	location = event_target:lrsk_tb_looting_target
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	option = {
+		name = EXCELLENT
+		hidden_effect = {
+			if = { limit = { has_modifier = lrsk_adv_civ_tb_capped_scientists }
+				remove_modifier = lrsk_adv_civ_tb_capped_scientists
+			}
+		}
+		add_modifier = {
+			modifier = lrsk_adv_civ_tb_capped_scientists
+			days = 1800
+		}
+	}
+}
+
+# 25%, cap only -> kidnap scientist
+country_event = {
+	id = lrsk_adv_civ_techbarb.205
+	title = "lrsk_adv_civ_techbarb.205"
+	desc = "lrsk_adv_civ_techbarb.205.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_activating_unknown_technology
+	location = event_target:lrsk_tb_looting_target
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+	
+	immediate = {
+		# TBD: complex stuff to kidnap a scientist when invading the enemy capital...
+	}
+
+	option = {
+		name = EXCELLENT
+		hidden_effect = {
+			if = { limit = { has_modifier = lrsk_adv_civ_tb_capped_scientists }
+				remove_modifier = lrsk_adv_civ_tb_capped_scientists
+			}
+		}
+		add_modifier = {
+			modifier = lrsk_adv_civ_tb_capped_scientists
+			days = 1800
+		}
+	}
+}
+
+
+# Add Hidebound trait to scientists on spawn
+country_event = {
+	id = lrsk_adv_civ_techbarb.trait
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		from = { leader_class = scientist }
+		not = { has_policy_flag = lrsk_adv_civ_no_rev }
+	}
+
+	immediate = {
+		random_list = {
+			25 = {
+				modifier = {
+					add = 25
+					has_policy_flag = lrsk_adv_civ_lapsed_rev
+				}
+				modifier = {
+					add = 50
+					has_policy_flag = lrsk_adv_civ_token_rev
+				}
+				# Nothing
+			} 
+			75 = {
+				modifier = {
+					add = -25
+					has_policy_flag = lrsk_adv_civ_lapsed_rev
+				}
+				modifier = {
+					add = -50
+					has_policy_flag = lrsk_adv_civ_token_rev
+				}
+				from = { add_trait = lrsk_gov_var_leader_trait_scientist_hidebound }
+			}
+		}
+	}
+}
 
 # Techno-Barbarian Salvage Mission Structure
 #

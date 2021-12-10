@@ -1,12 +1,12 @@
 # called during empire initialization when starting a new game
 # scope: country
-#empire_init_add_technologies = {
-#	events = {
-#		lrsk_adv_civ_estemp.1
-#		lrsk_adv_civ_siblings.1
-#		lrsk_adv_civ_techbarb.1
-#	}
-#}
+empire_init_add_technologies = {
+	events = {
+		lrsk_adv_civ_estemp.1
+		lrsk_adv_civ_siblings.1
+		lrsk_adv_civ_techbarb.1
+	}
+}
 
 on_monthly_pulse_country = {
 	events = {
@@ -79,6 +79,7 @@ on_ruler_back_to_pre_ruler_class = {
 on_leader_spawned = {
 	events = {
 		lrsk_adv_civ_revelation.20
+		lrsk_adv_civ_techbarb.trait
 	}
 	random_events = {
 		50 = 0

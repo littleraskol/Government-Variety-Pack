@@ -56,6 +56,9 @@ l_english:
  lrsk_gov_var_leader_trait_scientist_esper:0 "$LRSK_GOV_VAR_ESPER$"
  lrsk_gov_var_leader_trait_scientist_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ provides sparks of weird genius."
 
+ lrsk_gov_var_leader_trait_scientist_hidebound:0 "Hidebound"
+ lrsk_gov_var_leader_trait_scientist_hidebound_desc:0 "This researcher maintains the strictest ritual piety in all scientific matters."
+
  ## Deposits
 
  # Planetary
@@ -1014,28 +1017,38 @@ l_english:
  lrsk_adv_civ_tb_capped_scientists_desc:0 "Captive alien scholars have sworn to serve a durance of five years teaching us their secrets in exchange for an eventual safe return to their homeworlds."
 
  # Techno-Barbarian Sacrilege/Revolution/Reform
- #lrsk_adv_civ_tb_sacrilege:0 "Cyber-Sacrilege"
- #lrsk_adv_civ_tb_sacrilege_desc:0 "We have destroyed the holy ruins of our ancestors. The people are distressed beyond consolation at this blasphemous act."
+ lrsk_adv_civ_tb_sacrilege:0 "Cyber-Sacrilege"
+ lrsk_adv_civ_tb_sacrilege_desc:0 "We have committed to the abandoning of the old ways. The people are distressed by this blasphemous turn."
+ 
  lrsk_adv_civ_tb_revolution:0 "Techno-Cultural Revolution"
  lrsk_adv_civ_tb_revolution_desc:0 "Our eyes have been opened to the deception of our traditional beliefs. There is no longer any basis for social order, though, and a thorough changing of ways is needed."
+ 
  lrsk_adv_civ_tb_reformation:0 "Renaissance and Reformation"
  lrsk_adv_civ_tb_reformation_desc:0 "We have left behind our ancient superstitions. Now the work of building a new world from the ruins of the old must begin."
 
  # Techno-Barbarian policies
- lrsk_adv_civ_tech_ritual:0 "Techno-Ritual Piety"
- lrsk_adv_civ_tech_ritual_desc:1 "Our ancestors bequeathed us wonders and marvels aplenty, but they require the proper ritual veneration to operate. Some lapse in ritual strictures may be permissible, but we trifle with them at our peril when it comes to our voidcraft, the newest and least well-understood of the ancients' gifts.\n"
+ LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND:0 "chance scientists spawn with the §Y$lrsk_gov_var_leader_trait_scientist_hidebound$§! trait."
+ LRSK_ADV_CIV_TECH_RITUAL_RESPEN:0 "§GNo more penalty§! to all research."
+ LRSK_ADV_CIV_TECH_RITUAL_WARNING:0 "Adopting this policy will challenge the existing social order and may lead to §Hrevolutionary changes§!"
+ 
+ policy_lrsk_adv_civ_tech_ritual:0 "Techno-Ritual Piety"
+ policy_lrsk_adv_civ_tech_ritual_desc:1 "Our ancestors bequeathed us wonders and marvels aplenty, but they require the proper ritual veneration to operate. Some lapse in ritual strictures may be permissible, but we trifle with them at our peril when it comes to our voidcraft, the newest and least well-understood of the ancients' gifts.\n"
+ 
  lrsk_adv_civ_full_rev:0 "Full"
  lrsk_adv_civ_full_rev_name:0 "Full Ritual Reverence"
- lrsk_adv_civ_full_rev_desc:0 "We maintain the traditions that have served us so well and pay full honor to the ancestors, and in return, their blessings strengthen us."
+ lrsk_adv_civ_full_rev_desc:0 "We maintain the traditions that have served us so well and pay full honor to the ancestors, and in return, their blessings strengthen us.\n§R75%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$"
+ 
  lrsk_adv_civ_lapsed_rev:0 "Lapsed"
  lrsk_adv_civ_lapsed_rev_name:0 "Lapsed Ritual Reverence"
- lrsk_adv_civ_lapsed_rev_desc:0 "Although we still value the strictures of our traditions, certain details are left to interpretation or the user's optional choice."
+ lrsk_adv_civ_lapsed_rev_desc:0 "Although we still value the strictures of our traditions, certain details are left to interpretation or the user's optional choice.\n§R50%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$"
+ 
  lrsk_adv_civ_token_rev:0 "Token"
  lrsk_adv_civ_token_rev_name:0 "Token Ritual Reverence"
- lrsk_adv_civ_token_rev_desc:0 "While we still need the wisdom of our ancestors we can see that it's possible to cling so closely to the letter of the law that we are unable to think for ourselves at all."
+ lrsk_adv_civ_token_rev_desc:0 "While we still need the wisdom of our ancestors we can see that it's possible to cling so closely to the letter of the law that we are unable to think for ourselves at all.\n§R25%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$\n$LRSK_ADV_CIV_TECH_RITUAL_RESPEN$"
+ 
  lrsk_adv_civ_no_rev:0 "None"
  lrsk_adv_civ_no_rev_name:0 "Ritual Irreverence"
- lrsk_adv_civ_no_rev_desc:0 "The ancestors receive their due reverence on official holidays and in personal observences. Religious rituals should not interfere with practical day-to-day business."
+ lrsk_adv_civ_no_rev_desc:0 "The ancestors receive their due reverence on official holidays and in personal observences. Religious rituals should not interfere with practical day-to-day business.\n§G0%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$\n$LRSK_ADV_CIV_TECH_RITUAL_RESPEN$\n$LRSK_ADV_CIV_TECH_RITUAL_WARNING$"
 
  # Revelation trait descriptions
  lrsk_adv_civ_trait_illuminated:0 "Illuminated"
@@ -1294,8 +1307,17 @@ l_english:
  LRSK_ADV_CIV_TECH_UNLOCK_XXX_TITLE:0 "§HUnlocks :§! a thing"
  LRSK_ADV_CIV_TECH_UNLOCK_XXX_DESC:0 "§Hathing§!\n something."
 
- tech_lrsk_adv_civ_ancienttech:0 "Ancient Secrets"
- tech_lrsk_adv_civ_ancienttech_desc:0 "The ancestors created marvelous devices. We have preserved many of them and try to copy their designs, although we don't understand how it all works."
+ tech_lrsk_adv_civ_ancienttheory:0 "Ancient Secrets"
+ tech_lrsk_adv_civ_ancienttheory_desc:0 "The ancestors gazed out to the most remote corners of creation and peered into the hidden world of the essence of reality. Try as we might, we can only maintain a fraction of the wisdom they gleaned."
+
+ tech_lrsk_adv_civ_ancientlearning:0 "Ancient Learnings"
+ tech_lrsk_adv_civ_ancientlearning_desc:0 "The ancestors had a deep understanding of the nature of power, the social fabric, and philosophy. We honor them by following their prescriptions as best we know how."
+ 
+ tech_lrsk_adv_civ_ancientcraft:0 "Ancient Craftworks"
+ tech_lrsk_adv_civ_ancientcraft_desc:0 "The ancestors created marvelous devices. We have preserved many of them and try to copy their designs, although we don't understand how it all works."
+
+ tech_lrsk_adv_civ_scireformation:0 "Scientific Reformation"
+ tech_lrsk_adv_civ_scireformation_desc:0 "The ancestors were wise, but we were mistaken to strictly copy all their rites. We have taken the step to true innovation, and perhaps thereby honored the spirit of the ancestors in the greatest way possible."
 
  tech_lrsk_adv_civ_ambdesexpsys:0 "Grand Design Expert Systems"
  tech_lrsk_adv_civ_ambdesexpsys_desc:0 "Specialized semi-sapient AI systems interpret the ambitious plans and schemes of their clients and turn them into workable blueprints and instructions."
@@ -1348,19 +1370,23 @@ l_english:
 
  ### Techno-Barb Tech Looting ###
 
- LRSK_ADV_CIV_TECHBARB_PLANETFALL:0 "Upon making planetfall, our bold reavers"
+ LRSK_ADV_CIV_TECHBARB_PLANETFALL:0 "After making planetfall on [lrsk_tb_looting_target.GetName], our bold reavers"
 
- lrsk_adv_civ_techbarb.103:0 "Troves of Art, Levy of Beasts"
- lrsk_adv_civ_techbarb.103.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ found intact several places of cultural importance to the enemy. We've managed to seize works of art from a 'museum' and fantastic animals from a 'zoo.'"
+ lrsk_adv_civ_techbarb.201:0 "Troves of Art, Levy of Beasts"
+ lrsk_adv_civ_techbarb.201.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ found intact several places of cultural importance to the [lrsk_tb_enemy_country.GetName]. We've managed to seize works of art from a 'museum' and fantastic animals from a 'zoo.'"
 
- lrsk_adv_civ_techbarb.105:0 "Forges of the Enemy"
- lrsk_adv_civ_techbarb.105.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ entered one of the enemy's factory-forges. They took all the machinery they could drag away so that we may study their alien designs."
+ lrsk_adv_civ_techbarb.202:0 "Forges of the Enemy"
+ lrsk_adv_civ_techbarb.202.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ entered one of its factory-forges. They took all the machinery they could drag away so that we may study their alien designs."
 
- lrsk_adv_civ_techbarb.104:0 "Foreign Thinking Machines"
- lrsk_adv_civ_techbarb.104.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ sought out the enemy's thinking machines. We shall pry their secrets from the brains of the spirits within."
+ lrsk_adv_civ_techbarb.203:0 "Alien Thinking Machines"
+ lrsk_adv_civ_techbarb.203.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ sought out the enemy's thinking machines. We shall pry their secrets from the brains of the spirits within."
 
- lrsk_adv_civ_techbarb.102:0 "Alien Scholars In Custody"
- lrsk_adv_civ_techbarb.102.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ managed to capture a group of the enemy's scholars, tinkerers, and magicians. They swore to assist our tech-priests and cyber-shamans for five years as the ransom for their safe return."
+ lrsk_adv_civ_techbarb.204:0 "Alien Scholars In Custody"
+ lrsk_adv_civ_techbarb.204.desc:0 "$LRSK_ADV_CIV_TECHBARB_PLANETFALL$ managed to capture a group of the [lrsk_tb_enemy_country.GetName]'s scribes, tinkerers, and magicians. They swore to assist our tech-priests and cyber-shamans for five years as the ransom for their safe return."
+ 
+ lrsk_adv_civ_techbarb.205:0 "$lrsk_adv_civ_techbarb.204$"
+ lrsk_adv_civ_techbarb.205.desc:0 "$lrsk_adv_civ_techbarb.204.desc$\n\nFurthermore, this coven was led by a great scholar of the [lrsk_tb_enemy_country.GetName] who will serve us as well."
+ #lrsk_adv_civ_techbarb.205.desc:0 "$lrsk_adv_civ_techbarb.204.desc$\n\nFurthermore, this coven was led by §Y[lrsk_tb_enemy_scientist.GetTitle] [lrsk_tb_enemy_scientist.GetTitle]§!, a great scholar of the [lrsk_tb_enemy_country.GetName]. [lrsk_tb_enemy_scientist.GetSheHeCap] will serve us as well."
 
  ### Techno-Barb Ruins Salvage ###
 
@@ -1376,23 +1402,29 @@ l_english:
  #lrsk_adv_civ_techbarb_engsalvage:0 "Godly Forges"
  #lrsk_adv_civ_techbarb_engsalvage_desc:0 "The gods did gift our ancestors with mighty furnaces and forges, great divine engines of creation. We may #dare to spark their motive flames once more."
 
- ### Techno-Barb Ruins Destroyed ###
+ ### Techno-Barbarian Sacrilege/Revolution/Reform ###
 
- #lrsk_adv_civ_techbarb.remruins.name:0 "Sacrilege!"
- #lrsk_adv_civ_techbarb.remruins.desc:0 "In an act of baffling hubris, our government has seen fit to demolish the ancient ruins of our ancestors! #It staggers the imagination to understand what possible reason there could be for such a profane act, but we are now bereft of the legacy of the #ancients and must struggle in this galaxy without their gifts."
- #lrsk_adv_civ_techbarb.remruins.doubt:0 "Have we done the right thing...?"
+ lrsk_adv_civ_techbarb.prerev.name:0 "Sacrilege in the State"
+ lrsk_adv_civ_techbarb.prerev.desc:0 "The people are confused by what some see as the baffling hubris of our government. We have not only risked the wrath of the machine spirits by abandoning all technical ritual, we've shunned the founding values of the empire. Some are excited to see a new page turn, others wonder what could explain such profane politics, and more than a few in both camps sharpen their knives for the coming strife."
+ lrsk_adv_civ_techbarb.prerev.pride:0 "The future is now, fools!"
+ lrsk_adv_civ_techbarb.prerev.pride.desc:0 "Commit to reforming the government, which will eventually lead to losing the §Y$lrsk_adv_civ_civic_technobarbarism$§! civic.\nAdds the §Y$lrsk_adv_civ_tb_sacrilege$§! modifier for no more than 9 months, giving §R-20%§! Pop Happiness, Unity production, and Influence production."
+ lrsk_adv_civ_techbarb.prerev.doubt:0 "Have we done the right thing...?"
+ lrsk_adv_civ_techbarb.prerev.doubt.desc:0 "Abandon any drastic change (for now).\nThe §Y$policy_lrsk_adv_civ_tech_ritual$§! policy will be reset to §H$lrsk_adv_civ_token_rev_name$§!."
 
- #lrsk_adv_civ_techbarb.revolution.name:0 "Techno-Cultural Revolution"
- #LRSK_ADV_CIV_TECHBARB_REV_TEXT_START:0 "After years of despair, heresy, and chaos,"
- #LRSK_ADV_CIV_TECHBARB_REV_TEXT_END:0 "Old ways die hard, though, and now we must eradicate the hidebound superstitions and false beliefs that held #us back for so long."
- #lrsk_adv_civ_techbarb.revdyn.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ our Sovereign Salvager [Root.GetRulerName] emerged from the Palace of #Devicomancy with the dynasty's last revelation: our heroic ancestors never wished for us to be tied to the strictures of sacred technical rituals. #They wanted their heirs to take up the holy fire of creation themselves. And they had bestowed upon the dynasty a divine mandate to reform our #ways. We must now end our dependency on the ancients' gifts and stand on our own. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
- #lrsk_adv_civ_techbarb.revdic.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the former Technophant [Root.GetRulerName] made a public appearance, #shorn of the regalia of our ancient faith, with a shocking explanation: our ancestors' gifts and relics had to be destroyed so that our empire #could thrive. Daring as this idea was, the people needed something to hope for, and so the regime's new vision took hold. Most now accept that we #must learn to stand on our own and make our own way rather than lean on the crutch of our ancestors' gifts. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
- #lrsk_adv_civ_techbarb.revoli.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the elders of the Cyber-Shaman Order were displaced by the vanguard of #a new belief. Led by the former Chief Cyber-Seer [Root.GetRulerName], they preached a secret they had learned in the otherworld, a secret the #tottering frauds they had supplanted hoped to hide: the ancients' ruins were cursed, our reliance on technical rituals would doom us to perpetual #irrelevance, and so we must reject reliance on old ways and inherited gifts. The fervor of their conviction attracted many followers. #$LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
- #lrsk_adv_civ_techbarb.revolution.rebel:0 "Down with the old! Reach heaven through violence!"
+ lrsk_adv_civ_techbarb.revolution.name:0 "Repudiation of the Old Ways"
+ LRSK_ADV_CIV_TECHBARB_REV_TEXT_START:0 "After months of spiritual confusion and worry,"
+ LRSK_ADV_CIV_TECHBARB_REV_TEXT_END:0 "Old ways die hard, though, and now we must eradicate the hidebound superstitions and false beliefs that held us back for so long."
+ lrsk_adv_civ_techbarb.revdyn.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ our [Root.GetRulerTitle] [Root.GetRulerName] emerged from the Palace of Devicomancy with the dynasty's last revelation: our heroic ancestors never wished for us to be tied to the strictures of sacred technical rituals. They wanted their heirs to take up the holy fire of creation themselves. And they had bestowed upon the dynasty a divine mandate to reform our ways. We must now end our dependency on the ancients' ways and stand on our own. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ lrsk_adv_civ_techbarb.revdic.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the former [Root.GetRulerTitle] [Root.GetRulerName] made a public appearance, shorn of the regalia of our ancient faith, with a shocking explanation: our ancestors' ways had to be set aside so that our empire could thrive. Daring as this idea was, the people needed something to hope for, and so the regime's new vision took hold. Most now accept that we must learn to stand on our own and make our own way rather than lean on the crutch of our ancestors' ways. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ lrsk_adv_civ_techbarb.revoli.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ the elders of the Cyber-Shaman Order were displaced by the vanguard of a new belief. Led by the former [Root.GetRulerTitle] [Root.GetRulerName], they preached a secret they had learned in the otherworld, a secret the tottering frauds they had supplanted hoped to hide: our reliance on technical rituals would doom us to perpetual irrelevance, and so we must reject reliance on old ways and inherited gifts. The fervor of their conviction attracted many followers. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ lrsk_adv_civ_techbarb.revcorp.desc:0 "$LRSK_ADV_CIV_TECHBARB_REV_TEXT_START$ [Root.GetRulerTitle] [Root.GetRulerName] released a massive report to the Guild's shareholders. To explain to panicked and pious investors why the Guild has forsaken so many beloved ancient traditions, the report cites an impressive array of financial figures. 'There can be no doubt,' the report concludes, 'that the techno-rites were a drain on profitability.' It cites the original Guild Charter, signed by our holy ancestors, to bolster its claim that innovation must be the order of the day. $LRSK_ADV_CIV_TECHBARB_REV_TEXT_END$"
+ lrsk_adv_civ_techbarb.revolution.rebel:0 "Reach heaven through violence!"
+ lrsk_adv_civ_techbarb.revolution.rebel.desc:0 "The §Y$lrsk_adv_civ_tb_sacrilege$§! modifier is replaced with the §Y$lrsk_adv_civ_tb_revolution$§! modifier, giving §R-10%§! Pop Happiness, Unity production, and Influence production. for no more than 7 years.\nReplace the §Y$lrsk_adv_civ_civic_technobarbarism$§! civic with §Y$lrsk_adv_civ_civic_ref_technobarbarism$§! civic, giving §R-20%§! government ethics attraction and §R-5§! Stability. (Can be replaced through government reform.)\nGet the §Y$tech_lrsk_adv_civ_scireformation$§! technology, which will §Grestore the research alternative§! taken away by the §Y$tech_lrsk_adv_civ_ancientlearning$§! technology.\nFor 3-7 years, §Prevolutionary turmoil§! may afflict your empire."
 
- #lrsk_adv_civ_techbarb.reform.name:0 "Leaving Old Ways Behind"
- #lrsk_adv_civ_techbarb.reform.desc:0 "At first it was terrifying to be without the gifts of our ancestors. However, without the ruins to venerate, #without the old rituals to reinforce our superstitions again and again, our eyes could be opened to the truth: our ancestors weren't divine heroes #walking with gods, they were creators and explorers. That is their true legacy. It has taken much destruction, renovation, reinvention, and hard #struggle to truly realize how mistaken our old traditions and beliefs were. We lost far less of the knowledge and gifts of the ancients when we #destroyed their ruins than we did in the following cultural revolution. After years of strife and distress, though, we can begin to restore order #now that we understand the truth."
- #lrsk_adv_civ_techbarb.reform.hope:0 "This is a new beginning."
+ lrsk_adv_civ_techbarb.reform.name:0 "Turn Towards the Future"
+ lrsk_adv_civ_techbarb.reform.desc:0 "At first it was terrifying to go through each day without the familiar customs of our ancestors. However, without the old rituals to reinforce our superstitions again and again, our eyes could be opened to the truth: our ancestors weren't divine heroes walking with gods, they were creators and explorers. That is their true legacy. It has taken much destruction, renovation, reinvention, and hard struggle to truly realize how mistaken our old traditions and beliefs were. After years of strife and distress, though, we can begin to restore order now that we understand the truth."
+ lrsk_adv_civ_techbarb.reform.hope:0 "This is a new beginning."
+ lrsk_adv_civ_techbarb.reform.hope.desc:0 "The §Y$lrsk_adv_civ_tb_revolution$§! modifier is replaced with the §Y$lrsk_adv_civ_tb_reformation$§! modifier, giving §G+10%§! Pop Happiness and §R-5%§! Unity and Influence production for one year."
 
  ### Otherworldly research complete ###
 
@@ -1719,6 +1751,132 @@ l_english:
  lrsk_adv_civ_estemp.4.name:0 "Reforms Complete"
  lrsk_adv_civ_estemp.4.desc:0 "We've managed to shake off the lethargy and inefficiency that afflicted our government. Now we're ready to take on the galaxy."
  LRSK_ADV_CIV_EVENT_ESTEMP_COMPLETE:0 "Back in business!"
+
+ ### New Factions
+
+ ## Faction Modifiers
+
+ lrsk_gvp_suppressed_innovator:0 "Innovator Agenda Suppressed"
+ lrsk_gvp_suppressed_innovator_desc:0 "The §HMaterialist§! and §HEgalitarian§! Ethics are being suppressed by the government."
+ lrsk_gvp_promoted_innovator:0 "Innovator Agenda Promoted"
+ lrsk_gvp_promoted_innovator_desc:0 "The §HMaterialist§! and §HEgalitarian§! Ethics are being promoted by the government."
+ lrsk_gvp_suppressed_ritualist:0 "Ritualist Agenda Suppressed"
+ lrsk_gvp_suppressed_ritualist_desc:0 "The §HSpiritualist§! and §HAuthoritarian§! Ethics are being suppressed by the government."
+ lrsk_gvp_promoted_ritualist:0 "Ritualist Agenda Promoted"
+ lrsk_gvp_promoted_ritualist_desc:0 "The §HSpiritualist§! and §HAuthoritarian§! Ethics are being promoted by the government."
+
+ ## TechBarb Factions: Innovators (Mat, Egal) vs. Ritualists (Spi, Auth)
+
+ GVP_TB_RITE_COMMON:0 "§Y$policy_lrsk_adv_civ_tech_ritual$§! policy is set to"
+
+ # Innovators
+ pft_gvp_tb_innovator:0 "Innovator Faction"
+ pft_gvp_tb_innovator_desc:1 "$pft_gvp_tb_innovator$s believe that the empire's traditional technical rituals and strict heirarchy are holding it back. To secure supremacy, new things must be tried and political restrictions must be loosened.\n\n§LMaterialist Ethos§!\n§LEgalitarian§! pops can also join"
+
+ #GVP_TB_INNOVATOR_TECH_KEEP:0 "Keeping Up"
+ GVP_TB_INNOVATOR_TECH_KEEP:0 "$GVP_TB_INNOVATOR_TECH_LEFT$"
+ GVP_TB_INNOVATOR_TECH_LEFT:0 "Left Behind"
+ GVP_TB_INNOVATOR_TECH_KEEP_DESC:0 "Hidebound ways that allow other Empires to be §Yoverwhelming§! in tech level will displease the [Root.GetName]."
+ GVP_TB_INNOVATOR_TECH_LEAP:0 "Excelling"
+ GVP_TB_INNOVATOR_TECH_LAG:0 "$GVP_TB_INNOVATOR_TECH_LEAP$"
+ #GVP_TB_INNOVATOR_TECH_LAG:0 "Dull Edge"
+ GVP_TB_INNOVATOR_TECH_LEAP_DESC:0 "Staying ahead of the curve and not allowing other Empires to be more than §Yequivalent§! in tech level will please the [Root.GetName]."
+ GVP_TB_INNOVATOR_RESEARCH_TREATIES:0 "Foreign Learning"
+ GVP_TB_INNOVATOR_FEW_RESEARCH_TREATIES:0 "$GVP_TB_INNOVATOR_RESEARCH_TREATIES$"
+ #GVP_TB_INNOVATOR_FEW_RESEARCH_TREATIES:0 "$GVP_TB_INNOVATOR_RESEARCH_TREATIES$ Unsought"
+ GVP_TB_INNOVATOR_RESEARCH_TREATIES_DESC:0 "Signing Research Treaties with at least §Y2§! other Empires or being in a Research Cooperative will please the [Root.GetName]."
+ GVP_TB_INNOVATOR_RESEARCH_OPP:0 "Foreign Secrets"
+ GVP_TB_INNOVATOR_NO_RESEARCH_OPP:0 "$GVP_TB_INNOVATOR_RESEARCH_OPP$" #GVP_TB_INNOVATOR_NO_RESEARCH_OPP:0 "$GVP_TB_INNOVATOR_RESEARCH_OPP$ Occluded"
+ GVP_TB_INNOVATOR_RESEARCH_OPP_DESC:0 "Successfully completing a §YSteal Technology§! operation or obtaining technology through §YInfo Raiding§! will please the [Root.GetName] for a time."
+ GVP_TB_INNOVATOR_SECRET_KNOWLEDGE:0 "Secret Knowledge"
+ GVP_TB_INNOVATOR_NO_SECRET_KNOWLEDGE:0 "$GVP_TB_INNOVATOR_SECRET_KNOWLEDGE$"
+ GVP_TB_INNOVATOR_SECRET_KNOWLEDGE_DESC:0 "Access to secret knowledge - some kind of ancient §YInsight§! or §YData Cache§! - will please the [Root.GetName]."
+ GVP_TB_INNOVATOR_ARCANA:0 "Knowledge of the Past"
+ GVP_TB_INNOVATOR_NO_ARCANA:0 "$GVP_TB_INNOVATOR_ARCANA$"
+ GVP_TB_INNOVATOR_ARCANA_DESC:0 "Studying Minor Artifacts will please the [Root.GetName] for a time."
+ GVP_TB_INNOVATOR_PRECURSOR_SECRETS:0 "Precursor Secrets"
+ GVP_TB_INNOVATOR_NO_PRECURSOR_SECRETS:0 "$GVP_TB_INNOVATOR_PRECURSOR_SECRETS$"
+ GVP_TB_INNOVATOR_PRECURSOR_SECRETS_DESC:0 "Unraveling the ancient mysteries of the precursors will please the [Root.GetName]."
+ GVP_TB_INNOVATOR_SLAVERY_BANNED:1 "Thralldom Banned"
+ GVP_TB_INNOVATOR_SLAVERY_ALLOWED:0 "Thralldom Allowed"
+ GVP_TB_INNOVATOR_SLAVERY_BANNED_DESC:1 "Failing to ban the practice of Slavery will displease the [Root.GetName]."
+ GVP_TB_INNOVATOR_NO_STRATIFIED:0 "Common Good"
+ GVP_TB_INNOVATOR_STRATIFIED:0 "Unjust Privilege"
+ GVP_TB_INNOVATOR_NO_STRATIFIED_DESC:0 "Ensuring that no denizen of our empire lives in a §YStratified Economy§! or §YRobotic Servitude§! will please the [Root.GetName]."
+ GVP_TB_INNOVATOR_CHANGE_WARNING:0 "Losing either $ethic_authoritarian$ or $ethic_spiritualist$ Ethics will §Pinvalidate§! the §Ylrsk_adv_civ_civic_technobarbarism§! civic and may lead to §Hrevolutionary changes§!."
+ GVP_TB_INNOVATOR_AUTHORITY:0 "Tyrannical Order"
+ GVP_TB_INNOVATOR_NO_AUTHORITY:0 "Political Liberty"
+ GVP_TB_INNOVATOR_AUTHORITY_DESC:0 "Lacking §YAuthoritarian§! ethics in government will please the [Root.GetName]. $GVP_TB_INNOVATOR_CHANGE_WARNING$"
+ GVP_TB_INNOVATOR_SPIRITUALISM:0 "Enforced Faith"
+ GVP_TB_INNOVATOR_NO_SPIRITUALISM:0 "Freedom of Conscience"
+ GVP_TB_INNOVATOR_SPIRITUALISM_DESC:0 "Lacking §YSpiritualist§! ethics in government will please the [Root.GetName]. $GVP_TB_INNOVATOR_CHANGE_WARNING$"
+ GVP_TB_INNOVATOR_FULLREV:0 "$lrsk_adv_civ_full_rev_name$"
+ GVP_TB_INNOVATOR_NO_FULLREV:0 "$lrsk_adv_civ_full_rev_name$"
+ GVP_TB_INNOVATOR_FULLREV_DESC:0 "Wasting time on pointless elaborate rituals will greatly displease the [Root.GetName]. (Failed when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_full_rev$§!.)"
+ GVP_TB_INNOVATOR_LAPSEREV:0 "$lrsk_adv_civ_lapsed_rev_name$"
+ GVP_TB_INNOVATOR_NO_LAPSEREV:0 "$lrsk_adv_civ_lapsed_rev_name$"
+ GVP_TB_INNOVATOR_LAPSEREV_DESC:0 "Maintaining most of the backwards techno-rites will displease the [Root.GetName] somewhat less. (Failed when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_lapsed_rev$§!.)"
+ GVP_TB_INNOVATOR_TOKENREV:0 "$lrsk_adv_civ_token_rev_name$"
+ GVP_TB_INNOVATOR_NO_TOKENREV:0 "$lrsk_adv_civ_token_rev_name$"
+ GVP_TB_INNOVATOR_TOKENREV_DESC:0 "Merely going through the motions of the techno-rites will somewhat please the [Root.GetName]. (Achieved when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_token_rev$§!.)"
+ GVP_TB_INNOVATOR_UNREV:0 "$lrsk_adv_civ_no_rev_name$"
+ GVP_TB_INNOVATOR_NO_UNREV:0 "$lrsk_adv_civ_no_rev_name$"
+ GVP_TB_INNOVATOR_UNREV_DESC:0 "Courageously sweeping away all technical superstition will greatly please the [Root.GetName]. (Achieved when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_no_rev$§!.)"
+ GVP_TB_INNOVATOR_EMBRACE_DESC:0 "$EMBRACE_FACTION_DESC$ $GVP_TB_INNOVATOR_CHANGE_WARNING$"
+ GVP_TB_INNOVATOR_PROMOTE_DESC:0 "$PROMOTE_FACTION_DESC$ $GVP_TB_INNOVATOR_CHANGE_WARNING$"
+
+ # Ritualists
+ pft_gvp_tb_ritualist:0 "Ritualist Faction"
+ pft_gvp_tb_ritualist_desc:1 "$pft_gvp_tb_ritualist$s prioritize respect for the traditional technical rites that please the machine spirits, veneration of the ancestors and the past, and resistance to dangerous innovations.\n\n§LSpiritualist Ethos§!\n§LAuthoritarian§! pops can also join"
+
+ GVP_TB_RITUALIST_SPIRITUALIST_POPS:0 "Popular Orthodoxy"
+ GVP_TB_RITUALIST_FEW_SPIRITUALIST_POPS:0 "Popular Heterodoxy"
+ GVP_TB_RITUALIST_SPIRITUALIST_POPS_DESC:0 "Ritual traditions must be respected and embraced, so having at least §Y40%§! of our population be some form of Spiritualist will please the [Root.GetName]."
+ GVP_TB_RITUALIST_UNSPIRITUALIST:0 "Widespread Sacrilege"
+ GVP_TB_RITUALIST_NOT_UNSPIRITUALIST:0 "Sacrilege in Check"
+ GVP_TB_RITUALIST_UNSPIRITUALIST_DESC:0 "Seeing the masses abandon the machine spirits (i.e., §Y20%§! or fewer pops are Spiritualist) in [Root.Owner.GetName] will displease the [Root.GetName]."
+ GVP_TB_RITUALIST_RELIC_WORLDS:1 "Sacred Ruins"
+ GVP_TB_RITUALIST_NO_RELIC_WORLDS:0 "Neglected Ruins"
+ GVP_TB_RITUALIST_RELIC_WORLDS_DESC:2 "§YConsecrating§! a §YRelic World§! within our borders will please the [Root.GetName]."
+ GVP_TB_RITUALIST_TOMB_WORLDS:1 "Honoring the Fallen"
+ GVP_TB_RITUALIST_NO_TOMB_WORLDS:0 "Forgetting the Fallen"
+ GVP_TB_RITUALIST_TOMB_WORLDS_DESC:2 "§YConsecrating§! a §YTomb World§! within our borders will please the [Root.GetName]."
+ GVP_TB_RITUALIST_SHROUD_BOON:0 "Shrouded Boon"
+ GVP_TB_RITUALIST_NO_SHROUD_BOON:0 "$GVP_TB_RITUALIST_SHROUD_BOON$"
+ GVP_TB_RITUALIST_SHROUD_BOON_DESC:0 "Reaping beneficial rewards from the Shroud will please the [Root.GetName] for a time."
+ GVP_TB_RITUALIST_SHROUD_CURSE:0 "Shrouded Blight"
+ GVP_TB_RITUALIST_NO_SHROUD_CURSE:0 "$GVP_TB_RITUALIST_SHROUD_CURSE$"
+ GVP_TB_RITUALIST_SHROUD_CURSE_DESC:0 "Reaping ill rewards from the Shroud will displease the [Root.GetName] for a time."
+ GVP_TB_RITUALIST_RELIGIOUS_FINDING:0 "Wisdom of the Ancestors"
+ GVP_TB_RITUALIST_NO_RELIGIOUS_FINDING:0 "$GVP_TB_RITUALIST_RELIGIOUS_FINDING$"
+ GVP_TB_RITUALIST_RELIGIOUS_FINDING_DESC:0 "Finding religious significance in Minor Artifacts will please the [Root.GetName] for a time."
+ GVP_TB_RITUALIST_STRATIFICATION:0 "Privilege for the Chosen"
+ GVP_TB_RITUALIST_NO_STRATIFICATION:0 "No Proper Distinctions"
+ GVP_TB_RITUALIST_STRATIFICATION_DESC:1 "Ensuring a hierarchical society - be it through a §YStratified Economy§!, §YRobotic Servitude§!, or §YAcademic Privilege§! - will please the [Root.GetName]."
+ GVP_TB_RITUALIST_SLAVERY:0 "$GVP_TB_INNOVATOR_SLAVERY_ALLOWED$"
+ GVP_TB_RITUALIST_NO_SLAVERY:0 "$GVP_TB_INNOVATOR_SLAVERY_BANNED$"
+ GVP_TB_RITUALIST_SLAVERY_DESC:0 "Allowing the superior to keep the inferior in their proper state of servitude by permitting Slavery will please the [Root.GetName]."
+ GVP_TB_RITUALIST_AUTHORITY:0 "Hierarchical Order"
+ GVP_TB_RITUALIST_NO_AUTHORITY:0 "Anarchic Chaos"
+ GVP_TB_RITUALIST_AUTHORITY_DESC:0 "Lacking §YAuthoritarian§! ethics in government will displease the [Root.GetName]."
+ GVP_TB_RITUALIST_SPIRITUALISM:0 "Throne and Altar"
+ GVP_TB_RITUALIST_NO_SPIRITUALISM:0 "Infidel Rule"
+ GVP_TB_RITUALIST_DISCOVERY_DESC:0 "Lacking §YSpiritualist§! ethics in government will displease the [Root.GetName]." 
+ # TBD: Import some Auth faction issues? Living standards, vassals?
+ GVP_TB_RITUALIST_FULLREV:0 "$lrsk_adv_civ_full_rev_name$"
+ GVP_TB_RITUALIST_NO_FULLREV:0 "$lrsk_adv_civ_full_rev_name$"
+ GVP_TB_RITUALIST_FULLREV_DESC:0 "Following the techno-rites with the utmost stricture will greatly please the [Root.GetName]. (Achieved when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_full_rev$§!.)"
+ GVP_TB_RITUALIST_LAPSEREV:0 "$lrsk_adv_civ_lapsed_rev_name$"
+ GVP_TB_RITUALIST_NO_LAPSEREV:0 "$lrsk_adv_civ_lapsed_rev_name$"
+ GVP_TB_RITUALIST_LAPSEREV_DESC:0 "Showing proper respect for (if not exact adherence to) the techno-rites will somewhat please the [Root.GetName]. (Achieved when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_lapsed_rev$§!.)"
+ GVP_TB_RITUALIST_TOKENREV:0 "$lrsk_adv_civ_token_rev_name$"
+ GVP_TB_RITUALIST_NO_TOKENREV:0 "$lrsk_adv_civ_token_rev_name$"
+ GVP_TB_RITUALIST_TOKENREV_DESC:0 "Reducing ritual requirements to the bare minimum will displease the [Root.GetName] somewhat less. (Failed when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_token_rev$§!.)"
+ GVP_TB_RITUALIST_UNREV:0 "$lrsk_adv_civ_no_rev_name$"
+ GVP_TB_RITUALIST_NO_UNREV:0 "$lrsk_adv_civ_no_rev_name$"
+ GVP_TB_RITUALIST_UNREV_DESC:0 "Brazen disregard for proper ritual practice will greatly displease the [Root.GetName]. (Failed when $GVP_TB_RITE_COMMON$ §H$lrsk_adv_civ_no_rev$§!.)"
+ GVP_TB_RITUALIST_SUPPRESS_DESC:0 "$SUPPRESS_FACTION_DESC$ $GVP_TB_INNOVATOR_CHANGE_WARNING$"
+
  
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.

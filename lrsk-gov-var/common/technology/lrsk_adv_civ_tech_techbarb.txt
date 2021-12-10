@@ -3,27 +3,73 @@
 # Techno-Barbarian-only tech granted at start.
 # Author: littleraskol
 
-tech_lrsk_adv_civ_ancienttech = {
+@lrsk_tb_mod_factor_1 = 0.15
+@lrsk_tb_mod_factor_2 = -0.1
+@lrsk_tb_mod_factor_3 = 0.05
+
+tech_lrsk_adv_civ_ancienttheory = {
 	cost = 0
-	area = engineering
-	category = { industry }
-	tier = 1
+	area = physics
+	category = { computing }
+	tier = 0
 	weight = 0
 
 	modifier = {
-		ship_hull_mult = 0.1
-		ship_shield_mult = 0.1
-		ship_armor_mult = 0.1
-		ship_evasion_mult = 0.1
-		ship_fire_rate_mult = 0.1
-		weapon_type_kinetic_weapon_damage_mult = 0.1
-		weapon_type_energy_weapon_damage_mult = 0.1
-		weapon_type_explosive_weapon_damage_mult = 0.1
-		weapon_type_strike_craft_weapon_damage_mult = 0.1
-		ships_upkeep_mult = -0.05
-		army_damage_mult = 0.1
-		army_health = 0.1
-		armies_upkeep_mult = -0.05
-		planet_structures_upkeep_mult = -0.05
+		ship_shield_mult = @lrsk_tb_mod_factor_1
+		ship_evasion_mult = @lrsk_tb_mod_factor_1
+		weapon_type_energy_weapon_damage_mult = @lrsk_tb_mod_factor_1
+	}
+}
+ 
+tech_lrsk_adv_civ_ancientlearning = {
+	cost = 0
+	area = society
+	category = { statecraft }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @lrsk_tb_mod_factor_1
+		army_damage_mult = @lrsk_tb_mod_factor_1
+		army_health = @lrsk_tb_mod_factor_1
+		armies_upkeep_mult = @lrsk_tb_mod_factor_2
+		num_tech_alternatives_add = -1
+	}
+}
+ 
+tech_lrsk_adv_civ_ancientcraft = {
+	cost = 0
+	area = engineering
+	category = { industry }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		ship_hull_mult = @lrsk_tb_mod_factor_1
+		ship_armor_mult = @lrsk_tb_mod_factor_1
+		ship_fire_rate_mult = @lrsk_tb_mod_factor_3
+		weapon_type_kinetic_weapon_damage_mult = @lrsk_tb_mod_factor_1
+		weapon_type_explosive_weapon_damage_mult = @lrsk_tb_mod_factor_1
+		ships_upkeep_mult = @lrsk_tb_mod_factor_2
+		planet_structures_upkeep_mult = @lrsk_tb_mod_factor_2
+	}
+}
+ 
+tech_lrsk_adv_civ_scireformation = {
+	cost = 0
+	area = society
+	category = { statecraft }
+	tier = 2
+	weight = 0
+	
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	modifier = {
+		num_tech_alternatives_add = 1
 	}
 }

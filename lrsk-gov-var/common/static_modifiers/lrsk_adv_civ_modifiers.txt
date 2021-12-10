@@ -2,31 +2,54 @@
 # Static Modifiers
 # Author: littleraskol
 
+lrsk_gvp_suppressed_innovator = {
+	pop_ethic_materialist_attraction_mult = -0.75
+	pop_ethic_egalitarian_attraction_mult = -0.1
+	country_suppression_influence_upkeep_add = 1
+}
+
+lrsk_gvp_promoted_innovator = {
+	pop_ethic_materialist_attraction_mult = 1
+	pop_ethic_egalitarian_attraction_mult = 0.25
+	country_promotion_influence_upkeep_add = 2
+}
+
+lrsk_gvp_suppressed_ritualist = {
+	pop_ethic_spiritualist_attraction_mult = -0.75
+	pop_ethic_authoritarian_attraction_mult = -0.1
+	country_suppression_influence_upkeep_add = 1
+}
+
+lrsk_gvp_promoted_ritualist = {
+	pop_ethic_spiritualist_attraction_mult = 1
+	pop_ethic_authoritarian_attraction_mult = 0.25
+	country_promotion_influence_upkeep_add = 2
+}
+
 lrsk_adv_civ_tb_capped_scientists = {
 	icon = "gfx/interface/icons/modifiers/mod_country_all_tech_research_speed.dds"
 	all_technology_research_speed = 0.05
 }
 
-#lrsk_adv_civ_tb_sacrilege = {
-#	icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
-#	pop_citizen_happiness = -0.5
-#	country_influence_produces_mult = -0.2
-#	country_unity_produces_mult = -0.2
-#}
+lrsk_adv_civ_tb_sacrilege = {
+	#icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+	pop_citizen_happiness = -0.2
+	country_influence_produces_mult = -0.2
+	country_unity_produces_mult = -0.2
+}
 
 lrsk_adv_civ_tb_revolution = {
 	#icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
-	pop_citizen_happiness = 0.5
-	all_technology_research_speed = -0.05
+	pop_citizen_happiness = -0.1
 	country_influence_produces_mult = -0.1
 	country_unity_produces_mult = -0.1
 }
 
 lrsk_adv_civ_tb_reformation = {
-	#icon = "gfx/interface/icons/modifiers/mod_country_unrest_unhappy_pop_effect_mult.dds"
+	#icon = "gfx/interface/icons/modifiers/mod_country_unrest_happy_pop_effect_mult.dds"
 	country_influence_produces_mult = -0.05
 	country_unity_produces_mult = -0.05
-	all_technology_research_speed = 0.1
+	pop_citizen_happiness = 0.1
 }
 
 lrsk_adv_civ_ost_crisis = {
