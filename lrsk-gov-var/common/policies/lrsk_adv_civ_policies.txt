@@ -113,7 +113,7 @@ lrsk_adv_civ_rev_policy = {
 lrsk_adv_civ_tech_ritual = {
 
 	potential = {
-		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		has_civic = lrsk_adv_civ_civic_technobarbarism
 	}
 
 	option = {
@@ -124,11 +124,14 @@ lrsk_adv_civ_tech_ritual = {
 		}
 
 		valid = {
-			OR = {
+			or = {
 				has_policy_flag = lrsk_adv_civ_full_rev
 				has_policy_flag = lrsk_adv_civ_lapsed_rev
 			}
-			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
+			or = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				not = { ruler = { leader_of_faction = gvp_tb_innovator } }
+			}
 		}
 
 		modifier = {
@@ -145,7 +148,7 @@ lrsk_adv_civ_tech_ritual = {
 				factor = 3
 				years_passed > 19
 				years_passed < 40
-				OR = {
+				or = {
 					has_ethic = "ethic_fanatic_authoritarian"
 					has_ethic = "ethic_fanatic_spiritualist"
 				}
@@ -161,16 +164,15 @@ lrsk_adv_civ_tech_ritual = {
 		}
 
 		valid = {
-			OR = {
+			or = {
 				has_policy_flag = lrsk_adv_civ_full_rev
 				has_policy_flag = lrsk_adv_civ_lapsed_rev
 				has_policy_flag = lrsk_adv_civ_token_rev
 			}
-			OR = {
+			or = {
 				years_passed > 20
 				has_encountered_other_species = yes
 			}
-			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
 		}
 
 		modifier = {
@@ -196,14 +198,13 @@ lrsk_adv_civ_tech_ritual = {
 		}
 
 		valid = {
-			OR = {
+			or = {
 				has_policy_flag = lrsk_adv_civ_lapsed_rev
 				has_policy_flag = lrsk_adv_civ_token_rev
 				has_policy_flag = lrsk_adv_civ_no_rev
 			}
 			years_passed > 40
 			has_encountered_other_species = yes
-			NOT = { has_country_flag = lrsk_adv_civ_reform_decision_taken }
 		}
 
 		modifier = {
@@ -228,7 +229,7 @@ lrsk_adv_civ_tech_ritual = {
 			}
 			modifier = {
 				factor = 0.5
-				OR = {
+				or = {
 					has_ethic = "ethic_fanatic_authoritarian"
 					has_ethic = "ethic_fanatic_spiritualist"
 				}
@@ -244,9 +245,13 @@ lrsk_adv_civ_tech_ritual = {
 		}
 
 		valid = {
-			OR = {
+			or = {
 				has_policy_flag = lrsk_adv_civ_token_rev
 				has_policy_flag = lrsk_adv_civ_no_rev
+			}
+			or = {
+				has_policy_flag = lrsk_adv_civ_no_rev
+				not = { ruler = { leader_of_faction = gvp_tb_ritualist } }
 			}
 			years_passed > 60
 			has_encountered_other_species = yes
@@ -269,7 +274,7 @@ lrsk_adv_civ_tech_ritual = {
 			}
 			modifier = {
 				factor = 0
-				OR = {
+				or = {
 					has_ethic = "ethic_fanatic_authoritarian"
 					has_ethic = "ethic_fanatic_spiritualist"
 				}
