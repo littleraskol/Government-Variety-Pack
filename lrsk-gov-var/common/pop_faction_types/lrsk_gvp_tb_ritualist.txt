@@ -17,7 +17,10 @@ gvp_tb_ritualist = {
 	}
 
 	is_potential = {
-		has_civic = lrsk_adv_civ_civic_technobarbarism
+		or = {
+			has_civic = lrsk_adv_civ_civic_technobarbarism
+			has_modifier = lrsk_adv_civ_tb_revolution
+		}
 		
 		# Ritualists are literally reactionaries
 		root.owner = { OR = {
