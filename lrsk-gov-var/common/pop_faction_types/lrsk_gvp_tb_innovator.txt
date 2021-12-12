@@ -554,7 +554,8 @@ gvp_tb_innovator = {
 	}
 
 	on_create = {
-		root.owner = {			
+		root.owner = {
+			set_country_flag = lrsk_gvp_tb_innovators_arose
 			# We want to weaken and render obsolete the vanilla materialist faction
 			if = {
 				limit = { has_faction = technologist }
