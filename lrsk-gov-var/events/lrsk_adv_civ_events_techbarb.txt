@@ -97,19 +97,28 @@ country_event = {
 		add_modifier = {
 			modifier = lrsk_adv_civ_tb_revolution
 			days = 2521
-		}
+		}	
+		
+		force_remove_civic = lrsk_adv_civ_civic_technobarbarism
+		
+		force_add_civic = lrsk_adv_civ_civic_ref_technobarbarism		
 	}
 
 	option = {
 		name = lrsk_adv_civ_techbarb.revolution.rebel
 		custom_tooltip = lrsk_adv_civ_techbarb.revolution.rebel.desc
 	}
+
+	option = {
+		name = lrsk_adv_civ_techbarb.revolution.help
+		custom_tooltip = lrsk_adv_civ_techbarb.revolution.help.desc
+		
+		trigger = { is_ai = no }
+		
+		hidden_effect = { country_event = { id = lrsk_adv_civ_techbarb.revinform } }
+	}
 	
-	after = {		
-		force_remove_civic = lrsk_adv_civ_civic_technobarbarism
-		
-		force_add_civic = lrsk_adv_civ_civic_ref_technobarbarism
-		
+	after = {
 		give_technology = {
 			message = yes
 			tech = tech_lrsk_adv_civ_scireformation
@@ -120,6 +129,22 @@ country_event = {
 			days = 1800
 			random = 720
 		}
+	}
+}
+
+# Inform player of how to deal with this
+country_event = {
+	id = lrsk_adv_civ_techbarb.revinform
+	title = lrsk_adv_civ_techbarb.revinform.name
+	title = lrsk_adv_civ_techbarb.revinform.desc
+	picture = GFX_evt_alien_propaganda
+	is_triggered_only = yes
+	
+	# just give the player the broad strokes of how this all works...
+	
+	option = {
+		name = lrsk_adv_civ_techbarb.revinform.forward
+		custom_tooltip = lrsk_adv_civ_techbarb.revinform.forward.desc
 	}
 }
 
