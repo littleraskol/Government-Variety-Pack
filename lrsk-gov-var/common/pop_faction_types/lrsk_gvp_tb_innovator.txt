@@ -18,7 +18,10 @@ gvp_tb_innovator = {
 	}
 
 	is_potential = {
-		has_civic = lrsk_adv_civ_civic_technobarbarism
+		or = {
+			has_civic = lrsk_adv_civ_civic_technobarbarism
+			has_modifier = lrsk_adv_civ_tb_revolution
+		}
 		years_passed > 1
 	}
 
