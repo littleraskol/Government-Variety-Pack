@@ -427,6 +427,44 @@ country_event = {
 	}
 }
 
+# Periodic cleanup of vanilla materialist faction.
+country_event = {
+	id = lrsk_adv_civ_techbarb.cleanupmatfac
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		has_faction = technologist
+		has_faction = gvp_tb_innovator
+	}
+	
+	immediate = {
+		every_owned_pop = { limit = { member_of_faction = technologist }
+			set_pop_faction = gvp_tb_innovator
+		}
+	}
+}
+
+# Periodic cleanup of vanilla spiritualist faction.
+country_event = {
+	id = lrsk_adv_civ_techbarb.cleanupspifac
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		has_faction = traditionalist
+		has_faction = gvp_tb_ritualist
+	}
+	
+	immediate = {
+		every_owned_pop = { limit = { member_of_faction = traditionalist }
+			set_pop_faction = gvp_tb_ritualist
+		}
+	}
+}
+
 # Techno-Barbarian Salvage Mission Structure
 #
 # Frequency
