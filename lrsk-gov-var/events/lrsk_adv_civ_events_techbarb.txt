@@ -118,12 +118,7 @@ country_event = {
 		hidden_effect = { country_event = { id = lrsk_adv_civ_techbarb.revinform } }
 	}
 	
-	after = {
-		give_technology = {
-			message = yes
-			tech = tech_lrsk_adv_civ_scireformation
-		}
-		
+	after = {		
 		country_event = {
 			id = lrsk_adv_civ_techbarb.reform
 			days = 1800
@@ -172,6 +167,13 @@ country_event = {
 
 	option = {
 		name = lrsk_adv_civ_techbarb.reform.hope
+	}
+	
+	after = {
+		give_technology = {
+			message = yes
+			tech = tech_lrsk_adv_civ_scireformation
+		}
 	}
 }
 
