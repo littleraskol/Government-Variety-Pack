@@ -118,13 +118,13 @@ country_event = {
 		hidden_effect = { country_event = { id = lrsk_adv_civ_techbarb.revinform } }
 	}
 	
-	after = {		
+	after = { hidden_effect = {		
 		country_event = {
 			id = lrsk_adv_civ_techbarb.reform
 			days = 1800
 			random = 720
 		}
-	}
+	} }
 }
 
 # Inform player of how to deal with this
@@ -169,12 +169,12 @@ country_event = {
 		name = lrsk_adv_civ_techbarb.reform.hope
 	}
 	
-	after = {
+	after = { hidden_effect = {
 		give_technology = {
 			message = yes
 			tech = tech_lrsk_adv_civ_scireformation
 		}
-	}
+	} }
 }
 
 # Tech looting on taking a planet.
