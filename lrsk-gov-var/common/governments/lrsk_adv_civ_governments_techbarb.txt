@@ -72,3 +72,69 @@ lrsk_adv_civ_gov_artificers_guild = {
 		base = 9999
 	}
 }
+
+
+# "Device-Monger Dynasty"
+lrsk_adv_civ_gov_ref_devicomancer_dynasty = {
+	ruler_title = LRSK_ADV_CIV_REF_RT_LORD_HIGH_SALVAGER
+	ruler_title_female = LRSK_ADV_CIV_REF_RT_LADY_HIGH_SALVAGER
+	heir_title = LRSK_ADV_CIV_REF_HT_LORD_GADGETEER
+	heir_title_female = LRSK_ADV_CIV_REF_HT_LADY_GADGETEER
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_authority = auth_imperial
+    	has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Machine Cultivators"
+lrsk_adv_civ_gov_ref_machine_cult = {
+	ruler_title = LRSK_ADV_CIV_REF_TECHNOPHANT
+
+	possible = {
+		has_authority = auth_dictatorial
+   		has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Data Exploration Committee"
+lrsk_adv_civ_gov_ref_cybershaman_conclave = {
+	ruler_title = LRSK_ADV_CIV_REF_HIGH_CYBERSEER
+
+	possible = {
+		has_authority = auth_oligarchic
+    	has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
+
+# "Technologist Guild"
+lrsk_adv_civ_gov_ref_artificers_guild = {
+	ruler_title = LRSK_ADV_CIV_REF_LOREMASTER
+
+	possible = {
+		OR = {
+			has_authority = auth_corporate
+			has_valid_civic = civic_corporate_dominion
+		}
+    	has_valid_civic = lrsk_adv_civ_civic_ref_technobarbarism
+	}
+
+	weight = {
+		base = 9999
+	}
+}
