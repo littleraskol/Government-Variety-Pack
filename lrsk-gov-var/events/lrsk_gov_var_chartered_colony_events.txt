@@ -345,11 +345,13 @@ country_event = {
 
 			log = "Num of counted subjects = [this.lrsk_charcols]"
 
-			IF = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_colonial_trade } }
-				add_modifier = {
-					modifier = lrsk_gov_var_empire_colonial_trade
-					multiplier = lrsk_charcols
-				}
+			IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
+				remove_modifier = lrsk_gov_var_empire_colonial_trade
+			}
+			
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_colonial_trade
+				multiplier = lrsk_charcols
 			}
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
