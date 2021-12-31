@@ -337,8 +337,10 @@ country_event = {
 			every_subject = {
 				limit = { is_subject_type = lrsk_gov_var_subject_chartered_company }
 				log = "Counting subject [this.GetName]"
-				root = { change_variable = { which = lrsk_charcols value = 1 } }
-				log = "Subjects counted = [this.lrsk_charcols]"
+				root = {
+					change_variable = { which = lrsk_charcols value = 1 }
+					log = "Subjects counted = [this.lrsk_charcols]"
+				}
 			}
 
 			log = "Num of counted subjects = [this.lrsk_charcols]"
