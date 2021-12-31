@@ -203,6 +203,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3.1.4 (12-31-21) - Backend Fixes/Updates Part 4 -The Fixes Resurrection
+-Variable-multiplier-based modifiers were not working as intended.
+-Happy New Year!
+
 v3.3.1.3 (12-12-21) - Backend Fixes/Updates Part 3 - This Time It's Super Annoying
 -Can't believe I missed a bunch of governments that lacked election candidate blocks and outgoing ruler definitions!!!
 -Actually I can believe it.....................

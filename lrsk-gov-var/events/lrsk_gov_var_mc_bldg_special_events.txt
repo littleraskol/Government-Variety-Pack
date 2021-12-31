@@ -1057,20 +1057,17 @@ country_event = {
 	immediate = {
 		log = "Attempting offworld work bonus application."
 
-		# Remove previous modifier as needed
-		IF = {
-			limit = {
-				check_variable = { which = lrsk_offworld_workers_bonus value < 1 }
-				has_modifier = lrsk_gvp_empire_offworld_work_bonus
+		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
+			if = { limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
+				remove_modifier = lrsk_gvp_empire_offworld_work_bonus
 			}
-			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
-		}
-		# Add modifier if needed
-		ELSE_IF = { limit = { NOT = { has_modifier = lrsk_gvp_empire_offworld_work_bonus } }
 			add_modifier = {
 				modifier = lrsk_gvp_empire_offworld_work_bonus
 				multiplier = lrsk_offworld_workers_bonus
 			}
+		}
+		ELSE_IF = { limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
+			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
 		}
 	}
 }
