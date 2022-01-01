@@ -161,6 +161,9 @@ l_english:
  # Colonial Fiefs
  opinion_lrsk_gvp_loyal_explorer_vassal:0 "Grateful for New Start"
 
+ # Chartered Colony Stuff
+ opinion_lrsk_gvp_haughty_bigots:0 "Haughty Bigots"
+
  # Other civic interactions
  triggered_opinion_lrsk_gvp_civic_minded_spirit:0 "Civic-Minded Spirit"
  triggered_opinion_lrsk_gvp_unaccountable_tyrants:0 "Unaccountable Despots"
@@ -1444,9 +1447,16 @@ l_english:
  lrsk_gov_var_chartered.2.b:0 "A new colonial company should prove lucrative."
  lrsk_gov_var_chartered.2.b.tooltip:0 "Make [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
  lrsk_gov_var_chartered.2.c:0 "Yes, but [from.GetSpeciesNamePlural] cannot be trusted to govern themselves."
- lrsk_gov_var_chartered.2.c.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural]."
+ lrsk_gov_var_chartered.2.c.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural].\n\n§YXenophile§! empires in contact with the [from.GetName] §Rwill be outraged by this.§!"
  lrsk_gov_var_chartered.2.d:0 "Not necessary."
  lrsk_gov_var_chartered.2.d.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
+
+ lrsk_gov_var_chartered.20.name:0 "Overthrow of the [lrsk_subject_to_charter.GetName]"
+ lrsk_gov_var_chartered.20.desc:0 "As if their subjugation by the [lrsk_chartering_agent.GetName] were not humiliation enough, the new overlords of the [lrsk_subject_to_charter.GetSpeciesName] people of the [lrsk_subject_to_charter.GetName] do not consider [lrsk_subject_to_charter.GetSpeciesNamePlural] fit to govern themselves. In the name of 'enlightening the savage xeno' the [lrsk_chartering_agent.GetName] has decided to abolish the [lrsk_subject_to_charter.GetName], installing a new puppet regime led by [lrsk_chartering_agent.GetSpeciesNamePlural] from [lrsk_chartering_agent.capital_scope.GetName]."
+ lrsk_gov_var_chartered.20.a:0 "Woe to the vanquished..."
+ #lrsk_gov_var_chartered.20.a.tooltip:0 ""
+ lrsk_gov_var_chartered.20.b:0 "How dare they!"
+ lrsk_gov_var_chartered.20.b.tooltip:0 "This has §Pworsened our relations§! with the [lrsk_chartering_agent.GetName]."
 
  LRSK_GOV_VAR_TRADE_NOTICE_COMMON:0 "Check the Empire Status screen to see the effect of this as an empire modifier."
  lrsk_gov_var_chartered.4.name:0 "Balance of Colonial Trade"

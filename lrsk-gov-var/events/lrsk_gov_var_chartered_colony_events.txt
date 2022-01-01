@@ -240,6 +240,7 @@ country_event = {
 			every_country = {
 				limit = { has_communications = event_target:lrsk_subject_to_charter }
 				establish_communications_no_message = event_target:lrsk_new_chartered_company
+				country_event = { id = lrsk_gov_var_chartered.20 }
 			}
 			event_target:lrsk_new_chartered_company = {
 				add_resource = {
@@ -312,6 +313,57 @@ country_event = {
 	after = {
 		# immediate recalc of colony bonus
 		country_event = { id = lrsk_gov_var_chartered.3 }
+	}
+}
+
+# Reaction to subjugation by species
+country_event = {
+	id = lrsk_gov_var_chartered.20
+	title = lrsk_gov_var_chartered.20.name
+	desc = lrsk_gov_var_chartered.20.desc
+	picture = GFX_evt_alien_segregation
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_communications = event_target:lrsk_subject_to_charter
+	}
+
+	immediate = {
+		if = {
+			limit = { or = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			} }
+			add_opinion_modifier ={
+				modifier = opinion_lrsk_gvp_haughty_bigots
+				who = event_target:lrsk_chartering_agent
+			}
+		}
+	}
+
+	option = {
+		trigger = { nor = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+		} }
+	
+		name = lrsk_gov_var_chartered.20.a
+	}
+
+	option = {
+		trigger = { or = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+		} }
+		
+		allow = { or = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+		} }
+		
+		name = lrsk_gov_var_chartered.20.b
+		custom_tooltip = lrsk_gov_var_chartered.20.b.tooltip
 	}
 }
 

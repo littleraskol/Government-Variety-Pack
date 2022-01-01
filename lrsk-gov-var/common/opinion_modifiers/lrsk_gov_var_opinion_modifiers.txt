@@ -579,3 +579,21 @@ opinion_lrsk_gvp_loyal_explorer_vassal = {
 		base = 1
 	}
 }
+
+# Dislike of subjugation by species
+opinion_lrsk_gvp_haughty_bigots = {
+	opinion = {
+		base = -30
+	}
+
+	decay = {
+		base = 2
+
+		modifier = {
+			add = -1
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+	
+	accumulative = yes
+}
