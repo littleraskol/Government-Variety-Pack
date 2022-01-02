@@ -70,7 +70,7 @@ country_event = {
 					log = "In gcol flagger, num to flag = [this.lrsk_gcol]"
 					closest_system = { 
 						limit = {
-							has_owner = no
+							lrsk_system_vacant = yes
 							NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
 							any_system_planet = { has_planet_flag = prescripted_ideal }
 						}
@@ -104,7 +104,7 @@ country_event = {
 					closest_system = {
 						limit = {
 							NOT = { star = { has_planet_flag = lrsk_sublight_colony_system } }
-							has_owner = no
+							lrsk_system_vacant = yes
 							any_system_planet = {
 								is_ringworld = no
 								is_asteroid = no

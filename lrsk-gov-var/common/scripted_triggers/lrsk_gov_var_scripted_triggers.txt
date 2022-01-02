@@ -111,10 +111,8 @@ lrsk_gvp_planet_has_no_wild_cult = {
 # 4. A flag marking it as another empire's escape route, nor
 # 5. A flag marking it as owned.
 lrsk_is_hyperlane_escape_route = {
+	lrsk_system_vacant = yes
 	NOR = {
-		has_owner = yes
-		exists = space_owner
-		has_presence = yes
 		has_star_flag = lrsk_marked_escape_route
 		has_star_flag = lrsk_marked_owned_system
 	}
@@ -162,8 +160,7 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 			who = root
 			distance > 2
 		}
-		has_owner = no
-		has_presence = no
+		lrsk_system_vacant = yes
 		root = {
 			any_owned_pop_species = {
 				not = { has_trait = trait_syncretic_proles }
@@ -181,5 +178,17 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 				}
 			}
 		}
+	}
+}
+
+# Detect if a system is "truly empty" meaning:
+# -No owner.
+# -No occupier (maybe not needed idk)
+# -No presence of ships/space monsters
+lrsk_system_vacant = {
+	nor = {
+		has_owner = yes
+		exists = space_owner
+		has_presence = yes
 	}
 }
