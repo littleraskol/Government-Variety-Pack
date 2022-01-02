@@ -1919,20 +1919,27 @@ country_event = {
 					factor = 0
 					has_country_flag = lrsk_sublight_mothballed_ftl
 				}
-				switch = {
-					trigger = has_origin
-					lrsk_gov_var_origin_sublight_colony_loy = {
-						event_target:lrsk_sublight_dissident_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
-						event_target:lrsk_sublight_genship_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
+
+				if = {
+					limit = {
+						not = { has_origin = lrsk_gov_var_origin_sublight_colony_dis }
+						exists = event_target:lrsk_sublight_dissident_colony
 					}
-					lrsk_gov_var_origin_sublight_colony_gsp = {
-						event_target:lrsk_sublight_dissident_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
-						event_target:lrsk_sublight_loyalist_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
+					event_target:lrsk_sublight_dissident_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
+				}
+				if = {
+					limit = {
+						not = { has_origin = lrsk_gov_var_origin_sublight_colony_gsp }
+						exists = event_target:lrsk_sublight_genship_colony
 					}
-					lrsk_gov_var_origin_sublight_colony_dis = {
-						event_target:lrsk_sublight_genship_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
-						event_target:lrsk_sublight_loyalist_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
+					event_target:lrsk_sublight_genship_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
+				}
+				if = {
+					limit = {
+						not = { has_origin = lrsk_gov_var_origin_sublight_colony_loy }
+						exists = event_target:lrsk_sublight_loyalist_colony
 					}
+					event_target:lrsk_sublight_loyalist_colony = { country_event = { id = lrsk_gov_var_sublight_origins.3 days = 30 } }
 				}
 			}
 		}
