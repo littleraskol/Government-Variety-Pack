@@ -2208,6 +2208,13 @@ country_event = {
 		name = lrsk_gov_var_sublight_origins.4.a
 		custom_tooltip = lrsk_gov_var_sublight_origins.4.a.tooltip
 
+		allow = {
+			has_resource = {
+				amount >= 25
+				type = influence
+			}
+		}
+
 		add_resource = { influence = -25 }		
 	}
 
@@ -3107,7 +3114,12 @@ country_event = {
 		hidden_effect = {
 			set_timed_country_flag = {
 				flag = lrsk_sublight_media_campaign_cooldown
-				days = 3600
+				days = 5400
+			}
+			remove_country_flag = lrsk_sublight_whining_cooldown
+			set_timed_country_flag = {
+				flag = lrsk_sublight_whining_cooldown
+				days = 1800 # 5 year cooldown
 			}
 			every_subject = {
 				add_opinion_modifier = {
@@ -3782,15 +3794,10 @@ country_event = {
 				has_federation = yes
 				federation = {
 					NOT = { has_federation_flag = lrsk_sublight_federation }
-					any_member = { 
-						is_federation_leader = yes
-						NOT = { is_same_value = root }
-					}
+					federation_leader = { NOT = { is_same_value = root } }
 				}
 			}
 			save_event_target_as = lrsk_sublight_overlord_federation_quitter
-			leave_alliance = { override_requirements = yes }
-			set_country_flag = lrsk_sublight_overlord_left_prior_fed
 
 			# Consequences for sudden departure...
 			# Hegemon: President hates you and has rejoin CB
@@ -3804,11 +3811,6 @@ country_event = {
 						who = event_target:lrsk_sublight_overlord_federation_quitter
 						modifier = opinion_lrsk_gov_var_hegmad_sublight
 					}
-					add_casus_belli = {
-						type = cb_lrsk_gov_var_hegemon
-						who = event_target:lrsk_sublight_overlord_federation_quitter
-						days = -1
-					}
 				} }
 			}
 			ELSE = { federation = { every_member = { limit = { NOT = { is_same_value = event_target:lrsk_sublight_overlord_federation_quitter } }
@@ -3817,16 +3819,50 @@ country_event = {
 					modifier = opinion_lrsk_gov_var_fedmad_sublight
 				}
 			} } }
+
+			leave_alliance = { override_requirements = yes }
+			
+			set_country_flag = lrsk_sublight_overlord_left_prior_fed
+
+			if = {
+				limit = { exists = event_target:lrsk_sublight_overlord_hegemon_spurned }
+				event_target:lrsk_sublight_overlord_hegemon_spurned = {
+					add_casus_belli = {
+						type = cb_lrsk_gov_var_hegemon
+						who = event_target:lrsk_sublight_overlord_federation_quitter
+						days = -1
+					}
+				}
+			}
 		}
 
-		every_subject = { limit = { has_country_flag = lrsk_sublight_colony_accepted_federation }
-			join_alliance = {
-				who = event_target:lrsk_sublight_overlord
-				override_requirements = yes
+		every_subject = {
+			limit = {
+				has_country_flag = lrsk_sublight_colony_accepted_federation
+				not = { has_country_flag = lrsk_sublight_colony_joined_federation }
 			}
-			#remove_country_flag = lrsk_sublight_colony_accepted_federation
+
+			# Possible they are already in the overlord's fed or some other fed, so only join OL fed if they have none or the one they are in isn't the OL's. Leave some other fed first.
+			if = {
+				limit = {
+					has_federation = yes
+					federation = { federation_leader = { NOT = { is_same_value = root } } }
+				}
+				leave_alliance = { override_requirements = yes }
+			}
+
+			if = { limit = { has_federation = no }
+				join_alliance = {
+					who = event_target:lrsk_sublight_overlord
+					override_requirements = yes
+				}
+			}
+
 			set_subject_of = { who = none }
+
+			set_country_flag = lrsk_sublight_colony_joined_federation
 		}
+		
 		IF = { limit = { has_country_flag = lrsk_sublight_overlord_left_prior_fed } # This is a new federation
 			IF = {
 				limit = { has_origin = lrsk_gov_var_origin_sublight_empire }
@@ -3838,7 +3874,9 @@ country_event = {
 			set_federation_leader = event_target:lrsk_sublight_overlord
 		}
 
-		federation = { set_federation_flag = lrsk_sublight_federation }
+		federation = { if = { limit = { not = { has_federation_flag = lrsk_sublight_federation } }
+			set_federation_flag = lrsk_sublight_federation
+		} }
 		
 		#ELSE_IF = { limit = { has_country_flag = lrsk_sublight_overlord_offered_vassalization }
 		#	log = "ERROR: Somehow entered sublight reform to fed event despite vassalization chosen?"
