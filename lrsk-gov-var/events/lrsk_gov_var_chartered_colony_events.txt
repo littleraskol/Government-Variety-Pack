@@ -238,9 +238,16 @@ country_event = {
 				}
 			}
 			every_country = {
+				limit = {
+					not = { is_same_value = event_target:lrsk_chartering_agent }
+					has_communications = event_target:lrsk_subject_to_charter
+					has_communications = event_target:lrsk_chartering_agent
+				}
+				country_event = { id = lrsk_gov_var_chartered.20 }
+			}
+			every_country = {
 				limit = { has_communications = event_target:lrsk_subject_to_charter }
 				establish_communications_no_message = event_target:lrsk_new_chartered_company
-				country_event = { id = lrsk_gov_var_chartered.20 }
 			}
 			event_target:lrsk_new_chartered_company = {
 				add_resource = {
@@ -320,21 +327,34 @@ country_event = {
 country_event = {
 	id = lrsk_gov_var_chartered.20
 	title = lrsk_gov_var_chartered.20.name
-	desc = lrsk_gov_var_chartered.20.desc
 	picture = GFX_evt_alien_segregation
+
+	# Desc if comms to ol
+	desc = {
+		trigger = {
+			has_communications = event_target:lrsk_chartering_agent
+		}
+		text = lrsk_gov_var_chartered.20.desc.a
+	}
+	# Desc if no comms to ol
+	desc = {
+		trigger = {
+			not = { has_communications = event_target:lrsk_chartering_agent }
+		}
+		text = lrsk_gov_var_chartered.20.desc.b
+	}
 
 	is_triggered_only = yes
 
-	trigger = {
-		has_communications = event_target:lrsk_subject_to_charter
-	}
-
 	immediate = {
 		if = {
-			limit = { or = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			} }
+			limit = {
+				or = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+				has_communications = event_target:lrsk_chartering_agent
+			}
 			add_opinion_modifier ={
 				modifier = opinion_lrsk_gvp_haughty_bigots
 				who = event_target:lrsk_chartering_agent
@@ -352,18 +372,28 @@ country_event = {
 	}
 
 	option = {
-		trigger = { or = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		} }
-		
-		allow = { or = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		} }
+		trigger = {
+			or = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+			has_communications = event_target:lrsk_chartering_agent
+		}
 		
 		name = lrsk_gov_var_chartered.20.b
 		custom_tooltip = lrsk_gov_var_chartered.20.b.tooltip
+	}
+
+	option = {
+		trigger = {
+			or = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+			not = { has_communications = event_target:lrsk_chartering_agent }
+		}
+		
+		name = lrsk_gov_var_chartered.20.c
 	}
 }
 
