@@ -55,7 +55,7 @@ country_event = {
 					closest_system = {
 						limit = { 
 							NOT = { has_star_flag = neighbor_t1_first_colony }
-							has_owner = no
+							lrsk_system_vacant = yes
 							any_system_planet = {
 								is_ringworld = no
 								is_asteroid = no
@@ -94,7 +94,7 @@ country_event = {
 			capital_scope = {
 				solar_system = {
 					closest_system = {
-						limit = { has_owner = no }
+						limit = { lrsk_system_vacant = yes }
 						set_star_flag = lrsk_fed_origin_system_1
 						if = {
 							limit = {
@@ -122,7 +122,7 @@ country_event = {
 					closest_system = {
 						limit = { 
 							NOT = { has_star_flag = lrsk_fed_origin_system_1 }
-							has_owner = no
+							lrsk_system_vacant = yes
 							any_system_planet = {
 								is_ringworld = no
 								is_asteroid = no
