@@ -1200,24 +1200,36 @@ country_event = {
 	}
 
 	immediate = {
-		create_fleet = {
-			effect = {
-				set_owner = root
 
-				while = {
-					count = 1
-					create_fallen_empire_large_ship = yes
-				}
-				while = {
-					count = 3
-					create_fallen_empire_small_ship = yes
-				}
-
-				set_location = root.capital_star
-			}
+		add_resource = {
+			energy = 20000			
+			minerals = 20000			
+			alloys = 20000
 		}
 
+		give_technology = { tech = tech_battleships message = no }
+
 		capital_scope = {
+
+			create_fleet = {
+				name = "shitfuckers"
+				effect = {
+					set_owner = root
+					while = {
+						count = 5
+						create_ship = {
+							name = random
+							random_existing_design = battleship
+						}
+					}
+					set_location = {
+						target = root.capital_star
+						distance = 45
+						angle = random
+					}
+				}
+			}
+
 			while = {
 				count = 10
 				create_army = {
@@ -1227,12 +1239,7 @@ country_event = {
 					type = gene_warrior_army
 				}
 			}
-		}
 
-		add_resource = {
-			energy = 20000			
-			minerals = 20000			
-			alloys = 20000
 		}
 	}
 }
