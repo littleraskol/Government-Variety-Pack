@@ -2352,6 +2352,32 @@ country_event = {
 			}
 		}
 	}
+
+	# Bribery/corruption
+	option = {
+		name = lrsk_gov_var_sublight_origins.4.e
+		custom_tooltip = lrsk_gov_var_sublight_origins.4.e.tooltip
+
+		allow = {
+			has_resource = {
+				amount >= 1000
+				type = energy
+			}
+		}
+
+		add_resource = { energy = -1000 }
+
+		hidden_effect = {
+			from = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_lrsk_gov_var_carrot_sublight
+				}
+			}
+			# Corruption
+			country_event = { id = lrsk_gov_var_sublight_origins.200 }
+		}
+	}
 }
 
 # Tattle/Brag Notice on FTL denial
