@@ -203,6 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v3.3.1.5 (01-2?-22) - All out of joke names at this point tbh
+-Added tooltips of special effects to Combat Data and Imperial Economy.
+
 v3.3.1.4 (12-31-21) - Backend Fixes/Updates Part 4 -The Fixes Resurrection
 -Variable-multiplier-based modifiers were not working as intended.
 -Happy New Year!
