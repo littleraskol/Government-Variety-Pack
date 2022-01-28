@@ -203,7 +203,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v3.3.1.5 (01-2?-22) - All out of joke names at this point tbh
+v3.3.1.5 (01-27-22) - All out of joke names at this point tbh
 -Added tooltips of special effects to Combat Data and Imperial Economy.
 -Imrpoved the Universal Sovereignty tooltip.
 
