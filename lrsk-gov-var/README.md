@@ -205,7 +205,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v3.3.1.5 (01-27-22) - All out of joke names at this point tbh
 -Added tooltips of special effects to Combat Data and Imperial Economy.
--Imrpoved the Universal Sovereignty tooltip.
+-Improved the Universal Sovereignty tooltip.
 
 v3.3.1.4 (12-31-21) - Backend Fixes/Updates Part 4 -The Fixes Resurrection
 -Variable-multiplier-based modifiers were not working as intended.
