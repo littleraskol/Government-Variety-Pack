@@ -219,6 +219,10 @@ v3.? (??-??-2?) - More Origins, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 
+v3.3.1.5 (01-27-22) - All out of joke names at this point tbh
+-Added tooltips of special effects to Combat Data and Imperial Economy.
+-Improved the Universal Sovereignty tooltip.
+
 v3.3.1.4 (12-31-21) - Backend Fixes/Updates Part 4 -The Fixes Resurrection
 -Variable-multiplier-based modifiers were not working as intended.
 -Happy New Year!
