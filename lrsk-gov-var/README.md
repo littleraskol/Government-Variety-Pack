@@ -205,7 +205,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v4.0 (02-25-22) - Libra Update
 -Various internal changes to adapt to Stellaris 3.3 (Libra).
--Royal Absolutism civic now gives +30 Edcit Fund and -10% Edict Cost instead of +1 Edict Cap.
+-Royal Absolutism civic now gives +30 Edict Fund and -10% Edict Cost instead of +1 Edict Cap.
 -The "Chancellor" option in the "Proclamation of Justice" event gives a unity reward as well.
 -The "Estates General" modifier (from the Royal Absolutism special Edict) now gives +100% Edict Fund mult instead of +1 Edict Cap.
 -The "Promote Citizen Scholarship" Edict for Lifelong Learning now costs 20 Unity upkeep.
