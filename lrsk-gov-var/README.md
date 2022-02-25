@@ -123,7 +123,7 @@ Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine
 
 Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts)
+Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts)
 
 Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
@@ -210,7 +210,7 @@ v4.0 (02-25-22) - Libra Update
 -The "Estates General" modifier (from the Royal Absolutism special Edict) now gives +100% Edict Fund mult instead of +1 Edict Cap.
 -The "Promote Citizen Scholarship" Edict for Lifelong Learning now costs 20 Unity upkeep.
 -Supremacist Demagoguery and Boundless Spite civics now give +25% power projection.
--Reciprocal Planning Routines civic gives -10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts rather than +20 admin cap.
+-Reciprocal Planning Routines civic gives -10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts rather than +20 admin cap.
 -Various effects related to influence have either been replaced with unity or augmented with unity.
 -Everything modifying admin cap has been replaced with modifiers to the effects of empire size.
 

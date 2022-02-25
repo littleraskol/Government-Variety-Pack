@@ -127,7 +127,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Astro-Exploration Mainframe (Machine Intelligence)[/i] - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts)
+[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts)
 
 [*][i]Geosurvey Heuristics (Machine Intelligence)[/i] - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
