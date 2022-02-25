@@ -10,17 +10,9 @@ lrsk_gvp_citschol = {
 
 	resources = {
 		category = edicts
-		cost = { #Activation Cost
-			trigger = {
-				NOT = { has_edict = lrsk_gvp_citschol }
-			}
-			influence = 75
-		}
-		cost = { #Deactivation Cost
-			trigger = {
-				has_edict = lrsk_gvp_citschol
-			}
-			influence = 25
+		upkeep = {
+			unity = 20
+			multiplier = value:edict_size_effect
 		}
 	}
 

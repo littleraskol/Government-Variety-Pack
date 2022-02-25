@@ -82,6 +82,7 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 		max_rivalries = 2
     	army_morale_damage_mult = 0.2
 		pop_purge_speed = 0.5
+		country_power_projection_influence_produces_mult = 0.25
 	}
 }
 
@@ -346,7 +347,11 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
-  	modifier = { country_admin_cap_add = 20 }
+  	modifier = {
+		empire_size_systems_mult = -0.1
+		empire_size_colonies_mult = -0.2
+		empire_size_systems_mult = -0.05
+	}
 }
 
 # Geosurvey Heuristics (-10% clear tile blocker cost, terraform cost, and terraform completion time) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory.

@@ -37,7 +37,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage)
+[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage, +25% power projection)
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -51,7 +51,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Direct Revelation (Egalitarian and Spiritualist)[/i] - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
+[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
@@ -77,7 +77,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Reclamation Pools (Hive Mind)[/i] - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed)
+[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed, +25% power projection)
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
@@ -127,7 +127,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Astro-Exploration Mainframe (Machine Intelligence)[/i] - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
+[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts)
 
 [*][i]Geosurvey Heuristics (Machine Intelligence)[/i] - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 

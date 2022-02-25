@@ -37,7 +37,7 @@ Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has 
 
 Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
+Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -51,7 +51,7 @@ Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Libera
 
 Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
@@ -75,7 +75,7 @@ Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and
 
 Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage)
+Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
 
 Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
@@ -123,7 +123,7 @@ Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine
 
 Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
+Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts)
 
 Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
@@ -202,6 +202,17 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v4.0 (02-25-22) - Libra Update
+-Various internal changes to adapt to Stellaris 3.3 (Libra).
+-Royal Absolutism civic now gives +30 Edcit Fund and -10% Edict Cost instead of +1 Edict Cap.
+-The "Chancellor" option in the "Proclamation of Justice" event gives a unity reward as well.
+-The "Estates General" modifier (from the Royal Absolutism special Edict) now gives +100% Edict Fund mult instead of +1 Edict Cap.
+-The "Promote Citizen Scholarship" Edict for Lifelong Learning now costs 20 Unity upkeep.
+-Supremacist Demagoguery and Boundless Spite civics now give +25% power projection.
+-Reciprocal Planning Routines civic gives -10% Empire Size from systems, -20% Empire Size from planets, and -5% Empire Size from districts rather than +20 admin cap.
+-Various effects related to influence have either been replaced with unity or augmented with unity.
+-Everything modifying admin cap has been replaced with modifiers to the effects of empire size.
 
 v3.3.1.5 (01-27-22) - All out of joke names at this point tbh
 -Added tooltips of special effects to Combat Data and Imperial Economy.
