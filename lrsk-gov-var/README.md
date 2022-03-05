@@ -203,6 +203,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v4.0.1 (03-05-22) - Libra Cleanup
+-Fixed some localizations.
+-Various documentation updates.
+-Various backend changes.
+
 v4.0 (02-25-22) - Libra Update
 -Various internal changes to adapt to Stellaris 3.3 (Libra).
 -Royal Absolutism civic now gives +30 Edict Fund and -10% Edict Cost instead of +1 Edict Cap.
