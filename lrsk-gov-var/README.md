@@ -219,6 +219,11 @@ v4.? (??-??-2?) - More Origins, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 
+v4.0.1 (03-05-22) - Libra Cleanup
+-Fixed some localizations.
+-Various documentation updates.
+-Various backend changes.
+
 v4.0 (02-25-22) - Libra Update
 -Various internal changes to adapt to Stellaris 3.3 (Libra).
 -Royal Absolutism civic now gives +30 Edict Fund and -10% Edict Cost instead of +1 Edict Cap.
