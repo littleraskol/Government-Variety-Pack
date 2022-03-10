@@ -203,6 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v4.0.2 (03-10-22) - Annoying Fix
+-Personal Protection Office was giving the wrong ethics attraction.
+
 v4.0.1 (03-05-22) - Libra Cleanup
 -Fixed some localizations.
 -Various documentation updates.
