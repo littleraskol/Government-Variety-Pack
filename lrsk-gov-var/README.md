@@ -203,6 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v4.0.4 (03-11-22) - Fixes Continued 3
+-Work Allocation Plan should not be infinitely stackable.
+
 v4.0.3 (03-11-22) - Annoying Fix 2
 -Esper rulers should not give +115% unity production.
 
