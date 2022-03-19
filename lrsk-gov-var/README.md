@@ -203,6 +203,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v4.0.5 (03-19-22) - Fixes Continued 4
+-Fixed issue preventing governments that adopt Colonial Fiefs mid-game from being able to change their Explorer Colonies policy.
+
 v4.0.4 (03-11-22) - Fixes Continued 3
 -Work Allocation Plan should not be infinitely stackable.
 
