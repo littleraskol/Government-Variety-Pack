@@ -204,7 +204,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v4.0.6 (03-19-22) - Balance Pass 1
--Shapers, Artificers, and Essentialists civics now only give -5% researcher job output, rather than -10% overall research output, in thier non-favored areas.
+-Shapers, Artificers, and Essentialists civics now only give -5% researcher job output, rather than -10% overall research output, in their non-favored areas.
 -Shapers no longer gives a growth bonus.
 -Artificers robot job output bonus down to +5%, from +10%
 
