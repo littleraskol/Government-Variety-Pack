@@ -157,11 +157,11 @@ Investigation & Security Services (Authoritarian) - This firm provides both pers
 
 "Advanced" Civics
 
-Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -5% non-society research from jobs, start with "Eco Simulation" tech.)
 
-Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +5% robot output, +10% robot build speed, -5% non-engineering research from jobs, start with "Powered Exoskeletons" tech.)
 
-Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -5% non-physics research from jobs, start with "Fusion Power" tech.)
 
 Enhanced Civics
 
@@ -202,6 +202,11 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v4.0.6 (03-19-22) - Balance Pass 1
+-Shapers, Artificers, and Essentialists civics now only give -5% researcher job output, rather than -10% overall research output, in thier non-favored areas.
+-Shapers no longer gives a growth bonus.
+-Artificers robot job output bonus down to +5%, from +10%
 
 v4.0.5 (03-19-22) - Fixes Continued 4
 -Fixed issue preventing governments that adopt Colonial Fiefs mid-game from being able to change their Explorer Colonies policy.
