@@ -203,6 +203,29 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v4.1 (03-??-22) - Balance Pass 2
+-Planetmind Creativity requires some work given the new game systems. With unity being more useful for more things now, its Planetmind Synapse buildings' unity cost and upkeep hurt a lot more. So I'm making the jobs it gives cost less and give more and something more impactful and not granted by other civics or by APs.
+--Planetmind Creativity now grants a flat -5% to empire size from pops rather than -15% housing usage.
+--Planetmind Overseers now grant -1% empire size from pops rather than -1% empire size from colonies.
+--Planetmind Overseers now grant -5% pop housing usage.
+--Planetmind Overseer crime addition reduced to 10 from 15.
+--Planetmind Overseer stability loss reduced to 1 from 2.
+--Planetmind Overseer food and energy upkeep reduced to 2 from 3.
+-Jobs-per-pop modifiers are in a worse place since the game was rebalanced to reduce the number of pops overall. Therefore, the number of such jobs added by various sources has generally been doubled.
+--Builder Caste now grants one Maintenance Drone per 10 pops, up from 1 per 20 pops.
+--Warrior Caste now grants one Warrior Drone per 15 pops, up from 1 per 30 pops.
+--Royal Caste now grants one Synapse Drone per 20 pops, up from 1 per 40 pops.
+--Elected Clergy now grants one Pastor per 20 pops, up from 1 per 40 pops.
+--Republicanism now grants one Politician per 25 pops, up from 1 per 50 pops.
+--Direct Revelation now grants one Hedge Preacher per 15 pops, up from 1 per 25 pops.
+--Shroud Pockets deposit grants one Otherworld Guide per 25 pops, up from 1 per 40 pops.
+--Promote Citizen Scholarship edict grants one Citizen Scholar per 15 pops, up from 1 per 25 pops.
+-With unity being a more useful and more widely used resource, jobs producing unity should produce more of it to make it a useful bonus.
+--Pastors produce produce 5 unity, up from 3.
+--Hedge Preachers produce 4 unity, up from 2.
+--Otherworld Guides produce 2 unity base, up from 1. Trait bonuses unchanged.
+--Regional Coordinators produce 9 unity, up from 6.
+
 v4.0.6 (03-19-22) - Balance Pass 1
 -Shapers, Artificers, and Essentialists civics now only give -5% researcher job output, rather than -10% overall research output, in their non-favored areas.
 -Shapers no longer gives a growth bonus.
