@@ -204,6 +204,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v4.1 (03-??-22) - Balance Pass 2
+-Citizen Scholar pops produce more if they have the Utopian Abundance living standard (so that it's not strictly worse to be in this job than unemployed).
 -Planetmind Creativity requires some work given the new game systems. With unity being more useful for more things now, its Planetmind Synapse buildings' unity cost and upkeep hurt a lot more. So I'm making the jobs it gives cost less and give more and something more impactful and not granted by other civics or by APs.
 --Planetmind Creativity now grants a flat -5% to empire size from pops rather than -15% housing usage.
 --Planetmind Overseers now grant -1% empire size from pops rather than -1% empire size from colonies.
