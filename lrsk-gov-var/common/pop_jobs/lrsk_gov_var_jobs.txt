@@ -134,12 +134,14 @@ lrsk_gvp_job_citscholar = {
 
 	resources = {
 		category = planet_researchers
+		
 		produces = {
 			physics_research = 1
 			engineering_research = 1
 			society_research = 1
 			unity = 1
 		}
+
 		produces = {
 			trigger = {
 				exists = owner
@@ -149,9 +151,24 @@ lrsk_gvp_job_citscholar = {
 			}
 			unity = 1
 		}
+
+		produces = {
+			trigger = {
+				exists = owner
+				has_living_standard = {
+					country = owner 
+					type = living_standard_utopian
+				}
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
+
 		upkeep = {
 			consumer_goods = 1
 		}
+
 		upkeep = {
 			trigger = {
 				exists = owner
@@ -165,6 +182,19 @@ lrsk_gvp_job_citscholar = {
 
 	planet_modifier = {
 		planet_amenities_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			has_living_standard = {
+				country = owner 
+				type = living_standard_utopian
+			}
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
 	}
 
 	triggered_planet_modifier = {
