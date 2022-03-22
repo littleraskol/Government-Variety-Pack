@@ -208,7 +208,8 @@ v4.1 (03-??-22) - Balance Pass 2
 -Planetmind Creativity requires some work given the new game systems. With unity being more useful for more things now, its Planetmind Synapse buildings' unity cost and upkeep hurt a lot more. So I'm making the jobs it gives cost less and give more and something more impactful and not granted by other civics or by APs.
 --Planetmind Creativity now grants a flat -5% to empire size from pops rather than -15% housing usage.
 --Planetmind Overseers now grant -1% empire size from pops rather than -1% empire size from colonies.
---Planetmind Overseers now grant -5% pop housing usage.
+--Planetmind Overseers now grant -2% pop housing usage.
+--Planetmind Overseers influence production increased to 0.2 from 0.1 (influence matters less).
 --Planetmind Overseer crime addition reduced to 10 from 15.
 --Planetmind Overseer stability loss reduced to 1 from 2.
 --Planetmind Overseer food and energy upkeep reduced to 2 from 3.
