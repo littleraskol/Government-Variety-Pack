@@ -21,11 +21,11 @@ Grand Alliance (Militarist) - This civilization established early contact with i
 
 Normal Civics:
 
-Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
+Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 20 pops, +10% influence from factions)
 
 Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
 
-Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
+Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
 
 Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
@@ -49,7 +49,7 @@ Lifelong Learning (Democratic and Pacifist) - This society values public educati
 
 Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 15 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
 Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
@@ -67,11 +67,11 @@ Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehensio
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
-Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Menial Drone per 20 pops)
+Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Maintenance Drone per 10 pops)
 
-Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 30 pops)
+Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 15 pops)
 
-Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 40 pops)
+Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 20 pops)
 
 Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
