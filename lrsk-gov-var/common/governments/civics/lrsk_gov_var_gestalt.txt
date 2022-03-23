@@ -4,7 +4,7 @@
 
 # HIVE MIND
 
-# Planetmind Creativity (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and decrease empire size penalties, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
+# Planetmind Creativity (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -13,8 +13,7 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
 	modifier = {
-		#pop_amenities_usage_mult = -0.10
-		pop_housing_usage_mult = -0.15
+		empire_size_pops_mult = -0.05
 	}
 }
 
@@ -29,7 +28,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 	}
 }
 
-# Worker Caste (-10% building and ship construction time, 1 Menial Drone per 20 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
+# Worker Caste (-10% building and ship construction time, 1 Maintenance Drone per 10 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
 lrsk_gov_var_civic_hive_builder_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -38,11 +37,11 @@ lrsk_gov_var_civic_hive_builder_caste = {
     	planet_building_build_speed_mult = 0.1
     	starbase_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
-    	job_maintenance_drone_per_pop = 0.05
+    	job_maintenance_drone_per_pop = 0.1
 	}
 }
 
-# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 30 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
+# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 15 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
 lrsk_gov_var_civic_hive_warrior_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -50,18 +49,18 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 	modifier = {
     	admiral_skill_levels = 1
     	general_skill_levels = 1
-    	job_warrior_drone_per_pop = 0.0333
+    	job_warrior_drone_per_pop = 0.0666
 	}
 }
 
-# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 40 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
+# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 20 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
 lrsk_gov_var_civic_hive_royal_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
     	governor_skill_levels = 2
-    	job_synapse_drone_per_pop = 0.025
+    	job_synapse_drone_per_pop = 0.05
 	}
 }
 
