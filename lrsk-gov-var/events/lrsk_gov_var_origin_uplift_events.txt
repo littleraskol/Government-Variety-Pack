@@ -1277,64 +1277,76 @@ country_event = {
 country_event = {
 	id = lrsk_gov_var_uplift.13
 	hide_window = yes
-	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 5 }
 
 	trigger = {
-		from = { has_origin = lrsk_gov_var_origin_uplift }
-		#is_subject_type = protectorate
-		has_country_flag = primitives_can_into_space
-		has_opinion_modifier = {
-			who = from
-			modifier = opinion_enlightened_us
+		has_origin = lrsk_gov_var_origin_uplift
+		any_country = {
+			has_opinion_modifier = {
+				who = root
+				modifier = opinion_enlightened_us
+			}
+			has_country_flag = primitives_can_into_space
+			NOT = { has_country_flag = lrsk_enlightened_counted }
 		}
-		NOT = { has_country_flag = lrsk_enlightened_counted }
 	}
 
 	immediate = {
 		log = "Caught enlightenment event."
-		set_country_flag = lrsk_enlightened_counted
-		this = { species = { save_event_target_as = lrsk_uplift_grandchild } }
-		capital_scope = { save_event_target_as = lrsk_uplift_first_enlighten_planet }
-		from = {
-			if = {
-				limit = { has_modifier = lrsk_gov_var_empire_enlighten_cycle }
-				remove_modifier = lrsk_gov_var_empire_enlighten_cycle
-			}
-			add_modifier = {
-				modifier = lrsk_gov_var_empire_enlighten_cycle
-				days = 1800
-			}
 
-			set_country_flag = lrsk_senpai_notice_me
-
-			add_monthly_resource_mult = {
-				resource = unity
-				value = 10
-				min = 200
-				max = 2000
-			}
-
-			if = {
-				limit = {
-					is_subject = yes
-					overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+					who = root
+					modifier = opinion_enlightened_us
 				}
-				overlord = { save_event_target_as = lrsk_my_uplift_tutor }
-				save_event_target_as = lrsk_uplift_pupil
-				
-				event_target:lrsk_my_uplift_tutor = {
-					add_opinion_modifier = {
-						who = event_target:lrsk_uplift_pupil
-						modifier = opinion_lrsk_gov_var_impressed_uplift_tutor
-					}
-				}
+				has_country_flag = primitives_can_into_space
+				NOT = { has_country_flag = lrsk_enlightened_counted }
 			}
+			set_country_flag = lrsk_enlightened_counted
+			species = { save_event_target_as = lrsk_uplift_grandchild }
+			capital_scope = { save_event_target_as = lrsk_uplift_first_enlighten_planet }
+		}
+		
+		if = {
+			limit = { has_modifier = lrsk_gov_var_empire_enlighten_cycle }
+			remove_modifier = lrsk_gov_var_empire_enlighten_cycle
+		}
+		add_modifier = {
+			modifier = lrsk_gov_var_empire_enlighten_cycle
+			days = 1800
+		}
 
-			if = {
-				limit = { NOT = { has_country_flag = lrsk_enlighten_no_reward_notice } }
-				country_event = { id = lrsk_gov_var_uplift.130 }
+		set_country_flag = lrsk_senpai_notice_me
+
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 10
+			min = 200
+			max = 2000
+		}
+
+		if = {
+			limit = {
+				is_subject = yes
+				overlord = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
+			}
+			overlord = { save_event_target_as = lrsk_my_uplift_tutor }
+			save_event_target_as = lrsk_uplift_pupil
+			
+			event_target:lrsk_my_uplift_tutor = {
+				add_opinion_modifier = {
+					who = event_target:lrsk_uplift_pupil
+					modifier = opinion_lrsk_gov_var_impressed_uplift_tutor
+				}
 			}
 		}
+
+		if = {
+			limit = { NOT = { has_country_flag = lrsk_enlighten_no_reward_notice } }
+			country_event = { id = lrsk_gov_var_uplift.130 }
+		}		
 	}
 }
 

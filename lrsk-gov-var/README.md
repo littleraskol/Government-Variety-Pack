@@ -216,6 +216,7 @@ v4.? (??-??-2?) - New Origin, Colonial Chartering Civic
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Changed Functionary job to produce unity instead of giving empire size penalty reductions, making it more like a mini Clerk/Bureaucrat hybrid (which was its original design idea).
+-Fixed minor random name error. ("Failed to find part list 'lrsk_schl_type' in name random names lists")
 
 v4.1 (03-22-22) - Balance Pass 2
 -Citizen Scholar pops produce +2 amenities and +1 research if they have the Utopian Abundance living standard. (This is so that it's not strictly worse to be in this job than unemployed.)

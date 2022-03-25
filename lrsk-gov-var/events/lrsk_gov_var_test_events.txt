@@ -1243,3 +1243,24 @@ country_event = {
 		}
 	}
 }
+
+# Just removes a flag. Allows testing a message response twice.
+country_event = {
+	id = lrsk_gvp_testing.28
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+		
+		has_origin = lrsk_gov_var_origin_uplift
+		has_country_flag = lrsk_uplift_impressed_msg
+		has_country_flag = lrsk_senpai_notice_me
+	}
+
+	immediate = {
+		remove_country_flag = lrsk_uplift_impressed_msg
+		remove_country_flag = lrsk_senpai_notice_me
+	}
+}
