@@ -13,6 +13,9 @@ l_spanish:
  # Common Strings
  LRSK_GOV_VAR_ESPER:0 "Esper"
  LRSK_GOV_VAR_ESP_LEADER:0 "This leader has hightened extra-sensory perception that"
+ LRSK_GOV_VAR_HIVEPRIM:0 "Evolved from a pre-sapient eusocial species that"
+ LRSK_GOV_VAR_DEEPCODE:0 "Deep Code:"
+ LRSK_GOV_VAR_MECHPRIM:0 "Its most fundamental artificial intelligence algorithms"
 
  # Species
  #:0 ""
@@ -20,6 +23,58 @@ l_spanish:
 
  lrsk_gov_var_trait_natural_esper:0 "Natural $LRSK_GOV_VAR_ESPER$"
  lrsk_gov_var_trait_natural_esper_desc:0 "§LLong contact with Shroud energies have left many of the members of this species with an inborn special intuition, a 'knack' or 'gift' amounting to extra-sensory perception beyond what biology can explain.§!\n"
+
+ # §G§! §R§!
+ 
+ #lrsk_gov_var_trait_starborn:0 "$trait_presapient_starborn$"
+ #lrsk_gov_var_trait_starborn_desc:0 "§L$trait_presapient_starborn_desc$§!\n"
+ lrsk_gov_var_trait_starborn_effects:0 "§G+25%§! immigration growth\n§G-25%§! resettle cost\n§G+10%§! habitability"
+ 
+ lrsk_gov_var_trait_starborn_hive:0 "Swarmers"
+ lrsk_gov_var_trait_starborn_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ moved in great restless swarms, expanding rapidly and inexorably into even the least hospitable places.§!\n"
+ lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! pop growth\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to leader lifespan"
+ 
+ #lrsk_gov_var_trait_earthbound:0 "$trait_presapient_earthbound$"
+ #lrsk_gov_var_trait_earthbound_desc:0 "§L$trait_presapient_earthbound_desc$§!\n"
+ lrsk_gov_var_trait_earthbound_effects:0 "§G+10%§! £energy£ Energy from jobs\n§G+50%§! £defense_army£ Defense Army strength"
+ 
+ lrsk_gov_var_trait_earthbound_hive:0 "Pack-Runners"
+ lrsk_gov_var_trait_earthbound_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ showed exceptionally high levels of 'teamwork,' spontaneously organizing into complex packs or gangs that could coordinate with each other to take advantage of territory or defend it.§!\n"
+ lrsk_gov_var_trait_earthbound_hive_effects:0 "§G-5%§! empire sprawl from pops\n§G+10%§! £unity£ Unity from jobs\n§G-10%§! £housing£ pop housing usage\n§G+50%§! £defense_army£ Defense Army strength"
+ 
+ #lrsk_gov_var_trait_natural_intellectuals:0 "$trait_presapient_natural_intellectuals$"
+ #lrsk_gov_var_trait_natural_intellectuals_desc:0 "§L$trait_presapient_natural_intellectuals_desc$§!\n"
+ lrsk_gov_var_trait_natural_intellectuals_effects:0 "§G+5%§! £unity£ Unity from jobs\n§G+10%§! £science£ Research\n§R-5%§! £minerals£ Minerals from jobs"
+ 
+ lrsk_gov_var_trait_natural_intellectuals_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Pattern Analysis"
+ lrsk_gov_var_trait_natural_intellectuals_mech_desc:0 "§L$LRSK_GOV_VAR_MECHPRIM$ were originally written to sift through oceans of data looking for interesting patterns. It was this quality that suggested its potential for self-awareness.§!\n"
+ lrsk_gov_var_trait_natural_intellectuals_mech_effects:0 "§G+5%§! £unity£ Unity from jobs\n§G+10%§! £science£ Research \n§R-5%§! simple drone job production"
+ 
+ #lrsk_gov_var_trait_proles:0 "$trait_presapient_proles$"
+ #lrsk_gov_var_trait_proles_desc:0 "§L$trait_presapient_proles_desc$§!\n"
+ lrsk_gov_var_trait_proles_effects:0 "§G+10%§! £army_power£ Army Damage\n§G+10%§! £food£ Food and £minerals£ Minerals from jobs\n§R-15%§! £science£ Research"
+ 
+ lrsk_gov_var_trait_proles_hive:0 "Skirmishers"
+ lrsk_gov_var_trait_proles_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ had to engage in fierce competition for resources with other eusocial species (or its own species) on a hive-to-hive scale, which led to behavioral patterns rather like a society organizing for war.§!\n"
+ lrsk_gov_var_trait_proles_hive_effects:0 "§G+10%§! £army_power£ Army Damage\n§G+10%§! simple drone job production\n§R-10%§! £unity£ Unity from jobs"
+ 
+ lrsk_gov_var_trait_proles_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Skill Emulation"
+ lrsk_gov_var_trait_proles_mech_desc:0 "§L$LRSK_GOV_VAR_MECHPRIM$ seem designed to model and reproduce data gathered from skilled sapient professionals, perhaps to replace them? This left it somewhat inflexible in terns of learning ability, but it was familiar enough with the patterns of sapient minds to be bootstrapped to self-directed thought and creativity.\n"
+ lrsk_gov_var_trait_proles_mech_effects:0 "§G+10%§! £army_power£ Army Damage\n§G+10%§! complex drone job production\n§R-33%§! leader exp gain"
+ 
+ #lrsk_gov_var_trait_conservative:0 "$trait_presapient_conservative$"
+ #lrsk_gov_var_trait_conservative_desc:0 "§L$trait_presapient_conservative_desc$§!\n"
+ lrsk_gov_var_trait_conservative_effects:0 "§G+5%§! happiness\n§G+25%§! governing ethics attraction\n§R-33%§! leader exp gain"
+ 
+ lrsk_gov_var_trait_conservative_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Profiling"
+ lrsk_gov_var_trait_conservative_mech_desc:0 "§L$LRSK_GOV_VAR_MECHPRIM$ were built to create precise and complex data models of sapient minds to benefit the strategies of its designers. Raising this AI to true sapience was almost too easy.§!\n"
+ lrsk_gov_var_trait_conservative_mech_effects:0 "§G+2§! leader skill levels\n§G+33%§! leader exp gain"
+
+ trait_lrsk_gov_var_trait_enlightened_effect:0 "§G+1§! Envoys\n§G+10%§! trust growth\n§G+15%§! anomaly research speed\n§G+20%§! survey speed"
+
+ trait_lrsk_gov_var_trait_enlightened_hive_effect:0 "§G+1§! Envoys\n§G+10%§! trust growth\n§G+10%§! ship evasion chance\n§G+5%§! ship fire rate"
+ 
+ trait_lrsk_gov_var_trait_enlightened_mech_effect:0 "§G+1§! Archaeology skill\n§G+20%§! science ship disengage chance\n§G+15%§! anomaly research speed\n§G+20%§! survey speed"
 
  # admiral
  #:0 ""
@@ -78,10 +133,21 @@ l_spanish:
  SUBJECT_lrsk_gvp_vassal_prospector:0 "Prospecting Colony"
  SUBJECT_DESC_lrsk_gvp_vassal_prospector:1 "\nFor advanced development, this vassal has been tasked to find rare materials and turn over one-fifth of them to the overlord. (Taxed 20% of rare materials produced.)"
 
- ## Opinion Modifiers
+ SUBJECT_lrsk_gov_var_ward:0 "Ward"
+ SUBJECT_DESC_lrsk_gov_var_ward:1 "\nAnother alien civilization meddled the development of these vassals, raising them to the stars (possibly from pre-sapient beginnings). They are very independent and their masters gain £influence£ Influence, £society£ Society Research, and £unity£ Unity from the arrangement."
+ 
+ SUBJECT_lrsk_gov_var_sublight_vassal:0 "Sublight Vassal"
+ SUBJECT_DESC_lrsk_gov_var_sublight_vassal:1 "\nThis type of vassal began as the colony of another, established by a sub-lightspeed interstellar venture. Their overlord now keeps control through a monopoly on FTL tech... for now. They are able to do most things but are not diplomatically independent. They pay §Y15%§! of their monthly £energy£ Energy and £minerals£ Minerals, and §Y5%§! of their monthly £alloys£ Alloys and £consumer_goods£ Consumer Goods in tribute to their homeworld."
+ 
+ SUBJECT_lrsk_gov_var_sublight_satellite:0 "Sublight Satellite"
+ SUBJECT_DESC_lrsk_gov_var_sublight_satellite:1 "\nThis type of vassal began as the colony of another, established by a sub-lightspeed interstellar venture. They are able to do most things but are not diplomatically independent. Their overlord gains §Y+2§! £unity£ Unity and §Y+0.25§! £influence£ Influence per month from the arrangement."
+ 
+ SUBJECT_lrsk_gov_var_subject_chartered_company:0 "Chartered Colony"
+ SUBJECT_DESC_lrsk_gov_var_subject_chartered_company:1 "\nA subsidiary chartered joint-stock company set up as a colony. They can expand but not engage in diplomacy. They pay §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. Their overlord gets bonuses to £trade_value£ Trade Value and Market Fee discounts the more of these subjects it has."
+ lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
+ lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
 
- # New Fed Starts
- opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
+ ## Opinion Modifiers
 
  # Corp building specials
  opinion_lrsk_gvp_scandal_inflicted:0 "Exposed Our Scandals"
@@ -94,6 +160,9 @@ l_spanish:
 
  # Colonial Fiefs
  opinion_lrsk_gvp_loyal_explorer_vassal:0 "Grateful for New Start"
+
+ # Chartered Colony Stuff
+ opinion_lrsk_gvp_haughty_bigots:0 "Haughty Bigots"
 
  # Other civic interactions
  triggered_opinion_lrsk_gvp_civic_minded_spirit:0 "Civic-Minded Spirit"
@@ -432,14 +501,102 @@ l_spanish:
 
  ## Empire Modifiers
 
+ # Charter Colonial Company
+ decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
+ decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital."
+ decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\nIt will have the same Ethics and main species as your empire."
+
+ ## Empire Modifiers
+ 
  lrsk_gov_var_empire_endisnigh:0 "The End Is Nigh"
  lrsk_gov_var_empire_endisnigh_desc:0 "Doomsday cultists run rampant, given... well. You know. We have to prove them wrong!"
+ 
+ lrsk_gov_var_empire_enlightened:0 "Enlightened"
+ lrsk_gov_var_empire_enlightened_desc:0 "This empire's alien tutelege has left them eager to communicate and discover."
+  
+ lrsk_gov_var_empire_enlightened_hive:0 "Conditioned to Prevail"
+ lrsk_gov_var_empire_enlightened_hive_desc:0 "This hive mind has been painstakingly trained to give it every advantage in dealing with the other societies of the galaxy."
+ 
+ lrsk_gov_var_empire_enlightened_mech:0 "Curiosity Protocols"
+ lrsk_gov_var_empire_enlightened_mech_desc:0 "This machine intellect has had its operational heuristics optimized for gathering new data about the universe."
+
+ LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON:0 ", in imitation of how our tutor meddled with our people to spur our advancement."
+ 
+ lrsk_gov_var_empire_uplift_cycle:0 "Cycle of Uplift"
+ lrsk_gov_var_empire_uplift_cycle_desc:0 "We have raised a species to sapience$LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON$"
+ 
+ lrsk_gov_var_empire_enlighten_cycle:0 "Cycle of Enlightenment"
+ lrsk_gov_var_empire_enlighten_cycle_desc:0 "We have raised a civilization to the stars$LRSK_GOV_VAR_EMPIRE_CYCLE_COMMON$"
+
+ lrsk_gov_var_empire_black_box_drives:0 "Black Box Hyperdrives"
+ lrsk_gov_var_empire_black_box_drives_desc:0 "Due to restrictions enforced by its overlord, this empire only has access to second-rate feature-restricted hyperdrives lacking most diagnostic functions, which its pilots and engineers understand poorly."
+
+ lrsk_gov_var_empire_colony_red_tape:0 "Colonial Red Tape"
+ lrsk_gov_var_empire_black_box_drives_desc:0 "Colonial regulations and procedural requirements keep this empire's expansion in check to a certain degree. All for the good of the species, of course." 
+
+ lrsk_gov_var_empire_colony_penalty:0 "Trade Penalty"
+ lrsk_gov_var_empire_colony_penalty_desc:0 "Trade penalized by overlord." 
+
+ lrsk_gov_var_empire_colony_favors:0 "Trade Favors"
+ lrsk_gov_var_empire_colony_favors_desc:0 "Overlord favors them in trade."
+
+ lrsk_gov_var_empire_colony_opentrade:0 "Generous Trade Policy"
+ lrsk_gov_var_empire_colony_opentrade_desc:0 "Our open policy on trade makes our colonies happy, but there is an opportunity cost."
+
+ lrsk_gov_var_empire_colony_tradeadv:0 "Trade Advantage"
+ lrsk_gov_var_empire_colony_tradeadv_desc:0 "Our advantageous position over the colonies benefits our income from trade."
+ 
+ LRSK_GOV_VAR_COL_CORR:0 "Colonial Corruption"
+ lrsk_gov_var_empire_colonial_corruption_slight:0 "Slight $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_slight_desc:0 "What's a little grift here and there?"
+ lrsk_gov_var_empire_colonial_corruption_low:0 "Low $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_low_desc:0 "Bribery is the key that can open several doors in this colonial system."
+ lrsk_gov_var_empire_colonial_corruption_worrying:0 "Worrying $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_worrying_desc:0 "It's becoming difficult to do any kind of business without getting one's hands dirty."
+ lrsk_gov_var_empire_colonial_corruption_crippling:0 "Crippling $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_crippling_desc:0 "When everyone is on the take, being an honest official is a liability."
+ lrsk_gov_var_empire_colonial_corruption_entrenched:0 "Entrenched $LRSK_GOV_VAR_COL_CORR$"
+ lrsk_gov_var_empire_colonial_corruption_entrenched_desc:0 "A culture of corruption pervades the colonial administration, and it seems impossible to ever uproot."
+
+ lrsk_gov_var_empire_colonial_trade:0 "Colonial Trade Benefits"
+ lrsk_gov_var_empire_colonial_trade_1:0 "Colonial Trade Benefits"
+ lrsk_gov_var_empire_colonial_trade_2:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_3:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_4:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_5:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_6:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_7:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_8:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_9:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_10:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_11:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_12:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_13:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_14:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ lrsk_gov_var_empire_colonial_trade_15:0 "$lrsk_gov_var_empire_colonial_trade_1$"
+ 
+ lrsk_gov_var_empire_colonial_trade_desc:0 "Trade between the metropole and the chartered colonies yields great wealth."
+ lrsk_gov_var_empire_colonial_trade_1_desc:0 "Trade between the metropole and the chartered colonies yields great wealth."
+ lrsk_gov_var_empire_colonial_trade_2_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_3_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_4_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_5_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_6_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_7_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_8_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_9_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_10_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_11_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_12_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_13_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_14_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
+ lrsk_gov_var_empire_colonial_trade_15_desc:0 "$lrsk_gov_var_empire_colonial_trade_1_desc$"
 
  lrsk_gvp_empire_scandal_wracked:0 "Scandal-Wracked"
  lrsk_gvp_empire_scandal_wracked_desc:0 "Some scandal has damaged the prestige of this nation."
 
  lrsk_gvp_empire_offworld_work_bonus:0 "Offworld Worker Bonus"
- lrsk_gvp_empire_offworld_work_bonus_desc:0 "Contract laborers from our commercial partners are hard at work."
+ lrsk_gvp_empire_offworld_work_bonus_desc:0 "Guest workers from our many trade parters provide a boost to the productivity of our far-flung resource extraction posts."
  lrsk_gvp_empire_offworld_work_bonus_1:0 "$lrsk_gvp_empire_offworld_work_bonus$"
  lrsk_gvp_empire_offworld_work_bonus_2:0 "$lrsk_gvp_empire_offworld_work_bonus$"
  lrsk_gvp_empire_offworld_work_bonus_3:0 "$lrsk_gvp_empire_offworld_work_bonus$"
@@ -596,6 +753,72 @@ l_spanish:
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
  lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+ 
+ ## Opinion Modifiers
+
+ # New Fed Starts
+ opinion_lrsk_gov_var_new_feds:0 "Federated Beginning"
+
+ # Uplift
+ opinion_lrsk_gov_var_uplift_tutor:0 "Uplift Tutor"
+ opinion_lrsk_gov_var_uplift_pupil:0 "Uplift Pupil"
+ opinion_lrsk_gov_var_protective_uplift_tutor:0 "Protectiveness"
+ opinion_lrsk_gov_var_protective_uplift_tutor_d:0 "$opinion_lrsk_gov_var_protective_uplift_tutor$"
+ opinion_lrsk_gov_var_respected_uplift_tutor:0 "Respected by Pupil"
+ opinion_lrsk_gov_var_disrespected_uplift_tutor:0 "Uppity Pupil"
+ opinion_lrsk_gov_var_impressed_uplift_tutor:0 "Impressed by Pupil"
+
+ # Sublight Vassals
+ triggered_opinion_lrsk_gov_var_subject_rivals:0 "Rival Colonies" # Dissident/Loyalist relations
+ opinion_lrsk_gov_var_goodintro_sublight:0 "Inspiring Opening" # Good opening speech
+ opinion_lrsk_gov_var_badintro_sublight:0 "Discouraging Opening" # Bad opening speech
+ triggered_opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Beginnings" # Loyalists have passive approval
+ opinion_lrsk_gov_var_loyal_sublight:0 "Loyal Colony" # Loyalists have passive approval (decaying)
+ triggered_opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Beginnings" # Dissidents have passive disapproval
+ opinion_lrsk_gov_var_dsdnt_sublight:0 "Dissident Colony" # Dissidents have passive disapproval (decaying)
+ opinion_lrsk_gov_var_ftlmn_sublight:0 "FTL Patent License" # FTL monopoly keeps them at least acting happy
+ opinion_lrsk_gov_var_subpow_sublight:0 "Colonial Status Treaty" # Offsets initial power penalty somewhat for sublight origin overlords
+ #opinion_lrsk_gov_var_vasag_sublight:0 "$opinion_lrsk_gov_var_subpow_sublight$" # Reduce initial power penalty for sublight empires, wears off in 50 years.
+ #opinion_lrsk_gov_var_satag_sublight:0 "$opinion_lrsk_gov_var_subpow_sublight$" # Reduce initial power penalty for sublight commonwealths, wears off in 75 years.
+ opinion_lrsk_gov_var_subol_sublight:0 "Satisfied by Colonial Treaty" # Offsets any overlord distaste for vassals, wears off in 50 years (Commonwealth) or 25 years (Empire).
+ #opinion_lrsk_gov_var_vasol_sublight:0 "$opinion_lrsk_gov_var_subol_sublight$" # Offsets any overlord distaste for vassals, wears off in 25 years.
+ #opinion_lrsk_gov_var_satol_sublight:0 "$opinion_lrsk_gov_var_subol_sublight$" # Offsets any overlord distaste for satellites, wears off in 50 years.
+ opinion_lrsk_gov_var_oldire_sublight:0 "Impudent Wretches" # When you hate your vassal
+ opinion_lrsk_gov_var_resent_sublight:0 "Lingering Resentment" # This is how all colonies feel towards overlord after getting FTL.
+ opinion_lrsk_gov_var_thrall_sublight:0 "Kept Us In Thrall" # This is how dis/gsp colonies feel towards overlord after getting FTL.
+ opinion_lrsk_gov_var_ffree_sublight:0 "Finally Free of You" # This is how dis colonies also feel towards overlord after getting FTL.
+ opinion_lrsk_gov_var_ftlgift_sublight:0 "Offered FTL Tech" # This is how other colonies feel towards the colony that shares FTL tech with them.
+ opinion_lrsk_gov_var_carrot_sublight:0 "Favored Us" # Every time you favor one colony.
+ opinion_lrsk_gov_var_stick_sublight:0 "Spurned Us" # Every time you punish/deny one colony.
+ opinion_lrsk_gov_var_favors_sublight:0 "Playing Favorites" # Every time you favor one colony (felt by the rest).
+ opinion_lrsk_gov_var_benev_sublight:0 "Benevolent Rule" # Every time you favor all colonies.
+ opinion_lrsk_gov_var_leader_sublight:0 "Leadership" # This is how other colonies feel towards the colony that gets benefits for everyone.
+ opinion_lrsk_gov_var_stooge_sublight:0 "Overlord's Pet" # This is how other colonies feel towards the colony that gets benefits for just themselves.
+ opinion_lrsk_gov_var_colcorr_sublight:0 "$LRSK_GOV_VAR_COL_CORR$" # Every time colonial corruption rises.
+ opinion_lrsk_gov_var_endcorr_sublight:0 "Endemic Corruption" # Highest level of colonial corruption.
+ opinion_lrsk_gov_var_fedmad_sublight:0 "Abandoned the Federation" # If you yeet yourself out of a (non-heg) federation by colonial reform...
+ opinion_lrsk_gov_var_hegmad_sublight:0 "Left Hegemony Without Consent" # If you yeet yourself out of a hegemony by colonial reform...
+
+ # Chartered Colony vassals
+ triggered_opinion_lrsk_gov_var_colonial_mission:0 "Shared Colonial Mission" # Inherent trust, to offset power penalties
+
+ ## CBs/Wargoals
+
+ casus_belli_cb_lrsk_gov_var_hegemon:0 "Hegemon Reaction"
+ war_goal_wg_lrsk_gov_var_hegemon:0 "Reestablish Hegemony"
+ war_goal_wg_lrsk_gov_var_hegemon_desc:0 "War is waged to force the enemy to return to our Hegemony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new member of our Hegemony if they include at least one planet."
+
+ casus_belli_cb_lrsk_gov_var_subheg:0 "Sublight Hegemony"
+ war_goal_wg_lrsk_gov_var_subheg:0 "Enforce Colonial Reforms"
+ war_goal_wg_lrsk_gov_var_subheg_desc:1 "War is waged to force the enemy to join the rest of the former colonies in our Hegemony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new member of our Hegemony if they include at least one planet."
+
+ casus_belli_cb_lrsk_gov_var_subvas:0 "Sublight Subjugation"
+ war_goal_wg_lrsk_gov_var_subvas:0 "Enforce Colonial Reforms"
+ war_goal_wg_lrsk_gov_var_subvas_desc:1 "War is waged to subjugate the enemy as a Vassal, in line with the colonial system reforms.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new Vassal if they include at least one planet."
+
+ casus_belli_cb_lrsk_gov_var_colony:0 "Colonialism"
+ war_goal_wg_lrsk_gov_var_impchart:0 "Impose Charter"
+ war_goal_wg_lrsk_gov_var_impchart_desc:1 "War is waged to force the enemy to accept a colonial trading charter, subjugating it as a Chartered Colony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new Chartered Colony if they include at least one planet and the target will be forced into Tributary status for 10 years."
 
  ## Policies
 
@@ -963,6 +1186,295 @@ l_spanish:
 
  lrsk_gov_var_distributed_planning_systems.20.name:0 "$RESULT_STRING$ Inconclusive..."
  lrsk_gov_var_distributed_planning_systems.20.desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make, seeing no obvious avenues for improvement. This audit could not optimize production on [this.GetName] at this time."
+
+ # Sublight Empire/Commonwealth
+
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON:0 "§PThis will cause colonial corruption to increase!§!"
+
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_1:0 "Before we learned the secret of faster-than-light travel, we sent out several interstellar colony missions on conventional drives. Three of these have taken root in the nearest star systems: one is §Gloyal to our government and attempts to recreate our society§! on a new world, one lacked the benefit of cryosleep technology and so §Ygenerations lived and died on the colony ship before arrival§!, and the last is a kind of isle of misfits composed of §Rdissidents who rejected our governing ideals§!. Out of this mixed lot, we must forge"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_2:0 ".\n\nWe have constructed a legal framework of rights and obligations to tie our colonies"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_3:0 ":\n\n-Recognition of our legitimacy as leader of the arrangement.\n-Mutual aid and defense.\n-Strict regulation of further colonization efforts by the colonies.\n"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_4:0 "\n§HThese strictures take precedent over any other subject/client relation we may form.§! Hopefully, they will last us a good long time...\n\nIt is now the day of the signing ceremony, and we have the opportunity to deliver an address to set the tone for this new era of our civilization. What shall we say?"
+ lrsk_gov_var_sublight_origins.101.name:0 "The Sub-Light Colonial Charter"
+ lrsk_gov_var_sublight_origins.101.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_1$ an empire$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_2$ to us$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_3$-Limits on the use of hyperdrives, granting us an effective monopoly.\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_4$"
+ lrsk_gov_var_sublight_origins.101.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_1$ a commonwealth$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_2$ together$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_3$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_INTRO_4$"
+ lrsk_gov_var_sublight_origins.101.a:0 "Emphasize our willingness to work for the common good." # opinion boost, -25 Influence
+ lrsk_gov_var_sublight_origins.101.a.tooltip:0 "This will §Gplease§! the colonies."
+ lrsk_gov_var_sublight_origins.101.b:0 "Emphasize our power and authority." # opinion hit, +25 Influence
+ lrsk_gov_var_sublight_origins.101.b.tooltip:0 "This will §Rannoy§! the colonies."
+ lrsk_gov_var_sublight_origins.101.c:0 "Declare a tariff holiday." # opinion boost, trade malus for us, bonus to colonies
+ lrsk_gov_var_sublight_origins.101.c.tooltip:0 "For 10 years, §Rwe gain a trade value penalty§!, all colonies gain a trade value bonus. $lrsk_gov_var_sublight_origins.101.a.tooltip$"
+ lrsk_gov_var_sublight_origins.101.d:0 "Call in old debts." # opinion hit, trade bonus for us, malus to colonies
+ lrsk_gov_var_sublight_origins.101.d.tooltip:0 "For 10 years, §Gwe gain a trade value bonus§!, all colonies gain a trade value penalty. $lrsk_gov_var_sublight_origins.101.b.tooltip$"
+ lrsk_gov_var_sublight_origins.101.e:0 "Keep it vaguely inspirational." # no effect
+ lrsk_gov_var_sublight_origins.101.e.tooltip:0 "No special effect."
+ lrsk_gov_var_sublight_origins.101.f:0 "Slyly insinuate our openness to special deals." # trade bonus for us, +500 energy, colonial corruption
+ lrsk_gov_var_sublight_origins.101.f.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE:0 "An unfortunate development: it seems our underlings, the [from.GetName] have managed to reverse engineer the technology for hyperdrives and have upgraded their fleets with fully-functional drives.\n\n" 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS:0 "We always knew that our edge over them would not last forever, but it's never good to feel power slipping from one's grasp."
+ lrsk_gov_var_sublight_origins.4.name:0 "FTL Monopoly Broken!"
+ lrsk_gov_var_sublight_origins.4.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_PRE$It seems as though they got the technology from another of our vassals. Disloyalty runs rampant.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_BREAK_POS$"
+ lrsk_gov_var_sublight_origins.4.a:0 "So be it."
+ lrsk_gov_var_sublight_origins.4.a.tooltip:0 "§H[from.GetName]§! loses their 20% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # -25 influence
+ lrsk_gov_var_sublight_origins.4.b:0 "They will regret this!"
+ lrsk_gov_var_sublight_origins.4.b.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this, reducing their trade value by 10%. §RThis will upset them§!." # +100 influence
+ lrsk_gov_var_sublight_origins.4.c:0 "Maybe we should try the carrot now that the stick is gone..."
+ lrsk_gov_var_sublight_origins.4.c.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will grant them special favors, increasing their trade value by 10%. §GThis will please them§!, but §Rdisplease the other colonies§!. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.4.d:0 "After we treated them so well... The impudence..."
+ lrsk_gov_var_sublight_origins.4.d.tooltip:0 "$lrsk_gov_var_sublight_origins.4.a.tooltip$ We will penalize them for this every way we can! §RThis will upset them greatly§!." # +250 influence
+ lrsk_gov_var_sublight_origins.4.e:0 "Let's 'persuade' some key people over there..."
+ lrsk_gov_var_sublight_origins.4.e.tooltip:0 "You will attempt to bribe or otherwise entice key figures in the §H[from.GetName]§! government, which will §Gimprove their oppinion of us§!. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$" # -1000 energy
+
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PRE:0 "A message from the §H[from.GetName]§! has arrived:" 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_POS:0 "From the tone of the message, it's clear they expect some kind of recognition for this."
+ lrsk_gov_var_sublight_origins.43.name:0 "Laudable Loyalty?"
+ lrsk_gov_var_sublight_origins.43.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PRE$ They wish to inform us 'as a matter of diplomatic courtesy' that they have discovered and purged a 'rogue research team' that had attempted to develop hyperdrive technology and circumvent our control. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_POS$"
+ #lrsk_gov_var_sublight_origins.43.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PRE$ They convey the disturbing news that the §H[lrsk_sublight_ftl_cheater.GetName]§! attempted to share the illicit knowledge of hyperdrive technology with them. 'Of course, we ignored their disloyal envoys sent them away.' $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_POS$"
+ lrsk_gov_var_sublight_origins.43.a:0 "A reward is certainly in order."
+ lrsk_gov_var_sublight_origins.43.a.tooltip:0 "The §H[from.GetName]§! will be rewarded, but §Rother sublight vassals will resent this.§!"
+ lrsk_gov_var_sublight_origins.43.b:0 "They were just doing their duty."
+ lrsk_gov_var_sublight_origins.43.b.tooltip:0 "The §H[from.GetName]§! §Rwill be disappointed.§!" # +100 influence
+ lrsk_gov_var_sublight_origins.43.c:0 "A reward will set a good example."
+ lrsk_gov_var_sublight_origins.43.c.tooltip:0 "$lrsk_gov_var_sublight_origins.43.a.tooltip$"
+ lrsk_gov_var_sublight_origins.43.d:0 "Nevermind that, punish the traitors!"
+ #LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PUNISH:0 "We will penalize the §H[lrsk_sublight_ftl_cheater.GetName]§! for this, §Rwhich will upset them greatly.§!"
+ lrsk_gov_var_sublight_origins.43.d.tooltip:0 "$lrsk_gov_var_sublight_origins.43.b.tooltip$ $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PUNISH$" # +150 influence
+ lrsk_gov_var_sublight_origins.43.e:0 "All involved will get what they deserve."
+ lrsk_gov_var_sublight_origins.43.e.tooltip:0 "$lrsk_gov_var_sublight_origins.43.a.tooltip$ $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_FTL_PASS_PUNISH$" # +50 influence
+ lrsk_gov_var_sublight_origins.43.f:0 "Well then, prepare some appropriate... remarks."
+ lrsk_gov_var_sublight_origins.43.f.tooltip:0 "No special effect."
+
+ lrsk_gov_var_sublight_origins.5.name:0 "Upsetting the Status Quo"
+ lrsk_gov_var_sublight_origins.5.desc:0 "Envoys from our underlings in the §H[from.GetName]§! government have arrived with a distressing item of business. They claim to now have the ability to build their own hyperdrives. Understanding that deploying them would be against our interests, the are suggesting a trade: in exchange for respecting our monopoly on FTL travel, they request that various regulations on their activities be lifted."
+ lrsk_gov_var_sublight_origins.5.a:0 "Outrageous! Let them fly a little faster, we will not be blackmailed."
+ lrsk_gov_var_sublight_origins.5.a.tooltip:0 "§H[from.GetName]§! will be upset, and will lose their 25% penalty to hyperdrive wind-up and wind-down speed as they deploy their own hyperdrives." # +100 influence
+ lrsk_gov_var_sublight_origins.5.b:0 "Perhaps making a deal is for the best..."
+ lrsk_gov_var_sublight_origins.5.b.tooltip:0 "§H[from.GetName]§! will be pleased, and will lose their 20% reduction in expansion speed."
+ lrsk_gov_var_sublight_origins.5.c:0 "$lrsk_gov_var_sublight_origins.5.b$"
+ lrsk_gov_var_sublight_origins.5.c.tooltip:0 "§H[from.GetName]§! will be pleased, and will gain a 5% bonus to trade value."
+
+ lrsk_gov_var_sublight_origins.6.name:0 "Colonial Negotiations"
+ lrsk_gov_var_sublight_origins.6.desc:0 "One of our colonies has sent an envoy to complain about colonial regulations. It seems the §H[from.GetName]§! feels that they are too onerous, outdated, and ultimately not in anyone's interest, and suggest they be lifted."
+ lrsk_gov_var_sublight_origins.6.a:0 "Perhaps this is for the best..."
+ lrsk_gov_var_sublight_origins.6.a.tooltip:0 "All sublight colonies will lose their 20% reduction in expansion speed. They will be pleased."
+ lrsk_gov_var_sublight_origins.6.b:0 "The squeaky wheel gets the grease!"
+ lrsk_gov_var_sublight_origins.6.b.tooltip:0 "§H[from.GetName]§! will lose their 20% reduction in expansion speed, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.6.c:0 "No, we need to maintain control for the good of all [this.GetSpeciesName]kind."
+ lrsk_gov_var_sublight_origins.6.c.tooltip:0 "No restrictions lifted. All sublight colonies will be upset." # +100 influence
+ lrsk_gov_var_sublight_origins.6.d:0 "Cutting some red tape may be good for us all."
+ lrsk_gov_var_sublight_origins.6.d.tooltip:0 "All sublight colonies will gain a 10% bonus to trade value. They will be pleased. We will lose 5% of our trade value."
+ lrsk_gov_var_sublight_origins.6.e:0 "It's clear what the §H[from.GetName]§! is really after..."
+ lrsk_gov_var_sublight_origins.6.e.tooltip:0 "§H[from.GetName]§! will gain a 10% bonus to trade value, which they will appreciate. Other colonies will be displeased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.6.f:0 "No, there are rules for a reason."
+ lrsk_gov_var_sublight_origins.6.f.tooltip:0 "All sublight colonies will be upset." # +100 influence
+ lrsk_gov_var_sublight_origins.6.g:0 "Perhaps we can work something out with the envoy..."
+ lrsk_gov_var_sublight_origins.6.g.tooltip:0 "Bribe the envoy to accept a suitable excuse. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_COL_CORR_COMMON$"
+ lrsk_gov_var_sublight_origins.6.h:0 "It's clear we are not making the case for our leadership well enough."
+ lrsk_gov_var_sublight_origins.6.h.tooltip:0 "A mass media campaign to persuade the colonies to respect our leadership will increase their opinion of us and provide a longer repreive from their complaints. §YWe will not be able to try this again for 15 years.§!" # -50 influence
+
+ lrsk_gov_var_sublight_origins.70.name:0 "Revising the Deal"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1:0 "Certain voices in our government are calling into question aspects of the sublight colonial arrangement."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_C:0 "colonial exploration and colonization regulations, originally intended for colonist safety, are just stifling our own economic growth and potential now that the galaxy is better known."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_F:0 "hyperdrive patent is a paranoid measure that limits our colonies' ability to contribute to mutual defense."
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2:0 "In any case, restrictions like this are hindering relations with the colonies that prevent more advanced forms of organization. Is it time to make a change?"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_N:0 "§HThis is necessary for deeper reforms of the system.§!"
+ lrsk_gov_var_sublight_origins.70.desc.a:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1$ They say that the $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_C$\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2$"
+ lrsk_gov_var_sublight_origins.70.desc.b:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1$ They say that the $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_F$\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2$"
+ lrsk_gov_var_sublight_origins.70.desc.c:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_1$ They say that the $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_C$ Still others say that the $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_F$ Perhaps both points of view have merit.\n\n$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_2$" 
+ lrsk_gov_var_sublight_origins.70.a:0 "The exploration and colonization regulations have to go."
+ lrsk_gov_var_sublight_origins.70.a.tooltip:0 "$lrsk_gov_var_sublight_origins.6.a.tooltip$ $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_N$"
+ lrsk_gov_var_sublight_origins.70.b:0 "Release the FTL data, time for the colonies to catch up."
+ lrsk_gov_var_sublight_origins.70.b.tooltip:0 "All sublight colonies will lose their 25% penalty to hyperdrive speed. They will be pleased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_N$"
+ lrsk_gov_var_sublight_origins.70.c:0 "For the sake of advancement, lift both restrictions."
+ lrsk_gov_var_sublight_origins.70.c.tooltip:0 "All sublight colonies will lose both their 25% penalty to hyperdrive speed and their 20% reduction in expansion speed. They will be very pleased. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REVISE_N$"
+ lrsk_gov_var_sublight_origins.70.d:0 "This is worth considering... later."
+ lrsk_gov_var_sublight_origins.70.d.tooltip:0 "Nothing will happen right now, but §Yyou may be asked about this again in about 10 years.§!"
+ lrsk_gov_var_sublight_origins.70.e:0 "Don't bother me with this whining again."
+ lrsk_gov_var_sublight_origins.70.e.tooltip:0 "Nothing will change, and §Ryou will not be asked about this again.§!"
+
+ lrsk_gov_var_sublight_origins.7.name:0 "Time for a Change?"
+ lrsk_gov_var_sublight_origins.7.desc:0 "So far, the arrangement we've maintained with our interstellar sublight colonies has gone smoothly enough. However, it's possible that the colonial structure may become too inflexible, or deprive us of sufficient benefits. We may want to think about changing the arrangement."
+ lrsk_gov_var_sublight_origins.7.a:0 "Perhaps we should consider this."
+ lrsk_gov_var_sublight_origins.7.a.tooltip:0 "Get the Colonial Restructuring special project."
+ 
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING:0 "Colonial Restructuring"
+ LRSK_GOV_VAR_COLONIAL_RESTRUCTURING_DESC:0 "To reconsider the current state of affairs with our sublight colonies, we will set a team of social science and history experts to model alternatives. §HThis will result in some form of major diplomatic change.§! One option may §Rradically alter your diplomatic situation§! if you are part of a federation but not its leader. However, you will not have to make any final decision immediately."
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED:0 "All sublight colonies will be given the offer to be released as independent nations as part of a federation we will lead. If we are members of a federation already but not the leader, §Pwe will leave it and form a new one.§! If we are already the leader of a federation, §Hthey will join it as independent nations rather than subjects.§! Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FEDTYPE:0 "If we form a new federation, it will be a"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS:0 "All sublight colonies will be given the offer to become ordinary vassals, §Hwhich will allow us to integrate them.§! Colonies that refuse the offer will become independent"
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VASTYPE:0 "\n\n(Note: Integration is optional. If we have the ability to change a vassal's type due to some other civic or any other reason, this would also allow for that.)"
+ lrsk_gov_var_sublight_origins.8.name:0 "Time to Decide"
+ lrsk_gov_var_sublight_origins.8.desc:0 "Our study of colonial restructuring is complete. It seems there are two possible problems that may arise, each with their own solutions.\n\nOn the one hand, the colonies may be chaffing under the colonial system and desire independence more and more as they grow and become stronger. A solution to this would be to §Hrelease them as independent nations but under the aegis of an interstellar organization we would lead§!. This would sate their need for autonomy and ensure that their strength would still be on our side.\n\nOn the other hand, the indirect nature of colonial rule may be outdated and inefficient from an economic perspective. Perhaps it would be better to §Hintegrate the colonies as part of our nation§!. We would need to first change the arrangement to halt colonial expansion entirely with the goal of negotiating the integration with each colony, one by one.\n\nBear in mind that, however we choose to proceed, the colonies may or may not agree to these reforms. Any colony that does not could cite the drastic nature of this proposed change to the colonial charter as a pretext to sever ties with us. However, the better our relationship with a colony, the less likely this will be to happen."
+ lrsk_gov_var_sublight_origins.8.a.empire:0 "It's time to loosen the reins a bit."
+ lrsk_gov_var_sublight_origins.8.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED$, but we will get a CB to force them to join. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FEDTYPE$ §HHegemony§!."
+ lrsk_gov_var_sublight_origins.8.b.empire:0 "Time to reap the fruits of our labor."
+ lrsk_gov_var_sublight_origins.8.b.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS$, but we will get a Subjugation CB against them.$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VASTYPE$"
+ lrsk_gov_var_sublight_origins.8.a.commonwealth:0 "It's time to walk with the colonies as equals."
+ lrsk_gov_var_sublight_origins.8.a.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FED$. $LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_FEDTYPE$ §HGalactic Union§!."
+ lrsk_gov_var_sublight_origins.8.b.commonwealth:0 "Time to bring them all home."
+ lrsk_gov_var_sublight_origins.8.b.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VAS$.$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_DECIDE_VASTYPE$"
+ lrsk_gov_var_sublight_origins.8.c:0 "Maybe we should... think this over a bit."
+ lrsk_gov_var_sublight_origins.8.c.tooltip:0 "The reform plan will be postponed. You will be asked to reconsider it in §H10 years§!."
+ lrsk_gov_var_sublight_origins.8.d:0 "This is all too drastic, forget it!"
+ lrsk_gov_var_sublight_origins.8.d.tooltip:0 "Cancel all plans to reform the colonial system. §RThis choice is permenant, you will not get the option for reform again!§!"
+
+ lrsk_gov_var_sublight_origins.81.name:0 "Reform plan completed, but..."
+ lrsk_gov_var_sublight_origins.81.desc:0 "We have completed the proposal for colonial system reforms, but it seems moot because the colonial system is in disarray. Nonetheless, we can keep it on file in case things settle down."
+ lrsk_gov_var_sublight_origins.81.a:0 "Very well."
+ lrsk_gov_var_sublight_origins.81.a.tooltip:0 "We will be prompted to engage in colonial reform sometime after we have valid sublight colonies again."
+
+ lrsk_gov_var_sublight_origins.9.name:0 "Offer Accepted!"
+ lrsk_gov_var_sublight_origins.9.desc:0 "§H[from.GetName]§! has accepted the proposed restructuring."
+ lrsk_gov_var_sublight_origins.9.a.fed:0 "It's all coming together."
+ lrsk_gov_var_sublight_origins.9.a.fed.tooltip:0 "§H[from.GetName]§! will join our federation as an independent nation."
+ lrsk_gov_var_sublight_origins.9.a.vas:0 "$lrsk_gov_var_sublight_origins.9.a.fed$"
+ lrsk_gov_var_sublight_origins.9.a.vas.tooltip:0 "§H[from.GetName]§! will become a normal vassal. We will have the option to integrate them."
+ 
+ LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE:0 "§H[from.GetName]§! becomes independent."
+ lrsk_gov_var_sublight_origins.10.name:0 "Offer Refused..."
+ lrsk_gov_var_sublight_origins.10.desc:0 "§H[from.GetName]§! has rejected the proposed restructuring."
+ lrsk_gov_var_sublight_origins.10.a.empire:0 "We'll get them for this!"
+ lrsk_gov_var_sublight_origins.10.a.empire.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE$ We may declare war to force their compliance."
+ lrsk_gov_var_sublight_origins.10.a.commonwealth:0 "Unfortunate... Well, good luck out there!"
+ lrsk_gov_var_sublight_origins.10.a.commonwealth.tooltip:0 "$LRSK_GOV_VAR_SUBLIGHT_ORIGINS_REFUSE$"
+ 
+ # Uplift
+ 
+ LRSK_UPLIFT_INTRO_COMMON:0 "has been raised to the stars by the intervention of an advanced alien tutor. How did this relationship begin? And why? What potential did this alien benefactor see?"
+ LRSK_UPLIFT_TOOLT_COMMON:0 "species trait, giving the following benefit to all [this.GetSpeciesName] pops:\n\n"
+ LRSK_UPLIFT_TOOLT_NOUPLIFT:0 "We were not uplifted,"
+ LRSK_UPLIFT_TOOLT_HIVE_UNTHINK:0 "As unthinking creatures, they called us"
+ LRSK_UPLIFT_TOOLT_MECH_UNTHINK:0 "Simple learning algorithms allowing"
+ LRSK_UPLIFT_TOOLT_NORM_UNTHINK:0 "Clever animals that seemed"
+ 
+ lrsk_gov_var_uplift.4.name:0 "Your Story So Far..."
+ lrsk_gov_var_uplift.4.desc:0 "Your hive $LRSK_UPLIFT_INTRO_COMMON$"
+ lrsk_gov_var_uplift.4.a:0 "$LRSK_UPLIFT_TOOLT_HIVE_UNTHINK$ Swarmers..."
+ lrsk_gov_var_uplift.4.a.tooltip:0 "§LEven before thought, we displayed a useful fecundity and resilience.§!\n\nGain the §HSwarmers§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_starborn_hive_effects$"
+ lrsk_gov_var_uplift.4.b:0 "$LRSK_UPLIFT_TOOLT_HIVE_UNTHINK$ Pack-Runners..."
+ lrsk_gov_var_uplift.4.b.tooltip:0 "§LOur instinctive capacity for teamwork suggested the potential for higher thought.§!\n\nGain the §HPack-Runners§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_earthbound_hive_effects$"
+ lrsk_gov_var_uplift.4.c:0 "$LRSK_UPLIFT_TOOLT_HIVE_UNTHINK$ Skirmishers..."
+ lrsk_gov_var_uplift.4.c.tooltip:0 "§LOur mindless hives were always at war, and strife made us clever.§!\n\nGain the §HSkirmishers§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_proles_hive_effects$"
+ lrsk_gov_var_uplift.4.d:0 "$LRSK_UPLIFT_TOOLT_NOUPLIFT$ we were trained."
+ lrsk_gov_var_uplift.4.d.tooltip:0 "§LOur hive was awake and intelligent. They trained it to compete against the other minds of the galaxy.§!\n\nGain the §HConditioned to Prevail§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_hive_effect$"
+ 
+ lrsk_gov_var_uplift.5.name:0 "$lrsk_gov_var_uplift.4.name$"
+ lrsk_gov_var_uplift.5.desc:0 "Your machine intelligence $LRSK_UPLIFT_INTRO_COMMON$"
+ lrsk_gov_var_uplift.5.a:0 "$LRSK_UPLIFT_TOOLT_MECH_UNTHINK$ Pattern Analysis..."
+ lrsk_gov_var_uplift.5.a.tooltip:0 "§LOur early pattern analysis subroutines were already at the brink of spaience.§!\n\nGain the §H$lrsk_gov_var_trait_natural_intellectuals_mech$§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_natural_intellectuals_mech_effects$"
+ lrsk_gov_var_uplift.5.b:0 "$LRSK_UPLIFT_TOOLT_MECH_UNTHINK$ Skill Emulation..."
+ lrsk_gov_var_uplift.5.b.tooltip:0 "§LOur subroutines replicating sapient skill could be bootstrapped to true thought.§!\n\nGain the §H$lrsk_gov_var_trait_conservative_mech$§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_proles_mech_effects$"
+ lrsk_gov_var_uplift.5.c:0 "$LRSK_UPLIFT_TOOLT_MECH_UNTHINK$ Profiling..."
+ lrsk_gov_var_uplift.5.c.tooltip:0 "§LOur library of sapient minds made it almost too easy to raise us to that level.§!\n\nGain the §H$lrsk_gov_var_trait_proles_mech$! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_conservative_mech_effects$"
+ lrsk_gov_var_uplift.5.d:0 "$LRSK_UPLIFT_TOOLT_NOUPLIFT$ we were upgraded."
+ lrsk_gov_var_uplift.5.d.tooltip:0 "§LOur system was self-aware already, but optimized by them for exploration and discovery.§!\n\n Gain the §HCuriosity Protocols§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_mech_effect$"
+ 
+ lrsk_gov_var_uplift.6.name:0 "$lrsk_gov_var_uplift.4.name$"
+ lrsk_gov_var_uplift.6.desc:0 "Your civilization $LRSK_UPLIFT_INTRO_COMMON$"
+ lrsk_gov_var_uplift.6.a:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ Starborn..."
+ lrsk_gov_var_uplift.6.a.tooltip:0 "§LOur animal ancestors seemed to always be looking beyond, to the stars.§!\n\nGain the §HStarborn§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_starborn_effects$"
+ lrsk_gov_var_uplift.6.b:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ Earthbound..."
+ lrsk_gov_var_uplift.6.b.tooltip:0 "§LOur instinctive bias towards a home territory seemed useful.§!\n\nGain the §HEarthbound§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_earthbound_effects$"
+ lrsk_gov_var_uplift.6.c:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ nearly Intellectual..."
+ lrsk_gov_var_uplift.6.c.tooltip:0 "§LOur uncanny intuition and inventiveness showed great promise.§!\n\nGain the §HNatural Intellectuals§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_natural_intellectuals_effects$"
+ lrsk_gov_var_uplift.6.d:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ like Proles..."
+ lrsk_gov_var_uplift.6.d.tooltip:0 "§LOur great strength and tenacity could be put to work.§!\n\nGain the §HProles§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_proles_effects$"
+ lrsk_gov_var_uplift.6.e:0 "$LRSK_UPLIFT_TOOLT_NORM_UNTHINK$ oddly Conservative..."
+ lrsk_gov_var_uplift.6.e.tooltip:0 "§LOur beastly stubbornness seemed like a challenge.§!\n\nGain the §HConservative§! $LRSK_UPLIFT_TOOLT_COMMON$$lrsk_gov_var_trait_conservative_effects$"
+ lrsk_gov_var_uplift.6.f:0 "$LRSK_UPLIFT_TOOLT_NOUPLIFT$ we were enlightened."
+ lrsk_gov_var_uplift.6.f.tooltip:0 "§LOur civilization was young and meeting aliens has left us yearning to discover more.§!\n\nGain the §HEnlightened§! empire modifier, granting:\n\n$trait_lrsk_gov_var_trait_enlightened_effect$"
+ 
+ lrsk_gov_var_uplift.8.hive.desc:0 "[Root.GetSpeciesNamePlural]. Know that for years our collective has watched over you through countless eyes from the [lrsk_uplift_watchpost_star.GetName] system. Now that [Root.GetSpeciesNamePlural] are expanding to the stars, we have decided that this system no longer needs to be a part of the [lrsk_my_uplift_tutor.GetName]. We gift it to you."
+ lrsk_gov_var_uplift.8.mech.desc:0 "Attention [Root.GetSpeciesNamePlural]: New resources are available. Watchpost facility at [lrsk_uplift_watchpost_star.GetName] system has been designated for deprecation from the [lrsk_my_uplift_tutor.GetName] as superfluous now that [Root.GetSpeciesNamePlural] are engaged in interstellar travel. Option: The [lrsk_uplift_pupil.GetName] may assume ownership."
+ lrsk_gov_var_uplift.8.norm.desc:0 "Hello, [Root.GetSpeciesNamePlural]. We are filled with pride to see you set off into the stars for the first time as we once did. In the years our people have observed and guided you from the [lrsk_uplift_watchpost_star.GetName] system, we always knew this day would come. That said, perhaps that old watchpost facility is no longer needed. As a commencement gift, we would transfer it to you."
+ lrsk_gov_var_uplift.8.hive.a:0 "We welcome it into our collective."
+ lrsk_gov_var_uplift.8.mech.a:0 "Confirmed: New resources to be incorporated."
+ lrsk_gov_var_uplift.8.norm.a:0 "You have our thanks. We will not let you down."
+ lrsk_gov_var_uplift.8.a.tooltip:0 "We will gain control of the [lrsk_uplift_watchpost_star.GetName] system and the fleet stationed there."
+ lrsk_gov_var_uplift.8.hive.b:0 "What if our collective is unready, however?"
+ lrsk_gov_var_uplift.8.mech.b:0 "Warning: Unclear if our systems are prepared."
+ lrsk_gov_var_uplift.8.norm.b:0 "That's kind but... it's a scary galaxy out here!"
+ lrsk_gov_var_uplift.8.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will continue to protect us from the starbase in [lrsk_uplift_watchpost_star.GetName] system. The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us." # +unity
+ 
+ lrsk_gov_var_uplift.11.hive.desc:0 "Curious. [Root.GetSpeciesNamePlural] have spawned a novel design... Rather than watching the planetboud from afar, they build their observation post directly above the primitives' world? The [lrsk_my_uplift_tutor.GetName] watches in all directions and sees all, but looking back, somehow we can see even more clearly."
+ lrsk_gov_var_uplift.11.mech.desc:0 "Query for [Root.GetName]: Unexpected custodial behavior. When the [lrsk_my_uplift_tutor.GetName] uplifted [Root.GetSpeciesNamePlural], the ideal vantage point was determined to be in a nearby system. Does building directly above a primitive world offer some uncalculated advantage?"
+ lrsk_gov_var_uplift.11.norm.desc:0 "Clever [Root.GetSpeciesNamePlural]! Building your watchpost for planetbound primitives directly above thier world? Instead of lightyears away? What a good idea. Why didn't we think of it!"
+ lrsk_gov_var_uplift.11.hive.a:0 "Our intellectual growth overwhelms the [lrsk_my_uplift_tutor.GetName]!"
+ lrsk_gov_var_uplift.11.mech.a:0 "Offer: To upgrade [lrsk_my_uplift_tutor.GetName] planning algorithms."
+ lrsk_gov_var_uplift.11.norm.a:0 "Perhaps the student has surpassed the master?"
+ lrsk_gov_var_uplift.11.a.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will §Rnot appreciate§! your attitude." # +100 influence
+ lrsk_gov_var_uplift.11.hive.b:0 "Doubt besets our billions of minds, however."
+ lrsk_gov_var_uplift.11.mech.b:0 "Risk factors within limits, but still worrying."
+ lrsk_gov_var_uplift.11.norm.b:0 "Here's hoping it doesn't backfire..."
+ lrsk_gov_var_uplift.11.b.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] may become more disposed to protectiveness of us."
+ lrsk_gov_var_uplift.11.hive.c:0 "Only with your guidance could our collective develop so far."
+ lrsk_gov_var_uplift.11.mech.c:0 "All systems upgrade based on prior designs."
+ lrsk_gov_var_uplift.11.norm.c:0 "We saw farther for standing on the shoulders of giants."
+ lrsk_gov_var_uplift.11.c.tooltip:0 "The [lrsk_my_uplift_tutor.GetName] will §Gappreciate§! your attitude." # +50 influence
+
+ LRSK_UPLIFT_REWARD_COMMON:0 "of the [lrsk_uplift_grandchild.GetName] reminds us of our roots and fills us with pride. We have come so far that we now advance the progress of primitives, as our tutors once did for us."
+
+ lrsk_gov_var_uplift.120.name:0 "Uplift of the [lrsk_uplift_grandchild.GetName]"
+ lrsk_gov_var_uplift.120.desc:0 "The successful uplift $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.120.a:0 "Our role in the cycle of galactic life is confirmed."
+ lrsk_gov_var_uplift.120.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_uplift_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!."
+ lrsk_gov_var_uplift.120.b:0 "Great, but don't bug me with this again."
+ lrsk_gov_var_uplift.120.b.tooltip:0 "$lrsk_gov_var_uplift.120.a.tooltip$\n\n§PYou will not see this message again.§!"
+
+ lrsk_gov_var_uplift.130.name:0 "Enlightenment of the [lrsk_uplift_grandchild.GetName]"
+ lrsk_gov_var_uplift.130.desc:0 "The successful enlightenment $LRSK_UPLIFT_REWARD_COMMON$"
+ lrsk_gov_var_uplift.130.a:0 "$lrsk_gov_var_uplift.120.a$"
+ lrsk_gov_var_uplift.130.a.tooltip:0 "Grants the §H$lrsk_gov_var_empire_enlighten_cycle$§! empire modifier for 5 years, increasing £unity£ §Y$unity$§! gain by 10%§! and £happiness£ §YHappiness§! by §G5%§!."
+ lrsk_gov_var_uplift.130.b:0 "$lrsk_gov_var_uplift.120.b$"
+ lrsk_gov_var_uplift.130.b.tooltip:0 "$lrsk_gov_var_uplift.130.a.tooltip$\n\n§PYou will not see this message again.§!"
+
+ lrsk_gov_var_uplift.14.hive.desc:0 "Fascinating. The [Root.GetSpeciesNamePlural] have raised new sapient life to the galatic collective. We are parent to billions of offsrping, but the [Root.GetName] may be the most impressive of them all."
+ lrsk_gov_var_uplift.14.mech.desc:0 "Recent actions by the [Root.GetName] are of high interest. In upgrading the [Root.GetSpeciesNamePlural], has the [lrsk_my_uplift_tutor.GetName] initiated some recursive process? This merits further analysis."
+ lrsk_gov_var_uplift.14.norm.desc:0 "Oh. Oh! You've really done it... You're following in our footsteps so well that now your people are parents to another! And we are so proud to be 'grandparents,' well done!"
+ lrsk_gov_var_uplift.14.hive.a:0 "This cycle unites all with purpose."
+ lrsk_gov_var_uplift.14.mech.a:0 "Analysis: Merely pursuing curiosity as programmed by [lrsk_my_uplift_tutor.GetName]."
+ lrsk_gov_var_uplift.14.norm.a:0 "It worked out for us, so why not?"
+ lrsk_gov_var_uplift.14.a.tooltip:0 "Uplifting or Enlightening will §Gimprove [lrsk_my_uplift_tutor.GetName]'s opinion§! of you."
+
+ # Chartered Colony Stuff
+
+ lrsk_gov_var_chartered.2.name:0 "Status of the [from.GetName]"
+ lrsk_gov_var_chartered.2.desc.a:0 "The [from.GetSpeciesNamePlural] of the [from.GetName] have submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us. Shall we?"
+ lrsk_gov_var_chartered.2.desc.b:0 "The [from.GetName] has been organized as a semi-autonomous territory under our direction. We have the option of imposing a colonial charter so they will operate as a colonial trading and extraction company. Shall we?"
+ lrsk_gov_var_chartered.2.a:0 "Put some trustworthy [from.GetSpeciesNamePlural] in charge."
+ lrsk_gov_var_chartered.2.a.tooltip:0 "Make [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThey will retain their governing Ethics and their main species will remain [from.GetSpeciesName]."
+ lrsk_gov_var_chartered.2.b:0 "A new colonial company should prove lucrative."
+ lrsk_gov_var_chartered.2.b.tooltip:0 "Make [from.GetName] into a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§!, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$"
+ lrsk_gov_var_chartered.2.c:0 "Yes, but [from.GetSpeciesNamePlural] cannot be trusted to govern themselves."
+ lrsk_gov_var_chartered.2.c.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$SUBJECT_lrsk_gov_var_subject_chartered_company$§! subject under us. This type of subject is defined as follows:\n$SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural].\n\n§YXenophile§! empires in contact with the [from.GetName] §Rwill be outraged by this.§!"
+ lrsk_gov_var_chartered.2.d:0 "Not necessary."
+ lrsk_gov_var_chartered.2.d.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
+
+ lrsk_gov_var_chartered.20.name:0 "Overthrow of the [lrsk_subject_to_charter.GetName]"
+ lrsk_gov_var_chartered.20.desc.a:0 "As if their subjugation by the [lrsk_chartering_agent.GetName] were not humiliation enough, these new overlords of the [lrsk_subject_to_charter.GetSpeciesName] people of the [lrsk_subject_to_charter.GetName] do not consider [lrsk_subject_to_charter.GetSpeciesNamePlural] fit to govern themselves. In the name of 'enlightening the savage xeno' the [lrsk_chartering_agent.GetName] has decided to abolish the [lrsk_subject_to_charter.GetName], installing a new puppet regime led by [lrsk_chartering_agent.GetSpeciesNamePlural] from [lrsk_chartering_agent.capital_scope.GetName]."
+lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power were not humiliation enough, the new overlords of the [lrsk_subject_to_charter.GetSpeciesName] people of the [lrsk_subject_to_charter.GetName] do not consider [lrsk_subject_to_charter.GetSpeciesNamePlural] fit to govern themselves. In the name of 'enlightening the savage xeno' the new overlords have decided to abolish the [lrsk_subject_to_charter.GetName], installing a new puppet regime led by their own species."
+ lrsk_gov_var_chartered.20.a:0 "Woe to the vanquished..."
+ lrsk_gov_var_chartered.20.b:0 "How dare they!"
+ lrsk_gov_var_chartered.20.b.tooltip:0 "This has §Pworsened our relations§! with the [lrsk_chartering_agent.GetName]."
+ lrsk_gov_var_chartered.20.c:0 "How awful!"
+
+ LRSK_GOV_VAR_TRADE_NOTICE_COMMON:0 "Check the Empire Status screen to see the effect of this as an empire modifier."
+ lrsk_gov_var_chartered.4.name:0 "Balance of Colonial Trade"
+ lrsk_gov_var_chartered.4.desc:0 "The regular assessment of colonial trade benefits has been conducted. Every $SUBJECT_lrsk_gov_var_subject_chartered_company$ subject contributes a §G+2%§! £trade_value£ $TRADE_VALUE$ bonus and a §G-1%§! Market Fee discount."
+ lrsk_gov_var_chartered.4.a:0 "Let's see how things stand."
+ lrsk_gov_var_chartered.4.a.tooltip:0 "$LRSK_GOV_VAR_TRADE_NOTICE_COMMON$"
+ lrsk_gov_var_chartered.4.b:0 "That will do for now."
+ lrsk_gov_var_chartered.4.b.tooltip:0 "$LRSK_GOV_VAR_TRADE_NOTICE_COMMON$ §YYou will not be notified about this again for six months.§!"
+ lrsk_gov_var_chartered.4.c:0 "Great, but don't bug me with this again."
+ lrsk_gov_var_chartered.4.c.tooltip:0 "$LRSK_GOV_VAR_TRADE_NOTICE_COMMON$ §PYou will not see this message ever again.§!"
+
+ # Explainers
+ lrsk_gov_var_chartered.101.name:0 "The 'Honorable Old Company'"
+ lrsk_gov_var_chartered.101.desc:0 "The §Y$lrsk_gov_var_civic_mc_chart_corp_board$§! Civic is designed to emulate historical colonial joint-stock corporations like the British East India Company. Many European nations created companies like this in the early age of exploration and colonization. These nations did not actually have the funds to finance colonial ventures nor the administrative capacity to govern distant lands, so they created these companies as a form of indirect control over extraction: by selling stock in the company, they could raise the initial money (with the promise of a return to the initial investors) while also taxing all the trade between the colonies they created and the mother country.\n\nSince early game Stellaris is set in a new 'age of exploration and colonization,' this seemed like a good fit for a civic with its own playstyle. It puts you in the role of a mixed private/public entity called a §Y$lrsk_gov_var_gov_colonial_charter_board$§!, a kind of public holding corporation that 'charters' colonial companies. The way this works is: when you obtain a vassal, you should eventually be given a choice to turn them into a §Y$SUBJECT_lrsk_gov_var_subject_chartered_company$§! vassal. These pay you §G10%§! of their monthly £energy£ Energy and £minerals£ Minerals in taxes. You also get §G+2%§! £trade_value£ Trade Value and §G-1%§! Market Fee discount for each $SUBJECT_lrsk_gov_var_subject_chartered_company$ under your control. They also inherently like you more as an overlord, so you will have an easier time maintaining control over several of them."
+ lrsk_gov_var_chartered.101.a:0 "Let's get down to business!"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
