@@ -1191,6 +1191,7 @@ planet_event = {
 	immediate = {
 		log = "Caught uplift event."
 		save_event_target_as = lrsk_uplift_first_uplift_planet
+		from = { save_event_target_as = lrsk_uplift_grandchild }
 		owner = {
 			if = {
 				limit = { has_modifier = lrsk_gov_var_empire_uplift_cycle }
@@ -1228,7 +1229,7 @@ planet_event = {
 
 			if = {
 				limit = { NOT = { has_country_flag = lrsk_uplift_no_reward_notice } }
-				country_event = { id = lrsk_gov_var_uplift.120 days = 2 }
+				country_event = { id = lrsk_gov_var_uplift.120 }
 			}
 		}
 	}
@@ -1292,6 +1293,7 @@ country_event = {
 	immediate = {
 		log = "Caught enlightenment event."
 		set_country_flag = lrsk_enlightened_counted
+		this = { species = { save_event_target_as = lrsk_uplift_grandchild } }
 		capital_scope = { save_event_target_as = lrsk_uplift_first_enlighten_planet }
 		from = {
 			if = {
@@ -1330,7 +1332,7 @@ country_event = {
 
 			if = {
 				limit = { NOT = { has_country_flag = lrsk_enlighten_no_reward_notice } }
-				country_event = { id = lrsk_gov_var_uplift.130 days = 2 }
+				country_event = { id = lrsk_gov_var_uplift.130 }
 			}
 		}
 	}
