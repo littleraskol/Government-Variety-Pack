@@ -3,32 +3,32 @@
 # Author: littleraskol
 
 # Sublight
-war_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 999
-			OR = {
-				using_war_goal = {
-					type = wg_lrsk_gov_var_subvas
-					owner = attacker
-				}
-				using_war_goal = {
-					type = wg_lrsk_gov_var_subheg
-					owner = attacker
-				}
-			}
-            #attacker = {
-			#	has_federation = no
-			#	NOT = { has_government = gov_megacorporation }
-			#}
-			#defender = {
-			#	has_federation = no
-			#}
-		}
-	}
-	format = "[This.MainAttacker.GetAdj] - [This.MainDefender.GetAdj] Reform Enforcement Action"
-}
+#war_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 999
+#			OR = {
+#				using_war_goal = {
+#					type = wg_lrsk_gov_var_subvas
+#					owner = attacker
+#				}
+#				using_war_goal = {
+#					type = wg_lrsk_gov_var_subheg
+#					owner = attacker
+#				}
+#			}
+#            #attacker = {
+#			#	has_federation = no
+#			#	NOT = { has_government = gov_megacorporation }
+#			#}
+#			#defender = {
+#			#	has_federation = no
+#			#}
+#		}
+#	}
+#	format = "[This.MainAttacker.GetAdj] - [This.MainDefender.GetAdj] Reform Enforcement Action"
+#}
 
 ## Colonialism
 #war_name_format = {
@@ -53,23 +53,23 @@ war_name_format = {
 #}
 
 # Rare case...
-war_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 999
-			using_war_goal = {
-                type = wg_lrsk_gov_var_hegemon
-                owner = attacker
-            }
-            #attacker = {
-			#	has_federation = no
-			#	NOT = { has_government = gov_megacorporation }
-			#}
-			#defender = {
-			#	has_federation = no
-			#}
-		}
-	}
-	format = "[This.MainAttacker.GetAdj] Forced Reintegration of [This.MainDefender.GetAdj]"
-}
+#war_name_format = {
+#	random_weight = {
+#		factor = 0
+#		modifier = {
+#			add = 999
+#			using_war_goal = {
+#                type = wg_lrsk_gov_var_hegemon
+#                owner = attacker
+#            }
+#            #attacker = {
+#			#	has_federation = no
+#			#	NOT = { has_government = gov_megacorporation }
+#			#}
+#			#defender = {
+#			#	has_federation = no
+#			#}
+#		}
+#	}
+#	format = "[This.MainAttacker.GetAdj] Forced Reintegration of [This.MainDefender.GetAdj]"
+#}
