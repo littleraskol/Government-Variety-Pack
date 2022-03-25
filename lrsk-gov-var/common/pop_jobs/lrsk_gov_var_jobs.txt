@@ -350,8 +350,34 @@ lrsk_gov_var_job_functionary = {
 
 	possible_precalc = can_fill_worker_job
 
-	country_modifier = {
-		empire_size_penalty_mult = -0.01
+	resources = {
+		category = planet_administrators
+
+		produces = {
+			unity = 1
+		}
+
+		produces = {
+			trigger = {
+				exists = planet
+				planet = {
+					exists = sector
+					sector = {
+						exists = leader
+						leader = { has_trait = leader_trait_bureaucrat }
+					}
+				}
+			}
+			unity = 1
+		}
+
+		produces = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_bureau }
+			}
+			unity = 1
+		}
 	}
 	
 	planet_modifier = {
@@ -366,32 +392,6 @@ lrsk_gov_var_job_functionary = {
 		}
 		modifier = {
 			trade_value_add = 1
-		}
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				exists = sector
-				sector = {
-					exists = leader
-					leader = { has_trait = leader_trait_bureaucrat }
-				}
-			}
-		}
-		modifier = {
-			empire_size_districts_mult = -0.01
-		}
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			exists = planet
-			planet = { has_designation = col_bureau }
-		}
-		modifier = {
-			empire_size_pops_mult = -0.01
 		}
 	}
 
