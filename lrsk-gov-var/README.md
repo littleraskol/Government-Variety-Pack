@@ -211,11 +211,8 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v4.? (??-??-2?) - More Origins, Colonial Chartering Civic
--Added three new origins: Uplift, Sublight Empire, and Sublight Commonwealth.
--Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
--Sublight Empire starts you with three special tributary vassals of your starting species bound to you by your monopoly on the secret of hyperdrive. (Note: This is mostly represented by an opinion modifier, the vassals can absolutely use hyperlanes.)
--Sublight Commonwealth is similar to the above but less... imperialistic. The vassals aren't tributaries but do provide prestige and they have fewer limitations.
+v4.? (??-??-2?) - New Origin, Colonial Chartering Civic
+-Added new origin: Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
 -New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
 -Added new government type "Colonial Charter Board" based on the above civic.
 -Changed Functionary job to produce unity instead of giving empire size penalty reductions, making it more like a mini Clerk/Bureaucrat hybrid (which was its original design idea).

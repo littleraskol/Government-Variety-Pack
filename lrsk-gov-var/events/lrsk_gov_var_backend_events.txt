@@ -77,14 +77,13 @@ event = {
 			country_event = { id = lrsk_gov_var_uplift.1 }
 		}
 		
-		# Sublight Empire/Commonwealth
-		every_playable_country = {
-			limit = { OR = { 
-				has_origin = lrsk_gov_var_origin_sublight_empire
-				has_origin = lrsk_gov_var_origin_sublight_commonwealth
-			} }
-			country_event = { id = lrsk_gov_var_sublight_origins.1 }
-		}
+		## Sublight Empire/Commonwealth
+		#every_playable_country = {
+		#	limit = {
+		#		lrsk_gov_var_has_sublight_overlord_origin = yes
+		#	}
+		#	country_event = { id = lrsk_gov_var_sublight_origins.1 }
+		#}
 
 		## Escape routes for possible boxed-in starts
 
