@@ -323,18 +323,18 @@ country_event = {
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 		}
 
-		if = { limit = { check_variable = { which = lrsk_impecon_legit value < 1 } }
+		if = { limit = { check_variable = { which = lrsk_impecon_legit value > 0 } }
 			if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
 				remove_modifier = lrsk_gov_var_empire_impecon_legit
 			}
-		}
-		else = {
-			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_legit } }
-				add_modifier = {
-					modifier = lrsk_gov_var_empire_impecon_legit
-					multiplier = lrsk_impecon_legit
-				}
+
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_impecon_legit
+				multiplier = lrsk_impecon_legit
 			}
+		}
+		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
+			remove_modifier = lrsk_gov_var_empire_impecon_legit
 		}
 	}
 }

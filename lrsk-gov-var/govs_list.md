@@ -476,6 +476,12 @@ An empire ruled by a council of the wealthiest merchants and conglomerates who j
 [i]Ruler (Female):[/i] Merchant Princess
 [i]Heir:[/i] Vice-Princeps
 
+[b]Colonial Charter Board[/b]
+The governments of this empire's homeworld lacked the finances to exploit resources in space, and so set up a system that chartered joint-stock companies to raise investment money for space-based resource extraction. The public-private partnership agency that administers these chartered companies came to encompass all matters of state as this society expanded into space.
+
+[i]Ruler (Male):[/i] Hon. Chairman
+[i]Ruler (Female):[/i] Hon. Chairwoman
+
 [b]Stakeholder Polity[/b]
 Though corporations hold great sway in society, their management is actually held to a standard of accountability to the public by a central 'Fair Deals Council' made up of experienced public advocates, community leaders, and philanthropists. This holds back the worst greedy instincts.
 

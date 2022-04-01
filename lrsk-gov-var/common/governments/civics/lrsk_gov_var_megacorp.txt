@@ -93,6 +93,77 @@ lrsk_gov_var_civic_mc_gig_economy = {
   }
 }
 
+#Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. These companies eventually came to form an integral part of government above the planetary level. (+15% research and mining station output, special vassal interactions)
+lrsk_gov_var_civic_mc_chart_corp_board = {
+  potential = { 
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+    civics = { NOT = { value = lrsk_gov_var_civic_mc_chartered_company } }
+  }
+
+  #icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
+  description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
+
+  modification = no
+
+  # Don't really think this needs to be ethos locked...
+  #possible = {
+  #  ethics = {
+	#		NOR = {
+	#			text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
+	#			value = ethic_egalitarian
+	#			value = ethic_fanatic_egalitarian
+	#			value = ethic_pacifist
+	#			value = ethic_fanatic_pacifist
+	#		}
+  #  }
+  #}
+
+  random_weight = { base = 1 } # Not sure how I feel about this in AI hands, will it be able to create vassals as needed?
+
+  modifier = {
+    station_gatherers_produces_mult = 0.15
+    station_researchers_produces_mult = 0.15
+  }
+}
+
+# NPC version of above
+lrsk_gov_var_civic_mc_chartered_company = {
+  potential = { 
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+    civics = { value = lrsk_gov_var_civic_mc_chartered_company }
+  }
+  modification = no
+
+  #icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
+  #description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
+
+  possible = {
+    civics = { NOT = { value = lrsk_gov_var_civic_mc_chart_corp_board } }
+    #ethics = { # ethos locking this just makes everything more complicated
+		#	NOR = {
+		#		text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
+		#		value = ethic_egalitarian
+		#		value = ethic_fanatic_egalitarian
+		#		value = ethic_pacifist
+		#		value = ethic_fanatic_pacifist
+		#	}
+    #}
+  }
+
+  random_weight = { base = 0 }
+
+  modifier = {
+    station_gatherers_produces_mult = 0.25
+    station_researchers_produces_mult = 0.25
+  }
+}
+
 #Controlling Interest (Any) - A clique of members of the board major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 lrsk_gov_var_civic_mc_controlling_interest = {
 	potential = {
@@ -104,8 +175,9 @@ lrsk_gov_var_civic_mc_controlling_interest = {
   #icon = "gfx/interface/icons/governments/civics/civic_legal_counsel_civic.dds"
 
 	random_weight = { base = 5 }
+
 	modifier = {
-		country_election_influence_cost_mult = -0.75
+		country_election_cost_mult = -0.75
     country_trade_fee = -0.05
 	}
 }
@@ -121,6 +193,7 @@ lrsk_gov_var_civic_mc_vertical_integration = {
   #icon = "gfx/interface/icons/governments/civics/civic_franchising.dds"
 
 	random_weight = { base = 5 }
+
 	modifier = {
     country_energy_produces_mult = 0.05
     country_minerals_produces_mult = 0.05

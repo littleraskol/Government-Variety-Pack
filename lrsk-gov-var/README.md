@@ -19,13 +19,15 @@ Tradeways, Inc. (Megacorporation) - This global megacorporation established earl
 
 Grand Alliance (Militarist) - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
 
+Uplift (Any) - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
+
 Normal Civics:
 
-Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
+Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 20 pops, +10% influence from factions)
 
 Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
 
-Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
+Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
 
 Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
@@ -37,7 +39,7 @@ Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has 
 
 Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
+Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
 
 Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -49,9 +51,9 @@ Lifelong Learning (Democratic and Pacifist) - This society values public educati
 
 Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
+Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 15 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that ends policy cooldowns early)
+Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that ends policy cooldowns early)
 
 Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
@@ -63,19 +65,19 @@ Automated Indolence (Materialist) - This society, very early on in its industria
 
 Hive Mind Civics:
 
-Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.)
+Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.)
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
-Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Menial Drone per 20 pops)
+Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Maintenance Drone per 10 pops)
 
-Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 30 pops)
+Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 15 pops)
 
-Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 40 pops)
+Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 20 pops)
 
 Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage)
+Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
 
 Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
@@ -123,7 +125,7 @@ Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine
 
 Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
+Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts)
 
 Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
@@ -138,6 +140,8 @@ Scientific Management (Not Egalitarian) - This business grew through precise and
 Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
 
 Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
+
+Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
 
 Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
@@ -157,11 +161,11 @@ Investigation & Security Services (Authoritarian) - This firm provides both pers
 
 "Advanced" Civics
 
-Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -10% non-society research, start with "Eco Simulation" tech.)
+Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -5% non-society research from jobs, start with "Eco Simulation" tech.)
 
-Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +5% robot output, +10% robot build speed, -5% non-engineering research from jobs, start with "Powered Exoskeletons" tech.)
 
-Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -5% non-physics research from jobs, start with "Fusion Power" tech.)
 
 Enhanced Civics
 
@@ -202,6 +206,90 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v4.2 (03-25-22) - New Origin & Colonial Chartering Civic
+-Added new origin: Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
+-New megacorp civic Colonial Chartering: +15% research and mining station output, special vassal interactions (ht to Garlic Pudding for inspiration) - intended to replicate the European "colonial companies" of the Early Modern Era.
+-Added new government type "Colonial Charter Board" based on the above civic.
+-Changed Functionary job to produce unity instead of giving empire size penalty reductions, making it more like a mini Clerk/Bureaucrat hybrid (which was its original design idea).
+-Fixed minor random name error. ("Failed to find part list 'lrsk_schl_type' in name random names lists")
+
+v4.1 (03-22-22) - Balance Pass 2
+-Citizen Scholar pops produce +2 amenities and +1 research if they have the Utopian Abundance living standard. (This is so that it's not strictly worse to be in this job than unemployed.)
+-Planetmind Creativity requires some work given the new game systems. With unity being more useful for more things now, its Planetmind Synapse buildings' unity cost and upkeep hurt a lot more. So I'm making the jobs it gives cost less and give more and something more impactful and not granted by other civics or by APs.
+--Planetmind Creativity now grants a flat -5% to empire size from pops rather than -15% housing usage.
+--Planetmind Overseers now grant -1% empire size from pops rather than -1% empire size from colonies.
+--Planetmind Overseers now grant -2% pop housing usage.
+--Planetmind Overseers influence production increased to 0.2 from 0.1 (influence matters less).
+--Planetmind Overseer crime addition reduced to 10 from 15.
+--Planetmind Overseer stability loss reduced to 1 from 2.
+--Planetmind Overseer food and energy upkeep reduced to 2 from 3.
+-Jobs-per-pop modifiers are in a worse place since the game was rebalanced to reduce the number of pops overall. Therefore, the number of such jobs added by various sources has generally been doubled.
+--Builder Caste now grants one Maintenance Drone per 10 pops, up from 1 per 20 pops.
+--Warrior Caste now grants one Warrior Drone per 15 pops, up from 1 per 30 pops.
+--Royal Caste now grants one Synapse Drone per 20 pops, up from 1 per 40 pops.
+--Elected Clergy now grants one Pastor per 20 pops, up from 1 per 40 pops.
+--Republicanism now grants one Politician per 25 pops, up from 1 per 50 pops.
+--Direct Revelation now grants one Hedge Preacher per 15 pops, up from 1 per 25 pops.
+--Shroud Pockets deposit grants one Otherworld Guide per 25 pops, up from 1 per 40 pops.
+--Promote Citizen Scholarship edict grants one Citizen Scholar per 15 pops, up from 1 per 25 pops.
+-With unity being a more useful and more widely used resource, jobs producing unity should produce more of it to make it a useful bonus.
+--Pastors produce produce 5 unity, up from 3.
+--Hedge Preachers produce 4 unity, up from 2.
+--Otherworld Guides produce 2 unity base, up from 1. Trait bonuses unchanged.
+--Regional Coordinators produce 9 unity, up from 6.
+
+v4.0.6 (03-19-22) - Balance Pass 1
+-Shapers, Artificers, and Essentialists civics now only give -5% researcher job output, rather than -10% overall research output, in their non-favored areas.
+-Shapers no longer gives a growth bonus.
+-Artificers robot job output bonus down to +5%, from +10%
+
+v4.0.5 (03-19-22) - Fixes Continued 4
+-Fixed issue preventing governments that adopt Colonial Fiefs mid-game from being able to change their Explorer Colonies policy.
+
+v4.0.4 (03-11-22) - Fixes Continued 3
+-Work Allocation Plan should not be infinitely stackable.
+
+v4.0.3 (03-11-22) - Annoying Fix 2
+-Esper rulers should not give +115% unity production.
+
+v4.0.2 (03-10-22) - Annoying Fix
+-Personal Protection Office was giving the wrong ethics attraction.
+
+v4.0.1 (03-05-22) - Libra Cleanup
+-Fixed some localizations.
+-Various documentation updates.
+-Various backend changes.
+
+v4.0 (02-25-22) - Libra Update
+-Various internal changes to adapt to Stellaris 3.3 (Libra).
+-Royal Absolutism civic now gives +30 Edict Fund and -10% Edict Cost instead of +1 Edict Cap.
+-The "Chancellor" option in the "Proclamation of Justice" event gives a unity reward as well.
+-The "Estates General" modifier (from the Royal Absolutism special Edict) now gives +100% Edict Fund mult instead of +1 Edict Cap.
+-The "Promote Citizen Scholarship" Edict for Lifelong Learning now costs 20 Unity upkeep.
+-Supremacist Demagoguery and Boundless Spite civics now give +25% power projection.
+-Reciprocal Planning Routines civic gives -10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts rather than +20 admin cap.
+-Various effects related to influence have either been replaced with unity or augmented with unity.
+-Everything modifying admin cap has been replaced with modifiers to the effects of empire size.
+
+v3.3.1.5 (01-27-22) - All out of joke names at this point tbh
+-Added tooltips of special effects to Combat Data and Imperial Economy.
+-Improved the Universal Sovereignty tooltip.
+
+v3.3.1.4 (12-31-21) - Backend Fixes/Updates Part 4 -The Fixes Resurrection
+-Variable-multiplier-based modifiers were not working as intended.
+-Happy New Year!
+
+v3.3.1.3 (12-12-21) - Backend Fixes/Updates Part 3 - This Time It's Super Annoying
+-Can't believe I missed a bunch of governments that lacked election candidate blocks and outgoing ruler definitions!!!
+-Actually I can believe it.....................
+
+v3.3.1.2 (12-10-21) - Small improvement
+-Explainers now have a delay.
+-Some small degree of process efficiency.
+
+v3.3.1.1 (12-10-21) - Backend Fixes/Updates (continued...)
+-Missed some election weights!!!
 
 v3.3.1 (12-10-21) - Backend Fixes/Updates
 -Colonial Fiefs has special effect tooltip.
@@ -312,7 +400,6 @@ v1.6.8 (01-01-21) - Megacorp Expansion
 -Backend: Added "general test" diagnostic event.
 -Backend: Numerous testing tools in scripted effects/triggers.
 -Fixed some localization typos here and there.
-
 
 v1.6.7 (11-11-20) - More Merchantry
 -Added two governments based on the ideas of Steam user Garlic Pudding: Stakeholder Polity and Shareholder Commonwealth.

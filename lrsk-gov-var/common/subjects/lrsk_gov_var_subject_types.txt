@@ -145,3 +145,248 @@ lrsk_gvp_vassal_prospector  = {
 		from = { country_event = { id = lrsk_gov_var_impecon.3 } } # call event to recalc legitimacy variable
 	}
 }
+
+lrsk_gov_var_ward = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = yes
+	research_sharing = yes	# for tech sharing modifier
+
+	intel_from_being_subject = 30
+	intel_from_being_overlord = 100
+
+	tech_cost_mult = -0.80
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = yes
+
+	gets_sensor = no
+	
+	diplo_threat = 0.75 # idk??
+
+	overlord_resources = {
+		category = subjects
+		produces = {
+			influence = 0.2
+			society_research = 5
+			unity = 3
+		}
+	}
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	effect = {
+		#
+	}	
+}
+
+lrsk_gov_var_sublight_vassal = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = no
+	research_sharing = no	# for tech sharing modifier
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+	
+	diplo_threat = 0.5 # idk??
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+	
+	subject_tax_rate = {
+		#physics_research = 0.1
+		#society_research = 0.1
+		#engineering_research = 0.1
+		minerals = 0.15
+		energy = 0.15
+		alloys = 0.05
+		consumer_goods = 0.05
+	}
+	
+	effect = {
+		#
+	}	
+}
+
+lrsk_gov_var_sublight_satellite = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = yes
+	research_sharing = no	# for tech sharing modifier
+
+	intel_from_being_subject = 40
+	intel_from_being_overlord = 50
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+	
+	diplo_threat = 0.5 # idk??
+
+	potential = {
+		# Don't want this to be a diplo option
+	}
+
+	overlord_resources = {
+		category = subjects
+		produces = {
+			influence = 0.25
+			unity = 1
+		}
+	}
+	
+	effect = {
+		#
+	}	
+}
+
+lrsk_gov_var_subject_chartered_company = {
+	can_expand = yes
+	can_be_integrated = no
+	
+	research_agreement = no
+	research_sharing = no	# for tech sharing modifier
+
+	intel_from_being_subject = 30
+	intel_from_being_overlord = 40
+
+	joins_overlord_wars = yes
+	calls_overlord_to_war = yes
+	can_do_diplomacy = no
+	
+	diplo_threat = 1.5 # idk??
+
+	potential = {	
+		from = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+	
+	subject_tax_rate = {
+		minerals = 0.1
+		energy = 0.1
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				from = { 	
+					is_country_type_with_subjects = no
+				}
+			}
+			set_subject_of = {
+				who = none
+			}
+			break = yes
+		}		
+		if = {
+			limit = {
+				from = { has_valid_civic = civic_inwards_perfection }
+			}
+			set_subject_of = {
+				who = from
+				subject_type = tributary
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				from = { 	
+					has_valid_civic = civic_hive_devouring_swarm
+				}
+			}
+			set_subject_of = {
+				who = none
+			}
+			break = yes
+		}			
+		if = {
+			limit = {
+				NOT = { is_same_species = from }
+				from = { 
+					has_valid_civic = civic_fanatic_purifiers
+				}
+			}
+			set_subject_of = {
+				who = none
+			}
+			break = yes
+		}		
+		if = {
+			limit = {
+				from = { 
+					is_country_type = awakened_fallen_empire
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+			set_subject_of = {
+				who = from
+				subject_type = satellite
+			}
+			break = yes
+		}	
+		if = {
+			limit = {
+				from = { 
+					is_country_type = awakened_fallen_empire
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+			set_subject_of = {
+				who = from
+				subject_type = dominion
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				from = { 
+					is_country_type = awakened_fallen_empire
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+			set_subject_of = {
+				who = from
+				subject_type = signatory
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				from = { 
+					is_country_type = awakened_fallen_empire
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+			set_subject_of = {
+				who = from
+				subject_type = thrall
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				from = {
+					has_authority = auth_corporate
+					NOT = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+				}
+			}
+			set_subject_of = {
+				who = from
+				subject_type = subsidiary
+			}
+			break = yes
+		}
+	}	
+}

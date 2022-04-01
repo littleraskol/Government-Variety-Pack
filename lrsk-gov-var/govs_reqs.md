@@ -253,6 +253,9 @@ Note: When I say the name of an ethos, assume either normal or Fanatic is fine (
 [b]Merchant Principality[/b]
 [i]Requirements:[/i] Merchant Guilds and Philosopher King, Dictatorial or Imperial authority
 
+[b]Colonial Charter Board[/b]
+[i]Requirements:[/i] Colonial Chartering, Corporate authority
+
 [b]Stakeholder Polity[/b]
 [i]Requirements:[/i] Republicanism and Merchant Guilds, Oligarchic authority
 

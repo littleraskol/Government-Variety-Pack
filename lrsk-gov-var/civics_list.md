@@ -16,16 +16,18 @@ This is the full listing of civics with descriptions.
 [*][i]Tradeways, Inc. (Megacorporation)[/i] - This global megacorporation established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Same as Tradeways.)
 
 [*][i]Grand Alliance (Militarist)[/i] - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
+[*][i]Uplift (Any)[/i] - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
 [/list]
 
 [b]Normal Civics[/b]
 
 [list]
-[*][i]Elected Clergy (Democratic, Spiritualist)[/i] - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 40 pops, +10% influence from factions)
+[*][i]Elected Clergy (Democratic, Spiritualist)[/i] - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 20 pops, +10% influence from factions)
 
 [*][i]Ascetic Virtues (Not Materialist)[/i] - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
 
-[*][i]Republicanism (Democratic, or both Oligarchic and Egalitarian)[/i] - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Administrator per 50 pops)
+[*][i]Republicanism (Democratic, or both Oligarchic and Egalitarian)[/i] - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
 
 [*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
@@ -37,7 +39,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage)
+[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage, +25% power projection)
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -49,9 +51,9 @@ This is the full listing of civics with descriptions.
 
 [*][i]Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds)[/i] - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
 
-[*][i]Direct Revelation (Egalitarian and Spiritualist)[/i] - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 25 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
+[*][i]Direct Revelation (Egalitarian and Spiritualist)[/i] - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 15 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
 
-[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +1 Edict Cap, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
+[*][i]Royal Absolutism (Imperial, Authoritarian)[/i] - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that gives the player a choice of different effects on empire governance)
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
@@ -65,19 +67,19 @@ This is the full listing of civics with descriptions.
 [b]Hive Mind Civics[/b]
 
 [list]
-[*][i]Planetmind Creativity (Hive Mind)[/i] - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.)
+[*][i]Planetmind Creativity (Hive Mind)[/i] - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.)
 
 [*][i]Caste Quickening (Hive Mind)[/i] - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
-[*][i]Worker Caste (Hive Mind)[/i] - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Menial Drone per 20 pops)
+[*][i]Worker Caste (Hive Mind)[/i] - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Maintenance Drone per 10 pops)
 
-[*][i]Warrior Caste (Hive Mind)[/i] - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 30 pops)
+[*][i]Warrior Caste (Hive Mind)[/i] - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 15 pops)
 
-[*][i]Royal Caste (Hive Mind)[/i] - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 40 pops)
+[*][i]Royal Caste (Hive Mind)[/i] - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 20 pops)
 
 [*][i]Reclamation Pools (Hive Mind)[/i] - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed)
+[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed, +25% power projection)
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 
@@ -127,7 +129,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Astro-Exploration Mainframe (Machine Intelligence)[/i] - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
 
-[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (+20 admin cap)
+[*][i]Reciprocal Planning Routines (Machine Intelligence)[/i] - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts)
 
 [*][i]Geosurvey Heuristics (Machine Intelligence)[/i] - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
 
@@ -144,6 +146,8 @@ This is the full listing of civics with descriptions.
 [*][i]Educational Consortium (Materialist)[/i] - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
 
 [*][i]Gig Economics (Not Egalitarian)[/i] - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
+
+[*][i]Colonial Chartering (Any)[/i] - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
 
 [*][i]Controlling Interest (Any)[/i] - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
 
@@ -165,11 +169,11 @@ This is the full listing of civics with descriptions.
 [b]"Advanced" Civics[/b]
 
 [list]
-[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, +10% growth, -10% non-society research, start with "Eco Simulation" tech.)
+[*][i]Shapers (Not Essentialists or Artificers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -5% non-society research from jobs, start with "Eco Simulation" tech.)
 
-[*][i]Artificers (Not Essentialists or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +10% robot output, +10% robot build speed, -10% non-engineering research, start with "Powered Exoskeletons" tech.)
+[*][i]Artificers (Not Essentialists or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +5% robot output, +10% robot build speed, -5% non-engineering research from jobs, start with "Powered Exoskeletons" tech.)
 
-[*][i]Essentialists (Not Artificers or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -10% non-physics research, start with "Fusion Power" tech.)
+[*][i]Essentialists (Not Artificers or Shapers)[/i] - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -5% non-physics research from jobs, start with "Fusion Power" tech.)
 [/list]
 
 [b]Enhanced Civics[/b]

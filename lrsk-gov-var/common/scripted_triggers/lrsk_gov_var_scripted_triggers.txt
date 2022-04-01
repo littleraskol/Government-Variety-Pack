@@ -2,6 +2,35 @@
 # Scripted Triggers
 # Author: littleraskol
 
+#lrsk_gov_var_has_sublight_colony_origin = {
+#	OR = {
+#		has_origin = lrsk_gov_var_origin_sublight_colony_loy
+#		has_origin = lrsk_gov_var_origin_sublight_colony_gsp
+#		has_origin = lrsk_gov_var_origin_sublight_colony_dis
+#	}
+#}
+#
+#lrsk_gov_var_is_sublight_subject = {
+#	OR = {
+#		is_subject_type = lrsk_gov_var_sublight_vassal
+#		is_subject_type = lrsk_gov_var_sublight_satellite
+#	}
+#}
+#
+#lrsk_gov_var_has_sublight_overlord_origin = {
+#	OR = {
+#		has_origin = lrsk_gov_var_origin_sublight_empire
+#		has_origin = lrsk_gov_var_origin_sublight_commonwealth
+#	}
+#}
+
+lrsk_gov_var_is_chartered_colony_type_gov = {
+	OR = {
+		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+		has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
+	}
+}
+
 lrsk_gov_var_has_discovery_origin = {
 	or = { 
 		has_origin = lrsk_gov_var_origin_for_discovery
@@ -39,6 +68,9 @@ lrsk_gvp_has_boxed_in_origin = {
 	OR = {
 		lrsk_gov_var_has_newfed_origin = yes
 		lrsk_gov_var_has_newfed_npc_origin = yes
+		has_origin = lrsk_gov_var_origin_uplift 			# very unlikely but eh
+		#lrsk_gov_var_has_sublight_overlord_origin = yes
+		#lrsk_gov_var_has_sublight_colony_origin = yes
 	}
 }
 
@@ -79,10 +111,8 @@ lrsk_gvp_planet_has_no_wild_cult = {
 # 4. A flag marking it as another empire's escape route, nor
 # 5. A flag marking it as owned.
 lrsk_is_hyperlane_escape_route = {
+	lrsk_system_vacant = yes
 	NOR = {
-		has_owner = yes
-		exists = space_owner
-		has_presence = yes
 		has_star_flag = lrsk_marked_escape_route
 		has_star_flag = lrsk_marked_owned_system
 	}
@@ -130,8 +160,7 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 			who = root
 			distance > 2
 		}
-		has_owner = no
-		has_presence = no
+		lrsk_system_vacant = yes
 		root = {
 			any_owned_pop_species = {
 				not = { has_trait = trait_syncretic_proles }
@@ -149,5 +178,17 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 				}
 			}
 		}
+	}
+}
+
+# Detect if a system is "truly empty" meaning:
+# -No owner.
+# -No occupier (maybe not needed idk)
+# -No presence of ships/space monsters
+lrsk_system_vacant = {
+	nor = {
+		has_owner = yes
+		exists = space_owner
+		has_presence = yes
 	}
 }

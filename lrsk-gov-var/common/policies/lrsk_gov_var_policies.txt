@@ -20,6 +20,7 @@ lrsk_gvp_colfief_policy = {
 			OR = {
 				has_policy_flag = lrsk_gvp_colfief_prohibited
 				has_policy_flag = lrsk_gvp_colfief_permited
+				not = { has_country_flag = lrsk_gvp_colfief_changed }
 			}
 		}
 
@@ -51,6 +52,8 @@ lrsk_gvp_colfief_policy = {
 			country_subject_power_penalty_mult = -0.1
 		}
 
+		on_enabled = { set_country_flag = lrsk_gvp_colfief_changed }
+
 		AI_weight = {
 			weight = 0
 		}
@@ -76,6 +79,8 @@ lrsk_gvp_colfief_policy = {
 			country_subject_power_penalty_mult = -0.2
 			country_unity_produces_mult = -0.05
     	}
+
+		on_enabled = { set_country_flag = lrsk_gvp_colfief_changed }
 
 		AI_weight = {
 			weight = 0

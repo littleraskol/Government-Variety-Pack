@@ -34,7 +34,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	resources = {
 		category = planet_priests
 		produces = {
-			unity = 2
+			unity = 4
 		}
 	}
 
@@ -115,7 +115,6 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 }
 
-
 # Citizen Scholar
 lrsk_gvp_job_citscholar = {
 	category = worker
@@ -134,12 +133,14 @@ lrsk_gvp_job_citscholar = {
 
 	resources = {
 		category = planet_researchers
+		
 		produces = {
 			physics_research = 1
 			engineering_research = 1
 			society_research = 1
 			unity = 1
 		}
+
 		produces = {
 			trigger = {
 				exists = owner
@@ -149,9 +150,24 @@ lrsk_gvp_job_citscholar = {
 			}
 			unity = 1
 		}
+
+		produces = {
+			trigger = {
+				exists = owner
+				has_living_standard = {
+					country = owner 
+					type = living_standard_utopian
+				}
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
+
 		upkeep = {
 			consumer_goods = 1
 		}
+
 		upkeep = {
 			trigger = {
 				exists = owner
@@ -165,6 +181,19 @@ lrsk_gvp_job_citscholar = {
 
 	planet_modifier = {
 		planet_amenities_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			has_living_standard = {
+				country = owner 
+				type = living_standard_utopian
+			}
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -321,8 +350,34 @@ lrsk_gov_var_job_functionary = {
 
 	possible_precalc = can_fill_worker_job
 
-	country_modifier = {
-		country_admin_cap_add = 3
+	resources = {
+		category = planet_administrators
+
+		produces = {
+			unity = 1
+		}
+
+		produces = {
+			trigger = {
+				exists = planet
+				planet = {
+					exists = sector
+					sector = {
+						exists = leader
+						leader = { has_trait = leader_trait_bureaucrat }
+					}
+				}
+			}
+			unity = 1
+		}
+
+		produces = {
+			trigger = {
+				exists = planet
+				planet = { has_designation = col_bureau }
+			}
+			unity = 1
+		}
 	}
 	
 	planet_modifier = {
@@ -337,32 +392,6 @@ lrsk_gov_var_job_functionary = {
 		}
 		modifier = {
 			trade_value_add = 1
-		}
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			exists = planet
-			planet = {
-				exists = sector
-				sector = {
-					exists = leader
-					leader = { has_trait = leader_trait_bureaucrat }
-				}
-			}
-		}
-		modifier = {
-			country_admin_cap_add = 1
-		}
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			exists = planet
-			planet = { has_designation = col_bureau }
-		}
-		modifier = {
-			country_admin_cap_add = 1
 		}
 	}
 
@@ -885,7 +914,7 @@ lrsk_gov_var_job_pastor = {
 	resources = {
 		category = planet_priests
 		produces = {
-			unity = 3
+			unity = 5
 		}
 		upkeep = {
 			consumer_goods = 1
@@ -988,7 +1017,7 @@ lrsk_gov_var_job_otherworld_guide = {
 	resources = {
 		category = planet_telepaths
 		produces = {
-			unity = 1
+			unity = 2
 		}
 		produces = {
 			trigger = {	has_trait = trait_latent_psionic }
@@ -1805,21 +1834,22 @@ lrsk_gov_var_job_planetmind_overseer = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			influence = 0.1
+			influence = 0.2
 		}
 		upkeep = {
-			food = 3
-			energy = 3
+			food = 2
+			energy = 2
 		}
 	}
 
 	country_modifier = {
-		country_admin_cap_add = 2
+		empire_size_pops_mult = -0.01
 	}
 
 	planet_modifier = {
-		planet_crime_add = 15
-		planet_stability_add = -2
+		planet_crime_add = 10
+		planet_stability_add = -1
+		pop_housing_usage_mult = -0.02
 	}
 
 	weight = {
@@ -1850,7 +1880,7 @@ lrsk_gov_var_job_regional_coordinator = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			unity = 6
+			unity = 9
 		}
 		upkeep = {
 			energy = 5

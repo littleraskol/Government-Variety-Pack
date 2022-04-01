@@ -4,7 +4,7 @@
 
 # HIVE MIND
 
-# Planetmind Creativity (-15% pop housing use, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence and increase empire admin cap, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
+# Planetmind Creativity (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs.
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -13,8 +13,7 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
 	modifier = {
-		#pop_amenities_usage_mult = -0.10
-		pop_housing_usage_mult = -0.15
+		empire_size_pops_mult = -0.05
 	}
 }
 
@@ -29,7 +28,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 	}
 }
 
-# Worker Caste (-10% building and ship construction time, 1 Menial Drone per 20 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
+# Worker Caste (-10% building and ship construction time, 1 Maintenance Drone per 10 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
 lrsk_gov_var_civic_hive_builder_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -38,11 +37,11 @@ lrsk_gov_var_civic_hive_builder_caste = {
     	planet_building_build_speed_mult = 0.1
     	starbase_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
-    	job_maintenance_drone_per_pop = 0.05
+    	job_maintenance_drone_per_pop = 0.1
 	}
 }
 
-# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 30 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
+# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 15 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
 lrsk_gov_var_civic_hive_warrior_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -50,18 +49,18 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 	modifier = {
     	admiral_skill_levels = 1
     	general_skill_levels = 1
-    	job_warrior_drone_per_pop = 0.0333
+    	job_warrior_drone_per_pop = 0.0666
 	}
 }
 
-# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 40 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
+# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 20 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
 lrsk_gov_var_civic_hive_royal_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = 5 }
 	modifier = {
     	governor_skill_levels = 2
-    	job_synapse_drone_per_pop = 0.025
+    	job_synapse_drone_per_pop = 0.05
 	}
 }
 
@@ -82,6 +81,7 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 		max_rivalries = 2
     	army_morale_damage_mult = 0.2
 		pop_purge_speed = 0.5
+		country_power_projection_influence_produces_mult = 0.25
 	}
 }
 
@@ -268,6 +268,7 @@ lrsk_gov_var_civic_machine_architect_expert_systems = {
 lrsk_gov_var_civic_machine_combat_data = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
+	description = "civic_tooltip_lrsk_gov_var_civic_machine_combat_data_effects"
 	random_weight = { base = 5 }
 	modifier = {
     	army_morale_damage_mult = 0.3
@@ -340,12 +341,16 @@ lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 	}
 }
 
-# Reciprocal Planning Routines (+20 admin cap) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks.
+# Reciprocal Planning Routines (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks.
 lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = 5 }
-  	modifier = { country_admin_cap_add = 20 }
+  	modifier = {
+		empire_size_systems_mult = -0.1
+		empire_size_colonies_mult = -0.2
+		empire_size_districts_mult = -0.15
+	}
 }
 
 # Geosurvey Heuristics (-10% clear tile blocker cost, terraform cost, and terraform completion time) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory.

@@ -6,17 +6,17 @@
 lrsk_gov_var_gov_merchant_principality_d = {
 	ruler_title = LRSK_GOV_VAR_RT_MERCHANT_PRINCE
 	ruler_title_female = LRSK_GOV_VAR_RT_MERCHANT_PRINCESS
-
+	
 	#should_force_rename = yes
 
 	election_candidates = {
 		modifier = {
-			factor = 0
-			leader_class = admiral
+			add = 50
+			leader_class = governor
 		}
 		modifier = {
-			factor = 0
-			leader_class = general
+			add = 10
+			leader_class = scientist
 		}
 	}
 
@@ -37,8 +37,7 @@ lrsk_gov_var_gov_merchant_principality_i = {
 	heir_title_female = LRSK_GOV_VAR_HT_VICEPRINCEPS
 
 	#use_regnal_names = yes
-	#dynastic_last_names = yes
-
+	#dynastic_last_names = yes	
 	#should_force_rename = yes
 
 	possible = {
@@ -59,12 +58,16 @@ lrsk_gov_var_gov_stakeholder_polity = {
 
 	election_candidates = {
 		modifier = {
-			factor = 0
-			leader_class = admiral
+			add = 100
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = general
+			add = 50
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = scientist
 		}
 	}
 
@@ -86,12 +89,16 @@ lrsk_gov_var_gov_shareholder_commonwealth = {
 
 	election_candidates = {
 		modifier = {
-			factor = 0
-			leader_class = admiral
+			add = 100
+			leader_class = ruler
 		}
 		modifier = {
-			factor = 0
-			leader_class = general
+			add = 50
+			leader_class = governor
+		}
+		modifier = {
+			add = 10
+			leader_class = scientist
 		}
 	}
 
@@ -112,28 +119,23 @@ lrsk_gov_var_gov_shareholder_commonwealth = {
 lrsk_gov_var_gov_crusading_company = {
 	ruler_title = LRSK_GOV_VAR_RT_CHAPLAINMARTIAL
 	ruler_title_female = LRSK_GOV_VAR_RT_CHAPLAINMARTIAL
-
 	#should_force_rename = yes
 
 	election_candidates = {
 		modifier = {
-			add = 500
+			add = 100
 			leader_class = ruler
 		}
 		modifier = {
-			add = 150
+			add = 20
 			leader_class = governor
 		}
 		modifier = {
-			add = 50
-			leader_class = scientist
-		}
-		modifier = {
-			add = 250
+			add = 10
 			leader_class = admiral
 		}
 		modifier = {
-			add = 250
+			add = 10
 			leader_class = general
 		}
 	}
@@ -163,5 +165,60 @@ lrsk_gov_var_gov_crusading_company = {
 
 	weight = {
 		base = 1500
+	}
+}
+#  Colonial Charter Board (FanMil or FanSpi, Corp, GoM & PMC/NC)
+lrsk_gov_var_gov_colonial_charter_board = {
+	ruler_title = LRSK_GOV_VAR_RT_HON_BOARD_CHAIR_M
+	ruler_title_female = LRSK_GOV_VAR_RT_HON_BOARD_CHAIR_F
+	
+	#should_force_rename = yes
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = governor
+		}
+	}
+
+	possible = {
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+	}
+
+	weight = {
+		base = 2500
+	}
+}
+
+#  Colonial Company (NPC Only Vassal)
+lrsk_gov_var_gov_colonial_company = {
+	ruler_title = LRSK_GOV_VAR_RT_GOV_PRES
+	ruler_title_female = LRSK_GOV_VAR_RT_GOV_PRES
+	
+	should_force_rename = yes
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = governor
+		}
+	}
+
+	possible = {
+		has_authority = auth_corporate
+		has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
+	}
+
+	weight = {
+		base = 2500
 	}
 }
