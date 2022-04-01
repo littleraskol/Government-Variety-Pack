@@ -14,6 +14,7 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = lrsk_gvp_safety_lock } # Always false, comment out to activate these events.
 		
+		is_ai = no 	# JIC
 		has_origin = lrsk_adv_civ_origin_star_siblings
 		NOT = { has_country_flag = lrsk_adv_civ_created_sibling }
 	}
@@ -38,7 +39,7 @@ country_event = {
 		create_country = {
 			name_list = random
 			type = default
-			origin = origin_default	#Should eventually be an NPC version of Star Sibs
+			origin = lrsk_adv_civ_origin_star_siblings
 			ethos = event_target:lrsk_adv_civ_needs_sibling
 			authority = random
 			civics = random
@@ -47,6 +48,7 @@ country_event = {
 			day_zero_contact = no
 			ignore_initial_colony_error = yes
 			effect = {
+				set_country_flag = lrsk_adv_civ_created_sibling
 				establish_communications_no_message = event_target:lrsk_adv_civ_needs_sibling
 				save_event_target_as = lrsk_adv_civ_sibling_empire
 			}
@@ -103,7 +105,6 @@ country_event = {
 		}
 
 		last_created_country = {
-			set_country_flag = lrsk_adv_civ_created_sibling
 
 			event_target:lrsk_adv_civ_sibling_star = {
 				set_owner = event_target:lrsk_adv_civ_sibling_empire
@@ -163,6 +164,9 @@ country_event = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+		
+			set_country_flag = first_contact_event
+			set_country_flag = Story2 # Already encountered spacefarers
 		}
 
 		# Need to set up starting buildings and population
@@ -198,6 +202,9 @@ country_event = {
 			who = event_target:lrsk_adv_civ_sibling_empire
 			modifier = lrsk_adv_civ_star_siblings
 		}
+
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
 	}
 }
 
@@ -213,11 +220,13 @@ ship_event = {
 		from = { exists = space_owner } # Actually an owned system
 		from = { owner = { NOT = { is_same_value = root.owner } } } # Owner of system != owner of ship
 
-		# filtering out non-valid empires makes this quicker to resolve.
+		# Either space owner or ship owner is appropriate
 		OR = {
 			owner = { has_origin = lrsk_adv_civ_origin_star_siblings }
 			from = { owner = { has_origin = lrsk_adv_civ_origin_star_siblings } }
 		}
+
+		# We have not already done this
 		NOR = {
 			owner = { has_country_flag = lrsk_adv_civ_siblings_visit_complete }
 			from = { owner = { has_country_flag = lrsk_adv_civ_siblings_visit_complete } }
@@ -260,9 +269,9 @@ country_event = {
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_WELCOME
 		add_monthly_resource_mult = {
-			resource = influence
-			value = 30
-			min = 90
+			resource = unity
+			value = 10
+			min = 100
 			max = 300
 		}
 	}
@@ -286,9 +295,9 @@ country_event = {
 	option = {
 		name = LRSK_ADV_CIV_EVENT_SIBLINGS_JOY
 		add_monthly_resource_mult = {
-			resource = influence
-			value = 30
-			min = 90
+			resource = unity
+			value = 10
+			min = 100
 			max = 300
 		}
 	}

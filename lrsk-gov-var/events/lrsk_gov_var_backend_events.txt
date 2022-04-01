@@ -121,7 +121,10 @@ event = {
 
 		# Star Siblings
 		every_playable_country = {
-			limit = { has_origin = lrsk_adv_civ_origin_star_siblings }
+			limit = {
+				has_origin = lrsk_adv_civ_origin_star_siblings
+				is_ai = no # JIC
+			}
 			country_event = { id = lrsk_adv_civ_siblings.1 }
 		}
 
