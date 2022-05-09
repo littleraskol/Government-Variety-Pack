@@ -620,10 +620,10 @@ lrsk_has_special_vassals = {
 lrsk_special_vassal_allowed = {
 	NOR = {
 		# Prevents any existing ImpEcon special vassal from being changed.
-		is_subject_type = lrsk_gvp_vassal_foundry
-		is_subject_type = lrsk_gvp_vassal_market
-		is_subject_type = lrsk_gvp_vassal_trophy
-		is_subject_type = lrsk_gvp_vassal_prospector			
+		is_subject_with_preset = { PRESET = lrsk_gvp_vassal_foundry }
+		is_subject_with_preset = { PRESET = lrsk_gvp_vassal_market }
+		is_subject_with_preset = { PRESET = lrsk_gvp_vassal_trophy }
+		is_subject_with_preset = { PRESET = lrsk_gvp_vassal_prospector			 }
 
 		# Uplift: Prevent immediate change in subject status etc. if tutor can create special vassals
 		#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }

@@ -210,6 +210,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v5.0 (05-12-22) - Cepheus Update
 -Fixed what was needed for compatibility with Stellaris 3.4 (Cepheus)
 -Updated compat version number.
+-Fixed misc things for new version.
+-Adapted branch buildings to new holding system.
+-Uplift no longer requires any DLC... (This was pure oversight on my part.)
+-Changed specialized vassals into "presets"
 
 v4.2 (03-25-22) - New Origin & Colonial Chartering Civic
 -Added new origin: Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
