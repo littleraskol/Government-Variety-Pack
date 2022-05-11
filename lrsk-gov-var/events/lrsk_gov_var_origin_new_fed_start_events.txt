@@ -182,7 +182,10 @@ country_event = {
 							name = random
 							class = MACHINE # MIs allowed in RCs
 							portrait = random
-							traits = random
+							traits = {
+								trait = trait_machine_unit
+								trait = random_traits
+							}
 							homeworld = this
 							effect = {
 								save_event_target_as = lrsk_next_fed_planet_species
@@ -410,7 +413,10 @@ country_event = {
 							name = random
 							class = MACHINE # MIs allowed in RCs
 							portrait = random
-							traits = random
+							traits = {
+								trait = trait_machine_unit
+								trait = random_traits
+							}
 							homeworld = this
 							effect = {
 								save_event_target_as = lrsk_next_fed_planet_species
