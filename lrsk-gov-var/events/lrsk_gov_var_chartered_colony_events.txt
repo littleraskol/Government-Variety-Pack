@@ -18,7 +18,7 @@ country_event = {
 			has_ethic = ethic_gestalt_consciousness
 
 			# Not sure how this would happen but...
-			is_subject_with_preset = { PRESET = lrsk_gov_var_subject_chartered_company }
+			is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company }
 
 			# Uplift: Prevent immediate change in subject status etc. if tutor can use chartered company subjects
 			from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
@@ -118,7 +118,7 @@ country_event = {
 				set_name = random # Fixes some naming issues
 				set_subject_of = {
 					who = event_target:lrsk_chartering_agent
-					preset = lrsk_gov_var_subject_chartered_company
+					preset = preset_lrsk_gov_var_subject_chartered_company
 				}
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
@@ -176,7 +176,7 @@ country_event = {
 				set_name = random # Fixes some naming issues
 				set_subject_of = {
 					who = event_target:lrsk_chartering_agent
-					preset = lrsk_gov_var_subject_chartered_company
+					preset = preset_lrsk_gov_var_subject_chartered_company
 				}
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
@@ -272,7 +272,7 @@ country_event = {
 				set_name = random # Fixes some naming issues
 				set_subject_of = {
 					who = event_target:lrsk_chartering_agent
-					preset = lrsk_gov_var_subject_chartered_company
+					preset = preset_lrsk_gov_var_subject_chartered_company
 				}
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
@@ -412,7 +412,7 @@ country_event = {
 	}
 
 	immediate = {
-		IF = { limit = { any_subject = { is_subject_with_preset = { PRESET = lrsk_gov_var_subject_chartered_company } } }
+		IF = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } } }
 		
 			#set_variable = { which = lrsk_charcols_prev value = lrsk_charcols } # Store for comparison
 
@@ -420,7 +420,7 @@ country_event = {
 
 			# Not working? Need while & flags?
 			every_subject = {
-				limit = { is_subject_with_preset = { PRESET = lrsk_gov_var_subject_chartered_company } }
+				limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
 				log = "Counting subject [this.GetName]"
 				root = {
 					change_variable = { which = lrsk_charcols value = 1 }

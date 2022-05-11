@@ -30,7 +30,7 @@
 # }
 
 # Special holding effect: Taxed 25% of alloys produced
-lrsk_gvp_vassal_foundry = {
+preset_lrsk_gvp_vassal_foundry = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_foundry"
 	term_data = {
 		discrete_terms = {
@@ -80,7 +80,7 @@ lrsk_gvp_vassal_foundry = {
 
 # Special holding effect: Taxed 25% of alloys produced
 # provides OL with +10% trade value.
-lrsk_gvp_vassal_market = {
+preset_lrsk_gvp_vassal_market = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_market"
 	term_data = {
 		discrete_terms = {
@@ -130,7 +130,7 @@ lrsk_gvp_vassal_market = {
 
 # Special holding effect: Taxed 10% of Unity and Influence.
 # Gets a happiness penalty. OL gets +15% diplo power.
-lrsk_gvp_vassal_trophy = {
+preset_lrsk_gvp_vassal_trophy = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_trophy"
 	term_data = {
 		discrete_terms = {
@@ -179,7 +179,7 @@ lrsk_gvp_vassal_trophy = {
 }
  
 # Special holding effect: Taxed 20% of rare materials.
-lrsk_gvp_vassal_prospector = {
+preset_lrsk_gvp_vassal_prospector = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_prospector"
 	term_data = {
 		discrete_terms = {
@@ -275,7 +275,7 @@ lrsk_gvp_vassal_prospector = {
 #}
 
 
-lrsk_gov_var_subject_chartered_company = {
+preset_lrsk_gov_var_subject_chartered_company = {
 	icon = "GFX_diplomacy_status_is_lrsk_gov_var_subject_chartered_company"
 	term_data = {
 		discrete_terms = {
@@ -321,10 +321,13 @@ lrsk_gov_var_subject_chartered_company = {
 	}
 
 	overlord_weight = {
-		base = 0 	# Added by event...
+		base = 150
 	}
 
 	potential = {
-		# Should not be possible by normal diplomacy (I may change this)
+		from = {
+			has_authority = auth_corporate
+			has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+		}
 	}
 }
