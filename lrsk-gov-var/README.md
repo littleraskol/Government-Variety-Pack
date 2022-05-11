@@ -214,6 +214,7 @@ v5.0 (05-12-22) - Cepheus Update
 -Adapted branch buildings to new holding system.
 -Uplift no longer requires any DLC... (This was pure oversight on my part.)
 -Changed specialized vassals into "presets"
+-Added warning about special vassal civics not working well yet.
 
 v4.2 (03-25-22) - New Origin & Colonial Chartering Civic
 -Added new origin: Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
