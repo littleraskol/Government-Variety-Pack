@@ -783,7 +783,9 @@ country_event = {
 		}
 		any_owned_planet = {
 			num_pops > 0 # just to hopefully filter out any uninhabited worlds
-			has_holding = lrsk_gov_var_bldg_grand_casino # no idea how to call the relative flag
+			has_branch_office = yes
+			exists = branch_office_owner
+			has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
 		}
 	}
 
@@ -798,8 +800,10 @@ country_event = {
 		IF = {
 			limit = {
 				any_owned_planet = {
-					has_holding = lrsk_gov_var_bldg_grand_casino
 					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					has_branch_office = yes
+					exists = branch_office_owner
+					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
 					has_planet_flag = lrsk_can_get_casino_events_from@event_target:lrsk_casino_provider
 				}
 			}
