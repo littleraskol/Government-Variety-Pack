@@ -19,10 +19,10 @@ country_event = {
 
 			# Can only have one of each... This will not fire if OL has one of each already.
 			NAND = {
-				any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_foundry } }
-				any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_market } }
-				any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_trophy } }
-				any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_prospector } }
+				any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } }
+				any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } }
+				any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
+				any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } }
 			}
 		}
 		lrsk_special_vassal_allowed = yes
@@ -36,34 +36,34 @@ country_event = {
 			switch = {
 				trigger = has_country_flag
 				lrsk_gvp_impecon_alloysub_of@from = { 
-					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_foundry } } } } }
+					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } } } } }
 						set_subject_of = {
 							who = from
-							preset = preset_gvp_vassal_foundry
+							preset = preset_lrsk_gvp_vassal_foundry
 						}
 					}
 				}
 				lrsk_gvp_impecon_tradesub_of@from = {
-					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_market } } } } }
+					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } } } } }
 						set_subject_of = {
 							who = from
-							preset = preset_gvp_vassal_market
+							preset = preset_lrsk_gvp_vassal_market
 						}
 					}
 				}
 				lrsk_gvp_impecon_trophysub_of@from = {
-					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_trophy } } } } }
+					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } } } } }
 						set_subject_of = {
 							who = from
-							preset = preset_gvp_vassal_trophy
+							preset = preset_lrsk_gvp_vassal_trophy
 						}
 					}
 				}
 				lrsk_gvp_impecon_raressub_of@from = {
-					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_prospector } } } } }
+					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } } } } }
 						set_subject_of = {
 							who = from
-							preset = preset_gvp_vassal_prospector
+							preset = preset_lrsk_gvp_vassal_prospector
 						}
 					}
 				}
@@ -103,14 +103,14 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_impecon.2.a.tooltip
 
 		allow = {
-			not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_foundry } } }
+			not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } } }
 		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
 				set_subject_of = {
 					who = event_target:lrsk_impecon_colonizer
-					preset = preset_gvp_vassal_foundry
+					preset = preset_lrsk_gvp_vassal_foundry
 				}
 				set_country_flag = lrsk_gvp_impecon_specsub_of@root
 				set_country_flag = lrsk_gvp_impecon_alloysub_of@root
@@ -145,14 +145,14 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_impecon.2.b.tooltip
 
 		allow = {
-			not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_market } } }
+			not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } } }
 		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
 				set_subject_of = {
 					who = event_target:lrsk_impecon_colonizer
-					preset = preset_gvp_vassal_market
+					preset = preset_lrsk_gvp_vassal_market
 				}
 				set_country_flag = lrsk_gvp_impecon_specsub_of@root
 				set_country_flag = lrsk_gvp_impecon_tradesub_of@root
@@ -188,14 +188,14 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_impecon.2.c.tooltip
 
 		allow = {
-			not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_trophy } } }
+			not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } } }
 		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
 				set_subject_of = {
 					who = event_target:lrsk_impecon_colonizer
-					preset = preset_gvp_vassal_trophy
+					preset = preset_lrsk_gvp_vassal_trophy
 				}
 				set_country_flag = lrsk_gvp_impecon_specsub_of@root
 				set_country_flag = lrsk_gvp_impecon_trophysub_of@root
@@ -224,14 +224,14 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_impecon.2.d.tooltip
 
 		allow = {
-			not = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_prospector } } }
+			not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } } }
 		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
 				set_subject_of = {
 					who = event_target:lrsk_impecon_colonizer
-					preset = preset_gvp_vassal_prospector
+					preset = preset_lrsk_gvp_vassal_prospector
 				}
 				set_country_flag = lrsk_gvp_impecon_specsub_of@root
 				set_country_flag = lrsk_gvp_impecon_raressub_of@root
@@ -285,11 +285,11 @@ country_event = {
 	immediate = {
 		set_variable = { which = lrsk_impecon_legit value = 0 }	# reset to recalc
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_foundry } } }
+		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } } }
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 		}
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_market } } }
+		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } } }
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_market } }
 				add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
@@ -299,12 +299,12 @@ country_event = {
 			remove_modifier = lrsk_gov_var_empire_impecon_market
 		}
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_trophy } } }
+		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } } }
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol } }
 				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
 			}
-			random_subject = { limit = { is_subject_with_preset = { PRESET = preset_gvp_vassal_trophy } }
+			random_subject = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
 				if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
 					add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 				}
@@ -319,7 +319,7 @@ country_event = {
 			}
 		}
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_gvp_vassal_prospector } } }
+		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } } }
 			change_variable = { which = lrsk_impecon_legit value = 1 }
 		}
 
