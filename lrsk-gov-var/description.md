@@ -1,5 +1,7 @@
 A grab bag of new civics, origins, and government types.
 
+[b]Updated for Stellaris 3.4 (Cepheus).[/b] It is in a [b][i]minimal loading state[/b][/i], meaning there are no errors when loading the game with this mod active. Some civics (especially if they have features related to vassals) may not work correctly. Please report any bugs, issues, or other unexpected/undesired behavior [url=https://airtable.com/shr57DnP3u6lzJ4D9]using this form[/url].
+
 [i][b]New Civics[/b][/i]
 
 A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2764885229/3193619419614898917/]the dedicated civics thread[/url] for detailed descriptions.
@@ -46,6 +48,7 @@ There are also "backup" versions of this mod for older versions of Stellaris:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
