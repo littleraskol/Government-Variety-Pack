@@ -207,6 +207,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.0.1 (05/??/22) - Minor Fixes
+-Removed unneeded warning for Uplift (it uses standard presets).
+
 v5.0 (05-12-22) - Cepheus Update
 -Fixed what was needed for compatibility with Stellaris 3.4 (Cepheus)
 -Updated compat version number.
