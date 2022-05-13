@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Updated for Stellaris 3.4 (Cepheus).[/b] It is in a [b][i]minimal loading state[/i][/b], meaning there are no errors when loading the game with this mod active. Some civics (especially if they have features related to vassals) may not work correctly. Please report any bugs, issues, or other unexpected/undesired behavior [url=https://airtable.com/shr57DnP3u6lzJ4D9]using this form[/url].
+[b]Updated for Stellaris 3.4 (Cepheus).[/b] It is in a [b][i]minimal loading state[/i][/b], meaning there are no errors when loading the game with this mod active. Some civics (especially if they have features related to vassals) may not work correctly. Please report any bugs, issues, or other unexpected/undesired behavior [url=https://airtable.com/shr57DnP3u6lzJ4D9]using this form[/url]. You can see what issues I am aware of and working on [url=https://airtable.com/shrsRDMnNBkOnDlej/tblkSIUTcdXTeXAEo]here[/url].
 
 [i][b]New Civics[/b][/i]
 
