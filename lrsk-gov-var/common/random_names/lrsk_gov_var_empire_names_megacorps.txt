@@ -26,8 +26,8 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc><lrsk_megacorp><lrsk_corp_bits>"
 	format = "format.lrsk_megacorp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_megacorp>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_gen.3
 	# Human Empire
 }
 
@@ -50,8 +50,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_stellar_filler_desc><lrsk_megacorp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
 	format = "format.lrsk_megacorp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_megacorp>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_gen.1
 	# Sol Empire
 }
 
@@ -74,8 +74,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_stellar_filler_desc><lrsk_megacorp> of [This.Capital.GetName]<lrsk_corp_bits>"
 	format = "format.lrsk_megacorp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_megacorp>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_gen.2
 	# Earth Empire
 }
 
@@ -99,8 +99,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_trade_league_per_desc> [This.GetSpeciesAdj] <lrsk_trade_league_per>"
 	format = "format.lrsk_trade_league.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_trade_league_per>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_trd.3
 	# Human Empire
 }
 
@@ -122,8 +122,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.System.GetName]"
 	format = "format.lrsk_trade_league.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_trade_league_org>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_trd.1
 	# Sol Empire
 }
 
@@ -145,8 +145,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_trade_league_org_type> <lrsk_trade_league_org> of [This.Capital.GetName]"
 	format = "format.lrsk_trade_league.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_trade_league_org>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_trd.2
 	# Earth Empire
 }
 
@@ -168,8 +168,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_rmf_corp><lrsk_corp_bits>"
 	format = "format.lrsk_rmf_corp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_rmf_corp>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_rmf.3
 	# Human Empire
 }
 
@@ -190,8 +190,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.System.GetName]<lrsk_corp_bits>"
 	format = "format.lrsk_rmf_corp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_rmf_corp>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_rmf.1
 	# Sol Empire
 }
 
@@ -212,8 +212,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rmf_desc> <lrsk_rmf_corp> of [This.Capital.GetName]<lrsk_corp_bits>"
 	format = "format.lrsk_rmf_corp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_rmf_corp>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_rmf.2
 	# Earth Empire
 }
 
@@ -236,8 +236,8 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp><lrsk_corp_bits>"
 	format = "format.lrsk_pmc_corp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_pmc_corp>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_pmc.3
 	# Human Empire
 }
 
@@ -259,8 +259,8 @@ empire_name_format = {
 	
 	lookups = "[This.Capital.System.GetName]-Force <lrsk_stellar_filler_desc><lrsk_pmc_desc><lrsk_corp_bits>"
 	format = "format.lrsk_pmc_corp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_pmc_desc>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_pmc.4
 	# Human Empire
 }
 
@@ -282,8 +282,8 @@ empire_name_format = {
 	
 	lookups = "[This.Capital.GetName]-Force <lrsk_stellar_filler_desc><lrsk_pmc_desc><lrsk_corp_bits>"
 	format = "format.lrsk_pmc_corp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_pmc_desc>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_pmc.5
 	# Human Empire
 }
 
@@ -305,8 +305,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_crusdesc><lrsk_cruscomp> of [This.GetSpeciesAdj]kind"
 	format = "format.lrsk_crus_comp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_cruscomp>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_cru.3
 	# Human Empire
 }
 
@@ -327,8 +327,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_crusdesc><lrsk_cruscomp> of [This.Capital.System.GetName]"
 	format = "format.lrsk_crus_comp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_cruscomp>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_cru.1
 	# Human Empire
 }
 
@@ -349,8 +349,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_crusdesc><lrsk_cruscomp> of [This.Capital.GetName]"
 	format = "format.lrsk_crus_comp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_cruscomp>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_cru.2
 	# Human Empire
 }
 
@@ -372,8 +372,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_col_comp_bit> [This.Capital.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
 	format = "format.lrsk_col_comp.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_col_comp_type>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_col.1
 	# Human Empire
 }
 
@@ -394,8 +394,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_col_comp_bit> [This.Capital.System.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
 	format = "format.lrsk_col_comp.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_col_comp_type>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_col.2
 	# Human Empire
 }
 
@@ -417,8 +417,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> of [This.Capital.GetName]"
 	format = "format.lrsk_col_board.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_col_board_type>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_brd.1
 	# Human Empire
 }
 
@@ -439,8 +439,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> of [This.Capital.System.GetName]"
 	format = "format.lrsk_col_board.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_col_board_type>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_brd.2
 	# Human Empire
 }
 
@@ -463,8 +463,8 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp>"
 	format = "format.lrsk_inno_corp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_inno_corp>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_inn.3
 	# Human Empire
 }
 
@@ -485,8 +485,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.System.GetName]"
 	format = "format.lrsk_inno_corp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_inno_corp>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_inn.1
 	# Sol Empire
 }
 
@@ -507,8 +507,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_inno_type> <lrsk_inno_bits><lrsk_inno_corp> of [This.Capital.GetName]"
 	format = "format.lrsk_inno_corp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_inno_corp>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_inn.2
 	# Earth Empire
 }
 
@@ -531,8 +531,8 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_megachurch> <lrsk_megachurch_suffix>"
 	format = "format.lrsk_megachurch.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_megachurch>"
+	noun = format.species
+	prefix_format = format_prefix.lrsk_meg_chu.3
 	# Human Empire
 }
 
@@ -554,8 +554,8 @@ empire_name_format = {
 	
 	lookups = "<lrsk_megachurch_desc> <lrsk_megachurch> of [This.Capital.System.GetName]"
 	format = "format.lrsk_megachurch.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_megachurch>"
+	noun = format.home_system
+	prefix_format = format_prefix.lrsk_meg_chu.1
 	# Sol Empire
 }
 
@@ -577,7 +577,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_megachurch_desc> <lrsk_megachurch> of [This.Capital.GetName]"
 	format = "format.lrsk_megachurch.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_megachurch>"
+	noun = format.homeworld
+	prefix_format = format_prefix.lrsk_meg_chu.2
 	# Earth Empire
 }

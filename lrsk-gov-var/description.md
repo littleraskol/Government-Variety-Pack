@@ -4,11 +4,11 @@ A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2764885229/3193619419614898917/]the dedicated civics thread[/url] for detailed descriptions.
+A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for detailed descriptions.
 
 [i][b]New Governments[/b][/i]
 
-Around [b]85-90 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2764885229/3193619419614894394/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
+Around [b]85-90 new governments[/b] (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
 
 [i][b]Special Thanks[/b][/i]
 

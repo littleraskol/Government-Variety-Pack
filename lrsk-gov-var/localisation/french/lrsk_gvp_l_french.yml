@@ -1808,7 +1808,7 @@ l_french:
  # Charter Colonial Company
  decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
  decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital."
- decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$preset_lrsk_gov_var_subject_chartered_company$§!: $SUBJECT_DESC_lrsk_gov_var_subject_chartered_company$\nIt will have the same Ethics and main species as your empire."
+ decision_lrsk_gov_var_charter_col_effects:0 "[this.GetName] will become the capital world of a new §H$preset_lrsk_gov_var_subject_chartered_company$§!: $preset_lrsk_gov_var_subject_chartered_company_desc$\nIt will have the same Ethics and main species as your empire."
 
  ## Empire Modifiers
  
@@ -3400,6 +3400,246 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  format.lrsk_gen_dem.11: "<lrsk_dem_generic_desc> <lrsk_generic_states> of [This.Capital.GetName]"
  format.lrsk_gen_dem.12: "<lrsk_stellar_generic_desc> <lrsk_democratic_gen> of [This.Capital.GetName]"
  format.lrsk_gen_dem.13: "<lrsk_dem_generic_desc> <lrsk_stellar_generic> of [This.Capital.GetName]"
+
+ ## Genralized (Nouns/Adjectives)
+
+ # Stellar
+ format.lrsk_gvp_stellar:0 "<lrsk_stellar_generic_desc> "
+
+ # Generic
+ format_prefix.lrsk_imp_gen.1:0 "[This.Capital.System.GetName] <lrsk_imperial_gen>"
+ format_prefix.lrsk_imp_gen.2:0 "[This.Capital.GetName] <lrsk_imperial_gen>"
+ format_prefix.lrsk_imp_gen.3:0 "[This.GetSpeciesName] <lrsk_imperial_gen>"
+ format_prefix.lrsk_dic_gen.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_gen>"
+ format_prefix.lrsk_dic_gen.2:0 "[This.Capital.GetName] <lrsk_dictatorial_gen>"
+ format_prefix.lrsk_dic_gen.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_gen>"
+ format_prefix.lrsk_oli_gen.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_gen>"
+ format_prefix.lrsk_oli_gen.2:0 "[This.Capital.GetName] <lrsk_oligarchic_gen>"
+ format_prefix.lrsk_oli_gen.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_gen>"
+ format_prefix.lrsk_dem_gen.1:0 "[This.Capital.System.GetName] <lrsk_democratic_gen>"
+ format_prefix.lrsk_dem_gen.2:0 "[This.Capital.GetName] <lrsk_democratic_gen>"
+ format_prefix.lrsk_dem_gen.3:0 "[This.GetSpeciesName] <lrsk_democratic_gen>"
+
+ #Materialist
+ format_prefix.lrsk_imp_mat.1:0 "[This.Capital.System.GetName] <lrsk_imperial_mat>"
+ format_prefix.lrsk_imp_mat.2:0 "[This.Capital.GetName] <lrsk_imperial_mat>"
+ format_prefix.lrsk_imp_mat.3:0 "[This.GetSpeciesName] <lrsk_imperial_mat>"
+ format_prefix.lrsk_dic_mat.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_mat>"
+ format_prefix.lrsk_dic_mat.2:0 "[This.Capital.GetName] <lrsk_dictatorial_mat>"
+ format_prefix.lrsk_dic_mat.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_mat>"
+ format_prefix.lrsk_oli_mat.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_mat>"
+ format_prefix.lrsk_oli_mat.2:0 "[This.Capital.GetName] <lrsk_oligarchic_mat>"
+ format_prefix.lrsk_oli_mat.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_mat>"
+ format_prefix.lrsk_dem_mat.1:0 "[This.Capital.System.GetName] <lrsk_democratic_mat>"
+ format_prefix.lrsk_dem_mat.2:0 "[This.Capital.GetName] <lrsk_democratic_mat>"
+ format_prefix.lrsk_dem_mat.3:0 "[This.GetSpeciesName] <lrsk_democratic_mat>"
+ # Technocratic
+ format_prefix.lrsk_impdic_tech.1:0 "[This.Capital.System.GetName] <lrsk_impdic_tech>"
+ format_prefix.lrsk_impdic_tech.2:0 "[This.Capital.GetName] <lrsk_impdic_tech>"
+ format_prefix.lrsk_impdic_tech.3:0 "[This.GetSpeciesName] <lrsk_impdic_tech>"
+ format_prefix.lrsk_demoli_tech.1:0 "[This.Capital.System.GetName] <lrsk_demoli_tech>"
+ format_prefix.lrsk_demoli_tech.2:0 "[This.Capital.GetName] <lrsk_demoli_tech>"
+ format_prefix.lrsk_demoli_tech.3:0 "[This.GetSpeciesName] <lrsk_demoli_tech>"
+ # Scholastic
+ format_prefix.lrsk_schol.1:0 "[This.GetSpeciesAdj] <lrsk_schl_types>"
+
+ # Militarist
+ format_prefix.lrsk_imp_mil.1:0 "[This.Capital.System.GetName] <lrsk_imperial_mil>"
+ format_prefix.lrsk_imp_mil.2:0 "[This.Capital.GetName] <lrsk_imperial_mil>"
+ format_prefix.lrsk_imp_mil.3:0 "[This.GetSpeciesName] <lrsk_imperial_mil>"
+ format_prefix.lrsk_dic_mil.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_mil>"
+ format_prefix.lrsk_dic_mil.2:0 "[This.Capital.GetName] <lrsk_dictatorial_mil>"
+ format_prefix.lrsk_dic_mil.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_mil>"
+ format_prefix.lrsk_oli_mil.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_mil>"
+ format_prefix.lrsk_oli_mil.2:0 "[This.Capital.GetName] <lrsk_oligarchic_mil>"
+ format_prefix.lrsk_oli_mil.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_mil>"
+ format_prefix.lrsk_dem_mil.1:0 "[This.Capital.System.GetName] <lrsk_democratic_mil>"
+ format_prefix.lrsk_dem_mil.2:0 "[This.Capital.GetName] <lrsk_democratic_mil>"
+ format_prefix.lrsk_dem_mil.3:0 "[This.GetSpeciesName] <lrsk_democratic_mil>"
+ # Warrior
+ format_prefix.lrsk_dem_war.1:0 "[This.Capital.System.GetName] <lrsk_democratic_war_cul>"
+ format_prefix.lrsk_dem_war.2:0 "[This.Capital.GetName] <lrsk_democratic_war_cul>"
+ format_prefix.lrsk_dem_war.3:0 "[This.GetSpeciesName] <lrsk_democratic_war_cul>"
+ # CitServ
+ format_prefix.lrsk_oli_cit.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_service>"
+ format_prefix.lrsk_oli_cit.2:0 "[This.Capital.GetName] <lrsk_oligarchic_service>"
+ format_prefix.lrsk_oli_cit.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_service>"
+ format_prefix.lrsk_oli_cit.4:0 "<lrsk_stellar_generic_desc> <lrsk_oligarchic_service>"
+ format_prefix.lrsk_dem_cit.1:0 "[This.Capital.System.GetName] <lrsk_democratic_service>"
+ format_prefix.lrsk_dem_cit.2:0 "[This.Capital.GetName] <lrsk_democratic_service>"
+ format_prefix.lrsk_dem_cit.3:0 "[This.GetSpeciesName] <lrsk_democratic_service>"
+ format_prefix.lrsk_dem_cit.4:0 "<lrsk_stellar_generic_desc> <lrsk_democratic_service>"
+ # CitCru
+ format_prefix.lrsk_cit_cru.1:0 "[This.Capital.System.GetName] <lrsk_cit_crusaders>"
+ format_prefix.lrsk_cit_cru.2:0 "[This.Capital.GetName] <lrsk_cit_crusaders>"
+ format_prefix.lrsk_cit_cru.3:0 "[This.GetSpeciesName] <lrsk_cit_crusaders>"
+ 
+ # Pacifist 
+ format_prefix.lrsk_imp_pac.1:0 "[This.Capital.System.GetName] <lrsk_imperial_pac>"
+ format_prefix.lrsk_imp_pac.2:0 "[This.Capital.GetName] <lrsk_imperial_pac>"
+ format_prefix.lrsk_imp_pac.3:0 "[This.GetSpeciesName] <lrsk_imperial_pac>"
+ format_prefix.lrsk_dic_pac.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_pac>"
+ format_prefix.lrsk_dic_pac.2:0 "[This.Capital.GetName] <lrsk_dictatorial_pac>"
+ format_prefix.lrsk_dic_pac.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_pac>"
+ format_prefix.lrsk_oli_pac.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_pac>"
+ format_prefix.lrsk_oli_pac.2:0 "[This.Capital.GetName] <lrsk_oligarchic_pac>"
+ format_prefix.lrsk_oli_pac.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_pac>"
+ format_prefix.lrsk_dem_pac.1:0 "[This.Capital.System.GetName] <lrsk_democratic_pac>"
+ format_prefix.lrsk_dem_pac.2:0 "[This.Capital.GetName] <lrsk_democratic_pac>"
+ format_prefix.lrsk_dem_pac.3:0 "[This.GetSpeciesName] <lrsk_democratic_pac>"
+ # Celestial
+ format_prefix.lrsk_imp_cel.1:0 "[This.Capital.System.GetName] <lrsk_imperial_celestial>"
+ format_prefix.lrsk_imp_cel.2:0 "[This.Capital.GetName] <lrsk_imperial_celestial>"
+ format_prefix.lrsk_imp_cel.3:0 "[This.GetSpeciesName] <lrsk_imperial_celestial>"
+ # Enlightened
+ format_prefix.lrsk_imp_enl.1:0 "[This.Capital.System.GetName] <lrsk_imperial_enlightened>"
+ format_prefix.lrsk_imp_enl.2:0 "[This.Capital.GetName] <lrsk_imperial_enlightened>"
+ format_prefix.lrsk_imp_enl.3:0 "[This.GetSpeciesName] <lrsk_imperial_enlightened>"
+
+ # Spiritualist 
+ format_prefix.lrsk_imp_spi.1:0 "[This.Capital.System.GetName] <lrsk_imperial_spi>"
+ format_prefix.lrsk_imp_spi.2:0 "[This.Capital.GetName] <lrsk_imperial_spi>"
+ format_prefix.lrsk_imp_spi.3:0 "[This.GetSpeciesName] <lrsk_imperial_spi>"
+ format_prefix.lrsk_dic_spi.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_spi>"
+ format_prefix.lrsk_dic_spi.2:0 "[This.Capital.GetName] <lrsk_dictatorial_spi>"
+ format_prefix.lrsk_dic_spi.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_spi>"
+ format_prefix.lrsk_oli_spi.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_spi>"
+ format_prefix.lrsk_oli_spi.2:0 "[This.Capital.GetName] <lrsk_oligarchic_spi>"
+ format_prefix.lrsk_oli_spi.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_spi>"
+ format_prefix.lrsk_dem_spi.1:0 "[This.Capital.System.GetName] <lrsk_democratic_spi>"
+ format_prefix.lrsk_dem_spi.2:0 "[This.Capital.GetName] <lrsk_democratic_spi>"
+ format_prefix.lrsk_dem_spi.3:0 "[This.GetSpeciesName] <lrsk_democratic_spi>"
+ # Imperial Cult
+ format_prefix.lrsk_imp_clt.1:0 "[This.Capital.System.GetName] <lrsk_imperial_cult>"
+ format_prefix.lrsk_imp_clt.2:0 "[This.Capital.GetName] <lrsk_imperial_cult>"
+ format_prefix.lrsk_imp_clt.3:0 "[This.GetSpeciesName] <lrsk_imperial_cult>"
+ # Tribunal
+ format_prefix.lrsk_oli_trb.1:0 "[This.Capital.System.GetName] <lrsk_holy_tribunal>"
+ format_prefix.lrsk_oli_trb.2:0 "[This.Capital.GetName] <lrsk_holy_tribunal>"
+ format_prefix.lrsk_oli_trb.3:0 "[This.GetSpeciesName] <lrsk_holy_tribunal>"
+ # Crusader Order
+ format_prefix.lrsk_crusord.1:0 "[This.Capital.System.GetName] <lrsk_crusord_type>"
+ format_prefix.lrsk_crusord.2:0 "[This.Capital.GetName] <lrsk_crusord_type>"
+ # Cosmic Choir
+ format_prefix.lrsk_cos_cho.1:0 "[This.Capital.System.GetName] <lrsk_cosmic_choir>"
+ format_prefix.lrsk_cos_cho.2:0 "[This.Capital.GetName] <lrsk_cosmic_choir>"
+ format_prefix.lrsk_cos_cho.3:0 "[This.GetSpeciesName] <lrsk_cosmic_choir>"
+ 
+ # Purifiers
+ format_prefix.lrsk_imp_pur.1:0 "[This.Capital.System.GetName] <lrsk_imp_purifiers>"
+ format_prefix.lrsk_imp_pur.2:0 "[This.Capital.GetName] <lrsk_imp_purifiers>"
+ format_prefix.lrsk_imp_pur.3:0 "[This.GetSpeciesName] <lrsk_imp_purifiers>"
+ format_prefix.lrsk_dic_pur.1:0 "[This.Capital.System.GetName] <lrsk_dic_purifiers>"
+ format_prefix.lrsk_dic_pur.2:0 "[This.Capital.GetName] <lrsk_dic_purifiers>"
+ format_prefix.lrsk_dic_pur.3:0 "[This.GetSpeciesName] <lrsk_dic_purifiers>"
+ format_prefix.lrsk_oli_pur.1:0 "[This.Capital.System.GetName] <lrsk_oli_purifiers>"
+ format_prefix.lrsk_oli_pur.2:0 "[This.Capital.GetName] <lrsk_oli_purifiers>"
+ format_prefix.lrsk_oli_pur.3:0 "[This.GetSpeciesName] <lrsk_oli_purifiers>"
+ format_prefix.lrsk_dem_pur.1:0 "[This.Capital.System.GetName] <lrsk_dem_purifiers>"
+ format_prefix.lrsk_dem_pur.2:0 "[This.Capital.GetName] <lrsk_dem_purifiers>"
+ format_prefix.lrsk_dem_pur.3:0 "[This.GetSpeciesName] <lrsk_dem_purifiers>"
+ # Doom Horde
+ format_prefix.lrsk_hrd_pur.1:0 "[This.Capital.System.GetName] <lrsk_hrd_purifiers>"
+ format_prefix.lrsk_hrd_pur.2:0 "[This.Capital.GetName] <lrsk_hrd_purifiers>"
+ format_prefix.lrsk_hrd_pur.3:0 "[This.GetSpeciesName] <lrsk_hrd_purifiers>"
+ # Death Cult
+ format_prefix.lrsk_clt_pur.1:0 "[This.Capital.System.GetName] <lrsk_clt_purifiers>"
+ format_prefix.lrsk_clt_pur.2:0 "[This.Capital.GetName] <lrsk_clt_purifiers>"
+ format_prefix.lrsk_clt_pur.3:0 "[This.GetSpeciesName] <lrsk_clt_purifiers>"
+ # Cit Legion
+ format_prefix.lrsk_cit_pur.1:0 "[This.Capital.System.GetName] <lrsk_cit_purifiers>"
+ format_prefix.lrsk_cit_pur.2:0 "[This.Capital.GetName] <lrsk_cit_purifiers>"
+ format_prefix.lrsk_cit_pur.3:0 "[This.GetSpeciesName] <lrsk_cit_purifiers>"
+
+ # Capitalist 
+ format_prefix.lrsk_imp_cap.1:0 "[This.Capital.System.GetName] <lrsk_imperial_cap>"
+ format_prefix.lrsk_imp_cap.2:0 "[This.Capital.GetName] <lrsk_imperial_cap>"
+ format_prefix.lrsk_imp_cap.3:0 "[This.GetSpeciesName] <lrsk_imperial_cap>"
+ format_prefix.lrsk_dic_cap.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_cap>"
+ format_prefix.lrsk_dic_cap.2:0 "[This.Capital.GetName] <lrsk_dictatorial_cap>"
+ format_prefix.lrsk_dic_cap.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_cap>"
+ format_prefix.lrsk_oli_cap.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_cap>"
+ format_prefix.lrsk_oli_cap.2:0 "[This.Capital.GetName] <lrsk_oligarchic_cap>"
+ format_prefix.lrsk_oli_cap.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_cap>"
+ format_prefix.lrsk_dem_cap.1:0 "[This.Capital.System.GetName] <lrsk_democratic_cap>"
+ format_prefix.lrsk_dem_cap.2:0 "[This.Capital.GetName] <lrsk_democratic_cap>"
+ format_prefix.lrsk_dem_cap.3:0 "[This.GetSpeciesName] <lrsk_democratic_cap>"
+ format_prefix.lrsk_str_cap.1:0 "[This.GetSpeciesName] <lrsk_stellar_generic>"
+
+ # Socialist
+ format_prefix.lrsk_dic_soc.1:0 "[This.Capital.System.GetName] <lrsk_pdr_type>"
+ format_prefix.lrsk_dic_soc.2:0 "[This.Capital.GetName] <lrsk_pdr_type>"
+ format_prefix.lrsk_dic_soc.3:0 "[This.GetSpeciesName] <lrsk_pdr_type>"
+ format_prefix.lrsk_oli_soc.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_soc>"
+ format_prefix.lrsk_oli_soc.2:0 "[This.Capital.GetName] <lrsk_oligarchic_soc>"
+ format_prefix.lrsk_oli_soc.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_soc>"
+ format_prefix.lrsk_dem_soc.1:0 "[This.Capital.System.GetName] <lrsk_democratic_soc>"
+ format_prefix.lrsk_dem_soc.2:0 "[This.Capital.GetName] <lrsk_democratic_soc>"
+ format_prefix.lrsk_dem_soc.3:0 "[This.GetSpeciesName] <lrsk_democratic_soc>" 
+ format_prefix.lrsk_lab_soc.1:0 "[This.Capital.System.GetName] <lrsk_labor_org>"
+ format_prefix.lrsk_lab_soc.2:0 "[This.Capital.System.GetName] <lrsk_labor_orgs>"
+ format_prefix.lrsk_lab_soc.3:0 "[This.Capital.GetName] <lrsk_labor_org>"
+ format_prefix.lrsk_lab_soc.4:0 "[This.Capital.GetName] <lrsk_labor_orgs>"
+
+ # Megacorps
+ format_prefix.lrsk_meg_gen.1:0 "[This.Capital.System.GetName] <lrsk_megacorp>"
+ format_prefix.lrsk_meg_gen.2:0 "[This.Capital.GetName] <lrsk_megacorp>"
+ format_prefix.lrsk_meg_gen.3:0 "[This.GetSpeciesAdj] <lrsk_megacorp>"
+ format_prefix.lrsk_meg_trd.1:0 "[This.Capital.System.GetName] <lrsk_trade_league_org>"
+ format_prefix.lrsk_meg_trd.2:0 "[This.Capital.GetName] <lrsk_trade_league_org>"
+ format_prefix.lrsk_meg_trd.3:0 "[This.GetSpeciesAdj] <lrsk_trade_league_per>"
+ format_prefix.lrsk_meg_cri.1:0 "[This.Capital.System.GetName] <lrsk_criminal>"
+ format_prefix.lrsk_meg_cri.2:0 "[This.Capital.GetName] <lrsk_criminal>"
+ format_prefix.lrsk_meg_cri.3:0 "[This.GetSpeciesName] <lrsk_criminal>"
+ format_prefix.lrsk_meg_chu.1:0 "[This.Capital.System.GetName] <lrsk_megachurch>"
+ format_prefix.lrsk_meg_chu.2:0 "[This.Capital.GetName] <lrsk_megachurch>"
+ format_prefix.lrsk_meg_chu.3:0 "[This.GetSpeciesAdj] <lrsk_megachurch>"
+ format_prefix.lrsk_meg_rmf.1:0 "[This.Capital.System.GetName] <lrsk_rmf_corp>"
+ format_prefix.lrsk_meg_rmf.2:0 "[This.Capital.GetName] <lrsk_rmf_corp>"
+ format_prefix.lrsk_meg_rmf.3:0 "[This.GetSpeciesAdj] <lrsk_rmf_corp>"
+ format_prefix.lrsk_meg_pmc.1:0 "[This.Capital.System.GetName] <lrsk_pmc_corp>"
+ format_prefix.lrsk_meg_pmc.2:0 "[This.Capital.GetName] <lrsk_pmc_corp>"
+ format_prefix.lrsk_meg_pmc.3:0 "[This.GetSpeciesName] <lrsk_pmc_corp>"
+ format_prefix.lrsk_meg_pmc.4:0 "[This.Capital.System.GetName] <lrsk_pmc_desc>"
+ format_prefix.lrsk_meg_pmc.5:0 "[This.Capital.GetName] <lrsk_pmc_desc>"
+ format_prefix.lrsk_meg_cru.1:0 "[This.Capital.System.GetName] <lrsk_cruscomp>"
+ format_prefix.lrsk_meg_cru.2:0 "[This.Capital.GetName] <lrsk_cruscomp>"
+ format_prefix.lrsk_meg_cru.3:0 "[This.GetSpeciesName] <lrsk_cruscomp>"
+ format_prefix.lrsk_meg_col.1:0 "[This.Capital.System.GetName] <lrsk_col_comp_type>"
+ format_prefix.lrsk_meg_col.2:0 "[This.Capital.GetName] <lrsk_col_comp_type>"
+ format_prefix.lrsk_meg_brd.1:0 "[This.Capital.System.GetName] <lrsk_col_board_type>"
+ format_prefix.lrsk_meg_brd.2:0 "[This.Capital.GetName] <lrsk_col_board_type>"
+ format_prefix.lrsk_meg_inn.1:0 "[This.Capital.System.GetName] <lrsk_inno_corp>"
+ format_prefix.lrsk_meg_inn.2:0 "[This.Capital.GetName] <lrsk_inno_corp>"
+ format_prefix.lrsk_meg_inn.3:0 "[This.GetSpeciesAdj] <lrsk_inno_corp>"
+
+ # Noble Republic
+ format_prefix.lrsk_nob_rep.1:0 "[This.Capital.System.GetName] <lrsk_noblerep_gov>"
+ format_prefix.lrsk_nob_rep.2:0 "[This.Capital.GetName] <lrsk_noblerep_gov>"
+ format_prefix.lrsk_nob_rep.3:0 "[This.GetSpeciesName] <lrsk_noblerep_gov>"
+
+ # Popular Monarchy
+ format_prefix.lrsk_imp_pop.1:0 "[This.Capital.System.GetName] <lrsk_imperial_pop>"
+ format_prefix.lrsk_imp_pop.2:0 "[This.Capital.GetName] <lrsk_imperial_pop>"
+ format_prefix.lrsk_imp_pop.3:0 "[This.GetSpeciesAdj] <lrsk_imperial_pop>"
+
+ # Revolutionary
+ format_prefix.lrsk_imp_rev.1:0 "[This.Capital.System.GetName] <lrsk_imperial_rev>"
+ format_prefix.lrsk_dic_rev.1:0 "[This.Capital.System.GetName] <lrsk_dictatorial_rev>"
+ format_prefix.lrsk_dic_rev.2:0 "[This.Capital.GetName] <lrsk_dictatorial_rev>"
+ format_prefix.lrsk_dic_rev.3:0 "[This.GetSpeciesName] <lrsk_dictatorial_rev>"
+ format_prefix.lrsk_oli_rev.1:0 "[This.Capital.System.GetName] <lrsk_oligarchic_rev>"
+ format_prefix.lrsk_oli_rev.2:0 "[This.Capital.GetName] <lrsk_oligarchic_rev>"
+ format_prefix.lrsk_oli_rev.3:0 "[This.GetSpeciesName] <lrsk_oligarchic_rev>"
+ format_prefix.lrsk_dem_rev.1:0 "[This.Capital.System.GetName] <lrsk_democratic_rev>"
+ format_prefix.lrsk_dem_rev.2:0 "[This.Capital.GetName] <lrsk_democratic_rev>"
+ format_prefix.lrsk_dem_rev.3:0 "[This.GetSpeciesName] <lrsk_democratic_rev>"
+
+ # Generic
+ format_prefix.lrsk_gen_states.1:0 "[This.GetSpeciesName] <lrsk_generic_states>"
+ format_prefix.lrsk_gen_states.2:0 "[This.Capital.System.GetName] <lrsk_generic_states>"
+ format_prefix.lrsk_gen_stellar.1:0 "[This.GetSpeciesName] <lrsk_stellar_generic>"
+ format_prefix.lrsk_gen_stellar.2:0 "[This.Capital.GetName] <lrsk_stellar_generic>" 
 
  #### OTHER/MISC
 
