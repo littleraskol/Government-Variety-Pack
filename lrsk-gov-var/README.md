@@ -207,7 +207,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.0.1 (05/??/22) - Post-Release Fixes
+v5.0.1 (05/12/22) - Post-Release Fixes
 -Removed unneeded warning for Uplift (it uses standard presets).
 -Fixed more lozalization format issues.
 -Updating documentation.
