@@ -209,6 +209,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v5.0.1 (05/??/22) - Yet More Post-Release Fixes
 -Explorer Colonies spawned by Colonial Fiefs empires get a resource boost based on the game year to make them viable (got reports that they collapsed due to not having any unity).
+-Fixed lookups to work around possible bug causing %ADJECTIVE% adjectives for empires. (Thanks MaskofKeter!)
 
 v5.0.1 (05/12/22) - Post-Release Fixes
 -Removed unneeded warning for Uplift (it uses standard presets).
