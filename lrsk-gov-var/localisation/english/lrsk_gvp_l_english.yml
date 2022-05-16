@@ -83,7 +83,7 @@ l_english:
 
  lrsk_gov_var_civic_imperial_economy:0 "Imperial Economy"
  lrsk_gov_var_civic_imperial_economy_desc:0 "This empire exploits its vassals ruthlessly."
- civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects:0 "$LRSK_GVP_CEPHEUS_WARNING$Able to change some of its vassals into §Gspecialized subject types§!."
+ civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects:0 "Able to §Gfine tune vassal taxes§! and change some of its vassals into §Gspecialized subject types§!."
 
  lrsk_gov_var_civic_colonial_fiefs:0 "Colonial Fiefs"
  lrsk_gov_var_civic_colonial_fiefs_desc:0 "The monarch is willing to grant landholding rights to those bold enough to colonize new worlds."
@@ -1426,16 +1426,16 @@ l_english:
  LRSK_GVP_BRIEF_CEPHEUS_NOTE: "§PNOTE: Not working correctly yet in 3.4. Fix TBD.§!"
 
  preset_lrsk_gvp_vassal_foundry:0 "Foundry Colony"
- preset_lrsk_gvp_vassal_foundry_desc:1 "\nFor better military preparedness, this vassal has been forced to render a quarter of its alloy production to its overlord. (Taxed 25% of alloys produced. $LRSK_GVP_BRIEF_CEPHEUS_NOTE$)"
+ preset_lrsk_gvp_vassal_foundry_desc:1 "\nFor better military preparedness, this vassal has been forced to render a quarter of its alloy production to its overlord. (Taxed 25% of £alloys£ §YAlloys§! produced.)"
 
  preset_lrsk_gvp_vassal_market:0 "Market Colony"
- preset_lrsk_gvp_vassal_market_desc:1 "\nFor greater prosperity, this vassal has been forced to render a quarter of its consumer goods production to its overlord and provide the overlord with commercial opportunities. (Taxed 25% of consumer goods produced ($LRSK_GVP_BRIEF_CEPHEUS_NOTE$), overlord gets +10% trade value and -5% market fee.)"
+ preset_lrsk_gvp_vassal_market_desc:1 "\nFor greater prosperity, this vassal has been forced to render a quarter of its consumer goods production to its overlord and provide the overlord with commercial opportunities. (Taxed 20% of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced, overlord gets +10% trade value and -10% market fee.)"
 
  preset_lrsk_gvp_vassal_trophy:0 "Trophy Colony"
- preset_lrsk_gvp_vassal_trophy_desc:1 "\nFor the glory of the overlord, this vassal has been made an object lesson in proper deference to a superior. (Taxed 10% of Unity and Influence ($LRSK_GVP_BRIEF_CEPHEUS_NOTE$); gets a happiness penalty. Overlord gets +15% diplomatic power.)"
+ preset_lrsk_gvp_vassal_trophy_desc:1 "\nFor the glory of the overlord, this vassal has been made an object lesson in proper deference to a superior. (Taxed 10% of £unity£ §YUnity§! and £influence£ §YInfluence§! produced; gets a happiness penalty. Overlord gets +15% diplomatic power.)"
 
  preset_lrsk_gvp_vassal_prospector:0 "Prospecting Colony"
- preset_lrsk_gvp_vassal_prospector_desc:1 "\nFor advanced development, this vassal has been tasked to find rare materials and turn over one-fifth of them to the overlord. (Taxed 20% of rare materials produced. $LRSK_GVP_BRIEF_CEPHEUS_NOTE$)"
+ preset_lrsk_gvp_vassal_prospector_desc:1 "\nFor advanced development, this vassal has been tasked to find rare materials and turn over one-fifth of them to the overlord. (Taxed 15% of £volatile_motes£ §YVolatile Motes§!, £exotic_gases£ §YExotic Gases§!, and £rare_crystals£ §YRare Crystals§! produced.)"
 
  preset_lrsk_gov_var_ward:0 "Ward"
  preset_lrsk_gov_var_ward_desc:1 "\nAnother alien civilization meddled the development of these vassals, raising them to the stars (possibly from pre-sapient beginnings). They are very independent and their masters gain £influence£ Influence, £society£ Society Research, and £unity£ Unity from the arrangement."
@@ -1454,16 +1454,16 @@ l_english:
  # Agreement Terms
  lrsk_gvp_special_resource_taxes:0 "Special Vassal Taxes"
  lrsk_gvp_special_resource_taxes_desc:1 "This Term dictates the amount of a specific resource the Subject is obligated to pay to the Overlord as an extra assessment each month. The number is a percentage of the Subject's current monthly production. §YOnly available to empires using the $lrsk_gov_var_civic_imperial_economy$ civic.§!"
- lrsk_gvp_special_resource_tax_minerals:1 "Special Minerals Tax"
- lrsk_gvp_special_resource_tax_food:1 "Special Food Tax"
- lrsk_gvp_special_resource_tax_energy:1 "Special Energy Tax"
- lrsk_gvp_special_resource_tax_alloys:1 "Special Alloy Tax"
- lrsk_gvp_special_resource_tax_consumer_goods:1 "Special Consumer Goods Tax"
- lrsk_gvp_special_resource_tax_volatile_motes:1 "Special Volatile Motes Tax"
- lrsk_gvp_special_resource_tax_exotic_gases:1 "Special Exotic Gases Tax"
- lrsk_gvp_special_resource_tax_rare_crystals:1 "Special Rare Crystals Tax"
- lrsk_gvp_special_resource_tax_influence:1 "Special Influence Tax"
- lrsk_gvp_special_resource_tax_unity:1 "Special Unity Tax"
+ lrsk_gvp_special_resource_tax_minerals:1 "Minerals Taxes"
+ lrsk_gvp_special_resource_tax_food:1 "Food Taxes"
+ lrsk_gvp_special_resource_tax_energy:1 "Energy Taxes"
+ lrsk_gvp_special_resource_tax_alloys:1 "Alloy Taxes"
+ lrsk_gvp_special_resource_tax_consumer_goods:1 "Consumer Goods Taxes"
+ lrsk_gvp_special_resource_tax_volatile_motes:1 "Volatile Motes Taxes"
+ lrsk_gvp_special_resource_tax_exotic_gases:1 "Exotic Gases Taxes"
+ lrsk_gvp_special_resource_tax_rare_crystals:1 "Rare Crystals Taxes"
+ lrsk_gvp_special_resource_tax_influence:1 "Influence Taxes"
+ lrsk_gvp_special_resource_tax_unity:1 "Unity Taxes"
 
  ## Opinion Modifiers
 
@@ -2177,7 +2177,7 @@ l_english:
 
  # Explainer
  lrsk_gov_var_impecon.101.name:0 "To Serve the Empire"
- lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. (§PNOTE: Not all features of specialized vassals are working correctly yet in 3.4. Fix TBD.§!) Note that you can only have one of each type. The event that gives you this choice will explain the different types, but note that unlike most vassals, they are able to expand and will not join your wars, as they are purely economic assets (and would not be very good ones if they could never expand)."
+ lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to §Hfine-tune§! vassal contributions, determining exactly how much of each specific resource they pay you. Additionally, you have the option to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. The event that gives you this choice will explain the different types. They are able to expand and will not join your wars, as they are purely economic assets. You gain a small bonus for each such vassal you have under your thumb, but the burden of your exploitative rule will incline them to disloyalty."
  lrsk_gov_var_impecon.101.a:0 "Crack the whip!"
 
  ## Colonial Fiefs

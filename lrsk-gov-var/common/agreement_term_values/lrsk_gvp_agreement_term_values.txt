@@ -20,15 +20,78 @@
 # In 00_defines.txt:
 #	AGREEMENT_RESOURCE_SUBSIDIES_MIN
 #	AGREEMENT_RESOURCE_SUBSIDIES_MAX
-@subsidy_minimum = -0.75
-@subsidy_maximum = 0.75
 
-@set_factor_1 = 0.30
-@set_factor_1_neg = -0.30
-@set_factor_2 = 0.45
-@set_factor_2_neg = -0.45
-@set_factor_3 = 0.60
-@set_factor_3_neg = -0.60
+@lrsk_default_min = 0.0
+@lrsk_spec_min = 0.1
+@lrsk_default_max = 0.6
+@lrsk_spec_max = 0.75
+
+
+lrsk_gvp_special_resource_tax_influence = {
+	term = lrsk_gvp_special_resource_taxes
+	resources = {
+		influence
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_research
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_research
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+		target = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+	}
+
+	resource_min = {
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_trophy
+		}
+	}
+
+	resource_max = {
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_trophy
+		}
+	}
+}
+
+lrsk_gvp_special_resource_tax_unity = {
+	term = lrsk_gvp_special_resource_taxes
+	resources = {
+		unity
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_research
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_research
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+		target = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+	}
+
+	resource_min = {
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_trophy
+		}
+	}
+
+	resource_max = {
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_trophy
+		}
+	}
+}
 
 lrsk_gvp_special_resource_tax_minerals = {
 	term = lrsk_gvp_special_resource_taxes
@@ -36,19 +99,19 @@ lrsk_gvp_special_resource_tax_minerals = {
 		minerals
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_basic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
 	}
 }
 
@@ -58,19 +121,29 @@ lrsk_gvp_special_resource_tax_food = {
 		food
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_basic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_market
+		}
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_market
+		}
 	}
 }
 
@@ -80,19 +153,19 @@ lrsk_gvp_special_resource_tax_energy = {
 		energy
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_basic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
 	}
 }
 
@@ -110,22 +183,21 @@ lrsk_gvp_special_resource_tax_alloys = {
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
 
 		modifier = {
-			set = 0.1
+			set = @lrsk_spec_min
 			agreement_preset = preset_lrsk_gvp_vassal_foundry
 		}
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
 
 		modifier = {
-			set = 0.75
+			set = @lrsk_spec_max
 			agreement_preset = preset_lrsk_gvp_vassal_foundry
 		}
-
 	}
 }
 
@@ -143,11 +215,21 @@ lrsk_gvp_special_resource_tax_consumer_goods = {
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_market
+		}
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_market
+		}
 	}
 }
 
@@ -157,19 +239,29 @@ lrsk_gvp_special_resource_tax_volatile_motes = {
 		volatile_motes
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 }
 
@@ -179,19 +271,29 @@ lrsk_gvp_special_resource_tax_exotic_gases = {
 		exotic_gases
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 
 	resource_max = {
-		base = 0.6
+		base = @lrsk_default_max
+
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 }
 
@@ -201,62 +303,28 @@ lrsk_gvp_special_resource_tax_rare_crystals = {
 		rare_crystals
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	resource_min = {
-		base = 0
+		base = @lrsk_default_min
+
+		modifier = {
+			set = @lrsk_spec_min
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 
 	resource_max = {
-		base = 0.6
-	}
-}
+		base = @lrsk_default_max
 
-lrsk_gvp_special_resource_tax_influence = {
-	term = lrsk_gvp_special_resource_taxes
-	resources = {
-		influence
-	}
-
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
-
-	potential = {
-		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
-	}
-
-	resource_min = {
-		base = 0
-	}
-
-	resource_max = {
-		base = 0.6
-	}
-}
-
-lrsk_gvp_special_resource_tax_unity = {
-	term = lrsk_gvp_special_resource_taxes
-	resources = {
-		unity
-	}
-
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
-
-	potential = {
-		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
-	}
-
-	resource_min = {
-		base = 0
-	}
-
-	resource_max = {
-		base = 0.6
+		modifier = {
+			set = @lrsk_spec_max
+			agreement_preset = preset_lrsk_gvp_vassal_prospector
+		}
 	}
 }
