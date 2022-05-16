@@ -29,7 +29,8 @@
 # 	}
 # }
 
-# Special holding effect: Taxed 25% of alloys produced
+# Special holding effect: Taxed 25% of alloys produced.
+# Reduces naval capacity, overlord gets naval capacity boost.
 preset_lrsk_gvp_vassal_foundry = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_foundry"
 	term_data = {
@@ -67,6 +68,12 @@ preset_lrsk_gvp_vassal_foundry = {
 				value = subject_loyalty_effects
 			}
 		}
+		resource_terms = {
+			{
+				key = lrsk_gvp_special_resource_tax_alloys
+				value = 0.25
+			}
+		}
 	}
 
 	overlord_weight = {
@@ -78,8 +85,8 @@ preset_lrsk_gvp_vassal_foundry = {
 	}
 }
 
-# Special holding effect: Taxed 25% of alloys produced
-# provides OL with +10% trade value.
+# Special holding effect: Taxed 25% of consumer goods produced.
+# Provides OL with +10% trade value and -10% market fee.
 preset_lrsk_gvp_vassal_market = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_market"
 	term_data = {
@@ -179,6 +186,7 @@ preset_lrsk_gvp_vassal_trophy = {
 }
  
 # Special holding effect: Taxed 20% of rare materials.
+# Overlord planets can get random events to add a deposit once.
 preset_lrsk_gvp_vassal_prospector = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_prospector"
 	term_data = {
