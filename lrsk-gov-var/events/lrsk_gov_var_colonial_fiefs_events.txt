@@ -510,7 +510,7 @@ country_event = {
 					planet = this
 				}
 				
-				# 25% chance with promotion policy that colony starts with 2 pops
+				# 25% chance with promotion policy that colony starts with additional pop
 				if = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted } }
 					random = {
 						chance = 25
@@ -547,6 +547,24 @@ country_event = {
 				add_intel = {
 					amount = 60
 					who = root
+				}
+
+				#Resource boosts to keep them viable
+				add_resource = {
+					unity = 100
+					mult = trigger:years_passed
+				}
+				add_resource = {
+					food = 30
+					mult = trigger:years_passed
+				}
+				add_resource = {
+					minerals = 30
+					mult = trigger:years_passed
+				}
+				add_resource = {
+					energy = 30
+					mult = trigger:years_passed
 				}
 			}
 
