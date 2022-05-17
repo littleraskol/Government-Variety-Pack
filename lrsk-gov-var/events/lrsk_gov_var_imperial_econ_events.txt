@@ -39,6 +39,9 @@ country_event = {
 					if = { limit = { from = { not = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } } } } }
 						set_subject_of = {
 							who = from
+							#preset = preset_lrsk_gvp_vassal_foundry
+						}
+						set_agreement_preset = {
 							preset = preset_lrsk_gvp_vassal_foundry
 						}
 					}
