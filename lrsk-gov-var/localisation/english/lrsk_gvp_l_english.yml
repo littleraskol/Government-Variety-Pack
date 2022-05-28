@@ -1428,23 +1428,23 @@ l_english:
  
  preset_lrsk_gvp_vassal_foundry:0 "Foundry Colony"
  preset_lrsk_gvp_vassal_foundry_desc:1 "A $preset_lrsk_gvp_vassal_foundry$ is a Subject that must furnish its Overlord with materials and supplies for the Overlord's navy."
- preset_lrsk_gvp_vassal_foundry_flavor_desc:1 "To better the military preparedness of its overlord, this kind of subject is forced to render a portion of its alloy production and naval capacity. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_foundry_eff:1 "Taxed 25% of £alloys£ §YAlloys§! produced."
+ preset_lrsk_gvp_vassal_foundry_flavor_desc:1 "To better the military preparedness of its overlord, this kind of subject is forced to render a portion of its alloy and energy production and naval capacity. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ preset_lrsk_gvp_vassal_foundry_eff:1 "Taxed at least 20% of £alloys£ §YAlloys§! and £energy£ §YEnergy§! produced."
 
  preset_lrsk_gvp_vassal_market:0 "Market Colony"
  preset_lrsk_gvp_vassal_market_desc:1 "A $preset_lrsk_gvp_vassal_market$ is a Subject that exists to feed the material needs and wants of its Overlord's people."
  preset_lrsk_gvp_vassal_market_flavor_desc:1 "For the greater prosperity of its overlord, this kind of subject is forced to render a portion of its consumer goods and food production. It also provides its overlord with commercial opportunities. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_market_eff:1 "Taxed 20% of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced, overlord gets +10% trade value and -10% market fee."
+ preset_lrsk_gvp_vassal_market_eff:1 "Taxed at least 20% of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced, overlord gets +10% trade value and -10% market fee."
 
  preset_lrsk_gvp_vassal_trophy:0 "Trophy Colony"
  preset_lrsk_gvp_vassal_trophy_desc:1 "A $preset_lrsk_gvp_vassal_trophy$ is a Subject that has been made to act as a propagandist for its Overlord, echoing the Overlord's agenda and legitimating its culture."
  preset_lrsk_gvp_vassal_trophy_flavor_desc:1 "For the glory of its overlord, this kind of subject is made into an object lesson in proper deference to a superior. This increases its overlord's political and social captial, at the subject's expense and to its peoples' indignation, and improves the overlord's diplomatic standing. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_trophy_eff:1 "Taxed 10% of £unity£ §YUnity§! and £influence£ §YInfluence§! produced; gets a happiness penalty. Overlord gets +15% diplomatic power."
+ preset_lrsk_gvp_vassal_trophy_eff:1 "Taxed at least 10% of £unity£ §YUnity§! and £influence£ §YInfluence§! produced; gets a happiness penalty. Overlord gets +15% diplomatic power."
 
- preset_lrsk_gvp_vassal_prospector:0 "Prospecting Colony"
- preset_lrsk_gvp_vassal_prospector_desc:1 "A $preset_lrsk_gvp_vassal_prospector$ is a Subject that must render to its overlord a portion of the uncommon strategic resources it produces."
- preset_lrsk_gvp_vassal_prospector_flavor_desc:1 "To speed the advanced development of its overlord, this kind of subject is tasked with finding strategic construction materials, of which it must turn a portion over to its overlord. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_prospector_eff:1 "Taxed 15% of £volatile_motes£ §YVolatile Motes§!, £exotic_gases£ §YExotic Gases§!, and £rare_crystals£ §YRare Crystals§! produced."
+ preset_lrsk_gvp_vassal_prospector:0 "Provisioner Colony"
+ preset_lrsk_gvp_vassal_prospector_desc:1 "A $preset_lrsk_gvp_vassal_prospector$ is a Subject that must render to its overlord a portion of the construction resources it produces."
+ preset_lrsk_gvp_vassal_prospector_flavor_desc:1 "To speed the development of its overlord, this kind of subject is tasked with finding all kinds of construction materials, of which it must turn a portion over to its overlord. $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ preset_lrsk_gvp_vassal_prospector_eff:1 "Taxed at least 15% of £minerals£ §YMinerals§!, £volatile_motes£ §YVolatile Motes§!, £exotic_gases£ §YExotic Gases§!, and £rare_crystals£ §YRare Crystals§! produced."
 
  #preset_lrsk_gov_var_ward:0 "Ward"
  #preset_lrsk_gov_var_ward_desc:1 "\nAnother alien civilization meddled the development of these vassals, raising them to the stars (possibly from pre-sapient beginnings). They are very independent and their masters gain £influence£ Influence, £society£ Society Research, and £unity£ Unity from the arrangement."
@@ -2175,20 +2175,20 @@ l_english:
  LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
  lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
  lrsk_gov_var_impecon.2.desc:0 "The [lrsk_impecon_colonized.GetName] has submitted to us, as is right and proper. Our people expect to reap the benefits of our overlordship, and so we have the option of restructuring their economy and society for our benefit."
- lrsk_gov_var_impecon.2.a:0 "Make them forge materials for our fleets."
+ lrsk_gov_var_impecon.2.a:0 "Make them provide for the needs of our fleets."
  lrsk_gov_var_impecon.2.a.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$preset_lrsk_gvp_vassal_foundry$§!, which is defined as follows:\n$preset_lrsk_gvp_vassal_foundry_eff$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
  lrsk_gov_var_impecon.2.b:0 "Make of them a source of cheap goods."
  lrsk_gov_var_impecon.2.b.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$preset_lrsk_gvp_vassal_market$§!, which is defined as follows:\n$preset_lrsk_gvp_vassal_market_eff$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
  lrsk_gov_var_impecon.2.c:0 "Make them an object lesson on our glory."
  lrsk_gov_var_impecon.2.c.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$preset_lrsk_gvp_vassal_trophy$§!, which is defined as follows:\n$preset_lrsk_gvp_vassal_trophy_eff$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
- lrsk_gov_var_impecon.2.d:0 "Make them find valuable rarities for us."
+ lrsk_gov_var_impecon.2.d:0 "Make them find construction materials for us."
  lrsk_gov_var_impecon.2.d.tooltip:0 "[lrsk_impecon_colonized.GetName] becomes our §H$preset_lrsk_gvp_vassal_prospector$§!, which is defined as follows:\n$preset_lrsk_gvp_vassal_prospector_eff$ $LRSK_GOV_VAR_IMPECON_LEGIT$ $LRSK_GOV_VAR_IMPECON_PERM$"
  lrsk_gov_var_impecon.2.e:0 "Not necessary."
  lrsk_gov_var_impecon.2.e.tooltip:0 "Leave them in their current state of servitude. $LRSK_GOV_VAR_IMPECON_PERM$"
 
  # Explainer
  lrsk_gov_var_impecon.101.name:0 "To Serve the Empire"
- lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to §Hfine-tune§! vassal contributions, determining exactly how much of each specific resource they pay you. Additionally, you have the option to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. The event that gives you this choice will explain the different types. They are able to expand and will not join your wars, as they are purely economic assets. You gain a small bonus for each such vassal you have under your thumb, but the burden of your exploitative rule will incline them to disloyalty."
+ lrsk_gov_var_impecon.101.desc:0 "The §Y$lrsk_gov_var_civic_imperial_economy$§! Civic is designed to allow the player to benefit more from vassals. Beyond the base modifiers, it allows you to §Hfine-tune§! vassal contributions, determining exactly how much of each specific resource they pay you. Additionally, you have the option to create §Hspecialized vassals§!. How this works is that you will be given a choice after creating or obtaining a vassal to change it to one of four specialized types. The event that gives you this choice will explain the different types. They are able to expand and will not join your wars (although you will be required to defend them), as they are purely economic assets. You gain a small stability bonus for each such vassal you have under your thumb, but the burden of your exploitative rule will incline them to disloyalty."
  lrsk_gov_var_impecon.101.a:0 "Crack the whip!"
 
  ## Colonial Fiefs
