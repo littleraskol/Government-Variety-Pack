@@ -207,6 +207,17 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.1 (0?/??/22) - Fixed Imperial Economy
+-Changed the way the Imperial Economy special vassals work:
+--Taxes are based on setting agreement minimums, not preset definitions.
+--Foundry Colonies taxed at least 20% of alloys and energy.
+--Market Colonies taxed at least 20% of consumer goods and food.
+--Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject)
+--Provisioner Colony taxed at least 15% of minerals and strategic resources.
+--Trophy Colony taxed at least 10% of unity and influence.
+--No limits on how many of these vassals one can have.
+--Bonus for each reduced to +1 stability from +2.
+
 v5.0.3 (05/28/22) - Localization Updates
 -Providing new (missing) localizations for subjects.
 
