@@ -207,7 +207,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.0.3 (05/??/22) - Localization Updates
+v5.0.3 (05/28/22) - Localization Updates
 -Providing new (missing) localizations for subjects.
 
 v5.0.2 (05/15/22) - Yet More Post-Release Fixes
