@@ -52,10 +52,17 @@ country_event = {
 					}
 				}
 				default = {
+					set_timed_country_flag = {
+						flag = lrsk_impecon_temp_no_flag
+						days = 6
+					}
 					# This should never happen, but if there's no type flag, ask player what to do
 					from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
 				}
 			}
+
+			# recalcs if needed
+			if = { limit = { NOT = { has_country_flag = lrsk_impecon_temp_no_flag } } country_event = { id = lrsk_gov_var_impecon.3 } }
 		}
 		else = {
 			from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
@@ -187,6 +194,14 @@ country_event = {
 				factor = 3
 				has_ethic = ethic_fanatic_xenophobe
 			}
+			modifier = {
+				factor = 2
+				has_ethic = ethic_authoritarian
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_authoritarian
+			}
 		}
 	}
 
@@ -226,15 +241,24 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_impecon.2.e.tooltip
 		
 		log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
-		
-		hidden_effect = {
-			# call event to recalc legitimacy variable - this happens on vassalization effect otherwise.
-			country_event = { id = lrsk_gov_var_impecon.3 }
+
+		set_timed_country_flag = {
+			flag = lrsk_impecon_temp_no_change
+			days = 2
 		}
+		
+		#hidden_effect = {	
+		#	country_event = { id = lrsk_gov_var_impecon.3 }
+		#}
 		
 		ai_chance = {
 			factor = 1 # dunno
 		}
+	}
+
+	after = {
+		# call event to recalc variable variables if needed
+		if = { limit = { NOT = { has_country_flag = lrsk_impecon_temp_no_change } } country_event = { id = lrsk_gov_var_impecon.3 } }
 	}
 }
 
@@ -251,58 +275,118 @@ country_event = {
 	}
 	
 	immediate = {
-		set_variable = { which = lrsk_impecon_legit value = 0 }	# reset to recalc
+		# Reset to recalc
+		set_variable = { which = lrsk_impecon_legit value = 0 }
+		set_variable = { which = lrsk_impecon_foundries value = 0 }
+		set_variable = { which = lrsk_impecon_markets value = 0 }
+		set_variable = { which = lrsk_impecon_trophies value = 0 }
+		set_variable = { which = lrsk_impecon_prospectors value = 0 }
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } } }
-			change_variable = { which = lrsk_impecon_legit value = 1 }
-		}
-		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } } }
-			change_variable = { which = lrsk_impecon_legit value = 1 }
-			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_market } }
-				add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
+		# Count all special subjects, including how many of each type
+		every_subject = { limit = { lrsk_is_impecon_vassal = yes }
+			prev = { change_variable = { which = lrsk_impecon_legit value = 1 } }
+			
+			if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } }
+				prev = { change_variable = { which = lrsk_impecon_foundries value = 1 } }
 			}
-		}
-		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
-			remove_modifier = lrsk_gov_var_empire_impecon_market
-		}
-		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } } }
-			change_variable = { which = lrsk_impecon_legit value = 1 }
-			if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol } }
-				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
+			else_if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market } }
+				prev = { change_variable = { which = lrsk_impecon_markets value = 1 } }
 			}
-			random_subject = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
-				if = { limit = { not = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
+			else_if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
+				prev = { change_variable = { which = lrsk_impecon_trophies value = 1 } }
+
+				# Need to apply the shame modifier to trophy vassals (should already be there in most cases, but...
+				if = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
 					add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 				}
 			}
+			else_if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } }
+				prev = { change_variable = { which = lrsk_impecon_prospectors value = 1 } }
+			}
+			else = {
+				# Every applicable vassal in this conditional should have a special type
+				log = "ERROR: Special vassal of Imperial Economy empires without special type? Name = [this.GetName], Overlord = [root.GetName]"
+			}
 		}
-		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
-			remove_modifier = lrsk_gov_var_empire_impecon_trophy_ol
-			random_subject = { limit = { has_country_flag = lrsk_gvp_impecon_trophysub_of@root }
-				if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs }
-					remove_modifier = lrsk_gov_var_empire_impecon_trophy_vs
-				}
+
+		# Max special subject bonus mult = 5
+		if = { limit = { check_variable = { which = lrsk_impecon_foundries value > 5 } }
+			set_variable = { which = lrsk_impecon_foundries value = 5 }
+		}
+
+		if = { limit = { check_variable = { which = lrsk_impecon_markets value > 5 } }
+			set_variable = { which = lrsk_impecon_markets value = 5 }
+		}
+
+		if = { limit = { check_variable = { which = lrsk_impecon_trophies value > 5 } }
+			set_variable = { which = lrsk_impecon_trophies value = 5 }
+		}
+
+		if = { limit = { check_variable = { which = lrsk_impecon_prospectors value > 5 } }
+			set_variable = { which = lrsk_impecon_prospectors value = 5 }
+		}
+
+		# Remove any special subject bonus to re-apply with new mult if applicable		
+		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_foundry }
+			remove_modifier = lrsk_gov_var_empire_impecon_foundry
+		}
+		if = { limit = { check_variable = { which = lrsk_impecon_foundries value > 0 } }
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_impecon_foundry
+				multiplier = lrsk_impecon_foundries
+			}
+		}
+
+		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
+			remove_modifier = lrsk_gov_var_empire_impecon_market
+		}
+		if = { limit = { check_variable = { which = lrsk_impecon_markets value > 0 } }
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_impecon_market
+				multiplier = lrsk_impecon_markets
 			}
 		}
 		
-		if = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector } } }
-			change_variable = { which = lrsk_impecon_legit value = 1 }
+		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol }
+			remove_modifier = lrsk_gov_var_empire_impecon_trophy_ol
+		}
+		if = { limit = { check_variable = { which = lrsk_impecon_trophies value > 0 } }
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_impecon_trophy_ol
+				multiplier = lrsk_impecon_trophies
+			}
 		}
 
-		if = { limit = { check_variable = { which = lrsk_impecon_legit value > 0 } }
-			if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
-				remove_modifier = lrsk_gov_var_empire_impecon_legit
+		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_provision }
+			remove_modifier = lrsk_gov_var_empire_impecon_provision
+		}		
+		if = { limit = { check_variable = { which = lrsk_impecon_prospectors value > 0 } }
+			add_modifier = {
+				modifier = lrsk_gov_var_empire_impecon_provision
+				multiplier = lrsk_impecon_prospectors
 			}
+		}
 
+		# Finally, do legitimacy bonus
+		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
+			remove_modifier = lrsk_gov_var_empire_impecon_legit
+		}
+		if = { limit = { check_variable = { which = lrsk_impecon_legit value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_legit
 				multiplier = lrsk_impecon_legit
 			}
 		}
-		else_if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
-			remove_modifier = lrsk_gov_var_empire_impecon_legit
+
+		# This general check looks to see if we should remove the trophy happinness penalty from any freed trophy colony
+		every_country = { limit = { has_country_flag = lrsk_gvp_impecon_trophysub_of@root }
+			if = {
+				limit = {
+					NOT = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
+					has_modifier = lrsk_gov_var_empire_impecon_trophy_vs
+				}
+				remove_modifier = lrsk_gov_var_empire_impecon_trophy_vs
+			}
 		}
 	}
 }
