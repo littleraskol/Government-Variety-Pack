@@ -169,6 +169,13 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_impecon.2.c
 		custom_tooltip = lrsk_gov_var_impecon.2.c.tooltip
+
+		allow = {
+			custom_tooltip = {
+				fail_text = preset_lrsk_gvp_vassal_trophy_no_gestalt
+				event_target:lrsk_impecon_colonized = { is_gestalt = no }
+			}
+		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
