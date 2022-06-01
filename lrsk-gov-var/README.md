@@ -207,7 +207,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.1 (0?/??/22) - Fixed Imperial Economy
+v5.1 (0?/??/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 -Changed the way the Imperial Economy special vassals work:
 --Taxes are based on setting agreement minimums, not preset definitions.
 --Foundry Colonies taxed at least 20% of alloys and energy.
@@ -217,6 +217,10 @@ v5.1 (0?/??/22) - Fixed Imperial Economy
 --Trophy Colony taxed at least 10% of unity and influence.
 --No limits on how many of these vassals one can have.
 --Bonus for each reduced to +1 stability from +2.
+-Chartered Colony subject type changes:
+--Updated effect description.
+--Innate trust in chartering overlord reduced to +50 from +100.
+
 
 v5.0.3 (05/28/22) - Localization Updates
 -Providing new (missing) localizations for subjects.
