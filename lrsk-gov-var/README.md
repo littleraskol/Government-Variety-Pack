@@ -207,6 +207,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.0.4 (06/01/22) - Trying to fix "code names"
+-The only difference between my files and paradox files is the quotation marks around the format string. So I removed them. Hope this helps!
+
 v5.0.3 (05/28/22) - Localization Updates
 -Providing new (missing) localizations for subjects.
 
