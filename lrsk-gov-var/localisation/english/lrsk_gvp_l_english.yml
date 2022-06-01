@@ -1459,7 +1459,7 @@ l_english:
  preset_lrsk_gov_var_subject_chartered_company:0 "Chartered Colony"
  preset_lrsk_gov_var_subject_chartered_company_desc:1 "A $preset_lrsk_gov_var_subject_chartered_company$ is a Subject set up as a joint-stock company for commercial colonization."
  preset_lrsk_gov_var_subject_chartered_company_flavor_desc:1 "Some early star-faring governments had trouble financing interstellar colonization efforts. One solution they developed was to foster the creation of special colonization corporations: private interests would front the money for the endeavor and the homeworld government maintained indirect control through the terms of the incorporation contract. This subject is the result of such a scheme."
- preset_lrsk_gov_var_subject_chartered_company_eff:0 "Overlord gets §G+2%§! £trade_value£ §YTrade Value§! and  §G-1%§! §YMarket Fee§! for each Subject of this type that it has. This Subject type has an innate §G+50§! £opinion£ §YOpinion§! bonus to the Overlord that chartered it."
+ preset_lrsk_gov_var_subject_chartered_company_eff:0 "-Taxed §G20%§! of §YBasic Resources§! and §G10%§! of §YStrategic Resources§!.\n-Overlord gets §G+2%§! £trade_value£ §YTrade Value§! and  §G-1%§! §YMarket Fee§! for each Subject of this type that it has.\n-This Subject type has an innate §G+50§! £opinion£ §YOpinion§! bonus to the Overlord that chartered it.\n-Any §H$divided_patronage$§! penalty to this Subject's £loyalty£ §YLoyalty§! is §Ghalved%§! for other Subjects of the same type. "
  lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
  lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
 
@@ -1829,8 +1829,6 @@ l_english:
  decision_lrsk_gvp_end_work_allocation_plan_desc:1 "Due to satisfactory planetary employment levels, the plan to alleviate unemployment can come to an end."
  decision_lrsk_gvp_end_work_allocation_plan_effects:0 "Removes the §H$lrsk_gvp_statmod_work_plan$§! modifier, ending $lrsk_gvp_statmod_work_plan_effects_common$."
 
- ## Empire Modifiers
-
  # Charter Colonial Company
  decision_lrsk_gov_var_charter_col:0 "Charter Colonial Company"
  decision_lrsk_gov_var_charter_col_desc:0 "Charter a new colonial company as a subject empire, with this world as its capital."
@@ -1964,6 +1962,9 @@ l_english:
 
  lrsk_gov_var_empire_impecon_legit:0 "Imperial Legitimacy"
  lrsk_gov_var_empire_impecon_legit_desc:0 "Organizing the economies and societies of our vassals for particular uses raises the confidence of the people in our rule."
+
+ lrsk_gvp_colonial_mission_loyalty:0 "$triggered_opinion_lrsk_gov_var_colonial_mission$"
+ lrsk_gvp_colonial_mission_loyalty_desc:0 "Though our Overlord's attention is divided, we take heart that they are still invested in our shared commercial endevour."
  
  ### Planet Modifiers
 

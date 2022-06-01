@@ -781,3 +781,38 @@ lrsk_mark_escape_route = {
 		set_star_flag = lrsk_marked_escape_route
 	}
 }
+
+# Offsets "Divided Patronage" loyalty penalty only for Chartered Colony subjects
+lrsk_refresh_chartered_colony_loyalty_offset = {
+	every_subject = {
+		erase_modifier = { MOD = lrsk_gvp_colonial_mission_loyalty }
+	}
+	if = {
+		limit = {
+			NOR = {
+				has_civic = civic_feudal_realm
+				has_civic = civic_franchising
+				has_ascension_perk = ap_shared_destiny
+			}
+			subjects > 1
+			count_subject = {
+				count > 1
+				limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
+			}
+		}
+		set_variable = { which = lrsk_chartered_colony_minus_one value = 0 }
+		every_subject = {
+			limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
+			prev = { change_variable = { which = lrsk_chartered_colony_minus_one value = 1 } }
+		}
+		subtract_variable = { which = lrsk_chartered_colony_minus_one value = 1 }
+		every_subject = {
+			limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
+			add_modifier = {
+				modifier = lrsk_gvp_colonial_mission_loyalty
+				multiplier = prev.lrsk_chartered_colony_minus_one
+			}
+		}
+		clear_variable = lrsk_chartered_colony_minus_one
+	}
+}

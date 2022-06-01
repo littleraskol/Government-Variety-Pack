@@ -218,9 +218,10 @@ v5.1 (0?/??/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 --No limits on how many of these vassals one can have.
 --Bonus for each reduced to +1 stability from +2.
 -Chartered Colony subject type changes:
+--Taxed 20% of Basic Resources and 10% of Strategic Resources.
+--Innate trust (opinion bonus) in chartering overlord reduced to +50 from +100.
+--Halved "Divided Loyalties" penalty for this subject type.
 --Updated effect description.
---Innate trust in chartering overlord reduced to +50 from +100.
-
 
 v5.0.3 (05/28/22) - Localization Updates
 -Providing new (missing) localizations for subjects.

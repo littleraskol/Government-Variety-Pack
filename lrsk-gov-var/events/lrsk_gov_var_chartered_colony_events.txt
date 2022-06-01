@@ -401,6 +401,7 @@ country_event = {
 }
 
 # Calculate number of chartered colony subjects and determine whether to change the bonus
+# Also offset  "Divided Patronage" loyalty penalty only for Chartered Colony subjects
 country_event = {
 	id = lrsk_gov_var_chartered.3
 
@@ -438,6 +439,9 @@ country_event = {
 				modifier = lrsk_gov_var_empire_colonial_trade
 				multiplier = lrsk_charcols
 			}
+
+			# Loyalty penalty offset
+			lrsk_refresh_chartered_colony_loyalty_offset = yes
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
 			# Remove any bonus, there are no colonies and can therefore be no bonus
