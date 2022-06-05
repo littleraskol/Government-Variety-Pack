@@ -290,7 +290,14 @@ country_event = {
 		set_variable = { which = lrsk_impecon_prospectors value = 0 }
 		
 		# Count all special subjects, including how many of each type
-		every_subject = { limit = { lrsk_is_impecon_vassal = yes }
+		every_subject = {
+			limit = { or = {
+				is_subject_with_preset = preset_lrsk_gvp_vassal_foundry
+				is_subject_with_preset = preset_lrsk_gvp_vassal_market
+				is_subject_with_preset = preset_lrsk_gvp_vassal_trophy
+				is_subject_with_preset = preset_lrsk_gvp_vassal_prospector
+			} }
+			
 			prev = { change_variable = { which = lrsk_impecon_legit value = 1 } }
 			
 			if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry } }
