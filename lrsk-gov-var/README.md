@@ -210,15 +210,17 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v5.1 (0?/??/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 -Changed the way the Imperial Economy special vassals work:
 --Taxes are based on setting agreement minimums, not preset definitions.
---Foundry Colonies taxed at least 20% of alloys and energy.
---Market Colonies taxed at least 20% of consumer goods and food.
---Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject)
+--Each special type provdes a special bonus to the overlord.
+--Foundry Colony renamed to Logistics Colony (more accurate to purpose).
+--Logistics Colonies taxed at least 15% of alloys and energy.
+--Market Colonies taxed at least 15% of consumer goods and food.
+--Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject).
 --Provisioner Colony taxed at least 15% of minerals and strategic resources.
---Trophy Colony taxed at least 10% of unity and influence.
+--Trophy Colony taxed at least 15% of unity and influence.
 --No limits on how many of these vassals one can have.
 --Bonus for each reduced to +1 stability from +2.
 -Chartered Colony subject type changes:
---Taxed 20% of Basic Resources and 10% of Strategic Resources.
+--Taxed 15% of Basic Resources and Strategic Resources.
 --Innate trust (opinion bonus) in chartering overlord reduced to +25 and +25 (decaying) from +100.
 --Halved "Divided Loyalties" penalty for this subject type.
 --Updated effect description.

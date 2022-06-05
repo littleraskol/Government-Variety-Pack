@@ -302,7 +302,7 @@ country_event = {
 			else_if = { limit = { is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy } }
 				prev = { change_variable = { which = lrsk_impecon_trophies value = 1 } }
 
-				# Need to apply the shame modifier to trophy vassals (should already be there in most cases, but...
+				# Need to apply the shame modifier to trophy vassals (should already be there in most cases, but...)
 				if = { limit = { NOT = { has_modifier = lrsk_gov_var_empire_impecon_trophy_vs } }
 					add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 				}
@@ -334,9 +334,7 @@ country_event = {
 		}
 
 		# Remove any special subject bonus to re-apply with new mult if applicable		
-		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_foundry }
-			remove_modifier = lrsk_gov_var_empire_impecon_foundry
-		}
+		erase_modifier = { MOD = lrsk_gov_var_empire_impecon_foundry }
 		if = { limit = { check_variable = { which = lrsk_impecon_foundries value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_foundry
@@ -344,9 +342,7 @@ country_event = {
 			}
 		}
 
-		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_market }
-			remove_modifier = lrsk_gov_var_empire_impecon_market
-		}
+		erase_modifier = { MOD = lrsk_gov_var_empire_impecon_market }
 		if = { limit = { check_variable = { which = lrsk_impecon_markets value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_market
@@ -354,9 +350,7 @@ country_event = {
 			}
 		}
 		
-		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_trophy_ol }
-			remove_modifier = lrsk_gov_var_empire_impecon_trophy_ol
-		}
+		erase_modifier = { MOD = lrsk_gov_var_empire_impecon_trophy_ol }
 		if = { limit = { check_variable = { which = lrsk_impecon_trophies value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_trophy_ol
@@ -364,9 +358,7 @@ country_event = {
 			}
 		}
 
-		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_provision }
-			remove_modifier = lrsk_gov_var_empire_impecon_provision
-		}		
+		erase_modifier = { MOD = lrsk_gov_var_empire_impecon_provision }		
 		if = { limit = { check_variable = { which = lrsk_impecon_prospectors value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_provision
@@ -375,9 +367,7 @@ country_event = {
 		}
 
 		# Finally, do legitimacy bonus
-		if = { limit = { has_modifier = lrsk_gov_var_empire_impecon_legit }
-			remove_modifier = lrsk_gov_var_empire_impecon_legit
-		}
+		erase_modifier = { MOD = lrsk_gov_var_empire_impecon_legit }
 		if = { limit = { check_variable = { which = lrsk_impecon_legit value > 0 } }
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_impecon_legit
