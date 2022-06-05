@@ -423,8 +423,8 @@ country_event = {
 			log = "Num of counted subjects = [this.lrsk_charcols]"
 
 			# Max special bonus mult = 10
-			if = { limit = { check_variable = { which = lrsk_charcols value > 10 } }
-				set_variable = { which = lrsk_charcols value = 10 }
+			if = { limit = { check_variable = { which = lrsk_charcols value > 15 } }
+				set_variable = { which = lrsk_charcols value = 15 }
 			}
 
 			erase_modifier = { MOD = lrsk_gov_var_empire_colonial_trade }
