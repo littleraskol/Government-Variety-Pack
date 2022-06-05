@@ -120,6 +120,10 @@ country_event = {
 					who = event_target:lrsk_chartering_agent
 					preset = preset_lrsk_gov_var_subject_chartered_company
 				}
+				add_opinion_modifier = {
+					who = event_target:lrsk_chartering_agent
+					modifier = opinion_lrsk_gov_var_colonial_mission
+				}
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
@@ -177,6 +181,10 @@ country_event = {
 				set_subject_of = {
 					who = event_target:lrsk_chartering_agent
 					preset = preset_lrsk_gov_var_subject_chartered_company
+				}
+				add_opinion_modifier = {
+					who = event_target:lrsk_chartering_agent
+					modifier = opinion_lrsk_gov_var_colonial_mission
 				}
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
@@ -273,6 +281,10 @@ country_event = {
 				set_subject_of = {
 					who = event_target:lrsk_chartering_agent
 					preset = preset_lrsk_gov_var_subject_chartered_company
+				}
+				add_opinion_modifier = {
+					who = event_target:lrsk_chartering_agent
+					modifier = opinion_lrsk_gov_var_colonial_mission
 				}
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
