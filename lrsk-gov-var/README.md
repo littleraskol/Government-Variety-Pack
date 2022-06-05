@@ -208,6 +208,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v5.1 (0?/??/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
+-Imperial Economy allows for "fine tuning" subject resource contributions: You can individually set the taxes or subsidies of each resource type.
 -Changed the way the Imperial Economy special vassals work:
 --Taxes are based on setting agreement minimums, not preset definitions.
 --Each special type provdes a special bonus to the overlord.
