@@ -281,6 +281,16 @@ preset_lrsk_gvp_vassal_prospector = {
 preset_lrsk_gov_var_subject_chartered_company = {
 	icon = "GFX_diplomacy_status_is_lrsk_gov_var_subject_chartered_company"
 	term_data = {
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.15
+			}
+			{
+				key = resource_subsidies_advanced
+				value = 0.15
+			}
+		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -313,16 +323,6 @@ preset_lrsk_gov_var_subject_chartered_company = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
-			}
-		}
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.15
-			}
-			{
-				key = resource_subsidies_strategic
-				value = 0.15
 			}
 		}
 	}

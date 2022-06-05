@@ -2,15 +2,14 @@
 # Agreement Term Values
 # Author: littleraskol
 
-@subsidy_multiplier_basic = 0.5
-@subsidy_multiplier_advanced = 0.5
-@subsidy_multiplier_research = 1
-@subsidy_multiplier_strategic = 1.5
+@lrsk_subsidy_multiplier = 0.15
+@lrsk_subsidy_multiplier_trophy = 0.4
+@lrsk_subsidy_multiplier_advanced = 0.25
+@lrsk_subsidy_multiplier_strategic = 0.5
 
-@subsidy_monthly_multiplier_basic = 5
-@subsidy_monthly_multiplier_advanced = 5
-@subsidy_monthly_multiplier_research = 5
-@subsidy_monthly_multiplier_strategic = 5
+@lrsk_subsidy_monthly_multiplier = 1.5
+@lrsk_subsidy_monthly_multiplier_trophy = 4
+@lrsk_subsidy_monthly_multiplier_advanced = 2.5
 
 # When changing the maximum and minimum values here the following should also be updated:
 # In agreement_negotiation_view.gui
@@ -35,8 +34,8 @@ lrsk_gvp_special_resource_tax_influence = {
 		influence
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_research
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_research
+	subsidy_multiplier = @lrsk_subsidy_multiplier_trophy
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier_trophy
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -68,8 +67,8 @@ lrsk_gvp_special_resource_tax_unity = {
 		unity
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_research
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_research
+	subsidy_multiplier = @lrsk_subsidy_multiplier_trophy
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier_trophy
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -101,8 +100,8 @@ lrsk_gvp_special_resource_tax_minerals = {
 		minerals
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_basic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
+	subsidy_multiplier = @lrsk_subsidy_multiplier
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -133,8 +132,8 @@ lrsk_gvp_special_resource_tax_food = {
 		food
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_basic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
+	subsidy_multiplier = @lrsk_subsidy_multiplier
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -165,8 +164,8 @@ lrsk_gvp_special_resource_tax_energy = {
 		energy
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_basic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_basic
+	subsidy_multiplier = @lrsk_subsidy_multiplier
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -197,8 +196,8 @@ lrsk_gvp_special_resource_tax_alloys = {
 		alloys
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @lrsk_subsidy_multiplier_advanced
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier_advanced
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -229,8 +228,8 @@ lrsk_gvp_special_resource_tax_consumer_goods = {
 		consumer_goods
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_advanced
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+	subsidy_multiplier = @lrsk_subsidy_multiplier_advanced
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier_advanced
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -261,8 +260,8 @@ lrsk_gvp_special_resource_tax_volatile_motes = {
 		volatile_motes
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_strategic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
+	subsidy_multiplier = @lrsk_subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -293,8 +292,8 @@ lrsk_gvp_special_resource_tax_exotic_gases = {
 		exotic_gases
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_strategic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
+	subsidy_multiplier = @lrsk_subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
@@ -325,8 +324,8 @@ lrsk_gvp_special_resource_tax_rare_crystals = {
 		rare_crystals
 	}
 
-	subsidy_multiplier = @subsidy_multiplier_strategic
-	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
+	subsidy_multiplier = @lrsk_subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @lrsk_subsidy_monthly_multiplier
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
