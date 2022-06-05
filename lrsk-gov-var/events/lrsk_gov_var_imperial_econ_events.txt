@@ -23,50 +23,7 @@ country_event = {
 	immediate = {
 		log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
 
-		# check and see if there should already be an applied type somehow; apply it.
-		if = { limit = { has_country_flag = lrsk_gvp_impecon_specsub_of@from }
-			switch = {
-				trigger = has_country_flag
-				lrsk_gvp_impecon_alloysub_of@from = { 
-					set_subject_of = {
-						who = from
-						preset = preset_lrsk_gvp_vassal_foundry
-					}
-				}
-				lrsk_gvp_impecon_tradesub_of@from = {
-					set_subject_of = {
-						who = from
-						preset = preset_lrsk_gvp_vassal_market
-					}
-				}
-				lrsk_gvp_impecon_trophysub_of@from = {
-					set_subject_of = {
-						who = from
-						preset = preset_lrsk_gvp_vassal_trophy
-					}
-				}
-				lrsk_gvp_impecon_raressub_of@from = {
-					set_subject_of = {
-						who = from
-						preset = preset_lrsk_gvp_vassal_prospector
-					}
-				}
-				default = {
-					set_timed_country_flag = {
-						flag = lrsk_impecon_temp_no_flag
-						days = 6
-					}
-					# This should never happen, but if there's no type flag, ask player what to do
-					from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
-				}
-			}
-
-			# recalcs if needed
-			if = { limit = { NOT = { has_country_flag = lrsk_impecon_temp_no_flag } } country_event = { id = lrsk_gov_var_impecon.3 } }
-		}
-		else = {
-			from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
-		}
+		from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
 	}
 }
 
@@ -95,12 +52,7 @@ country_event = {
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
-				set_subject_of = {
-					who = event_target:lrsk_impecon_colonizer
-					preset = preset_lrsk_gvp_vassal_foundry
-				}
-				set_country_flag = lrsk_gvp_impecon_specsub_of@root
-				set_country_flag = lrsk_gvp_impecon_alloysub_of@root
+				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_foundry }
 			}
 			log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
 		}
@@ -133,12 +85,7 @@ country_event = {
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
-				set_subject_of = {
-					who = event_target:lrsk_impecon_colonizer
-					preset = preset_lrsk_gvp_vassal_market
-				}
-				set_country_flag = lrsk_gvp_impecon_specsub_of@root
-				set_country_flag = lrsk_gvp_impecon_tradesub_of@root
+				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_market }
 			}
 			add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
 			log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
@@ -179,12 +126,7 @@ country_event = {
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
-				set_subject_of = {
-					who = event_target:lrsk_impecon_colonizer
-					preset = preset_lrsk_gvp_vassal_trophy
-				}
-				set_country_flag = lrsk_gvp_impecon_specsub_of@root
-				set_country_flag = lrsk_gvp_impecon_trophysub_of@root
+				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_trophy }
 				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
 			}
 			add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
@@ -219,12 +161,7 @@ country_event = {
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
-				set_subject_of = {
-					who = event_target:lrsk_impecon_colonizer
-					preset = preset_lrsk_gvp_vassal_prospector
-				}
-				set_country_flag = lrsk_gvp_impecon_specsub_of@root
-				set_country_flag = lrsk_gvp_impecon_raressub_of@root
+				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_prospector }
 			}
 			log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
 		}
