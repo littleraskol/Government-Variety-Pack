@@ -828,8 +828,14 @@ lrsk_make_chartered_colony_subject = {
 		modifier = opinion_lrsk_gov_var_colonial_mission
 	}
 	# When setting a preset by event, this does not happen automatically.
-	set_agreement_terms = {
-		resource_subsidies_basic = 0.15
-		resource_subsidies_advanced = 0.15
+	random_agreement = {
+		limit = {
+			owner = { is_same_value = this.overlord }
+			target = { is_same_value = this }
+		}
+		set_agreement_terms = {
+			resource_subsidies_basic = 0.15
+			resource_subsidies_advanced = 0.15
+		}
 	}
 }
