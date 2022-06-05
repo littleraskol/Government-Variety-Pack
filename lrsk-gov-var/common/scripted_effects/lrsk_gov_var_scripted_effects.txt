@@ -816,3 +816,20 @@ lrsk_refresh_chartered_colony_loyalty_offset = {
 		clear_variable = lrsk_chartered_colony_minus_one
 	}
 }
+
+# Set as chartered colony subject with appropriate resource contributions.
+lrsk_make_chartered_colony_subject = {
+	set_subject_of = {
+		who = event_target:lrsk_chartering_agent
+		preset = preset_lrsk_gov_var_subject_chartered_company
+	}
+	add_opinion_modifier = {
+		who = event_target:lrsk_chartering_agent
+		modifier = opinion_lrsk_gov_var_colonial_mission
+	}
+	# When setting a preset by event, this does not happen automatically.
+	set_agreement_term = {
+		resource_subsidies_basic = 0.15
+		resource_subsidies_advanced = 0.15
+	}
+}

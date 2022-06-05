@@ -116,14 +116,7 @@ country_event = {
 					}
 				}
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
-				add_opinion_modifier = {
-					who = event_target:lrsk_chartering_agent
-					modifier = opinion_lrsk_gov_var_colonial_mission
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
@@ -178,14 +171,7 @@ country_event = {
 					}
 				}
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
-				add_opinion_modifier = {
-					who = event_target:lrsk_chartering_agent
-					modifier = opinion_lrsk_gov_var_colonial_mission
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
@@ -278,14 +264,7 @@ country_event = {
 				}
 				create_starting_leaders = yes
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
-				add_opinion_modifier = {
-					who = event_target:lrsk_chartering_agent
-					modifier = opinion_lrsk_gov_var_colonial_mission
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
 			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
