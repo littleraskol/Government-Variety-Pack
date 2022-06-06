@@ -619,16 +619,24 @@ lrsk_has_special_vassals = {
 # Specifies conditions that would block an event that alters vassal type for various special vassal type civcs etc.
 lrsk_special_vassal_allowed = {
 	NOR = {
-		# Prevents any existing ImpEcon special vassal from being changed.
-		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry }
-		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market }
-		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy }
-		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector			 }
+		# Prevents special vassal choice event from firing for a special vassal (edge case?)
+		lrsk_is_impecon_special_vassal = yes
 
 		# Uplift: Prevent immediate change in subject status etc. if tutor can create special vassals
+		# Deprecated: Uplift uses Protectorate now.
 		#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 
 		# Prevent sublight colonies from being changed
 		#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
+	}
+}
+
+# Whether it is a subject with an ImpEcon special type.
+lrsk_is_impecon_special_vassal = {
+	OR = {
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }

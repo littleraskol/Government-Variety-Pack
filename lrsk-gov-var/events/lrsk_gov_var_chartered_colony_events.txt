@@ -116,10 +116,7 @@ country_event = {
 					}
 				}
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
@@ -174,10 +171,7 @@ country_event = {
 					}
 				}
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
 			log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
@@ -270,10 +264,7 @@ country_event = {
 				}
 				create_starting_leaders = yes
 				set_name = random # Fixes some naming issues
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
 			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
@@ -401,6 +392,7 @@ country_event = {
 }
 
 # Calculate number of chartered colony subjects and determine whether to change the bonus
+# Also offset  "Divided Patronage" loyalty penalty only for Chartered Colony subjects
 country_event = {
 	id = lrsk_gov_var_chartered.3
 
@@ -422,7 +414,7 @@ country_event = {
 			every_subject = {
 				limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
 				log = "Counting subject [this.GetName]"
-				root = {
+				prev = {
 					change_variable = { which = lrsk_charcols value = 1 }
 					log = "Subjects counted = [this.lrsk_charcols]"
 				}
@@ -430,14 +422,20 @@ country_event = {
 
 			log = "Num of counted subjects = [this.lrsk_charcols]"
 
-			IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
-				remove_modifier = lrsk_gov_var_empire_colonial_trade
+			# Max special bonus mult = 10
+			if = { limit = { check_variable = { which = lrsk_charcols value > 15 } }
+				set_variable = { which = lrsk_charcols value = 15 }
 			}
+
+			erase_modifier = { MOD = lrsk_gov_var_empire_colonial_trade }
 			
 			add_modifier = {
 				modifier = lrsk_gov_var_empire_colonial_trade
 				multiplier = lrsk_charcols
 			}
+
+			# Loyalty penalty offset
+			lrsk_refresh_chartered_colony_loyalty_offset = yes
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gov_var_empire_colonial_trade }
 			# Remove any bonus, there are no colonies and can therefore be no bonus

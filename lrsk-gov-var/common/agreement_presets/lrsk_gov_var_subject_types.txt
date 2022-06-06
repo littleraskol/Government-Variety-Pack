@@ -29,7 +29,8 @@
 # 	}
 # }
 
-# Special holding effect: Taxed 25% of alloys produced
+# Special holding effect: Taxed 20% of alloys and energy produced.
+# Reduces naval capacity, overlord gets naval capacity boost.
 preset_lrsk_gvp_vassal_foundry = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_foundry"
 	term_data = {
@@ -48,19 +49,23 @@ preset_lrsk_gvp_vassal_foundry = {
 			}
 			{
 				key = subject_expand
-				value = subject_can_expand_with_tithe
+				value = subject_can_expand
 			}
 			{
 				key = joins_overlord_wars
-				value = joins_overlord_wars_all
+				value = joins_overlord_wars_none
 			}
 			{
 				key = joins_subject_wars
-				value = joins_subject_wars_none
+				value = joins_subject_wars_defensive
 			}
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_1
+			}
+			{
+				key = lrsk_gvp_special_service
+				value = lrsk_gvp_special_service_loyalty_penalty
 			}
 			{
 				key = subject_loyalty
@@ -78,8 +83,8 @@ preset_lrsk_gvp_vassal_foundry = {
 	}
 }
 
-# Special holding effect: Taxed 25% of alloys produced
-# provides OL with +10% trade value.
+# Special holding effect: Taxed 20% of consumer goods and food produced.
+# Provides OL with +10% trade value and -10% market fee.
 preset_lrsk_gvp_vassal_market = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_market"
 	term_data = {
@@ -98,19 +103,23 @@ preset_lrsk_gvp_vassal_market = {
 			}
 			{
 				key = subject_expand
-				value = subject_can_expand_with_tithe
+				value = subject_can_expand
 			}
 			{
 				key = joins_overlord_wars
-				value = joins_overlord_wars_all
+				value = joins_overlord_wars_none
 			}
 			{
 				key = joins_subject_wars
-				value = joins_subject_wars_none
+				value = joins_subject_wars_defensive
 			}
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_1
+			}
+			{
+				key = lrsk_gvp_special_service
+				value = lrsk_gvp_special_service_loyalty_penalty
 			}
 			{
 				key = subject_loyalty
@@ -148,19 +157,23 @@ preset_lrsk_gvp_vassal_trophy = {
 			}
 			{
 				key = subject_expand
-				value = subject_can_expand_with_tithe
+				value = subject_can_expand
 			}
 			{
 				key = joins_overlord_wars
-				value = joins_overlord_wars_all
+				value = joins_overlord_wars_none
 			}
 			{
 				key = joins_subject_wars
-				value = joins_subject_wars_none
+				value = joins_subject_wars_defensive
 			}
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_1
+			}
+			{
+				key = lrsk_gvp_special_service
+				value = lrsk_gvp_special_service_loyalty_penalty
 			}
 			{
 				key = subject_loyalty
@@ -175,10 +188,12 @@ preset_lrsk_gvp_vassal_trophy = {
 
 	potential = {
 		from = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+		is_gestalt = no
 	}
 }
  
-# Special holding effect: Taxed 20% of rare materials.
+# Special holding effect: Taxed 15% of minerals and strategic resources.
+# Overlord planets can get random events to add a deposit once.
 preset_lrsk_gvp_vassal_prospector = {
 	icon = "GFX_diplomacy_status_is_lrsk_gvp_vassal_prospector"
 	term_data = {
@@ -197,19 +212,23 @@ preset_lrsk_gvp_vassal_prospector = {
 			}
 			{
 				key = subject_expand
-				value = subject_can_expand_with_tithe
+				value = subject_can_expand
 			}
 			{
 				key = joins_overlord_wars
-				value = joins_overlord_wars_all
+				value = joins_overlord_wars_none
 			}
 			{
 				key = joins_subject_wars
-				value = joins_subject_wars_none
+				value = joins_subject_wars_defensive
 			}
 			{
 				key = subject_holdings_limit
 				value = subject_holdings_limit_1
+			}
+			{
+				key = lrsk_gvp_special_service
+				value = lrsk_gvp_special_service_loyalty_penalty
 			}
 			{
 				key = subject_loyalty
@@ -278,6 +297,12 @@ preset_lrsk_gvp_vassal_prospector = {
 preset_lrsk_gov_var_subject_chartered_company = {
 	icon = "GFX_diplomacy_status_is_lrsk_gov_var_subject_chartered_company"
 	term_data = {
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.15
+			}
+		}
 		discrete_terms = {
 			{
 				key = specialist_type
@@ -293,7 +318,7 @@ preset_lrsk_gov_var_subject_chartered_company = {
 			}
 			{
 				key = subject_expand
-				value = subject_can_expand_with_tithe
+				value = subject_can_expand
 			}
 			{
 				key = joins_overlord_wars
@@ -308,14 +333,12 @@ preset_lrsk_gov_var_subject_chartered_company = {
 				value = subject_holdings_limit_1
 			}
 			{
+				key = lrsk_gvp_chartering
+				value = lrsk_gvp_chartered_colony_effects
+			}
+			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
-			}
-		}
-		resource_terms = {
-			{
-				key = resource_subsidies_basic
-				value = 0.2
 			}
 		}
 	}

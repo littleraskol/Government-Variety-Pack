@@ -207,6 +207,27 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.1 (0?/??/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
+-Imperial Economy allows for "fine tuning" subject resource contributions: You can individually set the taxes or subsidies of each resource type.
+-Changed the way the Imperial Economy special vassals work:
+--Taxes are based on setting agreement minimums, not preset definitions.
+--Each special type provdes a special bonus to the overlord.
+--Foundry Colony renamed to Logistics Colony (more accurate to purpose).
+--Logistics Colonies taxed at least 15% of alloys and energy.
+--Market Colonies taxed at least 15% of consumer goods and food.
+--Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject).
+--Provisioner Colony taxed at least 15% of minerals and strategic resources.
+--Trophy Colony taxed at least 15% of unity and influence.
+--No limits on how many of these vassals one can have.
+--Bonus for each reduced to +1 stability from +2.
+--Special subject status can be changed after setting.
+-Chartered Colony subject type changes:
+--Taxed 15% of Basic Resources.
+--Innate trust (opinion bonus) in chartering overlord reduced to +25 and +25 (decaying) from +100.
+--Halved "Divided Loyalties" penalty for this subject type.
+--Greatly increased the "Colonial Trade" modifier bonus, making it the major benefit.
+--Updated effect description.
+
 v5.0.4 (06/01/22) - Trying to fix "code names"
 -The only difference between my name generators and Paradox's are the quotation marks I had around the format string. So I removed them. Hope this helps!
 

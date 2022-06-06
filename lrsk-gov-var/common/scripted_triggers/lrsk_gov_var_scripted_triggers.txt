@@ -192,3 +192,13 @@ lrsk_system_vacant = {
 		has_presence = yes
 	}
 }
+
+# If a special vassal type of Imperial Economy
+lrsk_is_impecon_vassal = {
+	or = {
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
+	}
+}

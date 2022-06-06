@@ -108,8 +108,8 @@ lrsk_gov_var_empire_colonial_corruption_entrenched = {
 
 lrsk_gov_var_empire_colonial_trade = {
   icon = "gfx/interface/icons/modifiers/mod_country_lrsk_gov_var_empire_colonial_trade.dds"
-	trade_value_mult = 0.02
-  country_trade_fee = -0.01
+	trade_value_mult = 0.1
+  country_trade_fee = -0.5
 }
 
 lrsk_gvp_empire_scandal_wracked = {
@@ -160,15 +160,21 @@ lrsk_gvp_empire_national_peril = {
 	starbase_shipyard_build_speed_mult = 0.2
 }
 
+lrsk_gov_var_empire_impecon_foundry = {
+  icon = "gfx/interface/icons/modifiers/mod_starbase_shipyard_build_cost_mult.dds"
+  starbase_shipyard_build_cost_mult = -0.03
+  ship_military_upkeep_mult = -0.03
+}
+
 lrsk_gov_var_empire_impecon_market = {
   icon = "gfx/interface/icons/modifiers/mod_trade_value_mult.dds"
-  trade_value_mult = 0.1
+  trade_value_mult = 0.05
   country_trade_fee = -0.05
 }
 
 lrsk_gov_var_empire_impecon_trophy_ol = {
   icon = "gfx/interface/icons/modifiers/mod_diplo_weight_mult.dds"
-  diplo_weight_mult = 0.15
+  diplo_weight_mult = 0.05
 }
 
 lrsk_gov_var_empire_impecon_trophy_vs = {
@@ -176,7 +182,21 @@ lrsk_gov_var_empire_impecon_trophy_vs = {
   pop_happiness = -0.1
 }
 
+lrsk_gov_var_empire_impecon_provision = {
+  icon = "gfx/interface/icons/modifiers/mod_planet_building_cost_mult.dds"
+  planet_structures_cost_mult = -0.04
+  planet_structures_upkeep_mult = -0.04
+}
+
 lrsk_gov_var_empire_impecon_legit = {
   icon = "gfx/interface/icons/modifiers/mod_planet_stability_add.dds"
-  planet_stability_add = 2
+  planet_stability_add = 1
+}
+
+lrsk_gvp_colonial_mission_loyalty = {
+	monthly_loyalty = 0.5
+}
+
+lrsk_gvp_impecon_special_service = {
+	monthly_loyalty = -1
 }
