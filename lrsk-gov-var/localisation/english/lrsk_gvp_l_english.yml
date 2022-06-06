@@ -2186,7 +2186,7 @@ l_english:
  ## Events
  
  ## Imperial Economy
- LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special subject you create increases our legitimacy amoing our people and will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+1§!"
+ LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special subject you create increases our legitimacy amoing our people and will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+1§!\n\n(NOTE: You can also select these options from the Agreement menu.)"
  LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
  lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
  lrsk_gov_var_impecon.2.desc:0 "The [lrsk_impecon_colonized.GetName] has submitted to us, as is right and proper. Our people expect to reap the benefits of our overlordship, and so we have the option of restructuring their economy and society for our benefit."
@@ -2784,18 +2784,20 @@ l_english:
  lrsk_gov_var_uplift.14.a.tooltip:0 "Uplifting or Enlightening will §Gimprove [lrsk_my_uplift_tutor.GetName]'s opinion§! of you."
 
  # Chartered Colony Stuff
+ 
+ LRSK_GVP_CHARTER_AGREEMENT_NOTE:0 "\n\n(NOTE: You can also make this change from the Agreement menu.)"
 
  lrsk_gov_var_chartered.2.name:0 "Status of the [from.GetName]"
  lrsk_gov_var_chartered.2.desc.a:0 "The [from.GetSpeciesNamePlural] of the [from.GetName] have submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us. Shall we?"
  lrsk_gov_var_chartered.2.desc.b:0 "The [from.GetName] has been organized as a semi-autonomous territory under our direction. We have the option of imposing a colonial charter so they will operate as a colonial trading and extraction company. Shall we?"
  lrsk_gov_var_chartered.2.a:0 "Put some trustworthy [from.GetSpeciesNamePlural] in charge."
- lrsk_gov_var_chartered.2.a.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$\n\nThey will retain their governing Ethics and their main species will remain [from.GetSpeciesName]."
+ lrsk_gov_var_chartered.2.a.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$\n\nThey will retain their governing Ethics and their main species will remain [from.GetSpeciesName].$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
  lrsk_gov_var_chartered.2.b:0 "A new colonial company should prove lucrative."
- lrsk_gov_var_chartered.2.b.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§!, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$"
+ lrsk_gov_var_chartered.2.b.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§!, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
  lrsk_gov_var_chartered.2.c:0 "Yes, but [from.GetSpeciesNamePlural] cannot be trusted to govern themselves."
  lrsk_gov_var_chartered.2.c.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural].\n\n§YXenophile§! empires in contact with the [from.GetName] §Rwill be outraged by this.§!"
  lrsk_gov_var_chartered.2.d:0 "Not necessary."
- lrsk_gov_var_chartered.2.d.tooltip:0 "Leave them in their current state of servitude. §PYou will not be able to change this decision later!§!"
+ lrsk_gov_var_chartered.2.d.tooltip:0 "Leave them in their current state of servitude."
 
  lrsk_gov_var_chartered.20.name:0 "Overthrow of the [lrsk_subject_to_charter.GetName]"
  lrsk_gov_var_chartered.20.desc.a:0 "As if their subjugation by the [lrsk_chartering_agent.GetName] were not humiliation enough, these new overlords of the [lrsk_subject_to_charter.GetSpeciesName] people of the [lrsk_subject_to_charter.GetName] do not consider [lrsk_subject_to_charter.GetSpeciesNamePlural] fit to govern themselves. In the name of 'enlightening the savage xeno' the [lrsk_chartering_agent.GetName] has decided to abolish the [lrsk_subject_to_charter.GetName], installing a new puppet regime led by [lrsk_chartering_agent.GetSpeciesNamePlural] from [lrsk_chartering_agent.capital_scope.GetName]."
