@@ -13,6 +13,14 @@ lrsk_gvp_special_service_loyalty_penalty = {
 		monthly_loyalty = -1
 	}
 
+	activate_effect = {
+		owner = { country_event = { id = lrsk_gov_var_impecon.3 } }
+	}
+
+	deactivate_effect = {
+		owner = { country_event = { id = lrsk_gov_var_impecon.3 } }
+	}
+
 	potential = {
 		target = { lrsk_is_impecon_special_vassal = yes }
 	}
@@ -30,11 +38,36 @@ lrsk_gvp_chartered_colony_effects = {
 	}
 
 	activate_effect = {
-		owner = { lrsk_refresh_chartered_colony_loyalty_offset = yes }
+		owner = { country_event = { id = lrsk_gov_var_chartered.3 } }
+		target = {
+			IF = { 
+				limit = { NOT = { 
+					has_opinion_modifier = {
+						who = this.overlord
+						modifier = opinion_lrsk_gov_var_colonial_mission
+					}
+				} }
+				add_opinion_modifier = {
+					who = this.overlord
+					modifier = opinion_lrsk_gov_var_colonial_mission
+				}
+			}
+		}
 	}
 
 	deactivate_effect = {
-		owner = { lrsk_refresh_chartered_colony_loyalty_offset = yes }
+		owner = { country_event = { id = lrsk_gov_var_chartered.3 } }
+		target = {			
+			IF = { 
+				limit = {
+					has_opinion_modifier = {
+						who = this.overlord
+						modifier = opinion_lrsk_gov_var_colonial_mission
+					}
+				}
+				remove_opinion_modifier = opinion_lrsk_gov_var_colonial_mission
+			}
+		}
 	}
 
 	potential = {

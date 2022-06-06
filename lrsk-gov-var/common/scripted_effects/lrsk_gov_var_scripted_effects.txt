@@ -826,12 +826,18 @@ lrsk_make_chartered_colony_subject = {
 		}
 		set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
 	}
-	add_opinion_modifier = {
-		who = event_target:lrsk_chartering_agent
-		modifier = opinion_lrsk_gov_var_colonial_mission
+	IF = { 
+		limit = { NOT = { 
+			has_opinion_modifier = {
+				who = event_target:lrsk_chartering_agent
+				modifier = opinion_lrsk_gov_var_colonial_mission
+			}
+		} }
+		add_opinion_modifier = {
+			who = event_target:lrsk_chartering_agent
+			modifier = opinion_lrsk_gov_var_colonial_mission
+		}
 	}
-	# I may try to find a way to apply this to chartered colonies set by the agreement menu, idk. If so, need to prevent from being applied repeatedly.
-	set_country_flag = lrsk_charcol_got_decaying_opinion_already
 }
 
 # Set as specified type of imperial economy special subject.

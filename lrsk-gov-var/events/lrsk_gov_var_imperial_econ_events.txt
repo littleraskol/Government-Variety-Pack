@@ -21,7 +21,7 @@ country_event = {
 	}
 
 	immediate = {
-		log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+		#log = "In Imperial Economy special vassals pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
 
 		from = { country_event = { id = lrsk_gov_var_impecon.2 days = 3 } } # delayed to help play nice with vassal mods.
 	}
@@ -42,7 +42,7 @@ country_event = {
 	immediate = {
 		save_event_target_as = lrsk_impecon_colonizer
 		from = { save_event_target_as = lrsk_impecon_colonized }
-		log = "In Imperial Economy special vassals choice event. Overlord = [lrsk_impecon_colonizer.GetName], subject = [lrsk_impecon_colonized.GetName]"
+		#log = "In Imperial Economy special vassals choice event. Overlord = [lrsk_impecon_colonizer.GetName], subject = [lrsk_impecon_colonized.GetName]"
 	}
 
 	# Foundry
@@ -54,7 +54,7 @@ country_event = {
 			event_target:lrsk_impecon_colonized = {
 				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_foundry }
 			}
-			log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
+			#log = "[lrsk_impecon_colonized.GetName] set to Foundry Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
 		ai_chance = {
@@ -87,8 +87,7 @@ country_event = {
 			event_target:lrsk_impecon_colonized = {
 				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_market }
 			}
-			add_modifier = { modifier = lrsk_gov_var_empire_impecon_market }
-			log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
+			#log = "[lrsk_impecon_colonized.GetName] set to Market Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
 		ai_chance = {
@@ -127,10 +126,9 @@ country_event = {
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
 				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_trophy }
-				add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_vs }
+				set_country_flag = lrsk_gvp_impecon_trophysub_of@root # used for later checks on shame modifier
 			}
-			add_modifier = { modifier = lrsk_gov_var_empire_impecon_trophy_ol }
-			log = "[lrsk_impecon_colonized.GetName] set to Trophy Colony under [lrsk_impecon_colonizer.GetName]"
+			#log = "[lrsk_impecon_colonized.GetName] set to Trophy Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
 		ai_chance = {
@@ -163,7 +161,7 @@ country_event = {
 			event_target:lrsk_impecon_colonized = {
 				lrsk_make_impecon_special_subject = { PRESET = preset_lrsk_gvp_vassal_prospector }
 			}
-			log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
+			#log = "[lrsk_impecon_colonized.GetName] set to Prospecting Colony under [lrsk_impecon_colonizer.GetName]"
 		}
 		
 		ai_chance = {
@@ -184,7 +182,7 @@ country_event = {
 		name = lrsk_gov_var_impecon.2.e
 		custom_tooltip = lrsk_gov_var_impecon.2.e.tooltip
 		
-		log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
+		#log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
 
 		set_timed_country_flag = {
 			flag = lrsk_impecon_temp_no_change

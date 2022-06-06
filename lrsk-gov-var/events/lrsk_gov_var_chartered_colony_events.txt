@@ -29,7 +29,7 @@ country_event = {
 	}
 
 	immediate = {
-		log = "In chartered colony pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
+		#log = "In chartered colony pre-choice event. Overlord = [from.GetName], subject = [this.GetName]"
 
 		from = {
 			save_event_target_as = lrsk_chartering_agent
@@ -87,7 +87,7 @@ country_event = {
 		owner_species = { save_event_target_as = lrsk_chartering_agent_species }
 		from = { save_event_target_as = lrsk_subject_to_charter }
 
-		log = "In chartered colony choice event. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+		#log = "In chartered colony choice event. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 	}
 
 	# Not same species, home rule
@@ -119,7 +119,7 @@ country_event = {
 				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
-			log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+			#log = "Chartered colony created, native rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
 		ai_chance = {
@@ -174,7 +174,7 @@ country_event = {
 				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
-			log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+			#log = "Chartered colony created, same species. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
 		ai_chance = {
@@ -235,7 +235,7 @@ country_event = {
 				limit = {
 					not = { is_same_value = event_target:lrsk_chartering_agent }
 					has_communications = event_target:lrsk_subject_to_charter
-					has_communications = event_target:lrsk_chartering_agent
+					#has_communications = event_target:lrsk_chartering_agent
 				}
 				country_event = { id = lrsk_gov_var_chartered.20 }
 			}
@@ -268,7 +268,7 @@ country_event = {
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
 			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
-			log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
+			#log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 
 		ai_chance = {
@@ -405,24 +405,21 @@ country_event = {
 
 	immediate = {
 		IF = { limit = { any_subject = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } } }
-		
-			#set_variable = { which = lrsk_charcols_prev value = lrsk_charcols } # Store for comparison
 
 			set_variable = { which = lrsk_charcols value = 0 } # Start count from 0
 
-			# Not working? Need while & flags?
 			every_subject = {
 				limit = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
-				log = "Counting subject [this.GetName]"
+				#log = "Counting subject [this.GetName]"
 				prev = {
 					change_variable = { which = lrsk_charcols value = 1 }
-					log = "Subjects counted = [this.lrsk_charcols]"
+					#log = "Subjects counted = [this.lrsk_charcols]"
 				}
 			}
 
-			log = "Num of counted subjects = [this.lrsk_charcols]"
+			#log = "Num of counted subjects = [this.lrsk_charcols]"
 
-			# Max special bonus mult = 10
+			# Max special bonus mult = 15
 			if = { limit = { check_variable = { which = lrsk_charcols value > 15 } }
 				set_variable = { which = lrsk_charcols value = 15 }
 			}
