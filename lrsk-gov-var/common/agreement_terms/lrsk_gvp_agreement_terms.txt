@@ -2,7 +2,15 @@
 # Agreement Terms
 # Author: littleraskol
 
-#lrsk_gvp_special_resource_taxes = {
-#	term_type = resource
-#	#hidden = yes
-#}
+# ImpEcon special vassals take a loyalty hit for the bonus modifier the overlord gets
+# In future versions, the player may be able to disable it (so it won't be hidden)
+lrsk_gvp_special_service = {
+	term_type = discrete
+	hidden = yes
+}
+
+# Any effects for chartered colonies.
+lrsk_gvp_chartering = {
+	term_type = discrete
+	hidden = yes
+}

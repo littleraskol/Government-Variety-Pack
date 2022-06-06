@@ -2,6 +2,48 @@
 # Agreement Term Values
 # Author: littleraskol
 
+### Discrete Terms ###
+
+# This is for the various stacking bonus modifiers the overlord gets.
+# Otherwise, it seems loyalty is actually too easy to come by for these subject types...
+lrsk_gvp_special_service_loyalty_penalty = {
+	term = lrsk_gvp_special_service
+
+	target_modifier = {
+		monthly_loyalty = -1
+	}
+
+	potential = {
+		target = { lrsk_is_impecon_special_vassal = yes }
+	}
+}
+
+# Effects of being a chartered colony.
+# They seem too negative overall, so I will give them a little boost and accompanying loyalty bonus
+# This may be a scaling/non-hidden term in the future.
+lrsk_gvp_chartered_colony_effects = {
+	term = lrsk_gvp_chartering
+
+	unique_target_modifier = {
+		trade_value_mult = 0.1
+		monthly_loyalty = 1
+	}
+
+	activate_effect = {
+		owner = { lrsk_refresh_chartered_colony_loyalty_offset = yes }
+	}
+
+	deactivate_effect = {
+		owner = { lrsk_refresh_chartered_colony_loyalty_offset = yes }
+	}
+
+	potential = {
+		target = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } }
+	}
+}
+
+### Resource Terms ###
+
 @lrsk_subsidy_multiplier = 0.15
 @lrsk_subsidy_multiplier_trophy = 0.4
 @lrsk_subsidy_multiplier_advanced = 0.25
