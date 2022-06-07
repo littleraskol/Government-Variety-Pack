@@ -108,15 +108,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			from  = {
-				change_government = {
-					authority = auth_corporate
-					civics = {
-						civic = lrsk_gov_var_civic_mc_chartered_company
-						civic = random
-					}
-				}
-				set_name = random # Fixes some naming issues
+			from = {
 				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
@@ -163,15 +155,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			from  = {
-				change_government = {
-					authority = auth_corporate
-					civics = {
-						civic = lrsk_gov_var_civic_mc_chartered_company
-						civic = random
-					}
-				}
-				set_name = random # Fixes some naming issues
+			from = {
 				lrsk_make_chartered_colony_subject = yes
 			}
 			set_relation_flag = { who = from flag = lrsk_chartered_this_company }
@@ -217,6 +201,7 @@ country_event = {
 					copy_techs_from = { target = event_target:lrsk_subject_to_charter }
 					save_event_target_as = lrsk_new_chartered_company
 					establish_communications_no_message = event_target:lrsk_chartering_agent
+					set_country_flag = lrsk_alien_rule_puppet
 				}
 			}
 			event_target:lrsk_subject_to_charter = {
@@ -266,10 +251,7 @@ country_event = {
 				create_starting_leaders = yes
 				set_name = random # Fixes some naming issues
 				
-				set_subject_of = {
-					who = event_target:lrsk_chartering_agent
-					preset = preset_lrsk_gov_var_subject_chartered_company
-				}
+				lrsk_make_chartered_colony_subject = yes
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
 			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }

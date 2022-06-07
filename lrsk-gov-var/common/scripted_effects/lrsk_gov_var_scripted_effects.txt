@@ -819,13 +819,46 @@ lrsk_refresh_chartered_colony_loyalty_offset = {
 
 # Set as chartered colony subject with decaying opinion modifier.
 lrsk_make_chartered_colony_subject = {
-	random_agreement = {
-		limit = {
-			owner = { is_same_value = event_target:lrsk_chartering_agent }
-			target = { is_same_value = this }
-		}
-		set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
+	# Need to do this because removing this preset in the Agreements menu will restore.
+	store_country_backup_data = {
+		name = yes
+		government = yes
+		ethics = yes
 	}
+
+	# This flag set when creating a whole new government to replace original by event. Otherwise, change govt.
+	IF = { limit = { NOT = { has_country_flag = lrsk_alien_rule_puppet } }
+		switch = {
+			trigger = has_ethic
+			ethic_fanatic_authoritarian = { shift_ethic = ethic_authoritarian }
+			ethic_fanatic_egalitarian = { shift_ethic = ethic_egalitarian }
+		}
+		change_government = {
+			authority = auth_corporate
+			civics = {
+				civic = lrsk_gov_var_civic_mc_chartered_company
+				civic = random
+			}
+		}
+		set_name = random # Fixes some naming issues
+	}
+
+	IF = { limit = { is_subject = yes }
+		random_agreement = {
+			limit = {
+				owner = { is_same_value = event_target:lrsk_chartering_agent }
+				target = { is_same_value = this }
+			}
+			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
+		}
+	}
+	ELSE = {				
+		set_subject_of = {
+			who = event_target:lrsk_chartering_agent
+			preset = preset_lrsk_gov_var_subject_chartered_company
+		}
+	}
+
 	IF = { 
 		limit = { NOT = { 
 			has_opinion_modifier = {
