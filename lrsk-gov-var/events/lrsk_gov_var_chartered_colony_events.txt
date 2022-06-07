@@ -80,6 +80,7 @@ country_event = {
 	trigger = {
 		# JIC, no point in this if already CC
 		from = { not = { has_valid_civic = lrsk_gov_var_civic_mc_chartered_company } } 
+		NOT = { has_country_flag = lrsk_specsubj_no_choice_event }
 	}
 
 	immediate = {
@@ -305,6 +306,18 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_chartered.2.d
 		custom_tooltip = lrsk_gov_var_chartered.2.d.tooltip
+
+		ai_chance = {
+			factor = 0 # AI chartering corp should always turn its vassals into chartered colonies if possible.
+		}
+	}
+
+	# Leave be, don't ask again
+	option = {
+		name = LRSK_SPECSUBJ_DISMISS_COMMON
+		custom_tooltip = LRSK_SPECSUBJ_DISMISS_COMMON_DESC
+
+		set_country_flag = lrsk_specsubj_no_choice_event
 
 		ai_chance = {
 			factor = 0 # AI chartering corp should always turn its vassals into chartered colonies if possible.

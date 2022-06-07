@@ -37,6 +37,7 @@ country_event = {
 
 	trigger = {
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy	# JIC
+		NOT = { has_country_flag = lrsk_specsubj_no_choice_event }
 	}
 
 	immediate = {
@@ -189,9 +190,24 @@ country_event = {
 			days = 2
 		}
 		
-		#hidden_effect = {	
-		#	country_event = { id = lrsk_gov_var_impecon.3 }
-		#}
+		ai_chance = {
+			factor = 1 # dunno
+		}
+	}
+
+	# Nothing, don't ask again
+	option = {
+		name = LRSK_SPECSUBJ_DISMISS_COMMON
+		custom_tooltip = LRSK_SPECSUBJ_DISMISS_COMMON_DESC
+		
+		#log = "[lrsk_impecon_colonized.GetName] retains previous subject status under [lrsk_impecon_colonizer.GetName]"
+
+		set_timed_country_flag = {
+			flag = lrsk_impecon_temp_no_change
+			days = 2
+		}
+
+		set_country_flag = lrsk_specsubj_no_choice_event
 		
 		ai_chance = {
 			factor = 1 # dunno
