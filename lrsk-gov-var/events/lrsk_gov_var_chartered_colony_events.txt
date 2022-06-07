@@ -265,7 +265,11 @@ country_event = {
 				}
 				create_starting_leaders = yes
 				set_name = random # Fixes some naming issues
-				lrsk_make_chartered_colony_subject = yes
+				
+				set_subject_of = {
+					who = event_target:lrsk_chartering_agent
+					preset = preset_lrsk_gov_var_subject_chartered_company
+				}
 			}
 			event_target:lrsk_subject_to_charter = { destroy_country = yes }
 			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
@@ -326,7 +330,7 @@ country_event = {
 
 	after = {
 		# immediate recalc of colony bonus
-		country_event = { id = lrsk_gov_var_chartered.3 }
+		hidden_effect = { country_event = { id = lrsk_gov_var_chartered.3 } }
 	}
 }
 

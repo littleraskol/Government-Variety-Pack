@@ -1004,9 +1004,15 @@ country_event = {
 					set_subject_of = {
 						who = root
 						preset = vassal
+						allow_instant_negotiation = yes
 					}
 				}
 			}
+		}
+
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_test_vassal
 		}
 	}
 }
