@@ -114,7 +114,10 @@ lrsk_gvp_chartered_colony_effects = {
 	}
 
 	deactivate_effect = {
-		owner = { country_event = { id = lrsk_gov_var_chartered.3 } }
+		owner = {
+			country_event = { id = lrsk_gov_var_chartered.3 }
+			remove_relation_flag = { who = prev.target flag = lrsk_chartered_this_company }
+		}
 		target = {
 			restore_country_backup_data = yes
 			IF = { 
