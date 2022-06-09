@@ -912,6 +912,14 @@ lrsk_make_chartered_colony_subject = {
 				fire = yes
 			}
 		}
+
+		every_owned_pop = { limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }		
+			set_citizenship_type = {
+				country = prev
+				type = citizenship_limited
+				cooldown = yes
+			}
+		}
 	}
 
 	IF = { limit = { is_subject = yes }
