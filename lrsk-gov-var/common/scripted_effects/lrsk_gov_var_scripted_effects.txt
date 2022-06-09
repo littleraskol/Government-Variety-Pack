@@ -907,7 +907,7 @@ lrsk_make_chartered_colony_subject = {
 		random_agreement = {
 			limit = {
 				owner = { is_same_value = event_target:lrsk_chartering_agent }
-				target = { is_same_value = prev }
+				target = { is_same_value = this }
 			}
 			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
 		}
