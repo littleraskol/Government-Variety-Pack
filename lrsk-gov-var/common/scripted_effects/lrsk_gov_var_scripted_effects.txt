@@ -842,8 +842,10 @@ lrsk_make_chartered_colony_subject = {
 
 	# This flag set when establishing foreign rule.
 	# Change the dominant species and "add" a pop of that species to the home planet
+	# Make xenophobic and replace ruler (with new dominant species ruler)
 	IF = { limit = { has_country_flag = lrsk_alien_rule_puppet }
 		change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
+
 		capital_scope = {
 			IF = {
 				limit = {
@@ -862,7 +864,7 @@ lrsk_make_chartered_colony_subject = {
 				create_pop = {
 					species = owner_main_species
 					ethos = {
-						ethic = "ethic_xenophobe"
+						ethic = ethic_xenophile
 					}
 				}	
 			}
@@ -883,7 +885,7 @@ lrsk_make_chartered_colony_subject = {
 				create_pop = {
 					species = owner_main_species
 					ethos = {
-						ethic = "ethic_xenophobe"
+						ethic = ethic_xenophile
 					}
 				}
 			}
@@ -896,9 +898,18 @@ lrsk_make_chartered_colony_subject = {
 				create_pop = {
 					species = owner_main_species
 					ethos = {
-						ethic = "ethic_xenophobe"
+						ethic = ethic_xenophile
 					}
 				}
+			}
+		}
+
+		shift_ethic = ethic_xenophobe
+
+		ruler = {
+			kill_leader = {
+				show_notification = no
+				fire = yes
 			}
 		}
 	}
