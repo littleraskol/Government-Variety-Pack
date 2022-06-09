@@ -840,6 +840,35 @@ lrsk_make_chartered_colony_subject = {
 	}
 	set_name = random # Fixes some naming issues
 
+	IF = { limit = { is_subject = yes }
+		random_agreement = {
+			limit = {
+				owner = { is_same_value = event_target:lrsk_chartering_agent }
+				target = { is_same_value = this }
+			}
+			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
+		}
+	}
+	ELSE = {
+		set_subject_of = {
+			who = event_target:lrsk_chartering_agent
+			preset = preset_lrsk_gov_var_subject_chartered_company
+		}
+	}
+
+	IF = { 
+		limit = { NOT = { 
+			has_opinion_modifier = {
+				who = event_target:lrsk_chartering_agent
+				modifier = opinion_lrsk_gov_var_colonial_mission
+			}
+		} }
+		add_opinion_modifier = {
+			who = event_target:lrsk_chartering_agent
+			modifier = opinion_lrsk_gov_var_colonial_mission
+		}
+	}
+
 	# This flag set when establishing foreign rule.
 	# Change the dominant species and "add" a pop of that species to the home planet
 	# Make xenophobic and replace ruler (with new dominant species ruler)
@@ -920,35 +949,6 @@ lrsk_make_chartered_colony_subject = {
 				type = citizenship_limited
 				cooldown = yes
 			}
-		}
-	}
-
-	IF = { limit = { is_subject = yes }
-		random_agreement = {
-			limit = {
-				owner = { is_same_value = event_target:lrsk_chartering_agent }
-				target = { is_same_value = this }
-			}
-			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
-		}
-	}
-	ELSE = {
-		set_subject_of = {
-			who = event_target:lrsk_chartering_agent
-			preset = preset_lrsk_gov_var_subject_chartered_company
-		}
-	}
-
-	IF = { 
-		limit = { NOT = { 
-			has_opinion_modifier = {
-				who = event_target:lrsk_chartering_agent
-				modifier = opinion_lrsk_gov_var_colonial_mission
-			}
-		} }
-		add_opinion_modifier = {
-			who = event_target:lrsk_chartering_agent
-			modifier = opinion_lrsk_gov_var_colonial_mission
 		}
 	}
 }
