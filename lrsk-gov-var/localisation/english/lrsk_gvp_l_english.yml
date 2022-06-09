@@ -2786,16 +2786,17 @@ l_english:
  # Chartered Colony Stuff
  
  LRSK_GVP_CHARTER_AGREEMENT_NOTE:0 "\n\n(NOTE: You can also make this change from the Agreement menu.)"
+ LRSK_GVP_CHARTER_COMMON:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$"
 
  lrsk_gov_var_chartered.2.name:0 "Status of the [from.GetName]"
  lrsk_gov_var_chartered.2.desc.a:0 "The [from.GetSpeciesNamePlural] of the [from.GetName] have submitted to us, as is right and proper. We have the option of imposing a colonial charter and subordinating their political leadership to a responsible trading and extraction company answerable to us. Shall we?"
  lrsk_gov_var_chartered.2.desc.b:0 "The [from.GetName] has been organized as a semi-autonomous territory under our direction. We have the option of imposing a colonial charter so they will operate as a colonial trading and extraction company. Shall we?"
  lrsk_gov_var_chartered.2.a:0 "Put some trustworthy [from.GetSpeciesNamePlural] in charge."
- lrsk_gov_var_chartered.2.a.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$\n\nThey will retain their governing Ethics and their main species will remain [from.GetSpeciesName].$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
+ lrsk_gov_var_chartered.2.a.tooltip:0 "$LRSK_GVP_CHARTER_COMMON$\n\nTheir main species will remain [from.GetSpeciesName].$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
  lrsk_gov_var_chartered.2.b:0 "A new colonial company should prove lucrative."
- lrsk_gov_var_chartered.2.b.tooltip:0 "Make [from.GetName] into a §H$preset_lrsk_gov_var_subject_chartered_company$§!, which will change their form of government to a $lrsk_gov_var_gov_colonial_company$, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
+ lrsk_gov_var_chartered.2.b.tooltip:0 "$LRSK_GVP_CHARTER_COMMON$$LRSK_GVP_CHARTER_AGREEMENT_NOTE$"
  lrsk_gov_var_chartered.2.c:0 "Yes, but [from.GetSpeciesNamePlural] cannot be trusted to govern themselves."
- lrsk_gov_var_chartered.2.c.tooltip:0 "Replace [from.GetName] with a new $lrsk_gov_var_gov_colonial_company$ government as a §H$preset_lrsk_gov_var_subject_chartered_company$§! subject under us, with the following effects:\n$preset_lrsk_gov_var_subject_chartered_company_eff$\n\nThis new subject empire will have our Ethics and be led by [this.GetSpeciesNamePlural].\n\n§YXenophile§! empires in contact with the [from.GetName] §Rwill be outraged by this.§!"
+ lrsk_gov_var_chartered.2.c.tooltip:0 "$LRSK_GVP_CHARTER_COMMON$\n\n[this.GetSpeciesNamePlural] with replace [from.GetSpeciesNamePlural] as the primary species of [from.GetName]. §YXenophile§! empires in contact with the [from.GetName] §Rwill be outraged by this.§!"
  lrsk_gov_var_chartered.2.d:0 "Not necessary."
  lrsk_gov_var_chartered.2.d.tooltip:0 "Leave them in their current state of servitude."
 
