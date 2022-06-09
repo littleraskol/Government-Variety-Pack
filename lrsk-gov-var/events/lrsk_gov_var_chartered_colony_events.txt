@@ -172,7 +172,7 @@ country_event = {
 		name = lrsk_gov_var_chartered.2.c
 		custom_tooltip = lrsk_gov_var_chartered.2.c.tooltip
 
-		# Checking for player status because we don't want this to be an instant game over for a player!
+		# Checking for player status because we don't want this to happen to a player!
 		trigger = {
 			from = { is_ai = yes } # JIC
 			NOT = { event_target:lrsk_subject_to_charter = { has_country_flag = lrsk_charter_subject_same_species_as_ol } }
@@ -184,39 +184,13 @@ country_event = {
 		}
 
 		hidden_effect = {
-			create_country = {
-				name_list = event_target:lrsk_chartering_agent
-				species = event_target:lrsk_chartering_agent_species
-				type = default
-				origin = "lrsk_gov_var_origin_colonial_charter"
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				ethos = event_target:lrsk_chartering_agent
-				authority = auth_corporate
-				civics = {
-					civic = lrsk_gov_var_civic_mc_chartered_company
-					civic = random
-				}
-				effect = {
-					copy_techs_from = { target = event_target:lrsk_subject_to_charter }
-					save_event_target_as = lrsk_new_chartered_company
-					establish_communications_no_message = event_target:lrsk_chartering_agent
-					set_country_flag = lrsk_alien_rule_puppet
-				}
+			from = {
+				set_country_flag = lrsk_alien_rule_puppet
+				owner_species = { set_species_flag = lrsk_usurped_indigenes } # make it possible to restore this later somehow
+
+				lrsk_make_chartered_colony_subject = yes
 			}
-			event_target:lrsk_subject_to_charter = {
-				every_owned_fleet = { set_owner = event_target:lrsk_new_chartered_company }
-				every_owned_planet = {
-					set_owner = event_target:lrsk_new_chartered_company
-					set_controller = event_target:lrsk_new_chartered_company
-				}
-				every_system_within_border = {
-					limit = { exists = starbase }
-					starbase = {
-						set_owner = event_target:lrsk_new_chartered_company
-					}
-				}
-			}
+
 			every_country = {
 				limit = {
 					not = { is_same_value = event_target:lrsk_chartering_agent }
@@ -225,36 +199,7 @@ country_event = {
 				}
 				country_event = { id = lrsk_gov_var_chartered.20 }
 			}
-			every_country = {
-				limit = { has_communications = event_target:lrsk_subject_to_charter }
-				establish_communications_no_message = event_target:lrsk_new_chartered_company
-			}
-			event_target:lrsk_new_chartered_company = {
-				add_resource = {
-					minerals = 2000
-					energy = 2000
-					alloys = 750
-					consumer_goods = 750
-					food = 2000
-					influence = 200
-				}
-				every_planet_within_border = {
-					set_surveyed = {
-						surveyed = yes
-						surveyor = event_target:lrsk_new_chartered_company
-					}
-				}
-				add_resource = {
-					unity = 100
-					mult = trigger:years_passed
-				}
-				create_starting_leaders = yes
-				set_name = random # Fixes some naming issues
-				
-				lrsk_make_chartered_colony_subject = yes
-			}
-			event_target:lrsk_subject_to_charter = { destroy_country = yes }
-			set_relation_flag = { who = event_target:lrsk_new_chartered_company flag = lrsk_chartered_this_company }
+
 			#log = "Chartered colony created, alien rule. Overlord = [lrsk_chartering_agent.GetName], subject = [lrsk_subject_to_charter.GetName]"
 		}
 

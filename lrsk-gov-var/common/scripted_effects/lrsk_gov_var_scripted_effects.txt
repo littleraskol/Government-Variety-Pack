@@ -826,28 +826,88 @@ lrsk_make_chartered_colony_subject = {
 		ethics = yes
 	}
 
-	# This flag set when creating a whole new government to replace original by event. Otherwise, change govt.
-	IF = { limit = { NOT = { has_country_flag = lrsk_alien_rule_puppet } }
-		switch = {
-			trigger = has_ethic
-			ethic_fanatic_authoritarian = { shift_ethic = ethic_authoritarian }
-			ethic_fanatic_egalitarian = { shift_ethic = ethic_egalitarian }
+	switch = {
+		trigger = has_ethic
+		ethic_fanatic_authoritarian = { shift_ethic = ethic_authoritarian }
+		ethic_fanatic_egalitarian = { shift_ethic = ethic_egalitarian }
+	}
+	change_government = {
+		authority = auth_corporate
+		civics = {
+			civic = lrsk_gov_var_civic_mc_chartered_company
+			civic = random
 		}
-		change_government = {
-			authority = auth_corporate
-			civics = {
-				civic = lrsk_gov_var_civic_mc_chartered_company
-				civic = random
+	}
+	set_name = random # Fixes some naming issues
+
+	# This flag set when establishing foreign rule.
+	# Change the dominant species and "add" a pop of that species to the home planet
+	IF = { limit = { has_country_flag = lrsk_alien_rule_puppet }
+		change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
+		capital_scope = {
+			IF = {
+				limit = {
+					any_owned_pop = {
+						has_job_category = ruler
+						NOT = { is_same_species = event_target:lrsk_chartering_agent }
+					}
+				}
+				random_owned_pop = {
+					limit = {
+						has_job_category = ruler
+						NOT = { is_same_species = event_target:lrsk_chartering_agent }
+					}
+					change_species = event_target:lrsk_chartering_agent_species
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = {
+						ethic = "ethic_xenophobe"
+					}
+				}	
+			}
+			ELSE_IF = {
+				limit = {
+					any_owned_pop = {
+						has_job_category = specialist
+						NOT = { is_same_species = event_target:lrsk_chartering_agent }
+					}
+				}
+				random_owned_pop = { 
+					limit = {
+						has_job_category = specialist
+						NOT = { is_same_species = event_target:lrsk_chartering_agent }
+					}
+					change_species = event_target:lrsk_chartering_agent_species
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = {
+						ethic = "ethic_xenophobe"
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { any_owned_pop = { NOT = { is_same_species = event_target:lrsk_chartering_agent } } }
+				random_owned_pop = {
+					limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }
+					change_species = event_target:lrsk_chartering_agent_species
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = {
+						ethic = "ethic_xenophobe"
+					}
+				}
 			}
 		}
-		set_name = random # Fixes some naming issues
 	}
 
 	IF = { limit = { is_subject = yes }
 		random_agreement = {
 			limit = {
 				owner = { is_same_value = event_target:lrsk_chartering_agent }
-				target = { is_same_value = this }
+				target = { is_same_value = prev }
 			}
 			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
 		}
