@@ -873,8 +873,11 @@ lrsk_make_chartered_colony_subject = {
 	# Change the dominant species and "add" a pop of that species to the home planet
 	# Make xenophobic and replace ruler (with new dominant species ruler)
 	IF = { limit = { has_country_flag = lrsk_alien_rule_puppet }
-		change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
 
+		# reaction of the usurped
+		country_event = { id = lrsk_gov_var_chartered.21 }
+
+		# This ensures a "ruler class" pop (if possible) of the new dominant species "displaces" a native pop
 		capital_scope = {
 			IF = {
 				limit = {
@@ -932,6 +935,8 @@ lrsk_make_chartered_colony_subject = {
 				}
 			}
 		}
+
+		change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
 
 		shift_ethic = ethic_xenophobe
 

@@ -186,7 +186,10 @@ country_event = {
 		hidden_effect = {
 			from = {
 				set_country_flag = lrsk_alien_rule_puppet
-				owner_species = { set_species_flag = lrsk_usurped_indigenes } # make it possible to restore this later somehow
+				owner_species = {
+					set_species_flag = lrsk_usurped_indigenes # make it possible to restore this later somehow
+					save_event_target_as = lrsk_chartering_usurped_species # for localization
+				}
 
 				lrsk_make_chartered_colony_subject = yes
 			}
@@ -332,6 +335,111 @@ country_event = {
 		}
 		
 		name = lrsk_gov_var_chartered.20.c
+	}
+}
+
+# Reaction to subjugation by usurped species
+country_event = {
+	id = lrsk_gov_var_chartered.21
+	title = lrsk_gov_var_chartered.21.name
+	picture = GFX_evt_alien_segregation
+	desc = lrsk_gov_var_chartered.21.desc
+
+	is_triggered_only = yes
+
+	#immediate = {
+	#	#
+	#}
+
+	option = {	
+		name = lrsk_gov_var_chartered.21.a
+		
+		ai_chance = {
+			factor = 40 # dunno
+			modifier = {
+				factor = 0.5
+				or = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			modifier = {
+				factor = 0.5
+				or = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+			modifier = {
+				factor = 0.5
+				or = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				factor = 1.5
+				or = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+	}
+
+	option = {		
+		name = lrsk_gov_var_chartered.21.b
+		custom_tooltip = lrsk_gov_var_chartered.21.b.tooltip
+		
+		hidden_effect = {
+			add_modifier = {
+				modifier = lrsk_gvp_indigenous_resistance
+				years = 3
+			}
+
+			every_owned_pop = {
+				limit = {
+					species = { is_same_value = event_target:lrsk_chartering_usurped_species }
+					NOT = { pop_has_ethic = ethic_fanatic_xenophile }
+				}
+				random = {
+					chance = 50
+					pop_change_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 10 # dunno
+			modifier = {
+				factor = 2
+				or = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			modifier = {
+				factor = 2
+				or = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+			modifier = {
+				factor = 2
+				or = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				factor = 0.3
+				or = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
 	}
 }
 
