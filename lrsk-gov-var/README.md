@@ -221,7 +221,7 @@ v5.1 (06/06/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 --Trophy Colony taxed at least 15% of unity and influence.
 --No limits on how many of these vassals one can have.
 --Bonus for each reduced to +1 stability from +2.
---Special subject status can be changed after setting.
+--Special subject status can be changed after setting (using Agreement menu).
 -Chartered Colony subject type changes:
 --Taxed 15% of Basic Resources.
 --Innate trust (opinion bonus) in chartering overlord reduced to +25 and +25 (decaying) from +100.
@@ -229,6 +229,8 @@ v5.1 (06/06/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 --Innate loyalty bonus (tied to small Trade Value bonus for subject).
 --Greatly increased the "Colonial Trade" modifier bonus, making it the major benefit.
 --Updated effect description.
+--Subject status can be changed after setting (using Agreement menu).
+--Improved process for "foreign rule" option.
 -Removed various logging outputs.
 
 v5.0.4 (06/01/22) - Trying to fix "code names"
