@@ -183,6 +183,15 @@ country_event = {
 			from = { is_ai = yes } # just in double case!!
 		}
 
+		add_resource = {
+			unity = 10
+			mult = trigger:years_passed
+		}
+		add_resource = {
+			influence = 1
+			mult = trigger:years_passed
+		}
+
 		hidden_effect = {
 			from = {
 				set_country_flag = lrsk_alien_rule_puppet
