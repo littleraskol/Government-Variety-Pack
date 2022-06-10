@@ -215,7 +215,10 @@ country_event = {
 
 			every_country = {
 				limit = {
-					not = { is_same_value = event_target:lrsk_chartering_agent }
+					NOR = {
+						is_same_value = event_target:lrsk_chartering_agent
+						is_same_value = event_target:lrsk_subject_to_charter
+					}
 					has_communications = event_target:lrsk_subject_to_charter
 					#has_communications = event_target:lrsk_chartering_agent
 				}
