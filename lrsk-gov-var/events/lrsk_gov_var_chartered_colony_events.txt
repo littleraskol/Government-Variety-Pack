@@ -183,17 +183,16 @@ country_event = {
 			from = { is_ai = yes } # just in double case!!
 		}
 
-		add_monthly_resource_mult = {
-			resource = influence
-			value = 5
-			min = 50
-			max = 500
-		}
 		IF = {
-			limit = { OR = {
-				is_xenophobe = yes
-				is_authoritarian = yes
-			} }
+			limit = { is_authoritarian = yes }
+			add_monthly_resource_mult = {
+				resource = influence
+				value = 5
+				min = 50
+				max = 500
+			}
+		}
+		IF = { limit = { is_xenophobe = yes }
 			add_monthly_resource_mult = {
 				resource = unity
 				value = 10

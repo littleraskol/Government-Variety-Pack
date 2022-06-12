@@ -144,6 +144,44 @@ lrsk_gvp_chartered_colony_effects = {
 	#}
 }
 
+## Alien rule terms
+
+# Default (home rule)
+lrsk_gvp_home_rule = {
+	term = lrsk_gvp_alien_puppet_regime
+
+	possible = {
+		target = { NOT = { has_country_flag = lrsk_alien_rule_puppet } }
+	}
+
+	#potential = {
+	#	target = { NOT = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } } }
+	#}
+}
+
+# Foreign puppet regime
+lrsk_gvp_foreign_regime = {
+	term = lrsk_gvp_alien_puppet_regime
+
+	possible = {
+		target = { has_country_flag = lrsk_alien_rule_puppet }
+	}
+
+	target_modifier = {
+		monthly_loyalty = 1.5
+	}
+
+	loyalty_change = 15
+
+	activate_effect = {
+		owner = { save_event_target_as = lrsk_alien_overlord }
+	}
+
+	#potential = {
+	#	target = { NOT = { is_subject_with_preset = { PRESET = preset_lrsk_gov_var_subject_chartered_company } } }
+	#}
+}
+
 ### Resource Terms ###
 
 @lrsk_subsidy_multiplier = 0.15
