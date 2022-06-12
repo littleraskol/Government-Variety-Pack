@@ -840,6 +840,7 @@ lrsk_make_chartered_colony_subject = {
 	}
 	set_name = random # Fixes some naming issues
 
+	# Should always already be a subject, but JIC
 	IF = { limit = { is_subject = yes }
 		random_agreement = {
 			limit = {
