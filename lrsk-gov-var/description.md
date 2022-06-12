@@ -31,6 +31,11 @@ Compaitibility patches exist for a few mods. Some are maintained by me, and some
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461985481]More Authorities - GVP Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2158334880]More Authorities mod[/url]. (Maintained by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url], author of More Authorities.)
 [/list]
 
+For non-English language translations:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2682891259]Japanese localization[/url] by Rio_Mizuhoshi (might be work-in-progress).
+[/list]
+
 Want to make a compatibility or localization patch? [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/3423311880045971276/]See this post to find out how[/url]!
 
 There are a few patches and other versions of this mod. These all require the main GVP mod (this), and do nothing but selectively remove features. [b]If you want all the features of this mod, you don't need any of these patches/alternate versions.[/b] They do not add anything and only provide options for users who for whatever reason want to exclude some features. Since all they do is replace files from GVP with identically-named blank files, there isn't typically much need to update them and tbh it's kind of a chore to update the version number on all these so I'm slow to do it. Bottom line, [b]you can almost certainly ignore the compatible version number for them[/b].
