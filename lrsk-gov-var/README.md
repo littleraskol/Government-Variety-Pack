@@ -207,7 +207,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.1 (06/06/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
+v5.1 (06/12/22) - Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
 -Specialized subjects for both civics can still be added by event, but change from the Agreement menu is supported.
 -Imperial Economy allows for "fine tuning" subject resource contributions: You can individually set the taxes or subsidies of each resource type.
 -Changed the way the Imperial Economy special vassals work:
@@ -227,10 +227,12 @@ v5.1 (06/06/22) - Fixed Imperial Economy, Tweaked Chartered Colonies
 --Innate trust (opinion bonus) in chartering overlord reduced to +25 and +25 (decaying) from +100.
 --Halved "Divided Loyalties" penalty for this subject type.
 --Innate loyalty bonus (tied to small Trade Value bonus for subject).
+--Choosing to install your species as rulers will benefit xenophobes and authoritarians, and increase subject monthly loyalty, but may lead to general unrest in the subject.
+--Improved process for "foreign rule" option, no longer completely destroys and replaces government, just changes primary species (and a few other things).
 --Greatly increased the "Colonial Trade" modifier bonus, making it the major benefit.
 --Updated effect description.
 --Subject status can be changed after setting (using Agreement menu).
---Improved process for "foreign rule" option.
+--Previous government should be restored if colonial charter ended.
 -Removed various logging outputs.
 
 v5.0.4 (06/01/22) - Trying to fix "code names"
