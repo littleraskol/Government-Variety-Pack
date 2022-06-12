@@ -820,25 +820,31 @@ lrsk_refresh_chartered_colony_loyalty_offset = {
 # Set as chartered colony subject with decaying opinion modifier.
 lrsk_make_chartered_colony_subject = {
 	# Need to do this because removing this preset in the Agreements menu will restore.
-	store_country_backup_data = {
-		name = yes
-		government = yes
-		ethics = yes
-	}
-
-	switch = {
-		trigger = has_ethic
-		ethic_fanatic_authoritarian = { shift_ethic = ethic_authoritarian }
-		ethic_fanatic_egalitarian = { shift_ethic = ethic_egalitarian }
-	}
-	change_government = {
-		authority = auth_corporate
-		civics = {
-			civic = lrsk_gov_var_civic_mc_chartered_company
-			civic = random
-		}
-	}
-	set_name = random # Fixes some naming issues
+	#store_country_backup_data = {
+	#	name = yes
+	#	government = yes
+	#	ethics = yes
+	#}
+	#
+	#switch = {
+	#	trigger = has_ethic
+	#	ethic_fanatic_authoritarian = {
+	#		country_remove_ethic = ethic_fanatic_authoritarian
+	#		shift_ethic = ethic_authoritarian
+	#	}
+	#	ethic_fanatic_egalitarian = {
+	#		country_remove_ethic = ethic_fanatic_egalitarian
+	#		shift_ethic = ethic_egalitarian
+	#	}
+	#}
+	#change_government = {
+	#	authority = auth_corporate
+	#	civics = {
+	#		civic = lrsk_gov_var_civic_mc_chartered_company
+	#		civic = random
+	#	}
+	#}
+	#set_name = random # Fixes some naming issues
 
 	# Should always already be a subject, but JIC
 	IF = { limit = { is_subject = yes }
@@ -857,106 +863,106 @@ lrsk_make_chartered_colony_subject = {
 		}
 	}
 
-	IF = { 
-		limit = { NOT = { 
-			has_opinion_modifier = {
-				who = event_target:lrsk_chartering_agent
-				modifier = opinion_lrsk_gov_var_colonial_mission
-			}
-		} }
-		add_opinion_modifier = {
-			who = event_target:lrsk_chartering_agent
-			modifier = opinion_lrsk_gov_var_colonial_mission
-		}
-	}
+	#IF = { 
+	#	limit = { NOT = { 
+	#		has_opinion_modifier = {
+	#			who = event_target:lrsk_chartering_agent
+	#			modifier = opinion_lrsk_gov_var_colonial_mission
+	#		}
+	#	} }
+	#	add_opinion_modifier = {
+	#		who = event_target:lrsk_chartering_agent
+	#		modifier = opinion_lrsk_gov_var_colonial_mission
+	#	}
+	#}
 
 	# This flag set when establishing foreign rule.
 	# Change the dominant species and "add" a pop of that species to the home planet
 	# Make xenophobic and replace ruler (with new dominant species ruler)
-	IF = { limit = { has_country_flag = lrsk_alien_rule_puppet }
-
-		# reaction of the usurped
-		country_event = { id = lrsk_gov_var_chartered.21 }
-
-		# This ensures a "ruler class" pop (if possible) of the new dominant species "displaces" a native pop
-		capital_scope = {
-			IF = {
-				limit = {
-					any_owned_pop = {
-						has_job_category = ruler
-						NOT = { is_same_species = event_target:lrsk_chartering_agent }
-					}
-				}
-				random_owned_pop = {
-					limit = {
-						has_job_category = ruler
-						NOT = { is_same_species = event_target:lrsk_chartering_agent }
-					}
-					change_species = event_target:lrsk_chartering_agent_species
-				}
-				create_pop = {
-					species = owner_main_species
-					ethos = {
-						ethic = ethic_xenophile
-					}
-				}	
-			}
-			ELSE_IF = {
-				limit = {
-					any_owned_pop = {
-						has_job_category = specialist
-						NOT = { is_same_species = event_target:lrsk_chartering_agent }
-					}
-				}
-				random_owned_pop = { 
-					limit = {
-						has_job_category = specialist
-						NOT = { is_same_species = event_target:lrsk_chartering_agent }
-					}
-					change_species = event_target:lrsk_chartering_agent_species
-				}
-				create_pop = {
-					species = owner_main_species
-					ethos = {
-						ethic = ethic_xenophile
-					}
-				}
-			}
-			ELSE_IF = {
-				limit = { any_owned_pop = { NOT = { is_same_species = event_target:lrsk_chartering_agent } } }
-				random_owned_pop = {
-					limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }
-					change_species = event_target:lrsk_chartering_agent_species
-				}
-				create_pop = {
-					species = owner_main_species
-					ethos = {
-						ethic = ethic_xenophile
-					}
-				}
-			}
-		}
-
-		change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
-
-		shift_ethic = ethic_xenophobe
-
-		ruler = {
-			kill_leader = {
-				show_notification = no
-				fire = yes
-			}
-		}
-
-		# prevents immediate mass enslavement of deposed species pops (fucking yikes)
-		every_owned_pop = { limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }		
-			set_citizenship_type = {
-				country = prev
-				type = citizenship_limited
-				cooldown = yes
-			}
-		}
-	}
+	#IF = { limit = { has_country_flag = lrsk_alien_rule_puppet }
+	#
+	#	# reaction of the usurped
+	#	country_event = { id = lrsk_gov_var_chartered.21 }
+	#
+	#	# This ensures a "ruler class" pop (if possible) of the new dominant species "displaces" a native pop
+	#	capital_scope = {
+	#		IF = {
+	#			limit = {
+	#				any_owned_pop = {
+	#					has_job_category = ruler
+	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
+	#				}
+	#			}
+	#			random_owned_pop = {
+	#				limit = {
+	#					has_job_category = ruler
+	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
+	#				}
+	#				change_species = event_target:lrsk_chartering_agent_species
+	#			}
+	#			create_pop = {
+	#				species = owner_main_species
+	#				ethos = {
+	#					ethic = ethic_xenophile
+	#				}
+	#			}	
+	#		}
+	#		ELSE_IF = {
+	#			limit = {
+	#				any_owned_pop = {
+	#					has_job_category = specialist
+	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
+	#				}
+	#			}
+	#			random_owned_pop = { 
+	#				limit = {
+	#					has_job_category = specialist
+	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
+	#				}
+	#				change_species = event_target:lrsk_chartering_agent_species
+	#			}
+	#			create_pop = {
+	#				species = owner_main_species
+	#				ethos = {
+	#					ethic = ethic_xenophile
+	#				}
+	#			}
+	#		}
+	#		ELSE_IF = {
+	#			limit = { any_owned_pop = { NOT = { is_same_species = event_target:lrsk_chartering_agent } } }
+	#			random_owned_pop = {
+	#				limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }
+	#				change_species = event_target:lrsk_chartering_agent_species
+	#			}
+	#			create_pop = {
+	#				species = owner_main_species
+	#				ethos = {
+	#					ethic = ethic_xenophile
+	#				}
+	#			}
+	#		}
+	#	}
+	#
+	#	change_dominant_species = { species = event_target:lrsk_chartering_agent_species }
+	#
+	#	shift_ethic = ethic_xenophobe
+	#
+	#	ruler = {
+	#		kill_leader = {
+	#			show_notification = no
+	#			fire = yes
+	#		}
+	#	}
+	#
+	#	# prevents immediate mass enslavement of deposed species pops (fucking yikes)
+	#	every_owned_pop = { limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }		
+	#		set_citizenship_type = {
+	#			country = prev
+	#			type = citizenship_limited
+	#			cooldown = yes
+	#		}
+	#	}
+	#}
 }
 
 # Set as specified type of imperial economy special subject.
