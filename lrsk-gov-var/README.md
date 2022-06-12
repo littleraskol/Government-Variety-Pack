@@ -207,6 +207,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.1.1 (06/12/22) - Adding Special Subject icons
+-Icons for added subject types.
+
 v5.1 (06/12/22) - Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
 -Specialized subjects for both civics can still be added by event, but change from the Agreement menu is supported.
 -Imperial Economy allows for "fine tuning" subject resource contributions: You can individually set the taxes or subsidies of each resource type.
