@@ -207,6 +207,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.1.2 (06/??/22) - Return of Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
+-See v5.1 changelog entry for overall list of changes.
+-Only difference is the lack of "fine tuning" for Imperial Economy. This requires the ability to limit who can see resource sliders with conditions in a potential = {} block, but for some reason if I add such a slider, it prevents anyone from changing agreement terms. For now the special subject resource taxes come from hidden resource sliders.
+
 v5.1.1 (06/12/22) - Adding Special Subject icons
 -Icons for added subject types.
 
@@ -217,11 +221,11 @@ v5.1 (06/12/22) - Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Co
 --Taxes are based on setting agreement minimums, not preset definitions.
 --Each special type provdes a special bonus to the overlord (tied to innate loyalty penalty).
 --Foundry Colony renamed to Logistics Colony (more accurate to purpose).
---Logistics Colonies taxed at least 15% of alloys and energy.
---Market Colonies taxed at least 15% of consumer goods and food.
+--Logistics Colonies Taxed 15% of alloys and energy.
+--Market Colonies Taxed 15% of consumer goods and food.
 --Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject).
---Provisioner Colony taxed at least 15% of minerals and strategic resources.
---Trophy Colony taxed at least 15% of unity and influence.
+--Provisioner Colony Taxed 15% of minerals and strategic resources.
+--Trophy Colony Taxed 15% of unity and influence.
 --No limits on how many of these vassals one can have.
 --Bonus for each reduced to +1 stability from +2.
 --Special subject status can be changed after setting (using Agreement menu).
