@@ -28,6 +28,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 Compaitibility patches exist for a few mods. Some are maintained by me, and some by the other mod's author. They are:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods. It will likely work on any fork of these mods as well. (Maintained by me.)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2805620150]Bug Branch/GVP Compatibility Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url] mod (maintained by [url=https://steamcommunity.com/id/AmberAmbitions]AmberAmbitions[/url]).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461985481]More Authorities - GVP Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2158334880]More Authorities mod[/url]. (Maintained by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url], author of More Authorities.)
 [/list]
 
