@@ -57,7 +57,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - [DEPRECATED] This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
+[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - [DEPRECATED] This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals) [Removed due to seeming bug in base game agreement resource terms causing its feature to break subject taxes generally.]
 
 [*][i]Colonial Fiefs (Imperial, not Militarist)[/i] - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
