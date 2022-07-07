@@ -207,6 +207,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.1.3 (07/07/22) - Imperial Economy Deprecated
+-Due to a bizarre base game bug involving agreement terms, the core features of the Imperial Economy civic prevent subject taxes from being collected. It has been removed until this is fixed.
+
 v5.1.2 (06/20/22) - Return of Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
 -See v5.1 changelog entry for overall list of changes.
 -Only difference is the lack of "fine tuning" for Imperial Economy. This requires the ability to limit who can see resource sliders with conditions in a potential = {} block, but for some reason if I add such a slider, it prevents anyone from changing agreement terms. For now the special subject resource taxes come from hidden resource sliders.

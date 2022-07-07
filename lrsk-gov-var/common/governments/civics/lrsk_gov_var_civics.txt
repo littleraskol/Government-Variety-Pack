@@ -699,10 +699,12 @@ lrsk_gov_var_civic_public_works = {
 }
 
 #Imperial Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
+#Deprecated until base game bug is fixed.
 lrsk_gov_var_civic_imperial_economy = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
+    civics = { value = lrsk_gov_var_civic_imperial_economy } # Deprecated until base game bug is fixed.
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects"
