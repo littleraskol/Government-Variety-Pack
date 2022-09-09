@@ -210,7 +210,6 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v5.1.4 (09/08/22) - Minor Fixes
 -CWTools flagged errors: deprecated/changed diplo blocks, incorrect preset keys, missing locs.
 -Reactionary Socialism lacked an hier title.
--Rebalanced Planetmind Creativity
 
 v5.1.3 (07/07/22) - Imperial Economy Deprecated
 -Due to a bizarre base game bug involving agreement terms, the core features of the Imperial Economy civic prevent subject taxes from being collected. It has been removed until this is fixed.
