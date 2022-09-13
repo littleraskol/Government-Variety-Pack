@@ -207,6 +207,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.2 (09/??/22) - Fornax Update
+-Fixed what was needed for compatibility with Stellaris 3.5 (Fornax)
+-Knight job renamed (avoid conflict with new knightly origin) to "Cavalier"
+-Imperial Economy returns (somewhat less dramatically)
+--details...
+-Planetmid Creativity rebalanced.
+--details...
+
 v5.1.4 (09/08/22) - Minor Fixes
 -CWTools flagged errors: deprecated/changed diplo blocks, incorrect preset keys, missing locs.
 -Reactionary Socialism lacked an hier title.
