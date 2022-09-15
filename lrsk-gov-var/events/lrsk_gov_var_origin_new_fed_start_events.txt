@@ -312,14 +312,18 @@ country_event = {
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
-					40 = {
+					30 = {
 						lrsk_create_tradeways_member_mg = yes
 						last_created_country = {
 							save_event_target_as = lrsk_fed_member_1
 							establish_communications_no_message = root
 						}
 					}
-					60 = {	
+					70 = {
+						modifier = {
+							factor = 0
+							root = { has_authority = auth_corporate }
+						}	
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {
 							save_event_target_as = lrsk_fed_member_1
@@ -545,22 +549,26 @@ country_event = {
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
-					50 = {
+					40 = {
 						modifier = {
-							factor = 1.5
+							add = 50
 							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
-						}						
+						}		
 						lrsk_create_tradeways_member_mg = yes
 						last_created_country = {
 							save_event_target_as = lrsk_fed_member_2
 							establish_communications_no_message = root
 						}
 					}
-					50 = {
+					60 = {
 						modifier = {
-							factor = 0.5
+							add = -50
 							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
-						}						
+						}
+						modifier = {
+							factor = 0
+							root = { has_authority = auth_corporate }
+						}					
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {
 							save_event_target_as = lrsk_fed_member_2
