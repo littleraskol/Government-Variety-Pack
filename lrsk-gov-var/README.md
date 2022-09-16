@@ -210,8 +210,13 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v5.2 (09/??/22) - Fornax Update
 -Fixed what was needed for compatibility with Stellaris 3.5 (Fornax)
 -Knight job renamed (avoid conflict with new knightly origin) to "Cavalier"
--Imperial Economy returns (somewhat less dramatically)
---details...
+-Did some improvements to Tradeways origins.
+--Megacorp players should never have Megacorp fed partners.
+--Merchant Guild players should have one Megacorp fed parter (small chance of 0 or 2).
+-Imperial Economy returns (somewhat less dramatically).
+--All benefits are based on a new subject agreement term unlocked by this civic, "Special Services," which provides the overlord four different benefits (with a penalty to the subject and loyalty hit).
+--Special subject presets only set one of these Special Service options.
+--Having at least one subject in a given service category provides a unique bonus.
 -Planetmid Creativity rebalanced.
 --details...
 

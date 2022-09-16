@@ -6,35 +6,206 @@
 
 ## ImpEcon Terms
 
-# Default non-spec subject option.
-lrsk_gvp_special_service_loyalty_null = {
+# Only thing non-impecon overlords should see.
+lrsk_gvp_special_service_null = {
 	term = lrsk_gvp_impecon
 
-	possible = {
-		target = { lrsk_is_impecon_special_vassal = no }
+	potential = {
+		owner = { NOT = { has_valid_civic = lrsk_gov_var_civic_imperial_economy } }
 	}
 }
 
-# Effects of being a special economic subject.
-# This is for the various stacking bonus modifiers the overlord gets.
-# Otherwise, it seems loyalty is actually too easy to come by for these subject types...
-lrsk_gvp_special_service_loyalty_effects = {
+# No special service.
+lrsk_gvp_special_service_none = {
 	term = lrsk_gvp_impecon
 
-	target_modifier = {
-		monthly_loyalty = -1
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
-	activate_effect = {
-		owner = { country_event = { id = lrsk_gov_var_impecon.3 } }
+	# Clearly being favored somehow
+	triggered_loyalty_change = {
+ 		trigger = {
+ 			owner = { OR = {
+				check_variable = { which = lrsk_impecon_foundries value > 0 }
+				check_variable = { which = lrsk_impecon_markets value > 0 }
+				check_variable = { which = lrsk_impecon_trophies value > 0 }
+				check_variable = { which = lrsk_impecon_prospectors value > 0 }
+			} }
+ 		}
+		loyalty_change = 10
 	}
+}
 
-	deactivate_effect = {
-		owner = { country_event = { id = lrsk_gov_var_impecon.3 } }
+# Logistics ("Foundry")
+lrsk_gvp_special_service_logistics = {
+	term = lrsk_gvp_impecon
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
 	}
 
 	possible = {
-		target = { lrsk_is_impecon_special_vassal = yes }
+		custom_tooltip = {
+			fail_text = LRSK_IMPECON_TOO_MANY
+			owner = { check_variable = { which = lrsk_impecon_foundries value < 10 } }
+		}
+	}
+
+	target_modifier = {
+		monthly_loyalty = -1
+		country_naval_cap_mult = -0.15
+	}
+
+	owner_modifier = {
+		starbase_shipyard_build_cost_mult = -0.05
+		ship_military_upkeep_mult = -0.05
+		planet_stability_add = 1
+	}
+
+	unique_owner_modifier = {
+		ship_fire_rate_mult = 0.05
+	}
+
+	activate_effect = {
+		owner = {
+			change_variable = { which = lrsk_impecon_foundries value = 1 }
+		}
+	}
+
+	deactivate_effect = {
+		owner = {
+			subtract_variable = { which = lrsk_impecon_foundries value = 1 }
+		}
+	}
+}
+
+# Commerical ("Market")
+lrsk_gvp_special_service_commerce = {
+	term = lrsk_gvp_impecon
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = LRSK_IMPECON_TOO_MANY
+			owner = { check_variable = { which = lrsk_impecon_markets value < 10 } }
+		}
+	}
+
+	target_modifier = {
+		monthly_loyalty = -1
+		trade_value_mult = -0.1
+	}
+
+	owner_modifier = {
+		trade_value_mult = 0.05
+		country_trade_fee = -0.05
+		planet_stability_add = 1
+	}
+
+	unique_owner_modifier = {
+		planet_jobs_specialist_happiness_mult = 0.05
+	}
+
+	activate_effect = {
+		owner = {
+			change_variable = { which = lrsk_impecon_markets value = 1 }
+		}
+	}
+
+	deactivate_effect = {
+		owner = {
+			subtract_variable = { which = lrsk_impecon_markets value = 1 }
+		}
+	}
+}
+
+# Diplomatic ("Trophy")
+lrsk_gvp_special_service_diplomatic = {
+	term = lrsk_gvp_impecon
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = LRSK_IMPECON_TOO_MANY
+			owner = { check_variable = { which = lrsk_impecon_trophies value < 10 } }
+		}
+	}
+
+	target_modifier = {
+		monthly_loyalty = -1
+		pop_happiness = -0.1
+	}
+
+	owner_modifier = {
+		diplo_weight_mult = 0.05
+		country_influence_produces_mult = 0.05
+		planet_stability_add = 1
+	}
+
+	unique_owner_modifier = {
+		envoys_add = 1
+	}
+
+	activate_effect = {
+		owner = {
+			change_variable = { which = lrsk_impecon_trophies value = 1 }
+		}
+	}
+
+	deactivate_effect = {
+		owner = {
+			subtract_variable = { which = lrsk_impecon_trophies value = 1 }
+		}
+	}
+}
+
+# Provisions ("Prospector")
+lrsk_gvp_special_service_provisions = {
+	term = lrsk_gvp_impecon
+
+	potential = {
+		owner = { has_valid_civic = lrsk_gov_var_civic_imperial_economy }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = LRSK_IMPECON_TOO_MANY
+			owner = { check_variable = { which = lrsk_impecon_prospectors value < 10 } }
+		}
+	}
+
+	target_modifier = {
+		monthly_loyalty = -1
+		# need malus
+	}
+
+	owner_modifier = {
+		planet_structures_cost_mult = -0.05
+		planet_structures_upkeep_mult = -0.05
+		planet_stability_add = 1
+	}
+
+	unique_owner_modifier = {
+		planet_jobs_worker_produces_mult = 0.05
+	}
+
+	activate_effect = {
+		owner = {
+			change_variable = { which = lrsk_impecon_prospectors value = 1 }
+		}
+	}
+
+	deactivate_effect = {
+		owner = {
+			subtract_variable = { which = lrsk_impecon_prospectors value = 1 }
+		}
 	}
 }
 
