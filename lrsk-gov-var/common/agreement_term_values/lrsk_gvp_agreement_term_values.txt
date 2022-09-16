@@ -136,6 +136,10 @@ lrsk_gvp_special_service_diplomatic = {
 			fail_text = LRSK_IMPECON_TOO_MANY
 			owner = { check_variable = { which = lrsk_impecon_trophies value < 10 } }
 		}
+		custom_tooltip = {
+			fail_text = preset_lrsk_gvp_vassal_trophy_no_gestalt
+			target = { is_gestalt = no }
+		}
 	}
 
 	target_modifier = {
