@@ -50,6 +50,13 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_impecon.2.a
 		custom_tooltip = lrsk_gov_var_impecon.2.a.tooltip
+
+		allow = {
+			custom_tooltip = {
+				fail_text = LRSK_IMPECON_TOO_MANY
+				check_variable = { which = lrsk_impecon_foundries value < 10 }
+			}
+		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
@@ -83,6 +90,13 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_impecon.2.b
 		custom_tooltip = lrsk_gov_var_impecon.2.b.tooltip
+
+		allow = {
+			custom_tooltip = {
+				fail_text = LRSK_IMPECON_TOO_MANY
+				check_variable = { which = lrsk_impecon_markets value < 10 }
+			}
+		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
@@ -122,6 +136,10 @@ country_event = {
 				fail_text = preset_lrsk_gvp_vassal_trophy_no_gestalt
 				event_target:lrsk_impecon_colonized = { is_gestalt = no }
 			}
+			custom_tooltip = {
+				fail_text = LRSK_IMPECON_TOO_MANY
+				check_variable = { which = lrsk_impecon_trophies value < 10 }
+			}
 		}
 		
 		hidden_effect = {
@@ -157,6 +175,13 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_impecon.2.d
 		custom_tooltip = lrsk_gov_var_impecon.2.d.tooltip
+
+		allow = {
+			custom_tooltip = {
+				fail_text = LRSK_IMPECON_TOO_MANY
+				check_variable = { which = lrsk_impecon_prospectors value < 10 }
+			}
+		}
 		
 		hidden_effect = {
 			event_target:lrsk_impecon_colonized = {
