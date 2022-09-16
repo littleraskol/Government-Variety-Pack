@@ -214,14 +214,15 @@ country_event = {
 		}
 	}
 
-	after = { hidden_effect = {
-		# call event to recalc variable variables if needed
-		if = { limit = { NOT = { has_country_flag = lrsk_impecon_temp_no_change } } country_event = { id = lrsk_gov_var_impecon.3 } }
-	} }
+	#after = { hidden_effect = {
+	#	# call event to recalc variable variables if needed
+	#	if = { limit = { NOT = { has_country_flag = lrsk_impecon_temp_no_change } } country_event = { id = lrsk_gov_var_impecon.3 } }
+	#} }
 }
 
 # Recalculates the "legitimacy" variable for imperial economy's stability modifier from having these vassals
 # Applies all relevant modifiers or removes them as needed
+# DEPRECATED - handled by agreement term now
 country_event = {
 	id = lrsk_gov_var_impecon.3
 
