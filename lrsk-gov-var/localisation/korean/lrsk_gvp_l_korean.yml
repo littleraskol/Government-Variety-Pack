@@ -1430,23 +1430,23 @@ l_korean:
  preset_lrsk_gvp_vassal_foundry:0 "Logistics Colony"
  preset_lrsk_gvp_vassal_foundry_desc:1 "A $preset_lrsk_gvp_vassal_foundry$ is a Subject that must furnish its Overlord with materials and supplies for the Overlord's navy."
  preset_lrsk_gvp_vassal_foundry_flavor_desc:1 "$lrsk_gvp_special_service_logistics_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_foundry_eff:1 "Taxed §G15%§! of £alloys£ §YAlloys§! and £energy£ §YEnergy§! produced. Overlord gets §G-3%§! £ship_stats_build_cost£ §Yship build and upkeep cost§! per such subject (to a maximum of §G-15%§!)."
+ preset_lrsk_gvp_vassal_foundry_eff:1 "Overlord gets §G-5%§! £ship_stats_build_cost£ §Yship build and upkeep cost§! per such subject. Having at least one of these Subjects gives the Overlord §G+5%§! ship fire rate. Subject gets §R-15%§! naval cap."
 
  preset_lrsk_gvp_vassal_market:0 "Market Colony"
  preset_lrsk_gvp_vassal_market_desc:1 "A $preset_lrsk_gvp_vassal_market$ is a Subject that exists to feed the material needs and wants of its Overlord's people."
  preset_lrsk_gvp_vassal_market_flavor_desc:1 "$lrsk_gvp_special_service_commerce_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_market_eff:1 "Taxed §G15%§! of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced. Overlord gets §G+5%§! £trade_value£ §YTrade Value§! (to a maximum of §G+25%§!) and  §G-5%§! §YMarket Fee§! (to a maximum of §G-25%§!) per such subject."
+ preset_lrsk_gvp_vassal_market_eff:1 "Overlord gets §G+5%§! £trade_value£ §YTrade Value§! and  §G-5%§! §YMarket Fee§! per such subject. Having at least one of these Subjects gives the Overlord §G+10%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. Subject gets §R-15%§! trade attractiveness."
 
  preset_lrsk_gvp_vassal_trophy:0 "Trophy Colony"
  preset_lrsk_gvp_vassal_trophy_desc:1 "A $preset_lrsk_gvp_vassal_trophy$ is a Subject that has been made to act as a propagandist for its Overlord, echoing the Overlord's agenda and legitimating its culture."
  preset_lrsk_gvp_vassal_trophy_flavor_desc:1 "$lrsk_gvp_special_service_diplomatic_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_trophy_eff:1 "Taxed §G15%§! of £unity£ §YUnity§! and £influence£ §YInfluence§! produced; gets a §R-10%§! £happiness£ §YHappiness§! penalty. Overlord gets §G+5%§! £diplo_weight£ §Y$diplomatic_weight$§! per such subject (to a maximum of §G+25%§!)."
+ preset_lrsk_gvp_vassal_trophy_eff:1 "Overlord gets §G+5%§! £diplo_weight£ §Y$diplomatic_weight$§! and £influence£ §YInfluence§! production per such subject. Having at least one of these Subjects gives the Overlord §G+1§! Envoys. Subject gets a §R-10%§! £happiness£ §YHappiness§! penalty."
  preset_lrsk_gvp_vassal_trophy_no_gestalt:0 "§PGestalt empires cannot become this kind of subject.§!"
 
  preset_lrsk_gvp_vassal_prospector:0 "Provisioner Colony"
  preset_lrsk_gvp_vassal_prospector_desc:1 "A $preset_lrsk_gvp_vassal_prospector$ is a Subject that must render to its overlord a portion of the construction resources it produces."
  preset_lrsk_gvp_vassal_prospector_flavor_desc:1 "$lrsk_gvp_special_service_provisions_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_prospector_eff:1 "Taxed §G15%§! of £minerals£ §YMinerals§!, £volatile_motes£ §YVolatile Motes§!, £exotic_gases£ §YExotic Gases§!, and £rare_crystals£ §YRare Crystals§! produced. Overlord gets §G-4%§! £building£ §Ybuilding construction and upkeep cost§! per such subject (to a maximum of §G-20%§!)."
+ preset_lrsk_gvp_vassal_prospector_eff:1 "Overlord gets §G-5%§! £building£ §Ybuilding construction and upkeep cost§! per such subject. Having at least one of these Subjects gives the Overlord §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$ £happiness£ Happiness§!. Subject gets §R-10%§! building speed."
 
  #preset_lrsk_gov_var_ward:0 "Ward"
  #preset_lrsk_gov_var_ward_desc:1 "\nAnother alien civilization meddled the development of these vassals, raising them to the stars (possibly from pre-sapient beginnings). They are very independent and their masters gain £influence£ Influence, £society£ Society Research, and £unity£ Unity from the arrangement."
@@ -2161,7 +2161,7 @@ l_korean:
  ## Events
  
  ## Imperial Economy
- LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special subject you create increases our legitimacy among our people and will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+1§!"
+ LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special subject you create increases our legitimacy among our people and will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+1§!\n\nWe are limited to §Y10§! of each type of special subject."
  LRSK_GOV_VAR_IMPECON_PERM:0 "\n\n§RThis decision cannot be undone.§!"
  lrsk_gov_var_impecon.2.name:0 "Exploitation of the [lrsk_impecon_colonized.GetName]"
  lrsk_gov_var_impecon.2.desc:0 "The [lrsk_impecon_colonized.GetName] has submitted to us, as is right and proper. Our people expect to reap the benefits of our overlordship, and so we have the option of restructuring their economy and society for our benefit.\n\n(NOTE: You can also select these options from the Agreement menu.)"
