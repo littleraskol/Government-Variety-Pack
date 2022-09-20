@@ -65,7 +65,7 @@ Automated Indolence (Materialist) - This society, very early on in its industria
 
 Hive Mind Civics:
 
-Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.)
+Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-20% empire size from colonies and systems, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and provide naval cap, but reduce planet stability and increase deviancy.)
 
 Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 
