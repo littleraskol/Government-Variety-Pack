@@ -67,7 +67,7 @@ This is the full listing of civics with descriptions.
 [b]Hive Mind Civics[/b]
 
 [list]
-[*][i]Planetmind Creativity (Hive Mind, no Subsumed Will or Divided Attention)[/i] - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-25% empire size from colonies and systems, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.)
+[*][i]Planetmind Creativity (Hive Mind, no Subsumed Will or Divided Attention)[/i] - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-20% empire size from colonies and systems, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and provide naval cap, but reduce planet stability and increase deviancy.)
 
 [*][i]Caste Quickening (Hive Mind)[/i] - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
 

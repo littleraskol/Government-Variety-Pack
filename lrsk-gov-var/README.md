@@ -209,7 +209,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v5.2 (09/??/22) - Fornax Update
 -Fixed what was needed for compatibility with Stellaris 3.5 (Fornax)
--Knight job renamed (avoid conflict with new knightly origin) to "Cavalier"
+-Knight job renamed to "Cavalier" (avoids redundancy with new knightly origin in Toxoids)
 -Did some improvements to Tradeways origins.
 --Megacorp players should never have Megacorp fed partners.
 --Merchant Guild players should have one Megacorp fed parter (small chance of 0 or 2).
@@ -218,10 +218,10 @@ v5.2 (09/??/22) - Fornax Update
 --Special subject presets only set one of these Special Service options.
 --Having at least one subject in a given service category provides a unique bonus.
 -Planetmind Creativity rebalanced.
---Instead of -5% empire size from pops, base civic grants -25% empire size from colonies and systems.
---Base civic incompatible with Subsumed Will and Divided Attention (this is both a gameplay and thematic limitation).
---Upgrade costs of Synaptic buildings now scale more steeply (higher level buildings harder to get).
-
+--Instead of -5% empire size from pops, civic grants -20% empire size from colonies and systems.
+--Civic incompatible with Subsumed Will and Divided Attention (this is both a gameplay and thematic limitation).
+--Upgrade costs of Synaptic buildings now scale more steeply (lower levels easier to get, higher level buildings harder to get).
+--Planetmind Overseer job now gives naval cap instead of empire size reductions (there's just no way to balance scaling percentages, RIP admin cap) and reduces housing usage on planet by 10%, while having a unity upkeep instead of an energy upkeep. Influence production reduced to +0.1, crime added reduced to 5.
 
 v5.1.4 (09/08/22) - Minor Fixes
 -CWTools flagged errors: deprecated/changed diplo blocks, incorrect preset keys, missing locs.
