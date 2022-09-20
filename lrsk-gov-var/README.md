@@ -217,8 +217,11 @@ v5.2 (09/??/22) - Fornax Update
 --All benefits are based on a new subject agreement term unlocked by this civic, "Special Services," which provides the overlord four different benefits (with a penalty to the subject and loyalty hit).
 --Special subject presets only set one of these Special Service options.
 --Having at least one subject in a given service category provides a unique bonus.
--Planetmid Creativity rebalanced.
---details...
+-Planetmind Creativity rebalanced.
+--Instead of -5% empire size from pops, base civic grants -25% empire size from colonies and systems.
+--Base civic incompatible with Subsumed Will and Divided Attention (this is both a gameplay and thematic limitation).
+--Upgrade costs of Synaptic buildings now scale more steeply (higher level buildings harder to get).
+
 
 v5.1.4 (09/08/22) - Minor Fixes
 -CWTools flagged errors: deprecated/changed diplo blocks, incorrect preset keys, missing locs.

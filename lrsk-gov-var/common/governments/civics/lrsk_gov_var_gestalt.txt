@@ -8,12 +8,17 @@
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
+    possible = { civics = { NOR = { 
+		value = civic_hive_divided_attention
+		value = civic_hive_subsumed_will
+	} } }
 	random_weight = { base = 5 }
 
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
 	modifier = {
-		empire_size_pops_mult = -0.05
+		empire_size_systems_mult = -0.25
+		empire_size_colonies_mult = -0.25
 	}
 }
 
