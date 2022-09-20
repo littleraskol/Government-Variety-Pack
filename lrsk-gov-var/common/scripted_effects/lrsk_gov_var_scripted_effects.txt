@@ -858,7 +858,7 @@ lrsk_make_chartered_colony_subject = {
 		random_agreement = {
 			limit = {
 				owner = { is_same_value = event_target:lrsk_chartering_agent }
-				#target = { is_same_value = this }
+				target = { is_same_value = event_target:lrsk_subject_to_charter }
 			}
 			set_agreement_preset = { preset = preset_lrsk_gov_var_subject_chartered_company }
 		}
@@ -977,7 +977,7 @@ lrsk_make_impecon_special_subject = {
 	random_agreement = {
 		limit = {
 			owner = { is_same_value = event_target:lrsk_impecon_colonizer }
-			#target = { is_same_value = this }
+			target = { is_same_value = event_target:lrsk_impecon_colonized }
 		}
 		set_agreement_preset = { preset = $PRESET$ }
 	}
