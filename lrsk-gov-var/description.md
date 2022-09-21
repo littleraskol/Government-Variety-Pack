@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Updated for Stellaris 3.4 (Cepheus).[/b]
+[b]Updated for Stellaris 3.5 (Formax).[/b] Though a backup version for 3.4 exists, save files from 3.4 should be like 95% compaitble (this percentage deduced using a very scientific process called "guesstimating").
 
 [i][b]New Civics[/b][/i]
 
@@ -57,6 +57,7 @@ There are also "backup" versions of this mod for older versions of Stellaris:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
