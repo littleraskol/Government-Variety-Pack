@@ -606,6 +606,13 @@ lrsk_has_gvp_possible_invalidated_civic = {
 			has_civic = lrsk_gov_var_civic_universal_sovereignty
 			has_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		}
+		AND = {
+			has_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			OR = {
+				has_civic = civic_hive_divided_attention
+				has_civic = civic_hive_subsumed_will
+			}
+		}
 	}
 }
 
