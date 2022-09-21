@@ -1443,3 +1443,26 @@ country_event = {
 		add_resource = { influence = 250 }
 	}
 }
+# This just calls 2003 for the scopeless on_single_player_save_game_load on action
+event = {
+	id = lrsk_government_variety_pack_backend.20032
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_country = {
+			lrsk_has_gvp_possible_invalidated_civic = yes
+			NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				lrsk_has_gvp_possible_invalidated_civic = yes
+				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
+		}
+	}
+}
