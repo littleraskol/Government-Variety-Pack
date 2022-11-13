@@ -207,6 +207,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.2.1 (11/13/22) - Lithoid Upkeep Fix
+-Planetmind Overseers should not have food upkeep for lithoids.
+
 v5.2 (09/21/22) - Fornax Update
 -Fixed what was needed for compatibility with Stellaris 3.5 (Fornax)
 -Knight job renamed to "Cavalier" (avoids redundancy with new knightly origin in Toxoids)

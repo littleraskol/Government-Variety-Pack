@@ -21,7 +21,7 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198019142950]Garlic Pudding[/url] came up with five government ideas I incorporated, and one I have yet to incorporate but a new Civic is WIP for it.
 [/list]
 
-[i][b]Compatibility and Patches[/b][/i]
+[i][b]Compatibility, Patches, and Submods[/b][/i]
 
 This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files, and will only conflict with other mods if for some reason another mod has files with the exact same names in the same places as this in mod. However, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best. There's also no guarantee that combinations of mod-added features will "play nice" or be balanced against/with each other in game.
 
@@ -60,6 +60,11 @@ There are also "backup" versions of this mod for older versions of Stellaris:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
+
+Finally, there is a submod available:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2884243461]Chivalric Peacekeepers[/url] - Changes the requirements of Chivalry, allowing it to be selected by any empire that is not Fanatic Pacifist. (maintained by [url=https://steamcommunity.com/id/lunaassassin98/]Luna Assassin[/url]).
+[/list]
 
 [i][b]Problems?[/b][/i]
 

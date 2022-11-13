@@ -1338,8 +1338,15 @@ lrsk_gov_var_job_planetmind_overseer = {
 			influence = 0.1
 		}
 		upkeep = {
-			food = 1
 			unity = 2
+		}
+		upkeep = {
+			trigger = { is_lithoid = no }
+			food = 1
+		}
+		upkeep = {
+			trigger = { is_lithoid = yes }
+			minerals = 1
 		}
 	}
 
