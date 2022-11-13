@@ -1,7 +1,5 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Updated for Stellaris 3.5 (Formax).[/b] Though a backup version for 3.4 exists, save files from 3.4 should be like 95% compaitble (this percentage deduced using a very scientific process called "guesstimating").
-
 [i][b]New Civics[/b][/i]
 
 A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. Even short summaries cannot be contained in the character limit so see [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for detailed descriptions.
