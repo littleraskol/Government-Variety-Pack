@@ -1762,8 +1762,8 @@ l_english:
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
 
- # Planetmind Overseer
- job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
+ # Planetmind Articulator
+ job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Articulator"
  job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
  job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
  job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§!, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§! by §G10%§!, and increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§! by §G+3§!. However, they produce §R+5§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-1§!. They consume §R1§! £food£ §H$food$§! and 2 £unity£ §H$unity$§!"
@@ -2833,6 +2833,57 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  LRSK_SPECSUBJ_DISMISS_COMMON:0 "Don't ask me again."
  LRSK_SPECSUBJ_DISMISS_COMMON_DESC:0 "This event will not appear again. Use the Agreement menu to change subject type."
  LRSK_SPECSUBJ_MENU_NOTICE:0 "(You can also use the Agreement menu to apply the appropriate preset.)"
+
+ ### SITUATIONS
+ 
+ ## Planetmind Bloom Situation
+
+ # Event Text
+  
+ # Basic Strings
+ situation_lrsk_gvp_planetmind_bloom:0 "$situation_lrsk_gvp_planetmind_bloom_type$ on [Target.GetName]"
+ situation_lrsk_gvp_planetmind_bloom_type:0 "Planetmind Bloom"
+ situation_lrsk_gvp_planetmind_bloom_desc_standard:0 "The planetary mind of [Target.GetName] has become unusually lucid and self-assertive, leading to ongoing disruptions. (Disruptions take the form of increased deviancy and decreased job output.)"
+ situation_lrsk_gvp_planetmind_bloom_monthly_change_tooltip:0 ""
+ situation_lrsk_gvp_planetmind_bloom_cultivated_tooltip:0 "The Planetmind on  §Y[Target.GetName]§! will develop into some new form, possibly one more autonomous from §Y[Owner.GetName]§!. As it develops there will be increasing deviancy and decreasing job output on [Target.GetName]."
+ situation_lrsk_gvp_planetmind_bloom_tamed_tooltip:0 "The Planetmind on  §Y[Target.GetName]§! will return to its former state of quiet compliance with the Overmind of §Y[Owner.GetName]§!. As it fades, increased deviancy will decline and job output return to normal on [Target.GetName]."
+ 
+ # Approaches
+ approach_lrsk_gvp_wait_and_see:0 "Wait and See"
+ approach_lrsk_gvp_wait_and_see_desc:0 "We are taxed by many pressing issues. This new challenge may simply resolve itself."
+ approach_lrsk_gvp_understand:0 "Understand"
+ approach_lrsk_gvp_understand_desc:0 "The Planetminds are fragments of the Overmind, born from and thus a part of Us. We must understand Ourself more to understand what is happening."
+ approach_lrsk_gvp_investigate:0 "Investigate"
+ approach_lrsk_gvp_investigate_desc:0 "The Planetminds are meant to be the subordinate assistants of the greater Overmind, the whole of which they are constituent parts. This disunity is intolerable to Us, and We must determine its source."
+ approach_lrsk_gvp_communicate:0 "Communicate"
+ approach_lrsk_gvp_communicate_desc:0 "The Blooming Planetmind on [Target.GetName] is more and more a Mind as Ourself, but distracted, confused. Perhaps We can make a connection and influence its development?"
+ approach_lrsk_gvp_cultivate:0 "Cultivate"
+ #approach_lrsk_gvp_cultivate_desc:0 "We will accept the Planetmind on [Target.GetName] as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure."
+ approach_lrsk_gvp_cultivate_desc:0 "We will accept the Planetmind on [Target.GetName] as a new, budding expression of Ourself."
+ approach_lrsk_gvp_concentrate:0 "Concentrate"
+ approach_lrsk_gvp_concentrate_desc:0 "The Bloom of the Planetmind on [Target.GetName] withers away with time and We can barely perceive its discordant thoughts. Impossible now to understand it further, but if We focus Our will, we can bring it to heel."
+ approach_lrsk_gvp_extinguish:0 "Extinguish"
+ approach_lrsk_gvp_extinguish_desc:0 "The Bloom on [Target.GetName] is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on [Target.GetName]."
+ approach_lrsk_gvp_suppress:0 "Suppress"
+ approach_lrsk_gvp_suppress_desc:0 "The Blooming Planetmind on [Target.GetName] grows fearsomely. We can barely contain its wild will. Our most intense focus will be required to bring it to heel."
+ approach_lrsk_gvp_intervene:0 "Intervene"
+ approach_lrsk_gvp_intervene_desc:0 "The Bloom of the Planetmind on [Target.GetName] is wilting fast. Must this miraculous new being wither away? Perhaps We can bring it back to lucidity..."
+ 
+ # Stages
+ stage_lrsk_gvp_withering:0 "Withering"
+ stage_lrsk_gvp_wilting:0 "Wilting"
+ stage_lrsk_gvp_budding:0 "Budding"
+ stage_lrsk_gvp_blossoming:0 "Blossoming"
+ stage_lrsk_gvp_fruiting:0 "Fruiting"
+ 
+ # Progress Tooltips
+ lrsk_gvp_string_current_approach:0 "Current Approach"
+ LRSK_GVP_STRING_DEVIANCY:0 "Deviancy Effects"
+ LRSK_GVP_STRING_ARTICULATORS:0 "$job_lrsk_gov_var_job_planetmind_overseer_plural$"
+ LRSK_GVP_STRING_SYNAPSE_BLDGS:0 "$LRSK_DESC_PLANETMIND_NAME$ Building Levels"
+ LRSK_GVP_STRING_SYNAPSE_STAPLES:0 "Synapse Staples in [owner.GetName]"
+ # TBD...
+ LRSK_GVP_STRING_DRONE_PURGE:0 "Purged Misaligned Drones"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.

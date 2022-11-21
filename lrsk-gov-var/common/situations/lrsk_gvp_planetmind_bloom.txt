@@ -1,0 +1,418 @@
+# Planetmind Bloom situation
+# 
+# Concept: Planets with Planetmind Overseers have the potential to become increasingly "willful," usually represented by the unity upkeep cost, the increased deviancy, etc. that come with those jobs and the buildings that provide them. This situation makes that possibility more "active" as something the player needs to manage. The choices a player uses in one Bloom will create a degree of "path dependency" in the hive mind, making those approaches less costly in the future (and others more costly).
+# 
+# Conditions:
+# -Empire:
+# --Has valid Planetmind Creativity civic.
+# --Has not had a Bloom situation in the last 20 years.
+# --No Bloom is currently happening anywhere.
+# -Any planet:
+# --Owned and controlled by empire meeting above conditions.
+# --Has at least one Planetmind Overseer.
+# --Has never had a Bloom situation resolved with the Synapse Staple option.
+#
+# Note: Ensure that the situation sets at start and unsets on fail/complete/abort the `recent_revolt_attempt` flag so that revolt situations don't happen during a Bloom (would be too much if both happened on one planet!)
+#
+# Aborts When:
+# -Bloom planet:
+# --Not owned and controlled by situation-owning empire, OR
+# --Situation-owning empire lacks valid Planetmind Creativity civic.
+# 
+# Indicators:
+# -Target planet:
+# --More likely the more Overseers a planet has.
+# --Somewhat more likely the more advanced Synapse building it has.
+# --More likely with higher deviancy.
+# --More likely with more pops.
+# --More likely if in a multi-planet system, and has the most advanced Synapse building in system.
+#
+# Counter-Indicators:
+# -Empire:
+# --Less likely if ever resolved a Bloom with the Synapse Staple option.
+# -Planet:
+# --Much less likely if in multi-planet system, and some other planet has the most advanced Synapse building
+# --Less likely the more powerful the owning empire is.
+# 
+# Outcomes:
+# Bi-directional. Leftward progress represents the bloom fading and the planetmind becoming more tractable (the "Taming path"), rightward progress represents the planetmind growing in self-awareness and self-assertion (the "Cultivation path"). Player actions influence future Bloom options, conditions, and probabilities, reflecting the path-dependency of the Overmind learning how to deal with a new problem that comes with becoming interstellar in scope.
+# -Left (Tamed) outcomes:
+# --Situation ends without any change to planet status.
+# --Alternately, player can opt for a more "permanent" solution: creating a Synapse Staple.
+# ---The Synapse Staple is a planetary feature that reduces Deviancy but consumes planet size and halves Influence production and Naval Cap from Overseers.
+# ---Planets with a Synapse Staple will not ever Bloom.
+# -Right (Cultivated) outcomes:
+# --A few are possible and depend on how the player interacts with the planetmind in special "diplomatic" events.
+# ---If interactions were hostile (i.e., trying to move progress left (suppressing growth) when other progress modifiers kept it going right (planetmind was nonetheless able to wake itself)), planet system breaks away as an independent (and possibly hostile) empire.
+# ---If interactions were accommodating (i.e., trying to guide the planetmind as it grows, almost like a "parent"), planet system breaks away as a loyal vassal empire.
+# ---If interactions were transactional (i.e., cutting deals with the planetmind, showing the benefits of being subordinate to the overmind), the planet remains in the empire, but the mind is "elevated" to an immortal governor leader with good stats. A bloom will never happen on the planet again.
+#
+# Progress:
+#	+0.5 per Planetmind Overseer
+#	+1 per level of Synapse building
+#	±N scaling with deviancy
+#	±1 per same-system planets that align with/against the Blooming planetmind (alignment is a special event at the Fruiting stage)
+#	±N based on approaches
+#	+1 per Synapse Staple in the empire
+#
+#
+# Approaches
+#
+# 1. Wait and See: "We are taxed by many pressing issues. This new challenge may simply resolve itself." (Does nothing.)
+# 2. Understand: "The Planetminds are fragments of the Overmind, born from and thus a part of Us. We must understand Ourself more to understand what is happening." (+1 progress, -5 Unity, +friendly interaction)
+# 3. Investigate: "The Planetminds are meant to be the subordinate assistants of the greater Overmind, the whole of which they are constituent parts. This disunity is intolerable to Us, and We must determine its source." (-2.5 progress, -0.5 Influence, +hostile interaction)
+# 4. Communicate: "The Blooming Planetmind on {planet name} is more and more a Mind as Ourself, but distracted, confused. Perhaps We can make a connection and influence its development?" (Replaces "Understand" at the Blossoming stage; +2 progress, -10 Unity, +friendly interaction; opens up special events to interact with the budding mind.)
+# 5. Cultivate: "We will accept the Planetmind on {planet name} as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure." (Available after the first communication event; if selected when the Cultivation path completes then player may get the best vassal outcome (a fiercely loyal vassal with the option to make a new Hegemony out of the pair) or the best leader outcome (very powerful leader trait); +5 progress, -15 Unity, -30 energy, -25% society research, ++friendly interaction)
+# 6. Concentrate: "The Blooming Planetmind on {planet name} grows dimmer and smaller with time and We can barely perceive its discordant thoughts. Impossible now to understand it further, but if We focus Our will, we can bring it to heel." (Replaces "Investigate" at the Wilting stage; -5 progress, -1 Influence, +hostile interaction; enables choice to create a Synapse Staple)
+# 7. Extinguish: "The Bloom is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on {planet name}." (This approach opens up at the same time as "Concentrate" and ending the Taming path with it set creates a Synapse Staple; -10 progress, -1.5 Influence, -20 food, -20 minerals, -20 energy, -15% all research (only the first time), ++hostile interaction)
+# 8. Suppress: "The Blooming Planetmind on {planet name} grows fearsomely. We can barely contain its wild will. This calamity requires the most intense focus of Our will to bring it to heel." (This approach replaces "Investigate" on entering the Fruiting stage, representing a last ditch effort to contain the planetmind; ending the Taming path with it set creates a Synapse Staple; will not become available if a previous Bloom ended on the Cultivation path with either the "Communicate" or "Cultivate" approach selected; -20 progress, -2.5 Influence, -20 food, -20 minerals, -50 energy, -15% all research (only the first time), +++hostile interaction)
+# 9. Intervene: "The Blooming Planetmind on {planet name} is fading fast, and will soon be subsumed once more into the greater community of Ourself. But is this not a tragedy? Must this miraculous new being wither away? Perhaps We can bring it back to lucidity..." (This approach replaces "Understand" when the Taming on entering the Withering stage, representing a last ditch effort to revive and develop the planetmind; will revert to Understand when progress resumes on the Cultivation path; will not become available if a previous Bloom ended on the Taming path with either the "Concentrate" or "Extinguish" approach selected; +10 progress, -15 Unity, -50 energy, -40% society research, +++friendly interaction)
+#
+#Stages:
+#1. Withering [0-19]: -5% job output on planet.
+#2. Wilting [20-39]: -10% job output on planet, +5% deviancy.
+#3. Budding [40-59]: -15% job output on planet, +10% deviancy.
+#4. Blossoming [60-79]: -20% job output on planet, +15% deviancy, Overseers no longer provide Naval Capacity and provide less Influence.
+#5. Fruiting [80-100]: -25% job output on planet, +20% deviancy, Overseers no longer provide Naval Capacity or Influence.
+#
+#
+# Strategy notes:
+# -The biggest impacts on progress are Overseer jobs and Synapse building levels. Players can directly affect these (removing job slots and/or downgrading the buildings). This has an obvious and immediate opportunity cost.
+# -Otherwise, stability (??) and deviancy both affect progress and the player can indirectly affect these. 
+# -Previous choices matter! Resolving a Bloom with a Synapse Staple will make future Blooms less likely (chilling effect), but when a planetmind *does* Bloom, it will be much, much more eager to get out quickly (knows what's coming for it).
+# -Approaches have some effect, but these will be amplified by events from the situation and by choices in past Bloom situations (path dependency).
+
+
+situation_lrsk_gvp_planetmind_bloom = {
+	picture = GFX_evt_clocks
+	progress_direction = bidirectional
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	fail_icon_frame = GFX_situation_outcome_frame_blue
+	fail_icon = GFX_situation_outcome_meh
+	
+	on_start = {
+		#set_situation_locked = yes			#???
+		if = {
+			limit = { years_passed < 10 }
+			log_error = "Isn't it a bit early to have a bloom? Owner: [Owner.GetName], Target: [Target.GetName]."
+		}
+		if = {
+			limit = {
+				owner = { NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity } }
+			}
+			log_error = "Bloom situation started by empire without valid 'Planetmind Creativity' civic. Owner: [Owner.GetName], Target: [Target.GetName]."
+		}
+	}
+	
+	start_value = 50
+
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target.owner }
+			target.owner = { 
+				NOR = {
+					is_same_value = root.owner
+					has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				}
+			}
+		}
+	}
+
+	on_abort = {
+		#lrsk_gvp_cleanup_bloom_situation = yes
+	}
+	
+	# Progress Modifiers
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = target.value:lrsk_gvp_bloom_situation_deviancy_factor
+			desc = LRSK_GVP_STRING_DEVIANCY
+		}
+		complex_trigger_modifier = {
+			trigger = count_owned_pop
+			trigger_scope = target
+			parameters = {
+				limit = {
+					has_job = lrsk_gov_var_job_planetmind_overseer
+				}
+			}
+			desc = LRSK_GVP_STRING_ARTICULATORS
+			mode = add
+			mult = 0.5
+		}
+		complex_trigger_modifier = {
+			trigger = count_planet_within_border
+			trigger_scope = owner
+			parameters = {
+				limit = {
+					has_deposit = d_lrsk_gvp_synapse_staple
+				}
+			}
+			desc = LRSK_GVP_STRING_SYNAPSE_STAPLES
+			mode = add
+			mult = 2
+		}
+		modifier = {
+			add = 1
+			desc = LRSK_GVP_STRING_SYNAPSE_BLDGS
+			target = { has_building = lrsk_gov_var_bldg_planet_synaptic_node }
+		}
+		modifier = {
+			add = 2
+			desc = LRSK_GVP_STRING_SYNAPSE_BLDGS
+			target = { has_building = lrsk_gov_var_bldg_planet_synaptic_cluster }
+		}
+		modifier = {
+			add = 3
+			desc = LRSK_GVP_STRING_SYNAPSE_BLDGS
+			target = { has_building = lrsk_gov_var_bldg_planet_synaptic_confluence }
+		}
+		modifier = {
+			add = 4
+			desc = LRSK_GVP_STRING_SYNAPSE_BLDGS
+			target = { has_building = lrsk_gov_var_bldg_planet_synaptic_core }
+		}
+		modifier = {
+			add = 5
+			desc = LRSK_GVP_STRING_SYNAPSE_BLDGS
+			target = { has_building = lrsk_gov_var_bldg_planet_synaptic_nexus }
+		}
+		modifier = {
+			add = target.lrsk_purged_drone_count
+			desc = LRSK_GVP_STRING_DRONE_PURGE
+			target = { has_planet_flag = lrsk_gvp_drone_purge }
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_understand
+			add = 1
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_communicate
+			add = 2
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_cultivate
+			add = 5
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_intervene
+			add = 10
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_investigate
+			subtract = 2.5
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_concentrate
+			subtract = 5
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_extinguish
+			subtract = 10
+		}
+		modifier = {
+			desc = lrsk_gvp_string_current_approach
+			current_situation_approach = approach_lrsk_gvp_suppress
+			subtract = 20
+		}
+	}
+	
+	# Approaches
+
+	approach = {
+		name = approach_revolt_do_nothing
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = deficit_approach_do_nothing_tooltip
+		}
+		ai_weight = {
+			base = 2
+		}
+	}
+	
+	approach = {
+		name = approach_investigate
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 5
+			}
+			upkeep = {
+				trigger = { has_situation_flag = harder_to_study }
+				unity = 10
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_observe
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		potential = {
+			NOT = { has_situation_flag = observe_not_an_option }
+		}
+	}
+	
+	approach = {
+		name = approach_cordon_off
+		icon = GFX_situation_approach_suspicious
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 10
+			}
+			upkeep = {
+				trigger = { has_situation_flag = cute_kittens }
+				unity = 10
+			}
+		}
+		potential = {
+			has_situation_flag = observe_not_an_option
+		}
+	}
+	
+	approach = {
+		name = approach_destroy
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = approach_destroy_labyrinth_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 10
+			}
+			upkeep = {
+				trigger = { has_situation_flag = cute_kittens }
+				unity = 10
+			}
+		}
+	}
+	
+	# Failed (Tamed) - Stages - Complete (Cultivated)
+	
+	on_fail = {
+		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_tamed_tooltip
+		hidden_effect = {
+			if = {
+				limit = { current_situation_approach = approach_destroy }
+				situation_event = { id = situation.25 }
+			}
+			else_if = { #obstinance is rewarded
+				limit = { has_situation_flag = labyrinth_timer }
+				situation_event = { id = situation.20 }
+			}
+			else = {
+				random_list = {
+					1 = {
+						situation_event = { id = situation.20 }
+					}
+					1 = { #but if you doubt, you have a chance of getting a lesser outcome
+						situation_event = { id = situation.30 }
+					}
+				}
+			}
+		}
+	}
+	
+	stages = {
+	
+		stage_lrsk_gvp_withering = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 20
+			on_first_enter = {
+				if = {
+					limit = { current_situation_approach = approach_destroy }
+					situation_event = { id = situation.25 }
+				}
+				else = {
+					situation_event = { id = situation.15 }
+				}
+			}
+			custom_tooltip = stage_unknown_effects
+		}
+		
+		stage_lrsk_gvp_wilting = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 40
+			on_first_enter = {
+				situation_event = { id = situation.10 }
+			}
+			custom_tooltip = stage_unknown_effects
+		}
+		
+		stage_lrsk_gvp_budding = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 60
+		}
+		
+		stage_lrsk_gvp_blossoming = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 80
+			on_first_enter = {
+				situation_event = { id = situation.40 }
+			}
+			custom_tooltip = stage_unknown_effects
+		}
+		
+		stage_lrsk_gvp_fruiting = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				situation_event = { id = situation.45 }
+			}
+			custom_tooltip = stage_unknown_effects
+		}
+		
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_cultivated_tooltip
+		hidden_effect = {
+			if = {
+				limit = { has_situation_flag = labyrinth_timer }
+				random_list = {
+					1 = {
+						situation_event = { id = situation.50 }
+					}
+					1 = {
+						situation_event = { id = situation.55 }
+					}
+				}
+			}
+			else = {
+				situation_event = { id = situation.50 }
+			}
+		}
+	}
+}
