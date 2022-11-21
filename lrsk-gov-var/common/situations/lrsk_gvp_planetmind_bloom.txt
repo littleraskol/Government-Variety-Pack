@@ -230,89 +230,114 @@ situation_lrsk_gvp_planetmind_bloom = {
 	# Approaches
 
 	approach = {
-		name = approach_revolt_do_nothing
-		icon = GFX_situation_approach_this_is_fine
+		name = approach_lrsk_gvp_wait_and_see
+		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_yellow
 		default = yes
 		on_select = {
-			custom_tooltip = deficit_approach_do_nothing_tooltip
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
 		ai_weight = {
-			base = 2
+			base = 1
 		}
 	}
-	
+
 	approach = {
-		name = approach_investigate
+		name = approach_lrsk_gvp_understand
 		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_yellow
+		icon_background = GFX_situation_approach_bg_green
 		on_select = {
-			custom_tooltip = approach_outcome_tooltip
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 5
-			}
-			upkeep = {
-				trigger = { has_situation_flag = harder_to_study }
-				unity = 10
-			}
+		ai_weight = {
+			base = 1
 		}
 	}
-	
+
 	approach = {
-		name = approach_observe
-		icon = GFX_situation_approach_shrug
-		icon_background = GFX_situation_approach_bg_yellow
+		name = approach_lrsk_gvp_communicate
+		icon = GFX_situation_approach_handshake
+		icon_background = GFX_situation_approach_bg_green
 		on_select = {
-			custom_tooltip = approach_outcome_tooltip
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
-		potential = {
-			NOT = { has_situation_flag = observe_not_an_option }
+		ai_weight = {
+			base = 1
 		}
 	}
-	
+
 	approach = {
-		name = approach_cordon_off
-		icon = GFX_situation_approach_suspicious
-		icon_background = GFX_situation_approach_bg_yellow
+		name = approach_lrsk_gvp_cultivate
+		icon = GFX_situation_approach_heart
+		icon_background = GFX_situation_approach_bg_green
 		on_select = {
-			custom_tooltip = approach_outcome_tooltip
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 10
-			}
-			upkeep = {
-				trigger = { has_situation_flag = cute_kittens }
-				unity = 10
-			}
-		}
-		potential = {
-			has_situation_flag = observe_not_an_option
+		ai_weight = {
+			base = 1
 		}
 	}
-	
+
 	approach = {
-		name = approach_destroy
+		name = approach_lrsk_gvp_intervene
+		icon = GFX_situation_approach_heart
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_investigate
+		icon = GFX_situation_approach_scales
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_concentrate
+		icon = GFX_situation_approach_whip
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_extinguish
 		icon = GFX_situation_approach_fist
 		icon_background = GFX_situation_approach_bg_red
 		on_select = {
-			custom_tooltip = approach_destroy_labyrinth_tooltip
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 10
-			}
-			upkeep = {
-				trigger = { has_situation_flag = cute_kittens }
-				unity = 10
-			}
+		ai_weight = {
+			base = 1
 		}
 	}
+
+	approach = {
+		name = approach_lrsk_gvp_suppress
+		icon = GFX_situation_approach_whip
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+
 	
 	# Failed (Tamed) - Stages - Complete (Cultivated)
 	
