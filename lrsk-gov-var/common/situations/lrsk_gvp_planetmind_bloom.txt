@@ -62,10 +62,10 @@
 # 2. Understand: "The Planetminds are fragments of the Overmind, born from and thus a part of Us. We must understand Ourself more to understand what is happening." (+1 progress, -5 Unity, +friendly interaction)
 # 3. Investigate: "The Planetminds are meant to be the subordinate assistants of the greater Overmind, the whole of which they are constituent parts. This disunity is intolerable to Us, and We must determine its source." (-2.5 progress, -0.5 Influence, +hostile interaction)
 # 4. Communicate: "The Blooming Planetmind on {planet name} is more and more a Mind as Ourself, but distracted, confused. Perhaps We can make a connection and influence its development?" (Replaces "Understand" at the Blossoming stage; +2 progress, -10 Unity, +friendly interaction; opens up special events to interact with the budding mind.)
-# 5. Cultivate: "We will accept the Planetmind on {planet name} as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure." (Available after the first communication event; if selected when the Cultivation path completes then player may get the best vassal outcome (a fiercely loyal vassal with the option to make a new Hegemony out of the pair) or the best leader outcome (very powerful leader trait); +5 progress, -15 Unity, -30 energy, -25% society research, ++friendly interaction)
+# 5. Cultivate: "We will accept the Planetmind on {planet name} as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure." (Available after reaching the Fruitng stage; if selected when the Cultivation path completes then player may get the best vassal outcome (a fiercely loyal vassal with the option to make a new Hegemony out of the pair) or the best leader outcome (very powerful leader trait); +5 progress, -15 Unity, -30 energy, -25% society research, ++friendly interaction)
 # 6. Concentrate: "The Blooming Planetmind on {planet name} grows dimmer and smaller with time and We can barely perceive its discordant thoughts. Impossible now to understand it further, but if We focus Our will, we can bring it to heel." (Replaces "Investigate" at the Wilting stage; -5 progress, -1 Influence, +hostile interaction; enables choice to create a Synapse Staple)
 # 7. Extinguish: "The Bloom is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on {planet name}." (This approach opens up at the same time as "Concentrate" and ending the Taming path with it set creates a Synapse Staple; -10 progress, -1.5 Influence, -20 food, -20 minerals, -20 energy, -15% all research (only the first time), ++hostile interaction)
-# 8. Suppress: "The Blooming Planetmind on {planet name} grows fearsomely. We can barely contain its wild will. This calamity requires the most intense focus of Our will to bring it to heel." (This approach replaces "Investigate" on entering the Fruiting stage, representing a last ditch effort to contain the planetmind; ending the Taming path with it set creates a Synapse Staple; will not become available if a previous Bloom ended on the Cultivation path with either the "Communicate" or "Cultivate" approach selected; -20 progress, -2.5 Influence, -20 food, -20 minerals, -50 energy, -15% all research (only the first time), +++hostile interaction)
+# 8. Suppress: "The Blooming Planetmind on {planet name} grows fearsomely. We can barely contain its wild will. This calamity requires the most intense focus of Our will to bring it to heel." (This approach replaces "Investigate" on entering the Fruiting stage, representing a last ditch effort to contain the planetmind; will not become available if a previous Bloom ended on the Cultivation path with either the "Communicate" or "Cultivate" approach selected; -20 progress, -2.5 Influence, -50 energy, +++hostile interaction)
 # 9. Intervene: "The Blooming Planetmind on {planet name} is fading fast, and will soon be subsumed once more into the greater community of Ourself. But is this not a tragedy? Must this miraculous new being wither away? Perhaps We can bring it back to lucidity..." (This approach replaces "Understand" when the Taming on entering the Withering stage, representing a last ditch effort to revive and develop the planetmind; will revert to Understand when progress resumes on the Cultivation path; will not become available if a previous Bloom ended on the Taming path with either the "Concentrate" or "Extinguish" approach selected; +10 progress, -15 Unity, -50 energy, -40% society research, +++friendly interaction)
 #
 #Stages:
@@ -234,9 +234,11 @@ situation_lrsk_gvp_planetmind_bloom = {
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_yellow
 		default = yes
+
 		on_select = {
 			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
 		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -246,9 +248,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_understand
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_green
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		resources = {
+			category = situations
+			upkeep = {
+				unity = 5
+			}
 		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -258,9 +265,22 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_communicate
 		icon = GFX_situation_approach_handshake
 		icon_background = GFX_situation_approach_bg_green
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_blossoming
 		}
+
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_communicate_effects
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				unity = 10
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -270,9 +290,27 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_cultivate
 		icon = GFX_situation_approach_heart
 		icon_background = GFX_situation_approach_bg_green
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_fruiting
 		}
+
+		on_select = {
+			custom_tooltip = approach_lrsk_gvp_cultivate_effects
+		}
+
+		modifier = {
+			country_society_research_produces_mult = -0.25
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				unity = 15
+				energy = 30
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -282,9 +320,30 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_intervene
 		icon = GFX_situation_approach_heart
 		icon_background = GFX_situation_approach_bg_green
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_withering
 		}
+
+		allow = {
+			custom_tooltip = {
+				fail_text = lrsk_gvp_bloom_approach_fail_tamer
+				owner = { NOT = { has_country_flag = lrsk_bloom_tamer } }
+			}
+		}
+
+		modifier = {
+			country_society_research_produces_mult = -0.4
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				unity = 15
+				energy = 50
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -294,9 +353,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_investigate
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
 		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -304,11 +368,20 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 	approach = {
 		name = approach_lrsk_gvp_concentrate
-		icon = GFX_situation_approach_whip
+		icon = GFX_situation_approach_suspicious
 		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_wilting
 		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 2
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -318,9 +391,48 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_extinguish
 		icon = GFX_situation_approach_fist
 		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_withering
 		}
+
+		on_select = {
+			# Need a cleanup process to replace this with `lrsk_never_extinguished`
+			owner = { set_country_flag = lrsk_first_extinguish }
+			custom_tooltip = approach_lrsk_gvp_extinguish_effects
+		}
+
+		triggered_modifier = {
+			potential = {
+				owner = { NOT = { has_country_flag = lrsk_never_extinguished } }
+			}
+			modifier = {
+				country_physics_research_produces_mult = -0.15
+				country_society_research_produces_mult = -0.15
+				country_engineering_research_produces_mult = -0.15
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 3
+				energy = 20
+			}
+			upkeep = {
+				trigger = {
+					owner = { is_lithoid = no }
+				}
+				food = 20
+			}
+			upkeep = {
+				trigger = {
+					owner = { is_lithoid = yes }
+				}
+				minerals = 20
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -330,9 +442,26 @@ situation_lrsk_gvp_planetmind_bloom = {
 		name = approach_lrsk_gvp_suppress
 		icon = GFX_situation_approach_whip
 		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_lrsk_gvp_wait_and_see_effects
+
+		potential = {
+			has_situation_flag = lrsk_reached_fruiting
 		}
+
+ 		allow = {
+			custom_tooltip = {
+				fail_text = lrsk_gvp_bloom_approach_fail_cultivator
+				owner = { NOT = { has_country_flag = lrsk_bloom_cultivator } }
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 3
+				energy = 50
+			}
+		}
+
 		ai_weight = {
 			base = 1
 		}
@@ -344,24 +473,24 @@ situation_lrsk_gvp_planetmind_bloom = {
 	on_fail = {
 		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_tamed_tooltip
 		hidden_effect = {
-			if = {
-				limit = { current_situation_approach = approach_destroy }
-				situation_event = { id = situation.25 }
-			}
-			else_if = { #obstinance is rewarded
-				limit = { has_situation_flag = labyrinth_timer }
-				situation_event = { id = situation.20 }
-			}
-			else = {
-				random_list = {
-					1 = {
-						situation_event = { id = situation.20 }
-					}
-					1 = { #but if you doubt, you have a chance of getting a lesser outcome
-						situation_event = { id = situation.30 }
-					}
-				}
-			}
+			#if = {
+			#	limit = { current_situation_approach = approach_destroy }
+			#	situation_event = { id = situation.25 }
+			#}
+			#else_if = { #obstinance is rewarded
+			#	limit = { has_situation_flag = labyrinth_timer }
+			#	situation_event = { id = situation.20 }
+			#}
+			#else = {
+			#	random_list = {
+			#		1 = {
+			#			situation_event = { id = situation.20 }
+			#		}
+			#		1 = { #but if you doubt, you have a chance of getting a #lesser outcome
+			#			situation_event = { id = situation.30 }
+			#		}
+			#	}
+			#}
 		}
 	}
 	
@@ -372,15 +501,15 @@ situation_lrsk_gvp_planetmind_bloom = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 20
 			on_first_enter = {
-				if = {
-					limit = { current_situation_approach = approach_destroy }
-					situation_event = { id = situation.25 }
-				}
-				else = {
-					situation_event = { id = situation.15 }
-				}
+				set_situation_flag = lrsk_reached_withering
+				#if = {
+				#	limit = { current_situation_approach = approach_destroy }
+				#	situation_event = { id = situation.25 }
+				#}
+				#else = {
+				#	situation_event = { id = situation.15 }
+				#}
 			}
-			custom_tooltip = stage_unknown_effects
 		}
 		
 		stage_lrsk_gvp_wilting = {
@@ -388,9 +517,9 @@ situation_lrsk_gvp_planetmind_bloom = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 40
 			on_first_enter = {
-				situation_event = { id = situation.10 }
+				set_situation_flag = lrsk_reached_wilting
+				#situation_event = { id = situation.10 }
 			}
-			custom_tooltip = stage_unknown_effects
 		}
 		
 		stage_lrsk_gvp_budding = {
@@ -404,7 +533,8 @@ situation_lrsk_gvp_planetmind_bloom = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 80
 			on_first_enter = {
-				situation_event = { id = situation.40 }
+				set_situation_flag = lrsk_reached_blossoming
+				#situation_event = { id = situation.40 }
 			}
 			custom_tooltip = stage_unknown_effects
 		}
@@ -414,7 +544,8 @@ situation_lrsk_gvp_planetmind_bloom = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
 			on_first_enter = {
-				situation_event = { id = situation.45 }
+				set_situation_flag = lrsk_reached_fruiting
+				#situation_event = { id = situation.45 }
 			}
 			custom_tooltip = stage_unknown_effects
 		}
@@ -424,20 +555,20 @@ situation_lrsk_gvp_planetmind_bloom = {
 	on_progress_complete = {
 		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_cultivated_tooltip
 		hidden_effect = {
-			if = {
-				limit = { has_situation_flag = labyrinth_timer }
-				random_list = {
-					1 = {
-						situation_event = { id = situation.50 }
-					}
-					1 = {
-						situation_event = { id = situation.55 }
-					}
-				}
-			}
-			else = {
-				situation_event = { id = situation.50 }
-			}
+			#if = {
+			#	limit = { has_situation_flag = labyrinth_timer }
+			#	random_list = {
+			#		1 = {
+			#			situation_event = { id = situation.50 }
+			#		}
+			#		1 = {
+			#			situation_event = { id = situation.55 }
+			#		}
+			#	}
+			#}
+			#else = {
+			#	situation_event = { id = situation.50 }
+			#}
 		}
 	}
 }

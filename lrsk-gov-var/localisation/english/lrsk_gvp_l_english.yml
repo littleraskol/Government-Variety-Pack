@@ -1420,6 +1420,8 @@ l_english:
  # Planetary
  d_lrsk_gov_var_shroud_pockets:0 "Otherworld Pockets"
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
+ d_lrsk_gvp_synapse_staple:0 "Synapse Staple"
+ d_lrsk_gov_var_shroud_pockets_desc:0 "it's like nerve stapling from SMAC but for a whole planet (whoops, yell at me to change this!)"
 
  ## Subjects
 
@@ -2858,13 +2860,16 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  approach_lrsk_gvp_investigate_desc:0 "The Planetminds are meant to be the subordinate assistants of the greater Overmind, the whole of which they are constituent parts. This disunity is intolerable to Us, and We must determine its source."
  approach_lrsk_gvp_communicate:0 "Communicate"
  approach_lrsk_gvp_communicate_desc:0 "The Blooming Planetmind on [Target.GetName] is more and more a Mind as Ourself, but distracted, confused. Perhaps We can make a connection and influence its development?"
+ approach_lrsk_gvp_communicate_effects:0 "Unlocks interaction events with the Blooming Planetmind."
  approach_lrsk_gvp_cultivate:0 "Cultivate"
  #approach_lrsk_gvp_cultivate_desc:0 "We will accept the Planetmind on [Target.GetName] as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure."
  approach_lrsk_gvp_cultivate_desc:0 "We will accept the Planetmind on [Target.GetName] as a new, budding expression of Ourself."
+ approach_lrsk_gvp_cultivate_effects:0 "Unlocks interaction events with the Blooming Planetmind and the best possible outcomes on this progress path."
  approach_lrsk_gvp_concentrate:0 "Concentrate"
  approach_lrsk_gvp_concentrate_desc:0 "The Bloom of the Planetmind on [Target.GetName] withers away with time and We can barely perceive its discordant thoughts. Impossible now to understand it further, but if We focus Our will, we can bring it to heel."
  approach_lrsk_gvp_extinguish:0 "Extinguish"
  approach_lrsk_gvp_extinguish_desc:0 "The Bloom on [Target.GetName] is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on [Target.GetName]."
+ approach_lrsk_gvp_extinguish_effects:0 "Completing this progress path with this approach will place a §H$d_lrsk_gvp_synapse_staple$§! deposit on [Target.GetName], which will prevent any future Bloom on the planet and make further Blooms elsewhere less likely, but may have other consequences as well...\n\n$d_lrsk_gvp_synapse_staple$s reduce Deviancy but consume a district slot and make $job_lrsk_gov_var_job_planetmind_overseer_plural$ less effective on any planet that has them."
  approach_lrsk_gvp_suppress:0 "Suppress"
  approach_lrsk_gvp_suppress_desc:0 "The Blooming Planetmind on [Target.GetName] grows fearsomely. We can barely contain its wild will. Our most intense focus will be required to bring it to heel."
  approach_lrsk_gvp_intervene:0 "Intervene"
@@ -2882,9 +2887,14 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  LRSK_GVP_STRING_DEVIANCY:0 "Deviancy Effects"
  LRSK_GVP_STRING_ARTICULATORS:0 "$job_lrsk_gov_var_job_planetmind_overseer_plural$"
  LRSK_GVP_STRING_SYNAPSE_BLDGS:0 "$LRSK_DESC_PLANETMIND_NAME$ Building Levels"
- LRSK_GVP_STRING_SYNAPSE_STAPLES:0 "Synapse Staples in [owner.GetName]"
+ LRSK_GVP_STRING_SYNAPSE_STAPLES:0 "$d_lrsk_gvp_synapse_staple$s in [owner.GetName]"
  # TBD...
  LRSK_GVP_STRING_DRONE_PURGE:0 "Purged Misaligned Drones"
+
+ # Fail Text
+ LRSK_GVP_BLOOM_FAIL_COMMON_1:0 "This approach is only available if you have never intentionally"
+ lrsk_gvp_bloom_approach_fail_tamer:0 "§R$LRSK_GVP_BLOOM_FAIL_COMMON_1$ tamed or extinguished a Planetmind Bloom.§!"
+ lrsk_gvp_bloom_approach_fail_cultivator:0 "§R$LRSK_GVP_BLOOM_FAIL_COMMON_1$ fostered or cultivated a Planetmind Bloom.§!"
 
  ### AI PERSONALITIES AND DIPLOMACY
  # Personality descriptions and diplomatic responses put in same place.
