@@ -103,6 +103,8 @@ situation_lrsk_gvp_planetmind_bloom = {
 			}
 			log_error = "Bloom situation started by empire without valid 'Planetmind Creativity' civic. Owner: [Owner.GetName], Target: [Target.GetName]."
 		}
+		set_variable = { which = lrsk_positive_interactions value = 0 }
+		set_variable = { which = lrsk_negative_interactions value = 0 }
 	}
 	
 	start_value = 50
@@ -249,6 +251,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_green
 
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_understand } }
+				set_situation_flag = lrsk_gvp_selected_understand
+				change_variable = { which = lrsk_positive_interactions value = 1 }
+			}
+		}
+
 		resources = {
 			category = situations
 			upkeep = {
@@ -272,6 +282,11 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 		on_select = {
 			custom_tooltip = approach_lrsk_gvp_communicate_effects
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_communicate } }
+				set_situation_flag = lrsk_gvp_selected_communicate
+				change_variable = { which = lrsk_positive_interactions value = 2 }
+			}
 		}
 
 		resources = {
@@ -297,6 +312,11 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 		on_select = {
 			custom_tooltip = approach_lrsk_gvp_cultivate_effects
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_cultivate } }
+				set_situation_flag = lrsk_gvp_selected_cultivate
+				change_variable = { which = lrsk_positive_interactions value = 3 }
+			}
 		}
 
 		modifier = {
@@ -323,6 +343,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 		potential = {
 			has_situation_flag = lrsk_reached_withering
+		}
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_intervene } }
+				set_situation_flag = lrsk_gvp_selected_intervene
+				change_variable = { which = lrsk_positive_interactions value = 3 }
+			}
 		}
 
 		allow = {
@@ -354,6 +382,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_red
 
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_investigate } }
+				set_situation_flag = lrsk_gvp_selected_investigate
+				change_variable = { which = lrsk_negative_interactions value = 1 }
+			}
+		}
+
 		resources = {
 			category = situations
 			upkeep = {
@@ -373,6 +409,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 		potential = {
 			has_situation_flag = lrsk_reached_wilting
+		}
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_concentrate } }
+				set_situation_flag = lrsk_gvp_selected_concentrate
+				change_variable = { which = lrsk_negative_interactions value = 2 }
+			}
 		}
 
 		resources = {
@@ -397,14 +441,19 @@ situation_lrsk_gvp_planetmind_bloom = {
 		}
 
 		on_select = {
-			# Need a cleanup process to replace this with `lrsk_never_extinguished`
+			# Need a cleanup process to replace this with `lrsk_has_extinguished`
 			owner = { set_country_flag = lrsk_first_extinguish }
 			custom_tooltip = approach_lrsk_gvp_extinguish_effects
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_extinguish } }
+				set_situation_flag = lrsk_gvp_selected_extinguish
+				change_variable = { which = lrsk_negative_interactions value = 3 }
+			}
 		}
 
 		triggered_modifier = {
 			potential = {
-				owner = { NOT = { has_country_flag = lrsk_never_extinguished } }
+				owner = { NOT = { has_country_flag = lrsk_has_extinguished } }
 			}
 			modifier = {
 				country_physics_research_produces_mult = -0.15
@@ -445,6 +494,14 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 		potential = {
 			has_situation_flag = lrsk_reached_fruiting
+		}
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_suppress } }
+				set_situation_flag = lrsk_gvp_selected_suppress
+				change_variable = { which = lrsk_negative_interactions value = 3 }
+			}
 		}
 
  		allow = {
