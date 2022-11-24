@@ -64,7 +64,7 @@
 # 4. Communicate: "The Blooming Planetmind on {planet name} is more and more a Mind as Ourself, but distracted, confused. Perhaps We can make a connection and influence its development?" (Replaces "Understand" at the Blossoming stage; +2 progress, -10 Unity, +friendly interaction; opens up special events to interact with the budding mind.)
 # 5. Cultivate: "We will accept the Planetmind on {planet name} as a new, budding expression of Ourself, which has the potential to carry Us forward into the galaxy. We brim with pride at the thought of making it ready to take its place in the universe, even as we feel bittersweet at the inevitability of its departure." (Available after reaching the Fruitng stage; if selected when the Cultivation path completes then player may get the best vassal outcome (a fiercely loyal vassal with the option to make a new Hegemony out of the pair) or the best leader outcome (very powerful leader trait); +5 progress, -15 Unity, -30 energy, -25% society research, ++friendly interaction)
 # 6. Concentrate: "The Blooming Planetmind on {planet name} grows dimmer and smaller with time and We can barely perceive its discordant thoughts. Impossible now to understand it further, but if We focus Our will, we can bring it to heel." (Replaces "Investigate" at the Wilting stage; -5 progress, -1 Influence, +hostile interaction; enables choice to create a Synapse Staple)
-# 7. Extinguish: "The Bloom is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on {planet name}." (This approach opens up at the same time as "Concentrate" and ending the Taming path with it set creates a Synapse Staple; -10 progress, -1.5 Influence, -20 food, -20 minerals, -20 energy, -15% all research (only the first time), ++hostile interaction)
+# 7. Extinguish: "The Bloom is wilting, but We cannot risk another such calamity. We must find a permanent remedy to the aberration that has manifested on {planet name}." (Available after reaching the Withering stage; ending the Taming path with it set creates a Synapse Staple; -10 progress, -1.5 Influence, -20 food, -20 minerals, -20 energy, -15% all research (only the first time), ++hostile interaction)
 # 8. Suppress: "The Blooming Planetmind on {planet name} grows fearsomely. We can barely contain its wild will. This calamity requires the most intense focus of Our will to bring it to heel." (This approach replaces "Investigate" on entering the Fruiting stage, representing a last ditch effort to contain the planetmind; will not become available if a previous Bloom ended on the Cultivation path with either the "Communicate" or "Cultivate" approach selected; -20 progress, -2.5 Influence, -50 energy, +++hostile interaction)
 # 9. Intervene: "The Blooming Planetmind on {planet name} is fading fast, and will soon be subsumed once more into the greater community of Ourself. But is this not a tragedy? Must this miraculous new being wither away? Perhaps We can bring it back to lucidity..." (This approach replaces "Understand" when the Taming on entering the Withering stage, representing a last ditch effort to revive and develop the planetmind; will revert to Understand when progress resumes on the Cultivation path; will not become available if a previous Bloom ended on the Taming path with either the "Concentrate" or "Extinguish" approach selected; +10 progress, -15 Unity, -50 energy, -40% society research, +++friendly interaction)
 #
@@ -125,6 +125,16 @@ situation_lrsk_gvp_planetmind_bloom = {
 		#lrsk_gvp_cleanup_bloom_situation = yes
 	}
 	
+
+ 	#This behaves like an on_action. Note: technically, this is an on_action called test_situation. So don't call your situation "on_monthly_pulse"!
+ 	on_monthly = {
+		events = {
+			lrsk_gvp_planetmind.1000
+		}
+		#random_events = {
+		#}
+	}
+
 	# Progress Modifiers
 	
 	monthly_progress = {

@@ -1,0 +1,50 @@
+# Government Variety Pack
+# Events - Planetmind Creativity
+# Author: littleraskol
+
+namespace = lrsk_gvp_planetmind
+
+# Housekeeing (Monthly):
+# Monitors stage and approach, switches as needed
+situation_event = {
+	id = lrsk_gvp_planetmind.1000
+
+  	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This seems a bit much to me but whatever
+		owner = {
+			has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	immediate = {
+
+		# Approach swapper
+		switch = {
+			trigger = current_stage
+			# "Intervene" replaces "Understand" at this stage. (Becomes available even if "Understand" was not available.)
+			stage_lrsk_gvp_withering = {
+				#
+			}
+			# "Concentrate" replaces "Investigate" at this stage.
+			stage_lrsk_gvp_wilting = {
+				#
+			}
+			# Should swap "Concentrate" or "Suppress" back to "Investigate"
+			# Should swap "Communicate" or "Intervene" back to "Understand"
+			stage_lrsk_gvp_budding = {
+				#
+			}
+			# "Communicate" replaces "Understand" at this stage.
+			stage_lrsk_gvp_blossoming = {
+				#
+			}
+			# "Suppress" replaces "Investigate" at this stage. (Becomes available even if "Investigate" was not available.)
+			stage_lrsk_gvp_fruiting = {
+				#
+			}
+		}
+	}
+}
