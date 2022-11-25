@@ -209,6 +209,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v5.3 (11/??/22) - Orion (3.6) Update
 -Made custom pre-sapient (Uplift) traits 0-cost to match "Presapient traits now have no trait point or trait pick cost" in Orion.
+-Deprecated the specialist federation origins - redundant with the changes to Common Ground, which gives a choice of type.
 
 v5.2.1 (11/13/22) - Lithoid Upkeep Fix
 -Planetmind Overseers should not have food upkeep for lithoids.
