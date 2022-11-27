@@ -33,6 +33,7 @@
 # -Planet:
 # --Much less likely if in multi-planet system, and some other planet has the most advanced Synapse building
 # --Less likely the more powerful the owning empire is.
+# --Much less likely on the capital
 # 
 # Outcomes:
 # Bi-directional. Leftward progress represents the bloom fading and the planetmind becoming more tractable (the "Taming path"), rightward progress represents the planetmind growing in self-awareness and self-assertion (the "Cultivation path"). Player actions influence future Bloom options, conditions, and probabilities, reflecting the path-dependency of the Overmind learning how to deal with a new problem that comes with becoming interstellar in scope.
@@ -105,6 +106,7 @@ situation_lrsk_gvp_planetmind_bloom = {
 		}
 		set_variable = { which = lrsk_positive_interactions value = 0 }
 		set_variable = { which = lrsk_negative_interactions value = 0 }
+		target = { set_planet_flag = recent_revolt_attempt }
 	}
 	
 	start_value = 50
@@ -122,14 +124,12 @@ situation_lrsk_gvp_planetmind_bloom = {
 	}
 
 	on_abort = {
-		#lrsk_gvp_cleanup_bloom_situation = yes
+		lrsk_gvp_cleanup_bloom_situation = yes
 	}
 	
-
- 	#This behaves like an on_action. Note: technically, this is an on_action called test_situation. So don't call your situation "on_monthly_pulse"!
  	on_monthly = {
 		events = {
-			lrsk_gvp_planetmind.1000
+			lrsk_gvp_planetmind.1000	# Housekeeping
 		}
 		#random_events = {
 		#}
@@ -540,6 +540,7 @@ situation_lrsk_gvp_planetmind_bloom = {
 	on_fail = {
 		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_tamed_tooltip
 		hidden_effect = {
+			lrsk_gvp_cleanup_bloom_situation = yes
 			#if = {
 			#	limit = { current_situation_approach = approach_destroy }
 			#	situation_event = { id = situation.25 }
@@ -622,6 +623,7 @@ situation_lrsk_gvp_planetmind_bloom = {
 	on_progress_complete = {
 		custom_tooltip = situation_lrsk_gvp_planetmind_bloom_cultivated_tooltip
 		hidden_effect = {
+			lrsk_gvp_cleanup_bloom_situation = yes
 			#if = {
 			#	limit = { has_situation_flag = labyrinth_timer }
 			#	random_list = {

@@ -982,3 +982,10 @@ lrsk_make_impecon_special_subject = {
 		set_agreement_preset = { preset = $PRESET$ }
 	}
 }
+
+# Cleanup Planetmind Bloom situation
+lrsk_gvp_cleanup_bloom_situation = {
+	target = {
+		lrsk_clear_planet_flag = { FLAG = recent_revolt_attempt }
+	}
+}

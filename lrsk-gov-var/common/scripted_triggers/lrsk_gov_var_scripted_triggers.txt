@@ -202,3 +202,14 @@ lrsk_is_impecon_vassal = {
 		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }
+
+# Conditions for valid planet for bloom event
+lrsk_is_valid_planetmind_bloom_target = {
+	exists = controller
+	controller = { is_same_empire = root }
+	NOT = { has_deposit = d_lrsk_gvp_synapse_staple }
+	any_owned_pop = { has_job = lrsk_gov_var_job_planetmind_overseer }
+	NOT = { has_planet_flag = recent_revolt_attempt }
+	has_orbital_bombardment = no
+	has_ground_combat = no
+}

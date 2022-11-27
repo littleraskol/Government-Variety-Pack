@@ -4,12 +4,207 @@
 
 namespace = lrsk_gvp_planetmind
 
+# Gate: Tries to find valid bloom candidate, chance per year of bloom happening
+country_event = {
+	id = lrsk_gvp_planetmind.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		NOT = { has_country_flag = lrsk_bloom_cooldown }
+		OR = {
+			is_ai = yes
+			AND = {
+				has_country_flag = lrsk_made_bloom_choice
+				NOT = { has_country_flag = lrsk_no_blooms }
+			}
+		}
+		any_situation = { is_situation_type = situation_lrsk_gvp_planetmind_bloom }
+		any_owned_planet = {
+			lrsk_is_valid_planetmind_bloom_target = yes
+		}
+	}
+
+	immediate = {
+
+		# We start in root scope to count the Synapse Staples once...		
+		set_variable = { which = lrsk_tmp_num_staples value = 0 }
+		every_owned_planet = {
+			limit = { has_deposit = d_lrsk_gvp_synapse_staple }
+			change_variable = { which = root.lrsk_tmp_num_staples value = 1 }
+		}
+
+		random_list = {
+
+			# Base chance of 10% oer year, 1 on average every 10 years.
+			10 = {
+				# Chance halved to 5% for having any synapse staples (should this be a choice flag?)
+				modifier = {
+					add = -5
+					check_variable = { which = lrsk_tmp_num_staples value > 0 }
+				}
+				
+				# We're going to look at every planet meeting the criteria in the trigger block and increment a variable for every (counter-)indicator:
+				#	+0.1 for each pop (max +5 (i.e., only count up to 50 pops))
+				#	±0.2 for each point away from 30
+				#	+1 for each Planetmind Articulator
+				#	+1 for each level of Planetary Synaptic building
+				#	+3 if planet has most advanced Synapse building in a multi-colony system
+				#	-1 per Synapse Staple anywhere in owning empire
+				#	-5 if in a multi-colony system and does not have the most advanced Synapse building
+				#	-1 per (some meteric of owning empire power)
+				#	-20 if the planet is the empire capital
+				#
+				# If the random chance for a Bloom triggers one, we order the planets according to the value of this variable and start the bloom on the highest one.
+
+				every_owned_planet = {
+					limit = {
+						lrsk_is_valid_planetmind_bloom_target = yes
+					}
+
+					set_variable = {
+						which = lrsk_bloom_indication
+						value = 0
+					}
+
+					# Start with the factor due to pops
+					export_trigger_value_to_variable = {
+						trigger = num_pops
+						variable = lrsk_bloom_indication
+					}
+
+					IF = {
+						limit = {
+							check_variable = {
+								which = lrsk_bloom_indication
+								value > 50
+							}
+						}
+						set_variable = {
+							which = lrsk_bloom_indication
+							value = 50
+						}
+					}
+
+					divide_variable = {
+						which = lrsk_bloom_indication
+						value = 10
+					}
+
+					# Add the deviancy factor
+					change_variable = {
+						which = lrsk_bloom_indication
+						value = root.value:lrsk_gvp_bloom_situation_deviancy_factor
+					}
+
+					# +1 for each Planetmind Articulator
+					every_owned_pop = {
+						limit = { has_job = lrsk_gov_var_job_planetmind_overseer }
+						change_variable = { which = prev.lrsk_bloom_indication value = 1 }
+					}
+
+					# +1 for each level of Planetary Synaptic building
+					switch = {
+						trigger = has_building
+						lrsk_gov_var_bldg_planet_synaptic_node = {
+							change_variable = { which = prev.lrsk_bloom_indication value = 1 }
+						}
+						lrsk_gov_var_bldg_planet_synaptic_cluster = {
+							change_variable = { which = prev.lrsk_bloom_indication value = 2 }
+						}
+						lrsk_gov_var_bldg_planet_synaptic_confluence = {
+							change_variable = { which = prev.lrsk_bloom_indication value = 3 }
+						}
+						lrsk_gov_var_bldg_planet_synaptic_core = {
+							change_variable = { which = prev.lrsk_bloom_indication value = 4 }
+						}
+						lrsk_gov_var_bldg_planet_synaptic_nexus = {
+							change_variable = { which = prev.lrsk_bloom_indication value = 5 }
+						}
+					}
+
+					# +3 if planet has most advanced Synapse building in a multi-colony system 
+					# -5 if in a multi-colony system and does not have the most advanced Synapse building
+					# tbd (idk lol)
+
+					# -1 per Synapse Staple anywhere in owning empire
+					subtract_variable = {
+						which = lrsk_bloom_indication
+						value = root.lrsk_tmp_num_staples
+					}
+
+					# -1 per (some meteric of owning empire power)
+					# tbd (idk lol)
+
+					# -20 if the planet is the empire capital
+					IF = { limit = { is_capital = yes }
+						subtract_variable = { which = lrsk_bloom_indication value = 20 }
+					}
+				}
+
+				
+				ordered_owned_planet = {
+					position = 0
+					order_by = lrsk_bloom_indication
+					limit = {
+						lrsk_is_valid_planetmind_bloom_target = yes
+					}
+					# launch bloom
+				}
+			}
+
+			90 = {
+				modifier = {
+					add = 5
+					check_variable = { which = lrsk_tmp_num_staples value > 0 }
+				}
+				# nothing
+			}
+
+		}
+	}
+}
+
+# Explainer: Gives choice to shut blooms down (in case playing in save that started without them)
+country_event = {
+	id = lrsk_gvp_planetmind.101
+	title = lrsk_gvp_planetmind.101.name
+	desc = lrsk_gvp_planetmind.101.desc
+	picture = GFX_evt_cargoship_caravan
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		NOT = { has_country_flag = lrsk_made_bloom_choice }
+	}
+
+	option = {
+		name = lrsk_gvp_planetmind.101.a
+	}
+
+	option = {
+		name = lrsk_gvp_planetmind.101.b
+		custom_tooltip = lrsk_gvp_planetmind.101.b.tooltip
+		hidden_effect = {
+			set_country_flag = lrsk_no_blooms
+		}
+	}
+
+	after = {
+		set_country_flag = lrsk_made_bloom_choice
+	}
+}
+
 # Housekeeing (Monthly):
 # Monitors stage and approach, switches as needed
 situation_event = {
 	id = lrsk_gvp_planetmind.1000
 
-  	hide_window = yes
+	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {

@@ -312,6 +312,12 @@ lrsk_clear_country_flag = {
 	}
 }
 
+lrsk_clear_planet_flag = {
+	IF = { limit = { has_planet_flag = $FLAG$ }
+		remove_planet_flag = $FLAG$
+	}
+}
+
 # These are the basic default transformations of vassals in their 'effect = { }' blocks.
 # I don't really understand it, but all base game vassal definitions seem to have this so I assume it's important.
 # Every special vassal transformation effect should call this.
