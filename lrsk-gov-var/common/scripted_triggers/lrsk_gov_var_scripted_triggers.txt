@@ -205,11 +205,30 @@ lrsk_is_impecon_vassal = {
 
 # Conditions for valid planet for bloom event
 lrsk_is_valid_planetmind_bloom_target = {
+	is_colony = yes
 	exists = controller
 	controller = { is_same_empire = root }
 	NOT = { has_deposit = d_lrsk_gvp_synapse_staple }
 	any_owned_pop = { has_job = lrsk_gov_var_job_planetmind_overseer }
 	NOT = { has_planet_flag = recent_revolt_attempt }
+	NOT = { has_planet_flag = unrest_timer }
 	has_orbital_bombardment = no
 	has_ground_combat = no
+}
+
+# Conditions for empire to have bloom event
+lrsk_is_valid_planetmind_bloom_country = {
+	has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+	NOT = { has_country_flag = lrsk_bloom_cooldown }
+	OR = {
+		is_ai = yes
+		AND = {
+			has_country_flag = lrsk_made_bloom_choice
+			NOT = { has_country_flag = lrsk_no_blooms }
+		}
+	}
+	NOT = { any_situation = { is_situation_type = situation_lrsk_gvp_planetmind_bloom } }
+	any_owned_planet = {
+		lrsk_is_valid_planetmind_bloom_target = yes
+	}
 }

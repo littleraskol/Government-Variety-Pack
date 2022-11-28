@@ -988,4 +988,10 @@ lrsk_gvp_cleanup_bloom_situation = {
 	target = {
 		lrsk_clear_planet_flag = { FLAG = recent_revolt_attempt }
 	}
+	owner = {
+		set_timed_country_flag = {
+			flag = lrsk_bloom_cooldown
+			days = 7200
+		}
+	}
 }
