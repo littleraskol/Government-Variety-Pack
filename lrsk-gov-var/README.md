@@ -3,7 +3,7 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-A total of 68 new civics, broken down into 3 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
+A total of 69 new civics, broken down into 4 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
 
 2. New Governments
 
@@ -20,6 +20,9 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
 
 5. Changes
+
+v5.3.1 (11/??/22) - Orion Post-Release Update 1
+-Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.
 
 v5.3 (11/29/22) - Orion (3.6) Update
 -Made custom pre-sapient (Uplift) traits 0-cost to match "Presapient traits now have no trait point or trait pick cost" in Orion.
