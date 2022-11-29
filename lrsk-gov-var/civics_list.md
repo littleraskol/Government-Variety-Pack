@@ -8,6 +8,8 @@ This is the full listing of civics with descriptions.
 [*][i]Shroud-Touched (Not Materialist)[/i] - The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies. (Most pops of your starting species have the Natural Esper trait, which is a lesser psionic trait. Can get leader traits like lesser versions of psionic leader traits. Very rarely, actual Latent Psionics can spawn. The Psionic Theory tech option starts ready to research. Your homeworld has an Otherworld Pockets deposit which adds special esper jobs.)
 
 [*][i]Uplift (Any)[/i] - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as a protectorate of an advanced empire. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
+
+[*][i]Diplomatic Directive: Discover (Machine Intelligence)[/i] - This machine intelligence established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with the Universal Compatibility tradition unlocked.)
 [/list]
 
 [b]Normal Civics[/b]
