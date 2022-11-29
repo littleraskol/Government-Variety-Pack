@@ -21,7 +21,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.3.1 (11/??/22) - Orion Post-Release Update 1
+v5.3.1 (11/29/22) - Orion Post-Release Update 1
 -Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.
 
 v5.3 (11/29/22) - Orion (3.6) Update
