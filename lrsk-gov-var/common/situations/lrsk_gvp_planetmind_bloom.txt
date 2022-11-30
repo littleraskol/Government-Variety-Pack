@@ -242,6 +242,155 @@ situation_lrsk_gvp_planetmind_bloom = {
 	# Approaches
 
 	approach = {
+		name = approach_lrsk_gvp_suppress
+		icon = GFX_situation_approach_whip
+		icon_background = GFX_situation_approach_bg_red
+
+		potential = {
+			has_situation_flag = lrsk_reached_fruiting
+		}
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_suppress } }
+				set_situation_flag = lrsk_gvp_selected_suppress
+				change_variable = { which = lrsk_negative_interactions value = 3 }
+			}
+		}
+
+ 		allow = {
+			custom_tooltip = {
+				fail_text = lrsk_gvp_bloom_approach_fail_cultivator
+				# TBD: Set this when necessary
+				owner = { NOT = { has_country_flag = lrsk_bloom_cultivator } }
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 3
+				energy = 50
+			}
+		}
+
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_extinguish
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+
+		potential = {
+			has_situation_flag = lrsk_reached_withering
+		}
+
+		on_select = {
+			# TBD: Need a cleanup process to replace this with `lrsk_has_extinguished`
+			owner = { set_country_flag = lrsk_first_extinguish }
+			custom_tooltip = approach_lrsk_gvp_extinguish_effects
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_extinguish } }
+				set_situation_flag = lrsk_gvp_selected_extinguish
+				change_variable = { which = lrsk_negative_interactions value = 3 }
+			}
+		}
+
+		triggered_modifier = {
+			potential = {
+				# TBD: Set this when necessary
+				owner = { NOT = { has_country_flag = lrsk_has_extinguished } }
+			}
+			modifier = {
+				country_physics_research_produces_mult = -0.15
+				country_society_research_produces_mult = -0.15
+				country_engineering_research_produces_mult = -0.15
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 3
+				energy = 20
+			}
+			upkeep = {
+				trigger = {
+					owner = { is_lithoid = no }
+				}
+				food = 20
+			}
+			upkeep = {
+				trigger = {
+					owner = { is_lithoid = yes }
+				}
+				minerals = 20
+			}
+		}
+
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_concentrate
+		icon = GFX_situation_approach_influence
+		icon_background = GFX_situation_approach_bg_red
+
+		potential = {
+			has_situation_flag = lrsk_reached_wilting
+		}
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_concentrate } }
+				set_situation_flag = lrsk_gvp_selected_concentrate
+				change_variable = { which = lrsk_negative_interactions value = 2 }
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 2
+			}
+		}
+
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
+		name = approach_lrsk_gvp_investigate
+		icon = GFX_situation_approach_scales
+		icon_background = GFX_situation_approach_bg_red
+
+		on_select = {
+			IF = {
+				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_investigate } }
+				set_situation_flag = lrsk_gvp_selected_investigate
+				change_variable = { which = lrsk_negative_interactions value = 1 }
+			}
+		}
+
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+
+		ai_weight = {
+			base = 1
+		}
+	}
+
+	approach = {
 		name = approach_lrsk_gvp_wait_and_see
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_yellow
@@ -313,7 +462,7 @@ situation_lrsk_gvp_planetmind_bloom = {
 
 	approach = {
 		name = approach_lrsk_gvp_cultivate
-		icon = GFX_situation_approach_heart
+		icon = GFX_situation_approach_amenities
 		icon_background = GFX_situation_approach_bg_green
 
 		potential = {
@@ -386,154 +535,6 @@ situation_lrsk_gvp_planetmind_bloom = {
 			base = 1
 		}
 	}
-
-	approach = {
-		name = approach_lrsk_gvp_investigate
-		icon = GFX_situation_approach_scales
-		icon_background = GFX_situation_approach_bg_red
-
-		on_select = {
-			IF = {
-				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_investigate } }
-				set_situation_flag = lrsk_gvp_selected_investigate
-				change_variable = { which = lrsk_negative_interactions value = 1 }
-			}
-		}
-
-		resources = {
-			category = situations
-			upkeep = {
-				influence = 1
-			}
-		}
-
-		ai_weight = {
-			base = 1
-		}
-	}
-
-	approach = {
-		name = approach_lrsk_gvp_concentrate
-		icon = GFX_situation_approach_suspicious
-		icon_background = GFX_situation_approach_bg_red
-
-		potential = {
-			has_situation_flag = lrsk_reached_wilting
-		}
-
-		on_select = {
-			IF = {
-				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_concentrate } }
-				set_situation_flag = lrsk_gvp_selected_concentrate
-				change_variable = { which = lrsk_negative_interactions value = 2 }
-			}
-		}
-
-		resources = {
-			category = situations
-			upkeep = {
-				influence = 2
-			}
-		}
-
-		ai_weight = {
-			base = 1
-		}
-	}
-
-	approach = {
-		name = approach_lrsk_gvp_extinguish
-		icon = GFX_situation_approach_fist
-		icon_background = GFX_situation_approach_bg_red
-
-		potential = {
-			has_situation_flag = lrsk_reached_withering
-		}
-
-		on_select = {
-			# Need a cleanup process to replace this with `lrsk_has_extinguished`
-			owner = { set_country_flag = lrsk_first_extinguish }
-			custom_tooltip = approach_lrsk_gvp_extinguish_effects
-			IF = {
-				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_extinguish } }
-				set_situation_flag = lrsk_gvp_selected_extinguish
-				change_variable = { which = lrsk_negative_interactions value = 3 }
-			}
-		}
-
-		triggered_modifier = {
-			potential = {
-				owner = { NOT = { has_country_flag = lrsk_has_extinguished } }
-			}
-			modifier = {
-				country_physics_research_produces_mult = -0.15
-				country_society_research_produces_mult = -0.15
-				country_engineering_research_produces_mult = -0.15
-			}
-		}
-
-		resources = {
-			category = situations
-			upkeep = {
-				influence = 3
-				energy = 20
-			}
-			upkeep = {
-				trigger = {
-					owner = { is_lithoid = no }
-				}
-				food = 20
-			}
-			upkeep = {
-				trigger = {
-					owner = { is_lithoid = yes }
-				}
-				minerals = 20
-			}
-		}
-
-		ai_weight = {
-			base = 1
-		}
-	}
-
-	approach = {
-		name = approach_lrsk_gvp_suppress
-		icon = GFX_situation_approach_whip
-		icon_background = GFX_situation_approach_bg_red
-
-		potential = {
-			has_situation_flag = lrsk_reached_fruiting
-		}
-
-		on_select = {
-			IF = {
-				limit = { NOT = { has_situation_flag = lrsk_gvp_selected_suppress } }
-				set_situation_flag = lrsk_gvp_selected_suppress
-				change_variable = { which = lrsk_negative_interactions value = 3 }
-			}
-		}
-
- 		allow = {
-			custom_tooltip = {
-				fail_text = lrsk_gvp_bloom_approach_fail_cultivator
-				owner = { NOT = { has_country_flag = lrsk_bloom_cultivator } }
-			}
-		}
-
-		resources = {
-			category = situations
-			upkeep = {
-				influence = 3
-				energy = 50
-			}
-		}
-
-		ai_weight = {
-			base = 1
-		}
-	}
-
 	
 	# Failed (Tamed) - Stages - Complete (Cultivated)
 	
