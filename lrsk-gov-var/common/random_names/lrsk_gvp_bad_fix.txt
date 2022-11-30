@@ -1,0 +1,199 @@
+# ################
+# # NAME FORMATS #
+# ################
+
+## Parts
+
+# Generic Dictatorial Descriptive
+empire_name_parts_list = {
+	key = "generic_dic_desc"
+	parts = {
+		Great = 3
+		Grand = 3
+		United = 3
+		Unified = 1
+		Sovereign = 1
+		Consolidated = 3
+		Centralized = 3
+		Combined = 3
+	}
+}
+
+# Generic machines
+# Generic
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_authority = auth_machine_intelligence
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<machine_empire_names_1>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	# Mechanoid Network
+}
+
+# Megacorporation
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			has_authority = auth_corporate
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<oligarchic_corp>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<oligarchic_corp>}}"
+	# Human Empire
+}
+
+# Hive Mind
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			has_authority = auth_hive_mind
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
+	# Human Empire
+}
+
+
+### Generic Combinations
+
+# Generic Imperial 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<generic_aut_desc> {[This.GetSpeciesAdj] {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# United Human Colonies
+}
+
+# Generic Imperial 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<generic_aut_desc> {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# Human Federated Colonies
+}
+
+# Generic Dictator 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<generic_dic_desc> {[This.GetSpeciesAdj] {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# United Human Colonies
+}
+
+# Generic Dictator 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<generic_dic_desc> {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# Human Federated Colonies
+}
+
+# Generic Oligarchic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<generic_oli_desc> {[This.GetSpeciesAdj] {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# United Human Colonies
+}
+
+# Generic Oligarchic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<generic_oli_desc> {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# Human Federated Colonies
+}
+
+# Generic Democratic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<generic_dem_desc> {[This.GetSpeciesAdj] {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# United Human Colonies
+}
+
+# Generic Democratic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<generic_dem_desc> {<generic_states>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
+	# Human Federated Colonies
+}
