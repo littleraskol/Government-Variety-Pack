@@ -68,6 +68,88 @@ empire_name_format = {
 	# Human Empire
 }
 
+### Imperial Generic
+
+# Imperial Generic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB {<imperial_gen> [This.Capital.System.GetName]}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <imperial_gen>}}"
+	# Empire of Sol
+}
+
+# Imperial Generic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB{<imperial_gen> [This.Capital.GetName]}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <imperial_gen>}}"
+	# Empire of Earth
+}
+
+# Imperial Generic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<imperial_gen>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_gen>}}"
+	# Human Empire
+}
+
+# Imperial Generic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<imperial_gen_desc> {[This.GetSpeciesAdj] {<imperial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_gen>}}"
+	# Great Human Empire
+}
+
+# Imperial Generic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_imperial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<imperial_gen_mid_desc> {<imperial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_gen>}}"
+	# Human Star Empire
+}
+
 # Generic Imperial 1
 empire_name_format = {
 	random_weight = {
@@ -98,6 +180,88 @@ empire_name_format = {
 	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
 	# Human Federated Colonies
+}
+
+### Dictatorial Generic
+
+# Dictatorial Generic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB {<dictatorial_gen> [This.Capital.System.GetName]}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <dictatorial_gen>}}"
+	# Empire of Sol
+}
+
+# Dictatorial Generic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB{<dictatorial_gen> [This.Capital.GetName]}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <dictatorial_gen>}}"
+	# Empire of Earth
+}
+
+# Dictatorial Generic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<dictatorial_gen>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<dictatorial_gen>}}"
+	# Human Empire
+}
+
+# Dictatorial Generic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<dictatorial_gen_desc> {[This.GetSpeciesAdj] {<dictatorial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<dictatorial_gen>}}"
+	# Great Human Empire
+}
+
+# Dictatorial Generic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_dictatorial
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<dictatorial_gen_mid_desc> {<dictatorial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<dictatorial_gen>}}"
+	# Human Star Empire
 }
 
 # Generic Dictator 1
@@ -132,6 +296,88 @@ empire_name_format = {
 	# Human Federated Colonies
 }
 
+### Oligarchic Generic
+
+# Oligarchic Generic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB{<oligarchic_gen> [This.Capital.System.GetName]}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <oligarchic_gen>}}"
+	# Empire of Sol
+}
+
+# Oligarchic Generic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB{<oligarchic_gen> [This.Capital.GetName]}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <oligarchic_gen>}}"
+	# Empire of Earth
+}
+
+# Oligarchic Generic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<oligarchic_gen>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<oligarchic_gen>}}"
+	# Human Empire
+}
+
+# Oligarchic Generic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<oligarchic_gen_desc> {[This.GetSpeciesAdj] {<oligarchic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<oligarchic_gen>}}"
+	# Great Human Empire
+}
+
+# Oligarchic Generic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_oligarchic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<oligarchic_gen_mid_desc> {<oligarchic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<oligarchic_gen>}}"
+	# Human Star Empire
+}
+
 # Generic Oligarchic 1
 empire_name_format = {
 	random_weight = {
@@ -162,6 +408,88 @@ empire_name_format = {
 	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
 	# Human Federated Colonies
+}
+
+### Democratic Generic
+
+# Democratic Generic 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB{<democratic_gen> [This.Capital.System.GetName]}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <democratic_gen>}}"
+	# Empire of Sol
+}
+
+# Democratic Generic 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 10
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{AofB {<democratic_gen> [This.Capital.GetName]}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <democratic_gen>}}"
+	# Empire of Earth
+}
+
+# Democratic Generic 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<democratic_gen>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<democratic_gen>}}"
+	# Human Empire
+}
+
+# Democratic Generic 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{<democratic_gen_desc> {[This.GetSpeciesAdj] {<democratic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<democratic_gen>}}"
+	# Great Human Empire
+}
+
+# Democratic Generic 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			has_authority = auth_democratic
+			lrsk_has_any_gvp_gov = yes
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<democratic_gen_mid_desc> {<democratic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<democratic_gen>}}"
+	# Human Star Empire
 }
 
 # Generic Democratic 1
