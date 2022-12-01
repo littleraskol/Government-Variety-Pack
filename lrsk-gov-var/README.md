@@ -21,7 +21,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.3.2 (12/??/22) - Yet More Random Name Problems
+v5.3.2 (11/30/22) - Yet More Random Name Problems
 -Hopefully adapted to the surprise new random name definition format.
 
 v5.3.1 (11/29/22) - Orion Post-Release Update 1
