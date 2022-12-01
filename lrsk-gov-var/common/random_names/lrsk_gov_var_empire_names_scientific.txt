@@ -22,7 +22,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_schl_desc> <lrsk_oligarchic_mat> [This.Capital.System.GetName]"
 	format = format.lrsk_acst.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_oli_mat.1
 	# Sol Empire
 }
@@ -44,7 +44,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_schl_desc> <lrsk_oligarchic_mat> [This.Capital.GetName]"
 	format = format.lrsk_acst.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_oli_mat.2
 	# Earth Empire
 }
@@ -66,7 +66,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_oli_schl_desc> [This.GetSpeciesAdj] <lrsk_schl_types> [This.GetSpeciesName]"
 	format = format.lrsk_acst.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_schol.1
 	# Human Empire
 }
@@ -90,7 +90,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_schl_desc> <lrsk_democratic_mat> [This.Capital.System.GetName]"
 	format = format.lrsk_scco.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_dem_mat.1
 	# Sol Empire
 }
@@ -112,7 +112,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_schl_desc> <lrsk_democratic_mat> [This.Capital.GetName]"
 	format = format.lrsk_scco.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_dem_mat.2
 	# Earth Empire
 }
@@ -134,7 +134,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_dem_schl_desc> [This.GetSpeciesAdj] <lrsk_schl_types> [This.GetSpeciesName]"
 	format = format.lrsk_scco.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_schol.1
 	# Human Empire
 }

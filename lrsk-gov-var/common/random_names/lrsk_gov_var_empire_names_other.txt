@@ -21,7 +21,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesName] <hive_mind>"
 	format = format.hive_mind.1
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format.hive_mind.1
 	# Human Empire
 }
@@ -42,7 +42,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesName] <hive_mind>"
 	format = format.hive_mind.1
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format.hive_mind.1
 	# Human Empire
 }
@@ -68,7 +68,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov>  [This.Capital.System.GetName]"
 	format = format.lrsk_noblerep_gen.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_nob_rep.1
 	# Empire of Sol
 }
@@ -92,7 +92,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov>  [This.Capital.GetName]"
 	format = format.lrsk_noblerep_gen.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_nob_rep.2
 	# Empire of Earth
 }
@@ -116,7 +116,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov> [This.GetSpeciesName]"
 	format = format.lrsk_noblerep_gen.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_nob_rep.3
 	# Human Empire
 }
@@ -140,7 +140,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_aristo_desc> [This.GetSpeciesAdj] <lrsk_noblerep_gov> [This.GetSpeciesName]"
 	format = format.lrsk_noblerep_gen.4
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_nob_rep.3
 	# Great Human Empire
 }
@@ -164,7 +164,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_aristo_desc> <lrsk_noblerep_gov> [This.GetSpeciesName]"
 	format = format.lrsk_noblerep_gen.5
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_nob_rep.3
 	# Human Star Empire
 }
@@ -192,7 +192,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_imppes_desc> <lrsk_imperial_pop> [This.GetSpeciesNamePlural]"
 	format = format.lrsk_imp_pes.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Empire of Sol
 }
@@ -215,7 +215,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_imppes_desc> <lrsk_imperial_pop> [This.GetSpeciesName]"
 	format = format.lrsk_imp_pes.2
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Empire of Earth
 }
@@ -238,7 +238,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_imppes_desc> [This.GetSpeciesAdj] <lrsk_imperial_pop>"
 	format = format.lrsk_imp_pes.3
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Empire
 }
@@ -261,7 +261,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_imppop_desc> <lrsk_imperial_pop>"
 	format = format.lrsk_imp_pes.4
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Empire
 }
@@ -288,7 +288,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc> <lrsk_criminal> [This.GetSpeciesName]"
 	format = format.lrsk_crimeorg.1
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_meg_chu.3
 	# Human Empire
 }
@@ -312,7 +312,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_stellar_filler_desc> <lrsk_criminal>  [This.Capital.System.GetName]"
 	format = format.lrsk_crimeorg.2
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_meg_cri.1
 	# Human Empire
 }
@@ -336,7 +336,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_stellar_filler_desc> <lrsk_criminal>  [This.Capital.GetName]"
 	format = format.lrsk_crimeorg.3
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_meg_cri.2
 	# Human Empire
 }
@@ -364,7 +364,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_imperial_rev> [This.GetSpeciesNamePlural]"
 	format = format.lrsk_imp_rev.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_imp_rev.1
 	# Empire of Sol
 }
@@ -388,7 +388,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev>  [This.Capital.System.GetName]"
 	format = format.lrsk_dic_rev.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_dic_rev.1
 	# Empire of Sol
 }
@@ -410,7 +410,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev>  [This.Capital.GetName]"
 	format = format.lrsk_dic_rev.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_dic_rev.2
 	# Empire of Earth
 }
@@ -432,7 +432,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dic_rev.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dic_rev.3
 	# Human Empire
 }
@@ -454,7 +454,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_dictatorial_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dic_rev.4
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dic_rev.1
 	# Great Human Empire
 }
@@ -476,7 +476,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_dictatorial_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dic_rev.5
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dic_rev.3
 	# Human Star Empire
 }
@@ -500,7 +500,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.Capital.System.GetName]"
 	format = format.lrsk_oli_rev.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_oli_rev.1
 	# Empire of Sol
 }
@@ -522,7 +522,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.Capital.GetName]"
 	format = format.lrsk_oli_rev.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_oli_rev.2
 	# Empire of Earth
 }
@@ -544,7 +544,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_oli_rev.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_oli_rev.3
 	# Human Empire
 }
@@ -566,7 +566,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_oligarchic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_oli_rev.4
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_oli_rev.3
 	# Great Human Empire
 }
@@ -588,7 +588,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_oligarchic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_oli_rev.5
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_oli_rev.3
 	# Human Star Empire
 }
@@ -614,7 +614,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_democratic_rev>  [This.Capital.System.GetName]"
 	format = format.lrsk_dem_rev.1
-	noun = format.home_system
+	noun = "{[This.Capital.System.GetName]}"
 	prefix_format = format_prefix.lrsk_dem_rev.1
 	# Empire of Sol
 }
@@ -637,7 +637,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_democratic_rev>  [This.Capital.GetName]"
 	format = format.lrsk_dem_rev.2
-	noun = format.homeworld
+	noun = "{[This.Capital.GetName]}"
 	prefix_format = format_prefix.lrsk_dem_rev.2
 	# Empire of Earth
 }
@@ -660,7 +660,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> <lrsk_democratic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dem_rev.3
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dem_rev.3
 	# Human Empire
 }
@@ -683,7 +683,7 @@ empire_name_format = {
 	
 	lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_democratic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dem_rev.4
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dem_rev.3
 	# Great Human Empire
 }
@@ -706,7 +706,7 @@ empire_name_format = {
 	
 	lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_democratic_rev> [This.GetSpeciesName]"
 	format = format.lrsk_dem_rev.5
-	noun = format.species
+	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = format_prefix.lrsk_dem_rev.3
 	# Human Star Empire
 }
