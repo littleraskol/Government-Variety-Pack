@@ -24,6 +24,8 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 -The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.
 -Added localization description of effects of agreement terms (for some reason, term tooltips don't show any effects besides loyalty-per-month changes).
+-Commercial agreements were way too powerful: market fee reduction per subject with commercial service is now -2%, down from -5% (did not realize it would just straight subtract that much from the fee!).
+--This change has also been applied to Colonial Chartering special subjects, with a max reduction limit of -20%.
 
 v5.3.2 (11/30/22) - Yet More Random Name Problems
 -Hopefully adapted to the surprise new random name definition format.
