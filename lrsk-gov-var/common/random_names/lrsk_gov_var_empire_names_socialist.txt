@@ -25,8 +25,8 @@ empire_name_format = {
 	}
 	
 	#lookups = "<lrsk_imppop_desc> <lrsk_imperial_pop> [This.GetSpeciesNamePlural]"
-	format = format.lrsk_imp_pop.1
-	noun = format.lrsk_species_plur
+	format = "{lrskAoftheB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} [This.GetSpeciesNamePlural]}}"
+	noun = "{[This.GetSpeciesNamePlural]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Star Empire
 }
@@ -48,8 +48,8 @@ empire_name_format = {
 	}
 	
 	#lookups = "<lrsk_imppop_desc> <lrsk_imperial_pop> [This.GetSpeciesName]"
-	format = format.lrsk_imp_pop.2
-	noun = format.lrsk_species_plur
+	format = "{AofB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} lrskKindSuff{[This.GetSpeciesName]}}}"
+	noun = "{[This.GetSpeciesNamePlural]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Star Empire
 }
@@ -71,8 +71,8 @@ empire_name_format = {
 	}
 	
 	#lookups = "<lrsk_imppop_desc> [This.GetSpeciesAdj] <lrsk_imperial_pop>"
-	format = format.lrsk_imp_pop.3
-	noun = format.lrsk_species_plur
+	format = "{AassocB{<lrsk_imppop_desc> [This.GetSpeciesAdj]} {<lrsk_imperial_pop>}}"
+	noun = "{[This.GetSpeciesNamePlural]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Star Empire
 }
@@ -94,8 +94,8 @@ empire_name_format = {
 	}
 	
 	#lookups = "[This.GetSpeciesAdj] <lrsk_imppop_desc> <lrsk_imperial_pop>"
-	format = format.lrsk_imp_pop.4
-	noun = format.lrsk_species_plur
+	format = "{AassocB{[This.GetSpeciesAdj] <lrsk_imppop_desc>} {<lrsk_imperial_pop>}}"
+	noun = "{[This.GetSpeciesNamePlural]}"
 	prefix_format = format_prefix.lrsk_imp_pop.3
 	# Human Star Empire
 }
