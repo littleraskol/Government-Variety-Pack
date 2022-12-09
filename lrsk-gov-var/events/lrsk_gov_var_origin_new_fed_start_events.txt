@@ -775,6 +775,13 @@ country_event = {
 				set_name = random
 			}
 		}
+		if = {
+			limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+			federation = { 
+				set_federation_type = spiritualist_federation
+				set_name = random
+			}
+		}
 		event_target:lrsk_fed_member_1 = {
 			add_opinion_modifier = {
 				who = root
