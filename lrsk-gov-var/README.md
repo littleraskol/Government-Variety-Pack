@@ -21,6 +21,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.3.4 (12/09/22) - Orion Post-Release Update 2
+-Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
+
 v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 -The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.
 -Added localization description of effects of agreement terms (for some reason, term tooltips don't show any effects besides loyalty-per-month changes).
