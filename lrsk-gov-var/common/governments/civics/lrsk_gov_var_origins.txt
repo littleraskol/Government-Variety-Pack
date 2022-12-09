@@ -161,7 +161,7 @@ lrsk_gov_var_origin_for_discovery_mi = {
 lrsk_gov_var_origin_for_discovery_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_for_discovery.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_for_discovery
 
 	playable = {
 		always = no # Non-player origin
@@ -187,7 +187,7 @@ lrsk_gov_var_origin_for_discovery_npc = {
 lrsk_gov_var_origin_for_discovery_mi_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_for_discovery_mi.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_for_discovery_mi
 
 	playable = {
 		always = no # Non-player origin
@@ -295,7 +295,7 @@ lrsk_gov_var_origin_tradeways_mc = {
 lrsk_gov_var_origin_tradeways_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_tradeways
 
 	playable = {
 		always = no # Non-player origin
@@ -321,7 +321,7 @@ lrsk_gov_var_origin_tradeways_npc = {
 lrsk_gov_var_origin_tradeways_mc_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways_mc.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_tradeways_mc
 
 	playable = {
 		always = no # Non-player origin
@@ -395,7 +395,7 @@ lrsk_gov_var_origin_grand_alliance = {
 lrsk_gov_var_origin_grand_alliance_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_grand_alliance.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_grand_alliance
 
 	playable = {
 		always = no # Non-player origin
@@ -409,6 +409,134 @@ lrsk_gov_var_origin_grand_alliance_npc = {
 				value = civic_barbaric_despoilers
 				value = civic_criminal_heritage
 			}
+		}
+	}
+
+	description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+
+# Convened by Providence: Start in a holy covenant. 
+lrsk_gvp_origin_convened_providence = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
+	picture = GFX_lrsk_gvp_origin_convened_providence
+	max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Federations"
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+			}
+		}
+	}
+
+	description = "lrsk_gvp_origin_convened_providence_effects"
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	random_weight = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+
+#NPC Member of above
+lrsk_gvp_origin_convened_providence_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
+	picture = GFX_lrsk_gvp_origin_convened_providence
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+			}
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+	}
+
+	description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+
+#NPC MC Member of above
+lrsk_gvp_origin_convened_providence_mc_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
+	picture = GFX_lrsk_gvp_origin_convened_providence
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOT = { value = civic_criminal_heritage }	# probably no fun to start next to one...
+		}
+		authority = {
+			value = auth_corporate
 		}
 	}
 

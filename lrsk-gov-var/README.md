@@ -32,6 +32,7 @@ v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 
 v5.3.2 (11/30/22) - Yet More Random Name Problems
 -Hopefully adapted to the surprise new random name definition format.
+-Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 
 v5.3.1 (11/29/22) - Orion Post-Release Update 1
 -Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.

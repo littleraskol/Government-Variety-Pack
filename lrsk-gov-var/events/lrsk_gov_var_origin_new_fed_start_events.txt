@@ -353,6 +353,51 @@ country_event = {
 					}
 				}
 			}
+			if = {
+				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+				random_list = {
+					8 = {
+						# non-MC
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gvp_origin_convened_providence_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = random
+							authority = random
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_1
+								establish_communications_no_message = root
+							}
+						}
+					}
+					2 ={
+						# MC
+						modifier = {
+							factor = 0
+							root = { has_authority = auth_corporate }
+						}
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gvp_origin_convened_providence_mc_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = random
+							authority = random
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_1
+								establish_communications_no_message = root
+							}
+						}
+					}
+				}
+			}
 			create_colony = {
 				owner = event_target:lrsk_fed_member_1
 			}
@@ -596,6 +641,65 @@ country_event = {
 					effect = {
 						save_event_target_as = lrsk_fed_member_2
 						establish_communications_no_message = root
+					}
+				}
+			}
+			if = {
+				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+				random_list = {
+					9 = {
+						# non-MC
+						modifier = {
+							add = -3
+							NOR = { 
+								root = { has_authority = auth_corporate }
+								event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+							}
+						}
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gvp_origin_convened_providence_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = random
+							authority = random
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_2
+								establish_communications_no_message = root
+							}
+						}
+					}
+					1 ={
+						# MC
+						modifier = {
+							factor = 0
+							root = { has_authority = auth_corporate }
+						}
+						modifier = {
+							add = 3
+							NOR = { 
+								root = { has_authority = auth_corporate }
+								event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+							}
+						}
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gvp_origin_convened_providence_mc_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = random
+							authority = random
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_2
+								establish_communications_no_message = root
+							}
+						}
 					}
 				}
 			}
