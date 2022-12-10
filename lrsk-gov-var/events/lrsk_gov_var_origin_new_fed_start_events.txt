@@ -365,7 +365,12 @@ country_event = {
 							origin = "lrsk_gvp_origin_convened_providence_npc"
 							ignore_initial_colony_error = yes
 							day_zero_contact = no
-							ethos = random
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_xenophile"
+								ethic = "ethic_spiritualist"
+								ethic = "ethic_fanatic_spiritualist"
+							}
 							authority = random
 							civics = random
 							effect = {
@@ -374,7 +379,7 @@ country_event = {
 							}
 						}
 					}
-					3 ={
+					3 = {
 						# MC
 						modifier = {
 							factor = 0
@@ -387,8 +392,13 @@ country_event = {
 							origin = "lrsk_gvp_origin_convened_providence_mc_npc"
 							ignore_initial_colony_error = yes
 							day_zero_contact = no
-							ethos = random
-							authority = random
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_xenophile"
+								ethic = "ethic_spiritualist"
+								ethic = "ethic_fanatic_spiritualist"
+							}
+							authority = auth_corporate
 							civics = random
 							effect = {
 								save_event_target_as = lrsk_fed_member_1
@@ -672,7 +682,7 @@ country_event = {
 							}
 						}
 					}
-					1 ={
+					1 = {
 						# MC
 						modifier = {
 							factor = 0
