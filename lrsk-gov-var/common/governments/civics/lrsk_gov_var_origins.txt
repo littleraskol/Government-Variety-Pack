@@ -478,65 +478,13 @@ lrsk_gvp_origin_convened_providence_npc = {
 	}
 
 	possible = {
-		ethics = {
-			OR = {
-				text = civic_tooltip_spiritualist
-				value = ethic_spiritualist
-				value = ethic_fanatic_spiritualist
-			}
-			NOR = {
-				text = civic_tooltip_not_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
-			}
-		}
 		civics = {
 			NOR = {
 				value = civic_fanatic_purifiers
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage # probably no fun to start next to one...
 			}
-		}
-		authority = {
-			NOT = { value = auth_corporate }
-		}
-	}
-
-	description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
-
-	random_weight = {
-		base = 0
-	}
-}
-
-#NPC MC Member of above
-lrsk_gvp_origin_convened_providence_mc_npc = {
-	is_origin = yes
-	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
-	picture = GFX_lrsk_gvp_origin_convened_providence
-
-	playable = {
-		always = no # Non-player origin
-	}
-
-	possible = {
-		ethics = {
-			OR = {
-				text = civic_tooltip_spiritualist
-				value = ethic_spiritualist
-				value = ethic_fanatic_spiritualist
-			}
-			NOR = {
-				text = civic_tooltip_not_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
-			}
-		}
-		civics = {
-			NOT = { value = civic_criminal_heritage }	# probably no fun to start next to one...
-		}
-		authority = {
-			value = auth_corporate
 		}
 	}
 

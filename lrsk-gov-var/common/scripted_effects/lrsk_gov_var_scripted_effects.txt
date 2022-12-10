@@ -402,6 +402,123 @@ lrsk_create_tradeways_member_mc = {
 	}
 }
 
+# Create Convened by Providence NPC empire w/ Corp authority.
+lrsk_create_providence_member = {
+	random_list = {
+		1 = {
+			# Democratic
+			modifier = {
+				factor = 0
+				root = { is_authoritarian = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gvp_origin_convened_providence_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				authority = auth_democratic
+				civics = random
+			}
+		}
+		1 = {
+			# Oligarchic
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gvp_origin_convened_providence_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				authority = auth_oligarchic
+				civics = random
+			}
+		}
+		1 = {
+			# Dictatorial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gvp_origin_convened_providence_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				authority = auth_dictatorial
+				civics = random
+			}
+		}
+		1 = {
+			# Imperial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gvp_origin_convened_providence_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				authority = auth_imperial
+				civics = random
+			}
+		}
+		1 = {
+			# Megacorp
+			modifier = {
+				factor = 0
+				root = { has_authority = auth_corporate }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gvp_origin_convened_providence_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_spiritualist"
+				}
+				authority = auth_corporate
+				civics = random
+			}
+		}
+	}
+}
+
 # Refreshes event tagets for sublight subjects in current context
 # CONTEXT: country scope, if caller has no subjects or no subjects that are sublight colonies this does nothing
 lrsk_gov_var_sublight_subjects_mark = {
