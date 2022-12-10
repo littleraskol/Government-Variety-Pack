@@ -411,6 +411,10 @@ lrsk_create_providence_member = {
 				factor = 0
 				root = { is_authoritarian = yes }
 			}
+			modifier = {
+				add = 1
+				root = { has_authority = auth_democratic }
+			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
@@ -430,6 +434,10 @@ lrsk_create_providence_member = {
 		}
 		1 = {
 			# Oligarchic
+			modifier = {
+				add = 1
+				root = { has_authority = auth_oligarchic }
+			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
@@ -453,6 +461,10 @@ lrsk_create_providence_member = {
 				factor = 0
 				root = { is_egalitarian = yes }
 			}
+			modifier = {
+				add = 1
+				root = { is_authoritarian = yes }
+			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
@@ -475,6 +487,10 @@ lrsk_create_providence_member = {
 			modifier = {
 				factor = 0
 				root = { is_egalitarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { is_authoritarian = yes }
 			}
 			create_country = {
 				name_list = random
