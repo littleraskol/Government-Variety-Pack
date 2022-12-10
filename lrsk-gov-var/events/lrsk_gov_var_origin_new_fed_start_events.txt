@@ -356,7 +356,7 @@ country_event = {
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				random_list = {
-					8 = {
+					7 = {
 						# non-MC
 						create_country = {
 							name_list = random
@@ -374,7 +374,7 @@ country_event = {
 							}
 						}
 					}
-					2 ={
+					3 ={
 						# MC
 						modifier = {
 							factor = 0
@@ -650,7 +650,7 @@ country_event = {
 					9 = {
 						# non-MC
 						modifier = {
-							add = -3
+							add = -1
 							NOR = { 
 								root = { has_authority = auth_corporate }
 								event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
@@ -679,7 +679,7 @@ country_event = {
 							root = { has_authority = auth_corporate }
 						}
 						modifier = {
-							add = 3
+							add = 1
 							NOR = { 
 								root = { has_authority = auth_corporate }
 								event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
