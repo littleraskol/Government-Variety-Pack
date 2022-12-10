@@ -23,6 +23,7 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 v5.3.4 (12/09/22) - Orion Post-Release Update 2
 -Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
+-Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 
 v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 -The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.
@@ -32,7 +33,6 @@ v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 
 v5.3.2 (11/30/22) - Yet More Random Name Problems
 -Hopefully adapted to the surprise new random name definition format.
--Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 
 v5.3.1 (11/29/22) - Orion Post-Release Update 1
 -Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.
