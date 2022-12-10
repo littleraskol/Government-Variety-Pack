@@ -25,7 +25,7 @@ v5.3.4 (12/09/22) - Orion Post-Release Update 2
 -Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
 -Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 -Cleaned up new federation start code.
--Incidentally, fixed a base game error that prevents Holy Covenants from getting random names.
+-Incidentally, fixed (most of the time) a base game error that prevents Holy Covenants from getting random names.
 
 v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
 -The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.

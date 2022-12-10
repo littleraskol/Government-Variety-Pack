@@ -528,48 +528,13 @@ empire_name_format = {
 
 # Spiritualist Covenant
 
-federation_name_parts_list = {
-	key = "lrsk_spiritualist_federation_names_1_1"
-	parts = {
-		Holy = 2
-		Sacred = 2
-		Harmonious = 2
-		Consecrated = 1
-		Hallowed = 1
-		Sanctified = 1
-		Sacrosanct = 1
-		Divine = 1
-		Blessed = 2
-		Seraphic = 1
-		Elysian = 1
-		Empyreal = 1
-	}
-}
-
-federation_name_parts_list = {
-	key = "lrsk_spiritualist_federation_names_1_2"
-	parts = {
-		Accord = 1
-		Covenant = 2
-		Communion = 1
-		Society = 1
-		Commonwealth = 1
-		Alliance = 1
-		Coalition = 1
-		Compact = 1
-		Concord = 1
-		Entente = 1
-		Partnership = 1
-	}
-}x
-
 federation_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 100000
 			has_federation_type = spiritualist_federation
 		}
 	}
-	format = "{<lrsk_spiritualist_federation_names_1_1> {<lrsk_spiritualist_federation_names_1_2>}}"
+	format = "{<spiritualist_federation_names_1_1> {<spiritualist_federation_names_1_2>}}"
 }
