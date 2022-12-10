@@ -672,6 +672,7 @@ country_event = {
 			limit = { lrsk_gov_var_has_discovery_origin = yes }
 			federation = { 
 				set_federation_type = research_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -679,6 +680,7 @@ country_event = {
 			limit = { lrsk_gov_var_has_tradeways_origin = yes }
 			federation = { 
 				set_federation_type = trade_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -686,6 +688,7 @@ country_event = {
 			limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 			federation = { 
 				set_federation_type = military_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -693,6 +696,7 @@ country_event = {
 			limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 			federation = { 
 				set_federation_type = spiritualist_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -764,6 +768,5 @@ country_event = {
 			amount = 60
 			who = event_target:lrsk_fed_member_2
 		}
-		set_federation_leader = root
 	}
 }
