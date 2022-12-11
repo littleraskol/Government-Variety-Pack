@@ -3,3 +3,19 @@
 # Author: littleraskol
 
 namespace = lrsk_gvp_complementation
+
+# Starting setup
+country_event = {
+	id = lrsk_gvp_complementation.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = lrsk_gvp_origin_complementation_project
+	}
+
+	immediate = {
+		# Add the "Unity of Purpose" tech
+		give_technology = { message = no tech = tech_unity_of_purpose }
+	}
+}
