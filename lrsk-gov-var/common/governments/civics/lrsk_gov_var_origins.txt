@@ -533,6 +533,71 @@ lrsk_gov_var_origin_uplift = {
 	#}
 }
 
+# Complementation Project: Imagine if SEELE won and turned into a Stellaris hive mind 
+lrsk_gvp_origin_complementation_project = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_complementation.dds"
+	picture = GFX_lrsk_gvp_origin_complementation
+	max_once_global = yes
+
+	playable = {
+		always = yes
+	}
+
+	possible = {
+		authority = { value = auth_hive_mind }
+	}
+
+	description = "lrsk_gvp_origin_tooltip_complementation_project_effects"
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	random_weight = {
+		base = 2
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+
+#NPC refugees/survivors of Complementation Project
+lrsk_gvp_origin_complementation_remnants = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_complementation_remnants.dds"
+	picture = GFX_lrsk_gvp_origin_complementation
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
+	}
+
+	modifier = {
+		ship_home_territory_fire_rate_mult = 0.1
+	}
+
+	description = lrsk_gvp_origin_tooltip_complementation_remnants_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+
 ##Sublight Empire: Start with several same-species vassals bound to you by the monopoly on FTL that you developed first, although this may not last...
 #lrsk_gov_var_origin_sublight_empire = {
 #	is_origin = yes

@@ -21,6 +21,14 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.x (??/??/??) - New Origin: Complementation Project
+-New Origin "Complementation Project" which represents a hive mind that began as a civilization of individuals which forcibly self-evolved into a collective consciousness.
+--Better diplomacy with organic species (due to remembering how to act like individuals).
+--Start with the ability to assimilate organic pops into the hive (not as effectively as assimilation gained through genetic ascension).
+--Start with the "Unity of Purpose" tech.
+--Somewhere in the galaxy are the remnants of your singleton precursor civilization, and they hate you!
+--Imagine if SEELE from Neon Genesis Evangelion won and turned into a Stellaris hive mind and you about have the idea here...
+
 v5.3.4 (12/09/22) - Orion Post-Release Update 2
 -Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
 -Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
