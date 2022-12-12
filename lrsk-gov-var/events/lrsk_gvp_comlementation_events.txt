@@ -19,3 +19,177 @@ country_event = {
 		give_technology = { message = no tech = tech_unity_of_purpose }
 	}
 }
+
+# Apply Complementation to Singleton Pops on Yearly Pulse
+country_event = {
+	id = lrsk_gvp_complementation.30	# number idk
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		num_unique_species > 1
+		any_owned_species = {
+			has_citizenship_type = {
+				type = citizenship_lrsk_complementation
+				country = root
+			}
+		}
+	}
+
+	immediate = {
+		set_update_modifiers_batch = begin
+
+		every_owned_species = {
+			limit = {
+				has_citizenship_type = {
+					type = citizenship_lrsk_complementation
+					country = root
+				}
+			}
+			if = { # complementation check? (needed?)
+				limit = {
+					root = {
+						has_origin = lrsk_gvp_origin_complementation_project
+						NOT = { has_tradition = tr_genetics_creation }	# Renders complementation obsolete
+						has_authority = auth_hive_mind
+						NOT = { has_civic = civic_hive_devouring_swarm }	# JIC
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_hive_mind
+					remove_trait = trait_self_modified
+					remove_trait = trait_latent_psionic
+					remove_trait = trait_psionic
+					change_scoped_species = no
+
+					effect = {
+						set_timed_species_flag = {
+							flag = lrsk_complementation_species_of_species@prev
+							days = 30
+						}
+						set_timed_species_flag = {
+							flag = lrsk_complementation_species_of_empire@root
+							days = 30
+						}
+						save_event_target_as = lrsk_convert_to_species
+					}
+				}
+			}
+			else = {
+				log_error = "ERROR: Somehow complementation logic applied to invalid empire?"
+			}
+		}
+
+		every_owned_planet = {
+			planet_event = { id = lrsk_gvp_complementation.31 }
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+# Complement Pops
+planet_event = {
+	id = lrsk_gvp_complementation.31
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_pop = {
+			has_citizenship_type = {
+				type = citizenship_lrsk_complementation
+				country = root.owner
+			}
+		}
+	}
+
+	immediate = {
+		random_list = {
+			1 = { set_variable = { which = lrsk_comlementation_counter value = 2 } }	# 2 pops
+			1 = { set_variable = { which = lrsk_comlementation_counter value = 4 } }	# 4 pops
+			1 = { set_variable = { which = lrsk_comlementation_counter value = 8 } }	# 8 pops
+		}
+			
+		if = {
+			limit = {
+				exists = event_target:lrsk_convert_to_species #should always exist
+			}
+			random_owned_pop = {
+				limit = {
+					has_citizenship_type = {
+						type = citizenship_lrsk_complementation
+						country = root.owner
+					}
+					NOT = { is_exact_same_species = event_target:lrsk_convert_to_species }
+				}
+				species = {
+					save_event_target_as = lrsk_old_species
+				}
+			}
+			while = {
+				limit = {
+					exists = event_target:lrsk_old_species
+					check_variable = {
+						which = lrsk_comlementation_counter
+						value > 0
+					}
+					any_owned_pop = {
+						has_citizenship_type = {
+							type = citizenship_lrsk_complementation
+							country = root.owner
+						}
+						is_same_value = event_target:lrsk_old_species
+					}
+				}
+				random_owned_pop = {
+					limit = {
+						has_citizenship_type = {
+							type = citizenship_lrsk_complementation
+							country = root.owner
+						}
+						is_exact_same_species = event_target:lrsk_old_species
+					}
+					change_species = event_target:lrsk_convert_to_species
+					lrsk_apply_post_complementation_effect = yes
+				}
+				# complementing the original species is faster, do it twice
+				if = {
+					limit = {
+						any_owned_pop = {
+							species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
+							has_citizenship_type = {
+								type = citizenship_lrsk_complementation
+								country = root.owner
+							}
+						}
+					}
+					random_owned_pop = {
+						limit = {
+							species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
+							has_citizenship_type = {
+								type = citizenship_lrsk_complementation
+								country = root.owner
+							}
+						}
+						species = { remove_species_flag = lrsk_singleton_original_species_of@root.owner }
+						change_species = event_target:lrsk_convert_to_species
+						lrsk_apply_post_complementation_effect = yes
+					}
+				}
+				change_variable = {
+					which = lrsk_comlementation_counter
+					value = -1
+				}
+			}
+			lrsk_apply_post_complementation_effect = yes
+		}
+		else = {
+			log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to complement to"
+		}
+
+		set_variable = {
+			which = lrsk_comlementation_counter
+			value = 0
+		}
+	}
+}

@@ -2191,7 +2191,7 @@ l_english:
  war_goal_wg_lrsk_gov_var_impchart:0 "Impose Charter"
  war_goal_wg_lrsk_gov_var_impchart_desc:1 "War is waged to force the enemy to accept a colonial trading charter, subjugating it as a Chartered Colony.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new Chartered Colony if they include at least one planet and the target will be forced into Tributary status for 10 years."
 
- ## Policies
+ ### Policies
 
  # Colonial Fiefs
  policy_lrsk_gvp_colfief_policy:0 "Explorer Colonies"
@@ -2210,7 +2210,24 @@ l_english:
  lrsk_gvp_colfief_promoted_name:0 "Encourage $policy_lrsk_gvp_colfief_policy$"
  lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opporunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ pop."
 
- ## Events
+ ### Species Rights
+
+ ## Citizenships
+ citizenship_lrsk_complementation:0 "Metaphysical Complementation"
+ citizenship_lrsk_complementation_tooltip:0 "Pops of this species are undergoing the §YComplementation§! process, during which their psychic flaws are mended by the mental strengths of the collective mind even as they lend their own strengths to the greater whole. In the end, all will be one mind."
+ citizenship_lrsk_complementation_tooltip_delayed:0 "§LIndividuals forget their foolishness and repeat their mistakes. They cannot redeem themselves willingly, and so they will not change. We have no choice but to force changes with our own hands. We pray you will be made whole in us.§!"
+
+ ## Living Standards
+ living_standard_lrsk_forced_complementation:0 "Forced Identity Complementation"
+ living_standard_lrsk_forced_complementation_tooltip:1 "This species endures the agonizing process of $citizenship_lrsk_complementation$, a necessary procedure for becoming one with the hive mind."
+ living_standard_lrsk_forced_complementation_tooltip_delayed:1 "§LThe broken self is made whole by joining the collective, all's right with the world.§!"
+ 
+ ## Warnings
+ LRSK_ONLY_ORGANICS:0 "$TRIGGER_FAIL$Can only be applied to an organic species."
+ LRSK_ONLY_SINGLETONS:0 "$TRIGGER_FAIL$Can only be applied to non-hive-minded pops."
+ LRSK_SPECIES_MUST_BE_COMPLEMENTING:0 "$TRIGGER_FAIL$Species must have §Y$citizenship_lrsk_complementation$§! citizenship."
+
+ ### Events
  
  ## Imperial Economy
  LRSK_GOV_VAR_IMPECON_LEGIT:0 "\n\nEach special subject you create increases our legitimacy among our people and will increase £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§! empire-wide by §G+1§!\n\nWe are limited to §Y10§! of each type of special subject."

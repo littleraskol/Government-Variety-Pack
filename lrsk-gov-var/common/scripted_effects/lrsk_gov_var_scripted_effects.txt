@@ -1115,3 +1115,23 @@ lrsk_make_impecon_special_subject = {
 		set_agreement_preset = { preset = $PRESET$ }
 	}
 }
+
+# pop scope, root = planet
+lrsk_apply_post_complementation_effect = {
+	if = {
+		limit = {
+			NOT = {
+				owner = {
+					any_owned_pop = {
+						is_exact_same_species = event_target:lrsk_convert_to_species
+						NOT = { is_same_value = prevprev }
+					}
+				}
+			}
+		}
+		set_living_standard = {
+			type = living_standard_hive_mind
+			country = root.owner
+		}
+	}
+}

@@ -1,0 +1,36 @@
+# from = country
+# this = species
+
+citizenship_lrsk_complementation = {
+	is_assimilation = yes
+
+	potential = {		
+		exists = from
+		from = {
+			has_origin = lrsk_gvp_origin_complementation_project
+			NOT = { has_tradition = tr_genetics_creation }	# Renders complementation obsolete
+			has_authority = auth_hive_mind
+			NOT = { has_civic = civic_hive_devouring_swarm }	# JIC
+		}
+	}
+
+	allow = {
+		hidden_trigger = { exists = from }
+		custom_tooltip = {
+			fail_text = MUST_NOT_BE_DOMINANT_SPECIES
+			NOT = { is_exact_same_species = from }
+		}
+		custom_tooltip = {
+			fail_text = LRSK_ONLY_ORGANICS
+			is_organic_species = yes
+		}
+		custom_tooltip = {
+			fail_text = LRSK_ONLY_SINGLETONS
+			NOT = { has_trait = trait_hive_mind }
+		}
+	}
+
+	ai_will_do = {
+		factor = 100
+	}
+}
