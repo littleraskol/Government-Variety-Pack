@@ -21,6 +21,9 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v?????
+-Removed redundant boxed-in escape route checks
+
 v5.3.5 (12/11/22) - Little Things
 -Forgot to add new origins to scripted triggers
 -Wrong effects for NPC Convened by Providence

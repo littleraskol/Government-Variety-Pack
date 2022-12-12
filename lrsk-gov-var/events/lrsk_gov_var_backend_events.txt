@@ -88,23 +88,23 @@ event = {
 
 		## Escape routes for possible boxed-in starts
 
-		# Find escape routes for human players first
-		every_playable_country = {
-			limit = {
-				lrsk_gvp_has_boxed_in_origin = yes
-				lrsk_has_gvp_npc_origin = no
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
-
-		# Find escape routes for AI players last
-		every_playable_country = {
-			limit = {
-				lrsk_gvp_has_boxed_in_origin = yes
-				lrsk_has_gvp_npc_origin = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
+		## Find escape routes for human players first
+		#every_playable_country = {
+		#	limit = {
+		#		lrsk_gvp_has_boxed_in_origin = yes
+		#		lrsk_has_gvp_npc_origin = no
+		#	}
+		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
+		#}
+		#
+		## Find escape routes for AI players last
+		#every_playable_country = {
+		#	limit = {
+		#		lrsk_gvp_has_boxed_in_origin = yes
+		#		lrsk_has_gvp_npc_origin = yes
+		#	}
+		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
+		#}
 
 		## Escape routes for possible boxed-in starts
 
