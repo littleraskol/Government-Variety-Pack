@@ -59,7 +59,7 @@ event = {
 			country_event = { id = lrsk_gov_var_shroud_touched.1 }
 		}
 		
-		# For Discovery / Tradeways / Grand Alliance
+		# For Discovery / Tradeways / Grand Alliance / Convended by Providence
 		every_playable_country = {
 			limit = { OR = { 
 				has_origin = lrsk_gov_var_origin_for_discovery
@@ -106,15 +106,6 @@ event = {
 			country_event = { id = lrsk_government_variety_pack_backend.3 }
 		}
 
-		## Explainers if not called elsewhere
-
-		# Colonial Chartering
-		every_playable_country = {
-			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
-		}
-
-
 		## Escape routes for possible boxed-in starts
 
 		# Extreme cludge alert: explicitly mark initially owned systems...
@@ -148,6 +139,12 @@ event = {
 		}
 
 		## Explainers if not called elsewhere
+
+		# Colonial Chartering
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
+		}
 
 		# Imperial Economy
 		every_playable_country = {

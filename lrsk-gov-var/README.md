@@ -21,7 +21,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.3.4 (12/09/22) - Orion Post-Release Update 2
+v5.3.5 (12/11/22) - Little Things
+-Forgot to add new origins to scripted triggers
+-Wrong effects for NPC Convened by Providence
+
+v5.3.4 (12/10/22) - Orion Post-Release Update 2
 -Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
 -Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 -Cleaned up new federation start code.
