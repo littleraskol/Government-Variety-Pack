@@ -21,10 +21,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v?????
+v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks
+-Colonial Fief spawned vassals were not copying techs from overlord.
+-Small localization update.
 
-v5.3.5 (12/11/22) - Little Things
+v5.3.5 (12/12/22) - Little Things
 -Forgot to add new origins to scripted triggers
 -Wrong effects for NPC Convened by Providence
 
