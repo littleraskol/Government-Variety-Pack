@@ -29,11 +29,11 @@ This is the full listing of civics with descriptions.
 
 [*][i]Universal Sovereignty (Dictatorial or Imperial, not Xenophobic)[/i] - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
 
-[*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
+[*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, +50% Worker political power, +5% Worker happiness, +25% Specialist political power, +2.5% Specialist happiness)
 
 [*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage, +25% power projection)
 
-[*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
+[*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output, +50% Specialist political power, +25% Worker political power)
 
 [*][i]Budgetary Thrift (Any)[/i] - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
 

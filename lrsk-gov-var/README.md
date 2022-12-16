@@ -21,6 +21,20 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v?.?.? (??/??/??) - Improved Legacy Civics 1
+-Enlightened Liberalism changes:
+--Specialist political power +50%
+--Worker political power +25%
+--(tbd active feature)
+--Output??
+-Workers Councils changes:
+--(tbd active feature)
+--Removed build speed bonus?
+-Budgetary Thrift changes:
+--Implement Auserity planetary decision (+trade value, +upkeep reduction, -amenities, -housing)
+-Public Works changes
+--?????
+
 v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks
 -Colonial Fief spawned vassals were not copying techs from overlord.
