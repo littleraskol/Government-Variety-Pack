@@ -21,6 +21,11 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.3.7 (01/01/23) - Siege Mentality and Colonial Fief Fixes
+-Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
+--Slight localization tweak.
+-Colonial Fief random vassals should no longer start on Holy Worlds.
+
 v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks
 -Colonial Fief spawned vassals were not copying techs from overlord.

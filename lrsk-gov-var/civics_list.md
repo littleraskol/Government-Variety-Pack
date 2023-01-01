@@ -23,7 +23,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
-[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -20% defense platform cost, +1 Encryption)
+[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, +10% home territory fire rate, +25% defense army morale, +1 Encryption)
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
