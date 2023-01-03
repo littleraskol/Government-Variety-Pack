@@ -28,6 +28,7 @@ v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
 --Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
 --Also they should have names...
 -Some small backend changes.
+-Fixed localization of Functionary job to show correct job effects.
 
 v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks
