@@ -208,9 +208,13 @@ lrsk_safe_to_colonize_planet = {
 # -Not adjacent to a FE's territory
 lrsk_safe_to_colonize_system = {
 	lrsk_system_vacant = yes
-	every_neighbor_system = { owner = {
-		NOT = { is_country_type = fallen_empire }
-	} }
+	NOT = {
+		any_neighbor_system = {
+			owner = {
+				is_country_type = fallen_empire
+			}
+		}
+	}
 
 }
 
