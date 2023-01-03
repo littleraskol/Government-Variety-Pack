@@ -21,10 +21,13 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.3.7 (01/01/23) - Siege Mentality and Colonial Fief Fixes
+v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
 -Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
 --Slight localization tweak.
--Colonial Fief random vassals should no longer start on Holy Worlds.
+-Colonial Fief fixes:
+--Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
+--Also they should have names...
+-Some small backend changes.
 
 v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks

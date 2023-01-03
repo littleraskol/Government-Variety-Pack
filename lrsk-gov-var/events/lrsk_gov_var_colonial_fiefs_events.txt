@@ -140,7 +140,7 @@ country_event = {
 					who = root
 					distance > 2
 				}
-				lrsk_system_vacant = yes
+				lrsk_safe_to_colonize_system = yes
 				root = {
 					any_owned_pop_species = {
 						not = { has_trait = trait_syncretic_proles }
@@ -154,7 +154,7 @@ country_event = {
 									who = prevprev
 									value >= 0.5
 								}
-								NOT = { has_modifier = holy_planet }
+								lrsk_safe_to_colonize_planet = yes
 							}
 						}
 					}
@@ -166,7 +166,7 @@ country_event = {
 			} }
 			every_system_planet = {
 				limit = {
-					NOT = { has_modifier = holy_planet }
+					lrsk_safe_to_colonize_planet = yes
 					root = {
 						any_owned_pop_species = {
 							not = { has_trait = trait_syncretic_proles }
