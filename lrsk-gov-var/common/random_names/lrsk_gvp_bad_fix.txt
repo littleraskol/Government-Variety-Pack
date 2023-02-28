@@ -1,6 +1,6 @@
-# ################
-# # NAME FORMATS #
-# ################
+##############
+# NAME PARTS #
+##############
 
 ## Parts
 
@@ -17,6 +17,112 @@ empire_name_parts_list = {
 		Centralized = 3
 		Combined = 3
 	}
+}
+
+# ################
+# # NAME FORMATS #
+# ################
+
+### Imperial Militarist
+
+# Imperial Militarist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			lrsk_has_any_gvp_gov = yes
+			is_militarist = yes
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{AofB{<imperial_mil> [This.Capital.System.GetName]}}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <imperial_mil>}}"
+	noun = "{[This.Capital.System.GetName]}"
+	# Empire of Sol
+}
+
+# Imperial Militarist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1
+			lrsk_has_any_gvp_gov = yes
+			is_militarist = yes
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{AofB{<imperial_mil> [This.Capital.GetName]}}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <imperial_mil>}}"
+	noun = "{[This.Capital.GetName]}"
+	# Empire of Earth
+}
+
+# Imperial Militarist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5
+			lrsk_has_any_gvp_gov = yes
+			is_militarist = yes
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<imperial_mil>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_mil>}}"
+	# Human Empire
+}
+
+# Imperial Militarist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			lrsk_has_any_gvp_gov = yes
+			is_militarist = yes
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<imperial_mil_desc> {[This.GetSpeciesAdj] {<imperial_mil>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_mil>}}"
+	# Great Human Empire
+}
+
+# Imperial Militarist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 2
+			lrsk_has_any_gvp_gov = yes
+			is_militarist = yes
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<imperial_mil_mid_desc> {<imperial_mil>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_mil>}}"
+	# Human Star Empire
 }
 
 ## Generic machines
