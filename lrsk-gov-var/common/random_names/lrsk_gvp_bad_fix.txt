@@ -45,10 +45,15 @@ empire_name_format = {
 		modifier = {
 			add = 5000
 			OR = {
-				has_authority = auth_hive_mind
+				AND = {
+					has_authority = auth_hive_mind
+					lrsk_has_any_gvp_gov = yes
+				}
+				has_government = "lrsk_gov_var_gov_coop_supersap"
 				has_government = "lrsk_gov_var_gov_pretender_hive"
 				has_government = "lrsk_gov_var_gov_pretender_hive_imp"
 			}
+			lrsk_has_any_gvp_gov = yes
 		}
 	}
 	format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
