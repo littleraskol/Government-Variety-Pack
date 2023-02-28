@@ -21,19 +21,10 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
-v5.3.8 (03/??/23) - More bad (less boring) names
+v5.3.8 (02/28/23) - More bad (less boring) names
 -Moved over more of the default name formats for added governments.
 -Should be able to deal with "special" governments (e.g. purifiers) appropriately.
 -Restoring "better names" from this mod is still a far off dream...
-
-v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
--Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
---Slight localization tweak.
--Colonial Fief fixes:
---Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
---Also they should have names...
--Some small backend changes.
--Fixed localization of Functionary job to show correct job effects.
 
 v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
 -Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
