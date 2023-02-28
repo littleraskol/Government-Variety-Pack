@@ -22,7 +22,8 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 5. Changes
 
 v5.3.8 (03/??/23) - More bad (less boring) names
--Moving over more of the default name formats for added governments
+-Moved over more of the default name formats for added governments.
+-Should be able to deal with "special" governments (e.g. purifiers) appropriately.
 -Restoring "better names" from this mod is still a far off dream...
 
 v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes

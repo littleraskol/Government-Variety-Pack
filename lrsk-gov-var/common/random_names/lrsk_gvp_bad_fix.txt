@@ -23,7 +23,7 @@ empire_name_parts_list = {
 # # NAME FORMATS #
 # ################
 
-# Generic machine
+# Generic machine (not even sure this will ever catch anything)
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -44,16 +44,7 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 5000
-			OR = {
-				AND = {
-					has_authority = auth_hive_mind
-					lrsk_has_any_gvp_gov = yes
-				}
-				has_government = "lrsk_gov_var_gov_coop_supersap"
-				has_government = "lrsk_gov_var_gov_pretender_hive"
-				has_government = "lrsk_gov_var_gov_pretender_hive_imp"
-			}
-			lrsk_has_any_gvp_gov = yes
+			lrsk_has_gvp_hive_gov = yes
 		}
 	}
 	format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
@@ -62,7 +53,7 @@ empire_name_format = {
 	# Human Empire
 }
 
-# Megacorporation
+# Megacorporation (not even sure this will ever catch anything)
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -70,6 +61,7 @@ empire_name_format = {
 			add = 1
 			has_authority = auth_corporate
 			lrsk_has_any_gvp_gov = yes
+			lrsk_has_gvp_special_corp_gov = no
 		}
 	}
 	format = "{[This.GetSpeciesAdj] {<oligarchic_corp>}}"
@@ -166,14 +158,7 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 50000
-			OR = {
-				has_government = "lrsk_gov_var_gov_doom_horde"
-				has_government = "lrsk_gov_var_gov_doom_horde_imp"
-				has_government = "lrsk_gov_var_gov_death_cult"
-				has_government = "lrsk_gov_var_gov_death_cult_imp"
-				has_government = "lrsk_gov_var_gov_citizen_legion"
-				has_government = "lrsk_gov_var_gov_pure_social_republic"
-			}
+			lrsk_has_gvp_purifier_gov = yes
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -197,6 +182,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -218,6 +204,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -239,6 +226,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -260,6 +248,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -281,6 +270,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -304,6 +294,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -325,6 +316,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -346,6 +338,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -367,6 +360,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -388,6 +382,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_imperial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -739,6 +734,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -760,6 +756,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -781,6 +778,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -802,6 +800,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -823,6 +822,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -846,6 +846,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -867,6 +868,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -888,6 +890,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -909,6 +912,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -930,6 +934,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1281,6 +1286,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1302,6 +1308,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1323,6 +1330,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1344,6 +1352,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1365,6 +1374,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1388,6 +1398,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1409,6 +1420,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1430,6 +1442,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1451,6 +1464,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1472,6 +1486,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_oligarchic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1823,6 +1838,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1844,6 +1860,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1865,6 +1882,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1886,6 +1904,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1907,6 +1926,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_militarist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1930,6 +1950,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1951,6 +1972,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1972,6 +1994,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -1993,6 +2016,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
@@ -2014,6 +2038,7 @@ empire_name_format = {
 			lrsk_has_any_gvp_gov = yes
 			is_spiritualist = yes
 			has_authority = auth_democratic
+			NOT = { has_civic = civic_fanatic_purifiers }
 			is_pirate = no
 			is_primitive = no
 			NOT = { is_country_type = fallen_empire }
