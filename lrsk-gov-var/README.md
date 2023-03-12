@@ -26,6 +26,7 @@ v5.4 (03/12/23) - Canis Minor (3.7) Update
 -Updated compat version number.
 -Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
 -Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
+-Improved tooltips for Combat Data special events.
 -Prep changes:
 --Descriptions and documentation corrected (forgot to restore docs when features restored).
 --Corp branch buildings have categories.
