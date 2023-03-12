@@ -25,8 +25,7 @@ v5.4 (03/12/23) - Canis Minor (3.7) Update
 -Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
 -Updated compat version number.
 -Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
--Boundless Spite gives +1 max rivalries (reduced from +2).
--Boundless Spite now gives +10% damage to rivals.
+-Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
 -Prep changes:
 --Descriptions and documentation corrected (forgot to restore docs when features restored).
 --Corp branch buildings have categories.
