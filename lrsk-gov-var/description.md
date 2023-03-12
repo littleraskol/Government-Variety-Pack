@@ -45,7 +45,6 @@ The patches and alternate versions are:
 [list]
 [*][url=http://steamcommunity.com/sharedfiles/filedetails/?id=924072507]Civics Variety Patch[/url] - Only civics (including origins), no governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029865238]Origins Variety Patch[/url] - Only origins.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1591858476]Lesser Names Patch[/url] - Removes the "Better Names" functionality from base game governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029864772]No Origins Patch[/url] - Removes all origins.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]

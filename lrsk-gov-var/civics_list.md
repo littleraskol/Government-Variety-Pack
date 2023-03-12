@@ -20,8 +20,6 @@ This is the full listing of civics with descriptions.
 [*][i]Grand Alliance (Militarist)[/i] - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
 
 [*][i]Convened by Providence (Spiritualist)[/i] - This civilization established early contact with its immediate alien neighbors. Finding each other to all be peoples of strong (though varied) faith, they made a sacred pact to seek the divine together. (Start as the leader of a Holy Covenant federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
-
-[*][i]Uplift (Any)[/i] - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
 [/list]
 
 [b]Normal Civics[/b]
