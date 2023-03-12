@@ -21,6 +21,12 @@ The field of civics mods has gotten more crowded, so I figured it would make sen
 
 5. Changes
 
+v5.3.9 (03/12/23) - Update prep
+-Changes made to re-merge with master branch and prepare for 3.7
+-Descriptions and documentation corrected (forgot to restore docs when features restored)
+-Corp branch buildings have categories
+-Removed spiritualist fed name fix (Paradox fixed)
+
 v5.3.8 (02/28/23) - More bad (less boring) names
 -Moved over more of the default name formats for added governments.
 -Should be able to deal with "special" governments (e.g. purifiers) appropriately.

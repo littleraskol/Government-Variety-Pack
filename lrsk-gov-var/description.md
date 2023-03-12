@@ -4,7 +4,7 @@ A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]70 new civics[/b], broken down into 5 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for details.
+A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for details.
 
 [i][b]New Governments[/b][/i]
 

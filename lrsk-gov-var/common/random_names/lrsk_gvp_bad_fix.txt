@@ -2392,18 +2392,3 @@ empire_name_format = {
 	prefix_format = "{[This.GetSpeciesAdj] {<generic_states>}}"
 	# Human Federated Colonies
 }
-
-### REMOVE THIS WHEN PDOX FIXES
-
-# Spiritualist Covenant
-
-federation_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 100000
-			has_federation_type = spiritualist_federation
-		}
-	}
-	format = "{<spiritualist_federation_names_1_1> {<spiritualist_federation_names_1_2>}}"
-}
