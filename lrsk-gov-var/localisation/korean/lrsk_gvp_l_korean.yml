@@ -2288,19 +2288,21 @@ l_korean:
 
  # Combat Data: New Post-Data Intel
 
+ LRSK_GVP_CD_NO_MORE_NOTICE:0 "\n\n§PYou will not get an update when this happens again.§!"
+
  lrsk_gov_var_combat_data.3.name:0 "New Military Intel"
  lrsk_gov_var_combat_data.3.desc:0 "After our battle with the §H[lrsk_cd_anttag.GetName]§!, we have extrapolated the high-level strategy of their forces from their tactical decisions, giving us new insights into their broader military operations."
  lrsk_gov_var_combat_data.3.a:0 "Incorporating new combat data."
  lrsk_gov_var_combat_data.3.a.tooltip:0 "You have gained the next level of military intel on §Y[lrsk_cd_anttag.GetName]§!, which will be fresh for 30 days."
  lrsk_gov_var_combat_data.3.b:0 "No more notifications about this."
- lrsk_gov_var_combat_data.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!"
+ lrsk_gov_var_combat_data.3.b.tooltip:0 "$lrsk_gov_var_combat_data.3.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  lrsk_gov_var_combat_data.4.name:0 "Military Intel Refreshed"
  lrsk_gov_var_combat_data.4.desc:0 "Our encounter with the §H[lrsk_cd_anttag.GetName]§! fleet has corroborated some of our previous information about their combat capabilities while forcing revisions elsewhere. In any case, we can maintain our current level of understanding of their military operations."
  lrsk_gov_var_combat_data.4.a:0 "Confirmed."
  lrsk_gov_var_combat_data.4.a.tooltip:0 "You maintained your current level of military intel on §Y[lrsk_cd_anttag.GetName]§! for another 30 days."
  lrsk_gov_var_combat_data.4.b:0 "$lrsk_gov_var_combat_data.3.b$"
- lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.3.b.tooltip$"
+ lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.4.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
