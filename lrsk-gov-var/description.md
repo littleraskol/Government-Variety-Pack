@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Known Issue:[/b] A base game bug prevents Holy Covenants from having names. I have implemented a partial fix that should work 99.9% of the time.
+[i]This is a backup/legacy version for Stellaris v.3.6.* (Orion).[/i] The current version can be found here: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2806903835]Government Variety Pack (Current)[/url]
 
 [i][b]New Civics[/b][/i]
 
