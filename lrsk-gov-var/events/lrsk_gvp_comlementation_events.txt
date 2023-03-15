@@ -17,6 +17,155 @@ country_event = {
 	immediate = {
 		# Add the "Unity of Purpose" tech
 		give_technology = { message = no tech = tech_unity_of_purpose }
+
+		# Spawn remnants
+		country_event = { id = lrsk_gvp_complementation.2 }
+	}
+}
+
+# Spawn remnants
+country_event = {
+	id = lrsk_gvp_complementation.2
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gvp_origin_complementation_project
+	}
+
+	immediate = {
+		# Mark every unowned, empty system that root has not surveyed at least 10 jumps away with a planet root can settle.
+		every_system = {
+			limit = {
+				distance_to_empire = {
+					who = root
+					distance > 9
+				}
+				lrsk_system_vacant = yes
+				root = {
+					owner_main_species = {
+						prevprev = {
+							any_system_planet = {
+								is_surveyed = {
+									who = root
+									status = no
+								}
+								habitability = {
+									who = prevprev
+									value >= 0.5
+								}
+							}
+						}
+					}
+				}
+			}
+			star = { set_timed_planet_flag = {
+				flag = lrsk_compl_possible_refuge_system
+				days = 2
+			} }
+			every_system_planet = {
+				limit = {
+					root = {
+						owner_main_species = {
+							prevprev = {
+								habitability = {
+									who = prev
+									value >= 0.5
+								}
+							}
+						}
+					}
+				}
+				set_timed_planet_flag = {
+					flag = lrsk_compl_possible_refuge_world
+					days = 2
+				}
+				root = { set_country_flag = lrsk_compl_found_a_refuge_planet }				
+			}
+		}
+
+		# Final sanity check: if we somehow don't have any possible refuge planets, don't continue.
+		if = { limit = { has_country_flag = lrsk_compl_found_a_refuge_planet }
+			lrsk_clear_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet }
+			
+			# Find the destination planet
+			closest_system = {
+				limit = {
+					star = { has_planet_flag = lrsk_compl_possible_refuge_system }
+				}
+				save_event_target_as = lrsk_compl_refuge_star
+				
+				random_system_planet = {
+					limit = {
+						has_planet_flag = lrsk_colfief_possible_dest_world
+					}
+					save_event_target_as = lrsk_compl_refuge_world
+				}
+			}
+			
+			# Create the remnant empire
+			create_country = {
+				name = random
+				name_list = random
+				species = event_target:lrsk_compl_remnant_species
+				type = default
+				origin = lrsk_gvp_origin_complementation_remnants
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos = random
+				authority = random
+				civics = random
+				effect = {
+					save_event_target_as = lrsk_compl_remnant_empire
+				}
+			}
+
+			event_target:lrsk_compl_refuge_world = {
+				create_colony = {
+					owner = event_target:lrsk_compl_remnant_empire
+				}
+
+				add_building = building_colony_shelter
+
+				solar_system = {
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_compl_remnant_empire
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
+						}
+					}
+				}
+			}
+			
+			event_target:lrsk_compl_remnant_empire = {
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 }
+				set_name = random # Fixes some naming issues
+				set_relation_flag = {
+					who = root
+					flag = lrsk_compl_fled_assimilation_from
+				}
+				set_country_flag = lrsk_compl_fled_from@root
+
+				#Resource boosts to make them a contender
+				add_resource = {
+					unity = 500
+					food = 500
+					minerals = 500
+					energy = 500
+				}
+			}
+		}
+		else = {
+			log_error = "Tried making complementation remnants for [root.GetName], could not find planet to host them."
+		}
 	}
 }
 
