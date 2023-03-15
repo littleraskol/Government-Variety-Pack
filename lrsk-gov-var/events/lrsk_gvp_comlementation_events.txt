@@ -35,22 +35,20 @@ country_event = {
 	}
 
 	immediate = {
-		# Mark every unowned, empty system that root has not surveyed at least 10 jumps away with a planet root can settle.
+		# Mark every unowned, empty system at least 10 jumps away (not in a starting cluster) with a planet root can settle.
 		every_system = {
 			limit = {
 				distance_to_empire = {
 					who = root
 					distance > 9
 				}
-				lrsk_system_vacant = yes
+				lrsk_safe_to_colonize_system = yes
+				NOT = { has_star_flag = empire_cluster }
 				root = {
 					owner_main_species = {
 						prevprev = {
 							any_system_planet = {
-								is_surveyed = {
-									who = root
-									status = no
-								}
+								lrsk_safe_to_colonize_planet = yes
 								habitability = {
 									who = prevprev
 									value >= 0.5
@@ -66,6 +64,7 @@ country_event = {
 			} }
 			every_system_planet = {
 				limit = {
+					lrsk_safe_to_colonize_planet = yes
 					root = {
 						owner_main_species = {
 							prevprev = {
@@ -81,7 +80,11 @@ country_event = {
 					flag = lrsk_compl_possible_refuge_world
 					days = 2
 				}
-				root = { set_country_flag = lrsk_compl_found_a_refuge_planet }				
+				root = { 
+					IF = { limit = { NOT = { has_country_flag = lrsk_compl_found_a_refuge_planet } }
+						set_country_flag = lrsk_compl_found_a_refuge_planet
+					}
+				}		
 			}
 		}
 
@@ -89,18 +92,28 @@ country_event = {
 		if = { limit = { has_country_flag = lrsk_compl_found_a_refuge_planet }
 			lrsk_clear_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet }
 			
-			# Find the destination planet
+			# Pick the destination planet
 			closest_system = {
-				limit = {
-					star = { has_planet_flag = lrsk_compl_possible_refuge_system }
-				}
+				limit = { star = { has_planet_flag = lrsk_compl_possible_refuge_system } }
 				save_event_target_as = lrsk_compl_refuge_star
 				
 				random_system_planet = {
-					limit = {
-						has_planet_flag = lrsk_colfief_possible_dest_world
-					}
+					limit = { has_planet_flag = lrsk_colfief_possible_dest_world }
 					save_event_target_as = lrsk_compl_refuge_world
+				}
+			}
+
+			# Derive "original" (non-hive) species from main species
+			owner_main_species = {
+				modify_species = {
+					species = this
+					remove_trait = trait_hive_mind
+					change_scoped_species = no
+
+					effect = {
+						set_species_flag = lrsk_singleton_original_species_of@root.owner
+						save_event_target_as = lrsk_compl_remnant_species
+					}
 				}
 			}
 			
@@ -140,6 +153,14 @@ country_event = {
 								module = trading_hub
 							}
 						}
+					}
+				}
+
+				# Create 3 pops... not many because they're struggling remnants
+				while = { count = 3					
+					create_pop = {
+						species = event_target:lrsk_compl_remnant_species
+						ethos = event_target:lrsk_compl_remnant_empire
 					}
 				}
 			}
