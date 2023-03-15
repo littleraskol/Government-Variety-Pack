@@ -207,9 +207,17 @@ lrsk_has_gvp_frev_gov = {
 	}
 }
 
-lrsk_has_gvp_gestalt_gov = {
+lrsk_has_gvp_hive_gov = {
 	OR = {
 		has_government = lrsk_gov_var_gov_coop_supersap
+		has_government = lrsk_gov_var_gov_pretender_hive
+		has_government = lrsk_gov_var_gov_pretender_hive_imp
+	}
+}
+
+lrsk_has_gvp_gestalt_gov = {
+	OR = {
+		lrsk_has_gvp_hive_gov = yes
 	}
 }
 
@@ -217,6 +225,11 @@ lrsk_has_gvp_other_gov = {
 	OR = {
 		has_government = lrsk_gov_var_gov_pretender_hive
 		has_government = lrsk_gov_var_gov_pretender_hive_imp
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_imp
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_dic
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_oli
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_dem
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_cmp
 	}
 }
 
@@ -282,6 +295,27 @@ lrsk_has_gvp_namazou_gov = {
 		has_government = lrsk_gov_var_gov_crime_family
 		has_government = lrsk_gov_var_gov_rogue_freehold
 		has_government = lrsk_gov_var_gov_corporate_banditry
+	}
+}
+
+lrsk_has_gvp_purifier_gov = {
+	OR = {
+		has_government = lrsk_gov_var_gov_doom_horde
+		has_government = lrsk_gov_var_gov_doom_horde_imp
+		has_government = lrsk_gov_var_gov_death_cult
+		has_government = lrsk_gov_var_gov_death_cult_imp
+		has_government = lrsk_gov_var_gov_citizen_legion
+		has_government = lrsk_gov_var_gov_pure_social_republic
+	}
+}
+
+lrsk_has_gvp_special_corp_gov = {
+	OR = {
+		has_government = lrsk_gov_var_gov_crusading_company
+		has_government = lrsk_gov_var_gov_evangelical_franchise
+		has_government = lrsk_gov_var_gov_coop_enterprise
+		has_government = lrsk_gov_var_gov_market_socialism
+		has_government = lrsk_gov_var_gov_occult_franchise
 	}
 }
 
@@ -572,6 +606,7 @@ lrsk_has_gvp_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways
 		has_origin = lrsk_gov_var_origin_tradeways_mc
 		has_origin = lrsk_gov_var_origin_grand_alliance
+		has_origin = lrsk_gvp_origin_convened_providence
 		has_origin = lrsk_gov_var_origin_uplift
 		#has_origin = lrsk_gov_var_origin_sublight_empire
 		#has_origin = lrsk_gov_var_origin_sublight_commonwealth
@@ -585,6 +620,7 @@ lrsk_has_gvp_npc_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways_npc
 		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
 		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+		has_origin = lrsk_gvp_origin_convened_providence_npc
 		#has_origin = lrsk_gov_var_origin_sublight_colony_loy
 		#has_origin = lrsk_gov_var_origin_sublight_colony_gsp
 		#has_origin = lrsk_gov_var_origin_sublight_colony_dis

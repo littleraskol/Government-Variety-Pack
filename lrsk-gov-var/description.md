@@ -1,10 +1,8 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Known Issue:[/b] A base game bug prevents Holy Covenants from having names. I have implemented a partial fix that should work 99.9% of the time.
-
 [i][b]New Civics[/b][/i]
 
-A total of [b]70 new civics[/b], broken down into 5 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for details.
+A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for details.
 
 [i][b]New Governments[/b][/i]
 
@@ -45,7 +43,6 @@ The patches and alternate versions are:
 [list]
 [*][url=http://steamcommunity.com/sharedfiles/filedetails/?id=924072507]Civics Variety Patch[/url] - Only civics (including origins), no governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029865238]Origins Variety Patch[/url] - Only origins.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1591858476]Lesser Names Patch[/url] - Removes the "Better Names" functionality from base game governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029864772]No Origins Patch[/url] - Removes all origins.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]

@@ -9,7 +9,17 @@ This is the full listing of civics with descriptions.
 
 [*][i]Uplift (Any)[/i] - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as a protectorate of an advanced empire. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
 
+[*][i]For Discovery (Materialist)[/i] - This civilization established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
 [*][i]Diplomatic Directive: Discover (Machine Intelligence)[/i] - This machine intelligence established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with the Universal Compatibility tradition unlocked.)
+
+[*][i]Tradeways (Merchant Guilds)[/i] - This civilization established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Start as the leader of a Trade League federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
+[*][i]Tradeways, Inc. (Megacorporation)[/i] - This global megacorporation established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Same as Tradeways.)
+
+[*][i]Grand Alliance (Militarist)[/i] - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
+
+[*][i]Convened by Providence (Spiritualist)[/i] - This civilization established early contact with its immediate alien neighbors. Finding each other to all be peoples of strong (though varied) faith, they made a sacred pact to seek the divine together. (Start as the leader of a Holy Covenant federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
 [/list]
 
 [b]Normal Civics[/b]
@@ -23,7 +33,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Utilitarian Planning (Not Spiritualist)[/i] - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
 
-[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -20% defense platform cost, +1 Encryption)
+[*][i]Siege Mentality (Not Militarist or Xenophile)[/i] - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, +10% home territory fire rate, +25% defense army morale, +1 Encryption)
 
 [*][i]Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist)[/i] - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 
@@ -31,7 +41,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism)[/i] - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
 
-[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +30% army morale damage, +25% power projection)
+[*][i]Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers)[/i] - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +10% damage to rivals, +25% power projection)
 
 [*][i]Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism)[/i] - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
 
@@ -49,7 +59,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Public Works (Any)[/i] - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
 
-[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - [DEPRECATED] This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals) [Removed due to seeming bug in base game agreement resource terms causing its feature to break subject taxes generally.]
+[*][i]Imperial Economy (Dictatorial/Imperial, not Xenophile)[/i] - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals) 
 
 [*][i]Colonial Fiefs (Imperial, not Militarist)[/i] - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
 
@@ -71,7 +81,7 @@ This is the full listing of civics with descriptions.
 
 [*][i]Reclamation Pools (Hive Mind)[/i] - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
 
-[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +50% purge speed, +25% power projection)
+[*][i]Boundless Spite (Hive Mind)[/i] - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+1 maximum rivalvries, +10% damage to rivals, +20% army morale damage, +50% purge speed, +25% power projection)
 
 [*][i]Void Affinity (Hive Mind)[/i] - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
 

@@ -35,7 +35,7 @@ l_polish:
  civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Able to use the §H$decision_lrsk_gvp_work_allocation_plan$§! planetary decision on planets with unemployment, which gives $lrsk_gvp_statmod_work_plan_effects_common$ (can be ended any time, will automatically end when no pops are unemployed for one month).\n\n"
 
  lrsk_gov_var_civic_siege_mentality:0 "Siege Mentality"
- lrsk_gov_var_civic_siege_mentality_desc:0 "The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
+ lrsk_gov_var_civic_siege_mentality_desc:0 "The government's military policy focuses on defense, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
 
  lrsk_gov_var_civic_cult_of_personality:0 "Cult of Personality"
  lrsk_gov_var_civic_cult_of_personality_desc:0 "The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence."
@@ -1298,7 +1298,7 @@ l_polish:
  LRSK_GOV_VAR_RT_COL_GOVERNOR:0 "Colonial Governor"
 
  lrsk_gov_var_gov_colonial_viceroyalty_cmp:0 "Viceroyal Company"
- lrsk_gov_var_gov_colonial_viceroyalty_cmp_desc:0 "This government is a commercial venture which officially has a fiduciary duty to enrich the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+ lrsk_gov_var_gov_colonial_viceroyalty_cmp_desc:0 "This government started as a commercial venture with a fiduciary duty to enrich the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
 
  LRSK_GOV_VAR_RT_COL_EXEC:0 "Colonial Executive Officer"
 
@@ -1791,7 +1791,7 @@ l_polish:
  job_lrsk_gov_var_job_functionary:0 "Functionary"
  job_lrsk_gov_var_job_functionary_plural:0 "Functionaries"
  job_lrsk_gov_var_job_functionary_desc:0 "Sure, the hours are long, the paperwork is tedious, and you're paying for the privilege, but think of how great this will look on your resume!"
- job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ reduce £mod_empire_size_mult£ §YEmpire Size penalties§! and produce £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ produce £unity£ §Y$unity$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
  mod_job_lrsk_gov_var_job_functionary_add:0 "$job_lrsk_gov_var_job_functionary$ Jobs"
  mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_functionary_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_functionary_add£ per $VALUE$ £pop£"
@@ -2288,19 +2288,21 @@ l_polish:
 
  # Combat Data: New Post-Data Intel
 
+ LRSK_GVP_CD_NO_MORE_NOTICE:0 "\n\n§PYou will not get an update when this happens again.§!"
+
  lrsk_gov_var_combat_data.3.name:0 "New Military Intel"
  lrsk_gov_var_combat_data.3.desc:0 "After our battle with the §H[lrsk_cd_anttag.GetName]§!, we have extrapolated the high-level strategy of their forces from their tactical decisions, giving us new insights into their broader military operations."
  lrsk_gov_var_combat_data.3.a:0 "Incorporating new combat data."
  lrsk_gov_var_combat_data.3.a.tooltip:0 "You have gained the next level of military intel on §Y[lrsk_cd_anttag.GetName]§!, which will be fresh for 30 days."
  lrsk_gov_var_combat_data.3.b:0 "No more notifications about this."
- lrsk_gov_var_combat_data.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!"
+ lrsk_gov_var_combat_data.3.b.tooltip:0 "$lrsk_gov_var_combat_data.3.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  lrsk_gov_var_combat_data.4.name:0 "Military Intel Refreshed"
  lrsk_gov_var_combat_data.4.desc:0 "Our encounter with the §H[lrsk_cd_anttag.GetName]§! fleet has corroborated some of our previous information about their combat capabilities while forcing revisions elsewhere. In any case, we can maintain our current level of understanding of their military operations."
  lrsk_gov_var_combat_data.4.a:0 "Confirmed."
  lrsk_gov_var_combat_data.4.a.tooltip:0 "You maintained your current level of military intel on §Y[lrsk_cd_anttag.GetName]§! for another 30 days."
  lrsk_gov_var_combat_data.4.b:0 "$lrsk_gov_var_combat_data.3.b$"
- lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.3.b.tooltip$"
+ lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.4.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"

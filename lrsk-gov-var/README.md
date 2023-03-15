@@ -3,7 +3,7 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-A total of 69 new civics, broken down into 4 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
+A total of 75 new civics, broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
 
 2. New Governments
 
@@ -17,7 +17,7 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
-The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
+This mod only adds new things to the game, in new files. There's no possibility of this mod conflicting with another due to both editing base game files. All file names and tokens, furthermore, are specific to this mod (using a special prefix) so any token or file conflict would more or less have to be intentional (e.g. a patch or submod). That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), not all mod features can be guaranteed to be coherent.
 
 5. Changes
 
@@ -29,7 +29,43 @@ v5.x (??/??/??) - New Origin: Complementation Project
 --Somewhere in the galaxy are the remnants of your singleton precursor civilization, and they hate you!
 --Imagine if SEELE from Neon Genesis Evangelion won and turned into a Stellaris hive mind and you about have the idea here...
 
-v5.3.4 (12/09/22) - Orion Post-Release Update 2
+v5.4 (03/14/23) - Canis Minor (3.7) Update
+-Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
+-Updated compat version number.
+-Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
+-Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
+-Improved tooltips for Combat Data special events.
+
+v5.3.9 (03/12/23) - Update prep
+-Changes made to re-merge with master branch and prepare for 3.7
+-Descriptions and documentation corrected (forgot to restore docs when features restored)
+-Corp branch buildings have categories
+-Removed spiritualist fed name fix (Paradox fixed)
+
+v5.3.8 (02/28/23) - More bad (less boring) names
+-Moved over more of the default name formats for added governments.
+-Should be able to deal with "special" governments (e.g. purifiers) appropriately.
+-Restoring "better names" from this mod is still a far off dream...
+
+v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
+-Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
+--Slight localization tweak.
+-Colonial Fief fixes:
+--Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
+--Also they should have names...
+-Some small backend changes.
+-Fixed localization of Functionary job to show correct job effects.
+
+v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
+-Removed redundant boxed-in escape route checks
+-Colonial Fief spawned vassals were not copying techs from overlord.
+-Small localization update.
+
+v5.3.5 (12/12/22) - Little Things
+-Forgot to add new origins to scripted triggers
+-Wrong effects for NPC Convened by Providence
+
+v5.3.4 (12/10/22) - Orion Post-Release Update 2
 -Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
 -Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
 -Cleaned up new federation start code.
