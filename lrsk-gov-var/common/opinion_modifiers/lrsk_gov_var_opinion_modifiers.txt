@@ -608,3 +608,27 @@ opinion_lrsk_gvp_haughty_bigots = {
 	
 	accumulative = yes
 }
+
+# Opinion of complementation remnants of the hive their people became
+triggered_opinion_lrsk_gvp_compl_remnants = {
+	trigger = {		
+		has_relation_flag = {
+			who = from
+			flag = lrsk_compl_fled_assimilation_from
+		}
+	}
+	opinion = {
+		base = -1000
+	}
+}
+
+# Opinion of singleton empires to complementation hive
+triggered_opinion_lrsk_gvp_compl_personability = {
+	trigger = {
+		is_gestalt = no
+		from = { has_origin = lrsk_gvp_origin_complementation_project }
+	}
+	opinion = {
+		base = 15
+	}
+}
