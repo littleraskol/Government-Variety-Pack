@@ -618,17 +618,23 @@ triggered_opinion_lrsk_gvp_compl_remnants = {
 		}
 	}
 	opinion = {
-		base = -1000
+		base = -200
 	}
 }
 
 # Opinion of singleton empires to complementation hive
 triggered_opinion_lrsk_gvp_compl_personability = {
 	trigger = {
+		is_country_type = default
 		is_gestalt = no
 		from = { has_origin = lrsk_gvp_origin_complementation_project }
 	}
 	opinion = {
-		base = 15
+		base = 20		
+		# Balance with Empath trait so it merely wipes out the hive penalty
+		modifier = {
+			subtract = 10
+			has_valid_civic = civic_hive_empath
+		}
 	}
 }
