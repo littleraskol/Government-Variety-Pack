@@ -22,7 +22,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v? (?/?/?) - Backend Cleanup and Inter-Compatibility
--??
+-Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
+--Removed variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial or Aristocratic Elite, removing duplicates).
+--Removed variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democracy or Egalitarian, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
+--The replaced civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
 
 v5.4 (03/14/23) - Canis Minor (3.7) Update
 -Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
