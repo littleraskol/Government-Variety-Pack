@@ -26,6 +26,8 @@ v? (?/?/?) - Backend Cleanup and Inter-Compatibility
 --Removed variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial or Aristocratic Elite, removing duplicates).
 --Removed variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democracy or Egalitarian, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
 --The replaced civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
+-Added scripted triggers to check for each authority type, which enables other mods or patches to overload them with mod-added authorities.
+-Government application logic now uses these scripted triggers rather than checking directly for authorities.
 
 v5.4 (03/14/23) - Canis Minor (3.7) Update
 -Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)

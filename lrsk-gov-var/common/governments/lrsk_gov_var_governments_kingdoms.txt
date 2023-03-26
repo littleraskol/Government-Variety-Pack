@@ -13,7 +13,7 @@ lrsk_gov_var_gov_noble_empire = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_feudal_realm
 		OR = {
 			has_valid_civic = civic_aristocratic_elite
@@ -38,7 +38,7 @@ lrsk_gov_var_gov_absolute_monarchy = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
 		NOR = {
 			has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
@@ -61,7 +61,7 @@ lrsk_gov_var_gov_libertine_empire = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		OR = {
 			has_valid_civic = civic_police_state
@@ -85,7 +85,7 @@ lrsk_gov_var_gov_empire_of_rapine = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_valid_civic = civic_barbaric_despoilers
 	}
@@ -106,7 +106,7 @@ lrsk_gov_var_gov_empire_of_rapine = {
 #	dynastic_last_names = yes
 #
 #	possible = {
-#		has_authority = auth_imperial
+#		has_auth_imperial = yes
 #		has_valid_civic = civic_imperial_cult
 #		has_valid_civic = civic_philosopher_king
 #	}

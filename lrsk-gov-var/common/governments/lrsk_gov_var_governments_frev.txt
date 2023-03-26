@@ -15,7 +15,7 @@ lrsk_gov_var_gov_solar_monarchy = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_royal_absolutism
 		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
 		NOR = {
@@ -42,7 +42,7 @@ lrsk_gov_var_gov_constitutional_monarchy = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		NOR = {
 			has_valid_civic = lrsk_gov_var_civic_royal_absolutism
@@ -161,7 +161,7 @@ lrsk_gov_var_gov_republican_directory = {
 	ruler_title = LRSK_GOV_VAR_RT_PRES_COUNC
 
 	possible = {
-		has_authority = auth_oligarchic
+		has_auth_oligarchic = yes
 		has_valid_civic = civic_nationalistic_zeal
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_ethic = ethic_egalitarian
@@ -200,7 +200,7 @@ lrsk_gov_var_gov_republican_protectorate = {
 	ruler_title = LRSK_GOV_VAR_RT_FIRST_CONSUL
 
 	possible = {
-		has_authority = auth_dictatorial
+		has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		OR = {
 			has_valid_civic = civic_nationalistic_zeal
@@ -247,7 +247,7 @@ lrsk_gov_var_gov_revolutionary_empire = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		OR = {
 			has_valid_civic = civic_police_state
