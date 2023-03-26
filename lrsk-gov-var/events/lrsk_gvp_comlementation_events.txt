@@ -35,12 +35,12 @@ country_event = {
 	}
 
 	immediate = {
-		# Mark every unowned, empty system at least 10 jumps away (not in a starting cluster) with a planet root can settle.
+		# Mark every unowned, empty system at least 5 jumps away (not in a starting cluster) with a planet root can settle.
 		every_system = {
 			limit = {
 				distance_to_empire = {
 					who = root
-					distance > 9
+					distance > 4
 				}
 				lrsk_safe_to_colonize_system = yes
 				NOT = { has_star_flag = empire_cluster }
@@ -80,17 +80,13 @@ country_event = {
 					flag = lrsk_compl_possible_refuge_world
 					days = 2
 				}
-				root = { 
-					IF = { limit = { NOT = { has_country_flag = lrsk_compl_found_a_refuge_planet } }
-						set_country_flag = lrsk_compl_found_a_refuge_planet
-					}
-				}		
+				root = { lrsk_add_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet } }		
 			}
 		}
 
 		# Final sanity check: if we somehow don't have any possible refuge planets, don't continue.
 		if = { limit = { has_country_flag = lrsk_compl_found_a_refuge_planet }
-			lrsk_clear_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet }
+			remove_country_flag =  lrsk_compl_found_a_refuge_planet
 			
 			# Pick the destination planet
 			closest_system = {
@@ -98,7 +94,7 @@ country_event = {
 				save_event_target_as = lrsk_compl_refuge_star
 				
 				random_system_planet = {
-					limit = { has_planet_flag = lrsk_colfief_possible_dest_world }
+					limit = { has_planet_flag = lrsk_compl_possible_refuge_world }
 					save_event_target_as = lrsk_compl_refuge_world
 				}
 			}
@@ -111,7 +107,7 @@ country_event = {
 					change_scoped_species = no
 
 					effect = {
-						set_species_flag = lrsk_singleton_original_species_of@root.owner
+						set_species_flag = lrsk_singleton_original_species_of@root
 						save_event_target_as = lrsk_compl_remnant_species
 					}
 				}
