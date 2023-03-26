@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v? (?/?/?) - Backend Cleanup and Inter-Compatibility
+-??
+
 v5.4 (03/14/23) - Canis Minor (3.7) Update
 -Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
 -Updated compat version number.
