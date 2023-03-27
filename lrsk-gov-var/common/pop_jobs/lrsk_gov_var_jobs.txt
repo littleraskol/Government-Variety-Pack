@@ -1411,3 +1411,109 @@ lrsk_gov_var_job_regional_coordinator = {
 		}
 	}
 }
+
+## Assimilation Jobs
+
+# Complementation Subject
+lrsk_gvp_job_complementing = {
+	category = assimilation
+	is_capped_by_modifier = no
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		is_sapient = yes
+	}
+
+	ignores_sapience = yes
+
+	possible = {
+		OR = {
+			has_citizenship_type = { type = citizenship_lrsk_complementation }
+			AND = {
+				has_citizenship_type = { type = citizenship_assimilation }
+				owner = { has_origin = lrsk_gvp_origin_complementation_project }
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 1
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_phototrophic_energy_upkeep = yes
+			}
+			energy = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				has_food_upkeep = yes
+				is_phototrophic = no
+			}
+			food = @living_standard_food_normal
+		}
+		upkeep = {
+			trigger = {
+				has_food_upkeep = yes
+				is_phototrophic = yes
+			}
+			food = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				has_mineral_upkeep = yes
+				is_phototrophic = no
+			}
+			minerals = @living_standard_food_normal
+		}
+		upkeep = {
+			trigger = {
+				has_mineral_upkeep = yes
+				is_phototrophic = yes
+			}
+			minerals = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				is_robotic_or_voidspawn_species = yes
+			}
+			energy = @living_standard_energy_normal
+		}
+	}
+
+	weight = {
+		weight = @special_job_weight
+
+		modifier = {
+			factor = 2000 # brings @special_job_weight up to 20 (need to beat the basic assimilation job...)
+			OR = {
+				has_citizenship_type = { type = citizenship_lrsk_complementation }
+				AND = {
+					has_citizenship_type = { type = citizenship_assimilation }
+					owner = { has_origin = lrsk_gvp_origin_complementation_project }
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0
+			NOR = {
+				has_citizenship_type = { type = citizenship_lrsk_complementation }
+				AND = {
+					has_citizenship_type = { type = citizenship_assimilation }
+					owner = { has_origin = lrsk_gvp_origin_complementation_project }
+				}
+			}
+		}
+	}
+}
