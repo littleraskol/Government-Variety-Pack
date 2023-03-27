@@ -1470,3 +1470,37 @@ event = {
 		}
 	}
 }
+
+# Diagnostic: Remove/replace deprecated civics (removes duplicates/redundancy)
+# Remove/deactivate after next save-breaking Stellaris update
+event = {
+	id = lrsk_government_variety_pack_backend.2004
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = { OR = {
+			has_civic = lrsk_gov_var_civic_republicanism_oli
+			has_civic = lrsk_gov_var_civic_chivalry_aristo
+		} }
+	}
+
+	immediate = {
+		every_country = {
+			limit = { OR = {
+				has_civic = lrsk_gov_var_civic_republicanism_oli
+				has_civic = lrsk_gov_var_civic_chivalry_aristo
+			} }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_republicanism_oli }
+				force_remove_civic = lrsk_gov_var_civic_republicanism_oli
+				force_add_civic = lrsk_gov_var_civic_republicanism
+			}
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_chivalry_aristo }
+				force_remove_civic = lrsk_gov_var_civic_chivalry_aristo
+				force_add_civic = lrsk_gov_var_civic_chivalry
+			}
+		}
+	}
+}

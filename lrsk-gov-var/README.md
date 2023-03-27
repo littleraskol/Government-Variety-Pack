@@ -29,6 +29,15 @@ v5.x (??/??/??) - New Origin: Complementation Project
 --Somewhere in the galaxy are the remnants of your singleton precursor civilization, and they hate you!
 --Imagine if SEELE from Neon Genesis Evangelion won and turned into a Stellaris hive mind and you about have the idea here...
 
+v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
+-Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
+--Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).
+--Deprecated duplicate variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democratic authority or Egalitarian ethics, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
+--The deprecated civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
+-Added scripted triggers to check for each authority type, which enables other mods or patches to overload them with mod-added authorities.
+-Government application logic now uses these scripted triggers rather than checking directly for authorities.
+-Added scripted trigger (lrsk_gvp_is_active) to detect whether this mod is active/loaded (for other modders to check, basically...)
+
 v5.4 (03/14/23) - Canis Minor (3.7) Update
 -Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
 -Updated compat version number.
