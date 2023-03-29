@@ -18,6 +18,19 @@ country_event = {
 		# Add the "Unity of Purpose" tech
 		give_technology = { message = no tech = tech_unity_of_purpose }
 
+		# Place "Complementation Nexus Ruins" deposit
+		capital_scope ={
+			set_planet_flag = lrsk_gvp_complementation_capital
+
+			add_deposit = d_lrsk_gvp_compl_project_ruins
+		}
+
+		# Semi-immediate check that some other mod did not remove the deposit
+		country_event = {
+			id = lrsk_government_variety_pack_backend.2
+			days = 2
+		}
+
 		# Spawn remnants
 		country_event = { id = lrsk_gvp_complementation.2 }
 	}

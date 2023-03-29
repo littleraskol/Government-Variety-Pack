@@ -207,6 +207,10 @@ country_event = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
 			}
+			AND = {
+				has_origin = lrsk_gvp_origin_complementation_project
+				NOT = { has_country_flag = lrsk_gvp_complementation_lost_compl_project_ruins }
+			}
 			# Add other checks as needed...
 		}
 	}
@@ -220,6 +224,12 @@ country_event = {
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
 						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				# Restore Complementation Nexus Ruins if removed
+				lrsk_gvp_complementation_capital = {
+					IF = { limit = { NOT = { has_deposit = d_lrsk_gvp_compl_project_ruins } }
+						add_deposit = d_lrsk_gvp_compl_project_ruins
 					}
 				}
 				# Add other planet flags as needed...

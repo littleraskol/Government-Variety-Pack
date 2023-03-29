@@ -33,3 +33,21 @@ d_lrsk_gov_var_shroud_pockets = {
 		weight = 0
 	}
 }
+
+d_lrsk_gvp_compl_project_ruins = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	should_swap_deposit_on_terraforming = no
+	
+	#category = deposit_cat_energy
+	
+	planet_modifier = { 
+		country_unity_produces_mult 0.05
+		planet_researchers_produces_mult = 0.05
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
