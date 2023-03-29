@@ -31,6 +31,20 @@ country_event = {
 			days = 2
 		}
 
+		# Derive "original" (non-hive) species from main species (used in several places)
+		owner_main_species = {
+			modify_species = {
+				species = this
+				remove_trait = trait_hive_mind
+				change_scoped_species = no
+
+				effect = {
+					set_species_flag = lrsk_singleton_original_species_of@root
+					save_event_target_as = lrsk_compl_remnant_species
+				}
+			}
+		}
+
 		# Spawn remnants
 		country_event = { id = lrsk_gvp_complementation.2 }
 	}
@@ -109,20 +123,6 @@ country_event = {
 				random_system_planet = {
 					limit = { has_planet_flag = lrsk_compl_possible_refuge_world }
 					save_event_target_as = lrsk_compl_refuge_world
-				}
-			}
-
-			# Derive "original" (non-hive) species from main species
-			owner_main_species = {
-				modify_species = {
-					species = this
-					remove_trait = trait_hive_mind
-					change_scoped_species = no
-
-					effect = {
-						set_species_flag = lrsk_singleton_original_species_of@root
-						save_event_target_as = lrsk_compl_remnant_species
-					}
 				}
 			}
 			
