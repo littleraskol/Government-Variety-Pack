@@ -23,11 +23,14 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 
 This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files, and will only conflict with other mods if for some reason another mod has files with the exact same names in the same places as this in mod. However, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best. There's also no guarantee that combinations of mod-added features will "play nice" or be balanced against/with each other in game.
 
-Compaitibility patches exist for a few mods. Some are maintained by me, and some by the other mod's author. They are:
+Compatibility patches:
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2111525145]Ethics & Civics Overhaul/Government Variety Pack Patch[/url] for the Ethics and Civics [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Classic[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1790861374]Alternative[/url] mods. It will likely work on any fork of these mods as well. (Maintained by me.)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2805620150]Bug Branch/GVP Compatibility Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url] mod (maintained by [url=https://steamcommunity.com/id/AmberAmbitions]AmberAmbitions[/url]).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461985481]More Authorities - GVP Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2158334880]More Authorities mod[/url]. (Maintained by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url], author of More Authorities.)
+[/list]
+
+Mods that have built-in compatibility:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581&searchtext=ethics]Ethics and Civics Alternative - FunEFork[/url] by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url].
 [/list]
 
 For non-English language translations:
@@ -47,14 +50,15 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]
 
-There are also "backup" versions of this mod for older versions of Stellaris:
+There are also "backup" versions of this mod for older versions of Stellaris. [b]NOTE: These are all stand-alone backup versions, do not run any of them with each other or the current version![/b]
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert. [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus). [b]NOTE: This is a stand-alone backup version, do not run it with the current version![/b]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2946882585]Backup for 3.6 (Orion)[/url] - Older version of the mod for 3.6 (Orion). 
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
