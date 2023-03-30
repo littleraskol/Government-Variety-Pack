@@ -43,11 +43,62 @@ d_lrsk_gvp_compl_project_ruins = {
 	#category = deposit_cat_energy
 	
 	planet_modifier = { 
-		country_unity_produces_mult 0.05
+		planet_jobs_unity_produces_mult = 0.05
 		planet_researchers_produces_mult = 0.05
 	}
 	
 	drop_weight = {
 		weight = 0
+	}
+}
+
+d_lrsk_gvp_compl_singleton_hideout = {
+	icon = d_slums
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+		planet_crime_no_happiness_mult = 0.1
+	}
+
+	on_cleared = {
+		hidden_effect = {
+			create_pop = {
+				species = event_target:lrsk_compl_remnant_species
+			}
+			random_list = {
+				2 = {
+					set_timed_planet_flag = { flag = lrsk_gvp_compl_no_remnant_damage days = 7 }
+				}
+				3 = {
+					add_planet_devastation = 5
+					set_timed_planet_flag = { flag = lrsk_gvp_compl_light_remnant_damage days = 7 }
+				}
+				2 = {
+					add_planet_devastation = 10
+					set_timed_planet_flag = { flag = lrsk_gvp_compl_medium_remnant_damage days = 7 }
+				}
+				1 = {
+					add_planet_devastation = 15
+					set_timed_planet_flag = { flag = lrsk_gvp_compl_heavy_remnant_damage days = 7 }
+				}
+			}
+			# some event should run the first time to tell the player what's up
+		}
+		custom_tooltip = d_decrepit_dwellings_custom_tooltip
+	}
+	
+	inline_script = deposits/ai_weight_pop_creating_blocker
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
 	}
 }
