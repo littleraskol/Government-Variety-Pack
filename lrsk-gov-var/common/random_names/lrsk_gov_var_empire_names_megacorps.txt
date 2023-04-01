@@ -1,12 +1,12 @@
-################
-# NAME FORMATS #
-################
+# ################
+# # NAME FORMATS #
+# ################
 
-### Capitalist Governments
+# ### Capitalist Governments
 
-## Megacorporation-Types
+# ## Megacorporation-Types
 
-# Megacorporation
+# # Megacorporation
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -23,36 +23,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc> <lrsk_megacorp> <lrsk_corp_bits> [This.GetSpeciesName]"
-	format = format.lrsk_megacorp.1
+	format = "{[This.GetSpeciesAdj] {<lrsk_stellar_generic_desc> {lrskConcat {<lrsk_megacorp> <lrsk_corp_bits>}}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_gen.3
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_galactic_cartel"
-				has_government = "lrsk_gov_var_gov_proprietary_franchise"
-				#has_government = "lrsk_gov_var_gov_colonial_viceroyalty_cmp"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_stellar_filler_desc> <lrsk_megacorp> [This.Capital.System.GetName] <lrsk_corp_bits>"
-	format = format.lrsk_megacorp.2
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_gen.1
-	# Sol Empire
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_megacorp>}}"
 }
 
 empire_name_format = {
@@ -71,60 +44,52 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_stellar_filler_desc> <lrsk_megacorp> [This.Capital.GetName] <lrsk_corp_bits>"
-	format = format.lrsk_megacorp.3
-	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_gen.2
-	# Earth Empire
-}
-
-# Market Socialism
-# Cooperative Enterprise
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_market_socialism"
-				has_government = "lrsk_gov_var_gov_coop_enterprise"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_trade_league_per_desc> [This.GetSpeciesAdj] <lrsk_trade_league_per> [This.GetSpeciesName]"
-	format = format.lrsk_trade_league.1
-	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_trd.3
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_market_socialism"
-				has_government = "lrsk_gov_var_gov_coop_enterprise"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_trade_league_org_type> <lrsk_trade_league_org> [This.Capital.System.GetName]"
-	format = format.lrsk_trade_league.2
+	format = "{<lrsk_stellar_generic_desc> {<lrsk_megacorp> {of {lrskConcat {[This.Capital.System.GetName] <lrsk_corp_bits>}}}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_trd.1
-	# Sol Empire
+	prefix_format = "{AofBpfx {<lrsk_megacorp> [This.Capital.System.GetName]}}"
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_galactic_cartel"
+				has_government = "lrsk_gov_var_gov_proprietary_franchise"
+				#has_government = "lrsk_gov_var_gov_colonial_viceroyalty_cmp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_stellar_generic_desc> {<lrsk_megacorp>{of {lrskConcat {[This.Capital.GetName] <lrsk_corp_bits>}}}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_megacorp> [This.Capital.GetName]}}"
+}
+
+# # Market Socialism
+# # Cooperative Enterprise
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_market_socialism"
+				has_government = "lrsk_gov_var_gov_coop_enterprise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_trade_league_per_desc> {[This.GetSpeciesAdj] {<lrsk_trade_league_per>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_trade_league_per>}}"
 }
 
 empire_name_format = {
@@ -142,57 +107,49 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_trade_league_org_type> <lrsk_trade_league_org> [This.Capital.GetName]"
-	format = format.lrsk_trade_league.3
-	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_trd.2
-	# Earth Empire
-}
-
-# RMF
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_rmf_desc> [This.GetSpeciesAdj] <lrsk_rmf_corp> <lrsk_corp_bits> [This.GetSpeciesName]"
-	format = format.lrsk_rmf_corp.1
-	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_rmf.3
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_rmf_desc> <lrsk_rmf_corp> [This.Capital.System.GetName] <lrsk_corp_bits>"
-	format = format.lrsk_rmf_corp.2
+	format = "{<lrsk_trade_league_org_type> {AofB {<lrsk_trade_league_org> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_rmf.1
-	# Sol Empire
+	prefix_format = "{AofBpfx {<lrsk_trade_league_org> [This.Capital.System.GetName]}}"
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_market_socialism"
+				has_government = "lrsk_gov_var_gov_coop_enterprise"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_trade_league_org_type> {AofB {<lrsk_trade_league_org> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofB {<lrsk_trade_league_org> [This.Capital.GetName]}}"
+}
+
+# # RMF
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_rmf_desc> {[This.GetSpeciesAdj] {lrskConcat {<lrsk_rmf_corp> <lrsk_corp_bits>}}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {lrskConcat {<lrsk_rmf_corp> <lrsk_corp_bits>}}}"
 }
 
 empire_name_format = {
@@ -209,15 +166,31 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rmf_desc> <lrsk_rmf_corp> [This.Capital.GetName] <lrsk_corp_bits>"
-	format = format.lrsk_rmf_corp.3
-	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_rmf.2
-	# Earth Empire
+	format = "{<lrsk_rmf_desc> {<lrsk_rmf_corp> {of {lrskConcat {[This.Capital.System.GetName] <lrsk_corp_bits>}}}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{<lrsk_rmf_corp> {of {lrskConcat {[This.Capital.System.GetName] <lrsk_corp_bits>}}}}"
 }
 
-# PMCs
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_rationalist_managerial_firm"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_rmf_desc> {<lrsk_rmf_corp> {of {lrskConcat {[This.Capital.GetName] <lrsk_corp_bits>}}}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{<lrsk_rmf_corp> {of {lrskConcat {[This.Capital.GetName] <lrsk_corp_bits>}}}}"
+}
+
+# # PMCs
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -233,35 +206,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_pmc_desc> <lrsk_pmc_corp> <lrsk_corp_bits> [This.GetSpeciesName]"
-	format = format.lrsk_pmc_corp.1
+	format = "{[This.GetSpeciesAdj] {<lrsk_pmc_desc> {lrskConcat {<lrsk_pmc_corp> <lrsk_corp_bits>}}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_pmc.3
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_private_military_contractor"
-				has_government = "lrsk_gov_var_gov_private_intel_agency"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "[This.Capital.System.GetName]-Force <lrsk_stellar_filler_desc> <lrsk_pmc_desc> <lrsk_corp_bits>"
-	format = format.lrsk_pmc_corp.2
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_pmc.4
-	# Human Empire
+	prefix_format = "{[This.GetSpeciesAdj] {lrskConcat {<lrsk_pmc_corp> <lrsk_corp_bits>}}}"
 }
 
 empire_name_format = {
@@ -279,57 +226,49 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.Capital.GetName]-Force <lrsk_stellar_filler_desc> <lrsk_pmc_desc> <lrsk_corp_bits>"
-	format = format.lrsk_pmc_corp.3
-	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_pmc.5
-	# Human Empire
-}
-
-# Crusading Company
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_crusading_company"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_crusdesc> <lrsk_cruscomp> [This.GetSpeciesAdj] [This.GetSpeciesName]"
-	format = format.lrsk_crus_comp.1
-	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_cru.3
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_crusading_company"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	
-	#lookups = "<lrsk_crusdesc> <lrsk_cruscomp> [This.Capital.System.GetName]"
-	format = format.lrsk_crus_comp.2
+	format = "{lrskPMCSF {[This.Capital.System.GetName] <lrsk_stellar_generic_desc> <lrsk_pmc_desc> <lrsk_corp_bits>}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_cru.1
-	# Human Empire
+	prefix_format = "{lrskPMCSF {[This.Capital.System.GetName] <lrsk_stellar_generic_desc> <lrsk_pmc_desc> <lrsk_corp_bits>}}"
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_private_military_contractor"
+				has_government = "lrsk_gov_var_gov_private_intel_agency"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{lrskPMCSF {[This.Capital.GetName] <lrsk_stellar_generic_desc> <lrsk_pmc_desc> <lrsk_corp_bits>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{lrskPMCSF {[This.Capital.GetName] <lrsk_stellar_generic_desc> <lrsk_pmc_desc> <lrsk_corp_bits>}}"
+}
+
+# # Crusading Company
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusading_company"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_crusdesc> {lrskKindSuff {<lrsk_cruscomp> [This.GetSpeciesAdj]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_cruscomp> [This.GetSpeciesAdj]}}"
 }
 
 empire_name_format = {
@@ -346,15 +285,31 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_crusdesc> <lrsk_cruscomp> [This.Capital.GetName]"
-	format = format.lrsk_crus_comp.3
-	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_cru.2
-	# Human Empire
+	format = "{<lrsk_crusdesc> {AofB {<lrsk_cruscomp> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_cruscomp> [This.Capital.System.GetName]}}"
 }
 
-# Colonial Company
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusading_company"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_crusdesc> {AofB {<lrsk_cruscomp> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_cruscomp> [This.Capital.GetName]}}"
+}
+
+# # Colonial Company
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -369,12 +324,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_col_comp_bit> [This.Capital.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
-	format = format.lrsk_col_comp.1
+	format = "{<lrsk_col_comp_bit> {[This.Capital.System.GetName] {<lrsk_business_desc> {<lrsk_col_comp_type>}}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_col.1
-	# Human Empire
+	prefix_format = "{[This.Capital.System.GetName] {<lrsk_col_comp_type>}}"
 }
 
 empire_name_format = {
@@ -391,15 +343,12 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_col_comp_bit> [This.Capital.System.GetName] <lrsk_business_desc> <lrsk_col_comp_type>"
-	format = format.lrsk_col_comp.2
+	format = "{<lrsk_col_comp_bit> {[This.Capital.GetName] {<lrsk_business_desc> {<lrsk_col_comp_type>}}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_col.2
-	# Human Empire
+	prefix_format = "{[This.Capital.GetName] {<lrsk_col_comp_type>}}"
 }
 
-# Colonial Charter Board
+# # Colonial Charter Board
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -414,12 +363,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> [This.Capital.GetName]"
-	format = format.lrsk_col_board.1
+	format = "{<lrsk_col_board_bit> {<lrsk_business_desc> {AofB {<lrsk_col_board_type> [This.Capital.System.GetName]}}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_brd.1
-	# Human Empire
+	prefix_format = "{AofBpfx {<lrsk_col_board_type> [This.Capital.System.GetName]}}"
 }
 
 empire_name_format = {
@@ -436,15 +382,12 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_col_board_bit> <lrsk_business_desc> <lrsk_col_board_type> [This.Capital.System.GetName]"
-	format = format.lrsk_col_board.2
+	format = "{<lrsk_col_board_bit> {<lrsk_business_desc> {AofB {<lrsk_col_board_type> [This.Capital.GetName]}}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_brd.2
-	# Human Empire
+	prefix_format = "{AofBpfx {<lrsk_col_board_type> [This.Capital.GetName]}}"
 }
 
-# Innovation Initiatives
+# # Innovation Initiatives
 
 empire_name_format = {
 	random_weight = {
@@ -460,12 +403,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_inno_type> <lrsk_inno_bits> <lrsk_inno_corp> [This.GetSpeciesName]"
-	format = format.lrsk_inno_corp.1
+	format = "{[This.GetSpeciesAdj] {<lrsk_inno_desc> {<lrsk_inno_type> {lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp>}}}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_inn.3
-	# Human Empire
+	prefix_format = "{[This.GetSpeciesAdj] {lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp>}}}"
 }
 
 empire_name_format = {
@@ -482,12 +422,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_inno_type> <lrsk_inno_bits> <lrsk_inno_corp> [This.Capital.System.GetName]"
-	format = format.lrsk_inno_corp.2
+	format = "{<lrsk_inno_desc> {<lrsk_inno_type> {lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp> {of {[This.Capital.System.GetName]}}}}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_inn.1
-	# Sol Empire
+	prefix_format = "{lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp> {of {[This.Capital.System.GetName]}}}}"
 }
 
 empire_name_format = {
@@ -504,15 +441,12 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_inno_type> <lrsk_inno_bits> <lrsk_inno_corp> [This.Capital.GetName]"
-	format = format.lrsk_inno_corp.3
+	format = "{<lrsk_inno_desc> {<lrsk_inno_type> {lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp> {of {[This.Capital.GetName]}}}}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_inn.2
-	# Earth Empire
+	prefix_format = "{lrskConcat {<lrsk_inno_bits> <lrsk_inno_corp> {of {[This.Capital.GetName]}}}}"
 }
 
-# Megachurch
+# # Megachurch
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -528,12 +462,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_megachurch> <lrsk_megachurch_suffix> [This.GetSpeciesName]"
-	format = format.lrsk_megachurch.1
+	format = "{[This.GetSpeciesAdj] {<lrsk_megachurch> {<lrsk_megachurch_suffix>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_chu.3
-	# Human Empire
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_megachurch>}}"
 }
 
 empire_name_format = {
@@ -551,12 +482,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_megachurch_desc> <lrsk_megachurch> [This.Capital.System.GetName]"
-	format = format.lrsk_megachurch.2
+	format = "{<lrsk_megachurch_desc> {AofB {<lrsk_megachurch> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_chu.1
-	# Sol Empire
+	prefix_format = "{AofBpfx {<lrsk_megachurch> [This.Capital.System.GetName]}}"
 }
 
 empire_name_format = {
@@ -574,10 +502,7 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_megachurch_desc> <lrsk_megachurch> [This.Capital.GetName]"
-	format = format.lrsk_megachurch.3
+	format = "{<lrsk_megachurch_desc> {AofB {<lrsk_megachurch> [This.Capital.GetName]}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_chu.2
-	# Earth Empire
+	prefix_format = "{AofBpfx {<lrsk_megachurch> [This.Capital.GetName]}}"
 }

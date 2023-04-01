@@ -1,53 +1,53 @@
-################
-# NAME FORMATS #
-################
+# ################
+# # NAME FORMATS #
+# ################
 
-# Pseudo-Hive Mind
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-      OR = {
-        has_government = "lrsk_gov_var_gov_pretender_hive"
-	      has_government = "lrsk_gov_var_gov_pretender_hive_imp"
-      }
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
+# # Pseudo-Hive Mind
+# empire_name_format = {
+# 	random_weight = {
+# 		factor = 0
+# 		modifier = {
+# 			add = 20
+#       OR = {
+#         has_government = "lrsk_gov_var_gov_pretender_hive"
+# 	      has_government = "lrsk_gov_var_gov_pretender_hive_imp"
+#       }
+# 			is_pirate = no
+# 			is_primitive = no
+# 			NOT = { is_country_type = fallen_empire }
+# 			NOT = { is_country_type = awakened_fallen_empire }
+# 		}
+# 	}
 	
-	#lookups = "[This.GetSpeciesName] <hive_mind>"
-	format = format.hive_mind.1
-	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format.hive_mind.1
-	# Human Empire
-}
+# 	#lookups = "[This.GetSpeciesName] <hive_mind>"
+# 	format = format.hive_mind.1
+# 	adjective = "{[This.GetSpeciesAdj]}"
+# 	prefix_format = format.hive_mind.1
+# 	# Human Empire
+# }
 
-# Cooperative Super-Sapience
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 5
-			has_government = "lrsk_gov_var_gov_coop_supersap"
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
+# # Cooperative Super-Sapience
+# empire_name_format = {
+# 	random_weight = {
+# 		factor = 0
+# 		modifier = {
+# 			add = 5
+# 			has_government = "lrsk_gov_var_gov_coop_supersap"
+# 			is_pirate = no
+# 			is_primitive = no
+# 			NOT = { is_country_type = fallen_empire }
+# 			NOT = { is_country_type = awakened_fallen_empire }
+# 		}
+# 	}
 	
-	#lookups = "[This.GetSpeciesName] <hive_mind>"
-	format = format.hive_mind.1
-	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format.hive_mind.1
-	# Human Empire
-}
+# 	#lookups = "[This.GetSpeciesName] <hive_mind>"
+# 	format = format.hive_mind.1
+# 	adjective = "{[This.GetSpeciesAdj]}"
+# 	prefix_format = format.hive_mind.1
+# 	# Human Empire
+# }
 
-# Noble Republics
+# # Noble Republics
 
 # Noble Republic 1
 empire_name_format = {
@@ -65,12 +65,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov>  [This.Capital.System.GetName]"
-	format = format.lrsk_noblerep_gen.1
+	format = "{<lrsk_aristo_desc>{AofB{<lrsk_noblerep_gov> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_nob_rep.1
-	# Empire of Sol
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_noblerep_gov>}}"
 }
 
 # Noble Republic 2
@@ -89,12 +86,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov>  [This.Capital.GetName]"
-	format = format.lrsk_noblerep_gen.2
+	format = "{<lrsk_aristo_desc>{AofB{<lrsk_noblerep_gov> [This.Capital.GetName]}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_nob_rep.2
-	# Empire of Earth
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_noblerep_gov>}}"
 }
 
 # Noble Republic 3
@@ -113,12 +107,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_aristo_desc> <lrsk_noblerep_gov> [This.GetSpeciesName]"
-	format = format.lrsk_noblerep_gen.3
+	format = "{<lrsk_aristo_desc> {lrskKindSuff {<lrsk_noblerep_gov> [This.GetSpeciesName]}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_nob_rep.3
-	# Human Empire
+	prefix_format = "{lrskKindSuff {<lrsk_noblerep_gov> [This.GetSpeciesName]}}"
 }
 
 # Noble Republic 4
@@ -137,12 +128,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_aristo_desc> [This.GetSpeciesAdj] <lrsk_noblerep_gov> [This.GetSpeciesName]"
-	format = format.lrsk_noblerep_gen.4
+	format = "{<lrsk_aristo_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_noblerep_gov>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_nob_rep.3
-	# Great Human Empire
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_noblerep_gov>}}"
 }
 
 # Noble Republic 5
@@ -161,18 +149,15 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_aristo_desc> <lrsk_noblerep_gov> [This.GetSpeciesName]"
-	format = format.lrsk_noblerep_gen.5
+	format = "{[This.GetSpeciesAdj]{<lrsk_aristo_desc>{<lrsk_noblerep_gov>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_nob_rep.3
-	# Human Star Empire
+	prefix_format = "{<lrsk_aristo_desc>{<lrsk_noblerep_gov>}}"
 }
 
 
 
-### Peasant Monarchy
-#Agrarian Monarchy
+# ### Peasant Monarchy
+# #Agrarian Monarchy
 
 # Peasant Monarchy 1
 empire_name_format = {
@@ -189,12 +174,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_imppes_desc> <lrsk_imperial_pop> [This.GetSpeciesNamePlural]"
-	format = format.lrsk_imp_pes.1
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_imp_pop.3
-	# Empire of Sol
+	format = "{<lrsk_imppes_desc> {lrskAoftheB {<lrsk_imperial_pop> [This.GetSpeciesNamePlural]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskAoftheB {<lrsk_imperial_pop> [This.GetSpeciesNamePlural]}}"
 }
 
 # Peasant Monarchy 2
@@ -212,12 +194,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_imppes_desc> <lrsk_imperial_pop> [This.GetSpeciesName]"
-	format = format.lrsk_imp_pes.2
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_imp_pop.3
-	# Empire of Earth
+	format = "{<lrsk_imppes_desc> {lrskKindSuff {<lrsk_imperial_pop> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_imperial_pop> [This.GetSpeciesName]}}"
 }
 
 # Peasant Monarchy 3
@@ -235,12 +214,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_imppes_desc> [This.GetSpeciesAdj] <lrsk_imperial_pop>"
-	format = format.lrsk_imp_pes.3
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_imp_pop.3
-	# Human Empire
+	format = "{<lrsk_imppes_desc> {[This.GetSpeciesAdj] {<lrsk_imperial_pop>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_imperial_pop>}}"
 }
 
 # Peasant Monarchy 4
@@ -258,16 +234,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_imppop_desc> <lrsk_imperial_pop>"
-	format = format.lrsk_imp_pes.4
-	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_imp_pop.3
-	# Human Empire
+	format = "{[This.GetSpeciesAdj] {<lrsk_imppop_desc> {<lrsk_imperial_pop>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_imperial_pop>}}"
 }
 
-# Crime Orgs
-#Crime Family
+# # Crime Orgs
+# #Crime Family
 
 # Criminal Organization 1
 empire_name_format = {
@@ -285,12 +258,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_stellar_filler_desc> <lrsk_criminal> [This.GetSpeciesName]"
-	format = format.lrsk_crimeorg.1
+	format = "{[This.GetSpeciesAdj] {<lrsk_stellar_generic_desc> {<lrsk_criminal>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_meg_chu.3
-	# Human Empire
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_criminal>}}"
 }
 
 # Criminal Organization 2
@@ -309,12 +279,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_stellar_filler_desc> <lrsk_criminal>  [This.Capital.System.GetName]"
-	format = format.lrsk_crimeorg.2
+	format = "{lrskBornSuff {[This.Capital.System.GetName] <lrsk_stellar_generic_desc> <lrsk_criminal>}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_cri.1
-	# Human Empire
+	prefix_format = "{lrskBornSuff {[This.Capital.System.GetName] <lrsk_criminal>}}"
 }
 
 # Criminal Organization 3
@@ -333,19 +300,16 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_stellar_filler_desc> <lrsk_criminal>  [This.Capital.GetName]"
-	format = format.lrsk_crimeorg.3
+	format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_stellar_generic_desc> <lrsk_criminal>}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_meg_cri.2
-	# Human Empire
+	prefix_format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_criminal>}}"
 }
 
-### Frev-based
+# ### Frev-based
 
-## Imperial
-#Revolutionary Empire
-#Constitutional Monarchy
+# ## Imperial
+# #Revolutionary Empire
+# #Constitutional Monarchy
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -361,16 +325,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_imperial_rev> [This.GetSpeciesNamePlural]"
-	format = format.lrsk_imp_rev.1
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_imperial_rev> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_imp_rev.1
-	# Empire of Sol
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_imperial_rev>}}"
 }
 
-## Dictatorial
-#Republican Protectorate
+# ## Dictatorial
+# #Republican Protectorate
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -385,12 +346,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev>  [This.Capital.System.GetName]"
-	format = format.lrsk_dic_rev.1
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_dictatorial_rev> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_dic_rev.1
-	# Empire of Sol
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_dictatorial_rev>}}"
 }
 
 empire_name_format = {
@@ -407,12 +365,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev>  [This.Capital.GetName]"
-	format = format.lrsk_dic_rev.2
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_dictatorial_rev> [This.Capital.GetName]}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_dic_rev.2
-	# Empire of Earth
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_dictatorial_rev>}}"
 }
 
 empire_name_format = {
@@ -429,12 +384,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_dictatorial_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dic_rev.3
+	format = "{<lrsk_rev_desc> {lrskKindSuff {<lrsk_dictatorial_rev> [This.GetSpeciesName]}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dic_rev.3
-	# Human Empire
+	prefix_format = "{lrskKindSuff {<lrsk_dictatorial_rev> [This.GetSpeciesName]}}"
 }
 
 empire_name_format = {
@@ -451,12 +403,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_dictatorial_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dic_rev.4
+	format = "{<lrsk_rev_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_dictatorial_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dic_rev.1
-	# Great Human Empire
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_dictatorial_rev>}}"
 }
 
 empire_name_format = {
@@ -473,16 +422,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_dictatorial_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dic_rev.5
+	format = "{[This.GetSpeciesAdj]{<lrsk_rev_desc>{<lrsk_dictatorial_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dic_rev.3
-	# Human Star Empire
+	prefix_format = "{<lrsk_rev_desc>{<lrsk_dictatorial_rev>}}"
 }
 
-## Oligarchic
-#Republican Directory
+# ## Oligarchic
+# #Republican Directory
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -497,12 +443,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.Capital.System.GetName]"
-	format = format.lrsk_oli_rev.1
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_oligarchic_rev> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_oli_rev.1
-	# Empire of Sol
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_oligarchic_rev>}}"
 }
 
 empire_name_format = {
@@ -519,12 +462,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.Capital.GetName]"
-	format = format.lrsk_oli_rev.2
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_oligarchic_rev> [This.Capital.GetName]}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_oli_rev.2
-	# Empire of Earth
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_oligarchic_rev>}}"
 }
 
 empire_name_format = {
@@ -541,12 +481,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_oligarchic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_oli_rev.3
+	format = "{<lrsk_rev_desc> {lrskKindSuff {<lrsk_oligarchic_rev> [This.GetSpeciesName]}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_oli_rev.3
-	# Human Empire
+	prefix_format = "{lrskKindSuff {<lrsk_oligarchic_rev> [This.GetSpeciesName]}}"
 }
 
 empire_name_format = {
@@ -563,12 +500,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_oligarchic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_oli_rev.4
+	format = "{<lrsk_rev_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_oligarchic_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_oli_rev.3
-	# Great Human Empire
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_oligarchic_rev>}}"
 }
 
 empire_name_format = {
@@ -585,17 +519,14 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_oligarchic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_oli_rev.5
+	format = "{[This.GetSpeciesAdj]{<lrsk_rev_desc>{<lrsk_oligarchic_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_oli_rev.3
-	# Human Star Empire
+	prefix_format = "{<lrsk_rev_desc>{<lrsk_oligarchic_rev>}}"
 }
 
-## Democratic
-#Republic of Virtue
-#Revolutionary Republic
+# ## Democratic
+# #Republic of Virtue
+# #Revolutionary Republic
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -611,12 +542,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_democratic_rev>  [This.Capital.System.GetName]"
-	format = format.lrsk_dem_rev.1
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_democratic_rev> [This.Capital.System.GetName]}}}"
 	noun = "{[This.Capital.System.GetName]}"
-	prefix_format = format_prefix.lrsk_dem_rev.1
-	# Empire of Sol
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_democratic_rev>}}"
 }
 
 empire_name_format = {
@@ -634,12 +562,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_democratic_rev>  [This.Capital.GetName]"
-	format = format.lrsk_dem_rev.2
+	format = "{<lrsk_rev_desc>{AofB{<lrsk_democratic_rev> [This.Capital.GetName]}}}"
 	noun = "{[This.Capital.GetName]}"
-	prefix_format = format_prefix.lrsk_dem_rev.2
-	# Empire of Earth
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_democratic_rev>}}"
 }
 
 empire_name_format = {
@@ -657,12 +582,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> <lrsk_democratic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dem_rev.3
+	format = "{<lrsk_rev_desc> {lrskKindSuff {<lrsk_democratic_rev> [This.GetSpeciesName]}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dem_rev.3
-	# Human Empire
+	prefix_format = "{lrskKindSuff {<lrsk_democratic_rev> [This.GetSpeciesName]}}"
 }
 
 empire_name_format = {
@@ -680,12 +602,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "<lrsk_rev_desc> [This.GetSpeciesAdj] <lrsk_democratic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dem_rev.4
+	format = "{<lrsk_rev_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_democratic_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dem_rev.3
-	# Great Human Empire
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_democratic_rev>}}"
 }
 
 empire_name_format = {
@@ -703,10 +622,7 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	
-	#lookups = "[This.GetSpeciesAdj] <lrsk_rev_desc> <lrsk_democratic_rev> [This.GetSpeciesName]"
-	format = format.lrsk_dem_rev.5
+	format = "{[This.GetSpeciesAdj]{<lrsk_rev_desc>{<lrsk_democratic_rev>}}}"
 	adjective = "{[This.GetSpeciesAdj]}"
-	prefix_format = format_prefix.lrsk_dem_rev.3
-	# Human Star Empire
+	prefix_format = "{<lrsk_rev_desc>{<lrsk_democratic_rev>}}"
 }
