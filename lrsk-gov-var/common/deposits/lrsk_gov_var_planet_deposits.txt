@@ -93,7 +93,14 @@ d_lrsk_gvp_compl_singleton_hideout = {
 		custom_tooltip = d_decrepit_dwellings_custom_tooltip
 	}
 	
-	inline_script = deposits/ai_weight_pop_creating_blocker
+	ai_weight = {
+		weight = 1
+		
+		modifier = {
+			factor = 2
+			from = { num_unemployed = 0 }
+		}
+	}
 
 	resources = {
 		category = deposit_blockers
