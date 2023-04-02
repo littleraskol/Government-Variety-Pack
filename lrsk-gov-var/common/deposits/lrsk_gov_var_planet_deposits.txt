@@ -71,6 +71,9 @@ d_lrsk_gvp_compl_singleton_hideout = {
 			create_pop = {
 				species = event_target:lrsk_compl_remnant_species
 			}
+			create_pop = {
+				species = event_target:lrsk_compl_remnant_species
+			}
 			random_list = {
 				2 = {
 					set_timed_planet_flag = { flag = lrsk_gvp_compl_no_remnant_damage days = 7 }
@@ -90,7 +93,7 @@ d_lrsk_gvp_compl_singleton_hideout = {
 			}
 			# some event should run the first time to tell the player what's up
 		}
-		custom_tooltip = d_decrepit_dwellings_custom_tooltip
+		custom_tooltip = d_lrsk_gvp_compl_singleton_hideout_custom_tooltip
 	}
 	
 	ai_weight = {
@@ -107,5 +110,131 @@ d_lrsk_gvp_compl_singleton_hideout = {
 		cost = {
 			energy = 300
 		}
+	}
+}
+
+d_lrsk_gvp_compl_final_battlefield = {
+	icon = d_radioactive_wasteland
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_lrsk_gvp_compl_salvage_fields
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+	}
+}
+
+d_lrsk_gvp_compl_salvage_fields = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_organic_landfill
+
+	planet_modifier = {
+		district_generator_max = 4
+		planet_jobs_society_research_produces_mult = 0.10
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_lrsk_gvp_compl_bleak_ruins = {
+	icon = d_city_ruins
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_metal_boneyard
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+	}
+}
+
+d_lrsk_gvp_compl_mystery_vault = {
+	icon = d_ancient_vault
+	time = 120
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	on_cleared = {
+		hidden_effect = {
+			create_pop = {
+				species = event_target:lrsk_compl_remnant_species
+			}
+			# some event should run the first time to tell the player what's up
+		}
+		custom_tooltip = d_lrsk_gvp_compl_mystery_vault_custom_tooltip
+	}
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_lrsk_gvp_compl_agriplex
+	}
+	
+	ai_weight = {
+		weight = 1
+		
+		modifier = {
+			factor = 2
+			from = { num_unemployed = 0 }
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 600
+		}
+	}
+}
+
+d_lrsk_gvp_compl_agriplex = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_lrsk_agrivault
+
+	planet_modifier = {
+		district_farming_max = 2
+	}
+
+	drop_weight = {
+		weight = 0
 	}
 }
