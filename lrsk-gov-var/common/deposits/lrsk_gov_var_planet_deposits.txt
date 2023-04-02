@@ -59,6 +59,8 @@ d_lrsk_gvp_compl_singleton_hideout = {
 	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
+	should_swap_deposit_on_terraforming = no
+
 	potential = { always = no }
 
 	planet_modifier = {
@@ -182,10 +184,12 @@ d_lrsk_gvp_compl_bleak_ruins = {
 
 d_lrsk_gvp_compl_mystery_vault = {
 	icon = d_ancient_vault
-	time = 120
+	time = 360
 
 	is_for_colonizable = yes
 	category = deposit_cat_blockers
+	
+	should_swap_deposit_on_terraforming = no
 
 	potential = { always = no }
 
@@ -229,6 +233,8 @@ d_lrsk_gvp_compl_agriplex = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_lrsk_agrivault
+	
+	should_swap_deposit_on_terraforming = no
 
 	planet_modifier = {
 		district_farming_max = 2
