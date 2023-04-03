@@ -20,7 +20,19 @@ country_event = {
 
 		# Place "Complementation Nexus Ruins" deposit
 		capital_scope ={
-			lrsk_place_complementation_home_planet_blockers = yes
+			set_planet_flag = lrsk_gvp_complementation_capital
+
+			add_deposit = d_lrsk_gvp_compl_project_ruins
+
+			# remove standard hive blockers
+			if = { limit = { has_deposit = d_collapsed_burrows } remove_deposit = d_collapsed_burrows }
+			if = { limit = { has_deposit = d_failing_infrastructure } remove_deposit = d_failing_infrastructure }
+			if = { limit = { has_deposit = d_failing_infrastructure } remove_deposit = d_failing_infrastructure }
+
+			add_deposit = d_lrsk_gvp_compl_singleton_hideout
+			add_deposit = d_lrsk_gvp_compl_final_battlefield
+			add_deposit = d_lrsk_gvp_compl_bleak_ruins
+			add_deposit = d_lrsk_gvp_compl_mystery_vault
 		}
 
 		# Semi-immediate check that some other mod did not remove the deposit
@@ -197,6 +209,39 @@ country_event = {
 	}
 }
 
+# Create original species pops
+planet_event = {
+	id = lrsk_gvp_complementation.20 # number idk
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		check_variable = {
+			which = lrsk_num_pops_to_add
+			value > 0
+		}
+	}
+
+	immediate = {
+		while = {
+			limit = {
+				check_variable = {
+					which = lrsk_num_pops_to_add
+					value > 0
+				}
+			}
+			create_pop = {
+				species = event_target:lrsk_compl_remnant_species
+			}
+			subtract_variable = {
+				which = lrsk_num_pops_to_add
+				value = 1
+			}
+		}
+	}
+}
+
 # Apply Complementation to Singleton Pops on Yearly Pulse
 country_event = {
 	id = lrsk_gvp_complementation.30	# number idk
@@ -204,6 +249,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_origin = lrsk_gvp_origin_complementation_project
 		num_unique_species > 1
 		any_owned_species = {
 			has_citizenship_type = {
@@ -223,38 +269,25 @@ country_event = {
 					country = root
 				}
 			}
-			if = { # complementation check? (needed?)
-				limit = {
-					root = {
-						has_origin = lrsk_gvp_origin_complementation_project
-						NOT = { has_tradition = tr_genetics_creation }	# Renders complementation obsolete
-						has_authority = auth_hive_mind
-						NOT = { has_civic = civic_hive_devouring_swarm }	# JIC
-					}
-				}
-				modify_species = {
-					species = this
-					add_trait = trait_hive_mind
-					remove_trait = trait_self_modified
-					remove_trait = trait_latent_psionic
-					remove_trait = trait_psionic
-					change_scoped_species = no
+			modify_species = {
+				species = this
+				add_trait = trait_hive_mind
+				remove_trait = trait_self_modified
+				remove_trait = trait_latent_psionic
+				remove_trait = trait_psionic
+				change_scoped_species = no
 
-					effect = {
-						set_timed_species_flag = {
-							flag = lrsk_complementation_species_of_species@prev
-							days = 30
-						}
-						set_timed_species_flag = {
-							flag = lrsk_complementation_species_of_empire@root
-							days = 30
-						}
-						save_event_target_as = lrsk_convert_to_species
+				effect = {
+					set_timed_species_flag = {
+						flag = lrsk_complementation_species_of_species@prev
+						days = 30
 					}
+					set_timed_species_flag = {
+						flag = lrsk_complementation_species_of_empire@root
+						days = 30
+					}
+					#save_event_target_as = lrsk_convert_to_species
 				}
-			}
-			else = {
-				log_error = "ERROR: Somehow complementation logic applied to invalid empire?"
 			}
 		}
 
@@ -286,87 +319,115 @@ planet_event = {
 			1 = { set_variable = { which = lrsk_comlementation_counter value = 4 } }	# 4 pops
 			1 = { set_variable = { which = lrsk_comlementation_counter value = 8 } }	# 8 pops
 		}
-			
-		if = {
+		
+		# TBD: Check for enhancer building and double lrsk_comlementation_counter if planet has it
+		
+		random_owned_pop = {
 			limit = {
-				exists = event_target:lrsk_convert_to_species #should always exist
+				has_citizenship_type = {
+					type = citizenship_lrsk_complementation
+					country = root.owner
+				}
 			}
-			random_owned_pop = {
+			random_galaxy_species = {
 				limit = {
-					has_citizenship_type = {
-						type = citizenship_lrsk_complementation
-						country = root.owner
+					has_species_flag = lrsk_complementation_species_of_species@prev.species
+					has_species_flag = lrsk_complementation_species_of_empire@root.owner
+				}
+				save_event_target_as = lrsk_convert_to_species
+			}
+			species = {
+				save_event_target_as = lrsk_old_species
+			}
+			
+			if = {
+				limit = {
+					exists = event_target:lrsk_convert_to_species #should always exist
+				}
+				change_species = event_target:lrsk_convert_to_species
+				owner = {
+					if = {
+						limit = { has_ascension_perk = ap_become_the_crisis }
+						complete_crisis_objective = crisobj_purge_pops
 					}
-					NOT = { is_exact_same_species = event_target:lrsk_convert_to_species }
 				}
-				species = {
-					save_event_target_as = lrsk_old_species
-				}
-			}
-			while = {
-				limit = {
-					exists = event_target:lrsk_old_species
-					check_variable = {
+				root = {
+					subtract_variable = {
 						which = lrsk_comlementation_counter
-						value > 0
+						value = 1
 					}
-					any_owned_pop = {
-						has_citizenship_type = {
-							type = citizenship_lrsk_complementation
-							country = root.owner
-						}
-						is_exact_same_species = event_target:lrsk_old_species
-					}
-				}
-				random_owned_pop = {
-					limit = {
-						has_citizenship_type = {
-							type = citizenship_lrsk_complementation
-							country = root.owner
-						}
-						is_exact_same_species = event_target:lrsk_old_species
-					}
-					change_species = event_target:lrsk_convert_to_species
-					lrsk_apply_post_complementation_effect = yes
-				}
-				# complementing the original species is faster, do it twice
-				if = {
-					limit = {
-						any_owned_pop = {
-							species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
-							has_citizenship_type = {
-								type = citizenship_lrsk_complementation
-								country = root.owner
-							}
-						}
-					}
-					random_owned_pop = {
+					while = {
 						limit = {
-							species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
-							has_citizenship_type = {
-								type = citizenship_lrsk_complementation
-								country = root.owner
+							exists = event_target:lrsk_old_species
+							check_variable = {
+								which = lrsk_comlementation_counter
+								value > 0
+							}
+							any_owned_pop = {
+								is_same_value = event_target:lrsk_old_species
 							}
 						}
-						species = { remove_species_flag = lrsk_singleton_original_species_of@root.owner }
-						change_species = event_target:lrsk_convert_to_species
-						lrsk_apply_post_complementation_effect = yes
+						random_owned_pop = {
+							limit = {
+								is_exact_same_species = event_target:lrsk_old_species
+							}
+							change_species = event_target:lrsk_convert_to_species
+							lrsk_apply_post_complementation_effect = yes
+						}
+						# complementing the original species is faster, do it twice
+						#if = {
+						#	limit = {
+						#		any_owned_pop = {
+						#			species = {
+						#				has_species_flag = #lrsk_singleton_original_species_of@root.owner
+						#			}
+						#			has_citizenship_type = {
+						#				type = citizenship_lrsk_complementation
+						#				country = root.owner
+						#			}
+						#		}
+						#	}
+						#	
+						#	random_owned_pop = {
+						#		limit = {
+						#			species = {
+						#				has_species_flag = #lrsk_singleton_original_species_of@root.owner
+						#			}
+						#			has_citizenship_type = {
+						#				type = citizenship_lrsk_complementation
+						#				country = root.owner
+						#			}
+						#		}								
+						#		species = {
+						#			save_event_target_as = #rsk_convert_original_to_species
+						#		}
+						#		
+						#		lrsk_apply_post_complementation_effect = yes
+						#	}
+						#	owner = {
+						#		if = {
+						#			limit = { has_ascension_perk = #ap_become_the_crisis }
+						#			complete_crisis_objective = crisobj_purge_pops
+						#		}
+						#	}
+						#}
+						subtract_variable = {
+							which = lrsk_comlementation_counter
+							value = 1
+						}
+						owner = {
+							if = {
+								limit = { has_ascension_perk = ap_become_the_crisis }
+								complete_crisis_objective = crisobj_purge_pops
+							}
+						}
 					}
 				}
-				change_variable = {
-					which = lrsk_comlementation_counter
-					value = -1
-				}
+				lrsk_apply_post_complementation_effect = yes
 			}
-			lrsk_apply_post_complementation_effect = yes
-		}
-		else = {
-			log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to complement to"
-		}
-
-		set_variable = {
-			which = lrsk_comlementation_counter
-			value = 0
+			else = {
+				log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to complement to"
+			}
 		}
 	}
 }

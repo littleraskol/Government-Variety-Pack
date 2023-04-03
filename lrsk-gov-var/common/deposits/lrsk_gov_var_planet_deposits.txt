@@ -70,12 +70,14 @@ d_lrsk_gvp_compl_singleton_hideout = {
 
 	on_cleared = {
 		hidden_effect = {
-			create_pop = {
-				species = event_target:lrsk_compl_remnant_species
+			set_variable = {
+				which = lrsk_num_pops_to_add
+				value = 2
 			}
-			create_pop = {
-				species = event_target:lrsk_compl_remnant_species
-			}
+
+			# Need to do this by event so we can reference the event target species
+			planet_event = { id = lrsk_gvp_complementation.20 }
+			
 			random_list = {
 				2 = {
 					set_timed_planet_flag = { flag = lrsk_gvp_compl_no_remnant_damage days = 7 }
@@ -93,6 +95,7 @@ d_lrsk_gvp_compl_singleton_hideout = {
 					set_timed_planet_flag = { flag = lrsk_gvp_compl_heavy_remnant_damage days = 7 }
 				}
 			}
+
 			# some event should run the first time to tell the player what's up
 		}
 		custom_tooltip = d_lrsk_gvp_compl_singleton_hideout_custom_tooltip
@@ -199,9 +202,14 @@ d_lrsk_gvp_compl_mystery_vault = {
 
 	on_cleared = {
 		hidden_effect = {
-			create_pop = {
-				species = event_target:lrsk_compl_remnant_species
+			set_variable = {
+				which = lrsk_num_pops_to_add
+				value = 1
 			}
+
+			# Need to do this by event so we can reference the event target species
+			planet_event = { id = lrsk_gvp_complementation.20 }
+
 			# some event should run the first time to tell the player what's up
 		}
 		custom_tooltip = d_lrsk_gvp_compl_mystery_vault_custom_tooltip

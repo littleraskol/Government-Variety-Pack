@@ -1135,20 +1135,3 @@ lrsk_apply_post_complementation_effect = {
 		}
 	}
 }
-
-lrsk_place_complementation_home_planet_deposits = {
-	set_planet_flag = lrsk_gvp_complementation_capital
-
-	add_deposit = d_lrsk_gvp_compl_project_ruins
-
-	# remove standard hive blockers
-	if = { limit = { has_deposit = d_collapsed_burrows } remove_deposit = d_collapsed_burrows }
-	if = { limit = { has_deposit = d_failing_infrastructure } remove_deposit = d_failing_infrastructure }
-	if = { limit = { has_deposit = d_failing_infrastructure } remove_deposit = d_failing_infrastructure }
-
-	add_deposit = d_lrsk_gvp_compl_singleton_hideout
-	add_deposit = d_lrsk_gvp_compl_final_battlefield
-	add_deposit = d_lrsk_gvp_compl_bleak_ruins
-	add_deposit = d_lrsk_gvp_compl_mystery_vault
-
-}
