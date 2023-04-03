@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.4.2 (4/3/23) - Small fixes
+-Safe system check needs to make sure owner exists before asking about it.
+-Removed some unneeded warnings.
+
 v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
 -Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
 --Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).
