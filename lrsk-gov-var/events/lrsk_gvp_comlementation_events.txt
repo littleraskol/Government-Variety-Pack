@@ -329,6 +329,24 @@ planet_event = {
 					country = root.owner
 				}
 			}
+
+			# Check to see if this is the original species and we have more than one original spcies on planet
+			#IF = {
+			#	limit = {
+			#		species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
+			#		root = {
+			#			count_owned_pop = {
+			#				limit = { species = { has_species_flag = lrsk_singleton_original_species_of@root.owner } }
+			#				count > 1
+			#			}
+			#		}
+			#	}
+			#	set_variable = { which = lrsk_local_compl_count value = 2 }
+			#}
+			#ELSE = {
+			#	set_variable = { which = lrsk_local_compl_count value = 1 }
+			#}
+
 			random_galaxy_species = {
 				limit = {
 					has_species_flag = lrsk_complementation_species_of_species@prev.species
@@ -340,7 +358,7 @@ planet_event = {
 				save_event_target_as = lrsk_old_species
 			}
 			
-			if = {
+			IF = {
 				limit = {
 					exists = event_target:lrsk_convert_to_species #should always exist
 				}
@@ -356,7 +374,7 @@ planet_event = {
 						which = lrsk_comlementation_counter
 						value = 1
 					}
-					while = {
+					WHILE = {
 						limit = {
 							exists = event_target:lrsk_old_species
 							check_variable = {
