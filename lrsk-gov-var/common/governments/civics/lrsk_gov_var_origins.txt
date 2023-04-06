@@ -556,13 +556,11 @@ lrsk_gvp_origin_complementation_project = {
 		envoys_add = 1
 	}
 
-	random_weight = {
-		base = 2
-		modifier = {
-			factor = 0
-			has_global_flag = game_started
-		}
-	}
+	# Trying to build around AI using this is way too much rn.
+	# Removing any weighting supposedly prevents random AI spawn per: forum.paradoxplaza.com/forum/index.php?threads/how-to-make-an-origin-player-only.1370184/
+	#random_weight = {
+	#	base = 0
+	#}
 }
 
 #NPC refugees/survivors of Complementation Project
