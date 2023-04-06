@@ -1116,9 +1116,142 @@ lrsk_make_impecon_special_subject = {
 	}
 }
 
+# Does complementation work, call inside while loop, planet scope
+lrsk_complementation_effect = {
+	optimize_memory
+	
+	# While any pop is original species, deal with them first.
+	IF = {
+		limit = {
+			any_owned_pop = {
+				species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
+				has_citizenship_type = {
+					type = citizenship_lrsk_complementation
+					country = root.owner
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				species = { has_species_flag = lrsk_singleton_original_species_of@root.owner }
+				has_citizenship_type = {
+					type = citizenship_lrsk_complementation
+					country = root.owner
+				}
+			}
+			species = { save_event_target_as = lrsk_old_species }
+			random_galaxy_species = {
+				limit = {
+					has_species_flag = lrsk_complementation_species_of_species@prev.species
+					has_species_flag = lrsk_complementation_species_of_empire@prev.owner
+				}
+				save_event_target_as = lrsk_convert_to_species
+			}
+			IF = {
+				limit = { exists = event_target:lrsk_convert_to_species } # should always exist
+				prev = {
+					WHILE = { # to avoid doing the random_galaxy_species thing too many times
+						limit = {
+							exists = event_target:lrsk_old_species
+							check_variable = {
+								which = lrsk_comlementation_counter
+								value > 0
+							}
+							any_owned_pop = { is_exact_same_species = event_target:lrsk_old_species }
+						}
+						random_owned_pop = {
+							limit = { is_exact_same_species = event_target:lrsk_old_species }
+							change_species = event_target:lrsk_convert_to_species
+							lrsk_apply_post_complementation_effect = yes
+						}
+						owner = {
+							if = {
+								limit = { has_ascension_perk = ap_become_the_crisis }
+								complete_crisis_objective = crisobj_purge_pops
+							}
+						}
+						subtract_variable = {
+							which = lrsk_comlementation_counter
+							value = 1
+						}
+					}
+				}
+			}
+			ELSE = {
+				log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to complement into"
+			}
+		}
+		# If the counter is odd, increment by 1
+		IF = {
+			limit = {
+				check_variable_arithmetic = {
+					which = lrsk_comlementation_counter
+					modulo = 2
+					value = 1
+				}
+			}
+			change_variable = { which = lrsk_comlementation_counter value = 1 }
+		}			
+	}
+	ELSE_IF = {
+		random_owned_pop = {
+			limit = {
+				has_citizenship_type = {
+					type = citizenship_lrsk_complementation
+					country = root.owner
+				}
+			}
+			species = { save_event_target_as = lrsk_old_species }
+			random_galaxy_species = {
+				limit = {
+					has_species_flag = lrsk_complementation_species_of_species@prev.species
+					has_species_flag = lrsk_complementation_species_of_empire@prev.owner
+				}
+				save_event_target_as = lrsk_convert_to_species
+			}
+			IF = {
+				limit = { exists = event_target:lrsk_convert_to_species } # should always exist
+				prev = {
+					WHILE = { # to avoid doing the random_galaxy_species thing too many times
+						limit = {
+							exists = event_target:lrsk_old_species
+							check_variable = {
+								which = lrsk_comlementation_counter
+								value > 0
+							}
+							any_owned_pop = { is_exact_same_species = event_target:lrsk_old_species }
+						}
+						random_owned_pop = {
+							limit = { is_exact_same_species = event_target:lrsk_old_species }
+							change_species = event_target:lrsk_convert_to_species
+							lrsk_apply_post_complementation_effect = yes
+						}
+						owner = {
+							if = {
+								limit = { has_ascension_perk = ap_become_the_crisis }
+								complete_crisis_objective = crisobj_purge_pops
+							}
+						}
+						subtract_variable = {
+							which = lrsk_comlementation_counter
+							value = 2
+						}
+					}
+				}
+			}
+			ELSE = {
+				log_error = "No species found for \\[This.Species.GetName] pop owned by \\[This.Owner.GetName] on \\[This.Planet.GetName] to complement into"
+			}
+		}
+	}
+	ELSE = {
+		log_error = "Trying to complement pops on \\[This.Planet.GetName], no valid one available?"
+	}
+}
+
 # pop scope, root = planet
 lrsk_apply_post_complementation_effect = {
-	if = {
+	IF = {
 		limit = {
 			NOT = {
 				owner = {
