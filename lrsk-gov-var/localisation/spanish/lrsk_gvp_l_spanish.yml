@@ -27,15 +27,15 @@ l_spanish:
 
  lrsk_gov_var_civic_republicanism:0 "Republicanism"
  lrsk_gov_var_civic_republicanism_desc:0 "This society believes that the greatest virtue is attained by people of good character serving the common good."
- lrsk_gov_var_civic_republicanism_oli:0 "$lrsk_gov_var_civic_republicanism$" 
- lrsk_gov_var_civic_republicanism_oli_desc:0 "$lrsk_gov_var_civic_republicanism_desc$"
+ lrsk_gov_var_civic_republicanism_oli:0 "$lrsk_gov_var_civic_republicanism$ (Legacy Civic)" 
+ lrsk_gov_var_civic_republicanism_oli_desc:0 "$lrsk_gov_var_civic_republicanism_desc$\n\n§PThis version for Egalitarian Oligarchies is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
 
  lrsk_gov_var_civic_utilitarian_planning:0 "Utilitarian Planning"
  lrsk_gov_var_civic_utilitarian_planning_desc:0 "The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation."
  civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Able to use the §H$decision_lrsk_gvp_work_allocation_plan$§! planetary decision on planets with unemployment, which gives $lrsk_gvp_statmod_work_plan_effects_common$ (can be ended any time, will automatically end when no pops are unemployed for one month).\n\n"
 
  lrsk_gov_var_civic_siege_mentality:0 "Siege Mentality"
- lrsk_gov_var_civic_siege_mentality_desc:0 "The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
+ lrsk_gov_var_civic_siege_mentality_desc:0 "The government's military policy focuses on defense, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
 
  lrsk_gov_var_civic_cult_of_personality:0 "Cult of Personality"
  lrsk_gov_var_civic_cult_of_personality_desc:0 "The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence."
@@ -59,8 +59,8 @@ l_spanish:
 
  lrsk_gov_var_civic_chivalry:0 "Chivalry"
  lrsk_gov_var_civic_chivalry_desc:0 "Ideals of martial valor and honorable conduct define ruling class culture."
- lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$"
- lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$"
+ lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$ (Legacy Civic)"
+ lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$\n\n§PThis version for Aristocratic Elite is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
  civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ §Y$job_lrsk_gov_var_job_knight_plural$§!.\n\n$job_lrsk_gov_var_job_knight_effect_desc$\n\n"
 
  lrsk_gov_var_civic_lifelong_learning:0 "Lifelong Learning"
@@ -231,13 +231,6 @@ l_spanish:
  lrsk_gov_var_civic_mc_gig_economy_desc:0 "This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time."
  civic_tooltip_lrsk_gov_var_civic_mc_gig_economy_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_odd_jobs_emporium$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+2§! §Y£job_lrsk_gov_var_job_gofer£ $job_lrsk_gov_var_job_gofer$ Jobs§! ($job_lrsk_gov_var_job_gofer_effect_desc$) and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n"
 
- lrsk_gov_var_civic_mc_chart_corp_board:0 "Colonial Chartering"
- lrsk_gov_var_civic_mc_chart_corp_board_desc:0 "A system of chartered joint-stock companies to raise investment money for space-based resource extraction."
- civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "$LRSK_GVP_CEPHEUS_WARNING$Turn ordinary subjects into special §YChartered Company§! subjects that provide £energy£ £minerals£ resource taxes. Each such subject also provides bonuses to £trade_value£ §Y$TRADE_VALUE$§! and discounted §YMarket Fees§!.\n\n"
-
- lrsk_gov_var_civic_mc_chartered_company:0 "Chartered Company"
- lrsk_gov_var_civic_mc_chartered_company_desc:0 "A chartered joint-stock company set up to raise investment money for space-based resource extraction."
-
  lrsk_gov_var_civic_mc_controlling_interest:0 "Controlling Interest"
  lrsk_gov_var_civic_mc_controlling_interest_desc:0 "A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs."
 
@@ -268,25 +261,12 @@ l_spanish:
  lrsk_gov_var_civic_mc_police_state_desc:0 "This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments."
  civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_professional_protection_office$§! $BRANCH_OFFICE_BUILDING$, which provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! §Y£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator$ Job§! ($job_lrsk_gov_var_job_investigator_effect_desc$) or (if the providing corp is criminal) §G+1§! §Y£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor$ Job§! ($job_lrsk_gov_var_job_suppressor_effect_desc$).\n\n"
 
- lrsk_gov_var_civic_mc_gig_economy:0 "Gig Economics"
- lrsk_gov_var_civic_mc_gig_economy_desc:0 "This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time."
-
  lrsk_gov_var_civic_mc_chart_corp_board:0 "Colonial Chartering"
  lrsk_gov_var_civic_mc_chart_corp_board_desc:0 "A system of chartered joint-stock companies to raise investment money for space-based resource extraction."
  civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "Turn ordinary subjects into special §YChartered Company§! subjects. Each such subject also provides bonuses to £trade_value£ $TRADE_VALUE$ and discounted Market Fees.\n\n"
 
  lrsk_gov_var_civic_mc_chartered_company:0 "Chartered Company"
  lrsk_gov_var_civic_mc_chartered_company_desc:0 "A chartered joint-stock company set up to raise investment money for space-based resource extraction."
-
- lrsk_gov_var_civic_mc_controlling_interest:0 "Controlling Interest"
- lrsk_gov_var_civic_mc_controlling_interest_desc:0 "A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs."
-
- lrsk_gov_var_civic_mc_vertical_integration:0 "Vertical Integration"
- lrsk_gov_var_civic_mc_vertical_integration_desc:0 "This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products."
-
- lrsk_gov_var_civic_mc_workers_councils:0 "Employee-Owned Co-op"
- lrsk_gov_var_civic_mc_workers_councils_desc:0 "All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company."
- civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "$civic_tooltip_lrsk_gov_var_civic_workers_councils_effects$"
 
  ####################################
  ### "Advanced" Civics
@@ -378,6 +358,18 @@ l_spanish:
  lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects:0 "-Starts as a member of a §HMartial Alliance§! federation with two additional members."
  
  LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to military excellence and glory.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would be allies bound for mutual defense, and when we were ready to spread out into the cosmos, face whatever threats arose there as a strong united front."
+ 
+ #### Convened by Providence: Start in a holy covenant.
+
+ lrsk_gvp_origin_convened_providence:0 "Convened by Providence"
+ lrsk_gvp_origin_convened_providence_desc:0 "This civilization established early contact with its immediate alien neighbors. Finding each other to all be peoples of strong (though varied) faith, they made a sacred pact to seek the divine together."
+ lrsk_gvp_origin_convened_providence_effects:0 "-Start as the leader of a §HHoly Covenant§! federation with two additional members.\n-Members will occupy any Guaranteed Habitable Worlds slots near your home system.\n-Start with §HThe Federation§! tradition unlocked." 
+ 
+ lrsk_gvp_origin_convened_providence_npc:0 "$lrsk_gvp_origin_convened_providence$"
+ lrsk_gvp_origin_convened_providence_npc_desc:0 "$lrsk_gvp_origin_convened_providence_desc$"
+ lrsk_gvp_origin_convened_providence_npc_effects:0 "-Starts as a member of a §HHoly Covenant§! federation with two additional members."
+ 
+ LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were spiritual seekers, attuned to the energy of the divine.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - as the forces of the divine world itself had blessed us by raising us together, we would honor the gods together."
 
  #### Uplift: Start as a protectorate of an advanced start empire, who are benefactors that uplifted you. Able to take uplift traits.
 
@@ -1286,7 +1278,7 @@ l_spanish:
  LRSK_GOV_VAR_RT_COL_GOVERNOR:0 "Colonial Governor"
 
  lrsk_gov_var_gov_colonial_viceroyalty_cmp:0 "Viceroyal Company"
- lrsk_gov_var_gov_colonial_viceroyalty_cmp_desc:0 "This government is a commercial venture which officially has a fiduciary duty to enrich the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
+ lrsk_gov_var_gov_colonial_viceroyalty_cmp_desc:0 "This government started as a commercial venture with a fiduciary duty to enrich the monarchy $LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON$"
 
  LRSK_GOV_VAR_RT_COL_EXEC:0 "Colonial Executive Officer"
 
@@ -1429,26 +1421,30 @@ l_spanish:
  
  preset_lrsk_gvp_vassal_foundry:0 "Logistics Colony"
  preset_lrsk_gvp_vassal_foundry_desc:1 "A $preset_lrsk_gvp_vassal_foundry$ is a Subject that must furnish its Overlord with materials and supplies for the Overlord's navy."
- preset_lrsk_gvp_vassal_foundry_flavor_desc:1 "$lrsk_gvp_special_service_logistics_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ LRSK_GVP_FOUNDRY_FLAVOR_TEXT_COMMON:0 "To better the military preparedness of the Overlord, the Subject shall provide the Overlord with workers for the shipyards."
+ preset_lrsk_gvp_vassal_foundry_flavor_desc:1 "$LRSK_GVP_FOUNDRY_FLAVOR_TEXT_COMMON$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
  preset_lrsk_gvp_vassal_foundry_eff:1 "Overlord gets §G-5%§! £ship_stats_build_cost£ §Yship build and upkeep cost§! per such subject. Having at least one of these Subjects gives the Overlord §G+5%§! ship fire rate. Subject gets §R-15%§! naval cap."
  #preset_lrsk_gvp_vassal_foundry_eff:1 "Taxed §G15%§! of £alloys£ §YAlloys§! and £energy£ §YEnergy§! produced. Overlord gets §G-3%§! £ship_stats_build_cost£ §Yship build and upkeep cost§! per such subject (to a maximum of §G-15%§!)."
 
  preset_lrsk_gvp_vassal_market:0 "Market Colony"
  preset_lrsk_gvp_vassal_market_desc:1 "A $preset_lrsk_gvp_vassal_market$ is a Subject that exists to feed the material needs and wants of its Overlord's people."
- preset_lrsk_gvp_vassal_market_flavor_desc:1 "$lrsk_gvp_special_service_commerce_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
- preset_lrsk_gvp_vassal_market_eff:1 "Overlord gets §G+5%§! £trade_value£ §YTrade Value§! and  §G-5%§! §YMarket Fee§! per such subject. Having at least one of these Subjects gives the Overlord §G+10%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. Subject gets §R-15%§! trade attractiveness."
- #preset_lrsk_gvp_vassal_market_eff:1 "Taxed §G15%§! of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced. Overlord gets §G+5%§! £trade_value£ §YTrade Value§! (to a maximum of §G+25%§!) and  §G-5%§! §YMarket Fee§! (to a maximum of §G-25%§!) per such subject."
+ LRSK_GVP_MARKET_FLAVOR_TEXT_COMMON:0 "For the greater prosperity of the Overlord, the Subject shall provide the Overlord with favorable commercial opportunities."
+ preset_lrsk_gvp_vassal_market_flavor_desc:1 "$LRSK_GVP_MARKET_FLAVOR_TEXT_COMMON$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ preset_lrsk_gvp_vassal_market_eff:1 "Overlord gets §G+5%§! £trade_value£ §YTrade Value§! and  §G-2%§! §YMarket Fee§! per such subject. Having at least one of these Subjects gives the Overlord §G+10%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. Subject gets §R-15%§! trade attractiveness."
+ #preset_lrsk_gvp_vassal_market_eff:1 "Taxed §G15%§! of £consumer_goods£ §YConsumer Goods§! and £food£ §YFood§! produced. Overlord gets §G+5%§! £trade_value£ §YTrade Value§! (to a maximum of §G+25%§!) and  §G-2%§! §YMarket Fee§! (to a maximum of §G-25%§!) per such subject."
 
  preset_lrsk_gvp_vassal_trophy:0 "Trophy Colony"
  preset_lrsk_gvp_vassal_trophy_desc:1 "A $preset_lrsk_gvp_vassal_trophy$ is a Subject that has been made to act as a propagandist for its Overlord, echoing the Overlord's agenda and legitimating its culture."
- preset_lrsk_gvp_vassal_trophy_flavor_desc:1 "$lrsk_gvp_special_service_diplomatic_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ LRSK_GVP_TROPHY_FLAVOR_TEXT_COMMON:0 "For the glory of the Overlord, the Subject shall be made into an object lesson in proper deference to a superior."
+ preset_lrsk_gvp_vassal_trophy_flavor_desc:1 "$LRSK_GVP_TROPHY_FLAVOR_TEXT_COMMON$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
  preset_lrsk_gvp_vassal_trophy_eff:1 "Overlord gets §G+5%§! £diplo_weight£ §Y$diplomatic_weight$§! and £influence£ §YInfluence§! production per such subject. Having at least one of these Subjects gives the Overlord §G+1§! Envoys. Subject gets a §R-10%§! £happiness£ §YHappiness§! penalty."
  #preset_lrsk_gvp_vassal_trophy_eff:1 "Taxed §G15%§! of £unity£ §YUnity§! and £influence£ §YInfluence§! produced; gets a §R-10%§! £happiness£ §YHappiness§! penalty. Overlord gets §G+5%§! £diplo_weight£ §Y$diplomatic_weight$§! per such subject (to a maximum of §G+25%§!)."
  preset_lrsk_gvp_vassal_trophy_no_gestalt:0 "§PGestalt Subjects cannot render this service.§!"
 
  preset_lrsk_gvp_vassal_prospector:0 "Provisioner Colony"
  preset_lrsk_gvp_vassal_prospector_desc:1 "A $preset_lrsk_gvp_vassal_prospector$ is a Subject that must render to its overlord a portion of the construction resources it produces."
- preset_lrsk_gvp_vassal_prospector_flavor_desc:1 "$lrsk_gvp_special_service_provisions_desc$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
+ LRSK_GVP_PROSPECT_FLAVOR_TEXT_COMMON:0 "To speed the development of the Overlord, the Subject shall provide the Overlord with construction workers."
+ preset_lrsk_gvp_vassal_prospector_flavor_desc:1 "$LRSK_GVP_PROSPECT_FLAVOR_TEXT_COMMON$ $LRSK_GVP_IMPECON_VASSAL_COMMON$"
  preset_lrsk_gvp_vassal_prospector_eff:1 "Overlord gets §G-5%§! £building£ §Ybuilding construction and upkeep cost§! per such subject. Having at least one of these Subjects gives the Overlord §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$ £happiness£ Happiness§!. Subject gets §R-10%§! building speed."
  #preset_lrsk_gvp_vassal_prospector_eff:1 "Taxed §G15%§! of £minerals£ §YMinerals§!, £volatile_motes£ §YVolatile Motes§!, £exotic_gases£ §YExotic Gases§!, and £rare_crystals£ §YRare Crystals§! produced. Overlord gets §G-4%§! £building£ §Ybuilding construction and upkeep cost§! per such subject (to a maximum of §G-20%§!)."
 
@@ -1464,7 +1460,7 @@ l_spanish:
  preset_lrsk_gov_var_subject_chartered_company:0 "Chartered Colony"
  preset_lrsk_gov_var_subject_chartered_company_desc:1 "A $preset_lrsk_gov_var_subject_chartered_company$ is a Subject set up as a joint-stock company for commercial colonization."
  preset_lrsk_gov_var_subject_chartered_company_flavor_desc:1 "Some early star-faring governments had trouble financing interstellar colonization efforts. One solution they developed was to foster the creation of special colonization corporations: private interests would front the money for the endeavor and the homeworld government maintained indirect control through the terms of the incorporation contract. This subject is the result of such a scheme."
- preset_lrsk_gov_var_subject_chartered_company_eff:0 "-Taxed §G15%§! of §YBasic Resources§!.\n-For each Subject of this type that it has, Overlord gets §G+10%§! £trade_value£ §YTrade Value§! (maximum §G+150%§!) and  §G-5%§! §YMarket Fee§! (maximum §G-75%§!).\n-This Subject type has an innate §G+50§! £opinion£ §YOpinion§! (decays to §G+25§! over time) bonus to the Overlord that chartered it.\n-Any §H$divided_patronage$§! penalty to this Subject's £loyalty£ §YMonthly Loyalty§! is §Ghalved§! for other Subjects of the same type. "
+ preset_lrsk_gov_var_subject_chartered_company_eff:0 "-Taxed §G15%§! of §YBasic Resources§!.\n-For each Subject of this type that it has, Overlord gets §G+10%§! £trade_value£ §YTrade Value§! (maximum §G+150%§!) and  §G-2%§! §YMarket Fee§! ((maximum §G-20%§!)).\n-This Subject type has an innate §G+50§! £opinion£ §YOpinion§! (decays to §G+25§! over time) bonus to the Overlord that chartered it.\n-Any §H$divided_patronage$§! penalty to this Subject's £loyalty£ §YMonthly Loyalty§! is §Ghalved§! for other Subjects of the same type. "
  lrsk_requires_recipient_not_gestalt:0 "$TRIGGER_FAIL$§RThey are a §Y$ethic_gestalt_consciousness$§!, unclear whether they can comprehend a colonial charter, much less obey one.§!"
  lrsk_grants_colonialism_cb:0 "If refused, grants §Y$casus_belli_cb_lrsk_gov_var_colony$§! §HCasus Belli§! on §H[From.GetName]§! for §Y$cb_subjugation_length_default$§!"
 
@@ -1492,16 +1488,16 @@ l_spanish:
  lrsk_gvp_special_service_none_desc:0 "The Subject is relieved of any special services to the Overlord. They should be grateful!"
  #lrsk_gvp_special_service_none_tooltip:0 "$SUBJECT|Y$ will appreciate being granted this relief if other Subjects are not so lucky."
  lrsk_gvp_special_service_logistics:0 "Logistics"
- lrsk_gvp_special_service_logistics_desc:0 "To better the military preparedness of the Overlord, the Subject shall provide the Overlord with workers for the shipyards."
+ lrsk_gvp_special_service_logistics_desc:0 "$LRSK_GVP_FOUNDRY_FLAVOR_TEXT_COMMON$ ($preset_lrsk_gvp_vassal_foundry_eff$)"
  #lrsk_gvp_special_service_logistics_tooltip:0 "To better the military preparedness of $OVERLORD|Y$, $SUBJECT|Y$ shall provide $OVERLORD|Y$ with workers for the shipyards."
  lrsk_gvp_special_service_commerce:0 "Commerical"
- lrsk_gvp_special_service_commerce_desc:0 "For the greater prosperity of the Overlord, the Subject shall provide the Overlord with favorable commercial opportunities."
+ lrsk_gvp_special_service_commerce_desc:0 "$LRSK_GVP_MARKET_FLAVOR_TEXT_COMMON$ ($preset_lrsk_gvp_vassal_market_eff$)"
  #lrsk_gvp_special_service_commerce_tooltip:0 "For the greater prosperity of $OVERLORD|Y$, $SUBJECT|Y$ shall provide $OVERLORD|Y$ with favorable commercial opportunities."
  lrsk_gvp_special_service_diplomatic:0 "Diplomatic"
- lrsk_gvp_special_service_diplomatic_desc:0 "For the glory of the Overlord, the Subject shall be made into an object lesson in proper deference to a superior. This increases the Overlord's political captial, to the indignation of the Subject's people, and improves the the Overlord's diplomatic standing."
+ lrsk_gvp_special_service_diplomatic_desc:0 "$LRSK_GVP_TROPHY_FLAVOR_TEXT_COMMON$ ($preset_lrsk_gvp_vassal_trophy_eff$)"
  #lrsk_gvp_special_service_diplomatic_tooltip:0 "For the glory of $OVERLORD|Y$, $SUBJECT|Y$ shall be made into an object lesson in proper deference to a superior. This increases $OVERLORD|Y$'s political captial, to the indignation of the people of $SUBJECT|Y$, and improves the $OVERLORD|Y$'s diplomatic standing."
  lrsk_gvp_special_service_provisions:0 "Provisions"
- lrsk_gvp_special_service_provisions_desc:0 "To speed the development of the Overlord, the Subject shall provide the Overlord with construction workers."
+ lrsk_gvp_special_service_provisions_desc:0 "$LRSK_GVP_PROSPECT_FLAVOR_TEXT_COMMON$ ($preset_lrsk_gvp_vassal_prospector_eff$)"
  #lrsk_gvp_special_service_provisions_tooltip:0 "To speed the development of $OVERLORD|Y$, $SUBJECT|Y$ shall provide its overlord with construction workers."
 
  lrsk_gvp_chartering:0 "Colonial Charter Benefits"
@@ -1775,7 +1771,7 @@ l_spanish:
  job_lrsk_gov_var_job_functionary:0 "Functionary"
  job_lrsk_gov_var_job_functionary_plural:0 "Functionaries"
  job_lrsk_gov_var_job_functionary_desc:0 "Sure, the hours are long, the paperwork is tedious, and you're paying for the privilege, but think of how great this will look on your resume!"
- job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ reduce £mod_empire_size_mult£ §YEmpire Size penalties§! and produce £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ produce £unity£ §Y$unity$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
  mod_job_lrsk_gov_var_job_functionary_add:0 "$job_lrsk_gov_var_job_functionary$ Jobs"
  mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_functionary_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_functionary_add£ per $VALUE$ £pop£"
@@ -2272,19 +2268,21 @@ l_spanish:
 
  # Combat Data: New Post-Data Intel
 
+ LRSK_GVP_CD_NO_MORE_NOTICE:0 "\n\n§PYou will not get an update when this happens again.§!"
+
  lrsk_gov_var_combat_data.3.name:0 "New Military Intel"
  lrsk_gov_var_combat_data.3.desc:0 "After our battle with the §H[lrsk_cd_anttag.GetName]§!, we have extrapolated the high-level strategy of their forces from their tactical decisions, giving us new insights into their broader military operations."
  lrsk_gov_var_combat_data.3.a:0 "Incorporating new combat data."
  lrsk_gov_var_combat_data.3.a.tooltip:0 "You have gained the next level of military intel on §Y[lrsk_cd_anttag.GetName]§!, which will be fresh for 30 days."
  lrsk_gov_var_combat_data.3.b:0 "No more notifications about this."
- lrsk_gov_var_combat_data.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!"
+ lrsk_gov_var_combat_data.3.b.tooltip:0 "$lrsk_gov_var_combat_data.3.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  lrsk_gov_var_combat_data.4.name:0 "Military Intel Refreshed"
  lrsk_gov_var_combat_data.4.desc:0 "Our encounter with the §H[lrsk_cd_anttag.GetName]§! fleet has corroborated some of our previous information about their combat capabilities while forcing revisions elsewhere. In any case, we can maintain our current level of understanding of their military operations."
  lrsk_gov_var_combat_data.4.a:0 "Confirmed."
  lrsk_gov_var_combat_data.4.a.tooltip:0 "You maintained your current level of military intel on §Y[lrsk_cd_anttag.GetName]§! for another 30 days."
  lrsk_gov_var_combat_data.4.b:0 "$lrsk_gov_var_combat_data.3.b$"
- lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.3.b.tooltip$"
+ lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.4.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
@@ -2982,10 +2980,10 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  ### Socialist Governments
  ## Imperial
  # Popular Kingdom
- format.lrsk_imp_pop.1: "<lrsk_imppop_desc><lrsk_imperial_pop> of the [This.GetSpeciesNamePlural]"
- format.lrsk_imp_pop.2: "<lrsk_imppop_desc><lrsk_imperial_pop> of [This.GetSpeciesName]kind"
- format.lrsk_imp_pop.3: "<lrsk_imppop_desc>[This.GetSpeciesAdj] <lrsk_imperial_pop>"
- format.lrsk_imp_pop.4: "[This.GetSpeciesAdj] <lrsk_imppop_desc><lrsk_imperial_pop>"
+ format.lrsk_imp_pop.1: "{lrskAoftheB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} [This.GetSpeciesNamePlural]}}"
+ format.lrsk_imp_pop.2: "{lrskAoftheB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} lrskKindSuff{[This.GetSpeciesName]}}}"
+ format.lrsk_imp_pop.3: "{AassocB{<lrsk_imppop_desc> [This.GetSpeciesAdj]} {<lrsk_imperial_pop>}}"
+ format.lrsk_imp_pop.4: "{AassocB{[This.GetSpeciesAdj] <lrsk_imppop_desc>} {<lrsk_imperial_pop>}}"
  ## Dictatorial
  #Proletarian Dictatorship
  #Insurrectionary Lineage
@@ -3709,7 +3707,7 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  Commons:0 "Commons"
  Social_Union:0 "Social Union"
  Realm:0 "Realm"
- Peopless:0 "Peoples'"
+ Peopless:0 "People's"
  Workerss:0 "Workers'"
  Free_and_Fair:0 "Free and Fair"
  Inc:0 ", Inc"
@@ -3719,20 +3717,20 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  Consensually_United:0 "Consensually-United"
  Contracturally_Bound:0 "Contracturally-Bound"
  Sovereign_Citizen:0 "Sovereign-Citizen"
- of_Tomorrow:0 "of Tomorrow"
- of_Prosperity:0 "of Prosperity"
- of_Renewal:0 "of Renewal"
- of_Light:0 "of Light"
- of_Ascension:0 "of Ascension"
- of_the_Living_Word:0 "of the Living Word"
- of_Fortune:0 "of Fortune"
- of_Virtue:0 "of Virtue"
- of_the_Reborn:0 "of the Reborn"
- of_the_Messiah:0 "of the Messiah "
- of_Riches:0 "of Riches "
- of_Truth:0 "of Truth"
- of_the_Spirit:0 "of the Spirit"
- of_Saints:0 "of Saints"
+ Tomorrow:0 "Tomorrow"
+ Prosperity:0 "Prosperity"
+ Renewal:0 "Renewal"
+ Light:0 "Light"
+ Ascension:0 "Ascension"
+ Living_Word:0 "Living Word"
+ Fortune:0 "Fortune"
+ Virtue:0 "Virtue"
+ Reborn:0 "Reborn"
+ Messiah:0 "Messiah "
+ Riches:0 "Riches "
+ Truth:0 "Truth"
+ Spirit:0 "Spirit"
+ Saints:0 "Saints"
  Shrine_Keepers:0 "Shrine-Keepers"
  Chapel_Guards:0 "Chapel-Guards"
  Socio_Economic:0 "Socio-Economic"
