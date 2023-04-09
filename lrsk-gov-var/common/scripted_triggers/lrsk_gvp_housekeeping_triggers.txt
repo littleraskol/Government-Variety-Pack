@@ -145,6 +145,8 @@ lrsk_has_gvp_soc_gov = {
 		has_government = lrsk_gov_var_gov_communal_democracy
 		has_government = lrsk_gov_var_gov_socialist_plenary
 		has_government = lrsk_gov_var_gov_automated_worldcommune
+		has_government = lrsk_gov_var_gov_automated_worldcommune_oli
+		has_government = lrsk_gov_var_gov_automated_worldcommune_dem
 		has_government = lrsk_gov_var_gov_market_socialism
 		has_government = lrsk_gov_var_gov_coop_enterprise
 		has_government = lrsk_gov_var_gov_syndicalist_conference
@@ -651,6 +653,10 @@ lrsk_has_gvp_possible_invalidated_civic = {
 				has_civic = civic_hive_divided_attention
 				has_civic = civic_hive_subsumed_will
 			}
+		}
+		AND = {
+			has_civic = civic_feudal_realm
+			has_civic = lrsk_gov_var_civic_royal_absolutism
 		}
 	}
 }
