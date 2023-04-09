@@ -1444,6 +1444,14 @@ lrsk_gvp_job_complementing = {
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			planet = { lrsk_gets_compl_nexus_boost = yes }
+		}
+		planet_amenities_add = 1
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
 	resources = {
 		category = planet_jobs
 		produces = {

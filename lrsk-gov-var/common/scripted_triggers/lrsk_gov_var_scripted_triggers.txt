@@ -228,3 +228,11 @@ lrsk_is_impecon_vassal = {
 		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }
+
+# Bonuses provided by either a building or a deposit.
+lrsk_gets_compl_nexus_boost = {
+	OR = {
+		has_building = lrsk_gvp_bldg_complementation_nexus
+		has_deposit = d_lrsk_gvp_compl_project_restored_nexus
+	}
+}

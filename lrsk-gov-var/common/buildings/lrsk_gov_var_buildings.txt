@@ -2665,6 +2665,49 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	}
 }
 
+# Complementation Nexus
+# The base production is not the main features of the building, which are rather:
+# 1. Make complementation faster (checked by lrsk_gvp_complementation.31) and allow a planet decision
+# 2. +1 amenities output from the complementation jobs
+lrsk_gvp_bldg_complementation_nexus = {
+	base_buildtime = 240
+	base_cap_amount = 1
 
+	category = government
+
+	potential = {
+		owner = {
+      		has_origin =  lrsk_gvp_origin_complementation_project
+			#has_technology = whatever
+		}
+		NOT = { has_deposit = d_lrsk_gvp_compl_project_restored_nexus }
+	}
+
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = lrsk_bldg_complementation_nexus_effects
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			influence = 0.1
+		}
+	}
+
+
+	ai_weight = {
+		weight = 1	# meh
+	}
+}
 
 

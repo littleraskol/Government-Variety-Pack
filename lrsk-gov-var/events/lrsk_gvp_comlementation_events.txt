@@ -322,7 +322,9 @@ planet_event = {
 			1 = { set_variable = { which = lrsk_comlementation_counter value = 16 } }	# 8 pops (up to 16 original)
 		}
 		
-		# TBD: If planet has a Complementation Nexus, increase the variable
+		IF = { limit = { lrsk_gets_compl_nexus_boost = yes }
+			multiply_variable = { which = lrsk_comlementation_counter value = 1.5 }
+		}
 		
 		while = {
 			limit = {
