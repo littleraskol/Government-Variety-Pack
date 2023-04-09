@@ -21,7 +21,7 @@ lrsk_gov_var_gov_merchant_principality_d = {
 	}
 
 	possible = {
-		has_authority = auth_dictatorial
+		has_auth_dictatorial = yes
 		has_valid_civic = civic_philosopher_king
 		has_valid_civic = civic_merchant_guilds
 	}
@@ -41,7 +41,7 @@ lrsk_gov_var_gov_merchant_principality_i = {
 	#should_force_rename = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_philosopher_king
 		has_valid_civic = civic_merchant_guilds
 	}
@@ -72,8 +72,8 @@ lrsk_gov_var_gov_stakeholder_polity = {
 	}
 
 	possible = {
-		has_authority = auth_oligarchic
-		has_valid_civic = lrsk_gov_var_civic_republicanism_oli
+		has_auth_oligarchic = yes
+		has_valid_civic = lrsk_gov_var_civic_republicanism
 		has_valid_civic = civic_merchant_guilds
 	}
 
@@ -103,7 +103,7 @@ lrsk_gov_var_gov_shareholder_commonwealth = {
 	}
 
 	possible = {
-		has_authority = auth_democratic
+		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
 		has_valid_civic = civic_merchant_guilds
 	}
@@ -153,7 +153,7 @@ lrsk_gov_var_gov_crusading_company = {
 				has_valid_civic = civic_citizen_service
 			}
 			AND = {
-				has_authority = auth_corporate
+				has_auth_corporate = yes
 				has_valid_civic = civic_gospel_of_the_masses
 				OR = {
 					has_valid_civic = civic_naval_contractors
@@ -186,7 +186,7 @@ lrsk_gov_var_gov_colonial_charter_board = {
 	}
 
 	possible = {
-		has_authority = auth_corporate
+		has_auth_corporate = yes
 		has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
 	}
 
@@ -214,7 +214,7 @@ lrsk_gov_var_gov_colonial_company = {
 	}
 
 	possible = {
-		has_authority = auth_corporate
+		has_auth_corporate = yes
 		has_valid_civic = lrsk_gov_var_civic_mc_chartered_company
 	}
 

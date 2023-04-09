@@ -3,7 +3,7 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-A total of 69 new civics, broken down into 4 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
+A total of 75 new civics, broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
 
 2. New Governments
 
@@ -17,9 +17,73 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
-The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
+This mod only adds new things to the game, in new files. There's no possibility of this mod conflicting with another due to both editing base game files. All file names and tokens, furthermore, are specific to this mod (using a special prefix) so any token or file conflict would more or less have to be intentional (e.g. a patch or submod). That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), not all mod features can be guaranteed to be coherent.
 
 5. Changes
+
+v5.4.2 (4/3/23) - Small fixes
+-Safe system check needs to make sure owner exists before asking about it.
+-Removed some redundant localization.
+
+v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
+-Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
+--Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).
+--Deprecated duplicate variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democratic authority or Egalitarian ethics, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
+--The deprecated civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
+-Added scripted triggers to check for each authority type, which enables other mods or patches to overload them with mod-added authorities.
+-Government application logic now uses these scripted triggers rather than checking directly for authorities.
+-Added scripted trigger (lrsk_gvp_is_active) to detect whether this mod is active/loaded (for other modders to check, basically...)
+
+v5.4 (03/14/23) - Canis Minor (3.7) Update
+-Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
+-Updated compat version number.
+-Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
+-Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
+-Improved tooltips for Combat Data special events.
+
+v5.3.9 (03/12/23) - Update prep
+-Changes made to re-merge with master branch and prepare for 3.7
+-Descriptions and documentation corrected (forgot to restore docs when features restored)
+-Corp branch buildings have categories
+-Removed spiritualist fed name fix (Paradox fixed)
+
+v5.3.8 (02/28/23) - More bad (less boring) names
+-Moved over more of the default name formats for added governments.
+-Should be able to deal with "special" governments (e.g. purifiers) appropriately.
+-Restoring "better names" from this mod is still a far off dream...
+
+v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
+-Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
+--Slight localization tweak.
+-Colonial Fief fixes:
+--Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
+--Also they should have names...
+-Some small backend changes.
+-Fixed localization of Functionary job to show correct job effects.
+
+v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
+-Removed redundant boxed-in escape route checks
+-Colonial Fief spawned vassals were not copying techs from overlord.
+-Small localization update.
+
+v5.3.5 (12/12/22) - Little Things
+-Forgot to add new origins to scripted triggers
+-Wrong effects for NPC Convened by Providence
+
+v5.3.4 (12/10/22) - Orion Post-Release Update 2
+-Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
+-Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
+-Cleaned up new federation start code.
+-Incidentally, fixed (most of the time) a base game error that prevents Holy Covenants from getting random names.
+
+v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
+-The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.
+-Added localization description of effects of agreement terms (for some reason, term tooltips don't show any effects besides loyalty-per-month changes).
+-Commercial agreements were way too powerful: market fee reduction per subject with commercial service is now -2%, down from -5% (did not realize it would just straight subtract that much from the fee!).
+--This change has also been applied to Colonial Chartering special subjects, with a max reduction limit of -20%.
+
+v5.3.2 (11/30/22) - Yet More Random Name Problems
+-Hopefully adapted to the surprise new random name definition format.
 
 v5.3.1 (11/29/22) - Orion Post-Release Update 1
 -Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.

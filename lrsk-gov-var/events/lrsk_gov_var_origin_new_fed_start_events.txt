@@ -353,38 +353,47 @@ country_event = {
 					}
 				}
 			}
+			if = {
+				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+				lrsk_create_providence_member = yes
+				last_created_country = {
+					save_event_target_as = lrsk_fed_member_1
+					establish_communications_no_message = root
+				}
+			}
 			create_colony = {
 				owner = event_target:lrsk_fed_member_1
 			}
-
-			#if = {
-			#	limit = { owner = { has_valid_civic = civic_machine_servitor } }
-			#	create_species = {
-			#		name = random
-			#		class = random_non_machine
-			#		portrait = random
-			#		traits = random
-			#		homeworld = this
-			#		effect = {
-			#			save_event_target_as = lrsk_fed_1_organic_species
-			#			set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_1
-			#		}
-			#	}
-			#}
 
 			generate_start_deposits_and_blockers = yes
 			generate_start_buildings_and_districts = yes
 			generate_start_pops = yes
 			solar_system = {
-				create_starbase = {
-					size = starbase_starport
-					module = shipyard
-					building = crew_quarters
-					owner = event_target:lrsk_fed_member_1
-					effect = {
-						set_starbase_module = {
-							slot = 1
-							module = trading_hub
+				if = { limit = { event_target:lrsk_fed_member_1 = { is_gestalt = yes } }
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_fed_member_1
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = solar_panel_network
+							}
+						}
+					}
+				}
+				else = {
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_fed_member_1
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
 						}
 					}
 				}
@@ -599,38 +608,47 @@ country_event = {
 					}
 				}
 			}
+			if = {
+				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+				lrsk_create_providence_member = yes
+				last_created_country = {
+					save_event_target_as = lrsk_fed_member_2
+					establish_communications_no_message = root
+				}
+			}
 			create_colony = {
 				owner = event_target:lrsk_fed_member_2
 			}
-
-			#if = {
-			#	limit = { owner = { has_valid_civic = civic_machine_servitor } }
-			#	create_species = {
-			#		name = random
-			#		class = random_non_machine
-			#		portrait = random
-			#		traits = random
-			#		homeworld = this
-			#		effect = {
-			#			save_event_target_as = lrsk_fed_2_servitor_species
-			#			set_species_flag = lrsk_fed_organic_pets_of@event_target:lrsk_fed_member_2
-			#		}
-			#	}
-			#}
 
 			generate_start_deposits_and_blockers = yes
 			generate_start_buildings_and_districts = yes
 			generate_start_pops = yes
 			solar_system = {
-				create_starbase = {
-					size = starbase_starport
-					module = shipyard
-					building = crew_quarters
-					owner = event_target:lrsk_fed_member_2
-					effect = {
-						set_starbase_module = {
-							slot = 1
-							module = trading_hub
+				if = { limit = { event_target:lrsk_fed_member_2 = { is_gestalt = yes } }
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_fed_member_2
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = solar_panel_network
+							}
+						}
+					}
+				}
+				else = {
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_fed_member_2
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
 						}
 					}
 				}
@@ -654,6 +672,7 @@ country_event = {
 			limit = { lrsk_gov_var_has_discovery_origin = yes }
 			federation = { 
 				set_federation_type = research_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -661,6 +680,7 @@ country_event = {
 			limit = { lrsk_gov_var_has_tradeways_origin = yes }
 			federation = { 
 				set_federation_type = trade_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -668,6 +688,15 @@ country_event = {
 			limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 			federation = { 
 				set_federation_type = military_federation
+				set_federation_leader = root
+				set_name = random
+			}
+		}
+		if = {
+			limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
+			federation = { 
+				set_federation_type = spiritualist_federation
+				set_federation_leader = root
 				set_name = random
 			}
 		}
@@ -739,6 +768,5 @@ country_event = {
 			amount = 60
 			who = event_target:lrsk_fed_member_2
 		}
-		set_federation_leader = root
 	}
 }

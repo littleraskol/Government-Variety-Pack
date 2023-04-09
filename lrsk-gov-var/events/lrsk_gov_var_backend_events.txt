@@ -59,7 +59,7 @@ event = {
 			country_event = { id = lrsk_gov_var_shroud_touched.1 }
 		}
 		
-		# For Discovery / Tradeways / Grand Alliance
+		# For Discovery / Tradeways / Grand Alliance / Convended by Providence
 		every_playable_country = {
 			limit = { OR = { 
 				has_origin = lrsk_gov_var_origin_for_discovery
@@ -67,6 +67,7 @@ event = {
 				has_origin = lrsk_gov_var_origin_tradeways
 				has_origin = lrsk_gov_var_origin_tradeways_mc
 				has_origin = lrsk_gov_var_origin_grand_alliance
+				has_origin = lrsk_gvp_origin_convened_providence
 			} }
 			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
 		}
@@ -87,32 +88,23 @@ event = {
 
 		## Escape routes for possible boxed-in starts
 
-		# Find escape routes for human players first
-		every_playable_country = {
-			limit = {
-				lrsk_gvp_has_boxed_in_origin = yes
-				lrsk_has_gvp_npc_origin = no
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
-
-		# Find escape routes for AI players last
-		every_playable_country = {
-			limit = {
-				lrsk_gvp_has_boxed_in_origin = yes
-				lrsk_has_gvp_npc_origin = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
-
-		## Explainers if not called elsewhere
-
-		# Colonial Chartering
-		every_playable_country = {
-			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
-			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
-		}
-
+		## Find escape routes for human players first
+		#every_playable_country = {
+		#	limit = {
+		#		lrsk_gvp_has_boxed_in_origin = yes
+		#		lrsk_has_gvp_npc_origin = no
+		#	}
+		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
+		#}
+		#
+		## Find escape routes for AI players last
+		#every_playable_country = {
+		#	limit = {
+		#		lrsk_gvp_has_boxed_in_origin = yes
+		#		lrsk_has_gvp_npc_origin = yes
+		#	}
+		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
+		#}
 
 		## Escape routes for possible boxed-in starts
 
@@ -147,6 +139,12 @@ event = {
 		}
 
 		## Explainers if not called elsewhere
+
+		# Colonial Chartering
+		every_playable_country = {
+			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
+		}
 
 		# Imperial Economy
 		every_playable_country = {
@@ -1463,6 +1461,40 @@ event = {
 				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
 			}
 			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
+		}
+	}
+}
+
+# Diagnostic: Remove/replace deprecated civics (removes duplicates/redundancy)
+# Remove/deactivate after next save-breaking Stellaris update
+event = {
+	id = lrsk_government_variety_pack_backend.2004
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = { OR = {
+			has_civic = lrsk_gov_var_civic_republicanism_oli
+			has_civic = lrsk_gov_var_civic_chivalry_aristo
+		} }
+	}
+
+	immediate = {
+		every_country = {
+			limit = { OR = {
+				has_civic = lrsk_gov_var_civic_republicanism_oli
+				has_civic = lrsk_gov_var_civic_chivalry_aristo
+			} }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_republicanism_oli }
+				force_remove_civic = lrsk_gov_var_civic_republicanism_oli
+				force_add_civic = lrsk_gov_var_civic_republicanism
+			}
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_chivalry_aristo }
+				force_remove_civic = lrsk_gov_var_civic_chivalry_aristo
+				force_add_civic = lrsk_gov_var_civic_chivalry
+			}
 		}
 	}
 }

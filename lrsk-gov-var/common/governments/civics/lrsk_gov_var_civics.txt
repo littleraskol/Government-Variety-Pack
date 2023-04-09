@@ -62,21 +62,19 @@ lrsk_gov_var_civic_ascetic_virtues = {
   }
 }
 
-#Republicanism (Democratic) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
+#Republicanism - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
 lrsk_gov_var_civic_republicanism = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOR = {
-      value = auth_corporate
-      value = auth_oligarchic
-    } }
+    authority = { NOT = { value = auth_corporate } }
   }
 
   #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
 
   possible = {
-    authority = {
-      value = auth_democratic
+    OR = {
+      authority = { value = auth_democratic }
+      ethics = { value = ethic_egalitarian }
     }
   }
 
@@ -87,15 +85,11 @@ lrsk_gov_var_civic_republicanism = {
     job_politician_per_pop = 0.04
   }
 }
-# Oligarchic variant, not sure if I will use it....
+# DEPRECATED
 lrsk_gov_var_civic_republicanism_oli = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOR = {
-      value = auth_corporate
-      value = auth_democratic
-    } }
-    #civics = { value = lrsk_gov_var_civic_republicanism_oli } # not in use, just a possibility...
+    civics = { value = lrsk_gov_var_civic_republicanism_oli }
   }
 
   icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_republicanism.dds"
@@ -205,8 +199,8 @@ lrsk_gov_var_civic_siege_mentality = {
 
   modifier = {
     starbase_defense_platform_capacity_add = 2
-    shipclass_military_station_build_cost_mult = -0.2
-    shipclass_military_station_damage_mult = 0.05
+    ship_home_territory_fire_rate_mult = 0.1
+    army_defense_morale_mult = 0.25
 		intel_encryption_add = 1
   }
 
@@ -370,7 +364,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
 
   modifier = {
     max_rivalries = 2
-    army_morale_damage_mult = 0.3
+    damage_vs_rival_mult = 0.1
     country_power_projection_influence_produces_mult = 0.25
   }
 }
@@ -440,20 +434,16 @@ lrsk_gov_var_civic_business_lobby = {
 lrsk_gov_var_civic_chivalry = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOR = {
-      value = auth_corporate
-      value = auth_oligarchic
-    } }
+    authority = { NOT = { value = auth_corporate } }
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_chivalry_effects"
   #icon = "gfx/interface/icons/governments/civics/civic_warrior_culture.dds"
 
   possible = {
-    authority = {
-      OR = {
-        value = auth_imperial
-      }
+    OR = {
+      authority = { value = auth_imperial }
+      civics = { value = civic_aristocratic_elite }
     }
     ethics = {
       OR = {
@@ -471,13 +461,11 @@ lrsk_gov_var_civic_chivalry = {
     general_skill_levels = 1
   }
 }
+# DEPRECATED
 lrsk_gov_var_civic_chivalry_aristo = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOR = {
-      value = auth_corporate
-      value = auth_imperial
-    } }
+    civics = { value = lrsk_gov_var_civic_chivalry_aristo }
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_chivalry_effects"
@@ -699,7 +687,6 @@ lrsk_gov_var_civic_public_works = {
 }
 
 #Imperial Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
-#Deprecated until base game bug is fixed.
 lrsk_gov_var_civic_imperial_economy = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
