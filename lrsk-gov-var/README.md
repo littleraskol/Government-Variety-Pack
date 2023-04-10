@@ -33,6 +33,12 @@ v5.5 (4/?/23) - Return of Better Names (and other updates)
 --Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
 --For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
 --Some backend tweaks only I care about.
+-In an effort to make "subject-focused" civics more useful if you happen to not have subjects, the following civics get +15% diplomatic weight from the indicated source:
+--Universal Sovereignty: Military
+--Imperial Economy: Economy
+--Exploitation Algorithms: Technology
+--Benign Overmind: Empire Size
+--Domineering Expectations: Pops
 
 v5.4.2 (4/3/23) - Small fixes
 -Safe system check needs to make sure owner exists before asking about it.
