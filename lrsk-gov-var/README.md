@@ -37,8 +37,8 @@ v5.5 (4/?/23) - Return of Better Names (and other updates)
 --Universal Sovereignty: Military
 --Imperial Economy: Economy
 --Exploitation Algorithms: Technology
---Benign Overmind: Empire Size
---Domineering Expectations: Pops
+--Benign Overmind: Pops
+--Domineering Expectations: Empire Size
 
 v5.4.2 (4/3/23) - Small fixes
 -Safe system check needs to make sure owner exists before asking about it.
