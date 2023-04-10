@@ -17,7 +17,7 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 [list]
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198025179504]Namazuo "Horse Poop" Toushiro[/url] came up with something like 17 new government suggestions that were all awesome, I added them and they served as the inspiration for a few more.
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198019142950]Garlic Pudding[/url] came up with five government ideas I incorporated, and one I have yet to incorporate but a new Civic is WIP for it.
-[*]Steam user [https://steamcommunity.com/id/proudwell/]Renan[/url] fixed all my name generators after 3.6 changed things so much I couldn't make heads or tails of it. Thank you so much!
+[*]Steam user [url=https://steamcommunity.com/id/proudwell/]Renan[/url] fixed all my name generators after 3.6 changed things so much I couldn't make heads or tails of it. Thank you so much!
 [/list]
 
 [i][b]Compatibility, Patches, and Submods[/b][/i]
