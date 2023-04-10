@@ -2,11 +2,11 @@ A grab bag of new civics, origins, and government types.
 
 [i][b]New Civics[/b][/i]
 
-A total of [b]75 new civics[/b], broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for details.
+A total of [b]77 new civics[/b], broken down into 9 origins, 20 normal civics, 19 hive civics, 14 machine civics, 12 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. (See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for more info.)
 
 [i][b]New Governments[/b][/i]
 
-Around [b]85-90 new governments[/b] also listed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/]their own thread[/url]. The requirements for making them are in the first reply to that thread.
+Around [b]90-100 new governments[/b] (depending on how one counts), detailed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/]their own thread[/url].
 
 [i][b]Special Thanks[/b][/i]
 
@@ -17,6 +17,7 @@ Wanna give a HUGE THANK YOU to [url=http://steamcommunity.com/id/meltup/]Meltup[
 [list]
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198025179504]Namazuo "Horse Poop" Toushiro[/url] came up with something like 17 new government suggestions that were all awesome, I added them and they served as the inspiration for a few more.
 [*]Steam user [url=https://steamcommunity.com/profiles/76561198019142950]Garlic Pudding[/url] came up with five government ideas I incorporated, and one I have yet to incorporate but a new Civic is WIP for it.
+[*]Steam user [url=https://steamcommunity.com/id/proudwell/]Renan[/url] fixed all my name generators after 3.6 changed things so much I couldn't make heads or tails of it. Thank you so much!
 [/list]
 
 [i][b]Compatibility, Patches, and Submods[/b][/i]
@@ -47,6 +48,7 @@ The patches and alternate versions are:
 [*][url=http://steamcommunity.com/sharedfiles/filedetails/?id=924072507]Civics Variety Patch[/url] - Only civics (including origins), no governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029865238]Origins Variety Patch[/url] - Only origins.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029864772]No Origins Patch[/url] - Removes all origins.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1591858476]Lesser Names Patch[/url] - Removes the "Better Names" functionality from base game governments.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]
 

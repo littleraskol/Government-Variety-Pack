@@ -29,6 +29,29 @@ v5.x (??/??/??) - New Origin: Complementation Project
 --Somewhere in the galaxy are the remnants of your singleton precursor civilization, and they hate you!
 --Imagine if SEELE from Neon Genesis Evangelion won and turned into a Stellaris hive mind and you about have the idea here...
 
+v5.5 (4/10/23) - Return of Better Names (and other updates)
+-The "Better Names" feature returns thanks to the heroic efforts of Renan.
+--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
+-Other, unrelated changes:
+--Royal Absolutism is incompatible with Feudal Society (because history).
+--Automated World-Commune can be Oligarchic or Democratic.
+--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
+--Citizen Crusade requires either Exalted Priesthood or Elected Clergy (meaning it can be Democratic).
+--Republican Directory requires either Enlightened Liberalism or Republicanism.
+--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
+--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
+--Some backend tweaks only I care about.
+-In an effort to make "subject-focused" civics more useful if you happen to not have subjects, the following civics get +15% diplomatic weight from the indicated source:
+--Universal Sovereignty: Military
+--Imperial Economy: Economy
+--Exploitation Algorithms: Technology
+--Benign Overmind: Pops
+--Domineering Expectations: Empire Size
+
+v5.4.2 (4/3/23) - Small fixes
+-Safe system check needs to make sure owner exists before asking about it.
+-Removed some redundant localization.
+
 v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
 -Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
 --Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).

@@ -291,6 +291,71 @@ lrsk_gov_var_gov_automated_worldcommune = {
 	}
 }
 
+# Automated World-Commune (oligarchic)
+lrsk_gov_var_gov_automated_worldcommune_oli = {
+	ruler_title = LRSK_GOV_VAR_RT_CHIEF_TROUBLESHOOTER
+
+	possible = {
+		has_auth_oligarchic = yes
+		has_valid_civic = civic_technocracy
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+		NOR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+		}
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 20
+			OR = {
+				leader_class = governor
+			}
+		}
+	}
+
+	weight = {
+		base = 1001
+	}
+}
+
+# Automated World-Commune (democratic)
+lrsk_gov_var_gov_automated_worldcommune_dem = {
+	ruler_title = LRSK_GOV_VAR_RT_OOS_CHAIR_MALE
+	ruler_title_female = LRSK_GOV_VAR_RT_OOS_CHAIR_FEMALE
+
+	possible = {
+		has_auth_democratic = yes
+		has_valid_civic = civic_technocracy
+		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
+	}
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			OR = {
+				leader_class = scientist
+			}
+		}
+		modifier = {
+			add = 20
+			OR = {
+				leader_class = governor
+			}
+		}
+	}
+
+	weight = {
+		base = 1001
+	}
+}
+
 # Market Socialism (WC+CD)
 lrsk_gov_var_gov_market_socialism = {
 	ruler_title = LRSK_GOV_VAR_RT_CONTRACT_MEDIATOR

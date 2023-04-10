@@ -1432,7 +1432,7 @@ country_event = {
 
 	trigger = {
 		lrsk_has_gvp_possible_invalidated_civic = yes
-		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
+		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v55 } # Update this for every version.
 	}
 
 	immediate = {
@@ -1443,7 +1443,7 @@ country_event = {
 			set_government_cooldown = no
 			country_event = { id = lrsk_government_variety_pack_backend.20031 days = 30 }
 		}
-		set_country_flag = lrsk_fixed_invalid_civics_v35
+		set_country_flag = lrsk_fixed_invalid_civics_v55
 	}
 
 	option = { name = OK }
@@ -1466,7 +1466,7 @@ event = {
 	trigger = {
 		any_country = {
 			lrsk_has_gvp_possible_invalidated_civic = yes
-			NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
+			NOT = { has_country_flag = lrsk_fixed_invalid_civics_v55 } # Update this for every version.
 		}
 	}
 
@@ -1474,7 +1474,7 @@ event = {
 		every_country = {
 			limit = {
 				lrsk_has_gvp_possible_invalidated_civic = yes
-				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v35 } # Update this for every version.
+				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v55 } # Update this for every version.
 			}
 			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
 		}
