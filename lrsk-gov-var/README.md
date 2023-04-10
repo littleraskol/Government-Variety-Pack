@@ -23,15 +23,16 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v5.5 (4/?/23) - Return of Better Names (and other updates)
 -The "Better Names" feature returns thanks to the heroic efforts of Renan.
--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
--Royal Absolutism is incompatible with Feudal Society (because history).
--Automated World-Commune can be Oligarchic or Democratic.
--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
--Citizen Crusade requires either Exalted Priesthood or Elected Clergy.
--Republican Directory requires either Enlightened Liberalism or Republicanism.
--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
--Some backend tweaks only I care about.
+--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
+-Other, unrelated changes:
+--Royal Absolutism is incompatible with Feudal Society (because history).
+--Automated World-Commune can be Oligarchic or Democratic.
+--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
+--Citizen Crusade requires either Exalted Priesthood or Elected Clergy (meaning it can be Democratic).
+--Republican Directory requires either Enlightened Liberalism or Republicanism.
+--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
+--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
+--Some backend tweaks only I care about.
 
 v5.4.2 (4/3/23) - Small fixes
 -Safe system check needs to make sure owner exists before asking about it.
