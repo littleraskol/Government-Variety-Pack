@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.5.? (?/?/?) - Better planet class detection
+-Can change the planet class to the ideal for species (in Uplift).
+
 v5.5 (4/10/23) - Return of Better Names (and other updates)
 -The "Better Names" feature returns thanks to the heroic efforts of Renan.
 --This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
