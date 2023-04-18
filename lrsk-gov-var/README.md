@@ -24,6 +24,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v5.5.? (?/?/?) - Better planet class detection
 -Can change the planet class to the ideal for species (in Uplift).
 
+v5.5.1 (4/18/23) - Little weird "bug" "fix"
+-There seems to be a base game bug in the random name parser that will cause it to read commented out text in localisation files. I have removed the comment that causes this specific issue, although the underlying problem may remain...
+
 v5.5 (4/10/23) - Return of Better Names (and other updates)
 -The "Better Names" feature returns thanks to the heroic efforts of Renan.
 --This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
