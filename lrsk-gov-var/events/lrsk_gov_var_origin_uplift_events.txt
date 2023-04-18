@@ -40,8 +40,15 @@ country_event = {
 		random_country = {
 			limit = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 			save_event_target_as = lrsk_my_uplift_tutor
-			event_target:lrsk_my_uplift_tutor = { species = { save_event_target_as = lrsk_my_uplift_tutor_species } }
-			IF = { limit = { owner_species = { is_robotic_species = no } } change_pc = event_target:lrsk_my_uplift_tutor_species }
+			owner_species = { save_event_target_as = lrsk_my_uplift_tutor_species }
+
+			IF = { limit = { owner_species = { is_robotic_species = no } }
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_uplift_tutor_planet }
+					change_pc = event_target:lrsk_my_uplift_tutor_species
+				}
+			}
+			
 			every_owned_planet = {
 				limit = {  has_planet_flag = lrsk_uplift_tutor_colony }
 				planet_event = { id = game_start.21 }
