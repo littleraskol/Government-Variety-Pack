@@ -89,11 +89,10 @@ country_event = {
 				lrsk_safe_to_colonize_system = yes
 				NOT = { has_star_flag = empire_cluster }
 				any_system_planet = {
-					lrsk_safe_to_colonize_planet = yes
-					habitability = {
-						who = event_target:lrsk_compl_remnant_species
-						value >= 0.5
-					}
+					is_ringworld = no
+					is_asteroid = no
+					is_star = no
+					is_moon = no
 				}
 			}
 			star = { set_timed_planet_flag = {
@@ -115,8 +114,28 @@ country_event = {
 				root = { lrsk_add_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet } }		
 			}
 		}
+		
+		# Here we can create a good planet even if we didn't find any...
+		if = { limit = { NOT = { has_country_flag = lrsk_compl_found_a_refuge_planet } }
+			closest_system = { limit = { star = { has_planet_flag = lrsk_compl_possible_refuge_system } }
+				random_system_planet = {
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					change_pc = event_target:lrsk_compl_remnant_species
+					set_timed_planet_flag = {
+						flag = lrsk_compl_possible_refuge_world
+						days = 2
+					}
+					root = { lrsk_add_country_flag = { FLAG = lrsk_compl_found_a_refuge_planet } }	
+				}
+			}
+		}
 
-		# Final sanity check: if we somehow don't have any possible refuge planets, don't continue.
+		# Final sanity check: if we somehow still don't have any possible refuge planets, don't continue.
 		if = { limit = { has_country_flag = lrsk_compl_found_a_refuge_planet }
 			remove_country_flag =  lrsk_compl_found_a_refuge_planet
 			
