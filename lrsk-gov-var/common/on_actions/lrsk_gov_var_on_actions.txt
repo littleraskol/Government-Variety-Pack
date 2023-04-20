@@ -164,3 +164,23 @@ on_space_battle_lost = {
 		lrsk_gov_var_combat_data.2	# New intel check on battle lost
 	}
 }
+
+#An army has been killed in ground combat
+# This = owner
+# From = army
+# FromFrom = opponent
+# FromFromFrom = planet
+on_army_killed_in_combat = {
+	events = {
+		lrsk_gvp_complementation.40
+	}
+}
+
+#An army has ceased to exist for any other reason
+# This = country
+# From = army
+on_army_killed_no_combat = {
+	events = {
+		lrsk_gvp_complementation.40
+	}
+}

@@ -366,3 +366,21 @@ planet_event = {
 		clear_variable = lrsk_comlementation_counter
 	}
 }
+
+# De-increment variable for counting Neo-Evangelists
+country_event = {
+	id = lrsk_gvp_complementation.40
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = { army_type = lrsk_gvp_neo_evangelist_unit }
+	}
+
+	immediate = {
+		change_variable = {
+			which = lrsk_neo_evangelist_count
+			value = -1
+		}
+	}
+}
