@@ -141,7 +141,10 @@ country_event = {
 			
 			# Pick the destination planet
 			closest_system = {
-				limit = { star = { has_planet_flag = lrsk_compl_possible_refuge_system } }
+				limit = {
+					star = { has_planet_flag = lrsk_compl_possible_refuge_system }
+					any_system_planet = { has_planet_flag = lrsk_compl_possible_refuge_world }
+				}
 				save_event_target_as = lrsk_compl_refuge_star
 				
 				random_system_planet = {
