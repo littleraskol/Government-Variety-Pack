@@ -1,0 +1,64 @@
+# Government Variety Pack
+# Technologies
+# Author: littleraskol
+
+# Metaphysical Biology
+tech_lrsk_gvp_metaphysical_biology = {
+	cost = @tier4cost2
+	area = society
+	category = { biology }
+	tier = 4
+	is_rare = yes
+	weight = 0	# event-added
+
+	potential = {
+		has_origin = lrsk_gvp_origin_complementation_project
+	}
+	
+	modifier = {
+		modify_species_cost_mult = -0.1
+		pop_environment_tolerance = 0.1
+		pop_amenities_usage_no_happiness_mult = -0.1
+	}
+}
+ 
+# Imaginary Architecture
+tech_lrsk_gvp_imaginary_architecture = {
+	cost = @tier4cost2
+	area = engineering
+	category = { industry }
+	tier = 4
+	is_rare = yes
+	weight = 0	# event-added
+
+	potential = {
+		has_origin = lrsk_gvp_origin_complementation_project
+	}
+	
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.10
+		planet_structures_cost_mult = -0.1
+		planet_max_buildings_add = 1
+	}
+}
+
+# Applied Theology
+tech_lrsk_gvp_applied_theology = {
+	cost = @tier4cost2
+	area = physics
+	category = { field_manipulation }
+	tier = 4
+	is_rare = yes
+	weight = 0	# event-added
+
+	potential = {
+		has_origin = lrsk_gvp_origin_complementation_project
+	}
+	
+	modifier = {
+		ship_sensor_range_add = 1
+		planet_sensor_range_add = 1
+		ship_windup_mult = -0.1
+		ship_winddown_mult = -0.1
+	}
+}
