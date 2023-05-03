@@ -78,6 +78,7 @@ pop_event = {
 	immediate = {
 		if = {
 			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
+			# in this case, we have to remove them ALL.
 			if = {
 				limit = {
 					or = {
@@ -91,11 +92,11 @@ pop_event = {
 				}
 				owner = { if = {
 					limit = {
-						has_country_flag = lrsk_gov_var_shroud_touched_nation
+						has_origin = lrsk_gov_var_origin_shroud_touched
 						NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } 
 					} 
 					country_event = { id = lrsk_gov_var_shroud_touched.4 }
-				} } # in this case, we have to remove them ALL.
+				} } 
 			}
 			else = {
 				# Usually do nothing, rarely promote pop to Latent Psionic, sometimes remove Natural Esper
@@ -105,7 +106,7 @@ pop_event = {
 						modify_species = { 
 							species = this
 							remove_trait = lrsk_gov_var_trait_natural_esper
-							add_trait = trait_latent_psionic
+							add_trait_no_notify = trait_latent_psionic
 							#set_species_flag = lrsk_gov_var_shroud_touched_promoted
 						} 
 					}
@@ -122,7 +123,7 @@ pop_event = {
 	}
 }
 
-# Attempt to change species after ascension.
+# Attempt to change species after adopting Psionics tradition tree.
 country_event = {
 	id = lrsk_gov_var_shroud_touched.4
 	hide_window = yes
@@ -130,20 +131,14 @@ country_event = {
 	#fire_only_once = yes
 
 	trigger = {
-		or = { 
-			has_ascension_perk = ap_mind_over_matter
-			has_ascension_perk = ap_transcendence
-		}
-		has_country_flag = lrsk_gov_var_shroud_touched_nation
+		has_tradition = tr_psionics_adopt
+		has_origin = lrsk_gov_var_origin_shroud_touched
 		NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone }
 	}
 
 	immediate = {
 		if = {
-			limit = { or = {
-				has_ascension_perk = ap_mind_over_matter
-				has_ascension_perk = ap_transcendence
-			} }
+			limit = { has_tradition = tr_psionics_adopt }
 			every_owned_pop = {
 				if = { 
 					limit = {
@@ -192,142 +187,86 @@ country_event = {
 					modifier = {
 						factor = 0
 						owner = {
-							OR = {
-								has_ascension_perk = ap_mind_over_matter
-								has_ascension_perk = ap_transcendence
-							}
-						} # probably redundant but eh
+							has_tradition = tr_psionics_adopt
+						}
 					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = leader_trait_admiral_psionic
-						add_ruler_trait = leader_trait_ruler_psionic
-					}
-					else_if = {
-						limit = { leader_class = general }
-						add_trait = leader_trait_general_psionic
-						add_ruler_trait = leader_trait_ruler_psionic
-					}
-					else_if = {
-						limit = { leader_class = governor }
-						add_trait = leader_trait_governor_psionic
-						add_ruler_trait = leader_trait_ruler_psionic
-					}
-					else_if = {
-						limit = { leader_class = scientist }
-						add_trait = leader_trait_scientist_psionic
-						add_ruler_trait = leader_trait_ruler_psionic
-					}
-					else_if = {
-						limit = { leader_class = ruler }
-						add_trait = leader_trait_ruler_psionic
-						add_ruler_trait = leader_trait_ruler_psionic
-					}
+					add_trait_no_notify = leader_trait_psionic
 				}
 				#sometimes get esper trait
 				35 = {
 					modifier = {
 						factor = 0
-						root = {
-							OR = {
-								has_ascension_perk = ap_mind_over_matter
-								has_ascension_perk = ap_transcendence
-							}
-						} # probably redundant but eh
+						owner = {
+							has_tradition = tr_psionics_adopt
+						}
 					}
-					if = {
-						limit = { leader_class = admiral }
-						add_trait = lrsk_gov_var_leader_trait_admiral_esper
-						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-					}
-					else_if = {
-						limit = { leader_class = general }
-						add_trait = lrsk_gov_var_leader_trait_general_esper
-						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-					}
-					else_if = {
-						limit = { leader_class = governor }
-						add_trait = lrsk_gov_var_leader_trait_governor_esper
-						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-					}
-					else_if = {
-						limit = { leader_class = scientist }
-						add_trait = lrsk_gov_var_leader_trait_scientist_esper
-						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-					}
-					else_if = {
-						limit = { leader_class = ruler }
-						add_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-					}
-
+					add_trait_no_notify = lrsk_gvp_leader_trait_esper
 				}
 			}
 		}
 	}
 }
 
-# Ruler gets normal class trait if one hasn't been assigned
-country_event = {
-	id = lrsk_gov_var_shroud_touched.6
-	is_triggered_only = yes
-	hide_window = yes
+# Ruler gets normal class trait if one hasn't been assigned - DEPRECATED
+#country_event = {
+#	id = lrsk_gov_var_shroud_touched.6
+#	is_triggered_only = yes
+#	hide_window = yes
+#
+#	trigger = {
+#		from = {
+#			has_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
+#			NOR = {
+#				has_trait = lrsk_gov_var_leader_trait_admiral_esper
+#				has_trait = lrsk_gov_var_leader_trait_general_esper
+#				has_trait = lrsk_gov_var_leader_trait_governor_esper
+#				has_trait = lrsk_gov_var_leader_trait_scientist_esper
+#				has_trait = leader_trait_admiral_psionic
+#				has_trait = leader_trait_general_psionic
+#				has_trait = leader_trait_governor_psionic
+#				has_trait = leader_trait_scientist_psionic
+#				has_trait = leader_trait_admiral_chosen
+#				has_trait = leader_trait_general_chosen
+#				has_trait = leader_trait_governor_chosen
+#				has_trait = leader_trait_scientist_chosen			
+#			}
+#		}
+#	}
+#
+#	immediate = {
+#		from = {
+#			if = {
+#				limit = { leader_class = admiral }
+#				add_trait_no_notify = lrsk_gov_var_leader_trait_admiral_esper
+#				break = yes
+#			}
+#			if = {
+#				limit = { leader_class = general }
+#				add_trait_no_notify = lrsk_gov_var_leader_trait_general_esper
+#				break = yes
+#			}
+#			if = {
+#				limit = { leader_class = governor }
+#				add_trait_no_notify = lrsk_gov_var_leader_trait_governor_esper
+#				break = yes
+#			}
+#			if = {
+#				limit = { leader_class = scientist }
+#				add_trait_no_notify = lrsk_gov_var_leader_trait_scientist_esper
+#				break = yes
+#			}
+#		}
+#	}
+#}
 
-	trigger = {
-		from = {
-			has_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-			NOR = {
-				has_trait = lrsk_gov_var_leader_trait_admiral_esper
-				has_trait = lrsk_gov_var_leader_trait_general_esper
-				has_trait = lrsk_gov_var_leader_trait_governor_esper
-				has_trait = lrsk_gov_var_leader_trait_scientist_esper
-				has_trait = leader_trait_admiral_psionic
-				has_trait = leader_trait_general_psionic
-				has_trait = leader_trait_governor_psionic
-				has_trait = leader_trait_scientist_psionic
-				has_trait = leader_trait_admiral_chosen
-				has_trait = leader_trait_general_chosen
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen			
-			}
-		}
-	}
-
-	immediate = {
-		from = {
-			if = {
-				limit = { leader_class = admiral }
-				add_trait = lrsk_gov_var_leader_trait_admiral_esper
-				break = yes
-			}
-			if = {
-				limit = { leader_class = general }
-				add_trait = lrsk_gov_var_leader_trait_general_esper
-				break = yes
-			}
-			if = {
-				limit = { leader_class = governor }
-				add_trait = lrsk_gov_var_leader_trait_governor_esper
-				break = yes
-			}
-			if = {
-				limit = { leader_class = scientist }
-				add_trait = lrsk_gov_var_leader_trait_scientist_esper
-				break = yes
-			}
-		}
-	}
-}
-
-# Convert leader traits to psionic when AP advances to mind-over-matter
+# Leaders can get Psychic trait under some circumstances
 country_event = {
 	id = lrsk_gov_var_shroud_touched.7
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		has_country_flag = lrsk_gov_var_shroud_touched_nation
-		has_ascension_perk = ap_mind_over_matter
-		NOT = { has_ascension_perk = ap_transcendence }
+		has_origin = lrsk_gov_var_origin_shroud_touched
 	}
 
 	immediate = {
@@ -344,69 +283,86 @@ country_event = {
 					is_same_species = root
 					NOR = {
 						has_leader_flag = lrsk_gov_var_esper_ap_mom_checked
-						has_trait =	leader_trait_admiral_psionic
-						has_trait =	leader_trait_general_psionic
-						has_trait =	leader_trait_governor_psionic
-						has_trait =	leader_trait_scientist_psionic
-						has_trait =	leader_trait_ruler_psionic
+						has_trait =	leader_trait_psionic
 					}
-					OR = {
-						has_trait = lrsk_gov_var_leader_trait_admiral_esper
-						has_trait = lrsk_gov_var_leader_trait_general_esper
-						has_trait = lrsk_gov_var_leader_trait_governor_esper
-						has_trait = lrsk_gov_var_leader_trait_scientist_esper
-						has_trait = lrsk_gov_var_leader_trait_ruler_esper		
-					}
+					has_trait = lrsk_gvp_leader_trait_esper
 				}
 				set_leader_flag = lrsk_gov_var_esper_ap_mom_checked
 				random_list = {
-					40 = {
-						if = {
-							limit = { has_trait = lrsk_gov_var_leader_trait_admiral_esper }
-							remove_trait = lrsk_gov_var_leader_trait_admiral_esper
-							add_trait = leader_trait_admiral_psionic
-							add_ruler_trait = leader_trait_ruler_psionic
+					10 = {
+						remove_trait = lrsk_gvp_leader_trait_esper
+						add_trait_no_notify = leader_trait_psionic
+						modifier = {
+							add = 10
+							has_ascension_perk = ap_mind_over_matter
 						}
-						if = {
-							limit = { has_trait = lrsk_gov_var_leader_trait_general_esper }
-							remove_trait = lrsk_gov_var_leader_trait_general_esper
-							add_trait = leader_trait_general_psionic
-							add_ruler_trait = leader_trait_ruler_psionic
-						}
-						if = {
-							limit = { has_trait = lrsk_gov_var_leader_trait_governor_esper }
-							remove_trait = lrsk_gov_var_leader_trait_governor_esper
-							add_trait = leader_trait_governor_psionic
-							add_ruler_trait = leader_trait_ruler_psionic
-						}
-						if = {
-							limit = { has_trait = lrsk_gov_var_leader_trait_scientist_esper }
-							remove_trait = lrsk_gov_var_leader_trait_scientist_esper
-							add_trait = leader_trait_scientist_psionic
-							add_ruler_trait = leader_trait_ruler_psionic
-						}
-						if = {
-							limit = { has_trait = lrsk_gov_var_leader_trait_ruler_esper }
-							remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-							add_ruler_trait = leader_trait_ruler_psionic
+						modifier = {
+							add = 20
+							has_tradition = tr_psionics_adopt
 						}
 					}
-					60 = {	} #Do nothing
+					90 = {
+						#Do nothing
+						modifier = {
+							subtract = 10
+							has_ascension_perk = ap_mind_over_matter
+						}
+						modifier = {
+							subtract = 20
+							has_tradition = tr_psionics_adopt
+						}
+					}
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					is_same_species = root
+					NOR = {
+						has_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+						has_trait =	leader_trait_psionic
+					}
+					has_trait = lrsk_gvp_leader_trait_esper
+				}
+				set_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+				random_list = {
+					10 = {
+						remove_trait = lrsk_gvp_leader_trait_esper
+						add_trait_no_notify = leader_trait_psionic
+						modifier = {
+							add = 10
+							has_ascension_perk = ap_mind_over_matter
+						}
+						modifier = {
+							add = 20
+							has_tradition = tr_psionics_adopt
+						}
+					}
+					90 = {
+						#Do nothing
+						modifier = {
+							subtract = 10
+							has_ascension_perk = ap_mind_over_matter
+						}
+						modifier = {
+							subtract = 20
+							has_tradition = tr_psionics_adopt
+						}
+					}
 				}
 			}
 		}
 	}
 }
 
-# Convert leader traits to psionic when AP advances to transcend
+# Convert leader trait to psionic when psionic ascension unlocked
 country_event = {
 	id = lrsk_gov_var_shroud_touched.8
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		has_country_flag = lrsk_gov_var_shroud_touched_nation
-		has_ascension_perk = ap_transcendence
+		has_origin = lrsk_gov_var_origin_shroud_touched
+		has_tradition = tr_psionics_psionic_assimilation
 	}
 
 	immediate = {
@@ -422,28 +378,19 @@ country_event = {
 				limit = {
 					is_same_species = root
 					NOT = { has_leader_flag = lrsk_gov_var_esper_ap_trscd_checked }
+					has_trait = lrsk_gvp_leader_trait_esper
 				}
 				set_leader_flag = lrsk_gov_var_esper_ap_trscd_checked
-				if = {
-					limit = { has_trait = lrsk_gov_var_leader_trait_admiral_esper }
-					remove_trait = lrsk_gov_var_leader_trait_admiral_esper
+				remove_trait = lrsk_gvp_leader_trait_esper
+			}
+			every_pool_leader = {
+				limit = {
+					is_same_species = root
+					NOT = { has_leader_flag = lrsk_gov_var_esper_ap_trscd_checked }
+					has_trait = lrsk_gvp_leader_trait_esper
 				}
-				if = {
-					limit = { has_trait = lrsk_gov_var_leader_trait_general_esper }
-					remove_trait = lrsk_gov_var_leader_trait_general_esper
-				}
-				if = {
-					limit = { has_trait = lrsk_gov_var_leader_trait_governor_esper }
-					remove_trait = lrsk_gov_var_leader_trait_governor_esper
-				}
-				if = {
-					limit = { has_trait = lrsk_gov_var_leader_trait_scientist_esper }
-					remove_trait = lrsk_gov_var_leader_trait_scientist_esper
-				}
-				if = {
-					limit = { has_trait = lrsk_gov_var_leader_trait_ruler_esper }
-					remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-				}
+				set_leader_flag = lrsk_gov_var_esper_ap_trscd_checked
+				remove_trait = lrsk_gvp_leader_trait_esper
 			}
 		}
 	}
@@ -469,96 +416,13 @@ event = {
 			}
 			every_owned_leader = {
 				limit = {
+					has_trait = lrsk_gvp_leader_trait_esper
 					OR = {
-						has_trait = lrsk_gov_var_leader_trait_admiral_esper
-						has_trait = lrsk_gov_var_leader_trait_general_esper
-						has_trait = lrsk_gov_var_leader_trait_governor_esper
-						has_trait = lrsk_gov_var_leader_trait_scientist_esper
-						has_trait = lrsk_gov_var_leader_trait_ruler_esper		
-					}
-					OR = {
-						has_trait =	leader_trait_admiral_psionic
-						has_trait =	leader_trait_general_psionic
-						has_trait =	leader_trait_governor_psionic
-						has_trait =	leader_trait_scientist_psionic
-						has_trait =	leader_trait_ruler_psionic
-						has_trait = leader_trait_admiral_chosen
-						has_trait = leader_trait_general_chosen
-						has_trait = leader_trait_governor_chosen
-						has_trait = leader_trait_scientist_chosen
-						has_trait = leader_trait_ruler_chosen
+						has_trait =	leader_trait_psionic
+						has_trait = leader_trait_chosen
 					}
 				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_admiral_esper
-						has_trait = leader_trait_admiral_psionic
-					}
-					remove_trait = lrsk_gov_var_leader_trait_admiral_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_general_esper
-						has_trait = leader_trait_general_psionic
-					}
-					remove_trait = lrsk_gov_var_leader_trait_general_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_governor_esper
-						has_trait = leader_trait_governor_psionic
-					}
-					remove_trait = lrsk_gov_var_leader_trait_governor_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_scientist_esper
-						has_trait = leader_trait_scientist_psionic
-					}
-					remove_trait = lrsk_gov_var_leader_trait_scientist_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_ruler_esper
-						has_trait = leader_trait_ruler_psionic
-					}
-					remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_admiral_esper
-						has_trait = leader_trait_admiral_chosen
-					}
-					remove_trait = lrsk_gov_var_leader_trait_admiral_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_general_esper
-						has_trait = leader_trait_general_chosen
-					}
-					remove_trait = lrsk_gov_var_leader_trait_general_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_governor_esper
-						has_trait = leader_trait_governor_chosen
-					}
-					remove_trait = lrsk_gov_var_leader_trait_governor_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_scientist_esper
-						has_trait = leader_trait_scientist_chosen
-					}
-					remove_trait = lrsk_gov_var_leader_trait_scientist_esper
-				}
-				if = {
-					limit = {
-						has_trait = lrsk_gov_var_leader_trait_ruler_esper
-						has_trait = leader_trait_ruler_chosen
-					}
-					remove_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-				}
+				remove_trait = lrsk_gvp_leader_trait_esper
 			}
 		}
 	}
