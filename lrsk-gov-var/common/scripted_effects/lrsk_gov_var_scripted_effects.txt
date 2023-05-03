@@ -562,38 +562,16 @@ lrsk_add_random_good_leader_trait = {
 			20 = {
 				modifier = {
 					factor = 0
-					OR = {
-						has_trait = leader_trait_adaptable
-						has_trait = leader_trait_flexible_programming
-						has_trait = leader_trait_rigid_programming
-					}
+					has_trait = leader_trait_adaptable
 				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_adaptable
-					set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_flexible_programming
-					set_timed_leader_flag = { flag = gained_leader_trait_flexible_programming days = 7 }
-				}
+				add_trait = leader_trait_adaptable
+				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
 				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
 			}
 			20 = {
 				modifier = {
 					factor = 0
-					OR = {
-						has_trait = leader_trait_resilient
-						owner = { has_ethic = ethic_gestalt_consciousness }
-						species = { has_trait = trait_mechanical }
-					}
+					has_trait = leader_trait_resilient
 				}
 				add_trait = leader_trait_resilient
 				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
@@ -611,27 +589,10 @@ lrsk_add_random_good_leader_trait = {
 			20 = {
 				modifier = {
 					factor = 0
-					OR = {
-						has_trait = leader_trait_fleet_logistician
-						has_trait = leader_trait_maintenance_loop
-					}
+					has_trait = leader_trait_fleet_logistician
 				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_fleet_logistician
-					set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_maintenance_loop
-					set_timed_leader_flag = { flag = gained_leader_trait_maintenance_loop days = 7 }
-				}
+				add_trait = leader_trait_fleet_logistician
+				set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
 				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
 			}
 			20 = {
@@ -715,38 +676,16 @@ lrsk_add_random_good_leader_trait = {
 			20 = {
 				modifier = {
 					factor = 0
-					OR = {
-						has_trait = leader_trait_adaptable
-						has_trait = leader_trait_flexible_programming
-						has_trait = leader_trait_rigid_programming
-					}
+					has_trait = leader_trait_adaptable
 				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_adaptable
-					set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_flexible_programming
-					set_timed_leader_flag = { flag = gained_leader_trait_flexible_programming days = 7 }
-				}
+				add_trait = leader_trait_adaptable
+				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
 				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
 			}
 			20 = {
 				modifier = {
 					factor = 0
-					OR = {
-						has_trait = leader_trait_resilient
-						owner = { has_ethic = ethic_gestalt_consciousness }
-						species = { has_trait = trait_mechanical }
-					}
+					has_trait = leader_trait_resilient
 				}
 				add_trait = leader_trait_resilient
 				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
