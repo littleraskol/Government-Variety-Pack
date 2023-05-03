@@ -1099,14 +1099,24 @@ country_event = {
 		}
 
 		set_variable = { which = lrsk_ruler_level value = 0 }
+		set_variable = { which = lrsk_ruler_level_factor value = 1 }
 		export_trigger_value_to_variable = {
 			trigger = get_councilor_level
 			parameters = {
 				type = councilor_ruler_imperial
 			}
-			variable = lrsk_ruler_level_factor
+			variable = lrsk_ruler_level
 		}
-		divide_variable = { which = lrsk_ruler_level_factor value = 10 }	# We use 1/10th the ruler level as a multiplier.
+		# The idea is that every ruler level reduces the cost of something by 10%
+		WHILE = {
+			limit = {
+				check_variable = { which = lrsk_ruler_level value > 1 }
+				check_variable = { which = lrsk_ruler_level_factor value > 0.1 }
+			}
+			
+			subtract_variable = { which = lrsk_ruler_level_factor value = 0.1 }
+			subtract_variable = { which = lrsk_ruler_level value = 1 }
+		}
 	}
 
 	option = {
@@ -1267,34 +1277,72 @@ country_event = {
 		}
 	}
 
-	#TBD: Option for resetting policy coolodwn. Costs 600/ruler level influence (i.e., mult = a variable set to level/10).
 	option = {
 		name = lrsk_government_variety_pack_backend.1002.f
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.f.tooltip
 
-		trigger = { NOR = {
-			# reformer
-		} }
+		#trigger = { NOR = {
+		#	# reformer
+		#} }
 
 		allow = {
 			resource_stockpile_compare = {
 				resource = influence
-				value > 600
+				value > 500
 				mult = lrsk_ruler_level_factor
 			}
 		}
 
 		add_resource = {
-			energy = -600
-			mult = lrsk_num_rj_empire_pops
+			influence = -500
+			mult = lrsk_ruler_level_factor
+		}
+
+		hidden_effect = {
+			reset_policy_cooldowns = yes
 		}
 	}
 
-	#TBD: Option like the previous, but it is half cost (i.e., cost is 300 x (level/10)) and only for rulers with Reformer.
+	#TBD: Option like the previous, but it is half cost and only for rulers with Reformer. (No such trait!)
 
-	#TBD: Option for resetting government reform coolodwn. Costs 750/ruler level influence and unity (i.e., mult = a variable set to level/10).
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.h
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.h.tooltip
 
-	#TBD: Option like the previous, but it is 2/3 cost (i.e., cost is 500 x (level/10)) and only for rulers with Reformer.
+		#trigger = { OR = {
+		#	# reformer
+		#} }
+
+		allow = {
+			resource_stockpile_compare = {
+				resource = influence
+				value > 750
+				mult = lrsk_ruler_level_factor
+			}
+			resource_stockpile_compare = {
+				resource = unity
+				value > 750
+				mult = lrsk_ruler_level_factor
+			}
+		}
+
+		add_resource = {
+			influence = -750
+			mult = lrsk_ruler_level_factor
+		}
+
+		add_resource = {
+			unity = -750
+			mult = lrsk_ruler_level_factor
+		}
+
+		hidden_effect = {
+			reset_policy_cooldowns = yes
+			set_government_cooldown = no
+		}
+	}
+
+	#TBD: Option like the previous, but it is 2/3 cost and only for rulers with Reformer. (No such trait!)
 }
 
 # Diagnostic: General test event mostly to test when events can be called.
