@@ -21,6 +21,12 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.6 (??/??/??) - NAMEHERE (3.8) Update
+-Fixed what was needed for compatibility with Stellaris 3.8 (NAMEHERE)
+-Updated compat version number.
+-Added councilors for all non-gestatlt civics.
+-Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
+
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).
 --This will enable better compatibility with mods adding new planet classes.
