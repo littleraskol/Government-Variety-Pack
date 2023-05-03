@@ -1098,7 +1098,15 @@ country_event = {
 			root = { change_variable = { which = lrsk_num_rj_empire_pops value = 1 } }
 		}
 
-		# TBD: Set a variable that is 1/10 of ruler level (i.e., level/10).
+		set_variable = { which = lrsk_ruler_level value = 0 }
+		export_trigger_value_to_variable = {
+			trigger = get_councilor_level
+			parameters = {
+				type = councilor_ruler_imperial
+			}
+			variable = lrsk_ruler_level_factor
+		}
+		divide_variable = { which = lrsk_ruler_level_factor value = 10 }	# We use 1/10th the ruler level as a multiplier.
 	}
 
 	option = {
@@ -1260,12 +1268,33 @@ country_event = {
 	}
 
 	#TBD: Option for resetting policy coolodwn. Costs 600/ruler level influence (i.e., mult = a variable set to level/10).
+	option = {
+		name = lrsk_government_variety_pack_backend.1002.f
+		custom_tooltip = lrsk_government_variety_pack_backend.1002.f.tooltip
 
-	#TBD: Option like the previous, but it is half cost (i.e., cost is 300 x (level/10)) and only for rulers with Reformer or Champion of the People.
+		trigger = { NOR = {
+			# reformer
+		} }
+
+		allow = {
+			resource_stockpile_compare = {
+				resource = influence
+				value > 600
+				mult = lrsk_ruler_level_factor
+			}
+		}
+
+		add_resource = {
+			energy = -600
+			mult = lrsk_num_rj_empire_pops
+		}
+	}
+
+	#TBD: Option like the previous, but it is half cost (i.e., cost is 300 x (level/10)) and only for rulers with Reformer.
 
 	#TBD: Option for resetting government reform coolodwn. Costs 750/ruler level influence and unity (i.e., mult = a variable set to level/10).
 
-	#TBD: Option like the previous, but it is 2/3 cost (i.e., cost is 500 x (level/10)) and only for rulers with Reformer or Champion of the People.
+	#TBD: Option like the previous, but it is 2/3 cost (i.e., cost is 500 x (level/10)) and only for rulers with Reformer.
 }
 
 # Diagnostic: General test event mostly to test when events can be called.
