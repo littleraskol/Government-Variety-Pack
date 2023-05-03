@@ -360,20 +360,6 @@ lrsk_gov_var_job_functionary = {
 		produces = {
 			trigger = {
 				exists = planet
-				planet = {
-					exists = sector
-					sector = {
-						exists = leader
-						leader = { has_trait = leader_trait_bureaucrat }
-					}
-				}
-			}
-			unity = 1
-		}
-
-		produces = {
-			trigger = {
-				exists = planet
 				planet = { has_designation = col_bureau }
 			}
 			unity = 1
