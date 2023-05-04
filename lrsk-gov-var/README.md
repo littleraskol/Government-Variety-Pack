@@ -30,7 +30,7 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 --Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
 --Crusader Order: Either Chivalry or Crusader Spirit qualifies.
 --Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
---Crusading Company: Crusader Spirit is an option along with Naval Contractors and Private Military Companies.
+--Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
 -RMF requires Precision Cogs.
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
