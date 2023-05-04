@@ -26,6 +26,11 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 -Updated compat version number.
 -Added councilors for all non-gestatlt civics.
 -Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
+-"Crusader" governments can be enabled by Crusader Spirit civic.
+--Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
+--Crusader Order: Either Chivalry or Crusader Spirit qualifies.
+--Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
+--Crusading Company: Crusader Spirit is an option along with Naval Contractors and Private Military Companies.
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).

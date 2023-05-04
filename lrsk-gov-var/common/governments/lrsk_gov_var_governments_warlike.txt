@@ -172,6 +172,7 @@ lrsk_gov_var_gov_crusader_kingdom = {
 		OR = {
 			has_valid_civic = civic_feudal_realm
 			has_valid_civic = lrsk_gov_var_civic_chivalry
+			has_valid_civic = civic_crusader_spirit
 		}
 	}
 
@@ -199,7 +200,10 @@ lrsk_gov_var_gov_crusader_order = {
 		}
 		AND = {
 			has_valid_civic = civic_aristocratic_elite
-			has_valid_civic = lrsk_gov_var_civic_chivalry
+			OR = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+				has_valid_civic = civic_crusader_spirit
+			}
 		}
 	}
 
@@ -227,6 +231,10 @@ lrsk_gov_var_gov_citizen_crusade = {
 		OR = {
 			has_valid_civic = civic_exalted_priesthood
 			has_valid_civic = lrsk_gov_var_civic_elected_clergy
+			AND = {
+				is_spiritualist = yes
+				has_valid_civic = civic_crusader_spirit
+			}
 		}
 	}
 

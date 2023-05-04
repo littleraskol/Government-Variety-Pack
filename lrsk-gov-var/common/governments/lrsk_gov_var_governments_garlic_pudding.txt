@@ -89,7 +89,13 @@ lrsk_gov_var_gov_crusading_company = {
 			AND = {
 				# Pretty much only going to show up in rare cases but eh
 				has_valid_civic = civic_corporate_dominion
-				has_valid_civic = civic_exalted_priesthood
+				OR = {
+					has_valid_civic = civic_exalted_priesthood
+					AND = {
+						is_spiritualist = yes
+						has_valid_civic = civic_crusader_spirit
+					}
+				}
 				has_valid_civic = civic_citizen_service
 			}
 			AND = {
@@ -98,6 +104,7 @@ lrsk_gov_var_gov_crusading_company = {
 				OR = {
 					has_valid_civic = civic_naval_contractors
 					has_valid_civic = civic_private_military_companies
+					has_valid_civic = civic_crusader_spirit_corporate
 				}
 			}
 		}
