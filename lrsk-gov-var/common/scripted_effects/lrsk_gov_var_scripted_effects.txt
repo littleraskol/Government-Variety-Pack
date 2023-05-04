@@ -548,267 +548,268 @@ lrsk_gov_var_sublight_subjects_mark = {
 	}
 }
 
-# Random good trait for mil leaders
-lrsk_add_random_good_leader_trait = {
-	if = {
-		limit = {
-			leader_class = admiral
-			NOT = { has_leader_flag = has_gained_trait } # JIC
-		}
+# Random good trait for mil leaders - DEPRECATED
 
-		log = "Granting random good admiral trait"
-		
-		random_list = {
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_adaptable
-				}
-				add_trait = leader_trait_adaptable
-				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_resilient
-				}
-				add_trait = leader_trait_resilient
-				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_trickster
-				}
-				add_trait = leader_trait_trickster
-				set_timed_leader_flag = { flag = gained_leader_trait_trickster days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_fleet_logistician
-				}
-				add_trait = leader_trait_fleet_logistician
-				set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_engineer
-				}
-				add_trait = leader_trait_engineer
-				set_timed_leader_flag = { flag = gained_leader_trait_engineer days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_aggressive
-				}
-				add_trait = leader_trait_aggressive
-				set_timed_leader_flag = { flag = gained_leader_trait_aggressive days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_cautious
-				}
-				add_trait = leader_trait_cautious
-				set_timed_leader_flag = { flag = gained_leader_trait_cautious days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_scout
-				}
-				add_trait = leader_trait_scout
-				set_timed_leader_flag = { flag = gained_leader_trait_scout days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_unyielding
-				}
-				add_trait = leader_trait_unyielding
-				set_timed_leader_flag = { flag = gained_leader_trait_unyielding days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_gale_speed
-				}
-				add_trait = leader_trait_gale_speed
-				set_timed_leader_flag = { flag = gained_leader_trait_gale_speed days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			1 = {
-				# think we need a null chance as a default
-			}
-		}
-
-		IF = {
-			limit = {
-				has_leader_flag = has_gained_trait				
-				has_level > 1 # Only show message on levelup.
-			}
-			save_event_target_as = lrsk_leader_to_levelup # JIC
-			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
-		}
-	}
-
-	if = {
-		limit = {
-			leader_class = general
-			NOT = { has_leader_flag = has_gained_trait } # JIC
-		}
-
-		log = "Granting random good general trait"
-
-		random_list = {
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_adaptable
-				}
-				add_trait = leader_trait_adaptable
-				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					has_trait = leader_trait_resilient
-				}
-				add_trait = leader_trait_resilient
-				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						owner = { has_authority = auth_machine_intelligence }
-						has_trait = leader_trait_butcher
-						has_trait = leader_trait_restrained
-					}
-				}
-				add_trait = leader_trait_restrained
-				set_timed_leader_flag = { flag = gained_leader_trait_restrained days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_trait = leader_trait_charismatic
-						has_trait = leader_trait_demoralizer
-					}
-				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_charismatic
-					set_timed_leader_flag = { flag = gained_leader_trait_charismatic days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_demoralizer
-					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
-				}
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_trait = leader_trait_butcher
-						has_trait = leader_trait_restrained
-					}
-				}
-				add_trait = leader_trait_butcher
-				set_timed_leader_flag = { flag = gained_leader_trait_butcher days = 7 }
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_trait = leader_trait_glory_seeker
-						has_trait = leader_trait_demoralizer
-					}
-				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_glory_seeker
-					set_timed_leader_flag = { flag = gained_leader_trait_glory_seeker days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_demoralizer
-					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
-				}
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-							has_trait = leader_trait_army_logistician
-							has_trait = leader_trait_parts_cannibalizer
-					}
-				}
-				if = {
-					limit = {
-						owner = {
-							NOT = { has_authority = auth_machine_intelligence }
-						}
-					}
-					add_trait = leader_trait_army_logistician
-					set_timed_leader_flag = { flag = gained_leader_trait_army_logistician days = 7 }
-				}
-				if = {
-					limit = {
-						owner = { has_authority = auth_machine_intelligence }
-					}
-					add_trait = leader_trait_parts_cannibalizer
-					set_timed_leader_flag = { flag = gained_leader_trait_parts_cannibalizer days = 7 }
-				}
-				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
-			}
-			1 = {
-				# think we need a null chance as a default
-			}
-		}
-
-		IF = {
-			limit = {
-				has_leader_flag = has_gained_trait				
-				has_level > 1 # Only show message on levelup.
-			}
-			save_event_target_as = lrsk_leader_to_levelup # JIC
-			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
-		}
-	}
-}
+#lrsk_add_random_good_leader_trait = {
+#	if = {
+#		limit = {
+#			leader_class = admiral
+#			NOT = { has_leader_flag = has_gained_trait } # JIC
+#		}
+#
+#		log = "Granting random good admiral trait"
+#		
+#		random_list = {
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_adaptable
+#				}
+#				add_trait = leader_trait_adaptable
+#				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_resilient
+#				}
+#				add_trait = leader_trait_resilient
+#				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_trickster
+#				}
+#				add_trait = leader_trait_trickster
+#				set_timed_leader_flag = { flag = gained_leader_trait_trickster days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_fleet_logistician
+#				}
+#				add_trait = leader_trait_fleet_logistician
+#				set_timed_leader_flag = { flag = gained_leader_trait_fleet_logistician days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_engineer
+#				}
+#				add_trait = leader_trait_engineer
+#				set_timed_leader_flag = { flag = gained_leader_trait_engineer days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_aggressive
+#				}
+#				add_trait = leader_trait_aggressive
+#				set_timed_leader_flag = { flag = gained_leader_trait_aggressive days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_cautious
+#				}
+#				add_trait = leader_trait_cautious
+#				set_timed_leader_flag = { flag = gained_leader_trait_cautious days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_scout
+#				}
+#				add_trait = leader_trait_scout
+#				set_timed_leader_flag = { flag = gained_leader_trait_scout days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_unyielding
+#				}
+#				add_trait = leader_trait_unyielding
+#				set_timed_leader_flag = { flag = gained_leader_trait_unyielding days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_gale_speed
+#				}
+#				add_trait = leader_trait_gale_speed
+#				set_timed_leader_flag = { flag = gained_leader_trait_gale_speed days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			1 = {
+#				# think we need a null chance as a default
+#			}
+#		}
+#
+#		IF = {
+#			limit = {
+#				has_leader_flag = has_gained_trait				
+#				has_level > 1 # Only show message on levelup.
+#			}
+#			save_event_target_as = lrsk_leader_to_levelup # JIC
+#			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
+#		}
+#	}
+#
+#	if = {
+#		limit = {
+#			leader_class = general
+#			NOT = { has_leader_flag = has_gained_trait } # JIC
+#		}
+#
+#		log = "Granting random good general trait"
+#
+#		random_list = {
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_adaptable
+#				}
+#				add_trait = leader_trait_adaptable
+#				set_timed_leader_flag = { flag = gained_leader_trait_adaptable days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					has_trait = leader_trait_resilient
+#				}
+#				add_trait = leader_trait_resilient
+#				set_timed_leader_flag = { flag = gained_leader_trait_resilient days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					OR = {
+#						owner = { has_authority = auth_machine_intelligence }
+#						has_trait = leader_trait_butcher
+#						has_trait = leader_trait_restrained
+#					}
+#				}
+#				add_trait = leader_trait_restrained
+#				set_timed_leader_flag = { flag = gained_leader_trait_restrained days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					OR = {
+#						has_trait = leader_trait_charismatic
+#						has_trait = leader_trait_demoralizer
+#					}
+#				}
+#				if = {
+#					limit = {
+#						owner = {
+#							NOT = { has_authority = auth_machine_intelligence }
+#						}
+#					}
+#					add_trait = leader_trait_charismatic
+#					set_timed_leader_flag = { flag = gained_leader_trait_charismatic days = 7 }
+#				}
+#				if = {
+#					limit = {
+#						owner = { has_authority = auth_machine_intelligence }
+#					}
+#					add_trait = leader_trait_demoralizer
+#					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+#				}
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					OR = {
+#						has_trait = leader_trait_butcher
+#						has_trait = leader_trait_restrained
+#					}
+#				}
+#				add_trait = leader_trait_butcher
+#				set_timed_leader_flag = { flag = gained_leader_trait_butcher days = 7 }
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					OR = {
+#						has_trait = leader_trait_glory_seeker
+#						has_trait = leader_trait_demoralizer
+#					}
+#				}
+#				if = {
+#					limit = {
+#						owner = {
+#							NOT = { has_authority = auth_machine_intelligence }
+#						}
+#					}
+#					add_trait = leader_trait_glory_seeker
+#					set_timed_leader_flag = { flag = gained_leader_trait_glory_seeker days = 7 }
+#				}
+#				if = {
+#					limit = {
+#						owner = { has_authority = auth_machine_intelligence }
+#					}
+#					add_trait = leader_trait_demoralizer
+#					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
+#				}
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			20 = {
+#				modifier = {
+#					factor = 0
+#					OR = {
+#							has_trait = leader_trait_army_logistician
+#							has_trait = leader_trait_parts_cannibalizer
+#					}
+#				}
+#				if = {
+#					limit = {
+#						owner = {
+#							NOT = { has_authority = auth_machine_intelligence }
+#						}
+#					}
+#					add_trait = leader_trait_army_logistician
+#					set_timed_leader_flag = { flag = gained_leader_trait_army_logistician days = 7 }
+#				}
+#				if = {
+#					limit = {
+#						owner = { has_authority = auth_machine_intelligence }
+#					}
+#					add_trait = leader_trait_parts_cannibalizer
+#					set_timed_leader_flag = { flag = gained_leader_trait_parts_cannibalizer days = 7 }
+#				}
+#				set_timed_leader_flag = { flag = has_gained_trait days = 7 }
+#			}
+#			1 = {
+#				# think we need a null chance as a default
+#			}
+#		}
+#
+#		IF = {
+#			limit = {
+#				has_leader_flag = has_gained_trait				
+#				has_level > 1 # Only show message on levelup.
+#			}
+#			save_event_target_as = lrsk_leader_to_levelup # JIC
+#			owner = { country_event = { id = lrsk_gvp_mc_bldg_special.12 } }
+#		}
+#	}
+#}
 
 # Removes all wild cults (planet scope)
 lrsk_gvp_remove_every_wild_cult = {
