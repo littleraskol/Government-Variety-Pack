@@ -33,6 +33,7 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 --Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
 -RMF requires Precision Cogs.
 -Military Excellence Academy boosts general and admiral exp gain rather than directly assigning traits.
+-Enlightened Liberalism boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).
