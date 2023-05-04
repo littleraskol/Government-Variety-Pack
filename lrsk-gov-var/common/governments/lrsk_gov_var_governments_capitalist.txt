@@ -232,7 +232,7 @@ lrsk_gov_var_gov_enterprise_authority = {
 lrsk_gov_var_gov_rationalist_managerial_firm = {
 	ruler_title = LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR
 
-	possible = {		
+	possible = {
 		OR = {
 			AND = {
 				has_valid_civic = civic_corporate_dominion
@@ -240,7 +240,10 @@ lrsk_gov_var_gov_rationalist_managerial_firm = {
 			}
 			AND = {
 				has_auth_corporate = yes
-				has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+				AND = {
+					has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+					has_valid_civic = civic_task_delegation_corporate
+				}
 			}
 		}		
 	}
