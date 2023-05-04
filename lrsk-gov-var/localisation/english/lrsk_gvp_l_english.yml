@@ -435,6 +435,8 @@ l_english:
  ####################################
  # Councilors
  ####################################
+ 
+ LRSK_MUST_BE_OVERLORD:0 "Empire must at least one §Ysubject§!."
 
  lrsk_gvp_aesetic_virtues_councilor:0 "Wellness and Wholeness Master"
  lrsk_gvp_aesetic_virtues_councilor_female:0 "$lrsk_gvp_aesetic_virtues_councilor$"
@@ -445,6 +447,7 @@ l_english:
  lrsk_gvp_automated_indolence_councilor:0 "Indulgence Maximization Director"
  lrsk_gvp_automated_indolence_councilor_female:0 "$lrsk_gvp_automated_indolence_councilor$"
  lrsk_gvp_automated_indolence_councilor_desc:0 "The $TITLE$ coordinates the most important work in a society based on machines enabling maximal leisure time and enjoyment: improving the automated systems so the treats and pampering increase ever further."
+ lrsk_gvp_automated_indolence_councilor_conditional_tooltip:0 "Empire has the §Y$tech_robotic_workers$§! technology."
  lrsk_gvp_business_lobby_councilor:0 "Public Deficits Rector"
  lrsk_gvp_business_lobby_councilor_female:0 "$lrsk_gvp_business_lobby_councilor$"
  lrsk_gvp_business_lobby_councilor_desc:0 "The $TITLE$ performs audits of public budgets at all levels of government to ensure that every nanogram of fiscal fat is trimmed."
@@ -454,9 +457,11 @@ l_english:
  lrsk_gvp_colonial_fiefs_councilor:0 "Colonial Surveyor"
  lrsk_gvp_colonial_fiefs_councilor_female:0 "$lrsk_gvp_colonial_fiefs_councilor$"
  lrsk_gvp_colonial_fiefs_councilor_desc:0 "The $TITLE$ ensures that colonial expansion of the realm is beneficial to the realm by discovering the most efficient ways to exploit the resources of its vassal worlds."
+ lrsk_gvp_colonial_fiefs_councilor_conditional_tooltip:0 "Empire must have at least §H10 developed colonies§! (i.e., with at least §Y2 £pop£ Pops§! and a §Y$building_capital$§! building or better)."
  lrsk_gvp_cult_of_personality_councilor:0 "Public Information Officer"
  lrsk_gvp_cult_of_personality_councilor_female:0 "$lrsk_gvp_cult_of_personality_councilor$"
- lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits of the [GetRulerTitle]."
+ lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits of the [GetRulerTitle] and [ruler.GetHerHis] grand designs."
+ lrsk_gvp_cult_of_personality_councilor_conditional_tooltip:0 "Empire must meet at least one of the following conditions:\n-Is §Hat war§!.\n-Has at least §H2 rivals§!.\n-Has fewer than §H10 developed colonies§! (i.e., with at least §Y2 £pop£ Pops§! and a §Y$building_capital$§! building or better).\n-Has completed any one of the §H$Domination$§!, §H$Expansion$§!, or §H$Supremacy$§! Tradition trees."
  lrsk_gvp_direct_revelation_councilor:0 "Certifier of Prophesy"
  lrsk_gvp_direct_revelation_councilor_female:0 "$lrsk_gvp_direct_revelation_councilor$"
  lrsk_gvp_direct_revelation_councilor_desc:0 "The $TITLE$ has the important job of harmonizing interfaith relations in a society where new religious movements come and go like fashionable fads. Though all revelations are valid, not all are equally valuable..."
@@ -478,12 +483,14 @@ l_english:
  lrsk_gvp_lifelong_learning_councilor:0 "Secretary of Citizen Academics"
  lrsk_gvp_lifelong_learning_councilor_female:0 "$lrsk_gvp_lifelong_learning_councilor$"
  lrsk_gvp_lifelong_learning_councilor_desc:0 "The $TITLE$ ensures that citizens at every phase of life have the chance to learn and contribute to the generation of knowledge."
+ lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc:0 "§Y$job_lrsk_gvp_job_citscholar_plural$§! produce §Y+1§! £physics£ £society£ £engineering£ §YResearch Points§." 
  lrsk_gvp_mc_casino_mystic_councilor:0 "Executive Gambling Umpire"
  lrsk_gvp_mc_casino_mystic_councilor_female:0 "$lrsk_gvp_mc_casino_mystic_councilor$"
  lrsk_gvp_mc_casino_mystic_councilor_desc:0 "The $TITLE$ deals with the unavoidable dark side of a society where games of chance are a major part of the culture: the inevitable growth of crime organized around fixing results."
  lrsk_gvp_mc_chart_corp_board_councilor:0 "Charter Review Secretary"
  lrsk_gvp_mc_chart_corp_board_councilor_female:0 "$lrsk_gvp_mc_chart_corp_board_councilor$"
  lrsk_gvp_mc_chart_corp_board_councilor_desc:0 "The $TITLE$ audits all records and communications between the [GetGovernmentName] and its chartered companies to ensure all obligations under the charter are met. This includes as well the important responsibility of making sure the [GetGovernmentName] doesn't fall behind its subjects."
+ lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip:0 "$LRSK_MUST_BE_OVERLORD$"
  lrsk_gvp_mc_conflict_res_councilor:0 "Director of Internal Mediation"
  lrsk_gvp_mc_conflict_res_councilor_female:0 "$lrsk_gvp_mc_conflict_res_councilor$"
  lrsk_gvp_mc_conflict_res_councilor_desc:0 "The $TITLE$ turns the [GetGovernmentName]'s expertise in resolving disputes towards creating a harmonious internal corporate culture."
@@ -535,6 +542,7 @@ l_english:
  lrsk_gvp_universal_sovereignty_councilor:0 "Client Obligations Enforcer"
  lrsk_gvp_universal_sovereignty_councilor_female:0 "$lrsk_gvp_universal_sovereignty_councilor$"
  lrsk_gvp_universal_sovereignty_councilor_desc:0 "The $TITLE$ ensures that those weaker states who have chosen safety under the [GetGovernmentName]'s aegis contribute to its benevolent protection."
+lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip:0 "$LRSK_MUST_BE_OVERLORD$"
  lrsk_gvp_utilitarian_planning_councilor:0 "Advanced Planning Chief"
  lrsk_gvp_utilitarian_planning_councilor_female:0 "$lrsk_gvp_utilitarian_planning_councilor$"
  lrsk_gvp_utilitarian_planning_councilor_desc:0 "The $TITLE$ oversees the execution of plans that go beyond basic sustenance and efficiency and into the common good."

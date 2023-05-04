@@ -9,7 +9,8 @@ lrsk_gvp_artificers_councilor = {
 	}
 	civic = lrsk_adv_civ_civic_artificers
 	modifier = {
-		#TBD
+		country_engineering_research_produces_mult = 0.02
+		planet_jobs_robotic_produces_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_artificers_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_artificers_councilor_conditional_tooltip
@@ -25,7 +26,8 @@ lrsk_gvp_aesetic_virtues_councilor = {
 	}
 	civic = lrsk_gov_var_civic_ascetic_virtues
 	modifier = {
-		#TBD
+		pop_growth_speed = 0.02
+		pop_happiness = 0.01
 	}
 	#custom_tooltip = lrsk_gvp_aesetic_virtues_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_aesetic_virtues_councilor_conditional_tooltip
@@ -35,13 +37,14 @@ lrsk_gvp_automated_indolence_councilor = {
 	leader_class = { scientist }
 	is_leader_possible = {
 		leader_class = scientist
+		owner = { has_technology = tech_robotic_workers }
 	}
 	civic = lrsk_gov_var_civic_automated_indolence
 	modifier = {
-		#TBD
+		planet_pop_assembly_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_automated_indolence_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_automated_indolence_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_automated_indolence_councilor_conditional_tooltip
 }
 
 lrsk_gvp_business_lobby_councilor = {
@@ -51,7 +54,8 @@ lrsk_gvp_business_lobby_councilor = {
 	}
 	civic = lrsk_gov_var_civic_business_lobby
 	modifier = {
-		#TBD
+		planet_structures_upkeep_mult = -0.01
+		ships_upkeep_mult = -0.01
 	}
 	#custom_tooltip = lrsk_gvp_business_lobby_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_business_lobby_councilor_conditional_tooltip
@@ -64,7 +68,7 @@ lrsk_gvp_mc_casino_mystic_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_casino_mystic
 	modifier = {
-		#TBD
+		planet_crime_mult = -0.02
 	}
 	#custom_tooltip = lrsk_gvp_mc_casino_mystic_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_casino_mystic_councilor_conditional_tooltip
@@ -80,23 +84,28 @@ lrsk_gvp_chivalry_councilor = {
 	}
 	civic = lrsk_gov_var_civic_chivalry
 	modifier = {
-		#TBD
+		army_morale = 0.05
+		ship_fire_rate_mult = 0.01
 	}
 	#custom_tooltip = lrsk_gvp_chivalry_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_chivalry_councilor_conditional_tooltip
 }
 
 lrsk_gvp_mc_chart_corp_board_councilor = {
-	leader_class = { governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
-		leader_class = governor
+		OR = {
+			leader_class = scientist
+			leader_class = governor
+		}
+		owner = { is_overlord = yes }
 	}
 	civic = lrsk_gov_var_civic_mc_chart_corp_board
 	modifier = {
-		#TBD
+		country_subject_technology_sharing_mult = 0.05
 	}
 	#custom_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip
 }
 
 lrsk_gvp_colonial_fiefs_councilor = {
@@ -106,13 +115,25 @@ lrsk_gvp_colonial_fiefs_councilor = {
 			leader_class = scientist
 			leader_class = governor
 		}
+		owner = {
+			count_owned_planets = {
+				limit = {
+					is_capital = no
+					num_pops > 2
+					NOT = { has_building = building_colony_shelter }
+				}
+				count > 9
+			}
+		}
 	}
 	civic = lrsk_gov_var_civic_colonial_fiefs
 	modifier = {
-		#TBD
+		country_energy_produces_mult = 0.02
+		country_food_produces_mult = 0.02
+		country_minerals_produces_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_colonial_fiefs_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_colonial_fiefs_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_colonial_fiefs_councilor_conditional_tooltip
 }
 
 lrsk_gvp_mc_conflict_res_councilor = {
@@ -122,7 +143,7 @@ lrsk_gvp_mc_conflict_res_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_conflict_res
 	modifier = {
-		#TBD
+		planet_stability_add = 1
 	}
 	#custom_tooltip = lrsk_gvp_mc_conflict_res_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_conflict_res_councilor_conditional_tooltip
@@ -135,28 +156,47 @@ lrsk_gvp_mc_controlling_interest_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_controlling_interest
 	modifier = {
-		#TBD
+		country_base_influence_produces_add = 0.2
 	}
 	#custom_tooltip = lrsk_gvp_mc_controlling_interest_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_controlling_interest_councilor_conditional_tooltip
 }
 
 lrsk_gvp_cult_of_personality_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general governor }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
 			leader_class = governor
+		}
+		owner = {
+			OR = {
+				is_at_war = yes
+				num_rivals > 1
+				count_owned_planets = {
+					limit = {
+						is_capital = no
+						num_pops > 2
+						NOT = { has_building = building_colony_shelter }
+					}
+					count < 10
+				}
+				has_tradition = tr_domination_finish
+				has_tradition = tr_expansion_finish
+				has_tradition = tr_supremacy_finish
+			}
 		}
 	}
 	civic = lrsk_gov_var_civic_cult_of_personality
 	modifier = {
-		#TBD
+		country_starbase_influence_cost_mult = 0.01
+		country_starbase_influence_cost_distance_mult = 0.05
+		country_claim_influence_cost_mult = 0.02
+		country_hostile_claim_influence_cost_mult = 0.015
 	}
 	#custom_tooltip = lrsk_gvp_cult_of_personality_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_cult_of_personality_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_cult_of_personality_councilor_conditional_tooltip
 }
 
 lrsk_gvp_direct_revelation_councilor = {
@@ -187,7 +227,8 @@ lrsk_gvp_mc_edu_corp_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_edu_corp
 	modifier = {
-		#TBD
+		pop_demotion_time_mult = 0.05
+		pop_resettlement_cost_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_mc_edu_corp_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_edu_corp_councilor_conditional_tooltip
@@ -221,7 +262,8 @@ lrsk_gvp_mc_workers_councils_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_workers_councils
 	modifier = {
-		#TBD
+		pop_cat_worker_happiness = 0.01
+		pop_cat_specialist_happiness = 0.01
 	}
 	#custom_tooltip = lrsk_gvp_mc_workers_councils_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_workers_councils_councilor_conditional_tooltip
@@ -237,7 +279,8 @@ lrsk_gvp_enlightened_liberalism_councilor = {
 	}
 	civic = lrsk_gov_var_civic_enlightened_liberalism
 	modifier = {
-		#TBD
+		tradition_cost_empire_size_mult = -0.02
+		empire_size_pops_mult = -0.01
 	}
 	#custom_tooltip = lrsk_gvp_enlightened_liberalism_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_enlightened_liberalism_councilor_conditional_tooltip
@@ -250,7 +293,8 @@ lrsk_gvp_essentialists_councilor = {
 	}
 	civic = lrsk_adv_civ_civic_essentialists
 	modifier = {
-		#TBD
+		country_physics_research_produces_mult = 0.02
+		ship_speed_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_essentialists_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_essentialists_councilor_conditional_tooltip
@@ -266,7 +310,7 @@ lrsk_gvp_mc_gig_economy_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_gig_economy
 	modifier = {
-		#TBD
+		pop_amenities_usage_mult = -0.02
 	}
 	#custom_tooltip = lrsk_gvp_mc_gig_economy_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_gig_economy_councilor_conditional_tooltip
@@ -284,7 +328,7 @@ lrsk_gvp_mc_heritage_trust_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_heritage_trust
 	modifier = {
-		#TBD
+		pop_citizen_happiness = 0.015
 	}
 	#custom_tooltip = lrsk_gvp_mc_heritage_trust_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_heritage_trust_councilor_conditional_tooltip
@@ -297,7 +341,7 @@ lrsk_gvp_imperial_economy_councilor = {
 	}
 	civic = lrsk_gov_var_civic_imperial_economy
 	modifier = {
-		#TBD
+		trade_value_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_imperial_economy_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_imperial_economy_councilor_conditional_tooltip
@@ -310,7 +354,7 @@ lrsk_gvp_institutionalized_collectivism_councilor = {
 	}
 	civic = lrsk_gov_var_civic_institutionalized_collectivism
 	modifier = {
-		#TBD
+		pop_job_amenities_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_institutionalized_collectivism_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_institutionalized_collectivism_councilor_conditional_tooltip
@@ -327,7 +371,7 @@ lrsk_gvp_mc_police_state_councilor = {
 	}
 	civic = lrsk_gov_var_civic_mc_police_state
 	modifier = {
-		#TBD
+		planet_jobs_ruler_produces_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_mc_police_state_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_mc_police_state_councilor_conditional_tooltip
@@ -343,9 +387,11 @@ lrsk_gvp_lifelong_learning_councilor = {
 	}
 	civic = lrsk_gov_var_civic_lifelong_learning
 	modifier = {
-		#TBD
+		country_physics_research_produces_mult = 0.01
+		country_society_research_produces_mult = 0.01
+		country_engineering_research_produces_mult = 0.01
 	}
-	#custom_tooltip = lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc
+	custom_tooltip = lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_lifelong_learning_councilor_conditional_tooltip
 }
 
@@ -415,7 +461,8 @@ lrsk_gvp_shapers_councilor = {
 	}
 	civic = lrsk_adv_civ_civic_shapers
 	modifier = {
-		#TBD
+		country_society_research_produces_mult = 0.02
+		modify_species_cost_mult = -0.02
 	}
 	#custom_tooltip = lrsk_gvp_shapers_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_shapers_councilor_conditional_tooltip
@@ -459,13 +506,14 @@ lrsk_gvp_universal_sovereignty_councilor = {
 			leader_class = general
 			leader_class = governor
 		}
+		owner = { is_overlord = yes }
 	}
 	civic = lrsk_gov_var_civic_universal_sovereignty
 	modifier = {
-		#TBD
+		country_vassal_naval_capacity_contribution_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_universal_sovereignty_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip
 }
 
 lrsk_gvp_utilitarian_planning_councilor = {
