@@ -3,14 +3,9 @@
 # Author: littleraskol
 
 lrsk_gvp_artificers_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = scientist
 	}
 	civic = lrsk_adv_civ_civic_artificers
 	modifier = {
@@ -21,11 +16,9 @@ lrsk_gvp_artificers_councilor = {
 }
 
 lrsk_gvp_aesetic_virtues_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -39,14 +32,9 @@ lrsk_gvp_aesetic_virtues_councilor = {
 }
 
 lrsk_gvp_automated_indolence_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = scientist
 	}
 	civic = lrsk_gov_var_civic_automated_indolence
 	modifier = {
@@ -57,14 +45,9 @@ lrsk_gvp_automated_indolence_councilor = {
 }
 
 lrsk_gvp_business_lobby_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_business_lobby
 	modifier = {
@@ -75,14 +58,9 @@ lrsk_gvp_business_lobby_councilor = {
 }
 
 lrsk_gvp_mc_casino_mystic_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_casino_mystic
 	modifier = {
@@ -93,13 +71,11 @@ lrsk_gvp_mc_casino_mystic_councilor = {
 }
 
 lrsk_gvp_chivalry_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
-			leader_class = governor
 		}
 	}
 	civic = lrsk_gov_var_civic_chivalry
@@ -111,14 +87,9 @@ lrsk_gvp_chivalry_councilor = {
 }
 
 lrsk_gvp_mc_chart_corp_board_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_chart_corp_board
 	modifier = {
@@ -129,11 +100,9 @@ lrsk_gvp_mc_chart_corp_board_councilor = {
 }
 
 lrsk_gvp_colonial_fiefs_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -147,14 +116,9 @@ lrsk_gvp_colonial_fiefs_councilor = {
 }
 
 lrsk_gvp_mc_conflict_res_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_conflict_res
 	modifier = {
@@ -165,14 +129,9 @@ lrsk_gvp_mc_conflict_res_councilor = {
 }
 
 lrsk_gvp_mc_controlling_interest_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_controlling_interest
 	modifier = {
@@ -219,11 +178,9 @@ lrsk_gvp_direct_revelation_councilor = {
 }
 
 lrsk_gvp_mc_edu_corp_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -255,11 +212,9 @@ lrsk_gvp_elected_clergy_councilor = {
 }
 
 lrsk_gvp_mc_workers_councils_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -272,37 +227,26 @@ lrsk_gvp_mc_workers_councils_councilor = {
 	#conditional_tooltip = lrsk_gvp_mc_workers_councils_councilor_conditional_tooltip
 }
 
-lrsk_gvp_e
-ightened_liberalism_councilor = {
-	leader_class = { admiral general scientist governor }
+lrsk_gvp_enlightened_liberalism_councilor = {
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
 	}
-	civic = lrsk_gov_var_civic_e
-ightened_liberalism
+	civic = lrsk_gov_var_civic_enlightened_liberalism
 	modifier = {
 		#TBD
 	}
-	#custom_tooltip = lrsk_gvp_e
-ightened_liberalism_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_e
-ightened_liberalism_councilor_conditional_tooltip
+	#custom_tooltip = lrsk_gvp_enlightened_liberalism_councilor_custom_modifier_desc
+	#conditional_tooltip = lrsk_gvp_enlightened_liberalism_councilor_conditional_tooltip
 }
 
 lrsk_gvp_essentialists_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = scientist
 	}
 	civic = lrsk_adv_civ_civic_essentialists
 	modifier = {
@@ -313,11 +257,9 @@ lrsk_gvp_essentialists_councilor = {
 }
 
 lrsk_gvp_mc_gig_economy_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -349,14 +291,9 @@ lrsk_gvp_mc_heritage_trust_councilor = {
 }
 
 lrsk_gvp_imperial_economy_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_imperial_economy
 	modifier = {
@@ -367,14 +304,9 @@ lrsk_gvp_imperial_economy_councilor = {
 }
 
 lrsk_gvp_institutionalized_collectivism_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_institutionalized_collectivism
 	modifier = {
@@ -385,12 +317,11 @@ lrsk_gvp_institutionalized_collectivism_councilor = {
 }
 
 lrsk_gvp_mc_police_state_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general governor }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
 			leader_class = governor
 		}
 	}
@@ -403,11 +334,9 @@ lrsk_gvp_mc_police_state_councilor = {
 }
 
 lrsk_gvp_lifelong_learning_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -421,14 +350,9 @@ lrsk_gvp_lifelong_learning_councilor = {
 }
 
 lrsk_gvp_public_works_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_public_works
 	modifier = {
@@ -439,14 +363,9 @@ lrsk_gvp_public_works_councilor = {
 }
 
 lrsk_gvp_republicanism_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_republicanism
 	modifier = {
@@ -457,12 +376,11 @@ lrsk_gvp_republicanism_councilor = {
 }
 
 lrsk_gvp_royal_absolutism_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general governor }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
 			leader_class = governor
 		}
 	}
@@ -475,11 +393,9 @@ lrsk_gvp_royal_absolutism_councilor = {
 }
 
 lrsk_gvp_mc_sci_mgnt_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -493,14 +409,9 @@ lrsk_gvp_mc_sci_mgnt_councilor = {
 }
 
 lrsk_gvp_shapers_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = scientist
 	}
 	civic = lrsk_adv_civ_civic_shapers
 	modifier = {
@@ -511,14 +422,9 @@ lrsk_gvp_shapers_councilor = {
 }
 
 lrsk_gvp_siege_mentality_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = admiral
 	}
 	civic = lrsk_gov_var_civic_siege_mentality
 	modifier = {
@@ -529,12 +435,11 @@ lrsk_gvp_siege_mentality_councilor = {
 }
 
 lrsk_gvp_supremacist_demagoguery_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general governor }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
 			leader_class = governor
 		}
 	}
@@ -547,12 +452,11 @@ lrsk_gvp_supremacist_demagoguery_councilor = {
 }
 
 lrsk_gvp_universal_sovereignty_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { admiral general governor }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
-			leader_class = scientist
 			leader_class = governor
 		}
 	}
@@ -565,11 +469,9 @@ lrsk_gvp_universal_sovereignty_councilor = {
 }
 
 lrsk_gvp_utilitarian_planning_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { scientist governor }
 	is_leader_possible = {
 		OR = {
-			leader_class = admiral
-			leader_class = general
 			leader_class = scientist
 			leader_class = governor
 		}
@@ -583,14 +485,9 @@ lrsk_gvp_utilitarian_planning_councilor = {
 }
 
 lrsk_gvp_mc_vacay_planning_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_vacay_planning
 	modifier = {
@@ -601,14 +498,9 @@ lrsk_gvp_mc_vacay_planning_councilor = {
 }
 
 lrsk_gvp_mc_vertical_integration_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_mc_vertical_integration
 	modifier = {
@@ -619,14 +511,9 @@ lrsk_gvp_mc_vertical_integration_councilor = {
 }
 
 lrsk_gvp_workers_councils_councilor = {
-	leader_class = { admiral general scientist governor }
+	leader_class = { governor }
 	is_leader_possible = {
-		OR = {
-			leader_class = admiral
-			leader_class = general
-			leader_class = scientist
-			leader_class = governor
-		}
+		leader_class = governor
 	}
 	civic = lrsk_gov_var_civic_workers_councils
 	modifier = {
