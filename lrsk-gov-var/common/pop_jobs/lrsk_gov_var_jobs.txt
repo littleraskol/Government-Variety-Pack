@@ -910,6 +910,14 @@ lrsk_gov_var_job_pastor = {
 	planet_modifier = {
 		planet_amenities_add = 5
 	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_councilor = { COUNCILOR = "lrsk_gvp_elected_clergy_councilor" }
+		}
+		planet_amenities_add = 0.25
+		mult = value:councilor_level|TYPE|lrsk_gvp_elected_clergy_councilor|
+	}
 
 	triggered_planet_modifier = {
 		potential = {
