@@ -98,14 +98,13 @@ lrsk_gvp_mc_chart_corp_board_councilor = {
 			leader_class = scientist
 			leader_class = governor
 		}
-		owner = { is_overlord = yes }
 	}
 	civic = lrsk_gov_var_civic_mc_chart_corp_board
 	modifier = {
 		country_subject_technology_sharing_mult = 0.05
 	}
 	#custom_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_custom_modifier_desc
-	conditional_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip
+	#conditional_tooltip = lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip
 }
 
 lrsk_gvp_colonial_fiefs_councilor = {
@@ -116,14 +115,7 @@ lrsk_gvp_colonial_fiefs_councilor = {
 			leader_class = governor
 		}
 		owner = {
-			count_owned_planets = {
-				limit = {
-					is_capital = no
-					num_pops > 2
-					NOT = { has_building = building_colony_shelter }
-				}
-				count > 9
-			}
+			has_tradition = tr_expansion_finish
 		}
 	}
 	civic = lrsk_gov_var_civic_colonial_fiefs
@@ -171,19 +163,8 @@ lrsk_gvp_cult_of_personality_councilor = {
 			leader_class = governor
 		}
 		owner = {
-			OR = {
-				is_at_war = yes
-				num_rivals > 1
-				count_owned_planets = {
-					limit = {
-						is_capital = no
-						num_pops > 2
-						NOT = { has_building = building_colony_shelter }
-					}
-					count < 10
-				}
+			AND = {
 				has_tradition = tr_domination_finish
-				has_tradition = tr_expansion_finish
 				has_tradition = tr_supremacy_finish
 			}
 		}
@@ -508,14 +489,13 @@ lrsk_gvp_universal_sovereignty_councilor = {
 			leader_class = general
 			leader_class = governor
 		}
-		owner = { is_overlord = yes }
 	}
 	civic = lrsk_gov_var_civic_universal_sovereignty
 	modifier = {
 		country_vassal_naval_capacity_contribution_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_universal_sovereignty_councilor_custom_modifier_desc
-	conditional_tooltip = lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip
+	#conditional_tooltip = lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip
 }
 
 lrsk_gvp_utilitarian_planning_councilor = {
