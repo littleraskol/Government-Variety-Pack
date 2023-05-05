@@ -159,6 +159,22 @@ planet_event = {
 				#Common housekeeping.
 				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
 
+				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl)
+				set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
+				IF = {
+					limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" }
+					export_trigger_value_to_variable = {
+						trigger = get_councilor_level
+						parameters = {
+							type = lrsk_gvp_direct_revelation_councilor
+						}
+						variable = lrsk_dr_councilor_lvl
+					}
+				}
+				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = lrsk_dr_councilor_lvl }
+				multiply_variable = { which = lrsk_dr_councilor_lvl value = -1 } #negating for next
+				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = lrsk_dr_councilor_lvl }	
+
 				#Each cult otherwise has an equal chance to form so long as it doesn't already exist, but a cult is less likely to form if its "opposite" is present.
 				random_list = {
 					10 = {
@@ -308,6 +324,10 @@ planet_event = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_golden_age_cult
 						}
+						modifier = {
+							add = lrsk_dr_councilor_lvl_neg_factor
+							has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" }
+						}
 						log = "Doomsday"
 						add_modifier = {
 							modifier = "lrsk_gov_var_statmod_doomsday_cult"
@@ -330,6 +350,10 @@ planet_event = {
 						modifier = {
 							factor = 0.5
 							has_modifier = lrsk_gov_var_statmod_doomsday_cult
+						}
+						modifier = {
+							add = lrsk_dr_councilor_lvl_pos_factor
+							has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" }
 						}
 						log = "Golden Age"
 						add_modifier = {
