@@ -1415,6 +1415,49 @@ country_event = {
 }
 
 #(TBD) Royal Absolutism Councilor: Monthly event that feeds exp to an heir, if an heir exists.
+country_event = {
+	id = lrsk_government_variety_pack_backend.1003
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_councilor = { COUNCILOR = "lrsk_gvp_royal_absolutism_councilor" }
+		OR = {
+			any_owned_leader = { is_heir = yes }
+			any_pool_leader = { is_heir = yes }
+		}
+	}
+
+	immediate = {
+		set_variable = { which = lrsk_ra_councilor_lvl_factor value = 0 }
+		export_trigger_value_to_variable = {
+			trigger = get_councilor_level
+			parameters = {
+				type = lrsk_gvp_royal_absolutism_councilor
+			}
+			variable = lrsk_ra_councilor_lvl_factor
+		}
+		multiply_variable = { which = lrsk_ra_councilor_lvl_factor value = 0.05 }
+
+		random_owned_leader = {
+			limit = { is_heir = yes }
+			add_experience = lrsk_ra_councilor_lvl_factor
+			root = { 
+				set_timed_country_flag = {
+					flag = lrsk_tmp_found_ra_heir
+					days = 3
+				} 
+			}
+		}
+
+		IF = { limit = { NOT = { has_country_flag = lrsk_tmp_found_ra_heir } }	
+			random_pool_leader = {
+				limit = { is_heir = yes }
+				add_experience = lrsk_ra_councilor_lvl_factor
+			}
+		}
+	}	
+}
 
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
