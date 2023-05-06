@@ -6,14 +6,20 @@ lrsk_gvp_artificers_councilor = {
 	leader_class = { scientist }
 	is_leader_possible = {
 		leader_class = scientist
+		owner = {
+			has_technology = tech_engineering_2
+			has_technology = tech_advanced_metallurgy_1
+			has_technology = tech_starbase_3
+		}
 	}
 	civic = lrsk_adv_civ_civic_artificers
 	modifier = {
 		country_engineering_research_produces_mult = 0.02
-		planet_jobs_robotic_produces_mult = 0.02
+		planet_jobs_robotic_produces_mult = 0.03
+		starbase_shipyard_build_speed_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_artificers_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_artificers_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_artificers_councilor_conditional_tooltip
 }
 
 lrsk_gvp_aesetic_virtues_councilor = {
@@ -270,14 +276,20 @@ lrsk_gvp_essentialists_councilor = {
 	leader_class = { scientist }
 	is_leader_possible = {
 		leader_class = scientist
+		owner = {
+			has_technology = tech_physics_2
+			has_technology = tech_power_plant_3
+			has_technology = tech_cold_fusion_power
+		}
 	}
 	civic = lrsk_adv_civ_civic_essentialists
 	modifier = {
 		country_physics_research_produces_mult = 0.02
-		ship_speed_mult = 0.02
+		ship_speed_mult = 0.03
+		country_energy_produces_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_essentialists_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_essentialists_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_essentialists_councilor_conditional_tooltip
 }
 
 lrsk_gvp_mc_gig_economy_councilor = {
@@ -440,14 +452,20 @@ lrsk_gvp_shapers_councilor = {
 	leader_class = { scientist }
 	is_leader_possible = {
 		leader_class = scientist
+		owner = {
+			has_technology = tech_society_2
+			has_technology = tech_terrestrial_sculpting
+			has_technology = tech_xeno_diplomacy
+		}
 	}
 	civic = lrsk_adv_civ_civic_shapers
 	modifier = {
 		country_society_research_produces_mult = 0.02
-		modify_species_cost_mult = -0.02
+		modify_species_cost_mult = -0.03
+		terraform_speed_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_shapers_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_shapers_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_shapers_councilor_conditional_tooltip
 }
 
 lrsk_gvp_siege_mentality_councilor = {
