@@ -114,9 +114,7 @@ lrsk_gvp_colonial_fiefs_councilor = {
 			leader_class = scientist
 			leader_class = governor
 		}
-		owner = {
-			has_tradition = tr_expansion_finish
-		}
+		owner = { has_tradition = tr_expansion_finish }
 	}
 	civic = lrsk_gov_var_civic_colonial_fiefs
 	modifier = {
@@ -145,13 +143,16 @@ lrsk_gvp_mc_controlling_interest_councilor = {
 	leader_class = { governor }
 	is_leader_possible = {
 		leader_class = governor
+		owner = { has_tradition = tr_mercantile_finish }
 	}
 	civic = lrsk_gov_var_civic_mc_controlling_interest
 	modifier = {
 		country_base_influence_produces_add = 0.2
+		country_edict_fund_mult = 0.02
+		country_unity_produces_mult = 0.01
 	}
 	#custom_tooltip = lrsk_gvp_mc_controlling_interest_councilor_custom_modifier_desc
-	#conditional_tooltip = lrsk_gvp_mc_controlling_interest_councilor_conditional_tooltip
+	conditional_tooltip = lrsk_gvp_mc_controlling_interest_councilor_conditional_tooltip
 }
 
 lrsk_gvp_cult_of_personality_councilor = {
