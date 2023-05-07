@@ -32,12 +32,13 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 --Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
 --Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
 -RMF requires Precision Cogs.
--Military Excellence Academy boosts general and admiral exp gain rather than directly assigning traits.
--Enlightened Liberalism boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
--Artificers gets reduction of robot upkeep instead of production (benefit moved to councilor).
--Shapers gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
+-Military Excellence Academy now boosts general and admiral exp gain rather than directly assigning traits.
+-Enlightened Liberalism now boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
+-Artificers now gets reduction of robot upkeep instead of production (benefit moved to councilor).
+-Shapers now gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
 -Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
 -Utilitarian Planning now gives +5% food production, +10% council agenda speed, +10% edict fund.
+-Cult of Personality now gives -10% starbase influence cost instead of +5% influence production (benefit moved to councilor).
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).
