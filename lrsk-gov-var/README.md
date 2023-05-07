@@ -37,6 +37,7 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 -Artificers gets reduction of robot upkeep instead of production (benefit moved to councilor).
 -Shapers gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
 -Ascetic Virtues gets -1 leader negative traits rather than a growth bonus (benefit moved to councilor).
+-Utilitarian Planning now gives +5% food production, +10% council agenda speed, +10% edict fund.
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).
