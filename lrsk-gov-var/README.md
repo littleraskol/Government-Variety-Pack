@@ -39,6 +39,7 @@ v5.6 (05/??/23) - Gemini (3.8) Update
 -Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
 -Utilitarian Planning now gives +5% food production, +10% council agenda speed, -10% edict cost.
 -Cult of Personality now gives -10% starbase influence cost instead of +5% influence production (benefit moved to councilor).
+-Automated Indolence has been removed until I can figure out how to do something actually interesting with it.
 
 v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
 -Can change the planet class to the ideal for species (in Uplift).
