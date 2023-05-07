@@ -21,10 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.6 (??/??/??) - NAMEHERE (3.8) Update
--Fixed what was needed for compatibility with Stellaris 3.8 (NAMEHERE)
+v5.6 (05/??/23) - Gemini (3.8) Update
+-Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
 -Updated compat version number.
--Added councilors for all non-gestatlt civics.
+-Added councilors for all non-gestalt civics.
 -Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
 -"Crusader" governments can be enabled by Crusader Spirit civic.
 --Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
@@ -34,7 +34,7 @@ v5.6 (??/??/??) - NAMEHERE (3.8) Update
 -RMF requires Precision Cogs.
 -Military Excellence Academy now boosts general and admiral exp gain rather than directly assigning traits.
 -Enlightened Liberalism now boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
--Artificers now gets reduction of robot upkeep instead of production (benefit moved to councilor).
+-Artificers now gets reduction of robot upkeep instead of increased robot production (benefit moved to councilor).
 -Shapers now gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
 -Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
 -Utilitarian Planning now gives +5% food production, +10% council agenda speed, -10% edict cost.
