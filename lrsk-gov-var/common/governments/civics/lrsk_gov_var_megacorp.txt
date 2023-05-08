@@ -26,6 +26,30 @@ lrsk_gov_var_civic_mc_sci_mgnt = {
   
   random_weight = { base = @civic_default_random_weight }
   
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
+  
   modifier = {
     planet_pops_organics_food_upkeep_mult = -0.1
     planet_jobs_worker_produces_mult = 0.1
@@ -44,8 +68,6 @@ lrsk_gov_var_civic_mc_edu_corp = {
   #icon = "gfx/interface/icons/governments/civics/civic_media_conglomerate.dds"
   description = "civic_tooltip_lrsk_gov_var_civic_mc_edu_corp_effects"
 
-  random_weight = { base = @civic_default_random_weight }
-
   possible = {
     ethics = {
       OR = {
@@ -55,6 +77,32 @@ lrsk_gov_var_civic_mc_edu_corp = {
       }
     }
   }
+
+  random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
     planet_jobs_specialist_produces_mult = 0.1
@@ -85,6 +133,30 @@ lrsk_gov_var_civic_mc_gig_economy = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
     pop_resettlement_cost_mult = -0.25
@@ -122,7 +194,7 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
   #}
 
   random_weight = { base = @civic_rare_random_weight } # Not sure how I feel about this in AI hands, will it be able to create vassals as needed?
-
+  
   modifier = {
     station_gatherers_produces_mult = 0.15
     station_researchers_produces_mult = 0.15
@@ -175,6 +247,30 @@ lrsk_gov_var_civic_mc_controlling_interest = {
   #icon = "gfx/interface/icons/governments/civics/civic_legal_counsel_civic.dds"
 
 	random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
 	modifier = {
 		country_election_cost_mult = -0.75
@@ -193,6 +289,30 @@ lrsk_gov_var_civic_mc_vertical_integration = {
   #icon = "gfx/interface/icons/governments/civics/civic_franchising.dds"
 
 	random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
 	modifier = {
     country_energy_produces_mult = 0.05
@@ -223,6 +343,30 @@ lrsk_gov_var_civic_mc_workers_councils = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
     planet_jobs_worker_produces_mult = 0.05
@@ -256,6 +400,30 @@ lrsk_gov_var_civic_mc_casino_mystic = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
     pop_demotion_time_mult = -0.25
@@ -285,6 +453,30 @@ lrsk_gov_var_civic_mc_vacay_planning = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
     pop_amenities_usage_mult = -0.10
@@ -313,6 +505,30 @@ lrsk_gov_var_civic_mc_heritage_trust = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
 		planet_stability_add = 5
@@ -341,6 +557,30 @@ lrsk_gov_var_civic_mc_conflict_res = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+  
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
 		country_trust_cap_add = 20
@@ -370,6 +610,30 @@ lrsk_gov_var_civic_mc_police_state = {
   }
 
   random_weight = { base = @civic_default_random_weight }
+
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+		#base = @ai_civic_uncommon_base_weight
+		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				#
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				#
+			}
+		}
+	}
 
   modifier = {
 		planet_crime_mult = -0.1
