@@ -12,7 +12,7 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 		value = civic_hive_divided_attention
 		value = civic_hive_subsumed_will
 	} } }
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
@@ -26,7 +26,7 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 lrsk_gov_var_civic_hive_caste_quickening = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		species_leader_exp_gain = 0.1
     	modify_species_cost_mult = -0.075
@@ -37,7 +37,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 lrsk_gov_var_civic_hive_builder_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	planet_building_build_speed_mult = 0.1
     	starbase_building_build_speed_mult = 0.1
@@ -50,7 +50,7 @@ lrsk_gov_var_civic_hive_builder_caste = {
 lrsk_gov_var_civic_hive_warrior_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	admiral_skill_levels = 1
     	general_skill_levels = 1
@@ -62,7 +62,7 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 lrsk_gov_var_civic_hive_royal_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	governor_skill_levels = 2
     	job_synapse_drone_per_pop = 0.05
@@ -73,7 +73,7 @@ lrsk_gov_var_civic_hive_royal_caste = {
 lrsk_gov_var_civic_hive_reclamation_pools = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = { planet_jobs_food_produces_mult = 0.1 }
 }
 
@@ -81,7 +81,7 @@ lrsk_gov_var_civic_hive_reclamation_pools = {
 lrsk_gov_var_civic_hive_boundless_spite = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		max_rivalries = 1
 		damage_vs_rival_mult = 0.1
@@ -95,7 +95,7 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 lrsk_gov_var_civic_hive_void_affinity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	station_gatherers_produces_mult = 0.2
     	station_researchers_produces_mult = 0.2
@@ -106,7 +106,7 @@ lrsk_gov_var_civic_hive_void_affinity = {
 lrsk_gov_var_civic_hive_hoarder = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	country_energy_produces_mult = 0.05
     	country_minerals_produces_mult = 0.05
@@ -118,7 +118,7 @@ lrsk_gov_var_civic_hive_hoarder = {
 lrsk_gov_var_civic_hive_eusocial_rhythm = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	ships_upkeep_mult = -0.05
     	planet_structures_upkeep_mult = -0.05
@@ -129,7 +129,7 @@ lrsk_gov_var_civic_hive_eusocial_rhythm = {
 lrsk_gov_var_civic_hive_inquisitive_bent = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	science_ship_survey_speed = 0.15
     	ship_anomaly_research_speed_mult = 0.1
@@ -141,7 +141,7 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
 lrsk_gov_var_civic_hive_big_picture_thinker = {
 	potential = { authority = { value = auth_hive_mind } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		terraform_speed_mult = 0.15
 		megastructure_build_speed_mult = 0.15
@@ -152,7 +152,7 @@ lrsk_gov_var_civic_hive_big_picture_thinker = {
 lrsk_gov_var_civic_hive_analgesic_stoicism = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = { planet_jobs_simple_drone_produces_mult = 0.1 }
 }
 
@@ -161,7 +161,7 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 	potential = { authority = { value = auth_hive_mind } }
     possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 	modifier = {
 		country_subject_technology_sharing_mult = 0.15
     	subject_tribute_mult = 0.075
@@ -173,7 +173,7 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 lrsk_gov_var_civic_hive_unending_bloom = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	planet_colony_development_speed_mult = 0.15
     	country_starbase_influence_cost_mult = -0.05
@@ -185,7 +185,7 @@ lrsk_gov_var_civic_hive_benign_overmind = {
 	potential = { authority = { value = auth_hive_mind } }
     possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 	modifier = {
 		country_vassal_naval_capacity_contribution_mult = 0.2
     	country_subject_power_penalty_mult = -0.25
@@ -198,7 +198,7 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 	potential = { authority = { value = auth_hive_mind } }
     possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 	modifier = {
 		diplomacy_upkeep_mult = -0.25
 		country_trust_growth = 0.15
@@ -210,7 +210,7 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 lrsk_gov_var_civic_hive_frenzy = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		ship_fire_rate_mult = 0.1
     	ship_evasion_mult = 0.1
@@ -221,7 +221,7 @@ lrsk_gov_var_civic_hive_frenzy = {
 lrsk_gov_var_civic_hive_vigorous_introversion = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		army_health = 0.1
     	pop_growth_speed = 0.1
@@ -234,7 +234,7 @@ lrsk_gov_var_civic_hive_vigorous_introversion = {
 lrsk_gov_var_civic_machine_distributed_planning_systems = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 
 	description = "civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects"
 
@@ -248,7 +248,7 @@ lrsk_gov_var_civic_machine_distributed_planning_systems = {
 lrsk_gov_var_civic_machine_selfimprovement_heuristics = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = { modify_species_cost_mult = -0.2 }
 }
 
@@ -256,7 +256,7 @@ lrsk_gov_var_civic_machine_selfimprovement_heuristics = {
 lrsk_gov_var_civic_machine_reflective_polymorphism = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = { leaders_cost_mult = -0.33 }
 }
 
@@ -264,7 +264,7 @@ lrsk_gov_var_civic_machine_reflective_polymorphism = {
 lrsk_gov_var_civic_machine_architect_expert_systems = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	planet_building_build_speed_mult = 0.2
     	starbase_building_build_speed_mult = 0.2
@@ -277,7 +277,7 @@ lrsk_gov_var_civic_machine_combat_data = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	description = "civic_tooltip_lrsk_gov_var_civic_machine_combat_data_effects"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	army_morale_damage_mult = 0.3
     	admiral_skill_levels = 1
@@ -293,7 +293,7 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 		value = civic_machine_assimilator
 	} } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 	modifier = {
 		envoys_add = 1
 		diplo_weight_mult = 0.05
@@ -307,7 +307,7 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	station_gatherers_produces_mult = 0.2
     	station_researchers_produces_mult = 0.2
@@ -318,7 +318,7 @@ lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 lrsk_gov_var_civic_machine_selfaware_production_targets = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	country_energy_produces_mult = 0.05
     	country_minerals_produces_mult = 0.05
@@ -330,7 +330,7 @@ lrsk_gov_var_civic_machine_selfaware_production_targets = {
 lrsk_gov_var_civic_machine_recursive_efficiency_analysis = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	ships_upkeep_mult = -0.05
     	planet_structures_upkeep_mult = -0.05
@@ -341,7 +341,7 @@ lrsk_gov_var_civic_machine_recursive_efficiency_analysis = {
 lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	science_ship_survey_speed = 0.15
     	ship_anomaly_research_speed_mult = 0.1
@@ -353,7 +353,7 @@ lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
   	modifier = {
 		empire_size_systems_mult = -0.1
 		empire_size_colonies_mult = -0.2
@@ -365,7 +365,7 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 lrsk_gov_var_civic_machine_geosurvey_heuristics = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	deposit_blockers_cost_mult = -0.1
   		terraform_speed_mult = 0.1
@@ -381,7 +381,7 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 		value = civic_machine_assimilator
 	} } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_uncommon_random_weight }
 	modifier = {
 		country_subject_technology_sharing_mult = 0.15
     	subject_tribute_mult = 0.075
@@ -393,7 +393,7 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 lrsk_gov_var_civic_machine_optimized_expansion = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
-	random_weight = { base = 5 }
+	random_weight = { base = @civic_default_random_weight }
 	modifier = {
     	planet_colony_development_speed_mult = 0.15
     	country_starbase_influence_cost_mult = -0.05

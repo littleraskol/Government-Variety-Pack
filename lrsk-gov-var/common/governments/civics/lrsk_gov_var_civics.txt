@@ -27,7 +27,7 @@ lrsk_gov_var_civic_elected_clergy = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     job_lrsk_gov_var_job_pastor_per_pop = 0.05
@@ -54,7 +54,7 @@ lrsk_gov_var_civic_ascetic_virtues = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     planet_pops_organics_food_upkeep_mult = -0.1
@@ -78,7 +78,7 @@ lrsk_gov_var_civic_republicanism = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     leaders_cost_mult = -0.3
@@ -107,7 +107,7 @@ lrsk_gov_var_civic_republicanism_oli = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     leaders_cost_mult = -0.3
@@ -140,7 +140,7 @@ lrsk_gov_var_civic_utilitarian_planning = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     country_food_produces_mult = 0.05
@@ -204,7 +204,7 @@ lrsk_gov_var_civic_siege_mentality = {
 		intel_encryption_add = 1
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 }
 
 #Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
@@ -244,7 +244,7 @@ lrsk_gov_var_civic_cult_of_personality = {
     country_war_exhaustion_mult = -0.1
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 }
 
 #Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
@@ -279,7 +279,7 @@ lrsk_gov_var_civic_universal_sovereignty = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     subject_integration_influence_cost_mult = -0.25
@@ -311,7 +311,7 @@ lrsk_gov_var_civic_workers_councils = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     planet_building_build_speed_mult = 0.1
@@ -361,7 +361,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     max_rivalries = 2
@@ -397,7 +397,7 @@ lrsk_gov_var_civic_enlightened_liberalism = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     station_gatherers_produces_mult = 0.2
@@ -424,7 +424,7 @@ lrsk_gov_var_civic_business_lobby = {
   #  }
   #}
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     country_energy_produces_mult = 0.05
@@ -457,7 +457,7 @@ lrsk_gov_var_civic_chivalry = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_uncommon_random_weight }
 
   modifier = {
     admiral_skill_levels = 1
@@ -487,7 +487,7 @@ lrsk_gov_var_civic_chivalry_aristo = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     admiral_skill_levels = 1
@@ -520,7 +520,7 @@ lrsk_gov_var_civic_lifelong_learning = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     scientist_skill_levels = 1
@@ -562,7 +562,7 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     country_consumer_goods_produces_mult = 0.1
@@ -596,7 +596,7 @@ lrsk_gov_var_civic_direct_revelation = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_uncommon_random_weight }
 
   modifier = { job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.0666 }
 }
@@ -631,7 +631,7 @@ lrsk_gov_var_civic_direct_revelation = {
 #    }
 #  }
 #
-#  random_weight = { base = 5 }
+#  random_weight = { base = @civic_default_random_weight }
 #
 #  modifier = {
 #    tradition_cost_num_colonies_mult = -0.2
@@ -668,7 +668,7 @@ lrsk_gov_var_civic_royal_absolutism = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_uncommon_random_weight }
 
   modifier = {
     pop_ethics_shift_speed_mult = -0.5
@@ -686,7 +686,7 @@ lrsk_gov_var_civic_public_works = {
 
   #icon = "gfx/interface/icons/governments/civics/civic_functional_architecture.dds"
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_default_random_weight }
 
   modifier = {
     deposit_blockers_cost_mult = -0.15
@@ -728,7 +728,7 @@ lrsk_gov_var_civic_imperial_economy = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_uncommon_random_weight }
 
   modifier = {
     country_vassal_naval_capacity_contribution_mult = 0.15
@@ -763,7 +763,7 @@ lrsk_gov_var_civic_colonial_fiefs = {
     }
   }
 
-  random_weight = { base = 5 }
+  random_weight = { base = @civic_rare_random_weight }
 
   modifier = {
     planet_colony_development_speed_mult = 0.15
@@ -825,7 +825,7 @@ lrsk_gov_var_civic_automated_indolence = {
 #    }
 #  }
 #
-#  random_weight = { base = 5 }
+#  random_weight = { base = @civic_default_random_weight }
 #
 #  modifier = {
 #    can_have_emergency_elections = yes
@@ -855,7 +855,7 @@ lrsk_gov_var_civic_automated_indolence = {
 #    }
 #  }
 #
-#  random_weight = { base = 5 }
+#  random_weight = { base = @civic_default_random_weight }
 #
 #  modifier = {
 #	  pop_government_ethic_attraction = 0.1
