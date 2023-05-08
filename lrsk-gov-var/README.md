@@ -25,6 +25,7 @@ v5.6 (05/??/23) - Gemini (3.8) Update
 -Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
 -Updated compat version number.
 -Added councilors for all non-gestalt civics.
+-Civics have AI weighting by personality for in-game picks.
 -Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
 -"Crusader" governments can be enabled by Crusader Spirit civic.
 --Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.

@@ -31,26 +31,24 @@ lrsk_gov_var_civic_elected_clergy = {
 
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = spiritual_seekers
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = evangelising_zealots
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -82,26 +80,27 @@ lrsk_gov_var_civic_ascetic_virtues = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = spiritual_seekers
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = decadent_hierarchy
+				has_ai_personality = slaving_despots
+				has_ai_personality = hegemonic_imperialists
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -130,12 +129,11 @@ lrsk_gov_var_civic_republicanism = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = federation_builders
 			}
 		}
 		modifier = {
@@ -183,8 +181,6 @@ lrsk_gov_var_civic_republicanism_oli = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
@@ -240,26 +236,24 @@ lrsk_gov_var_civic_utilitarian_planning = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = erudite_explorers
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -321,26 +315,26 @@ lrsk_gov_var_civic_siege_mentality = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = xenophobic_isolationists
+				has_ai_personality = decadent_hierarchy
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = fanatic_purifiers
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -386,26 +380,25 @@ lrsk_gov_var_civic_cult_of_personality = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -451,26 +444,32 @@ lrsk_gov_var_civic_universal_sovereignty = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = slaving_despots
+				has_ai_personality = fanatic_befrienders
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = migrating_flock
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = erudite_explorers
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -507,24 +506,22 @@ lrsk_gov_var_civic_workers_councils = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
-		modifier = {
-			factor = @ai_civic_personality_match_factor
-			OR = {
-				#
-			}
-		}
-		modifier = {
-			factor = @ai_civic_personality_mismatch_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_match_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
+		#modifier = {
+		#	factor = @ai_civic_personality_mismatch_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				#
+				has_ai_personality = ruthless_capitalists
 			}
 		}
 	}
@@ -581,26 +578,29 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = metalhead
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = erudite_explorers
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = xenophobic_isolationists
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -641,24 +641,24 @@ lrsk_gov_var_civic_enlightened_liberalism = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = ruthless_capitalists
+				has_ai_personality = erudite_explorers
+				has_ai_personality = democratic_crusaders
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
 			}
 		}
 	}
@@ -692,26 +692,26 @@ lrsk_gov_var_civic_business_lobby = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = ruthless_capitalists
+				has_ai_personality = slaving_despots
+				has_ai_personality = peaceful_traders
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = decadent_hierarchy
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -749,23 +749,24 @@ lrsk_gov_var_civic_chivalry = {
   
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = slaving_despots
+				has_ai_personality = metalhead
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				#
+				has_ai_personality = fanatic_purifiers
 			}
 		}
 	}
@@ -802,8 +803,6 @@ lrsk_gov_var_civic_chivalry_aristo = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
@@ -859,26 +858,25 @@ lrsk_gov_var_civic_lifelong_learning = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = migrating_flock
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = evangelising_zealots
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {
@@ -925,24 +923,24 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = decadent_hierarchy
+				has_ai_personality = slaving_despots
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				#
+				has_ai_personality = ruthless_capitalists
 			}
 		}
 	}
@@ -983,25 +981,24 @@ lrsk_gov_var_civic_direct_revelation = {
   
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = spiritual_seekers
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = evangelising_zealots
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = { job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.0666 }
@@ -1078,17 +1075,18 @@ lrsk_gov_var_civic_royal_absolutism = {
   
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = evangelising_zealots
 			}
 		}
 		modifier = {
@@ -1119,18 +1117,17 @@ lrsk_gov_var_civic_public_works = {
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = harmonious_hierarchy
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = decadent_hierarchy
+				has_ai_personality = slaving_despots
 			}
 		}
 		modifier = {
@@ -1185,23 +1182,24 @@ lrsk_gov_var_civic_imperial_economy = {
   
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = slaving_despots
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = decadent_hierarchy
+				has_ai_personality = erudite_explorers
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				#
+				has_ai_personality = xenophobic_isolationists
 			}
 		}
 	}
@@ -1246,21 +1244,22 @@ lrsk_gov_var_civic_colonial_fiefs = {
 		modifier = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
-				#
+				has_ai_personality = erudite_explorers
+				has_ai_personality = migrating_flock
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_mismatch_factor
-			OR = {
-				#
-			}
-		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				#
-			}
-		}
+		#modifier = {
+		#	factor = @ai_civic_personality_mismatch_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
+		#modifier = {
+		#	factor = @ai_civic_personality_forbid_factor
+		#	OR = {
+		#		#
+		#	}
+		#}
 	}
 
   modifier = {

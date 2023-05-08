@@ -15,7 +15,12 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				has_ai_personality = devouring_swarm
+			}
+		}
 	}
 
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
@@ -33,8 +38,6 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		species_leader_exp_gain = 0.1
@@ -49,8 +52,6 @@ lrsk_gov_var_civic_hive_builder_caste = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	planet_building_build_speed_mult = 0.1
@@ -67,8 +68,12 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = devouring_swarm
+			}
+		}
 	}
 	modifier = {
     	admiral_skill_levels = 1
@@ -84,8 +89,6 @@ lrsk_gov_var_civic_hive_royal_caste = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	governor_skill_levels = 2
@@ -100,8 +103,6 @@ lrsk_gov_var_civic_hive_reclamation_pools = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = { planet_jobs_food_produces_mult = 0.1 }
 }
@@ -113,8 +114,12 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = devouring_swarm
+			}
+		}
 	}
 	modifier = {
 		max_rivalries = 1
@@ -132,8 +137,6 @@ lrsk_gov_var_civic_hive_void_affinity = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	station_gatherers_produces_mult = 0.2
@@ -148,8 +151,6 @@ lrsk_gov_var_civic_hive_hoarder = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	country_energy_produces_mult = 0.05
@@ -165,8 +166,6 @@ lrsk_gov_var_civic_hive_eusocial_rhythm = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	ships_upkeep_mult = -0.05
@@ -181,8 +180,6 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	science_ship_survey_speed = 0.15
@@ -198,8 +195,6 @@ lrsk_gov_var_civic_hive_big_picture_thinker = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		terraform_speed_mult = 0.15
@@ -214,8 +209,6 @@ lrsk_gov_var_civic_hive_analgesic_stoicism = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = { planet_jobs_simple_drone_produces_mult = 0.1 }
 }
@@ -228,7 +221,6 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		country_subject_technology_sharing_mult = 0.15
@@ -244,8 +236,6 @@ lrsk_gov_var_civic_hive_unending_bloom = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	planet_colony_development_speed_mult = 0.15
@@ -261,7 +251,6 @@ lrsk_gov_var_civic_hive_benign_overmind = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		country_vassal_naval_capacity_contribution_mult = 0.2
@@ -278,7 +267,6 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		diplomacy_upkeep_mult = -0.25
@@ -294,8 +282,12 @@ lrsk_gov_var_civic_hive_frenzy = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = devouring_swarm
+			}
+		}
 	}
 	modifier = {
 		ship_fire_rate_mult = 0.1
@@ -310,8 +302,6 @@ lrsk_gov_var_civic_hive_vigorous_introversion = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		army_health = 0.1
@@ -328,7 +318,6 @@ lrsk_gov_var_civic_machine_distributed_planning_systems = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 
 	description = "civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects"
@@ -346,8 +335,6 @@ lrsk_gov_var_civic_machine_selfimprovement_heuristics = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = { modify_species_cost_mult = -0.2 }
 }
@@ -359,8 +346,6 @@ lrsk_gov_var_civic_machine_reflective_polymorphism = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = { leaders_cost_mult = -0.33 }
 }
@@ -372,8 +357,6 @@ lrsk_gov_var_civic_machine_architect_expert_systems = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	planet_building_build_speed_mult = 0.2
@@ -390,8 +373,12 @@ lrsk_gov_var_civic_machine_combat_data = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = exterminators
+			}
+		}
 	}
 	modifier = {
     	army_morale_damage_mult = 0.3
@@ -411,7 +398,6 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
 		envoys_add = 1
@@ -429,8 +415,6 @@ lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	station_gatherers_produces_mult = 0.2
@@ -445,8 +429,6 @@ lrsk_gov_var_civic_machine_selfaware_production_targets = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	country_energy_produces_mult = 0.05
@@ -462,8 +444,6 @@ lrsk_gov_var_civic_machine_recursive_efficiency_analysis = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	ships_upkeep_mult = -0.05
@@ -478,8 +458,6 @@ lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	science_ship_survey_speed = 0.15
@@ -495,8 +473,6 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
   	modifier = {
 		empire_size_systems_mult = -0.1
@@ -512,8 +488,6 @@ lrsk_gov_var_civic_machine_geosurvey_heuristics = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	deposit_blockers_cost_mult = -0.1
@@ -533,7 +507,12 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				has_ai_personality = servitors
+			}
+		}
 	}
 	modifier = {
 		country_subject_technology_sharing_mult = 0.15
@@ -549,8 +528,6 @@ lrsk_gov_var_civic_machine_optimized_expansion = {
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
 		base = @ai_civic_default_base_weight
-		#base = @ai_civic_uncommon_base_weight
-		#base = @ai_civic_rare_base_weight
 	}
 	modifier = {
     	planet_colony_development_speed_mult = 0.15
