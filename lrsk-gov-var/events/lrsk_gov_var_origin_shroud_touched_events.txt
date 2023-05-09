@@ -64,7 +64,7 @@ planet_event = {
 
 }
 
-# Handles traits on pops
+# Handles traits on pops that start with esper (i.e., pops from the Shroud Touched starting species)
 pop_event = {
 	id = lrsk_gov_var_shroud_touched.3
 	hide_window = yes
@@ -76,47 +76,46 @@ pop_event = {
 	}
 
 	immediate = {
+		# Remove esper if pop has either "real" psi trait
 		if = {
-			limit = { pop_has_trait = lrsk_gov_var_trait_natural_esper } # probably redundant but eh
-			# in this case, we have to remove them ALL.
-			if = {
-				limit = {
-					or = {
-						pop_has_trait = trait_latent_psionic
-						pop_has_trait = trait_psionic
-					}
+			limit = {
+				or = {
+					pop_has_trait = trait_latent_psionic
+					pop_has_trait = trait_psionic
 				}
-				modify_species = {
-					species = this
-					remove_trait = lrsk_gov_var_trait_natural_esper
-				}
-				owner = { if = {
-					limit = {
-						has_origin = lrsk_gov_var_origin_shroud_touched
-						NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } 
-					} 
-					country_event = { id = lrsk_gov_var_shroud_touched.4 }
-				} } 
 			}
-			else = {
-				# Usually do nothing, rarely promote pop to Latent Psionic, sometimes remove Natural Esper
-				random_list = {
-					60 = { } 
-					5 = { 
-						modify_species = { 
-							species = this
-							remove_trait = lrsk_gov_var_trait_natural_esper
-							add_trait = trait_latent_psionic
-							#set_species_flag = lrsk_gov_var_shroud_touched_promoted
-						} 
-					}
-					35 = {
-						modify_species = { 
-							species = this
-							remove_trait = lrsk_gov_var_trait_natural_esper
-							#set_species_flag = lrsk_gov_var_shroud_touched_demoted
-						} 
-					}
+			modify_species = {
+				species = this
+				remove_trait = lrsk_gov_var_trait_natural_esper
+			}
+			# Catching this case means we may have to sweep all pops for both traits and modify the root species.
+			owner = { if = {
+				limit = {
+					has_tradition = tr_psionics_adopt
+					has_origin = lrsk_gov_var_origin_shroud_touched
+					NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } 
+				} 
+				country_event = { id = lrsk_gov_var_shroud_touched.4 }
+			} } 
+		}
+		# Usually do nothing, rarely promote pop to Latent Psionic, sometimes remove Natural Esper
+		else = {
+			random_list = {
+				60 = { } 
+				5 = { 
+					modify_species = { 
+						species = this
+						remove_trait = lrsk_gov_var_trait_natural_esper
+						add_trait = trait_latent_psionic
+						#set_species_flag = lrsk_gov_var_shroud_touched_promoted
+					} 
+				}
+				35 = {
+					modify_species = { 
+						species = this
+						remove_trait = lrsk_gov_var_trait_natural_esper
+						#set_species_flag = lrsk_gov_var_shroud_touched_demoted
+					} 
 				}
 			}
 		}
@@ -137,31 +136,28 @@ country_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = { has_tradition = tr_psionics_adopt }
-			every_owned_pop = {
-				if = { 
-					limit = {
-						pop_has_trait = lrsk_gov_var_trait_natural_esper
-						or = {
-							pop_has_trait = trait_latent_psionic
-							pop_has_trait = trait_psionic
-						}
-					}
-					modify_species = {
-						species = this
-						remove_trait = lrsk_gov_var_trait_natural_esper
+		every_owned_pop = {
+			if = { 
+				limit = {
+					pop_has_trait = lrsk_gov_var_trait_natural_esper
+					or = {
+						pop_has_trait = trait_latent_psionic
+						pop_has_trait = trait_psionic
 					}
 				}
+				modify_species = {
+					species = this
+					remove_trait = lrsk_gov_var_trait_natural_esper
+				}
 			}
-
-			modify_species = {
-				species = this
-				remove_trait = lrsk_gov_var_trait_natural_esper
-			}
-
-			set_country_flag = lrsk_gov_var_shroud_touched_esper_undone
 		}
+
+		modify_species = {
+			species = this
+			remove_trait = lrsk_gov_var_trait_natural_esper
+		}
+
+		set_country_flag = lrsk_gov_var_shroud_touched_esper_undone
 	}
 }
 
