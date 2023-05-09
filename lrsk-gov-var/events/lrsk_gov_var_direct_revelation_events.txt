@@ -30,6 +30,13 @@ planet_event = {
 
 	immediate = {
 		log = "In Direct Revelation Wild Cult Formation gate on planet [this.GetName]."
+
+		#Setup variable
+		IF = {
+			limit = { NOT = { is_variable_set = lrsk_num_wild_cults } }
+			set_variable = { which = lrsk_num_wild_cults value = 0 }
+		}
+
 		#There's a base 50% chance of nothing happening. Each existing cult increases the chance of nothing happening. Any cult having recently formed will increase the overall chance of nothing happening by 33%. Any cult at all existing will increase the overall chance of nothing happening by 20%.
   		random_list = {
   			10 = {
@@ -80,34 +87,38 @@ planet_event = {
 				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
 
 				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl)
-				set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
-				IF = {
-					limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" } }
-					export_trigger_value_to_variable = {
-						trigger = get_councilor_level
-						parameters = {
-							type = lrsk_gvp_direct_revelation_councilor
+				owner = {
+					IF = {
+						limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" } }
+						set_variable = { which = lrsk_dr_councilor_lvl value = 0 } # need a temp version in country scope
+						export_trigger_value_to_variable = {
+							trigger = get_councilor_level
+							parameters = {
+								type = lrsk_gvp_direct_revelation_councilor
+							}
+							variable = lrsk_dr_councilor_lvl
 						}
-						variable = lrsk_dr_councilor_lvl
-					}
 
-					# Handle councilor benefit: +1% happiness per councilor level per wild cult
-					IF = { 
-						limit = { has_modifier = lrsk_gvp_dr_councilor_effect }
-						remove_modifier = lrsk_gvp_dr_councilor_effect
-					}
+						root = {
+							# Handle councilor benefit: +1% happiness per councilor level per wild cult
+							IF = { 
+								limit = { has_modifier = lrsk_gvp_dr_councilor_effect }
+								remove_modifier = lrsk_gvp_dr_councilor_effect
+							}
 
-					set_variable = { which = lrsk_dr_councilor_factor value = lrsk_dr_councilor_lvl }
-					multiply_variable = { which = lrsk_dr_councilor_factor value = lrsk_num_wild_cults }
+							set_variable = { which = lrsk_dr_councilor_factor value = owner.lrsk_dr_councilor_lvl }
+							multiply_variable = { which = lrsk_dr_councilor_factor value = lrsk_num_wild_cults }
 
-					add_modifier = {
-						modifier = lrsk_gvp_dr_councilor_effect
-						mult = lrsk_dr_councilor_factor
+							add_modifier = {
+								modifier = lrsk_gvp_dr_councilor_effect
+								mult = lrsk_dr_councilor_factor
+							}
+						}
 					}
-				}
-				ELSE_IF = {
-					limit = { has_modifier = lrsk_gvp_dr_councilor_effect }
-					remove_modifier = lrsk_gvp_dr_councilor_effect
+					ELSE_IF = {
+						limit = { root = { has_modifier = lrsk_gvp_dr_councilor_effect } }
+						root = { remove_modifier = lrsk_gvp_dr_councilor_effect }
+					}
 				}
 				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = lrsk_dr_councilor_lvl }
 				multiply_variable = { which = lrsk_dr_councilor_lvl value = -1 } #negating for next
