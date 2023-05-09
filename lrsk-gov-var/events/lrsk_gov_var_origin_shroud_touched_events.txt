@@ -168,6 +168,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
+		NOT = { has_tradition = tr_psionics_adopt }
 		from = {
 			species = { has_trait = lrsk_gov_var_trait_natural_esper }
 		}
@@ -180,22 +181,10 @@ country_event = {
 				60 = {}
 				#very rarely get full on psionic
 				5 = {
-					modifier = {
-						factor = 0
-						owner = {
-							has_tradition = tr_psionics_adopt
-						}
-					}
 					add_trait_no_notify = leader_trait_psionic
 				}
 				#sometimes get esper trait
 				35 = {
-					modifier = {
-						factor = 0
-						owner = {
-							has_tradition = tr_psionics_adopt
-						}
-					}
 					add_trait_no_notify = lrsk_gvp_leader_trait_esper
 				}
 			}
@@ -278,14 +267,14 @@ country_event = {
 				limit = {
 					is_same_species = root
 					NOR = {
-						has_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+						has_leader_flag = lrsk_gvp_esper_trait_checked
 						has_trait =	leader_trait_psionic
 					}
 					has_trait = lrsk_gvp_leader_trait_esper
 				}
-				set_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+				set_leader_flag = lrsk_gvp_esper_trait_checked
 				random_list = {
-					10 = {
+					20 = {
 						remove_trait = lrsk_gvp_leader_trait_esper
 						add_trait_no_notify = leader_trait_psionic
 						modifier = {
@@ -297,7 +286,7 @@ country_event = {
 							owner = { has_tradition = tr_psionics_adopt }
 						}
 					}
-					90 = {
+					80 = {
 						#Do nothing
 						modifier = {
 							subtract = 10
@@ -314,14 +303,14 @@ country_event = {
 				limit = {
 					is_same_species = root
 					NOR = {
-						has_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+						has_leader_flag = lrsk_gvp_esper_trait_checked
 						has_trait =	leader_trait_psionic
 					}
 					has_trait = lrsk_gvp_leader_trait_esper
 				}
-				set_leader_flag = lrsk_gov_var_esper_ap_mom_checked
+				set_leader_flag = lrsk_gvp_esper_trait_checked
 				random_list = {
-					10 = {
+					20 = {
 						remove_trait = lrsk_gvp_leader_trait_esper
 						add_trait_no_notify = leader_trait_psionic
 						modifier = {
@@ -333,7 +322,7 @@ country_event = {
 							owner = { has_tradition = tr_psionics_adopt }
 						}
 					}
-					90 = {
+					80 = {
 						#Do nothing
 						modifier = {
 							subtract = 10
