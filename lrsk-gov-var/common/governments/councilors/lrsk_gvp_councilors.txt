@@ -4,13 +4,13 @@
 
 lrsk_gvp_artificers_councilor = {
 	leader_class = { scientist }
+	possible = {
+		has_technology = tech_engineering_2
+		has_technology = tech_advanced_metallurgy_1
+		has_technology = tech_starbase_3
+	}
 	is_leader_possible = {
 		leader_class = scientist
-		owner = {
-			has_technology = tech_engineering_2
-			has_technology = tech_advanced_metallurgy_1
-			has_technology = tech_starbase_3
-		}
 	}
 	civic = lrsk_adv_civ_civic_artificers
 	modifier = {
@@ -24,12 +24,12 @@ lrsk_gvp_artificers_councilor = {
 
 lrsk_gvp_aesetic_virtues_councilor = {
 	leader_class = { scientist governor }
+	possible = { has_tradition = tr_harmony_finish }
 	is_leader_possible = {
 		OR = {
 			leader_class = scientist
 			leader_class = governor
 		}
-		owner = { has_tradition = tr_harmony_finish }
 	}
 	civic = lrsk_gov_var_civic_ascetic_virtues
 	modifier = {
@@ -43,9 +43,9 @@ lrsk_gvp_aesetic_virtues_councilor = {
 
 lrsk_gvp_automated_indolence_councilor = {
 	leader_class = { scientist }
+	possible = { has_technology = tech_robotic_workers }
 	is_leader_possible = {
 		leader_class = scientist
-		owner = { has_technology = tech_robotic_workers }
 	}
 	civic = lrsk_gov_var_civic_automated_indolence
 	modifier = {
@@ -117,12 +117,12 @@ lrsk_gvp_mc_chart_corp_board_councilor = {
 
 lrsk_gvp_colonial_fiefs_councilor = {
 	leader_class = { scientist governor }
+	possible = { has_tradition = tr_expansion_finish }
 	is_leader_possible = {
 		OR = {
 			leader_class = scientist
 			leader_class = governor
 		}
-		owner = { has_tradition = tr_expansion_finish }
 	}
 	civic = lrsk_gov_var_civic_colonial_fiefs
 	modifier = {
@@ -149,9 +149,9 @@ lrsk_gvp_mc_conflict_res_councilor = {
 
 lrsk_gvp_mc_controlling_interest_councilor = {
 	leader_class = { governor }
+	possible = { has_tradition = tr_mercantile_finish }
 	is_leader_possible = {
 		leader_class = governor
-		owner = { has_tradition = tr_mercantile_finish }
 	}
 	civic = lrsk_gov_var_civic_mc_controlling_interest
 	modifier = {
@@ -165,13 +165,13 @@ lrsk_gvp_mc_controlling_interest_councilor = {
 
 lrsk_gvp_cult_of_personality_councilor = {
 	leader_class = { admiral general governor }
+	possible = { has_tradition = tr_supremacy_finish }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
 			leader_class = general
 			leader_class = governor
 		}
-		owner = { has_tradition = tr_supremacy_finish }
 	}
 	civic = lrsk_gov_var_civic_cult_of_personality
 	modifier = {
@@ -186,6 +186,7 @@ lrsk_gvp_cult_of_personality_councilor = {
 
 lrsk_gvp_direct_revelation_councilor = {
 	leader_class = { admiral general scientist governor }
+	possible = { has_tradition = tr_domination_finish }
 	is_leader_possible = {
 		OR = {
 			leader_class = admiral
@@ -193,7 +194,6 @@ lrsk_gvp_direct_revelation_councilor = {
 			leader_class = scientist
 			leader_class = governor
 		}
-		owner = { has_tradition = tr_domination_finish }
 	}
 	civic = lrsk_gov_var_civic_direct_revelation
 	modifier = {
@@ -274,13 +274,13 @@ lrsk_gvp_enlightened_liberalism_councilor = {
 
 lrsk_gvp_essentialists_councilor = {
 	leader_class = { scientist }
+	possible = { 
+		has_technology = tech_physics_2
+		has_technology = tech_power_plant_3
+		has_technology = tech_cold_fusion_power
+	}
 	is_leader_possible = {
 		leader_class = scientist
-		owner = {
-			has_technology = tech_physics_2
-			has_technology = tech_power_plant_3
-			has_technology = tech_cold_fusion_power
-		}
 	}
 	civic = lrsk_adv_civ_civic_essentialists
 	modifier = {
@@ -451,13 +451,13 @@ lrsk_gvp_mc_sci_mgnt_councilor = {
 
 lrsk_gvp_shapers_councilor = {
 	leader_class = { scientist }
+	possible = {
+		has_technology = tech_society_2
+		has_technology = tech_terrestrial_sculpting
+		has_technology = tech_xeno_diplomacy
+	}
 	is_leader_possible = {
 		leader_class = scientist
-		owner = {
-			has_technology = tech_society_2
-			has_technology = tech_terrestrial_sculpting
-			has_technology = tech_xeno_diplomacy
-		}
 	}
 	civic = lrsk_adv_civ_civic_shapers
 	modifier = {
