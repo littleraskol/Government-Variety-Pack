@@ -1441,7 +1441,7 @@ country_event = {
 
 		random_owned_leader = {
 			limit = { is_heir = yes }
-			add_experience = lrsk_ra_councilor_lvl_factor
+			add_experience = root.lrsk_ra_councilor_lvl_factor
 			root = { 
 				set_timed_country_flag = {
 					flag = lrsk_tmp_found_ra_heir
@@ -1453,7 +1453,7 @@ country_event = {
 		IF = { limit = { NOT = { has_country_flag = lrsk_tmp_found_ra_heir } }	
 			random_pool_leader = {
 				limit = { is_heir = yes }
-				add_experience = lrsk_ra_councilor_lvl_factor
+				add_experience = root.lrsk_ra_councilor_lvl_factor
 			}
 		}
 	}	
