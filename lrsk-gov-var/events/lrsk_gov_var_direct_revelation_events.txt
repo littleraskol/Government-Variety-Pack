@@ -86,11 +86,11 @@ planet_event = {
 				#Common housekeeping.
 				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
 
-				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl)
+				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl) and adds +1% happiness per councilor level per wild cult
 				owner = {
 					IF = {
 						limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" } }
-						set_variable = { which = lrsk_dr_councilor_lvl value = 0 } # need a temp version in country scope
+						set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
 						export_trigger_value_to_variable = {
 							trigger = get_councilor_level
 							parameters = {
@@ -101,18 +101,7 @@ planet_event = {
 
 						root = {
 							# Handle councilor benefit: +1% happiness per councilor level per wild cult
-							IF = { 
-								limit = { has_modifier = lrsk_gvp_dr_councilor_effect }
-								remove_modifier = lrsk_gvp_dr_councilor_effect
-							}
-
-							set_variable = { which = lrsk_dr_councilor_factor value = owner.lrsk_dr_councilor_lvl }
-							multiply_variable = { which = lrsk_dr_councilor_factor value = lrsk_num_wild_cults }
-
-							add_modifier = {
-								modifier = lrsk_gvp_dr_councilor_effect
-								mult = lrsk_dr_councilor_factor
-							}
+							planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
 						}
 					}
 					ELSE_IF = {
@@ -122,7 +111,7 @@ planet_event = {
 				}
 				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = lrsk_dr_councilor_lvl }
 				multiply_variable = { which = lrsk_dr_councilor_lvl value = -1 } #negating for next
-				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = lrsk_dr_councilor_lvl }	
+				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = lrsk_dr_councilor_lvl }
 
 				#Each cult otherwise has an equal chance to form so long as it doesn't already exist, but a cult is less likely to form if its "opposite" is present.
 				random_list = {
@@ -930,7 +919,7 @@ country_event = {
 	}
 }
 
-# deccrements wild cult count
+# Deccrements wild cult count, recalcs as needed
 planet_event = {
 	id = lrsk_gov_var_direct_revelation.1001
 	hide_window = yes
@@ -938,14 +927,106 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		is_variable_set = lrsk_num_wild_cults
 		check_variable = { which = lrsk_num_wild_cults value > 0 }
 		owner = { has_valid_civic = lrsk_gov_var_civic_direct_revelation }
 	}
 
 	immediate = {
 		subtract_variable = { which = lrsk_num_wild_cults value = 1 }
+
+		# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl) and adds +1% happiness per councilor level per wild cult
+		owner = {
+			IF = {
+				limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" } }
+				set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
+				export_trigger_value_to_variable = {
+					trigger = get_councilor_level
+					parameters = {
+						type = lrsk_gvp_direct_revelation_councilor
+					}
+					variable = lrsk_dr_councilor_lvl
+				}
+
+				root = {
+					# Handle councilor benefit: +1% happiness per councilor level per wild cult
+					planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
+				}
+			}
+			ELSE_IF = {
+				limit = { root = { has_modifier = lrsk_gvp_dr_councilor_effect } }
+				root = { remove_modifier = lrsk_gvp_dr_councilor_effect }
+			}
+		}
 	}
 }
+
+# Checks for ability to apply councilor benefit on monthly pulse
+country_event = {
+	id = lrsk_gov_var_direct_revelation.1002
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+		has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" }
+		any_owned_planet = {
+			NOT = { has_modifier = lrsk_gvp_dr_councilor_effect }
+			is_variable_set = lrsk_num_wild_cults
+			check_variable = { which = lrsk_num_wild_cults value > 0 }		
+		}
+	}
+
+	immediate = {
+		set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
+		export_trigger_value_to_variable = {
+			trigger = get_councilor_level
+			parameters = {
+				type = lrsk_gvp_direct_revelation_councilor
+			}
+			variable = lrsk_dr_councilor_lvl
+		}
+		every_owned_planet = {
+			limit = {
+				NOT = { has_modifier = lrsk_gvp_dr_councilor_effect }
+				is_variable_set = lrsk_num_wild_cults
+				check_variable = { which = lrsk_num_wild_cults value > 0 }
+			}
+
+			planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
+		}
+	}
+	
+}
+
+# Apply councilor benefit to planet
+planet_event = {
+	id = lrsk_gov_var_direct_revelation.1003
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_variable_set = lrsk_num_wild_cults
+		check_variable = { which = lrsk_num_wild_cults value > 0 }	
+	}
+
+	immediate = {
+		# Handle councilor benefit: +1% happiness per councilor level per wild cult
+		IF = { 
+			limit = { has_modifier = lrsk_gvp_dr_councilor_effect }
+			remove_modifier = lrsk_gvp_dr_councilor_effect
+		}
+
+		set_variable = { which = lrsk_dr_councilor_factor value = owner.lrsk_dr_councilor_lvl }
+		multiply_variable = { which = lrsk_dr_councilor_factor value = lrsk_num_wild_cults }
+
+		add_modifier = {
+			modifier = lrsk_gvp_dr_councilor_effect
+			mult = lrsk_dr_councilor_factor
+		}
+	}
+}
+
 
 ## WORK IN PROGRESS/MAYBE FUTURE STUFF
 
