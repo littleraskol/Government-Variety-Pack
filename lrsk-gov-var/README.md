@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.6 (05/??/23) - Gemini (3.8) Update
+v5.6 (05/11/23) - Gemini (3.8) Update
 -Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
 -Updated compat version number.
 -Added councilors for all non-gestalt civics.
