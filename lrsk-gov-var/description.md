@@ -61,7 +61,7 @@ There are also "backup" versions of this mod for older versions of Stellaris. [b
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2946882585]Backup for 3.6 (Orion)[/url] - Older version of the mod for 3.6 (Orion). 
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=LinkTBD]Backup for 3.7 (Orion)[/url] - Older version of the mod for 3.7 (Canis Minor). 
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974438259]Backup for 3.7 (Orion)[/url] - Older version of the mod for 3.7 (Canis Minor). 
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
