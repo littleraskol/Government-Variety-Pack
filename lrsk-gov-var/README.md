@@ -21,6 +21,11 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+5.6.1 (05/13/23) Post-Update Hotfixes
+-Public Info Officer modifiers were all screwed up, now fixed.
+-Several other councilors had modifiers with the wrong sign, and so ended up being detrimental.
+-Added "concepts" (sub-tooltips) to make tooltips less busy.
+
 v5.6 (05/11/23) - Gemini (3.8) Update
 -Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
 -Updated compat version number.
