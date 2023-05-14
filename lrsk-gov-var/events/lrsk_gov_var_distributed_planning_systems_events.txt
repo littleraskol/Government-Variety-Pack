@@ -39,9 +39,51 @@ planet_event = {
 
 	immediate = { random_list = {
       10 = {
+		modifier = {
+			factor = 0.2 # any designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = lrsk_gvp_rra_ongoing@owner
+		}
+		set_planet_flag = lrsk_gvp_rra_ongoing@owner
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.3 }	#Ongoing Audit (bad result)
       }
       5 = {
+		modifier = {
+			factor = 0.2 # any designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = lrsk_gvp_rra_confused@owner
+		}
+		set_planet_flag = lrsk_gvp_rra_confused@owner
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.4 } #Confused Audit (worst result)
       }
       5 = {
@@ -1423,6 +1465,49 @@ planet_event = {
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.19 } #Build Speed Focus
       }
       20 = {
+		modifier = {
+			factor = 0.2 # any designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_planet_flag = lrsk_gvp_rra_none_1@owner
+		}
+		modifier = {
+			factor = 0.5
+			has_planet_flag = lrsk_gvp_rra_none_2@owner
+		}
+		modifier = {
+			factor = 0.25
+			has_planet_flag = lrsk_gvp_rra_none_3@owner
+		}
+		IF = {
+			limit = { has_planet_flag = lrsk_gvp_rra_none_3@owner }
+			# do nothing
+		}
+		ELSE_IF = {
+			limit = { has_planet_flag = lrsk_gvp_rra_none_2@owner }
+			set_planet_flag = lrsk_gvp_rra_none_3@owner
+		}
+		ELSE_IF = {
+			limit = { has_planet_flag = lrsk_gvp_rra_none_1@owner }
+			set_planet_flag = lrsk_gvp_rra_none_2@owner
+		}
+		ELSE = {
+			set_planet_flag = lrsk_gvp_rra_none_1@owner
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.20 } #Inconclusive (nothing happens)
       }
     } }
