@@ -26,6 +26,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 -Results of RRA now heavily factor in planet designations, and resource-related designations make bad outcomes much less likely.
 -Player-facing descriptions make results and requirements more clear.
 -The decision is overall more powerful in its ultimate results and less prone to bad outcomes, but costs more.
+-Changed name and flavor of signature job.
 
 5.6.1 (05/13/23) Post-Update Hotfixes
 -Public Info Officer modifiers were all screwed up, now fixed.
