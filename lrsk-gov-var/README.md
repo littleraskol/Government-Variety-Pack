@@ -21,9 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-5.6.2 (05/13/23) Touching Up RRA
--Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the odds add up to 100...)
--Results of RRA now heavily factor in planet designations.
+5.6.2 (05/??/23) Touching Up RRA
+-Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the base odds add up to 100...).
+-Results of RRA now heavily factor in planet designations, and resource-related designations make bad outcomes much less likely.
+-The decision is overall more powerful in its ultimate results and less prone to bad outcomes, but costs more.
 
 5.6.1 (05/13/23) Post-Update Hotfixes
 -Public Info Officer modifiers were all screwed up, now fixed.
