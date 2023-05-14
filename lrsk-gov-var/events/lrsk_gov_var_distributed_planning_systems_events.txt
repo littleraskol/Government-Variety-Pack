@@ -41,7 +41,7 @@ planet_event = {
       10 = {
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.3 }	#Ongoing Audit (bad result)
       }
-      10 = {
+      5 = {
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.4 } #Confused Audit (worst result)
       }
       5 = {
@@ -237,6 +237,27 @@ planet_event = {
 			add = 2
 			num_buildings = { type = building_network_junction value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 3 # right designation
+			OR = {
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_refinery_designation = yes
+			}
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.5 } #Favor complex drone output
       }
       5 = {
@@ -401,6 +422,27 @@ planet_event = {
 			add = 2
 			num_buildings = { type = building_hydroponics_farm value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_refinery_designation = yes
+			}
+		}
+		modifier = {
+			factor = 3 # right designation
+			OR = {
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_rural_designation = yes
+			}
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.6 } #Favor simple drone output
       }
       5 = {
@@ -504,6 +546,28 @@ planet_event = {
 			add = 10
 			num_buildings = { type = building_mineral_purification_hub value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_refinery_designation = yes
+			}
+		}
+		modifier = {
+			factor = 2 # okay designation
+			has_rural_designation = yes
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_mining_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.8 } #Mining focus
       }
       5 = {
@@ -578,6 +642,28 @@ planet_event = {
 			add = 15
 			num_buildings = { type = building_betharian_power_plant value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+			}
+		}
+		modifier = {
+			factor = 2 # okay designation
+			has_rural_designation = yes
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_generator_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.9 } #Energy focus
       }
       5 = {
@@ -644,6 +730,28 @@ planet_event = {
 			add = 10
 			num_buildings = { type = building_hydroponics_farm value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+			}
+		}
+		modifier = {
+			factor = 2 # okay designation
+			has_rural_designation = yes
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_generator_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 } #Food focus (servitor/assimilator only)
       }
       5 = {
@@ -707,6 +815,28 @@ planet_event = {
 			add = 6
 			num_buildings = { type = building_foundry_1 value > 5 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 2 # okay designation
+			has_industrial_designation = yes
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_foundry_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.11 } #Alloys focus
       }
       5 = {
@@ -769,6 +899,28 @@ planet_event = {
         modifier = {
 			add = 6
 			num_buildings = { type = building_factory_1 value > 5 }
+		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_foundry_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 2 # okay designation
+			has_industrial_designation = yes
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_foundry_designation = yes
 		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.12 } #Consumer goods focus (servitor only)
       }
@@ -877,6 +1029,25 @@ planet_event = {
 			add = 6
 			num_buildings = { type = building_gas_extractors value > 3 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_refinery_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.13 } #Rarities focus
       }
       5 = {
@@ -945,6 +1116,25 @@ planet_event = {
 			add = 6
 			num_buildings = { type = building_research_lab_1 value > 5 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_research_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.14 } #Research focus
       }
       5 = {
@@ -1008,6 +1198,25 @@ planet_event = {
         modifier = {
 			add = 6
 			num_buildings = { type = building_stronghold value > 5 }
+		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_unity_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_fortress_designation = yes
 		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.15 } #Military focus
       }
@@ -1169,6 +1378,25 @@ planet_event = {
 			add = 15
 			num_buildings = { type = building_artist_patron value > 0 }
 		}
+		modifier = {
+			factor = 0.2 # wrong designation
+			OR = {
+				has_fortress_designation = yes
+				has_factory_designation = yes
+				has_foundry_designation = yes
+				has_industrial_designation = yes
+				has_research_designation = yes
+				has_generator_designation = yes
+				has_farming_designation = yes
+				has_mining_designation = yes
+				has_refinery_designation = yes
+				has_rural_designation = yes
+			}
+		}
+		modifier = {
+			factor = 5 # right designation
+			has_unity_designation = yes
+		}
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.18 } #Unity Focus
       }
       5 = {
@@ -1195,7 +1423,7 @@ planet_event = {
         planet_event = { id = lrsk_gov_var_distributed_planning_systems.19 } #Build Speed Focus
       }
       20 = {
-        planet_event = { id = lrsk_gov_var_distributed_planning_systems.20 }	#Inconclusive (nothing happens)
+        planet_event = { id = lrsk_gov_var_distributed_planning_systems.20 } #Inconclusive (nothing happens)
       }
     } }
 
