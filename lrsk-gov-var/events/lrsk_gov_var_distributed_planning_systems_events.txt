@@ -18,8 +18,14 @@ planet_event = {
 
 	immediate = {
 		set_timed_planet_flag = {
-			flag = lrsk_gov_var_rra_happened
+			flag = lrsk_gov_var_rra_planet_cooldown
 			years = 11			
+		}
+		owner = {
+			set_timed_country_flag = {
+				flag = lrsk_gov_var_rra_empire_cooldown
+				years = 6
+			}
 		}
 		planet_event = {
 			id = lrsk_gov_var_distributed_planning_systems.2

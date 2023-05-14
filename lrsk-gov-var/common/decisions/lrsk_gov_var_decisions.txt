@@ -22,8 +22,12 @@ decision_lrsk_gov_var_rra = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = lrsk_gvp_rra_fail_too_soon
-			NOT = {  has_planet_flag = lrsk_gov_var_rra_happened }
+			fail_text = lrsk_gvp_rra_fail_cooldown_planet
+			NOT = { has_planet_flag = lrsk_gov_var_rra_planet_cooldown }
+		}
+		custom_tooltip = {
+			fail_text = lrsk_gvp_rra_fail_cooldown_empire
+			NOT = { owner = { has_country_flag = lrsk_gov_var_rra_empire_cooldown } }
 		}
 	}
 
