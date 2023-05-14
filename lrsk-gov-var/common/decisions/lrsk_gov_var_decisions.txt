@@ -16,12 +16,16 @@ decision_lrsk_gov_var_rra = {
     }
 
     potential = {
-        NOR = { 
-            has_planet_flag = lrsk_gov_var_rra_happened
-            has_modifier = lrsk_gov_var_statmod_planet_audit
-        }
+        NOT = { has_modifier = lrsk_gov_var_statmod_planet_audit }
         owner = { has_valid_civic = lrsk_gov_var_civic_machine_distributed_planning_systems }
     }
+
+	allow = {
+		custom_tooltip = {
+			fail_text = lrsk_gvp_rra_fail_too_soon
+			NOT = {  has_planet_flag = lrsk_gov_var_rra_happened }
+		}
+	}
 
     effect = {
         custom_tooltip = decision_lrsk_gov_var_rra_effects

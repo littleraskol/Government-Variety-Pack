@@ -1055,3 +1055,60 @@ lrsk_make_impecon_special_subject = {
 		set_agreement_preset = { preset = $PRESET$ }
 	}
 }
+
+lrsk_remove_existing_rra_modifier = {
+	SWITCH = {
+		trigger = has_modifier
+		lrsk_gov_var_statmod_planet_audit_continues = {
+			remove_modifier = lrsk_gov_var_statmod_planet_audit_continues
+		}
+		lrsk_gov_var_statmod_planet_audit_confused = {
+			remove_modifier = lrsk_gov_var_statmod_planet_audit_confused
+		}
+		lrsk_gov_var_statmod_planet_spec_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_spec_priority
+		}
+		lrsk_gov_var_statmod_planet_basic_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_basic_priority
+		}
+		lrsk_gov_var_statmod_planet_logistic_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_logistic_priority
+		}
+		lrsk_gov_var_statmod_planet_mining_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_mining_priority
+		}
+		lrsk_gov_var_statmod_planet_energy_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_energy_priority
+		}
+		lrsk_gov_var_statmod_planet_food_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_food_priority
+		}
+		lrsk_gov_var_statmod_planet_smelting_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_smelting_priority
+		}
+		lrsk_gov_var_statmod_planet_industrial_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_industrial_priority
+		}
+		lrsk_gov_var_statmod_planet_rarities_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_rarities_priority
+		}
+		lrsk_gov_var_statmod_planet_research_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_research_priority
+		}
+		lrsk_gov_var_statmod_planet_military_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_military_priority
+		}
+		lrsk_gov_var_statmod_planet_growth_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_growth_priority
+		}
+		lrsk_gov_var_statmod_planet_stability_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_stability_priority
+		}
+		lrsk_gov_var_statmod_planet_unity_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_unity_priority
+		}
+		lrsk_gov_var_statmod_planet_construction_priority = {
+			remove_modifier = lrsk_gov_var_statmod_planet_construction_priority
+		}
+	}
+}
