@@ -2070,6 +2070,22 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 			has_valid_civic = civic_private_military_companies
 		} }
 	}
+
+	triggered_country_modifier = {
+		potential = {			
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_naval_contractors }
+		}
+		admiral_exp_gain = 0.1
+	}
+
+	triggered_country_modifier = {
+		potential = {			
+			exists = branch_office_owner
+			branch_office_owner = { has_valid_civic = civic_private_military_companies }
+		}
+		general_exp_gain = 0.1
+	}
 	
 	triggered_desc = {
 		trigger = {
@@ -2251,56 +2267,56 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 		}
 	}
 	
-	triggered_desc = {
-		trigger = {
-			NOT = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
-			has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-		}
-		text = lrsk_military_excellence_naval_effect
-	}
-	
-	triggered_desc = {
-		trigger = {
-			has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-			NOT = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
-		}
-		text = lrsk_military_excellence_army_effect
-	}
-	
-	triggered_desc = {
-		trigger = {
-			has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-			has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-		}
-		text = lrsk_military_excellence_both_effect
-	}
+	#triggered_desc = {
+	#	trigger = {
+	#		NOT = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
+	#		has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+	#	}
+	#	text = lrsk_military_excellence_naval_effect
+	#}
+	#
+	#triggered_desc = {
+	#	trigger = {
+	#		has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+	#		NOT = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
+	#	}
+	#	text = lrsk_military_excellence_army_effect
+	#}
+	#
+	#triggered_desc = {
+	#	trigger = {
+	#		has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+	#		has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+	#	}
+	#	text = lrsk_military_excellence_both_effect
+	#}
 	
 	# Effect is by event: Better chance of positive military leader traits
-	on_built = {		
-		if = { limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
-			owner = { change_variable = { which = lrsk_general_training_bonus value = 1 } }
-			set_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-		}
-		if = { limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
-			owner = { change_variable = { which = lrsk_admiral_training_bonus value = 1 } }
-			set_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-		}
-		log = "General training bonus = [owner.lrsk_general_training_bonus]"
-		log = "Admiral training bonus = [owner.lrsk_admiral_training_bonus]"
-	}
-    
-	on_destroy = {
-		if = { limit = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
-			owner = { subtract_variable = { which = lrsk_general_training_bonus value = 1 } }
-			remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-		}
-		if = { limit = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
-			owner = { subtract_variable = { which = lrsk_admiral_training_bonus value = 1 } }
-			remove_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
-		}
-		log = "General training bonus = [owner.lrsk_general_training_bonus]"
-		log = "Admiral training bonus = [owner.lrsk_admiral_training_bonus]"
-	}
+	#on_built = {		
+	#	if = { limit = { branch_office_owner = { has_valid_civic = civic_private_military_companies } }
+	#		owner = { change_variable = { which = lrsk_general_training_bonus value = 1 } }
+	#		set_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+	#	}
+	#	if = { limit = { branch_office_owner = { has_valid_civic = civic_naval_contractors } }
+	#		owner = { change_variable = { which = lrsk_admiral_training_bonus value = 1 } }
+	#		set_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+	#	}
+	#	log = "General training bonus = [owner.lrsk_general_training_bonus]"
+	#	log = "Admiral training bonus = [owner.lrsk_admiral_training_bonus]"
+	#}
+    #
+	#on_destroy = {
+	#	if = { limit = { has_planet_flag = lrsk_got_general_bonus_from@branch_office_owner }
+	#		owner = { subtract_variable = { which = lrsk_general_training_bonus value = 1 } }
+	#		remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
+	#	}
+	#	if = { limit = { has_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner }
+	#		owner = { subtract_variable = { which = lrsk_admiral_training_bonus value = 1 } }
+	#		remove_planet_flag = lrsk_got_admiral_bonus_from@branch_office_owner
+	#	}
+	#	log = "General training bonus = [owner.lrsk_general_training_bonus]"
+	#	log = "Admiral training bonus = [owner.lrsk_admiral_training_bonus]"
+	#}
 
 	resources = {
 		category = planet_branch_office_buildings

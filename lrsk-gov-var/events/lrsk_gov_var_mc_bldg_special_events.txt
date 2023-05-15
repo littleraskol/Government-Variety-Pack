@@ -6,357 +6,357 @@
 
 namespace = lrsk_gvp_mc_bldg_special
 
-# Handle special military leader bonus from Military Excellence Academy (Gate for delay)
-country_event = {
-	id = lrsk_gvp_mc_bldg_special.10
-	hide_window = yes
-	is_triggered_only = yes
+# Handle special military leader bonus from Military Excellence Academy (Gate for delay) - DEPRECATED
+#country_event = {
+#	id = lrsk_gvp_mc_bldg_special.10
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	# Only fire if leader's empire has a bonus and the leader is appropriate
+#	trigger = {
+#		OR = {
+#			AND = {
+#				check_variable = { which = lrsk_general_training_bonus value > 0 }
+#				from = { leader_class = general }
+#			}
+#			AND = {
+#				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
+#				from = { leader_class = admiral }
+#			}
+#		}
+#	}
+#
+#	immediate = {
+#		log = "Handling special military leader bonus from Military Excellence Academy  (Gate for delay)"
+#		log = "Leader = [from.GetTitle] [from.GetName] || General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
+#
+#		from = { set_timed_leader_flag = { flag = lrsk_leveling_up_mil_leader days = 3 } }
+#		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
+#		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
+#	}
+#}
 
-	# Only fire if leader's empire has a bonus and the leader is appropriate
-	trigger = {
-		OR = {
-			AND = {
-				check_variable = { which = lrsk_general_training_bonus value > 0 }
-				from = { leader_class = general }
-			}
-			AND = {
-				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
-				from = { leader_class = admiral }
-			}
-		}
-	}
-
-	immediate = {
-		log = "Handling special military leader bonus from Military Excellence Academy  (Gate for delay)"
-		log = "Leader = [from.GetTitle] [from.GetName] || General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
-
-		from = { set_timed_leader_flag = { flag = lrsk_leveling_up_mil_leader days = 3 } }
-		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
-		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
-	}
-}
-
-# Handle special military leader bonus from Military Excellence Academy
-country_event = {
-	id = lrsk_gvp_mc_bldg_special.11
-	hide_window = yes
-	is_triggered_only = yes
-
-	# Only fire if leader's empire has a bonus and the leader is appropriate
-	trigger = {
-		any_owned_leader = {
-			has_leader_flag = lrsk_leveling_up_mil_leader
-			NOT = { has_leader_flag = has_gained_trait }
-			OR = {
-				AND = {
-					owner = { check_variable = { which = lrsk_general_training_bonus value > 0 } }
-					leader_class = general
-				}
-				AND = {
-					owner = { check_variable = { which = lrsk_admiral_training_bonus value > 0 } }
-					leader_class = admiral
-				}
-			}
-		}
-	}
-
-	immediate = {
-		log = "Handling special military leader bonus from Military Excellence Academy"
-		log = "General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
-
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = lrsk_leveling_up_mil_leader
-				NOT = { has_leader_flag = has_gained_trait }
-			}
-			save_event_target_as = lrsk_leader_to_levelup
-			log = "Leader = [this.GetTitle] [this.GetName]"
-		}
-		random_list = {
-			20 = {
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 1 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 2 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 3 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 4 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 5 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 6 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 7 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = 10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 8 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-
-				event_target:lrsk_leader_to_levelup = { lrsk_add_random_good_leader_trait = yes }
-			}
-			80 = {
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 1 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 2 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 3 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 4 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 5 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 6 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 7 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-				modifier = {
-					add = -10
-					OR = {
-						AND = {
-							check_variable = { which = lrsk_general_training_bonus value > 8 }
-							event_target:lrsk_leader_to_levelup = { leader_class = general }
-						}
-						AND = {
-							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-						}
-					}
-				}
-
-				# Do nothing
-			}
-		}
-	}
-}
-
-# Inform of gained trait
-country_event = {
-	id = lrsk_gvp_mc_bldg_special.12
-	title = lrsk_gvp_mc_bldg_special.12.name
-	desc = lrsk_gvp_mc_bldg_special.12.desc
-	location = event_target:current_location
-	picture = GFX_evt_throne_room
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_country_flag = lrsk_no_leader_improvement_notice }
-	}
-
-	immediate = {
-		log = "Informing of gained trait"
-		event_target:lrsk_leader_to_levelup = {
-			if = {
-				limit = { exists = fleet }
-				fleet = {
-					random_owned_ship = { save_event_target_as = current_location }
-				}
-			}
-			else = {
-				root.capital_scope = { save_event_target_as = current_location }
-			}
-		}
-	}
-
-	option = {
-		name = lrsk_gvp_mc_bldg_special.12.a
-		tooltip = {
-			event_target:lrsk_leader_to_levelup = {
-				switch = {
-					trigger = has_leader_flag
-					gained_leader_trait_adaptable = { add_trait = leader_trait_adaptable }
-					gained_leader_trait_flexible_programming = { add_trait = leader_trait_flexible_programming }
-					gained_leader_trait_resilient = { add_trait = leader_trait_resilient }
-					gained_leader_trait_trickster = { add_trait = leader_trait_trickster }
-					gained_leader_trait_fleet_logistician = { add_trait = leader_trait_fleet_logistician }
-					gained_leader_trait_engineer = { add_trait = leader_trait_engineer }
-					gained_leader_trait_aggressive = { add_trait = leader_trait_aggressive }
-					gained_leader_trait_cautious = { add_trait = leader_trait_cautious }
-					gained_leader_trait_scout = { add_trait = leader_trait_scout }
-					gained_leader_trait_unyielding = { add_trait = leader_trait_unyielding }
-					gained_leader_trait_gale_speed = { add_trait = leader_trait_gale_speed }
-					gained_leader_trait_maintenance_loop = { add_trait = leader_trait_maintenance_loop }
-					gained_leader_trait_restrained = { add_trait = leader_trait_restrained }
-					gained_leader_trait_charismatic = { add_trait = leader_trait_charismatic }
-					gained_leader_trait_butcher = { add_trait = leader_trait_butcher }
-					gained_leader_trait_glory_seeker = { add_trait = leader_trait_glory_seeker }
-					gained_leader_trait_army_logistician = { add_trait = leader_trait_army_logistician }
-					gained_leader_trait_demoralizer = { add_trait = leader_trait_demoralizer }
-					gained_leader_trait_parts_cannibalizer = { add_trait = leader_trait_parts_cannibalizer }
-				}
-			}
-		}
-	}
-
-	option = {
-		name = lrsk_gvp_mc_bldg_special.12.b
-		custom_tooltip = lrsk_gvp_mc_bldg_special.12.b.tooltip
-		hidden_effect = { set_country_flag = lrsk_no_leader_improvement_notice }
-	}
-}
+# Handle special military leader bonus from Military Excellence Academy - DEPRECATED
+#country_event = {
+#	id = lrsk_gvp_mc_bldg_special.11
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	# Only fire if leader's empire has a bonus and the leader is appropriate
+#	trigger = {
+#		any_owned_leader = {
+#			has_leader_flag = lrsk_leveling_up_mil_leader
+#			NOT = { has_leader_flag = has_gained_trait }
+#			OR = {
+#				AND = {
+#					owner = { check_variable = { which = lrsk_general_training_bonus value > 0 } }
+#					leader_class = general
+#				}
+#				AND = {
+#					owner = { check_variable = { which = lrsk_admiral_training_bonus value > 0 } }
+#					leader_class = admiral
+#				}
+#			}
+#		}
+#	}
+#
+#	immediate = {
+#		log = "Handling special military leader bonus from Military Excellence Academy"
+#		log = "General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
+#
+#		random_owned_leader = {
+#			limit = {
+#				has_leader_flag = lrsk_leveling_up_mil_leader
+#				NOT = { has_leader_flag = has_gained_trait }
+#			}
+#			save_event_target_as = lrsk_leader_to_levelup
+#			log = "Leader = [this.GetTitle] [this.GetName]"
+#		}
+#		random_list = {
+#			20 = {
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 1 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 2 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 3 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 4 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 5 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 6 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 7 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = 10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 8 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#
+#				event_target:lrsk_leader_to_levelup = { lrsk_add_random_good_leader_trait = yes }
+#			}
+#			80 = {
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 1 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 2 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 3 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 4 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 5 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 6 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 7 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#				modifier = {
+#					add = -10
+#					OR = {
+#						AND = {
+#							check_variable = { which = lrsk_general_training_bonus value > 8 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = general }
+#						}
+#						AND = {
+#							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
+#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
+#						}
+#					}
+#				}
+#
+#				# Do nothing
+#			}
+#		}
+#	}
+#}
+#
+## Inform of gained trait - DEPRECATED
+#country_event = {
+#	id = lrsk_gvp_mc_bldg_special.12
+#	title = lrsk_gvp_mc_bldg_special.12.name
+#	desc = lrsk_gvp_mc_bldg_special.12.desc
+#	location = event_target:current_location
+#	picture = GFX_evt_throne_room
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_country_flag = lrsk_no_leader_improvement_notice }
+#	}
+#
+#	immediate = {
+#		log = "Informing of gained trait"
+#		event_target:lrsk_leader_to_levelup = {
+#			if = {
+#				limit = { exists = fleet }
+#				fleet = {
+#					random_owned_ship = { save_event_target_as = current_location }
+#				}
+#			}
+#			else = {
+#				root.capital_scope = { save_event_target_as = current_location }
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = lrsk_gvp_mc_bldg_special.12.a
+#		tooltip = {
+#			event_target:lrsk_leader_to_levelup = {
+#				switch = {
+#					trigger = has_leader_flag
+#					gained_leader_trait_adaptable = { add_trait = leader_trait_adaptable }
+#					#gained_leader_trait_flexible_programming = { add_trait = leader_trait_flexible_programming }
+#					gained_leader_trait_resilient = { add_trait = leader_trait_resilient }
+#					gained_leader_trait_trickster = { add_trait = leader_trait_trickster }
+#					gained_leader_trait_fleet_logistician = { add_trait = leader_trait_fleet_logistician }
+#					gained_leader_trait_engineer = { add_trait = leader_trait_engineer }
+#					gained_leader_trait_aggressive = { add_trait = leader_trait_aggressive }
+#					gained_leader_trait_cautious = { add_trait = leader_trait_cautious }
+#					gained_leader_trait_scout = { add_trait = leader_trait_scout }
+#					gained_leader_trait_unyielding = { add_trait = leader_trait_unyielding }
+#					gained_leader_trait_gale_speed = { add_trait = leader_trait_gale_speed }
+#					#gained_leader_trait_maintenance_loop = { add_trait = leader_trait_maintenance_loop }
+#					gained_leader_trait_restrained = { add_trait = leader_trait_restrained }
+#					#gained_leader_trait_charismatic = { add_trait = leader_trait_charismatic }
+#					gained_leader_trait_butcher = { add_trait = leader_trait_butcher }
+#					gained_leader_trait_glory_seeker = { add_trait = leader_trait_glory_seeker }
+#					gained_leader_trait_army_logistician = { add_trait = leader_trait_army_logistician }
+#					#gained_leader_trait_demoralizer = { add_trait = leader_trait_demoralizer }
+#					#gained_leader_trait_parts_cannibalizer = { add_trait = leader_trait_parts_cannibalizer }
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = lrsk_gvp_mc_bldg_special.12.b
+#		custom_tooltip = lrsk_gvp_mc_bldg_special.12.b.tooltip
+#		hidden_effect = { set_country_flag = lrsk_no_leader_improvement_notice }
+#	}
+#}
 
 # Handle pop steal from Reformatory Workhouse
 country_event = {

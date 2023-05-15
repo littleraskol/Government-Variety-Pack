@@ -27,18 +27,7 @@ lrsk_gov_var_gov_galactic_cartel = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
-
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -59,19 +48,8 @@ lrsk_gov_var_gov_libertarian_freehold = {
 			has_ethic = ethic_fanatic_militarist
 		}
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -91,20 +69,8 @@ lrsk_gov_var_gov_anarcho_capitalism = {
 			has_ethic = ethic_fanatic_militarist
 		}
 	}
-
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -122,19 +88,8 @@ lrsk_gov_var_gov_corporate_neofuedalism = {
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		NOT = { has_ethic = ethic_egalitarian	}
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -172,19 +127,8 @@ lrsk_gov_var_gov_entrepreneurial_council = {
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = civic_aristocratic_elite
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -205,19 +149,8 @@ lrsk_gov_var_gov_merchant_republic = {
 			has_ethic = ethic_fanatic_egalitarian
 		}
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1800
@@ -239,18 +172,7 @@ lrsk_gov_var_gov_constitutional_plutocracy = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
-
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1800
@@ -267,18 +189,7 @@ lrsk_gov_var_gov_enterprise_society = {
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
-
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -294,27 +205,8 @@ lrsk_gov_var_gov_enterprise_junta = {
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_valid_civic = civic_police_state
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = admiral
-		}
-		modifier = {
-			add = 10
-			leader_class = general
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -331,25 +223,6 @@ lrsk_gov_var_gov_enterprise_authority = {
 		has_valid_civic = civic_police_state
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = admiral
-		}
-		modifier = {
-			add = 10
-			leader_class = general
-		}
-	}
-
 	weight = {
 		base = 2000
 	}
@@ -359,7 +232,7 @@ lrsk_gov_var_gov_enterprise_authority = {
 lrsk_gov_var_gov_rationalist_managerial_firm = {
 	ruler_title = LRSK_GOV_VAR_RT_PROC_EFF_DIRECTOR
 
-	possible = {		
+	possible = {
 		OR = {
 			AND = {
 				has_valid_civic = civic_corporate_dominion
@@ -367,27 +240,15 @@ lrsk_gov_var_gov_rationalist_managerial_firm = {
 			}
 			AND = {
 				has_auth_corporate = yes
-				has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+				AND = {
+					has_valid_civic = lrsk_gov_var_civic_mc_sci_mgnt
+					has_valid_civic = civic_task_delegation_corporate
+				}
 			}
 		}		
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 40
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -406,27 +267,8 @@ lrsk_gov_var_gov_private_intel_agency = {
 		has_auth_corporate = yes
 		has_valid_civic = lrsk_gov_var_civic_mc_police_state
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = admiral
-		}
-		modifier = {
-			add = 10
-			leader_class = general
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -446,27 +288,8 @@ lrsk_gov_var_gov_protection_racket = {
 		has_valid_civic = lrsk_gov_var_civic_mc_police_state
 		has_valid_civic = civic_criminal_heritage
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = admiral
-		}
-		modifier = {
-			add = 10
-			leader_class = general
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1750
