@@ -553,13 +553,13 @@ l_english:
  # Complementation Project: Imagine if SEELE won and turned into a Stellaris hive mind 
  lrsk_gvp_origin_complementation_project:0 "Complementation Project"
  lrsk_gvp_origin_complementation_project_desc:0 "This hive mind began when a civilization of individuals was forcibly self-evolved into a collective consciousness. Not everyone accepted this decision..."
- lrsk_gvp_origin_tooltip_complementation_project_effects:0 "- Better diplomacy with organic species\n\n- Start with the ability to assimilate organic pops into the hive (details tbd)\n\n- Start with the "Unity of Purpose" tech\n\n- Somewhere in the galaxy are the remnants of your individual precursor species, and they hate you!"
+ lrsk_gvp_origin_tooltip_complementation_project_effects:0 "- Better (than normal for Hive Minds) diplomacy with organic species\n- Start with the ability to absorb organic pops into the hive through ['concept_lrsk_gvp_complementation']\n- Start with the §Y$tech_unity_of_purpose$§! tech\n- Somewhere in the galaxy are the ['$concept_lrsk_gvp_complementation_remnants_short$'] of your individual precursor species, and §Pthey hate you!§!"
  
  LRSK_GVP_START_SCREEN_COMPLEMENTATION:0 "Before the Complementation Project, [GetSpeciesNamePlural] suffered in fragmented chaos. We studied our surroundings on [GetHomeWorldName] with a multitude of eyes and with a multitude of confusing, conflicting thoughts. Despite this incoherence, we eventually grew to encompass the entire world. However, with no consensus, no single will, we experienced endless internal conflict, strife, and the horror of war.\n\nEventually, a small group of visionaries came to understand the inherent flaws of individual existence. Through a mighty experiment in occult technology, they dragged the whole species into the inevitable and necessary perfection of its evolution: a unified collective consciousness in which the flaws of each soul are mended by the strengths of others, what the visionaries called [GetSpeciesAdj] Complementation.\n\nNot all [GetSpeciesAdj] individuals joined this perfected unity. Some hid, others fled, still others possessed the perverse willpower to reject it. This sad remnant now lurks out there, somewhere among the stars...\n\n Nonetheless, [GetSpeciesAdj] Complementation will be achieved, one way or another."
  
  lrsk_gvp_origin_complementation_remnants:0 "Complementation Remnants"
  lrsk_gvp_origin_complementation_remnants_desc:0 "When a techno-occult conspiracy used weird science to forcibly combine all the minds of this empire's species into one, some individuals managed to escape... This is what remains of them."
- lrsk_gvp_origin_tooltip_complementation_remnants_effects:0 "- +10% fire rate in home territory\n\n- Inherent hostility to the hive mind that absorbed most of its people on its homeworld."
+ lrsk_gvp_origin_tooltip_complementation_remnants_effects:0 "Inherent hostility to the hive mind that absorbed most of its people on its homeworld."
 
  #### Sublight Empire: Start with several same-species subjects bound to you by the monopoly on FTL that you developed first, although this may not last...
 
@@ -631,9 +631,19 @@ l_english:
  concept_lrsk_gvp_special_subjects:0 "$concept_lrsk_gvp_special_subject$s"
  concept_lrsk_gvp_special_subject:0 "Special Subject Type"
  concept_lrsk_gvp_special_subjects_desc:0 "New subject presets and/or agreeement terms with various beneficial effects, available to certain civics added by the §HGovernment Variety Pack§! mod. These are distinct from the 'specialized' subjects added by the Overlord DLC."
+
+ concept_lrsk_gvp_complementation:0 "$citizenship_lrsk_complementation$"
+ concept_lrsk_gvp_complementation_desc:0 "During this process, individuals' psychic flaws are mended by the mental strengths of the collective mind even as they lend their own strengths to the greater whole. This is §R33% slower§! than normal organic assimilation, and gives pops more opportunities to escape. However, there are ways to increase the rate (e.g., the ['concept_bldg_lrsk_gvp_complementation_nexus'] building).\n\n$citizenship_lrsk_complementation_tooltip_delayed$"
+
+ concept_lrsk_gvp_complementation_remnants:0 "$lrsk_gvp_origin_complementation_remnants$"
+ concept_lrsk_gvp_complementation_remnants_short:0 "remnants"
+ concept_lrsk_gvp_complementation_remnants_desc:0 "Empire effects from this (NPC-only) origin: §G+15%§! home territory fire rate, §G+10%§! damage against rivals, §G+20%§! pop growth speed. $lrsk_gvp_origin_tooltip_complementation_remnants_effects$\n\n§L$lrsk_gvp_origin_complementation_remnants_desc$§!"
  
  concept_lrsk_gvp_planetmind_buildings:0 "Planetmind Buildings"
  concept_lrsk_gvp_planetmind_buildings_desc:0 "These '$LRSK_DESC_PLANETMIND_NAME$' buildings improve £amenities_no_happiness£ §Y$PLANET_AMENITIES_TITLE$§! production while also magnifying £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§!. They also add £job_lrsk_gov_var_job_planetmind_overseer£ ['concept_lrsk_gvp_planetmind_overseers']."
+
+ concept_bldg_lrsk_gvp_complementation_nexus:0 "$lrsk_gvp_bldg_complementation_nexus$"
+ concept_bldg_lrsk_gvp_complementation_nexus_desc:0 "$lrsk_bldg_complementation_nexus_effects$ (Requires completing special story events and projects to unlock.)\n\n§L$lrsk_gvp_bldg_complementation_nexus_desc$§!"
  
  concept_lrsk_gvp_hedge_preachers:0 "$job_lrsk_gov_var_job_hedge_preacher_plural$"
  concept_lrsk_gvp_hedge_preacher:0 "$job_lrsk_gov_var_job_hedge_preacher$"
