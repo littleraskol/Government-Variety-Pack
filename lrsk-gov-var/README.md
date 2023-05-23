@@ -22,7 +22,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 5.6.3 (05/23/23) - Republicanism Redux
--OR between authority and civic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
+-OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
 
 5.6.2 (05/15/23) - Touching Up RRA
 -Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the base odds add up to 100...).
