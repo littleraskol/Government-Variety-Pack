@@ -119,10 +119,13 @@ lrsk_gov_var_civic_republicanism = {
   #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
 
   possible = {
-    OR = {
-      authority = { value = auth_democratic }
-      ethics = { value = ethic_egalitarian }
+    authority = {
+      OR = {
+        value = auth_democratic
+        value = auth_oligarchic
+      }
     }
+    ethics = { NOT = { value = ethic_authoritarian } }
   }
 
   random_weight = { base = @civic_default_random_weight }
