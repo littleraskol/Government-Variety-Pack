@@ -10,18 +10,26 @@ decision_lrsk_gov_var_rra = {
     resources = {
         category = decisions
         cost = {
-            energy = 50
-            unity = 200
+            energy = 1000
+            unity = 500
         }        
     }
 
     potential = {
-        NOR = { 
-            has_planet_flag = lrsk_gov_var_rra_happened
-            has_modifier = lrsk_gov_var_statmod_planet_audit
-        }
+        NOT = { has_modifier = lrsk_gov_var_statmod_planet_audit }
         owner = { has_valid_civic = lrsk_gov_var_civic_machine_distributed_planning_systems }
     }
+
+	allow = {
+		custom_tooltip = {
+			fail_text = lrsk_gvp_rra_fail_cooldown_planet
+			NOT = { has_planet_flag = lrsk_gov_var_rra_planet_cooldown }
+		}
+		custom_tooltip = {
+			fail_text = lrsk_gvp_rra_fail_cooldown_empire
+			NOT = { owner = { has_country_flag = lrsk_gov_var_rra_empire_cooldown } }
+		}
+	}
 
     effect = {
         custom_tooltip = decision_lrsk_gov_var_rra_effects

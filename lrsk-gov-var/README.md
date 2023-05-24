@@ -21,6 +21,70 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+5.6.3 (05/23/23) - Republicanism Redux
+-OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
+
+5.6.2 (05/15/23) - Touching Up RRA
+-Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the base odds add up to 100...).
+-Results of RRA now heavily factor in planet designations, and resource-related designations make bad outcomes much less likely.
+-Player-facing descriptions make results and requirements more clear.
+-The decision is overall more powerful in its ultimate results and less prone to bad outcomes, but costs more.
+-Changed name and flavor of signature job.
+
+5.6.1 (05/13/23) Post-Update Hotfixes
+-Public Info Officer modifiers were all screwed up, now fixed.
+-Vertical Integration's councilor shouldn't give the same benefit as the civic.
+-Several other councilors had modifiers with the wrong sign, and so ended up being detrimental.
+-Added "concepts" (sub-tooltips) to make tooltips less busy.
+-Improved some old civic descriptions, and even some new councilor descriptions.
+
+v5.6 (05/11/23) - Gemini (3.8) Update
+-Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
+-Updated compat version number.
+-Added councilors for all non-gestalt civics.
+-Civics have AI weighting by personality for in-game picks.
+-Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
+-"Crusader" governments can be enabled by Crusader Spirit civic.
+--Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
+--Crusader Order: Either Chivalry or Crusader Spirit qualifies.
+--Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
+--Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
+-RMF requires Precision Cogs.
+-Military Excellence Academy now boosts general and admiral exp gain rather than directly assigning traits.
+-Enlightened Liberalism now boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
+-Artificers now gets reduction of robot upkeep instead of increased robot production (benefit moved to councilor).
+-Shapers now gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
+-Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
+-Utilitarian Planning now gives +5% food production, +10% council agenda speed, -10% edict cost.
+-Cult of Personality now gives -10% starbase influence cost instead of +5% influence production (benefit moved to councilor).
+-Automated Indolence has been removed until I can figure out how to do something actually interesting with it.
+
+v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
+-Can change the planet class to the ideal for species (in Uplift).
+--This will enable better compatibility with mods adding new planet classes.
+
+v5.5.1 (4/18/23) - Little weird "bug" "fix"
+-There seems to be a base game bug in the random name parser that will cause it to read commented out text in localisation files. I have removed the comment that causes this specific issue, although the underlying problem may remain...
+
+v5.5 (4/10/23) - Return of Better Names (and other updates)
+-The "Better Names" feature returns thanks to the heroic efforts of Renan.
+--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
+-Other, unrelated changes:
+--Royal Absolutism is incompatible with Feudal Society (because history).
+--Automated World-Commune can be Oligarchic or Democratic.
+--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
+--Citizen Crusade requires either Exalted Priesthood or Elected Clergy (meaning it can be Democratic).
+--Republican Directory requires either Enlightened Liberalism or Republicanism.
+--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
+--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
+--Some backend tweaks only I care about.
+-In an effort to make "subject-focused" civics more useful if you happen to not have subjects, the following civics get +15% diplomatic weight from the indicated source:
+--Universal Sovereignty: Military
+--Imperial Economy: Economy
+--Exploitation Algorithms: Technology
+--Benign Overmind: Pops
+--Domineering Expectations: Empire Size
+
 v5.4.2 (4/3/23) - Small fixes
 -Safe system check needs to make sure owner exists before asking about it.
 -Removed some redundant localization.

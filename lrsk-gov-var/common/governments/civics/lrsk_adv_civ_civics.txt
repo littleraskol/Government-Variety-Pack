@@ -20,13 +20,13 @@ lrsk_adv_civ_civic_shapers = {
 		}
 	}
 
-	random_weight = { base = 1 }
+	random_weight = { base = @civic_rare_random_weight }
 
 	modification = no
 
 	modifier = {
 		leader_age = 5
-		modify_species_cost_mult = -0.1
+		BIOLOGICAL_species_trait_picks_add = 1
 		pop_environment_tolerance = 0.1
 		planet_researchers_engineering_research_produces_mult = -0.05
 		planet_researchers_physics_research_produces_mult = -0.05
@@ -49,14 +49,14 @@ lrsk_adv_civ_civic_artificers = {
 		}
 	}
 
-	random_weight = { base = 1 }
+	random_weight = { base = @civic_rare_random_weight }
 
 	modification = no
 
 	modifier = {
 		starbase_shipyard_build_cost_mult = -0.10
 		planet_structures_cost_mult = -0.1
-		planet_jobs_robotic_produces_mult = 0.05
+		planet_pops_robotics_upkeep_mult = -0.1
 		planet_pop_assembly_mult = 0.1
 		planet_researchers_society_research_produces_mult = -0.05
 		planet_researchers_physics_research_produces_mult = -0.05
@@ -79,7 +79,7 @@ lrsk_adv_civ_civic_essentialists = {
 		}
 	}
 
-	random_weight = { base = 1 }
+	random_weight = { base = @civic_rare_random_weight }
 
 	modification = no
 

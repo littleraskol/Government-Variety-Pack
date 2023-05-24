@@ -1275,3 +1275,21 @@ country_event = {
 		remove_country_flag = lrsk_senpai_notice_me
 	}
 }
+
+# Gives a tradition, used for testing the Direct Rev councilor.
+country_event = {
+	id = lrsk_gvp_testing.29
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+	}
+
+	immediate = {
+		add_tradition = tr_domination_finish
+	}
+}

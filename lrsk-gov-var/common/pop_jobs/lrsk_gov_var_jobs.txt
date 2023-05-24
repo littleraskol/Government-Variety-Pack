@@ -360,20 +360,6 @@ lrsk_gov_var_job_functionary = {
 		produces = {
 			trigger = {
 				exists = planet
-				planet = {
-					exists = sector
-					sector = {
-						exists = leader
-						leader = { has_trait = leader_trait_bureaucrat }
-					}
-				}
-			}
-			unity = 1
-		}
-
-		produces = {
-			trigger = {
-				exists = planet
 				planet = { has_designation = col_bureau }
 			}
 			unity = 1
@@ -924,6 +910,14 @@ lrsk_gov_var_job_pastor = {
 	planet_modifier = {
 		planet_amenities_add = 5
 	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_councilor = { COUNCILOR = "lrsk_gvp_elected_clergy_councilor" }
+		}
+		planet_amenities_add = 0.25
+		mult = value:councilor_level|TYPE|lrsk_gvp_elected_clergy_councilor|
+	}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -1367,7 +1361,7 @@ lrsk_gov_var_job_planetmind_overseer = {
 
 ## Complex Drones (Machine)
 
-# Regional Coordinator
+# Planetary Auditor
 lrsk_gov_var_job_regional_coordinator = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
