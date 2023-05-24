@@ -533,6 +533,53 @@ lrsk_gov_var_origin_uplift = {
 	#}
 }
 
+#Elder Folk: Space elves with space ork underlings idk
+lrsk_gvp_origin_elder_folk = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_elder_folk.dds"
+	picture = GFX_lrsk_gvp_origin_elder_folk
+	#max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Utopia"
+	}
+
+	possible = {
+		civics = { 
+			NOR = {
+				value = civic_fanatic_purifiers
+			} 
+		}
+	}
+
+	description = "origin_tooltip_lrsk_gvp_elder_folk_effects"
+	advanced_start = yes
+	flags = { custom_start_screen }
+
+	#modifier = {
+	#	#
+	#}
+
+	has_secondary_species = {
+		title = lrsk_gvp_origin_elder_folk_secondary_species
+		traits = {
+			trait = lrsk_gvp_trait_surgent
+		}
+	}
+
+	traits = {
+		trait = lrsk_gvp_trait_elder_folk
+	}
+
+	random_weight = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+
 ##Sublight Empire: Start with several same-species vassals bound to you by the monopoly on FTL that you developed first, although this may not last...
 #lrsk_gov_var_origin_sublight_empire = {
 #	is_origin = yes
