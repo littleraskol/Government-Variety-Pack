@@ -551,10 +551,10 @@ l_english:
  LRSK_GOV_VAR_START_SCREEN_UPLIFT:0 "It seems as though they have always been with us, the Elders. However long it's actually been, though, the presence of our tutors from the far stars has shaped us profoundly. Only recently, though, have we learned what they are shaping us for.\n\nFrom early on they have explained that our kind shows great promise and that their intention was guide us onto a path that would help us reach our full potential. And guide us they did. With their advice, we made great technological strides, quickly mastering electricity, then atomic power, and then crude spaceflight. Under the tutelage of the Elders, we have constructed our first hyperdrives. Now they have invited us to join them as junior partners in their galactic ambitions." 
 
  lrsk_gvp_origin_elder_folk:0 "The Elder Folk"
- lrsk_gvp_origin_elder_folk_desc:0 "The homeworld of this empire hosted the extremely improbable evoltuion two sapient species: one wise and haughty, the other energetic and boisterous. While the Elder Folk hold power and have defined the greatest glories of the homeworld's past, the new 'surging' young people may own the future."
+ lrsk_gvp_origin_elder_folk_desc:0 "The homeworld of this empire hosted the extremely improbable evoltuion two sapient species: the first wise and haughty, the second energetic and boisterous. While the Elder Folk hold power and have defined the greatest glories of the homeworld's past, the new 'surging' young people may own the future."
  origin_tooltip_lrsk_gvp_elder_folk_effects:0 "- Start the game with 12 £pop£ Pops of two different species.\n\n- Some of these £pop£ Pops are of the stately $lrsk_gvp_trait_elder_folk$ Folk. (concept tbd)\n\n- Most of these are of the young $lrsk_gvp_trait_surgent$ people. (concept tbd)\n\n- Leaders of either species get a special trait."
 
- LRSK_GVP_START_SCREEN_ELDERS:0 "TBD"
+ LRSK_GVP_START_SCREEN_ELDERS:0 "In the eons since the first primitive [GetSpeciesName] communities took shape on [GetHomeWorldName], our people spread and prospered. Slowly, carefully we advanced in the arts and sciences, making great discoveries and building a civilization of incomparable grandeur... for there was, after all, no one else to even compare to.\n\nFor a time, that is. In the course of our stately and deliberate exploration of [GetHomeWorldName], we discovered on the far side of the world a new people. Wild and energetic, the [lrsk_gvp_younger_species.GetName] people proved no match for our superior technology and culture, and with a minimum of friction, an accord was struck. As the Elders our charge was to lead and teach for the greater prosperity of both the peoples of [GetHomeWorldName].\n\nIn the centuries since, though, the [lrsk_gvp_younger_species.GetNamePlural] have grown in both numbers and sophistication. They live short and busy lives, and strive to make sure the flame that burns shorter yet shines brighter. There is a growing sense that the future of [GetName] may belong to them."
 
  #### Sublight Empire: Start with several same-species subjects bound to you by the monopoly on FTL that you developed first, although this may not last...
 
@@ -1589,46 +1589,33 @@ l_english:
  # Other Localization Tokens
  ####################################
 
- ## Traits
+ ### Traits
 
- # Common Strings
+ ## Species Traits
+
+ # Shroud-Touched
  LRSK_GOV_VAR_ESPER:0 "Esper"
- LRSK_GOV_VAR_ESP_LEADER:0 "This leader has hightened extra-sensory perception that"
- LRSK_GOV_VAR_HIVEPRIM:0 "Evolved from a pre-sapient eusocial species that"
- LRSK_GOV_VAR_DEEPCODE:0 "Deep Code:"
- LRSK_GOV_VAR_MECHPRIM:0 "Its most fundamental artificial intelligence algorithms"
- LRSK_GVP_ELDER:0 "Elder"
- LRSK_GVP_ELDER_LEADER:0 "This leader's innate grace and discernment"
- LRSK_GVP_SURGENT:0 "Surgen"
- LRSK_GVP_SURGENT_LEADER:0 "This leader works with a fierce energy"
-
- # Species
- #:0 ""
- #_desc:0 "§L§!\n"
 
  lrsk_gov_var_trait_natural_esper:0 "Natural $LRSK_GOV_VAR_ESPER$"
  lrsk_gov_var_trait_natural_esper_desc:0 "§LLong contact with Shroud energies have left many of the members of this species with an inborn special intuition, a 'knack' or 'gift' amounting to extra-sensory perception beyond what biology can explain.§!\n"
 
- # §G§! §R§!
- 
- #lrsk_gov_var_trait_starborn:0 "$trait_presapient_starborn$"
- #lrsk_gov_var_trait_starborn_desc:0 "§L$trait_presapient_starborn_desc$§!\n"
+ # Uplift
+ LRSK_GOV_VAR_HIVEPRIM:0 "Evolved from a pre-sapient eusocial species that"
+ LRSK_GOV_VAR_DEEPCODE:0 "Deep Code:"
+ LRSK_GOV_VAR_MECHPRIM:0 "Its most fundamental artificial intelligence algorithms"
+
  lrsk_gov_var_trait_starborn_effects:0 "§G+25%§! immigration growth\n§G-25%§! resettle cost\n§G+10%§! habitability"
  
  lrsk_gov_var_trait_starborn_hive:0 "Swarmers"
  lrsk_gov_var_trait_starborn_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ moved in great restless swarms, expanding rapidly and inexorably into even the least hospitable places.§!\n"
  lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! pop growth\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to leader lifespan"
  
- #lrsk_gov_var_trait_earthbound:0 "$trait_presapient_earthbound$"
- #lrsk_gov_var_trait_earthbound_desc:0 "§L$trait_presapient_earthbound_desc$§!\n"
  lrsk_gov_var_trait_earthbound_effects:0 "§G+10%§! £energy£ Energy from jobs\n§G+50%§! £defense_army£ Defense Army strength"
  
  lrsk_gov_var_trait_earthbound_hive:0 "Pack-Runners"
  lrsk_gov_var_trait_earthbound_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ showed exceptionally high levels of 'teamwork,' spontaneously organizing into complex packs or gangs that could coordinate with each other to take advantage of territory or defend it.§!\n"
  lrsk_gov_var_trait_earthbound_hive_effects:0 "§G-5%§! empire sprawl from pops\n§G+10%§! £unity£ Unity from jobs\n§G-10%§! £housing£ pop housing usage\n§G+50%§! £defense_army£ Defense Army strength"
  
- #lrsk_gov_var_trait_natural_intellectuals:0 "$trait_presapient_natural_intellectuals$"
- #lrsk_gov_var_trait_natural_intellectuals_desc:0 "§L$trait_presapient_natural_intellectuals_desc$§!\n"
  lrsk_gov_var_trait_natural_intellectuals_effects:0 "§G+5%§! £unity£ Unity from jobs\n§G+10%§! £science£ Research\n§R-5%§! £minerals£ Minerals from jobs"
  
  lrsk_gov_var_trait_natural_intellectuals_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Pattern Analysis"
@@ -1661,6 +1648,10 @@ l_english:
  
  trait_lrsk_gov_var_trait_enlightened_mech_effect:0 "§G+1§! Archaeology skill\n§G+20%§! science ship disengage chance\n§G+15%§! anomaly research speed\n§G+20%§! survey speed"
 
+ # The Elder Folk
+ LRSK_GVP_ELDER:0 "Elder"
+ LRSK_GVP_SURGENT:0 "Surgen"
+
  lrsk_gvp_trait_elder_folk:0 "$LRSK_GVP_ELDER$"
  lrsk_gvp_trait_elder_folk_desc:0 "§LAncient, wise, and haughty, this species evolved first on its homeworld and slowly advanced in the arts and sciences. So stately and considered was their progress that they met a newly sapient species in their early explorations.§!\n"
 
@@ -1668,6 +1659,9 @@ l_english:
  lrsk_gvp_trait_surgent_desc:0 "§LYoung, energetic, and boistrous, this species evolved on its homeworld after another, older species, which established a 'caretaker' role over it... for a time. The future may belong to the $lrsk_gvp_trait_surgent$, though.§!\n"
  lrsk_gvp_origin_elder_folk_secondary_species:0 "Younger Species"
 
+ ## Leader Traits
+
+ LRSK_GOV_VAR_ESP_LEADER:0 "This leader has hightened extra-sensory perception that"
  lrsk_gvp_leader_trait_esper:0 "$LRSK_GOV_VAR_ESPER$"
  lrsk_gvp_leader_trait_esper_desc:0 "[This.GetLRSKGVPNatEsperLeaderTraitDesc]"
  lrsk_gov_var_leader_trait_admiral_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ provides an unusual ability to sense where incoming fire will appear."
@@ -1676,6 +1670,7 @@ l_english:
  lrsk_gov_var_leader_trait_ruler_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ allows for guiding the ship of state with uncanny confidence and discernment."
  lrsk_gov_var_leader_trait_scientist_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ provides sparks of weird genius."
 
+ LRSK_GVP_ELDER_LEADER:0 "This leader's innate grace and discernment"
  lrsk_gvp_leader_trait_elder:0 "$LRSK_GVP_ELDER$ Wisdom"
  lrsk_gvp_leader_trait_elder_desc:0 "[This.GetLRSKGVPElderLeaderTraitDesc]"
  lrsk_gvp_leader_trait_elder_admiral_desc:0 "$LRSK_GVP_ELDER_LEADER$ favor cautious tactics and efficient fleet management."
@@ -1684,9 +1679,10 @@ l_english:
  lrsk_gvp_leader_trait_elder_scientist_desc:0 "$LRSK_GVP_ELDER_LEADER$ accelerate all areas of research and lend themselves to the excavation of ancient wonders."
  lrsk_gvp_leader_trait_elder_ruler_desc:0 "$LRSK_GVP_ELDER_LEADER$ deftly coordinate the powers of the state to achieve great things."
 
+ LRSK_GVP_SURGENT_LEADER:0 "This leader works with a fierce energy"
  lrsk_gvp_leader_trait_surgent:0 "Youthful $LRSK_GVP_SURGENT$cy"
  lrsk_gvp_leader_trait_surgent_desc:0 "[This.GetLRSKGVPSurgentLeaderTraitDesc]"
- lrsk_gvp_leader_trait_surgent_admiral_desc:0 "$LRSK_GVP_SURGENT_LEADER$ that fuels wild and aggressive tactics."
+ lrsk_gvp_leader_trait_surgent_admiral_desc:0 "$LRSK_GVP_SURGENT_LEADER$ that fuels crafty and aggressive tactics."
  lrsk_gvp_leader_trait_surgent_general_desc:0 "$LRSK_GVP_SURGENT_LEADER$ that makes army manuevers surprising and unpredictable."
  lrsk_gvp_leader_trait_surgent_governor_desc:0 "$LRSK_GVP_SURGENT_LEADER$ to build and expand throughout settled colonies."
  lrsk_gvp_leader_trait_surgent_scientist_desc:0 "$LRSK_GVP_SURGENT_LEADER$ to explore every corner of the vast unknown galaxy."
