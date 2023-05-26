@@ -1112,3 +1112,59 @@ lrsk_remove_existing_rra_modifier = {
 		}
 	}
 }
+
+# Sets flags for lithoid or non-lithoid subspecies (country scope)
+lrsk_gvp_categorize_subspecies = {
+	if = {
+		limit = {
+			OR = {
+				has_origin = lrsk_gvp_origin_elder_folk
+				# etc (room for more subspecies starts)
+			}
+		}
+
+		if = {
+			limit = { last_created_species = { is_lithoid = yes } }
+			set_country_flag = lithoid_subspecies
+		}
+		else = {
+			set_country_flag = non_lithoid_subspecies
+		}
+	}
+}
+
+# Currently just for Elder Folk, can be expanded for others (planet scope)
+lrsk_gvp_generate_special_pops = {
+	if = {
+		limit = {
+			owner = {
+				has_origin = lrsk_gvp_origin_elder_folk
+			}
+		}
+		
+		# Setting 12:16 pop ratio of elder:younger, total 28 pops
+		
+		while = {
+			limit = {
+				any_owned_pop = { is_same_species = owner_main_species }	# JIC
+				num_pops > 12
+			}
+			random_owned_pop = {
+				limit = { is_same_species = owner_main_species }	# JIC
+				kill_pop = yes
+			}
+		}
+
+		last_created_species = {
+			set_species_flag = lrsk_younger_species@root.owner
+			save_event_target_as = lrsk_gvp_younger_species
+		}
+		while = {
+			count = 16
+			create_pop = {
+				species = last_created_species
+				ethos = random
+			}
+		}
+	}
+}

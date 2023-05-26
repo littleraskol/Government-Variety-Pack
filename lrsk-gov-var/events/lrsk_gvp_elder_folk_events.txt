@@ -1,0 +1,26 @@
+# Government Variety Pack
+# Events - Elder Folk
+# Author: littleraskol
+
+namespace = lrsk_gvp_elder_folk
+
+# Set starting conditions, called directly by the on_action on_game_start_country
+country_event = {
+	id = lrsk_gvp_elder_folk.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = lrsk_gvp_origin_elder_folk
+	}
+
+	immediate = {
+
+		# Set up subspecies pops
+		lrsk_gvp_categorize_subspecies = yes 
+		capital_scope = {
+			lrsk_gvp_generate_special_pops = yes
+		}
+	}
+}
