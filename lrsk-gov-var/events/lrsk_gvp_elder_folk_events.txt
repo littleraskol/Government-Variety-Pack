@@ -4,23 +4,19 @@
 
 namespace = lrsk_gvp_elder_folk
 
-# Set starting conditions, called directly by the on_action on_game_start_country
-country_event = {
+# Set starting conditions, called on homeworld directly by the on_action empire_init_capital_planet
+planet_event = {
 	id = lrsk_gvp_elder_folk.1
 
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = lrsk_gvp_origin_elder_folk
+		owner = { has_origin = lrsk_gvp_origin_elder_folk }
 	}
 
 	immediate = {
-
 		# Set up subspecies pops
-		lrsk_gvp_categorize_subspecies = yes 
-		capital_scope = {
-			lrsk_gvp_generate_special_pops = yes
-		}
+		lrsk_gvp_generate_special_pops = yes
 	}
 }

@@ -1143,27 +1143,31 @@ lrsk_gvp_generate_special_pops = {
 		}
 		
 		# Setting 12:16 pop ratio of elder:younger, total 28 pops
-		
-		while = {
-			limit = {
-				any_owned_pop = { is_same_species = owner_main_species }	# JIC
-				num_pops > 12
+		owner = {
+			lrsk_gvp_categorize_subspecies = yes
+			last_created_species = {
+				set_species_flag = lrsk_younger_species@root.owner
+				save_event_target_as = lrsk_gvp_younger_species
 			}
-			random_owned_pop = {
-				limit = { is_same_species = owner_main_species }	# JIC
-				kill_pop = yes
-			}
-		}
-
-		last_created_species = {
-			set_species_flag = lrsk_younger_species@root.owner
-			save_event_target_as = lrsk_gvp_younger_species
 		}
 		while = {
 			count = 16
 			create_pop = {
-				species = last_created_species
+				species = event_target:lrsk_gvp_younger_species
 				ethos = random
+			}
+		}
+		
+		while = {
+			limit = {
+				count_owned_pop = { 
+					limit = { is_same_species = owner_main_species }
+					count > 12
+				}
+			}
+			random_owned_pop = {
+				limit = { is_same_species = owner_main_species }
+				kill_pop = yes
 			}
 		}
 	}
