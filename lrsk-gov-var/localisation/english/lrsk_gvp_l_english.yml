@@ -552,7 +552,7 @@ l_english:
 
  lrsk_gvp_origin_elder_folk:0 "The Elder Folk"
  lrsk_gvp_origin_elder_folk_desc:0 "The homeworld of this empire hosted the extremely improbable evoltuion two sapient species: the first wise and haughty, the second energetic and boisterous. While the Elder Folk hold power and have defined the greatest glories of the homeworld's past, the new 'surging' younger species may own the future."
- origin_tooltip_lrsk_gvp_elder_folk_effects:0 "- Start the game with 12 £pop£ Pops of your main species and 16 £pop£ Pops of your secondary species.\n\n- Your main species is the stately $lrsk_gvp_trait_elder_folk$ Folk.\n\n- Leaders of this species have a chance to gain the $lrsk_gvp_leader_trait_elder$ trait.\n\n- Your secondary species is the young $lrsk_gvp_trait_surgent$ people.\n\n- Leaders of this species have a chance to gain the $lrsk_gvp_leader_trait_surgent$ trait."
+ origin_tooltip_lrsk_gvp_elder_folk_effects:0 "- Start the game with 12 £pop£ Pops of your main species and 16 £pop£ Pops of your secondary species.\n\n- Your main species is the stately ['concept_trait_lrsk_gvp_elder_folk'] Folk.\n\n- Leaders of this species have a chance to gain the ['concept_leader_trait_lrsk_gvp_elder'] trait.\n\n- Your secondary species is the young ['concept_trait_lrsk_gvp_surgent'] people.\n\n- Leaders of this species have a chance to gain the ['concept_leader_trait_lrsk_gvp_surgent'] trait."
  lrsk_gvp_origin_elder_folk_secondary_species:0 "Younger Species"
 
  LRSK_GVP_START_SCREEN_ELDERS:0 "In the eons since the first primitive [GetSpeciesName] communities took shape on [GetHomeWorldName], our people spread and prospered. Slowly, carefully we advanced in the arts and sciences, making great discoveries and building a civilization of incomparable grandeur... for there was, after all, no one else to even compare to.\n\nFor a time, that is. In the course of our cautious and deliberate exploration of [GetHomeWorldName], we discovered on the far side of the world a new people. Wild and energetic, they nonetheless proved no match for our superior technology and culture, and with a minimum of friction, an accord was struck. As the Elders our charge was to lead and teach for the greater prosperity of both the peoples of [GetHomeWorldName].\n\nIn the centuries since, though, the younger, '$lrsk_gvp_trait_surgent$' people have grown in both numbers and sophistication. They live short and busy lives, and strive to make sure the flame that burns shorter yet shines brighter. There is a growing sense that the future of the [GetName] may belong to them."
@@ -698,8 +698,20 @@ l_english:
  concept_trait_lrsk_gvp_natural_esper:0 "$lrsk_gov_var_trait_natural_esper$"
  concept_trait_lrsk_gvp_natural_esper_desc:0 "§G+2.5%§! £unity£ §Y$unity$§! and £science£ §YResearch§! from pops with this trait.\n\n$lrsk_gov_var_trait_natural_esper_desc$"
  
+ concept_trait_lrsk_gvp_elder_folk:0 "$lrsk_gvp_trait_elder_folk$"
+ concept_trait_lrsk_gvp_elder_folk_desc:0 "$lrsk_gvp_trait_elder_folk_effects$\n\n$lrsk_gvp_trait_elder_folk_desc$"
+ 
+ concept_trait_lrsk_gvp_surgent:0 "$lrsk_gvp_trait_surgent$"
+ concept_trait_lrsk_gvp_surgent_desc:0 "$lrsk_gvp_trait_surgent_effects$\n\n$lrsk_gvp_trait_surgent_desc$"
+ 
  concept_leader_trait_lrsk_gvp_esper:0 "$lrsk_gvp_leader_trait_esper$"
  concept_leader_trait_lrsk_gvp_esper_desc:0 "Exact effects depend on the leader type, but are toned-down versions of the benefits provided by the §Y$leader_trait_psionic$§! leader trait."
+ 
+ concept_leader_trait_lrsk_gvp_elder:0 "$lrsk_gvp_leader_trait_elder$"
+ concept_leader_trait_lrsk_gvp_elder_desc:0 "Exact effects depend on the leader type, but emphasize caution, efficiency, and affinity for science."
+ 
+ concept_leader_trait_lrsk_gvp_surgent:0 "$lrsk_gvp_leader_trait_surgent$"
+ concept_leader_trait_lrsk_gvp_surgent_desc:0 "Exact effects depend on the leader type, but emphasize action, initiative, mobility, and expansion."
  
  concept_deposit_lrsk_gvp_shroud_pockets:0 "$d_lrsk_gov_var_shroud_pockets$"
  concept_deposit_lrsk_gvp_shroud_pockets_desc:0 "Adds £job_lrsk_gov_var_job_otherworld_guide£ ['concept_lrsk_gvp_otherworld_guides'].\n\n§L$d_lrsk_gov_var_shroud_pockets_desc$§!"
@@ -1655,9 +1667,11 @@ l_english:
 
  lrsk_gvp_trait_elder_folk:0 "$LRSK_GVP_ELDER$"
  lrsk_gvp_trait_elder_folk_desc:0 "§LAncient, wise, and haughty, this species evolved first on its homeworld and slowly advanced in the arts and sciences. So stately and considered was their progress that they met a newly sapient species in their early explorations.§!\n"
+ lrsk_gvp_trait_elder_folk_effects:0 "§G+15%§! £unity£ §YUnity%§! from £job£ Jobs.\n§G-1%§! §Y$mod_negative_traits_leader$§! and §G+100§! §Y$MOD_LEADER_AGE$§!.\n§R-10%§! £mod_pop_environment_tolerance£ §YPlanet Habitability§! and £mod_pop_growth_speed£ §Y$MOD_POP_GROWTH_SPEED$§!.\n§R-15%§! §Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! and §R+25%§! §Y$MOD_POP_RESETTLEMENT_COST_MULT$§!.\n§R-10%§! £happiness£ §YHappiness§! when working £pop_cat_slave£ §Y$pop_cat_slave$§! or £pop_cat_worker£ §Y$pop_cat_worker$§! £job£ Jobs."
 
  lrsk_gvp_trait_surgent:0 "$LRSK_GVP_SURGENT$t"
  lrsk_gvp_trait_surgent_desc:0 "§LYoung, energetic, and boistrous, this species evolved on its homeworld after another, older species, which established a 'caretaker' role over it... for a time. The future may belong to the $lrsk_gvp_trait_surgent$s, though.§!\n"
+ lrsk_gvp_trait_surgent_effects:"§G+10%§! £mod_pop_environment_tolerance£ §YPlanet Habitability§! and  §G+15%§! £mod_pop_growth_speed£ §Y$MOD_POP_GROWTH_SPEED$§!.\n§G+15%§! §Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! and §G+25%§! §Y$MOD_POP_RESETTLEMENT_COST_MULT$§!.\n§G+25%§! §Y$MOD_LEADER_SPECIES_EXP_GAIN$§!.\n§R-15§! §Y$MOD_LEADER_AGE$§!.\n§R+15%§! §Y$EMPIRE_SIZE$§! from £pops£ Pops.\n§R-10%§! £unity£ §YUnity%§! from £job£ Jobs.\n§R-15%§! §Y$MOD_POP_GOVERNMENT_ETHIC_ATTRACTION$§!"
 
  ## Leader Traits
 
