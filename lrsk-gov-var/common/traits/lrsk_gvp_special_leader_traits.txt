@@ -76,8 +76,8 @@ lrsk_gvp_leader_trait_esper = {
 
 lrsk_gvp_leader_trait_elder = {
 	is_councilor_trait_for_ruler = yes
-	starting_ruler_trait = yes
-	cost = 1
+	#starting_ruler_trait = yes
+	#cost = 1
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -127,12 +127,12 @@ lrsk_gvp_leader_trait_elder = {
 		edicts_cost_mult = -0.1
 	}
 	self_modifier = {
-		leaders_upkeep_mult = 0.15
+		leaders_upkeep_mult = 0.1
 	}
 	leader_class = { admiral scientist general governor }
 	requires_traits = { lrsk_gvp_trait_elder_folk }
 	randomized = yes
-	selectable_weight = 33
+	selectable_weight = 80
 	notify_on_gained = no
 	initial = yes
 }
@@ -140,8 +140,8 @@ lrsk_gvp_leader_trait_elder = {
 
 lrsk_gvp_leader_trait_surgent = {
 	is_councilor_trait_for_ruler = yes
-	starting_ruler_trait = yes
-	cost = 1
+	#starting_ruler_trait = yes
+	#cost = 1
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -196,7 +196,33 @@ lrsk_gvp_leader_trait_surgent = {
 	leader_class = { admiral scientist general governor }
 	requires_traits = { lrsk_gvp_trait_surgent }
 	randomized = yes
-	selectable_weight = 33
+	selectable_weight = 80
 	notify_on_gained = no
 	initial = yes
+}
+
+# Needed for ruler customization screen. 
+lrsk_gvp_leader_trait_elder_dummy = {
+	#is_councilor_trait_for_ruler = yes
+	starting_ruler_trait = yes
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_lrsk_gvp_leader_trait_elder_folk"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	modifier = {
+		country_edict_fund_mult = 0.1
+		edicts_cost_mult = -0.1
+	}
+	self_modifier = {
+		leaders_upkeep_mult = 0.1
+	}
+	leader_class = { admiral scientist general governor }
+	requires_traits = { lrsk_gvp_trait_elder_folk }
+	randomized = no
+	initial = no
 }

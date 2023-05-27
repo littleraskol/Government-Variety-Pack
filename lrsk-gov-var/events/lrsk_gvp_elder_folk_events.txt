@@ -18,5 +18,12 @@ planet_event = {
 	immediate = {
 		# Set up subspecies pops
 		lrsk_gvp_generate_special_pops = yes
+
+		owner.ruler = {
+			IF = { limit = { has_trait = lrsk_gvp_leader_trait_elder_dummy }
+				remove_trait = lrsk_gvp_leader_trait_elder_dummy
+				add_trait = lrsk_gvp_leader_trait_elder
+			}
+		}
 	}
 }
