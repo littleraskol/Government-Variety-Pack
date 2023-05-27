@@ -76,6 +76,8 @@ lrsk_gvp_leader_trait_esper = {
 
 lrsk_gvp_leader_trait_elder = {
 	is_councilor_trait_for_ruler = yes
+	starting_ruler_trait = yes
+	cost = 1
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -128,14 +130,18 @@ lrsk_gvp_leader_trait_elder = {
 		leaders_upkeep_mult = 0.15
 	}
 	leader_class = { admiral scientist general governor }
-	initial = no
-	randomized = no
+	requires_traits = { lrsk_gvp_trait_elder_folk }
+	randomized = yes
+	selectable_weight = 33
 	notify_on_gained = no
+	initial = yes
 }
 
 
 lrsk_gvp_leader_trait_surgent = {
 	is_councilor_trait_for_ruler = yes
+	starting_ruler_trait = yes
+	cost = 1
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -188,7 +194,9 @@ lrsk_gvp_leader_trait_surgent = {
 		leader_trait_selection_options_add = -1
 	}
 	leader_class = { admiral scientist general governor }
-	initial = no
-	randomized = no
+	requires_traits = { lrsk_gvp_trait_surgent }
+	randomized = yes
+	selectable_weight = 33
 	notify_on_gained = no
+	initial = yes
 }
