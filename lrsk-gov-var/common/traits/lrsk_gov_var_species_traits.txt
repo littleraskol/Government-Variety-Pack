@@ -355,7 +355,7 @@ lrsk_gvp_trait_surgent = {
 		species_leader_exp_gain = 0.25		
 		species_empire_size_mult = 0.15
 		pop_government_ethic_attraction = -0.15
-		planet_jobs_unity_produces_mult = -0.1
+		planet_jobs_unity_produces_mult = -0.2
 	}
 }
 
@@ -383,6 +383,11 @@ lrsk_gvp_trait_elder_folk_formerly = {
 	icon = "gfx/interface/icons/traits/trait_perfected_genes.dds"
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	modifier = {
+		pop_growth_speed = -0.05
+		leader_age = 20
+	}
 }
 
 
@@ -413,4 +418,8 @@ lrsk_gvp_trait_surgent_formerly = {
 	icon = "gfx/interface/icons/traits/trait_presapient_starborn.dds"
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	modifier = {
+		pop_environment_tolerance = 0.05
+	}
 }
