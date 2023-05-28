@@ -156,28 +156,54 @@ lrsk_gvp_surgent_faction = {
 		FLAG = galcom_resolution_passed_pro_progressive
 	}
 
-	# TBD: Happy when Surgent is ruler
-	#demand = {
-	#	title = "PROGRESSIVE_NO_AUTO"
-	#	unfulfilled_title = "PROGRESSIVE_AUTO"
-	#	desc = "PROGRESSIVE_DEMOCRATIC_GOVERNMENT_DESC"
-	#
-	#	fulfilled_effect = 10
-	#	unfulfilled_effect = -15
-	#
-	#	potential = {
-	#		exists = owner
-	#	}
-	#
-	#	trigger = {
-	#		owner = {
-	#			NOR = {
-	#				has_authority = auth_imperial
-	#				has_authority = auth_dictatorial
-	#			}
-	#		}
-	#	}
-	#}
+	# Happy when Surgent is ruler
+	demand = {
+		# Ruler = FANTASTIC
+		title = faction_demand_lrsk_gvp_happy_surgent
+		unfulfilled_title = LABEL_NA
+		desc = faction_demand_lrsk_gvp_happy_surgent_desc
+	
+		fulfilled_effect = 15
+		unfulfilled_effect = 0
+	
+		potential = {
+			exists = ruler
+			ruler = { species = { lrsk_is_surgent = yes } }
+		}
+	
+		#council_demand = yes	# ???
+		trigger = { always = yes }	# Always happy if Potential fulfilled.
+	}
+
+	# About Surgents on council
+	demand = {
+		title = faction_demand_lrsk_gvp_surgents_on_council
+		unfulfilled_title = faction_demand_lrsk_gvp_no_surgents_on_council
+		desc = faction_demand_lrsk_gvp_surgents_on_council_desc
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			has_paragon_dlc = yes
+			exists = owner
+		}
+
+		council_demand = yes
+
+		# Check for any leader on the Council with Faction's Ethic.
+		trigger = {
+			owner = {
+				any_owned_leader = {
+					OR = {
+						is_ruler = yes
+						is_councilor = yes
+					}
+					species = { lrsk_is_surgent = yes }
+				}
+			}
+		}
+	}
 
 	demand = {
 		title = "PROGRESSIVE_FREE_MOVEMENT"
@@ -360,8 +386,6 @@ lrsk_gvp_surgent_faction = {
 			}
 		}
 	}
-
-	# TBD: Need species representation on council demand
 	
 	# Faction Demands for Ruler and Council positions.
 	inline_script = {
@@ -376,7 +400,6 @@ lrsk_gvp_surgent_faction = {
 		pop_faction_event = { id = factions.1 }
 	}
 
-	# TBD: Do I need my own version of these modifiers?
 	on_destroy = {
 		if = {
 			limit = {

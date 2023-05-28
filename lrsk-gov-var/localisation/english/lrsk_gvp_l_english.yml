@@ -1602,6 +1602,18 @@ l_english:
  # Other Localization Tokens
  ####################################
 
+ ### Factions
+
+ ## Elder Folk origin
+
+ # Elder Dominion Faction
+ pft_lrsk_gvp_elder_faction:0 "$lrsk_gvp_trait_elder_folk$ Dominion Faction"
+ pft_lrsk_gvp_elder_faction_desc:2 "This faction seeks to preserve the leading role in politics, society, and culture of the §Y$lrsk_gvp_trait_elder_folk$§! Folk.\n\n§LAuthoritarian and Xenophobe Ethos§!"
+
+ # Surgent Rights Faction
+ pft_lrsk_gvp_surgent_faction:0 "$lrsk_gvp_trait_surgent$ Rights Faction"
+ pft_lrsk_gvp_surgent_faction_desc:2 "This faction struggles for the liberty and inclusion of the §Y$lrsk_gvp_trait_surgent$§! people.\n\n§LEgalitarian and Xenophile Ethos§!"
+
  ### Traits
 
  ## Species Traits
@@ -1674,7 +1686,7 @@ l_english:
 
  lrsk_gvp_trait_surgent:0 "$LRSK_GVP_SURGENT$t"
  lrsk_gvp_trait_surgent_desc:0 "§LYoung, energetic, and boistrous, this species evolved on its homeworld after another, older species, which established a 'caretaker' role over it... for a time. The future may belong to the $lrsk_gvp_trait_surgent$s, though.§!\n"
- lrsk_gvp_trait_surgent_effects:"§G+10%§! £mod_pop_environment_tolerance£ §YPlanet Habitability§! and  §G+15%§! £mod_pop_growth_speed£ §Y$MOD_POP_GROWTH_SPEED$§!.\n§G+15%§! §Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! and §G+25%§! §Y$MOD_POP_RESETTLEMENT_COST_MULT$§!.\n§G+25%§! §Y$MOD_LEADER_SPECIES_EXP_GAIN$§!.\n§R-15§! §Y$MOD_LEADER_AGE$§!.\n§R+15%§! §Y$EMPIRE_SIZE$§! from £pops£ Pops.\n§R-10%§! £unity£ §YUnity%§! from £job£ Jobs.\n§R-15%§! §Y$MOD_POP_GOVERNMENT_ETHIC_ATTRACTION$§!"
+ lrsk_gvp_trait_surgent_effects:"§G+10%§! £mod_pop_environment_tolerance£ §YPlanet Habitability§! and  §G+15%§! £mod_pop_growth_speed£ §Y$MOD_POP_GROWTH_SPEED$§!.\n§G+15%§! §Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! and §G+25%§! §Y$MOD_POP_RESETTLEMENT_COST_MULT$§!.\n§G+25%§! §Y$MOD_LEADER_SPECIES_EXP_GAIN$§!.\n§R-15§! §Y$MOD_LEADER_AGE$§!.\n§R+15%§! §Y$EMPIRE_SIZE$§! from £pops£ Pops.\n§R-20%§! £unity£ §YUnity%§! from £job£ Jobs.\n§R-15%§! §Y$MOD_POP_GOVERNMENT_ETHIC_ATTRACTION$§!"
 
  lrsk_gvp_trait_surgent_formerly:0 "$lrsk_gvp_trait_surgent$"
  lrsk_gvp_trait_surgent_formerly_desc:0 "§LThough science has untangled much of the complicated genetics of the $lrsk_gvp_trait_surgent$ peoples' frantic energy and mayfly lifespans, more superficial marks of distinction remain.§!\n"
@@ -2276,6 +2288,22 @@ l_english:
 
  lrsk_gvp_trait_picks_elder_folk:0 "Lineage Secrets"
  lrsk_gvp_trait_picks_elder_folk_desc:0 "Unravelling the complex genetics of the $lrsk_gvp_trait_elder_folk$ Folk and $lrsk_gvp_trait_surgent$ people have opened up more options for genetic engineering."
+
+ ### Faction Modifiers
+
+ ## Elder Folk origin
+
+ lrsk_gvp_promoted_surgent_fac:0 "$lrsk_gvp_trait_surgent$ Liberation Promoted"
+ lrsk_gvp_promoted_surgent_fac_desc:0 "The §HEgalitarianism§! and §HXenophilia§! of the §Y$pft_lrsk_gvp_surgent_faction$§! is being promoted by the government."
+
+ lrsk_gvp_suppressed_surgent_fac:0 "$lrsk_gvp_trait_surgent$ Liberation Suppressed"
+ lrsk_gvp_suppressed_surgent_fac_desc:0 "The §HEgalitarianism§! and §HXenophilia§! of the §Y$pft_lrsk_gvp_surgent_faction$§! is being suppressed by the government."
+
+ lrsk_gvp_promoted_elder_fac:0 "$lrsk_gvp_trait_elder_folk$ Dominion Promoted"
+ lrsk_gvp_promoted_elder_fac_desc:0 "The §HAuthoritarianism§! and §HXenophobia§! of the §Y$pft_lrsk_gvp_elder_faction$§! is being promoted by the government."
+
+ lrsk_gvp_suppressed_elder_fac:0 "$lrsk_gvp_trait_elder_folk$ Dominion Suppressed"
+ lrsk_gvp_suppressed_elder_fac_desc:0 "The §HAuthoritarianism§! and §HXenophobia§! of the §Y$pft_lrsk_gvp_elder_faction$§! is being suppressed by the government."
  
  ### Planet Modifiers
 
