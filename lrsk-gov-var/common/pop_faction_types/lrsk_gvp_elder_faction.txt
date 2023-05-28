@@ -1,0 +1,672 @@
+# Government Variety Pack
+# Factions - Elder Dominance
+# Author: littleraskol
+
+lrsk_gvp_elder_faction = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_authoritarian			# Also slightly xenophobic
+	use_guiding_ethic_as_pop_filter = no
+	visual_ethic = "totalitarian_visual_ethic"
+
+	unique = yes
+	support_multiplier = 1.2
+
+	resources = {
+		category = pop_factions
+		produces = {
+			unity = 0.5
+		}
+	}
+
+	is_potential = {
+		is_faction_allowed = yes
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_faction = {
+		is_enslaved = no
+		is_shackled_robot = no
+		is_being_purged = no
+		can_think = yes
+	}
+
+	attraction = {
+		base = 75	# Should be half as popular as the base factions except for relevant species
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { is_ruler = yes }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+		
+		modifier = {
+			factor = 3
+			AND = {
+				has_trait = lrsk_gvp_trait_elder_folk
+				NOT = { has_ethic = ethic_egalitarian }
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			OR = {
+				AND = {
+					has_trait = lrsk_gvp_trait_surgent
+					NOR = {
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_xenophobe
+					}
+				}
+				AND = {
+					has_trait = lrsk_gvp_trait_elder_folk
+					has_ethic = ethic_egalitarian
+				}					
+			}
+		}
+		
+		# Other species besides majors ones
+		modifier = {
+			factor = 0.2
+			NOT = { has_trait = lrsk_gvp_trait_surgent }
+			NOR = {
+				has_trait = lrsk_gvp_trait_elder_folk
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_xenophobe
+			}
+		}
+	}
+
+	leader = {
+		base = 100
+
+		modifier = {
+			factor = 0
+			OR = {
+				species = { NOT = { has_trait = lrsk_gvp_trait_elder_folk } }
+				AND = {
+					species = { has_trait = lrsk_gvp_trait_elder_folk }
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_xenophile
+					}
+				}					
+			}
+		}
+
+		modifier = {
+			factor = 2
+			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_xenophile
+			}
+		}
+
+		modifier = {
+			factor = 3
+			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			has_ethic = ethic_xenophobe
+		}
+
+		modifier = {
+			factor = 5
+			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			has_ethic = ethic_authoritarian
+		}
+
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+	}
+
+	# DEMAND: Faction Outraged (by a GalCom Resolution)
+	inline_script = {
+		script = pop_faction_types/demand_faction_outraged
+		FLAG = galcom_resolution_passed_anti_totalitarian
+	}
+
+	# DEMAND: Faction Pleased (by a GalCom Resolution)
+	inline_script = {
+		script = pop_faction_types/demand_faction_pleased
+		FLAG = galcom_resolution_passed_pro_totalitarian
+	}
+
+	# TBD: Happy when Elder is ruler, Angry when Surgent is ruler, Annoyed with other ruler
+	#demand = {
+	#	title = "TOTALITARIAN_AUTOCRACY"
+	#	unfulfilled_title = "TOTALITARIAN_NO_AUTOCRACY"
+	#	desc = "TOTALITARIAN_AUTOCRACY_DESC"
+	#
+	#	fulfilled_effect = 10
+	#	unfulfilled_effect = -0.001
+	#
+	#	potential = {
+	#		exists = owner
+	#		owner = {
+	#			NOT = { has_authority = auth_democratic }
+	#		}
+	#	}
+	#
+	#	trigger = {
+	#		owner = {
+	#			OR = {
+	#				has_authority = auth_imperial
+	#				has_authority = auth_dictatorial
+	#			}
+	#		}
+	#	}
+	#}
+
+	#demand = {
+	#	title = "TOTALITARIAN_DEMOCRACY"
+	#	unfulfilled_title = "TOTALITARIAN_NO_DEMOCRACY"
+	#	desc = "TOTALITARIAN_DEMOCRACY_DESC"
+	#
+	#	unfulfilled_effect = -25
+	#	fulfilled_effect = 0.001
+	#
+	#	potential = {
+	#		exists = owner
+	#		owner = {
+	#			NOR = {
+	#				has_authority = auth_imperial
+	#				has_authority = auth_dictatorial
+	#			}
+	#		}
+	#	}
+	#
+	#	trigger = {
+	#		owner = {
+	#			NOT = { has_authority = auth_democratic }
+	#		}
+	#	}
+	#}
+
+	#demand = {
+	#	title = "SUPREMACIST_RULER_SAME_SPECIES"
+	#	unfulfilled_title = "SUPREMACIST_RULER_NOT_SAME_SPECIES"
+	#	desc = "SUPREMACIST_RULER_NOT_SAME_SPECIES_DESC"
+	#
+	#	fulfilled_effect = 10
+	#	unfulfilled_effect = -30
+	#
+	#	potential = {
+	#		exists = owner
+	#		owner = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
+	#	}
+	#
+	#	trigger = {
+	#		owner = {
+	#			exists = ruler
+	#			ruler = { is_same_species = owner_species }
+	#		}
+	#	}
+	#}
+
+	# TBD: Specific demand about Surgent subjugation?
+	demand = {
+		title = "TOTALITARIAN_STRATIFICATION"
+		unfulfilled_title = "TOTALITARIAN_NO_STRATIFICATION"
+		desc = "TOTALITARIAN_STRATIFICATION_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					NOT = {
+						any_owned_species = {
+							NOR = {
+								has_living_standard = { type = living_standard_dystopian_society country = prev }
+								has_living_standard = { type = living_standard_stratified country = prev }
+								has_living_standard = { type = living_standard_academic_privilege country = prev }
+							}
+						}
+					}
+					any_owned_species = {
+						OR = {
+							has_citizenship_type = { type = citizenship_slavery country = prev }
+							has_citizenship_type = { type = citizenship_purge country = prev }
+							has_citizenship_type = { type = citizenship_robot_servitude country = prev }
+						}
+					}
+					has_civic = civic_slaver_guilds
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "TOTALITARIAN_ELITISM"
+		unfulfilled_title = "TOTALITARIAN_NO_ELITISM"
+		desc = "TOTALITARIAN_ELITISM_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_technology = tech_selected_lineages
+					has_technology = tech_capacity_boosters
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_policy_flag = leader_enhancement_selected_lineages
+					has_policy_flag = leader_enhancement_capacity_boosters
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY"
+		unfulfilled_title = "TOTALITARIAN_NO_EXTRANATIONAL_AUTHORITY"
+		desc = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications > 2
+			}
+		}
+
+		trigger = {
+			owner = {
+				is_overlord = yes
+			}
+		}
+	}
+
+	# TBD: Demand to be overlord, period
+	#demand = {
+	#	title = "TOTALITARIAN_OPPRESSIVE_SUBJUGATION_POLICY"
+	#	unfulfilled_title = "TOTALITARIAN_ADOPT_OPPRESSIVE_SUBJUGATION_POLICY"
+	#	desc = "TOTALITARIAN_OPPRESSIVE_SUBJUGATION_POLICY_DESC"
+	#
+	#	fulfilled_effect = 10
+	#	unfulfilled_effect = -0.001
+	#
+	#	potential = {
+	#		exists = owner
+	#		owner = {
+	#			is_subject = no
+	#			NOT = { has_policy_flag = benevolent_terms }
+	#		}
+	#	}
+	#
+	#	trigger = {
+	#		owner = {
+	#			has_policy_flag = oppressive_terms
+	#		}
+	#	}
+	#}
+
+	# TBD: Should demand to lead the hegemony!
+	demand = {
+		title = TOTALITARIAN_FEDERATION
+		unfulfilled_title = TOTALITARIAN_FEDERATION_NOT_HEGEMONY
+		desc = TOTALITARIAN_FEDERATION_DESC
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner.federation
+			has_federations_dlc = yes
+		}
+
+		trigger = {
+			owner.federation = { has_federation_type = hegemony_federation }
+		}
+	}
+
+	demand = {
+		title = "SUPREMACIST_NO_FREE_ALIENS"
+		unfulfilled_title = "SUPREMACIST_HAS_FREE_ALIENS"
+		desc = "SUPREMACIST_ALIEN_SLAVES_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				any_owned_species = {
+					NOT = { is_same_species = prev }
+					is_robotic = no
+					is_sapient = yes
+					NOT = {
+						has_citizenship_type = { type = citizenship_purge country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_species = {
+						NOT = {
+							is_same_species = prev
+						}
+						is_robotic = no
+						is_sapient = yes
+						has_citizenship_type = { type = citizenship_full country = prev }
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "SUPREMACIST_NO_MIGRATION_TREATIES"
+		unfulfilled_title = "SUPREMACIST_MIGRATION_TREATIES"
+		desc = "SUPREMACIST_NO_MIGRATION_TREATIES_DESC"
+
+		unfulfilled_effect = -10
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				num_communications > 2
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					num_migration_pacts > 0
+					any_country = {
+						is_country_type = default
+						has_communications = root.owner
+						OR = {
+							has_diplo_migration_treaty = root.owner
+							root = {
+								owner = {
+									has_diplo_migration_treaty = prevprev
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "SUPREMACIST_CELEBRATE_DIVERSITY"
+		unfulfilled_title = "SUPREMACIST_NO_CELEBRATE_DIVERSITY"
+		desc = "SUPREMACIST_CELEBRATE_DIVERSITY_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_modifier = celebrate_diversity
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_modifier = celebrate_diversity }
+			}
+		}
+	}
+	
+	# TBD: Need demographic demand (mad when more than X% of population is Surgent (or any alien?)
+	
+	# Mad when LESS than Y% of population is surgent?? (They care about their little buddies, in their way)
+	
+	# TBD: Need species representation on council demand (mad when no elders, more than half surgent)
+
+	# Faction Demands for Ruler and Council positions.
+	inline_script = {
+		script = "paragon/global_faction_demands"
+		ETHIC = ethic_authoritarian
+		ETHIC_FANATIC = ethic_fanatic_authoritarian
+		ETHIC_OPPOSED = ethic_egalitarian
+	} 
+
+	# TBD: Need my own version
+	on_create = {
+		pop_faction_event = { id = factions.1 }
+	}
+
+	# TBD: Do I need my own version of these modifiers?
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = lrsk_gvp_promoted_elder_fac
+			}
+			remove_modifier = lrsk_gvp_promoted_elder_fac
+		}
+		if = {
+			limit = {
+				has_modifier = lrsk_gvp_suppressed_elder_fac
+			}
+			remove_modifier = lrsk_gvp_suppressed_elder_fac
+		}
+	}
+
+	#TBD: Xenophobe should be in the mix here
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOT = { has_ethic = "ethic_fanatic_authoritarian" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					shift_ethic = ethic_authoritarian
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_authoritarian
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = lrsk_gvp_suppressed_elder_fac
+						has_modifier = lrsk_gvp_promoted_elder_fac
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = lrsk_gvp_promoted_elder_fac days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = lrsk_gvp_promoted_elder_fac
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = lrsk_gvp_promoted_elder_fac
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = lrsk_gvp_suppressed_elder_fac
+						has_modifier = lrsk_gvp_promoted_elder_fac
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = lrsk_gvp_suppressed_elder_fac days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = lrsk_gvp_suppressed_elder_fac
+				}
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = lrsk_gvp_suppressed_elder_fac
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}
+
