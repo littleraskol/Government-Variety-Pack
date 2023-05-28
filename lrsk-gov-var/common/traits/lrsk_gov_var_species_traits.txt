@@ -252,6 +252,8 @@ lrsk_gvp_trait_elder_folk = {
 		"trait_tiyanki"
 		"trait_decadent"
 		"lrsk_gvp_trait_surgent"
+		"lrsk_gvp_trait_surgent_formerly"
+		"lrsk_gvp_trait_elder_folk_formerly"
 	}
 
 	initial = no
@@ -319,6 +321,8 @@ lrsk_gvp_trait_surgent = {
 		"trait_deviants"
 		"trait_conformists"
 		"lrsk_gvp_trait_elder_folk"
+		"lrsk_gvp_trait_elder_folk_formerly"
+		"lrsk_gvp_trait_surgent_formerly"
 	}
 
 	initial = no
@@ -353,4 +357,60 @@ lrsk_gvp_trait_surgent = {
 		pop_government_ethic_attraction = -0.15
 		planet_jobs_unity_produces_mult = -0.1
 	}
+}
+
+lrsk_gvp_trait_elder_folk_formerly = {
+	cost = 0
+	opposites = {
+		"lrsk_gvp_trait_surgent"
+		"lrsk_gvp_trait_surgent_formerly"
+		"lrsk_gvp_trait_elder_folk"
+	}
+
+	initial = no
+	randomized = no
+	improves_leaders = no	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	icon = "gfx/interface/icons/traits/trait_perfected_genes.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+}
+
+
+lrsk_gvp_trait_surgent_formerly = {
+	cost = 0
+	opposites = {
+		"lrsk_gvp_trait_surgent"
+		"lrsk_gvp_trait_elder_folk_formerly"
+		"lrsk_gvp_trait_elder_folk"
+	}
+
+	initial = no
+	randomized = no
+	improves_leaders = no	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+	slave_cost = {
+		energy = 1700
+	}
+
+	icon = "gfx/interface/icons/traits/trait_presapient_starborn.dds"
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 }

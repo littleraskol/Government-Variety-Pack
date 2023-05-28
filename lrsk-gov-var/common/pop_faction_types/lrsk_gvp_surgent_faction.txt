@@ -64,7 +64,7 @@ lrsk_gvp_surgent_faction = {
 		modifier = {
 			factor = 3
 			AND = {
-				has_trait = lrsk_gvp_trait_surgent
+				lrsk_is_surgent = yes
 				NOT = { has_ethic = ethic_authoritarian }
 			}
 		}
@@ -73,14 +73,14 @@ lrsk_gvp_surgent_faction = {
 			factor = 0.1
 			OR = {
 				AND = {
-					has_trait = lrsk_gvp_trait_elder_folk
+					lrsk_is_elder_folk = yes
 					NOR = {
 						has_ethic = ethic_egalitarian
 						has_ethic = ethic_xenophile
 					}
 				}
 				AND = {
-					has_trait = lrsk_gvp_trait_surgent
+					lrsk_is_surgent = yes
 					has_ethic = ethic_authoritarian
 				}					
 			}
@@ -89,9 +89,9 @@ lrsk_gvp_surgent_faction = {
 		# Other species besides majors ones
 		modifier = {
 			factor = 0.2
-			NOT = { has_trait = lrsk_gvp_trait_elder_folk }
+			lrsk_is_elder_folk = no
 			NOR = {
-				has_trait = lrsk_gvp_trait_surgent
+				lrsk_is_surgent = yes
 				has_ethic = ethic_egalitarian
 				has_ethic = ethic_xenophile
 			}
@@ -105,14 +105,14 @@ lrsk_gvp_surgent_faction = {
 			factor = 0
 			OR = {
 				AND = {
-					species = { has_trait = lrsk_gvp_trait_elder_folk }
+					species = { lrsk_is_elder_folk = yes }
 					NOR = {
 						has_ethic = ethic_egalitarian
 						has_ethic = ethic_xenophile
 					}
 				}
 				AND = {
-					species = { has_trait = lrsk_gvp_trait_surgent }
+					species = { lrsk_is_surgent = yes }
 					has_ethic = ethic_authoritarian
 				}					
 			}
@@ -120,7 +120,7 @@ lrsk_gvp_surgent_faction = {
 
 		modifier = {
 			factor = 0.01
-			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			species = { lrsk_is_elder_folk = yes }
 			OR = {
 				has_ethic = ethic_egalitarian
 				has_ethic = ethic_xenophile
@@ -129,7 +129,7 @@ lrsk_gvp_surgent_faction = {
 
 		modifier = {
 			factor = 2
-			species = { has_trait = lrsk_gvp_trait_surgent }
+			species = { lrsk_is_surgent = yes }
 			NOT = { has_ethic = ethic_authoritarian }
 		}
 
@@ -137,8 +137,8 @@ lrsk_gvp_surgent_faction = {
 			factor = 0.1
 			species = {
 				NOR = {
-					has_trait = lrsk_gvp_trait_surgent
-					has_trait = lrsk_gvp_trait_elder_folk
+					lrsk_is_surgent = yes
+					lrsk_is_elder_folk = yes
 				}
 			}
 		}

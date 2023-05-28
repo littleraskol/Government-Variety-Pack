@@ -61,7 +61,7 @@ lrsk_gvp_elder_faction = {
 		modifier = {
 			factor = 3
 			AND = {
-				has_trait = lrsk_gvp_trait_elder_folk
+				lrsk_is_elder_folk = yes
 				NOT = { has_ethic = ethic_egalitarian }
 			}
 		}
@@ -70,14 +70,14 @@ lrsk_gvp_elder_faction = {
 			factor = 0.1
 			OR = {
 				AND = {
-					has_trait = lrsk_gvp_trait_surgent
+					lrsk_is_surgent = yes
 					NOR = {
 						has_ethic = ethic_authoritarian
 						has_ethic = ethic_xenophobe
 					}
 				}
 				AND = {
-					has_trait = lrsk_gvp_trait_elder_folk
+					lrsk_is_elder_folk = yes
 					has_ethic = ethic_egalitarian
 				}					
 			}
@@ -86,9 +86,9 @@ lrsk_gvp_elder_faction = {
 		# Other species besides majors ones
 		modifier = {
 			factor = 0.2
-			NOT = { has_trait = lrsk_gvp_trait_surgent }
+			lrsk_is_surgent = no
 			NOR = {
-				has_trait = lrsk_gvp_trait_elder_folk
+				lrsk_is_elder_folk = yes
 				has_ethic = ethic_authoritarian
 				has_ethic = ethic_xenophobe
 			}
@@ -101,9 +101,9 @@ lrsk_gvp_elder_faction = {
 		modifier = {
 			factor = 0
 			OR = {
-				species = { NOT = { has_trait = lrsk_gvp_trait_elder_folk } }
+				species = { lrsk_is_elder_folk = no }
 				AND = {
-					species = { has_trait = lrsk_gvp_trait_elder_folk }
+					species = { lrsk_is_elder_folk = yes }
 					OR = {
 						has_ethic = ethic_egalitarian
 						has_ethic = ethic_xenophile
@@ -114,7 +114,7 @@ lrsk_gvp_elder_faction = {
 
 		modifier = {
 			factor = 2
-			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			species = { lrsk_is_elder_folk = yes }
 			NOR = {
 				has_ethic = ethic_egalitarian
 				has_ethic = ethic_xenophile
@@ -123,13 +123,13 @@ lrsk_gvp_elder_faction = {
 
 		modifier = {
 			factor = 3
-			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			species = { lrsk_is_elder_folk = yes }
 			has_ethic = ethic_xenophobe
 		}
 
 		modifier = {
 			factor = 5
-			species = { has_trait = lrsk_gvp_trait_elder_folk }
+			species = { lrsk_is_elder_folk = yes }
 			has_ethic = ethic_authoritarian
 		}
 
