@@ -19,7 +19,25 @@ lrsk_gvp_elder_faction = {
 	}
 
 	is_potential = {
-		is_faction_allowed = yes
+		has_origin = lrsk_gvp_origin_elder_folk
+		OR = {
+			AND = {
+				years_passed > 3
+				OR = {
+					has_encountered_other_species = yes
+					pop_percentage = {
+						percentage > 0.7
+						limit = { has_trait = lrsk_gvp_trait_surgent }
+					}
+					count_owned_planet = {
+						count > 1
+						limit = { num_pops > 0 }
+					}
+				}
+			}
+			has_faction = lrsk_gvp_surgent_faction
+			years_passed > 12
+		}
 	}
 
 	parameters = {
@@ -31,11 +49,23 @@ lrsk_gvp_elder_faction = {
 		}
 	}
 
-	can_join_faction = {
+	can_join_pre_triggers = {
 		is_enslaved = no
-		is_shackled_robot = no
 		is_being_purged = no
+	}
+
+	can_join_faction = {
+		is_shackled_robot = no
 		can_think = yes
+		OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_xenophobe
+			lrsk_is_elder_folk = yes
+		}
+		NOR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_xenophile
+		}
 	}
 
 	attraction = {
@@ -60,38 +90,13 @@ lrsk_gvp_elder_faction = {
 		
 		modifier = {
 			factor = 3
-			AND = {
-				lrsk_is_elder_folk = yes
-				NOT = { has_ethic = ethic_egalitarian }
-			}
+			lrsk_is_elder_folk = yes
 		}
 		
 		modifier = {
-			factor = 0.1
-			OR = {
-				AND = {
-					lrsk_is_surgent = yes
-					NOR = {
-						has_ethic = ethic_authoritarian
-						has_ethic = ethic_xenophobe
-					}
-				}
-				AND = {
-					lrsk_is_elder_folk = yes
-					has_ethic = ethic_egalitarian
-				}					
-			}
-		}
-		
-		# Other species besides majors ones
-		modifier = {
-			factor = 0.2
-			lrsk_is_surgent = no
-			NOR = {
-				lrsk_is_elder_folk = yes
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_xenophobe
-			}
+			factor = 0.5
+			lrsk_is_surgent = yes
+			NOT = { has_ethic = ethic_authoritarian }
 		}
 	}
 
@@ -113,24 +118,12 @@ lrsk_gvp_elder_faction = {
 		}
 
 		modifier = {
-			factor = 2
-			species = { lrsk_is_elder_folk = yes }
-			NOR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_xenophile
-			}
-		}
-
-		modifier = {
 			factor = 3
 			species = { lrsk_is_elder_folk = yes }
-			has_ethic = ethic_xenophobe
-		}
-
-		modifier = {
-			factor = 5
-			species = { lrsk_is_elder_folk = yes }
-			has_ethic = ethic_authoritarian
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_authoritarian
+			}
 		}
 
 		modifier = {

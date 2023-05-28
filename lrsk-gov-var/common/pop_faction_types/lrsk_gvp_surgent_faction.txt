@@ -19,7 +19,32 @@ lrsk_gvp_surgent_faction = {
 	}
 
 	is_potential = {
-		is_faction_allowed = yes
+		has_origin = lrsk_gvp_origin_elder_folk
+		OR = {
+			AND = {
+				years_passed > 3
+				OR = {
+					has_encountered_other_species = yes
+					any_owned_pop = {
+						lrsk_is_surgent = yes
+						is_enslaved = yes
+					}
+					any_owned_species = {
+						lrsk_is_surgent = yes
+						OR = {
+							has_living_standard = { type = living_standard_dystopian_society country = prev }
+							has_living_standard = { type = living_standard_stratified country = prev }
+						}
+					}
+					count_owned_planet = {
+						count > 1
+						limit = { num_pops > 0 }
+					}
+				}
+			}
+			has_faction = lrsk_gvp_elder_faction
+			years_passed > 12
+		}
 	}
 
 	parameters = {
@@ -39,6 +64,14 @@ lrsk_gvp_surgent_faction = {
 	can_join_faction = {
 		is_shackled_robot = no
 		can_think = yes
+		NOT = {
+			has_ethic = ethic_authoritarian
+		}
+		OR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_xenophile
+			lrsk_is_surgent = yes
+		}
 	}
 
 	attraction = {
@@ -63,38 +96,12 @@ lrsk_gvp_surgent_faction = {
 		
 		modifier = {
 			factor = 3
-			AND = {
-				lrsk_is_surgent = yes
-				NOT = { has_ethic = ethic_authoritarian }
-			}
+			lrsk_is_surgent = yes
 		}
 		
 		modifier = {
-			factor = 0.1
-			OR = {
-				AND = {
-					lrsk_is_elder_folk = yes
-					NOR = {
-						has_ethic = ethic_egalitarian
-						has_ethic = ethic_xenophile
-					}
-				}
-				AND = {
-					lrsk_is_surgent = yes
-					has_ethic = ethic_authoritarian
-				}					
-			}
-		}
-		
-		# Other species besides majors ones
-		modifier = {
-			factor = 0.2
-			lrsk_is_elder_folk = no
-			NOR = {
-				lrsk_is_surgent = yes
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_xenophile
-			}
+			factor = 0.5
+			lrsk_is_elder_folk = yes
 		}
 	}
 
@@ -104,12 +111,11 @@ lrsk_gvp_surgent_faction = {
 		modifier = {
 			factor = 0
 			OR = {
-				AND = {
-					species = { lrsk_is_elder_folk = yes }
-					NOR = {
-						has_ethic = ethic_egalitarian
-						has_ethic = ethic_xenophile
-					}
+				species = { lrsk_is_elder_folk = yes }
+				NOR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_xenophile
+					lrsk_is_surgent = yes
 				}
 				AND = {
 					species = { lrsk_is_surgent = yes }
@@ -119,8 +125,8 @@ lrsk_gvp_surgent_faction = {
 		}
 
 		modifier = {
-			factor = 0.01
-			species = { lrsk_is_elder_folk = yes }
+			factor = 3
+			species = { lrsk_is_surgent = yes }
 			OR = {
 				has_ethic = ethic_egalitarian
 				has_ethic = ethic_xenophile
@@ -128,19 +134,8 @@ lrsk_gvp_surgent_faction = {
 		}
 
 		modifier = {
-			factor = 2
-			species = { lrsk_is_surgent = yes }
-			NOT = { has_ethic = ethic_authoritarian }
-		}
-
-		modifier = {
 			factor = 0.1
-			species = {
-				NOR = {
-					lrsk_is_surgent = yes
-					lrsk_is_elder_folk = yes
-				}
-			}
+			species = { lrsk_is_surgent = no }
 		}
 
 		modifier = {
