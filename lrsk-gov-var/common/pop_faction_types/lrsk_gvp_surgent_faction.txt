@@ -100,7 +100,7 @@ lrsk_gvp_surgent_faction = {
 		}
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			lrsk_is_elder_folk = yes
 		}
 	}
@@ -156,53 +156,16 @@ lrsk_gvp_surgent_faction = {
 		FLAG = galcom_resolution_passed_pro_progressive
 	}
 
-	# Happy when Surgent is ruler
-	demand = {
-		# Ruler = FANTASTIC
-		title = faction_demand_lrsk_gvp_happy_surgent
-		unfulfilled_title = LABEL_NA
-		desc = faction_demand_lrsk_gvp_happy_surgent_desc
-	
-		fulfilled_effect = 15
-		unfulfilled_effect = 0
-	
-		potential = {
-			exists = ruler
-			ruler = { species = { lrsk_is_surgent = yes } }
-		}
-	
-		#council_demand = yes	# ???
-		trigger = { always = yes }	# Always happy if Potential fulfilled.
+	# DEMAND: Faction Outraged (by a GalCom Resolution)
+	inline_script = {
+		script = pop_faction_types/demand_faction_outraged
+		FLAG = galcom_resolution_passed_anti_xenoist
 	}
-
-	# About Surgents on council
-	demand = {
-		title = faction_demand_lrsk_gvp_surgents_on_council
-		unfulfilled_title = faction_demand_lrsk_gvp_no_surgents_on_council
-		desc = faction_demand_lrsk_gvp_surgents_on_council_desc
-
-		fulfilled_effect = 10
-		unfulfilled_effect = -10
-
-		potential = {
-			has_paragon_dlc = yes
-			exists = owner
-		}
-
-		council_demand = yes
-
-		# Check for any leader on the Council with Faction's Ethic.
-		trigger = {
-			owner = {
-				any_owned_leader = {
-					OR = {
-						is_ruler = yes
-						is_councilor = yes
-					}
-					species = { lrsk_is_surgent = yes }
-				}
-			}
-		}
+	
+	# DEMAND: Faction Pleased (by a GalCom Resolution)
+	inline_script = {
+		script = pop_faction_types/demand_faction_pleased
+		FLAG = galcom_resolution_passed_pro_xenoist
 	}
 
 	demand = {
@@ -386,6 +349,55 @@ lrsk_gvp_surgent_faction = {
 			}
 		}
 	}
+
+	# Happy when Surgent is ruler
+	demand = {
+		# Ruler = FANTASTIC
+		title = faction_demand_lrsk_gvp_happy_surgent
+		unfulfilled_title = LABEL_NA
+		desc = faction_demand_lrsk_gvp_happy_surgent_desc
+	
+		fulfilled_effect = 15
+		unfulfilled_effect = 0
+	
+		potential = {
+			exists = ruler
+			ruler = { species = { lrsk_is_surgent = yes } }
+		}
+	
+		#council_demand = yes	# ???
+		trigger = { always = yes }	# Always happy if Potential fulfilled.
+	}
+
+	# About Surgents on council
+	demand = {
+		title = faction_demand_lrsk_gvp_surgents_on_council
+		unfulfilled_title = faction_demand_lrsk_gvp_no_surgents_on_council
+		desc = faction_demand_lrsk_gvp_surgents_on_council_desc
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			#has_paragon_dlc = yes	# ???
+			exists = owner
+		}
+
+		council_demand = yes
+
+		# Check for any leader on the Council with Faction's Ethic.
+		trigger = {
+			owner = {
+				any_owned_leader = {
+					OR = {
+						is_ruler = yes
+						is_councilor = yes
+					}
+					species = { lrsk_is_surgent = yes }
+				}
+			}
+		}
+	}
 	
 	# Faction Demands for Ruler and Council positions.
 	inline_script = {
@@ -415,7 +427,6 @@ lrsk_gvp_surgent_faction = {
 		}
 	}
 
-	#TBD: Xenophile should be in the mix here
 	actions = {
 		embrace_faction = {
 			title = "EMBRACE_FACTION"
@@ -443,15 +454,26 @@ lrsk_gvp_surgent_faction = {
 					}
 				}
 				support > 0.20
-				parameter:empire = {
-					NOT = { has_ethic = "ethic_fanatic_egalitarian" }
+				custom_tooltip = {
+					fail_text = LRSK_SURGENT_FACTION_EMBRACE_LIMIT
+					parameter:empire = {
+						NAND = { 
+							has_ethic = ethic_fanatic_egalitarian
+							has_ethic = ethic_xenophile
+						}
+					}
 				}
 			}
 
 			effect = {
 				add_modifier = { modifier = embraced_faction days = 3600 }
 				parameter:empire = {
-					shift_ethic = ethic_egalitarian
+					IF = { limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } }
+						shift_ethic = ethic_egalitarian
+					}
+					ELSE = {
+						shift_ethic = ethic_xenophile
+					}
 					hidden_effect = {
 						add_modifier = { modifier = embraced_faction_timer days = 3600 }
 						every_pop_faction = {
@@ -474,7 +496,7 @@ lrsk_gvp_surgent_faction = {
 									level >= 1
 								}
 							}
-							country_event = { id = factions.2000 }
+							country_event = { id = factions.2000 } # TBD!!!
 						}
 					}
 				}
@@ -486,7 +508,10 @@ lrsk_gvp_surgent_faction = {
 					factor = 0
 					support < 0.50
 					owner = {
-						has_ethic = ethic_egalitarian
+						OR = {
+							has_ethic = ethic_egalitarian
+							has_ethic = ethic_xenophile
+						}
 					}
 				}
 				modifier = {
