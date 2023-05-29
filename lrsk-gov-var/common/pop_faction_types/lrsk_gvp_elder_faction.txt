@@ -170,8 +170,8 @@ lrsk_gvp_elder_faction = {
 			owner = {
 				pop_percentage = {
 					percentage >= 0.4
+					exclude = { lrsk_is_surgent = no }
 					limit = {
-						lrsk_is_surgent = yes
 						OR = {
 							has_job_category = worker
 							is_enslaved = yes
@@ -185,8 +185,8 @@ lrsk_gvp_elder_faction = {
 			owner = {
 				pop_percentage = {
 					percentage > 0.7
+					exclude = { lrsk_is_surgent = no }
 					limit = {
-						lrsk_is_surgent = yes
 						OR = {
 							has_job_category = worker
 							is_enslaved = yes
@@ -209,8 +209,8 @@ lrsk_gvp_elder_faction = {
 			owner = {
 				pop_percentage = {
 					percentage < 0.4
+					exclude = { lrsk_is_surgent = no }
 					limit = {
-						lrsk_is_surgent = yes
 						OR = {
 							has_job_category = worker
 							is_enslaved = yes

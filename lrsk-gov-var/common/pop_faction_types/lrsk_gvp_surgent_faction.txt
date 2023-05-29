@@ -167,6 +167,69 @@ lrsk_gvp_surgent_faction = {
 		script = pop_faction_types/demand_faction_pleased
 		FLAG = galcom_resolution_passed_pro_xenoist
 	}
+	
+	# Demands about Surgent advancement
+	demand = {
+		title = faction_demand_lrsk_gvp_surgents_rising
+		unfulfilled_title = faction_demand_lrsk_gvp_surgents_rising
+		desc = faction_demand_lrsk_gvp_surgents_rising_desc
+
+		fulfilled_effect = 15
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				pop_percentage = {
+					percentage >= 0.25
+					exclude = {
+						is_enslaved = yes
+						has_job_category = worker
+					}
+					limit = { lrsk_is_surgent = yes }
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				pop_percentage = {
+					percentage > 0.5
+					exclude = {
+						is_enslaved = yes
+						has_job_category = worker
+					}
+					limit = { lrsk_is_surgent = yes }
+				}
+			}
+		}
+	}
+	demand = {
+		title = LABEL_NA
+		unfulfilled_title = faction_demand_lrsk_gvp_surgents_shut_out
+		desc = faction_demand_lrsk_gvp_surgents_shut_out_desc
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				pop_percentage = {
+					percentage < 0.25
+					exclude = {
+						is_enslaved = yes
+						has_job_category = worker
+					}
+					limit = {
+						lrsk_is_surgent = yes
+					}
+				}
+			}
+		}
+
+		trigger = { always = no }	# Always unhappy if Potential fulfilled.
+	}
 
 	demand = {
 		title = "PROGRESSIVE_FREE_MOVEMENT"
