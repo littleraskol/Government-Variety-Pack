@@ -14,8 +14,25 @@ lrsk_gvp_surgent_pop_ratio = {
 	}
 }
 
-# 1/10th of the above
+# 1/10th of the ratio
 lrsk_gvp_tenth_surgent_pop_ratio = {
 	base = 0.1
 	mult = value:lrsk_gvp_surgent_pop_ratio
+}
+
+# 1/4th of the ratio
+lrsk_gvp_quarter_surgent_pop_ratio = {
+	base = 0.25
+	mult = value:lrsk_gvp_surgent_pop_ratio
+}
+
+
+# Display as percentage
+lrsk_gvp_surgent_pop_percent = {
+	base = 100
+	mult = value:lrsk_gvp_surgent_pop_ratio
+}
+lrsk_gvp_quarter_surgent_pop_percent = {
+	base = 100
+	mult = value:lrsk_gvp_quarter_surgent_pop_ratio
 }
