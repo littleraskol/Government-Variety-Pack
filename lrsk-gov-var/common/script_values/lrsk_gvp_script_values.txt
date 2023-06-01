@@ -1,0 +1,21 @@
+# Government Variety Pack
+# Events - Scripted Values
+# Author: littleraskol
+
+lrsk_gvp_surgent_pop_ratio = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = pop_percentage
+		trigger_scope = owner
+		parameters = {
+			limit = { lrsk_is_surgent = yes }
+		}
+		mode = mult	# returns a fraction between 0 and 1, want to multiply this by the base of 1 to get itself...
+	}
+}
+
+# 1/10th of the above
+lrsk_gvp_tenth_surgent_pop_ratio = {
+	base = 0.1
+	mult = value:lrsk_gvp_surgent_pop_ratio
+}
