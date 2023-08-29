@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.7 (05/11/23) - Caelum (3.9) Update
+-Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
+-Updated compat version number.
+
 5.6.3 (05/23/23) - Republicanism Redux
 -OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
 
