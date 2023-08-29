@@ -24,6 +24,12 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v5.7 (05/11/23) - Caelum (3.9) Update
 -Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
 -Updated compat version number.
+-"Employee-Owned Co-op" civic renamed and reflavored due to introduction of the "Worker Cooperative" civic in base game.
+--Renamed to "Labor Peace," flavor is more about labor/management compromise.
+--"Organizing Hub" branch office building changed to "Labor-Management Retreat"
+--"Employee Wellness Coordinator" councilor's flavor text modified somewhat to match new civic flavor.
+--"Cooperative Enterprise" government now only available without Megacorp DLC.
+
 
 5.6.3 (05/23/23) - Republicanism Redux
 -OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
