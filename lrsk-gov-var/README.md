@@ -29,6 +29,7 @@ v5.7 (05/11/23) - Caelum (3.9) Update
 --"Organizing Hub" branch office building changed to "Labor-Management Retreat"
 --"Employee Wellness Coordinator" councilor's flavor text modified somewhat to match new civic flavor.
 --"Cooperative Enterprise" government now only available without Megacorp DLC.
+-Supremacist Demagoguery now gives +1 max rivalries, +15% damage to rivals, +5% diplo weight from rivals, and +25% power projection.
 -Backend: Replaced calls to base game "federation_origin_planet_setup" scripted effect with mod-added "lrsk_federation_origin_planet_setup" scripted effect that works the same way as the pre-3.9 scripted effect. (Base game version now works very differently, will take more effort to understand/adapt its new effects; the old way will work for now.)
 
 5.6.3 (05/23/23) - Republicanism Redux
