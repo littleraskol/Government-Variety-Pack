@@ -1346,7 +1346,22 @@ lrsk_gov_var_job_planetmind_overseer = {
 
 	country_modifier = {
 		country_naval_cap_add = 2
+	}
+
+	triggered_country_modifier = {		
+		potential = {
+			exists = owner
+			owner = { empire_size > 2 }
+		}
 		empire_size_add = -2
+	}
+
+	triggered_country_modifier = {		
+		potential = {
+			exists = owner
+			owner = { empire_size = 2 }
+		}
+		empire_size_add = -1
 	}
 
 	planet_modifier = {
