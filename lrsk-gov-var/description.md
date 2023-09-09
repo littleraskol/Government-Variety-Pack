@@ -26,7 +26,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 Compatibility patches:
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2805620150]Bug Branch/GVP Compatibility Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url] mod (maintained by [url=https://steamcommunity.com/id/AmberAmbitions]AmberAmbitions[/url]).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2805620150]Bug Branch/GVP Compatibility Patch[/url] for the [url=https://steamcommunity.com/workshop/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url] mod (maintained by [url=https://steamcommunity.com/id/AmberAmbitions]AmberAmbitions[/url]) (May be out of date, see below.)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3015332725]Bug Branch + Ruling Class + Government Variety Pack[/url] patch for the [url=https://steamcommunity.com/workshop/filedetails/?id=2517213262]Ethics & Civics: Bug Branch[/url] mod and (optionally) the [url=https://steamcommunity.com/workshop/filedetails/?id=2844533998]Ruling Class[/url] mod (maintained by [url=https://steamcommunity.com/id/NoSleeper]NoSleeper[/url]).
 [/list]
 
 Mods that have built-in compatibility:
