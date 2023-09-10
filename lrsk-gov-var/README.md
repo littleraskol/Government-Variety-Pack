@@ -32,6 +32,7 @@ v5.7 (05/11/23) - Caelum (3.9) Update
 --Shuffled around opinion modifiers to match.
 -Supremacist Demagoguery now gives +1 max rivalries, +15% damage to rivals, +5% diplo weight from rivals, and +25% power projection.
 -Because admin cap is back (in pog form), Planetmind Overseers now give +2 naval cap and reduce empire size by 2.
+-Changed name of Universal Sovereignty councilor to "Client Obligations Guarantor"
 -Backend: Replaced calls to base game "federation_origin_planet_setup" scripted effect with mod-added "lrsk_federation_origin_planet_setup" scripted effect that works the same way as the pre-3.9 scripted effect. (Base game version now works very differently, will take more effort to understand/adapt its new effects; the old way will work for now.)
 -Various other backend things.
 
