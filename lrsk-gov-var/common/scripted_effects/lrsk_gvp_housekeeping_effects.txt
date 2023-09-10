@@ -318,6 +318,19 @@ lrsk_add_country_flag = {
 	}
 }
 
+# Will this work???
+lrsk_clear_flag = {
+	IF = { limit = { has_$TYPE$_flag = $FLAG$ }
+		remove_$TYPE$_flag = $FLAG$
+	}
+}
+
+lrsk_add_flag = {
+	IF = { limit = { NOT = { has_$TYPE$_flag = $FLAG$ } }
+		set_$TYPE$_flag = $FLAG$
+	}
+}
+
 # These are the basic default transformations of vassals in their 'effect = { }' blocks.
 # I don't really understand it, but all base game vassal definitions seem to have this so I assume it's important.
 # Every special vassal transformation effect should call this.

@@ -403,7 +403,7 @@ lrsk_gvp_chartered_colony_effects = {
 			}
 
 			# deal with alien rule stuff
-			lrsk_clear_country_flag = { FLAG = lrsk_alien_rule_puppet }
+			lrsk_clear_flag = { FLAG = lrsk_alien_rule_puppet TYPE = country }
 			IF = { limit = { any_owned_species = { has_species_flag = lrsk_usurped_indigenes } }
 				random_owned_species = { limit = { has_species_flag = lrsk_usurped_indigenes }
 					save_event_target_as = lrsk_chartering_usurped_species
