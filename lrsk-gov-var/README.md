@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.7 (05/11/23) - Caelum (3.9) Update
+v5.7 (09/12/23) - Caelum (3.9) Update
 -Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
 -Updated compat version number.
 -"Employee-Owned Co-op" civic renamed and reflavored due to introduction of the "Worker Cooperative" civic in base game.
