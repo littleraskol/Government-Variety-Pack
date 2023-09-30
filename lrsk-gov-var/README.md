@@ -29,6 +29,26 @@ v5.x (??/??/??) - New Origin: Complementation Project
 --Somewhere in the galaxy are the remnants of your singleton precursor civilization, and they hate you!
 --Imagine if SEELE from Neon Genesis Evangelion won and turned into a Stellaris hive mind and you about have the idea here...
 
+v5.7.1 (09/30/23) - Branch Office Building Concepts (& more!)
+-Adding concepts for branch office buildings granted by corp civics.
+-Altered casino luck random events so that when one happens, it's positive 80% of the time and negative 20% of the time (changed from 50%/50%).
+-Tweaked some fixed opinion modifiers.
+
+v5.7 (09/12/23) - Caelum (3.9) Update
+-Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
+-Updated compat version number.
+-"Employee-Owned Co-op" civic renamed and reflavored due to introduction of the "Worker Cooperative" civic in base game.
+--Renamed to "Labor Peace," flavor is more about labor/management compromise.
+--"Organizing Hub" branch office building changed to "Labor-Management Retreat"
+--"Employee Wellness Coordinator" councilor's flavor text modified somewhat to match new civic flavor.
+--"Cooperative Enterprise" government now only available without Megacorp DLC.
+--Shuffled around opinion modifiers to match.
+-Supremacist Demagoguery now gives +1 max rivalries, +15% damage to rivals, +5% diplo weight from rivals, and +25% power projection.
+-Because admin cap is back (in pog form), Planetmind Overseers now give +2 naval cap and reduce empire size by 2.
+-Changed name of Universal Sovereignty councilor to "Client Obligations Guarantor"
+-Backend: Replaced calls to base game "federation_origin_planet_setup" scripted effect with mod-added "lrsk_federation_origin_planet_setup" scripted effect that works the same way as the pre-3.9 scripted effect. (Base game version now works very differently, will take more effort to understand/adapt its new effects; the old way will work for now.)
+-Various other backend things.
+
 5.6.3 (05/23/23) - Republicanism Redux
 -OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
 
