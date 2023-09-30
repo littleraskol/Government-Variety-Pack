@@ -401,7 +401,10 @@ triggered_opinion_lrsk_gvp_intrepid_freedom_lovers = {
 triggered_opinion_lrsk_gvp_unbounded_greed = {
 	trigger = {
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-		from = { has_authority = auth_corporate }
+		from = {
+			has_authority = auth_corporate
+			NOT = { has_valid_civic = lrsk_gov_var_civic_mc_workers_councils }
+		}
 	}
 	opinion = {
 		base = -20
