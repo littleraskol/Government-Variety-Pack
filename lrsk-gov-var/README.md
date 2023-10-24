@@ -26,7 +26,7 @@ v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
 --Chivalry now gives +10% exp for admirals and generals.
 --Lifelong Learning now gives +10% exp gain for scientists and governors.
 --Warrior Caste now gives +10% exp for admirals and generals.
---Lifelong Learning now gives +20% exp gain for governors.
+--Royal Caste now gives +20% exp gain for governors.
 --Combat Data now gives +10% exp for admirals and generals.
 --The "Deep Code: Profiling" trait from Uplift now gives -10% leader upkeep instead of +2 leader levels.
 
