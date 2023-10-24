@@ -21,6 +21,15 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.7.2 (10/??/23) - Leader Levels -> Exp Gain
+-MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
+--Chivalry now gives +10% exp for admirals and generals.
+--Lifelong Learning now gives +10% exp gain for scientists and governors, as well as ??? (find something other than species exp gain... (CitScholars/pop???))
+--Warrior Caste now gives +10% exp for admirals and generals.
+--Lifelong Learning now gives +20% exp gain for governors.
+--Combat Data now gives +10% exp for admirals and generals.
+--The "Deep Code: Profiling" trait from Uplift now gives -10% leader upkeep instead of +2 leader levels.
+
 v5.7.1 (09/30/23) - Branch Office Building Concepts (& more!)
 -Adding concepts for branch office buildings granted by corp civics.
 -Altered casino luck random events so that when one happens, it's positive 80% of the time and negative 20% of the time (changed from 50%/50%).
