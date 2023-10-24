@@ -24,7 +24,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v5.7.2 (10/??/23) - Leader Levels -> Exp Gain
 -MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
 --Chivalry now gives +10% exp for admirals and generals.
---Lifelong Learning now gives +10% exp gain for scientists and governors, as well as ??? (find something other than species exp gain... (CitScholars/pop???))
+--Lifelong Learning now gives +15% exp gain for scientists and governors.
 --Warrior Caste now gives +10% exp for admirals and generals.
 --Lifelong Learning now gives +20% exp gain for governors.
 --Combat Data now gives +10% exp for admirals and generals.
