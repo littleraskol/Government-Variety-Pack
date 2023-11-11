@@ -26,6 +26,7 @@ v5.8 (11/??/23) - Pyxis (3.10) Update
 --Rework of Esper trait to match new multi-leader trait format (based on Psychic trait).
 --Changed exp_gain modifiers to match new leader types (typically also added leader levels where appropriate).
 --Changed leader_age to new leader_lifespan_add modifier.
+--Generally substituted "official" for "governor" and "commander" for "admiral" and/or "general" as needed.
 -Updated compat version number.
 
 v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
