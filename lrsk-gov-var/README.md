@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.8 (11/??/23) - Pyxis (3.10) Update
+-Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)
+-Updated compat version number.
+
 v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
 -MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
 --Chivalry now gives +10% exp for admirals and generals.
