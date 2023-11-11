@@ -61,7 +61,7 @@ lrsk_gov_var_civic_hive_builder_caste = {
 	}
 }
 
-# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 15 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
+# Warrior Caste (+1 military leader skill levels, 1 Warrior Drone per 15 pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. RETURN_TO_THIS
 lrsk_gov_var_civic_hive_warrior_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -76,13 +76,14 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 		}
 	}
 	modifier = {
-    	admiral_exp_gain = 0.1
-    	general_exp_gain = 0.1
+		commander_exp_gain = 0.1
+		commander_initial_skill = 1
+		# More?
     	job_warrior_drone_per_pop = 0.0666
 	}
 }
 
-# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 20 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity.
+# Royal Caste (+2 governor skill levels, 1 Synapse Drone per 20 pops) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. RETURN_TO_THIS
 lrsk_gov_var_civic_hive_royal_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -91,7 +92,8 @@ lrsk_gov_var_civic_hive_royal_caste = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
-    	governor_exp_gain = 0.2
+    	official_exp_gain = 0.1
+		official_initial_skill = 1
     	job_synapse_drone_per_pop = 0.05
 	}
 }
@@ -365,7 +367,7 @@ lrsk_gov_var_civic_machine_architect_expert_systems = {
 	}
 }
 
-# Combat Data (+1 military leader skill levels, +20% army morale damage) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least.
+# Combat Data (+1 military leader skill levels, +20% army morale damage) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. RETURN_TO_THIS
 lrsk_gov_var_civic_machine_combat_data = {
 	potential = { authority = { value = auth_machine_intelligence } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
@@ -382,8 +384,9 @@ lrsk_gov_var_civic_machine_combat_data = {
 	}
 	modifier = {
     	army_morale_damage_mult = 0.3
-    	admiral_exp_gain = 0.1
-    	general_exp_gain = 0.1
+		commander_exp_gain = 0.1
+		commander_initial_skill = 1
+		# More?
 	}
 }
 
