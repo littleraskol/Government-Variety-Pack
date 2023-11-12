@@ -561,3 +561,15 @@ lrsk_gvp_workers_councils_councilor = {
 	#conditional_tooltip = lrsk_gvp_workers_councils_councilor_conditional_tooltip
 }
 
+lrsk_gvp_civic_mc_war_profiteers_councilor = {
+	leader_class = { commander }
+	is_leader_possible = {
+		leader_class = commander
+	}
+	civic = lrsk_gvp_civic_mc_war_profiteers
+	modifier = {
+		ship_starting_experience_add = 10
+		army_starting_experience_add = 10
+		commander_exp_gain = 0.01
+	}
+}

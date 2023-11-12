@@ -2062,28 +2062,17 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	potential = {
 		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
-		branch_office_owner = { OR = {
-			has_valid_civic = civic_naval_contractors
-			has_valid_civic = civic_private_military_companies
-		} }
+		branch_office_owner = {
+			has_valid_civic = lrsk_gvp_civic_mc_war_profiteers
+		}
 	}
 
-	triggered_country_modifier = {
-		potential = {			
-			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_naval_contractors }
-		}
+	country_modifier = {
+		ship_starting_experience_add = 50
+		army_starting_experience_add = 50
 		commander_exp_gain = 0.1
 	}
 
-	triggered_country_modifier = {
-		potential = {			
-			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_private_military_companies }
-		}
-		commander_exp_gain = 0.1
-	}
-	
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner

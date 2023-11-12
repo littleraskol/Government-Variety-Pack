@@ -28,6 +28,7 @@ v5.8 (11/??/23) - Pyxis (3.10) Update
 --Changed leader_age to new leader_lifespan_add modifier.
 --Generally substituted "official" for "governor" and "commander" for "admiral" and/or "general" as needed.
 -Added missing localisation for "mod_councilor_ruler_imperial_exp_gain"
+-Added new civic "War Profiteers" which is what now allows for the Military Excellence Academy branch office building (the Naval Contractors and Private Military Companies civics no longer provide this).
 -Updated compat version number.
 
 v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
