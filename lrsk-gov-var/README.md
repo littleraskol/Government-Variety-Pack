@@ -27,6 +27,7 @@ v5.8 (11/??/23) - Pyxis (3.10) Update
 --Changed exp_gain modifiers to match new leader types (typically also added leader levels where appropriate).
 --Changed leader_age to new leader_lifespan_add modifier.
 --Generally substituted "official" for "governor" and "commander" for "admiral" and/or "general" as needed.
+-Added missing localisation for "mod_councilor_ruler_imperial_exp_gain"
 -Updated compat version number.
 
 v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
