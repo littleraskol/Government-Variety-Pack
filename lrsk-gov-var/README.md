@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.8 (11/??/23) - Pyxis (3.10) Update
+v5.8 (11/17/23) - Pyxis (3.10) Update
 -Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)
 --Rework of Esper trait to match new multi-leader trait format (based on Psychic trait).
 --Changed exp_gain modifiers to match new leader types (typically also added leader levels where appropriate).
