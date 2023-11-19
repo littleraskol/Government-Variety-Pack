@@ -76,3 +76,209 @@ lrsk_gov_var_gov_noble_republic = {
 		}
 	}
 }
+
+# Pious Republic
+lrsk_gvp_gov_pious_republic = {
+	ruler_title = RT_CHIEF_PRECENTOR
+	ruler_title_female = RT_CHIEF_PRECENTOR_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	weight = {
+		base = 6
+	}
+}
+
+# Pious Commonwealth
+lrsk_gvp_gov_pious_commonwealth = {
+	ruler_title = RT_REVERED_ELDER
+	ruler_title_female = RT_REVERED_ELDER_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	weight = {
+		base = 6
+	}
+}
+
+# Bellicose Republic
+lrsk_gvp_gov_bellicose_republic = {
+	ruler_title = RT_ARCHON
+	ruler_title_female = RT_ARCHON_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.10
+			OR = {
+				has_valid_civic = civic_distinguished_admiralty
+				has_valid_civic = civic_nationalistic_zeal
+			}
+		}
+	}
+}
+
+# Bellicose Commonwealth
+lrsk_gvp_gov_bellicose_commonwealth = {
+	ruler_title = RT_COMMISSARY_GENERAL
+	ruler_title_female = RT_COMMISSARY_GENERAL_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.10
+			OR = {
+				has_valid_civic = civic_distinguished_admiralty
+				has_valid_civic = civic_nationalistic_zeal
+			}
+		}
+	}
+}
+
+# Tranquil Republic
+lrsk_gvp_gov_tranquil_republic = {
+	ruler_title = RT_COORDINATOR
+	ruler_title_female = RT_COORDINATOR_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+# Tranquil Commonwealth
+lrsk_gvp_gov_tranquil_commonwealth = {
+	ruler_title = RT_PRIME_MINISTER
+	ruler_title_female = RT_PRIME_MINISTER_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+# Enlightened Republic
+lrsk_gvp_gov_enlightened_republic = {
+	ruler_title = RT_CHAIRMAN
+	ruler_title_female = RT_CHAIRWOMAN
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_mechanists
+		}
+	}
+}
+
+# Enlightened Commonwealth
+lrsk_gvp_gov_enlightened_commonwealth = {
+	ruler_title = RT_CHANCELLOR
+	ruler_title_female = RT_CHANCELLOR_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_mechanists
+		}
+	}
+}
