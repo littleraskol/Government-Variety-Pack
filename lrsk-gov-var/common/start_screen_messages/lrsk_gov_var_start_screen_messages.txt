@@ -1079,6 +1079,58 @@ part = {
 }
 
 part = {
+	location = 1
+	localization = "LRSK_GVP_START_SCREEN_P2_PIOUS_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gvp_gov_pious_republic
+			has_government = lrsk_gvp_gov_pious_commonwealth
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GVP_START_SCREEN_P2_BELLICOSE_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gvp_gov_bellicose_republic
+			has_government = lrsk_gvp_gov_bellicose_commonwealth
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GVP_START_SCREEN_P2_TRANQUIL_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gvp_gov_tranquil_republic
+			has_government = lrsk_gvp_gov_tranquil_commonwealth
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_GVP_START_SCREEN_P2_ENLIGHTENED_REPUBLIC"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gvp_gov_enlightened_republic
+			has_government = lrsk_gvp_gov_enlightened_commonwealth
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
 	location = 0
 	localization = "LRSK_GOV_VAR_START_SCREEN_GALACTIC_BACKDOOR"
 	
