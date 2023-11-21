@@ -4,17 +4,19 @@
 
 on_game_start = {
 	events = {
-		lrsk_government_variety_pack_backend.1      #Set mod active flag, origins
+		lrsk_government_variety_pack_backend.1      	# Set mod active flag, origins
+		#lrsk_government_variety_pack_backend.2004      	# Remove/replace deprecated civics (removes duplicates/redundancy)
 	}
 }
 
 # No scope, like on_game_start
 # Does not run when loading MP saves due to OOS concerns
-on_single_player_save_game_load = {
-	events = {
-		lrsk_government_variety_pack_backend.20032	# Detect and address invalidated civics
-	}
-}
+#on_single_player_save_game_load = {
+#	events = {
+#		lrsk_government_variety_pack_backend.20032		# Detect and address invalidated civics
+#		lrsk_government_variety_pack_backend.2004     	# Remove/replace deprecated civics (removes duplicates/redundancy)
+#	}
+#}
 
 on_game_start_country = {
 	events = {
@@ -50,6 +52,8 @@ on_monthly_pulse_country = {
 		lrsk_gov_var_chartered.1000					# Chartered company housekeeping
 		lrsk_government_variety_pack_backend.2003	# Detect and address invalidated civics
 		#lrsk_gov_var_impecon.3 # Recalc legit bonus in case a vassal is lost
+		lrsk_government_variety_pack_backend.1003	# feed exp to Royal Absolutism heir with Royal Confessor councilor
+		lrsk_gov_var_direct_revelation.1002 		# Checks for ability to apply councilor benefit on monthly pulse
 	}
 }
 
@@ -76,27 +80,27 @@ on_pop_grown = {
 on_leader_spawned = {
 	events = {
 		lrsk_gov_var_shroud_touched.5 				# Leaders get esper trait as appropriate
-		lrsk_gvp_mc_bldg_special.10					# Handle special military leader bonus from Military Excellence Academy
+		#lrsk_gvp_mc_bldg_special.10					# Handle special military leader bonus from Military Excellence Academy
 	}
 }
 
 # A leader leveled up.
 # Scope = Country
 # From = Leader
-on_leader_level_up = {
-	events = {
-		lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
-	}
-}
+#on_leader_level_up = {
+#	events = {
+#		#lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
+#	}
+#}
 
 # Executed when the ruler is ousted and goes back to their pre-ruler class
 # From = Previous Ruler, already has the new class
 # This = Country
-on_ruler_back_to_pre_ruler_class = {
-	events = {
-		lrsk_gov_var_shroud_touched.6 				# Addes esper leader traits to demoted ruler without them
-	}
-}
+#on_ruler_back_to_pre_ruler_class = {
+#	events = {
+#		lrsk_gov_var_shroud_touched.6 				# Addes esper leader traits to demoted ruler without them
+#	}
+#}
 
 #on_tech_increased = {
 #	events = {

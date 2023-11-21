@@ -278,291 +278,255 @@
 
 # # Horde
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_doom_horde"
-# 				has_government = "lrsk_gov_var_gov_doom_horde_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_hrd_pur_desc> <lrsk_hrd_purifiers> [This.GetSpeciesName]"
-# 	format = format.lrsk_hrd_purifier.1
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_hrd_pur.3
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_doom_horde"
+				has_government = "lrsk_gov_var_gov_doom_horde_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<lrsk_hrd_pur_desc> {<lrsk_hrd_purifiers>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_hrd_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_doom_horde"
-# 				has_government = "lrsk_gov_var_gov_doom_horde_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.Capital.GetName] <lrsk_hrd_pur_desc> <lrsk_hrd_purifiers>"
-# 	format = format.lrsk_hrd_purifier.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_hrd_pur.2
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_doom_horde"
+				has_government = "lrsk_gov_var_gov_doom_horde_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_hrd_pur_desc> <lrsk_hrd_purifiers>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_hrd_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_doom_horde"
-# 				has_government = "lrsk_gov_var_gov_doom_horde_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_hrd_pur_desc> <lrsk_hrd_purifiers> [This.Capital.System.GetName]"
-# 	format = format.lrsk_hrd_purifier.3
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_hrd_pur.1
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_doom_horde"
+				has_government = "lrsk_gov_var_gov_doom_horde_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_hrd_pur_desc> {AofB {<lrsk_hrd_purifiers> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_hrd_purifiers> [This.Capital.System.GetName]}}"
+}
 
 # # Cult
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_death_cult"
-# 				has_government = "lrsk_gov_var_gov_death_cult_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_spi_pur_desc> <lrsk_clt_purifiers> [This.GetSpeciesName]"
-# 	format = format.lrsk_clt_purifier.1
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_clt_pur.3
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_death_cult"
+				has_government = "lrsk_gov_var_gov_death_cult_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<lrsk_spi_pur_desc> {<lrsk_clt_purifiers>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_clt_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_death_cult"
-# 				has_government = "lrsk_gov_var_gov_death_cult_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.Capital.GetName] <lrsk_spi_pur_desc> <lrsk_clt_purifiers>"
-# 	format = format.lrsk_clt_purifier.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_clt_pur.2
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_death_cult"
+				has_government = "lrsk_gov_var_gov_death_cult_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_spi_pur_desc> <lrsk_clt_purifiers>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_clt_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_death_cult"
-# 				has_government = "lrsk_gov_var_gov_death_cult_imp"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_pur_desc> <lrsk_clt_purifiers> [This.Capital.System.GetName]"
-# 	format = format.lrsk_clt_purifier.3
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_clt_pur.1
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_death_cult"
+				has_government = "lrsk_gov_var_gov_death_cult_imp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_pur_desc> {AofB {<lrsk_clt_purifiers> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_clt_purifiers> [This.Capital.System.GetName]}}"
+}
 
 # # Citizen
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_citizen_legion"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] Citizen <lrsk_cit_purifiers> [This.GetSpeciesName]"
-# 	format = format.lrsk_cit_purifier.1
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_cit_pur.3
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_citizen_legion"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {Citizen {<lrsk_cit_purifiers>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_cit_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_citizen_legion"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.Capital.GetName] Citizen <lrsk_cit_purifiers>"
-# 	format = format.lrsk_cit_purifier.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_cit_pur.2
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_citizen_legion"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{lrskBornSuff {[This.Capital.GetName] Citizen <lrsk_cit_purifiers>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_cit_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_citizen_legion"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_cit_purifiers> [This.Capital.System.GetName]"
-# 	format = format.lrsk_cit_purifier.3
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_cit_pur.1
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_citizen_legion"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{Citizen {AofB {<lrsk_cit_purifiers> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_cit_purifiers> [This.Capital.System.GetName]}}"
+}
 
 
 # # NazBol
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_pure_social_republic"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_dem_purifiers> [This.GetSpeciesName]"
-# 	format = format.lrsk_psr_purifier.1
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_dem_pur.3
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {People's {<lrsk_dem_purifiers>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_dem_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_pure_social_republic"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.Capital.GetName] <lrsk_dem_purifiers>"
-# 	format = format.lrsk_psr_purifier.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_pur.2
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{lrskBornSuff {[This.Capital.GetName] People's <lrsk_dem_purifiers>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{lrskBornSuff {[This.Capital.GetName] <lrsk_dem_purifiers>}}"
+}
 
-# # Fanatical Purifiers
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_pure_social_republic"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_dem_purifiers> [This.Capital.System.GetName]"
-# 	format = format.lrsk_psr_purifier.3
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_pur.1
-# 	# Human Empire
-# }
+# Fanatical Purifiers
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_pure_social_republic"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{People's {AofB {<lrsk_dem_purifiers> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_dem_purifiers> [This.Capital.System.GetName]}}"
+}

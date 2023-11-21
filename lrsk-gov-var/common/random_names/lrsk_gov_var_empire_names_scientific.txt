@@ -3,138 +3,122 @@
 # ################
 
 
-# # Academy States
+# Academy States
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_academy_state"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_schl_desc> <lrsk_oligarchic_mat> [This.Capital.System.GetName]"
-# 	format = format.lrsk_acst.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_oli_mat.1
-# 	# Sol Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_academy_state"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_schl_desc>{AofB{<lrsk_oligarchic_mat> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{<lrsk_oligarchic_mat> [This.Capital.System.GetName]}}"
+	# Academic Union of Sol
+}
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_academy_state"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_schl_desc> <lrsk_oligarchic_mat> [This.Capital.GetName]"
-# 	format = format.lrsk_acst.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_oli_mat.2
-# 	# Earth Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_academy_state"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_schl_desc>{AofB{<lrsk_oligarchic_mat> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{<lrsk_oligarchic_mat> [This.Capital.GetName]}}"
+	# Academic Directorate of Earth
+}
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_academy_state"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_oli_schl_desc> [This.GetSpeciesAdj] <lrsk_schl_types> [This.GetSpeciesName]"
-# 	format = format.lrsk_acst.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_schol.1
-# 	# Human Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_academy_state"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_oli_schl_desc> {[This.GetSpeciesAdj] {<lrsk_schl_types>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_schl_types>}}"
+}
 
 # # Scholastic Commonwealths
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_schl_desc> <lrsk_democratic_mat> [This.Capital.System.GetName]"
-# 	format = format.lrsk_scco.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_mat.1
-# 	# Sol Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_schl_desc> {AofB {<lrsk_democratic_mat> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_democratic_mat> [This.Capital.System.GetName]}}"
+}
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_schl_desc> <lrsk_democratic_mat> [This.Capital.GetName]"
-# 	format = format.lrsk_scco.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_mat.2
-# 	# Earth Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_schl_desc> {AofB {<lrsk_democratic_mat> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_democratic_mat> [This.Capital.GetName]}}"
+}
 
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 20
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_dem_schl_desc> [This.GetSpeciesAdj] <lrsk_schl_types> [This.GetSpeciesName]"
-# 	format = format.lrsk_scco.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_schol.1
-# 	# Human Empire
-# }
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_scholastic_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_dem_schl_desc> {[This.GetSpeciesAdj] {<lrsk_schl_types>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_schl_types>}}"
+}

@@ -15,21 +15,10 @@ lrsk_gov_var_gov_whig_republic = {
 				has_ethic = ethic_egalitarian
 			}
 		}
-		has_authority = auth_oligarchic
+		has_auth_oligarchic = yes
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
-
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -53,21 +42,10 @@ lrsk_gov_var_gov_whig_commonwealth = {
 				}
 			}
 		}
-		has_authority = auth_democratic
+		has_auth_democratic = yes
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
-	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1000
@@ -81,25 +59,10 @@ lrsk_gov_var_gov_noble_republic = {
 
 	possible = {
 		has_valid_civic = civic_aristocratic_elite
-		has_authority = auth_oligarchic
+		has_auth_oligarchic = yes
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 1000
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			or = {
-				leader_class = governor
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-	}
-	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 800
@@ -110,6 +73,212 @@ lrsk_gov_var_gov_noble_republic = {
 		modifier = {
 			add = 201
 			has_valid_civic = civic_cutthroat_politics
+		}
+	}
+}
+
+# Pious Republic
+lrsk_gvp_gov_pious_republic = {
+	ruler_title = LRSK_GVP_RT_REV_GOV
+	ruler_title_female = LRSK_GVP_RT_REV_GOV_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	weight = {
+		base = 6
+	}
+}
+
+# Pious Commonwealth
+lrsk_gvp_gov_pious_commonwealth = {
+	ruler_title = LRSK_GVP_RT_REV_PRES
+	ruler_title_female = LRSK_GVP_RT_REV_PRES_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	weight = {
+		base = 6
+	}
+}
+
+# Bellicose Republic
+lrsk_gvp_gov_bellicose_republic = {
+	ruler_title = LRSK_GVP_RT_GOV_COMMANDER
+	ruler_title_female = LRSK_GVP_RT_GOV_COMMANDER_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.10
+			OR = {
+				has_valid_civic = civic_distinguished_admiralty
+				has_valid_civic = civic_nationalistic_zeal
+			}
+		}
+	}
+}
+
+# Bellicose Commonwealth
+lrsk_gvp_gov_bellicose_commonwealth = {
+	ruler_title = LRSK_GVP_RT_COMMANDER_CHIEF
+	ruler_title_female = LRSK_GVP_RT_COMMANDER_CHIEF_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.10
+			OR = {
+				has_valid_civic = civic_distinguished_admiralty
+				has_valid_civic = civic_nationalistic_zeal
+			}
+		}
+	}
+}
+
+# Tranquil Republic
+lrsk_gvp_gov_tranquil_republic = {
+	ruler_title = LRSK_GVP_RT_GRAND_ARBITOR
+	ruler_title_female = LRSK_GVP_RT_GRAND_ARBITOR_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+# Tranquil Commonwealth
+lrsk_gvp_gov_tranquil_commonwealth = {
+	ruler_title = LRSK_GVP_RT_CHIEF_MEDIATOR
+	ruler_title_female = LRSK_GVP_RT_CHIEF_MEDIATOR_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+# Enlightened Republic
+lrsk_gvp_gov_enlightened_republic = {
+	ruler_title = LRSK_GVP_RT_GOV_RECTOR
+	ruler_title_female = LRSK_GVP_RT_GOV_RECTOR_FEMALE
+
+	possible = {
+		has_authority = auth_oligarchic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_mechanists
+		}
+	}
+}
+
+# Enlightened Commonwealth
+lrsk_gvp_gov_enlightened_commonwealth = {
+	ruler_title = LRSK_GVP_RT_PRES_RECTOR
+	ruler_title_female = LRSK_GVP_RT_PRES_RECTOR_FEMALE
+
+	possible = {
+		has_authority = auth_democratic
+		has_valid_civic = lrsk_gov_var_civic_republicanism
+		OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+
+	weight = {
+		base = 6
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_mechanists
 		}
 	}
 }

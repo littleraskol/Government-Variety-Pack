@@ -3,7 +3,7 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-A total of 69 new civics, broken down into 4 origins, 22 normal civics, 19 hive civics, 14 machine civics, 13 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
+A total of 76 new civics, broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 14 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 3 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
 
 2. New Governments
 
@@ -17,7 +17,7 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
-The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
+This mod only adds new things to the game, in new files. There's no possibility of this mod conflicting with another due to both editing base game files. All file names and tokens, furthermore, are specific to this mod (using a special prefix) so any token or file conflict would more or less have to be intentional (e.g. a patch or submod). That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), not all mod features can be guaranteed to be coherent.
 
 5. Changes
 
@@ -34,6 +34,155 @@ v?.?.? (??/??/??) - Improved Legacy Civics 1
 --Implement Auserity planetary decision (+trade value, +upkeep reduction, -amenities, -housing)
 -Public Works changes
 --?????
+
+v5.8.1 (??/??/??) - Post Pyxis Tweaks
+-Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Politician job per 40 pops (down from 1 per 25).
+-New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
+
+v5.8 (11/17/23) - Pyxis (3.10) Update
+-Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)
+--Rework of Esper trait to match new multi-leader trait format (based on Psychic trait).
+--Changed exp_gain modifiers to match new leader types (typically also added leader levels where appropriate).
+--Changed leader_age to new leader_lifespan_add modifier.
+--Generally substituted "official" for "governor" and "commander" for "admiral" and/or "general" as needed.
+-Added missing localisation for "mod_councilor_ruler_imperial_exp_gain"
+-Added new civic "War Profiteers" which is what now allows for the Military Excellence Academy branch office building (the Naval Contractors and Private Military Companies civics no longer provide this).
+-Warrior Caste gets +1 Commander cap.
+-Royal Caste gets +1 Official cap.
+-Updated compat version number.
+
+v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
+-MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
+--Chivalry now gives +10% exp for admirals and generals.
+--Lifelong Learning now gives +10% exp gain for scientists and governors.
+--Warrior Caste now gives +10% exp for admirals and generals.
+--Royal Caste now gives +20% exp gain for governors.
+--Combat Data now gives +10% exp for admirals and generals.
+--The "Deep Code: Profiling" trait from Uplift now gives -10% leader upkeep instead of +2 leader levels.
+
+v5.7.1 (09/30/23) - Branch Office Building Concepts (& more!)
+-Adding concepts for branch office buildings granted by corp civics.
+-Altered casino luck random events so that when one happens, it's positive 80% of the time and negative 20% of the time (changed from 50%/50%).
+-Tweaked some fixed opinion modifiers.
+
+v5.7 (09/12/23) - Caelum (3.9) Update
+-Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
+-Updated compat version number.
+-"Employee-Owned Co-op" civic renamed and reflavored due to introduction of the "Worker Cooperative" civic in base game.
+--Renamed to "Labor Peace," flavor is more about labor/management compromise.
+--"Organizing Hub" branch office building changed to "Labor-Management Retreat"
+--"Employee Wellness Coordinator" councilor's flavor text modified somewhat to match new civic flavor.
+--"Cooperative Enterprise" government now only available without Megacorp DLC.
+--Shuffled around opinion modifiers to match.
+-Supremacist Demagoguery now gives +1 max rivalries, +15% damage to rivals, +5% diplo weight from rivals, and +25% power projection.
+-Because admin cap is back (in pog form), Planetmind Overseers now give +2 naval cap and reduce empire size by 2.
+-Changed name of Universal Sovereignty councilor to "Client Obligations Guarantor"
+-Backend: Replaced calls to base game "federation_origin_planet_setup" scripted effect with mod-added "lrsk_federation_origin_planet_setup" scripted effect that works the same way as the pre-3.9 scripted effect. (Base game version now works very differently, will take more effort to understand/adapt its new effects; the old way will work for now.)
+-Various other backend things.
+
+5.6.3 (05/23/23) - Republicanism Redux
+-OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
+
+5.6.2 (05/15/23) - Touching Up RRA
+-Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the base odds add up to 100...).
+-Results of RRA now heavily factor in planet designations, and resource-related designations make bad outcomes much less likely.
+-Player-facing descriptions make results and requirements more clear.
+-The decision is overall more powerful in its ultimate results and less prone to bad outcomes, but costs more.
+-Changed name and flavor of signature job.
+
+5.6.1 (05/13/23) Post-Update Hotfixes
+-Public Info Officer modifiers were all screwed up, now fixed.
+-Vertical Integration's councilor shouldn't give the same benefit as the civic.
+-Several other councilors had modifiers with the wrong sign, and so ended up being detrimental.
+-Added "concepts" (sub-tooltips) to make tooltips less busy.
+-Improved some old civic descriptions, and even some new councilor descriptions.
+
+v5.6 (05/11/23) - Gemini (3.8) Update
+-Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
+-Updated compat version number.
+-Added councilors for all non-gestalt civics.
+-Civics have AI weighting by personality for in-game picks.
+-Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
+-"Crusader" governments can be enabled by Crusader Spirit civic.
+--Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
+--Crusader Order: Either Chivalry or Crusader Spirit qualifies.
+--Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
+--Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
+-RMF requires Precision Cogs.
+-Military Excellence Academy now boosts general and admiral exp gain rather than directly assigning traits.
+-Enlightened Liberalism now boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
+-Artificers now gets reduction of robot upkeep instead of increased robot production (benefit moved to councilor).
+-Shapers now gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
+-Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
+-Utilitarian Planning now gives +5% food production, +10% council agenda speed, -10% edict cost.
+-Cult of Personality now gives -10% starbase influence cost instead of +5% influence production (benefit moved to councilor).
+-Automated Indolence has been removed until I can figure out how to do something actually interesting with it.
+
+v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
+-Can change the planet class to the ideal for species (in Uplift).
+--This will enable better compatibility with mods adding new planet classes.
+
+v5.5.1 (4/18/23) - Little weird "bug" "fix"
+-There seems to be a base game bug in the random name parser that will cause it to read commented out text in localisation files. I have removed the comment that causes this specific issue, although the underlying problem may remain...
+
+v5.5 (4/10/23) - Return of Better Names (and other updates)
+-The "Better Names" feature returns thanks to the heroic efforts of Renan.
+--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
+-Other, unrelated changes:
+--Royal Absolutism is incompatible with Feudal Society (because history).
+--Automated World-Commune can be Oligarchic or Democratic.
+--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
+--Citizen Crusade requires either Exalted Priesthood or Elected Clergy (meaning it can be Democratic).
+--Republican Directory requires either Enlightened Liberalism or Republicanism.
+--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
+--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
+--Some backend tweaks only I care about.
+-In an effort to make "subject-focused" civics more useful if you happen to not have subjects, the following civics get +15% diplomatic weight from the indicated source:
+--Universal Sovereignty: Military
+--Imperial Economy: Economy
+--Exploitation Algorithms: Technology
+--Benign Overmind: Pops
+--Domineering Expectations: Empire Size
+
+v5.4.2 (4/3/23) - Small fixes
+-Safe system check needs to make sure owner exists before asking about it.
+-Removed some redundant localization.
+
+v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
+-Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
+--Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).
+--Deprecated duplicate variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democratic authority or Egalitarian ethics, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
+--The deprecated civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
+-Added scripted triggers to check for each authority type, which enables other mods or patches to overload them with mod-added authorities.
+-Government application logic now uses these scripted triggers rather than checking directly for authorities.
+-Added scripted trigger (lrsk_gvp_is_active) to detect whether this mod is active/loaded (for other modders to check, basically...)
+
+v5.4 (03/14/23) - Canis Minor (3.7) Update
+-Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
+-Updated compat version number.
+-Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
+-Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
+-Improved tooltips for Combat Data special events.
+
+v5.3.9 (03/12/23) - Update prep
+-Changes made to re-merge with master branch and prepare for 3.7
+-Descriptions and documentation corrected (forgot to restore docs when features restored)
+-Corp branch buildings have categories
+-Removed spiritualist fed name fix (Paradox fixed)
+
+v5.3.8 (02/28/23) - More bad (less boring) names
+-Moved over more of the default name formats for added governments.
+-Should be able to deal with "special" governments (e.g. purifiers) appropriately.
+-Restoring "better names" from this mod is still a far off dream...
+
+v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
+-Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
+--Slight localization tweak.
+-Colonial Fief fixes:
+--Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
+--Also they should have names...
+-Some small backend changes.
+-Fixed localization of Functionary job to show correct job effects.
 
 v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
 -Removed redundant boxed-in escape route checks

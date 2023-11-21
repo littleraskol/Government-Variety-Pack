@@ -4,120 +4,105 @@
 
 # ### Imperial Spiritualist
 
-# # Imperial Spiritualist 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.Capital.System.GetName]"
-# 	format = format.lrsk_imp_spi.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.1
-# 	# Empire of Sol
-# }
+# Imperial Spiritualist 1
+empire_name_format = {
+	random_weight = {
+    	factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_imperial_spi> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_imperial_spi>}}"
+}
 
-# # Imperial Spiritualist 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.Capital.GetName]"
-# 	format = format.lrsk_imp_spi.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.2
-# 	# Empire of Earth
-# }
+# Imperial Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			is_pirate = no
+			is_primitive = no
+    		NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_imperial_spi> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_imperial_spi>}}"
+}
 
-# # Imperial Spiritualist 3
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Human Empire
-# }
+# Imperial Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskKindSuff {<lrsk_imperial_spi> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_imperial_spi> [This.GetSpeciesName]}}"
+}
 
-# # Imperial Spiritualist 4
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> [This.GetSpeciesAdj] <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.4
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Great Human Empire
-# }
+# Imperial Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_imperial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_imperial_spi>}}"
+}
 
-# # Imperial Spiritualist 5
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_spi_desc> <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.5
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Human Star Empire
-# }
+# Imperial Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_spi_desc>{<lrsk_imperial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_imperial_spi>}}"
+}
 
 
 # ### Dictatorial Spiritualist
@@ -235,243 +220,223 @@
 
 # ### Oligarchic Spiritualist
 
-# # Oligarchic Spiritualist 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_oligarchic_spi> [This.Capital.System.GetName]"
-# 	format = format.lrsk_oli_spi.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_oli_spi.1
-# 	# Empire of Sol
-# }
+# Oligarchic Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+    			has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_oligarchic_spi> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_oligarchic_spi>}}"
+}
 
-# # Oligarchic Spiritualist 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_oligarchic_spi> [This.Capital.GetName]"
-# 	format = format.lrsk_oli_spi.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_oli_spi.2
-# 	# Empire of Earth
-# }
+# Oligarchic Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_oligarchic_spi> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_oligarchic_spi>}}"
+}
 
-# # Oligarchic Spiritualist 3
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_oligarchic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_oli_spi.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_oli_spi.3
-# 	# Human Empire
-# }
+# Oligarchic Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskKindSuff {<lrsk_oligarchic_spi> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_oligarchic_spi> [This.GetSpeciesName]}}"
+}
 
-# # Oligarchic Spiritualist 4
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> [This.GetSpeciesAdj] <lrsk_oligarchic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_oli_spi.4
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_oli_spi.3
-# 	# Great Human Empire
-# }
+# Oligarchic Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_oligarchic_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_oligarchic_spi>}}"
+}
 
-# # Oligarchic Spiritualist 5
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_spi_desc> <lrsk_oligarchic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_oli_spi.5
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_oli_spi.3
-# 	# Human Star Empire
-# }
+# Oligarchic Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_spi_desc>{<lrsk_oligarchic_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_oligarchic_spi>}}"
+	#Human Star Empire
+}
 
 
 # ### Democratic Spiritualist
 
-# # Democratic Spiritualist 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_saintly_assembly"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_democratic_spi> [This.Capital.System.GetName]"
-# 	format = format.lrsk_dem_spi.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_spi.1
-# 	# Empire of Sol
-# }
+# Democratic Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gvp_gov_pious_republic"
+				has_government = "lrsk_gvp_gov_pious_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_democratic_spi> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_democratic_spi>}}"
+}
 
-# # Democratic Spiritualist 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_saintly_assembly"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_democratic_spi> [This.Capital.GetName]"
-# 	format = format.lrsk_dem_spi.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_dem_spi.2
-# 	# Empire of Earth
-# }
+# Democratic Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gvp_gov_pious_republic"
+				has_government = "lrsk_gvp_gov_pious_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_democratic_spi> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_democratic_spi>}}"
+	#Empire of Earth
+}
 
-# # Democratic Spiritualist 3
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_saintly_assembly"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_democratic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_dem_spi.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_dem_spi.3
-# 	# Human Empire
-# }
+# Democratic Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gvp_gov_pious_republic"
+				has_government = "lrsk_gvp_gov_pious_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskKindSuff {<lrsk_democratic_spi> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_democratic_spi> [This.GetSpeciesName]}}"
+}
 
-# # Democratic Spiritualist 4
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_saintly_assembly"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> [This.GetSpeciesAdj] <lrsk_democratic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_dem_spi.4
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_dem_spi.3
-# 	# Great Human Empire
-# }
+# Democratic Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				has_government = "lrsk_gvp_gov_pious_republic"
+				has_government = "lrsk_gvp_gov_pious_commonwealth"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_democratic_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_democratic_spi>}}"
+}
 
-# # Democratic Spiritualist 5
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 25
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_saintly_assembly"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_spi_desc> <lrsk_democratic_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_dem_spi.5
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_dem_spi.3
-# 	# Human Star Empire
-# }
+# Democratic Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_saintly_assembly"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_spi_desc>{<lrsk_democratic_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_democratic_spi>}}"
+}
 
 
 # ### Imperial Imperial Cult
@@ -602,244 +567,215 @@
 
 # ## Crusader Orders
 
-# # Crusader Order 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 50
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_order"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_crusord_desc> <lrsk_crusord_type> [This.Capital.System.GetName]"
-# 	format = format.lrsk_crusord_gen.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_crusord.1
-# 	# Empire of Sol
-# }
+# Crusader Order 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_order"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.Capital.System.GetName] {<lrsk_crusord_type>}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{[This.Capital.System.GetName] {<lrsk_crusord_type>}}"
+}
 
-# # Crusader Order 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 50
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_order"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_crusord_desc> <lrsk_crusord_type> [This.Capital.GetName]"
-# 	format = format.lrsk_crusord_gen.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_crusord.2
-# 	# Empire of Earth
-# }
+# Crusader Order 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_order"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.Capital.GetName] {<lrsk_crusord_type>}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{[This.Capital.GetName] {<lrsk_crusord_type>}}"
+}
 
 # ### Special Weighting for FanSpi Crusader Kingdom
 
-# # Imperial Spiritualist 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 75
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			has_ethic = ethic_fanatic_spiritualist
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.Capital.System.GetName]"
-# 	format = format.lrsk_imp_spi.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.1
-# 	# Empire of Sol
-# }
+# Imperial Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_imperial_spi> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_imperial_spi>}}"
+}
 
-# # Imperial Spiritualist 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 75
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			has_ethic = ethic_fanatic_spiritualist
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.Capital.GetName]"
-# 	format = format.lrsk_imp_spi.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.2
-# 	# Empire of Earth
-# }
+# Imperial Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_imperial_spi> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_imperial_spi>}}"
+}
 
-# # Imperial Spiritualist 3
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 75
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			has_ethic = ethic_fanatic_spiritualist
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Human Empire
-# }
+# Imperial Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskKindSuff {<lrsk_imperial_spi> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_imperial_spi> [This.GetSpeciesName]}}"
+}
 
-# # Imperial Spiritualist 4
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 75
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			has_ethic = ethic_fanatic_spiritualist
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_spi_desc> [This.GetSpeciesAdj] <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.4
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Great Human Empire
-# }
+# Imperial Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_imperial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_imperial_spi>}}"
+	#Great Human Empire
+}
 
-# # Imperial Spiritualist 5
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 75
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
-# 			}
-# 			has_ethic = ethic_fanatic_spiritualist
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "[This.GetSpeciesAdj] <lrsk_spi_desc> <lrsk_imperial_spi> [This.GetSpeciesName]"
-# 	format = format.lrsk_imp_spi.5
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_imp_spi.3
-# 	# Human Star Empire
-# }
+# Imperial Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 75
+			OR = {
+				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_spi_desc>{<lrsk_imperial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_imperial_spi>}}"
+}
 
 # ## Cosmic Choirs
 
-# # Cosmic Choir 1
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 30
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_cosmic_choir_desc> <lrsk_cosmic_choir> [This.Capital.System.GetName]"
-# 	format = format.lrsk_coschoir.1
-# 	noun = "{[This.Capital.System.GetName]}"
-# 	prefix_format = format_prefix.lrsk_cos_cho.1
-# 	# Empire of Sol
-# }
+# Cosmic Choir 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_cosmic_choir_desc> {AofB {<lrsk_cosmic_choir> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_cosmic_choir> [This.Capital.System.GetName]}}"
+}
 
-# # Cosmic Choir 2
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 30
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_cosmic_choir_desc> <lrsk_cosmic_choir> [This.Capital.GetName]"
-# 	format = format.lrsk_coschoir.2
-# 	noun = "{[This.Capital.GetName]}"
-# 	prefix_format = format_prefix.lrsk_cos_cho.2
-# 	# Empire of Earth
-# }
+# Cosmic Choir 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_cosmic_choir_desc> {AofB {<lrsk_cosmic_choir> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_cosmic_choir> [This.Capital.GetName]}}"
+}
 
-# # Cosmic Choir 3
-# empire_name_format = {
-# 	random_weight = {
-# 		factor = 0
-# 		modifier = {
-# 			add = 30
-# 			OR = {
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir"
-# 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
-# 			}
-# 			is_pirate = no
-# 			is_primitive = no
-# 			NOT = { is_country_type = fallen_empire }
-# 			NOT = { is_country_type = awakened_fallen_empire }
-# 		}
-# 	}
-	
-# 	#lookups = "<lrsk_cosmic_choir_desc> [This.GetSpeciesAdj] <lrsk_cosmic_choir> [This.GetSpeciesName]"
-# 	format = format.lrsk_coschoir.3
-# 	adjective = "{[This.GetSpeciesAdj]}"
-# 	prefix_format = format_prefix.lrsk_cos_cho.3
-# 	# Human Empire
-# }
+# Cosmic Choir 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 30
+			OR = {
+				has_government = "lrsk_gov_var_gov_cosmic_choir"
+				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_cosmic_choir_desc> {[This.GetSpeciesAdj] {<lrsk_cosmic_choir>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<lrsk_cosmic_choir>}}"
+}

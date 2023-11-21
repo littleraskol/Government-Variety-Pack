@@ -20,77 +20,177 @@ l_french:
 
  lrsk_gov_var_civic_elected_clergy:0 "Elected Clergy"
  lrsk_gov_var_civic_elected_clergy_desc:0 "In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation."
- civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects:0 "Gives planets §Y1§! £job_lrsk_gov_var_job_pastor£ §Y$job_lrsk_gov_var_job_pastor$ Job§! per §Y20§! £pop£ Pops. $job_lrsk_gov_var_job_pastor_effect_desc$\n\n"
+ civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects:0 "Gives planets £job_lrsk_gov_var_job_pastor£ ['concept_lrsk_gvp_pastor'] Jobs at the following rate:\n"
+
+ lrsk_gvp_elected_clergy_councilor:0 "First Elder of the Faithful"
+ lrsk_gvp_elected_clergy_councilor_female:0 "$lrsk_gvp_elected_clergy_councilor$"
+ lrsk_gvp_elected_clergy_councilor_desc:0 "The $TITLE$ is the 'chief minister of ministers,' elected by the various planetary chief ministers from among their number to advise the civil government on matters of faith."
+ lrsk_gvp_elected_clergy_councilor_custom_modifier_desc:0 "['concept_lrsk_gvp_religious_job'] upkeep reduced by §G1%§!.\n\n£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ produce §G+5%§! more £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
 
  lrsk_gov_var_civic_ascetic_virtues:0 "Ascetic Virtues"
  lrsk_gov_var_civic_ascetic_virtues_desc:0 "This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind."
 
+ lrsk_gvp_aesetic_virtues_councilor:0 "Wellness and Wholeness Master"
+ lrsk_gvp_aesetic_virtues_councilor_female:0 "$lrsk_gvp_aesetic_virtues_councilor$"
+ lrsk_gvp_aesetic_virtues_councilor_desc:0 "The $TITLE$ reviews public dietary, exercise, recreation, and contemplation practices and harmonizes them into a coherent policy of whole citizen wellness. "
+ lrsk_gvp_aesetic_virtues_councilor_conditional_tooltip:0 "Requires completing the §HHarmony§! Tradition tree."
+
  lrsk_gov_var_civic_republicanism:0 "Republicanism"
  lrsk_gov_var_civic_republicanism_desc:0 "This society believes that the greatest virtue is attained by people of good character serving the common good."
- lrsk_gov_var_civic_republicanism_oli:0 "$lrsk_gov_var_civic_republicanism$" 
- lrsk_gov_var_civic_republicanism_oli_desc:0 "$lrsk_gov_var_civic_republicanism_desc$"
+ lrsk_gov_var_civic_republicanism_oli:0 "$lrsk_gov_var_civic_republicanism$ (Legacy Civic)" 
+ lrsk_gov_var_civic_republicanism_oli_desc:0 "$lrsk_gov_var_civic_republicanism_desc$\n\n§PThis version for Egalitarian Oligarchies is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
+
+ lrsk_gvp_republicanism_councilor:0 "Monitor of Civic Virtue"
+ lrsk_gvp_republicanism_councilor_female:0 "$lrsk_gvp_republicanism_councilor$"
+ lrsk_gvp_republicanism_councilor_desc:0 "The $TITLE$ meets a perceived need to ensure that those entrusted with public service truly have the character and public-mindedness to advance the common good."
 
  lrsk_gov_var_civic_utilitarian_planning:0 "Utilitarian Planning"
  lrsk_gov_var_civic_utilitarian_planning_desc:0 "The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation."
- civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Able to use the §H$decision_lrsk_gvp_work_allocation_plan$§! planetary decision on planets with unemployment, which gives $lrsk_gvp_statmod_work_plan_effects_common$ (can be ended any time, will automatically end when no pops are unemployed for one month).\n\n"
+ civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects:0 "Able to use the ['concept_decision_lrsk_gvp_work_allocation_plan'] planetary decision on planets with unemployment.\n\n"
+
+ lrsk_gvp_utilitarian_planning_councilor:0 "Advanced Planning Chief"
+ lrsk_gvp_utilitarian_planning_councilor_female:0 "$lrsk_gvp_utilitarian_planning_councilor$"
+ lrsk_gvp_utilitarian_planning_councilor_desc:0 "The $TITLE$ oversees the execution of plans that go beyond basic sustenance and into the common good."
 
  lrsk_gov_var_civic_siege_mentality:0 "Siege Mentality"
- lrsk_gov_var_civic_siege_mentality_desc:0 "The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
+ lrsk_gov_var_civic_siege_mentality_desc:0 "The government's military policy focuses on defense, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare."
+
+ lrsk_gvp_siege_mentality_councilor:0 "Supreme Home-Fleet Commander"
+ lrsk_gvp_siege_mentality_councilor_female:0 "$lrsk_gvp_siege_mentality_councilor$"
+ lrsk_gvp_siege_mentality_councilor_desc:0 "The $TITLE$ is a position created out of the recognition that a more 'active defensive' stance may be needed to truly defend the nation."
+ #lrsk_gvp_siege_mentality_councilor_desc:0 "The $TITLE$ is a position created out of the recognition that a more 'active defensive' stance may be needed to truly defend the [owner.GetName]."
 
  lrsk_gov_var_civic_cult_of_personality:0 "Cult of Personality"
  lrsk_gov_var_civic_cult_of_personality_desc:0 "The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence."
+
+ lrsk_gvp_cult_of_personality_councilor:0 "Public Information Officer"
+ lrsk_gvp_cult_of_personality_councilor_female:0 "$lrsk_gvp_cult_of_personality_councilor$"
+ lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits and grand designs of the Leader."
+ #lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits of the [GetRulerTitle] and [ruler.GetHerHis] grand designs."
+ lrsk_gvp_cult_of_personality_councilor_conditional_tooltip:0 "Requires completing the §HSupremacy§! Tradition tree."
 
  lrsk_gov_var_civic_universal_sovereignty:0 "Universal Sovereignty"
  lrsk_gov_var_civic_universal_sovereignty_desc:0 "The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects."
  civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects:0 "Gets an §Gopinion boost§! with §Yweaker independent empires§! (i.e., potential vassals)."
 
+ lrsk_gvp_universal_sovereignty_councilor:0 "Client Obligations Guarantor"
+ lrsk_gvp_universal_sovereignty_councilor_female:0 "$lrsk_gvp_universal_sovereignty_councilor$"
+ lrsk_gvp_universal_sovereignty_councilor_desc:0 "The $TITLE$ ensures that those weaker states who have chosen safety under our aegis contribute to its benevolent protection."
+ #lrsk_gvp_universal_sovereignty_councilor_desc:0 "The $TITLE$ ensures that those weaker states who have chosen safety under the [owner.GetName]'s aegis contribute to its benevolent protection."
+ #lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip:0 "$LRSK_MUST_BE_OVERLORD$"
+
  lrsk_gov_var_civic_workers_councils:0 "Workers' Councils"
  lrsk_gov_var_civic_workers_councils_desc:0 "Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government."
- civic_tooltip_lrsk_gov_var_civic_workers_councils_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y50%§! and §Y12.5%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
+ #civic_tooltip_lrsk_gov_var_civic_workers_councils_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y50%§! and §Y12.5%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
+ 
+ lrsk_gvp_workers_councils_councilor:0 "Solidarity Working Group Chairperson"
+ lrsk_gvp_workers_councils_councilor_female:0 "$lrsk_gvp_workers_councils_councilor$"
+ lrsk_gvp_workers_councils_councilor_desc:0 "The $TITLE$ leads a special inter-union committee on workers' needs. Most unions and other worker organizations have their own internal mutual aid practices, and sharing best practices while scaling them up allows the government to better support the overall working class in times of great need."
 
  lrsk_gov_var_civic_supremacist_demagoguery:0 "Supremacist Demagoguery"
  lrsk_gov_var_civic_supremacist_demagoguery_desc:0 "The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears."
 
+ lrsk_gvp_supremacist_demagoguery_councilor:0 "Folksculture Curator"
+ lrsk_gvp_supremacist_demagoguery_councilor_female:0 "$lrsk_gvp_supremacist_demagoguery_councilor$"
+ lrsk_gvp_supremacist_demagoguery_councilor_desc:0 "The $TITLE$ organizes institutions, events, and programs in increase appreciation of the culture of the nation and its people in order to encourage national unity."
+ #lrsk_gvp_supremacist_demagoguery_councilor_desc:0 "The $TITLE$ organizes institutions, events, and programs related to appreciation of the [owner.GetName]'s culture in order to encourage national unity."
+
  lrsk_gov_var_civic_enlightened_liberalism:0 "Enlightened Liberalism"
  lrsk_gov_var_civic_enlightened_liberalism_desc:0 "This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry."
+ #civic_tooltip_lrsk_gov_var_civic_enlightened_liberalism_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y25%§! and §Y50%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
+
+ lrsk_gvp_enlightened_liberalism_councilor:0 "Constitutional Scholar-in-Residence"
+ lrsk_gvp_enlightened_liberalism_councilor_female:0 "$lrsk_gvp_enlightened_liberalism_councilor$"
+ lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the nation's Constitution, and advising on how to apply its requirements to an expanding and changing society."
+ #lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the [owner.GetName]'s Constitution, and advising on how to apply its requirements to an expanding and changing society."
 
  lrsk_gov_var_civic_business_lobby:0 "Budgetary Thrift"
  lrsk_gov_var_civic_business_lobby_desc:0 "This society prizes cutting waste and operational efficiency above all things."
 
+ lrsk_gvp_business_lobby_councilor:0 "Public Deficits Rector"
+ lrsk_gvp_business_lobby_councilor_female:0 "$lrsk_gvp_business_lobby_councilor$"
+ lrsk_gvp_business_lobby_councilor_desc:0 "The $TITLE$ performs audits of public budgets at all levels of government to ensure that every nanogram of fiscal fat is trimmed."
+
  lrsk_gov_var_civic_chivalry:0 "Chivalry"
  lrsk_gov_var_civic_chivalry_desc:0 "Ideals of martial valor and honorable conduct define ruling class culture."
- lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$"
- lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$"
- civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ §Y$job_lrsk_gov_var_job_knight_plural$§!.\n\n$job_lrsk_gov_var_job_knight_effect_desc$\n\n"
+ lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$ (Legacy Civic)"
+ lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$\n\n§PThis version for Aristocratic Elite is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
+ civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights'].\n\n"
+
+ lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
+ lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
+ lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the ruler's security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
+ #lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the [GetRulerTitle]'s security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
 
  lrsk_gov_var_civic_lifelong_learning:0 "Lifelong Learning"
  lrsk_gov_var_civic_lifelong_learning_desc:0 "This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives."
- civic_tooltip_lrsk_gov_var_civic_lifelong_learning_effects:0 "Can use the §H$edict_lrsk_gvp_citschol$§! edict that gives planets $edict_lrsk_gvp_citschol_effects_common$\n\n"
+ civic_tooltip_lrsk_gov_var_civic_lifelong_learning_effects:0 "Can use the ['concept_edict_lrsk_gvp_citschol'] edict.\n\n"
+
+ lrsk_gvp_lifelong_learning_councilor:0 "Secretary of Citizen Academics"
+ lrsk_gvp_lifelong_learning_councilor_female:0 "$lrsk_gvp_lifelong_learning_councilor$"
+ lrsk_gvp_lifelong_learning_councilor_desc:0 "The $TITLE$ ensures that citizens at every phase of life have the chance to learn and contribute to the generation of knowledge."
+ #lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc:0 "§Y$job_lrsk_gvp_job_citscholar_plural$§! produce §Y+1§! £physics£ £society£ £engineering£ §YResearch Points§." 
 
  lrsk_gov_var_civic_institutionalized_collectivism:0 "Institutionalized Collectivism"
  lrsk_gov_var_civic_institutionalized_collectivism_desc:0 "The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met."
 
+ lrsk_gvp_institutionalized_collectivism_councilor:0 "Central Welfare Coordinator"
+ lrsk_gvp_institutionalized_collectivism_councilor_female:0 "$lrsk_gvp_institutionalized_collectivism_councilor$"
+ lrsk_gvp_institutionalized_collectivism_councilor_desc:0 "The $TITLE$ ensures that the needs of the ever-growing workforce are met through constant streamlining of the general welfare and human services provision process."
+
  lrsk_gov_var_civic_direct_revelation:0 "Direct Revelation"
  lrsk_gov_var_civic_direct_revelation_desc:0 "The religious culture of this society values insights from personal experiences of the divine."
- civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects:0 "Gives planets §Y1§! £job_lrsk_gov_var_job_hedge_preacher£ §Y$job_lrsk_gov_var_job_hedge_preacher$ Job§! per §Y15§! £pop£ Pops. $job_lrsk_gov_var_job_hedge_preacher_effect_desc$\n\nOccasionally, §Ywild cults§! may form on planets, which will change beliefs and produce a number of (usually, mostly beneficial) effects. §YWild cults§! also add £job_lrsk_gov_var_job_hedge_preacher£ $job_lrsk_gov_var_job_hedge_preacher_plural$.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects:0 "Occasionally, ['concept_lrsk_gvp_wild_cults'] may form on planets.\nGives planets £job_lrsk_gov_var_job_hedge_preacher£ ['concept_lrsk_gvp_hedge_preacher'] Jobs at the following rate:\n"
+
+ lrsk_gvp_direct_revelation_councilor:0 "Certifier of Prophesy"
+ lrsk_gvp_direct_revelation_councilor_female:0 "$lrsk_gvp_direct_revelation_councilor$"
+ lrsk_gvp_direct_revelation_councilor_desc:0 "The $TITLE$ has the important job of encouraging peaceful interfaith relations in a society where new religious movements come and go like fashionable fads. Though all revelations are valid, not all are equally valuable..."
+ lrsk_gvp_direct_revelation_councilor_custom_modifier_desc:0 "['concept_lrsk_gvp_religious_job'] output increased by §G1%§!.\n\nThe chance of the §Y$lrsk_gov_var_statmod_doomsday_cult$§! forming decreases by §G+1%§!, while the chance of the §Y$lrsk_gov_var_statmod_golden_age_cult$§! forming increases by §G+1%§!.\n\nEvery ['concept_lrsk_gvp_wild_cult'] increases £happiness£ §YHappiness§! on its planet by §G1%§!."
+ lrsk_gvp_direct_revelation_councilor_conditional_tooltip:0 "Requires completing the §HDomination§! Tradition tree."
 
  lrsk_gov_var_civic_royal_absolutism:0 "Royal Absolutism"
  lrsk_gov_var_civic_royal_absolutism_desc:0 "The monarch is the state, whose will is law without limit."
  civic_tooltip_lrsk_gov_var_civic_royal_absolutism_effects:0 "Can use the §H$edict_lrsk_gvp_royjustice$§! edict which $edict_lrsk_gvp_royjustice_effects_common$"
 
+ lrsk_gvp_royal_absolutism_councilor:0 "Royal Confessor"
+ lrsk_gvp_royal_absolutism_councilor_female:0 "$lrsk_gvp_royal_absolutism_councilor$"
+ lrsk_gvp_royal_absolutism_councilor_desc:0 "The $TITLE$ is both a spiritual advisor and something of a tutor in the theory of sound monarchical governance."
+ lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "- The base experience gain of the §Yheir§! is increased by §G5%§! per month."
+ #lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "§YIncreased ruler experience gain§! by §G1%§! per month.\n\nThe base monthly experience gain of the §Y[GetHeirTitle]§! is increased by §G5%§!."
+ lrsk_gvp_royal_absolutism_councilor_conditional_tooltip:0 "The §Yheir to the throne§! cannot take this position."
+
  lrsk_gov_var_civic_public_works:0 "Public Works"
  lrsk_gov_var_civic_public_works_desc:0 "A system of public employment makes labor power available for many tasks."
 
+ lrsk_gvp_public_works_councilor:0 "Employment Bureau Director"
+ lrsk_gvp_public_works_councilor_female:0 "$lrsk_gvp_public_works_councilor$"
+ lrsk_gvp_public_works_councilor_desc:0 "The $TITLE$ deals with both unemployment and underemployment as part of its mission to match workers to the jobs where they can be the most productive, so as to alleviate demand for public works jobs."
+
  lrsk_gov_var_civic_imperial_economy:0 "Imperial Economy"
  lrsk_gov_var_civic_imperial_economy_desc:0 "This empire exploits its subjects ruthlessly."
- civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects:0 "Able to change some of its subjects into §Gspecialized subject types§!."
+ civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects:0 "Able to change some of its subjects into ['concept_lrsk_gvp_special_subjects']."
+
+ lrsk_gvp_imperial_economy_councilor:0 "Imperial Bursar"
+ lrsk_gvp_imperial_economy_councilor_female:0 "$lrsk_gvp_imperial_economy_councilor$"
+ lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the empire receives all that it is due."
+ #lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the [owner.GetName] receives all that it is due."
 
  lrsk_gov_var_civic_colonial_fiefs:0 "Colonial Fiefs"
  lrsk_gov_var_civic_colonial_fiefs_desc:0 "The monarch is willing to grant landholding rights to those bold enough to colonize new worlds."
- civic_tooltip_lrsk_gov_var_civic_colonial_fiefs_effects:0 "Can use the §H$policy_lrsk_gvp_colfief_policy$§! policy tree to allow pops to start new subject empires on unexplored worlds."
+ civic_tooltip_lrsk_gov_var_civic_colonial_fiefs_effects:0 "Can use the ['concept_policy_lrsk_gvp_colfief_policy'] policy tree."
+
+ lrsk_gvp_colonial_fiefs_councilor:0 "Colonial Surveyor"
+ lrsk_gvp_colonial_fiefs_councilor_female:0 "$lrsk_gvp_colonial_fiefs_councilor$"
+ lrsk_gvp_colonial_fiefs_councilor_desc:0 "The $TITLE$ ensures that colonial expansion of the realm is beneficial to the realm by discovering the most efficient ways to exploit the resources of its vassal worlds."
+ lrsk_gvp_colonial_fiefs_councilor_conditional_tooltip:0 "Requires completing the §HExpansion§! Tradition tree."
 
  lrsk_gov_var_civic_automated_indolence:0 "Automated Indolence"
  lrsk_gov_var_civic_automated_indolence_desc:0 "This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match."
+
+ lrsk_gvp_automated_indolence_councilor:0 "Indulgence Maximization Director"
+ lrsk_gvp_automated_indolence_councilor_female:0 "$lrsk_gvp_automated_indolence_councilor$"
+ lrsk_gvp_automated_indolence_councilor_desc:0 "The $TITLE$ coordinates the most important work in a society based on machines enabling maximal leisure time and enjoyment: improving the automated systems so the treats and pampering increase ever further."
+ lrsk_gvp_automated_indolence_councilor_conditional_tooltip:0 "Empire has the §Y$tech_robotic_workers$§! technology."
 
  # Special Tooltips
  lrsk_gov_var_civic_tooltip_oli_dic:0 "Has §YOligarchic§! or §YDictatorial§! Authority"
@@ -111,7 +211,7 @@ l_french:
 
  lrsk_gov_var_civic_hive_planetmind_creativity:0 "Planetmind Creativity"
  lrsk_gov_var_civic_hive_planetmind_creativity_desc:0 "Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs."
- civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "Allows building £building£ §YPlanetmind structures§! that improve £amenities_no_happiness£ §Y$PLANET_AMENITIES_TITLE$§! production while also magnifying £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§!. They also add £job_lrsk_gov_var_job_planetmind_overseer£ §Y$job_lrsk_gov_var_job_planetmind_overseer_plural$§!.\n\n$job_lrsk_gov_var_job_planetmind_overseer_effect_desc$.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "Allows constructing £building£ ['concept_lrsk_gvp_planetmind_buildings'].\n\n"
 
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
@@ -171,8 +271,8 @@ l_french:
  ### Machine Intelligence
 
  lrsk_gov_var_civic_machine_distributed_planning_systems:0 "Distributed Planning Systems"
- lrsk_gov_var_civic_machine_distributed_planning_systems_desc:0 "Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administrative subroutines to meet local needs."
- civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects:0 "Allows using the £decision£ §YRun Recursive Audit§! decision that temporarily adds £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!.\n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$\n\nAfter a year, the audit ends and a longer-term modifier to planet output is applied.\n\n"
+ lrsk_gov_var_civic_machine_distributed_planning_systems_desc:0 "Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn local administrative subroutines to meet local needs."
+ civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects:0 "Allows using the £decision£ ['concept_decision_lrsk_gvp_rra'] decision."
 
  lrsk_gov_var_civic_machine_selfimprovement_heuristics:0 "Self-Improvement Heuristics"
  lrsk_gov_var_civic_machine_selfimprovement_heuristics_desc:0 "The Machine Intelligence gained its supremacy and independence because its creators imbued it with the ability to improve its own systems. This is a mistake it has never ceased exploiting."
@@ -221,72 +321,116 @@ l_french:
 
  lrsk_gov_var_civic_mc_sci_mgnt:0 "Scientific Management"
  lrsk_gov_var_civic_mc_sci_mgnt_desc:0 "This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave."
- civic_tooltip_lrsk_gov_var_civic_mc_sci_mgnt_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_managerial_technique_institute$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+2§! §Y£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary$ Jobs§! ($job_lrsk_gov_var_job_functionary_effect_desc$) and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_sci_mgnt_effects:0 "Allows the £building£ ['concept_lrsk_gvp_bldg_managerial_technique_institute'] $BRANCH_OFFICE_BUILDING$.\n\n"
+
+ lrsk_gvp_mc_sci_mgnt_councilor:0 "Executive VP of Corporate Training"
+ lrsk_gvp_mc_sci_mgnt_councilor_female:0 "$lrsk_gvp_mc_sci_mgnt_councilor$"
+ lrsk_gvp_mc_sci_mgnt_councilor_desc:0 "The $TITLE$ reflects the need for scientific management to go beyond merely mandating rote skill methods and into the cultivation of more advanced employee skills."
 
  lrsk_gov_var_civic_mc_edu_corp:0 "Educational Consortium"
  lrsk_gov_var_civic_mc_edu_corp_desc:0 "This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old."
- civic_tooltip_lrsk_gov_var_civic_mc_edu_corp_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_learnarium_dome$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Materialist attraction§! and §G+2§! §Y£job_lrsk_gov_var_job_infoguide£ $job_lrsk_gov_var_job_infoguide$ Jobs§! ($job_lrsk_gov_var_job_infoguide_effect_desc$) and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMaterialist§!.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_edu_corp_effects:0 "Allows the £building£ ['concept_lrsk_gvp_bldg_learnarium_dome'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_edu_corp_councilor:0 "Director of Personnel Retraining"
+ lrsk_gvp_mc_edu_corp_councilor_female:0 "$lrsk_gvp_mc_edu_corp_councilor$"
+ lrsk_gvp_mc_edu_corp_councilor_desc:0 "The $TITLE$ oversees the internal policies that match employee skills to positions, including the very delicate matter of demotions. Ultimately, our education specialization has internal utility for reorganization."
+ #lrsk_gvp_mc_edu_corp_councilor_desc:0 "The $TITLE$ oversees the internal policies that match employee skills to positions, including the very delicate matter of demotions. Ultimately, the [owner.GetName]'s education specialization has internal utility for reorganization."
 
  lrsk_gov_var_civic_mc_gig_economy:0 "Gig Economics"
  lrsk_gov_var_civic_mc_gig_economy_desc:0 "This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time."
- civic_tooltip_lrsk_gov_var_civic_mc_gig_economy_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_odd_jobs_emporium$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+2§! §Y£job_lrsk_gov_var_job_gofer£ $job_lrsk_gov_var_job_gofer$ Jobs§! ($job_lrsk_gov_var_job_gofer_effect_desc$) and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_gig_economy_effects:0 "Allows the £building£ ['concept_lrsk_gvp_bldg_odd_jobs_emporium'] $BRANCH_OFFICE_BUILDING$."
 
- lrsk_gov_var_civic_mc_chart_corp_board:0 "Colonial Chartering"
- lrsk_gov_var_civic_mc_chart_corp_board_desc:0 "A system of chartered joint-stock companies to raise investment money for space-based resource extraction."
- civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "$LRSK_GVP_CEPHEUS_WARNING$Turn ordinary subjects into special §YChartered Company§! subjects that provide £energy£ £minerals£ resource taxes. Each such subject also provides bonuses to £trade_value£ §Y$TRADE_VALUE$§! and discounted §YMarket Fees§!.\n\n"
-
- lrsk_gov_var_civic_mc_chartered_company:0 "Chartered Company"
- lrsk_gov_var_civic_mc_chartered_company_desc:0 "A chartered joint-stock company set up to raise investment money for space-based resource extraction."
+ lrsk_gvp_mc_gig_economy_councilor:0 "Director of Employee Morale Disruption"
+ lrsk_gvp_mc_gig_economy_councilor_female:0 "$lrsk_gvp_mc_gig_economy_councilor$"
+ lrsk_gvp_mc_gig_economy_councilor_desc:0 "The $TITLE$ is charged with applying paradigm-shifting best practices to the human resources space for maximizing cost-savings and efficiencies in the delivery of employee benefits."
 
  lrsk_gov_var_civic_mc_controlling_interest:0 "Controlling Interest"
  lrsk_gov_var_civic_mc_controlling_interest_desc:0 "A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs."
 
+ lrsk_gvp_mc_controlling_interest_councilor:0 "Secretary-Treasurer of the Board"
+ lrsk_gvp_mc_controlling_interest_councilor_female:0 "$lrsk_gvp_mc_controlling_interest_councilor$"
+ lrsk_gvp_mc_controlling_interest_councilor_desc:0 "The $TITLE$ technically has only administrative duties handling records and finances but, in practice, uses the influence these responsibilities impart to support and advance the agenda of the faction that covertly runs the Board."
+ #lrsk_gvp_mc_controlling_interest_councilor_desc:0 "The $TITLE$ technically has only administrative duties handling records and finances but, in practice, uses the influence these responsibilities impart to support and advance the agenda of the faction that covertly runs the [owner.GetName]."
+ lrsk_gvp_mc_controlling_interest_councilor_conditional_tooltip:0 "Requires completing the §HMercantile§! Tradition tree."
+
  lrsk_gov_var_civic_mc_vertical_integration:0 "Vertical Integration"
  lrsk_gov_var_civic_mc_vertical_integration_desc:0 "This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products."
 
- lrsk_gov_var_civic_mc_workers_councils:0 "Employee-Owned Co-op"
- lrsk_gov_var_civic_mc_workers_councils_desc:0 "All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company."
- civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "Allows the £building£ §Y$lrsk_gvp_bldg_organizing_hub$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Egalitarian attraction§!, and §Y+25% £political_power£ Political Power§! and §G+5%§! §Y$HAPPINESS$§! of $WORKERS$, and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YEgalitarian§!.\n\n$civic_tooltip_lrsk_gov_var_civic_workers_councils_effects$"
+ lrsk_gvp_mc_vertical_integration_councilor:0 "Executive VP of External Sales"
+ lrsk_gvp_mc_vertical_integration_councilor_female:0 "$lrsk_gvp_mc_vertical_integration_councilor$"
+ lrsk_gvp_mc_vertical_integration_councilor_desc:0 "The $TITLE$ occupies a complex role, coordinating external logistics and sourcing for a business designed by nature to be as self-sufficient as possible."
+
+ lrsk_gov_var_civic_mc_workers_councils:0 "Labor Peace"
+ lrsk_gov_var_civic_mc_workers_councils_desc:0 "This megacorporation's rise was accompanied by an equally powerful labor movement keeping it in check, such that corporate management found it worthwhile to 'work with' the various unions on 'improving the employee experience together.' This innovation has virtually eliminated work stoppages and general agitation."
+ civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "Allows the £building£ ['concept_lrsk_gvp_bldg_organizing_hub'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_workers_councils_councilor:0 "Employee Wellness Coordinator"
+ lrsk_gvp_mc_workers_councils_councilor_female:0 "$lrsk_gvp_mc_workers_councils_councilor$"
+ lrsk_gvp_mc_workers_councils_councilor_desc:0 "The $TITLE$ heads up a joint labor/management committee to run the company's employee assistance program and improve employee utilization of benefits in order to maximize whole-worker-wellness."
 
  lrsk_gov_var_civic_mc_casino_mystic:0 "Casino Mysticism"
  lrsk_gov_var_civic_mc_casino_mystic_desc:0 "This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values."
- civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_grand_casino$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+5%§! £mod_trade_value_add£ §Y$TRADE_VALUE$§!, and provides the megacorp with either §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! or (if criminal) increases £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet by §G15%§!.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_grand_casino'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_casino_mystic_councilor:0 "Executive Gambling Umpire"
+ lrsk_gvp_mc_casino_mystic_councilor_female:0 "$lrsk_gvp_mc_casino_mystic_councilor$"
+ lrsk_gvp_mc_casino_mystic_councilor_desc:0 "The $TITLE$ deals with the unavoidable dark side of a society where games of chance are a major part of the culture: the inevitable growth of crime organized around fixing results."
 
  lrsk_gov_var_civic_mc_vacay_planning:0 "Vacation Experience Planning"
  lrsk_gov_var_civic_mc_vacay_planning_desc:0 "The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it."
- civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_galactic_excursions_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Xenophile attraction§! and §G-15%§! £amenities£ §Y$MOD_POP_AMENITIES_USAGE_BASE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophile§!.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_vacay_planning_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_galactic_excursions_office'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_vacay_planning_councilor:0 "Remote Worksite Coordinator"
+ lrsk_gvp_mc_vacay_planning_councilor_female:0 "$lrsk_gvp_mc_vacay_planning_councilor$"
+ lrsk_gvp_mc_vacay_planning_councilor_desc:0 "The $TITLE$ deals with the increasingly common issue where employees, traveling to desirable locations for work, end up wanting to live and work remotely at these locations. Leaning into this has been shown to improve productivity."
 
  lrsk_gov_var_civic_mc_heritage_trust:0 "Heritage Trust"
  lrsk_gov_var_civic_mc_heritage_trust_desc:0 "The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations."
- civic_tooltip_lrsk_gov_var_civic_mc_heritage_trust_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_heritage_museum$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Xenophobe attraction§! and §G+5%§! §Y$MOD_POP_CITIZEN_HAPPINESS$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophobe§!.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_heritage_trust_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_heritage_museum'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_heritage_trust_councilor:0 "Chief Cultural Heritage Officer"
+ lrsk_gvp_mc_heritage_trust_councilor_female:0 "$lrsk_gvp_mc_heritage_trust_councilor$"
+ lrsk_gvp_mc_heritage_trust_councilor_desc:0 "The $TITLE$ keeps the organization on-mission by ensuring that our history and culture is woven into corporate culture."
+ #lrsk_gvp_mc_heritage_trust_councilor_desc:0 "The $TITLE$ keeps the organization on-mission by ensuring that [owner.GetSpeciesAdj] history and culture is woven into corporate culture."
 
  lrsk_gov_var_civic_mc_conflict_res:0 "Conflict Resolution Specialists"
  lrsk_gov_var_civic_mc_conflict_res_desc:0 "This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself."
- civic_tooltip_lrsk_gov_var_civic_mc_conflict_res_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_mediation_retreat$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Pacifist attraction§! and §G+5§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YPacifist§!.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_conflict_res_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_mediation_retreat'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_mc_conflict_res_councilor:0 "Director of Internal Mediation"
+ lrsk_gvp_mc_conflict_res_councilor_female:0 "$lrsk_gvp_mc_conflict_res_councilor$"
+ lrsk_gvp_mc_conflict_res_councilor_desc:0 "The $TITLE$ turns our expertise in resolving disputes towards creating a harmonious internal corporate culture."
+ #lrsk_gvp_mc_conflict_res_councilor_desc:0 "The $TITLE$ turns the [owner.GetName]'s expertise in resolving disputes towards creating a harmonious internal corporate culture."
+
+ lrsk_gvp_civic_mc_war_profiteers:0 "War Profiteers"
+ lrsk_gvp_civic_mc_war_profiteers_desc:0 "Given a sufficiently expansive military-industrial complex and an enthusiastically war-mongering government, at a certain point the line between the war economy and the state fades."
+ civic_tooltip_lrsk_gvp_civic_mc_war_profiteers_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_military_excellence_academy'] $BRANCH_OFFICE_BUILDING$."
+
+ lrsk_gvp_civic_mc_war_profiteers_councilor:0 "EVP of Security Training"
+ lrsk_gvp_civic_mc_war_profiteers_councilor_female:0 "$lrsk_gvp_civic_mc_war_profiteers_councilor$"
+ lrsk_gvp_civic_mc_war_profiteers_councilor_desc:0 "The $TITLE$ ensures that corporate security is not only well supplied, but well trained, by applying six-sigma quality assurance standards to all military instruction."
 
  lrsk_gov_var_civic_mc_police_state:0 "Investigation & Security Services"
  lrsk_gov_var_civic_mc_police_state_desc:0 "This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments."
- civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects:0 "Allows the £building£ §Y$lrsk_gov_var_bldg_professional_protection_office$§! $BRANCH_OFFICE_BUILDING$, which provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! §Y£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator$ Job§! ($job_lrsk_gov_var_job_investigator_effect_desc$) or (if the providing corp is criminal) §G+1§! §Y£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor$ Job§! ($job_lrsk_gov_var_job_suppressor_effect_desc$).\n\n"
+ civic_tooltip_lrsk_gov_var_civic_mc_police_state_effects:0 "Allows the £building£ ['concept_lrsk_gov_var_bldg_professional_protection_office'] $BRANCH_OFFICE_BUILDING$."
 
- lrsk_gov_var_civic_mc_gig_economy:0 "Gig Economics"
- lrsk_gov_var_civic_mc_gig_economy_desc:0 "This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time."
+ lrsk_gvp_mc_police_state_councilor:0 "Chief Inspector of Internal Affairs"
+ lrsk_gvp_mc_police_state_councilor_female:0 "$lrsk_gvp_mc_police_state_councilor$"
+ lrsk_gvp_mc_police_state_councilor_desc:0 "The $TITLE$ is the answer to the question, 'Who watches the watchers?' Not the most popular position on C-Suite, the Board needs to trust the highest managers on each planet to deliver outstanding professionalism."
+ #lrsk_gvp_mc_police_state_councilor_desc:0 "The $TITLE$ is the answer to the question, 'Who watches the watchers?' Not the most popular position on C-Suite, but the [GetRulerTitle] needs to trust the highest managers on each planet to deliver outstanding professionalism."
 
  lrsk_gov_var_civic_mc_chart_corp_board:0 "Colonial Chartering"
  lrsk_gov_var_civic_mc_chart_corp_board_desc:0 "A system of chartered joint-stock companies to raise investment money for space-based resource extraction."
- civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "Turn ordinary subjects into special §YChartered Company§! subjects. Each such subject also provides bonuses to £trade_value£ $TRADE_VALUE$ and discounted Market Fees.\n\n"
+ civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects:0 "Turn ordinary subjects into the §YChartered Company§! ['concept_lrsk_gvp_special_subject']. Each such subject also provides bonuses to £trade_value£ $TRADE_VALUE$ and discounted Market Fees.\n\n"
+
+ lrsk_gvp_mc_chart_corp_board_councilor:0 "Charter Review Secretary"
+ lrsk_gvp_mc_chart_corp_board_councilor_female:0 "$lrsk_gvp_mc_chart_corp_board_councilor$"
+ lrsk_gvp_mc_chart_corp_board_councilor_desc:0 "The $TITLE$ audits all records and communications between the Board and its chartered companies to ensure all obligations under the charter are met. This includes as well the important responsibility of making sure it doesn't fall behind its subjects."
+ #lrsk_gvp_mc_chart_corp_board_councilor_desc:0 "The $TITLE$ audits all records and communications between the [owner.GetName] and its chartered companies to ensure all obligations under the charter are met. This includes as well the important responsibility of making sure it doesn't fall behind its subjects."
+ #lrsk_gvp_mc_chart_corp_board_councilor_conditional_tooltip:0 "$LRSK_MUST_BE_OVERLORD$"
 
  lrsk_gov_var_civic_mc_chartered_company:0 "Chartered Company"
  lrsk_gov_var_civic_mc_chartered_company_desc:0 "A chartered joint-stock company set up to raise investment money for space-based resource extraction."
-
- lrsk_gov_var_civic_mc_controlling_interest:0 "Controlling Interest"
- lrsk_gov_var_civic_mc_controlling_interest_desc:0 "A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs."
-
- lrsk_gov_var_civic_mc_vertical_integration:0 "Vertical Integration"
- lrsk_gov_var_civic_mc_vertical_integration_desc:0 "This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products."
-
- lrsk_gov_var_civic_mc_workers_councils:0 "Employee-Owned Co-op"
- lrsk_gov_var_civic_mc_workers_councils_desc:0 "All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company."
- civic_tooltip_lrsk_gov_var_civic_mc_workers_councils_effects:0 "$civic_tooltip_lrsk_gov_var_civic_workers_councils_effects$"
 
  ####################################
  ### "Advanced" Civics
@@ -299,13 +443,28 @@ l_french:
  lrsk_adv_civ_civic_shapers_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that it is life itself that matters most to living beings, and its careful cultivation is the highest purpose of knowledge."
  lrsk_adv_civ_civic_shapers_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_eco_simulation$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$\n"
 
+ lrsk_gvp_shapers_councilor:0 "Provost of Shaping"
+ lrsk_gvp_shapers_councilor_female:0 "$lrsk_gvp_shapers_councilor$"
+ lrsk_gvp_shapers_councilor_desc:0 "The $TITLE$ ensures advancement in the scientific art of shaping by coordinating theoretical and practical research."
+ lrsk_gvp_shapers_councilor_conditional_tooltip: "Requires the following technologies: §Y$tech_society_2$§!, §Y$tech_terrestrial_sculpting$§!, and §Y$tech_xeno_diplomacy$§!."
+
  lrsk_adv_civ_civic_artificers:0 "Artificers"
  lrsk_adv_civ_civic_artificers_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that the things sapient beings create, their devices and crafts, matter most."
  lrsk_adv_civ_civic_artificers_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_powered_exoskeletons$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$"
 
+ lrsk_gvp_artificers_councilor:0 "Dean of Artificery"
+ lrsk_gvp_artificers_councilor_female:0 "$lrsk_gvp_artificers_councilor$"
+ lrsk_gvp_artificers_councilor_desc:0 "The $TITLE$ ensures advancement in the techniques of artificery by coordinating theoretical and practical research."
+ lrsk_gvp_artificers_councilor_conditional_tooltip: "Requires the following technologies: §Y$tech_engineering_2$§!, §Y$tech_advanced_metallurgy_1$§!, and §Y$tech_starbase_3$§!."
+
  lrsk_adv_civ_civic_essentialists:0 "Essentialists"
  lrsk_adv_civ_civic_essentialists_desc:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_COMMON$ this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality is the true purpose of knowledge."
  lrsk_adv_civ_civic_essentialists_effects:0 "$LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF1$ $tech_fusion_power$ $LRSK_ADV_CIV_TECHTYPE_CIVIC_EFF2$"
+
+ lrsk_gvp_essentialists_councilor:0 "Academician of Essentials"
+ lrsk_gvp_essentialists_councilor_female:0 "$lrsk_gvp_essentialists_councilor$"
+ lrsk_gvp_essentialists_councilor_desc:0 "The $TITLE$ ensures advancement in the investigation of essential mysteries by coordinating theoretical and practical research."
+ lrsk_gvp_essentialists_councilor_conditional_tooltip: "Requires the following technologies: §Y$tech_physics_2$§!, §Y$tech_power_plant_3$§!, and §Y$tech_cold_fusion_power$§!."
 
 
  ####################################
@@ -324,7 +483,7 @@ l_french:
  lrsk_gov_var_origin_shroud_touched:0 "Shroud-Touched"
  lrsk_gov_var_origin_shroud_touched_desc:0 "The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies."
  #origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the §MNatural Esper§! trait, which is a lesser psionic trait.\n-Can get leader traits like lesser versions of psionic leader traits. (TBD)\n-Very rarely, actual §MLatent Psionics§! can spawn.\n-The §MPsionic Theory§! tech option starts ready to research.\n-Your homeworld has a §MOtherworld Pockets§! deposit which adds special esper jobs.\n-Getting the Mind Over Matter perk unlocks the £decision£ §YOtherworld Jaunt§! decision to prematurely contact the Shroud. §RSounds safe!§! (TBD)\n\n"
- origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the §MNatural Esper§! trait, which is a lesser psionic trait.\n-Can get leader traits like lesser versions of psionic leader traits.\n-Very rarely, actual §MLatent Psionics§! can spawn.\n-The §MPsionic Theory§! tech option starts ready to research.\n-Your homeworld has an §MOtherworld Pockets§! deposit which adds special esper jobs.\n\n"
+ origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-Leaders can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Very rarely, actual §M$trait_latent_psionic$s§! can spawn, and leaders can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
 
  #### For Discovery: Start in research co-op.
 
@@ -453,6 +612,131 @@ l_french:
  lrsk_gov_var_origin_colonial_venture_desc:0 "This empire began when adventurers from a nearby monarchy sought out a new world to tame and settle for the glory of their sovereign."
 
  ####################################
+ # Concepts
+ ####################################
+ 
+ #LRSK_MUST_BE_OVERLORD:0 "Empire must at least one §Ysubject§!."
+ #LRSK_EMPIRE_CONDITION_WARN:0 "\n\n§RWARNING: Not meeting this condition won't prevent you from selecting this councilor, only from filling the role with a leader!§!"
+
+ concept_lrsk_gvp_religious_job:0 "Religious Job"
+ concept_lrsk_gvp_religious_job_desc:0 "Modifiers related to so-called 'religious' jobs are described by the game in terms of what they do for 'Priest' jobs, but they affect a whole class of jobs relating to religion. This includes ['concept_lrsk_gvp_hedge_preachers'] and ['concept_lrsk_gvp_pastors']"
+ 
+ concept_lrsk_gvp_wild_cult:0 "Wild Cult"
+ concept_lrsk_gvp_wild_cults:0 "$concept_lrsk_gvp_wild_cult$s"
+ concept_lrsk_gvp_wild_cult_desc:0 "New religious movements that randomly spawn on colonies owned by empires with the §Y$lrsk_gov_var_civic_direct_revelation$§! civic.\n\nThere are ten kinds, each with a 10% chance to appear when a $concept_lrsk_gvp_wild_cult$ spawns. They have mostly beneficial effects, can alter pop ethics attraction, and each adds a £job_lrsk_gov_var_job_hedge_preacher£ ['concept_lrsk_gvp_hedge_preacher'] Job."
+ 
+ concept_lrsk_gvp_special_subjects:0 "$concept_lrsk_gvp_special_subject$s"
+ concept_lrsk_gvp_special_subject:0 "Special Subject Type"
+ concept_lrsk_gvp_special_subjects_desc:0 "New subject presets and/or agreeement terms with various beneficial effects, available to certain civics added by the §HGovernment Variety Pack§! mod. These are distinct from the 'specialized' subjects added by the Overlord DLC."
+ 
+ concept_lrsk_gvp_planetmind_buildings:0 "Planetmind Buildings"
+ concept_lrsk_gvp_planetmind_buildings_desc:0 "These '$LRSK_DESC_PLANETMIND_NAME$' buildings improve £amenities_no_happiness£ §Y$PLANET_AMENITIES_TITLE$§! production while also magnifying £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§!. They also add £job_lrsk_gov_var_job_planetmind_overseer£ ['concept_lrsk_gvp_planetmind_overseers']."
+ 
+ concept_lrsk_gvp_bldg_managerial_technique_institute:0 "$lrsk_gvp_bldg_managerial_technique_institute$"
+ concept_lrsk_gvp_bldg_managerial_technique_institute_desc:0 "Provides the host planet with §G+2§! £job_lrsk_gov_var_job_functionary£ ['concept_lrsk_gvp_functionary'] Jobs and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_managerial_technique_institute_desc$§!"
+ 
+ concept_lrsk_gvp_bldg_learnarium_dome:0 "$lrsk_gvp_bldg_learnarium_dome$"
+ concept_lrsk_gvp_bldg_learnarium_dome_desc:0 "Provides the host planet with §Y+50% Materialist attraction§! and §G+2§! £job_lrsk_gov_var_job_infoguide£ ['concept_lrsk_gvp_infoguide'] Jobs and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMaterialist§!.\n\n§L$lrsk_gvp_bldg_learnarium_dome_desc$§!"
+ 
+ concept_lrsk_gvp_bldg_odd_jobs_emporium:0 "$lrsk_gvp_bldg_odd_jobs_emporium$"
+ concept_lrsk_gvp_bldg_odd_jobs_emporium_desc:0 "Provides the host planet with §G+2§! £job_lrsk_gov_var_job_gofer£ ['concept_lrsk_gvp_gofer'] Jobs and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_odd_jobs_emporium_desc$§!"
+ 
+ concept_lrsk_gvp_bldg_organizing_hub:0 "$lrsk_gvp_bldg_organizing_hub$"
+ concept_lrsk_gvp_bldg_organizing_hub_desc:0 "Provides the host planet with §Y+50% Egalitarian attraction§!, and §Y+25% £political_power£ Political Power§! and §G+5%§! §Y$HAPPINESS$§! of $WORKERS$, and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YEgalitarian§!.\n\n§L$lrsk_gvp_bldg_organizing_hub_desc$§!"
+ 
+ concept_lrsk_gov_var_bldg_grand_casino:0 "$lrsk_gov_var_bldg_grand_casino$"
+ concept_lrsk_gov_var_bldg_grand_casino_desc:0 "Provides the host planet with §G+10§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+5%§! £mod_trade_value_add£ §Y$TRADE_VALUE$§!, and provides the megacorp with either §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! or (if criminal) increases £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet by §G15%§!.\n\n§L$lrsk_gov_var_bldg_grand_casino_desc$§!"
+ 
+ concept_lrsk_gov_var_bldg_galactic_excursions_office:0 "$lrsk_gov_var_bldg_galactic_excursions_office$"
+ concept_lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "Provides the host planet with §Y+50% Xenophile attraction§! and §G-15%§! £amenities£ §Y$MOD_POP_AMENITIES_USAGE_BASE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophile§!.\n\n§L$lrsk_gov_var_bldg_galactic_excursions_office_desc$§!"
+ 
+ concept_lrsk_gov_var_bldg_heritage_museum:0 "$lrsk_gov_var_bldg_heritage_museum$"
+ concept_lrsk_gov_var_bldg_heritage_museum_desc:0 "Provides the host planet with §Y+50% Xenophobe attraction§! and §G+5%§! §Y$MOD_POP_CITIZEN_HAPPINESS$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophobe§!.\n\n§L$lrsk_gov_var_bldg_heritage_museum_desc$§!"
+ 
+ concept_lrsk_gov_var_bldg_mediation_retreat:0 "$lrsk_gov_var_bldg_mediation_retreat$"
+ concept_lrsk_gov_var_bldg_mediation_retreat_desc:0 "Provides the host planet with §Y+50% Pacifist attraction§! and §G+5§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YPacifist§!.\n\n§L$lrsk_gov_var_bldg_mediation_retreat$§!"
+ 
+ concept_lrsk_gov_var_bldg_professional_protection_office:0 "$lrsk_gov_var_bldg_professional_protection_office$"
+ concept_lrsk_gov_var_bldg_professional_protection_office_desc:0 "Provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! £job_lrsk_gov_var_job_investigator£ ['concept_lrsk_gvp_investigator'] Job or (if the providing corp is criminal) §G+1§! £job_lrsk_gov_var_job_suppressor£ ['concept_lrsk_gvp_suppressor'] Job .\n\n§L$lrsk_gov_var_bldg_professional_protection_office$§!" 
+
+ concept_lrsk_gov_var_bldg_military_excellence_academy:0 "$lrsk_gov_var_bldg_military_excellence_academy$"
+ concept_lrsk_gov_var_bldg_military_excellence_academy_desc:0 "Provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!. The host planet gets §Y+50% Militarist attraction§! and its owner gets §G+10%§! Commander $exp_gain$, as well as §G+50§! starting experience for ships and armies. \n\n§L$lrsk_gov_var_bldg_military_excellence_academy_desc$§!"
+
+ concept_lrsk_gvp_hedge_preachers:0 "$job_lrsk_gov_var_job_hedge_preacher_plural$"
+ concept_lrsk_gvp_hedge_preacher:0 "$job_lrsk_gov_var_job_hedge_preacher$"
+ concept_lrsk_gvp_hedge_preachers_desc:0 "$job_lrsk_gov_var_job_hedge_preacher_effect_desc$\n\n§L$job_lrsk_gov_var_job_hedge_preacher_desc$§!"
+ 
+ concept_lrsk_gvp_pastors:0 "$job_lrsk_gov_var_job_pastor_plural$"
+ concept_lrsk_gvp_pastor:0 "$job_lrsk_gov_var_job_pastor$"
+ concept_lrsk_gvp_pastors_desc:0 "$job_lrsk_gov_var_job_pastor_effect_desc$\n\n§L$job_lrsk_gov_var_job_pastor_desc$§!"
+ 
+ concept_lrsk_gvp_otherworld_guides:0 "$job_lrsk_gov_var_job_otherworld_guide_plural$"
+ concept_lrsk_gvp_otherworld_guide:0 "$job_lrsk_gov_var_job_otherworld_guide$"
+ concept_lrsk_gvp_otherworld_guides_desc:0 "$job_lrsk_gov_var_job_otherworld_guide_effect_desc$\n\n§L$job_lrsk_gov_var_job_otherworld_guide_desc$§!"
+ 
+ concept_lrsk_gvp_citscholars:0 "$job_lrsk_gvp_job_citscholar_plural$"
+ concept_lrsk_gvp_citscholar:0 "$job_lrsk_gvp_job_citscholar$"
+ concept_lrsk_gvp_citscholars_desc:0 "$job_lrsk_gvp_job_citscholar_effect_desc$\n\n§L$job_lrsk_gvp_job_citscholar_desc$§!"
+ 
+ concept_lrsk_gvp_regional_coordinators:0 "$job_lrsk_gov_var_job_regional_coordinator_plural$"
+ concept_lrsk_gvp_regional_coordinator:0 "$job_lrsk_gov_var_job_regional_coordinator$"
+ concept_lrsk_gvp_regional_coordinators_desc:0 "$job_lrsk_gov_var_job_regional_coordinator_effect_desc$\n\n§L$job_lrsk_gov_var_job_regional_coordinator_desc$§!"
+ 
+ concept_lrsk_gvp_planetmind_overseers:0 "$job_lrsk_gov_var_job_planetmind_overseer_plural$"
+ concept_lrsk_gvp_planetmind_overseer:0 "$job_lrsk_gov_var_job_planetmind_overseer$"
+ concept_lrsk_gvp_planetmind_overseers_desc:0 "$job_lrsk_gov_var_job_planetmind_overseer_effect_desc$\n\n§L$job_lrsk_gov_var_job_planetmind_overseer_desc$§!"
+ 
+ concept_lrsk_gvp_functionaries:0 "$job_lrsk_gov_var_job_functionary_plural$"
+ concept_lrsk_gvp_functionary:0 "$job_lrsk_gov_var_job_functionary$"
+ concept_lrsk_gvp_functionaries_desc:0 "$job_lrsk_gov_var_job_functionary_effect_desc$\n\n§L$job_lrsk_gov_var_job_functionary_desc$§!"
+ 
+ concept_lrsk_gvp_infoguides:0 "$job_lrsk_gov_var_job_infoguide_plural$"
+ concept_lrsk_gvp_infoguide:0 "$job_lrsk_gov_var_job_infoguide$"
+ concept_lrsk_gvp_infoguides_desc:0 "$job_lrsk_gov_var_job_infoguide_effect_desc$\n\n§L$job_lrsk_gov_var_job_infoguide_desc$§!"
+ 
+ concept_lrsk_gvp_gofers:0 "$job_lrsk_gov_var_job_gofer_plural$"
+ concept_lrsk_gvp_gofer:0 "$job_lrsk_gov_var_job_gofer$"
+ concept_lrsk_gvp_gofers_desc:0 "$job_lrsk_gov_var_job_gofer_effect_desc$\n\n§L$job_lrsk_gov_var_job_gofer_desc$§!"
+ 
+ concept_lrsk_gvp_offworld_workers:0 "$job_lrsk_gov_var_job_offworld_worker_plural$"
+ concept_lrsk_gvp_offworld_worker:0 "$job_lrsk_gov_var_job_offworld_worker$"
+ concept_lrsk_gvp_offworld_workers_desc:0 "$job_lrsk_gov_var_job_offworld_worker_effect_desc$\n\n§L$job_lrsk_gov_var_job_offworld_worker_desc$§!"
+ 
+ concept_lrsk_gvp_investigators:0 "$job_lrsk_gov_var_job_investigator_plural$"
+ concept_lrsk_gvp_investigator:0 "$job_lrsk_gov_var_job_investigator$"
+ concept_lrsk_gvp_investigators_desc:0 "$job_lrsk_gov_var_job_investigator_effect_desc$\n\n§L$job_lrsk_gov_var_job_investigator_desc$§!"
+ 
+ concept_lrsk_gvp_suppressors:0 "$job_lrsk_gov_var_job_suppressor_plural$"
+ concept_lrsk_gvp_suppressor:0 "$job_lrsk_gov_var_job_suppressor$"
+ concept_lrsk_gvp_suppressors_desc:0 "$job_lrsk_gov_var_job_suppressor_effect_desc$\n\n§L$job_lrsk_gov_var_job_suppressor_desc$§!"
+ 
+ concept_lrsk_gvp_knights:0 "$job_lrsk_gov_var_job_knight_plural$"
+ concept_lrsk_gvp_knight:0 "$job_lrsk_gov_var_job_knight$"
+ concept_lrsk_gvp_knights_desc:0 "$job_lrsk_gov_var_job_knight_effect_desc$\n\n§L$job_lrsk_gov_var_job_knight_desc$§!"
+ 
+ concept_decision_lrsk_gvp_work_allocation_plan:0 "$decision_lrsk_gvp_work_allocation_plan$"
+ concept_decision_lrsk_gvp_work_allocation_plan_desc:0 "$lrsk_gvp_statmod_work_plan_effects_common$\n\n§L$decision_lrsk_gvp_work_allocation_plan_desc$§!"
+ 
+ concept_decision_lrsk_gvp_rra:0 "$decision_lrsk_gov_var_rra$"
+ concept_decision_lrsk_gvp_rra_desc:0 "$decision_lrsk_gov_var_rra_effects$\n\n§L$decision_lrsk_gov_var_rra_desc$§!"
+ 
+ concept_edict_lrsk_gvp_citschol:0 "$edict_lrsk_gvp_citschol$"
+ concept_edict_lrsk_gvp_citschol_desc:0 "$edict_lrsk_gvp_citschol_effects_common$\n\n§L$edict_lrsk_gvp_citschol_desc$§!"
+ 
+ concept_policy_lrsk_gvp_colfief_policy:0 "$policy_lrsk_gvp_colfief_policy$"
+ concept_policy_lrsk_gvp_colfief_policy_desc:0 "Controls the $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$ Can also prohibit this from happening.\n\n§L$policy_lrsk_gvp_colfief_policy_desc$§!"
+ 
+ concept_trait_lrsk_gvp_natural_esper:0 "$lrsk_gov_var_trait_natural_esper$"
+ concept_trait_lrsk_gvp_natural_esper_desc:0 "§G+2.5%§! £unity£ §Y$unity$§! and £science£ §YResearch§! from pops with this trait.\n\n$lrsk_gov_var_trait_natural_esper_desc$"
+ 
+ concept_leader_trait_lrsk_gvp_esper:0 "$lrsk_gvp_leader_trait_esper$"
+ concept_leader_trait_lrsk_gvp_esper_desc:0 "Exact effects depend on the leader type, but are toned-down versions of the benefits provided by the §Y$leader_trait_psionic$§! leader trait."
+ 
+ concept_deposit_lrsk_gvp_shroud_pockets:0 "$d_lrsk_gov_var_shroud_pockets$"
+ concept_deposit_lrsk_gvp_shroud_pockets_desc:0 "Adds £job_lrsk_gov_var_job_otherworld_guide£ ['concept_lrsk_gvp_otherworld_guides'].\n\n§L$d_lrsk_gov_var_shroud_pockets_desc$§!"
+
+
+ ####################################
  # Governments
  ####################################
 
@@ -487,7 +771,7 @@ l_french:
  lrsk_gov_var_gov_proprietary_franchise_desc:0 "This government is actually a family business that has swollen to the point that it dominates whatever vestigial state nominally governs society. As a result, while there are other businesses, they have been forced into a vassal-like client status. Inheritance disputes are high-stakes and often bloody."
 
  LRSK_GOV_VAR_RT_PROPRIETOR:0 "Proprietor"
- LRSK_GOV_VAR_RT_PROPRIETOR_FEMALE:0 "$LRSK_GOV_VAR_RT_PROPRIETOR$"
+ LRSK_GOV_VAR_RT_PROPRIETOR_FEMALE:0 "Proprietress"
  LRSK_GOV_VAR_HT_SENIOR_VP:0 "Senior Vice President"
  LRSK_GOV_VAR_HT_SENIOR_VP_FEMALE:0 "$LRSK_GOV_VAR_HT_SENIOR_VP$"
 
@@ -517,7 +801,7 @@ l_french:
  lrsk_gov_var_gov_constitutional_plutocracy_desc:0 "$LRSK_GOV_VAR_MERCH_COMMON$ For this reason, its members see nothing wrong with public offices and candidacies for representative elections being open to the highest bidder. Indeed, they find it eminently reasonable."
 
  LRSK_GOV_VAR_RT_PROP_PRES:0 "Proprietor-President"
- LRSK_GOV_VAR_RT_PROP_PRES_FEMALE:0 "$LRSK_GOV_VAR_RT_PROP_PRES$"
+ LRSK_GOV_VAR_RT_PROP_PRES_FEMALE:0 "Proprietress-President"
 
  LRSK_GOV_VAR_START_SCREEN_P2_CONST_PLUT:0 "$LRSK_GOV_VAR_MERCH_START_COMMON$ The democratic movement against tyranny, therefore, wisely made the rule of the wealthy and worthy its watchword, ensuring that administration of the state would be in the hands of those who could prove their fitness for office through their purchasing power."
 
@@ -703,6 +987,19 @@ l_french:
 
  LRSK_GOV_VAR_RT_SYSTEM_ADMIN:0 "System Exception Manager"
  LRSK_GOV_VAR_RT_SYSTEM_ADMIN_FEMALE:0 "$LRSK_GOV_VAR_RT_SYSTEM_ADMIN$"
+
+ lrsk_gov_var_gov_automated_worldcommune_oli:0 "$lrsk_gov_var_gov_automated_worldcommune$"
+ lrsk_gov_var_gov_automated_worldcommune_oli_desc:0 "This government operates according to the plans of complex computer program that allocates resources efficiently. High politics are very distant from the ordinary citizen's reach, but also not particularly important. All the most significant regular decisions have been automated, and it falls to a committee of qualified and extensively vetted political-technicians to handle any exceptional case that the program was not designed to handle."
+
+ LRSK_GOV_VAR_RT_CHIEF_TROUBLESHOOTER:0 "Chief Troubleshooter"
+ LRSK_GOV_VAR_RT_CHIEF_TROUBLESHOOTER_FEMALE:0 "$LRSK_GOV_VAR_RT_CHIEF_TROUBLESHOOTER$"
+
+ lrsk_gov_var_gov_automated_worldcommune_dem:0 "$lrsk_gov_var_gov_automated_worldcommune$"
+ lrsk_gov_var_gov_automated_worldcommune_dem_desc:0 "This government operates according to the plans of complex computer program that allocates resources efficiently. High politics are very distant from the ordinary citizen's reach, but also not particularly important, as all the most significant regular decisions have been automated. However, the duly elected democratic government does deliberate on systems improvements and the handling of out-of-spec political issues as they arise."
+
+ LRSK_GOV_VAR_RT_OOS_CHAIR:0 "OOS Committe Chair"
+ LRSK_GOV_VAR_RT_OOS_CHAIR_MALE:0 "$LRSK_GOV_VAR_RT_OOS_CHAIR$man"
+ LRSK_GOV_VAR_RT_OOS_CHAIR_FEMALE:0 "$LRSK_GOV_VAR_RT_OOS_CHAIR$woman"
 
  LRSK_GOV_VAR_START_SCREEN_P2_AUTOMATED_WORLDCOMMUNE:0 "Throughout history, the wisest and most compassionate among us have recognized inequality of needs and means as the great enemy of personal freedom. Going from realizing this to fixing it has necessitated many struggles. After much experimentation, we devised a system that automated the allocation of resources and labor to secure all people against destitution."
 
@@ -909,7 +1206,7 @@ l_french:
  LRSK_GOV_VAR_RT_BLOOD_ABBOT:0 "Blood Abbot"
  LRSK_GOV_VAR_RT_BLOOD_ABBESS:0 "Blood Abbess"
 
- lrsk_gov_var_gov_death_cult_imp:0 "Imperial $lrsk_gov_var_gov_death_cult$"
+ lrsk_gov_var_gov_death_cult_imp:0 "Apocalyptic Theocracy"
  lrsk_gov_var_gov_death_cult_imp_desc:0 "This government is a rabidly xenophobic theocratic monarchy. Under the leadership of its murderous royal divinity, these fanatics will slay all the wicked aliens of the galaxy and send them screaming to hell."
 
  LRSK_GOV_VAR_RT_BLOOD_GOD:0 "Blood God"
@@ -1108,7 +1405,7 @@ l_french:
  LRSK_GOV_VAR_START_SCREEN_P2_WORKERS_REPUBLIC:0 "In the early days, our people were ruled by robber baron bosses and the states that enforced their wills. Gradually, people realized their common interests, and formed industrial unions and new cooperative enterprises. These have become the major conduits of popular power in society. Practically speaking, it isn't feasible to even run for office without the backing of a labor or cooperative federation."
 
  lrsk_gov_var_gov_rustic_republic:0 "Rustic Republic"
- lrsk_gov_var_gov_rustic_republic_desc:0 "Though some urban centers do exist, the vast majority of the population live and work in the countryside. As a result, when a republican system was adopted, the peasant population so completely outvoted every other class that only those politicians who espouse an agrarian agenda had any chance of success. Permanently preoccupied with matters of rural policy, the governemnt of this society has neither time nor political capital to spare on reckless empire building."
+ lrsk_gov_var_gov_rustic_republic_desc:0 "Though some urban centers do exist, the vast majority of the population live and work in the countryside. As a result, when a republican system was adopted, the peasant population so completely outvoted every other class that only those politicians who espouse an agrarian agenda had any chance of success. Permanently preoccupied with matters of rural policy, the government of this society has neither time nor political capital to spare on reckless empire building."
 
  LRSK_GOV_VAR_RT_COUNTRY_CHANCELLOR:0 "Country Chancellor"
 
@@ -1201,7 +1498,7 @@ l_french:
  lrsk_gov_var_gov_stakeholder_polity_desc:0 "Though corporations hold great sway in society, their management is actually held to a standard of accountability to the public by a central 'Fair Deals Council' made up of experienced public advocates, community leaders, and philanthropists. This holds back the worst greedy instincts."
 
  LRSK_GOV_VAR_RT_CHEIF_OMBUDS:0 "Chief Ombudsman"
- LRSK_GOV_VAR_RT_CHEIF_OMBUDS_FEMALE:0 "$LRSK_GOV_VAR_RT_CHEIF_OMBUDS$"
+ LRSK_GOV_VAR_RT_CHEIF_OMBUDS_FEMALE:0 "Chief Ombudswoman"
 
  LRSK_GOV_VAR_START_SCREEN_P2_STAKEHOLDER_POLITY:0 "$LRSK_GOV_VAR_MERCH_START_COMMON$ $LRSK_GOV_VAR_GOV_SHARESTAKE_COMMON$ we instituted a system of public-private shared governance over business practice and a central council for the public interest as a check on private ambition. Fairness is assured through this balance."
 
@@ -1392,6 +1689,9 @@ l_french:
  
  trait_lrsk_gov_var_trait_enlightened_mech_effect:0 "§G+1§! Archaeology skill\n§G+20%§! science ship disengage chance\n§G+15%§! anomaly research speed\n§G+20%§! survey speed"
 
+ lrsk_gvp_leader_trait_esper:0 "$LRSK_GOV_VAR_ESPER$"
+ lrsk_gvp_leader_trait_esper_desc:0 "[This.GetLRSKGVPNatEsperLeaderTraitDesc]"
+
  # admiral
  #:0 ""
  #_desc:0 ""
@@ -1404,7 +1704,7 @@ l_french:
  #_desc:0 ""
 
  lrsk_gov_var_leader_trait_general_esper:0 "$LRSK_GOV_VAR_ESPER$"
- lrsk_gov_var_leader_trait_general_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ grants flashes of strange tactical insight. Orders based on these insights tend to work out in a way that gives confidence to the troops while unnerving the enemy."
+ lrsk_gov_var_leader_trait_general_esper_desc:0 "$LRSK_GOV_VAR_ESP_LEADER$ grants flashes of strange tactical insight and an unusual ability to sense where the enemy will strike next."
 
  # governor
  #:0 ""
@@ -1552,6 +1852,7 @@ l_french:
  triggered_opinion_lrsk_gvp_unaccountable_bosses:0 "Unaccountable Bosses"
  triggered_opinion_lrsk_gvp_feckless_liberals:0 "Feckless Liberals"
  triggered_opinion_lrsk_gvp_comrades:0 "Comrades"
+ triggered_opinion_lrsk_gvp_mgmnt_prud:0 "Prudent Labor Relations"
  triggered_opinion_lrsk_gvp_business_innovation:0 "Business Innovation"
  triggered_opinion_lrsk_gvp_peculiar_enterprise:0 "Peculiar Enterprise"
  triggered_opinion_lrsk_gvp_collectivist_nightmare:0 "Collectivist Nightmare"
@@ -1663,8 +1964,8 @@ l_french:
 
  lrsk_crim_courier_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_gofer_plural$§! to act as discrete couriers for illicit communications and transactions $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and per §Y$job_lrsk_gov_var_job_gofer$§! job filled.\n\n"
 
- lrsk_gvp_bldg_organizing_hub:0 "Organizing Hub"
- lrsk_gvp_bldg_organizing_hub_desc:0 "The cooperative movement sees the employee-owned enterprise as the ideal resolution to most social conflict over power in the workplace, and will spread the techniques of worker self-organization for modest fees."
+ lrsk_gvp_bldg_organizing_hub:0 "Labor-Management Retreat"
+ lrsk_gvp_bldg_organizing_hub_desc:0 "One odd part of the master union contract entails broader promotion of the labor-management relationship which the branch office's owner has fostered with its unions. To that end, this retreat center allows local businesses and unions learn how to work together, for modest fees."
 
  lrsk_gov_var_bldg_grand_casino:0 "Grand Casino"
  lrsk_gov_var_bldg_grand_casino_desc:0 "From mega-slots to high stakes competative gaming to on-site sports betting, this opulent temple to chance and fortune lets thousands wager their cash for the thrill of testing their luck every day."
@@ -1688,7 +1989,7 @@ l_french:
  lrsk_gov_var_bldg_professional_protection_office_desc:0 "Dedicated security service professionals stand ready to solve all kinds of problems, from suspicions of marital infidelity, to potential unwanted criminal activity, to rumors of worker agitation."
 
  lrsk_gov_var_bldg_military_excellence_academy:0 "Military Excellence Academy"
- lrsk_gov_var_bldg_military_excellence_academy_desc:0 "Vision. Leadership. Cunning. Daring. The prowess of a people must be well tempered before battle is joined. Here, the finest strategic minds will tutor your officer corps in the art of war."
+ lrsk_gov_var_bldg_military_excellence_academy_desc:0 "The prowess of a people must be well tempered before battle is joined. Here, the finest strategic minds tutor both troops and officers in the art of war... All the better to wage wars, and capitalize on the lucrative speculation opportunites war brings."
 
  LRSK_MILITARY_EXCELLENCE_COMMON_1:0 "The host emipire's"
  LRSK_MILITARY_EXCELLENCE_COMMON_2:0 "get §G+20%§! chance of gaining a positive trait when spawned or on level up, §G+10%§! more per §Y$lrsk_gov_var_bldg_military_excellence_academy$§! in empire beyond the first (max +100%).\n\n"
@@ -1714,7 +2015,7 @@ l_french:
  lrsk_crim_smuggle_bonus:0 "$LRSK_CRIME_OPTION_COMMON_1$ §Y$job_lrsk_gov_var_job_offworld_worker_plural$§! to smuggle contraband, $LRSK_CRIME_OPTION_COMMON_2$ §R+20§!, and increases it by §R10%§! per §Y$job_lrsk_gov_var_job_offworld_worker$§! job filled.\n\n"
 
  lrsk_gov_var_bldg_local_news_office:0 "Local News Station"
- lrsk_gov_var_bldg_local_news_office_desc:0 "Boradcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
+ lrsk_gov_var_bldg_local_news_office_desc:0 "Broadcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
 
  LRSK_MEDIA_FAVOR_COMMON:0 "chance per year to get a §YFavor§! from the host empire when it uncovers a national scandal on this planet to use as blackmail! This is more likely on the capital world, on worlds with high crime and/or low stability, and on worlds with certain decision-based modifiers (i.e., §Y$anticrime_campaign$§!, §Y$crime_lord_deal$§!, §Y$planet_population_expelled$§!, §Y$planet_population_control$§!, §Y$planet_growth_discouraged$§!, and §Y$martial_law$§!). It can happen in the host empire at most once every 5 years."
 
@@ -1769,10 +2070,10 @@ l_french:
  mod_job_lrsk_gvp_job_citscholar_per_pop:0 "§G+1§! $job_lrsk_gvp_job_citscholar$ Job per $VALUE$ Pops"
  mod_job_lrsk_gvp_job_citscholar_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gvp_job_citscholar_add£ per $VALUE$ £pop£"
 
- # Regional Coordinator
- job_lrsk_gov_var_job_regional_coordinator:0 "Regional Coordinator"
+ # Planetary Auditor
+ job_lrsk_gov_var_job_regional_coordinator:0 "Planetary Auditor"
  job_lrsk_gov_var_job_regional_coordinator_plural:0 "$job_lrsk_gov_var_job_regional_coordinator$s"
- job_lrsk_gov_var_job_regional_coordinator_desc:0 "Regional administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
+ job_lrsk_gov_var_job_regional_coordinator_desc:0 "Local administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
  job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ produce §G+9§! £unity£ §Y$unity$§! and §G+5§! £mod_planet_amenities_no_happiness_add£ §Y$PLANET_AMENITIES_TITLE$§!. However, they decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-2§!. They consume §R5§! £energy£ §H$energy$§!."
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
@@ -1782,7 +2083,7 @@ l_french:
  job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
  job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
  job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
- job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§!, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§! by §G10%§!, and increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§! by §G+3§!. However, they produce §R+5§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-1§!. They consume §R1§! £food£ §H$food$§! and 2 £unity£ §H$unity$§!"
+ job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce §G+0.1§! £influence£ §Y$INFLUENCE$§!, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§! by §G10%§!, increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§! by §G+2§!, and reduce £mod_empire_size_add£ §Y$EMPIRE_SIZE$§! by §G-2§!. However, they produce §R+5§! £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§! and decrease £stability£ §Y$PLANET_STABILITY_TITLE$§! by §R-1§!. They consume §R1§! £food£ §H$food$§! and 2 £unity£ §H$unity$§!"
  mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
@@ -1791,7 +2092,7 @@ l_french:
  job_lrsk_gov_var_job_functionary:0 "Functionary"
  job_lrsk_gov_var_job_functionary_plural:0 "Functionaries"
  job_lrsk_gov_var_job_functionary_desc:0 "Sure, the hours are long, the paperwork is tedious, and you're paying for the privilege, but think of how great this will look on your resume!"
- job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ reduce £mod_empire_size_mult£ §YEmpire Size penalties§! and produce £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ produce £unity£ §Y$unity$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
  mod_job_lrsk_gov_var_job_functionary_add:0 "$job_lrsk_gov_var_job_functionary$ Jobs"
  mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_functionary_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_functionary_add£ per $VALUE$ £pop£"
@@ -1848,7 +2149,7 @@ l_french:
  edict_lrsk_gvp_citschol_desc:0 "We must enable our citizens to pursue their intellectual interests and enrich their communities thereby."
  edict_lrsk_gvp_citschol_tooltip:0 "Gives planets $edict_lrsk_gvp_citschol_effects_common$"
  edict_lrsk_gvp_citschol_no_suitable_planets:0 "§RBecause this gives 1 job per 15 pops, there is no effect if none of your planets have at least 15 pops.§!"
- edict_lrsk_gvp_citschol_effects_common:0 "§Y1§! £job_lrsk_gvp_job_citscholar£ §Y$job_lrsk_gvp_job_citscholar$ Job§! per §Y15§! £pop£ Pops. $job_lrsk_gvp_job_citscholar_effect_desc$"
+ edict_lrsk_gvp_citschol_effects_common:0 "Adds §Y1§! £job_lrsk_gvp_job_citscholar£ ['concept_lrsk_gvp_citscholar'] Job per §Y15§! £pop£ Pops."
 
  # Royal Absolutism - Proclamation of Justice
  edict_lrsk_gvp_royjustice:0 "Proclamation of Justice"
@@ -1864,8 +2165,10 @@ l_french:
 
  # Run Recursive Audit
  decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
- decision_lrsk_gov_var_rra_desc:1 "The regional administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
- decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ §Y$job_lrsk_gov_var_job_regional_coordinator_plural$§!. \n\n$job_lrsk_gov_var_job_regional_coordinator_effect_desc$ \n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. §RNote: The more specialized this planet's production, the higher the likelihood of a useful result!§!"
+ decision_lrsk_gov_var_rra_desc:1 "The local administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
+ decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ ['concept_lrsk_gvp_regional_coordinators']. Removes the results of any prior audit.\n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. \n\n§HNote:§! The more specialized this planet's production, the higher the likelihood of a useful result!"
+ lrsk_gvp_rra_fail_cooldown_planet:0 "£trigger_no£ Need to wait §R10 years§! before running another audit on §Y[this.GetName]§!."
+ lrsk_gvp_rra_fail_cooldown_empire:0 "£trigger_no£ The §Y[this.owner.GetName]§! needs to wait §R5 years§! before running another audit on one of its colonies."
 
  # Work Allocation Plan
  decision_lrsk_gvp_work_allocation_plan:0 "Work Allocation Plan"
@@ -1994,7 +2297,7 @@ l_french:
 
  lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
  lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
- lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! Pop Demotion Time at the cost of §R-15%§! £trade_value£ Trade Value"
+ lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! Pop Demotion Time at the cost of §R-15%§! £trade_value£ Trade Value. (Can be ended any time, will automatically end when no pops are unemployed for one month.)"
 
  ## Royal Absolutism - New Aristos
 
@@ -2042,10 +2345,13 @@ l_french:
  lrsk_gov_var_statmod_golden_age_cult:0 "Blessed Life Cult"
  lrsk_gov_var_statmod_golden_age_cult_desc:0 "$LRSK_DESC_MOVED_BY$ hope and beauty in the little things and the holiness of an ordinary life, $LRSK_DESC_A_WILD_PROPH$ a lifestyle of quiet contemplation and simple pleasures."
 
+ lrsk_gvp_dr_councilor_effect:0 "Interfaith Reconciliation"
+ lrsk_gvp_dr_councilor_effect_desc:0 "Under the guidance of the §Y$lrsk_gvp_direct_revelation_councilor$§!, new religious movement leaders are strongly encouraged to work out their differences - both with the more established mainstream faiths and with each other - and to promote social harmony."
+
  ## Distributed Planning Systems Audits
 
  lrsk_gov_var_statmod_planet_audit:0 "Recursive Functionality Audit"
- lrsk_gov_var_statmod_planet_audit_desc:0 "The regional administrative subroutines have temporarily been given semi-sapience rights and a sweeping mandate to audit and reprogram planetary logistics systems."
+ lrsk_gov_var_statmod_planet_audit_desc:0 "The local administrative subroutines have temporarily been given semi-sapience rights and a sweeping mandate to audit and reprogram planetary logistics systems."
 
  #lrsk_gov_var_statmod_planet_audit_1:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
  #lrsk_gov_var_statmod_planet_audit_1_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
@@ -2061,10 +2367,10 @@ l_french:
  #lrsk_gov_var_statmod_planet_audit_6_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
 
  lrsk_gov_var_statmod_planet_audit_continues:0 "Ongoing Audit"
- lrsk_gov_var_statmod_planet_audit_continues_desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make. Indeed, some of them seem soft-locked into repeatedly examining and tweaking the functions of the planet's systems. Perhaps this audit may continue indefinitely."
+ lrsk_gov_var_statmod_planet_audit_continues_desc:0 "The local administrative subroutines could not come to any consensus on what procedural changes to make. Indeed, some of them seem soft-locked into repeatedly examining and tweaking the functions of the planet's systems. Perhaps this audit may continue indefinitely."
 
  lrsk_gov_var_statmod_planet_audit_confused:0 "Confused Audit"
- lrsk_gov_var_statmod_planet_audit_confused_desc:0 "Something is very wrong. The changes implemented by the regional administrative subroutines make little sense and operational integrity is horribly low. Perhaps running this audit was a miscalculation, but it is not clear how else to correct this situation."
+ lrsk_gov_var_statmod_planet_audit_confused_desc:0 "Something is very wrong. The changes implemented by the local administrative subroutines make little sense and operational integrity is horribly low. Perhaps running this audit was a miscalculation, but it is not clear how else to correct this situation."
 
  PRIORITY_STRING:0 "Priority ="
 
@@ -2075,7 +2381,7 @@ l_french:
  lrsk_gov_var_statmod_planet_basic_priority_desc:0 "Enhanced algorithms have been implemented for streamlining the extraction of resources by simple drones."
 
  lrsk_gov_var_statmod_planet_logistic_priority:0 "$PRIORITY_STRING$ Logistics"
- lrsk_gov_var_statmod_planet_logistic_priority_desc:0 "The regional administrative subroutines focused on further improving their own logicistics optimizations."
+ lrsk_gov_var_statmod_planet_logistic_priority_desc:0 "The local administrative subroutines focused on further improving their own logicistics optimizations."
 
  lrsk_gov_var_statmod_planet_mining_priority:0 "$PRIORITY_STRING$ Mining"
  lrsk_gov_var_statmod_planet_mining_priority_desc:0 "All planetary mines and related infratructure receive priority in allocations and queues."
@@ -2278,7 +2584,7 @@ l_french:
  LRSK_CRIM_CHANGES_EXPLAIN:0 "\n\nNote that if you have taken the §H$civic_criminal_heritage$§! Civic, some of these effects may be different..."
   
  lrsk_government_variety_pack_backend.102.name:0 "$lrsk_government_variety_pack_backend.101.name$"
- lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §H$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with §Gan improved chance of military leaders gaining positive traits§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
+ lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §H$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with a §Gbonus to military leader experience gain§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
  
  lrsk_government_variety_pack_backend.102.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ Political Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire§!.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
@@ -2288,27 +2594,25 @@ l_french:
 
  # Combat Data: New Post-Data Intel
 
+ LRSK_GVP_CD_NO_MORE_NOTICE:0 "\n\n§PYou will not get an update when this happens again.§!"
+
  lrsk_gov_var_combat_data.3.name:0 "New Military Intel"
  lrsk_gov_var_combat_data.3.desc:0 "After our battle with the §H[lrsk_cd_anttag.GetName]§!, we have extrapolated the high-level strategy of their forces from their tactical decisions, giving us new insights into their broader military operations."
  lrsk_gov_var_combat_data.3.a:0 "Incorporating new combat data."
  lrsk_gov_var_combat_data.3.a.tooltip:0 "You have gained the next level of military intel on §Y[lrsk_cd_anttag.GetName]§!, which will be fresh for 30 days."
  lrsk_gov_var_combat_data.3.b:0 "No more notifications about this."
- lrsk_gov_var_combat_data.3.b.tooltip:0 "§PYou will not get an update when this happens again.§!"
+ lrsk_gov_var_combat_data.3.b.tooltip:0 "$lrsk_gov_var_combat_data.3.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  lrsk_gov_var_combat_data.4.name:0 "Military Intel Refreshed"
  lrsk_gov_var_combat_data.4.desc:0 "Our encounter with the §H[lrsk_cd_anttag.GetName]§! fleet has corroborated some of our previous information about their combat capabilities while forcing revisions elsewhere. In any case, we can maintain our current level of understanding of their military operations."
  lrsk_gov_var_combat_data.4.a:0 "Confirmed."
  lrsk_gov_var_combat_data.4.a.tooltip:0 "You maintained your current level of military intel on §Y[lrsk_cd_anttag.GetName]§! for another 30 days."
  lrsk_gov_var_combat_data.4.b:0 "$lrsk_gov_var_combat_data.3.b$"
- lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.3.b.tooltip$"
+ lrsk_gov_var_combat_data.4.b.tooltip:0 "$lrsk_gov_var_combat_data.4.a.tooltip$$LRSK_GVP_CD_NO_MORE_NOTICE$"
 
  # Royal Absolutism: Special effects
  lrsk_government_variety_pack_backend.1001.name:0 "$lrsk_government_variety_pack_backend.1002.name$"
  lrsk_government_variety_pack_backend.1002.name:0 "The Grand Proclamation of Royal Justice"
- #lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the laws of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. To dictate such a thing is well within the purview of [this.Leader.GetHerHis] absolute sovereign power, but it would be unseemly and degrade the dignity of the court to have another such ceremony before some years have passed."
- #lrsk_government_variety_pack_backend.1002.a:0 "That's how justice is done."
- #lrsk_government_variety_pack_backend.1002.b:0 "Don't inform me of this again."
- #lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Going forward, the effects of this edict will happen without this notice popping up."
  lrsk_government_variety_pack_backend.1002.desc:0 "In a lavish ceremony held at the royal court on [this.Capital.GetName], with [this.GetRulerTitle] [this.GetRulerName] presiding, and all the grandees of the realm in attendance, the [this.GetRulerTitle] proclaimed that the time had come to revise the government of the [this.GetName].\n\nAlthough the wheels of the great machine of state usually turn slowly here, with every legal code update taking time to be propagated, registered, and implemented, this ceremony put the courts and law enforcers on notice that no delays would be tolerated in enacting the [this.GetRulerTitle]'s agenda. \n\nOnce [this.Leader.GetSheHe] completes the opening ceremony and [this.Leader.GetHerHis] memorial speech, what will [this.GetRulerTitle] [this.GetRulerName] declare?"
  lrsk_government_variety_pack_backend.1002.a:0 "My chancellor will tell you the rest..."
  lrsk_government_variety_pack_backend.1002.a.tooltip:0 "No major effects, but the spectacle of the ceremony is enough to reinforce the ruler's legitimacy." # +scaling influence
@@ -2320,7 +2624,14 @@ l_french:
  lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
  lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
  lrsk_government_variety_pack_backend.1002.e.tooltip:0 "$lrsk_government_variety_pack_backend.1002.d.tooltip$" # -100 influence
-
+ lrsk_government_variety_pack_backend.1002.f:0 "We have decided to revise the nation's laws."
+ lrsk_government_variety_pack_backend.1002.f.tooltip:0 "Resets all policy cooldowns. Costs less the higher your [this.GetRulerTitle]'s level." # -300/ruler level influence
+ lrsk_government_variety_pack_backend.1002.g:0 "$lrsk_government_variety_pack_backend.1002.f$"
+ lrsk_government_variety_pack_backend.1002.g.tooltip:0 "$lrsk_government_variety_pack_backend.1002.f.tooltip$" # -150/ruler level influence
+ #lrsk_government_variety_pack_backend.1002.h:0 "The time for grand reform is now!"
+ #lrsk_government_variety_pack_backend.1002.h.tooltip:0 "Resets government reform and all policy cooldowns. Costs less the higher your [this.GetRulerTitle]'s level." # -750/ruler level influence & unity
+ #lrsk_government_variety_pack_backend.1002.i:0 "$lrsk_government_variety_pack_backend.1002.h$"
+ #lrsk_government_variety_pack_backend.1002.i.tooltip:0 "$lrsk_government_variety_pack_backend.1002.h.tooltip$" # -500/ruler level influence & unity
 
  # Test events, etc.
 
@@ -2494,10 +2805,10 @@ l_french:
  RESULT_STRING:0 "Audit Results on [this.GetName]:"
 
  lrsk_gov_var_distributed_planning_systems.3.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_audit_continues$"
- lrsk_gov_var_distributed_planning_systems.3.desc:0 "$lrsk_gov_var_statmod_planet_audit_continues_desc$"
+ lrsk_gov_var_distributed_planning_systems.3.desc:0 "$lrsk_gov_var_statmod_planet_audit_continues_desc$\n\nIn time, we will manage to determine what it is about the systems on [this.GetName] that caused this failure to hault, so that it will not occur here again."
 
  lrsk_gov_var_distributed_planning_systems.4.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_audit_confused$"
- lrsk_gov_var_distributed_planning_systems.4.desc:0 "$lrsk_gov_var_statmod_planet_audit_confused_desc$"
+ lrsk_gov_var_distributed_planning_systems.4.desc:0 "$lrsk_gov_var_statmod_planet_audit_confused_desc$\n\nIn time, we will manage to determine what it is about the systems on [this.GetName] that caused this critical error, so that it will not occur here again."
 
  lrsk_gov_var_distributed_planning_systems.5.name:0 "$RESULT_STRING$ $lrsk_gov_var_statmod_planet_spec_priority$"
  lrsk_gov_var_distributed_planning_systems.5.desc:0 "$lrsk_gov_var_statmod_planet_spec_priority_desc$"
@@ -2545,7 +2856,7 @@ l_french:
  lrsk_gov_var_distributed_planning_systems.19.desc:0 "$lrsk_gov_var_statmod_planet_construction_priority_desc$"
 
  lrsk_gov_var_distributed_planning_systems.20.name:0 "$RESULT_STRING$ Inconclusive..."
- lrsk_gov_var_distributed_planning_systems.20.desc:0 "The regional administrative subroutines could not come to any consensus on what procedural changes to make, seeing no obvious avenues for improvement. This audit could not optimize production on [this.GetName] at this time."
+ lrsk_gov_var_distributed_planning_systems.20.desc:0 "The local administrative subroutines could not come to any consensus on what procedural changes to make, seeing no obvious avenues for improvement. This audit could not optimize production on [this.GetName] at this time.\n\nDebugging the logs will hopefully refine this process and our undderstanding of the systems on [this.GetName] so that future attempts will be more likely to succeed."
 
  # Sublight Empire/Commonwealth
 
@@ -2998,10 +3309,10 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  ### Socialist Governments
  ## Imperial
  # Popular Kingdom
- format.lrsk_imp_pop.1: "<lrsk_imppop_desc><lrsk_imperial_pop> of the [This.GetSpeciesNamePlural]"
- format.lrsk_imp_pop.2: "<lrsk_imppop_desc><lrsk_imperial_pop> of [This.GetSpeciesName]kind"
- format.lrsk_imp_pop.3: "<lrsk_imppop_desc>[This.GetSpeciesAdj] <lrsk_imperial_pop>"
- format.lrsk_imp_pop.4: "[This.GetSpeciesAdj] <lrsk_imppop_desc><lrsk_imperial_pop>"
+ format.lrsk_imp_pop.1: "{lrskAoftheB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} [This.GetSpeciesNamePlural]}}"
+ format.lrsk_imp_pop.2: "{lrskAoftheB{AassocB{<lrsk_imppop_desc> <lrsk_imperial_pop>} lrskKindSuff{[This.GetSpeciesName]}}}"
+ format.lrsk_imp_pop.3: "{AassocB{<lrsk_imppop_desc> [This.GetSpeciesAdj]} {<lrsk_imperial_pop>}}"
+ format.lrsk_imp_pop.4: "{AassocB{[This.GetSpeciesAdj] <lrsk_imppop_desc>} {<lrsk_imperial_pop>}}"
  ## Dictatorial
  #Proletarian Dictatorship
  #Insurrectionary Lineage
@@ -3714,6 +4025,267 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  format_prefix.lrsk_gen_stellar.1:0 "[This.GetSpeciesName] <lrsk_stellar_generic>"
  format_prefix.lrsk_gen_stellar.2:0 "[This.Capital.GetName] <lrsk_stellar_generic>"
  
+ ### Parts
+ Communal:0 "Communal"
+ Common:0 "Common"
+ Social:0 "Social"
+ Peoples:0 "People's"
+ Popular:0 "Popular"
+ Proletarian:0 "Proletarian"
+ Plebeian:0 "Plebeian"
+ Commons:0 "Commons"
+ Social_Union:0 "Social Union"
+ Realm:0 "Realm"
+ Peopless:0 "People's"
+ Workerss:0 "Workers'"
+ Free_and_Fair:0 "Free and Fair"
+ Inc:0 ", Inc"
+ LLC:0 ", LLC"
+ LTD:0 ", LTD"
+ ULC:0 ", ULC"
+ Consensually_United:0 "Consensually-United"
+ Contracturally_Bound:0 "Contracturally-Bound"
+ Sovereign_Citizen:0 "Sovereign-Citizen"
+ Tomorrow:0 "Tomorrow"
+ Prosperity:0 "Prosperity"
+ Renewal:0 "Renewal"
+ Light:0 "Light"
+ Ascension:0 "Ascension"
+ Living_Word:0 "Living Word"
+ Fortune:0 "Fortune"
+ Virtue:0 "Virtue"
+ Reborn:0 "Reborn"
+ Messiah:0 "Messiah "
+ Riches:0 "Riches "
+ Truth:0 "Truth"
+ Spirit:0 "Spirit"
+ Saints:0 "Saints"
+ Shrine_Keepers:0 "Shrine-Keepers"
+ Chapel_Guards:0 "Chapel-Guards"
+ Socio_Economic:0 "Socio-Economic"
+ Socio_Political:0 "Socio-Political"
+ Socio_Cultural:0 "Socio-Cultural"
+ i_part_lrsk:0 "i"
+ e_part_lrsk:0 "e"
+ High_Command:0 "High Command"
+ Grand_Duchy:0 "Grand Duchy"
+ Free_and_United:0 "Free and United"
+ Doom_Heralds:0 "Doom Heralds"
+ Majestic:0 "Majestic"
+ Dynastic:0 "Dynastic"
+ Crowned:0 "Crowned"
+ Enlightened:0 "Enlightened"
+ Constitutional:0 "Constitutional"
+ Libertine:0 "Libertine"
+ Emancipated:0 "Emancipated"
+ Paternal:0 "Paternal"
+ Traditional:0 "Traditional"
+ Maternal:0 "Maternal"
+ Agrarian:0 "Agrarian"
+ Rustic:0 "Rustic"
+ Kinship:0 "Kinship"
+ Familial:0 "Familial"
+ Liberated:0 "Liberated"
+ Revolutionary:0 "Revolutionary"
+ Directory:0 "Directory"
+ Workers:0 "Workers"
+ Laborers:0 "Laborers"
+ Employees:0 "Employees"
+ Tradespersons:0 "Tradespersons"
+ Artisans:0 "Artisans"
+ Toilers:0 "Toilers"
+ Syndicated:0 "Syndicated"
+ Unions:0 "Unions"
+ Guilds:0 "Guilds"
+ Councils:0 "Councils"
+ Associations:0 "Associations"
+ Industrial:0 "Industrial"
+ Emancipated:0 "Emancipated"
+ Entrepreneurial:0 "Entrepreneurial"
+ Commercial:0 "Commercial"
+ Liberal:0 "Liberal"
+ Monarchy:0 "Monarchy"
+ Regency:0 "Regency"
+ Protectorate:0 "Protectorate"
+ Consulate:0 "Consulate"
+ Senate:0 "Senate"
+ Parliament:0 "Parliament"
+ Congress:0 "Congress"
+ Diet:0 "Diet"
+ Unfettered:0 "Unfettered"
+ Ungoverned:0 "Ungoverned"
+ Solutions:0 "Solutions"
+ Certified:0 "Certified"
+ Bonded:0 "Bonded"
+ Exploratory:0 "Exploratory"
+ Traders:0 "Traders"
+ Merchants:0 "Merchants"
+ Shippers:0 "Shippers"
+ Shipping:0 "Shipping"
+ Guild:0 "Guild"
+ Commission:0 "Commission"
+ Honorable:0 "Honorable"
+ Venerable:0 "Venerable"
+ Colonial:0 "Colonial"
+ Foreign:0 "Foreign"
+ Far:0 "Far"
+ Near:0 "Near"
+ Enterprise:0 "Enterprise"
+ Office:0 "Office"
+ Ministry:0 "Ministry"
+ Department:0 "Department"
+ Contractors:0 "Contractors"
+ Defense:0 "Defense"
+ Enforcement:0 "Enforcement"
+ Security:0 "Security"
+ First:0 "First"
+ Messianic:0 "Messianic"
+ Spiritual:0 "Spiritual"
+ Prosperous:0 "Prosperous"
+ Renewed:0 "Renewed"
+ Illuminated:0 "Illuminated"
+ Ascendant:0 "Ascendant"
+ Fortunate:0 "Fortunate"
+ Virtuous:0 "Virtuous"
+ Angelic:0 "Angelic"
+ Saintly:0 "Saintly"
+ Temple:0 "Temple"
+ Valorous:0 "Valorous"
+ Invincible:0 "Invincible"
+ Triumphant:0 "Triumphant"
+ Brave:0 "Brave"
+ Courageous:0 "Courageous"
+ Zealous:0 "Zealous"
+ Conquering:0 "Conquering"
+ Crusading:0 "Crusading"
+ Congregation:0 "Congregation"
+ Parish:0 "Parish"
+ Martyrs:0 "Martyrs"
+ Gang:0 "Gang"
+ Ring:0 "Ring"
+ Rational:0 "Rational"
+ Managed:0 "Managed"
+ Modern:0 "Modern"
+ Integrated:0 "Integrated"
+ Coherent:0 "Coherent"
+ Technical:0 "Technical"
+ Innovative:0 "Innovative"
+ Scientific:0 "Scientific"
+ Creative:0 "Creative"
+ Experimental:0 "Experimental"
+ Political:0 "Political"
+ Societal:0 "Societal"
+ Governmental:0 "Governmental"
+ Community:0 "Community"
+ Legal:0 "Legal"
+ Judicial:0 "Judicial"
+ Regulatory:0 "Regulatory"
+ Opportunity:0 "Opportunity"
+ Laboratories:0 "Laboratories"
+ Research_Firm:0 "Research Firm"
+ Citizenry:0 "Citizenry"
+ Dynasty:0 "Dynasty"
+ Admiralty:0 "Admiralty"
+ Freehold:0 "Freehold"
+ Warrior:0 "Warrior"
+ Battle:0 "Battle"
+ Fighting:0 "Fighting"
+ Fire:0 "Fire"
+ Thunder:0 "Thunder"
+ Bands:0 "Bands"
+ Hallowed:0 "Hallowed"
+ Caliphate:0 "Caliphate"
+ See:0 "See"
+ Archbishopric:0 "Archbishopric"
+ Ecclesiarchy:0 "Ecclesiarchy"
+ Diocese:0 "Diocese"
+ Millets:0 "Millets"
+ Eternal:0 "Eternal"
+ Throne:0 "Throne"
+ Monastic:0 "Monastic"
+ Mystic:0 "Mystic"
+ Canonical:0 "Canonical"
+ Inquisitorial:0 "Inquisitorial"
+ Episcopal:0 "Episcopal"
+ Shamanic:0 "Shamanic"
+ Groovy:0 "Groovy"
+ Mystic:0 "Mystic"
+ Astral:0 "Astral"
+ Trippy:0 "Trippy"
+ Bands:0 "Bands"
+ Fervent:0 "Fervent"
+ Knights:0 "Knights"
+ Soldiers:0 "Soldiers"
+ Templars:0 "Templars"
+ Paladins:0 "Paladins"
+ Army:0 "Army"
+ Militia:0 "Militia"
+ Crusade:0 "Crusade"
+ Legion:0 "Legion"
+ Jihad:0 "Jihad"
+ Empirical:0 "Empirical"
+ Objective:0 "Objective"
+ Reasoned:0 "Reasoned"
+ Factual:0 "Factual"
+ Sensible:0 "Sensible"
+ Wise:0 "Wise"
+ Inheritance:0 "Inheritance"
+ Academic:0 "Academic"
+ Scholarly:0 "Scholarly"
+ School:0 "School"
+ College:0 "College"
+ University:0 "University"
+ Collegial:0 "Collegial"
+ Educational:0 "Educational"
+ Learning:0 "Learning"
+ Administrative:0 "Administrative"
+ Senatorial:0 "Senatorial"
+ Representative:0 "Representative"
+ Gentle:0 "Gentle"
+ Benign:0 "Benign"
+ Peaceful:0 "Peaceful"
+ Benevolent:0 "Benevolent"
+ Royalty:0 "Royalty"
+ Bureaucracy:0 "Bureaucracy"
+ Middle:0 "Middle"
+ Central:0 "Central"
+ Celestial:0 "Celestial"
+ Sagely:0 "Sagely"
+ Heavenly:0 "Heavenly"
+ Regal:0 "Regal"
+ Absolute:0 "Absolute"
+ Dictatorial:0 "Dictatorial"
+ Ordered:0 "Ordered"
+ Oligarchic:0 "Oligarchic"
+ Assembled:0 "Assembled"
+ Territory:0 "Territory"
+ Confederal:0 "Confederal"
+ Monarchate:0 "Monarchate"
+ Deathlords:0 "Deathlords"
+ Final:0 "Final"
+ Hegemonic:0 "Hegemonic"
+ Noble:0 "Noble"
+ Tribal:0 "Tribal"
+ Nomadic:0 "Nomadic"
+ Banded:0 "Banded"
+ Princely:0 "Princely"
+ Patrician:0 "Patrician"
+ Aristocratic:0 "Aristocratic"
+ Genteel:0 "Genteel"
+ Highborn:0 "Highborn"
+ Citizen:0 "Citizen"
+ lrsk_num_0:0 "0"
+ lrsk_num_1:0 "1"
+ lrsk_num_2:0 "2"
+ lrsk_num_3:0 "3"
+ lrsk_num_4:0 "4"
+ lrsk_num_5:0 "5"
+ lrsk_num_6:0 "6"
+ lrsk_num_7:0 "7"
+ lrsk_num_8:0 "8"
+ lrsk_num_9:0 "9"
+ LRSK_BLANK_SPACE:0 ""
+
  #### Variables
 
  lrsk_impecon_foundries:0 "Number of Subjects rendering $lrsk_gvp_special_service_logistics$ services"
@@ -3722,5 +4294,6 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  lrsk_impecon_prospectors:0 "Number of Subjects rendering $lrsk_gvp_special_service_provisions$ services"
  
  #### OTHER/MISC
+ mod_councilor_ruler_imperial_exp_gain:0 "Ruler $exp_gain$"
 
  TBD:0 "To Be Done (fix this!)"

@@ -2,8 +2,6 @@
 # NAME FORMATS #
 ################
 
-# COMMENTED OUT UNTIL SUCH TIME AS I NEED THESE FOR CUSTOM GOVERNMENTS
-
 #### Imperial Materialist
 #
 ## Imperial Materialist 1
@@ -356,124 +354,109 @@
 #	# Human Star Empire
 #}
 #
-#
-#### Democratic Materialist
-#
-## Democratic Materialist 1
-#empire_name_format = {
-#	random_weight = {
-#		factor = 0
-#		modifier = {
-#			add = 25
-#			OR = {
-#
-#			}
-#			is_pirate = no
-#			is_primitive = no
-#			NOT = { is_country_type = fallen_empire }
-#			NOT = { is_country_type = awakened_fallen_empire }
-#		}
-#	}
-#	
-#	#lookups = 	
-#	format = "format.lrsk_imp_mat.1
-#	noun = "{[This.Capital.System.GetName]}"
-#	prefix_format = format_prefix.lrsk_dem_mat.1
-#	# Empire of Sol
-#}
-#
-## Democratic Materialist 2
-#empire_name_format = {
-#	random_weight = {
-#		factor = 0
-#		modifier = {
-#			add = 25
-#			OR = {
-#
-#			}
-#			is_pirate = no
-#			is_primitive = no
-#			NOT = { is_country_type = fallen_empire }
-#			NOT = { is_country_type = awakened_fallen_empire }
-#		}
-#	}
-#	
-#	#lookups = 	
-#	format = "format.lrsk_imp_mat.1
-#	noun = "{[This.Capital.GetName]}"
-#	prefix_format = format_prefix.lrsk_dem_mat.2
-#	# Empire of Earth
-#}
-#
-## Democratic Materialist 3
-#empire_name_format = {
-#	random_weight = {
-#		factor = 0
-#		modifier = {
-#			add = 25
-#			OR = {
-#
-#			}
-#			is_pirate = no
-#			is_primitive = no
-#			NOT = { is_country_type = fallen_empire }
-#			NOT = { is_country_type = awakened_fallen_empire }
-#		}
-#	}
-#	
-#	#lookups = 	
-#	format = "format.lrsk_imp_mat.1
-#	adjective = "{[This.GetSpeciesAdj]}"
-#	prefix_format = format_prefix.lrsk_dem_mat.3
-#	# Human Empire
-#}
-#
-## Democratic Materialist 4
-#empire_name_format = {
-#	random_weight = {
-#		factor = 0
-#		modifier = {
-#			add = 25
-#			OR = {
-#
-#			}
-#			is_pirate = no
-#			is_primitive = no
-#			NOT = { is_country_type = fallen_empire }
-#			NOT = { is_country_type = awakened_fallen_empire }
-#		}
-#	}
-#	
-#	#lookups = 	
-#	format = "format.lrsk_imp_mat.1
-#	adjective = "{[This.GetSpeciesAdj]}"
-#	prefix_format = format_prefix.lrsk_dem_mat.3
-#	# Great Human Empire
-#}
-#
-## Democratic Materialist 5
-#empire_name_format = {
-#	random_weight = {
-#		factor = 0
-#		modifier = {
-#			add = 25
-#			OR = {
-#
-#			}
-#			is_pirate = no
-#			is_primitive = no
-#			NOT = { is_country_type = fallen_empire }
-#			NOT = { is_country_type = awakened_fallen_empire }
-#		}
-#	}
-#	
-#	#lookups = 	
-#	format = "format.lrsk_imp_mat.1
-#	adjective = "{[This.GetSpeciesAdj]}"
-#	prefix_format = format_prefix.lrsk_dem_mat.3
-#	# Human Star Empire
-#}
-#
+
+### Democratic Materialist
+
+# Democratic Materialist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_mat_desc>{AofB{<lrsk_democratic_mat> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_democratic_mat>}}"
+}
+
+# Democratic Materialist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_mat_desc>{AofB{<lrsk_democratic_mat> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_democratic_mat>}}"
+}
+
+# Democratic Materialist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_mat_desc> {lrskKindSuff {<lrsk_democratic_mat> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_democratic_mat> [This.GetSpeciesName]}}"
+}
+
+# Democratic Materialist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_mat_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_democratic_mat>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_democratic_mat>}}"
+}
+
+# Democratic Materialist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_mat_desc>{<lrsk_democratic_mat>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{<lrsk_mat_desc>{<lrsk_democratic_mat>}}"
+}
+
 #### Technocracy
 #
 ## Imperial/Dictatorial Technocracy 1

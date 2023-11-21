@@ -7,32 +7,12 @@ lrsk_gov_var_gov_galactic_dominion = {
 	ruler_title = LRSK_GOV_VAR_RT_COS_AUTARCH
 
 	possible = {
-		has_authority = auth_dictatorial
+		has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy
 		OR = {
 			has_ethic = ethic_militarist
 			has_ethic = ethic_fanatic_militarist
-		}
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
-			add = 10
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
 		}
 	}
 
@@ -52,7 +32,7 @@ lrsk_gov_var_gov_galactic_imperium = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy
 		OR = {
@@ -71,7 +51,7 @@ lrsk_gov_var_gov_folkish_commonwealth = {
 	ruler_title = LRSK_GOV_VAR_RT_FOLKSPRESIDENT
 
 	possible = {
-		has_authority = auth_democratic
+		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
 			has_ethic = ethic_xenophobe
@@ -85,30 +65,7 @@ lrsk_gov_var_gov_folkish_commonwealth = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 1000
@@ -120,7 +77,7 @@ lrsk_gov_var_gov_folkish_league = {
 	ruler_title = LRSK_GOV_VAR_RT_FOLKSMARSHAL
 
 	possible = {
-		has_authority = auth_oligarchic
+		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
 			has_ethic = ethic_xenophobe
@@ -134,30 +91,7 @@ lrsk_gov_var_gov_folkish_league = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 1000
@@ -169,7 +103,7 @@ lrsk_gov_var_gov_folkish_regime = {
 	ruler_title = LRSK_GOV_VAR_RT_FOLKSLEADER
 
 	possible = {
-		has_authority = auth_dictatorial
+		has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
 			has_ethic = ethic_xenophobe
@@ -179,26 +113,6 @@ lrsk_gov_var_gov_folkish_regime = {
 		}
 		NOT = {
 			has_valid_civic = civic_fanatic_purifiers
-		}
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			OR = {
-				leader_class = admiral
-				leader_class = general
-			}
-		}
-		modifier = {
-			add = 10
-			OR = {
-				leader_class = governor
-			}
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
 		}
 	}
 
@@ -215,7 +129,7 @@ lrsk_gov_var_gov_folkish_realm = {
 	heir_title_female = LRSK_GOV_VAR_HT_TRUEBORNDAUGHTER
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
 			has_ethic = ethic_xenophobe
@@ -244,7 +158,7 @@ lrsk_gov_var_gov_crusader_kingdom = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		AND = {
 			OR = {
 				has_ethic = ethic_fanatic_militarist
@@ -258,6 +172,7 @@ lrsk_gov_var_gov_crusader_kingdom = {
 		OR = {
 			has_valid_civic = civic_feudal_realm
 			has_valid_civic = lrsk_gov_var_civic_chivalry
+			has_valid_civic = civic_crusader_spirit
 		}
 	}
 
@@ -278,41 +193,21 @@ lrsk_gov_var_gov_crusader_order = {
 	ruler_title = LRSK_GOV_VAR_RT_GRANDMASTER
 
 	possible = {
-		has_authority = auth_oligarchic
+		has_auth_oligarchic = yes
 		OR = {
 			has_ethic = ethic_spiritualist
 			has_ethic = ethic_fanatic_spiritualist
 		}
 		AND = {
 			has_valid_civic = civic_aristocratic_elite
-			has_valid_civic = lrsk_gov_var_civic_chivalry_aristo
+			OR = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+				has_valid_civic = civic_crusader_spirit
+			}
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 1400
@@ -331,35 +226,19 @@ lrsk_gov_var_gov_citizen_crusade = {
 	ruler_title = LRSK_GOV_VAR_RT_MP_MARSHALL
 	ruler_title_female = LRSK_GOV_VAR_RT_MP_MARSHALL
 
-	possible = {
-		has_valid_civic = civic_exalted_priesthood
+	possible = {		
 		has_valid_civic = civic_citizen_service
+		OR = {
+			has_valid_civic = civic_exalted_priesthood
+			has_valid_civic = lrsk_gov_var_civic_elected_clergy
+			AND = {
+				is_spiritualist = yes
+				has_valid_civic = civic_crusader_spirit
+			}
+		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 1400
@@ -377,7 +256,7 @@ lrsk_gov_var_gov_private_military_contractor = {
 				has_valid_civic = civic_citizen_service
 			}
 			AND = {
-				has_authority = auth_corporate
+				has_auth_corporate = yes
 				AND = {
 					has_valid_civic = civic_private_military_companies
 					has_valid_civic = civic_naval_contractors
@@ -386,30 +265,7 @@ lrsk_gov_var_gov_private_military_contractor = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 1000
@@ -422,35 +278,12 @@ lrsk_gov_var_gov_doom_horde = {
 	ruler_title_female = LRSK_GOV_VAR_RT_DEATH_KHATUN
 
 	possible = {
-		NOT = { has_authority = auth_imperial }
+		NOT = { has_auth_imperial = yes }
 		has_valid_civic = civic_fanatic_purifiers
 		has_valid_civic = civic_warrior_culture
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 2500
@@ -464,7 +297,7 @@ lrsk_gov_var_gov_doom_horde_imp = {
 	heir_title_female = LRSK_GOV_VAR_HT_TERROR_GONJI
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_fanatic_purifiers
 		has_valid_civic = civic_warrior_culture
 	}
@@ -487,30 +320,7 @@ lrsk_gov_var_gov_death_cult = {
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 2500
@@ -543,30 +353,7 @@ lrsk_gov_var_gov_citizen_legion = {
 		has_valid_civic = civic_citizen_service
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			factor = 0
-			leader_class = scientist
-		}
-		modifier = {
-			add = 40
-			leader_class = admiral
-		}
-		modifier = {
-			add = 40
-			leader_class = general
-		}
-	}
-
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 2500
