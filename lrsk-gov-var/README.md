@@ -23,8 +23,6 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v?.?.? (??/??/??) - Improved Legacy Civics 1
 -Enlightened Liberalism changes:
---Specialist political power +50%
---Worker political power +25%
 --(tbd active feature)
 --Output??
 -Workers Councils changes:
