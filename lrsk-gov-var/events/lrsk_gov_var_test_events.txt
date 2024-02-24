@@ -576,58 +576,58 @@ country_event = {
 }
 
 # Selects random level 1 admiral and levels them up - for use when testing mil acad effect
-country_event = {
-	id = lrsk_gvp_testing.13
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-
-		any_owned_leader = {
-			leader_class = admiral
-			has_level < 2
-		}
-	}
-
-	immediate = {
-		random_owned_leader = {
-			limit = {
-				leader_class = admiral
-				has_level < 2
-			}
-			add_experience = 201
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.13
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#
+#		any_owned_leader = {
+#			leader_class = admiral
+#			has_level < 2
+#		}
+#	}
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = admiral
+#				has_level < 2
+#			}
+#			add_experience = 201
+#		}
+#	}
+#}
 
 # Selects random level 1 general and levels them up - for use when testing mil acad effect
-country_event = {
-	id = lrsk_gvp_testing.14
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-
-		any_owned_leader = {
-			leader_class = general
-			has_level < 2
-		}
-	}
-
-	immediate = {
-		random_owned_leader = {
-			limit = {
-				leader_class = general
-				has_level < 2
-			}
-			add_experience = 201
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.14
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#
+#		any_owned_leader = {
+#			leader_class = general
+#			has_level < 2
+#		}
+#	}
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = general
+#				has_level < 2
+#			}
+#			add_experience = 201
+#		}
+#	}
+#}
 
 # Triggers the pop steal event
 country_event = {
@@ -686,7 +686,7 @@ country_event = {
 	}
 }
 
-# Creates 10 admirals and 10 generals
+# Creates 10 commanders
 country_event = {
 	id = lrsk_gvp_testing.17
 	hide_window = yes
@@ -703,39 +703,39 @@ country_event = {
 			create_leader = {
 				name = random
 				species = root.owner_main_species
-				class = admiral
+				class = commander
 				skill = 1
 			}
-			create_leader = {
-				name = random
-				species = root.owner_main_species
-				class = general
-				skill = 1
-			}
+			#create_leader = {
+			#	name = random
+			#	species = root.owner_main_species
+			#	class = general
+			#	skill = 1
+			#}
 		}
 	}
 }
 
 # Run entire test series on military leaders
-country_event = {
-	id = lrsk_gvp_testing.18
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-	}
-
-	immediate = {
-		country_event = { id = lrsk_gvp_testing.17 }
-		while = {
-			count = 10
-			country_event = { id = lrsk_gvp_testing.13 }
-			country_event = { id = lrsk_gvp_testing.14 }
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.18
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#	}
+#
+#	immediate = {
+#		country_event = { id = lrsk_gvp_testing.17 }
+#		while = {
+#			count = 10
+#			country_event = { id = lrsk_gvp_testing.13 }
+#			country_event = { id = lrsk_gvp_testing.14 }
+#		}
+#	}
+#}
 
 
 # Triggers casino luck - Casino side
