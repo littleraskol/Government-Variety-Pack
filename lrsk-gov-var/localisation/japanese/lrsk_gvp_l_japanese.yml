@@ -20,7 +20,7 @@ l_japanese:
 
  lrsk_gov_var_civic_elected_clergy:0 "Elected Clergy"
  lrsk_gov_var_civic_elected_clergy_desc:0 "In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation."
- civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects:0 "Gives planets £job_lrsk_gov_var_job_pastor£ ['concept_lrsk_gvp_pastor'] Jobs at the following rate:\n"
+ civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects:0 "Gives planets £job_lrsk_gov_var_job_pastor£ ['concept_lrsk_gvp_pastor'] Jobs scaling with population.\n"
 
  lrsk_gvp_elected_clergy_councilor:0 "First Elder of the Faithful"
  lrsk_gvp_elected_clergy_councilor_female:0 "$lrsk_gvp_elected_clergy_councilor$"
@@ -37,8 +37,7 @@ l_japanese:
 
  lrsk_gov_var_civic_republicanism:0 "Republicanism"
  lrsk_gov_var_civic_republicanism_desc:0 "This society believes that the greatest virtue is attained by people of good character serving the common good."
- lrsk_gov_var_civic_republicanism_oli:0 "$lrsk_gov_var_civic_republicanism$ (Legacy Civic)" 
- lrsk_gov_var_civic_republicanism_oli_desc:0 "$lrsk_gov_var_civic_republicanism_desc$\n\n§PThis version for Egalitarian Oligarchies is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
+ civic_tooltip_lrsk_gov_var_civic_republicanism_effects:0 "Gives planets £job_lrsk_gvp_job_civic_leader£ ['concept_lrsk_gvp_civic_leader'] Jobs scaling with population.\n"
 
  lrsk_gvp_republicanism_councilor:0 "Monitor of Civic Virtue"
  lrsk_gvp_republicanism_councilor_female:0 "$lrsk_gvp_republicanism_councilor$"
@@ -669,7 +668,11 @@ l_japanese:
  concept_lrsk_gvp_pastors:0 "$job_lrsk_gov_var_job_pastor_plural$"
  concept_lrsk_gvp_pastor:0 "$job_lrsk_gov_var_job_pastor$"
  concept_lrsk_gvp_pastors_desc:0 "$job_lrsk_gov_var_job_pastor_effect_desc$\n\n§L$job_lrsk_gov_var_job_pastor_desc$§!"
- 
+
+ concept_lrsk_gvp_civic_leaders:0 "$job_lrsk_gvp_job_civic_leader_plural$"
+ concept_lrsk_gvp_civic_leader:0 "$job_lrsk_gvp_job_civic_leader$"
+ concept_lrsk_gvp_civic_leaders_desc:0 "$job_lrsk_gvp_job_civic_leader_effect_desc$\n\n§L$job_lrsk_gvp_job_civic_leader_desc$§!"
+
  concept_lrsk_gvp_otherworld_guides:0 "$job_lrsk_gov_var_job_otherworld_guide_plural$"
  concept_lrsk_gvp_otherworld_guide:0 "$job_lrsk_gov_var_job_otherworld_guide$"
  concept_lrsk_gvp_otherworld_guides_desc:0 "$job_lrsk_gov_var_job_otherworld_guide_effect_desc$\n\n§L$job_lrsk_gov_var_job_otherworld_guide_desc$§!"
@@ -1453,6 +1456,8 @@ l_japanese:
 
  LRSK_GOV_VAR_RT_INTERPLANETARY_CHAIRMAN:0 "Interplanetary Chairman"
  LRSK_GOV_VAR_RT_INTERPLANETARY_CHAIRWOMAN:0 "Interplanetary Chairwoman"
+ LRSK_GOV_VAR_HT_DEPUTY_CHAIRMAN:0 "Deputy Chairman"
+ LRSK_GOV_VAR_HT_DEPUTY_CHAIRWOMAN:0 "Deputy Chairwoman"
 
  LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_IMPERIALISM:0 "After ages of slaving for bloody kings and greedy merchants, the people finally rose up in revolution. Workers' parties have captured the governments of the majority of nations and put them to the task of social development. The International system on [Capital.GetName] worked well at empowering the vanguard nation of the revolution to free the world with solidarity contributions from its associate workers' states."
 
@@ -2214,6 +2219,15 @@ l_japanese:
  mod_job_lrsk_gov_var_job_suppressor_add:0 "$job_lrsk_gov_var_job_suppressor$ Jobs"
  mod_job_lrsk_gov_var_job_suppressor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_suppressor$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_suppressor_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_suppressor_add£ per $VALUE$ £pop£"
+
+ #Civic Leader
+ job_lrsk_gvp_job_civic_leader:0 "Civic Leader"
+ job_lrsk_gvp_job_civic_leader_plural:0 "$job_lrsk_gvp_job_civic_leader$s"
+ job_lrsk_gvp_job_civic_leader_desc:0 "Local notables involved in charitable efforts, reform political movements, and neighborhood services."
+ job_lrsk_gvp_job_civic_leader_effect_desc:1 "£job_lrsk_gvp_job_civic_leader£ $job_lrsk_gvp_job_civic_leader_plural$ turn §R-2§! £consumer_goods£ §Y$consumer_goods$§! into §G+3§! £unity£ §Y$unity$§! and §G+2§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and increase £stability£ §Y$PLANET_STABILITY_TITLE$§! by §G+1§!."
+ mod_job_lrsk_gvp_job_civic_leader_add:0 "$job_lrsk_gvp_job_civic_leader$ Jobs"
+ mod_job_lrsk_gvp_job_civic_leader_per_pop:0 "§G+1§! $job_lrsk_gvp_job_civic_leader$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gvp_job_civic_leader_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_civic_leader_add£ per $VALUE$ £pop£"
 
  ## Edicts
 
@@ -4297,6 +4311,79 @@ lrsk_gov_var_chartered.20.desc.b:0 "As if their subjugation by a foreign power w
  Legion:0 "Legion"
  Jihad:0 "Jihad"
  Empirical:0 "Empirical"
+ Objective:0 "Objective"
+ Reasoned:0 "Reasoned"
+ Factual:0 "Factual"
+ Sensible:0 "Sensible"
+ Wise:0 "Wise"
+ Inheritance:0 "Inheritance"
+ Academic:0 "Academic"
+ Scholarly:0 "Scholarly"
+ School:0 "School"
+ College:0 "College"
+ University:0 "University"
+ Collegial:0 "Collegial"
+ Educational:0 "Educational"
+ Learning:0 "Learning"
+ Administrative:0 "Administrative"
+ Senatorial:0 "Senatorial"
+ Representative:0 "Representative"
+ Gentle:0 "Gentle"
+ Benign:0 "Benign"
+ Peaceful:0 "Peaceful"
+ Benevolent:0 "Benevolent"
+ Royalty:0 "Royalty"
+ Bureaucracy:0 "Bureaucracy"
+ Middle:0 "Middle"
+ Central:0 "Central"
+ Celestial:0 "Celestial"
+ Sagely:0 "Sagely"
+ Heavenly:0 "Heavenly"
+ Regal:0 "Regal"
+ Absolute:0 "Absolute"
+ Dictatorial:0 "Dictatorial"
+ Ordered:0 "Ordered"
+ Oligarchic:0 "Oligarchic"
+ Assembled:0 "Assembled"
+ Territory:0 "Territory"
+ Confederal:0 "Confederal"
+ Monarchate:0 "Monarchate"
+ Deathlords:0 "Deathlords"
+ Final:0 "Final"
+ Hegemonic:0 "Hegemonic"
+ Noble:0 "Noble"
+ Tribal:0 "Tribal"
+ Nomadic:0 "Nomadic"
+ Banded:0 "Banded"
+ Princely:0 "Princely"
+ Patrician:0 "Patrician"
+ Aristocratic:0 "Aristocratic"
+ Genteel:0 "Genteel"
+ Highborn:0 "Highborn"
+ Citizen:0 "Citizen"
+ lrsk_num_0:0 "0"
+ lrsk_num_1:0 "1"
+ lrsk_num_2:0 "2"
+ lrsk_num_3:0 "3"
+ lrsk_num_4:0 "4"
+ lrsk_num_5:0 "5"
+ lrsk_num_6:0 "6"
+ lrsk_num_7:0 "7"
+ lrsk_num_8:0 "8"
+ lrsk_num_9:0 "9"
+ LRSK_BLANK_SPACE:0 ""
+
+ #### Variables
+
+ lrsk_impecon_foundries:0 "Number of Subjects rendering $lrsk_gvp_special_service_logistics$ services"
+ lrsk_impecon_markets:0 "Number of Subjects rendering $lrsk_gvp_special_service_commerce$ services"
+ lrsk_impecon_trophies:0 "Number of Subjects rendering $lrsk_gvp_special_service_diplomatic$ services"
+ lrsk_impecon_prospectors:0 "Number of Subjects rendering $lrsk_gvp_special_service_provisions$ services"
+ 
+ #### OTHER/MISC
+ mod_councilor_ruler_imperial_exp_gain:0 "Ruler $exp_gain$"
+
+ TBD:0 "To Be Done (fix this!)"
  Objective:0 "Objective"
  Reasoned:0 "Reasoned"
  Factual:0 "Factual"
