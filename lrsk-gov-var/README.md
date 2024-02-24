@@ -24,6 +24,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v5.8.1 (??/??/??) - Post Pyxis Tweaks
 -Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Politician job per 40 pops (down from 1 per 25).
 -New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
+-Renamed "Imperial Economy" civic to "Extrective Economy" (due to confusion related to Imperial authority name); this civic also no longer has strict authority limits but is unavailable to any Egalitarians.
+-Renamed "Imperial Socialism" government to "Colonial Socialism" (due to confusion related to Imperial authority name) and reworded its description to match; this government also no longer has authority requirements. (Un-egalitarian social democracies can be colonialists too!)
+-Fixed various bugs/errors.
 
 v5.8 (11/17/23) - Pyxis (3.10) Update
 -Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)

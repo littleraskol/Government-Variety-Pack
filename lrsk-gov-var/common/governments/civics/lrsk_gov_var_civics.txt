@@ -1046,7 +1046,7 @@ lrsk_gov_var_civic_public_works = {
   }
 }
 
-#Imperial Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
+#Extractive Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
 lrsk_gov_var_civic_imperial_economy = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -1058,18 +1058,23 @@ lrsk_gov_var_civic_imperial_economy = {
   #icon = "gfx/interface/icons/governments/civics/civic_slaver_guilds.dds"
 
   possible = {
-    authority = {
-      OR = {
-        text = civic_tooltip_dic_imp
-        value = auth_dictatorial
-        value = auth_imperial
-      }
-    }
+    #authority = {
+    #  OR = {
+    #    text = civic_tooltip_dic_imp
+    #    value = auth_dictatorial
+    #    value = auth_imperial
+    #  }
+    #}
     ethics = {
       NOR = {
         text = civic_tooltip_not_xenophile
         value = ethic_xenophile
         value = ethic_fanatic_xenophile
+      }
+      NOR = {
+        text = civic_tooltip_not_egalitarian
+        value = ethic_egalitarian
+        value = ethic_fanatic_egalitarian
       }
     }
     civics = {
