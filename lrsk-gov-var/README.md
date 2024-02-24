@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v5.9 (??/??/??) - Eridanus (3.11) Update
+-Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
+-Updated compat version number.
+
 v5.8.1 (02/25/24) - Post Pyxis Tweaks
 -Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Civic Leader job per 25 pops. Civic Leaders are a specialist-level admin job. (Change made because adding ruler jobs per pop creates annoying unemployment issues as planet population fluctuates.)
 -New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
@@ -38,7 +42,6 @@ v5.8 (11/17/23) - Pyxis (3.10) Update
 -Added new civic "War Profiteers" which is what now allows for the Military Excellence Academy branch office building (the Naval Contractors and Private Military Companies civics no longer provide this).
 -Warrior Caste gets +1 Commander cap.
 -Royal Caste gets +1 Official cap.
--Updated compat version number.
 
 v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
 -MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
