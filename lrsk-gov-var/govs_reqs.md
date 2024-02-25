@@ -169,6 +169,30 @@ Note: When I say the name of an ethos, assume either normal or Fanatic is fine (
 [b]Whig Commonwealth[/b]
 [i]Requirements:[/i] Shadow Council, either Idealistic Foundation or Beacon of Liberty or both Meritocracy and Egalitarian, Democratic authority
 
+[b]Pious Republic[/b]
+[i]Requirements:[/i] Republicanism, some degree of Spiritualist, Oligarchic authority
+
+[b]Pious Commonwealth[/b]
+[i]Requirements:[/i] Republicanism, some degree of Spiritualist, Democratic authority
+
+[b]Bellicose Republic[/b]
+[i]Requirements:[/i] Republicanism, some degree of Militarist, Oligarchic authority
+
+[b]Bellicose Commonwealth[/b]
+[i]Requirements:[/i] Republicanism, some degree of Militarist, Democratic authority
+
+[b]Tranquil Republic[/b]
+[i]Requirements:[/i] Republicanism, some degree of Pacifist, Oligarchic authority
+
+[b]Tranquil Commonwealth[/b]
+[i]Requirements:[/i] Republicanism, some degree of Pacifist, Democratic authority
+
+[b]Enlightened Republic[/b]
+[i]Requirements:[/i] Republicanism, some degree of Materialist, Oligarchic authority
+
+[b]Enlightened Commonwealth[/b]
+[i]Requirements:[/i] Republicanism, some degree of Materialist, Democratic authority
+
 [b]Kingdom of the Sun[/b]
 [i]Requirements:[/i] Royal Absolutism and Universal Sovereignty, not Pacifist or Materialist, Imperial authority
 

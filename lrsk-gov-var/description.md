@@ -6,7 +6,7 @@ A total of [b]77 new civics[/b], broken down into 9 origins, 20 normal civics, 1
 
 [i][b]New Governments[/b][/i]
 
-Around [b]90-100 new governments[/b] (depending on how one counts), detailed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/]their own thread[/url].
+Around [b]95-105 new governments[/b] (depending on how one counts), detailed in [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/]their own thread[/url].
 
 [i][b]Special Thanks[/b][/i]
 
