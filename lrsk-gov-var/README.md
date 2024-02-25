@@ -23,6 +23,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v5.9 (??/??/??) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
+-Dealt with removed techs:
+--Changed tech requirements for Artificers, Essentialists, and Shapers councilors.
+--Reworked Uplift tutor empire creation to use base game advanced empire event to set techs (which I was also doing anyway...)
 -Updated compat version number.
 
 v5.8.1 (02/25/24) - Post Pyxis (or Pre-Eridanus?) Tweaks
