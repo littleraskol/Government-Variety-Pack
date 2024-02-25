@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.8.1 (02/25/24) - Post Pyxis Tweaks
+v5.8.1 (02/25/24) - Post Pyxis (or Pre-Eridanus?) Tweaks
 -Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Civic Leader job per 25 pops. Civic Leaders are a specialist-level admin job. (Change made because adding ruler jobs per pop creates annoying unemployment issues as planet population fluctuates.)
 -New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
 -Renamed "Imperial Economy" civic to "Extractive Economy" (due to confusion related to Imperial authority name); this civic also no longer has strict authority limits but is unavailable to any Egalitarians.
