@@ -24,9 +24,15 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v5.8.1 (02/25/24) - Post Pyxis Tweaks
 -Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Civic Leader job per 25 pops. Civic Leaders are a specialist-level admin job. (Change made because adding ruler jobs per pop creates annoying unemployment issues as planet population fluctuates.)
 -New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
--Renamed "Imperial Economy" civic to "Extrective Economy" (due to confusion related to Imperial authority name); this civic also no longer has strict authority limits but is unavailable to any Egalitarians.
+-Renamed "Imperial Economy" civic to "Extractive Economy" (due to confusion related to Imperial authority name); this civic also no longer has strict authority limits but is unavailable to any Egalitarians.
 -Renamed "Imperial Socialism" government to "Colonial Socialism" (due to confusion related to Imperial authority name) and reworded its description to match; this government also no longer has authority requirements. (Un-egalitarian social democracies can be colonialists too!)
--Fixed various bugs/errors.
+-Removed most trait-based job logic (i.e., effects on output and chance of taking a job) and replaced them with the scripted calcs which the base game now uses.
+-Overhauled Otherworld Guide job to be more dependent on psionic traits (and added concept text for this).
+-Investigator and Suppressor are now more reliant on certain traits: 
+--Psionic traits make the Investigator more effective (as a "legitimate" detective).
+--Strength-based traits make the Suppressor more effective (as a goon sent to intimidate people).
+-Fixed error where gestalt job was adding "regular" amenities (instead of the no-happiness version).
+-Fixed various other bugs/errors.
 
 v5.8 (11/17/23) - Pyxis (3.10) Update
 -Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)
