@@ -314,6 +314,46 @@ This government is a paradox. Its citizens are deeply suspicious of threats to t
 
 [i]Ruler:[/i] Executive Chancellor
 
+[b]Pious Republic[/b]
+In this stately republic, the citizenry see no distinction between civic virtue and holiness: good citizens strive to also be right with the faith, and encourage the most ethical and moral individuals to seek office in both church and state.
+
+[i]Ruler:[/i] Rev. Governor
+
+[b]Pious Commonwealth[/b]
+In this popular republic, the citizenry see no distinction between civic virtue and holiness: good citizens strive to also be right with the faith, and encourage the most ethical and moral individuals to seek office in both church and state.
+
+[i]Ruler:[/i] Rev. President
+
+[b]Bellicose Republic[/b]
+In this stately republic, civic virtue includes the ideal of the citizen-soldier defending republican liberty. Consequentially, military careers often lead to government careers, as the citizenry considers martial valor to be a key component of good citizenship.
+
+[i]Ruler:[/i] Governing Commander
+
+[b]Bellicose Commonwealth[/b]
+In this popular republic, civic virtue includes the ideal of the citizen-soldier defending republican liberty. Consequentially, military careers often lead to government careers, as the citizenry considers martial valor to be a key component of good citizenship.
+
+[i]Ruler:[/i] Commander-in-Chief
+
+[b]Tranquil Republic[/b]
+In this stately republic, the greatest sign that a citizen is virtuous is the ability to solve conflicts amicably. The peacemaker is considered the ideal republican leader, and diplomatic careers are a common way of preparing to run for office.
+
+[i]Ruler:[/i] Grand Arbiter
+
+[b]Tranquil Commonwealth[/b]
+In this popular republic, the greatest sign that a citizen is virtuous is the ability to solve conflicts amicably. The peacemaker is considered the ideal republican leader, and diplomatic careers are a common way of preparing to run for office.
+
+[i]Ruler:[/i] Chief Mediator
+
+[b]Enlightened Republic[/b]
+In this stately republic, the rational and inquisitive citizen is the considered the most virtuous. Political culture places a strong emphasis on education and the best politicians are those who approach political problems with an empirical and experimental method.
+
+[i]Ruler:[/i] Governing Rector
+
+[b]Enlightened Commonwealth[/b]
+In this popular republic, the rational and inquisitive citizen is the considered the most virtuous. Political culture places a strong emphasis on education and the best politicians are those who approach political problems with an empirical and experimental method.
+
+[i]Ruler:[/i] Presiding Rector
+
 [b]Kingdom of the Sun[/b]
 This government is centered around the person of the monarch, who claims to embody the state. All subjects and dependencies of the throne are likened to planets orbiting the sun.
 
