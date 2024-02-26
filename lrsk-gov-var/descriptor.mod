@@ -1,8 +1,7 @@
-version="4"
-supported_version="3.3.*"
+version="5.8"
 tags={
 	"Gameplay"
 }
 name="Government Variety Pack"
+supported_version="3.10.*"
 picture="thumbnail.png"
-remote_file_id="2764885229"

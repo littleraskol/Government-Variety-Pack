@@ -489,7 +489,7 @@ action_leave_federation = {
 
 ############# Vasal Demand #############
 
-action_demand_vassalization = {
+action_demand_subjugation = {
 	consider = {
 		LRSK_QCC_CONSIDER_02 = {
 			trigger = {
@@ -539,7 +539,7 @@ action_demand_vassalization = {
 
 ############# Vasal Request #############
 
-action_ask_to_become_vassalized = {
+action_ask_to_become_subjugated = {
 	consider = {
 		LRSK_QCC_CONSIDER_02 = {
 			trigger = {
@@ -588,104 +588,104 @@ action_ask_to_become_vassalized = {
 }
 
 ############# Protectorate Demand #############
-
-action_demand_protectorate = {
-	consider = {
-		LRSK_QCC_CONSIDER_02 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-		LRSK_QCC_CONSIDER_03 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-		LRSK_QCC_CONSIDER_04 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	select = {
-		LRSK_QCC_DEMAND_PROT_SELECT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	propose = {
-		LRSK_QCC_DEMAND_PROT_PROPOSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_DEMAND_PROT_ACCEPT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	refuse = {
-		LRSK_QCC_DEMAND_PROT_REFUSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
-
-############# Protectorate Request #############
-
-action_ask_to_become_protectorate = {
-	consider = {
-		LRSK_QCC_CONSIDER_02 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-		LRSK_QCC_CONSIDER_03 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-		LRSK_QCC_CONSIDER_04 = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	select = {
-		LRSK_QCC_ASK_FOR_PROT_SELECT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	propose = {
-		LRSK_QCC_ASK_FOR_PROT_PROPOSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	accept = {
-		LRSK_QCC_ASK_FOR_PROT_ACCEPT = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-	refuse = {
-		LRSK_QCC_ASK_FOR_PROT_REFUSE = {
-			trigger = {
-				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
-			}
-		}
-	}
-}
+## Deprecated?
+#action_demand_protectorate = {
+#	consider = {
+#		LRSK_QCC_CONSIDER_02 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#		LRSK_QCC_CONSIDER_03 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#		LRSK_QCC_CONSIDER_04 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	select = {
+#		LRSK_QCC_DEMAND_PROT_SELECT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	propose = {
+#		LRSK_QCC_DEMAND_PROT_PROPOSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_DEMAND_PROT_ACCEPT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	refuse = {
+#		LRSK_QCC_DEMAND_PROT_REFUSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
+#
+############## Protectorate Request #############
+## Deprecated?
+#action_ask_to_become_protectorate = {
+#	consider = {
+#		LRSK_QCC_CONSIDER_02 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#		LRSK_QCC_CONSIDER_03 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#		LRSK_QCC_CONSIDER_04 = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	select = {
+#		LRSK_QCC_ASK_FOR_PROT_SELECT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	propose = {
+#		LRSK_QCC_ASK_FOR_PROT_PROPOSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	accept = {
+#		LRSK_QCC_ASK_FOR_PROT_ACCEPT = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#	refuse = {
+#		LRSK_QCC_ASK_FOR_PROT_REFUSE = {
+#			trigger = {
+#				has_ai_personality = lrsk_gov_var_quasicollective_consciousness
+#			}
+#		}
+#	}
+#}
 
 ############# Release Subject #############
 

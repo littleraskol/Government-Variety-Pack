@@ -50,6 +50,7 @@ lrsk_gov_var_has_newfed_origin = {
 		lrsk_gov_var_has_discovery_origin = yes
 		lrsk_gov_var_has_tradeways_origin = yes
 		has_origin = lrsk_gov_var_origin_grand_alliance
+		has_origin = lrsk_gvp_origin_convened_providence
 	}
 }
 
@@ -60,6 +61,7 @@ lrsk_gov_var_has_newfed_npc_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways_npc
 		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
 		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+		has_origin = lrsk_gvp_origin_convened_providence_npc
 	}
 }
 
@@ -186,9 +188,43 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 # -No occupier (maybe not needed idk)
 # -No presence of ships/space monsters
 lrsk_system_vacant = {
-	nor = {
+	NOR = {
 		has_owner = yes
 		exists = space_owner
 		has_presence = yes
+	}
+}
+
+# Detect if a world is "safe to colonize" meaning:
+# -Not a holy world
+lrsk_safe_to_colonize_planet = {
+	NOR = {
+		has_modifier = holy_planet
+	}
+}
+
+# Detect if a system is "safe to colonize" meaning:
+# -Truly vacant
+# -Not adjacent to a FE's territory
+lrsk_safe_to_colonize_system = {
+	lrsk_system_vacant = yes
+	NOT = {
+		any_neighbor_system = {
+			exists = owner
+			owner = {
+				is_country_type = fallen_empire
+			}
+		}
+	}
+
+}
+
+# If a special vassal type of Imperial Economy
+lrsk_is_impecon_vassal = {
+	OR = {
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }

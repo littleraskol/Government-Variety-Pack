@@ -109,7 +109,10 @@ lrsk_uplift_1 = {
 						name = random
 						class = MACHINE
 						portrait = random
-						traits = random
+						traits = {
+							trait = trait_machine_unit
+							trait = random_traits
+						}
 						homeworld = this
 						effect = {
 							save_event_target_as = lrsk_uplift_tutor_species
@@ -145,7 +148,10 @@ lrsk_uplift_1 = {
 						name = random
 						class = random_non_machine
 						portrait = random
-						traits = random
+						traits = {
+							trait = trait_hive_mind
+							trait = random_traits
+						}
 						homeworld = this
 						effect = {
 							save_event_target_as = lrsk_uplift_tutor_species
@@ -309,15 +315,31 @@ lrsk_uplift_1 = {
 			generate_lost_colony_parent_bonus = yes # just adds stuff, we can use as-is
 
 			solar_system = {
-				create_starbase = {
-					size = starbase_starport
-					module = shipyard
-					building = crew_quarters
-					owner = event_target:lrsk_uplift_tutor
-					effect = {
-						set_starbase_module = {
-							slot = 1
-							module = trading_hub
+				if = { limit = { event_target:lrsk_uplift_tutor = { has_ethic = ethic_gestalt_consciousness } }
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_uplift_tutor
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = anchorage
+							}
+						}
+					}
+				}
+				else = {
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:lrsk_uplift_tutor
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = solar_panel_network
+							}
 						}
 					}
 				}
@@ -377,7 +399,7 @@ lrsk_uplift_1 = {
 			event_target:lrsk_uplift_pupil = {
 				set_subject_of = {
 					who = event_target:lrsk_uplift_tutor
-					subject_type = lrsk_gov_var_ward
+					preset = preset_protectorate
 				}
 				add_opinion_modifier = {
 					who = event_target:lrsk_uplift_tutor

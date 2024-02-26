@@ -2,6 +2,9 @@
 # Scripted Triggers - Housekeeping
 # Author: littleraskol
 
+# For other mods to check for this mod being active/loaded.
+lrsk_gvp_is_active = { always = yes }
+
 # These triggers are intended to positively identify empires with mod content. Some of them are more "thematic" than exact.
 
 lrsk_has_gvp_mil_gov = {
@@ -158,6 +161,8 @@ lrsk_has_gvp_soc_gov = {
 		has_government = lrsk_gov_var_gov_communal_democracy
 		has_government = lrsk_gov_var_gov_socialist_plenary
 		has_government = lrsk_gov_var_gov_automated_worldcommune
+		has_government = lrsk_gov_var_gov_automated_worldcommune_oli
+		has_government = lrsk_gov_var_gov_automated_worldcommune_dem
 		has_government = lrsk_gov_var_gov_market_socialism
 		has_government = lrsk_gov_var_gov_coop_enterprise
 		has_government = lrsk_gov_var_gov_syndicalist_conference
@@ -223,9 +228,17 @@ lrsk_has_gvp_frev_gov = {
 	}
 }
 
-lrsk_has_gvp_gestalt_gov = {
+lrsk_has_gvp_hive_gov = {
 	OR = {
 		has_government = lrsk_gov_var_gov_coop_supersap
+		has_government = lrsk_gov_var_gov_pretender_hive
+		has_government = lrsk_gov_var_gov_pretender_hive_imp
+	}
+}
+
+lrsk_has_gvp_gestalt_gov = {
+	OR = {
+		lrsk_has_gvp_hive_gov = yes
 	}
 }
 
@@ -233,6 +246,11 @@ lrsk_has_gvp_other_gov = {
 	OR = {
 		has_government = lrsk_gov_var_gov_pretender_hive
 		has_government = lrsk_gov_var_gov_pretender_hive_imp
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_imp
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_dic
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_oli
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_dem
+		has_government = lrsk_gov_var_gov_colonial_viceroyalty_cmp
 	}
 }
 
@@ -343,6 +361,27 @@ lrsk_has_gvp_advanced_gov = {
 	}
 }
 
+lrsk_has_gvp_purifier_gov = {
+	OR = {
+		has_government = lrsk_gov_var_gov_doom_horde
+		has_government = lrsk_gov_var_gov_doom_horde_imp
+		has_government = lrsk_gov_var_gov_death_cult
+		has_government = lrsk_gov_var_gov_death_cult_imp
+		has_government = lrsk_gov_var_gov_citizen_legion
+		has_government = lrsk_gov_var_gov_pure_social_republic
+	}
+}
+
+lrsk_has_gvp_special_corp_gov = {
+	OR = {
+		has_government = lrsk_gov_var_gov_crusading_company
+		has_government = lrsk_gov_var_gov_evangelical_franchise
+		has_government = lrsk_gov_var_gov_coop_enterprise
+		has_government = lrsk_gov_var_gov_market_socialism
+		has_government = lrsk_gov_var_gov_occult_franchise
+	}
+}
+
 lrsk_has_any_gvp_gov = {
 	OR = {
 		lrsk_has_gvp_mil_gov = yes
@@ -371,7 +410,6 @@ lrsk_has_gvp_normal_civic = {
 		has_civic = lrsk_gov_var_civic_elected_clergy
 		has_civic = lrsk_gov_var_civic_ascetic_virtues
 		has_civic = lrsk_gov_var_civic_republicanism
-		has_civic = lrsk_gov_var_civic_republicanism_oli
 		has_civic = lrsk_gov_var_civic_utilitarian_planning
 		has_civic = lrsk_gov_var_civic_siege_mentality
 		has_civic = lrsk_gov_var_civic_cult_of_personality
@@ -381,7 +419,6 @@ lrsk_has_gvp_normal_civic = {
 		has_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_civic = lrsk_gov_var_civic_business_lobby
 		has_civic = lrsk_gov_var_civic_chivalry
-		has_civic = lrsk_gov_var_civic_chivalry_aristo
 		has_civic = lrsk_gov_var_civic_lifelong_learning
 		has_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_civic = lrsk_gov_var_civic_direct_revelation
@@ -458,6 +495,7 @@ lrsk_has_gvp_corp_civic = {
 		has_civic = lrsk_gov_var_civic_mc_heritage_trust
 		has_civic = lrsk_gov_var_civic_mc_conflict_res
 		has_civic = lrsk_gov_var_civic_mc_police_state
+		has_civic = lrsk_gvp_civic_mc_war_profiteers
 	}
 }
 
@@ -499,7 +537,6 @@ lrsk_has_gvp_normal_valid_civic = {
 		has_valid_civic = lrsk_gov_var_civic_elected_clergy
 		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		has_valid_civic = lrsk_gov_var_civic_republicanism_oli
 		has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
 		has_valid_civic = lrsk_gov_var_civic_siege_mentality
 		has_valid_civic = lrsk_gov_var_civic_cult_of_personality
@@ -509,7 +546,6 @@ lrsk_has_gvp_normal_valid_civic = {
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_valid_civic = lrsk_gov_var_civic_business_lobby
 		has_valid_civic = lrsk_gov_var_civic_chivalry
-		has_valid_civic = lrsk_gov_var_civic_chivalry_aristo
 		has_valid_civic = lrsk_gov_var_civic_lifelong_learning
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_valid_civic = lrsk_gov_var_civic_direct_revelation
@@ -586,6 +622,7 @@ lrsk_has_gvp_corp_valid_civic = {
 		has_valid_civic = lrsk_gov_var_civic_mc_heritage_trust
 		has_valid_civic = lrsk_gov_var_civic_mc_conflict_res
 		has_valid_civic = lrsk_gov_var_civic_mc_police_state
+		has_valid_civic = lrsk_gvp_civic_mc_war_profiteers
 	}
 }
 
@@ -614,10 +651,10 @@ lrsk_has_any_gvp_valid_civic = {
 
 lrsk_has_enhanced_valid_civic = {
 	OR = {
-		has_valid_civic = civic_naval_contractors
+		#has_valid_civic = civic_naval_contractors
 		has_valid_civic = civic_media_conglomerate
 		has_valid_civic = civic_private_prospectors
-		has_valid_civic = civic_private_military_companies
+		#has_valid_civic = civic_private_military_companies
 		has_valid_civic = civic_indentured_assets
 	}
 }
@@ -631,10 +668,11 @@ lrsk_has_gvp_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways
 		has_origin = lrsk_gov_var_origin_tradeways_mc
 		has_origin = lrsk_gov_var_origin_grand_alliance
-		lrsk_has_advanced_origin = yes
+		has_origin = lrsk_gvp_origin_convened_providence
 		has_origin = lrsk_gov_var_origin_uplift
 		#has_origin = lrsk_gov_var_origin_sublight_empire
 		#has_origin = lrsk_gov_var_origin_sublight_commonwealth
+		lrsk_has_advanced_origin = yes
 	}
 }
 
@@ -645,6 +683,7 @@ lrsk_has_gvp_npc_origin = {
 		has_origin = lrsk_gov_var_origin_tradeways_npc
 		has_origin = lrsk_gov_var_origin_tradeways_mc_npc
 		has_origin = lrsk_gov_var_origin_grand_alliance_npc
+		has_origin = lrsk_gvp_origin_convened_providence_npc
 		#has_origin = lrsk_gov_var_origin_sublight_colony_loy
 		#has_origin = lrsk_gov_var_origin_sublight_colony_gsp
 		#has_origin = lrsk_gov_var_origin_sublight_colony_dis
@@ -675,6 +714,17 @@ lrsk_has_gvp_possible_invalidated_civic = {
 			has_civic = lrsk_gov_var_civic_universal_sovereignty
 			has_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		}
+		AND = {
+			has_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			OR = {
+				has_civic = civic_hive_divided_attention
+				has_civic = civic_hive_subsumed_will
+			}
+		}
+		AND = {
+			has_civic = civic_feudal_realm
+			has_civic = lrsk_gov_var_civic_royal_absolutism
+		}
 	}
 }
 
@@ -688,16 +738,24 @@ lrsk_has_special_vassals = {
 # Specifies conditions that would block an event that alters vassal type for various special vassal type civcs etc.
 lrsk_special_vassal_allowed = {
 	NOR = {
-		# Prevents any existing ImpEcon special vassal from being changed.
-		is_subject_type = lrsk_gvp_vassal_foundry
-		is_subject_type = lrsk_gvp_vassal_market
-		is_subject_type = lrsk_gvp_vassal_trophy
-		is_subject_type = lrsk_gvp_vassal_prospector			
+		# Prevents special vassal choice event from firing for a special vassal (edge case?)
+		lrsk_is_impecon_special_vassal = yes
 
 		# Uplift: Prevent immediate change in subject status etc. if tutor can create special vassals
+		# Deprecated: Uplift uses Protectorate now.
 		#from = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 
 		# Prevent sublight colonies from being changed
 		#has_relation_flag = { who = from flag = lrsk_sublight_underling_of }
+	}
+}
+
+# Whether it is a subject with an ImpEcon special type.
+lrsk_is_impecon_special_vassal = {
+	OR = {
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_foundry }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_market }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_trophy }
+		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }

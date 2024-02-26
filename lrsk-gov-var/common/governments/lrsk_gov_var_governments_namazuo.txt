@@ -10,23 +10,8 @@ lrsk_gov_var_gov_conspiracy_of_equals = {
 		has_valid_civic = civic_shadow_council
 		has_valid_civic = lrsk_gov_var_civic_workers_councils
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -40,22 +25,7 @@ lrsk_gov_var_gov_utopian_despotism_dic = {
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_valid_civic = lrsk_gov_var_civic_automated_indolence
-		has_authority = auth_dictatorial
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 50
-			leader_class = scientist
-		}
+		has_auth_dictatorial = yes
 	}
 
 	weight = {
@@ -71,7 +41,7 @@ lrsk_gov_var_gov_utopian_despotism_imp = {
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_valid_civic = lrsk_gov_var_civic_automated_indolence
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 	}
 
 	weight = {
@@ -87,27 +57,12 @@ lrsk_gov_var_gov_utopian_socialism = {
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_valid_civic = lrsk_gov_var_civic_automated_indolence
 		OR = {
-			has_authority = auth_oligarchic
-			has_authority = auth_democratic
+			has_auth_oligarchic = yes
+			has_auth_democratic = yes
 		}
 	}
 
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 50
-			leader_class = scientist
-		}
-	}
-
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -118,30 +73,13 @@ lrsk_gov_var_gov_utopian_socialism = {
 lrsk_gov_var_gov_social_imperialism = {
 	ruler_title = LRSK_GOV_VAR_RT_INTERPLANETARY_CHAIRMAN
 	ruler_title_female = LRSK_GOV_VAR_RT_INTERPLANETARY_CHAIRWOMAN
+	heir_title = LRSK_GOV_VAR_HT_DEPUTY_CHAIRMAN
+	heir_title_female = LRSK_GOV_VAR_HT_DEPUTY_CHAIRWOMAN
 
 	possible = {
-		has_authority = auth_dictatorial
+		#has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = admiral
-		}
-		modifier = {
-			add = 10
-			leader_class = general
-		}
 	}
 
 	weight = {
@@ -154,31 +92,12 @@ lrsk_gov_var_gov_pure_social_republic = {
 	ruler_title = LRSK_GOV_VAR_RT_PEOPLES_CHAMPION
 
 	possible = {
-		NOT = { has_authority = auth_imperial }
+		NOT = { has_auth_imperial = yes }
 		has_valid_civic = civic_fanatic_purifiers
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 50
-			leader_class = admiral
-		}
-		modifier = {
-			add = 20
-			leader_class = general
-		}
-	}
 	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 2100
@@ -190,27 +109,12 @@ lrsk_gov_var_gov_onestate_socialism = {
 	ruler_title = LRSK_GOV_VAR_RT_NATIONAL_PARTY_CHAIR
 
 	possible = {
-		NOT = { has_authority = auth_imperial }
+		NOT = { has_auth_imperial = yes }
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 		has_valid_civic = civic_inwards_perfection
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -225,23 +129,8 @@ lrsk_gov_var_gov_workers_republic = {
 		has_valid_civic = lrsk_gov_var_civic_republicanism
 		has_valid_civic = lrsk_gov_var_civic_workers_councils
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -259,23 +148,8 @@ lrsk_gov_var_gov_rustic_republic = {
 		}
 		has_valid_civic = civic_agrarian_idyll
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -290,23 +164,8 @@ lrsk_gov_var_gov_peasant_commune_collective = {
 		has_valid_civic = civic_agrarian_idyll
 		has_valid_civic = lrsk_gov_var_civic_workers_councils
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -318,24 +177,9 @@ lrsk_gov_var_gov_peasant_dictatorship = {
 	ruler_title = LRSK_GOV_VAR_RT_COLLECTIVE_DIRECTOR
 
 	possible = {
-		has_authority = auth_dictatorial
+		has_auth_dictatorial = yes
 		has_valid_civic = civic_agrarian_idyll
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 30
-			leader_class = governor
-		}
-		modifier = {
-			add = 10
-			leader_class = scientist
-		}
 	}
 
 	weight = {
@@ -354,7 +198,7 @@ lrsk_gov_var_gov_agrarian_monarchy = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_agrarian_idyll
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
@@ -368,30 +212,21 @@ lrsk_gov_var_gov_agrarian_monarchy = {
 lrsk_gov_var_gov_reactionary_socialism = {
 	ruler_title = LRSK_GOV_VAR_RT_LORD_PRESIDENT
 	ruler_title_female = LRSK_GOV_VAR_RT_LADY_PRESIDENT
+	heir_title = LRSK_GOV_VAR_HT_VP_ESQ
+	heir_title_female = LRSK_GOV_VAR_HT_VP_ESQ
 	
 	dynastic_last_names = yes
 
 	possible = {
 		OR = {
-			has_authority = auth_oligarchic
-			has_authority = auth_imperial
+			has_auth_oligarchic = yes
+			has_auth_imperial = yes
 		}
 		has_valid_civic = civic_aristocratic_elite
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-	}
 	
-	leader_class = governor
+	#leader_class = governor
 
 	weight = {
 		base = 1100
@@ -409,7 +244,7 @@ lrsk_gov_var_gov_feudal_socialism = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_feudal_realm
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 	}
@@ -428,7 +263,7 @@ lrsk_gov_var_gov_crime_family = {
 	dynastic_last_names = yes
 
 	possible = {
-		has_authority = auth_imperial
+		has_auth_imperial = yes
 		has_valid_civic = civic_merchant_guilds
 		has_valid_civic = civic_barbaric_despoilers
 	}
@@ -443,31 +278,12 @@ lrsk_gov_var_gov_rogue_freehold = {
 	ruler_title = LRSK_GOV_VAR_RT_HEAD_JUDGE
 
 	possible = {
-		has_authority = auth_democratic
+		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_valid_civic = civic_barbaric_despoilers
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 30
-			leader_class = admiral
-		}
-		modifier = {
-			add = 30
-			leader_class = general
-		}
-	}
 	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 11000
@@ -480,33 +296,14 @@ lrsk_gov_var_gov_corporate_banditry = {
 
 	possible = {
 		OR = {
-			has_authority = auth_dictatorial
-			has_authority = auth_oligarchic
+			has_auth_dictatorial = yes
+			has_auth_oligarchic = yes
 		}
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 		has_valid_civic = civic_barbaric_despoilers
 	}
-
-	election_candidates = {
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
-		modifier = {
-			add = 30
-			leader_class = admiral
-		}
-		modifier = {
-			add = 30
-			leader_class = general
-		}
-	}
 	
-	leader_class = admiral
+	#leader_class = admiral
 
 	weight = {
 		base = 11000

@@ -1,16 +1,16 @@
-################
-# NAME FORMATS #
-################
+# ################
+# # NAME FORMATS #
+# ################
 
-## This file defines random names for NPC-only governments required for other content.
-## Nothing should be player-facing, thus preserving patch fucntions.
-## iow, "lesser names patch" will miss this file.
+# ## This file defines random names for NPC-only governments required for other content.
+# ## Nothing should be player-facing, thus preserving patch fucntions.
+# ## iow, "lesser names patch" will miss this file.
 
-################
-# NAME FORMATS #
-################
+# ################
+# # NAME FORMATS #
+# ################
 
-### Imperial Generic
+# ### Imperial Generic
 
 # Imperial Generic 1
 empire_name_format = {
@@ -27,10 +27,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_imp_gen.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_imperial_gen>"
-	# Empire of Sol
+	format = "{<lrsk_impdic_filler>{AofB{<lrsk_imperial_gen> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_imperial_gen>}}"
 }
 
 # Imperial Generic 2
@@ -48,10 +47,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_imp_gen.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_imperial_gen>"
-	# Empire of Earth
+	format = "{<lrsk_impdic_filler>{AofB{<lrsk_imperial_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_imperial_gen>}}"
 }
 
 # Imperial Generic 3
@@ -69,10 +67,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_imp_gen.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_gen>"
-	# Human Empire
+	format = "{<lrsk_impdic_filler> {lrskKindSuff {<lrsk_imperial_gen> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_imperial_gen> [This.GetSpeciesName]}}"
 }
 
 # Imperial Generic 4
@@ -90,10 +87,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_imp_gen.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_gen>"
-	# Great Human Empire
+	format = "{<lrsk_impdic_filler> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_imperial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_imperial_gen>}}"
 }
 
 # Imperial Generic 5
@@ -111,14 +107,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_imp_gen.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_imperial_gen>"
-	# Human Star Empire
+	format = "{[This.GetSpeciesAdj]{<lrsk_impdic_filler>{<lrsk_imperial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{<lrsk_impdic_filler>{<lrsk_imperial_gen>}}"
 }
 
 
-### Dictatorial Generic
+# ### Dictatorial Generic
 
 # Dictatorial Generic 1
 empire_name_format = {
@@ -135,10 +130,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dic_gen.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_dictatorial_gen>"
-	# Empire of Sol
+	format = "{<lrsk_impdic_filler>{AofB{<lrsk_dictatorial_gen> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_dictatorial_gen>}}"
 }
 
 # Dictatorial Generic 2
@@ -156,10 +150,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dic_gen.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_dictatorial_gen>"
-	# Empire of Earth
+	format = "{<lrsk_impdic_filler>{AofB{<lrsk_dictatorial_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_dictatorial_gen>}}"
 }
 
 # Dictatorial Generic 3
@@ -177,10 +170,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dic_gen.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_dictatorial_gen>"
-	# Human Empire
+	format = "{<lrsk_impdic_filler> {lrskKindSuff {<lrsk_dictatorial_gen> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_dictatorial_gen> [This.GetSpeciesName]}}"
 }
 
 # Dictatorial Generic 4
@@ -198,10 +190,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dic_gen.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_dictatorial_gen>"
-	# Great Human Empire
+	format = "{<lrsk_impdic_filler> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_dictatorial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_dictatorial_gen>}}"
 }
 
 # Dictatorial Generic 5
@@ -219,14 +210,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dic_gen.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_dictatorial_gen>"
-	# Human Star Empire
+	format = "{[This.GetSpeciesAdj]{<lrsk_impdic_filler>{<lrsk_dictatorial_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{<lrsk_impdic_filler>{<lrsk_dictatorial_gen>}}"
 }
 
 
-### Oligarchic Generic
+# ### Oligarchic Generic
 
 # Oligarchic Generic 1
 empire_name_format = {
@@ -243,10 +233,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_oli_gen.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_oligarchic_gen>"
-	# Empire of Sol
+	format = "{<lrsk_demoli_filler>{AofB{<lrsk_oligarchic_gen> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_oligarchic_gen>}}"
 }
 
 # Oligarchic Generic 2
@@ -264,10 +253,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_oli_gen.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_oligarchic_gen>"
-	# Empire of Earth
+	format = "{<lrsk_demoli_filler>{AofB{<lrsk_oligarchic_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_oligarchic_gen>}}"
 }
 
 # Oligarchic Generic 3
@@ -285,10 +273,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_oli_gen.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_oligarchic_gen>"
-	# Human Empire
+	format = "{<lrsk_demoli_filler> {lrskKindSuff {<lrsk_oligarchic_gen> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_oligarchic_gen> [This.GetSpeciesName]}}"
 }
 
 # Oligarchic Generic 4
@@ -306,10 +293,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_oli_gen.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_oligarchic_gen>"
-	# Great Human Empire
+	format = "{<lrsk_demoli_filler> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_oligarchic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_oligarchic_gen>}}"
 }
 
 # Oligarchic Generic 5
@@ -327,14 +313,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_oli_gen.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_oligarchic_gen>"
-	# Human Star Empire
+	format = "{[This.GetSpeciesAdj]{<lrsk_demoli_filler>{<lrsk_oligarchic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{<lrsk_demoli_filler>{<lrsk_oligarchic_gen>}}"
 }
 
 
-### Democratic Generic
+# ### Democratic Generic
 
 # Democratic Generic 1
 empire_name_format = {
@@ -351,10 +336,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dem_gen.1"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_democratic_gen>"
-	# Empire of Sol
+	format = "{<lrsk_demoli_filler>{AofB{<lrsk_democratic_gen> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_democratic_gen>}}"
 }
 
 # Democratic Generic 2
@@ -372,10 +356,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dem_gen.2"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_democratic_gen>"
-	# Empire of Earth
+	format = "{<lrsk_demoli_filler>{AofB{<lrsk_democratic_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_democratic_gen>}}"
 }
 
 # Democratic Generic 3
@@ -393,10 +376,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dem_gen.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_democratic_gen>"
-	# Human Empire
+	format = "{<lrsk_demoli_filler> {lrskKindSuff {<lrsk_democratic_gen> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_democratic_gen> [This.GetSpeciesName]}}"
 }
 
 # Democratic Generic 4
@@ -414,10 +396,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dem_gen.4"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_democratic_gen>"
-	# Great Human Empire
+	format = "{<lrsk_demoli_filler> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_democratic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_democratic_gen>}}"
 }
 
 # Democratic Generic 5
@@ -435,14 +416,13 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_dem_gen.5"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <lrsk_democratic_gen>"
-	# Human Star Empire
+	format = "{[This.GetSpeciesAdj]{<lrsk_demoli_filler>{<lrsk_democratic_gen>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{<lrsk_demoli_filler>{<lrsk_democratic_gen>}}"
 }
 
 
-# Megacorporation
+# # Megacorporation
 empire_name_format = {
 	random_weight = {
 		factor = 0
@@ -457,30 +437,9 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_megacorp.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesAdj] <lrsk_megacorp>"
-	# Human Empire
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 20
-			OR = {
-				has_government = "lrsk_gov_var_gov_colonial_viceroyalty_cmp"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.lrsk_megacorp.2"
-	noun = "[This.Capital.System.GetName]"
-	prefix_format = "[This.Capital.System.GetName] <lrsk_megacorp>"
-	# Sol Empire
+	format = "{[This.GetSpeciesAdj] {<lrsk_stellar_generic_desc> {lrskConcat {<lrsk_megacorp> <lrsk_corp_bits>}}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_megacorp>}}"
 }
 
 empire_name_format = {
@@ -497,8 +456,26 @@ empire_name_format = {
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
 	}
-	format = "format.lrsk_megacorp.3"
-	noun = "[This.Capital.GetName]"
-	prefix_format = "[This.Capital.GetName] <lrsk_megacorp>"
-	# Earth Empire
+	format = "{<lrsk_stellar_generic_desc> {<lrsk_megacorp> {of {lrskConcat {[This.Capital.System.GetName] <lrsk_corp_bits>}}}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_megacorp> [This.Capital.System.GetName]}}"
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 20
+			OR = {
+				has_government = "lrsk_gov_var_gov_colonial_viceroyalty_cmp"
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_stellar_generic_desc> {<lrsk_megacorp>{of {lrskConcat {[This.Capital.GetName] <lrsk_corp_bits>}}}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx {<lrsk_megacorp> [This.Capital.GetName]}}"
 }

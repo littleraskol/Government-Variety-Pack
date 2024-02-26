@@ -576,58 +576,58 @@ country_event = {
 }
 
 # Selects random level 1 admiral and levels them up - for use when testing mil acad effect
-country_event = {
-	id = lrsk_gvp_testing.13
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-
-		any_owned_leader = {
-			leader_class = admiral
-			has_level < 2
-		}
-	}
-
-	immediate = {
-		random_owned_leader = {
-			limit = {
-				leader_class = admiral
-				has_level < 2
-			}
-			add_experience = 201
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.13
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#
+#		any_owned_leader = {
+#			leader_class = admiral
+#			has_level < 2
+#		}
+#	}
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = admiral
+#				has_level < 2
+#			}
+#			add_experience = 201
+#		}
+#	}
+#}
 
 # Selects random level 1 general and levels them up - for use when testing mil acad effect
-country_event = {
-	id = lrsk_gvp_testing.14
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-
-		any_owned_leader = {
-			leader_class = general
-			has_level < 2
-		}
-	}
-
-	immediate = {
-		random_owned_leader = {
-			limit = {
-				leader_class = general
-				has_level < 2
-			}
-			add_experience = 201
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.14
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#
+#		any_owned_leader = {
+#			leader_class = general
+#			has_level < 2
+#		}
+#	}
+#
+#	immediate = {
+#		random_owned_leader = {
+#			limit = {
+#				leader_class = general
+#				has_level < 2
+#			}
+#			add_experience = 201
+#		}
+#	}
+#}
 
 # Triggers the pop steal event
 country_event = {
@@ -686,7 +686,7 @@ country_event = {
 	}
 }
 
-# Creates 10 admirals and 10 generals
+# Creates 10 commanders
 country_event = {
 	id = lrsk_gvp_testing.17
 	hide_window = yes
@@ -703,39 +703,39 @@ country_event = {
 			create_leader = {
 				name = random
 				species = root.owner_main_species
-				class = admiral
+				class = commander
 				skill = 1
 			}
-			create_leader = {
-				name = random
-				species = root.owner_main_species
-				class = general
-				skill = 1
-			}
+			#create_leader = {
+			#	name = random
+			#	species = root.owner_main_species
+			#	class = general
+			#	skill = 1
+			#}
 		}
 	}
 }
 
 # Run entire test series on military leaders
-country_event = {
-	id = lrsk_gvp_testing.18
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
-		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
-	}
-
-	immediate = {
-		country_event = { id = lrsk_gvp_testing.17 }
-		while = {
-			count = 10
-			country_event = { id = lrsk_gvp_testing.13 }
-			country_event = { id = lrsk_gvp_testing.14 }
-		}
-	}
-}
+#country_event = {
+#	id = lrsk_gvp_testing.18
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+#		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+#	}
+#
+#	immediate = {
+#		country_event = { id = lrsk_gvp_testing.17 }
+#		while = {
+#			count = 10
+#			country_event = { id = lrsk_gvp_testing.13 }
+#			country_event = { id = lrsk_gvp_testing.14 }
+#		}
+#	}
+#}
 
 
 # Triggers casino luck - Casino side
@@ -783,7 +783,9 @@ country_event = {
 		}
 		any_owned_planet = {
 			num_pops > 0 # just to hopefully filter out any uninhabited worlds
-			has_building = lrsk_gov_var_bldg_grand_casino # no idea how to call the relative flag
+			has_branch_office = yes
+			exists = branch_office_owner
+			has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
 		}
 	}
 
@@ -798,8 +800,10 @@ country_event = {
 		IF = {
 			limit = {
 				any_owned_planet = {
-					has_building = lrsk_gov_var_bldg_grand_casino
 					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					has_branch_office = yes
+					exists = branch_office_owner
+					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
 					has_planet_flag = lrsk_can_get_casino_events_from@event_target:lrsk_casino_provider
 				}
 			}
@@ -962,7 +966,7 @@ country_event = {
 						species = event_target:lrsk_test_vassal_species
 						name_list = random
 						type = default
-						origin = origin_default
+						origin = lrsk_gov_var_origin_npc_test
 						ignore_initial_colony_error = yes
 						day_zero_contact = no
 						authority = random
@@ -999,10 +1003,16 @@ country_event = {
 					set_name = random # Fixes some naming issues
 					set_subject_of = {
 						who = root
-						subject_type = vassal
+						preset = preset_vassal
+						allow_instant_negotiation = yes
 					}
 				}
 			}
+		}
+
+		add_intel = {
+			amount = 60
+			who = event_target:lrsk_test_vassal
 		}
 	}
 }
@@ -1066,6 +1076,7 @@ country_event = {
 						effect = {
 							save_event_target_as = lrsk_test_target
 							establish_communications_no_message = root
+							copy_techs_from = { target = root }
 						}
 					}
 					create_colony = {
@@ -1262,5 +1273,23 @@ country_event = {
 	immediate = {
 		remove_country_flag = lrsk_uplift_impressed_msg
 		remove_country_flag = lrsk_senpai_notice_me
+	}
+}
+
+# Gives a tradition, used for testing the Direct Rev councilor.
+country_event = {
+	id = lrsk_gvp_testing.29
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+
+		has_valid_civic = lrsk_gov_var_civic_direct_revelation
+	}
+
+	immediate = {
+		add_tradition = tr_domination_finish
 	}
 }

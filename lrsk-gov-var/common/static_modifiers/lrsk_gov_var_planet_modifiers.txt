@@ -126,6 +126,14 @@ lrsk_gov_var_statmod_golden_age_cult = {
 	icon_frame = 1
 }
 
+#Councilor effect: +1% happiness per councilor level per wild cult
+lrsk_gvp_dr_councilor_effect = {
+  pop_happiness = 0.01
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
+	icon_frame = 1
+}
+
 ## For Distributed Planning Systems
 
 # Varying levels of regcoord added by population.
@@ -139,104 +147,103 @@ lrsk_gov_var_statmod_planet_audit = {
 #One of the "failure" states...
 lrsk_gov_var_statmod_planet_audit_continues = {
   job_lrsk_gov_var_job_regional_coordinator_add = 1
-  job_lrsk_gov_var_job_regional_coordinator_per_pop = 0.025
 	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
 	icon_frame = 3
 }
 
 #Another "failure" state...
 lrsk_gov_var_statmod_planet_audit_confused = {
-  planet_crime_add = 50
-  planet_jobs_simple_drone_produces_mult = -0.1
-  planet_jobs_complex_drone_produces_mult = -0.2
+  planet_crime_mult = 0.15
+  planet_jobs_simple_drone_produces_mult = -0.05
+  planet_jobs_complex_drone_produces_mult = -0.1
 	icon = "gfx/interface/icons/planet_modifiers/pm_planet_separatist_supporter.dds"
 	icon_frame = 3
 }
 
 #Favor complex drone output
 lrsk_gov_var_statmod_planet_spec_priority = {
-  planet_jobs_complex_drone_produces_mult = +0.1
+  planet_jobs_complex_drone_produces_mult = 0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Favor simple drone output
 lrsk_gov_var_statmod_planet_basic_priority = {
-  planet_jobs_simple_drone_produces_mult = +0.1
+  planet_jobs_simple_drone_produces_mult = 0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Logistics focus
 lrsk_gov_var_statmod_planet_logistic_priority = {
-  planet_amenities_no_happiness_mult  = 0.2
+  planet_amenities_no_happiness_mult  = 0.25
 	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
 	icon_frame = 1
 }
 
 #Mining focus
 lrsk_gov_var_statmod_planet_mining_priority = {
-  planet_miners_minerals_produces_mult = 0.25
+  planet_miners_minerals_produces_mult = 0.3
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Energy focus
 lrsk_gov_var_statmod_planet_energy_priority = {
-  planet_technician_energy_produces_mult = 0.25
+  planet_technician_energy_produces_mult = 0.3
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Food focus (servitor only)
 lrsk_gov_var_statmod_planet_food_priority = {
-  planet_farmers_food_produces_mult = 0.25
+  planet_farmers_food_produces_mult = 0.3
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Alloys focus
 lrsk_gov_var_statmod_planet_smelting_priority = {
-  planet_metallurgists_produces_mult = 0.15
+  planet_metallurgists_produces_mult = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Consumer goods focus (servitor only)
 lrsk_gov_var_statmod_planet_industrial_priority = {
-  planet_artisans_produces_mult = 0.15
+  planet_artisans_produces_mult = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 }
 
 #Rarities focus
 lrsk_gov_var_statmod_planet_rarities_priority = {
-  planet_refiners_produces_mult = 0.1
-  planet_translucers_produces_mult = 0.1
-  planet_chemists_produces_mult = 0.1
+  planet_refiners_produces_mult = 0.15
+  planet_translucers_produces_mult = 0.15
+  planet_chemists_produces_mult = 0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_ultra_rich.dds"
 	icon_frame = 1
 }
 
 #Research focus
 lrsk_gov_var_statmod_planet_research_priority = {
-  planet_researchers_produces_mult = 0.15
+  planet_researchers_produces_mult = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_strong_magnetic_field.dds"
 	icon_frame = 1
 }
 
 #Military focus
 lrsk_gov_var_statmod_planet_military_priority = {
-  army_starting_experience_add = 50
-  planet_orbital_bombardment_damage = -0.15
-  army_defense_damage_mult = 0.15
+  army_starting_experience_add = 100
+  planet_orbital_bombardment_damage = -0.2
+  army_defense_damage_mult = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_martial_law_machine.dds"
 	icon_frame = 1
 }
 
 #Growth focus
 lrsk_gov_var_statmod_planet_growth_priority = {
-  planet_pop_assembly_mult = 0.2
+  planet_pop_assembly_mult = 0.25
 	icon = "gfx/interface/icons/planet_modifiers/pm_robots.dds"
 	icon_frame = 1
 }
@@ -244,21 +251,21 @@ lrsk_gov_var_statmod_planet_growth_priority = {
 #Stability focus
 lrsk_gov_var_statmod_planet_stability_priority = {
   planet_stability_add = 5
-  planet_crime_no_happiness_mult = -0.25
+  planet_crime_no_happiness_mult = -0.3
 	icon = "gfx/interface/icons/planet_modifiers/pm_crime.dds"
 	icon_frame = 1
 }
 
 #Unity Focus
 lrsk_gov_var_statmod_planet_unity_priority = {
-  planet_jobs_unity_produces_mult = 0.15
+  planet_jobs_unity_produces_mult = 0.2
 	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
 	icon_frame = 1
 }
 
 #Build Speed Focus
 lrsk_gov_var_statmod_planet_construction_priority = {
-  planet_building_build_speed_mult = 0.2
+  planet_building_build_speed_mult = 0.25
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"
 	icon_frame = 1
 }

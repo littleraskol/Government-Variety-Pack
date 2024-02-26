@@ -28,7 +28,7 @@ lrsk_gov_var_trait_natural_esper = {
 		planet_jobs_engineering_research_produces_mult = 0.025
 		planet_jobs_physics_research_produces_mult = 0.025
 		planet_jobs_society_research_produces_mult = 0.025
-		planet_jobs_energy_produces_mult = 0.025
+		planet_jobs_unity_produces_mult = 0.025
 	}
 }
 
@@ -37,7 +37,7 @@ lrsk_gov_var_trait_natural_esper = {
 # Hive traits
 
 lrsk_gov_var_trait_starborn_hive = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"trait_sedentary"
 		"trait_slow_breeders"
@@ -64,12 +64,12 @@ lrsk_gov_var_trait_starborn_hive = {
 		pop_growth_speed = 0.1
 		pop_resettlement_cost_mult = -0.2
 		pop_environment_tolerance = 0.1
-		leader_age = -10
+		leader_lifespan_add = -10
 	}
 }
 
 lrsk_gov_var_trait_earthbound_hive = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"lrsk_gov_var_trait_proles_hive"
 		"lrsk_gov_var_trait_starborn_hive"
@@ -98,7 +98,7 @@ lrsk_gov_var_trait_earthbound_hive = {
 }
 
 lrsk_gov_var_trait_proles_hive = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"trait_traditional"
 		"trait_weak"
@@ -132,7 +132,7 @@ lrsk_gov_var_trait_proles_hive = {
 # Machine traits
 
 lrsk_gov_var_trait_natural_intellectuals_mech = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"trait_robot_power_drills"
 		"lrsk_gov_var_trait_proles_mech"
@@ -165,7 +165,7 @@ lrsk_gov_var_trait_natural_intellectuals_mech = {
 }
 
 lrsk_gov_var_trait_proles_mech = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"lrsk_gov_var_trait_natural_intellectuals_mech"
 		"lrsk_gov_var_trait_conservative_mech"
@@ -196,7 +196,7 @@ lrsk_gov_var_trait_proles_mech = {
 }
 
 lrsk_gov_var_trait_conservative_mech = {
-	cost = 1
+	cost = 0
 	opposites = {
 		"trait_robot_repurposed_hardware"
 		"lrsk_gov_var_trait_natural_intellectuals_mech"
@@ -220,7 +220,7 @@ lrsk_gov_var_trait_conservative_mech = {
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		leader_skill_levels = 2
+		leaders_upkeep_mult = -0.1
 		species_leader_exp_gain = 0.33
 	}
 }

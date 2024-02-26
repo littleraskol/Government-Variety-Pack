@@ -161,45 +161,53 @@ lrsk_gov_var_origin_for_discovery_mi = {
 lrsk_gov_var_origin_for_discovery_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origins_for_discovery.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_for_discovery
 
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
 
 	random_weight = {
 		base = 0
-		modifier = {
-			factor = 0
-			has_global_flag = game_started
-		}
 	}
 }
 lrsk_gov_var_origin_for_discovery_mi_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_for_discovery_mi.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_for_discovery_mi
 
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
 
 	random_weight = {
 		base = 0
-		modifier = {
-			factor = 0
-			has_global_flag = game_started
-		}
 	}
 }
 
@@ -287,13 +295,21 @@ lrsk_gov_var_origin_tradeways_mc = {
 lrsk_gov_var_origin_tradeways_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_tradeways
 
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
@@ -305,13 +321,21 @@ lrsk_gov_var_origin_tradeways_npc = {
 lrsk_gov_var_origin_tradeways_mc_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_tradeways_mc.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_tradeways_mc
 
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
@@ -371,13 +395,21 @@ lrsk_gov_var_origin_grand_alliance = {
 lrsk_gov_var_origin_grand_alliance_npc = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_grand_alliance.dds"
-	picture = GFX_lrsk_gov_var_origin_generic
+	picture = GFX_lrsk_gov_var_origin_grand_alliance
 
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
@@ -387,16 +419,88 @@ lrsk_gov_var_origin_grand_alliance_npc = {
 	}
 }
 
-#Uplift: Start as the "ward" (like a protectorate) of an advanced start empire, who are benefactors that uplifted you. Able to take uplift traits.
+# Convened by Providence: Start in a holy covenant. 
+lrsk_gvp_origin_convened_providence = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
+	picture = GFX_lrsk_gvp_origin_convened_providence
+	max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Federations"
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+			}
+		}
+	}
+
+	description = "lrsk_gvp_origin_convened_providence_effects"
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	random_weight = {
+		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+}
+
+#NPC Member of above
+lrsk_gvp_origin_convened_providence_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_gvp_origin_convened_providence.dds"
+	picture = GFX_lrsk_gvp_origin_convened_providence
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage # probably no fun to start next to one...
+			}
+		}
+	}
+
+	description = lrsk_gvp_origin_convened_providence_npc_effects
+
+	random_weight = {
+		base = 0
+	}
+}
+
+#Uplift: Start as a protectorate of an advanced start empire, who are benefactors that uplifted you. Able to take uplift traits.
 lrsk_gov_var_origin_uplift = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/lrsk_gov_var_origin_uplift.dds"
 	picture = GFX_lrsk_gov_var_origin_uplift
 	max_once_global = yes
-
-	playable = {
-		host_has_dlc = Federations
-	}
 
 	possible = {
 		ethics = {
@@ -526,7 +630,7 @@ lrsk_gov_var_origin_uplift = {
 #
 #	modifier = {
 #		pop_government_ethic_attraction = 0.25
-#		leader_skill_levels = 1
+#		leader_exp_gain = 0.1
 #		planet_jobs_specialist_produces_mult = 0.10
 #	}
 #

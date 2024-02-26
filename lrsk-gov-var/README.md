@@ -3,197 +3,11 @@ A grab bag of new civics and government types.
 
 1. New Civics
 
-Origins:
-
-Galactic Backdoor (Any) - This civilization has a wormhole in their home system - potential boon to exploration, or an invitation to invasion? (Start with a wormhole in your home system. The Wormhole Stabilization tech option starts ready to research. Warning: There are fewer limits on where the wormhole's exit point can spawn than normal. This origin may lead to some interesting interactions.)
-
-Shroud-Touched (Not Materialist) - The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies. (Most pops of your starting species have the Natural Esper trait, which is a lesser psionic trait. Can get leader traits like lesser versions of psionic leader traits. Very rarely, actual Latent Psionics can spawn. The Psionic Theory tech option starts ready to research. Your homeworld has an Otherworld Pockets deposit which adds special esper jobs.)
-
-For Discovery (Materialist) - This civilization established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
-
-Diplomatic Directive: Discover (Machine Intelligence) - This machine intelligence established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts. (Start as the leader of a Research Cooperative federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with the Universal Compatibility tradition unlocked.)
-
-Tradeways (Merchant Guilds) - This civilization established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Start as the leader of a Trade League federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
-
-Tradeways, Inc. (Megacorporation) - This global megacorporation established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy that diverse fruits of their industry. (Same as Tradeways.)
-
-Grand Alliance (Militarist) - This civilization established early contact with its immediate alien neighbors. Finding each other to be strong believers in the need for military excellence in a potentially dangerous universe, they entered a defensive coalition for mutual security. And potentially joint conquest. (Start as the leader of a Martial Alliance federation with two additional members. Members will occupy any Guaranteed Habitable Worlds slots near your home system. Start with The Federation tradition unlocked.)
-
-Uplift (Any) - An alien empire has meddled in the development of this civilization, enlightening them to the level of technology required for interstellar travel and possibly even modifying them from pre-sapient origins. (Start as the "ward" of an advanced empire, a special vassal type with a large amount of autonomy. You will have the ability to select one of a number of unique advantages upon starting the game, including traits normally available only to pre-sapients, other species traits, or empire bonsues. Get rewards for enlightening primitives or uplifting pre-sapients.)
-
-Normal Civics:
-
-Elected Clergy (Democratic, Spiritualist) - In this society's religion, local priests are elected by their congregations. Doctrine is varied and open to consensus interpretation. (1 Pastor per 20 pops, +10% influence from factions)
-
-Ascetic Virtues (Not Materialist) - This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind. (+15 years to leader age, +10% growth rate)
-
-Republicanism (Democratic, or both Oligarchic and Egalitarian) - This society believes that the greatest virtue is attained by people of good character serving the common good. (-30% leader cost, 1 Politician per 25 pops)
-
-Utilitarian Planning (Not Spiritualist) - The government is concerned with doing the greatest good for the greatest number by rational calculation of resource allocation. (-5% pop food requirements, -2.5% ship and building upkeep, access to the Work Allocation Plan planetary decision, which alleviates unemployment.)
-
-Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
-
-Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
-
-Universal Sovereignty (Dictatorial or Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost, gets an opinion boost with weaker independent empires)
-
-Workers' Councils (Egalitarian, no Shared Burdens or Enlightened Liberalism) - Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government. (-10% building and ship construction time, increased happiness and political power of workers and spcialists.)
-
-Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
-
-Enlightened Liberalism (Not Spiritualist, not Fanatic Authoritarian, no Workers Councils or Institutionalized Collectivism) - This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry. (+20% research and mining station output)
-
-Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% mineral and energy production, -5% Market Fee)
-
-Chivalry (Imperial authority or Aristocratic Elite, Militarist) - Ideals of martial valor and honorable conduct define ruling class culture. (+1 military leader levels, allows building Warrior Halls that improve armies and add Knight jobs. Knights increase naval cap, spawn defense armies, decrease crime, and produce planet stability.)
-
-Lifelong Learning (Democratic and Pacifist) - This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain, access to the Promote Citizen Scholarship edict that gives special researcher jobs per pop)
-
-Institutionalized Collectivism (Not Fanatic Authoritarian, no Enlightened Liberalism or Merchant Guilds) - The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met. (+5% Worker and Specialist output, +10% consumer goods production)
-
-Direct Revelation (Egalitarian and Spiritualist) - The religious culture of this society values insights from personal experiences of the divine. (1 Hedge Preacher per 15 pops. Wild cults may occasionally form with (mostly) beneficial effects, and which add Hedge Preacher jobs.)
-
-Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed, +30 Edcit Fund and -10% Edict Cost, access to the Proclamation of Justice edict that ends policy cooldowns early)
-
-Public Works (Any) - A system of public employment makes labor power available for many tasks. (-15% clear blocker cost, +5% habitability)
-
-Imperial Economy (Dictatorial/Imperial, not Xenophile) - This empire exploits its vassals ruthlessly. (+15% vassal naval capacity contribution, +7.5% tributary income, able to create specialized vassals)
-
-Colonial Fiefs (Imperial, not Militarist) - The monarch is willing to grant landholding rights to those bold enough to colonize new worlds. (+15% colony development speed, -5% starbase influence cost)
-
-Automated Indolence (Materialist) - This society, very early on in its industrial revolution, decided to deal with questions of labor and inequality by 'letting machines do the work' as much as possible and its social structure and technical focus has adapted to match. (+5 stability, +10% robot output)
-
-Hive Mind Civics:
-
-Planetmind Creativity (Hive Mind) - Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs. (-5% empire size from pops, allows building Planetary Synapses that improve amenities production, compound deviancy, and add Planetmind Overseer jobs. Planetmind Overseers produce small amounts of influence, reduce pop housing usage, and decrease empire size penalties, but reduce planet stability and increase deviancy.)
-
-Caste Quickening (Hive Mind) - The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes. (+10% leader experience gain, -7.5% genetic modification cost)
-
-Worker Caste (Hive Mind) - The Hive Mind spawns a special breed of drones that are adapted for general labor. (-10% building and ship construction time, 1 Maintenance Drone per 10 pops)
-
-Warrior Caste (Hive Mind) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones. (+1 military leader skill levels, 1 Warrior Drone per 15 pops)
-
-Royal Caste (Hive Mind) - To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity. (+2 governor skill levels, 1 Synapse Drone per 20 pops)
-
-Reclamation Pools (Hive Mind) - All dead drones are reprocessed for the sustenance of hive's next generation. (+10% job food production)
-
-Boundless Spite (Hive Mind) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing. (+2 maximum rivalvries, +20% army morale damage, +25% power projection)
-
-Void Affinity (Hive Mind) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars. (+20% research and mining station output)
-
-Hoarder (Hive Mind) - The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm. (+5% mineral and energy output, +7500 mineral storage)
-
-Eusocial Rhythm (Hive Mind) - All drones assigned to particular facilities are psionically synced together in local clusters to harmonize their actions, reducing the cost of routine tasks. (-5% ship, building, and district upkeep)
-
-Inquisitive Bent (Hive Mind) - The Hive Mind has a deep and impatient curiosity about the universe. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
-
-Big Picture Thinker (Hive Mind) -  Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects. (+15% terraform and megastructure build speed)
-
-Toiling Multitudes (Hive Mind) - Many hands make light work, for the simplest tasks at least. That's fine when, like a Hive Mind, you have all the hands. (+10% simple drone output)
-
-Domineering Expectations (Hive Mind, not Devouring Swarm) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones. (+15% subject research share, +7.5% tributary income)
-
-Unending Bloom (Hive Mind) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy. (+15% colony development speed, -5% starbase influence cost)
-
-Benign Overmind (Hive Mind, not Devouring Swarm) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs. (-25% Subject Power Penalty, +20% vassal naval capacity contribution)
-
-Gestalt Extroversion (Hive Mind, not Devouring Swarm) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends. (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap)
-
-Frenzy (Hive Mind) - A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity. (+10% fire rate, +10% evasion)
-
-Vigorous Introversion (Hive Mind) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus. (+10% army health, -10% growth time)
-
-Machine Intelligence Civics:
-
-Distributed Planning Systems (Machine Intelligence) - Once a public service administration program for a vast planetary empire, the Machine Intelligence maintains its ability to spawn regional administration subroutines to meet local needs. (-10% pop housing and amenities use, special planet specialization decision)
-
-Self-Improvement Heuristics (Machine Intelligence) - The Machine Intelligence gained its supremacy and independence because its creators imbued it with the ability to improve its own systems. This is a mistake it has never ceased exploiting. (+5% research speed, -15% robo-modification cost)
-
-Reflective Polymorphism (Machine Intelligence) - All the highest-level decision making and creative tasks of the Machine Intelligence are enhanced by a library of standard research and administration expert system classes. (-33% leader recruit cost)
-
-Architect Expert Systems (Machine Intelligence) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs. (-20% building and ship construction time)
-
-Combat Data (Machine Intelligence) - The Machine Intelligence was once a military field testing system and still has a preoccupation with battlefield strategic experimentation. Being on the receiving end of these strategies is unsettling to say the least. (+1 military leader skill levels, +20% army morale damage, chance to raise military intel on opponents after space battles)
-
-Diplomatic Protocols (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect. (+1 Envoy, +5% diplomatic weight, +1 max rivals, +10% trade attractiveness and trust growth)
-
-Astro-Prospecting Mainframe (Machine Intelligence) - The creators of this Machine Intelligence intended it to plan their society's exploitation of their solar system, a task it still excels at without them. (+20% research and mining station output)
-
-Self-Aware Production Targets (Machine Intelligence) - By imbuing economic planning systems with a semi-sapient expert system slaved to the Machine Intelligence's goals, production output gets a continuously increasing boost. (+5% mineral and energy output, +2.5% alloy production)
-
-Recursive Efficiency Analysis (Machine Intelligence) - Subsystems of the Machine Intelligence continually perform situational analyses that seek out opportunities to improve the efficiency of basic operations. (-5% ship, building, and district upkeep)
-
-Astro-Exploration Mainframe (Machine Intelligence) - The Machine Intelligence was designed to assist a deep space exploration program, which increases the efficiency of analyzing new discoveries. (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance)
-
-Reciprocal Planning Routines (Machine Intelligence) - By syncing the operations of its varied colonies to quickly propagate general best practices, the computational overhead of maintaining vast holdings is greatly reduced, freeing up the Machine Intelligence for more creative tasks. (-10% Empire Size from systems, -20% Empire Size from planets, and -15% Empire Size from districts)
-
-Geosurvey Heuristics (Machine Intelligence) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory. (-10% clear blocker cost, terraform cost, and terraform completion time)
-
-Exploitation Algorithms (Machine Intelligence, neither Determined Exterminator nor Driven Assimilator) - The Machine Intelligence has developed frighteningly precise methods of calculating the expected contributions of its subjects. (+15% subject research share, +7.5% tributary income)
-
-Optimized Expansion (Machine Intelligence) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency. (+15% colony development speed, -5% starbase influence cost)
-
-Megacorp Civics:
-
-Scientific Management (Not Egalitarian) - This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave. (-10% pop food requirements, +10% worker production output, build Managerial Technique Institute)
-
-Educational Consortium (Materialist) - This conglomerate specializes in providing high-quality edu-info-tainment product-experiences to expand the minds of customer-pupils young and old. (+10% specialist production output, +20% leader experience gain, build Learnarium Dome)
-
-Gig Economics (Not Egalitarian) - This company pioneered the application of 'gig economy' business models to interplanetary and then interstellar scale. Everyone is on the go to provide just what's needed, just in time. (-25% pop resettlement cost, +5% specialist and ruler happiness, build Odd Jobs Emporium)
-
-Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. (+15% research and mining station output, special vassal interactions)
-
-Controlling Interest (Any) - A small clique of well-connected members of the board and major shareholders have organized themselves well enough to ensure that all goes according to their designs. (-75% election influence cost, -5% Market Fee)
-
-Vertical Integration (Any) - This megacorporation owns and operates the entire supply and production chain from raw materials to sales for its major products. (+5% Energy and Mineral production, Trade Value)
-
-Employee-Owned Co-op (Egalitarian, no Criminal Heritage or Gospel of the Masses) - All employees are also co-owners of the enterprise and get a vote on its internal policy and leadership selection, giving them a real stake in their company. (Increased production and political power of workers and specialists, build Organizing Hub)
-
-Casino Mysticism (Not Materialist) - This megacorp specialized in casinos, racetracks, and other gambling entertainment with a pernicious and effective marketing strategy of encouraging general belief in luck, fate, and risk-taking, which became widespread cultural values. (-25% pop demotion time, +25% colony development speed, build Grand Casino branch office building)
-
-Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
-
-Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)
-
-Conflict Resolution Specialists (Pacifist) - This business specialized in providing trained mediators to de-escalate conflicts and arbitration services to resolve them without violence or state services, eventually becoming more trusted for problem solving than the state itself. (+15% trust growth rate and +20 trust cap, build Mediation Retreat)
-
-Investigation & Security Services (Authoritarian) - This firm provides both personal protection and investigations for individual customers along with policing, detective, inspection, and intelligence services for governments. (-15% crime, build Professional Protection Office)
-
-"Advanced" Civics
-
-Shapers (Not Essentialists or Artificers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that it is life that matters most to living beings, and its careful cultivation is the highest purpose of knowledge. (+5 leader age, -10% genetic modification cost, +10% habitability, -5% non-society research from jobs, start with "Eco Simulation" tech.)
-
-Artificers (Not Essentialists or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that the things sapient beings create, their tools and crafts, that matter most. (-10% ship build cost, -10% planetary structure build cost, +5% robot output, +10% robot build speed, -5% non-engineering research from jobs, start with "Powered Exoskeletons" tech.)
-
-Essentialists (Not Artificers or Shapers) - In the philosophical-ideological dispute over the value of knowledge, this society ultimately decided that solving the deepest and most abstract mysteries of the very fabric of reality are the true purpose of knowledge. (+10% ship and planet sensor range, -10% FTL windup and winddown time, -5% non-physics research from jobs, start with "Fusion Power" tech.)
-
-Enhanced Civics
-
-(These are civics from the base game that have had new features added to them.)
-
-Naval Contractors and Private Military Companies - Enables the Military Excellence Academy branch building, which provides the host planet with +50% Militarist attraction, the host empire with an improved chance of military leaders gaining positive traits, and provides the megacorp with increased Branch Office Value that scales with the proportion of the planetary population that is Militarist.
-
-Indentured Assets - Enables the Reformatory Workhouse branch building, which provides the host planet with +10% worker/slave output and provides the megacorp with +15% Branch Office Value. Criminal megacorps with this building occasionally steal and enslave pops from the planet!
-
-Private Prospectors - Enables the Offworld Jobs Placement branch building, which provides the host planet with two Offworld Worker jobs (produces +4 Trade Value and +2 energy), and provides the megacorp with improved colony growth speed and mining station output.
-
-Media Conglomerate - Enables the Local News Office branch building, which provides the host planet with +10% ruler output, +20% specialist political power, and +5% specialist happiness. It provides the megacorp with a chance to occasionally get favors from the host empire.
+A total of 76 new civics, broken down into 10 origins, 22 normal civics, 19 hive civics, 14 machine civics, 14 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 3 base game civics have been enhanced with expanded features. All details are in this dedicated thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/
 
 2. New Governments
 
-Way too many to list here. They fall into three broad categories:
-
-First, an assortment of new government types for Spiritualists, Imperial and Dictatorial authority, and I wanna say Xenophobes and Militarists. So this is not a useful description but there's no real category for this stuff.
-
-Second, an attempt to recapture some of that good-old collectivist/individualist flavor. Here, I made a good faith effort to include both positive and negative examples of what you might call "socialist" and "capitalist" governments. I have my own opinions, but I genuinely tried to see the best in ideas I disagree with for the positive examples and the worst in ideas I agree with for the negative ones. So please take your terminology flame wars to the dump where they belong, tia.
-
-Third, because I am a huge French Revolution nerd, there's a series of governments related to that. It includes governments modeled on the actual forms of government that France evolved through in that period and governments based on the ideal forms various participants wanted. (Most are actually a mix of both.) MP3s of "Ca Ira" and "Le Chant du Depart" not included.
-
-If you're *really* curious about what all the new governments are, well, I'm too damn lazy to put them all here and it would make this description obnoxiously long. So you can dig into the mod files, which (if you're new to this modding game and don't already know) should be at: C:\Program Files (x86)\Steam\steamapps\workshop\content\281990\901988941\lrsk-gov-var.zip, then: \localisation\lrsk_gov_var_govs_l_english.yml
-
-If you don't want to do that, here are some hints: Most of the new governments involve my civics in some way. Many of them are about mixing what seem at first blush to be thematic opposites. Some combine new civics with existing ones in complimentary ways, but require an additional ethos choice to show up. (I'm not being coy, these are literally the only general "patterns" that I see in my designs.)
-
-NOTE: The spiritualist faction will demand that you be running specific named government types, none of which are mod-added, obviously. These are set in the faction definition file. For reasons of compatibility, I have created a fix for this as a separate mod [url=http://steamcommunity.com/sharedfiles/filedetails/?id=912834599]here[/url].
+Around 85-90 new governments (I may have lost count at some point!) spread across nearly all authority types and combining vanilla and GVP-added civics. They are also listed in their own thread: https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559694926/ (The requirements for making them are in the first reply to that thread.)
 
 3. Known Issues
 
@@ -203,9 +17,285 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 
 4. Compatibility
 
-The field of civics mods has gotten more crowded, so I figured it would make sense to make a note about compatibility. This mod only adds new things to the game, in new files. There's no possibility of my mod conflicting with another due to both editing base game files. That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), compatibility will be shaky at best.
+This mod only adds new things to the game, in new files. There's no possibility of this mod conflicting with another due to both editing base game files. All file names and tokens, furthermore, are specific to this mod (using a special prefix) so any token or file conflict would more or less have to be intentional (e.g. a patch or submod). That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), not all mod features can be guaranteed to be coherent.
 
 5. Changes
+
+v5.8.1 (02/25/24) - Post Pyxis (or Pre-Eridanus?) Tweaks
+-Republicanism effects changed to -20% Officials cost, +1 Officials cap, and 1 Civic Leader job per 25 pops. Civic Leaders are a specialist-level admin job. (Change made because adding ruler jobs per pop creates annoying unemployment issues as planet population fluctuates.)
+-New governments for different ethics "flavors" of oligarchy/democracy with Republicanism.
+-Renamed "Imperial Economy" civic to "Extractive Economy" (due to confusion related to Imperial authority name); this civic also no longer has strict authority limits but is unavailable to any Egalitarians.
+-Renamed "Imperial Socialism" government to "Colonial Socialism" (due to confusion related to Imperial authority name) and reworded its description to match; this government also no longer has authority requirements. (Un-egalitarian social democracies can be colonialists too!)
+-Removed most trait-based job logic (i.e., effects on output and chance of taking a job) and replaced them with the scripted calcs which the base game now uses.
+-Overhauled Otherworld Guide job to be more dependent on psionic traits (and added concept text for this).
+-Investigator and Suppressor are now more reliant on certain traits: 
+--Psionic traits make the Investigator more effective (as a "legitimate" detective).
+--Strength-based traits make the Suppressor more effective (as a goon sent to intimidate people).
+-Fixed error where gestalt job was adding "regular" amenities (instead of the no-happiness version).
+-Fixed various other bugs/errors.
+
+v5.8 (11/17/23) - Pyxis (3.10) Update
+-Fixed what was needed for compatibility with Stellaris 3.10 (Pyxis)
+--Rework of Esper trait to match new multi-leader trait format (based on Psychic trait).
+--Changed exp_gain modifiers to match new leader types (typically also added leader levels where appropriate).
+--Changed leader_age to new leader_lifespan_add modifier.
+--Generally substituted "official" for "governor" and "commander" for "admiral" and/or "general" as needed.
+-Added missing localisation for "mod_councilor_ruler_imperial_exp_gain"
+-Added new civic "War Profiteers" which is what now allows for the Military Excellence Academy branch office building (the Naval Contractors and Private Military Companies civics no longer provide this).
+-Warrior Caste gets +1 Commander cap.
+-Royal Caste gets +1 Official cap.
+-Updated compat version number.
+
+v5.7.2 (10/24/23) - Leader Levels -> Exp Gain
+-MrFunEGUY helpfully pointed out that xxx_skill_levels modifiers are deprecated. They will be changed to xxx_exp_gain modifiers instead.
+--Chivalry now gives +10% exp for admirals and generals.
+--Lifelong Learning now gives +10% exp gain for scientists and governors.
+--Warrior Caste now gives +10% exp for admirals and generals.
+--Royal Caste now gives +20% exp gain for governors.
+--Combat Data now gives +10% exp for admirals and generals.
+--The "Deep Code: Profiling" trait from Uplift now gives -10% leader upkeep instead of +2 leader levels.
+
+v5.7.1 (09/30/23) - Branch Office Building Concepts (& more!)
+-Adding concepts for branch office buildings granted by corp civics.
+-Altered casino luck random events so that when one happens, it's positive 80% of the time and negative 20% of the time (changed from 50%/50%).
+-Tweaked some fixed opinion modifiers.
+
+v5.7 (09/12/23) - Caelum (3.9) Update
+-Fixed what was needed for compatibility with Stellaris 3.9 (Caelum)
+-Updated compat version number.
+-"Employee-Owned Co-op" civic renamed and reflavored due to introduction of the "Worker Cooperative" civic in base game.
+--Renamed to "Labor Peace," flavor is more about labor/management compromise.
+--"Organizing Hub" branch office building changed to "Labor-Management Retreat"
+--"Employee Wellness Coordinator" councilor's flavor text modified somewhat to match new civic flavor.
+--"Cooperative Enterprise" government now only available without Megacorp DLC.
+--Shuffled around opinion modifiers to match.
+-Supremacist Demagoguery now gives +1 max rivalries, +15% damage to rivals, +5% diplo weight from rivals, and +25% power projection.
+-Because admin cap is back (in pog form), Planetmind Overseers now give +2 naval cap and reduce empire size by 2.
+-Changed name of Universal Sovereignty councilor to "Client Obligations Guarantor"
+-Backend: Replaced calls to base game "federation_origin_planet_setup" scripted effect with mod-added "lrsk_federation_origin_planet_setup" scripted effect that works the same way as the pre-3.9 scripted effect. (Base game version now works very differently, will take more effort to understand/adapt its new effects; the old way will work for now.)
+-Various other backend things.
+
+5.6.3 (05/23/23) - Republicanism Redux
+-OR between authority and ethic does not work, so Republicanism is just going to be available to non-Authoritarian Oligarchies and (redundantly) Democracies.
+
+5.6.2 (05/15/23) - Touching Up RRA
+-Tweaked the odds in Run Recursive Analysis so the "worst" option is naturally the least likely (and all the base odds add up to 100...).
+-Results of RRA now heavily factor in planet designations, and resource-related designations make bad outcomes much less likely.
+-Player-facing descriptions make results and requirements more clear.
+-The decision is overall more powerful in its ultimate results and less prone to bad outcomes, but costs more.
+-Changed name and flavor of signature job.
+
+5.6.1 (05/13/23) Post-Update Hotfixes
+-Public Info Officer modifiers were all screwed up, now fixed.
+-Vertical Integration's councilor shouldn't give the same benefit as the civic.
+-Several other councilors had modifiers with the wrong sign, and so ended up being detrimental.
+-Added "concepts" (sub-tooltips) to make tooltips less busy.
+-Improved some old civic descriptions, and even some new councilor descriptions.
+
+v5.6 (05/11/23) - Gemini (3.8) Update
+-Fixed what was needed for compatibility with Stellaris 3.8 (Gemini)
+-Updated compat version number.
+-Added councilors for all non-gestalt civics.
+-Civics have AI weighting by personality for in-game picks.
+-Royal Proclamation of Justice now has an option for resetting policy cooldowns finally!
+-"Crusader" governments can be enabled by Crusader Spirit civic.
+--Crusader Kingdom: Crusader Spirit is an option along with Chivalry and Feudal Realm.
+--Crusader Order: Either Chivalry or Crusader Spirit qualifies.
+--Citizen Crusade: Being Spiritualist with Crusader Spirit is an option along with Exalted Priesthood and Elected Clergy.
+--Crusading Company: Crusader Spirit is an option for the non-Megacorp implementation.
+-RMF requires Precision Cogs.
+-Military Excellence Academy now boosts general and admiral exp gain rather than directly assigning traits.
+-Enlightened Liberalism now boosts Specialist political power by 50% and Worker political power by 25% (this one's for everyone who's commented on this civic being too dystopian, lol).
+-Artificers now gets reduction of robot upkeep instead of increased robot production (benefit moved to councilor).
+-Shapers now gets +1 organic species trait pick insteat of modification cost reduction (benefit moved to councilor).
+-Ascetic Virtues now gets -1 leader negative traits and -10% food pop usage rather than a growth and leader age bonus (these benefits moved to councilor).
+-Utilitarian Planning now gives +5% food production, +10% council agenda speed, -10% edict cost.
+-Cult of Personality now gives -10% starbase influence cost instead of +5% influence production (benefit moved to councilor).
+-Automated Indolence has been removed until I can figure out how to do something actually interesting with it.
+
+v5.5.2 (4/19/23) - Better planet class detection (backend improvement)
+-Can change the planet class to the ideal for species (in Uplift).
+--This will enable better compatibility with mods adding new planet classes.
+
+v5.5.1 (4/18/23) - Little weird "bug" "fix"
+-There seems to be a base game bug in the random name parser that will cause it to read commented out text in localisation files. I have removed the comment that causes this specific issue, although the underlying problem may remain...
+
+v5.5 (4/10/23) - Return of Better Names (and other updates)
+-The "Better Names" feature returns thanks to the heroic efforts of Renan.
+--This includes some (probably quite cack-handed) attempts at real localization for syntax functions.
+-Other, unrelated changes:
+--Royal Absolutism is incompatible with Feudal Society (because history).
+--Automated World-Commune can be Oligarchic or Democratic.
+--Local News Offices no longer engage in "Boradcasting" (and other typos finally fixed).
+--Citizen Crusade requires either Exalted Priesthood or Elected Clergy (meaning it can be Democratic).
+--Republican Directory requires either Enlightened Liberalism or Republicanism.
+--Constitutional Plutocracy, Stakeholder Polity, and Proprietary Franchise now have actual female ruler titles for all you girlbosses out there.
+--For some reason, changed the name of an Easter Egg government you can't get without modding in more than 3 ethic points. (Imperial Church of Slaughter is now Apocalyptic Theocracy.)
+--Some backend tweaks only I care about.
+-In an effort to make "subject-focused" civics more useful if you happen to not have subjects, the following civics get +15% diplomatic weight from the indicated source:
+--Universal Sovereignty: Military
+--Imperial Economy: Economy
+--Exploitation Algorithms: Technology
+--Benign Overmind: Pops
+--Domineering Expectations: Empire Size
+
+v5.4.2 (4/3/23) - Small fixes
+-Safe system check needs to make sure owner exists before asking about it.
+-Removed some redundant localization.
+
+v5.4.1 (3/27/23) - Backend Cleanup and Inter-Compatibility
+-Learned that a base game change apparently made to enable megacorps to be Galactic Emperor means OR logic between different categories of civic requirements is possible, resulting in the following:
+--Deprecated duplicate variant of Chivalry for Aristocratic Elite (now able to make a civic require Imperial authority or Aristocratic Elite, removing duplicates).
+--Deprecated duplicate variant of Republicanism for Egalitarian Oligarchies (now able to make a civic require Democratic authority or Egalitarian ethics, and the only non-Democratic Egalitarians are Oligarchies, removing duplicates).
+--The deprecated civics still exist, but require themselves, and so can't be selected. An event should remove and replace them for any empires that have them.
+-Added scripted triggers to check for each authority type, which enables other mods or patches to overload them with mod-added authorities.
+-Government application logic now uses these scripted triggers rather than checking directly for authorities.
+-Added scripted trigger (lrsk_gvp_is_active) to detect whether this mod is active/loaded (for other modders to check, basically...)
+
+v5.4 (03/14/23) - Canis Minor (3.7) Update
+-Fixed what was needed for compatibility with Stellaris 3.7 (Canis Minor)
+-Updated compat version number.
+-Supremacist Demagoguery now gives +10% damage to rivals instead of +30% army morale damage.
+-Boundless Spite gives +1 max rivalries (reduced from +2) and +10% damage to rivals.
+-Improved tooltips for Combat Data special events.
+
+v5.3.9 (03/12/23) - Update prep
+-Changes made to re-merge with master branch and prepare for 3.7
+-Descriptions and documentation corrected (forgot to restore docs when features restored)
+-Corp branch buildings have categories
+-Removed spiritualist fed name fix (Paradox fixed)
+
+v5.3.8 (02/28/23) - More bad (less boring) names
+-Moved over more of the default name formats for added governments.
+-Should be able to deal with "special" governments (e.g. purifiers) appropriately.
+-Restoring "better names" from this mod is still a far off dream...
+
+v5.3.7 (01/03/23) - Siege Mentality and Colonial Fief Fixes
+-Siege Mentality now grants +10% home territory fire rate and +25% defense army morale instead of its previous defense platform build speed and damage bonuses.
+--Slight localization tweak.
+-Colonial Fief fixes:
+--Random vassals should no longer start on Holy Worlds or in systems adjacent to Fallen Empires.
+--Also they should have names...
+-Some small backend changes.
+-Fixed localization of Functionary job to show correct job effects.
+
+v5.3.6 (12/13/22) - Little Things 2: The Ensmallening
+-Removed redundant boxed-in escape route checks
+-Colonial Fief spawned vassals were not copying techs from overlord.
+-Small localization update.
+
+v5.3.5 (12/12/22) - Little Things
+-Forgot to add new origins to scripted triggers
+-Wrong effects for NPC Convened by Providence
+
+v5.3.4 (12/10/22) - Orion Post-Release Update 2
+-Restored all federation start origins: the choice given by the new Common Ground does not guarantee any suitable fed partners the way my origins do, so that's positive value added. Plus, removing them broke custom empires for users.
+-Added "Convened by Providence" origin to start player in a suitable Holy Covenant.
+-Cleaned up new federation start code.
+-Incidentally, fixed (most of the time) a base game error that prevents Holy Covenants from getting random names.
+
+v5.3.3 (12/3/22) - Fix for (sigh) Imperial Economy
+-The special service agreement terms should handle all effects, but the old modifier-based system was never removed. It has now been.
+-Added localization description of effects of agreement terms (for some reason, term tooltips don't show any effects besides loyalty-per-month changes).
+-Commercial agreements were way too powerful: market fee reduction per subject with commercial service is now -2%, down from -5% (did not realize it would just straight subtract that much from the fee!).
+--This change has also been applied to Colonial Chartering special subjects, with a max reduction limit of -20%.
+
+v5.3.2 (11/30/22) - Yet More Random Name Problems
+-Hopefully adapted to the surprise new random name definition format.
+
+v5.3.1 (11/29/22) - Orion Post-Release Update 1
+-Restored "Diplomatic Directive: Discover" because Machine Intelligences cannot take Common Ground.
+
+v5.3 (11/29/22) - Orion (3.6) Update
+-Made custom pre-sapient (Uplift) traits 0-cost to match "Presapient traits now have no trait point or trait pick cost" in Orion.
+-Deprecated the specialist federation origins - redundant with the changes to Common Ground, which gives a choice of type.
+
+v5.2.1 (11/13/22) - Lithoid Upkeep Fix
+-Planetmind Overseers should not have food upkeep for lithoids.
+
+v5.2 (09/21/22) - Fornax Update
+-Fixed what was needed for compatibility with Stellaris 3.5 (Fornax)
+-Knight job renamed to "Cavalier" (avoids redundancy with new knightly origin in Toxoids)
+-Did some improvements to Tradeways origins:
+--Megacorp players should never have Megacorp fed partners.
+--Merchant Guild players should have one Megacorp fed parter (small chance of 0 or 2).
+-Imperial Economy returns (somewhat less dramatically):
+--All benefits are based on a new subject agreement term unlocked by this civic, "Special Services," which provides the overlord four different benefits (with a penalty to the subject and loyalty hit).
+--Special subject presets mostly set one of these Special Service options.
+--Having at least one subject in a given service category provides a unique bonus.
+-Planetmind Creativity rebalanced:
+--Instead of -5% empire size from pops, civic grants -20% empire size from colonies and systems.
+--Civic incompatible with Subsumed Will and Divided Attention (this is both a gameplay and thematic limitation).
+--Upgrade costs of Synaptic buildings now scale more steeply (lower levels easier to get, higher level buildings harder to get).
+--Planetmind Overseer job now gives naval cap instead of empire size reductions (there's just no way to balance scaling percentages, RIP admin cap) and reduces housing usage on planet by 10%, while having a unity upkeep instead of an energy upkeep. Influence production reduced to +0.1, crime added reduced to 5.
+--This is a work in progress and feedback welcome. Not using empire size mods on the job frees up more room to tinker because they can scale properly now.
+
+v5.1.4 (09/08/22) - Minor Fixes
+-CWTools flagged errors: deprecated/changed diplo blocks, incorrect preset keys, missing locs.
+-Reactionary Socialism lacked an hier title.
+
+v5.1.3 (07/07/22) - Imperial Economy Deprecated
+-Due to a bizarre base game bug involving agreement terms, the core features of the Imperial Economy civic prevent subject taxes from being collected. It has been removed until this is fixed.
+
+v5.1.2 (06/20/22) - Return of Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
+-See v5.1 changelog entry for overall list of changes.
+-Only difference is the lack of "fine tuning" for Imperial Economy. This requires the ability to limit who can see resource sliders with conditions in a potential = {} block, but for some reason if I add such a slider, it prevents anyone from changing agreement terms. For now the special subject resource taxes come from hidden resource sliders.
+-Known issue (minor): When leaving the Chartered Company preset, the empire is supposed to have its government restored from before it was changed into that type of vassal (which comes with a change in government). This does not seem to be working? Not the end of the world, kind of an edge case, but hopefully will be fixed in the future.
+
+v5.1.1 (06/12/22) - Adding Special Subject icons
+-Icons for added subject types.
+
+v5.1 (06/12/22) - Fixed/Updated/Adapted/Imrpoved Imperial Economy & Chartered Colonies
+-Specialized subjects for both civics can still be added by event, but change from the Agreement menu is supported.
+-Imperial Economy allows for "fine tuning" subject resource contributions: You can individually set the taxes or subsidies of each resource type.
+-Changed the way the Imperial Economy special vassals work:
+--Taxes are based on setting agreement minimums, not preset definitions.
+--Each special type provdes a special bonus to the overlord (tied to innate loyalty penalty).
+--Foundry Colony renamed to Logistics Colony (more accurate to purpose).
+--Logistics Colonies Taxed 15% of alloys and energy.
+--Market Colonies Taxed 15% of consumer goods and food.
+--Prospecting Colony renamed to Provisioner Colony (Overlord DLC has a "Prospectorium" specialized subject).
+--Provisioner Colony Taxed 15% of minerals and strategic resources.
+--Trophy Colony Taxed 15% of unity and influence.
+--No limits on how many of these vassals one can have.
+--Bonus for each reduced to +1 stability from +2.
+--Special subject status can be changed after setting (using Agreement menu).
+-Chartered Colony subject type changes:
+--Taxed 15% of Basic Resources.
+--Innate trust (opinion bonus) in chartering overlord reduced to +25 and +25 (decaying) from +100.
+--Halved "Divided Loyalties" penalty for this subject type.
+--Innate loyalty bonus (tied to small Trade Value bonus for subject).
+--Choosing to install your species as rulers will benefit xenophobes and authoritarians, and increase subject monthly loyalty, but may lead to general unrest in the subject.
+--Improved process for "foreign rule" option, no longer completely destroys and replaces government, just changes primary species (and a few other things).
+--Greatly increased the "Colonial Trade" modifier bonus, making it the major benefit.
+--Updated effect description.
+--Subject status can be changed after setting (using Agreement menu).
+--Previous government should be restored if colonial charter ended.
+-Removed various logging outputs.
+
+v5.0.4 (06/01/22) - Trying to fix "code names"
+-The only difference between my name generators and Paradox's are the quotation marks I had around the format string. So I removed them. Hope this helps!
+
+v5.0.3 (05/28/22) - Localization Updates
+-Providing new (missing) localizations for subjects.
+
+v5.0.2 (05/15/22) - Yet More Post-Release Fixes
+-Explorer Colonies spawned by Colonial Fiefs empires get a resource boost based on the game year to make them viable (got reports that they collapsed due to not having any unity).
+-Fixed lookups to work around possible bug causing %ADJECTIVE% adjectives for empires. (Thanks MaskofKeter!)
+
+v5.0.1 (05/12/22) - Post-Release Fixes
+-Removed unneeded warning for Uplift (it uses standard presets).
+-Fixed more lozalization format issues.
+-Updating documentation.
+
+v5.0 (05-12-22) - Cepheus Update
+-Fixed what was needed for compatibility with Stellaris 3.4 (Cepheus)
+-Updated compat version number.
+-Fixed misc things for new version.
+-Adapted branch buildings to new holding system.
+-Uplift no longer requires any DLC... (This was pure oversight on my part.)
+-Changed specialized vassals into "presets".
+-Added warning about special vassal civics not working well yet.
 
 v4.2 (03-25-22) - New Origin & Colonial Chartering Civic
 -Added new origin: Uplift lets you play as the subject of an uplift/enlightenment action, starting as a special vassal of an advanced start empire that raised you to the stars. You have the option to select special species traits or an empire bonus.
