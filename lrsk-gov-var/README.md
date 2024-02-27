@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v5.9 (??/??/??) - Eridanus (3.11) Update
+v5.9 (2/27/24) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
 -Dealt with removed techs:
 --Changed tech requirements for Artificers, Essentialists, and Shapers councilors.
