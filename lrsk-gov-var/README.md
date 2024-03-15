@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v?.? (?/?/?) - Technobarbarism Update
+Adding major new advanced civic: Technobarbarism
+Adds a new origin: Ancient Technology
+
 v5.9 (2/27/24) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
 -Dealt with removed techs:

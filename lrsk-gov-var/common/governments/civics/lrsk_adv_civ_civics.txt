@@ -92,3 +92,85 @@ lrsk_adv_civ_civic_essentialists = {
 		planet_researchers_society_research_produces_mult = -0.05
 	}
 }
+
+#Techno-Barbarism (Spiritualist, Authoritarian, can't have certain civics) - The superstitious heirs to an advanced civilization, they have forgotten more of science than most empires ever discover. Unfortunately, they remember little and misunderstand much of that. Fortunately, their technology was designed very well. (Techno-Ritual Reverence policies that can improve ship hull, shields, armor, evasion, and damage, -10% building upkeep, cost, and build speed, +15% army damage and health, -10% research speed, -1 research alternative, +20% scientist recruit cost)
+lrsk_adv_civ_civic_technobarbarism = {
+	description = "lrsk_adv_civ_civic_tooltip_technobarbarism_effect"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = { value = lrsk_adv_civ_civic_technobarbarism }
+	}
+	
+	#icon = "gfx/interface/icons/governments/civics/civic_fanatic_purifiers.dds"
+	
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				#value = lrsk_adv_civ_civic_technobarbarism
+				#value = lrsk_adv_civ_civic_aspiring_ascendants
+				#value = lrsk_adv_civ_civic_figurehead_monarchy
+				#value = lrsk_adv_civ_civic_otherworldly
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_criminal_heritage
+			}
+		}
+	}
+	
+	modification = no
+	
+	random_weight = { base = 1 }
+	
+	## NOTE: Modifiers given by techs
+	#modifier = {
+	#	ship_hull_mult = 0.1
+	#	ship_shield_mult = 0.1
+	#	ship_armor_mult = 0.1
+	#	ship_evasion_mult = 0.1
+	#	ship_fire_rate_mult = 0.1
+	#	weapon_type_kinetic_weapon_damage_mult = 0.1
+	#	weapon_type_energy_weapon_damage_mult = 0.1
+	#	weapon_type_explosive_weapon_damage_mult = 0.1
+	#	weapon_type_strike_craft_weapon_damage_mult = 0.1
+	#	ships_upkeep_mult = -0.05
+	#	army_damage_mult = 0.1
+	#	army_health = 0.1
+	#	armies_upkeep_mult = -0.05
+	#	planet_structures_upkeep_mult = -0.05
+	#	num_tech_alternatives_add = -1
+	#}
+}
+
+#Reformed Techno-Barbarism - Once the remnant of a more scientifically advanced civilization whose knowledge of technology had regressed to mere ritual, they have cast off their ancient superstitions.
+lrsk_adv_civ_civic_ref_technobarbarism = {
+	#description = "lrsk_adv_civ_civic_tooltip_technobarbarism_effect"
+	potential = { 
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = { value = lrsk_adv_civ_civic_ref_technobarbarism } # event-added
+	}
+	
+	icon = "gfx/interface/icons/governments/civics/lrsk_adv_civ_civic_technobarbarism.dds"
+	
+	# Doesn't really do anything, so why not let them gather the influence to remove?
+	#modification = no 
+	
+	random_weight = { base = 0 }
+	
+	modifier = {
+			pop_government_ethic_attraction = -0.2
+			planet_stability_add = -5
+	}
+}

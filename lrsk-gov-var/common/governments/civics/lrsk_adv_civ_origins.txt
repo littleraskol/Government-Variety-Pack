@@ -1,0 +1,33 @@
+# New Advanced Civics
+# Origins
+# Author: littleraskol
+
+# Ancient Technology - Adds a tile blocker that turns into a good tech deposit that enables a building. Designed as a simple origin for techno-barbs but could be used by others.
+lrsk_adv_civ_origin_ancient_tech = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/lrsk_adv_civ_origin_ancient_tech.dds"
+	picture = GFX_lrsk_adv_civ_origin_ancient_tech
+
+	potential = {
+		always = yes
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
+		}
+	}
+
+	random_weight = {
+		base = 5
+		modifier = {
+			factor = 10
+			has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		}
+	}
+
+	description = "lrsk_gov_var_origin_tooltip_ancient_tech_effects"
+
+	advanced_start = yes
+}
+
