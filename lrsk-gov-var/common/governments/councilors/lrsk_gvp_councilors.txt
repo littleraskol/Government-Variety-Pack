@@ -573,3 +573,29 @@ lrsk_gvp_civic_mc_war_profiteers_councilor = {
 		commander_exp_gain = 0.01
 	}
 }
+
+lrsk_adv_civ_civic_technobarbarism_councilor = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+		#NOT = { has_trait = lrsk_gvp_leader_trait_hidebound } # tbd uncomment when trait added
+	}
+	civic = lrsk_adv_civ_civic_technobarbarism
+	modifier = {
+		scientist_exp_gain = 0.03
+	}
+	custom_tooltip = lrsk_adv_civ_civic_technobarbarism_councilor_custom_modifier_desc
+}
+
+lrsk_adv_civ_civic_ref_technobarbarism_councilor = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+		#NOT = { has_trait = lrsk_gvp_leader_trait_hidebound } # tbd uncomment when trait added
+	}
+	civic = lrsk_adv_civ_civic_ref_technobarbarism
+	modifier = {
+		scientist_exp_gain = 0.03
+		planet_researchers_upkeep_mult = -0.015
+	}
+}
