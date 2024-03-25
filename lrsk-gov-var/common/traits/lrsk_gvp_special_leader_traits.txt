@@ -68,3 +68,79 @@ lrsk_gvp_leader_trait_esper = {
 	randomized = no
 	notify_on_gained = no
 }
+
+lrsk_gvp_leader_trait_hidebound = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		CLASS = leader
+		ICON = "GFX_lrsk_gvp_leader_trait_hidebound"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	# If Ruler
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}		
+		all_technology_research_speed = -0.05
+		planet_researchers_upkeep_mult = 0.025
+		country_edict_fund_add = 15
+	}
+	# If Head of Research
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_research
+		}
+		all_technology_research_speed = -0.1
+		planet_researchers_upkeep_mult = 0.05
+		country_edict_fund_add = 5
+	}
+	# If other Councilor
+	triggered_councilor_modifier = {
+		potential = {
+			NOR = {
+				is_ruler = yes
+				is_councilor_type = councilor_research
+			}
+		}
+		all_technology_research_speed = -0.025
+		planet_researchers_upkeep_mult = 0.0125
+		country_edict_fund_add = 10
+	}
+	# Scientist - Science Ship Modifier
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		science_ship_survey_speed = -0.1
+		ship_anomaly_research_speed_mult = -0.1
+		ship_archaeological_site_excavation_speed_mult = -0.1
+	}
+	# Any Class - Planet Modifier
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_jobs_physics_research_produces_mult = -0.05
+		planet_jobs_society_research_produces_mult = -0.05
+		planet_jobs_engineering_research_produces_mult = -0.05
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	# Any Class - Sector Modifier
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_jobs_physics_research_produces_mult = -0.025
+		planet_jobs_society_research_produces_mult = -0.025
+		planet_jobs_engineering_research_produces_mult = -0.025
+		planet_jobs_unity_produces_mult = 0.025
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
