@@ -33,3 +33,90 @@ d_lrsk_gov_var_shroud_pockets = {
 		weight = 0
 	}
 }
+
+d_lrsk_gov_var_collapsed_tech_ruins = {
+	time = 720
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
+	should_swap_deposit_on_terraforming = no
+	
+	can_be_cleared = {
+		custom_tooltip = {
+			fail_text = lrsk_gvp_noclear_ruins_policy
+			exists = owner
+			owner = { NOT = { has_policy_flag = lrsk_adv_civ_full_rev } }
+		}
+	}
+
+	planet_modifier = { 
+		planet_max_districts_add = -2
+		planet_jobs_unity_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+		}
+		planet_jobs_unity_produces_mult = 0.05
+	}
+
+	use_weights_for_blocker_swap_types = no
+
+	blocker_swap_types = {
+		d_lrsk_gov_var_tech_ruins
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+			influence = 100
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+	
+	ai_weight = {
+		weight = 1
+	
+		modifier = {
+			factor = 0
+			owner = { has_policy_flag = lrsk_adv_civ_full_rev }
+		}
+	
+		modifier = {
+			factor = 0.5
+			owner = { has_policy_flag = lrsk_adv_civ_lapsed_rev }
+		}
+	}
+}
+
+d_lrsk_gov_var_tech_ruins = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = { 
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+		}
+		planet_jobs_unity_produces_mult = 0.1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
