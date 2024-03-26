@@ -1,0 +1,68 @@
+# New Advanced Civics
+# Technology - Ancient Tech
+# Techno-Barbarian-only tech granted at start (or on reformation)
+# Author: littleraskol
+
+@lrsk_tb_minor_bonus = 0.15		# "minor" because the benefit it applies to is less impactful
+@lrsk_tb_major_bonus = 0.05		# "major" because the benefit it applies to is very impactful
+@lrsk_tb_savings = -0.1
+
+tech_lrsk_adv_civ_ancienttheory = {
+	cost = 0
+	area = physics
+	category = { computing }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		ship_shield_mult = @lrsk_tb_minor_bonus
+		ship_evasion_mult = @lrsk_tb_minor_bonus
+		weapon_type_energy_weapon_damage_mult = @lrsk_tb_minor_bonus
+	}
+}
+
+tech_lrsk_adv_civ_ancientlearning = {
+	cost = 0
+	area = society
+	category = { statecraft }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @lrsk_tb_minor_bonus
+		army_damage_mult = @lrsk_tb_minor_bonus
+		army_health = @lrsk_tb_minor_bonus
+		armies_upkeep_mult = @lrsk_tb_savings
+		num_tech_alternatives_add = -1
+	}
+}
+
+tech_lrsk_adv_civ_ancientcraft = {
+	cost = 0
+	area = engineering
+	category = { industry }
+	tier = 0
+	weight = 0
+
+	modifier = {
+		ship_hull_mult = @lrsk_tb_minor_bonus
+		ship_armor_mult = @lrsk_tb_minor_bonus
+		ship_fire_rate_mult = @lrsk_tb_major_bonus
+		weapon_type_kinetic_weapon_damage_mult = @lrsk_tb_minor_bonus
+		weapon_type_explosive_weapon_damage_mult = @lrsk_tb_minor_bonus
+		ships_upkeep_mult = @lrsk_tb_savings
+		planet_structures_upkeep_mult = @lrsk_tb_savings
+	}
+}
+
+tech_lrsk_adv_civ_scireformation = {
+	cost = 0
+	area = society
+	category = { statecraft }
+	tier = 2
+	weight = 0
+
+	modifier = {
+		num_tech_alternatives_add = 1
+	}
+}
