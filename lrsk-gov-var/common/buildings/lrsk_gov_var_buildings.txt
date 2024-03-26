@@ -133,6 +133,50 @@ lrsk_gov_var_bldg_hall_of_valor = {
 	}
 }
 
+## Research Buildings
+
+# Techno-Ruin Research Center
+
+lrsk_gov_var_bldg_tech_ruins = {
+	base_buildtime = 360
+	base_cap_amount = 1
+
+	category = research
+
+	potential = {
+		owner = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+	}
+
+	allow = {
+		has_deposit = d_lrsk_gov_var_tech_ruins
+	}
+
+	planet_modifier = {
+		job_lrsk_gov_var_job_cyber_salvager_add = 1
+		job_lrsk_gov_var_job_cyber_salvager_per_pop = 0.025
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+		}
+		modifier = {
+			job_lrsk_gov_var_job_head_salvager_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+}
+
 ## Government Buildings
 
 # Planetary Synaptic Stuff
