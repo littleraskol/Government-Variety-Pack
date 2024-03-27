@@ -1190,6 +1190,54 @@ part = {
 	}
 }
 
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_CYBERSHAMAN_CONCLAVE"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_cybershaman_conclave
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_MACHINE_CULT"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_machine_cult
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_DEVICOMANCER_DYNASTY"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_devicomancer_dynasty
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
+part = {
+	location = 1
+	localization = "LRSK_ADV_CIV_START_SCREEN_P2_ARTIFICERS_GUILD"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_adv_civ_gov_artificers_guild
+		}
+		NOT = { has_country_flag = custom_start_screen }
+	}
+}
+
 #part = {
 #	location = 0
 #	localization = "LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_EMPIRE"
