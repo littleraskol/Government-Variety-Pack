@@ -471,7 +471,7 @@ l_english:
  lrsk_adv_civ_civic_technobarbarism_councilor:0 "Speaker of Mysteries"
  lrsk_adv_civ_civic_technobarbarism_councilor_female:0 "$lrsk_adv_civ_civic_technobarbarism_councilor$"
  lrsk_adv_civ_civic_technobarbarism_councilor_desc:0 "The $TITLE$ is entrusted with the deepest, oldest rites of the machine spirits, and can guide scholars at lower ranks of initiation towards more refined practices without straying into impiety."
- lrsk_adv_civ_civic_technobarbarism_councilor_custom_modifier_desc: " §G-2%/level§! LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND" # tbd ref actual text when added
+ lrsk_adv_civ_civic_technobarbarism_councilor_custom_modifier_desc: " §G-2%/level§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$" 
 
  lrsk_adv_civ_civic_ref_technobarbarism:0 "Reformed Techno-Barbarism"
  lrsk_adv_civ_civic_ref_technobarbarism_desc:0 "Once the remnant of a more scientifically advanced civilization whose knowledge of technology had regressed to mere ritual, they have cast off their ancient superstitions."
@@ -1907,7 +1907,7 @@ l_english:
 
  d_lrsk_gov_var_collapsed_tech_ruins:0 "Collapsed Techno-Ruins"
  d_lrsk_gov_var_collapsed_tech_ruins_desc:0 "The remnants and rubble $LRSK_TECH_RUIN_COMMON$ While it takes up space, our people find solace in this reminder of our past glories."
- lrsk_gvp_noclear_ruins_policy:0 "$TRIGGER_FAIL$§RThis blocker cannot be removed while the §Ylrsk_adv_civ_full_rev_name§R policy is in effect." # TBD: actual policy name when it exists
+ lrsk_gvp_noclear_ruins_policy:0 "$TRIGGER_FAIL$§RThis blocker cannot be removed while the §Y$lrsk_adv_civ_full_rev_name$§R policy is in effect." 
 
  d_lrsk_gov_var_tech_ruins:0 "Techno-Ruins"
  d_lrsk_gov_var_tech_ruins_desc:0 "The remnants $LRSK_TECH_RUIN_COMMON$ Having been cleaned out and partially restored, the curiosities within provide a boon to scientific research."
@@ -2742,6 +2742,30 @@ l_english:
  lrsk_gvp_colfief_promoted:0 "Promoted"
  lrsk_gvp_colfief_promoted_name:0 "Encourage $policy_lrsk_gvp_colfief_policy$"
  lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opporunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ pop."
+ 
+ # Techno-Barbarian ritual piety
+ LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND:0 "chance scientists spawn with the §Y$lrsk_gvp_leader_trait_hidebound$§! trait."
+ LRSK_ADV_CIV_TECH_RITUAL_RESPEN:0 "§GNo more penalty§! to all research."
+ LRSK_ADV_CIV_TECH_RITUAL_WARNING:0 "Adopting this policy will challenge the existing social order and may lead to §Hrevolutionary changes§!"
+ 
+ policy_lrsk_adv_civ_tech_ritual:0 "Techno-Ritual Piety"
+ policy_lrsk_adv_civ_tech_ritual_desc:1 "Our ancestors bequeathed us wonders and marvels aplenty, but they require the proper ritual veneration to operate. Some lapse in ritual strictures may be permissible, but we trifle with them at our peril when it comes to our voidcraft, the most-recently restored and least well-understood of the ancients' gifts.\n"
+ 
+ lrsk_adv_civ_full_rev:0 "Full"
+ lrsk_adv_civ_full_rev_name:0 "Full Ritual Reverence"
+ lrsk_adv_civ_full_rev_desc:0 "We maintain the traditions that have served us so well and pay full honor to the ancestors, and in return, their blessings strengthen us.\n§R60%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$"
+ 
+ lrsk_adv_civ_lapsed_rev:0 "Lapsed"
+ lrsk_adv_civ_lapsed_rev_name:0 "Lapsed Ritual Reverence"
+ lrsk_adv_civ_lapsed_rev_desc:0 "Although we still value the strictures of our traditions, certain details are left to interpretation or the user's optional choice.\n§G-10%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$"
+ 
+ lrsk_adv_civ_token_rev:0 "Token"
+ lrsk_adv_civ_token_rev_name:0 "Token Ritual Reverence"
+ lrsk_adv_civ_token_rev_desc:0 "While we still need the wisdom of our ancestors, we can now see that it's possible to cling so closely to the letter of the law that we are unable to think for ourselves at all.\n§G-20%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$\n$LRSK_ADV_CIV_TECH_RITUAL_RESPEN$"
+ 
+ lrsk_adv_civ_no_rev:0 "None"
+ lrsk_adv_civ_no_rev_name:0 "Ritual Irreverence"
+ lrsk_adv_civ_no_rev_desc:0 "The ancestors receive their due reverence on official holidays and in personal observances. Religious rituals should not interfere with practical day-to-day business.\n§G-30%§! $LRSK_ADV_CIV_TECH_RITUAL_HIDEBOUND$\n$LRSK_ADV_CIV_TECH_RITUAL_RESPEN$\n$LRSK_ADV_CIV_TECH_RITUAL_WARNING$"
 
  ## Events
  

@@ -87,3 +87,188 @@ lrsk_gvp_colfief_policy = {
 		}
 	}
 }
+
+lrsk_adv_civ_tech_ritual = {
+
+	potential = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+	}
+
+	option = {
+		name = "lrsk_adv_civ_full_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_full_rev
+		}
+
+		valid = {
+			or = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+			}
+			# TBD: For when the factions are done.
+			#or = {
+			#	has_policy_flag = lrsk_adv_civ_full_rev
+			#	not = { ruler = { leader_of_faction = gvp_tb_innovator } }
+			#}
+		}
+
+		modifier = {
+			all_technology_research_speed = -0.2
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed < 20
+			}
+			modifier = {
+				factor = 3
+				years_passed > 19
+				years_passed < 40
+				or = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_lapsed_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_lapsed_rev
+		}
+
+		valid = {
+			or = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+				has_policy_flag = lrsk_adv_civ_token_rev
+			}
+			or = {
+				years_passed > 20
+				has_encountered_other_species = yes
+			}
+		}
+
+		modifier = {
+			ship_emergency_ftl_mult = 0.05
+			ship_disengage_chance_mult = -0.05
+			all_technology_research_speed = -0.1
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				years_passed > 40
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_token_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_token_rev
+		}
+
+		valid = {
+			or = {
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+				has_policy_flag = lrsk_adv_civ_token_rev
+				has_policy_flag = lrsk_adv_civ_no_rev
+			}
+			or = {
+				and = {
+					years_passed > 40
+					has_encountered_other_species = yes
+				}
+				years_passed > 60
+			}
+		}
+
+		modifier = {
+			ship_emergency_ftl_mult = 0.1
+			ship_disengage_chance_mult = -0.1
+			ship_fire_rate_mult = -0.05
+			ship_evasion_mult = -0.05
+			# no research penalty
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed > 60
+				years_passed < 80
+
+			}
+			modifier = {
+				factor = 4
+				years_passed > 79
+			}
+			modifier = {
+				factor = 0.5
+				or = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "lrsk_adv_civ_no_rev"
+
+		policy_flags = {
+			lrsk_adv_civ_no_rev
+		}
+
+		valid = {
+			or = {
+				has_policy_flag = lrsk_adv_civ_token_rev
+				has_policy_flag = lrsk_adv_civ_no_rev
+			}
+			# TBD: For when the factions are done.
+			#or = {
+			#	has_policy_flag = lrsk_adv_civ_no_rev
+			#	not = { ruler = { leader_of_faction = gvp_tb_ritualist } }
+			#}
+			or = {
+				and = {
+					years_passed > 60
+					has_encountered_other_species = yes
+				}
+				years_passed > 80
+			}
+		}
+
+		modifier = {
+			ship_emergency_ftl_mult = 0.15
+			ship_disengage_chance_mult = -0.15
+			ship_fire_rate_mult = -0.1
+			ship_evasion_mult = -0.1
+
+			num_tech_alternatives_add = 1
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				years_passed > 80
+			}
+			modifier = {
+				factor = 0
+				or = {
+					has_ethic = "ethic_fanatic_authoritarian"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+  	}
+}
