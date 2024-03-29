@@ -27,6 +27,14 @@ on_game_start_country = {
 	}
 }
 
+# called during empire initialization when starting a new game
+# scope: country
+empire_init_add_technologies = {
+	events = {
+		lrsk_adv_civ_techbarb.starttech
+	}
+}
+
 on_yearly_pulse_country = {
 	events = {
 		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.

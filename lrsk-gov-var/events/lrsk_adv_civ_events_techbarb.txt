@@ -4,6 +4,20 @@
 
 namespace = lrsk_adv_civ_techbarb
 
+# Starting tech
+country_event = {
+	id = lrsk_adv_civ_techbarb.starttech
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancienttheory }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancientlearning }
+			give_technology = { message = no tech = tech_lrsk_adv_civ_ancientcraft }
+		}
+	}
+}
 
 # Add Hidebound trait to scientists on spawn
 country_event = {
