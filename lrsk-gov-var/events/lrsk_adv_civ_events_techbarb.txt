@@ -1,0 +1,78 @@
+# New Advanced Civics
+# Events - Techno-Barbarian
+# Author: littleraskol
+
+namespace = lrsk_adv_civ_techbarb
+
+
+# Add Hidebound trait to scientists on spawn
+country_event = {
+	id = lrsk_adv_civ_techbarb.trait
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		from = { leader_class = scientist }
+	}
+
+	immediate = {
+		set_variable = { which = lrsk_tb_councilor_lvl value = 0 }
+		set_variable = { which = lrsk_tb_councilor_lvl_pos_factor value = 0 }
+		set_variable = { which = lrsk_tb_councilor_lvl_neg_factor value = 0 }
+		IF = {
+			limit = { has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" } }
+			export_trigger_value_to_variable = {
+				trigger = get_councilor_level
+				parameters = {
+					type = lrsk_adv_civ_civic_technobarbarism_councilor
+				}
+				variable = lrsk_tb_councilor_lvl
+			}
+			multiply_variable = { which = lrsk_tb_councilor_lvl value = 2 } #effect is ±2%/lvl
+			set_variable = { which = lrsk_tb_councilor_lvl_pos_factor value = lrsk_tb_councilor_lvl }
+			multiply_variable = { which = lrsk_tb_councilor_lvl value = -1 } #negating for next
+			set_variable = { which = lrsk_tb_councilor_lvl_neg_factor value = lrsk_tb_councilor_lvl }
+		}
+		random_list = {
+			40 = {
+				modifier = {
+					add = 10
+					has_policy_flag = lrsk_adv_civ_lapsed_rev
+				}
+				modifier = {
+					add = 20
+					has_policy_flag = lrsk_adv_civ_token_rev
+				}
+				modifier = {
+					add = 30
+					has_policy_flag = lrsk_adv_civ_no_rev
+				}
+				modifier = {
+					add = lrsk_tb_councilor_lvl_pos_factor
+					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
+				}
+				# Nothing
+			} 
+			60 = {
+				modifier = {
+					add = -10
+					has_policy_flag = lrsk_adv_civ_lapsed_rev
+				}
+				modifier = {
+					add = -20
+					has_policy_flag = lrsk_adv_civ_token_rev
+				}
+				modifier = {
+					add = -30
+					has_policy_flag = lrsk_adv_civ_no_rev
+				}
+				modifier = {
+					add = lrsk_tb_councilor_lvl_neg_factor
+					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
+				}
+				from = { add_trait = lrsk_gvp_leader_trait_hidebound }
+			}
+		}
+	}
+}
