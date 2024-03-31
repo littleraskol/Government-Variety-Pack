@@ -91,37 +91,44 @@ country_event = {
 	}
 }
 
-
-# Periodic cleanup of vanilla materialist faction.
+# Periodic cleanup of vanilla materialist and spiritualist factions.
 country_event = {
-	id = lrsk_adv_civ_techbarb.cleanupmatfac
+	id = lrsk_adv_civ_techbarb.cleanupfactions
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
-		has_faction = technologist
-		has_faction = gvp_tb_innovator
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		OR = {
+			has_country_flag = lrsk_gvp_tb_innovators_arose
+			has_country_flag = lrsk_gvp_tb_ritualists_arose
+		}
+		OR = {
+			AND = {
+				has_faction = technologist
+				has_faction = gvp_tb_innovator
+			}
+			AND = {
+				has_faction = traditionalist
+				has_faction = gvp_tb_ritualist
+			}
+		}
 	}
 
 	immediate = {
-		lrsk_gvp_technologists_to_innovators = yes
-	}
-}
-
-# Periodic cleanup of vanilla spiritualist faction.
-country_event = {
-	id = lrsk_adv_civ_techbarb.cleanupspifac
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
-		has_faction = traditionalist
-		has_faction = gvp_tb_ritualist
-	}
-
-	immediate = {
-		lrsk_gvp_traditionalists_to_ritualists = yes
+		IF = {
+			limit = {
+				has_faction = technologist
+				has_faction = gvp_tb_innovator
+			}
+			lrsk_gvp_technologists_to_innovators = yes
+		}
+		IF = {
+			limit = {
+				has_faction = traditionalist
+				has_faction = gvp_tb_ritualist
+			}
+			lrsk_gvp_traditionalists_to_ritualists = yes
+		}
 	}
 }

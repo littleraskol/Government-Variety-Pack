@@ -459,6 +459,7 @@ gvp_tb_ritualist = {
 
 	on_create = {
 		root.owner = {
+			set_country_flag = lrsk_gvp_tb_ritualists_arose
 			# We want to weaken and render obsolete the vanilla spiritualist faction
 			if = {
 				limit = { has_faction = traditionalist }
