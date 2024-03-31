@@ -1,0 +1,800 @@
+# New Advanced Civics
+# Faction - Innovator
+# Author: littleraskol
+
+gvp_tb_innovator = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_materialist
+	use_guiding_ethic_as_pop_filter = no
+	visual_ethic = "technologist_visual_ethic"
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		produces = {
+			unity = @faction_base_unity
+		}
+	}
+
+	is_potential = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		is_faction_allowed = yes
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_egalitarian
+		}
+		is_shackled_robot = no
+		can_think = yes
+	}
+
+	attraction = {
+		base = 150
+
+		# want to avoid the Technologist faction getting materialist pops as much as possible...
+		modifier = {
+			factor = 2
+			has_ethic = ethic_materialist
+		}
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 1.1
+			exists = owner
+			owner = { has_encountered_other_species = yes }
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+
+		modifier = {
+			factor = 1.05
+			years_passed > 5
+		}
+
+		modifier = {
+			factor = 1.05
+			years_passed > 10
+		}
+
+		modifier = {
+			factor = 1.05
+			years_passed > 20
+		}
+
+		modifier = {
+			factor = 1.05
+			years_passed > 40
+		}
+	}
+
+	leader = {
+		base = 100
+
+		modifier = {
+			factor = 0.0
+			OR = {
+				is_event_leader = yes
+				has_trait = lrsk_gvp_leader_trait_hidebound
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			leader_class = scientist
+		}
+
+		# dunno if this will work but we want to weaken the vanilla materialist faction however possible
+		modifier = {
+			factor = 3
+			leader_of_faction = technologist
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_FULLREV"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_FULLREV"
+		desc = "GVP_TB_INNOVATOR_FULLREV_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+			}
+		}
+
+		trigger = {
+			owner = {
+				not = { has_policy_flag = lrsk_adv_civ_full_rev }
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_LAPSEREV"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_LAPSEREV"
+		desc = "GVP_TB_INNOVATOR_LAPSEREV_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -15
+
+		potential = {
+			exists = owner
+			owner = { or = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+			} }
+		}
+
+		trigger = {
+			owner = {
+				not = { has_policy_flag = lrsk_adv_civ_lapsed_rev }
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_TOKENREV"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_TOKENREV"
+		desc = "GVP_TB_INNOVATOR_TOKENREV_DESC"
+
+		fulfilled_effect = 15
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = { or = {
+				has_policy_flag = lrsk_adv_civ_lapsed_rev
+				has_policy_flag = lrsk_adv_civ_token_rev
+			} }
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = lrsk_adv_civ_token_rev
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_UNREV"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_UNREV"
+		desc = "GVP_TB_INNOVATOR_UNREV_DESC"
+
+		fulfilled_effect = 25
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = { or = {
+				has_policy_flag = lrsk_adv_civ_token_rev
+				has_policy_flag = lrsk_adv_civ_no_rev
+			} }
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = lrsk_adv_civ_no_rev
+			}
+		}
+	}
+	
+	# To the player, this should look the same whether fanatic or not, only the negative opinion hit changing
+	demand = {
+		title = "GVP_TB_INNOVATOR_FAUTHORITY"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_FAUTHORITY"
+		desc = "GVP_TB_INNOVATOR_FAUTHORITY_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_fanatic_authoritarian }
+			}
+		}
+	}
+	demand = {
+		title = "GVP_TB_INNOVATOR_AUTHORITY"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_AUTHORITY"
+		desc = "GVP_TB_INNOVATOR_AUTHORITY_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_ethic = ethic_fanatic_authoritarian }
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_authoritarian
+				}
+			}
+		}
+	} 
+
+	# To the player, this should look the same whether fanatic or not, only the negative opinion hit changing
+	demand = {
+		title = "GVP_TB_INNOVATOR_FSPIRITUALISM"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_FSPIRITUALISM"
+		desc = "GVP_TB_INNOVATOR_FSPIRITUALISM_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_fanatic_spiritualist }
+			}
+		}
+	}
+	demand = {
+		title = "GVP_TB_INNOVATOR_SPIRITUALISM"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_SPIRITUALISM"
+		desc = "GVP_TB_INNOVATOR_SPIRITUALISM_DESC"
+
+		fulfilled_effect = 20
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_ethic = ethic_fanatic_spiritualist }
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_TECH_KEEP"
+		unfulfilled_title = "GVP_TB_INNOVATOR_TECH_LEFT"
+		desc = "GVP_TB_INNOVATOR_TECH_KEEP_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				any_relation = {
+					has_communications = root.owner
+					is_country_type = default
+					NOT = { has_government = gov_successor_khanate }
+					root.owner = {
+						has_intel_level = {
+							who = prev
+							category = technology
+							level >= 1
+						}
+					}
+				}
+				NOR = {
+					has_country_flag = primitives_can_into_space
+					is_subject = yes
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_relation = {
+						has_communications = root.owner
+						is_country_type = default
+						NOT = { has_government = gov_successor_khanate }
+						root.owner = {
+							has_intel_level = {
+								who = prev
+								category = technology
+								level >= 1
+							}
+						}
+						# TBD: Double check how this works
+						relative_power = {
+							who = root.owner
+							category = technology
+							value = pathetic
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_TECH_LEAP"
+		unfulfilled_title = "GVP_TB_INNOVATOR_TECH_LAG"
+		desc = "GVP_TB_INNOVATOR_TECH_LEAP_DESC"
+
+		fulfilled_effect = 20
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				any_relation = {
+					has_communications = root.owner
+					is_country_type = default
+					NOT = { has_government = gov_successor_khanate }
+					root.owner = {
+						has_intel_level = {
+							who = prev
+							category = technology
+							level >= 1
+						}
+					}
+				}
+				NOR = {
+					has_country_flag = primitives_can_into_space
+					is_subject = yes
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_relation = {
+						has_communications = root.owner
+						is_country_type = default
+						NOT = { has_government = gov_successor_khanate }
+						root.owner = {
+							has_intel_level = {
+								who = prev
+								category = technology
+								level >= 1
+							}
+						}
+						relative_power = {
+							who = root.owner
+							category = technology
+							value > equivalent
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_RESEARCH_TREATIES"
+		unfulfilled_title = "GVP_TB_INNOVATOR_FEW_RESEARCH_TREATIES"
+		desc = "GVP_TB_INNOVATOR_RESEARCH_TREATIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications > 3
+				NOT = { has_valid_civic = civic_inwards_perfection }
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					AND = {
+						has_federation = yes
+						federation = {
+							has_federation_perk = research_federation_passive
+						}
+					}
+					count_playable_country = {
+						count > 1
+						limit = {
+							exists = this
+							root.owner = { has_research_agreement = prev }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# Need to set a timed flag after the relevant opp or event happens
+	demand = {
+		title = "GVP_TB_INNOVATOR_RESEARCH_OPP"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_RESEARCH_OPP"
+		desc = "GVP_TB_INNOVATOR_RESEARCH_OPP_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = lrsk_gvp_tb_tech_stolen
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = lrsk_gvp_tb_tech_stolen
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_SECRET_KNOWLEDGE"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_SECRET_KNOWLEDGE"
+		desc = "GVP_TB_INNOVATOR_SECRET_KNOWLEDGE_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_modifier = fallen_empire_gift_databanks
+					has_modifier = curator_insight
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_modifier = fallen_empire_gift_databanks
+					has_modifier = curator_insight
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_ARCANA"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_ARCANA"
+		desc = "GVP_TB_INNOVATOR_ARCANA_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_modifier = arcane_deciphering_cooldown
+					has_modifier = arcane_insight
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_modifier = arcane_deciphering_cooldown
+					has_modifier = arcane_insight
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_PRECURSOR_SECRETS"
+		unfulfilled_title = "GVP_TB_INNOVATOR_NO_PRECURSOR_SECRETS"
+		desc = "GVP_TB_INNOVATOR_PRECURSOR_SECRETS_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_country_flag = irassian_world_found
+					has_country_flag = yuht_world_found
+					has_country_flag = vultaum_world_found
+					has_country_flag = cybrex_world_found
+					has_country_flag = league_world_found
+					has_country_flag = last_baol_system
+					has_country_flag = last_zroni_system
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_completed_precursor_research = yes
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_NO_STRATIFIED"
+		unfulfilled_title = "GVP_TB_INNOVATOR_STRATIFIED"
+		desc = "GVP_TB_INNOVATOR_NO_STRATIFIED_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 10
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					any_owned_species = {
+						has_living_standard = { type = living_standard_stratified country = prev }
+						has_citizenship_type = { type = citizenship_robot_servitude country = prev }
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "GVP_TB_INNOVATOR_SLAVERY_BANNED"
+		unfulfilled_title = "GVP_TB_INNOVATOR_SLAVERY_ALLOWED"
+		desc = "GVP_TB_INNOVATOR_SLAVERY_BANNED_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = slavery_not_allowed
+			}
+		}
+	}
+
+	on_create = {
+		root.owner = {
+			set_country_flag = lrsk_gvp_tb_innovators_arose
+			# We want to weaken and render obsolete the vanilla materialist faction
+			if = {
+				limit = { has_faction = technologist }
+				lrsk_gvp_technologists_to_innovators = yes
+			}
+		}
+		pop_faction_event = { id = factions.1 } # call after to make sure leader assignment makes sense
+	}
+
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = lrsk_gvp_promoted_innovator
+			}
+			remove_modifier = lrsk_gvp_promoted_innovator
+		}
+		if = {
+			limit = {
+				has_modifier = lrsk_gvp_suppressed_innovator
+			}
+			remove_modifier = lrsk_gvp_suppressed_innovator
+		}
+	}
+
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "GVP_TB_INNOVATOR_EMBRACE_DESC"
+
+			cost = {
+				influence = 500
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { is_subject_type = dominion }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOT = { has_ethic = "ethic_fanatic_materialist" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					shift_ethic = ethic_materialist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							# TBD replace this
+							#country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "GVP_TB_INNOVATOR_PROMOTE_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = lrsk_gvp_suppressed_innovator
+						has_modifier = lrsk_gvp_promoted_innovator
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = lrsk_gvp_promoted_innovator days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = lrsk_gvp_promoted_innovator
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = lrsk_gvp_promoted_innovator
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = lrsk_gvp_suppressed_innovator
+						has_modifier = lrsk_gvp_promoted_innovator
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = lrsk_gvp_suppressed_innovator days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = lrsk_gvp_suppressed_innovator
+				}
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = lrsk_gvp_suppressed_innovator
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}

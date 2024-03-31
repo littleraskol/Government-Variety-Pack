@@ -1129,3 +1129,39 @@ lrsk_federation_origin_planet_setup = {
 	}
 	reroll_planet = yes
 }
+
+# Eliminates base game materialist faction by transferring all pops in it to Innovators
+lrsk_gvp_technologists_to_innovators = {
+	every_owned_pop = { limit = { member_of_faction = technologist }
+		set_pop_faction = gvp_tb_innovator
+	}
+
+	if = {
+		limit = {
+			any_owned_leader = { leader_of_faction = technologist }
+			any_owned_leader = { NOT = { leader_of_faction = gvp_tb_innovator } }	# don't want to boot out any existing leader
+		}
+		random_owned_leader = { limit = { leader_of_faction = technologist }
+			save_event_target_as = lrsk_gvp_tb_former_techfac_leader
+		}
+		root = { assign_leader = event_target:lrsk_gvp_tb_former_techfac_leader }
+	}
+}
+
+# Eliminates base game spiritualist faction by transferring all pops in it to Ritualists
+lrsk_gvp_traditionalists_to_ritualists = {
+	every_owned_pop = { limit = { member_of_faction = traditionalist }
+		set_pop_faction = gvp_tb_ritualist
+	}
+
+	if = {
+		limit = {
+			any_owned_leader = { leader_of_faction = traditionalist }
+			any_owned_leader = { NOT = { leader_of_faction = gvp_tb_ritualist } }	# don't want to boot out any existing leader
+		}
+		random_owned_leader = { limit = { leader_of_faction = traditionalist }
+			save_event_target_as = lrsk_gvp_tb_former_tradfac_leader
+		}
+		root = { assign_leader = event_target:lrsk_gvp_tb_former_tradfac_leader }
+	}
+}
