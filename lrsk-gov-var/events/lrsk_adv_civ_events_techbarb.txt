@@ -91,7 +91,26 @@ country_event = {
 	}
 }
 
-# Periodic cleanup of vanilla materialist and spiritualist factions.
+# Periodic cleanup of vanilla materialist and spiritualist factions. 
+# First event runs yearly, calls the second immediately and then 6 months later.
+country_event = {
+	id = lrsk_adv_civ_techbarb.factioncleanupscheduler
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_civic = lrsk_adv_civ_civic_technobarbarism
+		OR = {
+			has_country_flag = lrsk_gvp_tb_innovators_arose
+			has_country_flag = lrsk_gvp_tb_ritualists_arose
+		}
+	}
+
+	immediate = {
+		country_event = { id = lrsk_adv_civ_techbarb.cleanupfactions }
+		country_event = { id = lrsk_adv_civ_techbarb.cleanupfactions days = 180 }
+	}
+}
 country_event = {
 	id = lrsk_adv_civ_techbarb.cleanupfactions
 	hide_window = yes
