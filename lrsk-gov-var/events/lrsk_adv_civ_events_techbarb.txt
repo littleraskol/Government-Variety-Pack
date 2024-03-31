@@ -91,6 +91,101 @@ country_event = {
 	}
 }
 
+# Announcing when a TB faction is formed
+pop_faction_event = {
+	id = lrsk_adv_civ_techbarb.factionpopup
+	title = factions.1.title
+	desc = {
+		trigger = {
+			text = factions.1.desc.start
+			text = newline
+			success_text = {
+				text = lrsk_gvp_techbarb_innovators_arise
+				is_pop_faction_type = gvp_tb_innovator
+			}
+			success_text = {
+				text = lrsk_gvp_techbarb_ritualists_arise
+				is_pop_faction_type = gvp_tb_ritualist
+			}
+			success_text = {
+				hidden:owner = { NOT = { has_country_flag = first_faction } }
+				text = factions.1.desc.firstfinisher
+			}
+		}
+	}
+	picture = GFX_evt_galactic_senate
+	show_sound = event_factions
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			owner = {
+				has_origin = origin_broken_shackles
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		hidden_effect = {
+			owner = {
+				every_owned_planet = {
+					every_owned_pop = {
+						force_faction_evaluation = yes
+					}
+				}
+				IF = { limit = { NOT = { has_country_flag = first_faction } }
+					set_country_flag = first_faction
+				}
+				# call this one more time in case force_faction_evaluation gave pops to default factions
+				country_event = { id = lrsk_adv_civ_techbarb.cleanupfactions }
+			}
+		}
+	}
+}
+
+# Notification event - other empire shifts ethics
+country_event = {
+	id = lrsk_adv_civ_techbarb.ethicshift
+	title = factions.2000.title
+	location = event_target:TargetFaction.Owner.capital_scope
+	desc = {
+		trigger = {
+			text = factions.2000.desc.start
+			text = newline
+			success_text = {
+				text = factions.2000.desc.technologist
+				event_target:TargetFaction = { is_pop_faction_type = gvp_tb_innovator }
+				has_country_flag = lrsk_gvp_inno_mat_shift
+			}
+			success_text = {
+				text = factions.2000.desc.progressive
+				event_target:TargetFaction = { is_pop_faction_type = gvp_tb_innovator }
+				has_country_flag = lrsk_gvp_inno_egal_shift
+			}
+			success_text = {
+				text = factions.2000.desc.traditionalist
+				event_target:TargetFaction = { is_pop_faction_type = gvp_tb_ritualist }
+				has_country_flag = lrsk_gvp_rit_spi_shift
+			}
+			success_text = {
+				text = factions.2000.desc.totalitarian
+				event_target:TargetFaction = { is_pop_faction_type = gvp_tb_ritualist }
+				has_country_flag = lrsk_gvp_rit_auth_shift
+			}
+		}
+	}
+
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_factions
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
 # Periodic cleanup of vanilla materialist and spiritualist factions. 
 # First event runs yearly, calls the second immediately and then 6 months later.
 country_event = {
@@ -100,6 +195,7 @@ country_event = {
 
 	trigger = {
 		has_civic = lrsk_adv_civ_civic_technobarbarism
+		has_country_flag = first_faction
 		OR = {
 			has_country_flag = lrsk_gvp_tb_innovators_arose
 			has_country_flag = lrsk_gvp_tb_ritualists_arose
@@ -117,11 +213,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_civic = lrsk_adv_civ_civic_technobarbarism
-		OR = {
-			has_country_flag = lrsk_gvp_tb_innovators_arose
-			has_country_flag = lrsk_gvp_tb_ritualists_arose
-		}
+		# these are evaluated by the scheduler
+		#has_civic = lrsk_adv_civ_civic_technobarbarism
+		#OR = {
+		#	has_country_flag = lrsk_gvp_tb_innovators_arose
+		#	has_country_flag = lrsk_gvp_tb_ritualists_arose
+		#}
 		OR = {
 			AND = {
 				has_faction = technologist

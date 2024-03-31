@@ -466,7 +466,7 @@ gvp_tb_ritualist = {
 				lrsk_gvp_traditionalists_to_ritualists = yes
 			}
 		}
-		pop_faction_event = { id = factions.1 } # call after to make sure leader assignment makes sense
+		pop_faction_event = { id = lrsk_adv_civ_techbarb.factionpopup } # call after to make sure leader assignment makes sense
 	}
 
 	on_destroy = {
@@ -512,14 +512,24 @@ gvp_tb_ritualist = {
 				}
 				support > 0.20
 				parameter:empire = {
-					NOT = { has_ethic = "ethic_fanatic_spiritualist" }
+					NOT = { 
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_authoritarian
+					}
 				}
 			}
 
 			effect = {
 				add_modifier = { modifier = embraced_faction days = 3600 }
 				parameter:empire = {
-					shift_ethic = ethic_spiritualist
+					IF = { limit = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
+						shift_ethic = ethic_spiritualist
+						set_timed_country_flag = { flag = lrsk_gvp_rit_spi_shift days = 2 }
+					}
+					ELSE = {
+						shift_ethic = ethic_authoritarian
+						set_timed_country_flag = { flag = lrsk_gvp_rit_auth_shift days = 2 }
+					}
 					hidden_effect = {
 						add_modifier = { modifier = embraced_faction_timer days = 3600 }
 						every_pop_faction = {
@@ -542,8 +552,7 @@ gvp_tb_ritualist = {
 									level >= 1
 								}
 							}
-							# TBD: change this
-							#country_event = { id = factions.2000 }
+							country_event = { id = lrsk_adv_civ_techbarb.ethicshift }
 						}
 					}
 				}

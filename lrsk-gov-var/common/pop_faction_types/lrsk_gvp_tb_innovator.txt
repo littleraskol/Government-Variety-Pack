@@ -616,7 +616,7 @@ gvp_tb_innovator = {
 				lrsk_gvp_technologists_to_innovators = yes
 			}
 		}
-		pop_faction_event = { id = factions.1 } # call after to make sure leader assignment makes sense
+		pop_faction_event = { id = lrsk_adv_civ_techbarb.factionpopup } # call after to make sure leader assignment makes sense
 	}
 
 	on_destroy = {
@@ -662,14 +662,24 @@ gvp_tb_innovator = {
 				}
 				support > 0.20
 				parameter:empire = {
-					NOT = { has_ethic = "ethic_fanatic_materialist" }
+					NOT = { 
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_egalitarian
+					}
 				}
 			}
 
 			effect = {
 				add_modifier = { modifier = embraced_faction days = 3600 }
 				parameter:empire = {
-					shift_ethic = ethic_materialist
+					IF = { limit = { NOT = { has_ethic = ethic_fanatic_materialist } }
+						shift_ethic = ethic_materialist
+						set_timed_country_flag = { flag = lrsk_gvp_inno_mat_shift days = 2 }
+					}
+					ELSE = {
+						shift_ethic = ethic_egalitarian
+						set_timed_country_flag = { flag = lrsk_gvp_inno_egal_shift days = 2 }
+					}
 					hidden_effect = {
 						add_modifier = { modifier = embraced_faction_timer days = 3600 }
 						every_pop_faction = {
@@ -692,8 +702,7 @@ gvp_tb_innovator = {
 									level >= 1
 								}
 							}
-							# TBD replace this
-							#country_event = { id = factions.2000 }
+							country_event = { id = lrsk_adv_civ_techbarb.ethicshift }
 						}
 					}
 				}
