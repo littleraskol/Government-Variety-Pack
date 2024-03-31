@@ -114,12 +114,6 @@ gvp_tb_innovator = {
 			factor = 1.5
 			leader_class = scientist
 		}
-
-		# dunno if this will work but we want to weaken the vanilla materialist faction however possible
-		modifier = {
-			factor = 3
-			leader_of_faction = technologist
-		}
 	}
 
 	demand = {
@@ -640,7 +634,7 @@ gvp_tb_innovator = {
 			description = "GVP_TB_INNOVATOR_EMBRACE_DESC"
 
 			cost = {
-				influence = 500
+				unity = 5000
 			}
 
 			potential = {
@@ -709,7 +703,22 @@ gvp_tb_innovator = {
 			}
 
 			ai_weight = {
-				base = 0
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_materialist
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
 			}
 		}
 

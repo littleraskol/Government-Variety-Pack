@@ -5,6 +5,7 @@
 gvp_tb_ritualist = {
 	election_header = "GFX_faction_header_yellow"
 	guiding_ethic = ethic_spiritualist
+	use_guiding_ethic_as_pop_filter = no
 	visual_ethic = "traditionalist_visual_ethic"
 
 	unique = yes
@@ -105,12 +106,6 @@ gvp_tb_ritualist = {
 		modifier = {
 			factor = 1.5
 			has_trait = lrsk_gvp_leader_trait_hidebound
-		}
-
-		# dunno if this will work but we want to weaken the vanilla materialist faction however possible
-		modifier = {
-			factor = 3
-			leader_of_faction = traditionalist
 		}
 	}
 
@@ -490,7 +485,7 @@ gvp_tb_ritualist = {
 			description = "EMBRACE_FACTION_DESC"
 
 			cost = {
-				influence = 500
+				unity = 5000
 			}
 
 			potential = {
@@ -565,17 +560,6 @@ gvp_tb_ritualist = {
 					support < 0.50
 					owner = {
 						has_ethic = ethic_spiritualist
-					}
-				}
-				modifier = {
-					factor = 0
-					NOT = {
-						owner = {
-							exists = ruler
-							ruler = {
-								leader_of_faction = gvp_tb_ritualist
-							}
-						}
 					}
 				}
 				modifier = {
