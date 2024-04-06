@@ -21,6 +21,16 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v?.? (?/?/?) - Automated Indolence Redux
+-Brought back the "Automated Indolence" civic.
+--Now a start-only civic.
+--Pops that spawn in Automated Indolence empires resent being in worker jobs and are worse at them. (This effect can fade with time when deprived of infrastructure that offsets it.)
+--Colonies can construct buildings that boost worker-tier job output and happiness of worker and specialist pops, adds amenities, and increases mechanical pop assembly speed.
+--Homeworld starts with top-tier version of this building.
+--Researching "automation" tech (e.g. robots and AI) improves these buildings.
+--Can construct "Leisure Centers" that give special highly-desired specialist-tier jobs that improve specialist output but increase worker resentment.
+--May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
+
 v5.9 (2/27/24) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
 -Dealt with removed techs:
