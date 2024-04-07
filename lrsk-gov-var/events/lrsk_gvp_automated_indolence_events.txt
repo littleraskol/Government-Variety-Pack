@@ -1,0 +1,57 @@
+# Government Variety Pack
+# Events - Automated Indolence Events
+# Author: littleraskol
+
+namespace = lrsk_gvp_autoindol
+
+# Setup starting tech, buildings, variables
+country_event = {
+	id = lrsk_gvp_autoindol.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_automated_indolence
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_administrative_ai message = no }
+		set_variable = { which = lrsk_ai_techs value = 0 }
+		set_variable = { which = lrsk_robo_techs value = 0 }
+		set_variable = { which = lrsk_autoadmin_techs value = 0 }
+		
+		# Buildings
+	}
+}
+
+# Check is relevant tech researched
+country_event = {
+	id = lrsk_gvp_autoindol.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_automated_indolence
+	}
+	
+	immediate = {
+		switch = {
+			trigger = last_increased_tech
+			tech_pd_tracking_3 = { change_variable = { which = lrsk_ai_techs value = 1 } }
+			tech_sapient_ai = { change_variable = { which = lrsk_ai_techs value = 1 } }
+			tech_combat_computers_3 = { change_variable = { which = lrsk_ai_techs value = 1 } }
+			tech_cryostasis_2 = { change_variable = { which = lrsk_ai_techs value = 1 } }
+			tech_consumer_good_refinement_2 = { change_variable = { which = lrsk_ai_techs value = 1 } }
+			tech_droid_workers = { change_variable = { which = lrsk_robo_techs value = 1 } }
+			tech_synthetic_workers = { change_variable = { which = lrsk_robo_techs value = 1 } }
+			tech_synthetic_leaders = { change_variable = { which = lrsk_robo_techs value = 1 } }
+			tech_robomodding_points_1 = { change_variable = { which = lrsk_robo_techs value = 1 } }
+			tech_robomodding = { change_variable = { which = lrsk_robo_techs value = 1 } }
+			tech_effective_bureaucracy = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+			tech_interstellar_economics = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+			tech_hypercomms_forum = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+			tech_collective_self = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+			tech_paradise_dome = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+		}
+	}
+}

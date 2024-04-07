@@ -24,6 +24,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v?.? (?/?/?) - Automated Indolence Redux
 -Brought back the "Automated Indolence" civic.
 --Now a start-only civic.
+--Start with Administrative AI tech.
 --Pops that spawn in Automated Indolence empires resent being in worker jobs and are worse at them. (This effect can fade with time when deprived of infrastructure that offsets it.)
 --Colonies can construct buildings that boost worker-tier job output and happiness of worker and specialist pops, adds amenities, and increases mechanical pop assembly speed.
 --Homeworld starts with top-tier version of this building.
