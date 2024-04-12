@@ -1180,8 +1180,6 @@ lrsk_gov_var_civic_colonial_fiefs = {
 lrsk_gov_var_civic_automated_indolence = {
   potential = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOT = { value = auth_corporate } }
-    civics = { value = lrsk_gov_var_civic_automated_indolence }
   }
 
   #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
@@ -1220,10 +1218,11 @@ lrsk_gov_var_civic_automated_indolence = {
 		}
 	}
 
-  modifier = {
-    planet_jobs_robotic_produces_mult = 0.10
-    planet_stability_add = 5
-  }
+  #Effects are other elements
+  #modifier = {
+  #  planet_jobs_robotic_produces_mult = 0.10
+  #  planet_stability_add = 5
+  #}
 }
 
 
