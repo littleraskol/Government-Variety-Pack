@@ -20,6 +20,8 @@ Report any issues you find here: https://airtable.com/shr57DnP3u6lzJ4D9
 This mod only adds new things to the game, in new files. There's no possibility of this mod conflicting with another due to both editing base game files. All file names and tokens, furthermore, are specific to this mod (using a special prefix) so any token or file conflict would more or less have to be intentional (e.g. a patch or submod). That said, there's no guarantee that all the civic combinations between my mods and others will make sense or be balanced. Also, if a mod radically changes the way ethics work (especially renaming the base ethics), not all mod features can be guaranteed to be coherent.
 
 5. Changes
+v5.9.1 (4/25/24) - Filename Hotfix 
+-Extremely embarassing filename error fixed.
 
 v5.9 (2/27/24) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
