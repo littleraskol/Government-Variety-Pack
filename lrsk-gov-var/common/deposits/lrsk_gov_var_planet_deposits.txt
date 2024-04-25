@@ -73,7 +73,18 @@ d_lrsk_gov_var_collapsed_tech_ruins = {
 		category = deposit_blockers
 		cost = {
 			energy = 1000
-			influence = 100
+		}
+		cost = {
+			trigger = { owner = { has_policy_flag = lrsk_adv_civ_full_rev } }
+			unity = 750
+		}
+		cost = {
+			trigger = { owner = { has_policy_flag = lrsk_adv_civ_lapsed_rev } }
+			unity = 500
+		}
+		cost = {
+			trigger = { owner = { has_policy_flag = lrsk_adv_civ_token_rev } }
+			unity = 250
 		}
 	}
 
