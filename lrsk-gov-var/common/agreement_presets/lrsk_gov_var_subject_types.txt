@@ -355,3 +355,71 @@ preset_lrsk_gov_var_subject_chartered_company = {
 		is_gestalt = no
 	}
 }
+
+# Taxed 20% of research
+preset_lrsk_gvp_tech_tributary = {
+	icon = "GFX_diplomacy_status_is_tributary"
+	term_data = {
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand
+			}
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_none
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_0
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+		}
+		resource_terms = {
+			{
+				key = resource_subsidies_research
+				value = 0.2
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 90
+	}
+	subject_weight = {
+		base = 50
+	}
+
+	potential = {
+		from = {
+			has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		}
+		tech_unlocked_ratio = {
+			who = from
+			ratio >= @protectorate_tech_threshold
+		}
+	}
+}
