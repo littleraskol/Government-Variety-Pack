@@ -106,11 +106,10 @@ lrsk_adv_civ_tech_ritual = {
 				has_policy_flag = lrsk_adv_civ_full_rev
 				has_policy_flag = lrsk_adv_civ_lapsed_rev
 			}
-			# TBD: For when the factions are done.
-			#or = {
-			#	has_policy_flag = lrsk_adv_civ_full_rev
-			#	not = { ruler = { leader_of_faction = gvp_tb_innovator } }
-			#}
+			or = {
+				has_policy_flag = lrsk_adv_civ_full_rev
+				not = { ruler = { has_ethic = ethic_materialist } }
+			}
 		}
 
 		modifier = {
@@ -238,11 +237,10 @@ lrsk_adv_civ_tech_ritual = {
 				has_policy_flag = lrsk_adv_civ_token_rev
 				has_policy_flag = lrsk_adv_civ_no_rev
 			}
-			# TBD: For when the factions are done.
-			#or = {
-			#	has_policy_flag = lrsk_adv_civ_no_rev
-			#	not = { ruler = { leader_of_faction = gvp_tb_ritualist } }
-			#}
+			or = {
+				has_policy_flag = lrsk_adv_civ_no_rev
+				not = { ruler = { has_ethic = ethic_spiritualist } }
+			}
 			or = {
 				and = {
 					years_passed > 60
