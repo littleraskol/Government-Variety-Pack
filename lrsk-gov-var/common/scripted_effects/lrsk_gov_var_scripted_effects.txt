@@ -1167,3 +1167,402 @@ lrsk_gvp_traditionalists_to_ritualists = {
 	#	root = { assign_leader = event_target:lrsk_gvp_tb_former_tradfac_leader }
 	#}
 }
+
+# Gives random starting techs and tech progress
+lrsk_give_random_techs = {
+	## TECH BONUSES
+	# Note: work done here to accomodate gestalts is technically wasted, but I might decide to add support for gestalts with this origin.
+
+	# Add random weapon tech: Coilguns, Fusion Missiles, Blue Lasers
+
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_mass_drivers_2
+			}
+			give_technology = { tech = tech_mass_drivers_2 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_missiles_2
+			}
+			give_technology = { tech = tech_missiles_2 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_lasers_2
+			}
+			give_technology = { tech = tech_lasers_2 message = no }
+		}
+	}
+
+	# Add random naval support tech (two): Ceramo-Metal Materials, Ion Thrusters, Specialized Combat Computers, Fusion Power, Improved Deflectors, Gravitic Sensors
+
+	while = {
+		count = 2
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_ship_armor_2
+				}
+				give_technology = { tech = tech_ship_armor_2 message = no }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_thrusters_2
+				}
+				give_technology = { tech = tech_thrusters_2 message = no }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_combat_computers_1
+				}
+				give_technology = { tech = tech_combat_computers_1 message = no }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_fusion_power
+				}
+				give_technology = { tech = tech_fusion_power message = no }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_shields_2
+				}
+				give_technology = { tech = tech_shields_2 message = no }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_technology = tech_sensors_2
+				}
+				give_technology = { tech = tech_sensors_2 message = no }
+			}
+		}
+	}
+
+	# Add random space options tech: Starhold, Destroyers, Zero-G Refineries & Zero-G Laboratories, FTL Inhibition
+
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_starbase_3
+			}
+			give_technology = { tech = tech_starbase_3 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_destroyers
+			}
+			give_technology = { tech = tech_destroyers message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_technology = tech_space_mining_1
+					has_technology = tech_space_science_1
+				}
+			}
+			give_technology = { tech = tech_space_mining_1 message = no }
+			give_technology = { tech = tech_space_science_1 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_ftl_inhibitor
+			}
+			give_technology = { tech = tech_ftl_inhibitor message = no }
+		}
+	}
+
+	# Add random industrial tech: Holographic Casts, Nano-Circuit Assembly, Exotic Materials Labs
+
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_alloys_1
+			}
+			give_technology = { tech = tech_alloys_1 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_technology = tech_luxuries_1
+					AND = {
+						is_gestalt = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+			}
+			give_technology = { tech = tech_luxuries_1 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_basic_science_lab_2
+			}
+			give_technology = { tech = tech_basic_science_lab_2 message = no }
+		}
+	}
+
+	# Add random gov tech: Planetary Unification, Artificial Moral Codes/Unity of Purpose, Interstellar Campaigns
+
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_planetary_unification
+			}
+			give_technology = { tech = tech_planetary_unification message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_technology = tech_artificial_moral_codes
+					is_gestalt = yes
+				}
+			}
+			give_technology = { tech = tech_artificial_moral_codes message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_technology = tech_unity_of_purpose
+					is_gestalt = no
+				}
+			}
+			give_technology = { tech = tech_unity_of_purpose message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_interstellar_campaigns
+			}
+			give_technology = { tech = tech_interstellar_campaigns message = no }
+		}
+	}
+
+	# Add random other tech: Automated Exploration Protocols, AI-Controlled Colony Ships, Doctrine: Space Combat, Doctrine: Fleet Support
+
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_automated_exploration
+			}
+			give_technology = { tech = tech_automated_exploration message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_cryostasis_1
+			}
+			give_technology = { tech = tech_cryostasis_1 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_doctrine_fleet_size_1
+			}
+			give_technology = { tech = tech_doctrine_fleet_size_1 message = no }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_technology = tech_doctrine_navy_size_1
+			}
+			give_technology = { tech = tech_doctrine_navy_size_1 message = no }
+		}
+	}
+
+	# Add 50% progress on 2 random T2 techs for each category, respecting prereqs
+
+	while = {
+		count = 2
+		
+		add_random_research_option = {
+			add_progress = 0.5
+			area = engineering
+			tier = 2
+			ignore_prereqs = no
+			fail_effects = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = @tier2researchreward
+					min = @tier2researchmin
+					max = @tier2researchmax
+				}
+			}
+		}
+		
+		add_random_research_option = {
+			add_progress = 0.5
+			area = society
+			tier = 2
+			ignore_prereqs = no
+			fail_effects = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = @tier2researchreward
+					min = @tier2researchmin
+					max = @tier2researchmax
+				}
+			}
+		}
+		
+		add_random_research_option = {
+			add_progress = 0.5
+			area = physics
+			tier = 2
+			ignore_prereqs = no
+			fail_effects = {
+				add_monthly_resource_mult = {
+					resource = physics_research
+					value = @tier2researchreward
+					min = @tier2researchmin
+					max = @tier2researchmax
+				}
+			}
+		}
+	}
+
+	# Add 5% progress on 1 random T3 tech for each category, respecting prereqs
+	# If failed (likely due to prereqs) add 1% progress on 1 random T3 in that category
+
+	add_random_research_option = {
+		add_progress = 0.05
+		area = engineering
+		tier = 3
+		ignore_prereqs = no
+		fail_effects = {
+			add_random_research_option = {
+				add_progress = 0.01
+				area = engineering
+				tier = 3
+				ignore_prereqs = yes
+				fail_effects = {
+					add_monthly_resource_mult = {
+						resource = engineering_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				}
+			}
+		}
+	}
+	
+	add_random_research_option = {
+		add_progress = 0.05
+		area = society
+		tier = 3
+		ignore_prereqs = no
+		fail_effects = {
+			add_random_research_option = {
+				add_progress = 0.01
+				area = society
+				tier = 3
+				ignore_prereqs = yes
+				fail_effects = {
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				}
+			}
+		}
+	}
+	
+	add_random_research_option = {
+		add_progress = 0.05
+		area = physics
+		tier = 3
+		ignore_prereqs = no
+		fail_effects = {		
+			add_random_research_option = {
+				add_progress = 0.01
+				area = physics
+				tier = 3
+				ignore_prereqs = yes
+				fail_effects = {
+					add_monthly_resource_mult = {
+						resource = physics_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				}
+			}
+		}
+	}
+	
+	# TBs get 1% towards random high-level rare techs
+	IF = {
+		limit = {
+			has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+			NOT = { has_country_flag = lrsk_tb_special_tech_bonus_granted }
+		}
+		
+		set_country_flag = lrsk_tb_special_tech_bonus_granted
+		
+		add_random_research_option = {
+			add_progress = 0.01
+			area = engineering
+			ignore_prereqs = yes
+			only_rare = yes
+			fail_effects = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+				}
+			}
+		}
+		add_random_research_option = {
+			add_progress = 0.01
+			area = society
+			ignore_prereqs = yes
+			only_rare = yes
+			fail_effects = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+				}
+			}
+		}
+		add_random_research_option = {
+			add_progress = 0.01
+			area = physics
+			ignore_prereqs = yes
+			only_rare = yes
+			fail_effects = {
+				add_monthly_resource_mult = {
+					resource = physics_research
+					value = @tier4researchreward
+					min = @tier4researchmin
+					max = @tier4researchmax
+				}
+			}
+		}
+	}
+}

@@ -248,3 +248,37 @@ country_event = {
 		}
 	}
 }
+
+# Sets up Ancient Tech deposit, gives random techs as needed for AT and TB (doubles up with both)
+country_event = {
+	id = namespace = lrsk_adv_civ_techbarb.randomtech
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_origin = lrsk_adv_civ_origin_ancient_tech
+			has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		}
+	}
+	
+	immediate = {
+		IF = { limit = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+			capital_scope = {
+				set_planet_flag = lrsk_gov_var_ancient_tech_capital
+
+				add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
+			}
+			# Semi-immediate check that some other mod did not remove the ruins
+			country_event = {
+				id = lrsk_government_variety_pack_backend.2
+				days = 2
+			}
+			lrsk_give_random_techs = yes
+		}				
+		
+		IF = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+			lrsk_give_random_techs = yes
+		}
+	}
+}
