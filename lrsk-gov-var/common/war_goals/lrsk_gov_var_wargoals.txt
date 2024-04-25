@@ -1,7 +1,253 @@
 ## Government Variety Pack
 ## Wargoals
 ## Author: littleraskol
-#
+
+wg_lrsk_gvp_tech_plunder = {
+	casus_belli = cb_lrsk_gvp_revelation
+	hide_if_no_cb = no
+	total_war = no
+
+	galactic_empire_joins_defender = {
+		from = { is_galactic_emperor = yes }
+		imperial_authority >= 100
+	}
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	surrender_acceptance = -25
+
+	potential = {
+		has_total_war_cb = no
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		NOT = { is_in_federation_with = from }
+		NAND = {
+			is_galactic_emperor = yes
+			from = { is_galactic_community_member = yes }
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = has_claimed_all_systems
+			from = {
+				is_country_type = default
+				any_owned_planet = {
+					is_colony = yes
+					root = {
+						NOT = { has_claim = prev.solar_system }
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = cannot_use_against_emperor
+			OR = {
+				from = { is_galactic_emperor = no }
+				is_galactic_community_member = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = pax_galactica_active
+			NAND = {
+				is_active_resolution = resolution_emperor_pax_galactica
+				is_galactic_community_member = yes
+				from = { is_galactic_community_member = yes }
+			}
+		}
+	}
+	on_accept = {
+		custom_tooltip = wg_lrsk_gvp_tech_plunder_them
+		hidden_effect = {
+			set_timed_country_flag = { flag = lrsk_gvp_tb_techraid_won_or_whitepeace@from days = 7 }		# will skip checking for raiding flags
+			from = {
+				set_variable = { which = lrsk_tb_techraided_worlds value = 0 }
+				add_modifier = {
+					modifier = lrsk_gvp_techraided
+					days = 3600
+				}
+				IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
+					every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
+						change_variable = { which = lrsk_tb_techraided_worlds value = 1 }
+						remove_planet_flag = lrsk_tb_techraided_by@root
+					}
+				}
+			}
+			set_variable = { which = lrsk_tb_techraids value = from.lrsk_tb_techraided_worlds }
+			set_variable = { which = lrsk_tb_techraid_factor value = 0.05 }	# min progress = 5%, max is 50% based on total raids
+			IF = { limit = { check_variable = { which = lrsk_tb_techraids value > 9 } }
+				set_variable = { which = lrsk_tb_techraid_factor value = 0.5 }
+			}
+			ELSE_IF = { limit = { check_variable = { which = lrsk_tb_techraids value > 0 } }
+				multiply_variable = { which = lrsk_tb_techraid_factor value = lrsk_tb_techraids }
+			}
+			change_variable = { which = lrsk_tb_techraids value = 3 }	# will give tech options = 3 + num of raided worlds
+			while = {
+				count = lrsk_tb_techraids
+				copy_random_tech_from = {
+					who = from
+					progress = lrsk_tb_techraid_factor
+				}
+			}
+		}
+	}
+	on_status_quo = {
+		custom_tooltip = wg_lrsk_gvp_tech_plunder_white_peace
+		hidden_effect = {
+			set_timed_country_flag = { flag = lrsk_gvp_tb_techraid_won_or_whitepeace@from days = 7 }		# will skip checking for raiding flags
+			from = {
+				IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
+					every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
+						remove_planet_flag = lrsk_tb_techraided_by@root
+					}
+				}			
+			}
+		} 
+	}
+	ai_weight = {
+		weight = 100
+	}
+}
+
+wg_lrsk_gvp_tech_tribute = {
+	casus_belli = cb_subjugation
+
+	hide_if_no_cb = no
+	release_occupied_systems_on_status_quo = yes
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	surrender_acceptance = -75
+
+	potential = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		NOT = { has_ascension_perk = ap_become_the_crisis }
+		has_total_war_cb = no
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = has_claimed_all_systems
+			from = {
+				is_country_type = default
+				any_owned_planet = {
+					is_colony = yes
+					root = {
+						NOT = { has_claim = prev.solar_system }
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = cannot_subjugate_empire_member
+			NAND = {
+				has_galactic_emperor = yes
+				is_galactic_community_member = no
+				from = { is_galactic_community_member = yes }
+			}
+		}
+		custom_tooltip = {
+			fail_text = "cannot_use_against_custodian"
+			from = { is_galactic_custodian = no }
+		}
+		custom_tooltip = {
+			fail_text = "cannot_use_against_emperor"
+			from = { is_galactic_emperor = no }
+		}
+		custom_tooltip = {
+			fail_text = "cannot_use_against_btc"
+			from = { has_been_declared_crisis = no }
+		}
+		custom_tooltip = {
+			fail_text = pax_galactica_active
+			NAND = {
+				is_active_resolution = resolution_emperor_pax_galactica
+				is_galactic_community_member = yes
+				from = { is_galactic_community_member = yes }
+			}
+		}
+	}
+	on_accept = {
+		hidden_effect = {
+			from = {
+				add_threat = {
+					who = root
+					amount = 0.25
+				}
+			}
+			set_truce = {
+				target = FROM
+				type = war
+			}
+			FROM = {
+				set_truce = {
+					target = ROOT
+					type = war
+				}
+			}
+		}
+		if = {
+			limit = { from = { has_been_declared_crisis = no } }
+			from = {
+				set_subject_of = {
+					who = root
+					preset = preset_lrsk_gvp_tech_tributary
+				}
+				add_modifier = {
+					modifier = newly_subjugated_loyalty
+					years = 5
+				}
+			}
+		}
+	}
+
+	on_status_quo = {
+		if = {
+			limit = {
+				exists = last_created_country
+				last_created_country = {
+					has_country_flag = released_empire
+				}
+			}
+
+			last_created_country = {
+				set_origin_effect = yes
+				set_subject_of = {
+					who = root
+					preset = preset_lrsk_gvp_tech_tributary
+				}
+				add_modifier = {
+					modifier = newly_subjugated_loyalty
+					years = 5
+				}
+			}
+
+			if = {
+				limit = {
+					root = { has_authority = auth_corporate }
+					last_created_country = { has_authority = auth_corporate }
+				}
+				last_created_country = {
+					set_merchant_government_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			NOT = { has_ai_personality_behaviour = wants_tribute }
+		}
+	}
+}
+
 #wg_lrsk_gov_var_hegemon = {
 #	casus_belli = cb_lrsk_gov_var_hegemon
 #

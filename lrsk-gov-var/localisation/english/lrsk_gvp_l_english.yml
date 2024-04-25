@@ -2657,6 +2657,9 @@ l_english:
  lrsk_gvp_impecon_special_service:0 "Special Service"
  lrsk_gvp_impecon_special_service_desc:0 "Our Overlord demands services and contributions beyond what is customary."
 
+ lrsk_gvp_techraided:0 "Research Plundered"
+ lrsk_gvp_techraided_desc:0 "Techno-Barbarians ransacked our research archives and institutes."
+
  # Faction Modifiers
 
  lrsk_gvp_suppressed_innovator:0 "Innovator Agenda Suppressed"
@@ -2846,6 +2849,16 @@ l_english:
  opinion_lrsk_gov_var_colonial_mission:0 "New Commerical Venture" # Inherent trust, as above, but decaying
 
  ## CBs/Wargoals
+
+ casus_belli_cb_lrsk_gvp_revelation:0 "Revelatory Crusade"
+ casus_belli_cb_lrsk_gvp_revelation_acquire_hint:1 "\n§EHaving inferior technology relative to the the target will grant §Y$casus_belli_cb_lrsk_gvp_revelation$§! §HCasus Belli§!.§!"
+ war_goal_wg_lrsk_gvp_tech_plunder:0 "Uncover Secrets"
+ war_goal_wg_lrsk_gvp_tech_plunder_desc:1 "War is waged to force the enemy to transfer some of their technology to you as research options. The more worlds of theirs you capture, the more research options you can get. Using this wargoal will grant you research points from the target's worlds when you capture them. It may be possible to abduct their scientists as well."
+ wg_lrsk_gvp_tech_plunder_them:0 "The research archives and institutes of §Y[From.GetName]§! are ransacked, reducing their §YResearch§! production by §R10%§! for §Y10§! years.\n§Y[Root.GetName]§! gets progress towards several technologies known by §Y[From.GetName]§!."
+ wg_lrsk_gvp_tech_plunder_white_peace:0 "Y[Root.GetName]§! ends the raid, taking whatever knowledge they've managed to steal from the worlds of §Y[From.GetName]§!."
+
+ war_goal_wg_lrsk_gvp_tech_tribute:0 "Make $preset_lrsk_gvp_tech_tributary$"
+ war_goal_wg_lrsk_gvp_tech_tribute_desc:1 "War is waged to subjugate the enemy as a $preset_lrsk_gvp_tech_tributary$.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new $preset_lrsk_gvp_tech_tributary$ if they include at least one planet."
 
  casus_belli_cb_lrsk_gov_var_hegemon:0 "Hegemon Reaction"
  war_goal_wg_lrsk_gov_var_hegemon:0 "Reestablish Hegemony"

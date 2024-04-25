@@ -2,6 +2,38 @@
 # CBs
 # Author: littleraskol
 
+
+cb_lrsk_gvp_revelation = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	#aggregated_message_key = LRSK_GVP_REVELATION_WAR	# Needed?
+	potential = {
+		has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		NOT = { is_in_federation_with = from }
+		is_subject = no
+		has_intel_level = {
+			who = from
+			category = technology
+			level >= 1
+		}
+	}
+	is_valid = {
+		NOT = { is_overlord_to = from }
+		relative_power = {
+			who = from
+			category = technology
+			value > equivalent
+		}
+	}
+	destroy_if = {
+		relative_power = {
+			who = from
+			category = technology
+			value < superior
+		}
+	}
+}
+
 #cb_lrsk_gov_var_hegemon = {
 #	show_in_diplomacy = no
 #	show_notification = yes
