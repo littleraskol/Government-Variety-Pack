@@ -4,7 +4,7 @@
 
 wg_lrsk_gvp_tech_plunder = {
 	casus_belli = cb_lrsk_gvp_revelation
-	hide_if_no_cb = no
+	hide_if_no_cb = yes
 	total_war = no
 
 	galactic_empire_joins_defender = {
@@ -80,10 +80,14 @@ wg_lrsk_gvp_tech_plunder = {
 			IF = { limit = { check_variable = { which = lrsk_tb_techraids value > 9 } }
 				set_variable = { which = lrsk_tb_techraid_factor value = 0.5 }
 			}
-			ELSE_IF = { limit = { check_variable = { which = lrsk_tb_techraids value > 0 } }
+			ELSE_IF = { limit = { check_variable = { which = lrsk_tb_techraids value > 1 } }
 				multiply_variable = { which = lrsk_tb_techraid_factor value = lrsk_tb_techraids }
 			}
-			change_variable = { which = lrsk_tb_techraids value = 3 }	# will give tech options = 3 + num of raided worlds
+			
+			IF = { limit = { check_variable = { which = lrsk_tb_techraids value < 3 } }
+				set_variable = { which = lrsk_tb_techraids value = 3 }	# will always try to give at least 3 tech options
+			}
+			
 			while = {
 				count = lrsk_tb_techraids
 				copy_random_tech_from = {
@@ -152,15 +156,15 @@ wg_lrsk_gvp_tech_tribute = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = "cannot_use_against_custodian"
+			fail_text = cannot_use_against_custodian
 			from = { is_galactic_custodian = no }
 		}
 		custom_tooltip = {
-			fail_text = "cannot_use_against_emperor"
+			fail_text = cannot_use_against_emperor
 			from = { is_galactic_emperor = no }
 		}
 		custom_tooltip = {
-			fail_text = "cannot_use_against_btc"
+			fail_text = cannot_use_against_btc
 			from = { has_been_declared_crisis = no }
 		}
 		custom_tooltip = {
