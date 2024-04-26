@@ -1051,6 +1051,65 @@ lrsk_gvp_job_civic_leader = {
 
 ## Ruler Jobs
 
+# Pampered Respite
+lrsk_gvp_job_pampered_respite = {
+	category = ruler
+	clothes_texture_index = 1
+	building_icon = building_organic_sanctuary
+	icon = fe_hedonist
+
+	possible_pre_triggers = {
+		is_sapient = yes
+		is_robot_pop = no
+	}
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
+
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				happiness >= 0.5
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				happiness >= 0.75
+			}
+			unity = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			happiness >= 0.5
+		}
+
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.01
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			happiness >= 0.8
+		}
+
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.01
+			planet_jobs_ruler_produces_mult = 0.01
+		}
+	}
+
+	weight = {
+		weight = @ruler_job_weight
+	}
+}
+
 ## Complex Drones (Hive)
 
 # Planetmind Overseer

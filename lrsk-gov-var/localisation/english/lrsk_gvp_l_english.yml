@@ -1981,6 +1981,38 @@ l_english:
  lrsk_gov_var_bldg_planet_synaptic_nexus:0 "$LRSK_DESC_PLANETMIND_NAME$ Nexus"
  lrsk_gov_var_bldg_planet_synaptic_nexus_desc:2 "This enormous thicket of tangled $LRSK_DESC_PLANETMIND_DESC$"
 
+ # Automated Indolence - Automation Infrastructure Line 
+ LRSK_GVP_AUTOINDOL_BLDG_COMMON:0 "Automation Infrastructure"
+ 
+ lrsk_gvp_bldg_autoindolcenter_1:0 "Basic $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolcenter_1_desc:0 "description tbd"
+ 
+ lrsk_gvp_bldg_autoindolcenter_2:0 "Developed $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolcenter_2_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+ 
+ lrsk_gvp_bldg_autoindolcenter_3:0 "Comprehensive $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolcenter_3_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+ 
+ lrsk_gvp_bldg_autoindolcenter_4:0 "Consummate $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolcenter_4_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+ 
+ lrsk_gvp_autoindol_tooltip_aitechs:0 "The following count as AI techs for $LRSK_GVP_AUTOINDOL_BLDG_COMMON$ improvement of £pop_cat_specialist£ $pop_cat_specialist$ job output: §Y$tech_pd_tracking_3$§!, §Y$tech_sapient_ai$§!, §Y$tech_combat_computers_3$§!, §Y$tech_cryostasis_2$§!, §Y$tech_consumer_good_refinement_2$§!"
+ lrsk_gvp_autoindol_tooltip_robotechs:0 "The following count as robotics techs for $LRSK_GVP_AUTOINDOL_BLDG_COMMON$ improvement of £planet_pop_assembly_mult£ $planet_pop_assembly_mult$: §Y$tech_droid_workers$§!, §Y$tech_synthetic_workers$§!, §Y$tech_synthetic_leaders$§!, §Y$tech_robomodding_points_1$§!, §Y$tech_robomodding$§!" 
+
+ # Automated Indolence - Leisure Reserves Line
+ LRSK_GVP_AUTOFUN_BLDG_COMMON:0 "Leisure Reserves"
+ 
+ lrsk_gvp_bldg_autoindolfunplex_1:0 "Refreshing $LRSK_GVP_AUTOFUN_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolfunplex_1_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+ 
+ lrsk_gvp_bldg_autoindolfunplex_2:0 "Luxurious $LRSK_GVP_AUTOFUN_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolfunplex_2_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+ 
+ lrsk_gvp_bldg_autoindolfunplex_3:0 "Indulgent $LRSK_GVP_AUTOFUN_BLDG_COMMON$"
+ lrsk_gvp_bldg_autoindolfunplex_3_desc:0 "$lrsk_gvp_bldg_autoindolcenter_1_desc$"
+
+ lrsk_gvp_autoindol_tooltip_autoadmintechs:0 "The following count as admin automation techs for $LRSK_GVP_AUTOFUN_BLDG_COMMON$ improvement of £pop_happiness£ $pop_happiness$ and £pop_amenities_usage_mult£ $pop_amenities_usage_mult$: §Y$tech_effective_bureaucracy$§!, §Y$tech_interstellar_economics$§!, §Y$tech_hypercomms_forum$§!, §Y$tech_collective_self$§!, §Y$tech_paradise_dome$§!"
+
  # Branch Office Buildings
 
  LRSK_CRIME_OPTION_COMMON_1:0 "Because the corporate branch office owner is a §Hcriminal enterprise§! without any scruples, they will use"
@@ -2231,6 +2263,15 @@ l_english:
  mod_job_lrsk_gvp_job_civic_leader_per_pop:0 "§G+1§! $job_lrsk_gvp_job_civic_leader$ Job per $VALUE$ Pops"
  mod_job_lrsk_gvp_job_civic_leader_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_civic_leader_add£ per $VALUE$ £pop£"
 
+ #Pampered Respite
+ job_lrsk_gvp_job_pampered_respite:0 "Pampered Respite"
+ job_lrsk_gvp_job_pampered_respite_plural:0 "$job_lrsk_gvp_job_pampered_respite$s"
+ job_lrsk_gvp_job_pampered_respite_desc:0 "Less a 'job' than a very deliberately curated lack of a job for an extended duration, this combines vacation and sabbatical into an advanced form of leisure where one can focus solely on one's own cultivation, refreshment, and pleasure."
+ job_lrsk_gvp_job_pampered_respite_effect_desc:1 "Given sufficient £happiness£ §YHappiness§!, £job_lrsk_gvp_job_pampered_respite£ $job_lrsk_gvp_job_pampered_respite_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§! and increase both §Y$planet_jobs_specialist_produces_mult$§! and §Y$planet_jobs_ruler_produces_mult$§!."
+ mod_job_lrsk_gvp_job_pampered_respite_add:0 "$job_lrsk_gvp_job_pampered_respite$ Jobs"
+ mod_job_lrsk_gvp_job_pampered_respite_per_pop:0 "§G+1§! $job_lrsk_gvp_job_pampered_respite$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gvp_job_pampered_respite_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_pampered_respite_add£ per $VALUE$ £pop£"
+ 
  ## Edicts
 
  # Lifelong Learning - Promote Citizen Scholarship
