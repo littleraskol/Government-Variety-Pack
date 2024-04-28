@@ -1059,8 +1059,11 @@ lrsk_gvp_job_pampered_respite = {
 	icon = fe_hedonist
 
 	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
 		is_sapient = yes
-		is_robot_pop = no
 	}
 	
 	possible = { NOT = { has_trait = trait_nerve_stapled } }
