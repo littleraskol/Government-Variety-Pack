@@ -12,17 +12,15 @@ lrsk_adv_civ_origin_ancient_tech = {
 		always = yes
 	}
 
-	possible = {
-		ethics = {
-			NOT = { value = ethic_gestalt_consciousness } #Maybe this should not matter...
-		}
-	}
-
 	random_weight = {
 		base = 5
 		modifier = {
 			factor = 10
 			has_valid_civic = lrsk_adv_civ_civic_technobarbarism
+		}
+		modifier = {
+			factor = 0.1
+			is_gestalt = yes
 		}
 	}
 
