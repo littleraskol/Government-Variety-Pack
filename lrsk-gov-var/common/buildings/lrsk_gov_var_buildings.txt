@@ -151,9 +151,26 @@ lrsk_gov_var_bldg_tech_ruins = {
 		has_deposit = d_lrsk_gov_var_tech_ruins
 	}
 
-	planet_modifier = {
-		job_lrsk_gov_var_job_cyber_salvager_add = 1
-		job_lrsk_gov_var_job_cyber_salvager_per_pop = 0.025
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_lrsk_gov_var_job_cyber_salvager_add = 1
+			job_lrsk_gov_var_job_cyber_salvager_per_pop = 0.025
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			mod_job_lrsk_gvp_job_curator_drone_add = 1
+			mod_job_lrsk_gvp_job_curator_drone_per_pop = 0.025
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -164,6 +181,30 @@ lrsk_gov_var_bldg_tech_ruins = {
 		modifier = {
 			job_lrsk_gov_var_job_head_salvager_add = 1
 		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_lrsk_gov_var_job_cyber_salvager_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_lrsk_gvp_job_curator_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
+		}
+		text = job_lrsk_gov_var_job_head_salvager_effect_desc
 	}
 
 	resources = {
