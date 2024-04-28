@@ -61,7 +61,6 @@ wg_lrsk_gvp_tech_plunder = {
 	on_accept = {
 		custom_tooltip = wg_lrsk_gvp_tech_plunder_them
 		hidden_effect = {
-			set_timed_country_flag = { flag = lrsk_gvp_tb_techraid_won_or_whitepeace@from days = 7 }		# will skip checking for raiding flags
 			from = {
 				set_variable = { which = lrsk_tb_techraided_worlds value = 0 }
 				add_modifier = {
@@ -100,7 +99,6 @@ wg_lrsk_gvp_tech_plunder = {
 	on_status_quo = {
 		custom_tooltip = wg_lrsk_gvp_tech_plunder_white_peace
 		hidden_effect = {
-			set_timed_country_flag = { flag = lrsk_gvp_tb_techraid_won_or_whitepeace@from days = 7 }		# will skip checking for raiding flags
 			from = {
 				IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
 					every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
