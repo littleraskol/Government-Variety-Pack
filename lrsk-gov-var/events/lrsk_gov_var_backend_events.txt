@@ -77,6 +77,21 @@ event = {
 			limit = { has_origin = lrsk_gov_var_origin_uplift }
 			country_event = { id = lrsk_gov_var_uplift.1 }
 		}
+
+		# Ancient Tech
+		every_playable_country = {
+			limit = { has_origin = lrsk_adv_civ_origin_ancient_tech }
+			capital_scope = {
+				set_planet_flag = lrsk_gov_var_ancient_tech_capital
+
+				add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
+			}
+			# Semi-immediate check that some other mod did not remove the ruins
+			country_event = {
+				id = lrsk_government_variety_pack_backend.2
+				days = 2
+			}
+		} 
 		
 		## Sublight Empire/Commonwealth
 		#every_playable_country = {
@@ -201,6 +216,10 @@ country_event = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
 			}
+			AND = {
+				has_origin = lrsk_adv_civ_origin_ancient_tech
+				NOT = { has_country_flag = lrsk_gov_var_ancient_tech_cleared_ruins }
+			}
 			# Add other checks as needed...
 		}
 	}
@@ -214,6 +233,12 @@ country_event = {
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
 						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				# Restore tech ruins if removed
+				lrsk_gov_var_ancient_tech_capital = {
+					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_collapsed_tech_ruins } }
+						add_deposit = d_lrsk_gov_var_collapsed_tech_ruins
 					}
 				}
 				# Add other planet flags as needed...
