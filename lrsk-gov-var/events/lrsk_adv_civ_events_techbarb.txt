@@ -50,25 +50,6 @@ country_event = {
 		}
 		# Base 60% chance to get trait, Minimum 10% with policies and councilor
 		random_list = {
-			40 = {
-				modifier = {
-					add = 10
-					has_policy_flag = lrsk_adv_civ_lapsed_rev
-				}
-				modifier = {
-					add = 20
-					has_policy_flag = lrsk_adv_civ_token_rev
-				}
-				modifier = {
-					add = 30
-					has_policy_flag = lrsk_adv_civ_no_rev
-				}
-				modifier = {
-					add = lrsk_tb_councilor_lvl_pos_factor
-					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
-				}
-				# Nothing
-			} 
 			60 = {
 				modifier = {
 					add = -10
@@ -87,6 +68,25 @@ country_event = {
 					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
 				}
 				from = { add_trait = lrsk_gvp_leader_trait_hidebound }
+			}
+			40 = {
+				modifier = {
+					add = 10
+					has_policy_flag = lrsk_adv_civ_lapsed_rev
+				}
+				modifier = {
+					add = 20
+					has_policy_flag = lrsk_adv_civ_token_rev
+				}
+				modifier = {
+					add = 30
+					has_policy_flag = lrsk_adv_civ_no_rev
+				}
+				modifier = {
+					add = lrsk_tb_councilor_lvl_pos_factor
+					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
+				}
+				# Nothing
 			}
 		}
 	}
@@ -279,6 +279,28 @@ country_event = {
 		
 		IF = { limit = { has_valid_civic = lrsk_adv_civ_civic_technobarbarism }
 			lrsk_gvp_give_random_techs = yes
+		}
+	}
+}
+
+# Removes tech raid WG flags (there's no "on_defeat" case in WG definition??)
+country_event = {
+	id = lrsk_adv_civ_techbarb.techraidloss
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = lrsk_tb_tech_raiding@from
+	}
+	
+	immediate = {
+		lrsk_clear_country_flag = { FLAG = lrsk_tb_tech_raiding@from }
+		FROM = {
+			IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
+				every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
+					remove_planet_flag = lrsk_tb_techraided_by@root
+				}
+			}			
 		}
 	}
 }

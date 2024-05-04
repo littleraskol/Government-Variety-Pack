@@ -176,3 +176,12 @@ on_space_battle_lost = {
 		lrsk_gov_var_combat_data.2	# New intel check on battle lost
 	}
 }
+
+# A war has ended
+# Root = Loser
+# From = Main Winner
+on_war_ended = {
+	events = {
+		lrsk_adv_civ_techbarb.techraidloss
+	}
+}

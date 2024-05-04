@@ -58,10 +58,23 @@ wg_lrsk_gvp_tech_plunder = {
 			}
 		}
 	}
+
+	on_wargoal_set = {
+		set_country_flag = lrsk_tb_tech_raiding@from
+		FROM = {
+			IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@prev } } 
+				every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@prev }
+					remove_planet_flag = lrsk_tb_techraided_by@prev
+				}
+			}
+		}
+	}
+
 	on_accept = {
 		custom_tooltip = wg_lrsk_gvp_tech_plunder_them
 		hidden_effect = {
-			from = {
+			lrsk_clear_country_flag = { FLAG = lrsk_tb_tech_raiding@from }
+			FROM = {
 				set_variable = { which = lrsk_tb_techraided_worlds value = 0 }
 				add_modifier = {
 					modifier = lrsk_gvp_techraided
@@ -69,7 +82,7 @@ wg_lrsk_gvp_tech_plunder = {
 				}
 				IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
 					every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
-						change_variable = { which = lrsk_tb_techraided_worlds value = 1 }
+						owner = { change_variable = { which = lrsk_tb_techraided_worlds value = 1 } }
 						remove_planet_flag = lrsk_tb_techraided_by@root
 					}
 				}
@@ -96,10 +109,12 @@ wg_lrsk_gvp_tech_plunder = {
 			}
 		}
 	}
+
 	on_status_quo = {
 		custom_tooltip = wg_lrsk_gvp_tech_plunder_white_peace
 		hidden_effect = {
-			from = {
+			lrsk_clear_country_flag = { FLAG = lrsk_tb_tech_raiding@from }
+			FROM = {
 				IF = { limit = { any_owned_planet = { has_planet_flag = lrsk_tb_techraided_by@root } } 
 					every_owned_planet = { limit = { has_planet_flag = lrsk_tb_techraided_by@root }
 						remove_planet_flag = lrsk_tb_techraided_by@root
@@ -108,6 +123,7 @@ wg_lrsk_gvp_tech_plunder = {
 			}
 		} 
 	}
+
 	ai_weight = {
 		weight = 100
 	}
@@ -132,6 +148,7 @@ wg_lrsk_gvp_tech_tribute = {
 		NOT = { has_ascension_perk = ap_become_the_crisis }
 		has_total_war_cb = no
 	}
+
 	possible = {
 		custom_tooltip = {
 			fail_text = has_claimed_all_systems
@@ -174,6 +191,7 @@ wg_lrsk_gvp_tech_tribute = {
 			}
 		}
 	}
+
 	on_accept = {
 		hidden_effect = {
 			from = {
