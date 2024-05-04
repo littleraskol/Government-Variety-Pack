@@ -65,7 +65,7 @@ country_event = {
 				}
 				modifier = {
 					add = lrsk_tb_councilor_lvl_neg_factor
-					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
+					check_variable = { which = lrsk_tb_councilor_lvl_neg_factor value < 0 }
 				}
 				from = { add_trait = lrsk_gvp_leader_trait_hidebound }
 			}
@@ -84,7 +84,7 @@ country_event = {
 				}
 				modifier = {
 					add = lrsk_tb_councilor_lvl_pos_factor
-					has_councilor = { COUNCILOR = "lrsk_adv_civ_civic_technobarbarism_councilor" }
+					check_variable = { which = lrsk_tb_councilor_lvl_pos_factor value > 0 }
 				}
 				# Nothing
 			}
