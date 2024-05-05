@@ -21,9 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.0 (?/?/24) - Andromeda (3.12) Update
+v6.0 (5/7/24) - Andromeda (3.12) Update
 -Fixed what was needed for compatibility with Stellaris 3.12 (Andromeda)
 -Diplomatic Protocols deprecated (exists in base game now, same name and basic concept.)
+-Added inline scripts to jobs for new automodding priorities.
 -Updated compat version number.
 
 v5.9 (2/27/24) - Eridanus (3.11) Update
