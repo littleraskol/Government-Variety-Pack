@@ -74,6 +74,7 @@ lrsk_gov_var_civic_ascetic_virtues = {
         value = ethic_fanatic_materialist
       }
     }
+		species_archetype = { NOT = { value = MACHINE } }
   }
 
   random_weight = { base = @civic_default_random_weight }
@@ -211,7 +212,8 @@ lrsk_gov_var_civic_utilitarian_planning = {
 	}
 
   modifier = {
-    country_food_produces_mult = 0.05
+    pop_housing_usage_mult = -0.05
+    pop_amenities_usage_mult = -0.05
     council_agenda_progress_speed = 0.1
     edicts_cost_mult = -0.1
   }

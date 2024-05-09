@@ -21,6 +21,12 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.1 (5/?/24) - Individualist Machines Hotfixes
+-Shroud-Touched should not be available to individualist machines.
+-Shapers should not be available to individualist machines.
+-Ascetic Virtues should not be available to individualist machines.
+-Utilitarian Planning now reduces pop housing and amenities usage (rather than food, for compatibility with individual machines)
+
 v6.0 (5/7/24) - Andromeda (3.12) Update
 -Fixed what was needed for compatibility with Stellaris 3.12 (Andromeda)
 -Diplomatic Protocols deprecated (exists in base game now, same name and basic concept.)
