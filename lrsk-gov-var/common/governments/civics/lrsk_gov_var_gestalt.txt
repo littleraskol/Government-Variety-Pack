@@ -393,10 +393,7 @@ lrsk_gov_var_civic_machine_combat_data = {
 # Diplomatic Protocols (+1 max rivals, +15% trade attractiveness and trust growth) - The creators of the Machine Intelligence hoped to use it to aid ambassadors in their missions abroad, and it can still optimize its communications for desired effect.
 lrsk_gov_var_civic_machine_diplomatic_protocols = {
 	potential = { authority = { value = auth_machine_intelligence } }
-	possible = { civics = { NOR = {
-		value = civic_machine_terminator
-		value = civic_machine_assimilator
-	} } }
+	possible = { civics = { value = lrsk_gov_var_civic_machine_diplomatic_protocols } }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
