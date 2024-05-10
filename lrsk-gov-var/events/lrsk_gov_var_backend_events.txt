@@ -1511,22 +1511,30 @@ country_event = {
 		}
 		ELSE = {
 			set_government_cooldown = no
-			country_event = { id = lrsk_government_variety_pack_backend.20031 days = 30 }
+			set_variable = { which = lrsk_empire_size_temp value = 1 }
+			export_trigger_value_to_variable = {
+				trigger = empire_size
+				variable = lrsk_empire_size_temp
+			}
+			add_resource = {
+				unity = 10
+				mult = lrsk_empire_size_temp
+			}
 		}
 		set_country_flag = lrsk_fixed_invalid_civics_v6
 	}
 
 	option = { name = OK }
 }
-country_event = {
-	id = lrsk_government_variety_pack_backend.20031
-	is_triggered_only = yes
-	hide_window = yes
-
-	immediate = {
-		add_resource = { influence = 250 }
-	}
-}
+#country_event = {
+#	id = lrsk_government_variety_pack_backend.20031
+#	is_triggered_only = yes
+#	hide_window = yes
+#
+#	immediate = {
+#		add_resource = { influence = 250 }
+#	}
+#}
 # This just calls 2003 for the scopeless on_single_player_save_game_load on action
 #event = {
 #	id = lrsk_government_variety_pack_backend.20032
