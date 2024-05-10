@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.0.1 (5/?/24) - Individualist Machines Hotfixes
+v6.0.1 (5/10/24) - Individualist Machines Hotfixes
 -Shroud-Touched should not be available to individualist machines.
 -Shapers should not be available to individualist machines.
 -Ascetic Virtues should not be available to individualist machines.
