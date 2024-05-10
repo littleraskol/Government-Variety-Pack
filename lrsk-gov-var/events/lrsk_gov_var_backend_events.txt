@@ -1506,18 +1506,19 @@ country_event = {
 	}
 
 	immediate = {
+		# Special case: Shapers cannot be removed normally.
+		IF = {
+			limit = {
+				has_civic = lrsk_adv_civ_civic_shapers
+				species = { is_archetype = MACHINE }
+			}
+			force_remove_civic = lrsk_adv_civ_civic_shapers
+		}
+		
 		IF = { limit = { is_ai = yes }
 			change_government = { civics = random }
 		}
 		ELSE = {
-			# Special case: Shapers cannot be removed normally.
-			IF = {
-				limit = {
-					has_civic = lrsk_adv_civ_civic_shapers
-					species = { is_archetype = MACHINE }
-				}
-				force_remove_civic = lrsk_adv_civ_civic_shapers
-			}
 			set_government_cooldown = no
 			set_variable = { which = lrsk_empire_size_temp value = 1 }
 			export_trigger_value_to_variable = {
