@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v?.? (?/?/?) - Technobarbarism Update
+Adding major new advanced civic: Technobarbarism
+Adds a new origin: Ancient Technology
+
 v6.0.1 (5/10/24) - Individualist Machines Hotfixes
 -Shroud-Touched should not be available to individualist machines.
 -Shapers should not be available to individualist machines.
@@ -35,10 +39,6 @@ v6.0 (5/7/24) - Andromeda (3.12) Update
 
 v5.9.1 (4/25/24) - Filename Hotfix 
 -Extremely embarassing filename error fixed.
-
-v?.? (?/?/?) - Technobarbarism Update
-Adding major new advanced civic: Technobarbarism
-Adds a new origin: Ancient Technology
 
 v5.9 (2/27/24) - Eridanus (3.11) Update
 -Fixed what was needed for compatibility with Stellaris 3.11 (Eridanus)
