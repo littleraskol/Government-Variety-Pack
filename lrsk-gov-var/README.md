@@ -21,8 +21,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v? (?/?/?) - Building Effect Reqs
--Several building types had no way of handling being owned by an empire without the originating civic, which now do.
+v6.0.2 (5/11/24) - Building Effect Reqs
+-Several building types had no way of handling being owned by an empire without the originating civic. Now they do.
 --Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
 --Synaptic buildings: Without Planetmind Creativity, only boosts soc research.
 
