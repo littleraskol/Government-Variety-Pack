@@ -21,6 +21,11 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v? (?/?/?) - Building Effect Reqs
+-Several building types had no way of handling being owned by an empire without the originating civic, which now do.
+--Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
+--Synaptic buildings: Without Planetmind Creativity, only boosts soc research.
+
 v6.0.1 (5/10/24) - Individualist Machines Hotfixes
 -Shroud-Touched should not be available to individualist machines.
 -Shapers should not be available to individualist machines.
