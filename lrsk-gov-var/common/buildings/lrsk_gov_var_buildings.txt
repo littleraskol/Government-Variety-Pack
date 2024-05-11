@@ -23,6 +23,15 @@ lrsk_gov_var_bldg_hall_of_honor = {
 
 	planet_modifier = {
 		planet_housing_add = 1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+			}
+		}
 		job_lrsk_gov_var_job_knight_add = 1
 	}
 
@@ -87,6 +96,15 @@ lrsk_gov_var_bldg_hall_of_valor = {
 
 	planet_modifier = {
 		planet_housing_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+			}
+		}
 		job_lrsk_gov_var_job_knight_add = 2
 	}
 
@@ -274,18 +292,46 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 		lrsk_gov_var_bldg_planet_synaptic_cluster
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
 		job_lrsk_gov_var_job_planetmind_overseer_add = 1
 		job_maintenance_drone_add = 1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.05
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_maintenance_drone_effect_desc
 	}
 
@@ -329,18 +375,46 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		lrsk_gov_var_bldg_planet_synaptic_confluence
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_2
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
 		job_lrsk_gov_var_job_planetmind_overseer_add = 2
 		job_maintenance_drone_add = 1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.1
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_maintenance_drone_effect_desc
 	}
 
@@ -384,18 +458,46 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 		lrsk_gov_var_bldg_planet_synaptic_core
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_3
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
 		job_lrsk_gov_var_job_planetmind_overseer_add = 3
 		job_maintenance_drone_add = 1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.15
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_maintenance_drone_effect_desc
 	}
 
@@ -439,18 +541,46 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		lrsk_gov_var_bldg_planet_synaptic_nexus
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_4
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
 		job_lrsk_gov_var_job_planetmind_overseer_add = 4
 		job_maintenance_drone_add = 1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.2
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_maintenance_drone_effect_desc
 	}
 
@@ -490,18 +620,46 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_5
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_5
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
 		job_lrsk_gov_var_job_planetmind_overseer_add = 5
 		job_maintenance_drone_add = 1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.25
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
 		text = job_maintenance_drone_effect_desc
 	}
 

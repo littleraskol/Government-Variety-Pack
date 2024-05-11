@@ -25,6 +25,11 @@ v?.? (?/?/?) - Technobarbarism Update
 Adding major new advanced civic: Technobarbarism
 Adds a new origin: Ancient Technology
 
+v6.0.2 (5/11/24) - Building Effect Reqs
+-Several building types had no way of handling being owned by an empire without the originating civic. Now they do.
+--Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
+--Synaptic buildings: Without Planetmind Creativity, only boosts soc research.
+
 v6.0.1 (5/10/24) - Individualist Machines Hotfixes
 -Shroud-Touched should not be available to individualist machines.
 -Shapers should not be available to individualist machines.
