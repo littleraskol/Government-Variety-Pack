@@ -1198,14 +1198,14 @@ lrsk_gov_var_civic_automated_indolence = {
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
 			}
 		}
 		modifier = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
+				#
 			}
 		}
 	}
