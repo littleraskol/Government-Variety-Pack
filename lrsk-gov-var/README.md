@@ -23,7 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v?.? (?/?/?) - Automated Indolence Redux
 -Brought back the "Automated Indolence" civic.
---Now a start-only civic, and available to megacorps.
+--Now a start-only civic available to all non-gestalts regardless of ethos.
 --Effects aren't based on base civic modifiers anymore (some moved to Councilor).
 --Councilor now gives +robot output as well.
 --Start with Administrative AI tech.

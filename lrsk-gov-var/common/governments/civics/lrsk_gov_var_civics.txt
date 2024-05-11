@@ -1184,18 +1184,6 @@ lrsk_gov_var_civic_automated_indolence = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
   }
 
-  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
-
-  possible = {
-    ethics = {
-      OR = {
-        text = civic_tooltip_materialist
-        value = ethic_materialist
-        value = ethic_fanatic_materialist
-      }
-    }
-  }
-
   random_weight = { base = @civic_rare_random_weight }
   
 	ai_weight = {
@@ -1209,7 +1197,8 @@ lrsk_gov_var_civic_automated_indolence = {
 		modifier = {
 			factor = @ai_civic_personality_mismatch_factor
 			OR = {
-				#
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = spiritual_seekers
 			}
 		}
 		modifier = {
@@ -1220,11 +1209,9 @@ lrsk_gov_var_civic_automated_indolence = {
 		}
 	}
 
-  #Effects are other elements
-  #modifier = {
-  #  planet_jobs_robotic_produces_mult = 0.10
-  #  planet_stability_add = 5
-  #}
+  modifier = {
+    planet_stability_add = 5
+  }
 }
 
 
