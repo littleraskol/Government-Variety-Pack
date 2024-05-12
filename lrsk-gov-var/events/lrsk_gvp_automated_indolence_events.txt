@@ -6,7 +6,7 @@ namespace = lrsk_gvp_autoindol
 
 # Setup starting tech, buildings, variables
 country_event = {
-	id = lrsk_gvp_autoindol.1
+	id = lrsk_gvp_autoindol.startup
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -20,13 +20,16 @@ country_event = {
 		set_variable = { which = lrsk_robo_techs value = 0 }
 		set_variable = { which = lrsk_autoadmin_techs value = 0 }
 		
-		# Buildings
+		capital_scope = {
+			add_building = lrsk_gvp_bldg_autoindolcenter_2
+			add_building = lrsk_gvp_bldg_autoindolfunplex_1
+		}
 	}
 }
 
 # Check is relevant tech researched
 country_event = {
-	id = lrsk_gvp_autoindol.2
+	id = lrsk_gvp_autoindol.techup
 	hide_window = yes
 	is_triggered_only = yes
 	
