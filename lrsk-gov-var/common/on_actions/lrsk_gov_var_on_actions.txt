@@ -24,6 +24,8 @@ on_game_start = {
 empire_init_add_technologies = {
 	events = {
 		lrsk_government_variety_pack_backend.5		# Add Shaper/Artificer/Essentialist starting techs.
+		lrsk_adv_civ_techbarb.starttech				# Add starting "ancient" techs for techbarbs
+		lrsk_adv_civ_techbarb.randomtech			# Run random tech bonus for techbarbs and Ancient Tech origin.
 	}
 }
 
@@ -33,15 +35,6 @@ on_game_start_country = {
 		lrsk_gov_var_uplift.3						# Trait menu selector
 		#lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
 		lrsk_gov_var_direct_revelation.1000			# Starting grace period, special interactions
-	}
-}
-
-# called during empire initialization when starting a new game
-# scope: country
-empire_init_add_technologies = {
-	events = {
-		lrsk_adv_civ_techbarb.starttech
-		lrsk_adv_civ_techbarb.randomtech
 	}
 }
 
