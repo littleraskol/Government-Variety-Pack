@@ -18,15 +18,7 @@ event = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
 
-		## Starting Civics setup
-
-		# Shapers/Artificers/Essentialists
-		every_playable_country = {
-			limit = {
-				lrsk_has_gvp_techideology_valid_civic = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.5 }
-		}
+		## Starting Civics/Origins setup
 
 		# Automated Indolence
 		every_playable_country = {
@@ -35,9 +27,7 @@ event = {
 			}
 			country_event = { id = lrsk_gvp_autoindol.startup }
 		}
-		
-		## Origins Setup
-
+				
 		# Fed start fix for GVP govs
 		every_playable_country = {
 			limit = {

@@ -34,7 +34,9 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Can construct "Leisure Centers" that give special highly-desired specialist-tier jobs that improve specialist output but increase worker resentment.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
 
-v6.0.? (?/?/?) - Civil Society Leader
+v6.0.3 (5/13/24) - Misc tweaks and fixes
+-Just in case, made Shroud-Touched origin unable to be added after game start. (Modifies planet deposits, should always have been the case.)
+-Moved setup event for Shapers/Artificers/Essentialists to the empire_init_add_technologies on_action trigger (in case it randomly spawns in game)
 -Changed "Civic Leader" job name to "Civil Society Leader" and tweaked its description.
 
 v6.0.2 (5/11/24) - Building Effect Reqs
