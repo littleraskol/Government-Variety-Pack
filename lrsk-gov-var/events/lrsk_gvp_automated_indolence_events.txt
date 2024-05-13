@@ -16,6 +16,7 @@ country_event = {
 	
 	immediate = {
 		give_technology = { tech = tech_administrative_ai message = no }
+
 		set_variable = { which = lrsk_ai_techs value = 0 }
 		set_variable = { which = lrsk_robo_techs value = 0 }
 		set_variable = { which = lrsk_autoadmin_techs value = 0 }
@@ -23,6 +24,11 @@ country_event = {
 		capital_scope = {
 			add_building = lrsk_gvp_bldg_autoindolcenter_2
 			add_building = lrsk_gvp_bldg_autoindolfunplex_1
+		}
+
+		# Some effects of this civic require fairly expensive queries; we set this to check for it elsewhere and avoid these queries if unset.
+		IF = { limit = { NOT = { has_global_flag = lrsk_gvp_automated_indolence_empire_created } }
+			set_global_flag = lrsk_gvp_automated_indolence_empire_created
 		}
 	}
 }
