@@ -228,3 +228,13 @@ lrsk_is_impecon_vassal = {
 		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }
+
+# Does the planet have any of the automation infrastructure for Automated Indolence? (Planet scope.)
+lrsk_gvp_autoindol_has_auto_infra = {
+	OR = {
+		has_building = lrsk_gvp_bldg_autoindolcenter_1
+		has_building = lrsk_gvp_bldg_autoindolcenter_2
+		has_building = lrsk_gvp_bldg_autoindolcenter_3
+		has_building = lrsk_gvp_bldg_autoindolcenter_4
+	}
+}
