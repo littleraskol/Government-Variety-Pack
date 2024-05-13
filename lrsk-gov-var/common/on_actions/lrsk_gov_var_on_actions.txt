@@ -18,6 +18,15 @@ on_game_start = {
 #	}
 #}
 
+
+# called during empire initialization when starting a new game
+# scope: country
+empire_init_add_technologies = {
+	events = {
+		lrsk_government_variety_pack_backend.5		# Add Shaper/Artificer/Essentialist starting techs.
+	}
+}
+
 on_game_start_country = {
 	events = {
 		lrsk_gov_var_uplift.2						# Tutor system finalizations and watchpost system

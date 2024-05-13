@@ -25,6 +25,11 @@ v?.? (?/?/?) - Technobarbarism Update
 Adding major new advanced civic: Technobarbarism
 Adds a new origin: Ancient Technology
 
+v6.0.3 (5/13/24) - Misc tweaks and fixes
+-Just in case, made Shroud-Touched origin unable to be added after game start. (Modifies planet deposits, should always have been the case.)
+-Moved setup event for Shapers/Artificers/Essentialists to the empire_init_add_technologies on_action trigger (in case it randomly spawns in game)
+-Changed "Civic Leader" job name to "Civil Society Leader" and tweaked its description.
+
 v6.0.2 (5/11/24) - Building Effect Reqs
 -Several building types had no way of handling being owned by an empire without the originating civic. Now they do.
 --Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
