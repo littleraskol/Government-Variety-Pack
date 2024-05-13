@@ -34,6 +34,9 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Can construct "Leisure Centers" that give special highly-desired specialist-tier jobs that improve specialist output but increase worker resentment.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
 
+v6.0.? (?/?/?) - Civil Society Leader
+-Changed "Civic Leader" job name to "Civil Society Leader" and tweaked its description.
+
 v6.0.2 (5/11/24) - Building Effect Reqs
 -Several building types had no way of handling being owned by an empire without the originating civic. Now they do.
 --Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
