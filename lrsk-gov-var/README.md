@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.? (?/?/?) - Civil Society Leader
+-Changed "Civic Leader" job name to "Civil Society Leader" and tweaked its description.
+
 v6.0.2 (5/11/24) - Building Effect Reqs
 -Several building types had no way of handling being owned by an empire without the originating civic. Now they do.
 --Hall of Honor/Valor: Jobs only provided if owner has Chivalry.
