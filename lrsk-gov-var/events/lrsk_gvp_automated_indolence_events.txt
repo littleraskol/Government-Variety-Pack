@@ -97,16 +97,16 @@ planet_event = {
 	
 	trigger = {
 		OR = {
-			# set whenever any empire has this civic; resolving false spares us having to check anything else
+			# Set whenever any empire has this civic; resolving false spares us having to check anything else
 			has_global_flag = lrsk_gvp_automated_indolence_empire_created
 			
-			# deal with cases within AutoIndol empire
+			# Deal with cases within AutoIndol empire
 			owner = { has_civic = lrsk_gov_var_civic_automated_indolence }
 
-			# don't do any of this on a recently gained world
+			# Don't do any of this on a recently gained world
 			NOT = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@owner }
 			
-			# deal with cases anywhere with pops having the appropriate modifiers
+			# Deal with cases anywhere with pops having the appropriate modifiers
 			any_owned_pop = {
 				OR = {
 					has_modifier = lrsk_gvp_autoindol_accustomed_languor
