@@ -64,3 +64,80 @@ country_event = {
 		}
 	}
 }
+
+# Add AutoIndol modifiers to pops as appropriate
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+planet_event = {
+	id = lrsk_gvp_autoindol.popgrow
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+		NOT = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM }
+	}
+	
+	immediate = {
+		IF = { limit = { lrsk_gvp_autoindol_has_auto_infra = yes }
+			FROMFROM = { add_modifier = { modifier = lrsk_gvp_autoindol_accustomed_languor } } 
+		}
+		ELSE_IF = { limit = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy }
+			FROMFROM = { add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy_pop } }
+		}
+	}
+}
+
+# Governs AutoIndo modifiers (planet and pops) based on conditions
+planet_event = {
+	id = lrsk_gvp_autoindol.planetpophousekeeping
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			# set whenever any empire has this civic; resolving false spares us having to check anything else
+			has_global_flag = lrsk_gvp_automated_indolence_empire_created 
+			
+			# deal with cases within AutoIndol empire
+			owner = { has_civic = lrsk_gov_var_civic_automated_indolence }
+			
+			# deal with cases anywhere with pops having the appropriate modifiers
+			any_owned_pop = {
+				OR = {
+					has_modifier = lrsk_gvp_autoindol_accustomed_languor
+					has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		set_variable = { which = lrsk_languor_pops value = 0 }
+		export_trigger_value_to_variable = {
+			trigger = count_owned_pop
+			parameters = { has_modifier = lrsk_gvp_autoindol_accustomed_languor }
+			variable = lrsk_languor_pops
+		}
+		
+		set_variable = { which = lrsk_haughty_pops value = 0 }
+		export_trigger_value_to_variable = {
+			trigger = count_owned_pop
+			parameters = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop }
+			variable = lrsk_haughty_pops
+		}
+		
+		IF = { limit = { owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence } }
+			# AutoIndo empire stuff: adding/removing Haughty Autonomy as needed
+		}
+		
+		IF = { limit = { check_variable = { which = lrsk_languor_pops value > 0 } }
+			# See if they should still have this modifier if e.g., they left the AutoIndol empire
+		}
+		
+		IF = { limit = { check_variable = { which = lrsk_haughty_pops value > 0 } }
+			# See if they should still have this modifier if e.g., they left the AutoIndol empire
+		}
+	}
+}
