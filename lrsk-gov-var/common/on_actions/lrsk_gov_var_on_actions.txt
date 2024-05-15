@@ -185,3 +185,13 @@ on_colony_5_year_pulse = {
 		lrsk_gvp_autoindol.planetpophousekeeping	# Governs AutoIndo modifiers (planet and pops) based on conditions
 	}
 }
+
+# Fired whenever a new owner is set for a planet, following a war or through trade
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+		lrsk_gvp_autoindol.gainedplanet		# AutoIndol: flag to prevent modifiers on pops for 15 years
+	}
+}

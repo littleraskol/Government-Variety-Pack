@@ -98,10 +98,13 @@ planet_event = {
 	trigger = {
 		OR = {
 			# set whenever any empire has this civic; resolving false spares us having to check anything else
-			has_global_flag = lrsk_gvp_automated_indolence_empire_created 
+			has_global_flag = lrsk_gvp_automated_indolence_empire_created
 			
 			# deal with cases within AutoIndol empire
 			owner = { has_civic = lrsk_gov_var_civic_automated_indolence }
+
+			# don't do any of this on a recently gained world
+			NOT = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@owner }
 			
 			# deal with cases anywhere with pops having the appropriate modifiers
 			any_owned_pop = {
@@ -138,6 +141,31 @@ planet_event = {
 		
 		IF = { limit = { check_variable = { which = lrsk_haughty_pops value > 0 } }
 			# See if they should still have this modifier if e.g., they left the AutoIndol empire
+		}
+	}
+}
+
+# Set a flag for 15 years to stop pops from gaining AutoIndol modifiers
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+planet_event = {
+	id = lrsk_gvp_autoindol.gainedplanet
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+	}
+	
+	immediate = {
+		IF = { limit = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM }
+			remove_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM
+		}
+		
+		set_timed_planet_flag = {
+			flag = lrsk_gvp_autoindol_recently_gained_by@FROM
+			days = 5400
 		}
 	}
 }
