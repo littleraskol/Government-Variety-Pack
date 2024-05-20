@@ -659,6 +659,14 @@ lrsk_gvp_bldg_autoindolcenter_1 = {
 	upgrades = {
 		"lrsk_gvp_bldg_autoindolcenter_2"
 	}
+
+	on_built = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
+	}
+	
+	on_destroy = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
+	}
 }
 
 # Developed Automation Infrastructure
@@ -726,6 +734,14 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 
 	upgrades = {
 		"lrsk_gvp_bldg_autoindolcenter_3"
+	}
+
+	on_built = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
+	}
+	
+	on_destroy = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
 	}
 }
 
@@ -795,6 +811,14 @@ lrsk_gvp_bldg_autoindolcenter_3 = {
 
 	upgrades = {
 		"lrsk_gvp_bldg_autoindolcenter_4"
+	}
+
+	on_built = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
+	}
+	
+	on_destroy = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
 	}
 }
 
@@ -868,6 +892,14 @@ lrsk_gvp_bldg_autoindolcenter_4 = {
 		}
 		planet_pop_assembly_mult = 0.04
 		mult = owner.lrsk_robo_techs
+	}
+
+	on_built = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
+	}
+	
+	on_destroy = {
+		planet = { planet_event = { id = lrsk_gvp_autoindol.planetpophousekeeping } } # re-eval
 	}
 }
 
