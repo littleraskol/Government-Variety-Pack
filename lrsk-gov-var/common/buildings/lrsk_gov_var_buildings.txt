@@ -933,8 +933,11 @@ lrsk_gvp_bldg_autoindolfunplex_1 = {
 			energy = @b1_upkeep
 		}
 	}
-
-	planet_modifier = {
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_2
+		}
 		pop_cat_ruler_happiness = 0.05
 		pop_cat_specialist_happiness = 0.05
 		pop_cat_worker_happiness = 0.05
@@ -942,6 +945,7 @@ lrsk_gvp_bldg_autoindolfunplex_1 = {
 	
 	triggered_planet_modifier = {
 		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_2
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
@@ -956,6 +960,7 @@ lrsk_gvp_bldg_autoindolfunplex_1 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_2
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
@@ -1006,8 +1011,11 @@ lrsk_gvp_bldg_autoindolfunplex_2 = {
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
-
-	planet_modifier = {
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_3
+		}
 		pop_cat_ruler_happiness = 0.1
 		pop_cat_specialist_happiness = 0.1
 		pop_cat_worker_happiness = 0.1
@@ -1015,6 +1023,7 @@ lrsk_gvp_bldg_autoindolfunplex_2 = {
 	
 	triggered_planet_modifier = {
 		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_3
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
@@ -1029,6 +1038,7 @@ lrsk_gvp_bldg_autoindolfunplex_2 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_building = lrsk_gvp_bldg_autoindolcenter_3
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
@@ -1084,7 +1094,14 @@ lrsk_gvp_bldg_autoindolfunplex_3 = {
 		}
 	}
 	
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = lrsk_gvp_bldg_autoindolcenter_4
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
+		}
 		pop_cat_ruler_happiness = 0.15
 		pop_cat_specialist_happiness = 0.15
 		pop_cat_worker_happiness = 0.15
@@ -1092,6 +1109,10 @@ lrsk_gvp_bldg_autoindolfunplex_3 = {
 	
 	triggered_planet_modifier = {
 		potential = {
+			OR = {
+				has_building = lrsk_gvp_bldg_autoindolcenter_4
+				has_modifier = resort_colony
+			}
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
@@ -1106,6 +1127,11 @@ lrsk_gvp_bldg_autoindolfunplex_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
+			OR = {
+				has_building = lrsk_gvp_bldg_autoindolcenter_4
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 			exists = owner
 			owner = {
 				has_valid_civic = lrsk_gov_var_civic_automated_indolence
