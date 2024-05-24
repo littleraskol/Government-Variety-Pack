@@ -1129,3 +1129,20 @@ lrsk_federation_origin_planet_setup = {
 	}
 	reroll_planet = yes
 }
+
+# Can be used anywhere you can scope to pops, intended for planet
+lrsk_gvp_autoindol_calc_pop_vars = {
+	set_variable = { which = lrsk_languor_pops value = 0 }
+	export_trigger_value_to_variable = {
+		trigger = count_owned_pop
+		parameters = { has_modifier = lrsk_gvp_autoindol_accustomed_languor }
+		variable = lrsk_languor_pops
+	}
+	
+	set_variable = { which = lrsk_haughty_pops value = 0 }
+	export_trigger_value_to_variable = {
+		trigger = count_owned_pop
+		parameters = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop }
+		variable = lrsk_haughty_pops
+	}	
+}
