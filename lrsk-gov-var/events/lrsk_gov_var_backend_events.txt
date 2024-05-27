@@ -20,6 +20,12 @@ event = {
 
 		## Starting Civics/Origins setup
 		
+		# Xeno Communication Expert System
+		every_playable_country = {
+			limit = { has_origin = lrsk_gov_var_civic_machine_diplomatic_protocols }
+			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
+		}
+		
 		# Fed start fix for GVP govs
 		every_playable_country = {
 			limit = {

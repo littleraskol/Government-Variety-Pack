@@ -440,7 +440,10 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 	modification = {
 		moddable_conditions_custom_tooltip = LRSK_CIVIC_NOT_MODDABLE_ONLY_ADD
 		add = {
-			always = no
+			custom_tooltip = {
+				fail_text = LRSK_CIVIC_NOT_MODDABLE_ONLY_ADD_RED
+				has_country_flag = lrsk_gvp_xeno_comms_country
+			}
 		}
 		remove = {
 			always = yes
