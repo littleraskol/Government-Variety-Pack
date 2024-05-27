@@ -26,6 +26,7 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		empire_size_systems_mult = -0.2
 		empire_size_colonies_mult = -0.2
 	}
@@ -40,6 +41,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 		species_leader_exp_gain = 0.1
     	modify_species_cost_mult = -0.075
 	}
@@ -54,6 +56,7 @@ lrsk_gov_var_civic_hive_builder_caste = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.1
     	starbase_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
@@ -76,6 +79,7 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 		}
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		commander_exp_gain = 0.1
 		commander_initial_skill = 1
 		country_commander_cap_add = 1
@@ -92,6 +96,7 @@ lrsk_gov_var_civic_hive_royal_caste = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
     	official_exp_gain = 0.1
 		official_initial_skill = 1
 		country_official_cap_add = 1
@@ -107,7 +112,10 @@ lrsk_gov_var_civic_hive_reclamation_pools = {
 	ai_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	modifier = { planet_jobs_food_produces_mult = 0.1 }
+	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
+		planet_jobs_food_produces_mult = 0.1
+	}
 }
 
 # Boundless Spite (+2 maximum rivalvries, +20% army morale damage) - The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing.
@@ -125,6 +133,7 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 		}
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		max_rivalries = 1
 		damage_vs_rival_mult = 0.1
     	army_morale_damage_mult = 0.2
@@ -142,6 +151,7 @@ lrsk_gov_var_civic_hive_void_affinity = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
     	station_gatherers_produces_mult = 0.2
     	station_researchers_produces_mult = 0.2
 	}
@@ -156,6 +166,7 @@ lrsk_gov_var_civic_hive_hoarder = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	country_energy_produces_mult = 0.05
     	country_minerals_produces_mult = 0.05
 		country_resource_max_add = 7500
@@ -171,6 +182,7 @@ lrsk_gov_var_civic_hive_eusocial_rhythm = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
     	ships_upkeep_mult = -0.05
     	planet_structures_upkeep_mult = -0.05
 	}
@@ -185,6 +197,7 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
     	science_ship_survey_speed = 0.15
     	ship_anomaly_research_speed_mult = 0.1
   		ship_anomaly_generation_chance_mult = 0.1
@@ -200,6 +213,7 @@ lrsk_gov_var_civic_hive_big_picture_thinker = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
 		terraform_speed_mult = 0.15
 		megastructure_build_speed_mult = 0.15
 	 }
@@ -213,7 +227,10 @@ lrsk_gov_var_civic_hive_analgesic_stoicism = {
 	ai_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	modifier = { planet_jobs_simple_drone_produces_mult = 0.1 }
+	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
+		planet_jobs_simple_drone_produces_mult = 0.1
+	}
 }
 
 # Domineering Expectations (+15% subject research share, +7.5% tributary income) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones.
@@ -226,6 +243,7 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 		base = @ai_civic_uncommon_base_weight
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		country_subject_technology_sharing_mult = 0.15
     	subject_tribute_mult = 0.075
 		diplo_weight_sprawl_mult = 0.15
@@ -241,6 +259,7 @@ lrsk_gov_var_civic_hive_unending_bloom = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_colony_development_speed_mult = 0.15
     	country_starbase_influence_cost_mult = -0.05
 	}
@@ -256,6 +275,7 @@ lrsk_gov_var_civic_hive_benign_overmind = {
 		base = @ai_civic_uncommon_base_weight
 	}
 	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
 		country_vassal_naval_capacity_contribution_mult = 0.2
     	country_subject_power_penalty_mult = -0.25
 		diplo_weight_pops_mult = 0.15
@@ -272,6 +292,7 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 		base = @ai_civic_uncommon_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
 		diplomacy_upkeep_mult = -0.25
 		country_trust_growth = 0.15
 		first_contact_speed_mult = 0.1
@@ -293,6 +314,7 @@ lrsk_gov_var_civic_hive_frenzy = {
 		}
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		ship_fire_rate_mult = 0.1
     	ship_evasion_mult = 0.1
 	}
@@ -307,6 +329,7 @@ lrsk_gov_var_civic_hive_vigorous_introversion = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 		army_health = 0.1
     	pop_growth_speed = 0.1
 	}
@@ -326,6 +349,7 @@ lrsk_gov_var_civic_machine_distributed_planning_systems = {
 	description = "civic_tooltip_lrsk_gov_var_civic_machine_distributed_planning_systems_desc_effects"
 
   	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 		pop_amenities_usage_mult = -0.10
 		pop_housing_usage_mult = -0.10
   	}
@@ -339,7 +363,10 @@ lrsk_gov_var_civic_machine_selfimprovement_heuristics = {
 	ai_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	modifier = { modify_species_cost_mult = -0.2 }
+	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+		modify_species_cost_mult = -0.2
+	}
 }
 
 # Reflective Polymorphism (-33% leader recruit cost) - All the highest-level decision making and creative tasks of the Machine Intelligence are enhanced by a library of standard research and administration expert system classes.
@@ -350,7 +377,10 @@ lrsk_gov_var_civic_machine_reflective_polymorphism = {
 	ai_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	modifier = { leaders_cost_mult = -0.33 }
+	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+		leaders_cost_mult = -0.33
+	}
 }
 
 # Architect Expert Systems (-20% building and ship construction time) - Originally built as an advanced CAD program, the Machine Intelligence maintains the ability to rapidly design constructs.
@@ -362,6 +392,7 @@ lrsk_gov_var_civic_machine_architect_expert_systems = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.2
     	starbase_building_build_speed_mult = 0.2
     	starbase_shipyard_build_speed_mult = 0.2
@@ -384,6 +415,7 @@ lrsk_gov_var_civic_machine_combat_data = {
 		}
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
     	army_morale_damage_mult = 0.3
 		commander_exp_gain = 0.1
 		commander_initial_skill = 1
@@ -400,6 +432,7 @@ lrsk_gov_var_civic_machine_diplomatic_protocols = {
 		base = @ai_civic_uncommon_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
 		envoys_add = 1
 		diplo_weight_mult = 0.05
     	max_rivalries = 1
@@ -417,6 +450,7 @@ lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
     	station_gatherers_produces_mult = 0.2
     	station_researchers_produces_mult = 0.2
 	}
@@ -431,6 +465,7 @@ lrsk_gov_var_civic_machine_selfaware_production_targets = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	country_energy_produces_mult = 0.05
     	country_minerals_produces_mult = 0.05
 		country_alloys_produces_mult = 0.025
@@ -446,6 +481,7 @@ lrsk_gov_var_civic_machine_recursive_efficiency_analysis = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
     	ships_upkeep_mult = -0.05
     	planet_structures_upkeep_mult = -0.05
 	}
@@ -460,6 +496,7 @@ lrsk_gov_var_civic_machine_astroexploration_mainframe = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
     	science_ship_survey_speed = 0.15
     	ship_anomaly_research_speed_mult = 0.1
   		ship_anomaly_generation_chance_mult = 0.1
@@ -475,6 +512,7 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 		base = @ai_civic_default_base_weight
 	}
   	modifier = {
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
 		empire_size_systems_mult = -0.1
 		empire_size_colonies_mult = -0.2
 		empire_size_districts_mult = -0.15
@@ -490,6 +528,7 @@ lrsk_gov_var_civic_machine_geosurvey_heuristics = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	deposit_blockers_cost_mult = -0.1
   		terraform_speed_mult = 0.1
   		terraforming_cost_mult = -0.1
@@ -515,6 +554,7 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 		}
 	}
 	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		country_subject_technology_sharing_mult = 0.15
     	subject_tribute_mult = 0.075
 		diplo_weight_technology_mult = 0.15
@@ -530,6 +570,7 @@ lrsk_gov_var_civic_machine_optimized_expansion = {
 		base = @ai_civic_default_base_weight
 	}
 	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_colony_development_speed_mult = 0.15
     	country_starbase_influence_cost_mult = -0.05
 	}

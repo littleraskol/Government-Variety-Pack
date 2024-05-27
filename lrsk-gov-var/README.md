@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.4 (?/?/?) - Gestalt Civic Node Exp
+-Gestalt civics are supposed to give exp gains to their nodes. The ones from this mod now do so.
+
 v6.0.3 (5/13/24) - Misc tweaks and fixes
 -Just in case, made Shroud-Touched origin unable to be added after game start. (Modifies planet deposits, should always have been the case.)
 -Moved setup event for Shapers/Artificers/Essentialists to the empire_init_add_technologies on_action trigger (in case it randomly spawns in game)
