@@ -1293,3 +1293,28 @@ country_event = {
 		add_tradition = tr_domination_finish
 	}
 }
+
+# Allows for reforming government at any time
+country_event = {
+	id = lrsk_gvp_testing.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		set_government_cooldown = no
+		set_variable = { which = lrsk_empire_size_temp value = 1 }
+		export_trigger_value_to_variable = {
+			trigger = empire_size
+			variable = lrsk_empire_size_temp
+		}
+		add_resource = {
+			unity = 10
+			mult = lrsk_empire_size_temp
+		}
+	}
+}
