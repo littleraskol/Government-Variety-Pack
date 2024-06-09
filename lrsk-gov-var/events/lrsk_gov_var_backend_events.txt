@@ -1516,14 +1516,9 @@ country_event = {
 		}
 		ELSE = {
 			set_government_cooldown = no
-			set_variable = { which = lrsk_empire_size_temp value = 1 }
-			export_trigger_value_to_variable = {
-				trigger = empire_size
-				variable = lrsk_empire_size_temp
-			}
 			add_resource = {
 				unity = 10
-				mult = lrsk_empire_size_temp
+				mult = trigger:empire_size
 			}
 		}
 		set_country_flag = lrsk_fixed_invalid_civics_v6
