@@ -130,7 +130,9 @@ planet_event = {
 				# Remove HA from planet
 				remove_modifier = lrsk_gvp_autoindol_haughty_autonomy
 				
-				# Conditional notification/etc.
+				IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_loseHA } } }
+					planet_event = { id = lrsk_gvp_autoindol.loseHA }
+				}
 			}
 			
 			ELSE_IF = {
@@ -141,7 +143,9 @@ planet_event = {
 				# Add HA to planet
 				add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy }
 				
-				# Conditional notification/etc.
+				IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_getHA } } }
+					planet_event = { id = lrsk_gvp_autoindol.getHA }
+				}
 			}
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy }
@@ -247,3 +251,52 @@ planet_event = {
 	}
 }
 
+# Inform player of Haughty Autonomy
+planet_event = {
+	id = lrsk_gvp_autoindol.getHA
+	title = lrsk_gvp_autoindol.getHA.name
+	desc = lrsk_gvp_autoindol.getHA.desc
+	picture = GFX_evt_civil_action
+
+  	is_triggered_only = yes
+	location = this
+	
+	option = {
+		name = lrsk_gvp_autoindol.getHA.a
+		custom_tooltip = lrsk_gvp_autoindol.getHA.a.tooltip
+	}
+	
+	option = {
+		name = lrsk_gvp_autoindol.getHA.b
+		custom_tooltip = lrsk_gvp_autoindol.getHA.b.tooltip
+
+		hidden_effect = {
+			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_getHA }
+		}
+	}
+}
+
+# Inform player of return of Accustomed Languor/loss of Haughty Autonomy
+planet_event = {
+	id = lrsk_gvp_autoindol.loseHA
+	title = lrsk_gvp_autoindol.loseHA.name
+	desc = lrsk_gvp_autoindol.loseHA.desc
+	picture = GFX_evt_galactic_community
+
+  	is_triggered_only = yes
+	location = this
+	
+	option = {
+		name = lrsk_gvp_autoindol.loseHA.a
+		custom_tooltip = lrsk_gvp_autoindol.loseHA.a.tooltip
+	}
+	
+	option = {
+		name = lrsk_gvp_autoindol.loseHA.b
+		custom_tooltip = lrsk_gvp_autoindol.loseHA.b.tooltip
+
+		hidden_effect = {
+			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_loseHA }
+		}
+	}
+}
