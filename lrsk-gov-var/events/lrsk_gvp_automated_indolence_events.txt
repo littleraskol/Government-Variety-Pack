@@ -44,24 +44,23 @@ country_event = {
 	}
 	
 	immediate = {
-		switch = {
-			trigger = last_increased_tech
-			tech_pd_tracking_3 = { change_variable = { which = lrsk_ai_techs value = 1 } }
-			tech_sapient_ai = { change_variable = { which = lrsk_ai_techs value = 1 } }
-			tech_combat_computers_3 = { change_variable = { which = lrsk_ai_techs value = 1 } }
-			tech_cryostasis_2 = { change_variable = { which = lrsk_ai_techs value = 1 } }
-			tech_consumer_good_refinement_2 = { change_variable = { which = lrsk_ai_techs value = 1 } }
-			tech_droid_workers = { change_variable = { which = lrsk_robo_techs value = 1 } }
-			tech_synthetic_workers = { change_variable = { which = lrsk_robo_techs value = 1 } }
-			tech_synthetic_leaders = { change_variable = { which = lrsk_robo_techs value = 1 } }
-			tech_robomodding_points_1 = { change_variable = { which = lrsk_robo_techs value = 1 } }
-			tech_robomodding = { change_variable = { which = lrsk_robo_techs value = 1 } }
-			tech_effective_bureaucracy = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
-			tech_interstellar_economics = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
-			tech_hypercomms_forum = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
-			tech_collective_self = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
-			tech_paradise_dome = { change_variable = { which = lrsk_autoadmin_techs value = 1 } }
-		}
+		IF = { limit = { last_increased_tech = tech_pd_tracking_3 } change_variable = { which = lrsk_ai_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_sapient_ai } change_variable = { which = lrsk_ai_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_combat_computers_3 } change_variable = { which = lrsk_ai_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_cryostasis_2 } change_variable = { which = lrsk_ai_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_consumer_good_refinement_2 } change_variable = { which = lrsk_ai_techs value = 1 } }
+		
+		IF = { limit = { last_increased_tech = tech_droid_workers } change_variable = { which = lrsk_robo_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_synthetic_workers } change_variable = { which = lrsk_robo_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_synthetic_leaders } change_variable = { which = lrsk_robo_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_robomodding_points_1 } change_variable = { which = lrsk_robo_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_robomodding } change_variable = { which = lrsk_robo_techs value = 1 } }
+		
+		IF = { limit = { last_increased_tech = tech_effective_bureaucracy } change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_interstellar_economics } change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_hypercomms_forum } change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_collective_self } change_variable = { which = lrsk_autoadmin_techs value = 1 } }
+		IF = { limit = { last_increased_tech = tech_paradise_dome } change_variable = { which = lrsk_autoadmin_techs value = 1 } }
 	}
 }
 
