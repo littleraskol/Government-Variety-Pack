@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.5 (6/19/24) - wow
+-supported_version now requires a 'v' incredibly important update
+
 v6.0.4 (5/29/24) - Gestalt Civic Node Exp & Diplomatic Protocols Rework
 -Gestalt civics are supposed to give exp gains to their nodes. The ones from this mod now do so.
 -Diplomatic Protocols reworked into "Xeno Communication Expert System" (+10% first contact speed, +1 first contact clue, +1 first contact target difficulty, +10% trust growth, +10% trade attractiveness).
