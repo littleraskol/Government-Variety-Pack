@@ -23,15 +23,15 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v?.? (?/?/?) - Automated Indolence Redux
 -Brought back the "Automated Indolence" civic.
---Now a start-only civic available to all non-gestalts regardless of ethos.
---Effects aren't based on base civic modifiers anymore (some moved to Councilor).
---Councilor now gives +robot output as well.
+--Now a start-only civic available to organic non-gestalts regardless of ethos.
+--Councilor now gets +robot output effect (moved from base civic modifiers).
 --Start with Administrative AI tech.
 --Pops that spawn in Automated Indolence empires resent being in worker jobs and are worse at them. (This effect can fade with time when deprived of infrastructure that offsets it.)
---Colonies can construct buildings that boost worker-tier job output and happiness of worker and specialist pops, adds amenities, and increases mechanical pop assembly speed.
---Homeworld starts with top-tier version of this building.
+--Colonies can construct "Automation Infrastructure" buildings that boost worker-tier job output and happiness of worker and specialist pops, adds amenities, and increases mechanical pop assembly speed.
+--Homeworld starts with tier 2 version of this building.
+--Can construct "Leisure Reserves" buildings that increase happiness and give special highly-desired ruler jobs that improve specialist and ruler output.
+--Homeworld starts with base version of this building.
 --Researching "automation" tech (e.g. robots and AI) improves these buildings.
---Can construct "Leisure Centers" that give special highly-desired specialist-tier jobs that improve specialist output but increase worker resentment.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
 
 v6.0.5 (6/19/24) - wow
