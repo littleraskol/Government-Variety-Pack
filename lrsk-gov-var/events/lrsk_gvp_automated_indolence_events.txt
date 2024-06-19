@@ -77,6 +77,7 @@ planet_event = {
 	trigger = {
 		FROM = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
 		NOT = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM }
+		FROMFROM = { is_organic_species = yes }
 	}
 	
 	immediate = {
