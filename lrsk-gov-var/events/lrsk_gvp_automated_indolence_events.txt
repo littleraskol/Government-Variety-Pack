@@ -22,6 +22,9 @@ country_event = {
 		set_variable = { which = lrsk_autoadmin_techs value = 0 }
 		
 		capital_scope = {
+			set_planet_flag = lrsk_gvp_autoindol_capital
+
+			add_deposit = d_lrsk_gvp_legacy_autoinf
 			add_building = lrsk_gvp_bldg_autoindolcenter_2
 			add_building = lrsk_gvp_bldg_autoindolfunplex_1
 			repair_all_buildings = yes	# kludge because funlex sometimes starts ruined?
@@ -35,6 +38,12 @@ country_event = {
 		# Some effects of this civic require fairly expensive queries; we set this to check for it elsewhere and avoid these queries if unset.
 		IF = { limit = { NOT = { has_global_flag = lrsk_gvp_automated_indolence_empire_created } }
 			set_global_flag = lrsk_gvp_automated_indolence_empire_created
+		}
+
+		# Semi-immediate check that some other mod did not remove the shroud pockets
+		country_event = {
+			id = lrsk_government_variety_pack_backend.2
+			days = 2
 		}
 	}
 }

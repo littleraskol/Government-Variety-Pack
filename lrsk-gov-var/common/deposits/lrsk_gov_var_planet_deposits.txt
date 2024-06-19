@@ -33,3 +33,46 @@ d_lrsk_gov_var_shroud_pockets = {
 		weight = 0
 	}
 }
+
+d_lrsk_gvp_legacy_autoinf = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	should_swap_deposit_on_terraforming = no
+	
+	#category = deposit_cat_energy
+
+	triggered_planet_modifier = {
+		potential = {
+			lrsk_gvp_autoindol_has_auto_infra = yes			
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			lrsk_gvp_autoindol_has_auto_funplex = yes			
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+		}
+	}
+
+	resources = {
+		category = deposit_cat_rare_resource
+		produces = {
+			trigger = {
+				has_building = lrsk_gvp_bldg_autoindolcenter_2
+				exists = owner
+				owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+			}
+			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
