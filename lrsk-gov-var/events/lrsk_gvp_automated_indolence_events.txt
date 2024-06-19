@@ -6,7 +6,7 @@ namespace = lrsk_gvp_autoindol
 
 # Setup starting tech, buildings, variables
 country_event = {
-	id = lrsk_gvp_autoindol.startup
+	id = lrsk_gvp_autoindol.1
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -41,7 +41,7 @@ country_event = {
 
 # Check is relevant tech researched
 country_event = {
-	id = lrsk_gvp_autoindol.techup
+	id = lrsk_gvp_autoindol.2
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -75,7 +75,7 @@ country_event = {
 # From = Country
 # FromFrom = Pop
 planet_event = {
-	id = lrsk_gvp_autoindol.popgrow
+	id = lrsk_gvp_autoindol.3
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -95,9 +95,34 @@ planet_event = {
 	}
 }
 
+# Set a flag for 15 years to stop pops from gaining AutoIndol modifiers
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+planet_event = {
+	id = lrsk_gvp_autoindol.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+	}
+	
+	immediate = {
+		IF = { limit = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM }
+			remove_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM
+		}
+		
+		set_timed_planet_flag = {
+			flag = lrsk_gvp_autoindol_recently_gained_by@FROM
+			days = 5400
+		}
+	}
+}
+
 # Governs AutoIndo modifiers (planet and pops) based on conditions
 planet_event = {
-	id = lrsk_gvp_autoindol.planetpophousekeeping
+	id = lrsk_gvp_autoindol.100
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -137,7 +162,7 @@ planet_event = {
 				remove_modifier = lrsk_gvp_autoindol_haughty_autonomy
 				
 				IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_loseHA } } }
-					planet_event = { id = lrsk_gvp_autoindol.loseHA }
+					planet_event = { id = lrsk_gvp_autoindol.111 }
 				}
 			}
 			
@@ -150,7 +175,7 @@ planet_event = {
 				add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy }
 				
 				IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_getHA } } }
-					planet_event = { id = lrsk_gvp_autoindol.getHA }
+					planet_event = { id = lrsk_gvp_autoindol.110 }
 				}
 			}
 		}
@@ -232,49 +257,24 @@ planet_event = {
 	}
 }
 
-# Set a flag for 15 years to stop pops from gaining AutoIndol modifiers
-# This = Planet scope
-# From = Country scope (new owner)
-# FromFrom = Country scope (previous owner, if any)
-planet_event = {
-	id = lrsk_gvp_autoindol.gainedplanet
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		FROM = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
-	}
-	
-	immediate = {
-		IF = { limit = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM }
-			remove_planet_flag = lrsk_gvp_autoindol_recently_gained_by@FROM
-		}
-		
-		set_timed_planet_flag = {
-			flag = lrsk_gvp_autoindol_recently_gained_by@FROM
-			days = 5400
-		}
-	}
-}
-
 # Inform player of Haughty Autonomy
 planet_event = {
-	id = lrsk_gvp_autoindol.getHA
-	title = lrsk_gvp_autoindol.getHA.name
-	desc = lrsk_gvp_autoindol.getHA.desc
+	id = lrsk_gvp_autoindol.110
+	title = lrsk_gvp_autoindol.110.name
+	desc = lrsk_gvp_autoindol.110.desc
 	picture = GFX_evt_civil_action
 
   	is_triggered_only = yes
 	location = this
 	
 	option = {
-		name = lrsk_gvp_autoindol.getHA.a
-		custom_tooltip = lrsk_gvp_autoindol.getHA.a.tooltip
+		name = lrsk_gvp_autoindol.110.a
+		custom_tooltip = lrsk_gvp_autoindol.110.a.tooltip
 	}
 	
 	option = {
-		name = lrsk_gvp_autoindol.getHA.b
-		custom_tooltip = lrsk_gvp_autoindol.getHA.b.tooltip
+		name = lrsk_gvp_autoindol.110.b
+		custom_tooltip = lrsk_gvp_autoindol.110.b.tooltip
 
 		hidden_effect = {
 			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_getHA }
@@ -284,22 +284,22 @@ planet_event = {
 
 # Inform player of return of Accustomed Languor/loss of Haughty Autonomy
 planet_event = {
-	id = lrsk_gvp_autoindol.loseHA
-	title = lrsk_gvp_autoindol.loseHA.name
-	desc = lrsk_gvp_autoindol.loseHA.desc
+	id = lrsk_gvp_autoindol.111
+	title = lrsk_gvp_autoindol.111.name
+	desc = lrsk_gvp_autoindol.111.desc
 	picture = GFX_evt_galactic_community
 
   	is_triggered_only = yes
 	location = this
 	
 	option = {
-		name = lrsk_gvp_autoindol.loseHA.a
-		custom_tooltip = lrsk_gvp_autoindol.loseHA.a.tooltip
+		name = lrsk_gvp_autoindol.111.a
+		custom_tooltip = lrsk_gvp_autoindol.111.a.tooltip
 	}
 	
 	option = {
-		name = lrsk_gvp_autoindol.loseHA.b
-		custom_tooltip = lrsk_gvp_autoindol.loseHA.b.tooltip
+		name = lrsk_gvp_autoindol.111.b
+		custom_tooltip = lrsk_gvp_autoindol.111.b.tooltip
 
 		hidden_effect = {
 			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_loseHA }
