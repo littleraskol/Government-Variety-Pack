@@ -20,6 +20,11 @@ country_event = {
 		set_variable = { which = lrsk_ai_techs value = 0 }
 		set_variable = { which = lrsk_robo_techs value = 0 }
 		set_variable = { which = lrsk_autoadmin_techs value = 0 }
+
+		# Super dumb kludge to deal with upkeep shortage
+		add_resource = {
+			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
+		}
 		
 		capital_scope = {
 			set_planet_flag = lrsk_gvp_autoindol_capital
