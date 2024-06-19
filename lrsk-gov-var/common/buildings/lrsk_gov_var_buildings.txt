@@ -595,11 +595,33 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 	}
 }
 
-## Automated Indlugence Buildings
+## Automated Indulgence Buildings
+
+@lrsk_autoindolcenter1_time = 1080
+@lrsk_autoindolcenter1_minerals = 800
+@lrsk_autoindolcenter1_upkeep = 2
+
+@lrsk_autoindolcenter2_time = 600
+@lrsk_autoindolcenter2_minerals = 1000
+@lrsk_autoindolcenter2_upkeep = 5
+@lrsk_autoindolcenter2_rare_cost = 100
+@lrsk_autoindolcenter2_rare_upkeep = 1
+
+@lrsk_autoindolcenter3_time = 720
+@lrsk_autoindolcenter3_minerals = 1200
+@lrsk_autoindolcenter3_upkeep = 8
+@lrsk_autoindolcenter3_rare_cost = 150
+@lrsk_autoindolcenter3_rare_upkeep = 2
+
+@lrsk_autoindolcenter4_time = 840
+@lrsk_autoindolcenter4_minerals = 2000
+@lrsk_autoindolcenter4_upkeep = 10
+@lrsk_autoindolcenter4_rare_cost = 200
+@lrsk_autoindolcenter4_rare_upkeep = 4
 
 # Basic Automation Infrastructure
 lrsk_gvp_bldg_autoindolcenter_1 = {
-	base_buildtime = @b1_time
+	base_buildtime = @lrsk_autoindolcenter1_time
 	base_cap_amount = 1
 
 	#exempt_from_ai_planet_specialization = no	#???
@@ -616,10 +638,10 @@ lrsk_gvp_bldg_autoindolcenter_1 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b1_minerals
+			minerals = @lrsk_autoindolcenter1_minerals
 		}
 		upkeep = {
-			energy = @b1_upkeep
+			energy = @lrsk_autoindolcenter1_upkeep
 		}
 	}
 	
@@ -671,7 +693,7 @@ lrsk_gvp_bldg_autoindolcenter_1 = {
 
 # Developed Automation Infrastructure
 lrsk_gvp_bldg_autoindolcenter_2 = {
-	base_buildtime = @b2_time
+	base_buildtime = @lrsk_autoindolcenter2_time
 	can_build = no
 
 	category = government
@@ -690,12 +712,12 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
+			minerals = @lrsk_autoindolcenter2_minerals
+			rare_crystals = @lrsk_autoindolcenter2_rare_cost
 		}
 		upkeep = {
-			energy = @b2_upkeep
-			rare_crystals = @b2_rare_upkeep
+			energy = @lrsk_autoindolcenter2_upkeep
+			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
 		}
 	}
 
@@ -747,7 +769,7 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 
 # Comprehensive Automation Infrastructure
 lrsk_gvp_bldg_autoindolcenter_3 = {
-	base_buildtime = @b3_time
+	base_buildtime = @lrsk_autoindolcenter3_time
 	can_build = no
 
 	category = government
@@ -767,12 +789,12 @@ lrsk_gvp_bldg_autoindolcenter_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b3_minerals
-			rare_crystals = @b3_rare_cost
+			minerals = @lrsk_autoindolcenter3_minerals
+			rare_crystals = @lrsk_autoindolcenter3_rare_cost
 		}
 		upkeep = {
-			energy = @b3_upkeep
-			rare_crystals = @b3_rare_upkeep
+			energy = @lrsk_autoindolcenter3_upkeep
+			rare_crystals = @lrsk_autoindolcenter3_rare_upkeep
 		}
 	}
 
@@ -824,7 +846,7 @@ lrsk_gvp_bldg_autoindolcenter_3 = {
 
 # Consummate Automation Infrastructure
 lrsk_gvp_bldg_autoindolcenter_4 = {
-	base_buildtime = @b4_time
+	base_buildtime = @lrsk_autoindolcenter4_time
 	can_build = no
 
 	category = government
@@ -848,12 +870,12 @@ lrsk_gvp_bldg_autoindolcenter_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b4_minerals
-			rare_crystals = @b4_rare_cost
+			minerals = @lrsk_autoindolcenter4_minerals
+			rare_crystals = @lrsk_autoindolcenter4_rare_cost
 		}
 		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
+			energy = @lrsk_autoindolcenter4_upkeep
+			rare_crystals = @lrsk_autoindolcenter4_rare_upkeep
 		}
 	}
 
@@ -903,9 +925,25 @@ lrsk_gvp_bldg_autoindolcenter_4 = {
 	}
 }
 
+@lrsk_autoindolfunplex1_time = 720
+@lrsk_autoindolfunplex1_minerals = 500
+@lrsk_autoindolfunplex1_upkeep = 2
+
+@lrsk_autoindolfunplex2_time = 480
+@lrsk_autoindolfunplex2_minerals = 750
+@lrsk_autoindolfunplex2_upkeep = 5
+@lrsk_autoindolfunplex2_rare_cost = 75
+@lrsk_autoindolfunplex2_rare_upkeep = 1
+
+@lrsk_autoindolfunplex3_time = 600
+@lrsk_autoindolfunplex3_minerals = 900
+@lrsk_autoindolfunplex3_upkeep = 8
+@lrsk_autoindolfunplex3_rare_cost = 150
+@lrsk_autoindolfunplex3_rare_upkeep = 2
+
 # Refreshing Leisure Reserves
 lrsk_gvp_bldg_autoindolfunplex_1 = {
-	base_buildtime = @b1_time
+	base_buildtime = @lrsk_autoindolfunplex1_time
 	base_cap_amount = 1
 
 	#exempt_from_ai_planet_specialization = no	#???
@@ -927,10 +965,10 @@ lrsk_gvp_bldg_autoindolfunplex_1 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b1_minerals
+			minerals = @lrsk_autoindolfunplex1_minerals
 		}
 		upkeep = {
-			energy = @b1_upkeep
+			energy = @lrsk_autoindolfunplex1_upkeep
 		}
 	}
 	
@@ -983,7 +1021,7 @@ lrsk_gvp_bldg_autoindolfunplex_1 = {
 
 # Luxurious Leisure Reserves
 lrsk_gvp_bldg_autoindolfunplex_2 = {
-	base_buildtime = @b2_time
+	base_buildtime = @lrsk_autoindolfunplex2_time
 	can_build = no
 
 	category = government
@@ -1003,12 +1041,12 @@ lrsk_gvp_bldg_autoindolfunplex_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
+			minerals = @lrsk_autoindolfunplex2_minerals
+			exotic_gases = @lrsk_autoindolfunplex2_rare_cost
 		}
 		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
+			energy = @lrsk_autoindolfunplex2_upkeep
+			exotic_gases = @lrsk_autoindolfunplex2_rare_upkeep
 		}
 	}
 	
@@ -1061,7 +1099,7 @@ lrsk_gvp_bldg_autoindolfunplex_2 = {
 
 # Indulgent Leisure Reserves
 lrsk_gvp_bldg_autoindolfunplex_3 = {
-	base_buildtime = @b3_time
+	base_buildtime = @lrsk_autoindolfunplex3_time
 	can_build = no
 
 	category = government
@@ -1085,12 +1123,12 @@ lrsk_gvp_bldg_autoindolfunplex_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
+			minerals = @lrsk_autoindolfunplex3_minerals
+			exotic_gases = @lrsk_autoindolfunplex3_rare_cost
 		}
 		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
+			energy = @lrsk_autoindolfunplex3_upkeep
+			exotic_gases = @lrsk_autoindolfunplex3_rare_upkeep
 		}
 	}
 	
