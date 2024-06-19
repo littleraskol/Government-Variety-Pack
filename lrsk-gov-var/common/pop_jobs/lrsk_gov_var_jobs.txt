@@ -1087,7 +1087,10 @@ lrsk_gvp_job_pampered_respite = {
 		is_sapient = yes
 	}
 	
-	possible = { NOT = { has_trait = trait_nerve_stapled } }
+	possible = { 
+		NOT = { has_trait = trait_nerve_stapled }
+		is_organic_species = yes
+	}
 
 	resources = {
 		category = planet_culture_workers
