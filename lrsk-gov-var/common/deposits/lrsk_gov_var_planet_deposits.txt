@@ -37,6 +37,7 @@ d_lrsk_gov_var_shroud_pockets = {
 d_lrsk_gvp_legacy_autoinf = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare
+	custom_tooltip = d_lrsk_gvp_legacy_autoinf_tooltip
 	
 	should_swap_deposit_on_terraforming = no
 	
@@ -60,17 +61,17 @@ d_lrsk_gvp_legacy_autoinf = {
 		}
 	}
 
-	resources = {
-		category = planet_deposits
-		produces = {
-			trigger = {
-				has_building = lrsk_gvp_bldg_autoindolcenter_2
-				exists = owner
-				owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
-			}
-			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
-		}
-	}
+	#resources = {
+	#	category = planet_deposits
+	#	produces = {
+	#		trigger = {
+	#			has_building = lrsk_gvp_bldg_autoindolcenter_2
+	#			exists = owner
+	#			owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+	#		}
+	#		rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
+	#	}
+	#}
 	
 	drop_weight = {
 		weight = 0

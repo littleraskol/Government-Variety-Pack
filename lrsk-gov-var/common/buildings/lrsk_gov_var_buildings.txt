@@ -695,9 +695,22 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 		}
 		upkeep = {
 			energy = @lrsk_autoindolcenter2_upkeep
+		}
+		# To stop immediate resource shortage issues at the start of the game, this upkeep is conditional: Only applies if not on the starting planet or has enough income to support it.
+		upkeep = {
+			trigger = {
+				OR = {
+					NOT = { has_deposit = d_lrsk_gvp_legacy_autoinf }
+					resource_income_compare = {
+						resource = rare_crystals
+						value >= @lrsk_autoindolcenter2_rare_upkeep
+					}
+				}
+			}
 			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
 		}
 	}
+
 
 	planet_modifier = {
 		planet_jobs_worker_produces_mult = 0.05
