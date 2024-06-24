@@ -19,6 +19,12 @@ event = {
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
 
 		## Starting Civics/Origins setup
+
+		# Xeno Communication Expert System
+		every_playable_country = {
+			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
+			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
+		}
 		
 		# Fed start fix for GVP govs
 		every_playable_country = {
@@ -1535,14 +1541,9 @@ country_event = {
 		}
 		ELSE = {
 			set_government_cooldown = no
-			set_variable = { which = lrsk_empire_size_temp value = 1 }
-			export_trigger_value_to_variable = {
-				trigger = empire_size
-				variable = lrsk_empire_size_temp
-			}
 			add_resource = {
 				unity = 10
-				mult = lrsk_empire_size_temp
+				mult = trigger:empire_size
 			}
 		}
 		set_country_flag = lrsk_fixed_invalid_civics_v6
