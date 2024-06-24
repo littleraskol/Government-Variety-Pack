@@ -34,7 +34,7 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Researching "automation" tech (e.g. robots and AI) improves these buildings.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
 
-v6.0.6 (6/??/24) - Govt Weight Audit
+v6.0.6 (6/24/24) - Govt Weight Audit
 -Came to my attention that the base game changed its weighting of governments so that base game governments outweigh those added by this mod where not expected. This should be fixed.
 
 v6.0.5 (6/19/24) - wow
