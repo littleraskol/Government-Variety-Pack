@@ -21,7 +21,7 @@ lrsk_gov_var_gov_whig_republic = {
 	#leader_class = governor
 
 	weight = {
-		base = 1000
+		base = @lrsk_gov_civic_weight_low_L1
 	}
 }
 
@@ -48,7 +48,7 @@ lrsk_gov_var_gov_whig_commonwealth = {
 	#leader_class = governor
 
 	weight = {
-		base = 1000
+		base = @lrsk_gov_civic_weight_low_L1
 	}
 }
 
@@ -65,7 +65,7 @@ lrsk_gov_var_gov_noble_republic = {
 	#leader_class = governor
 
 	weight = {
-		base = 800
+		base = @lrsk_gov_civic_weight_low_L1
 		modifier = {
 			add = 201
 			has_valid_civic = civic_shadow_council
@@ -92,7 +92,7 @@ lrsk_gvp_gov_pious_republic = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 	}
 }
 
@@ -111,7 +111,7 @@ lrsk_gvp_gov_pious_commonwealth = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 	}
 }
 
@@ -130,7 +130,7 @@ lrsk_gvp_gov_bellicose_republic = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_militarist
@@ -160,7 +160,7 @@ lrsk_gvp_gov_bellicose_commonwealth = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_militarist
@@ -190,7 +190,7 @@ lrsk_gvp_gov_tranquil_republic = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_pacifist
@@ -217,7 +217,7 @@ lrsk_gvp_gov_tranquil_commonwealth = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_pacifist
@@ -244,7 +244,7 @@ lrsk_gvp_gov_enlightened_republic = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_materialist
@@ -271,7 +271,7 @@ lrsk_gvp_gov_enlightened_commonwealth = {
 	}
 
 	weight = {
-		base = 6
+		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_materialist
