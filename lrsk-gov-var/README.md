@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.6 (6/??/24) - Govt Weight Audit
+-Came to my attention that the base game changed its weighting of governments so that base game governments outweigh those added by this mod where not expected. This should be fixed.
+
 v6.0.5 (6/19/24) - wow
 -supported_version now requires a 'v' incredibly important update
 
