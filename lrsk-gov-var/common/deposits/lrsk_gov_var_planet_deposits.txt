@@ -41,37 +41,7 @@ d_lrsk_gvp_legacy_autoinf = {
 	
 	should_swap_deposit_on_terraforming = no
 	
-	#category = deposit_cat_energy
-
-	triggered_planet_modifier = {
-		potential = {
-			lrsk_gvp_autoindol_has_auto_infra = yes			
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			lrsk_gvp_autoindol_has_auto_funplex = yes			
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-		}
-	}
-
-	#resources = {
-	#	category = planet_deposits
-	#	produces = {
-	#		trigger = {
-	#			has_building = lrsk_gvp_bldg_autoindolcenter_2
-	#			exists = owner
-	#			owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
-	#		}
-	#		rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
-	#	}
-	#}
+	# This basically acts as a fancy, player-visible flag to prevent the civic's special buildings from using building slots on the empire homeworld. All effects are in the buildings.
 	
 	drop_weight = {
 		weight = 0
