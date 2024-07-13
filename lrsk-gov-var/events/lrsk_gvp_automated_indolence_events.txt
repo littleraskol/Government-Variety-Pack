@@ -37,7 +37,7 @@ country_event = {
 
 		every_owned_pop = {
 			limit = { is_organic_species = yes }
-			add_modifier = { modifier = lrsk_gvp_autoindol_accustomed_languor }
+			set_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
 		}
 
 		# Some effects of this civic require fairly expensive queries; we set this to check for it elsewhere and avoid these queries if unset.
@@ -101,10 +101,10 @@ planet_event = {
 	
 	immediate = {
 		IF = { limit = { lrsk_gvp_autoindol_has_auto_infra = yes }
-			FROMFROM = { add_modifier = { modifier = lrsk_gvp_autoindol_accustomed_languor } } 
+			FROMFROM = { set_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop } 
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy }
-			FROMFROM = { add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy_pop } }
+			FROMFROM = { set_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop }
 		}
 	}
 }
@@ -157,8 +157,8 @@ planet_event = {
 			# Deal with cases anywhere with pops having the appropriate modifiers
 			any_owned_pop = {
 				OR = {
-					has_modifier = lrsk_gvp_autoindol_accustomed_languor
-					has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+					has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
+					has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 				}
 			}
 		}
@@ -168,10 +168,10 @@ planet_event = {
 		# Deal with planet modifier first - impacts pop modifiers
 		IF = { limit = { owner = { has_valid_civic = lrsk_gov_var_civic_automated_indolence } }	
 			IF = {
-				limit = { AND = {
+				limit = {
 					lrsk_gvp_autoindol_has_auto_infra = yes
 					has_modifier = lrsk_gvp_autoindol_haughty_autonomy
-				} }
+				}
 				# Remove HA from planet
 				remove_modifier = lrsk_gvp_autoindol_haughty_autonomy
 				
@@ -181,10 +181,10 @@ planet_event = {
 			}
 			
 			ELSE_IF = {
-				limit = { AND = {
+				limit = {
 					lrsk_gvp_autoindol_has_auto_infra = no
 					NOT = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy }
-				} }
+				}
 				# Add HA to planet
 				add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy }
 				
@@ -200,17 +200,17 @@ planet_event = {
 		
 		# Outside AutoIndol empire, 80% chance either gets removed
 		IF = { limit = { NOT = { owner = { has_civic = lrsk_gov_var_civic_automated_indolence } } }
-			every_owned_pop = { limit = { has_modifier = lrsk_gvp_autoindol_accustomed_languor }
+			every_owned_pop = { limit = { has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop }
 				random = {
 					chance = 80
-					remove_modifier = lrsk_gvp_autoindol_accustomed_languor
+					remove_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
 					set_timed_pop_flag = { flag = lrsk_autogvp_mod_checked@root days = 3 }
 				}
 			}
-			every_owned_pop = { limit = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop }
+			every_owned_pop = { limit = { has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop }
 				random = {
 					chance = 80
-					remove_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+					remove_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 					set_timed_pop_flag = { flag = lrsk_autogvp_mod_checked@root days = 3 }
 				}
 			}
@@ -221,19 +221,19 @@ planet_event = {
 			every_owned_pop = {
 				limit = {
 					NOR = {
-						has_modifier = lrsk_gvp_autoindol_accustomed_languor
-						has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+						has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
+						has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 					}
 				}
 				random = {
 					chance = 60
-					add_modifier = { modifier = lrsk_gvp_autoindol_accustomed_languor }
+					set_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
 				}
 			}
-			every_owned_pop = { limit = { has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop }
+			every_owned_pop = { limit = { has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop }
 				random = {
 					chance = 40
-					remove_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+					remove_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 				}
 			}
 		}
@@ -242,19 +242,19 @@ planet_event = {
 			every_owned_pop = {
 				limit = {
 					NOR = {
-						has_modifier = lrsk_gvp_autoindol_accustomed_languor
-						has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+						has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
+						has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 					}
 				}
 				random = {
 					chance = 40
-					add_modifier = { modifier = lrsk_gvp_autoindol_haughty_autonomy_pop }
+					set_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 				}
 			}
-			every_owned_pop = { limit = { has_modifier = lrsk_gvp_autoindol_accustomed_languor }
+			every_owned_pop = { limit = { has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop }
 				random = {
 					chance = 60
-					remove_modifier = lrsk_gvp_autoindol_accustomed_languor
+					remove_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
 				}
 			}
 		}
@@ -262,11 +262,11 @@ planet_event = {
 		# Unsure how any pop would get both, but remove jic...
 		every_owned_pop = {
 			limit = {
-				has_modifier = lrsk_gvp_autoindol_accustomed_languor
-				has_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+				has_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
+				has_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 			}
-			remove_modifier = lrsk_gvp_autoindol_accustomed_languor
-			remove_modifier = lrsk_gvp_autoindol_haughty_autonomy_pop
+			remove_pop_flag = lrsk_gvp_autoindol_accustomed_languor_pop
+			remove_pop_flag = lrsk_gvp_autoindol_haughty_autonomy_pop
 		}
 	}
 }
