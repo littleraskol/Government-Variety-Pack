@@ -666,11 +666,11 @@ lrsk_gvp_bldg_autoindolcenter_1 = {
 	}
 
 	on_built = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
+		#planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
 	}
 	
 	on_destroy = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
+		#planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
 	}
 }
 
@@ -751,14 +751,6 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 	upgrades = {
 		"lrsk_gvp_bldg_autoindolcenter_3"
 	}
-
-	on_built = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
-	}
-	
-	on_destroy = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
-	}
 }
 
 # Comprehensive Automation Infrastructure
@@ -832,14 +824,6 @@ lrsk_gvp_bldg_autoindolcenter_3 = {
 
 	upgrades = {
 		"lrsk_gvp_bldg_autoindolcenter_4"
-	}
-
-	on_built = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
-	}
-	
-	on_destroy = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
 	}
 }
 
@@ -918,14 +902,6 @@ lrsk_gvp_bldg_autoindolcenter_4 = {
 	triggered_planet_modifier = {
 		potential = { has_deposit = d_lrsk_gvp_legacy_autoinf }
 		modifier = { planet_max_buildings_add = 1 }
-	}
-
-	on_built = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
-	}
-	
-	on_destroy = {
-		planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
 	}
 }
 

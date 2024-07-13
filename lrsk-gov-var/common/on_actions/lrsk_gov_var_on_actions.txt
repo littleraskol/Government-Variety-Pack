@@ -182,7 +182,7 @@ on_space_battle_lost = {
 # Fires for each planet every 5 years (counting up from colonisation date, includes home planet)
 on_colony_5_year_pulse = {
 	events = {
-		lrsk_gvp_autoindol.100	# Governs AutoIndo modifiers (planet and pops) based on conditions
+		lrsk_gvp_autoindol.100	# Governs AutoIndo modifiers/flags (planet and pops) based on conditions
 	}
 }
 
@@ -192,6 +192,6 @@ on_colony_5_year_pulse = {
 # FromFrom = Country scope (previous owner, if any)
 on_planet_transfer = {
 	events = {
-		lrsk_gvp_autoindol.4		# AutoIndol: flag to prevent modifiers on pops for 15 years
+		lrsk_gvp_autoindol.4		# AutoIndol: flag to prevent AutoIndo modifiers/flags (planet and pops) for 5 years
 	}
 }

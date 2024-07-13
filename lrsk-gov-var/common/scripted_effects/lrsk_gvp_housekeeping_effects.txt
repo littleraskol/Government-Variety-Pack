@@ -318,6 +318,12 @@ lrsk_add_country_flag = {
 	}
 }
 
+lrsk_set_modifier = {
+	IF = { limit = { NOT = { has_modifier = $MOD$ } }
+		add_modifier = { modifier = $MOD$ }
+	}
+}
+
 # Will this work???
 lrsk_clear_flag = {
 	IF = { limit = { has_$TYPE$_flag = $FLAG$ }
