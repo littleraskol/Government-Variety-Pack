@@ -696,17 +696,11 @@ lrsk_gvp_bldg_autoindolcenter_2 = {
 		category = planet_buildings
 		cost = {
 			minerals = @lrsk_autoindolcenter2_minerals
-			rare_crystals = @lrsk_autoindolcenter2_rare_cost
+			alloys = @lrsk_autoindolcenter2_rare_cost
 		}
 		upkeep = {
 			energy = @lrsk_autoindolcenter2_upkeep
-		}
-		# To stop immediate resource shortage issues at the start of the game, this upkeep is conditional: Only applies if not on the starting planet.
-		upkeep = {
-			trigger = { 
-				NOT = { has_deposit = d_lrsk_gvp_legacy_autoinf }
-			}
-			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
+			alloys = @lrsk_autoindolcenter2_rare_upkeep
 		}
 	}
 
@@ -776,11 +770,13 @@ lrsk_gvp_bldg_autoindolcenter_3 = {
 		category = planet_buildings
 		cost = {
 			minerals = @lrsk_autoindolcenter3_minerals
-			rare_crystals = @lrsk_autoindolcenter3_rare_cost
+			alloys = @lrsk_autoindolcenter3_rare_cost
+			rare_crystals = @lrsk_autoindolcenter2_rare_cost
 		}
 		upkeep = {
 			energy = @lrsk_autoindolcenter3_upkeep
-			rare_crystals = @lrsk_autoindolcenter3_rare_upkeep
+			alloys = @lrsk_autoindolcenter3_rare_upkeep
+			rare_crystals = @lrsk_autoindolcenter2_rare_upkeep
 		}
 	}
 
@@ -854,11 +850,13 @@ lrsk_gvp_bldg_autoindolcenter_4 = {
 		category = planet_buildings
 		cost = {
 			minerals = @lrsk_autoindolcenter4_minerals
-			rare_crystals = @lrsk_autoindolcenter4_rare_cost
+			alloys = @lrsk_autoindolcenter4_rare_cost
+			rare_crystals = @lrsk_autoindolcenter3_rare_cost
 		}
 		upkeep = {
 			energy = @lrsk_autoindolcenter4_upkeep
-			rare_crystals = @lrsk_autoindolcenter4_rare_upkeep
+			alloys = @lrsk_autoindolcenter4_rare_upkeep
+			rare_crystals = @lrsk_autoindolcenter3_rare_upkeep
 		}
 	}
 
