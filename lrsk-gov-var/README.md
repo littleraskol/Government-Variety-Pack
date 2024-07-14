@@ -21,6 +21,13 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.0.7 (?/?/?) - Individual Machine Audit
+There was more to do when it came to accounting for individualist machines and interactions with civics.
+-Various backend tweaks (adding blocks_random_machine_empire_generation = yes as needed)
+-Uplift Origin incompatible with individualism machines.
+-Ascetic Virtues and Shroud Touched invalidated by synth ascension.
+-Scientific Management replaced food usage reduction with housing and amenities usage reduction.
+
 v6.0.6 (6/24/24) - Govt Weight Audit
 -Came to my attention that the base game changed its weighting of governments so that base game governments outweigh those added by this mod where not expected. This should be fixed.
 

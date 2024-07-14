@@ -55,6 +55,12 @@ lrsk_gov_var_origin_shroud_touched = {
 				value = ethic_fanatic_materialist
 			} 
 		}
+		species_archetype = {
+			NOT = {
+				text = disabled_by_synthetic_ascension
+				value = ROBOT
+			}
+		}
 		species_archetype = { NOT = { value = MACHINE } }
 	}
 
@@ -69,6 +75,8 @@ lrsk_gov_var_origin_shroud_touched = {
 	traits = {
 		trait = lrsk_gov_var_trait_natural_esper
 	}
+
+	blocks_random_machine_empire_generation	= yes
 
 	random_weight = {
 		base = 10
@@ -526,7 +534,10 @@ lrsk_gov_var_origin_uplift = {
 				value = civic_machine_servitor
 			}
 		}
+		species_archetype = { NOT = { value = MACHINE } }
 	}
+
+	blocks_random_machine_empire_generation	= yes
 
 	description = "lrsk_gov_var_origin_tooltip_uplift_effects"
 	flags = { custom_start_screen }
