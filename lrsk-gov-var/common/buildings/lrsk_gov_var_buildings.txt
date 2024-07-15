@@ -666,11 +666,19 @@ lrsk_gvp_bldg_autoindolcenter_1 = {
 	}
 
 	on_built = {
-		#planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
+		# re-eval modifiers and pop flags after 2.5 years
+		planet = {
+			set_timed_planet_flag = { flag = lrsk_autoindol_reeval_hold days = 899 } # hold for just under 2.5 years
+			planet_event = { id = lrsk_gvp_autoindol.100 days = 900 }
+		}
 	}
 	
 	on_destroy = {
-		#planet = { planet_event = { id = lrsk_gvp_autoindol.100 } } # re-eval
+		# re-eval modifiers and pop flags after 2.5 years
+		planet = {
+			set_timed_planet_flag = { flag = lrsk_autoindol_reeval_hold days = 899 } # hold for just under 2.5 years
+			planet_event = { id = lrsk_gvp_autoindol.100 days = 900 }
+		}
 	}
 }
 

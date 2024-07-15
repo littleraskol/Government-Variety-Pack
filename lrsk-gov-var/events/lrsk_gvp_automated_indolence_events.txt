@@ -145,8 +145,11 @@ planet_event = {
 		# Set whenever any empire spawns with this civic; resolving false spares us having to check anything else
 		has_global_flag = lrsk_gvp_automated_indolence_empire_created
 
-		# Don't do any of this on a recently gained world
-		NOT = { has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@owner }
+		# Don't do any of this on a recently gained world or if there's some other hold
+		NOR = {
+			has_planet_flag = lrsk_gvp_autoindol_recently_gained_by@owner
+			has_planet_flag = lrsk_autoindol_reeval_hold
+		}
 
 		OR = {			
 			# Deal with cases within AutoIndol empire
