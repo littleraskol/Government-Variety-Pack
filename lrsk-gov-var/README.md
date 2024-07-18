@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.0.7 (?/?/?) - Individual Machine Audit
+v6.0.7 (7/17/24) - Individual Machine Audit
 There was more to do when it came to accounting for individualist machines and interactions with civics.
 -Various backend tweaks (adding blocks_random_machine_empire_generation = yes as needed)
 -Uplift Origin incompatible with individualism machines.
