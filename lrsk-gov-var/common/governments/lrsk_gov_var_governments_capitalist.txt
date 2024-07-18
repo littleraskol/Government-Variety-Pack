@@ -126,6 +126,13 @@ lrsk_gov_var_gov_entrepreneurial_council = {
 	possible = {
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = civic_aristocratic_elite
+		OR = {
+			NOT = { has_global_flag = ethic_civic_classic_active }
+			NOR = {
+				has_ethic = ethic_socialist
+				has_ethic = ethic_fanatic_socialist
+			}
+		}
 	}
 	
 	#leader_class = governor
