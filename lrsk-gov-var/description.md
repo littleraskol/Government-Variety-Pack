@@ -32,7 +32,8 @@ Compatibility patches:
 
 Mods that have built-in compatibility:
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581&searchtext=ethics]Ethics and Civics Alternative - FunEFork[/url] by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url].
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]Ethics and Civics Alternative - FunEFork[/url] by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url].
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url] maintained by [url=https://steamcommunity.com/id/Coggernaut]Coggernaut[/url]. Note that very little actually needed to be changed here, please see the explanation [url=tbd]here[/url].
 [/list]
 
 For non-English language translations:
@@ -55,14 +56,12 @@ The patches and alternate versions are:
 
 There are also "backup" versions of this mod for older versions of Stellaris. [b]NOTE: These are all stand-alone backup versions, do not run any of them with each other or the current version![/b]
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2094166544]Backup for 2.6 (Verne)[/url] - Older version of the mod for 2.6 Verne.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2461121876]Backup for 2.8 (Butler)[/url] - Older version of the mod for 2.8 Butler.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=901988941]Backup for 3.0 (D!ck)[/url] - Older version of the mod for 3.0 D!ck.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2946882585]Backup for 3.6 (Orion)[/url] - Older version of the mod for 3.6 (Orion). 
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974438259]Backup for 3.7 (Canis Minor)[/url] - Older version of the mod for 3.7 (Canis Minor). 
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974438259]Backup for 3.7 (Canis Minor)[/url] - Older version of the mod for 3.7 (Canis Minor).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3086323855]Backup for 3.9 (Caelum)[/url] - Older version of the mod for 3.9 (Caelum).
 [/list]
 All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
 
