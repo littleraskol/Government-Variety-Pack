@@ -74,6 +74,12 @@ lrsk_gov_var_civic_ascetic_virtues = {
         value = ethic_fanatic_materialist
       }
     }
+		species_archetype = {
+			NOT = {
+				text = disabled_by_synthetic_ascension
+				value = ROBOT
+			}
+		}
 		species_archetype = { NOT = { value = MACHINE } }
   }
 
@@ -187,7 +193,13 @@ lrsk_gov_var_civic_utilitarian_planning = {
     }
   }
 
-  random_weight = { base = @civic_default_random_weight }
+  random_weight = {
+    base = @civic_default_random_weight
+    modifier = {
+      factor = 0
+      has_ethic = ethic_fanatic_capitalism
+    }
+  }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -203,12 +215,12 @@ lrsk_gov_var_civic_utilitarian_planning = {
 				has_ai_personality = erudite_explorers
 			}
 		}
-		#modifier = {
-		#	factor = @ai_civic_personality_forbid_factor
-		#	OR = {
-		#		#
-		#	}
-		#}
+		modifier = {
+			factor = @ai_civic_personality_forbid_factor
+			OR = {
+				has_ethic = ethic_fanatic_capitalism
+			}
+		}
 	}
 
   modifier = {
@@ -458,7 +470,16 @@ lrsk_gov_var_civic_workers_councils = {
     }
   }
 
-  random_weight = { base = @civic_default_random_weight }
+  random_weight = {
+    base = @civic_default_random_weight
+    modifier = {
+      factor = 0
+      OR = {
+        has_ethic = ethic_capitalism
+        has_ethic = ethic_fanatic_capitalism
+      }
+    }
+  }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -478,6 +499,8 @@ lrsk_gov_var_civic_workers_councils = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = ruthless_capitalists
+        has_ethic = ethic_capitalism
+        has_ethic = ethic_fanatic_capitalism
 			}
 		}
 	}
@@ -594,8 +617,17 @@ lrsk_gov_var_civic_enlightened_liberalism = {
       NOT = { value = ethic_fanatic_authoritarian }
     }
   }
-
-  random_weight = { base = @civic_default_random_weight }
+  
+  random_weight = {
+    base = @civic_default_random_weight
+    modifier = {
+      factor = 0
+        OR = {
+          has_ethic = ethic_socialism
+          has_ethic = ethic_fanatic_socialism
+      }
+    }
+  }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -617,6 +649,8 @@ lrsk_gov_var_civic_enlightened_liberalism = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = harmonious_hierarchy
+        has_ethic = ethic_socialism
+        has_ethic = ethic_fanatic_socialism
 			}
 		}
 	}
@@ -823,8 +857,17 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 			NOT = { value = ethic_fanatic_authoritarian }
     }
   }
-
-  random_weight = { base = @civic_default_random_weight }
+  
+  random_weight = {
+    base = @civic_default_random_weight
+    modifier = {
+      factor = 0
+        OR = {
+          has_ethic = ethic_capitalism
+          has_ethic = ethic_fanatic_capitalism
+      }
+    }
+  }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -846,6 +889,8 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = ruthless_capitalists
+        has_ethic = ethic_capitalism
+        has_ethic = ethic_fanatic_capitalism
 			}
 		}
 	}

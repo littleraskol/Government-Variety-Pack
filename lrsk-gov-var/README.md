@@ -22,7 +22,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v?.? (?/?/?) - Automated Indolence Redux
--Brought back the "Automated Indolence" civic.
+-Brought back the "Automated Indolence" civic as an "Advanced" civic with more complex mechanics.
 --Now a start-only civic available to organic non-gestalts regardless of ethos.
 --Councilor now gets +robot output effect (moved from base civic modifiers).
 --Start with Administrative AI tech.
@@ -33,6 +33,17 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Homeworld starts with base version of this building.
 --Researching "automation" tech (e.g. robots and AI) improves these buildings.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
+
+v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
+-Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
+-None of this will prevent players from making goofy combinations but whatever.
+
+v6.0.7 (7/17/24) - Individual Machine Audit
+There was more to do when it came to accounting for individualist machines and interactions with civics.
+-Various backend tweaks (adding blocks_random_machine_empire_generation = yes as needed)
+-Uplift Origin incompatible with individualism machines.
+-Ascetic Virtues and Shroud Touched invalidated by synth ascension.
+-Scientific Management replaced food usage reduction with housing and amenities usage reduction.
 
 v6.0.6 (6/24/24) - Govt Weight Audit
 -Came to my attention that the base game changed its weighting of governments so that base game governments outweigh those added by this mod where not expected. This should be fixed.
