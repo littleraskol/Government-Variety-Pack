@@ -21,9 +21,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v?.?.? (?/?/?) - Built-In Adaptation to Ethics and Civics Classic
+v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
--Using the E&C mod flag to check for E&C ethics in government requirements to avoid randomly-generated and AI-player empires with governments that are thematically dissonant with their elements.
 -None of this will prevent players from making goofy combinations but whatever.
 
 v6.0.7 (7/17/24) - Individual Machine Audit
