@@ -1814,8 +1814,8 @@ l_english:
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
 
  d_lrsk_gvp_legacy_autoinf:0 "Legacy Automation"
- d_lrsk_gvp_legacy_autoinf_desc:0 "This civilization built its vast automation infrastructure bit by bit, to the point that it is seamlessly integrated into all its construction and logistics."
- d_lrsk_gvp_legacy_autoinf_tooltip:0 "£building£ §Y$LRSK_GVP_AUTOINDOL_BLDG_COMMON$§! and £building£ §Y$LRSK_GVP_AUTOFUN_BLDG_COMMON$§! will §Gnot use £mod_planet_max_buildings_add£ $MOD_PLANET_MAX_BUILDINGS_ADD$§!. £building£ §Y$lrsk_gvp_bldg_autoindolcenter_2$§! requires §Gno £rare_crystals£ $rare_crystals$ upkeep.§!"
+ d_lrsk_gvp_legacy_autoinf_desc:0 "This civilization built its vast automation infrastructure bit by bit, to the point that it is seamlessly integrated into all construction and logistics on the homeworld."
+ d_lrsk_gvp_legacy_autoinf_tooltip:0 "£building£ §Y$LRSK_GVP_AUTOINDOL_BLDG_COMMON$§! and £building£ §Y$LRSK_GVP_AUTOFUN_BLDG_COMMON$§! will §Gnot use £mod_planet_max_buildings_add£ $MOD_PLANET_MAX_BUILDINGS_ADD$§!."
 
  ## Subjects
 
@@ -1998,12 +1998,12 @@ l_english:
  lrsk_gvp_bldg_autoindolcenter_2_desc:0 "$LRSK_GVP_AUTOINDOL_BLDG_DESC_COMMON$ automates most core aspects of production and logistics."
  
  lrsk_gvp_bldg_autoindolcenter_3:0 "Comprehensive $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
- lrsk_gvp_bldg_autoindolcenter_3_desc:0 "$LRSK_GVP_AUTOINDOL_BLDG_DESC_COMMON$, through automation, enables the workforce to reach peak productivity."
+ lrsk_gvp_bldg_autoindolcenter_3_desc:0 "$LRSK_GVP_AUTOINDOL_BLDG_DESC_COMMON$ enables the workforce to reach peak productivity."
  
  lrsk_gvp_bldg_autoindolcenter_4:0 "Consummate $LRSK_GVP_AUTOINDOL_BLDG_COMMON$"
  lrsk_gvp_bldg_autoindolcenter_4_desc:0 "$LRSK_GVP_AUTOINDOL_BLDG_DESC_COMMON$ anticipates and preemptively fulfills nearly all workforce needs, freeing our people for higher pursuits."
  
- lrsk_gvp_autoindol_tooltip_aitechs:0 "The following count as AI techs for $LRSK_GVP_AUTOINDOL_BLDG_COMMON$ improvement of £pop_cat_specialist£ $pop_cat_specialist$ job output: §Y$tech_pd_tracking_3$§!, §Y$tech_sapient_ai$§!, §Y$tech_combat_computers_3$§!, §Y$tech_cryostasis_2$§!, §Y$tech_consumer_good_refinement_2$§!"
+ lrsk_gvp_autoindol_tooltip_aitechs:0 "The following count as AI techs for $LRSK_GVP_AUTOINDOL_BLDG_COMMON$ improvement of £pop_cat_worker£ $pop_cat_worker$ and £pop_cat_specialist£ $pop_cat_specialist$ job output: §Y$tech_pd_tracking_3$§!, §Y$tech_sapient_ai$§!, §Y$tech_combat_computers_3$§!, §Y$tech_cryostasis_2$§!, §Y$tech_consumer_good_refinement_2$§!"
 
  lrsk_gvp_autoindol_tooltip_robotechs:0 "The following count as robotics techs for $LRSK_GVP_AUTOINDOL_BLDG_COMMON$ improvement of £planet_pop_assembly_mult£ $MOD_PLANET_POP_ASSEMBLY_MULT$: §Y$tech_droid_workers$§!, §Y$tech_synthetic_workers$§!, §Y$tech_synthetic_leaders$§!, §Y$tech_robomodding_points_1$§!, §Y$tech_robomodding$§!" 
 
@@ -2015,7 +2015,7 @@ l_english:
  lrsk_gvp_bldg_autoindolfunplex_1_desc:0 "$LRSK_GVP_AUTOFUN_BLDG_DESC_COMMON$ allows more people to relax and recharge from the cares of working life."
  
  lrsk_gvp_bldg_autoindolfunplex_2:0 "Luxurious $LRSK_GVP_AUTOFUN_BLDG_COMMON$"
- lrsk_gvp_bldg_autoindolfunplex_2_desc:0 "$LRSK_GVP_AUTOFUN_BLDG_DESC_COMMON$ provides for many ordinary working people the chance to live like royalty for a time, ensconced in the finest things in life."
+ lrsk_gvp_bldg_autoindolfunplex_2_desc:0 "$LRSK_GVP_AUTOFUN_BLDG_DESC_COMMON$ provides for many ordinary people the chance to live like royalty for a time, ensconced in the finest things in life."
  
  lrsk_gvp_bldg_autoindolfunplex_3:0 "Indulgent $LRSK_GVP_AUTOFUN_BLDG_COMMON$"
  lrsk_gvp_bldg_autoindolfunplex_3_desc:0 "$LRSK_GVP_AUTOFUN_BLDG_DESC_COMMON$ predicts and serves up custom enjoyment and cultivation experiences, letting the multitudes taste paradise."
@@ -2276,7 +2276,7 @@ l_english:
  job_lrsk_gvp_job_pampered_respite:0 "Pampered Respite"
  job_lrsk_gvp_job_pampered_respite_plural:0 "$job_lrsk_gvp_job_pampered_respite$s"
  job_lrsk_gvp_job_pampered_respite_desc:0 "Less a 'job' than a very deliberately curated lack of a job for an extended duration, this combines vacation and sabbatical into an advanced form of leisure where one can focus solely on one's own cultivation, refreshment, and pleasure."
- job_lrsk_gvp_job_pampered_respite_effect_desc:1 "Given sufficient £happiness£ §YHappiness§!, £job_lrsk_gvp_job_pampered_respite£ $job_lrsk_gvp_job_pampered_respite_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§! and increase both §Y$planet_jobs_specialist_produces_mult$§! and §Y$planet_jobs_ruler_produces_mult$§!."
+ job_lrsk_gvp_job_pampered_respite_effect_desc:1 "Given sufficient £happiness£ §YHappiness§!, £job_lrsk_gvp_job_pampered_respite£ $job_lrsk_gvp_job_pampered_respite_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§! and increase both §Y$planet_jobs_specialist_produces_mult$§! and §Y$planet_jobs_ruler_produces_mult$§!. ALSO diplo weight and stability desc TBD"
  mod_job_lrsk_gvp_job_pampered_respite_add:0 "$job_lrsk_gvp_job_pampered_respite$ Jobs"
  mod_job_lrsk_gvp_job_pampered_respite_per_pop:0 "§G+1§! $job_lrsk_gvp_job_pampered_respite$ Job per $VALUE$ Pops"
  mod_job_lrsk_gvp_job_pampered_respite_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_pampered_respite_add£ per $VALUE$ £pop£"
@@ -2897,7 +2897,7 @@ l_english:
 
  # Inform player of Haughty Autonomy
  lrsk_gvp_autoindol.51.name:0 "Pride in Independence?"
- lrsk_gvp_autoindol.51.desc:0 "tbd"
+ lrsk_gvp_autoindol.51.desc:0 "Our neglegence in providing the colonists of [this.GetName] with the support our people deserve has come back to haunt us. $lrsk_gvp_autoindol_haughty_autonomy_desc$"
  lrsk_gvp_autoindol.51.a:0 "Distressing"
  lrsk_gvp_autoindol.51.a.tooltip:0 "This planet gets the §Y$lrsk_gvp_autoindol_haughty_autonomy$§! modifier, reducing Stability and making shifts away from your governing ethics more likely."
  lrsk_gvp_autoindol.51.b:0 "$lrsk_gvp_autoindol.51.a$, but don't bother me with this again."
@@ -2905,7 +2905,7 @@ l_english:
 
  # Inform player of return of Accustomed Languor/loss of Haughty Autonomy
  lrsk_gvp_autoindol.52.name:0 "Return to Leisure"
- lrsk_gvp_autoindol.52.desc:0 "tbd"
+ lrsk_gvp_autoindol.52.desc:0 "Despite a brief fad for posturing as frontier survivors 'roughing it,' normalcy has been restored to [this.GetName]. $lrsk_gvp_autoindol_accustomed_languor_desc$"
  lrsk_gvp_autoindol.52.a:0 "Of course."
  lrsk_gvp_autoindol.52.a.tooltip:0 "This planet loses the §Y$lrsk_gvp_autoindol_haughty_autonomy$§! modifier and gains the  §Y$lrsk_gvp_autoindol_accustomed_languor$§! modifier."
  lrsk_gvp_autoindol.52.b:0 "Fine, but don't bother me with this again."
