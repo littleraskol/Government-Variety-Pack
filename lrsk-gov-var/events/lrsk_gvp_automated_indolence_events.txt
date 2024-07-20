@@ -137,7 +137,7 @@ planet_event = {
 
 # Governs AutoIndo modifiers/flags (planet and pops) based on conditions
 planet_event = {
-	id = lrsk_gvp_autoindol.100
+	id = lrsk_gvp_autoindol.5
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -195,7 +195,7 @@ planet_event = {
 					remove_modifier = lrsk_gvp_autoindol_haughty_autonomy
 					
 					IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_loseHA } } }
-						planet_event = { id = lrsk_gvp_autoindol.111 }
+						planet_event = { id = lrsk_gvp_autoindol.52 }
 					}
 				}
 			}			
@@ -208,7 +208,7 @@ planet_event = {
 				erase_modifier = { MOD = lrsk_gvp_autoindol_accustomed_languor }
 				
 				IF = { limit = { NOT = { owner = { has_country_flag = lrsk_gvp_autoindol_ignore_getHA } } }
-					planet_event = { id = lrsk_gvp_autoindol.110 }
+					planet_event = { id = lrsk_gvp_autoindol.51 }
 				}
 			}
 
@@ -274,22 +274,22 @@ planet_event = {
 
 # Inform player of Haughty Autonomy
 planet_event = {
-	id = lrsk_gvp_autoindol.110
-	title = lrsk_gvp_autoindol.110.name
-	desc = lrsk_gvp_autoindol.110.desc
+	id = lrsk_gvp_autoindol.51
+	title = lrsk_gvp_autoindol.51.name
+	desc = lrsk_gvp_autoindol.51.desc
 	picture = GFX_evt_civil_action
 
   	is_triggered_only = yes
 	location = this
 	
 	option = {
-		name = lrsk_gvp_autoindol.110.a
-		custom_tooltip = lrsk_gvp_autoindol.110.a.tooltip
+		name = lrsk_gvp_autoindol.51.a
+		custom_tooltip = lrsk_gvp_autoindol.51.a.tooltip
 	}
 	
 	option = {
-		name = lrsk_gvp_autoindol.110.b
-		custom_tooltip = lrsk_gvp_autoindol.110.b.tooltip
+		name = lrsk_gvp_autoindol.51.b
+		custom_tooltip = lrsk_gvp_autoindol.51.b.tooltip
 
 		hidden_effect = {
 			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_getHA }
@@ -299,22 +299,22 @@ planet_event = {
 
 # Inform player of return of Accustomed Languor/loss of Haughty Autonomy
 planet_event = {
-	id = lrsk_gvp_autoindol.111
-	title = lrsk_gvp_autoindol.111.name
-	desc = lrsk_gvp_autoindol.111.desc
+	id = lrsk_gvp_autoindol.52
+	title = lrsk_gvp_autoindol.52.name
+	desc = lrsk_gvp_autoindol.52.desc
 	picture = GFX_evt_galactic_community
 
   	is_triggered_only = yes
 	location = this
 	
 	option = {
-		name = lrsk_gvp_autoindol.111.a
-		custom_tooltip = lrsk_gvp_autoindol.111.a.tooltip
+		name = lrsk_gvp_autoindol.52.a
+		custom_tooltip = lrsk_gvp_autoindol.52.a.tooltip
 	}
 	
 	option = {
-		name = lrsk_gvp_autoindol.111.b
-		custom_tooltip = lrsk_gvp_autoindol.111.b.tooltip
+		name = lrsk_gvp_autoindol.52.b
+		custom_tooltip = lrsk_gvp_autoindol.52.b.tooltip
 
 		hidden_effect = {
 			owner = { set_country_flag = lrsk_gvp_autoindol_ignore_loseHA }
