@@ -1229,6 +1229,19 @@ lrsk_gov_var_civic_automated_indolence = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
   }
 
+  possible = {
+    origin = {
+      NOR = {
+        value = lrsk_gov_var_origin_uplift
+        value = origin_scion
+        value = origin_lost_colony
+        value = origin_necrophage
+        value = origin_clone_army
+        value = origin_broken_shackles
+      }
+    }
+  }
+
   random_weight = {
     base = @civic_rare_random_weight
 		modifier = {
@@ -1245,6 +1258,10 @@ lrsk_gov_var_civic_automated_indolence = {
         has_ethic = ethic_fanatic_spiritualist
       }
     }
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
   }
   
 	modification = no
