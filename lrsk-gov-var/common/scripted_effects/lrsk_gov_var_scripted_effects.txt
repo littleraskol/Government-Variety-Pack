@@ -6,20 +6,154 @@
 lrsk_create_tradeways_member_mg = {
 	# Merchant Guilds has strict requirements in E&C that we need to account for.
 	IF = { limit = { has_global_flag = ethic_civic_classic_active }
-		create_country = {
-			name = random
-			name_list = random
-			species = event_target:lrsk_next_fed_planet_species
-			type = default
-			origin = lrsk_gov_var_origin_tradeways_npc
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			civics = {
-				civic = civic_merchant_guilds
-				civic = random
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_pacifist = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_pacifist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_pacifist
+						ethic = random				# Should not actually be "random" and select ethic_capitalism as required by E&C.
+					}
+					authority = random
+				}
 			}
-			ethos = random
-			authority = random
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_materialist = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_materialist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_materialist
+						ethic = random				# Should not actually be "random" and select ethic_capitalism as required by E&C.
+					}
+					authority = random
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_spiritualist = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_spiritualist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_spiritualist
+						ethic = random				# Should not actually be "random" and select ethic_capitalism as required by E&C.
+					}
+					authority = random
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_militarist = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_militarist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_militarist
+						ethic = random				# Should not actually be "random" and select ethic_capitalism as required by E&C.
+					}
+					authority = random
+				}
+			}
+			1 = {
+				# Fallback (mostly for matching an Authoritarian or Egalitarian player)
+				modifier = {
+					factor = 0
+					root = { OR = {
+						is_pacifist = yes
+						is_materialist = yes
+						is_spiritualist = yes
+						is_militarist = yes
+					} }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_authoritarian
+						ethic = random				# Should not actually be "random" and select ethic_capitalism as required by E&C.
+					}
+					authority = random
+				}
+			}
 		}
 	}
 	ELSE = {
