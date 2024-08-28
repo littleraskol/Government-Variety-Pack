@@ -3,5 +3,5 @@ tags={
 	"Gameplay"
 }
 name="Government Variety Pack"
-supported_version="v3.12.*"
+supported_version="v3.13.*"
 picture="thumbnail.png"
