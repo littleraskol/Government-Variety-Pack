@@ -4,6 +4,7 @@
 
 # Create Tradeways NPC empire w/ Merchant Guilds.
 lrsk_create_tradeways_member_mg = {
+	# Merchant Guilds has strict requirements in E&C that we need to account for.
 	IF = { limit = { has_global_flag = ethic_civic_classic_active }
 		create_country = {
 			name = random
@@ -204,7 +205,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 			}
 			1 = {
-				# This will only happen with mod-added ethics. There's a limit to how much I can accomodate that!
+				# This will only happen with mod-added ethics. There's a limit to how much I can accommodate that!
 				modifier = {
 					factor = 0
 					root = { OR = {
