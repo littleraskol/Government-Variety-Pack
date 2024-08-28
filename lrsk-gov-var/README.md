@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v?.?.? (?/?/?) - Fixes in create_country effect
+-Needed special case for Tradeways origins to not force an invalid government when using E&C.
+-Explicitly randomize civics as needed.
+
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
 -None of this will prevent players from making goofy combinations but whatever.
