@@ -23,9 +23,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v?.?.? (?/?/?) - Various Fixes and Updates
 -Needed special case for Tradeways origins to not force an invalid government when using E&C.
--Explicitly randomize civics as needed.
+-Explicitly randomize civics as needed when using create_country effect.
 -NPC fed partners cannot be Xenophobes.
--Randomize authority for NPC fed partners.
+-Explicitly randomize authority for NPC fed partners.
 -Ported over base game restrictions on certain fed partners.
 -"For Discovery" Machine Intelligence NPC origin apparently preventing non-MI civics?
 -No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
