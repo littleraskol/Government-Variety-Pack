@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v?.?.? (?/?/?) - Various Fixes and Updates
+v6.1.1 (?/?/24) - Various Fixes and Updates
 -Needed special case for Tradeways origins to not force an invalid government when using E&C.
 -Explicitly randomize civics as needed when using create_country effect.
 -NPC fed partners cannot be Xenophobes.
