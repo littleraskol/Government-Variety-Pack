@@ -21,14 +21,15 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v?.?.? (?/?/?) - Fixes in create_country effect and ferderation creation
+v?.?.? (?/?/?) - Various Fixes and Updates
 -Needed special case for Tradeways origins to not force an invalid government when using E&C.
 -Explicitly randomize civics as needed.
 -NPC fed partners cannot be Xenophobes.
 -Randomize authority for NPC fed partners.
 -Ported over base game restrictions on certain fed partners.
 -"For Discovery" Machine Intelligence NPC origin apparently preventing non-MI civics?
--No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner)
+-No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
+-Using scripted triggers to check authority in places that I missed.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.

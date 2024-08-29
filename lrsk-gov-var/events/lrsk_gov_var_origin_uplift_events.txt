@@ -150,7 +150,7 @@ country_event = {
 	immediate = {
 		log = "at trait select gate"
 		IF = { limit = { is_gestalt = yes } 
-			IF = { limit = { has_authority = auth_hive_mind }
+			IF = { limit = { has_auth_hive = yes }
 				log = "at hive trait branch gate"
 				country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
 			}
@@ -685,13 +685,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.8.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine= yes }
 		}
 		text = lrsk_gov_var_uplift.8.mech.desc
 	}
@@ -733,7 +733,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 
 		hidden_effect = { country_event = { id = lrsk_gov_var_uplift.9 } }
@@ -743,7 +743,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 		
 		hidden_effect = { country_event = { id = lrsk_gov_var_uplift.9 } }
@@ -763,7 +763,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { unity = 200 }
 
@@ -782,7 +782,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 		add_resource = { unity = 200 }
 
@@ -894,13 +894,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.11.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine= yes }
 		}
 		text = lrsk_gov_var_uplift.11.mech.desc
 	}
@@ -942,7 +942,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { influence = 100 }
 		
@@ -960,7 +960,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 		add_resource = { influence = 100 }
 		
@@ -996,7 +996,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 
 		hidden_effect = {
@@ -1014,7 +1014,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 
 		hidden_effect = {
@@ -1052,7 +1052,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { influence = 50 }
 		
@@ -1070,7 +1070,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 		add_resource = { influence = 50 }
 		
@@ -1321,13 +1321,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.14.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine= yes }
 		}
 		text = lrsk_gov_var_uplift.14.mech.desc
 	}
@@ -1370,7 +1370,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 	}
 	option = {
@@ -1378,7 +1378,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine= yes }
 		}
 	}
 	option = {
