@@ -597,7 +597,7 @@ lrsk_create_providence_member = {
 			# Oligarchic
 			modifier = {
 				add = 1
-				root = { has_authority = auth_oligarchic }
+				root = { has_auth_oligarchic = yes }
 			}
 			create_country = {
 				name_list = random
@@ -674,7 +674,7 @@ lrsk_create_providence_member = {
 			# Megacorp
 			modifier = {
 				factor = 0
-				root = { has_authority = auth_corporate }
+				root = { has_auth_corporate = yes }
 			}
 			create_country = {
 				name_list = random
