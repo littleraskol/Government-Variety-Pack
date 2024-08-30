@@ -4,7 +4,7 @@
 
 on_game_start = {
 	events = {
-		lrsk_government_variety_pack_backend.1      	# Set mod active flag, origins
+		lrsk_government_variety_pack_backend.1      		# Set mod active flag
 		#lrsk_government_variety_pack_backend.2004      	# Remove/replace deprecated civics (removes duplicates/redundancy)
 	}
 }
@@ -29,6 +29,7 @@ empire_init_add_technologies = {
 
 on_game_start_country = {
 	events = {
+		lrsk_government_variety_pack_backend.6		# Starting conditions for civics that need setup and origins.
 		lrsk_gov_var_uplift.2						# Tutor system finalizations and watchpost system
 		lrsk_gov_var_uplift.3						# Trait menu selector
 		#lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely

@@ -30,6 +30,7 @@ v6.1.1 (?/?/24) - Various Fixes and Updates
 -"For Discovery" Machine Intelligence NPC origin apparently preventing non-MI civics?
 -No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
 -Using scripted triggers to check authority in places that I missed.
+-Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
