@@ -1331,3 +1331,70 @@ lrsk_federation_origin_create_kinship_species = {
 		}
 	}
 }
+
+# Final planet and system stuff for fed partner homeworlds/systems
+lrsk_federation_origin_final_steup = {
+	create_colony = {
+		owner = event_target:lrsk_fed_member_$NUM$
+	}
+
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+	event_target:lrsk_fed_member_$NUM$ = {
+		country_event = { id = game_start.8 }
+		give_starting_resources_effect = yes
+	}
+	
+	solar_system = {
+		if = { limit = { event_target:lrsk_fed_member_$NUM$ = { is_gestalt = no } }
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:lrsk_fed_member_$NUM$
+				effect = {
+					set_starbase_module = {
+						slot = 1
+						module = trading_hub
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+				}
+			}
+		}
+		else = {
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:lrsk_fed_member_$NUM$
+				effect = {
+					if = {
+						limit = {
+							event_target:lrsk_fed_member_$NUM$ = {
+								has_valid_civic = civic_machine_astromining_drones
+							}	
+						}
+						set_starbase_module = {
+							slot = 1
+							module = astromining_bay
+						}
+					}
+					else = {
+						set_starbase_module = {
+							slot = 1
+							module = solar_panel_network
+						}
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+				}
+			}
+		}
+	}
+}

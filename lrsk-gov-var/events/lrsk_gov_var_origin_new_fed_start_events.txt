@@ -261,43 +261,8 @@ country_event = {
 					establish_communications_no_message = root
 				}
 			}
-			create_colony = {
-				owner = event_target:lrsk_fed_member_1
-			}
 
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			solar_system = {
-				if = { limit = { event_target:lrsk_fed_member_1 = { is_gestalt = yes } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_1
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
-						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_1
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = trading_hub
-							}
-						}
-					}
-				}
-			}
+			lrsk_federation_origin_final_steup = { NUM = 1 }
 		}
 
 		# Second Member
@@ -471,44 +436,10 @@ country_event = {
 					establish_communications_no_message = root
 				}
 			}
-			create_colony = {
-				owner = event_target:lrsk_fed_member_2
-			}
 
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			solar_system = {
-				if = { limit = { event_target:lrsk_fed_member_2 = { is_gestalt = yes } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_2
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
-						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_2
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = trading_hub
-							}
-						}
-					}
-				}
-			}
+			lrsk_federation_origin_final_steup = { NUM = 2 }
 		}
+		
 		event_target:lrsk_fed_member_1 = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
