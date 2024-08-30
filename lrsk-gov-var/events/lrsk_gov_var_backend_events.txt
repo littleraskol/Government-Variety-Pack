@@ -32,23 +32,6 @@ country_event = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
 			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
 		}
-		
-		# Fed start fix for GVP govs
-		every_playable_country = {
-			limit = {
-				NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
-				is_gestalt = no # probably unneeded but eh
-				has_federation = yes # This is real JIC shit
-				OR = {
-					has_origin = origin_common_ground
-					has_origin = origin_hegemon
-				}
-				is_authoritarian = no
-				is_egalitarian = no
-				lrsk_has_any_gvp_gov = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.4 }
-		}
 
 		# Galactic Backdoor
 		every_playable_country = {
