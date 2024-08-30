@@ -941,6 +941,36 @@ country_event = {
 	}
 }
 
+# Xenolinguistic tech for some Origins (I don't actually understand this, but the game uses it...)
+country_event = {
+	id = lrsk_government_variety_pack_backend.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_paragon_dlc = yes
+		is_country_type = default
+		is_gestalt = no
+		OR = {
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+			has_origin = lrsk_gov_var_origin_grand_alliance
+			has_origin = lrsk_gvp_origin_convened_providence
+			has_origin = lrsk_gov_var_origin_uplift
+		}
+	}
+
+	immediate = {
+		add_research_option = tech_xeno_linguistics
+		add_tech_progress = {
+			tech = tech_xeno_linguistics
+			progress = 0.50
+		}
+	}
+}
+
 # Explainers
 country_event = {
 	id = lrsk_government_variety_pack_backend.101
