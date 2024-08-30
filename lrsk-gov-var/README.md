@@ -25,6 +25,7 @@ v6.2.0 (9/?/24) - Vela (3.13) Update
 -Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
 --Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
 --Shifted Xenophobic pop growth to use new founder_species_growth_mult modifier.
+--Pass-through of inter-compatibility triggers (very technical).
 -Updated compat version number.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
