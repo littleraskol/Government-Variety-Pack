@@ -1274,19 +1274,46 @@ lrsk_remove_existing_rra_modifier = {
 	}
 }
 
-# Base game changed this in 3.9, need my own copy of the old version
+# Need my own version for mod flags, etc
 lrsk_federation_origin_planet_setup = {
-	set_planet_size = 18
-	random_list = {
-		1 = { change_pc = pc_tropical }
-		1 = { change_pc = pc_arid }
-		1 = { change_pc = pc_continental }
-		1 = { change_pc = pc_ocean }
-		1 = { change_pc = pc_tundra }
-		1 = { change_pc = pc_arctic }
-		1 = { change_pc = pc_alpine }
-		1 = { change_pc = pc_savannah }
-		1 = { change_pc = pc_desert }
+	if = {
+		limit = { any_system_planet = { habitable_planet = yes } }
+		random_system_planet = {
+			limit = { habitable_planet = yes }
+			set_planet_size = 18
+			random_list = {
+				1 = { change_pc = pc_tropical }
+				1 = { change_pc = pc_arid }
+				1 = { change_pc = pc_continental }
+				1 = { change_pc = pc_ocean }
+				1 = { change_pc = pc_tundra }
+				1 = { change_pc = pc_arctic }
+				1 = { change_pc = pc_alpine }
+				1 = { change_pc = pc_savannah }
+				1 = { change_pc = pc_desert }
+			}
+			reroll_planet = yes
+			save_event_target_as = lrsk_fed_planet_$NUM$
+		}
 	}
-	reroll_planet = yes
+	else = {
+		random_system_planet = {
+			limit = { is_star = no }
+			set_planet_size = 18
+			random_list = {
+				1 = { change_pc = pc_tropical }
+				1 = { change_pc = pc_arid }
+				1 = { change_pc = pc_continental }
+				1 = { change_pc = pc_ocean }
+				1 = { change_pc = pc_tundra }
+				1 = { change_pc = pc_arctic }
+				1 = { change_pc = pc_alpine }
+				1 = { change_pc = pc_savannah }
+				1 = { change_pc = pc_desert }
+			}
+			reroll_planet = yes
+			save_event_target_as = lrsk_fed_planet_$NUM$
+		}
+	}
+	add_extra_hyperlane_to_spawned_system_effect = yes
 }

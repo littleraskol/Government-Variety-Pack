@@ -32,6 +32,8 @@ v6.1.1 (?/?/24) - Various Fixes and Updates
 -Using scripted triggers to check authority in places that I missed.
 -Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
+-General update of federation start logic to use base game updates.
+-Various federation start tweaks.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
