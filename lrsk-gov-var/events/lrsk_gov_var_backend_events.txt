@@ -17,38 +17,6 @@ event = {
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
-
-		## Escape routes for possible boxed-in starts
-
-		# Extreme cludge alert: explicitly mark initially owned systems...
-		every_country = {
-			if = { limit = { exists = capital_scope }
-				capital_scope.solar_system = {
-					lrsk_mark_owned_system = yes
-				}
-			}
-			every_system_within_border = {
-				lrsk_mark_owned_system = yes
-			}
-		}
-
-		# Find escape routes for human players first
-		every_playable_country = {
-			limit = {
-				is_ai = no
-				lrsk_gvp_has_boxed_in_origin = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
-
-		# Find escape routes for AI players last
-		every_playable_country = {
-			limit = {
-				is_ai = yes
-				lrsk_gvp_has_boxed_in_origin = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.3 }
-		}
 	}
 }
 
@@ -133,6 +101,38 @@ country_event = {
 		#	}
 		#	country_event = { id = lrsk_gov_var_sublight_origins.1 }
 		#}
+
+		## Escape routes for possible boxed-in starts
+
+		# Extreme cludge alert: explicitly mark initially owned systems...
+		every_country = {
+			if = { limit = { exists = capital_scope }
+				capital_scope.solar_system = {
+					lrsk_mark_owned_system = yes
+				}
+			}
+			every_system_within_border = {
+				lrsk_mark_owned_system = yes
+			}
+		}
+
+		# Find escape routes for human players first
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				lrsk_gvp_has_boxed_in_origin = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.3 }
+		}
+
+		# Find escape routes for AI players last
+		every_playable_country = {
+			limit = {
+				is_ai = yes
+				lrsk_gvp_has_boxed_in_origin = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.3 }
+		}
 
 		## Explainers if not called elsewhere
 
