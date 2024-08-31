@@ -105,19 +105,19 @@ country_event = {
 		## Escape routes for possible boxed-in starts
 
 		# Extreme cludge alert: explicitly mark initially owned systems...
-		every_country = {
-			if = { limit = { exists = capital_scope }
-				capital_scope.solar_system = {
-					lrsk_mark_owned_system = yes
-				}
-			}
-			every_system_within_border = {
+
+		IF = { limit = { exists = capital_scope }
+			capital_scope.solar_system = {
 				lrsk_mark_owned_system = yes
 			}
 		}
+		every_system_within_border = {
+			lrsk_mark_owned_system = yes
+		}
+
 
 		# Find escape routes for human players first
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = no
 				lrsk_gvp_has_boxed_in_origin = yes
@@ -126,7 +126,7 @@ country_event = {
 		}
 
 		# Find escape routes for AI players last
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = yes
 				lrsk_gvp_has_boxed_in_origin = yes
