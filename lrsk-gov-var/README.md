@@ -22,17 +22,16 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v6.1.1 (?/?/24) - Various Fixes and Updates
+-Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
+-General update of federation start logic to use base game updates.
 -Needed special case for Tradeways origins to not force an invalid government when using E&C.
 -Explicitly randomize civics as needed when using create_country effect.
--NPC fed partners cannot be Xenophobes.
 -Explicitly randomize authority for NPC fed partners.
--Ported over base game restrictions on certain fed partners.
+-NPC fed partners cannot be Xenophobes.
 -"For Discovery" Machine Intelligence NPC origin apparently preventing non-MI civics?
 -No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
 -Using scripted triggers to check authority in places that I missed.
--Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
--General update of federation start logic to use base game updates.
 -Various federation start tweaks.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
