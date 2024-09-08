@@ -24,22 +24,23 @@ country_event = {
 }
 
 # Sets wormholes to seen, and creates wormhole pair.
-country_event = {
+planet_event = {
 	id = lrsk_gov_var_galactic_backdoor.2
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_galactic_backdoor
+		owner = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
 	}
 
 	immediate = {
-		set_country_flag = lrsk_gov_var_galactic_backdoor_nation
+		owner = {
+			set_country_flag = lrsk_gov_var_galactic_backdoor_nation			
+			set_country_flag = encountered_first_wormhole
+			add_seen_bypass_type = wormhole
+		}
 		
-		set_country_flag = encountered_first_wormhole
-		add_seen_bypass_type = wormhole
-
-		this.capital_scope.solar_system = {
+		this.solar_system = {
 			random_system = {
 				limit = {
 					NOR = {

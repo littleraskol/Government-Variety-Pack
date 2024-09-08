@@ -26,32 +26,31 @@ country_event = {
 }
 
 # Sets planet deposit and pop traits.
-country_event = {
+planet_event = {
 	id = lrsk_gov_var_shroud_touched.6			# Why is 6 right after 1? To troll my OCD.
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_shroud_touched
+		owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
 	}
 
 	immediate = {
-		# Tag species as being a shroud-touched origin. Not sure if useful...
-		species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
-		
-		# Randomly sets some to Latent Psionic or to lose Natural Esper
-		every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
+		set_planet_flag = lrsk_gov_var_shroud_touched_capital
+		add_deposit = d_lrsk_gov_var_shroud_pockets
 
-		capital_scope ={
-			set_planet_flag = lrsk_gov_var_shroud_touched_capital
+		owner = {
+			# Tag species as being a shroud-touched origin. Not sure if useful...
+			species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
+			
+			# Randomly sets some to Latent Psionic or to lose Natural Esper
+			every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
 
-			add_deposit = d_lrsk_gov_var_shroud_pockets
-		}
-
-		# Semi-immediate check that some other mod did not remove the shroud pockets
-		country_event = {
-			id = lrsk_government_variety_pack_backend.2
-			days = 2
+			# Semi-immediate check that some other mod did not remove the shroud pockets
+			country_event = {
+				id = lrsk_government_variety_pack_backend.2
+				days = 2
+			}
 		}
 	}
 }
