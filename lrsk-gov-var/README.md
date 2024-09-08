@@ -30,6 +30,7 @@ v6.1.1 (?/?/24) - Various Fixes and Updates
 -NPC fed partners cannot be Xenophobes.
 -"For Discovery" Machine Intelligence NPC origin apparently preventing non-MI civics?
 -No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
+-Uplift tutor and pupil now have starting trust and intel on each other.
 -Using scripted triggers to check authority in places that I missed.
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
