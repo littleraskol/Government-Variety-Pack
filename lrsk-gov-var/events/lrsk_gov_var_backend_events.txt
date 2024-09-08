@@ -32,7 +32,6 @@ country_event = {
 		# Add any new ones onto here.
 		OR = {
 			has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
-			has_origin = lrsk_gov_var_origin_galactic_backdoor
 			has_origin = lrsk_gov_var_origin_shroud_touched
 			has_origin = lrsk_gov_var_origin_for_discovery
 			has_origin = lrsk_gov_var_origin_for_discovery_mi
@@ -61,12 +60,6 @@ country_event = {
 		IF = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
 			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
-		}
-		
-		# Galactic Backdoor
-		IF = {
-			limit = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
-			country_event = { id = lrsk_gov_var_galactic_backdoor.1 }
 		}
 		
 		# Shroud-Touched

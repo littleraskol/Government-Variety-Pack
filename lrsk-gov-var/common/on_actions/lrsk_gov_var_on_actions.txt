@@ -23,8 +23,20 @@ on_game_start = {
 # scope: country
 empire_init_add_technologies = {
 	events = {
+		lrsk_gov_var_galactic_backdoor.1			# Tech option and progress for Wormhole Stabilization.
 		lrsk_government_variety_pack_backend.5		# Add Shaper/Artificer/Essentialist starting techs.
 		lrsk_government_variety_pack_backend.7		# Xenolinguistic tech for some Origins (I don't actually understand this, but the game uses it...)
+	}
+}
+
+# Called during empire initialization when starting a new game if has_secondary_species game rule is true.
+# Called before empire_init_create_capital_pops.
+# scope: planet
+# from: founder species
+# fromfrom: secondary species (if exists)
+empire_init_capital_planet = {
+	events = {
+		lrsk_gov_var_galactic_backdoor.2			# Sets wormholes to seen, and creates wormhole pair.
 	}
 }
 
