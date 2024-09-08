@@ -43,11 +43,12 @@ empire_init_capital_planet = {
 }
 
 on_game_start_country = {
-	events = {
-		lrsk_government_variety_pack_backend.6		# Starting conditions for civics that need setup and origins.
+	events = {		
+		lrsk_gov_var_new_fed_starts.1				# Sets up the research coop/trade league/martial alliance for the related origins.
+		lrsk_gov_var_uplift.1						# Setup flags, event target.
+		lrsk_government_variety_pack_backend.6		# Misc country startup chores.
 		lrsk_gov_var_uplift.2						# Tutor system finalizations and watchpost system
 		lrsk_gov_var_uplift.3						# Trait menu selector
-		#lrsk_government_variety_pack_backend.3	# Make sure that for origins that spawn new nearby empires, unlikely to be boxed in completely
 		lrsk_gov_var_direct_revelation.1000			# Starting grace period, special interactions
 	}
 }

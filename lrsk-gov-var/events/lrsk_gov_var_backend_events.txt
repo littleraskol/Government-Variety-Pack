@@ -20,7 +20,7 @@ event = {
 	}
 }
 
-# Starting conditions for civics that need setup and origins.
+# Misc country startup chores.
 country_event = {
 	id = lrsk_government_variety_pack_backend.6			# Why is 6 right after 1? To troll my OCD.
 	is_triggered_only = yes
@@ -32,13 +32,6 @@ country_event = {
 		# Add any new ones onto here.
 		OR = {
 			has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
-			has_origin = lrsk_gov_var_origin_for_discovery
-			has_origin = lrsk_gov_var_origin_for_discovery_mi
-			has_origin = lrsk_gov_var_origin_tradeways
-			has_origin = lrsk_gov_var_origin_tradeways_mc
-			has_origin = lrsk_gov_var_origin_grand_alliance
-			has_origin = lrsk_gvp_origin_convened_providence
-			has_origin = lrsk_gov_var_origin_uplift
 			AND = {
 				is_ai = no
 				OR = {
@@ -60,33 +53,6 @@ country_event = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
 			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
 		}
-		
-		# For Discovery / Tradeways / Grand Alliance / Convended by Providence
-		IF = {
-			limit = { OR = { 
-				has_origin = lrsk_gov_var_origin_for_discovery
-				has_origin = lrsk_gov_var_origin_for_discovery_mi
-				has_origin = lrsk_gov_var_origin_tradeways
-				has_origin = lrsk_gov_var_origin_tradeways_mc
-				has_origin = lrsk_gov_var_origin_grand_alliance
-				has_origin = lrsk_gvp_origin_convened_providence
-			} }
-			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
-		}
-		
-		# Uplift
-		IF = {
-			limit = { has_origin = lrsk_gov_var_origin_uplift }
-			country_event = { id = lrsk_gov_var_uplift.1 }
-		}
-		
-		## Sublight Empire/Commonwealth
-		#IF = {
-		#	limit = {
-		#		lrsk_gov_var_has_sublight_overlord_origin = yes
-		#	}
-		#	country_event = { id = lrsk_gov_var_sublight_origins.1 }
-		#}
 
 		## Escape routes for possible boxed-in starts
 
@@ -100,7 +66,6 @@ country_event = {
 		every_system_within_border = {
 			lrsk_mark_owned_system = yes
 		}
-
 
 		# Find escape routes for human players first
 		IF = {
