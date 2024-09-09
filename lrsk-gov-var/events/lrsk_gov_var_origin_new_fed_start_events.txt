@@ -12,12 +12,14 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_for_discovery
-		has_origin = lrsk_gov_var_origin_for_discovery_mi
-		has_origin = lrsk_gov_var_origin_tradeways
-		has_origin = lrsk_gov_var_origin_tradeways_mc
-		has_origin = lrsk_gov_var_origin_grand_alliance
-		has_origin = lrsk_gvp_origin_convened_providence
+		OR = {
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+			has_origin = lrsk_gov_var_origin_grand_alliance
+			has_origin = lrsk_gvp_origin_convened_providence
+		}
 	}
 
 	immediate = {
