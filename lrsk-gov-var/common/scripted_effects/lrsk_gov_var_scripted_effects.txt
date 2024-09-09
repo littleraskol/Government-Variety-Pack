@@ -605,7 +605,14 @@ lrsk_create_providence_member = {
 		1 = {
 			# Oligarchic
 			modifier = {
-				add = 1
+				factor = 0
+				root = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				add = 2
 				root = { has_auth_oligarchic = yes }
 			}
 			create_country = {
@@ -633,7 +640,7 @@ lrsk_create_providence_member = {
 			}
 			modifier = {
 				add = 1
-				root = { is_authoritarian = yes }
+				root = { has_auth_dictatorial = yes }
 			}
 			create_country = {
 				name_list = random
@@ -660,7 +667,7 @@ lrsk_create_providence_member = {
 			}
 			modifier = {
 				add = 1
-				root = { is_authoritarian = yes }
+				root = { has_auth_imperial = yes }
 			}
 			create_country = {
 				name_list = random
