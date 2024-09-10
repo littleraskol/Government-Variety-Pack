@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.2.0 (9/?/24) - Vela (3.13) Update
+v6.2.0 (9/10/24) - Vela (3.13) Update
 -Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
 --Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
 --Shifted pop growth from "Xenophobic" sources to use new founder_species_growth_mult modifier.
