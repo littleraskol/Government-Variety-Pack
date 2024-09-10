@@ -54,16 +54,8 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]
 
-There are also "backup" versions of this mod for older versions of Stellaris. [b]NOTE: These are all stand-alone backup versions, do not run any of them with each other or the current version![/b]
-[list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2946882585]Backup for 3.6 (Orion)[/url] - Older version of the mod for 3.6 (Orion). 
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974438259]Backup for 3.7 (Canis Minor)[/url] - Older version of the mod for 3.7 (Canis Minor).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3086323855]Backup for 3.9 (Caelum)[/url] - Older version of the mod for 3.9 (Caelum).
-[/list]
-All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
+There are also "backup" versions of this mod for older versions of Stellaris available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url]. [b]NOTE: The backup versions are stand-alone, do not run any of them with each other or the current version![/b]
+
 
 Finally, there is a submod available:
 [list]

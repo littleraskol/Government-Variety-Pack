@@ -1,7 +1,7 @@
-version="6.0"
+version="6.2"
 tags={
 	"Gameplay"
 }
 name="Government Variety Pack"
-supported_version="v3.12.*"
+supported_version="v3.13.*"
 picture="thumbnail.png"

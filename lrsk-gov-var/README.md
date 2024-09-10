@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.1.1 (?/?/24) - Various Fixes and Updates
+v6.3 (?/?/24) - Various Fixes and Updates
 -Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
 -General update of federation start logic to use base game updates.
 -Needed special case for Tradeways origins to not force an invalid government when using E&C.
@@ -34,6 +34,13 @@ v6.1.1 (?/?/24) - Various Fixes and Updates
 -Using scripted triggers to check authority in places that I missed.
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
+
+v6.2.0 (9/10/24) - Vela (3.13) Update
+-Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
+--Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
+--Shifted pop growth from "Xenophobic" sources to use new founder_species_growth_mult modifier.
+--Pass-through of inter-compatibility triggers (very technical).
+-Updated compat version number.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.

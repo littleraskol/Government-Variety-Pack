@@ -1313,3 +1313,34 @@ country_event = {
 		}
 	}
 }
+
+# Gives all special pre-reqs for councilors 
+country_event = {
+	id = lrsk_gvp_testing.31
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		give_technology = { tech = tech_ship_armor_3 message = no }
+		give_technology = { tech = tech_advanced_metallurgy_1 message = no }
+		give_technology = { tech = tech_starbase_3 message = no }
+		give_technology = { tech = tech_hyper_drive_2 message = no }
+		give_technology = { tech = tech_power_plant_3 message = no }
+		give_technology = { tech = tech_cold_fusion_power message = no }
+		give_technology = { tech = tech_vitality_boosters message = no }
+		give_technology = { tech = tech_terrestrial_sculpting message = no }
+		give_technology = { tech = tech_xeno_diplomacy message = no }
+		give_technology = { tech = tech_robotic_workers message = no }
+
+		add_tradition = tr_harmony_finish
+		add_tradition = tr_mercantile_finish
+		add_tradition = tr_expansion_finish
+		add_tradition = tr_supremacy_finish
+		add_tradition = tr_domination_finish
+	}
+}

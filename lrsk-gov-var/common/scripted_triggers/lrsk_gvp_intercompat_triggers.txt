@@ -4,24 +4,26 @@
 
 # These triggers replace checks for various government features, enabling other mods or patches to overload them and improve compatbility.
 
+# In 3.13, the base game has moved to using is_authority triggers instead of checking for specific authorities. I expect that modders will eventually just start overriding those.
+# In the meantime, some mods will still use the modder-created has_auth_whatever standard. This passes one through the other so all overrides should work.
 has_auth_democratic = {
-	has_authority = auth_democratic
+	is_democratic_authority = yes
 }
 has_auth_oligarchic = {
-	has_authority = auth_oligarchic
+	is_oligarchic_authority = yes
 }
 has_auth_dictatorial = {
-	has_authority = auth_dictatorial
+	is_dictatorial_authority = yes
 }
 has_auth_imperial = {
-	has_authority = auth_imperial
+	is_imperial_authority = yes
 }
 has_auth_hive = {
-	has_authority = auth_hive_mind
+	is_hive_empire = yes
 }
 has_auth_machine = {
-	has_authority = auth_machine_intelligence
+	is_machine_empire = yes
 }
 has_auth_corporate = {
-	has_authority = auth_corporate
+	is_megacorp = yes
 }
