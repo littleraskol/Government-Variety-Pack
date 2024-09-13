@@ -42,24 +42,24 @@ country_event = {
 			save_event_target_as = lrsk_my_uplift_tutor
 			owner_species = { save_event_target_as = lrsk_my_uplift_tutor_species }
 			
-			event_target:lrsk_my_uplift_tutor = {
-				add_trust = {
-					amount = 50
-					who = root
-				}
-				add_intel = {
-					amount = 100
-					who = root
-				}
-			}
-			add_trust = {
-				amount = 50
-				who = event_target:lrsk_my_uplift_tutor
-			}
-			add_intel = {
-				amount = 55
-				who = event_target:lrsk_my_uplift_tutor
-			}
+			#event_target:lrsk_my_uplift_tutor = {
+			#	add_trust = {
+			#		amount = 50
+			#		who = root
+			#	}
+			#	add_intel = {
+			#		amount = 100
+			#		who = root
+			#	}
+			#}
+			#add_trust = {
+			#	amount = 50
+			#	who = event_target:lrsk_my_uplift_tutor
+			#}
+			#add_intel = {
+			#	amount = 55
+			#	who = event_target:lrsk_my_uplift_tutor
+			#}
 
 			IF = { limit = { owner_species = { is_robotic_species = no } }
 				every_owned_planet = {
