@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.2.1 (9/10/24) - Post-Vela (3.13) Hotfixes
+-Need to adjust weights of GVP-added "criminal" governments so they override base game.
+
+
 v6.2.0 (9/10/24) - Vela (3.13) Update
 -Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
 --Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
