@@ -1309,7 +1309,7 @@ lrsk_federation_origin_planet_setup = {
 				1 = { change_pc = pc_desert }
 			}
 			reroll_planet = yes
-			set_planet_flag = lrsk_fed_start_planet
+			sve_event_target_as = lrsk_fed_planet_$NUM$
 		}
 	}
 	else = {
@@ -1343,7 +1343,7 @@ lrsk_federation_origin_create_kinship_species = {
 		traits = random
 		homeworld = this
 		effect = {
-			save_event_target_as = lrsk_next_fed_planet_species
+			save_event_target_as = lrsk_fed_planet_$NUM$
 		}
 	}
 }
