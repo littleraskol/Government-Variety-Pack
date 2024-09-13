@@ -103,7 +103,7 @@ lrsk_uplift_1 = {
 				10 = {
 					modifier = {
 						factor = 5
-						event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+						event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 					}
 					create_species = {
 						name = random
@@ -142,7 +142,7 @@ lrsk_uplift_1 = {
 				10 = {
 					modifier = {
 						factor = 5
-						event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+						event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 					}
 					create_species = {
 						name = random
@@ -215,7 +215,7 @@ lrsk_uplift_1 = {
 						}
 					}
 					ELSE = {
-						IF = { limit = { event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind } }
+						IF = { limit = { event_target:lrsk_uplift_pupil = { has_auth_hive = yes } }
 							create_country = {
 								species = event_target:lrsk_uplift_tutor_species
 								name_list = random

@@ -322,7 +322,7 @@ country_event = {
 					70 = {
 						modifier = {
 							factor = 0
-							root = { has_authority = auth_corporate }
+							root = { has_auth_corporate = yes }
 						}	
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {
@@ -419,7 +419,7 @@ country_event = {
 					20 = {
 						modifier = {
 							factor = 0.5
-							event_target:lrsk_fed_member_1 = { has_authority = auth_machine_intelligence }
+							event_target:lrsk_fed_member_1 = { has_auth_machine = yes }
 							root = { NOT = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
 						}
 						create_species = {
@@ -530,7 +530,7 @@ country_event = {
 					80 = {
 						modifier = {
 							factor = 1.125
-							event_target:lrsk_fed_member_1 = { has_authority = auth_machine_intelligence }
+							event_target:lrsk_fed_member_1 = { has_auth_machine = yes }
 							root = { NOT = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
 						}
 						create_country = {
@@ -561,7 +561,7 @@ country_event = {
 					40 = {
 						modifier = {
 							add = 50
-							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+							event_target:lrsk_fed_member_1 = { has_auth_corporate = yes }
 						}		
 						lrsk_create_tradeways_member_mg = yes
 						last_created_country = {
@@ -572,11 +572,11 @@ country_event = {
 					60 = {
 						modifier = {
 							add = -50
-							event_target:lrsk_fed_member_1 = { has_authority = auth_corporate }
+							event_target:lrsk_fed_member_1 = { has_auth_corporate = yes }
 						}
 						modifier = {
 							factor = 0
-							root = { has_authority = auth_corporate }
+							root = { has_auth_corporate = yes }
 						}					
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {

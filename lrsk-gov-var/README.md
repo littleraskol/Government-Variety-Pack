@@ -23,7 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v6.2.1 (9/10/24) - Post-Vela (3.13) Hotfixes
 -Need to adjust weights of GVP-added "criminal" governments so they override base game.
-
+-Using scripted triggers to check authority in places that I missed.
 
 v6.2.0 (9/10/24) - Vela (3.13) Update
 -Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
