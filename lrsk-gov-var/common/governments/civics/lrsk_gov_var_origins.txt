@@ -320,6 +320,7 @@ lrsk_gov_var_origin_tradeways_npc = {
 	}
 
 	possible = {
+		authority = { NOT = { value = auth_corporate } }
 		ethics = {
 			NOR = {
 				value = ethic_xenophobe
@@ -352,6 +353,7 @@ lrsk_gov_var_origin_tradeways_mc_npc = {
 	}
 
 	possible = {
+		authority = { value = auth_corporate }
 		ethics = {
 			NOR = {
 				value = ethic_xenophobe
