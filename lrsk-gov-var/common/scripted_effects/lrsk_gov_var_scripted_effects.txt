@@ -873,7 +873,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				modifier = {
 #					factor = 0
 #					OR = {
-#						owner = { has_authority = auth_machine_intelligence }
+#						owner = { has_auth_machine = yes }
 #						has_trait = leader_trait_butcher
 #						has_trait = leader_trait_restrained
 #					}
@@ -893,7 +893,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				if = {
 #					limit = {
 #						owner = {
-#							NOT = { has_authority = auth_machine_intelligence }
+#							NOT = { has_auth_machine = yes }
 #						}
 #					}
 #					add_trait = leader_trait_charismatic
@@ -901,7 +901,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				}
 #				if = {
 #					limit = {
-#						owner = { has_authority = auth_machine_intelligence }
+#						owner = { has_auth_machine = yes }
 #					}
 #					add_trait = leader_trait_demoralizer
 #					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
@@ -931,7 +931,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				if = {
 #					limit = {
 #						owner = {
-#							NOT = { has_authority = auth_machine_intelligence }
+#							NOT = { has_auth_machine = yes }
 #						}
 #					}
 #					add_trait = leader_trait_glory_seeker
@@ -939,7 +939,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				}
 #				if = {
 #					limit = {
-#						owner = { has_authority = auth_machine_intelligence }
+#						owner = { has_auth_machine = yes }
 #					}
 #					add_trait = leader_trait_demoralizer
 #					set_timed_leader_flag = { flag = gained_leader_trait_demoralizer days = 7 }
@@ -957,7 +957,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				if = {
 #					limit = {
 #						owner = {
-#							NOT = { has_authority = auth_machine_intelligence }
+#							NOT = { has_auth_machine = yes }
 #						}
 #					}
 #					add_trait = leader_trait_army_logistician
@@ -965,7 +965,7 @@ lrsk_gov_var_sublight_subjects_mark = {
 #				}
 #				if = {
 #					limit = {
-#						owner = { has_authority = auth_machine_intelligence }
+#						owner = { has_auth_machine = yes }
 #					}
 #					add_trait = leader_trait_parts_cannibalizer
 #					set_timed_leader_flag = { flag = gained_leader_trait_parts_cannibalizer days = 7 }

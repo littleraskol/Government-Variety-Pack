@@ -32,6 +32,12 @@ v6.3 (?/?/24) - Various Fixes and Updates
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
 
+v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
+-Adjusted weights of GVP-added "criminal" governments so they override base game.
+-Using scripted triggers to check authority in places that I missed.
+-NPC fed partners now cannot be Xenophobes.
+-Research Co-op Federation NPC origin was apparently preventing non-MI civics? Now prevents various MI civics the base game does not allow in federations.
+
 v6.2.0 (9/10/24) - Vela (3.13) Update
 -Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
 --Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
