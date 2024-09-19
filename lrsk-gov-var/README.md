@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.2.1 (?/?/?) - Branch Office Events Fix
+v6.2.2 (?/?/?) - Branch Office Events Fix
 -Some branch office events were firing when they should not.
 --Reformatory Workhouse, Grand Casino, Local News Station, and Offworld Jobs Placement should now only work when actually present...
 
