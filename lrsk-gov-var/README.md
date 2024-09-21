@@ -32,6 +32,7 @@ v6.3 (?/?/24) - Various Fixes and Updates
 -Uplift tutor and pupil now have starting trust and intel on each other.
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
+-"Empire of Rapine" weighted too low.
 
 v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
 -Adjusted weights of GVP-added "criminal" governments so they override base game.
