@@ -14,6 +14,7 @@ country_event = {
 
 	# Only fire if a criminal slaver corp with built workhouses, and if there are applicable planets/empires
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_workhouse		# don't bother if never once built
 		has_valid_civic = civic_criminal_heritage
 		has_valid_civic = civic_indentured_assets
 		check_variable = { which = lrsk_num_built_workhouses value > 0 }
@@ -258,6 +259,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_workhouse		# don't bother if never once built
 		has_valid_civic = civic_criminal_heritage
 		has_valid_civic = civic_indentured_assets
 		any_country = {
@@ -313,6 +315,7 @@ country_event = {
 
 	# Only fire if a media corp with built local news stations, and if there are applicable planets/empires
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_newsoffice	# don't bother if never once built
 		has_valid_civic = civic_media_conglomerate
 		check_variable = { which = lrsk_num_built_localmedia value > 0 }
 		
@@ -752,6 +755,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_newsoffice	# don't bother if never once built
 		has_valid_civic = civic_media_conglomerate
 		any_country = {
 			any_owned_planet = {
@@ -834,6 +838,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_offworldjobs	# don't bother if never once built
 		has_valid_civic = civic_private_prospectors
 		any_country = {
 			any_owned_planet = {
@@ -876,6 +881,7 @@ country_event = {
 
 	# Only fire if a casino corp with built local casinos, and if there are applicable planets/empires
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_casino	# don't bother if never once built
 		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
 		NOT = { has_country_flag = lrsk_casino_luck_cooldown }
 		check_variable = { which = lrsk_num_built_casinos value > 0 }
@@ -1203,6 +1209,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_casino	# don't bother if never once built
 		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
 		any_country = {
 			any_owned_planet = {
