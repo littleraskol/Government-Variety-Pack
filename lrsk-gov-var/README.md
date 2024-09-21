@@ -22,6 +22,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 -"Empire of Rapine" weighted too low.
+-Wrong flag for Reformatory Workhouse on_destroy block.
 
 v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
 -Adjusted weights of GVP-added "criminal" governments so they override base game.
