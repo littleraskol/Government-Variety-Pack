@@ -251,6 +251,60 @@ country_event = {
 	}
 }
 
+# Yearly check of actually built Reformatory Workhouse buildings, in case the on_built and on_destroy blocks fail
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = civic_criminal_heritage
+		has_valid_civic = civic_indentured_assets
+		any_country = {
+			any_owned_planet = {
+				NOT = { has_planet_flag = lrsk_gvp_popsteal_checked }
+				has_branch_office = root
+				has_building = lrsk_gov_var_bldg_reformatory_workhouse
+			}
+		}
+	}
+
+	immediate = {
+		clear_variable = lrsk_num_built_workhouses
+		IF = { limit = { NOT = { has_global_flag = lrsk_popsteal_allcleared } }
+			every_country = {
+				limit = { check_variable = { which = lrsk_num_owned_workhouses value > 0 } }
+				clear_variable = lrsk_num_owned_workhouses
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_could_lose_pops_to@root }
+					remove_planet_flag = lrsk_could_lose_pops_to@root
+				}
+			}
+			set_timed_global_flag = { flag = lrsk_popsteal_allcleared days = 7}
+		}
+		every_country = {
+			limit = {
+				any_owned_planet = {
+					NOT = { has_planet_flag = lrsk_gvp_popsteal_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_reformatory_workhouse
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = lrsk_gvp_popsteal_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_reformatory_workhouse
+				}
+				set_planet_flag = lrsk_could_lose_pops_to@root
+				set_timed_planet_flag = { flag = lrsk_gvp_popsteal_checked days = 7 }
+				owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 } }
+				root = { change_variable = { which = lrsk_num_built_workhouses value = 1 } }
+			}
+		}
+	}
+}
+
 # Handle favor gain chance from Local News Station
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.30
@@ -691,6 +745,59 @@ country_event = {
 	}
 }
 
+# Yearly check of actually built Local News Station buildings, in case the on_built and on_destroy blocks fail
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.35
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = civic_media_conglomerate
+		any_country = {
+			any_owned_planet = {
+				NOT = { has_planet_flag = lrsk_gvp_localmedia_checked }
+				has_branch_office = root
+				has_building = lrsk_gov_var_bldg_local_news_office
+			}
+		}
+	}
+
+	immediate = {
+		clear_variable = lrsk_num_built_localmedia
+		IF = { limit = { NOT = { has_global_flag = lrsk_localmedia_allcleared } }
+			every_country = {
+				limit = { check_variable = { which = lrsk_num_owned_localmedia value > 0 } }
+				clear_variable = lrsk_num_owned_localmedia
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_could_leak_scandal_to@root }
+					remove_planet_flag = lrsk_could_leak_scandal_to@root
+				}
+			}
+			set_timed_global_flag = { flag = lrsk_localmedia_allcleared days = 7}
+		}
+		every_country = {
+			limit = {
+				any_owned_planet = {
+					NOT = { has_planet_flag = lrsk_gvp_localmedia_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_local_news_office
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = lrsk_gvp_localmedia_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_local_news_office
+				}
+				set_planet_flag = lrsk_could_leak_scandal_to@root
+				set_timed_planet_flag = { flag = lrsk_gvp_localmedia_checked days = 7 }
+				owner = { change_variable = { which = lrsk_num_owned_localmedia value = 1 } }
+				root = { change_variable = { which = lrsk_num_built_localmedia value = 1 } }
+			}
+		}
+	}
+}
+
 # Handle bonuses from Offworld Jobs Placement
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.40
@@ -720,12 +827,12 @@ country_event = {
 	}
 }
 
+# Yearly check of actually built Offworld Jobs Placement buildings, in case the on_built and on_destroy blocks fail
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.41
 	hide_window = yes
 	is_triggered_only = yes
 
-	# Only fire if a prospector corp & someone has their offworld jobs building
 	trigger = {
 		has_valid_civic = civic_private_prospectors
 		any_country = {
@@ -1085,6 +1192,59 @@ country_event = {
 			value = 50
 			min = 250
 			max = 2000
+		}
+	}
+}
+
+# Yearly check of actually built Grand Casino buildings, in case the on_built and on_destroy blocks fail
+country_event = {
+	id = lrsk_gvp_mc_bldg_special.53
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_mc_casino_mystic
+		any_country = {
+			any_owned_planet = {
+				NOT = { has_planet_flag = lrsk_gvp_casino_checked }
+				has_branch_office = root
+				has_building = lrsk_gov_var_bldg_grand_casino
+			}
+		}
+	}
+
+	immediate = {
+		clear_variable = lrsk_num_built_casinos
+		IF = { limit = { NOT = { has_global_flag = lrsk_casino_allcleared } }
+			every_country = {
+				limit = { check_variable = { which = lrsk_num_owned_casinos value > 0 } }
+				clear_variable = lrsk_num_owned_casinos
+				every_owned_planet = {
+					limit = { has_planet_flag = lrsk_can_get_casino_events_from@root }
+					remove_planet_flag = lrsk_can_get_casino_events_from@root
+				}
+			}
+			set_timed_global_flag = { flag = lrsk_casino_allcleared days = 7}
+		}
+		every_country = {
+			limit = {
+				any_owned_planet = {
+					NOT = { has_planet_flag = lrsk_gvp_casino_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_grand_casino
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = lrsk_gvp_casino_checked }
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_grand_casino
+				}
+				set_planet_flag = lrsk_can_get_casino_events_from@root
+				set_timed_planet_flag = { flag = lrsk_gvp_casino_checked days = 7 }
+				owner = { change_variable = { which = lrsk_num_owned_casinos value = 1 } }
+				root = { change_variable = { which = lrsk_num_built_casinos value = 1 } }
+			}
 		}
 	}
 }
