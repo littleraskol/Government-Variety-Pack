@@ -24,7 +24,6 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v6.2.2 (?/?/?) - Branch Office Events Fix, etc
 -Some branch office events were firing when they should not.
 --Reformatory Workhouse, Grand Casino, Local News Station, and Offworld Jobs Placement should now only work when actually present...
--"Empire of Rapine" weighted too low.
 
 v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
 -Adjusted weights of GVP-added "criminal" governments so they override base game.
