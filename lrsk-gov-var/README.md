@@ -21,6 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.2.1.1 (?/?/?) - Some smaller fixes
 -"Empire of Rapine" weighted too low.
 -Wrong flag for Reformatory Workhouse on_destroy block.
 
