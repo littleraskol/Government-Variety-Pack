@@ -745,7 +745,8 @@ country_event = {
 			check_variable = { which = lrsk_num_owned_casinos value > 0 }
 			any_owned_planet = {
 				num_pops > 0 # just to hopefully filter out any uninhabited worlds
-				has_planet_flag = lrsk_can_get_casino_events_from@root
+				has_branch_office = root
+				has_building = lrsk_gov_var_bldg_grand_casino
 			}
 		}
 	}
@@ -761,7 +762,8 @@ country_event = {
 				check_variable = { which = lrsk_num_owned_casinos value > 0 }
 				any_owned_planet = {
 					num_pops > 0 # just to hopefully filter out any uninhabited worlds
-					has_planet_flag = lrsk_can_get_casino_events_from@root
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_grand_casino
 				}
 			}
 
@@ -773,7 +775,8 @@ country_event = {
 					}
 					any_owned_planet = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_can_get_casino_events_from@root
+						has_branch_office = root
+						has_building = lrsk_gov_var_bldg_grand_casino
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 				}
@@ -781,7 +784,8 @@ country_event = {
 				random_owned_planet = {
 					limit = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_can_get_casino_events_from@root
+						has_branch_office = root
+						has_building = lrsk_gov_var_bldg_grand_casino
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 

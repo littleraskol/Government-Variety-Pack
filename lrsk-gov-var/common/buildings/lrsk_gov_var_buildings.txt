@@ -1326,7 +1326,6 @@ lrsk_gov_var_bldg_grand_casino = {
 	}
 	
 	on_built = {
-		set_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
 		owner = {
 			change_variable = { which = lrsk_num_owned_casinos value = 1 }
 		}
@@ -1336,9 +1335,6 @@ lrsk_gov_var_bldg_grand_casino = {
 	}
     
 	on_destroy = {
-		if = { limit = { has_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner }
-			remove_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
-		}
 		owner = {
 			change_variable = { which = lrsk_num_owned_casinos value = 1 }
 		}
