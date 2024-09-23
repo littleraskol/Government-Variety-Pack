@@ -21,9 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.2.2 (?/?/?) - Branch Office Events Fix, etc
--Some branch office events were firing when they should not.
---Reformatory Workhouse, Grand Casino, Local News Station, and Offworld Jobs Placement should now only work when actually present...
+v6.2.1.2 (9/23/24) - Branch Office Events Fix
+-Special events related to the Reformatory Workhouse, Grand Casino, and Local News Station branch office buildings should only fire when the relevant buildings are actually present.
+--For some reason I was tracking this with flags and such, when there's no good reason to not just check for the building.
 
 v6.2.1.1 (9/23/24) - Some smaller fixes
 -"Empire of Rapine" weighted too low.
