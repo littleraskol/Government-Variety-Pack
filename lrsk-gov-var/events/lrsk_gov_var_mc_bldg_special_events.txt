@@ -24,7 +24,7 @@ country_event = {
 			any_owned_planet = {
 				num_pops > 1 # don't want to steal last pop...
 				has_branch_office = root
-				has_building = lrsk_gov_var_bldg_reformatory_workhouse
+				has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 			}
 		}
 	}
@@ -40,7 +40,7 @@ country_event = {
 				any_owned_planet = {
 					num_pops > 1 # don't want to steal last pop...
 					has_branch_office = root
-					has_building = lrsk_gov_var_bldg_reformatory_workhouse
+					has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 				}
 			}
 
@@ -50,7 +50,7 @@ country_event = {
 					any_owned_planet = {
 						num_pops > 1 # don't want to steal last pop...
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_reformatory_workhouse
+						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
 					}
 				}
@@ -59,7 +59,7 @@ country_event = {
 					limit = {
 						num_pops > 1 # don't want to steal last pop...
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_reformatory_workhouse
+						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
 					}
 
@@ -272,7 +272,7 @@ country_event = {
 			any_owned_planet = {
 				num_pops > 0 # just to hopefully filter out any uninhabited worlds
 				has_branch_office = root
-				has_building = lrsk_gov_var_bldg_local_news_office
+				has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 			}
 		}
 	}
@@ -288,7 +288,7 @@ country_event = {
 				any_owned_planet = {
 					num_pops > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = root
-					has_building = lrsk_gov_var_bldg_local_news_office
+					has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 				}
 			}
 
@@ -298,7 +298,7 @@ country_event = {
 					any_owned_planet = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_local_news_office
+						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
 				}
@@ -307,7 +307,7 @@ country_event = {
 					limit = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_local_news_office
+						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
 
@@ -746,7 +746,7 @@ country_event = {
 			any_owned_planet = {
 				num_pops > 0 # just to hopefully filter out any uninhabited worlds
 				has_branch_office = root
-				has_building = lrsk_gov_var_bldg_grand_casino
+				has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 			}
 		}
 	}
@@ -763,7 +763,7 @@ country_event = {
 				any_owned_planet = {
 					num_pops > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = root
-					has_building = lrsk_gov_var_bldg_grand_casino
+					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 				}
 			}
 
@@ -776,7 +776,7 @@ country_event = {
 					any_owned_planet = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_grand_casino
+						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 				}
@@ -785,7 +785,7 @@ country_event = {
 					limit = {
 						num_pops > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = root
-						has_building = lrsk_gov_var_bldg_grand_casino
+						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 
