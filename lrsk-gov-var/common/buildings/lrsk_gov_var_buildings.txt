@@ -2766,15 +2766,16 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		text = lrsk_offworld_work_effect
 	}
 
-	# The queue logic controls how many the AI builds, see ai_weight below
+	# DEPRECATED: The queue logic controls how many the AI builds, see ai_weight below - DEPRECATED
+	# Note: This is likely a holdover from before static modifier values could be multiplied by a variable.
 
-	on_queued = {
-		branch_office_owner = { change_variable = { which = lrsk_offworld_placement_built value = 1 } }
-	}
-    
-	on_unqueued = {
-		branch_office_owner = { subtract_variable = { which = lrsk_offworld_placement_built value = 1 } }
-	}
+	#on_queued = {
+	#	branch_office_owner = { change_variable = { which = lrsk_offworld_placement_built value = 1 } }
+	#}
+    #
+	#on_unqueued = {
+	#	branch_office_owner = { subtract_variable = { which = lrsk_offworld_placement_built value = 1 } }
+	#}
 
 	on_built = {
 		branch_office_owner = {
@@ -2785,7 +2786,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
     
 	on_destroy = {
 		branch_office_owner = {
-			subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
+			#subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
 			subtract_variable = { which = lrsk_offworld_workers_bonus value = 1 }
 			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
@@ -2803,11 +2804,11 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 
 	ai_weight = {
 		weight = 100
-		modifier = {
-			# Little advantage to corp past 10 of these...
-			factor = 0.01
-			branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
-		}
+		#modifier = {
+		#	# Little advantage to corp past 10 of these... (DEPRECATED because, no??)
+		#	factor = 0.01
+		#	branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
+		#}
 	}
 }
 
