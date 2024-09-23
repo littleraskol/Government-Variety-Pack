@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.2.2 (?/?/?) - Branch Office Events Fix, etc
+-Some branch office events were firing when they should not.
+--Reformatory Workhouse, Grand Casino, Local News Station, and Offworld Jobs Placement should now only work when actually present...
+
 v6.2.1.1 (9/23/24) - Some smaller fixes
 -"Empire of Rapine" weighted too low.
 -Wrong flag for Reformatory Workhouse on_destroy block.
