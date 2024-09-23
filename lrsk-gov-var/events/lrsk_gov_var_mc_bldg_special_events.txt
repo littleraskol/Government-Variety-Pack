@@ -714,9 +714,7 @@ country_event = {
 		log = "Attempting offworld work bonus application."
 
 		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
-			if = { limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
-				remove_modifier = lrsk_gvp_empire_offworld_work_bonus
-			}
+			erase_modifier = { MOD = lrsk_gvp_empire_offworld_work_bonus }
 			add_modifier = {
 				modifier = lrsk_gvp_empire_offworld_work_bonus
 				multiplier = lrsk_offworld_workers_bonus
@@ -724,6 +722,59 @@ country_event = {
 		}
 		ELSE_IF = { limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
 			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
+		}
+	}
+}
+
+# Yearly check of actually built Offworld Jobs Placement buildings, in case the on_built and on_destroy blocks fail
+event = {
+	id = lrsk_gvp_mc_bldg_special.41
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			OR = {
+				check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
+				any_owned_planet = {
+					has_branch_office = yes
+					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+				}
+			}
+		}
+	}
+
+	immediate = {
+		every_country = {
+			limit = { is_variable_set = lrsk_offworld_workers_bonus }
+			set_variable = { which = lrsk_offworld_workers_bonus value = 0 }
+		}
+		every_country = {
+			limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
+			remove_modifier = lrsk_gvp_empire_offworld_work_bonus
+		}
+		
+		every_country = {
+			limit = {
+				any_owned_planet = {
+					has_branch_office = yes
+					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					has_branch_office = yes
+					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+				}
+				branch_office_owner = { 
+					change_variable = { which = lrsk_offworld_workers_bonus value = 1 }
+				}
+			}
+		}
+		
+		every_country = {
+			limit = { has_valid_civic = civic_private_prospectors }
+			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
 	}
 }
