@@ -2532,17 +2532,11 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 
 	on_built = {		
 		owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 }	}
-		if = { limit = { branch_office_owner = { has_valid_civic = civic_criminal_heritage } }
-			set_planet_flag = lrsk_could_lose_pops_to@branch_office_owner
-		}
 		branch_office_owner = { change_variable = { which = lrsk_num_built_workhouses value = 1 } }
 	}
     
 	on_destroy = {
 		owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 } }
-		if = { limit = { has_planet_flag = lrsk_could_lose_pops_to@branch_office_owner }
-			remove_planet_flag = lrsk_could_lose_pops_to@branch_office_owner
-		}
 		branch_office_owner = { subtract_variable = { which = lrsk_num_built_workhouses value = 1 } }
 	}
 	

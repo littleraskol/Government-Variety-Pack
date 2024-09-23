@@ -23,7 +23,8 @@ country_event = {
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
 				num_pops > 1 # don't want to steal last pop...
-				has_planet_flag = lrsk_could_lose_pops_to@root
+				has_branch_office = root
+				has_building = lrsk_gov_var_bldg_reformatory_workhouse
 			}
 		}
 	}
@@ -38,7 +39,8 @@ country_event = {
 				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 				any_owned_planet = {
 					num_pops > 1 # don't want to steal last pop...
-					has_planet_flag = lrsk_could_lose_pops_to@root
+					has_branch_office = root
+					has_building = lrsk_gov_var_bldg_reformatory_workhouse
 				}
 			}
 
@@ -47,7 +49,8 @@ country_event = {
 					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 					any_owned_planet = {
 						num_pops > 1 # don't want to steal last pop...
-						has_planet_flag = lrsk_could_lose_pops_to@root
+						has_branch_office = root
+						has_building = lrsk_gov_var_bldg_reformatory_workhouse
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
 					}
 				}
@@ -55,7 +58,8 @@ country_event = {
 				random_owned_planet = {
 					limit = {
 						num_pops > 1 # don't want to steal last pop...
-						has_planet_flag = lrsk_could_lose_pops_to@root
+						has_branch_office = root
+						has_building = lrsk_gov_var_bldg_reformatory_workhouse
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
 					}
 
