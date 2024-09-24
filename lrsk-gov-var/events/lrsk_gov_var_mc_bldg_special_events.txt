@@ -738,7 +738,7 @@ event = {
 				check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
 				any_owned_planet = {
 					has_branch_office = yes
-					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+					has_holding = { holding = lrsk_gov_var_bldg_offworld_jobs_placement owner = branch_office_owner }
 				}
 			}
 		}
@@ -758,13 +758,13 @@ event = {
 			limit = {
 				any_owned_planet = {
 					has_branch_office = yes
-					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+					has_holding = { holding = lrsk_gov_var_bldg_offworld_jobs_placement owner = branch_office_owner }
 				}
 			}
 			every_owned_planet = {
 				limit = {
 					has_branch_office = yes
-					has_building = lrsk_gov_var_bldg_offworld_jobs_placement
+					has_holding = { holding = lrsk_gov_var_bldg_offworld_jobs_placement owner = branch_office_owner }
 				}
 				branch_office_owner = { 
 					change_variable = { which = lrsk_offworld_workers_bonus value = 1 }
