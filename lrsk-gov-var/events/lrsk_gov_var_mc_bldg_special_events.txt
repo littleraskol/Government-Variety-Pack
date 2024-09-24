@@ -773,7 +773,10 @@ event = {
 		}
 		
 		every_country = {
-			limit = { has_valid_civic = civic_private_prospectors }
+			limit = {
+				has_valid_civic = civic_private_prospectors
+				check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
+			}
 			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
 	}
