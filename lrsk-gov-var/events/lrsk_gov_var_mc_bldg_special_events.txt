@@ -262,6 +262,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_workhouse		# Don't bother if one was never built
 		any_country = {
 			OR = {
 				check_variable = { which = lrsk_num_built_workhouses value > 0 }
@@ -758,6 +759,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_newsoffice		# Don't bother if one was never built
 		any_country = {
 			OR = {
 				check_variable = { which = lrsk_num_built_localmedia value > 0 }
@@ -837,6 +839,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_offworldjobs		# Don't bother if one was never built
 		any_country = {
 			OR = {
 				check_variable = { which = lrsk_offworld_workers_bonus value > 0 }
@@ -1225,6 +1228,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = lrsk_has_ever_built_casino		# Don't bother if one was never built
 		any_country = {
 			OR = {
 				check_variable = { which = lrsk_num_built_casinos value > 0 }
