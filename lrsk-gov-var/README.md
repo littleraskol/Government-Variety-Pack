@@ -33,6 +33,20 @@ v6.3 (?/?/24) - Various Fixes and Updates
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
 
+v6.2.1.4 (9/28/24) - Branch Office Events Fix GAIDEN: IIIrd X the Ch∀rm
+-wrong varibale
+
+v6.2.1.3 (9/28/24) - Branch Office Events Fix The Second
+-How long were the on_destroy blocks incrementing the owned building count...!?
+
+v6.2.1.2 (9/23/24) - Branch Office Events Fix
+-Special events related to the Reformatory Workhouse, Grand Casino, and Local News Station branch office buildings should only fire when the relevant buildings are actually present.
+--For some reason I was tracking this with flags and such, when there's no good reason to not just check for the building.
+
+v6.2.1.1 (9/23/24) - Some smaller fixes
+-"Empire of Rapine" weighted too low.
+-Wrong flag for Reformatory Workhouse on_destroy block.
+
 v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
 -Adjusted weights of GVP-added "criminal" governments so they override base game.
 -Using scripted triggers to check authority in places that I missed.
