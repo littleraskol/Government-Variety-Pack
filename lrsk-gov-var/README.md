@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.2.1.4 (9/28/24) - Branch Office Events Fix GAIDEN: IIIrd X the Ch∀rm
+-wrong varibale
+
 v6.2.1.3 (9/28/24) - Branch Office Events Fix The Second
 -How long were the on_destroy blocks incrementing the owned building count...!?
 
