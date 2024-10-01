@@ -149,23 +149,21 @@ country_event = {
 
 	immediate = {
 		log = "at trait select gate"
-		IF = { limit = { is_gestalt = yes } 
-			IF = { limit = { has_auth_hive = yes }
-				log = "at hive trait branch gate"
-				country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
-			}
-			ELSE = {
-				log = "at MI trait branch gate"
-				country_event =  { id = lrsk_gov_var_uplift.5 days = 1 }
-			}
+		IF = { limit = { has_auth_hive = yes }
+			country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
+		}
+		ELSE_IF = {
+			limit = { OR = {
+				is_individual_machine = yes
+				has_auth_machine = yes
+			} }
+			country_event =  { id = lrsk_gov_var_uplift.5 days = 1 }
 		}
 		ELSE = {
-			log = "at normal trait branch gate"
 			country_event =  { id = lrsk_gov_var_uplift.6 days = 1 }
 		}
 	}
 }
-
 
 # Hive traits
 country_event = {
