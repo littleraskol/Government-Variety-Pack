@@ -120,5 +120,40 @@ country_event = {
 				}
 			}
 		}
+
+		# Final Check, No Items, Fox Only
+		IF = { limit = { NOT = { owns_any_bypass = wormhole } }
+			capital_scope.solar_system = {
+				random_system = {
+					limit = {
+						#has_natural_wormhole = no	# irrelevant here
+						has_owner = no		# this is MUCH less restrictive...
+						distance = {
+							source = prev
+							min_distance >= 50 # Getting desperate
+						}
+					}
+					spawn_random_home_system = yes # We don't really need a "home" system but...
+					last_created_system = {
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_dest
+						save_event_target_as = lrsk_gvp_fallback_backdoor_dest
+					}
+					prev = { 
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_home
+						link_wormholes = event_target:lrsk_gvp_fallback_backdoor_dest
+					}
+				}
+			}
+		}
 	}
 }
