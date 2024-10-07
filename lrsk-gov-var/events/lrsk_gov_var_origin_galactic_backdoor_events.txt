@@ -40,11 +40,12 @@ planet_event = {
 			add_seen_bypass_type = wormhole
 		}
 		
-		this.solar_system = {
+		solar_system = {
 			random_system = {
 				limit = {
 					NOR = {
 						has_natural_wormhole = yes
+						has_owner = yes
 						starting_system = yes
 						has_star_flag = empire_cluster
 					}
@@ -68,6 +69,116 @@ planet_event = {
 				}
 				set_star_flag = lrsk_gov_var_backdoor_dest
 				link_wormholes = prev
+			}
+		}
+
+		# Double check
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
+				random_system = {
+					limit = {
+						NOR = {
+							has_natural_wormhole = yes
+							has_owner = yes
+							starting_system = yes
+							has_star_flag = empire_cluster
+						}
+						distance = {
+							source = prev
+							min_distance >= 100 # We'd like it farther away ideally, but...
+						}
+					}
+					prev = { 
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_home
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+					set_star_flag = lrsk_gov_var_backdoor_dest
+					link_wormholes = prev
+				}
+			}
+		}
+
+		# Triple check
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
+				random_system = {
+					limit = {
+						has_natural_wormhole = no
+						has_owner = no
+						# No longer care about starting cluster, which is MUCH less restrictive...
+						distance = {
+							source = prev
+							min_distance >= 100 # We'd like it farther away ideally, but...
+						}
+					}
+					prev = { 
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_home
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+					set_star_flag = lrsk_gov_var_backdoor_dest
+					link_wormholes = prev
+				}
+			}
+		}
+
+		# Final Check, No Items, Fox Only
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
+				random_system = {
+					limit = {
+						#has_natural_wormhole = no	# irrelevant here
+						has_owner = no
+						distance = {
+							source = prev
+							min_distance >= 50 # Getting desperate
+						}
+					}
+					set_spawn_system_batch = begin
+					spawn_system = {
+						min_distance = 10
+						max_distance = 30
+						max_jumps = 0
+						hyperlane = yes
+						initializer = random
+					}
+					set_spawn_system_batch = end
+					last_created_system = {
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_dest
+						save_event_target_as = lrsk_gvp_fallback_backdoor_dest
+					}
+					prev = { 
+						spawn_natural_wormhole = {
+							bypass_type = wormhole
+							random_pos = yes
+							orbit_angle = 360
+						}
+						set_star_flag = lrsk_gov_var_backdoor_home
+						link_wormholes = event_target:lrsk_gvp_fallback_backdoor_dest
+					}
+				}
 			}
 		}
 	}
