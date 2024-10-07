@@ -333,6 +333,8 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_uplift.5.d
 		custom_tooltip = lrsk_gov_var_uplift.5.d.tooltip
+		
+		trigger = { has_auth_machine = yes }
 
 		#tooltip = {
 		#	ship_archeaological_site_clues_add = 1
@@ -343,6 +345,26 @@ country_event = {
 
 		hidden_effect = {
 			set_country_flag = lrsk_uplift_mech_4
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	# Individual machines should get the non-gestalt empire bonus option.
+	option = {
+		name = lrsk_gov_var_uplift.6.f
+		custom_tooltip = lrsk_gov_var_uplift.6.f.tooltip
+
+		trigger = { is_individual_machine = yes }
+
+		#tooltip = {
+		#	envoys_add = 1
+		#	country_trust_growth = 0.1
+		#	ship_anomaly_research_speed_mult = 0.15
+		#	science_ship_survey_speed = 0.2
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_6
 			country_event = { id = lrsk_gov_var_uplift.7 }
 		}
 	}
