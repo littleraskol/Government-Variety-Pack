@@ -133,7 +133,15 @@ country_event = {
 							min_distance >= 50 # Getting desperate
 						}
 					}
-					spawn_random_home_system = yes # We don't really need a "home" system but...
+					set_spawn_system_batch = begin
+					spawn_system = {
+						min_distance = 10
+						max_distance = 30
+						max_jumps = 0
+						hyperlane = yes
+						initializer = random
+					}
+					set_spawn_system_batch = end
 					last_created_system = {
 						spawn_natural_wormhole = {
 							bypass_type = wormhole
