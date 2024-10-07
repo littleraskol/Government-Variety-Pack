@@ -258,7 +258,16 @@ country_event = {
 country_event = {
 	id = lrsk_gov_var_uplift.5
 	title = lrsk_gov_var_uplift.5.name
-	desc = lrsk_gov_var_uplift.5.desc
+	# Desc if gestalt machine intelligence
+	desc = {
+		trigger = { has_auth_machine = yes }
+		text = lrsk_gov_var_uplift.5.desc
+	}
+	# Desc if individual machines
+	desc = {
+		trigger = { is_individual_machine = yes }
+		text = lrsk_gov_var_uplift.6.desc
+	}
 	picture = GFX_evt_machine_sapience
 
 	is_triggered_only = yes
