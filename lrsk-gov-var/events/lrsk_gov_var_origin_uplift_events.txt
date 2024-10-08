@@ -884,6 +884,7 @@ country_event = {
 		}
 		overlord = {
 			random_owned_fleet = { limit = { has_fleet_flag = lrsk_uplift_overwatch_fleet@root }
+				IF = { limit = { exists = leader } leader = { unassign_leader = this } }
 				set_owner = event_target:lrsk_uplift_pupil
 			}
 		}
