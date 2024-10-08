@@ -318,31 +318,19 @@ lrsk_uplift_1 = {
 			generate_lost_colony_parent_bonus = yes # just adds stuff, we can use as-is
 
 			solar_system = {
-				if = { limit = { event_target:lrsk_uplift_tutor = { has_ethic = ethic_gestalt_consciousness } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_uplift_tutor
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = anchorage
-							}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_uplift_tutor
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = shipyard
 						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_uplift_tutor
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
+						set_starbase_module = {
+							slot = 2
+							module = anchorage
 						}
 					}
 				}
