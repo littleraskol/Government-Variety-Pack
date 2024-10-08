@@ -772,10 +772,10 @@ country_event = {
 	immediate = {
 		overlord = {
 			save_event_target_as = lrsk_my_uplift_tutor				# Should already be done but can't hurt.
-			random_owned_system = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
+			random_system_within_border = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
 				save_event_target_as = lrsk_uplift_watchpost_star	# This should also already be done, but CWTools complains about it, so...
 			}
-		}	
+		}
 		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
 		set_country_flag = lrsk_uplift_got_system_offer
 		log = "In uplift system offer"
