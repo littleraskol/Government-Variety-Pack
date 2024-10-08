@@ -30,6 +30,9 @@ v6.3 (?/?/24) - Various Fixes and Updates
 -More precise and better restrictions on Fed start partners.
 -No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
 -Uplift tutor and pupil now have starting trust and intel on each other.
+-Uplift not compatible with "Guided Sapience" civics (too powerful).
+-Uplift can't be at all Xenophobic.
+-Fixed various Uplift issues.
 -Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 -Various federation start tweaks.
 

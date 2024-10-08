@@ -549,18 +549,28 @@ lrsk_gov_var_origin_uplift = {
 	possible = {
 		ethics = {
 			NOR = {
-				#value = ethic_gestalt_consciousness
-				#value = ethic_xenophobe
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
 		}
 		civics = {
 			NOR = {
-				#value = civic_fanatic_purifiers
-				value = civic_inwards_perfection
-				value = civic_barbaric_despoilers
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
 				value = civic_hive_devouring_swarm
 				value = civic_machine_terminator
+			}
+			NOR = {
+				text = lrsk_gvp_civic_tooltip_not_guided_sapience
+				value = civic_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+				value = civic_corporate_guided_sapience
+			}
+			NOR = {
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
 				value = civic_machine_assimilator
 				value = civic_machine_servitor
 			}
