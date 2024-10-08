@@ -4,29 +4,29 @@
 
 namespace = lrsk_gov_var_uplift
 
-# Setup flags, event target.
-country_event = {
-	id = lrsk_gov_var_uplift.1
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_origin = lrsk_gov_var_origin_uplift
-	}
-
-	immediate = {
-		log = "at uplift init event"
-		set_country_flag = lrsk_gov_var_uplift_nation
-		set_country_flag = first_contact_event
-		set_country_flag = Story2 # Already encountered spacefarers
-
-		save_event_target_as = lrsk_uplift_pupil
-	}
-}
+## Setup flags, event target.
+#country_event = {
+#	id = lrsk_gov_var_uplift.1
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		has_origin = lrsk_gov_var_origin_uplift
+#	}
+#
+#	immediate = {
+#		log = "at uplift init event"
+#		set_country_flag = lrsk_gov_var_uplift_nation
+#		set_country_flag = first_contact_event
+#		set_country_flag = Story2 # Already encountered spacefarers
+#
+#		save_event_target_as = lrsk_uplift_pupil
+#	}
+#}
 
 # Tutor system finalizations and watchpost system
 country_event = {
-	id = lrsk_gov_var_uplift.2
+	id = lrsk_gov_var_uplift.1
 	hide_window = yes
 	is_triggered_only = yes
 
