@@ -29,6 +29,14 @@ v6.3 (?/?/24) - Various Fixes and Updates
 --Explicitly randomize authority for NPC fed partners.
 --No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
 --Needed special case for Tradeways origins to not force an invalid government when using E&C.
+--Federation start origins give bonus modifiers:
+---For Discovery gets +1 Scientist cap, +15% Scientist XP gain.
+---Diplomatic Directive: Discover gets +1 Scientist initial skill, -33% scientist cost
+---Tradeways gets -5% market fee, +20% diplomatic weight from economy, -10% empire size from colonies
+---Tradeways, Inc. gets +10% branch office value, -25% empire size from branch offices
+---Grand Alliance gets +1 Commander cap, +15% Commander XP gain.
+---Convened by Providence gets +25 edict fund, -15% tradition cost from empire size, +5% unity from jobs
+---This is to maintain parity with Common Ground, which can be used to move to any non-Hegemony federation type but with more cohesion between members.
 --Various other federation start tweaks.
 -Uplift Origin Changes:
 --Uplift tutor and pupil now have starting trust and intel on each other.

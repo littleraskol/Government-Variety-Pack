@@ -124,6 +124,11 @@ lrsk_gov_var_origin_for_discovery = {
 	description = "lrsk_gov_var_origin_tooltip_for_discovery_effects"
 	flags = { custom_start_screen }
 
+	modifier = {
+		country_scientist_cap_add = 1
+		scientist_exp_gain = 0.15
+	}
+
 	traits = {
 	}
 
@@ -159,6 +164,11 @@ lrsk_gov_var_origin_for_discovery_mi = {
 
 	description = "lrsk_gov_var_origin_tooltip_for_discovery_mi_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		scientist_initial_skill = 1
+		leader_scientists_cost_mult = -0.33
+	}
 
 	traits = {
 	}
@@ -270,6 +280,12 @@ lrsk_gov_var_origin_tradeways = {
 	description = "lrsk_gov_var_origin_tooltip_tradeways_effects"
 	flags = { custom_start_screen }
 
+	modifier = {
+		country_trade_fee = -0.05
+		diplo_weight_economy_mult = 0.2
+		empire_size_colonies_mult = -0.1
+	}
+
 	traits = {
 	}
 
@@ -314,6 +330,11 @@ lrsk_gov_var_origin_tradeways_mc = {
 
 	description = "lrsk_gov_var_origin_tooltip_tradeways_mc_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		branch_office_value_mult = 0.1
+		empire_size_branch_office_mult = -0.25
+	}
 
 	traits = {
 	}
@@ -437,6 +458,11 @@ lrsk_gov_var_origin_grand_alliance = {
 	description = "lrsk_gov_var_origin_tooltip_grand_alliance_effects"
 	flags = { custom_start_screen }
 
+	modifier = {
+		country_commander_cap_add = 1
+		commander_exp_gain = 0.15
+	}
+
 	traits = {
 	}
 
@@ -528,6 +554,12 @@ lrsk_gvp_origin_convened_providence = {
 
 	description = "lrsk_gvp_origin_convened_providence_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		country_edict_fund_add = 25
+		tradition_cost_empire_size_mult = -0.15
+		planet_jobs_unity_produces_mult = 0.05
+	}
 
 	traits = {
 	}
