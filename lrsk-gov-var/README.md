@@ -22,19 +22,23 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v6.3 (?/?/24) - Various Fixes and Updates
--Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
--General update of federation start logic to use base game updates.
--Needed special case for Tradeways origins to not force an invalid government when using E&C.
--Explicitly randomize civics as needed when using create_country effect.
--Explicitly randomize authority for NPC fed partners.
--More precise and better restrictions on Fed start partners.
--No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
--Uplift tutor and pupil now have starting trust and intel on each other.
--Uplift not compatible with "Guided Sapience" civics (too powerful).
--Uplift can't be at all Xenophobic.
--Fixed various Uplift issues.
--Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
--Various federation start tweaks.
+-Federation Start Origin Changes:
+--General update of federation start logic to use base game updates.
+--Federation starts generally preclude having "antisocial" civics (defined as: Inward Perfection, Barbaric Despoilers, Driven Assimilators, and Criminal Heritage) - need to be able to play well with others to start in a federation.
+--More precise and better restrictions on Fed start partners.
+--Explicitly randomize authority for NPC fed partners.
+--No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
+--Needed special case for Tradeways origins to not force an invalid government when using E&C.
+--Various other federation start tweaks.
+-Uplift Origin Changes:
+--Uplift tutor and pupil now have starting trust and intel on each other.
+--Uplift not compatible with "Guided Sapience" civics (too powerful/redundant).
+--Uplift can't be at all Xenophobic or have "antisocial" civics (see above).
+--Fixed various Uplift issues.
+-Other changes:
+--Explicitly randomize civics as needed when using create_country effect.
+--Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
+--Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
 
 v6.2.1.5 (10/7/24) - Machine Uplift and Backdoor Backup Plan
 -Restored Uplift origin to machine empires - gestalt and individual.
