@@ -133,7 +133,13 @@ lrsk_gov_var_civic_republicanism = {
         value = auth_oligarchic
       }
     }
-    ethics = { NOT = { value = ethic_authoritarian } }
+    ethics = { 
+      NOR = {
+        text = civic_tooltip_not_authoritarian
+        value = ethic_authoritarian
+        value = ethic_fanatic_authoritarian
+      }
+    }
   }
 
   random_weight = { base = @civic_default_random_weight }
