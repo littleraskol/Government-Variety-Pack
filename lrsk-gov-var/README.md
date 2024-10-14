@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v6.3 (?/?/24) - Various Fixes and Updates
+v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
 --General update of federation start logic to use base game updates.
 --Federation starts generally preclude having "antisocial" civics (defined as: Inward Perfection, Barbaric Despoilers, Driven Assimilators, and Criminal Heritage) - need to be able to play well with others to start in a federation.
