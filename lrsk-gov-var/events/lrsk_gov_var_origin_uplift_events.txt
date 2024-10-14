@@ -4,29 +4,29 @@
 
 namespace = lrsk_gov_var_uplift
 
-# Setup
-country_event = {
-	id = lrsk_gov_var_uplift.1
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_origin = lrsk_gov_var_origin_uplift
-	}
-
-	immediate = {
-		log = "at uplift init event"
-		set_country_flag = lrsk_gov_var_uplift_nation
-		set_country_flag = first_contact_event
-		set_country_flag = Story2 # Already encountered spacefarers
-
-		save_event_target_as = lrsk_uplift_pupil
-	}
-}
+## Setup flags, event target.
+#country_event = {
+#	id = lrsk_gov_var_uplift.1
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		has_origin = lrsk_gov_var_origin_uplift
+#	}
+#
+#	immediate = {
+#		log = "at uplift init event"
+#		set_country_flag = lrsk_gov_var_uplift_nation
+#		set_country_flag = first_contact_event
+#		set_country_flag = Story2 # Already encountered spacefarers
+#
+#		save_event_target_as = lrsk_uplift_pupil
+#	}
+#}
 
 # Tutor system finalizations and watchpost system
 country_event = {
-	id = lrsk_gov_var_uplift.2
+	id = lrsk_gov_var_uplift.1
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -41,7 +41,7 @@ country_event = {
 			limit = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 			save_event_target_as = lrsk_my_uplift_tutor
 			owner_species = { save_event_target_as = lrsk_my_uplift_tutor_species }
-
+			
 			IF = { limit = { owner_species = { is_robotic_species = no } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_colony }
@@ -74,17 +74,17 @@ country_event = {
 					effect = {
 						set_starbase_module = {
 							slot = 1
-							module = shipyard
+							module = missile_battery
 						}
 						set_starbase_module = {
 							slot = 2
-							module = solar_panel_network
+							module = gun_battery
 						}
 					}
 				}
 				star = {
 					save_event_target_as = lrsk_uplift_watchpost_star
-					set_planet_flag = lrsk_uplift_watchpost_system
+					set_planet_flag = lrsk_uplift_watchpost_system@root
 				}
 				create_fleet = {
 					name = "Overwatch Squadron"
@@ -106,7 +106,7 @@ country_event = {
 						}
 					}
 				}
-				last_created_fleet = { save_event_target_as = lrsk_uplift_overwatch_fleet }
+				last_created_fleet = { set_fleet_flag = lrsk_uplift_overwatch_fleet@root }
 
 				event_target:lrsk_my_uplift_tutor = {
 					random_system_within_border = { 
@@ -702,7 +702,6 @@ country_event = {
 		ELSE = {
 			log = "ERROR: Uplift Trait Selector failed to catch valid flag."
 		}
-		
 	}
 }
 
@@ -751,7 +750,12 @@ country_event = {
 	}
 
 	immediate = {
-		overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
+		overlord = {
+			save_event_target_as = lrsk_my_uplift_tutor				# Should already be done but can't hurt.
+			random_system_within_border = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
+				save_event_target_as = lrsk_uplift_watchpost_star	# This should also already be done, but CWTools complains about it, so...
+			}
+		}
 		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
 		set_country_flag = lrsk_uplift_got_system_offer
 		log = "In uplift system offer"
@@ -853,11 +857,17 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		this.capital_scope.solar_system = { closest_system = {
-			limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system } }
-			starbase = { set_owner = event_target:lrsk_uplift_pupil }
-		} }
-		event_target:lrsk_uplift_overwatch_fleet = { set_owner = event_target:lrsk_uplift_pupil }
+		capital_scope.solar_system = {
+			closest_system = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
+				starbase = { set_owner = event_target:lrsk_uplift_pupil }
+			}
+		}
+		overlord = {
+			random_owned_fleet = { limit = { has_fleet_flag = lrsk_uplift_overwatch_fleet@root }
+				IF = { limit = { exists = leader } leader = { unassign_leader = this } }
+				set_owner = event_target:lrsk_uplift_pupil
+			}
+		}
 	}
 }
 

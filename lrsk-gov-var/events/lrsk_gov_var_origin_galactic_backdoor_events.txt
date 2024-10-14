@@ -4,7 +4,7 @@
 
 namespace = lrsk_gov_var_galactic_backdoor
 
-# Sets wormholes to seen, tech progress, and creates wormhole pair.
+# Tech option and progress for Wormhole Stabilization.
 country_event = {
 	id = lrsk_gov_var_galactic_backdoor.1
 	hide_window = yes
@@ -15,17 +15,32 @@ country_event = {
 	}
 
 	immediate = {
-		set_country_flag = lrsk_gov_var_galactic_backdoor_nation
-		
-		set_country_flag = encountered_first_wormhole
-		add_seen_bypass_type = wormhole
 		add_research_option = tech_wormhole_stabilization
 		add_tech_progress = {
 			tech = tech_wormhole_stabilization
 			progress = 0.05
 		}
+	}
+}
 
-		capital_scope.solar_system = {
+# Sets wormholes to seen, and creates wormhole pair.
+planet_event = {
+	id = lrsk_gov_var_galactic_backdoor.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = lrsk_gov_var_galactic_backdoor_nation			
+			set_country_flag = encountered_first_wormhole
+			add_seen_bypass_type = wormhole
+		}
+		
+		solar_system = {
 			random_system = {
 				limit = {
 					NOR = {
@@ -58,8 +73,8 @@ country_event = {
 		}
 
 		# Double check
-		IF = { limit = { NOT = { owns_any_bypass = wormhole } }
-			capital_scope.solar_system = {
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
 				random_system = {
 					limit = {
 						NOR = {
@@ -93,8 +108,8 @@ country_event = {
 		}
 
 		# Triple check
-		IF = { limit = { NOT = { owns_any_bypass = wormhole } }
-			capital_scope.solar_system = {
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
 				random_system = {
 					limit = {
 						has_natural_wormhole = no
@@ -125,8 +140,8 @@ country_event = {
 		}
 
 		# Final Check, No Items, Fox Only
-		IF = { limit = { NOT = { owns_any_bypass = wormhole } }
-			capital_scope.solar_system = {
+		IF = { limit = { NOT = { owner = { owns_any_bypass = wormhole } } }
+			solar_system = {
 				random_system = {
 					limit = {
 						#has_natural_wormhole = no	# irrelevant here

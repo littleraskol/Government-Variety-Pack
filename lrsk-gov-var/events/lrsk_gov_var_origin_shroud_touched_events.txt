@@ -4,7 +4,7 @@
 
 namespace = lrsk_gov_var_shroud_touched
 
-# Sets initial tech progress, planet deposit, and pop traits
+# Sets initial tech progress (Psionic Theory) and flag.
 country_event = {
 	id = lrsk_gov_var_shroud_touched.1
 	hide_window = yes
@@ -22,27 +22,35 @@ country_event = {
 			tech = tech_psionic_theory
 			progress = 0.05
 		}
+	}
+}
 
-		# Tag species as being a shroud-touched origin. Not sure if useful...
-		species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
-		
-		# Randomly sets some to Latent Psionic or to lose Natural Esper
-		every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
+# Sets planet deposit and pop traits.
+planet_event = {
+	id = lrsk_gov_var_shroud_touched.6			# Why is 6 right after 1? To troll my OCD.
+	hide_window = yes
+	is_triggered_only = yes
 
-		capital_scope ={
-			if = {
-				limit = { owner = { has_origin = lrsk_gov_var_origin_shroud_touched } } # probably redundant but eh
+	trigger = {
+		owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+	}
 
-				set_planet_flag = lrsk_gov_var_shroud_touched_capital
+	immediate = {
+		set_planet_flag = lrsk_gov_var_shroud_touched_capital
+		add_deposit = d_lrsk_gov_var_shroud_pockets
 
-				add_deposit = d_lrsk_gov_var_shroud_pockets
+		owner = {
+			# Tag species as being a shroud-touched origin. Not sure if useful...
+			species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
+			
+			# Randomly sets some to Latent Psionic or to lose Natural Esper
+			every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
+
+			# Semi-immediate check that some other mod did not remove the shroud pockets
+			country_event = {
+				id = lrsk_government_variety_pack_backend.2
+				days = 2
 			}
-		}
-
-		# Semi-immediate check that some other mod did not remove the shroud pockets
-		country_event = {
-			id = lrsk_government_variety_pack_backend.2
-			days = 2
 		}
 	}
 }
@@ -191,58 +199,6 @@ country_event = {
 		}
 	}
 }
-
-# Ruler gets normal class trait if one hasn't been assigned - DEPRECATED
-#country_event = {
-#	id = lrsk_gov_var_shroud_touched.6
-#	is_triggered_only = yes
-#	hide_window = yes
-#
-#	trigger = {
-#		from = {
-#			has_ruler_trait = lrsk_gov_var_leader_trait_ruler_esper
-#			NOR = {
-#				has_trait = lrsk_gov_var_leader_trait_admiral_esper
-#				has_trait = lrsk_gov_var_leader_trait_general_esper
-#				has_trait = lrsk_gov_var_leader_trait_governor_esper
-#				has_trait = lrsk_gov_var_leader_trait_scientist_esper
-#				has_trait = leader_trait_admiral_psionic
-#				has_trait = leader_trait_general_psionic
-#				has_trait = leader_trait_governor_psionic
-#				has_trait = leader_trait_scientist_psionic
-#				has_trait = leader_trait_admiral_chosen
-#				has_trait = leader_trait_general_chosen
-#				has_trait = leader_trait_governor_chosen
-#				has_trait = leader_trait_scientist_chosen			
-#			}
-#		}
-#	}
-#
-#	immediate = {
-#		from = {
-#			if = {
-#				limit = { leader_class = admiral }
-#				add_trait_no_notify = lrsk_gov_var_leader_trait_admiral_esper
-#				break = yes
-#			}
-#			if = {
-#				limit = { leader_class = general }
-#				add_trait_no_notify = lrsk_gov_var_leader_trait_general_esper
-#				break = yes
-#			}
-#			if = {
-#				limit = { leader_class = governor }
-#				add_trait_no_notify = lrsk_gov_var_leader_trait_governor_esper
-#				break = yes
-#			}
-#			if = {
-#				limit = { leader_class = scientist }
-#				add_trait_no_notify = lrsk_gov_var_leader_trait_scientist_esper
-#				break = yes
-#			}
-#		}
-#	}
-#}
 
 # Esper leaders can get Psychic trait under some circumstances
 country_event = {

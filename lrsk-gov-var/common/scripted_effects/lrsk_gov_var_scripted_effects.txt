@@ -4,206 +4,236 @@
 
 # Create Tradeways NPC empire w/ Merchant Guilds.
 lrsk_create_tradeways_member_mg = {
-	random_list = {
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_pacifist = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_pacifist }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_pacifist
-					ethic = ethic_fanatic_pacifist
-				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
-				}
+	# Merchant Guilds has strict requirements in E&C that we need to account for.
+	IF = { limit = { has_global_flag = ethic_civic_classic_active }
+		create_country = {
+			name = random
+			name_list = random
+			species = event_target:lrsk_next_fed_planet_species
+			type = default
+			origin = lrsk_gov_var_origin_tradeways_npc
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			authority = random
+			civics = random
+			randomize_ethos = yes
+			ethos = {
+				ethic = ethic_xenophile					# Smooths over lack of specificity
+				ethic = ethic_fanatic_xenophile			# Smooths over lack of specificity
+				ethic = ethic_capitalism				# Needed to avoid nonsense
+				ethic = ethic_fanatic_capitalism		# Needed to avoid nonsense
 			}
 		}
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_materialist = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_materialist }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_materialist
-					ethic = ethic_fanatic_materialist
+	}
+	ELSE = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_pacifist = no }
 				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_pacifist }
 				}
-			}
-		}
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_spiritualist = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_spiritualist }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_spiritualist
-					ethic = ethic_fanatic_spiritualist
-				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_pacifist
+						ethic = ethic_fanatic_pacifist
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
 				}
 			}
-		}
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_militarist = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_militarist }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_militarist
-					ethic = ethic_fanatic_militarist
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_materialist = no }
 				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_materialist }
 				}
-			}
-		}
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_authoritarian = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_authoritarian }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_authoritarian
-					ethic = ethic_fanatic_authoritarian
-				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_materialist
+						ethic = ethic_fanatic_materialist
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
 				}
 			}
-		}
-		1 = {
-			modifier = {
-				factor = 0
-				root = { is_egalitarian = no }
-			}
-			modifier = {
-				factor = 2
-				root = { has_ethic = ethic_fanatic_egalitarian }
-			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				randomize_ethos = yes
-				ethos = {
-					ethic = ethic_xenophile
-					ethic = ethic_egalitarian
-					ethic = ethic_fanatic_egalitarian
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_spiritualist = no }
 				}
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_spiritualist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_spiritualist
+						ethic = ethic_fanatic_spiritualist
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
 				}
 			}
-		}
-		1 = {
-			# This will only happen with mod-added ethics. There's a limit to how much I can accomodate that!
-			modifier = {
-				factor = 0
-				root = { OR = {
-					is_pacifist = yes
-					is_materialist = yes
-					is_spiritualist = yes
-					is_militarist = yes
-					is_authoritarian = yes
-					is_egalitarian = yes
-				} }
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_militarist = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_militarist }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_militarist
+						ethic = ethic_fanatic_militarist
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
+				}
 			}
-			create_country = {
-				name = random
-				name_list = random
-				species = event_target:lrsk_next_fed_planet_species
-				type = default
-				origin = lrsk_gov_var_origin_tradeways_npc
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				ethos = root
-				civics = {
-					civic = civic_merchant_guilds
-					civic = random
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_authoritarian = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_authoritarian }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_authoritarian
+						ethic = ethic_fanatic_authoritarian
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					root = { is_egalitarian = no }
+				}
+				modifier = {
+					factor = 2
+					root = { has_ethic = ethic_fanatic_egalitarian }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_egalitarian
+						ethic = ethic_fanatic_egalitarian
+					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
+				}
+			}
+			1 = {
+				# This will only happen with mod-added ethics. There's a limit to how much I can accommodate that!
+				modifier = {
+					factor = 0
+					root = { OR = {
+						is_pacifist = yes
+						is_materialist = yes
+						is_spiritualist = yes
+						is_militarist = yes
+						is_authoritarian = yes
+						is_egalitarian = yes
+					} }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					ethos = root
+					civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					}
+					authority = random
 				}
 			}
 		}
@@ -435,7 +465,14 @@ lrsk_create_providence_member = {
 		1 = {
 			# Oligarchic
 			modifier = {
-				add = 1
+				factor = 0
+				root = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				add = 2
 				root = { has_auth_oligarchic = yes }
 			}
 			create_country = {
@@ -463,7 +500,7 @@ lrsk_create_providence_member = {
 			}
 			modifier = {
 				add = 1
-				root = { is_authoritarian = yes }
+				root = { has_auth_dictatorial = yes }
 			}
 			create_country = {
 				name_list = random
@@ -490,7 +527,7 @@ lrsk_create_providence_member = {
 			}
 			modifier = {
 				add = 1
-				root = { is_authoritarian = yes }
+				root = { has_auth_imperial = yes }
 			}
 			create_country = {
 				name_list = random
@@ -1113,19 +1150,127 @@ lrsk_remove_existing_rra_modifier = {
 	}
 }
 
-# Base game changed this in 3.9, need my own copy of the old version
+# Need my own version for mod flags, etc
 lrsk_federation_origin_planet_setup = {
-	set_planet_size = 18
-	random_list = {
-		1 = { change_pc = pc_tropical }
-		1 = { change_pc = pc_arid }
-		1 = { change_pc = pc_continental }
-		1 = { change_pc = pc_ocean }
-		1 = { change_pc = pc_tundra }
-		1 = { change_pc = pc_arctic }
-		1 = { change_pc = pc_alpine }
-		1 = { change_pc = pc_savannah }
-		1 = { change_pc = pc_desert }
+	if = {
+		limit = { any_system_planet = { habitable_planet = yes } }
+		random_system_planet = {
+			limit = { habitable_planet = yes }
+			set_planet_size = 18
+			random_list = {
+				1 = { change_pc = pc_tropical }
+				1 = { change_pc = pc_arid }
+				1 = { change_pc = pc_continental }
+				1 = { change_pc = pc_ocean }
+				1 = { change_pc = pc_tundra }
+				1 = { change_pc = pc_arctic }
+				1 = { change_pc = pc_alpine }
+				1 = { change_pc = pc_savannah }
+				1 = { change_pc = pc_desert }
+			}
+			reroll_planet = yes
+			set_planet_flag = lrsk_fed_start_planet
+		}
 	}
-	reroll_planet = yes
+	else = {
+		random_system_planet = {
+			limit = { is_star = no }
+			set_planet_size = 18
+			random_list = {
+				1 = { change_pc = pc_tropical }
+				1 = { change_pc = pc_arid }
+				1 = { change_pc = pc_continental }
+				1 = { change_pc = pc_ocean }
+				1 = { change_pc = pc_tundra }
+				1 = { change_pc = pc_arctic }
+				1 = { change_pc = pc_alpine }
+				1 = { change_pc = pc_savannah }
+				1 = { change_pc = pc_desert }
+			}
+			reroll_planet = yes
+			set_planet_flag = lrsk_fed_start_planet
+		}
+	}
+	add_extra_hyperlane_to_spawned_system_effect = yes
+}
+
+# Handle fed start w/ Selective Kinship civic.
+lrsk_federation_origin_create_kinship_species = {
+	create_species = {
+		name = random
+		class = $CLASS$
+		portrait = random
+		traits = random
+		homeworld = this
+		effect = {
+			save_event_target_as = lrsk_next_fed_planet_species
+		}
+	}
+}
+
+# Final planet and system stuff for fed partner homeworlds/systems
+lrsk_federation_origin_final_steup = {
+	create_colony = {
+		owner = event_target:lrsk_fed_member_$NUM$
+	}
+
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+	event_target:lrsk_fed_member_$NUM$ = {
+		country_event = { id = game_start.8 }
+		give_starting_resources_effect = yes
+	}
+	
+	solar_system = {
+		if = { limit = { event_target:lrsk_fed_member_$NUM$ = { is_gestalt = no } }
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:lrsk_fed_member_$NUM$
+				effect = {
+					set_starbase_module = {
+						slot = 1
+						module = trading_hub
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+				}
+			}
+		}
+		else = {
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:lrsk_fed_member_$NUM$
+				effect = {
+					if = {
+						limit = {
+							event_target:lrsk_fed_member_$NUM$ = {
+								has_valid_civic = civic_machine_astromining_drones
+							}	
+						}
+						set_starbase_module = {
+							slot = 1
+							module = astromining_bay
+						}
+					}
+					else = {
+						set_starbase_module = {
+							slot = 1
+							module = solar_panel_network
+						}
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+				}
+			}
+		}
+	}
 }

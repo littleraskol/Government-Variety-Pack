@@ -26,6 +26,33 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Updated compat version number.
 -Fixed some typos.
 
+v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
+-Federation Start Origin Changes:
+--General update of federation start logic to use base game updates.
+--Federation starts generally preclude having "antisocial" civics (defined as: Inward Perfection, Barbaric Despoilers, Driven Assimilators, and Criminal Heritage) - need to be able to play well with others to start in a federation.
+--More precise and better restrictions on Fed start partners.
+--Explicitly randomize authority for NPC fed partners.
+--No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
+--Needed special case for Tradeways origins to not force an invalid government when using E&C.
+--Federation start origins give bonus modifiers:
+---For Discovery gets +1 Scientist cap, +15% Scientist XP gain.
+---Diplomatic Directive: Discover gets +1 Scientist initial skill, -33% scientist cost
+---Tradeways gets -5% market fee, +20% diplomatic weight from economy, -10% empire size from colonies
+---Tradeways, Inc. gets +10% branch office value, -25% empire size from branch offices
+---Grand Alliance gets +1 Commander cap, +15% Commander XP gain.
+---Convened by Providence gets +25 edict fund, -15% tradition cost from empire size, +5% unity from jobs
+---This is to maintain parity with Common Ground, which can be used to move to any non-Hegemony federation type but with more cohesion between members.
+--Various other federation start tweaks.
+-Uplift Origin Changes:
+--Uplift tutor and pupil now have starting trust and intel on each other.
+--Uplift not compatible with "Guided Sapience" civics (too powerful/redundant).
+--Uplift can't be at all Xenophobic or have "antisocial" civics (see above).
+--Fixed various Uplift issues.
+-Other changes:
+--Explicitly randomize civics as needed when using create_country effect.
+--Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
+--Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
+
 v6.2.1.5 (10/7/24) - Machine Uplift and Backdoor Backup Plan
 -Restored Uplift origin to machine empires - gestalt and individual.
 --This was only removed while I figured out how to update the origin for individual machines, which I have finally done.
