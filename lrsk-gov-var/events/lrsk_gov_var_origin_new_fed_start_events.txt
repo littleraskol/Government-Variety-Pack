@@ -11,6 +11,17 @@ country_event = {
 
 	is_triggered_only = yes
 
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+			has_origin = lrsk_gov_var_origin_grand_alliance
+			has_origin = lrsk_gvp_origin_convened_providence
+		}
+	}
+
 	immediate = {
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
@@ -25,16 +36,30 @@ country_event = {
 						limit = { has_star_flag = neighbor_t1_first_colony }
 						random_system_planet = {
 							limit = { has_planet_flag = prescripted_ideal }
-							save_event_target_as = lrsk_fed_planet_1
+							change_pc = pc_barren
+						}
+						spawn_random_home_system = yes
+						last_created_system = {
 							lrsk_federation_origin_planet_setup = yes
+							random_system_planet = {
+								limit = { has_planet_flag = lrsk_fed_start_planet }
+								save_event_target_as = lrsk_fed_planet_1
+							}
 						}
 					}
 					closest_system = {
 						limit = { has_star_flag = neighbor_t2_second_colony }
 						random_system_planet = {
 							limit = { has_planet_flag = prescripted_ideal }
-							save_event_target_as = lrsk_fed_planet_2
+							change_pc = pc_barren
+						}
+						spawn_random_home_system = yes
+						last_created_system = {
 							lrsk_federation_origin_planet_setup = yes
+							random_system_planet = {
+								limit = { has_planet_flag = lrsk_fed_start_planet }
+								save_event_target_as = lrsk_fed_planet_2
+							}
 						}
 					}
 				}
@@ -48,41 +73,28 @@ country_event = {
 						limit = { has_star_flag = neighbor_t1_first_colony }
 						random_system_planet = {
 							limit = { has_planet_flag = prescripted_ideal }
-							save_event_target_as = lrsk_fed_planet_1
+							change_pc = pc_barren
+						}
+						spawn_random_home_system = yes
+						last_created_system = {
 							lrsk_federation_origin_planet_setup = yes
+							random_system_planet = {
+								limit = { has_planet_flag = lrsk_fed_start_planet }
+								save_event_target_as = lrsk_fed_planet_1
+							}
 						}
 					}
 					closest_system = {
 						limit = { 
 							NOT = { has_star_flag = neighbor_t1_first_colony }
 							lrsk_system_vacant = yes
-							any_system_planet = {
-								is_ringworld = no
-								is_asteroid = no
-								is_star = no
-								is_moon = no
-							}
 						}
-						if = {
-							limit = {
-								any_system_planet = { habitable_planet = yes }
-							}
+						spawn_random_home_system = yes
+						last_created_system = {
+							lrsk_federation_origin_planet_setup = yes
 							random_system_planet = {
-								limit = { habitable_planet = yes }
+								limit = { has_planet_flag = lrsk_fed_start_planet }
 								save_event_target_as = lrsk_fed_planet_2
-								set_planet_size = 16
-							}
-						}
-						else = {
-							random_system_planet = {
-								limit = {
-									is_ringworld = no
-									is_asteroid = no
-									is_star = no
-									is_moon = no
-								}
-								save_event_target_as = lrsk_fed_planet_2
-								lrsk_federation_origin_planet_setup = yes
 							}
 						}
 					}
@@ -96,26 +108,12 @@ country_event = {
 					closest_system = {
 						limit = { lrsk_system_vacant = yes }
 						set_star_flag = lrsk_fed_origin_system_1
-						if = {
-							limit = {
-								any_system_planet = { habitable_planet = yes }
-							}
+						spawn_random_home_system = yes
+						last_created_system = {
+							lrsk_federation_origin_planet_setup = yes
 							random_system_planet = {
-								limit = { habitable_planet = yes }
+								limit = { has_planet_flag = lrsk_fed_start_planet }
 								save_event_target_as = lrsk_fed_planet_1
-								set_planet_size = 16
-							}
-						}
-						else = {
-							random_system_planet = {
-								limit = {
-									is_ringworld = no
-									is_asteroid = no
-									is_star = no
-									is_moon = no
-								}
-								save_event_target_as = lrsk_fed_planet_1
-								lrsk_federation_origin_planet_setup = yes
 							}
 						}
 					}
@@ -123,33 +121,13 @@ country_event = {
 						limit = { 
 							NOT = { has_star_flag = lrsk_fed_origin_system_1 }
 							lrsk_system_vacant = yes
-							any_system_planet = {
-								is_ringworld = no
-								is_asteroid = no
-								is_star = no
-								is_moon = no
-							}
 						}
-						if = {
-							limit = {
-								any_system_planet = { habitable_planet = yes }
-							}
+						spawn_random_home_system = yes
+						last_created_system = {
+							lrsk_federation_origin_planet_setup = yes
 							random_system_planet = {
-								limit = { habitable_planet = yes }
+								limit = { has_planet_flag = lrsk_fed_start_planet }
 								save_event_target_as = lrsk_fed_planet_2
-								set_planet_size = 16
-							}
-						}
-						else = {
-							random_system_planet = {
-								limit = {
-									is_ringworld = no
-									is_asteroid = no
-									is_star = no
-									is_moon = no
-								}
-								save_event_target_as = lrsk_fed_planet_2
-								lrsk_federation_origin_planet_setup = yes
 							}
 						}
 					}
@@ -160,14 +138,37 @@ country_event = {
 		# First Member
 		event_target:lrsk_fed_planet_1 = {
 			solar_system = { generate_home_system_resources = yes }
-			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = lrsk_next_fed_planet_species
+			if = {
+				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				create_species = {
+					name = random
+					class = random_non_machine
+					portrait = random
+					traits = random
+					homeworld = this
+					effect = {
+						save_event_target_as = lrsk_next_fed_planet_species
+					}
+				}
+			}
+			else = {
+				root = {
+					switch = {
+						trigger = is_species_class
+						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
+						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
+						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
+						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
+						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
+						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
+						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+					}
 				}
 			}
 			if = {
@@ -177,6 +178,10 @@ country_event = {
 						modifier = {
 							factor = 2
 							root = { has_origin = lrsk_gov_var_origin_for_discovery_mi }
+						}
+						modifier = {
+							factor = 0
+							root = { has_valid_civic = civic_selective_kinship }
 						}
 						create_species = {
 							name = random
@@ -191,96 +196,22 @@ country_event = {
 								save_event_target_as = lrsk_next_fed_planet_species
 							}
 						}
-						#Need to use this semi-random selection to exclude some of the less savory options...
-						random_list = {
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_introspective
-										civic = civic_machine_delegated_functions
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_1
-										establish_communications_no_message = root
-									}
-								}
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = {
+								ethic = ethic_gestalt_consciousness
 							}
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_predictive_analysis
-										civic = civic_machine_delegated_functions
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_1
-										establish_communications_no_message = root
-									}
-								}
+							authority = auth_machine_intelligence
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_1
+								establish_communications_no_message = root
 							}
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_introspective
-										civic = civic_machine_predictive_analysis
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_1
-										establish_communications_no_message = root
-									}
-								}
-							}
-							#1 = {
-							#	create_country = {
-							#		name_list = random
-							#		species = event_target:lrsk_next_fed_planet_species
-							#		type = default
-							#		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-							#		ignore_initial_colony_error = yes
-							#		day_zero_contact = no
-							#		ethos = {
-							#			ethic = ethic_gestalt_consciousness
-							#		}
-							#		authority = auth_machine_intelligence
-							#		civics = {
-							#			civic = civic_machine_servitor
-							#			civic = random
-							#		}
-							#		effect = {
-							#			save_event_target_as = lrsk_fed_member_1
-							#			establish_communications_no_message = root
-							#		}
-							#	}
-							#}
 						}
 					}
 					80 = {
@@ -301,6 +232,8 @@ country_event = {
 								ethic = "ethic_materialist"
 								ethic = "ethic_fanatic_materialist"
 							}
+							authority = random
+							civics = random
 							effect = {
 								save_event_target_as = lrsk_fed_member_1
 								establish_communications_no_message = root
@@ -347,6 +280,8 @@ country_event = {
 						ethic = "ethic_militarist"
 						ethic = "ethic_fanatic_militarist"
 					}
+					authority = random
+					civics = random
 					effect = {
 						save_event_target_as = lrsk_fed_member_1
 						establish_communications_no_message = root
@@ -361,56 +296,44 @@ country_event = {
 					establish_communications_no_message = root
 				}
 			}
-			create_colony = {
-				owner = event_target:lrsk_fed_member_1
-			}
 
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			solar_system = {
-				if = { limit = { event_target:lrsk_fed_member_1 = { is_gestalt = yes } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_1
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
-						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_1
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = trading_hub
-							}
-						}
-					}
-				}
-			}
+			lrsk_federation_origin_final_steup = { NUM = 1 }
 		}
 
 		# Second Member
 		event_target:lrsk_fed_planet_2 = {
 			solar_system = { generate_home_system_resources = yes }
-			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = lrsk_next_fed_planet_species
+			if = {
+				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				create_species = {
+					name = random
+					class = random_non_machine
+					portrait = random
+					traits = random
+					homeworld = this
+					effect = {
+						save_event_target_as = lrsk_next_fed_planet_species
+					}
+				}
+			}
+			else = {
+				root = {
+					switch = {
+						trigger = is_species_class
+						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
+						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
+						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
+						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
+						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
+						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
+						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+					}
 				}
 			}
 			if = {
@@ -421,6 +344,10 @@ country_event = {
 							factor = 0.5
 							event_target:lrsk_fed_member_1 = { has_auth_machine = yes }
 							root = { NOT = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
+						}
+						modifier = {
+							factor = 0
+							root = { has_valid_civic = civic_selective_kinship }
 						}
 						create_species = {
 							name = random
@@ -435,96 +362,22 @@ country_event = {
 								save_event_target_as = lrsk_next_fed_planet_species
 							}
 						}
-						#Need to use this semi-random selection to exclude some of the less savory options...
-						random_list = {
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_introspective
-										civic = civic_machine_delegated_functions
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_2
-										establish_communications_no_message = root
-									}
-								}
+						create_country = {
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							ethos = {
+								ethic = ethic_gestalt_consciousness
 							}
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_predictive_analysis
-										civic = civic_machine_delegated_functions
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_2
-										establish_communications_no_message = root
-									}
-								}
+							authority = auth_machine_intelligence
+							civics = random
+							effect = {
+								save_event_target_as = lrsk_fed_member_2
+								establish_communications_no_message = root
 							}
-							1 = {
-								create_country = {
-									name_list = random
-									species = event_target:lrsk_next_fed_planet_species
-									type = default
-									origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_gestalt_consciousness
-									}
-									authority = auth_machine_intelligence
-									civics = {
-										civic = civic_machine_introspective
-										civic = civic_machine_predictive_analysis
-									}
-									effect = {
-										save_event_target_as = lrsk_fed_member_2
-										establish_communications_no_message = root
-									}
-								}
-							}
-							#1 = {
-							#	create_country = {
-							#		name_list = random
-							#		species = event_target:lrsk_next_fed_planet_species
-							#		type = default
-							#		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
-							#		ignore_initial_colony_error = yes
-							#		day_zero_contact = no
-							#		ethos = {
-							#			ethic = ethic_gestalt_consciousness
-							#		}
-							#		authority = auth_machine_intelligence
-							#		civics = {
-							#			civic = civic_machine_servitor
-							#			civic = random
-							#		}
-							#		effect = {
-							#			save_event_target_as = lrsk_fed_member_2
-							#			establish_communications_no_message = root
-							#		}
-							#	}
-							#}
 						}
 					}
 					80 = {
@@ -540,13 +393,14 @@ country_event = {
 							origin = "lrsk_gov_var_origin_for_discovery_npc"
 							ignore_initial_colony_error = yes
 							day_zero_contact = no
-							authority = random
 							randomize_ethos = yes
 							ethos = {
 								ethic = "ethic_xenophile"
 								ethic = "ethic_materialist"
 								ethic = "ethic_fanatic_materialist"
 							}
+							authority = random
+							civics = random
 							effect = {
 								save_event_target_as = lrsk_fed_member_2
 								establish_communications_no_message = root
@@ -595,13 +449,14 @@ country_event = {
 					origin = "lrsk_gov_var_origin_grand_alliance_npc"
 					ignore_initial_colony_error = yes
 					day_zero_contact = no
-					authority = random
 					randomize_ethos = yes
 					ethos = {
 						ethic = "ethic_xenophile"
 						ethic = "ethic_militarist"
 						ethic = "ethic_fanatic_militarist"
 					}
+					authority = random
+					civics = random
 					effect = {
 						save_event_target_as = lrsk_fed_member_2
 						establish_communications_no_message = root
@@ -616,48 +471,15 @@ country_event = {
 					establish_communications_no_message = root
 				}
 			}
-			create_colony = {
-				owner = event_target:lrsk_fed_member_2
-			}
 
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			solar_system = {
-				if = { limit = { event_target:lrsk_fed_member_2 = { is_gestalt = yes } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_2
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
-						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_fed_member_2
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = trading_hub
-							}
-						}
-					}
-				}
-			}
+			lrsk_federation_origin_final_steup = { NUM = 2 }
 		}
+		
 		event_target:lrsk_fed_member_1 = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
 			join_alliance = { who = root override_requirements = yes }
 			set_name = random # Fixes some naming issues
 		}
@@ -665,6 +487,7 @@ country_event = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
 			join_alliance = { who = root override_requirements = yes }
 			set_name = random # Fixes some naming issues
 		}
@@ -706,11 +529,11 @@ country_event = {
 				modifier = opinion_lrsk_gov_var_new_feds
 			}
 			add_trust = {
-				amount = 50
+				amount = 25
 				who = root
 			}
 			add_trust = {
-				amount = 50
+				amount = 25
 				who = event_target:lrsk_fed_member_2
 			}
 			add_intel = {
@@ -728,11 +551,11 @@ country_event = {
 				modifier = opinion_lrsk_gov_var_new_feds
 			}
 			add_trust = {
-				amount = 50
+				amount = 25
 				who = root
 			}
 			add_trust = {
-				amount = 50
+				amount = 25
 				who = event_target:lrsk_fed_member_1
 			}
 			add_intel = {
@@ -753,11 +576,11 @@ country_event = {
 			modifier = opinion_lrsk_gov_var_new_feds
 		}
 		add_trust = {
-			amount = 50
+			amount = 25
 			who = event_target:lrsk_fed_member_1
 		}
 		add_trust = {
-			amount = 50
+			amount = 25
 			who = event_target:lrsk_fed_member_2
 		}
 		add_intel = {
