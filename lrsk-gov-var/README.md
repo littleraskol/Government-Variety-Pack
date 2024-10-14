@@ -25,7 +25,6 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Fixed what was needed for compatibility with Stellaris 3.14 (Circinus).
 -Updated compat version number.
 -Fixed some typos.
--Deprecating federation origins: The Common Ground origin is flexible enough to accommodate all these options. Not having to keep these updated will free up effort for other things.
 
 v6.2.1.4 (9/28/24) - Branch Office Events Fix GAIDEN: IIIrd X the Ch∀rm
 -wrong varibale

@@ -95,10 +95,8 @@ lrsk_gov_var_origin_for_discovery = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gov_var_origin_for_discovery } }
 
 	possible = {
 		ethics = {
@@ -128,7 +126,11 @@ lrsk_gov_var_origin_for_discovery = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 4
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -140,10 +142,8 @@ lrsk_gov_var_origin_for_discovery_mi = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gov_var_origin_for_discovery_mi } }
 
 	possible = {
 		authority = { value = auth_machine_intelligence }
@@ -162,7 +162,11 @@ lrsk_gov_var_origin_for_discovery_mi = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 1
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -233,10 +237,8 @@ lrsk_gov_var_origin_tradeways = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gov_var_origin_tradeways } }
 
 	possible = {
 		ethics = {
@@ -263,7 +265,11 @@ lrsk_gov_var_origin_tradeways = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 2
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -275,10 +281,8 @@ lrsk_gov_var_origin_tradeways_mc = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gov_var_origin_tradeways_mc } }
 
 	possible = {
 		authority = { value = auth_corporate }
@@ -297,7 +301,11 @@ lrsk_gov_var_origin_tradeways_mc = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 3
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -375,10 +383,8 @@ lrsk_gov_var_origin_grand_alliance = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gov_var_origin_grand_alliance } }
 
 	possible = {
 		ethics = {
@@ -407,7 +413,11 @@ lrsk_gov_var_origin_grand_alliance = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -453,10 +463,8 @@ lrsk_gvp_origin_convened_providence = {
 	max_once_global = yes
 
 	playable = {
-		always = no # Deprecated.
+		host_has_dlc = "Federations"
 	}
-
-	potential = { origin = { value = lrsk_gvp_origin_convened_providence } }
 
 	possible = {
 		ethics = {
@@ -487,7 +495,11 @@ lrsk_gvp_origin_convened_providence = {
 	}
 
 	random_weight = {
-		base = 0
+		base = 5
+		modifier = {
+			factor = 0
+			has_global_flag = game_started
+		}
 	}
 }
 
@@ -551,10 +563,7 @@ lrsk_gov_var_origin_uplift = {
 				value = civic_machine_servitor
 			}
 		}
-		species_archetype = { NOT = { value = MACHINE } }
 	}
-
-	blocks_random_machine_empire_generation	= yes
 
 	description = "lrsk_gov_var_origin_tooltip_uplift_effects"
 	flags = { custom_start_screen }
