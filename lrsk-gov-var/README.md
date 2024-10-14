@@ -25,6 +25,7 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Fixed what was needed for compatibility with Stellaris 3.14 (Circinus).
 -Updated compat version number.
 -Fixed some typos.
+-Improved tooltip readability.
 
 v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
