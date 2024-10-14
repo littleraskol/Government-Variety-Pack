@@ -26,6 +26,12 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Updated compat version number.
 -Fixed some typos.
 
+v6.2.1.5 (10/7/24) - Machine Uplift and Backdoor Backup Plan
+-Restored Uplift origin to machine empires - gestalt and individual.
+--This was only removed while I figured out how to update the origin for individual machines, which I have finally done.
+-Checked to make sure Galactic Backdoor has a wormhole, makes one if not.
+--Sometimes found that this origin didn't start with a wormhole, so added several fallbacks attempts with much less strict requirements.
+
 v6.2.1.4 (9/28/24) - Branch Office Events Fix GAIDEN: IIIrd X the Ch∀rm
 -wrong varibale
 
