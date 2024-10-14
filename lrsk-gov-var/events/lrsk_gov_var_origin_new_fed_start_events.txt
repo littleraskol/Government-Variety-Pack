@@ -255,7 +255,12 @@ country_event = {
 					70 = {
 						modifier = {
 							factor = 0
-							root = { has_auth_corporate = yes }
+							root = { 
+								OR = {
+									has_valid_civic = civic_corporate_dominion
+									has_auth_corporate = yes
+								}
+							}
 						}	
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {
@@ -430,7 +435,12 @@ country_event = {
 						}
 						modifier = {
 							factor = 0
-							root = { has_auth_corporate = yes }
+							root = { 
+								OR = {
+									has_valid_civic = civic_corporate_dominion
+									has_auth_corporate = yes
+								}
+							}
 						}					
 						lrsk_create_tradeways_member_mc = yes
 						last_created_country = {
