@@ -427,16 +427,7 @@ lrsk_gov_var_civic_workers_councils = {
     }
   }
 
-  random_weight = {
-    base = @civic_default_random_weight
-    modifier = {
-      factor = 0
-      OR = {
-        has_ethic = ethic_capitalism
-        has_ethic = ethic_fanatic_capitalism
-      }
-    }
-  }
+  random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
