@@ -335,6 +335,316 @@ lrsk_create_providence_member = {
 	}
 }
 
+# Create For Discovery/Diplo:Discover NPC empire (Machine Intelligence).
+lrsk_create_discovery_mi_member = {
+	create_species = {
+		name = random
+		class = MACHINE # MIs allowed in RCs
+		portrait = random
+		traits = {
+			trait = trait_machine_unit
+			trait = random_traits
+		}
+		homeworld = this
+		effect = {
+			save_event_target_as = lrsk_next_fed_planet_species
+		}
+	}
+	create_country = {
+		name_list = random
+		species = event_target:lrsk_next_fed_planet_species
+		type = default
+		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+		ignore_initial_colony_error = yes
+		day_zero_contact = no
+		ethos = {
+			ethic = ethic_gestalt_consciousness
+		}
+		authority = auth_machine_intelligence
+		civics = random
+	}
+}
+
+# Create For Discovery/Diplo:Discover NPC empire (Singleton).
+lrsk_create_discovery_si_member = {
+	random_list = {
+		1 = {
+			# Democratic
+			modifier = {
+				factor = 0
+				root = { is_authoritarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_democratic = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				authority = auth_democratic
+				civics = random
+			}
+		}
+		1 = {
+			# Oligarchic
+			modifier = {
+				factor = 0
+				root = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				add = 2
+				root = { has_auth_oligarchic = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				authority = auth_oligarchic
+				civics = random
+			}
+		}
+		1 = {
+			# Dictatorial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_dictatorial = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				authority = auth_dictatorial
+				civics = random
+			}
+		}
+		1 = {
+			# Imperial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_imperial = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				authority = auth_imperial
+				civics = random
+			}
+		}
+		1 = {
+			# Megacorp
+			modifier = {
+				factor = 0
+				root = { has_auth_corporate = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_materialist"
+					ethic = "ethic_fanatic_materialist"
+				}
+				authority = auth_corporate
+				civics = random
+			}
+		}
+	}
+}
+
+# Create For Grand Alliance NPC empire.
+lrsk_create_grand_alliance_member = {
+	random_list = {
+		1 = {
+			# Democratic
+			modifier = {
+				factor = 0
+				root = { is_authoritarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_democratic = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				authority = auth_democratic
+				civics = random
+			}
+		}
+		1 = {
+			# Oligarchic
+			modifier = {
+				factor = 0
+				root = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			modifier = {
+				add = 2
+				root = { has_auth_oligarchic = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				authority = auth_oligarchic
+				civics = random
+			}
+		}
+		1 = {
+			# Dictatorial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_dictatorial = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				authority = auth_dictatorial
+				civics = random
+			}
+		}
+		1 = {
+			# Imperial
+			modifier = {
+				factor = 0
+				root = { is_egalitarian = yes }
+			}
+			modifier = {
+				add = 1
+				root = { has_auth_imperial = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				authority = auth_imperial
+				civics = random
+			}
+		}
+		1 = {
+			# Megacorp
+			modifier = {
+				factor = 0
+				root = { has_auth_corporate = yes }
+			}
+			create_country = {
+				name_list = random
+				species = event_target:lrsk_next_fed_planet_species
+				type = default
+				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				randomize_ethos = yes
+				ethos = {
+					ethic = "ethic_xenophile"
+					ethic = "ethic_militarist"
+					ethic = "ethic_fanatic_militarist"
+				}
+				authority = auth_corporate
+				civics = random
+			}
+		}
+	}
+}
+
 # Create Tradeways NPC empire w/ Merchant Guilds.
 lrsk_create_tradeways_member_mg = {
 	IF = { limit = { NOT = { has_global_flag = ethic_civic_classic_active } }
