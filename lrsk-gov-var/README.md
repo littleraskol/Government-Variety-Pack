@@ -27,7 +27,8 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Fixed some typos.
 -Improved tooltip readability.
 -Tradeways now available to players without the Megacorp DLC so long as they have Merchant Guilds civic OR the Corporate Dominion civic (long overdue fix to an oversight that probably affected no one...)
--Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields.
+-NPC versions of Grand Alliance, For Discovery, and Convened by Providence now require same ethics as player versions.
+-Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields. Might increase it more later based on feedback...
 
 v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
