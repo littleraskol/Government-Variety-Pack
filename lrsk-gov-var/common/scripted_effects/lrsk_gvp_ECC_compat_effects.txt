@@ -164,7 +164,7 @@ lrsk_create_tradeways_member_mc = {
 			}
 		}
 		1 = {
-			# This will only happen with mod-added ethics. There's a limit to how much I can accomodate that!
+			# This will catch a Xenophile player or players with mod-added ethics.
 			modifier = {
 				factor = 0
 				root = { OR = {
@@ -199,137 +199,134 @@ lrsk_create_tradeways_member_mc = {
 lrsk_create_providence_member = {
 	random_list = {
 		1 = {
-			# Democratic
 			modifier = {
 				factor = 0
-				root = { is_authoritarian = yes }
+				root = { is_pacifist = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_democratic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_pacifist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gvp_origin_convened_providence_npc"
+				origin = lrsk_gvp_origin_convened_providence_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
+					ethic = ethic_xenophile
+					ethic = ethic_pacifist
+					ethic = ethic_fanatic_pacifist
 				}
-				authority = auth_democratic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Oligarchic
 			modifier = {
 				factor = 0
-				root = {
-					has_ethic = ethic_fanatic_authoritarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				root = { is_militarist = no }
 			}
 			modifier = {
-				add = 2
-				root = { has_auth_oligarchic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_militarist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gvp_origin_convened_providence_npc"
+				origin = lrsk_gvp_origin_convened_providence_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
+					ethic = ethic_xenophile
+					ethic = ethic_militarist
+					ethic = ethic_fanatic_militarist
 				}
-				authority = auth_oligarchic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Dictatorial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_authoritarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_dictatorial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_authoritarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gvp_origin_convened_providence_npc"
+				origin = lrsk_gvp_origin_convened_providence_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
+					ethic = ethic_xenophile
+					ethic = ethic_authoritarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_dictatorial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Imperial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_egalitarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_imperial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_egalitarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gvp_origin_convened_providence_npc"
+				origin = lrsk_gvp_origin_convened_providence_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
+					ethic = ethic_xenophile
+					ethic = ethic_egalitarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_imperial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Megacorp
+			# This will catch a Xenophile player or players with mod-added ethics.
 			modifier = {
 				factor = 0
-				root = { has_auth_corporate = yes }
+				root = { OR = {
+					is_pacifist = yes
+					is_militarist = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+				} }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gvp_origin_convened_providence_npc"
+				origin = lrsk_gvp_origin_convened_providence_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_fanatic_spiritualist"
+					ethic = ethic_xenophile
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_corporate
 				civics = random
+				authority = random
 			}
 		}
 	}
@@ -369,137 +366,134 @@ lrsk_create_discovery_mi_member = {
 lrsk_create_discovery_si_member = {
 	random_list = {
 		1 = {
-			# Democratic
 			modifier = {
 				factor = 0
-				root = { is_authoritarian = yes }
+				root = { is_pacifist = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_democratic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_pacifist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				origin = lrsk_gov_var_origin_for_discovery_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
+					ethic = ethic_xenophile
+					ethic = ethic_pacifist
+					ethic = ethic_fanatic_pacifist
 				}
-				authority = auth_democratic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Oligarchic
 			modifier = {
 				factor = 0
-				root = {
-					has_ethic = ethic_fanatic_authoritarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				root = { is_militarist = no }
 			}
 			modifier = {
-				add = 2
-				root = { has_auth_oligarchic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_militarist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				origin = lrsk_gov_var_origin_for_discovery_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
+					ethic = ethic_xenophile
+					ethic = ethic_militarist
+					ethic = ethic_fanatic_militarist
 				}
-				authority = auth_oligarchic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Dictatorial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_authoritarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_dictatorial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_authoritarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				origin = lrsk_gov_var_origin_for_discovery_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
+					ethic = ethic_xenophile
+					ethic = ethic_authoritarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_dictatorial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Imperial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_egalitarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_imperial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_egalitarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				origin = lrsk_gov_var_origin_for_discovery_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
+					ethic = ethic_xenophile
+					ethic = ethic_egalitarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_imperial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Megacorp
+			# This will catch a Xenophile player or players with mod-added ethics.
 			modifier = {
 				factor = 0
-				root = { has_auth_corporate = yes }
+				root = { OR = {
+					is_pacifist = yes
+					is_militarist = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+				} }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_for_discovery_npc"
+				origin = lrsk_gov_var_origin_for_discovery_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_materialist"
-					ethic = "ethic_fanatic_materialist"
+					ethic = ethic_xenophile
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_corporate
 				civics = random
+				authority = random
 			}
 		}
 	}
@@ -509,137 +503,134 @@ lrsk_create_discovery_si_member = {
 lrsk_create_grand_alliance_member = {
 	random_list = {
 		1 = {
-			# Democratic
 			modifier = {
 				factor = 0
-				root = { is_authoritarian = yes }
+				root = { is_materialist = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_democratic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_materialist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				origin = lrsk_gov_var_origin_grand_alliance_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
+					ethic = ethic_xenophile
+					ethic = ethic_materialist
+					ethic = ethic_fanatic_materialist
 				}
-				authority = auth_democratic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Oligarchic
 			modifier = {
 				factor = 0
-				root = {
-					has_ethic = ethic_fanatic_authoritarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				root = { is_spiritualist = no }
 			}
 			modifier = {
-				add = 2
-				root = { has_auth_oligarchic = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_spiritualist }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				origin = lrsk_gov_var_origin_grand_alliance_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
+					ethic = ethic_xenophile
+					ethic = ethic_spiritualist
+					ethic = ethic_fanatic_spiritualist
 				}
-				authority = auth_oligarchic
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Dictatorial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_authoritarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_dictatorial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_authoritarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				origin = lrsk_gov_var_origin_grand_alliance_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
+					ethic = ethic_xenophile
+					ethic = ethic_authoritarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_dictatorial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Imperial
 			modifier = {
 				factor = 0
-				root = { is_egalitarian = yes }
+				root = { is_egalitarian = no }
 			}
 			modifier = {
-				add = 1
-				root = { has_auth_imperial = yes }
+				factor = 2
+				root = { has_ethic = ethic_fanatic_egalitarian }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				origin = lrsk_gov_var_origin_grand_alliance_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
+					ethic = ethic_xenophile
+					ethic = ethic_egalitarian
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_imperial
 				civics = random
+				authority = random
 			}
 		}
 		1 = {
-			# Megacorp
+			# This will catch a Xenophile player or players with mod-added ethics.
 			modifier = {
 				factor = 0
-				root = { has_auth_corporate = yes }
+				root = { OR = {
+					is_materialist = yes
+					is_spiritualist = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+				} }
 			}
 			create_country = {
 				name_list = random
 				species = event_target:lrsk_next_fed_planet_species
 				type = default
-				origin = "lrsk_gov_var_origin_grand_alliance_npc"
+				origin = lrsk_gov_var_origin_grand_alliance_npc
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_xenophile"
-					ethic = "ethic_militarist"
-					ethic = "ethic_fanatic_militarist"
+					ethic = ethic_xenophile
+					ethic = ethic_fanatic_xenophile
 				}
-				authority = auth_corporate
 				civics = random
+				authority = random
 			}
 		}
 	}
@@ -830,7 +821,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 			}
 			1 = {
-				# This will only happen with mod-added ethics. There's a limit to how much I can accommodate that!
+				## This will catch a Xenophile player or players with mod-added ethics.
 				modifier = {
 					factor = 0
 					root = { OR = {
