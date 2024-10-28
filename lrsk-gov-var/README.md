@@ -32,6 +32,7 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Added final check to make sure player megacorps don't end up with megacorp fed partners.
 -Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields. Might increase it more later based on feedback...
 -Removed all "ECC built-in compatibility" as it turns out it didn't work. A patch will be forthcoming, but the main goal now is just making the mod "safe" to use with Ethics and Civics Classic.
+-Supremacist Demagoguery cannot be Pacifist (this is one of the first civics I made and I have no idea how I never noticed before that it's possible for Pacifists to take a civic that entails "saber rattling rhetoric" and a focus on picking fights!)
 
 v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
