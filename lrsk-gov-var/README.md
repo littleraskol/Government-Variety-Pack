@@ -28,6 +28,8 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Improved tooltip readability.
 -Tradeways now available to players without the Megacorp DLC so long as they have Merchant Guilds civic OR the Corporate Dominion civic (long overdue fix to an oversight that probably affected no one...)
 -NPC versions of Grand Alliance, For Discovery, and Convened by Providence now require same ethics as player versions.
+-Used base-game cleanup effect for MI fed partners to prevent invalid governments/neutrals.
+-Added final check to make sure player megacorps don't end up with megacorp fed partners.
 -Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields. Might increase it more later based on feedback...
 -Removed all "ECC built-in compatibility" as it turns out it didn't work. A patch will be forthcoming, but the main goal now is just making the mod "safe" to use with Ethics and Civics Classic.
 

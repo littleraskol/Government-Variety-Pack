@@ -229,7 +229,7 @@ lrsk_create_discovery_mi_member = {
 		name_list = random
 		species = event_target:lrsk_next_fed_planet_species
 		type = default
-		origin = "lrsk_gov_var_origin_for_discovery_mi_npc"
+		origin = "origin_default" 	# Think there is a reason the base game does this, related to neutrals...
 		ignore_initial_colony_error = yes
 		day_zero_contact = no
 		ethos = {
@@ -237,6 +237,11 @@ lrsk_create_discovery_mi_member = {
 		}
 		authority = auth_machine_intelligence
 		civics = random
+		effect = {
+			machine_federation_member_civic_fix = yes	# I believe the base game calls this, which sets the special NPC Common Ground origin, to prevent spwaning a neutral when getting an unwanted civic (terminator, etc) for no reason.
+			
+			set_origin = "lrsk_gov_var_origin_for_discovery_mi_npc"	# Need to set the right origin...
+		}
 	}
 }
 

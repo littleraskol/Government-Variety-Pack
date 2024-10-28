@@ -704,3 +704,75 @@ lrsk_federation_origin_final_steup = {
 		}
 	}
 }
+
+# Final check to make sure we don't have a corp fed partner to a corp player
+lrsk_federation_origin_megacorp_fix = {
+	IF = {
+		limit = {
+			has_auth_corporate = yes
+			root = { has_auth_corporate = yes }
+		}
+		random_list = {
+			1 = {
+				# Democratic
+				modifier = {
+					factor = 0
+					root = { is_authoritarian = yes }
+				}
+				modifier = {
+					factor = 0
+					is_authoritarian = yes
+				}
+				modifier = {
+					add = 1
+					root = { is_egalitarian = yes }
+				}
+				modifier = {
+					add = 1
+					is_egalitarian = yes
+				}
+				change_government = { 
+					authority = auth_democratic
+					civics = random
+				}
+			}
+			2 = {
+				# Oligarchic
+				change_government = { 
+					authority = auth_oligarchic
+					civics = random
+				}
+			}
+			1 = {
+				# Dictatorial
+				modifier = {
+					factor = 0
+					root = { is_egalitarian = yes }
+				}
+				modifier = {
+					factor = 0
+					is_egalitarian = yes
+				}
+				change_government = { 
+					authority = auth_dictatorial
+					civics = random
+				}
+			}
+			1 = {
+				# Imperial
+				modifier = {
+					factor = 0
+					root = { is_egalitarian = yes }
+				}
+				modifier = {
+					factor = 0
+					is_egalitarian = yes
+				}
+				change_government = { 
+					authority = auth_imperial
+					civics = random
+				}
+			}
+		}
+	}
+}
