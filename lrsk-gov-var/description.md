@@ -33,7 +33,7 @@ Compatibility patches:
 Mods that have built-in compatibility:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]Ethics and Civics Alternative - FunEFork[/url] by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url].
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url] maintained by [url=https://steamcommunity.com/id/Coggernaut]Coggernaut[/url]. Note that very little actually needed to be changed here, please see [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4520008986317183213/]this explanation[/url] here.
+[*]While there isn't any built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url] maintained by [url=https://steamcommunity.com/id/Coggernaut]Coggernaut[/url], GVP is safe to run with it. A patch will be produced, eventually.
 [/list]
 
 For non-English language translations:

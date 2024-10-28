@@ -30,6 +30,7 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -NPC versions of Grand Alliance, For Discovery, and Convened by Providence now require same ethics as player versions.
 --As a result, Grand Alliance, For Discovery, and Convened by Providence now base their NPC fed partners on player ethics, not authority.
 -Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields. Might increase it more later based on feedback...
+-Removed all "ECC built-in compatibility" as it turns out it didn't work. A patch will be forthcoming, but the main goal now is just making the mod "safe" to use with Ethics and Civics Classic.
 
 v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
