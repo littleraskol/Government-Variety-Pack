@@ -34,6 +34,7 @@ v6.3 (10/29/24) - Circinus (3.14) Update
 -Removed all "ECC built-in compatibility" as it turns out it didn't work. A patch will be forthcoming, but the main goal now is just making the mod "safe" to use with Ethics and Civics Classic.
 -Supremacist Demagoguery cannot be Pacifist (this is one of the first civics I made and I have no idea how I never noticed before that it's possible for Pacifists to take a civic that entails "saber rattling rhetoric" and a focus on picking fights!)
 -NPC fed partners cannot have Selective Kinship.
+-KNOWN ISSUE: Federation start origins may rarely spawn partners with no government ("Despicable Neutrals"). The reason is known but the fix is obscure. If this happens to you, at this time the best thing to do is start a new game. It only happens occasionally.
 
 v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
 -Federation Start Origin Changes:
