@@ -62,6 +62,10 @@ Finally, there is a submod available:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2884243461]Chivalric Peacekeepers[/url] - Changes the requirements of Chivalry, allowing it to be selected by any empire that is not Fanatic Pacifist. (maintained by [url=https://steamcommunity.com/id/lunaassassin98/]Luna Assassin[/url]).
 [/list]
 
+[i][b]Known Issues[/b][/i]
+
+Federation start origins may rarely spawn partners with no government ("Despicable Neutrals"). The reason is known but the fix is obscure. If this happens to you, at this time the best thing to do is start a new game. It only happens occasionally.
+
 [i][b]Problems?[/b][/i]
 
 Report any bugs, issues, or other unexpected/undesired behavior [url=https://airtable.com/shr57DnP3u6lzJ4D9]using this form[/url].
