@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.3.1 (??/??/24) Despicable Neutrals Eradication Protocols
+-Attempts to detect and replace "Despicable Neutral" spawned fed partners.
+
 v6.3 (10/29/24) - Circinus (3.14) Update
 -Fixed what was needed for compatibility with Stellaris 3.14 (Circinus).
 -Updated compat version number.
