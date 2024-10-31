@@ -193,20 +193,12 @@ country_event = {
 						lrsk_create_discovery_si_member = yes
 					}
 				}
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_1
-					establish_communications_no_message = root
-				}
 			}
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
 					30 = {
 						lrsk_create_tradeways_member_mg = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_1
-							establish_communications_no_message = root
-						}
 					}
 					70 = {
 						modifier = {
@@ -219,28 +211,21 @@ country_event = {
 							}
 						}	
 						lrsk_create_tradeways_member_mc = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_1
-							establish_communications_no_message = root
-						}
 					}
 				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_1
-					establish_communications_no_message = root
-				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_1
-					establish_communications_no_message = root
-				}
+			}
+
+			last_created_country = {
+				save_event_target_as = lrsk_fed_member_1
+				establish_communications_no_message = root
 			}
 
 			lrsk_federation_origin_final_steup = { NUM = 1 }
@@ -306,10 +291,6 @@ country_event = {
 						lrsk_create_discovery_si_member = yes
 					}
 				}
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_2
-					establish_communications_no_message = root
-				}
 			}
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
@@ -320,10 +301,6 @@ country_event = {
 							event_target:lrsk_fed_member_1 = { has_auth_corporate = yes }
 						}		
 						lrsk_create_tradeways_member_mg = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_2
-							establish_communications_no_message = root
-						}
 					}
 					60 = {
 						modifier = {
@@ -340,28 +317,21 @@ country_event = {
 							}
 						}					
 						lrsk_create_tradeways_member_mc = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_2
-							establish_communications_no_message = root
-						}
 					}
 				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_2
-					establish_communications_no_message = root
-				}
 			}
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_2
-					establish_communications_no_message = root
-				}
+			}
+
+			last_created_country = {
+				save_event_target_as = lrsk_fed_member_2
+				establish_communications_no_message = root
 			}
 
 			lrsk_federation_origin_final_steup = { NUM = 2 }
