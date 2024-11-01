@@ -277,6 +277,7 @@ lrsk_create_grand_alliance_member = {
 
 # Create Tradeways NPC empire w/ Merchant Guilds.
 lrsk_create_tradeways_member_mg = {
+	# Note: This first attaches "placeholder" civics that are later replaced.
 	IF = { limit = { NOT = { has_global_flag = ethic_civic_classic_active } }
 		random_list = {
 			1 = {
@@ -303,8 +304,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_pacifist
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -333,8 +334,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_materialist
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -363,8 +364,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_spiritualist
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -393,8 +394,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_militarist
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -423,8 +424,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_authoritarian
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -453,8 +454,8 @@ lrsk_create_tradeways_member_mg = {
 						ethic = ethic_fanatic_egalitarian
 					}
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}
@@ -482,8 +483,8 @@ lrsk_create_tradeways_member_mg = {
 					day_zero_contact = no
 					ethos = root
 					civics = {
-						civic = civic_merchant_guilds
-						civic = random
+						civic = lrsk_gov_var_civic_test_1
+						civic = lrsk_gov_var_civic_test_2
 					}
 					authority = random
 				}

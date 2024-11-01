@@ -224,8 +224,34 @@ country_event = {
 			}
 
 			last_created_country = {
-				save_event_target_as = lrsk_fed_member_1
-				establish_communications_no_message = root
+				# Need to set MG or CD - due to Megacorp DLC reqs
+				IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
+					force_remove_civic = lrsk_gov_var_civic_test_1
+					force_remove_civic = lrsk_gov_var_civic_test_2
+					
+					IF = { limit = { root = { has_civic = civic_corporate_dominion } }
+						change_government = {
+							civics = {
+								civic = civic_corporate_dominion
+								civic = random
+							}
+						}
+					}
+					ELSE = {
+						change_government = { civics = {
+							civic = civic_merchant_guilds
+							civic = random
+						} }
+					}
+				}
+				
+				IF = { limit = { has_ai_personality = personality_null }
+					lrsk_fix_null_partner = { NUM = 1 }
+				}
+				ELSE = {			
+					save_event_target_as = lrsk_fed_member_1
+					establish_communications_no_message = root
+				}
 			}
 
 			lrsk_federation_origin_final_steup = { NUM = 1 }
@@ -330,8 +356,34 @@ country_event = {
 			}
 
 			last_created_country = {
-				save_event_target_as = lrsk_fed_member_2
-				establish_communications_no_message = root
+				# Need to set MG or CD - due to Megacorp DLC reqs
+				IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
+					force_remove_civic = lrsk_gov_var_civic_test_1
+					force_remove_civic = lrsk_gov_var_civic_test_2
+					
+					IF = { limit = { root = { has_civic = civic_corporate_dominion } }
+						change_government = {
+							civics = {
+								civic = civic_corporate_dominion
+								civic = random
+							}
+						}
+					}
+					ELSE = {
+						change_government = { civics = {
+							civic = civic_merchant_guilds
+							civic = random
+						} }
+					}
+				}
+				
+				IF = { limit = { has_ai_personality = personality_null }
+					lrsk_fix_null_partner = { NUM = 2 }
+				}
+				ELSE = {			
+					save_event_target_as = lrsk_fed_member_2
+					establish_communications_no_message = root
+				}
 			}
 
 			lrsk_federation_origin_final_steup = { NUM = 2 }
