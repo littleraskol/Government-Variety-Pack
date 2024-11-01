@@ -512,3 +512,61 @@ lrsk_create_tradeways_member_mg = {
 		}
 	}
 }
+
+lrsk_fix_null_partner = {
+	# need to re-create the species, as by this point we can't be sure it's valid for every origin
+	IF = { limit = { root = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
+		# machine species
+		create_species = {
+			name = random
+			class = MACHINE
+			portrait = random
+			traits = {
+				trait = trait_machine_unit
+				trait = random_traits
+			}
+			homeworld = event_target:lrsk_fed_planet_$NUM$
+			effect = {
+				save_event_target_as = lrsk_next_fed_planet_species
+			}
+		}
+	}
+	ELSE_IF = { limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+		# non-machine species
+		create_species = {
+			name = random
+			class = RANDOM_NON_MACHINE
+			portrait = random
+			traits = random
+			homeworld = event_target:lrsk_fed_planet_$NUM$
+			effect = {
+				save_event_target_as = lrsk_next_fed_planet_species
+			}
+		}
+	}
+	# Don't need a case for Selective Kinship - if root has that, its species was set as needed and it's not a MI
+
+	root = {
+		switch = {
+			trigger = has_origin
+			lrsk_gov_var_origin_for_discovery = {
+				# default singleton nerd
+			}
+			lrsk_gov_var_origin_for_discovery_mi = {
+				# default machine nerd
+			}
+			lrsk_gov_var_origin_tradeways = {
+				# default megacorp
+			}
+			lrsk_gov_var_origin_tradeways_mc = {
+				# default MG
+			}
+			lrsk_gov_var_origin_grand_alliance = {
+				# default warmonger
+			}
+			lrsk_gvp_origin_convened_providence_npc = {
+				# default holy roller
+			}
+		}
+	}
+}
