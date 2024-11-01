@@ -551,21 +551,301 @@ lrsk_fix_null_partner = {
 			trigger = has_origin
 			lrsk_gov_var_origin_for_discovery = {
 				# default singleton nerd
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							root = { 
+								OR = {
+									has_valid_civic = civic_corporate_dominion
+									has_auth_corporate = yes
+								}
+							}
+						}
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gov_var_origin_for_discovery_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = auth_corporate
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_materialist
+							}
+							civics = {
+								civic = lrsk_gov_var_civic_mc_edu_corp
+								civic = civic_free_traders
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+					4 = {
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gov_var_origin_for_discovery_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = random
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_materialist
+							}
+							civics = {
+								civic = civic_technocracy
+								civic = civic_free_haven
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+				}
 			}
 			lrsk_gov_var_origin_for_discovery_mi = {
 				# default machine nerd
+				create_country = {
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_for_discovery_mi_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					ethos = {
+						ethic = ethic_gestalt_consciousness
+					}
+					authority = auth_machine_intelligence
+					civics = {
+						civic = civic_machine_predictive_analysis
+						civic = lrsk_gov_var_civic_machine_astroexploration_mainframe
+					}
+					effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+				}
 			}
 			lrsk_gov_var_origin_tradeways = {
 				# default megacorp
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_mc_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					authority = auth_corporate
+					ethos = {
+						ethic = ethic_fanatic_xenophile
+						ethic = ethic_pacifist			# Not perfect, but better than neutral
+					}
+					civics = {
+						civic = civic_trading_posts
+						civic = civic_free_traders
+					}
+					effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+				}
 			}
 			lrsk_gov_var_origin_tradeways_mc = {
-				# default MG
+				# default MG/non-MC
+				IF = { limit = { root = { has_civic = civic_corporate_dominion }
+					# Can't use MG in this case (no megacorp DLC)
+					create_country = {
+						name = random
+						name_list = random
+						species = event_target:lrsk_next_fed_planet_species
+						type = default
+						origin = lrsk_gov_var_origin_tradeways_npc
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = random
+						ethos = {
+							ethic = ethic_fanatic_xenophile
+							ethic = ethic_pacifist			# Not perfect, but better than neutral
+						}
+						civics = {
+							civic = civic_corporate_dominion
+							civic = lrsk_gov_var_civic_business_lobby
+						}
+						effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+					}
+				}
+				ELSE = {
+					create_country = {
+						name = random
+						name_list = random
+						species = event_target:lrsk_next_fed_planet_species
+						type = default
+						origin = lrsk_gov_var_origin_tradeways_npc
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = random
+						ethos = {
+							ethic = ethic_fanatic_xenophile
+							ethic = ethic_pacifist			# Not perfect, but better than neutral
+						}
+						civics = {
+							civic = civic_merchant_guilds
+							civic = lrsk_gov_var_civic_business_lobby
+						}
+						effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+					}
+				}
 			}
 			lrsk_gov_var_origin_grand_alliance = {
 				# default warmonger
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							root = { 
+								OR = {
+									has_valid_civic = civic_corporate_dominion
+									has_auth_corporate = yes
+								}
+							}
+						}
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gov_var_origin_grand_alliance_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = auth_corporate
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_militarist
+							}
+							civics = {
+								civic = civic_naval_contractors
+								civic = lrsk_gvp_civic_mc_war_profiteers
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+					4 = {
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gov_var_origin_grand_alliance_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = random
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_militarist
+							}
+							civics = {
+								civic = civic_distinguished_admiralty
+								civic = civic_warrior_culture
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+				}
 			}
 			lrsk_gvp_origin_convened_providence_npc = {
 				# default holy roller
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							root = { 
+								OR = {
+									has_valid_civic = civic_corporate_dominion
+									has_auth_corporate = yes
+								}
+							}
+						}
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gvp_origin_convened_providence_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = auth_corporate
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_spiritualist
+							}
+							civics = {
+								civic = civic_gospel_of_the_masses
+								civic = civic_public_relations_specialists
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+					1 = {
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gvp_origin_convened_providence_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = auth_democratic
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_spiritualist
+							}
+							civics = {
+								civic = lrsk_gov_var_civic_ascetic_virtues
+								civic = lrsk_gov_var_civic_elected_clergy
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+					2 = {
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gvp_origin_convened_providence_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = random 		# Will be Oligarchic or Dictatorial
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_spiritualist
+							}
+							civics = {
+								civic = lrsk_gov_var_civic_ascetic_virtues
+								civic = civic_exalted_priesthood
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+					1 = {
+						create_country = {
+							name = random
+							name_list = random
+							species = event_target:lrsk_next_fed_planet_species
+							type = default
+							origin = lrsk_gvp_origin_convened_providence_npc
+							ignore_initial_colony_error = yes
+							day_zero_contact = no
+							authority = auth_imperial
+							ethos = {
+								ethic = ethic_xenophile
+								ethic = ethic_fanatic_spiritualist
+							}
+							civics = {
+								civic = lrsk_gov_var_civic_ascetic_virtues
+								civic = civic_philosopher_king
+							}
+							effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+						}
+					}
+				}
 			}
 		}
 	}
