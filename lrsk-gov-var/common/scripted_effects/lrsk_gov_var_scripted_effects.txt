@@ -738,6 +738,13 @@ lrsk_federation_origin_megacorp_fix = {
 			}
 			2 = {
 				# Oligarchic
+				modifier = {
+					add = -1
+					root = { OR= {
+						has_ethos = ethic_fanatic_authoritarian
+						has_ethos = ethic_fanatic_egalitarian
+					} }
+				}
 				change_government = { 
 					authority = auth_oligarchic
 					civics = random
@@ -753,6 +760,14 @@ lrsk_federation_origin_megacorp_fix = {
 					factor = 0
 					is_egalitarian = yes
 				}
+				modifier = {
+					add =  1
+					root = { has_ethic = ethic_authoritarian }
+				}
+				modifier = {
+					add =  1
+					is_authoritarian = yes
+				}
 				change_government = { 
 					authority = auth_dictatorial
 					civics = random
@@ -767,6 +782,14 @@ lrsk_federation_origin_megacorp_fix = {
 				modifier = {
 					factor = 0
 					is_egalitarian = yes
+				}
+				modifier = {
+					add =  1
+					root = { has_ethic = ethic_fanatic_authoritarian }
+				}
+				modifier = {
+					add =  1
+					is_authoritarian = yes
 				}
 				change_government = { 
 					authority = auth_imperial
