@@ -24,6 +24,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v6.3.x (??/??/24) Despicable Neutrals Eradication Protocols
 -Attempts to detect and replace "Despicable Neutral" spawned fed partners.
 -Various other streamlining/improvements to fed starts.
+-Fed start opinion modifier set to 100 (half of Common Ground), to be less arbitrarily punishing.
 
 v6.3.1 (11/2/24) - Post-Circinus (3.14) Hotfix
 -Check for the Pacifist/Supremacist Demagoguery combo for replacement.
