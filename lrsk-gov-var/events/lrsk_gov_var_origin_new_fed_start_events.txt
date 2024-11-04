@@ -244,7 +244,11 @@ country_event = {
 						} }
 					}
 				}
+
+				# Check if we somehow got a corp partner for a corp player
+				lrsk_federation_origin_megacorp_fix = yes
 				
+				# Replace with new preset country if somehow a Despicable Neutral
 				IF = { limit = { has_ai_personality = personality_null }
 					lrsk_fix_null_partner = { NUM = 1 }
 				}
@@ -376,7 +380,11 @@ country_event = {
 						} }
 					}
 				}
+
+				# Check if we somehow got a corp partner for a corp player
+				lrsk_federation_origin_megacorp_fix = yes
 				
+				# Replace with new preset country if somehow a Despicable Neutral
 				IF = { limit = { has_ai_personality = personality_null }
 					lrsk_fix_null_partner = { NUM = 2 }
 				}
@@ -390,7 +398,6 @@ country_event = {
 		}
 		
 		event_target:lrsk_fed_member_1 = {
-			lrsk_federation_origin_megacorp_fix = yes
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
@@ -399,7 +406,6 @@ country_event = {
 			set_name = random # Fixes some naming issues
 		}
 		event_target:lrsk_fed_member_2 = {
-			lrsk_federation_origin_megacorp_fix = yes
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
