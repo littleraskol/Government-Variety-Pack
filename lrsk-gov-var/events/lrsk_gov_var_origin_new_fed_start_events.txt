@@ -138,39 +138,33 @@ country_event = {
 		# First Member
 		event_target:lrsk_fed_planet_1 = {
 			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_next_fed_planet_species
-					}
-				}
+
+			# Selective Kinship will make partners of different species class problematic
+			if = { limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				lrsk_create_fed_planet_species = { CLASS = RANDOM }
 			}
 			else = {
 				root = {
 					switch = {
 						trigger = is_species_class
-						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
-						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
-						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
-						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
-						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
-						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
-						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
-						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
-						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
-						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
-						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
-						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
-						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						HUM =		{ lrsk_create_fed_planet_species = { CLASS = HUM } }
+						MAM =		{ lrsk_create_fed_planet_species = { CLASS = MAM } }
+						FUN =		{ lrsk_create_fed_planet_species = { CLASS = FUN } }
+						AVI =		{ lrsk_create_fed_planet_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_create_fed_planet_species = { CLASS = PLANT } }
+						ART =		{ lrsk_create_fed_planet_species = { CLASS = ART } }
+						REP =		{ lrsk_create_fed_planet_species = { CLASS = REP } }
+						MOL =		{ lrsk_create_fed_planet_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_create_fed_planet_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_create_fed_planet_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_create_fed_planet_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_create_fed_planet_species = { CLASS = TOX } }
+						default =	{ lrsk_create_fed_planet_species = { CLASS = HUM } }
 					}
 				}
 			}
+
+			# For Discovery/Diplomatic Directive: Discover
 			if = {
 				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
@@ -194,6 +188,7 @@ country_event = {
 					}
 				}
 			}
+			# Tradeways/Tradeways, Inc.
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
@@ -214,10 +209,12 @@ country_event = {
 					}
 				}
 			}
+			# Grand Alliance
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
 			}
+			# Convened by Providence
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
@@ -225,25 +222,7 @@ country_event = {
 
 			last_created_country = {
 				# Need to set MG or CD - due to Megacorp DLC reqs
-				IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
-					force_remove_civic = lrsk_gov_var_civic_test_1
-					force_remove_civic = lrsk_gov_var_civic_test_2
-					
-					IF = { limit = { root = { has_civic = civic_corporate_dominion } }
-						change_government = {
-							civics = {
-								civic = civic_corporate_dominion
-								civic = random
-							}
-						}
-					}
-					ELSE = {
-						change_government = { civics = {
-							civic = civic_merchant_guilds
-							civic = random
-						} }
-					}
-				}
+				lrsk_choose_CD_or_MG_for_tradeways_NPC = yes
 
 				# Check if we somehow got a corp partner for a corp player
 				lrsk_federation_origin_megacorp_fix = yes
@@ -264,39 +243,33 @@ country_event = {
 		# Second Member
 		event_target:lrsk_fed_planet_2 = {
 			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_next_fed_planet_species
-					}
-				}
+
+			# Selective Kinship will make partners of different species class problematic
+			if = { limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				lrsk_create_fed_planet_species = { CLASS = RANDOM }
 			}
 			else = {
 				root = {
 					switch = {
 						trigger = is_species_class
-						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
-						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
-						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
-						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
-						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
-						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
-						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
-						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
-						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
-						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
-						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
-						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
-						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						HUM =		{ lrsk_create_fed_planet_species = { CLASS = HUM } }
+						MAM =		{ lrsk_create_fed_planet_species = { CLASS = MAM } }
+						FUN =		{ lrsk_create_fed_planet_species = { CLASS = FUN } }
+						AVI =		{ lrsk_create_fed_planet_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_create_fed_planet_species = { CLASS = PLANT } }
+						ART =		{ lrsk_create_fed_planet_species = { CLASS = ART } }
+						REP =		{ lrsk_create_fed_planet_species = { CLASS = REP } }
+						MOL =		{ lrsk_create_fed_planet_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_create_fed_planet_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_create_fed_planet_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_create_fed_planet_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_create_fed_planet_species = { CLASS = TOX } }
+						default =	{ lrsk_create_fed_planet_species = { CLASS = HUM } }
 					}
 				}
 			}
+
+			# For Discovery/Diplomatic Directive: Discover
 			if = {
 				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
@@ -322,6 +295,7 @@ country_event = {
 					}
 				}
 			}
+			# Tradeways/Tradeways, Inc.
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
@@ -350,36 +324,20 @@ country_event = {
 					}
 				}
 			}
+			# Grand Alliance
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
 			}
+			# Convened by Providence
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
 			}
 
 			last_created_country = {
-				# Need to set MG or CD - due to Megacorp DLC reqs
-				IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
-					force_remove_civic = lrsk_gov_var_civic_test_1
-					force_remove_civic = lrsk_gov_var_civic_test_2
-					
-					IF = { limit = { root = { has_civic = civic_corporate_dominion } }
-						change_government = {
-							civics = {
-								civic = civic_corporate_dominion
-								civic = random
-							}
-						}
-					}
-					ELSE = {
-						change_government = { civics = {
-							civic = civic_merchant_guilds
-							civic = random
-						} }
-					}
-				}
+				# Need to set MG or CD - due to Megacorp DLC reqs				
+				lrsk_choose_CD_or_MG_for_tradeways_NPC = yes
 
 				# Check if we somehow got a corp partner for a corp player
 				lrsk_federation_origin_megacorp_fix = yes

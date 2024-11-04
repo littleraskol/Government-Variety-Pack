@@ -624,17 +624,47 @@ lrsk_federation_origin_planet_setup = {
 	add_extra_hyperlane_to_spawned_system_effect = yes
 }
 
-# Handle fed start w/ Selective Kinship civic.
-lrsk_federation_origin_create_kinship_species = {
-	create_species = {
-		name = random
-		class = $CLASS$
-		portrait = random
-		traits = random
-		homeworld = this
-		effect = {
-			save_event_target_as = lrsk_next_fed_planet_species
+# Handle fed start partner species under various conditions
+lrsk_create_fed_planet_species = {
+	if = {
+		limit = {
+			root = {
+				is_machine_empire = yes
+			}
 		}
+		random_list = {
+			50 = {
+				create_species = {
+					name = random
+					class = MACHINE
+					portrait = random
+					traits = random
+					homeworld = this
+				}
+			}
+			50 = {
+				create_species = {
+					name = random
+					class = $CLASS$
+					portrait = random
+					traits = random
+					homeworld = this
+				}
+			}
+		}
+	}
+	else = {
+		create_species = {
+			name = random
+			class = $CLASS$
+			portrait = random
+			traits = random
+			homeworld = this
+		}
+	}
+	
+	last_created_species = {
+		save_event_target_as = lrsk_next_fed_planet_species
 	}
 }
 
