@@ -626,12 +626,7 @@ lrsk_federation_origin_planet_setup = {
 
 # Handle fed start partner species under various conditions
 lrsk_create_fed_planet_species = {
-	if = {
-		limit = {
-			root = {
-				is_machine_empire = yes
-			}
-		}
+	if = { limit = { root = { is_machine_empire = yes } }
 		random_list = {
 			50 = {
 				create_species = {
