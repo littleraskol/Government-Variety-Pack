@@ -624,20 +624,17 @@ lrsk_federation_origin_planet_setup = {
 	add_extra_hyperlane_to_spawned_system_effect = yes
 }
 
-# Handle fed start partner species under various conditions
+# Handle fed start partner species under various conditions (conditions tbd)
 lrsk_create_fed_planet_species = {
-	else = {
-		create_species = {
-			name = random
-			class = $CLASS$
-			portrait = random
-			traits = random
-			homeworld = this
+	create_species = {
+		name = random
+		class = $CLASS$
+		portrait = random
+		traits = random
+		homeworld = this
+		effect = {
+			save_event_target_as = lrsk_next_fed_planet_species
 		}
-	}
-	
-	last_created_species = {
-		save_event_target_as = lrsk_next_fed_planet_species
 	}
 }
 
