@@ -212,17 +212,42 @@ lrsk_create_providence_member = {
 
 # Create For Discovery/Diplo:Discover NPC empire (Machine Intelligence).
 lrsk_create_discovery_mi_member = {
-	create_species = {
-		name = random
-		class = MACHINE # MIs allowed in RCs
-		portrait = random
-		traits = {
-			trait = trait_machine_unit
-			trait = random_traits
+	IF = {
+		limit = {
+			event_target:lrsk_next_fed_planet_species = {
+				NOT = { is_archetype = MACHINE }
+			}
 		}
-		homeworld = this
-		effect = {
-			save_event_target_as = lrsk_next_fed_planet_species
+		create_species = {
+			name = random
+			class = MACHINE # MIs allowed in RCs
+			portrait = random
+			traits = {
+				trait = trait_machine_unit
+				trait = random_traits
+			}
+			homeworld = this
+			effect = {
+				save_event_target_as = lrsk_next_fed_planet_species
+			}
+		}
+	}
+	ELSE_IF = {
+		limit = {
+			event_target:lrsk_next_fed_planet_species = {
+				# It should?? Base game makes sure to add this...
+				NOT = { has_trait = trait_machine_unit }
+			}
+		}
+		event_target:lrsk_next_fed_planet_species = {
+			modify_species = {
+				species = this
+				add_trait = trait_machine_unit
+				add_traits_at_start_of_list = yes
+				effect = {
+					save_event_target_as = lrsk_next_fed_planet_species
+				}
+			}
 		}
 	}
 	create_country = {
