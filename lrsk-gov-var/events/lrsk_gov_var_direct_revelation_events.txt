@@ -12,6 +12,10 @@ planet_event = {
 
   	hide_window = yes
 
+	pre_triggers = {
+		has_owner = yes
+	}
+
 	#Can only happen on planets which lack at least one wild cult and where there are at least 3 pops (at least one of is Spiritualist) and which are in an empire with DR where a wild cult hasn't formed recently.
 	trigger = {		
 		num_pops > 2
