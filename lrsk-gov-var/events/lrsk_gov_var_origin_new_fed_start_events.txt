@@ -225,7 +225,7 @@ country_event = {
 				lrsk_federation_origin_megacorp_fix = yes
 				
 				# Replace with new preset country if somehow a Despicable Neutral
-				IF = { limit = { has_ai_personality = personality_null }
+				IF = { limit = { has_valid_ai_personality = no }
 					lrsk_fix_null_partner = { NUM = 1 }
 				}
 				ELSE = {			
@@ -337,7 +337,7 @@ country_event = {
 				lrsk_federation_origin_megacorp_fix = yes
 				
 				# Replace with new preset country if somehow a Despicable Neutral
-				IF = { limit = { has_ai_personality = personality_null }
+				IF = { limit = { has_valid_ai_personality = no }
 					lrsk_fix_null_partner = { NUM = 2 }
 				}
 				ELSE = {			
