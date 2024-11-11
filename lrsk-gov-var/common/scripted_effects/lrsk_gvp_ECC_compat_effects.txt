@@ -514,6 +514,29 @@ lrsk_create_tradeways_member_mg = {
 					authority = random
 				}
 			}
+		}		
+
+		last_created_country = {
+			# Need to set MG or CD - due to Megacorp DLC reqs
+			IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
+				force_remove_civic = lrsk_gov_var_civic_test_1
+				force_remove_civic = lrsk_gov_var_civic_test_2
+				
+				IF = { limit = { root = { has_civic = civic_corporate_dominion } }
+					change_government = {
+						civics = {
+							civic = civic_corporate_dominion
+							civic = random
+						}
+					}
+				}
+				ELSE = {
+					change_government = { civics = {
+						civic = civic_merchant_guilds
+						civic = random
+					} }
+				}
+			}
 		}
 	}
 	# ECC doesn't really require Merchant Guilds for Trade Leagues, so this just makes a non-corp partner with the appropriate ethics. 
@@ -540,27 +563,27 @@ lrsk_create_tradeways_member_mg = {
 }
 
 # Need to set a non-MC tradways partner to CD or MG due to Megacorp DLC reqs
-lrsk_choose_CD_or_MG_for_tradeways_NPC = {
-	IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
-		force_remove_civic = lrsk_gov_var_civic_test_1
-		force_remove_civic = lrsk_gov_var_civic_test_2
-		
-		IF = { limit = { root = { has_civic = civic_corporate_dominion } }
-			change_government = {
-				civics = {
-					civic = civic_corporate_dominion
-					civic = random
-				}
-			}
-		}
-		ELSE = {
-			change_government = { civics = {
-				civic = civic_merchant_guilds
-				civic = random
-			} }
-		}
-	}
-}
+#lrsk_choose_CD_or_MG_for_tradeways_NPC = {
+#	IF = { limit = { has_civic = lrsk_gov_var_civic_test_1 } 
+#		force_remove_civic = lrsk_gov_var_civic_test_1
+#		force_remove_civic = lrsk_gov_var_civic_test_2
+#		
+#		IF = { limit = { root = { has_civic = civic_corporate_dominion } }
+#			change_government = {
+#				civics = {
+#					civic = civic_corporate_dominion
+#					civic = random
+#				}
+#			}
+#		}
+#		ELSE = {
+#			change_government = { civics = {
+#				civic = civic_merchant_guilds
+#				civic = random
+#			} }
+#		}
+#	}
+#}
 
 # If we end up with a Despicable Neutral fed partner, replace with a preset.
 lrsk_fix_null_partner = {
