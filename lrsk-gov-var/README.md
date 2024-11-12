@@ -27,6 +27,7 @@ v6.3.x (??/??/24) Despicable Neutrals Eradication Protocols
 -Fed start opinion modifier set to 100 (half of Common Ground), to be less arbitrarily punishing.
 -NPC fed start origins get minor bonuses (designed to be helpful to the player and not get in the player's way).
 -Deprecating some obsolete stuff in branch office building code.
+-Fixed a typo in Otherworld Guide concept.
 
 v6.3.1 (11/2/24) - Post-Circinus (3.14) Hotfix
 -Check for the Pacifist/Supremacist Demagoguery combo for replacement.
