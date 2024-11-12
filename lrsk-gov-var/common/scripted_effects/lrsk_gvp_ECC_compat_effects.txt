@@ -550,7 +550,11 @@ lrsk_create_tradeways_member_mg = {
 			ignore_initial_colony_error = yes
 			day_zero_contact = no
 			authority = random
-			civics = random
+			civics = {
+				civic = civic_efficient_bureaucracy		# Just to avoid spawning a MC
+				civic = random
+				civic = random
+			}
 			randomize_ethos = yes
 			ethos = {
 				ethic = ethic_xenophile					# Smooths over lack of specificity
