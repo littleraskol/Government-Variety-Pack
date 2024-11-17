@@ -634,7 +634,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_valid_civic = civic_corporate_dominion
+									has_megacorp = no
 									has_auth_corporate = yes
 								}
 							}
@@ -704,30 +704,28 @@ lrsk_fix_null_partner = {
 			}
 			lrsk_gov_var_origin_tradeways = {
 				# default megacorp
-				create_country = {
-					name = random
-					name_list = random
-					species = event_target:lrsk_next_fed_planet_species
-					type = default
-					origin = lrsk_gov_var_origin_tradeways_mc_npc
-					ignore_initial_colony_error = yes
-					day_zero_contact = no
-					authority = auth_corporate
-					ethos = {
-						ethic = ethic_fanatic_xenophile
-						ethic = ethic_pacifist			# Not perfect, but better than neutral
+				IF = { limit = { root = { has_megacorp = yes } }
+					create_country = {
+						name = random
+						name_list = random
+						species = event_target:lrsk_next_fed_planet_species
+						type = default
+						origin = lrsk_gov_var_origin_tradeways_mc_npc
+						ignore_initial_colony_error = yes
+						day_zero_contact = no
+						authority = auth_corporate
+						ethos = {
+							ethic = ethic_fanatic_xenophile
+							ethic = ethic_pacifist			# Not perfect, but better than neutral
+						}
+						civics = {
+							civic = civic_trading_posts
+							civic = civic_free_traders
+						}
+						effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
 					}
-					civics = {
-						civic = civic_trading_posts
-						civic = civic_free_traders
-					}
-					effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
 				}
-			}
-			lrsk_gov_var_origin_tradeways_mc = {
-				# default MG/non-MC
-				IF = { limit = { root = { has_civic = civic_corporate_dominion } }
-					# Can't use MG in this case (no megacorp DLC)
+				ELSE = {
 					create_country = {
 						name = random
 						name_list = random
@@ -748,26 +746,27 @@ lrsk_fix_null_partner = {
 						effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
 					}
 				}
-				ELSE = {
-					create_country = {
-						name = random
-						name_list = random
-						species = event_target:lrsk_next_fed_planet_species
-						type = default
-						origin = lrsk_gov_var_origin_tradeways_npc
-						ignore_initial_colony_error = yes
-						day_zero_contact = no
-						authority = random
-						ethos = {
-							ethic = ethic_fanatic_xenophile
-							ethic = ethic_pacifist			# Not perfect, but better than neutral
-						}
-						civics = {
-							civic = civic_merchant_guilds
-							civic = lrsk_gov_var_civic_business_lobby
-						}
-						effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
+			}
+			lrsk_gov_var_origin_tradeways_mc = {
+				# default MG/non-MC
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:lrsk_next_fed_planet_species
+					type = default
+					origin = lrsk_gov_var_origin_tradeways_npc
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					authority = random
+					ethos = {
+						ethic = ethic_fanatic_xenophile
+						ethic = ethic_pacifist			# Not perfect, but better than neutral
 					}
+					civics = {
+						civic = civic_merchant_guilds
+						civic = lrsk_gov_var_civic_business_lobby
+					}
+					effect = { save_event_target_as = lrsk_fed_member_$NUM$ }
 				}
 			}
 			lrsk_gov_var_origin_grand_alliance = {
@@ -778,7 +777,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_valid_civic = civic_corporate_dominion
+									has_megacorp = no
 									has_auth_corporate = yes
 								}
 							}
@@ -834,7 +833,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_valid_civic = civic_corporate_dominion
+									has_megacorp = no
 									has_auth_corporate = yes
 								}
 							}
