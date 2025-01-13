@@ -707,6 +707,8 @@ lrsk_federation_origin_final_steup = {
 
 # Final check to make sure we don't have a corp fed partner to a corp player
 lrsk_federation_origin_megacorp_fix = {
+	log_error = "GVP: Caught megacorp spawned as fed partner for with megacorp player: \\[this.GetName]"
+
 	IF = {
 		limit = {
 			has_auth_corporate = yes

@@ -591,6 +591,8 @@ lrsk_create_tradeways_member_mg = {
 
 # If we end up with a Despicable Neutral fed partner, replace with a preset.
 lrsk_fix_null_partner = {
+	log_error = "GVP: Caught null/neutral: \\[this.GetName]"
+
 	# need to re-create the species, as by this point we can't be sure it's valid for every origin
 	IF = { limit = { root = { has_origin = lrsk_gov_var_origin_for_discovery_mi } }
 		# machine species
