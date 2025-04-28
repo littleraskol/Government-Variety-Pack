@@ -21,6 +21,12 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v7.0 (05/??/25) Phoenix (4.0) Update
+-Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
+--A lot got changed!
+--Sorted out 4000+ line error log.
+-Updated compat version number.
+
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
 -Attempts to detect and replace "Despicable Neutral" spawned fed partners.
 -Various other streamlining/improvements to fed starts.
