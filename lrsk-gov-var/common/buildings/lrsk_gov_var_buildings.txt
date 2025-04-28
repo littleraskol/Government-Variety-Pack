@@ -2761,9 +2761,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		text = lrsk_offworld_work_effect
 	}
 
+	# The queue logic controls how many the AI builds, see ai_weight below
 	# DEPRECATED: The queue logic controls how many the AI builds, see ai_weight below - DEPRECATED
 	# Note: This is likely a holdover from before static modifier values could be multiplied by a variable.
-
 	#on_queued = {
 	#	branch_office_owner = { change_variable = { which = lrsk_offworld_placement_built value = 1 } }
 	#}
@@ -2807,7 +2807,3 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		#}
 	}
 }
-
-
-
-

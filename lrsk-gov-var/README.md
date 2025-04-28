@@ -21,6 +21,18 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
+-Attempts to detect and replace "Despicable Neutral" spawned fed partners.
+-Various other streamlining/improvements to fed starts.
+-Fed start opinion modifier set to 100 (half of Common Ground), to be less arbitrarily punishing.
+-NPC fed start origins get minor bonuses (designed to be helpful to the player and not get in the player's way).
+-More robust prevention of MC fed partners for ECC.
+-Deprecating some obsolete stuff in branch office building code.
+-Fixed a typo in Otherworld Guide concept.
+
+v6.3.1 (11/2/24) - Post-Circinus (3.14) Hotfix
+-Check for the Pacifist/Supremacist Demagoguery combo for replacement.
+
 v6.3 (10/29/24) - Circinus (3.14) Update
 -Fixed what was needed for compatibility with Stellaris 3.14 (Circinus).
 -Updated compat version number.

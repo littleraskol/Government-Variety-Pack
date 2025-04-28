@@ -624,8 +624,8 @@ lrsk_federation_origin_planet_setup = {
 	add_extra_hyperlane_to_spawned_system_effect = yes
 }
 
-# Handle fed start w/ Selective Kinship civic.
-lrsk_federation_origin_create_kinship_species = {
+# Handle fed start partner species under various conditions (conditions tbd)
+lrsk_create_fed_planet_species = {
 	create_species = {
 		name = random
 		class = $CLASS$
@@ -707,11 +707,13 @@ lrsk_federation_origin_final_steup = {
 
 # Final check to make sure we don't have a corp fed partner to a corp player
 lrsk_federation_origin_megacorp_fix = {
+
 	IF = {
 		limit = {
 			has_auth_corporate = yes
 			root = { has_auth_corporate = yes }
 		}
+		log_error = "GVP: Caught megacorp spawned as fed partner for with megacorp player: \\[this.GetName]"
 		random_list = {
 			1 = {
 				# Democratic
@@ -738,6 +740,13 @@ lrsk_federation_origin_megacorp_fix = {
 			}
 			2 = {
 				# Oligarchic
+				modifier = {
+					add = -1
+					root = { OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_egalitarian
+					} }
+				}
 				change_government = { 
 					authority = auth_oligarchic
 					civics = random
@@ -752,6 +761,14 @@ lrsk_federation_origin_megacorp_fix = {
 				modifier = {
 					factor = 0
 					is_egalitarian = yes
+				}
+				modifier = {
+					add =  1
+					root = { has_ethic = ethic_authoritarian }
+				}
+				modifier = {
+					add =  1
+					is_authoritarian = yes
 				}
 				change_government = { 
 					authority = auth_dictatorial
@@ -768,11 +785,22 @@ lrsk_federation_origin_megacorp_fix = {
 					factor = 0
 					is_egalitarian = yes
 				}
+				modifier = {
+					add =  1
+					root = { has_ethic = ethic_fanatic_authoritarian }
+				}
+				modifier = {
+					add =  1
+					is_authoritarian = yes
+				}
 				change_government = { 
 					authority = auth_imperial
 					civics = random
 				}
 			}
+		}
+		IF = { limit = { has_origin = lrsk_gov_var_origin_tradeways_mc_npc }
+			set_origin = lrsk_gov_var_origin_tradeways_npc
 		}
 	}
 }

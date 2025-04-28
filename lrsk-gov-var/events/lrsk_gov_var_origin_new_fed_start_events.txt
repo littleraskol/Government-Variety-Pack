@@ -138,39 +138,33 @@ country_event = {
 		# First Member
 		event_target:lrsk_fed_planet_1 = {
 			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_next_fed_planet_species
-					}
-				}
+
+			# Selective Kinship will make partners of different species class problematic
+			if = { limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				lrsk_create_fed_planet_species = { CLASS = RANDOM }
 			}
 			else = {
 				root = {
 					switch = {
 						trigger = is_species_class
-						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
-						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
-						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
-						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
-						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
-						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
-						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
-						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
-						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
-						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
-						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
-						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
-						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						HUM =		{ lrsk_create_fed_planet_species = { CLASS = HUM } }
+						MAM =		{ lrsk_create_fed_planet_species = { CLASS = MAM } }
+						FUN =		{ lrsk_create_fed_planet_species = { CLASS = FUN } }
+						AVI =		{ lrsk_create_fed_planet_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_create_fed_planet_species = { CLASS = PLANT } }
+						ART =		{ lrsk_create_fed_planet_species = { CLASS = ART } }
+						REP =		{ lrsk_create_fed_planet_species = { CLASS = REP } }
+						MOL =		{ lrsk_create_fed_planet_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_create_fed_planet_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_create_fed_planet_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_create_fed_planet_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_create_fed_planet_species = { CLASS = TOX } }
+						default =	{ lrsk_create_fed_planet_species = { CLASS = RANDOM } }
 					}
 				}
 			}
+
+			# For Discovery/Diplomatic Directive: Discover
 			if = {
 				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
@@ -193,20 +187,13 @@ country_event = {
 						lrsk_create_discovery_si_member = yes
 					}
 				}
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_1
-					establish_communications_no_message = root
-				}
 			}
+			# Tradeways/Tradeways, Inc.
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
 					30 = {
 						lrsk_create_tradeways_member_mg = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_1
-							establish_communications_no_message = root
-						}
 					}
 					70 = {
 						modifier = {
@@ -219,25 +206,29 @@ country_event = {
 							}
 						}	
 						lrsk_create_tradeways_member_mc = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_1
-							establish_communications_no_message = root
-						}
 					}
 				}
 			}
+			# Grand Alliance
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_1
-					establish_communications_no_message = root
-				}
 			}
+			# Convened by Providence
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
-				last_created_country = {
+			}
+
+			last_created_country = {
+				# Check if we somehow got a corp partner for a corp player
+				lrsk_federation_origin_megacorp_fix = yes
+				
+				# Replace with new preset country if somehow a Despicable Neutral
+				IF = { limit = { has_valid_ai_personality = no }
+					lrsk_fix_null_partner = { NUM = 1 }
+				}
+				ELSE = {			
 					save_event_target_as = lrsk_fed_member_1
 					establish_communications_no_message = root
 				}
@@ -249,39 +240,33 @@ country_event = {
 		# Second Member
 		event_target:lrsk_fed_planet_2 = {
 			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
-					homeworld = this
-					effect = {
-						save_event_target_as = lrsk_next_fed_planet_species
-					}
-				}
+
+			# Selective Kinship will make partners of different species class problematic
+			if = { limit = { root = { NOT = { has_valid_civic = civic_selective_kinship } } }
+				lrsk_create_fed_planet_species = { CLASS = RANDOM }
 			}
 			else = {
 				root = {
 					switch = {
 						trigger = is_species_class
-						HUM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
-						MAM =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MAM } }
-						FUN =		{ lrsk_federation_origin_create_kinship_species = { CLASS = FUN } }
-						AVI =		{ lrsk_federation_origin_create_kinship_species = { CLASS = AVI } }
-						PLANT =		{ lrsk_federation_origin_create_kinship_species = { CLASS = PLANT } }
-						ART =		{ lrsk_federation_origin_create_kinship_species = { CLASS = ART } }
-						REP =		{ lrsk_federation_origin_create_kinship_species = { CLASS = REP } }
-						MOL =		{ lrsk_federation_origin_create_kinship_species = { CLASS = MOL } }
-						LITHOID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = LITHOID } }
-						NECROID =	{ lrsk_federation_origin_create_kinship_species = { CLASS = NECROID } }
-						AQUATIC =	{ lrsk_federation_origin_create_kinship_species = { CLASS = AQUATIC } }
-						TOX =		{ lrsk_federation_origin_create_kinship_species = { CLASS = TOX } }
-						default =	{ lrsk_federation_origin_create_kinship_species = { CLASS = HUM } }
+						HUM =		{ lrsk_create_fed_planet_species = { CLASS = HUM } }
+						MAM =		{ lrsk_create_fed_planet_species = { CLASS = MAM } }
+						FUN =		{ lrsk_create_fed_planet_species = { CLASS = FUN } }
+						AVI =		{ lrsk_create_fed_planet_species = { CLASS = AVI } }
+						PLANT =		{ lrsk_create_fed_planet_species = { CLASS = PLANT } }
+						ART =		{ lrsk_create_fed_planet_species = { CLASS = ART } }
+						REP =		{ lrsk_create_fed_planet_species = { CLASS = REP } }
+						MOL =		{ lrsk_create_fed_planet_species = { CLASS = MOL } }
+						LITHOID =	{ lrsk_create_fed_planet_species = { CLASS = LITHOID } }
+						NECROID =	{ lrsk_create_fed_planet_species = { CLASS = NECROID } }
+						AQUATIC =	{ lrsk_create_fed_planet_species = { CLASS = AQUATIC } }
+						TOX =		{ lrsk_create_fed_planet_species = { CLASS = TOX } }
+						default =	{ lrsk_create_fed_planet_species = { CLASS = RANDOM } }
 					}
 				}
 			}
+
+			# For Discovery/Diplomatic Directive: Discover
 			if = {
 				limit = { root = { lrsk_gov_var_has_discovery_origin = yes } }
 				random_list = {
@@ -306,11 +291,8 @@ country_event = {
 						lrsk_create_discovery_si_member = yes
 					}
 				}
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_2
-					establish_communications_no_message = root
-				}
 			}
+			# Tradeways/Tradeways, Inc.
 			if = {
 				limit = { root = { lrsk_gov_var_has_tradeways_origin = yes } }
 				random_list = {
@@ -320,10 +302,6 @@ country_event = {
 							event_target:lrsk_fed_member_1 = { has_auth_corporate = yes }
 						}		
 						lrsk_create_tradeways_member_mg = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_2
-							establish_communications_no_message = root
-						}
 					}
 					60 = {
 						modifier = {
@@ -340,25 +318,29 @@ country_event = {
 							}
 						}					
 						lrsk_create_tradeways_member_mc = yes
-						last_created_country = {
-							save_event_target_as = lrsk_fed_member_2
-							establish_communications_no_message = root
-						}
 					}
 				}
 			}
+			# Grand Alliance
 			if = {
 				limit = { root = { has_origin = lrsk_gov_var_origin_grand_alliance } }
 				lrsk_create_grand_alliance_member = yes
-				last_created_country = {
-					save_event_target_as = lrsk_fed_member_2
-					establish_communications_no_message = root
-				}
 			}
+			# Convened by Providence
 			if = {
 				limit = { root = { has_origin = lrsk_gvp_origin_convened_providence } }
 				lrsk_create_providence_member = yes
-				last_created_country = {
+			}
+
+			last_created_country = {
+				# Check if we somehow got a corp partner for a corp player
+				lrsk_federation_origin_megacorp_fix = yes
+				
+				# Replace with new preset country if somehow a Despicable Neutral
+				IF = { limit = { has_valid_ai_personality = no }
+					lrsk_fix_null_partner = { NUM = 2 }
+				}
+				ELSE = {			
 					save_event_target_as = lrsk_fed_member_2
 					establish_communications_no_message = root
 				}
@@ -368,7 +350,6 @@ country_event = {
 		}
 		
 		event_target:lrsk_fed_member_1 = {
-			lrsk_federation_origin_megacorp_fix = yes
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
@@ -377,7 +358,6 @@ country_event = {
 			set_name = random # Fixes some naming issues
 		}
 		event_target:lrsk_fed_member_2 = {
-			lrsk_federation_origin_megacorp_fix = yes
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
