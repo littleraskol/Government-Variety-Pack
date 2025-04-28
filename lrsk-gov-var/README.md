@@ -30,6 +30,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Jobs x100
 -General pop changes:
 --num_pop to pop_amount
+--count_owned_pop to count_owned_pop_amount or num_assigned_jobs as needed.
 --Pops x100
 --Jobs (generally) x100
 --Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)

@@ -1025,9 +1025,9 @@ planet_event = {
 	immediate = {
 		IF = {
 			limit  = {			
-				count_owned_pop = {
+				count_owned_pop_amount = {
 					limit = { is_unemployed = yes  }
-					count < 1
+					count < 100
 				}
 			}
 			remove_modifier = lrsk_gvp_statmod_work_plan

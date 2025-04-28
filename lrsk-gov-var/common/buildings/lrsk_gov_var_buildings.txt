@@ -667,9 +667,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value > 0
 			}
 		}
 		modifier = {
@@ -681,9 +681,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value >= 100
 			}
 		}
 		modifier = {
@@ -712,9 +712,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value > 0
 			}
 		}
 		modifier = {			
@@ -726,9 +726,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value >= 100
 			}
 		}
 		modifier = {			
@@ -1001,9 +1001,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value > 0
 			}
 		}
 		modifier = {
@@ -1015,9 +1015,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value >= 100
 			}
 		}
 		modifier = {
@@ -1047,9 +1047,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value > 0
 			}
 		}
 		modifier = {
@@ -1061,9 +1061,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value >= 100
 			}
 		}
 		modifier = {
@@ -2713,9 +2713,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value > 0
 			}
 		}
 		modifier = {
@@ -2727,9 +2727,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value >= 100
 			}
 		}
 		modifier = {
@@ -2759,9 +2759,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value > 0
 			}
 		}
 		modifier = {			
@@ -2773,9 +2773,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value >= 100
 			}
 		}
 		modifier = {			

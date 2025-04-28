@@ -874,9 +874,9 @@ country_event = {
 			}
 			while = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_sapient = no }
-						count < 3
+						count < 300
 					}
 				}
 				create_pop = { species = last_created }

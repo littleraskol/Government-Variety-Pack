@@ -39,7 +39,7 @@ lrsk_gvp_citschol = {
 			weight = 1			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
 						count > 0
 					}
@@ -51,9 +51,9 @@ lrsk_gvp_citschol = {
 			weight = 3			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 1
+						count > 99
 					}
 					pop_amount > 4900
 				}
@@ -63,9 +63,9 @@ lrsk_gvp_citschol = {
 			weight = 5			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 2
+						count > 199
 					}
 					pop_amount > 7400
 				}
@@ -75,7 +75,7 @@ lrsk_gvp_citschol = {
 			weight = 5			
 			count_owned_planet = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
 						count > 0
 					}
@@ -88,7 +88,7 @@ lrsk_gvp_citschol = {
 			weight = 10			
 			count_owned_planet = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
 						count > 0
 					}
