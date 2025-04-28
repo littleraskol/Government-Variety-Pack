@@ -1061,7 +1061,7 @@ country_event = {
 		every_owned_planet = {
 			limit = {
 				is_capital = no
-				num_pops > 2
+				pop_amount > 200
 				NOT = { has_building = building_colony_shelter }
 			}
 			root = { change_variable = { which = lrsk_num_rj_applicable_planets value = 1 } }
@@ -1122,7 +1122,7 @@ country_event = {
 		trigger = {
 			any_owned_planet = {
 				is_capital = no
-				num_pops > 2
+				pop_amount > 200
 				NOT = { has_building = building_colony_shelter }
 			}
 		}
@@ -1154,7 +1154,7 @@ country_event = {
 			every_owned_planet = {
 				limit = {
 					is_capital = no
-					num_pops > 2
+					pop_amount > 200
 					NOT = { has_building = building_colony_shelter }
 				}
 				add_modifier = {

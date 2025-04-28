@@ -28,6 +28,12 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 -Buildings:
 --Added building_sets definitions.
 --Jobs x100
+-General pop changes:
+--num_pop to pop_amount
+--Pops x100
+--Jobs (generally) x100
+--Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
+--Amenities x100 (no consistent factor in base game)
 -Updated compat version number.
 
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols

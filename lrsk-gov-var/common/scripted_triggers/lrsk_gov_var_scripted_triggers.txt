@@ -146,7 +146,7 @@ lrsk_can_spawn_viceroyal_colony_vassal = {
 
 	# Don't want to poach pops from planets with few pops
 	any_owned_planet = {
-		num_pops > 9
+		pop_amount > 900
 		# Pop that starts new empire must be free, not subject to purge, not "second class" species
 		any_owned_pop = {
 			is_enslaved = no

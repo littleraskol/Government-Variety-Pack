@@ -22,7 +22,7 @@ country_event = {
 			NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
-				num_pops > 1 # don't want to steal last pop...
+				pop_amount > 100 # don't want to steal last pop...
 				has_branch_office = yes
 				has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 			}
@@ -38,7 +38,7 @@ country_event = {
 				NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 				any_owned_planet = {
-					num_pops > 1 # don't want to steal last pop...
+					pop_amount > 100 # don't want to steal last pop...
 					has_branch_office = yes
 					has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 				}
@@ -48,7 +48,7 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 					any_owned_planet = {
-						num_pops > 1 # don't want to steal last pop...
+						pop_amount > 100 # don't want to steal last pop...
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
@@ -57,7 +57,7 @@ country_event = {
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 1 # don't want to steal last pop...
+						pop_amount > 100 # don't want to steal last pop...
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
@@ -69,31 +69,31 @@ country_event = {
 						5 = {
 							modifier = {
 								add = -4
-								num_pops < 5
+								pop_amount < 500
 							}
 							modifier = {
 								add = 5
-								num_pops > 15
+								pop_amount > 1500
 							}
 							modifier = {
 								add = 5
-								num_pops > 30
+								pop_amount > 3000
 							}
 							modifier = {
 								add = 5
-								num_pops > 45
+								pop_amount > 4500
 							}
 							modifier = {
 								add = 5
-								planet_crime > 20
+								planet_crime > 2000
 							}
 							modifier = {
 								add = 5
-								planet_crime > 40
+								planet_crime > 4000
 							}
 							modifier = {
 								add = 5
-								planet_crime > 60
+								planet_crime > 6000
 							}
 							modifier = {
 								add = 5
@@ -164,31 +164,31 @@ country_event = {
 						95 = {
 							modifier = {
 								add = 4
-								num_pops < 5
+								pop_amount < 500
 							}
 							modifier = {
 								add = -5
-								num_pops > 15
+								pop_amount > 1500
 							}
 							modifier = {
 								add = -5
-								num_pops > 30
+								pop_amount > 3000
 							}
 							modifier = {
 								add = -5
-								num_pops > 45
+								pop_amount > 4500
 							}
 							modifier = {
 								add = -5
-								planet_crime > 20
+								planet_crime > 2000
 							}
 							modifier = {
 								add = -5
-								planet_crime > 40
+								planet_crime > 4000
 							}
 							modifier = {
 								add = -5
-								planet_crime > 60
+								planet_crime > 6000
 							}
 							modifier = {
 								add = -5
@@ -270,7 +270,7 @@ country_event = {
 			NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_branch_office = yes
 				has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 			}
@@ -286,7 +286,7 @@ country_event = {
 				NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 				check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = yes
 					has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 				}
@@ -296,7 +296,7 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 					any_owned_planet = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
@@ -305,7 +305,7 @@ country_event = {
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
@@ -742,7 +742,7 @@ country_event = {
 			NOT = { has_country_flag = lrsk_casino_luck_cooldown }
 			check_variable = { which = lrsk_num_owned_casinos value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_branch_office = yes
 				has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 			}
@@ -759,7 +759,7 @@ country_event = {
 				NOT = { has_country_flag = lrsk_casino_luck_cooldown }
 				check_variable = { which = lrsk_num_owned_casinos value > 0 }
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = yes
 					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 				}
@@ -772,7 +772,7 @@ country_event = {
 						root = { has_country_flag = lrsk_casino_luck_cooldown }
 					}
 					any_owned_planet = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
@@ -781,7 +781,7 @@ country_event = {
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }

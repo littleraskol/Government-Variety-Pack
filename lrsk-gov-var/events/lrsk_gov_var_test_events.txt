@@ -646,7 +646,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
-				num_pops > 1 # don't want to steal last pop...
+				pop_amount > 100 # don't want to steal last pop...
 				has_planet_flag = lrsk_could_lose_pops_to@root
 			}
 		}
@@ -674,7 +674,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_planet_flag = lrsk_could_leak_scandal_to@root
 			}
 		}
@@ -754,7 +754,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_casinos value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_planet_flag = lrsk_can_get_casino_events_from@root
 			}
 		}
@@ -782,7 +782,7 @@ country_event = {
 			check_variable = { which = lrsk_num_built_casinos value > 0 }
 		}
 		any_owned_planet = {
-			num_pops > 0 # just to hopefully filter out any uninhabited worlds
+			pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 			has_branch_office = yes
 			exists = branch_office_owner
 			has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
@@ -800,7 +800,7 @@ country_event = {
 		IF = {
 			limit = {
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = yes
 					exists = branch_office_owner
 					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
