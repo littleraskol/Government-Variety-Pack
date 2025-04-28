@@ -12,6 +12,12 @@ lrsk_gov_var_bldg_hall_of_honor = {
 	base_cap_amount = 2
 
 	category = army
+	
+	building_sets = {
+		fortress
+		government
+		knights
+	}
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_chivalry }
@@ -32,7 +38,7 @@ lrsk_gov_var_bldg_hall_of_honor = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 1
+		job_lrsk_gov_var_job_knight_add = 100
 	}
 
 	army_modifier = {
@@ -89,6 +95,12 @@ lrsk_gov_var_bldg_hall_of_valor = {
 	can_build = no
 
 	category = army
+	
+	building_sets = {
+		fortress
+		government
+		knights
+	}
 
 	allow = {
 		has_major_upgraded_capital = yes
@@ -105,7 +117,7 @@ lrsk_gov_var_bldg_hall_of_valor = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 2
+		job_lrsk_gov_var_job_knight_add = 200
 	}
 
 	army_modifier = {
@@ -191,6 +203,10 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 
 	category = government
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -216,8 +232,8 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
-		job_lrsk_gov_var_job_planetmind_overseer_add = 1
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 100
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -274,6 +290,10 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -299,8 +319,8 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_2
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
-		job_lrsk_gov_var_job_planetmind_overseer_add = 2
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 200
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -357,6 +377,10 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -382,8 +406,8 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_3
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
-		job_lrsk_gov_var_job_planetmind_overseer_add = 3
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 300
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -440,6 +464,10 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -465,8 +493,8 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_4
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
-		job_lrsk_gov_var_job_planetmind_overseer_add = 4
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 400
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -544,8 +572,8 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_5
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
-		job_lrsk_gov_var_job_planetmind_overseer_add = 5
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 500
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -611,7 +639,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_functionary_add = 2
+		job_lrsk_gov_var_job_functionary_add = 200
 	}
 	
 	triggered_desc = {
@@ -733,7 +761,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_infoguide_add = 2
+		job_lrsk_gov_var_job_infoguide_add = 200
 	}
 	
 	triggered_desc = {
@@ -945,7 +973,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_gofer_add = 2
+		job_lrsk_gov_var_job_gofer_add = 200
 	}
 	
 	triggered_desc = {
@@ -1378,7 +1406,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 		}
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.5
-			job_lrsk_gov_var_job_investigator_add = 1
+			job_lrsk_gov_var_job_investigator_add = 100
 		}
 	}
 	
@@ -1398,7 +1426,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.25
 			planet_crime_add = 20
-			job_lrsk_gov_var_job_suppressor_add = 1
+			job_lrsk_gov_var_job_suppressor_add = 100
 		}
 	}
 	
@@ -2657,7 +2685,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	}
 
 	planet_modifier = {	
-		job_lrsk_gov_var_job_offworld_worker_add = 2
+		job_lrsk_gov_var_job_offworld_worker_add = 200
 	}
 	
 	triggered_desc = {

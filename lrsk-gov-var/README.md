@@ -25,6 +25,9 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 -Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
 --A lot got changed!
 --Sorted out 4000+ line error log.
+-Buildings:
+--Added building_sets definitions.
+--Jobs x100
 -Updated compat version number.
 
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
