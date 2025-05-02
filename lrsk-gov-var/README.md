@@ -41,6 +41,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
 --Amenities x100 (no consistent factor in base game)
 --Deprecated some questionable edge case features that don't have an easy fix in the new pop system.
+-a little typo only i would see
 -Updated compat version number.
 
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
