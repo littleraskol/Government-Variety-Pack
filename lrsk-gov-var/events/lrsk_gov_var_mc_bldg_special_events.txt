@@ -149,9 +149,10 @@ country_event = {
 								limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_pop_to_abduct } }
 								random_owned_pop_group = { limit = { has_pop_group_flag = lrsk_pop_to_abduct }
 									remove_pop_group_flag = lrsk_pop_to_abduct
-									resettle_pop = {
-										pop = this
-										planet = root.capital_scope
+									resettle_pop_group = {
+										POP_GROUP = this
+										PLANET = owner.capital_scope
+										PERCENTAGE = 100
 									}
 									# Note: I don't think it makes sense to try to force any slavery category by event.
 									# Instead the player is notified that they should check the species rights of the pop.

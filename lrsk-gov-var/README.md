@@ -36,6 +36,8 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 -- _owned_pop = { -> _owned_pop_group = {
 --pop_has_trait -> pop_group_has_trait
 -- _pop_flag -> _pop_group_flag
+--resettle_pop -> resettle_pop_group
+--pop_event -> pop_group_event
 --Pops x100
 --Jobs x100
 --Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
