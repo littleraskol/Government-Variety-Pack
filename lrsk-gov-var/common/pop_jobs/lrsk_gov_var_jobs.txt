@@ -491,20 +491,6 @@ lrsk_gov_var_job_knight = {
 		}
 	}
 
-	pop_modifier = {
-		pop_defense_armies_add = 1
-	}
-
-	triggered_pop_modifier = {
-		potential = {
-			planet = {
-				exists = owner
-				owner = { has_technology = "tech_global_defense_grid" }
-			}
-		}
-		pop_defense_armies_add = 1
-	}
-
 	resources = {
 		category = planet_enforcers
 		#produces = {
@@ -527,6 +513,7 @@ lrsk_gov_var_job_knight = {
 	planet_modifier = {
 		planet_crime_add = -5
 		planet_stability_add = 2
+		planet_defense_armies_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -557,6 +544,16 @@ lrsk_gov_var_job_knight = {
 		modifier = {
 			planet_crime_add = -5
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				exists = owner
+				owner = { has_technology = "tech_global_defense_grid" }
+			}
+		}
+		planet_defense_armies_add = 1
 	}
 
 	weight = {

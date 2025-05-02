@@ -1068,7 +1068,7 @@ country_event = {
 		}
 
 		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
-		every_owned_pop = {
+		every_owned_pop_group = {
 			limit = {
 				is_enslaved = no
 			}
@@ -1170,7 +1170,7 @@ country_event = {
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip
 
 		trigger = {
-			any_owned_pop = {
+			any_owned_pop_group = {
 				is_enslaved = no	# Almost certainly true but eh
 			}
 		}

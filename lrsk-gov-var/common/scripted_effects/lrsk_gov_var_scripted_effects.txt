@@ -435,12 +435,12 @@ lrsk_make_chartered_colony_subject = {
 	#	capital_scope = {
 	#		IF = {
 	#			limit = {
-	#				any_owned_pop = {
+	#				any_owned_pop_group = {
 	#					has_job_category = ruler
 	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
 	#				}
 	#			}
-	#			random_owned_pop = {
+	#			random_owned_pop_group = {
 	#				limit = {
 	#					has_job_category = ruler
 	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
@@ -456,12 +456,12 @@ lrsk_make_chartered_colony_subject = {
 	#		}
 	#		ELSE_IF = {
 	#			limit = {
-	#				any_owned_pop = {
+	#				any_owned_pop_group = {
 	#					has_job_category = specialist
 	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
 	#				}
 	#			}
-	#			random_owned_pop = { 
+	#			random_owned_pop_group = { 
 	#				limit = {
 	#					has_job_category = specialist
 	#					NOT = { is_same_species = event_target:lrsk_chartering_agent }
@@ -476,8 +476,8 @@ lrsk_make_chartered_colony_subject = {
 	#			}
 	#		}
 	#		ELSE_IF = {
-	#			limit = { any_owned_pop = { NOT = { is_same_species = event_target:lrsk_chartering_agent } } }
-	#			random_owned_pop = {
+	#			limit = { any_owned_pop_group = { NOT = { is_same_species = event_target:lrsk_chartering_agent } } }
+	#			random_owned_pop_group = {
 	#				limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }
 	#				change_species = event_target:lrsk_chartering_agent_species
 	#			}
@@ -502,7 +502,7 @@ lrsk_make_chartered_colony_subject = {
 	#	}
 	#
 	#	# prevents immediate mass enslavement of deposed species pops (fucking yikes)
-	#	every_owned_pop = { limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }		
+	#	every_owned_pop_group = { limit = { NOT = { is_same_species = event_target:lrsk_chartering_agent } }		
 	#		set_citizenship_type = {
 	#			country = prev
 	#			type = citizenship_limited

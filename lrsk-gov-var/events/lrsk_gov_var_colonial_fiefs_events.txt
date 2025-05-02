@@ -65,10 +65,10 @@ country_event = {
 		every_owned_planet = {
 			limit = {
 				pop_amount > 900
-				any_owned_pop = {
+				any_owned_pop_group = {
 					is_enslaved = no
 					is_being_purged = no
-					not = { pop_has_trait = trait_syncretic_proles }
+					not = { pop_group_has_trait = trait_syncretic_proles }
 				}
 			}
 			set_timed_planet_flag = {
@@ -76,25 +76,25 @@ country_event = {
 				days = 2
 			}
 			# Mark all pops that can be founders on each applicible planet.
-			every_owned_pop = {
+			every_owned_pop_group = {
 				limit = {
 					is_enslaved = no
 					is_being_purged = no
-					not = { pop_has_trait = trait_syncretic_proles }
+					not = { pop_group_has_trait = trait_syncretic_proles }
 				}
-				set_timed_pop_flag = {
+				set_timed_pop_group_flag = {
 					flag = lrsk_colfief_possible_founder
 					days = 2
 				}
 				# This series of conditions will be checked later to give priority to the discontented and unemployed.
 				if = { limit = { is_unemployed = yes }
-					set_timed_pop_flag = {
+					set_timed_pop_group_flag = {
 						flag = lrsk_colfief_unemployed
 						days = 2
 					}
 				}
 				if = { limit = { happiness < 50 }
-					set_timed_pop_flag = {
+					set_timed_pop_group_flag = {
 						flag = lrsk_colfief_unhappy
 						days = 2
 					}
@@ -102,7 +102,7 @@ country_event = {
 				else_if = { limit = { happiness < 60 }
 					random = {
 						chance = 75
-						set_timed_pop_flag = {
+						set_timed_pop_group_flag = {
 							flag = lrsk_colfief_unhappy
 							days = 2
 						}
@@ -111,7 +111,7 @@ country_event = {
 				else_if = { limit = { happiness < 70 }
 					random = {
 						chance = 50
-						set_timed_pop_flag = {
+						set_timed_pop_group_flag = {
 							flag = lrsk_colfief_unhappy
 							days = 2
 						}
@@ -120,7 +120,7 @@ country_event = {
 				else_if = { limit = { happiness < 80 }
 					random = {
 						chance = 25
-						set_timed_pop_flag = {
+						set_timed_pop_group_flag = {
 							flag = lrsk_colfief_unhappy
 							days = 2
 						}
@@ -187,7 +187,7 @@ country_event = {
 		}
 
 		# Remove the founder flag from any pop that can't settle any possible destination world due to hab
-		every_owned_pop = { limit = { has_pop_flag = lrsk_colfief_possible_founder }
+		every_owned_pop_group = { limit = { has_pop_group_flag = lrsk_colfief_possible_founder }
 			if = {
 				limit = { NOT = {
 					any_system = {
@@ -201,18 +201,18 @@ country_event = {
 						}
 					}
 				} }
-				remove_pop_flag = lrsk_colfief_possible_founder
+				remove_pop_group_flag = lrsk_colfief_possible_founder
 			}
 		}
 
 		# Final sanity check: if we somehow eliminated all possible founders, we should not continue.
-		if = { limit = { any_owned_pop = { has_pop_flag = lrsk_colfief_possible_founder } }
+		if = { limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder } }
 
 			# This starts the selection with the source planet.
 			random_owned_planet = {
 				limit = {
 					has_planet_flag = lrsk_colfief_possible_source_world
-					any_owned_pop = { has_pop_flag = lrsk_colfief_possible_founder }
+					any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder }
 				}
 				
 				save_event_target_as = lrsk_colfief_new_vassal_founder_homeworld
@@ -220,55 +220,55 @@ country_event = {
 				# Want to prioritize the unemployed and unhappy as "motivated" to leave and found a new colony
 				if = {
 					limit = {
-						any_owned_pop = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unemployed
-							has_pop_flag = lrsk_colfief_unhappy
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unemployed
+							has_pop_group_flag = lrsk_colfief_unhappy
 						}
 					}
-					random_owned_pop = {
+					random_owned_pop_group = {
 						limit = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unemployed
-							has_pop_flag = lrsk_colfief_unhappy
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unemployed
+							has_pop_group_flag = lrsk_colfief_unhappy
 						}
 						save_event_target_as = lrsk_colfief_new_vassal_founder
 					}
 				}
 				else_if = {
 					limit = {
-						any_owned_pop = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unemployed
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unemployed
 						}
 					}
-					random_owned_pop = {
+					random_owned_pop_group = {
 						limit = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unemployed
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unemployed
 						}
 						save_event_target_as = lrsk_colfief_new_vassal_founder
 					}
 				}
 				else_if = {
 					limit = {
-						any_owned_pop = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unhappy
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unhappy
 						}
 					}
-					random_owned_pop = {
+					random_owned_pop_group = {
 						limit = {
-							has_pop_flag = lrsk_colfief_possible_founder
-							has_pop_flag = lrsk_colfief_unhappy
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_unhappy
 						}
 						save_event_target_as = lrsk_colfief_new_vassal_founder
 					}
 				}
 				else = {
-					random_owned_pop = {
+					random_owned_pop_group = {
 						limit = {
-							has_pop_flag = lrsk_colfief_possible_founder
+							has_pop_group_flag = lrsk_colfief_possible_founder
 						}
 						save_event_target_as = lrsk_colfief_new_vassal_founder
 					}

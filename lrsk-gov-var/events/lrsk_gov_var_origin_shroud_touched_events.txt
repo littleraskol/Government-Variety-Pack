@@ -44,7 +44,7 @@ planet_event = {
 			species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
 			
 			# Randomly sets some to Latent Psionic or to lose Natural Esper
-			every_owned_pop = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
+			every_owned_pop_group = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
 
 			# Semi-immediate check that some other mod did not remove the shroud pockets
 			country_event = {
@@ -61,11 +61,11 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {	fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper } }
+	trigger = {	fromfrom = { pop_group_has_trait = lrsk_gov_var_trait_natural_esper } }
 
 	immediate = {
 		if = {
-			limit = { fromfrom = { pop_has_trait = lrsk_gov_var_trait_natural_esper } } # probably redundant but eh
+			limit = { fromfrom = { pop_group_has_trait = lrsk_gov_var_trait_natural_esper } } # probably redundant but eh
 			fromfrom = { pop_event = { id = lrsk_gov_var_shroud_touched.3 } }
 		}
 	}
@@ -80,7 +80,7 @@ pop_event = {
 
 	trigger = {
 		#species = { has_species_flag = lrsk_gov_var_shroud_touched_species }
-		pop_has_trait = lrsk_gov_var_trait_natural_esper
+		pop_group_has_trait = lrsk_gov_var_trait_natural_esper
 	}
 
 	immediate = {
@@ -88,8 +88,8 @@ pop_event = {
 		if = {
 			limit = {
 				or = {
-					pop_has_trait = trait_latent_psionic
-					pop_has_trait = trait_psionic
+					pop_group_has_trait = trait_latent_psionic
+					pop_group_has_trait = trait_psionic
 				}
 			}
 			modify_species = {
@@ -144,13 +144,13 @@ country_event = {
 	}
 
 	immediate = {
-		every_owned_pop = {
+		every_owned_pop_group = {
 			if = { 
 				limit = {
-					pop_has_trait = lrsk_gov_var_trait_natural_esper
+					pop_group_has_trait = lrsk_gov_var_trait_natural_esper
 					or = {
-						pop_has_trait = trait_latent_psionic
-						pop_has_trait = trait_psionic
+						pop_group_has_trait = trait_latent_psionic
+						pop_group_has_trait = trait_psionic
 					}
 				}
 				modify_species = {
@@ -375,10 +375,10 @@ event = {
 
 	trigger = {
 		#any_pop = {
-		#	pop_has_trait = lrsk_gov_var_trait_natural_esper
+		#	pop_group_has_trait = lrsk_gov_var_trait_natural_esper
 		#	OR = {
-		#		pop_has_trait = trait_latent_psionic
-		#		pop_has_trait = trait_psionic
+		#		pop_group_has_trait = trait_latent_psionic
+		#		pop_group_has_trait = trait_psionic
 		#	}
 		#}
 	}
@@ -392,12 +392,12 @@ event = {
 					is_country_type = awakened_fallen_empire
 				}
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				limit = {
-					pop_has_trait = lrsk_gov_var_trait_natural_esper
+					pop_group_has_trait = lrsk_gov_var_trait_natural_esper
 					OR = {
-						pop_has_trait = trait_latent_psionic
-						pop_has_trait = trait_psionic
+						pop_group_has_trait = trait_latent_psionic
+						pop_group_has_trait = trait_psionic
 					}
 				}
 				modify_species = {

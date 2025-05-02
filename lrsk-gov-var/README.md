@@ -30,10 +30,17 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 -General pop changes:
 --num_pop to pop_amount
 --count_owned_pop to count_owned_pop_amount or num_assigned_jobs as needed.
+--pop_percentage to pop_amount_percentage
+--pop_growth_speed to logistic_growth_mult
+--pop_defense_armies_add -> planet_defense_armies_add (pop mod -> planet mod)
+-- _owned_pop = { -> _owned_pop_group = {
+--pop_has_trait -> pop_group_has_trait
+-- _pop_flag -> _pop_group_flag
 --Pops x100
 --Jobs x100
 --Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
 --Amenities x100 (no consistent factor in base game)
+--Deprecated some questionable edge case features that don't have an easy fix in the new pop system.
 -Updated compat version number.
 
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols

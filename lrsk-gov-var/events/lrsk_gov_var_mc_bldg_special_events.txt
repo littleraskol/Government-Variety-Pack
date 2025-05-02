@@ -97,15 +97,15 @@ country_event = {
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								factor = 20
@@ -122,33 +122,33 @@ country_event = {
 
 							# Choice of pop to enslave starts with those who would be "least missed" or are most desperate.
 							IF = {
-								limit = { any_owned_pop = { OR = { 
+								limit = { any_owned_pop_group = { OR = { 
 									is_unemployed = yes
 									is_pop_category = slave
 									is_pop_category = purge
 								} } }
-								random_owned_pop = {
+								random_owned_pop_group = {
 									limit = { OR = { 
 										is_unemployed = yes
 										is_pop_category = slave
 										is_pop_category = purge
 									} }
-									set_pop_flag = lrsk_pop_to_abduct
+									set_pop_group_flag = lrsk_pop_to_abduct
 								}
 							}
-							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = worker } }
-								random_owned_pop = { limit = { is_pop_category = worker } set_pop_flag = lrsk_pop_to_abduct }
+							ELSE_IF = { limit = { any_owned_pop_group = { is_pop_category = worker } }
+								random_owned_pop_group = { limit = { is_pop_category = worker } set_pop_group_flag = lrsk_pop_to_abduct }
 							}
-							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = specialist } }
-								random_owned_pop = { limit = { is_pop_category = specialist } set_pop_flag = lrsk_pop_to_abduct }
+							ELSE_IF = { limit = { any_owned_pop_group = { is_pop_category = specialist } }
+								random_owned_pop_group = { limit = { is_pop_category = specialist } set_pop_group_flag = lrsk_pop_to_abduct }
 							}
-							ELSE = { random_owned_pop = { set_pop_flag = lrsk_pop_to_abduct } }
+							ELSE = { random_owned_pop_group = { set_pop_group_flag = lrsk_pop_to_abduct } }
 
 							
 							IF = {
-								limit = { any_owned_pop = { has_pop_flag = lrsk_pop_to_abduct } }
-								random_owned_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct }
-									remove_pop_flag = lrsk_pop_to_abduct
+								limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_pop_to_abduct } }
+								random_owned_pop_group = { limit = { has_pop_group_flag = lrsk_pop_to_abduct }
+									remove_pop_group_flag = lrsk_pop_to_abduct
 									resettle_pop = {
 										pop = this
 										planet = root.capital_scope
@@ -192,15 +192,15 @@ country_event = {
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								factor = 0
