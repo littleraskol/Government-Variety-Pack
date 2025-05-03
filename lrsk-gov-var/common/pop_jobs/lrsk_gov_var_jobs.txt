@@ -18,8 +18,12 @@
 # Hedge Preacher
 lrsk_gov_var_job_hedge_preacher = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_primitive_dwellings
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_primitive_dwellings
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -75,13 +79,27 @@ lrsk_gov_var_job_hedge_preacher = {
 	}
 
 	inline_script = "jobs/automodding_priority_unity"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Citizen Scholar
 lrsk_gvp_job_citscholar = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_residence
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_residence
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -195,13 +213,27 @@ lrsk_gvp_job_citscholar = {
 	}
 
 	inline_script = "jobs/automodding_priority_research"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Functionary
 lrsk_gov_var_job_functionary = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_managerial_technique_institute
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_managerial_technique_institute
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -257,13 +289,27 @@ lrsk_gov_var_job_functionary = {
 	}
 
 	inline_script = "jobs/automodding_priority_trade"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Info-Guide
 lrsk_gov_var_job_infoguide = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_learnarium_dome
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_learnarium_dome
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -312,13 +358,27 @@ lrsk_gov_var_job_infoguide = {
 	}
 
 	inline_script = "jobs/automodding_priority_research"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Gofer
 lrsk_gov_var_job_gofer = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_odd_jobs_emporium
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_odd_jobs_emporium
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -378,13 +438,27 @@ lrsk_gov_var_job_gofer = {
 	}
 	
 	inline_script = "jobs/automodding_priority_amenities"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Offworld Worker
 lrsk_gov_var_job_offworld_worker = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -446,6 +520,16 @@ lrsk_gov_var_job_offworld_worker = {
 	}
 	
 	inline_script = "jobs/automodding_priority_amenities"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 ## Specialist Jobs
@@ -453,8 +537,12 @@ lrsk_gov_var_job_offworld_worker = {
 # Knight
 lrsk_gov_var_job_knight = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_hall_of_honor
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_hall_of_honor
+		}
+	}
 	clothes_texture_index = 4
 
 	possible_pre_triggers = {
@@ -622,13 +710,27 @@ lrsk_gov_var_job_knight = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Pastor
 lrsk_gov_var_job_pastor = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_temple
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_temple
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -703,13 +805,27 @@ lrsk_gov_var_job_pastor = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Otherworld Guide
 lrsk_gov_var_job_otherworld_guide = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_shroud_pocket
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_shroud_pocket
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -804,13 +920,27 @@ lrsk_gov_var_job_otherworld_guide = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Investigator
 lrsk_gov_var_job_investigator = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_professional_protection_office
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_professional_protection_office
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -900,13 +1030,27 @@ lrsk_gov_var_job_investigator = {
 			has_trait = trait_psionic
 		}
 	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Suppressor
 lrsk_gov_var_job_suppressor = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_professional_protection_office
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_professional_protection_office
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -999,13 +1143,27 @@ lrsk_gov_var_job_suppressor = {
 			has_trait = trait_cybernetic
 		}
 	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Civil Society Leader
 lrsk_gvp_job_civic_leader = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_capital
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_capital
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -1065,6 +1223,16 @@ lrsk_gvp_job_civic_leader = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 ## Ruler Jobs
@@ -1074,8 +1242,12 @@ lrsk_gvp_job_civic_leader = {
 # Planetmind Overseer
 lrsk_gov_var_job_planetmind_overseer = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1137,6 +1309,16 @@ lrsk_gov_var_job_planetmind_overseer = {
 		weight = @lrsk_planetmind_job_weight
 		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_planetmind_overseer|RESOURCE|unity|
 	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = complex_drone
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 ## Complex Drones (Machine)
@@ -1144,8 +1326,12 @@ lrsk_gov_var_job_planetmind_overseer = {
 # Planetary Auditor
 lrsk_gov_var_job_regional_coordinator = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_machine_capital
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1188,4 +1374,14 @@ lrsk_gov_var_job_regional_coordinator = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = complex_drone
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
