@@ -50,6 +50,8 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --has_living_standard can no longer be used from jobs, not necessarily needed though.
 --Can no longer change output based on has_trait
 --planet_administrators replaced with planet_bureaucrats
+-Other:
+--potential_crossbreeding_chance gone
 -a little typo only i would see
 -Updated compat version number.
 
