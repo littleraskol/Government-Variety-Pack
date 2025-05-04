@@ -44,7 +44,10 @@ planet_event = {
 			species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
 			
 			# Randomly sets some to Latent Psionic or to lose Natural Esper
-			every_owned_pop_group = { pop_group_event = { id = lrsk_gov_var_shroud_touched.3 } }
+			every_owned_pop_group = { 
+				limit = { pop_group_has_trait = lrsk_gov_var_trait_natural_esper }
+				pop_group_event = { id = lrsk_gov_var_shroud_touched.3 }
+			}
 
 			# Semi-immediate check that some other mod did not remove the shroud pockets
 			country_event = {
