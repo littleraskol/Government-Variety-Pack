@@ -48,6 +48,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Added promotion blocks
 --planet_priests no longer exists; considered bureaucrats now. Needed changes made.
 --has_living_standard can no longer be used from jobs, not necessarily needed though.
+--Can no longer change output based on has_trait
 -a little typo only i would see
 -Updated compat version number.
 

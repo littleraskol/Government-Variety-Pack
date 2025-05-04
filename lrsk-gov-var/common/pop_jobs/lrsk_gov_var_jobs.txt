@@ -838,22 +838,22 @@ lrsk_gov_var_job_otherworld_guide = {
 	possible_precalc = can_fill_specialist_job
 
 	resources = {
-		category = planet_telepaths
+		category = planet_entertainers
 		produces = {
-			unity = 1
-		}
-		produces = {
-			trigger = {	has_trait = lrsk_gov_var_trait_natural_esper }
-			unity = 1
-		}
-		produces = {
-			trigger = {	has_trait = trait_latent_psionic }
 			unity = 2
 		}
-		produces = {
-			trigger = {	has_trait = trait_psionic }
-			unity = 3
-		}
+		#produces = {
+		#	trigger = {	has_trait = lrsk_gov_var_trait_natural_esper }
+		#	unity = 1
+		#}
+		#produces = {
+		#	trigger = {	has_trait = trait_latent_psionic }
+		#	unity = 2
+		#}
+		#produces = {
+		#	trigger = {	has_trait = trait_psionic }
+		#	unity = 3
+		#}
 		upkeep = {
 			consumer_goods = 1
 		}
@@ -861,30 +861,31 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			has_trait = lrsk_gov_var_trait_natural_esper
+			always = yes
 		}
 		planet_stability_add = 1
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_latent_psionic
-		}
-		planet_stability_add = 2
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_latent_psionic
+	#	}
+	#	planet_stability_add = 2
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_psionic
-		}
-		planet_stability_add = 3
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_psionic
+	#	}
+	#	planet_stability_add = 3
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
 		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_otherworld_guide|RESOURCE|unity|
 		modifier = {
-			factor = 0.01	# don't want this going unfilled in edge case where no one has a valid trait...
+			#factor = 0.01	# don't want this going unfilled in edge case where no one has a valid trait...
+			factor = 0	# No way to make the job more powerful per trait level, just going to ban it if lacking a psi trait. Oh well.
 			NOR = {
 				has_trait = trait_latent_psionic
 				has_trait = trait_psionic
@@ -980,7 +981,7 @@ lrsk_gov_var_job_investigator = {
 
 	triggered_planet_modifier = {
 		potential = {
-			has_trait = trait_latent_psionic
+			enforcer_is_telepath_trigger = yes
 		}
 		modifier = {
 			planet_crime_add = -5
@@ -988,15 +989,15 @@ lrsk_gov_var_job_investigator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_psionic
-		}
-		modifier = {
-			planet_crime_add = -10
-			pop_cat_worker_political_power = -0.1
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_psionic
+	#	}
+	#	modifier = {
+	#		planet_crime_add = -10
+	#		pop_cat_worker_political_power = -0.1
+	#	}
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
@@ -1067,45 +1068,45 @@ lrsk_gov_var_job_suppressor = {
 		planet_jobs_worker_produces_mult = 0.1
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_strong
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.05
-			planet_jobs_worker_produces_mult = 0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_strong
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.05
+	#		planet_jobs_worker_produces_mult = 0.05
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_cybernetic
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.05
-			planet_jobs_worker_produces_mult = 0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_cybernetic
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.05
+	#		planet_jobs_worker_produces_mult = 0.05
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.1
-			planet_jobs_worker_produces_mult = 0.1
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_very_strong
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.1
+	#		planet_jobs_worker_produces_mult = 0.1
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_weak
-		}
-		modifier = {
-			pop_cat_worker_political_power = +0.05
-			planet_jobs_worker_produces_mult = -0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_weak
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = +0.05
+	#		planet_jobs_worker_produces_mult = -0.05
+	#	}
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
