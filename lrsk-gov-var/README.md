@@ -57,6 +57,7 @@ v7.0 (05/06/25) Phoenix (4.0) Update
 -Buildings:
 --Added building_sets definitions.
 --Corp buildings now cost influence.
+--Corp buildings provide some degree of trade bonus from job tags and traders on corp capital (lesser bc only some civics even get them)
 -Other:
 --potential_crossbreeding_chance gone
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
