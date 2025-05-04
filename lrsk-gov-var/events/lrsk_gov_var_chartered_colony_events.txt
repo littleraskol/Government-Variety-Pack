@@ -429,7 +429,11 @@ country_event = {
 				}
 				random = {
 					chance = 50
-					pop_change_ethic = ethic_fanatic_xenophile
+					pop_group_transfer_ethic = {
+						POP_GROUP = this
+						ETHOS = ethic_fanatic_xenophile
+						PERCENTAGE = 1 # 100%
+					}
 				}
 			}
 		}
