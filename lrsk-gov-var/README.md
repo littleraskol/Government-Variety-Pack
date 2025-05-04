@@ -53,6 +53,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --planet_administrators replaced with planet_bureaucrats
 --trade_value_add is now a resource (trade)
 --Updated Offworld Worker desc (provides amenities, not trade)
+--Jobs no longer "self-weight"
 -Other:
 --potential_crossbreeding_chance gone
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
