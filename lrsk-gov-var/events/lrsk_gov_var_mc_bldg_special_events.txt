@@ -189,15 +189,15 @@ country_event = {
 										is_pop_category = purge
 									}
 									modifier = {
-										factor = 0.25	# pickier, more expectations and resources
-										is_pop_category = ruler
-									}
-									modifier = {
-										factor = 1.5
+										factor = 1.5	# somewhat motivated to take risks
 										OR = { 
 											is_pop_category = worker
 											is_pop_category = civilian
 										}
+									}
+									modifier = {
+										factor = 0.25	# pickier, more expectations and resources
+										is_pop_category = ruler
 									}
 								}
 								resettle_pop_group = {
