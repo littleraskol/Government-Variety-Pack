@@ -131,18 +131,18 @@ lrsk_gvp_job_citscholar = {
 			unity = 1
 		}
 
-		produces = {
-			trigger = {
-				exists = owner
-				has_living_standard = {
-					country = owner 
-					type = living_standard_utopian
-				}
-			}
-			physics_research = 1
-			engineering_research = 1
-			society_research = 1
-		}
+		#produces = {
+		#	trigger = {
+		#		exists = owner
+		#		has_living_standard = {
+		#			country = owner 
+		#			type = living_standard_utopian
+		#		}
+		#	}
+		#	physics_research = 1
+		#	engineering_research = 1
+		#	society_research = 1
+		#}
 
 		upkeep = {
 			consumer_goods = 1
@@ -167,18 +167,18 @@ lrsk_gvp_job_citscholar = {
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			has_living_standard = {
-				country = owner 
-				type = living_standard_utopian
-			}
-		}
-		modifier = {
-			planet_amenities_add = 200
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		exists = owner
+	#		has_living_standard = {
+	#			country = owner 
+	#			type = living_standard_utopian
+	#		}
+	#	}
+	#	modifier = {
+	#		planet_amenities_add = 200
+	#	}
+	#}
 
 	triggered_planet_modifier = {
 		potential = {
