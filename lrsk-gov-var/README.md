@@ -68,6 +68,9 @@ v7.0 (05/06/25) Phoenix (4.0) Update
 --a little typo only i would see
 -Updated compat version number.
 
+v6.4.1 (05/04/25) - Planetmind Overseer weight fix
+-Removed weird weight from Planetmind Overseer job (weighted unity production, but it has only unity upkeep?)
+
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
 -Attempts to detect and replace "Despicable Neutral" spawned fed partners.
 -Various other streamlining/improvements to fed starts.
