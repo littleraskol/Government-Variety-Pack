@@ -46,6 +46,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 -Jobs:
 --Added swappable_data blocks
 --Added promotion blocks
+--planet_priests no longer exists; considered bureaucrats now. Needed changes made.
 -a little typo only i would see
 -Updated compat version number.
 
