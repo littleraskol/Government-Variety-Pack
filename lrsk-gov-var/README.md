@@ -56,6 +56,7 @@ v7.0 (05/06/25) Phoenix (4.0) Update
 --Maintenance Drones seem to be deprecated.
 -Buildings:
 --Added building_sets definitions.
+--Corp buildings now cost influence.
 -Other:
 --potential_crossbreeding_chance gone
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
