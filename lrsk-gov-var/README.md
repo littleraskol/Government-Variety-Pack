@@ -58,7 +58,8 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
 --Imperial Bursar councilor gives less trade but more tech sharing
 --country_vassal_naval_capacity_contribution_mult replaced with country_naval_capacity_contribution_from_subjects_mult
--a little typo only i would see
+--planet_immigration_pull_mult and pop_growth_from_immigration replaced by planet_resettlement_unemployed_destination_mult
+--a little typo only i would see
 -Updated compat version number.
 
 v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
