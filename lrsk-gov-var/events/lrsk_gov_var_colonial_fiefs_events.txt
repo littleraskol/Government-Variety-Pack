@@ -519,16 +519,17 @@ country_event = {
 				resettle_pop_group = {
 					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
 					PLANET = owner.capital_scope
-					PERCENTAGE = 1 # 100%
+					PERCENTAGE = 0.5 # 50%
 				}
 				
-				# 25% chance with promotion policy that colony starts with additional pop
+				# 25% chance with promotion policy that colony starts with additional pops
 				if = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted } }
 					random = {
 						chance = 25
-						create_pop = {
-							species = event_target:lrsk_colfief_new_vassal_founder
-							ethos = event_target:lrsk_colfief_new_vassal_founder
+						resettle_pop_group = {
+							POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
+							PLANET = owner.capital_scope
+							PERCENTAGE = 0.25 # 25% (total 75% transferred)
 						}
 					}
 				}
