@@ -86,50 +86,6 @@ country_event = {
 					flag = lrsk_colfief_possible_founder
 					days = 2
 				}
-				# This series of conditions will be checked later to give priority to the discontented and unemployed.
-				if = { limit = { is_unemployed = yes }
-					set_timed_pop_group_flag = {
-						flag = lrsk_colfief_unemployed
-						days = 2
-					}
-				}
-				if = { limit = { happiness < 50 }
-					set_timed_pop_group_flag = {
-						flag = lrsk_colfief_unhappy
-						days = 2
-					}
-				}
-				else_if = { limit = { happiness < 60 }
-					random = {
-						chance = 75
-						set_timed_pop_group_flag = {
-							flag = lrsk_colfief_unhappy
-							days = 2
-						}
-					}
-				}
-				else_if = { limit = { happiness < 70 }
-					random = {
-						chance = 50
-						set_timed_pop_group_flag = {
-							flag = lrsk_colfief_unhappy
-							days = 2
-						}
-					}
-				}
-				else_if = { limit = { happiness < 80 }
-					random = {
-						chance = 25
-						set_timed_pop_group_flag = {
-							flag = lrsk_colfief_unhappy
-							days = 2
-						}
-					}
-				}
-				
-				# This is an "aristocratic" system. So long as there is some possible founder somewhere,
-				# we want it to be more likely for a "higher class" pop to start a whole new empire.
-				# TBD!
 			}
 		}
 
@@ -218,60 +174,35 @@ country_event = {
 				save_event_target_as = lrsk_colfief_new_vassal_founder_homeworld
 
 				# Want to prioritize the unemployed and unhappy as "motivated" to leave and found a new colony
-				if = {
+				weighted_random_owned_pop_group = {
 					limit = {
-						any_owned_pop_group = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unemployed
-							has_pop_group_flag = lrsk_colfief_unhappy
+						has_pop_group_flag = lrsk_colfief_possible_founder
+					}
+					weights = {
+						# can use add or mult
+						base = 2
+						modifier = {
+							add = 2
+							happiness < 60
+						}
+						modifier = {
+							add = 4
+							happiness < 30
+						}
+						modifier = {
+							factor = 2
+							is_unemployed = yes
+						}
+						modifier = {
+							factor = 1.5
+							is_pop_category = civilian
+						}
+						modifier = {
+							factor = 0
+							is_pop_category = ruler
 						}
 					}
-					random_owned_pop_group = {
-						limit = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unemployed
-							has_pop_group_flag = lrsk_colfief_unhappy
-						}
-						save_event_target_as = lrsk_colfief_new_vassal_founder
-					}
-				}
-				else_if = {
-					limit = {
-						any_owned_pop_group = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unemployed
-						}
-					}
-					random_owned_pop_group = {
-						limit = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unemployed
-						}
-						save_event_target_as = lrsk_colfief_new_vassal_founder
-					}
-				}
-				else_if = {
-					limit = {
-						any_owned_pop_group = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unhappy
-						}
-					}
-					random_owned_pop_group = {
-						limit = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-							has_pop_group_flag = lrsk_colfief_unhappy
-						}
-						save_event_target_as = lrsk_colfief_new_vassal_founder
-					}
-				}
-				else = {
-					random_owned_pop_group = {
-						limit = {
-							has_pop_group_flag = lrsk_colfief_possible_founder
-						}
-						save_event_target_as = lrsk_colfief_new_vassal_founder
-					}
+					save_event_target_as = lrsk_colfief_new_vassal_founder
 				}
 			}
 
@@ -516,20 +447,24 @@ country_event = {
 					}
 				}
 
-				resettle_pop_group = {
-					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
-					PLANET = owner.capital_scope
-					PERCENTAGE = 0.5 # 50%
-				}
-				
-				# 25% chance with promotion policy that colony starts with additional pops
-				if = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-					random = {
-						chance = 25
+				random_list = {
+					3 = {
 						resettle_pop_group = {
 							POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
 							PLANET = owner.capital_scope
-							PERCENTAGE = 0.25 # 25% (total 75% transferred)
+							PERCENTAGE = 0.5 # 50%
+						}
+					}
+					# 25% chance with promotion policy that colony starts with additional pops
+					1 = {
+						modifier = {
+							factor = 0
+							root = { NOT= { has_policy_flag = lrsk_gvp_colfief_promoted } }
+						}
+						resettle_pop_group = {
+							POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
+							PLANET = owner.capital_scope
+							PERCENTAGE = 1 # 100%
 						}
 					}
 				}
