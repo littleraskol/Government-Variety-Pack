@@ -95,7 +95,7 @@ decision_lrsk_gvp_work_allocation_plan = {
 		NOT = { has_modifier = lrsk_gvp_statmod_work_plan }
 		count_owned_pop_amount = {
 			limit = { is_unemployed = yes  }
-			count > 0
+			count > 99
 		}
 	}
 
@@ -120,14 +120,14 @@ decision_lrsk_gvp_work_allocation_plan = {
 			weight = 1
 			count_owned_pop_amount = {
 				limit = { is_unemployed = yes  }
-				count > 0
+				count > 99
 			}
 		}
 		modifier = {
 			weight = 5
 			count_owned_pop_amount = {
 				limit = { is_unemployed = yes  }
-				count > 99
+				count > 199
 			}
 		}
 		modifier = {
