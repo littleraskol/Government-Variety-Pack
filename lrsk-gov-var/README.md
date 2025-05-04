@@ -55,6 +55,9 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Updated Offworld Worker desc (provides amenities, not trade)
 -Other:
 --potential_crossbreeding_chance gone
+--trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
+--Imperial Bursar councilor gives less trade but more tech sharing
+--country_vassal_naval_capacity_contribution_mult replaced with country_naval_capacity_contribution_from_subjects_mult
 -a little typo only i would see
 -Updated compat version number.
 
