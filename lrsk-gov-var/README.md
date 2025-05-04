@@ -51,6 +51,8 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --has_living_standard can no longer be used from jobs, not necessarily needed though.
 --Can no longer change output based on has_trait
 --planet_administrators replaced with planet_bureaucrats
+--trade_value_add is now a resource (trade)
+--Updated Offworld Worker desc (provides amenities, not trade)
 -Other:
 --potential_crossbreeding_chance gone
 -a little typo only i would see

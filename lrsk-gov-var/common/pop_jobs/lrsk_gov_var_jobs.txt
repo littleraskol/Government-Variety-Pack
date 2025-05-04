@@ -250,6 +250,7 @@ lrsk_gov_var_job_functionary = {
 
 		produces = {
 			unity = 1
+			trade = 3
 		}
 
 		produces = {
@@ -261,13 +262,13 @@ lrsk_gov_var_job_functionary = {
 		}
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			always = yes
-		}
-		trade_value_add = 3
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		always = yes
+	#	}
+	#	trade_value_add = 3
+	#	mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_worker_job_weight
