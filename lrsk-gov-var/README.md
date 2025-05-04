@@ -59,6 +59,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Imperial Bursar councilor gives less trade but more tech sharing
 --country_vassal_naval_capacity_contribution_mult replaced with country_naval_capacity_contribution_from_subjects_mult
 --planet_immigration_pull_mult and pop_growth_from_immigration replaced by planet_resettlement_unemployed_destination_mult
+--has_refinery_designation gone
 --a little typo only i would see
 -Updated compat version number.
 
