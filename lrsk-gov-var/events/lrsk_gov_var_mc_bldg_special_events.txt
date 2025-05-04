@@ -25,6 +25,7 @@ country_event = {
 				pop_amount > 100 # don't want to steal last pop...
 				has_branch_office = yes
 				has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
+				any_owned_pop_group = { can_be_smuggled = yes }
 			}
 		}
 	}
@@ -41,6 +42,7 @@ country_event = {
 					pop_amount > 100 # don't want to steal last pop...
 					has_branch_office = yes
 					has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
+					any_owned_pop_group = { can_be_smuggled = yes }
 				}
 			}
 
@@ -52,6 +54,7 @@ country_event = {
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						any_owned_pop_group = { can_be_smuggled = yes }
 					}
 				}
 
@@ -61,6 +64,51 @@ country_event = {
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						any_owned_pop_group = { can_be_smuggled = yes }
+					}
+					# This weighting basically starts with the most likely planets, which should save some time.
+					weights = {
+						base = 10
+						modifier = {
+							factor = 0.1
+							pop_amount < 500
+						}
+						modifier = {
+							factor = 1.5
+							pop_amount > 1500
+						}
+						modifier = {
+							factor = 2
+							pop_amount > 3000
+						}
+						modifier = {
+							factor = 3
+							pop_amount > 4500
+						}
+						modifier = {
+							factor = 1.5
+							planet_crime > 20
+						}
+						modifier = {
+							factor = 2
+							planet_crime > 40
+						}
+						modifier = {
+							factor = 3
+							planet_crime > 60
+						}
+						modifier = {
+							factor = 1.5
+							pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
+						}
+						modifier = {
+							factor = 2
+							pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+						}
+						modifier = {
+							factor = 3
+							pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+						}
 					}
 
 					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 7 } # marks this planet
@@ -85,19 +133,19 @@ country_event = {
 							}
 							modifier = {
 								add = 5
-								planet_crime > 2000
+								planet_crime > 20
 							}
 							modifier = {
 								add = 5
-								planet_crime > 4000
+								planet_crime > 40
 							}
 							modifier = {
 								add = 5
-								planet_crime > 6000
+								planet_crime > 60
 							}
 							modifier = {
 								add = 5
-								pop_amount_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = 5
@@ -121,42 +169,44 @@ country_event = {
 							save_event_target_as = lrsk_slaver_corp_abduct_location
 
 							# Choice of pop to enslave starts with those who would be "least missed" or are most desperate.
-							IF = {
-								limit = { any_owned_pop_group = { OR = { 
-									is_unemployed = yes
-									is_pop_category = slave
-									is_pop_category = purge
-								} } }
-								random_owned_pop_group = {
-									limit = { OR = { 
-										is_unemployed = yes
+							weighted_random_owned_pop_group = {
+								limit = {
+									can_be_smuggled = yes
+								}
+								weights = {
+									# can use add or mult
+									base = 10
+									modifier = {
+										factor = 2		# easier to enslave the already enslaved
 										is_pop_category = slave
-										is_pop_category = purge
-									} }
-									set_pop_group_flag = lrsk_pop_to_abduct
-								}
-							}
-							ELSE_IF = { limit = { any_owned_pop_group = { is_pop_category = worker } }
-								random_owned_pop_group = { limit = { is_pop_category = worker } set_pop_group_flag = lrsk_pop_to_abduct }
-							}
-							ELSE_IF = { limit = { any_owned_pop_group = { is_pop_category = specialist } }
-								random_owned_pop_group = { limit = { is_pop_category = specialist } set_pop_group_flag = lrsk_pop_to_abduct }
-							}
-							ELSE = { random_owned_pop_group = { set_pop_group_flag = lrsk_pop_to_abduct } }
-
-							
-							IF = {
-								limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_pop_to_abduct } }
-								random_owned_pop_group = { limit = { has_pop_group_flag = lrsk_pop_to_abduct }
-									remove_pop_group_flag = lrsk_pop_to_abduct
-									resettle_pop_group = {
-										POP_GROUP = this
-										PLANET = owner.capital_scope
-										PERCENTAGE = 1 # 100%
 									}
-									# Note: I don't think it makes sense to try to force any slavery category by event.
-									# Instead the player is notified that they should check the species rights of the pop.
+									modifier = {
+										factor = 3		# easier to ensnare in various schemes due to desperation
+										is_unemployed = yes
+									}
+									modifier = {
+										factor = 5		# highly motivated to leave by any means necessary
+										is_pop_category = purge
+									}
+									modifier = {
+										factor = 0.25	# pickier, more expectations and resources
+										is_pop_category = ruler
+									}
+									modifier = {
+										factor = 1.5
+										OR = { 
+											is_pop_category = worker
+											is_pop_category = civilian
+										}
+									}
 								}
+								resettle_pop_group = {
+									POP_GROUP = this
+									PLANET = owner.capital_scope
+									PERCENTAGE = 0.75 # 75%
+								}
+								# Note: I don't think it makes sense to try to force any slavery category by event.
+								# Instead the player is notified that they should check the species rights of the pop.
 
 								root = { country_event = { id = lrsk_gvp_mc_bldg_special.21 } }
 								event_target:lrsk_slaver_corp_abduct_gov = { country_event = { id = lrsk_gvp_mc_bldg_special.22 } }
@@ -181,19 +231,19 @@ country_event = {
 							}
 							modifier = {
 								add = -5
-								planet_crime > 2000
+								planet_crime > 20
 							}
 							modifier = {
 								add = -5
-								planet_crime > 4000
+								planet_crime > 40
 							}
 							modifier = {
 								add = -5
-								planet_crime > 6000
+								planet_crime > 60
 							}
 							modifier = {
 								add = -5
-								pop_amount_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = -5
