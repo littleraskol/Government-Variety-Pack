@@ -21,28 +21,26 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0 (05/??/25) Phoenix (4.0) Update
+v7.0 (05/06/25) Phoenix (4.0) Update
 -Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
 --A lot got changed!
 --Sorted out 4000+ line error log.
--Buildings:
---Added building_sets definitions.
 -General pop changes:
---num_pop to pop_amount
---count_owned_pop to count_owned_pop_amount or num_assigned_jobs as needed.
---pop_percentage to pop_amount_percentage
---pop_growth_speed to logistic_growth_mult
---pop_defense_armies_add -> planet_defense_armies_add (pop mod -> planet mod)
---etc_owned_pop = { -> etc_owned_pop_group = {
---pop_has_trait -> pop_group_has_trait
---etc_pop_flag -> etc_pop_group_flag
---resettle_pop -> resettle_pop_group
---pop_event -> pop_group_event
 --Pops x100
 --Jobs x100
 --Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
 --Amenities x100 (no consistent factor in base game)
 --Deprecated some questionable edge case features that don't have an easy fix in the new pop system.
+--num_pop to pop_amount
+--count_owned_pop to count_owned_pop_amount or num_assigned_jobs as needed.
+--pop_percentage to pop_amount_percentage
+--pop_growth_speed to logistic_growth_mult
+--pop_defense_armies_add -> planet_defense_armies_add (pop mod -> planet mod)
+--etc_owned_pop -> etc_owned_pop_group
+--pop_has_trait -> pop_group_has_trait
+--etc_pop_flag -> etc_pop_group_flag
+--resettle_pop -> resettle_pop_group
+--pop_event -> pop_group_event
 --pop_change_ethic replaced with pop_group_transfer_ethic
 -Jobs:
 --Added swappable_data blocks
@@ -56,6 +54,8 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --Jobs no longer "self-weight"
 --I'm not creating a whole separate kind of job just for pops that eat rocks (Planetmind Overseers consume energy)
 --Maintenance Drones seem to be deprecated.
+-Buildings:
+--Added building_sets definitions.
 -Other:
 --potential_crossbreeding_chance gone
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed

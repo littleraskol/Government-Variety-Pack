@@ -1,5 +1,7 @@
 A grab bag of new civics, origins, and government types.
 
+[b]Newly updated for Stellaris 4.0 (Phoenix)[/b] - This is a big one. I've made sure that it doesn't throw and errors on load, and done some sanity checking of everything that touches pops, but have not had time (nor do I expect to have time) for a detailed test of everything that was changed.
+
 [i][b]New Civics[/b][/i]
 
 A total of [b]77 new civics[/b], broken down into 9 origins, 20 normal civics, 19 hive civics, 14 machine civics, 12 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. (See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for more info.)
