@@ -33,9 +33,9 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --pop_percentage to pop_amount_percentage
 --pop_growth_speed to logistic_growth_mult
 --pop_defense_armies_add -> planet_defense_armies_add (pop mod -> planet mod)
--- etc_owned_pop = { -> etc_owned_pop_group = {
+--etc_owned_pop = { -> etc_owned_pop_group = {
 --pop_has_trait -> pop_group_has_trait
--- _pop_flag -> _pop_group_flag
+--etc_pop_flag -> etc_pop_group_flag
 --resettle_pop -> resettle_pop_group
 --pop_event -> pop_group_event
 --Pops x100
