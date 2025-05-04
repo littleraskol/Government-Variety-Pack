@@ -54,6 +54,7 @@ v7.0 (05/??/25) Phoenix (4.0) Update
 --trade_value_add is now a resource (trade)
 --Updated Offworld Worker desc (provides amenities, not trade)
 --Jobs no longer "self-weight"
+--I'm not creating a whole separate kind of job just for pops that eat rocks (Planetmind Overseers consume energy)
 -Other:
 --potential_crossbreeding_chance gone
 --trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
