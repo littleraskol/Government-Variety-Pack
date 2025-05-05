@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0 (05/06/25) Phoenix (4.0) Update
+v7.0 (05/05/25) Phoenix (4.0) Update
 -Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
 --A lot got changed!
 --Sorted out 4000+ line error log.
