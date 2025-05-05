@@ -23,6 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v7.0.1 (05/05/25) Post Phoenix (4.0) hotfix
 -Improperly scoped to variable for DR councilor level (rendering whole system possibly moot??)
+-Upped DR pop reqs for Wild Cult
 
 v7.0 (05/05/25) Phoenix (4.0) Update
 -Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
