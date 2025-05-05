@@ -22,10 +22,13 @@ country_event = {
 			NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
-				pop_amount > 100 # don't want to steal last pop...
+				pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 				has_branch_office = yes
 				has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
-				any_owned_pop_group = { can_be_smuggled = yes }
+				any_owned_pop_group = {
+					can_be_smuggled = yes
+					pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+				}
 			}
 		}
 	}
@@ -39,10 +42,13 @@ country_event = {
 				NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 				any_owned_planet = {
-					pop_amount > 100 # don't want to steal last pop...
+					pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 					has_branch_office = yes
 					has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
-					any_owned_pop_group = { can_be_smuggled = yes }
+					any_owned_pop_group = {
+						can_be_smuggled = yes
+						pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+					}
 				}
 			}
 
@@ -50,21 +56,27 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 					any_owned_planet = {
-						pop_amount > 100 # don't want to steal last pop...
+						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
-						any_owned_pop_group = { can_be_smuggled = yes }
+						any_owned_pop_group = {
+							can_be_smuggled = yes
+							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+						}
 					}
 				}
 
 				random_owned_planet = {
 					limit = {
-						pop_amount > 100 # don't want to steal last pop...
+						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
-						any_owned_pop_group = { can_be_smuggled = yes }
+						any_owned_pop_group = {
+							can_be_smuggled = yes
+							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+						}
 					}
 					# This weighting basically starts with the most likely planets, which should save some time.
 					weights = {
@@ -172,6 +184,7 @@ country_event = {
 							weighted_random_owned_pop_group = {
 								limit = {
 									can_be_smuggled = yes
+									pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
 								}
 								weights = {
 									# can use add or mult
