@@ -172,8 +172,8 @@ country_event = {
 			# Sets variables used for transfer: percent for <1000, flat amount for >1000
 			random_list = {
 				3 = {
-					set_variable = { which = lrsk_colfief_popratio value = 0.5 }	# If size < 1000
-					set_variable = { which = lrsk_colfief_popcount value = 500 }	# If size > 1000
+					set_variable = { which = lrsk_colfief_popratio value = @lrsk_colfief_popratio_nopro }	# If size < 1000
+					set_variable = { which = lrsk_colfief_popcount value = @lrsk_colfief_popcount_nopro }	# If size > 1000
 				}
 				# 25% chance with promotion policy that colony starts with additional pops
 				1 = {
@@ -181,8 +181,8 @@ country_event = {
 						factor = 0
 						NOT = { has_policy_flag = lrsk_gvp_colfief_promoted }
 					}
-					set_variable = { which = lrsk_colfief_popratio value = 0.75 }	# If size < 1000
-					set_variable = { which = lrsk_colfief_popcount value = 750 }	# If size > 1000
+					set_variable = { which = lrsk_colfief_popratio value = @lrsk_colfief_popratio_promo }	# If size < 1000
+					set_variable = { which = lrsk_colfief_popcount value = @lrsk_colfief_popcount_promo }	# If size > 1000
 				}
 			}
 
