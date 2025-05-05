@@ -61,6 +61,7 @@ country_event = {
 	# This is a complex series of many-to-many relations. It is mediated by temporary flags to mark everything with potential and then combine them.
 	immediate = {
 		#log = "In colonial fiefs vassal spawner"
+		
 		# Mark all empire planets from which a colony founder can emigrate.
 		every_owned_planet = {
 			limit = {
@@ -68,7 +69,9 @@ country_event = {
 				any_owned_pop_group = {
 					is_enslaved = no
 					is_being_purged = no
-					not = { pop_group_has_trait = trait_syncretic_proles }
+					NOT = { pop_group_has_trait = trait_syncretic_proles }
+					pop_group_size > 199
+					NOT = { is_pop_category = ruler }	# Too much power/prestige to take on this risk
 				}
 			}
 			set_timed_planet_flag = {
@@ -80,7 +83,9 @@ country_event = {
 				limit = {
 					is_enslaved = no
 					is_being_purged = no
-					not = { pop_group_has_trait = trait_syncretic_proles }
+					NOT = { pop_group_has_trait = trait_syncretic_proles }
+					pop_group_size > 199
+					NOT = { is_pop_category = ruler }	# Too much power/prestige to take on this risk
 				}
 				set_timed_pop_group_flag = {
 					flag = lrsk_colfief_possible_founder
@@ -162,13 +167,55 @@ country_event = {
 		}
 
 		# Final sanity check: if we somehow eliminated all possible founders, we should not continue.
-		if = { limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder } }
+		IF = { limit = { any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder } }
 
-			# This starts the selection with the source planet.
+			# Sets variables used for transfer: percent for <1000, flat amount for >1000
+			random_list = {
+				3 = {
+					set_variable = { which = lrsk_colfief_popratio value = 0.5 }	# If size < 1000
+					set_variable = { which = lrsk_colfief_popcount value = 500 }	# If size > 1000
+				}
+				# 25% chance with promotion policy that colony starts with additional pops
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_policy_flag = lrsk_gvp_colfief_promoted }
+					}
+					set_variable = { which = lrsk_colfief_popratio value = 0.75 }	# If size < 1000
+					set_variable = { which = lrsk_colfief_popcount value = 750 }	# If size > 1000
+				}
+			}
+
+			# Select founder pop group from a source planet with (we hope) an ideal pop group size
 			random_owned_planet = {
 				limit = {
 					has_planet_flag = lrsk_colfief_possible_source_world
 					any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder }
+				}
+				weights = {
+					base = 1
+					# Prioritize larger sizes: ideally above 400 half or 3/4 (200 or 300 at least) from
+					modifier = {
+						add = 1
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							pop_group_size > 399
+						}
+					}
+					modifier = {
+						add = 2
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							pop_group_size > 599
+						}
+					}
+					modifier = {
+						add = 3
+						any_owned_pop_group = {
+							has_pop_group_flag = lrsk_colfief_possible_founder
+							pop_group_size > 799
+						}
+					}
 				}
 				
 				save_event_target_as = lrsk_colfief_new_vassal_founder_homeworld
@@ -182,12 +229,25 @@ country_event = {
 						# can use add or mult
 						base = 2
 						modifier = {
-							add = 2
+							add = 1
 							happiness < 60
 						}
 						modifier = {
-							add = 4
+							add = 2
 							happiness < 30
+						}
+						# Prioritize larger sizes: ideally above 400 half or 3/4 (200 or 300 at least) from
+						modifier = {
+							add = 1
+							pop_group_size > 399
+						}
+						modifier = {
+							add = 1
+							pop_group_size > 599
+						}
+						modifier = {
+							add = 1
+							pop_group_size > 799
 						}
 						modifier = {
 							factor = 2
@@ -197,16 +257,12 @@ country_event = {
 							factor = 1.5
 							is_pop_category = civilian
 						}
-						modifier = {
-							factor = 0
-							is_pop_category = ruler
-						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_founder
 				}
 			}
 
-			# Find the destination planet
+			# Find the destination planet - finds closest (founder is lazy ig?) and then picks by habitability
 			closest_system = {
 				limit = {
 					star = { has_planet_flag = lrsk_colfief_possible_dest_system }
@@ -226,6 +282,38 @@ country_event = {
 						habitability = {
 							who = event_target:lrsk_colfief_new_vassal_founder
 							value >= 0.5
+						}
+					}
+					# find the best habitability if there's more than 1
+					weights = {
+						base = 1
+						modifier = {
+							add = 1
+							habitability = {
+								who = event_target:lrsk_colfief_new_vassal_founder
+								value >= 0.6
+							}
+						}
+						modifier = {
+							add = 2
+							habitability = {
+								who = event_target:lrsk_colfief_new_vassal_founder
+								value >= 0.7
+							}
+						}
+						modifier = {
+							add = 3
+							habitability = {
+								who = event_target:lrsk_colfief_new_vassal_founder
+								value >= 0.8
+							}
+						}
+						modifier = {
+							add = 4
+							habitability = {
+								who = event_target:lrsk_colfief_new_vassal_founder
+								value >= 0.9
+							}
 						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_world
@@ -425,6 +513,7 @@ country_event = {
 				}
 			}
 
+			# Set up colony and home system
 			event_target:lrsk_colfief_new_vassal_world = {
 				create_colony = {
 					owner = event_target:lrsk_colfief_new_vassal_empire
@@ -446,30 +535,24 @@ country_event = {
 						}
 					}
 				}
+			}
 
-				random_list = {
-					3 = {
-						resettle_pop_group = {
-							POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
-							PLANET = owner.capital_scope
-							PERCENTAGE = 0.5 # 50%
-						}
-					}
-					# 25% chance with promotion policy that colony starts with additional pops
-					1 = {
-						modifier = {
-							factor = 0
-							root = { NOT= { has_policy_flag = lrsk_gvp_colfief_promoted } }
-						}
-						resettle_pop_group = {
-							POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
-							PLANET = owner.capital_scope
-							PERCENTAGE = 1 # 100%
-						}
-					}
+			# Transfer pops (amount based on pop group size)
+			IF = { limit = { event_target:lrsk_colfief_new_vassal_founder = { pop_group_size < 1000 } }
+				resettle_pop_group = {
+					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
+					PLANET = event_target:lrsk_colfief_new_vassal_world
+					PERCENTAGE = lrsk_colfief_popratio
 				}
 			}
-			
+			ELSE = {
+				resettle_pop_group = {
+					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
+					PLANET = event_target:lrsk_colfief_new_vassal_world
+					AMOUNT = lrsk_colfief_popcount
+				}
+			}
+
 			event_target:lrsk_colfief_new_vassal_empire = {
 				create_starting_leaders = yes
 				country_event = { id = game_start.9 }
