@@ -92,9 +92,9 @@ planet_event = {
 
 				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl) and adds +1% happiness per councilor level per wild cult
 				owner = {
+					set_variable = { which = lrsk_dr_councilor_lvl value = 0 }	# ensuring it has a value (if it matters, will be set for real)
 					IF = {
 						limit = { has_councilor = { COUNCILOR = "lrsk_gvp_direct_revelation_councilor" } }
-						set_variable = { which = lrsk_dr_councilor_lvl value = 0 }
 						export_trigger_value_to_variable = {
 							trigger = get_councilor_level
 							parameters = {
@@ -113,9 +113,9 @@ planet_event = {
 						root = { remove_modifier = lrsk_gvp_dr_councilor_effect }
 					}
 				}
-				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = lrsk_dr_councilor_lvl }
+				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = owner.lrsk_dr_councilor_lvl }
 				multiply_variable = { which = lrsk_dr_councilor_lvl value = -1 } #negating for next
-				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = lrsk_dr_councilor_lvl }
+				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = owner.lrsk_dr_councilor_lvl }
 
 				#Each cult otherwise has an equal chance to form so long as it doesn't already exist, but a cult is less likely to form if its "opposite" is present.
 				random_list = {
