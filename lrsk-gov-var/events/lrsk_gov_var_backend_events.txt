@@ -1067,12 +1067,25 @@ country_event = {
 			root = { change_variable = { which = lrsk_num_rj_applicable_planets value = 1 } }
 		}
 
-		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
+		set_variable = { which = lrsk_num_rj_empire_eg_delegates value = 0 }	# this will be each free group's size/100, min 1
 		every_owned_pop_group = {
 			limit = {
 				is_enslaved = no
+				is_being_purged = no
+				is_being_assimilated = no
+				is_sapient = yes
 			}
-			root = { change_variable = { which = lrsk_num_rj_empire_pops value = 1 } }
+
+			set_variable = { which = lrsk_rj_popgroup_popcount value = trigger:pop_group_size }
+
+			# Civilians get half as many
+			IF = { limit = { is_pop_category = civilian } set_variable = { which = lrsk_rj_popcount_per_delegate value = 200 } }
+			ELSE = { set_variable = { which = lrsk_rj_popcount_per_delegate value = 100 } }
+
+			WHILE = { limit = { check_variable = { which = lrsk_rj_popgroup_popcount value > 0 } }
+				subtract_variable = { which = lrsk_rj_popgroup_popcount value = lrsk_rj_popcount_per_delegate }
+				root = { change_variable = { which = lrsk_num_rj_empire_eg_delegates value = 1 } }
+			}
 		}
 
 		set_variable = { which = lrsk_ruler_level value = 0 }
@@ -1171,7 +1184,10 @@ country_event = {
 
 		trigger = {
 			any_owned_pop_group = {
-				is_enslaved = no	# Almost certainly true but eh
+				is_enslaved = no
+				is_being_purged = no
+				is_being_assimilated = no
+				is_sapient = yes
 			}
 		}
 
@@ -1179,13 +1195,13 @@ country_event = {
 			resource_stockpile_compare = {
 				resource = energy
 				value > 20
-				mult = lrsk_num_rj_empire_pops
+				mult = lrsk_num_rj_empire_eg_delegates
 			}
 		}
 
 		add_resource = {
 			energy = -20
-			mult = lrsk_num_rj_empire_pops
+			mult = lrsk_num_rj_empire_eg_delegates
 		}
 
 		hidden_effect = {
@@ -1213,12 +1229,16 @@ country_event = {
 		}
 
 		allow = {
-			has_resource = {
-				amount >= 200
-				type = influence
+			resource_stockpile_compare = {
+				resource = influence
+				value >= 200
+				mult = lrsk_ruler_level_factor
 			}
 		}
-		add_resource = { influence = -200 }
+		add_resource = {
+			influence = -200 
+			mult = lrsk_ruler_level_factor
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1239,12 +1259,16 @@ country_event = {
 		} }
 
 		allow = {
-			has_resource = {
-				amount >= 100
-				type = influence
+			resource_stockpile_compare = {
+				resource = influence
+				value >= 100
+				mult = lrsk_ruler_level_factor
 			}
 		}
-		add_resource = { influence = -100 }
+		add_resource = {
+			influence = -100 
+			mult = lrsk_ruler_level_factor
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1267,7 +1291,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = {
 				resource = influence
-				value > 300
+				value >= 300
 				mult = lrsk_ruler_level_factor
 			}
 		}
@@ -1296,7 +1320,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = {
 				resource = influence
-				value > 150
+				value >= 150				
 				mult = lrsk_ruler_level_factor
 			}
 		}

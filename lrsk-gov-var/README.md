@@ -22,8 +22,13 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v7.0.1 (05/05/25) Post Phoenix (4.0) hotfix
--Improperly scoped to variable for DR councilor level (rendering whole system possibly moot??)
--Upped DR pop reqs for Wild Cult
+-Direct Revelations fixes/updates:
+--Improperly scoped to variable for DR councilor level (rendering whole system possibly moot??) (maybe I should backport this...)
+--Upped pop reqs for Wild Cult
+-Royal Justice edict updates:
+--Per pop now calculated as per 100 pops of applicable pop group for Estates General
+---"Applicable" now means free, not being purged or assimilated, and able to think (maybe I should backport this...)
+--Ruler level now reduces cost of declaring "Realm in Peril" (maybe I should backport this...)
 
 v7.0 (05/05/25) Phoenix (4.0) Update
 -Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
