@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0.1 (05/05/25) Post Phoenix (4.0) hotfix
+v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:
 --Improperly scoped to variable for DR councilor level (rendering whole system possibly moot??) (maybe I should backport this...)
 --Upped pop reqs for Wild Cult
