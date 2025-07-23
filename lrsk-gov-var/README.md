@@ -27,7 +27,7 @@ Generally changing "+X jobs" to "+X00 jobs" in localisation files.
 v7.1 (??/??/??) - AutoIndol Returns
 -Restored Automated Indolence.
 --No longer locked to Materialist ethics.
---Modifiers: +10% automated workforce, +5 stability, -5% worker happiness.
+--Modifiers: +10% automated workforce, +5 stability
 
 v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:
