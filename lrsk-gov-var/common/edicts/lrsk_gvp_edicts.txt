@@ -28,7 +28,7 @@ lrsk_gvp_citschol = {
 		custom_tooltip = {
 			fail_text = "edict_lrsk_gvp_citschol_no_suitable_planets"
 			any_owned_planet = {
-				num_pops > 14
+				pop_amount > 1400
 			}
 		}
 	}
@@ -39,11 +39,11 @@ lrsk_gvp_citschol = {
 			weight = 1			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 0
+						count > 99
 					}
-					num_pops > 24
+					pop_amount > 2400
 				}
 			}
 		}
@@ -51,11 +51,11 @@ lrsk_gvp_citschol = {
 			weight = 3			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 1
+						count > 199
 					}
-					num_pops > 49
+					pop_amount > 4900
 				}
 			}
 		}
@@ -63,11 +63,11 @@ lrsk_gvp_citschol = {
 			weight = 5			
 			any_owned_planet = {
 				AND = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 2
+						count > 299
 					}
-					num_pops > 74
+					pop_amount > 7400
 				}
 			}
 		}
@@ -75,11 +75,11 @@ lrsk_gvp_citschol = {
 			weight = 5			
 			count_owned_planet = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 0
+						count > 99
 					}
-					num_pops > 24
+					pop_amount > 2400
 				}
 				count > 1
 			}
@@ -88,11 +88,11 @@ lrsk_gvp_citschol = {
 			weight = 10			
 			count_owned_planet = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_unemployed = yes  }
-						count > 0
+						count > 99
 					}
-					num_pops > 24
+					pop_amount > 2400
 				}
 				count > 4
 			}

@@ -6,358 +6,6 @@
 
 namespace = lrsk_gvp_mc_bldg_special
 
-# Handle special military leader bonus from Military Excellence Academy (Gate for delay) - DEPRECATED
-#country_event = {
-#	id = lrsk_gvp_mc_bldg_special.10
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	# Only fire if leader's empire has a bonus and the leader is appropriate
-#	trigger = {
-#		OR = {
-#			AND = {
-#				check_variable = { which = lrsk_general_training_bonus value > 0 }
-#				from = { leader_class = general }
-#			}
-#			AND = {
-#				check_variable = { which = lrsk_admiral_training_bonus value > 0 }
-#				from = { leader_class = admiral }
-#			}
-#		}
-#	}
-#
-#	immediate = {
-#		log = "Handling special military leader bonus from Military Excellence Academy  (Gate for delay)"
-#		log = "Leader = [from.GetTitle] [from.GetName] || General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
-#
-#		from = { set_timed_leader_flag = { flag = lrsk_leveling_up_mil_leader days = 3 } }
-#		# We want to give the default level up event a chance to run. It will temp flag any leader that gets a trait.
-#		if = { limit = { from = { NOT = { has_leader_flag = has_gained_trait } } } country_event = { id = lrsk_gvp_mc_bldg_special.11 days = 1 } }
-#	}
-#}
-
-# Handle special military leader bonus from Military Excellence Academy - DEPRECATED
-#country_event = {
-#	id = lrsk_gvp_mc_bldg_special.11
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	# Only fire if leader's empire has a bonus and the leader is appropriate
-#	trigger = {
-#		any_owned_leader = {
-#			has_leader_flag = lrsk_leveling_up_mil_leader
-#			NOT = { has_leader_flag = has_gained_trait }
-#			OR = {
-#				AND = {
-#					owner = { check_variable = { which = lrsk_general_training_bonus value > 0 } }
-#					leader_class = general
-#				}
-#				AND = {
-#					owner = { check_variable = { which = lrsk_admiral_training_bonus value > 0 } }
-#					leader_class = admiral
-#				}
-#			}
-#		}
-#	}
-#
-#	immediate = {
-#		log = "Handling special military leader bonus from Military Excellence Academy"
-#		log = "General training bonus = [this.lrsk_general_training_bonus] || Admiral training bonus = [this.lrsk_admiral_training_bonus]"
-#
-#		random_owned_leader = {
-#			limit = {
-#				has_leader_flag = lrsk_leveling_up_mil_leader
-#				NOT = { has_leader_flag = has_gained_trait }
-#			}
-#			save_event_target_as = lrsk_leader_to_levelup
-#			log = "Leader = [this.GetTitle] [this.GetName]"
-#		}
-#		random_list = {
-#			20 = {
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 1 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 2 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 3 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 4 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 5 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 6 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 7 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = 10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 8 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#
-#				event_target:lrsk_leader_to_levelup = { lrsk_add_random_good_leader_trait = yes }
-#			}
-#			80 = {
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 1 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 1 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 2 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 2 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 3 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 3 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 4 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 4 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 5 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 5 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 6 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 6 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 7 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 7 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#				modifier = {
-#					add = -10
-#					OR = {
-#						AND = {
-#							check_variable = { which = lrsk_general_training_bonus value > 8 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = general }
-#						}
-#						AND = {
-#							check_variable = { which = lrsk_admiral_training_bonus value > 8 }
-#							event_target:lrsk_leader_to_levelup = { leader_class = admiral }
-#						}
-#					}
-#				}
-#
-#				# Do nothing
-#			}
-#		}
-#	}
-#}
-#
-## Inform of gained trait - DEPRECATED
-#country_event = {
-#	id = lrsk_gvp_mc_bldg_special.12
-#	title = lrsk_gvp_mc_bldg_special.12.name
-#	desc = lrsk_gvp_mc_bldg_special.12.desc
-#	location = event_target:current_location
-#	picture = GFX_evt_throne_room
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		NOT = { has_country_flag = lrsk_no_leader_improvement_notice }
-#	}
-#
-#	immediate = {
-#		log = "Informing of gained trait"
-#		event_target:lrsk_leader_to_levelup = {
-#			if = {
-#				limit = { exists = fleet }
-#				fleet = {
-#					random_owned_ship = { save_event_target_as = current_location }
-#				}
-#			}
-#			else = {
-#				root.capital_scope = { save_event_target_as = current_location }
-#			}
-#		}
-#	}
-#
-#	option = {
-#		name = lrsk_gvp_mc_bldg_special.12.a
-#		tooltip = {
-#			event_target:lrsk_leader_to_levelup = {
-#				switch = {
-#					trigger = has_leader_flag
-#					gained_leader_trait_adaptable = { add_trait = leader_trait_adaptable }
-#					#gained_leader_trait_flexible_programming = { add_trait = leader_trait_flexible_programming }
-#					gained_leader_trait_resilient = { add_trait = leader_trait_resilient }
-#					gained_leader_trait_trickster = { add_trait = leader_trait_trickster }
-#					gained_leader_trait_fleet_logistician = { add_trait = leader_trait_fleet_logistician }
-#					gained_leader_trait_engineer = { add_trait = leader_trait_engineer }
-#					gained_leader_trait_aggressive = { add_trait = leader_trait_aggressive }
-#					gained_leader_trait_cautious = { add_trait = leader_trait_cautious }
-#					gained_leader_trait_scout = { add_trait = leader_trait_scout }
-#					gained_leader_trait_unyielding = { add_trait = leader_trait_unyielding }
-#					gained_leader_trait_gale_speed = { add_trait = leader_trait_gale_speed }
-#					#gained_leader_trait_maintenance_loop = { add_trait = leader_trait_maintenance_loop }
-#					gained_leader_trait_restrained = { add_trait = leader_trait_restrained }
-#					#gained_leader_trait_charismatic = { add_trait = leader_trait_charismatic }
-#					gained_leader_trait_butcher = { add_trait = leader_trait_butcher }
-#					gained_leader_trait_glory_seeker = { add_trait = leader_trait_glory_seeker }
-#					gained_leader_trait_army_logistician = { add_trait = leader_trait_army_logistician }
-#					#gained_leader_trait_demoralizer = { add_trait = leader_trait_demoralizer }
-#					#gained_leader_trait_parts_cannibalizer = { add_trait = leader_trait_parts_cannibalizer }
-#				}
-#			}
-#		}
-#	}
-#
-#	option = {
-#		name = lrsk_gvp_mc_bldg_special.12.b
-#		custom_tooltip = lrsk_gvp_mc_bldg_special.12.b.tooltip
-#		hidden_effect = { set_country_flag = lrsk_no_leader_improvement_notice }
-#	}
-#}
-
 # Handle pop steal from Reformatory Workhouse
 country_event = {
 	id = lrsk_gvp_mc_bldg_special.20
@@ -374,8 +22,13 @@ country_event = {
 			NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
-				num_pops > 1 # don't want to steal last pop...
-				has_planet_flag = lrsk_could_lose_pops_to@root
+				pop_amount > @lrsk_rw_popsteal_min_planet_pops 
+				has_branch_office = yes
+				has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
+				any_owned_pop_group = {
+					can_be_smuggled = yes
+					pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+				}
 			}
 		}
 	}
@@ -389,8 +42,13 @@ country_event = {
 				NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 				check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 				any_owned_planet = {
-					num_pops > 1 # don't want to steal last pop...
-					has_planet_flag = lrsk_could_lose_pops_to@root
+					pop_amount > @lrsk_rw_popsteal_min_planet_pops 
+					has_branch_office = yes
+					has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
+					any_owned_pop_group = {
+						can_be_smuggled = yes
+						pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+					}
 				}
 			}
 
@@ -398,17 +56,71 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = lrsk_pop_stolen_cooldown }
 					any_owned_planet = {
-						num_pops > 1 # don't want to steal last pop...
-						has_planet_flag = lrsk_could_lose_pops_to@root
+						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						any_owned_pop_group = {
+							can_be_smuggled = yes
+							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+						}
 					}
 				}
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 1 # don't want to steal last pop...
-						has_planet_flag = lrsk_could_lose_pops_to@root
+						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
 						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						any_owned_pop_group = {
+							can_be_smuggled = yes
+							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+						}
+					}
+					# This weighting basically starts with the most likely planets, which should save some time.
+					weights = {
+						base = 10
+						modifier = {
+							factor = 0.1
+							pop_amount < 500
+						}
+						modifier = {
+							factor = 1.5
+							pop_amount > 1500
+						}
+						modifier = {
+							factor = 2
+							pop_amount > 3000
+						}
+						modifier = {
+							factor = 3
+							pop_amount > 4500
+						}
+						modifier = {
+							factor = 1.5
+							planet_crime > 20
+						}
+						modifier = {
+							factor = 2
+							planet_crime > 40
+						}
+						modifier = {
+							factor = 3
+							planet_crime > 60
+						}
+						modifier = {
+							factor = 1.5
+							pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
+						}
+						modifier = {
+							factor = 2
+							pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+						}
+						modifier = {
+							factor = 3
+							pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+						}
 					}
 
 					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 7 } # marks this planet
@@ -417,19 +129,19 @@ country_event = {
 						5 = {
 							modifier = {
 								add = -4
-								num_pops < 5
+								pop_amount < 500
 							}
 							modifier = {
 								add = 5
-								num_pops > 15
+								pop_amount > 1500
 							}
 							modifier = {
 								add = 5
-								num_pops > 30
+								pop_amount > 3000
 							}
 							modifier = {
 								add = 5
-								num_pops > 45
+								pop_amount > 4500
 							}
 							modifier = {
 								add = 5
@@ -445,15 +157,15 @@ country_event = {
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = 5
-								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								factor = 20
@@ -469,41 +181,55 @@ country_event = {
 							save_event_target_as = lrsk_slaver_corp_abduct_location
 
 							# Choice of pop to enslave starts with those who would be "least missed" or are most desperate.
-							IF = {
-								limit = { any_owned_pop = { OR = { 
-									is_unemployed = yes
-									is_pop_category = slave
-									is_pop_category = purge
-								} } }
-								random_owned_pop = {
-									limit = { OR = { 
-										is_unemployed = yes
+							weighted_random_owned_pop_group = {
+								limit = {
+									can_be_smuggled = yes
+									pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
+								}
+								weights = {
+									# can use add or mult
+									base = 10
+									modifier = {
+										factor = 2		# easier to enslave the already enslaved
 										is_pop_category = slave
-										is_pop_category = purge
-									} }
-									set_pop_flag = lrsk_pop_to_abduct
-								}
-							}
-							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = worker } }
-								random_owned_pop = { limit = { is_pop_category = worker } set_pop_flag = lrsk_pop_to_abduct }
-							}
-							ELSE_IF = { limit = { any_owned_pop = { is_pop_category = specialist } }
-								random_owned_pop = { limit = { is_pop_category = specialist } set_pop_flag = lrsk_pop_to_abduct }
-							}
-							ELSE = { random_owned_pop = { set_pop_flag = lrsk_pop_to_abduct } }
-
-							
-							IF = {
-								limit = { any_owned_pop = { has_pop_flag = lrsk_pop_to_abduct } }
-								random_owned_pop = { limit = { has_pop_flag = lrsk_pop_to_abduct }
-									remove_pop_flag = lrsk_pop_to_abduct
-									resettle_pop = {
-										pop = this
-										planet = root.capital_scope
 									}
-									# Note: I don't think it makes sense to try to force any slavery category by event.
-									# Instead the player is notified that they should check the species rights of the pop.
+									modifier = {
+										factor = 3		# easier to ensnare in various schemes due to desperation
+										is_unemployed = yes
+									}
+									modifier = {
+										factor = 5		# highly motivated to leave by any means necessary
+										is_pop_category = purge
+									}
+									modifier = {
+										factor = 1.5	# somewhat motivated to take risks
+										OR = { 
+											is_pop_category = worker
+											is_pop_category = civilian
+										}
+									}
+									modifier = {
+										factor = 0.25	# pickier, more expectations and resources
+										is_pop_category = ruler
+									}
 								}
+								# Transfer pops (amount based on pop group size)
+								IF = { limit = { pop_group_size < 1000 }
+									resettle_pop_group = {
+										POP_GROUP = this
+										PLANET = owner.capital_scope
+										PERCENTAGE = 0.75
+									}
+								}
+								ELSE = {
+									resettle_pop_group = {
+										POP_GROUP = this
+										PLANET = owner.capital_scope
+										AMOUNT = 750
+									}
+								}
+								# Note: I don't think it makes sense to try to force any slavery category by event.
+								# Instead the player is notified that they should check the species rights of the pop.
 
 								root = { country_event = { id = lrsk_gvp_mc_bldg_special.21 } }
 								event_target:lrsk_slaver_corp_abduct_gov = { country_event = { id = lrsk_gvp_mc_bldg_special.22 } }
@@ -512,19 +238,19 @@ country_event = {
 						95 = {
 							modifier = {
 								add = 4
-								num_pops < 5
+								pop_amount < 500
 							}
 							modifier = {
 								add = -5
-								num_pops > 15
+								pop_amount > 1500
 							}
 							modifier = {
 								add = -5
-								num_pops > 30
+								pop_amount > 3000
 							}
 							modifier = {
 								add = -5
-								num_pops > 45
+								pop_amount > 4500
 							}
 							modifier = {
 								add = -5
@@ -540,15 +266,15 @@ country_event = {
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.1 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.2 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.3 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								add = -5
-								pop_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
+								pop_amount_percentage = { percentage > 0.5 limit = { is_unemployed = yes } }
 							}
 							modifier = {
 								factor = 0
@@ -618,8 +344,9 @@ country_event = {
 			NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
-				has_planet_flag = lrsk_could_leak_scandal_to@root
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+				has_branch_office = yes
+				has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 			}
 		}
 	}
@@ -633,8 +360,9 @@ country_event = {
 				NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 				check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
-					has_planet_flag = lrsk_could_leak_scandal_to@root
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+					has_branch_office = yes
+					has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 				}
 			}
 
@@ -642,16 +370,18 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = lrsk_scandal_favor_cooldown }
 					any_owned_planet = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_could_leak_scandal_to@root
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
 				}
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_could_leak_scandal_to@root
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
 						NOT = { has_planet_flag = lrsk_scandal_rolled }
 					}
 
@@ -1058,9 +788,7 @@ country_event = {
 		log = "Attempting offworld work bonus application."
 
 		IF = { limit = { check_variable = { which = lrsk_offworld_workers_bonus value > 0 } }
-			if = { limit = { has_modifier = lrsk_gvp_empire_offworld_work_bonus }
-				remove_modifier = lrsk_gvp_empire_offworld_work_bonus
-			}
+			erase_modifier = { MOD = lrsk_gvp_empire_offworld_work_bonus }
 			add_modifier = {
 				modifier = lrsk_gvp_empire_offworld_work_bonus
 				multiplier = lrsk_offworld_workers_bonus
@@ -1088,8 +816,9 @@ country_event = {
 			NOT = { has_country_flag = lrsk_casino_luck_cooldown }
 			check_variable = { which = lrsk_num_owned_casinos value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
-				has_planet_flag = lrsk_can_get_casino_events_from@root
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+				has_branch_office = yes
+				has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 			}
 		}
 	}
@@ -1104,8 +833,9 @@ country_event = {
 				NOT = { has_country_flag = lrsk_casino_luck_cooldown }
 				check_variable = { which = lrsk_num_owned_casinos value > 0 }
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
-					has_planet_flag = lrsk_can_get_casino_events_from@root
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+					has_branch_office = yes
+					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 				}
 			}
 
@@ -1116,16 +846,18 @@ country_event = {
 						root = { has_country_flag = lrsk_casino_luck_cooldown }
 					}
 					any_owned_planet = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_can_get_casino_events_from@root
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 				}
 
 				random_owned_planet = {
 					limit = {
-						num_pops > 0 # just to hopefully filter out any uninhabited worlds
-						has_planet_flag = lrsk_can_get_casino_events_from@root
+						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
+						has_branch_office = yes
+						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
 						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
 					}
 

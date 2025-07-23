@@ -1,5 +1,7 @@
 A grab bag of new civics, origins, and government types.
 
+[b]Newly updated for Stellaris 4.0 (Phoenix)[/b] - This is a big one. I've made sure that it doesn't throw and errors on load, and done some sanity checking of everything that touches pops, but have not had time (nor do I expect to have time) for a detailed test of everything that was changed.
+
 [i][b]New Civics[/b][/i]
 
 A total of [b]77 new civics[/b], broken down into 9 origins, 20 normal civics, 19 hive civics, 14 machine civics, 12 megacorp civics, and 3 "advanced" civics available to any non-gestalt empire. Additionally, 5 base game civics have been enhanced with expanded features. (See [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4839692156559653486/]the dedicated civics thread[/url] for more info.)
@@ -33,7 +35,7 @@ Compatibility patches:
 Mods that have built-in compatibility:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]Ethics and Civics Alternative - FunEFork[/url] by [url=https://steamcommunity.com/profiles/76561198025143641]MrFunEGUY[/url].
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url] maintained by [url=https://steamcommunity.com/id/Coggernaut]Coggernaut[/url]. Note that very little actually needed to be changed here, please see [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/4520008986317183213/]this explanation[/url] here.
+[*]While there isn't any built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1100284147]Ethics and Civics Classic[/url] maintained by [url=https://steamcommunity.com/id/Coggernaut]Coggernaut[/url], GVP is safe to run with it. A patch will be produced, eventually.
 [/list]
 
 For non-English language translations:
@@ -54,21 +56,17 @@ The patches and alternate versions are:
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2345045872]No Enhanced Civics[/url] - Removes "enhanced" features of base game civics.
 [/list]
 
-There are also "backup" versions of this mod for older versions of Stellaris. [b]NOTE: These are all stand-alone backup versions, do not run any of them with each other or the current version![/b]
-[list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601883293]Backup for 3.2 (Herbert)[/url] - Older version of the mod for 3.2 Herbert.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2764885229]Backup for 3.3 (Libra)[/url] - Older version of the mod for 3.3 (Libra).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2865498939]Backup for 3.4 (Cepheus)[/url] - Older version of the mod for 3.4 (Cepheus).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2946882585]Backup for 3.6 (Orion)[/url] - Older version of the mod for 3.6 (Orion). 
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974438259]Backup for 3.7 (Canis Minor)[/url] - Older version of the mod for 3.7 (Canis Minor).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3086323855]Backup for 3.9 (Caelum)[/url] - Older version of the mod for 3.9 (Caelum).
-[/list]
-All are available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url].
+There are also "backup" versions of this mod for older versions of Stellaris available on [url=https://steamcommunity.com/id/littleraskol/myworkshopfiles/?appid=281990]my Workshop page[/url]. [b]NOTE: The backup versions are stand-alone, do not run any of them with each other or the current version![/b]
+
 
 Finally, there is a submod available:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2884243461]Chivalric Peacekeepers[/url] - Changes the requirements of Chivalry, allowing it to be selected by any empire that is not Fanatic Pacifist. (maintained by [url=https://steamcommunity.com/id/lunaassassin98/]Luna Assassin[/url]).
 [/list]
+
+[i][b]Known Issues[/b][/i]
+
+Federation start origins may rarely spawn partners with no government ("Despicable Neutrals"). The reason is known but the fix is obscure. If this happens to you, at this time the best thing to do is start a new game. It only happens occasionally.
 
 [i][b]Problems?[/b][/i]
 

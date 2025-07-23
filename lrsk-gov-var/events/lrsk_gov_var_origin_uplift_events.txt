@@ -4,29 +4,29 @@
 
 namespace = lrsk_gov_var_uplift
 
-# Setup
-country_event = {
-	id = lrsk_gov_var_uplift.1
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_origin = lrsk_gov_var_origin_uplift
-	}
-
-	immediate = {
-		log = "at uplift init event"
-		set_country_flag = lrsk_gov_var_uplift_nation
-		set_country_flag = first_contact_event
-		set_country_flag = Story2 # Already encountered spacefarers
-
-		save_event_target_as = lrsk_uplift_pupil
-	}
-}
+## Setup flags, event target.
+#country_event = {
+#	id = lrsk_gov_var_uplift.1
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		has_origin = lrsk_gov_var_origin_uplift
+#	}
+#
+#	immediate = {
+#		log = "at uplift init event"
+#		set_country_flag = lrsk_gov_var_uplift_nation
+#		set_country_flag = first_contact_event
+#		set_country_flag = Story2 # Already encountered spacefarers
+#
+#		save_event_target_as = lrsk_uplift_pupil
+#	}
+#}
 
 # Tutor system finalizations and watchpost system
 country_event = {
-	id = lrsk_gov_var_uplift.2
+	id = lrsk_gov_var_uplift.1
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -41,7 +41,7 @@ country_event = {
 			limit = { has_relation_flag = { who = root flag = lrsk_uplift_tutor_of } }
 			save_event_target_as = lrsk_my_uplift_tutor
 			owner_species = { save_event_target_as = lrsk_my_uplift_tutor_species }
-
+			
 			IF = { limit = { owner_species = { is_robotic_species = no } }
 				every_owned_planet = {
 					limit = { has_planet_flag = lrsk_uplift_tutor_colony }
@@ -58,7 +58,7 @@ country_event = {
 			country_event = { id = game_start.6 } #Advanced empire buffs
 		}
 		
-		this.capital_scope.solar_system = {
+		capital_scope.solar_system = {
 			closest_system = {
 				limit = {
 					any_system_planet = { habitable_planet = no }
@@ -74,17 +74,17 @@ country_event = {
 					effect = {
 						set_starbase_module = {
 							slot = 1
-							module = shipyard
+							module = missile_battery
 						}
 						set_starbase_module = {
 							slot = 2
-							module = solar_panel_network
+							module = gun_battery
 						}
 					}
 				}
 				star = {
 					save_event_target_as = lrsk_uplift_watchpost_star
-					set_planet_flag = lrsk_uplift_watchpost_system
+					set_planet_flag = lrsk_uplift_watchpost_system@root
 				}
 				create_fleet = {
 					name = "Overwatch Squadron"
@@ -106,7 +106,7 @@ country_event = {
 						}
 					}
 				}
-				last_created_fleet = { save_event_target_as = lrsk_uplift_overwatch_fleet }
+				last_created_fleet = { set_fleet_flag = lrsk_uplift_overwatch_fleet@root }
 
 				event_target:lrsk_my_uplift_tutor = {
 					random_system_within_border = { 
@@ -149,23 +149,21 @@ country_event = {
 
 	immediate = {
 		log = "at trait select gate"
-		IF = { limit = { is_gestalt = yes } 
-			IF = { limit = { has_authority = auth_hive_mind }
-				log = "at hive trait branch gate"
-				country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
-			}
-			ELSE = {
-				log = "at MI trait branch gate"
-				country_event =  { id = lrsk_gov_var_uplift.5 days = 1 }
-			}
+		IF = { limit = { has_auth_hive = yes }
+			country_event =  { id = lrsk_gov_var_uplift.4 days = 1 }
+		}
+		ELSE_IF = {
+			limit = { OR = {
+				is_individual_machine = yes
+				has_auth_machine = yes
+			} }
+			country_event =  { id = lrsk_gov_var_uplift.5 days = 1 }
 		}
 		ELSE = {
-			log = "at normal trait branch gate"
 			country_event =  { id = lrsk_gov_var_uplift.6 days = 1 }
 		}
 	}
 }
-
 
 # Hive traits
 country_event = {
@@ -260,7 +258,16 @@ country_event = {
 country_event = {
 	id = lrsk_gov_var_uplift.5
 	title = lrsk_gov_var_uplift.5.name
-	desc = lrsk_gov_var_uplift.5.desc
+	# Desc if gestalt machine intelligence
+	desc = {
+		trigger = { has_auth_machine = yes }
+		text = lrsk_gov_var_uplift.5.desc
+	}
+	# Desc if individual machines
+	desc = {
+		trigger = { is_individual_machine = yes }
+		text = lrsk_gov_var_uplift.6.desc
+	}
 	picture = GFX_evt_machine_sapience
 
 	is_triggered_only = yes
@@ -326,6 +333,8 @@ country_event = {
 	option = {
 		name = lrsk_gov_var_uplift.5.d
 		custom_tooltip = lrsk_gov_var_uplift.5.d.tooltip
+		
+		trigger = { has_auth_machine = yes }
 
 		#tooltip = {
 		#	ship_archeaological_site_clues_add = 1
@@ -336,6 +345,26 @@ country_event = {
 
 		hidden_effect = {
 			set_country_flag = lrsk_uplift_mech_4
+			country_event = { id = lrsk_gov_var_uplift.7 }
+		}
+	}
+
+	# Individual machines should get the non-gestalt empire bonus option.
+	option = {
+		name = lrsk_gov_var_uplift.6.f
+		custom_tooltip = lrsk_gov_var_uplift.6.f.tooltip
+
+		trigger = { is_individual_machine = yes }
+
+		#tooltip = {
+		#	envoys_add = 1
+		#	country_trust_growth = 0.1
+		#	ship_anomaly_research_speed_mult = 0.15
+		#	science_ship_survey_speed = 0.2
+		#}
+
+		hidden_effect = {
+			set_country_flag = lrsk_uplift_norm_6
 			country_event = { id = lrsk_gov_var_uplift.7 }
 		}
 	}
@@ -371,7 +400,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.6.a.tooltip
 
 		#tooltip = {
-		#	pop_growth_from_immigration = 0.25
+		#	planet_resettlement_unemployed_destination_mult = 0.25
 		#	pop_resettlement_cost_mult = -0.25
 		#	pop_environment_tolerance = 0.1
 		#}
@@ -492,7 +521,7 @@ country_event = {
 
 		IF = { limit =  { has_country_flag = lrsk_uplift_hive_1 }
 			log = "hive 1"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_starborn_hive
@@ -507,7 +536,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_hive_2 }
 			log = "hive 2"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_earthbound_hive
@@ -522,7 +551,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_hive_3 }
 			log = "hive 3"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_proles_hive
@@ -542,7 +571,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_1 }
 			log = "mech 1"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_natural_intellectuals_mech
@@ -557,7 +586,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_2 }
 			log = "mech 2"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_proles_mech
@@ -572,7 +601,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_mech_3 }
 			log = "mech 3"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = lrsk_gov_var_trait_conservative_mech
@@ -592,7 +621,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_1 }
 			log = "norm 1"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = trait_presapient_starborn
@@ -607,7 +636,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_2 }
 			log = "norm 2"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = trait_presapient_earthbound
@@ -622,7 +651,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_3 }
 			log = "norm 3"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = trait_presapient_natural_intellectuals
@@ -637,7 +666,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_4 }
 			log = "norm 4"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = trait_presapient_proles
@@ -652,7 +681,7 @@ country_event = {
 		}
 		ELSE_IF = { limit =  { has_country_flag = lrsk_uplift_norm_5 }
 			log = "norm 5"
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					add_trait = trait_presapient_conservative
@@ -673,7 +702,6 @@ country_event = {
 		ELSE = {
 			log = "ERROR: Uplift Trait Selector failed to catch valid flag."
 		}
-		
 	}
 }
 
@@ -685,13 +713,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.8.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine = yes }
 		}
 		text = lrsk_gov_var_uplift.8.mech.desc
 	}
@@ -722,7 +750,12 @@ country_event = {
 	}
 
 	immediate = {
-		overlord = { save_event_target_as = lrsk_my_uplift_tutor }	# Should already be done but can't hurt.
+		overlord = {
+			save_event_target_as = lrsk_my_uplift_tutor				# Should already be done but can't hurt.
+			random_system_within_border = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
+				save_event_target_as = lrsk_uplift_watchpost_star	# This should also already be done, but CWTools complains about it, so...
+			}
+		}
 		save_event_target_as = lrsk_uplift_pupil					# Should already be done but can't hurt.
 		set_country_flag = lrsk_uplift_got_system_offer
 		log = "In uplift system offer"
@@ -733,7 +766,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 
 		hidden_effect = { country_event = { id = lrsk_gov_var_uplift.9 } }
@@ -743,7 +776,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 		
 		hidden_effect = { country_event = { id = lrsk_gov_var_uplift.9 } }
@@ -763,7 +796,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { unity = 200 }
 
@@ -782,7 +815,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.8.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 		add_resource = { unity = 200 }
 
@@ -824,11 +857,17 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		this.capital_scope.solar_system = { closest_system = {
-			limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system } }
-			starbase = { set_owner = event_target:lrsk_uplift_pupil }
-		} }
-		event_target:lrsk_uplift_overwatch_fleet = { set_owner = event_target:lrsk_uplift_pupil }
+		capital_scope.solar_system = {
+			closest_system = { limit = { star = { has_planet_flag = lrsk_uplift_watchpost_system@root } }
+				starbase = { set_owner = event_target:lrsk_uplift_pupil }
+			}
+		}
+		overlord = {
+			random_owned_fleet = { limit = { has_fleet_flag = lrsk_uplift_overwatch_fleet@root }
+				IF = { limit = { exists = leader } leader = { unassign_leader = this } }
+				set_owner = event_target:lrsk_uplift_pupil
+			}
+		}
 	}
 }
 
@@ -894,13 +933,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.11.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine = yes }
 		}
 		text = lrsk_gov_var_uplift.11.mech.desc
 	}
@@ -942,7 +981,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { influence = 100 }
 		
@@ -960,7 +999,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 		add_resource = { influence = 100 }
 		
@@ -996,7 +1035,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 
 		hidden_effect = {
@@ -1014,7 +1053,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.b.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 
 		hidden_effect = {
@@ -1052,7 +1091,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 		add_resource = { influence = 50 }
 		
@@ -1070,7 +1109,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.11.c.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 		add_resource = { influence = 50 }
 		
@@ -1321,13 +1360,13 @@ country_event = {
 
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_hive_mind }
+			event_target:lrsk_my_uplift_tutor = { has_auth_hive = yes }
 		}
 		text = lrsk_gov_var_uplift.14.hive.desc
 	}
 	desc = {
 		trigger = {
-			event_target:lrsk_my_uplift_tutor = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_my_uplift_tutor = { has_auth_machine = yes }
 		}
 		text = lrsk_gov_var_uplift.14.mech.desc
 	}
@@ -1370,7 +1409,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
 
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+			event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 		}
 	}
 	option = {
@@ -1378,7 +1417,7 @@ country_event = {
 		custom_tooltip = lrsk_gov_var_uplift.14.a.tooltip
 		
 		trigger = {
-			event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+			event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 		}
 	}
 	option = {

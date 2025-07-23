@@ -12,6 +12,12 @@ lrsk_gov_var_bldg_hall_of_honor = {
 	base_cap_amount = 2
 
 	category = army
+	
+	building_sets = {
+		fortress
+		government
+		knights
+	}
 
 	potential = {
 		owner = { has_valid_civic = lrsk_gov_var_civic_chivalry }
@@ -22,7 +28,7 @@ lrsk_gov_var_bldg_hall_of_honor = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 1
+		planet_housing_add = 100
 	}
 	
 	triggered_planet_modifier = {
@@ -32,7 +38,7 @@ lrsk_gov_var_bldg_hall_of_honor = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 1
+		job_lrsk_gov_var_job_knight_add = 100
 	}
 
 	army_modifier = {
@@ -89,13 +95,19 @@ lrsk_gov_var_bldg_hall_of_valor = {
 	can_build = no
 
 	category = army
+	
+	building_sets = {
+		fortress
+		government
+		knights
+	}
 
 	allow = {
 		has_major_upgraded_capital = yes
 	}
 
 	planet_modifier = {
-		planet_housing_add = 2
+		planet_housing_add = 200
 	}
 	
 	triggered_planet_modifier = {
@@ -105,7 +117,7 @@ lrsk_gov_var_bldg_hall_of_valor = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 2
+		job_lrsk_gov_var_job_knight_add = 200
 	}
 
 	army_modifier = {
@@ -178,11 +190,11 @@ lrsk_gov_var_bldg_hall_of_valor = {
 @lrsk_gov_var_planet_synaptic_amenities_4 = 0.25
 @lrsk_gov_var_planet_synaptic_amenities_5 = 0.3
 
-@lrsk_gov_var_planet_synaptic_popsreq_1 = 5
-@lrsk_gov_var_planet_synaptic_popsreq_2 = 15
-@lrsk_gov_var_planet_synaptic_popsreq_3 = 30
-@lrsk_gov_var_planet_synaptic_popsreq_4 = 50
-@lrsk_gov_var_planet_synaptic_popsreq_5 = 75
+@lrsk_gov_var_planet_synaptic_popsreq_1 = 500
+@lrsk_gov_var_planet_synaptic_popsreq_2 = 1500
+@lrsk_gov_var_planet_synaptic_popsreq_3 = 3000
+@lrsk_gov_var_planet_synaptic_popsreq_4 = 5000
+@lrsk_gov_var_planet_synaptic_popsreq_5 = 7500
 
 # Planetary Synaptic Node
 lrsk_gov_var_bldg_planet_synaptic_node = {
@@ -190,6 +202,10 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 	base_cap_amount = 1
 
 	category = government
+
+	building_sets = {
+		government
+	}
 
 	potential = {
 		exists = owner
@@ -200,7 +216,7 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 	}
 
 	allow = {
-		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_1
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_1
 	}
 
 	upgrades = {
@@ -216,8 +232,8 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
-		job_lrsk_gov_var_job_planetmind_overseer_add = 1
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 100
+		#job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -274,6 +290,10 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -283,7 +303,7 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 	}
 
 	allow = {
-		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_2
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_2
 	}
 
 	upgrades = {
@@ -299,8 +319,8 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_2
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
-		job_lrsk_gov_var_job_planetmind_overseer_add = 2
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 200
+		#job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -357,6 +377,10 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -366,7 +390,7 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 	}
 
 	allow = {
-		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_3
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_3
 	}
 
 	upgrades = {
@@ -382,8 +406,8 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_3
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
-		job_lrsk_gov_var_job_planetmind_overseer_add = 3
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 300
+		#job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -440,6 +464,10 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -449,7 +477,7 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 	}
 
 	allow = {
-		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_4
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_4
 	}
 
 	upgrades = {
@@ -465,8 +493,8 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_4
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
-		job_lrsk_gov_var_job_planetmind_overseer_add = 4
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 400
+		#job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -523,6 +551,10 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 	category = government
 	can_build = no
 
+	building_sets = {
+		government
+	}
+
 	potential = {
 		exists = owner
 		owner = {
@@ -532,7 +564,7 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 	}
 
 	allow = {
-		num_pops >= @lrsk_gov_var_planet_synaptic_popsreq_5
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_5
 	}
 
 	triggered_planet_modifier = {
@@ -544,8 +576,8 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		}
 		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_5
 		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
-		job_lrsk_gov_var_job_planetmind_overseer_add = 5
-		job_maintenance_drone_add = 1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 500
+		#job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -1333,6 +1365,11 @@ lrsk_gvp_bldg_autoindolfunplex_3 = {
 
 ## Branch Office Buildings
 
+# These buildings are limited to certain civic holders, so provides less "comparative" advantage.
+@lrsk_traders_from_civic = 100
+@lrsk_trade_value_from_jobs = 0.05
+@lrsk_trade_value_from_jobs_small = 0.025
+
 # Managerial Technique Institute
 lrsk_gvp_bldg_managerial_technique_institute = {
 	base_buildtime = @b1_time
@@ -1347,7 +1384,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_functionary_add = 2
+		job_lrsk_gov_var_job_functionary_add = 200
 	}
 	
 	triggered_desc = {
@@ -1371,9 +1408,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value > 0
 			}
 		}
 		modifier = {
@@ -1385,9 +1422,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value >= 100
 			}
 		}
 		modifier = {
@@ -1416,9 +1453,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value > 0
 			}
 		}
 		modifier = {			
@@ -1430,9 +1467,9 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_functionary }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_functionary
+				value >= 100
 			}
 		}
 		modifier = {			
@@ -1440,10 +1477,41 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|trade|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|industry|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -1469,7 +1537,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_infoguide_add = 2
+		job_lrsk_gov_var_job_infoguide_add = 200
 	}
 	
 	triggered_desc = {
@@ -1511,7 +1579,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_materialist = yes
@@ -1523,7 +1591,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_materialist = yes
@@ -1536,7 +1604,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_materialist = yes
@@ -1549,7 +1617,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_materialist = yes
@@ -1562,7 +1630,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_materialist = yes
@@ -1575,7 +1643,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_materialist = yes
@@ -1588,7 +1656,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_materialist = yes
@@ -1601,7 +1669,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_materialist = yes
@@ -1614,7 +1682,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_materialist = yes
@@ -1627,7 +1695,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_materialist = yes
@@ -1640,7 +1708,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_materialist = yes
@@ -1652,13 +1720,38 @@ lrsk_gvp_bldg_learnarium_dome = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|research|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}	
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		produces = {
 			energy = 5
+			mult = value:branch_office_value_for_buildings
 		}
 	}
 
@@ -1681,7 +1774,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	}
 
 	planet_modifier = {
-		job_lrsk_gov_var_job_gofer_add = 2
+		job_lrsk_gov_var_job_gofer_add = 200
 	}
 	
 	triggered_desc = {
@@ -1705,9 +1798,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value > 0
 			}
 		}
 		modifier = {
@@ -1719,9 +1812,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value >= 100
 			}
 		}
 		modifier = {
@@ -1751,9 +1844,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value > 0
 			}
 		}
 		modifier = {
@@ -1765,9 +1858,9 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_gofer }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_gofer
+				value >= 100
 			}
 		}
 		modifier = {
@@ -1775,10 +1868,41 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|consumer_goods|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|amenities|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}	
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -1847,7 +1971,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_egalitarian = yes
@@ -1859,7 +1983,7 @@ lrsk_gvp_bldg_organizing_hub = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_egalitarian = yes
@@ -1872,7 +1996,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_egalitarian = yes
@@ -1885,7 +2009,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_egalitarian = yes
@@ -1898,7 +2022,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_egalitarian = yes
@@ -1911,7 +2035,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_egalitarian = yes
@@ -1924,7 +2048,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_egalitarian = yes
@@ -1937,7 +2061,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_egalitarian = yes
@@ -1950,7 +2074,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_egalitarian = yes
@@ -1963,7 +2087,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_egalitarian = yes
@@ -1976,7 +2100,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_egalitarian = yes
@@ -1988,10 +2112,34 @@ lrsk_gvp_bldg_organizing_hub = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|unity|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -2017,7 +2165,7 @@ lrsk_gov_var_bldg_grand_casino = {
 	}
 
 	planet_modifier = {
-		planet_amenities_add = 10
+		planet_amenities_add = 1000
 	}
 	
 	triggered_desc = {
@@ -2062,34 +2210,47 @@ lrsk_gov_var_bldg_grand_casino = {
 	}
 	
 	on_built = {
-		set_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
-		owner = {
-			change_variable = { which = lrsk_num_owned_casinos value = 1 }
-		}
-		branch_office_owner = {
-			change_variable = { which = lrsk_num_built_casinos value = 1 }
-		}
+		owner = { change_variable = { which = lrsk_num_owned_casinos value = 1 } }
+		branch_office_owner = { change_variable = { which = lrsk_num_built_casinos value = 1 } }
 	}
     
 	on_destroy = {
-		if = { limit = { has_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner }
-			remove_planet_flag = lrsk_can_get_casino_events_from@branch_office_owner
+		owner = { subtract_variable = { which = lrsk_num_owned_casinos value = 1 } }
+		branch_office_owner = { subtract_variable = { which = lrsk_num_built_casinos value = 1 } }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
 		}
-		owner = {
-			change_variable = { which = lrsk_num_owned_casinos value = 1 }
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|amenities|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
 		}
-		branch_office_owner = {
-			subtract_variable = { which = lrsk_num_built_casinos value = 1 }
-		}
+		job_capital_trader_add = @lrsk_traders_from_civic
 	}
 
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		produces = {
 			energy = 5
+			mult = value:branch_office_value_for_buildings
 		}
 	}
 
@@ -2126,7 +2287,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 		}
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.5
-			job_lrsk_gov_var_job_investigator_add = 1
+			job_lrsk_gov_var_job_investigator_add = 100
 		}
 	}
 	
@@ -2146,13 +2307,13 @@ lrsk_gov_var_bldg_professional_protection_office = {
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.25
 			planet_crime_add = 20
-			job_lrsk_gov_var_job_suppressor_add = 1
+			job_lrsk_gov_var_job_suppressor_add = 100
 		}
 	}
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_authoritarian = yes
@@ -2164,7 +2325,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_authoritarian = yes
@@ -2177,7 +2338,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_authoritarian = yes
@@ -2190,7 +2351,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_authoritarian = yes
@@ -2203,7 +2364,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_authoritarian = yes
@@ -2216,7 +2377,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_authoritarian = yes
@@ -2229,7 +2390,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_authoritarian = yes
@@ -2242,7 +2403,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_authoritarian = yes
@@ -2255,7 +2416,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_authoritarian = yes
@@ -2268,7 +2429,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_authoritarian = yes
@@ -2281,7 +2442,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_authoritarian = yes
@@ -2292,11 +2453,35 @@ lrsk_gov_var_bldg_professional_protection_office = {
 			branch_office_value_mult = 0.05
 		}
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|crime|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
 	
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -2364,7 +2549,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_pacifist = yes
@@ -2376,7 +2561,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_pacifist = yes
@@ -2389,7 +2574,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_pacifist = yes
@@ -2402,7 +2587,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_pacifist = yes
@@ -2415,7 +2600,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_pacifist = yes
@@ -2428,7 +2613,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_pacifist = yes
@@ -2441,7 +2626,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_pacifist = yes
@@ -2454,7 +2639,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_pacifist = yes
@@ -2467,7 +2652,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_pacifist = yes
@@ -2480,7 +2665,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_pacifist = yes
@@ -2493,7 +2678,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_pacifist = yes
@@ -2505,10 +2690,34 @@ lrsk_gov_var_bldg_mediation_retreat = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|amenities|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -2576,7 +2785,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_xenophobe = yes
@@ -2588,7 +2797,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_xenophobe = yes
@@ -2601,7 +2810,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_xenophobe = yes
@@ -2614,7 +2823,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_xenophobe = yes
@@ -2627,7 +2836,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_xenophobe = yes
@@ -2640,7 +2849,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_xenophobe = yes
@@ -2653,7 +2862,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_xenophobe = yes
@@ -2666,7 +2875,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_xenophobe = yes
@@ -2679,7 +2888,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_xenophobe = yes
@@ -2692,7 +2901,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_xenophobe = yes
@@ -2705,7 +2914,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_xenophobe = yes
@@ -2717,10 +2926,34 @@ lrsk_gov_var_bldg_heritage_museum = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|unity|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -2789,7 +3022,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_xenophile = yes
@@ -2801,7 +3034,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_xenophile = yes
@@ -2814,7 +3047,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_xenophile = yes
@@ -2827,7 +3060,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_xenophile = yes
@@ -2840,7 +3073,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_xenophile = yes
@@ -2853,7 +3086,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_xenophile = yes
@@ -2866,7 +3099,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_xenophile = yes
@@ -2879,7 +3112,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_xenophile = yes
@@ -2892,7 +3125,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_xenophile = yes
@@ -2905,7 +3138,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_xenophile = yes
@@ -2918,7 +3151,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_xenophile = yes
@@ -2930,10 +3163,34 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|amenities|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
+	}
+
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -3006,7 +3263,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	
 	triggered_desc = {
 		trigger = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0
 				limit = {
 					is_militarist = yes
@@ -3018,7 +3275,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage > 0
 				limit = {
 					is_militarist = yes
@@ -3031,7 +3288,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.1
 				limit = {
 					is_militarist = yes
@@ -3044,7 +3301,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.2
 				limit = {
 					is_militarist = yes
@@ -3057,7 +3314,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.3
 				limit = {
 					is_militarist = yes
@@ -3070,7 +3327,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.4
 				limit = {
 					is_militarist = yes
@@ -3083,7 +3340,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.5
 				limit = {
 					is_militarist = yes
@@ -3096,7 +3353,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.6
 				limit = {
 					is_militarist = yes
@@ -3109,7 +3366,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.7
 				limit = {
 					is_militarist = yes
@@ -3122,7 +3379,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.8
 				limit = {
 					is_militarist = yes
@@ -3135,7 +3392,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			pop_percentage = {
+			pop_amount_percentage = {
 				percentage >= 0.9
 				limit = {
 					is_militarist = yes
@@ -3145,6 +3402,21 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 		modifier = {
 			branch_office_value_mult = 0.05
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|soldier|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
 	}
 	
 	#triggered_desc = {
@@ -3202,6 +3474,15 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -3268,24 +3549,42 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 
 	on_built = {		
 		owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 }	}
-		if = { limit = { branch_office_owner = { has_valid_civic = civic_criminal_heritage } }
-			set_planet_flag = lrsk_could_lose_pops_to@branch_office_owner
-		}
 		branch_office_owner = { change_variable = { which = lrsk_num_built_workhouses value = 1 } }
 	}
     
 	on_destroy = {
-		owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 } }
-		if = { limit = { has_planet_flag = lrsk_could_lose_pops_to@branch_office_owner }
-			remove_planet_flag = lrsk_got_general_bonus_from@branch_office_owner
-		}
+		owner = { subtract_variable = { which = lrsk_num_owned_workhouses value = 1 } }
 		branch_office_owner = { subtract_variable = { which = lrsk_num_built_workhouses value = 1 } }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|crime|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
 	}
 	
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -3372,23 +3671,57 @@ lrsk_gov_var_bldg_local_news_office = {
 	}
 	
 	on_built = {
-		set_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner
 		owner = { change_variable = { which = lrsk_num_owned_localmedia value = 1 } }
 		branch_office_owner = { change_variable = { which = lrsk_num_built_localmedia value = 1 } }
 	}
     
 	on_destroy = {
-		owner = { change_variable = { which = lrsk_num_owned_workhouses value = 1 } }
-		if = { limit = { has_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner }
-			remove_planet_flag = lrsk_could_leak_scandal_to@branch_office_owner
-		}
+		owner = { subtract_variable = { which = lrsk_num_owned_localmedia value = 1 } }
 		branch_office_owner = { subtract_variable = { which = lrsk_num_built_localmedia value = 1 } }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|crime|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|soldier|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs_small
+		mult = value:num_jobs_with_tag|TAG|research|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
 	}
 
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -3415,7 +3748,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	}
 
 	planet_modifier = {	
-		job_lrsk_gov_var_job_offworld_worker_add = 2
+		job_lrsk_gov_var_job_offworld_worker_add = 200
 	}
 	
 	triggered_desc = {
@@ -3439,9 +3772,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value > 0
 			}
 		}
 		modifier = {
@@ -3453,9 +3786,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value >= 100
 			}
 		}
 		modifier = {
@@ -3485,9 +3818,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count = 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value > 0
 			}
 		}
 		modifier = {			
@@ -3499,9 +3832,9 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		potential = {
 			exists = branch_office_owner
 			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
-			count_owned_pop = {
-				limit = { has_job = lrsk_gov_var_job_offworld_worker }
-				count > 1
+			num_assigned_jobs = {
+				job = lrsk_gov_var_job_offworld_worker
+				value >= 100
 			}
 		}
 		modifier = {			
@@ -3517,14 +3850,15 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	}
 
 	# The queue logic controls how many the AI builds, see ai_weight below
-
-	on_queued = {
-		branch_office_owner = { change_variable = { which = lrsk_offworld_placement_built value = 1 } }
-	}
-    
-	on_unqueued = {
-		branch_office_owner = { subtract_variable = { which = lrsk_offworld_placement_built value = 1 } }
-	}
+	# DEPRECATED: The queue logic controls how many the AI builds, see ai_weight below - DEPRECATED
+	# Note: This is likely a holdover from before static modifier values could be multiplied by a variable.
+	#on_queued = {
+	#	branch_office_owner = { change_variable = { which = lrsk_offworld_placement_built value = 1 } }
+	#}
+    #
+	#on_unqueued = {
+	#	branch_office_owner = { subtract_variable = { which = lrsk_offworld_placement_built value = 1 } }
+	#}
 
 	on_built = {
 		branch_office_owner = {
@@ -3535,16 +3869,40 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
     
 	on_destroy = {
 		branch_office_owner = {
-			subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
+			#subtract_variable = { which = lrsk_offworld_placement_built value = 1 }
 			subtract_variable = { which = lrsk_offworld_workers_bonus value = 1 }
 			country_event = { id = lrsk_gvp_mc_bldg_special.40 }
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_trade_produces_mult = @lrsk_trade_value_from_jobs
+		mult = value:num_jobs_with_tag|TAG|amenities|
+	}
+	#Merchant Jobs (normalizing with base game standards)
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		job_capital_trader_add = @lrsk_traders_from_civic
 	}
 
 	resources = {
 		category = planet_branch_office_buildings
 		cost = {
 			minerals = 500
+			influence = 10
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_auth_corporate = yes
+				}
+			}
+			influence = 10
 		}
 		upkeep = {
 			energy = 2
@@ -3553,14 +3911,10 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 
 	ai_weight = {
 		weight = 100
-		modifier = {
-			# Little advantage to corp past 10 of these...
-			factor = 0.01
-			branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
-		}
+		#modifier = {
+		#	# Little advantage to corp past 10 of these... (DEPRECATED because, no??)
+		#	factor = 0.01
+		#	branch_office_owner = { check_variable = { which = lrsk_offworld_placement_built value >= 10 } }
+		#}
 	}
 }
-
-
-
-

@@ -94,6 +94,7 @@ lrsk_uplift_1 = {
 					NOT = { has_country_flag = lrsk_uplift_tutor_system_spawned }
 				}
 				set_country_flag = lrsk_uplift_tutor_system_spawned
+				set_country_flag = lrsk_gov_var_uplift_nation
 				save_event_target_as = lrsk_uplift_pupil
 				set_country_flag = first_contact_event
 				set_country_flag = Story2
@@ -103,7 +104,7 @@ lrsk_uplift_1 = {
 				10 = {
 					modifier = {
 						factor = 5
-						event_target:lrsk_uplift_pupil = { has_authority = auth_machine_intelligence }
+						event_target:lrsk_uplift_pupil = { has_auth_machine = yes }
 					}
 					create_species = {
 						name = random
@@ -142,7 +143,7 @@ lrsk_uplift_1 = {
 				10 = {
 					modifier = {
 						factor = 5
-						event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind }
+						event_target:lrsk_uplift_pupil = { has_auth_hive = yes }
 					}
 					create_species = {
 						name = random
@@ -202,6 +203,7 @@ lrsk_uplift_1 = {
 							origin = "origin_default"
 							ethos = event_target:lrsk_uplift_pupil	# We assume a high degree of influence by the tutor....
 							authority = random
+							civics = random
 							effect = {
 								add_resource = {
 									minerals = 1900
@@ -215,7 +217,7 @@ lrsk_uplift_1 = {
 						}
 					}
 					ELSE = {
-						IF = { limit = { event_target:lrsk_uplift_pupil = { has_authority = auth_hive_mind } }
+						IF = { limit = { event_target:lrsk_uplift_pupil = { has_auth_hive = yes } }
 							create_country = {
 								species = event_target:lrsk_uplift_tutor_species
 								name_list = random
@@ -227,6 +229,7 @@ lrsk_uplift_1 = {
 									ethic = ethic_xenophile
 								}
 								authority = random
+								civics = random
 								effect = {
 									add_resource = {
 										minerals = 1900
@@ -250,6 +253,7 @@ lrsk_uplift_1 = {
 									ethic = ethic_xenophile
 								}
 								authority = random
+								civics = random
 								effect = {
 									add_resource = {
 										minerals = 1900
@@ -315,31 +319,19 @@ lrsk_uplift_1 = {
 			generate_lost_colony_parent_bonus = yes # just adds stuff, we can use as-is
 
 			solar_system = {
-				if = { limit = { event_target:lrsk_uplift_tutor = { has_ethic = ethic_gestalt_consciousness } }
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_uplift_tutor
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = anchorage
-							}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:lrsk_uplift_tutor
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = shipyard
 						}
-					}
-				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:lrsk_uplift_tutor
-						effect = {
-							set_starbase_module = {
-								slot = 1
-								module = solar_panel_network
-							}
+						set_starbase_module = {
+							slot = 2
+							module = anchorage
 						}
 					}
 				}
@@ -379,6 +371,14 @@ lrsk_uplift_1 = {
 					who = event_target:lrsk_uplift_pupil
 					modifier = opinion_lrsk_gov_var_uplift_pupil
 				}
+				add_trust = {
+					amount = 20
+					who = event_target:lrsk_uplift_pupil
+				}
+				add_intel = {
+					amount = 100
+					who = event_target:lrsk_uplift_pupil
+				}
 				#country_event = { id = lrsk_gov_var_uplift.20 days = 9000 random = 9000 } # tbd?
 				establish_communications_no_message = event_target:lrsk_uplift_pupil
 
@@ -399,6 +399,14 @@ lrsk_uplift_1 = {
 				add_opinion_modifier = {
 					who = event_target:lrsk_uplift_tutor
 					modifier = opinion_lrsk_gov_var_uplift_tutor
+				}
+				add_trust = {
+					amount = 40
+					who = event_target:lrsk_uplift_tutor
+				}
+				add_intel = {
+					amount = 45
+					who = event_target:lrsk_uplift_tutor
 				}
 				#country_event = { id = lrsk_gov_var_uplift.10 days = 3 } # tbd?
 			}

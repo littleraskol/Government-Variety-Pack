@@ -6,7 +6,7 @@
 
 namespace = lrsk_government_variety_pack_backend
 
-# Adds a flag denoting this mod is in use, starts up mod-added origins.
+# Adds a flag denoting this mod is in use.
 event = {
 	id = lrsk_government_variety_pack_backend.1
 	hide_window = yes
@@ -17,107 +17,58 @@ event = {
 	immediate = {
 		set_global_flag = lrsk_government_variety_pack_mod_active
 		set_global_flag = lrsk_government_variety_pack_live_version # Uncomment on release
+	}
+}
 
-		## Starting Civics/Origins setup
-
+# Misc country startup chores.
+country_event = {
+	id = lrsk_government_variety_pack_backend.6			# Why is 6 right after 1? To troll my OCD.
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = { 
+		is_country_type = default
+	
+		# Add any new ones onto here.
+		OR = {
+			has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
+			AND = {
+				is_ai = no
+				OR = {
+					has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+					has_valid_civic = lrsk_gov_var_civic_imperial_economy
+					has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
+					AND = {
+						NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+						lrsk_has_enhanced_valid_civic = yes
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
 		# Xeno Communication Expert System
-		every_playable_country = {
+		IF = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
 			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
 		}
-		
-		# Fed start fix for GVP govs
-		every_playable_country = {
-			limit = {
-				NOT = { has_global_flag = lrsk_federation_start_fix_mod_active } # In case I make a whole mod of this
-				is_gestalt = no # probably unneeded but eh
-				has_federation = yes # This is real JIC shit
-				OR = {
-					has_origin = origin_common_ground
-					has_origin = origin_hegemon
-				}
-				is_authoritarian = no
-				is_egalitarian = no
-				lrsk_has_any_gvp_gov = yes
-			}
-			country_event = { id = lrsk_government_variety_pack_backend.4 }
-		}
-
-		# Galactic Backdoor
-		every_playable_country = {
-			limit = { has_origin = lrsk_gov_var_origin_galactic_backdoor }
-			country_event = { id = lrsk_gov_var_galactic_backdoor.1 }
-		}
-		
-		# Shroud-Touched
-		every_playable_country = {
-			limit = { has_origin = lrsk_gov_var_origin_shroud_touched }
-			country_event = { id = lrsk_gov_var_shroud_touched.1 }
-		}
-		
-		# For Discovery / Tradeways / Grand Alliance / Convended by Providence
-		every_playable_country = {
-			limit = { OR = { 
-				has_origin = lrsk_gov_var_origin_for_discovery
-				has_origin = lrsk_gov_var_origin_for_discovery_mi
-				has_origin = lrsk_gov_var_origin_tradeways
-				has_origin = lrsk_gov_var_origin_tradeways_mc
-				has_origin = lrsk_gov_var_origin_grand_alliance
-				has_origin = lrsk_gvp_origin_convened_providence
-			} }
-			country_event = { id = lrsk_gov_var_new_fed_starts.1 }
-		}
-		
-		# Uplift
-		every_playable_country = {
-			limit = { has_origin = lrsk_gov_var_origin_uplift }
-			country_event = { id = lrsk_gov_var_uplift.1 }
-		}
-		
-		## Sublight Empire/Commonwealth
-		#every_playable_country = {
-		#	limit = {
-		#		lrsk_gov_var_has_sublight_overlord_origin = yes
-		#	}
-		#	country_event = { id = lrsk_gov_var_sublight_origins.1 }
-		#}
-
-		## Escape routes for possible boxed-in starts
-
-		## Find escape routes for human players first
-		#every_playable_country = {
-		#	limit = {
-		#		lrsk_gvp_has_boxed_in_origin = yes
-		#		lrsk_has_gvp_npc_origin = no
-		#	}
-		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
-		#}
-		#
-		## Find escape routes for AI players last
-		#every_playable_country = {
-		#	limit = {
-		#		lrsk_gvp_has_boxed_in_origin = yes
-		#		lrsk_has_gvp_npc_origin = yes
-		#	}
-		#	country_event = { id = lrsk_government_variety_pack_backend.3 }
-		#}
 
 		## Escape routes for possible boxed-in starts
 
 		# Extreme cludge alert: explicitly mark initially owned systems...
-		every_country = {
-			if = { limit = { exists = capital_scope }
-				capital_scope.solar_system = {
-					lrsk_mark_owned_system = yes
-				}
-			}
-			every_system_within_border = {
+
+		IF = { limit = { exists = capital_scope }
+			capital_scope.solar_system = {
 				lrsk_mark_owned_system = yes
 			}
 		}
+		every_system_within_border = {
+			lrsk_mark_owned_system = yes
+		}
 
 		# Find escape routes for human players first
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = no
 				lrsk_gvp_has_boxed_in_origin = yes
@@ -126,7 +77,7 @@ event = {
 		}
 
 		# Find escape routes for AI players last
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = yes
 				lrsk_gvp_has_boxed_in_origin = yes
@@ -137,13 +88,13 @@ event = {
 		## Explainers if not called elsewhere
 
 		# Colonial Chartering
-		every_playable_country = {
+		IF = {
 			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
 			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
 		}
 
 		# Imperial Economy
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = no
 				has_valid_civic = lrsk_gov_var_civic_imperial_economy
@@ -152,7 +103,7 @@ event = {
 		}
 
 		# Colonial Fiefs
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = no
 				has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
@@ -161,7 +112,7 @@ event = {
 		}
 
 		# Enhanced base game explainers
-		every_playable_country = {
+		IF = {
 			limit = {
 				is_ai = no
 				NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
@@ -171,11 +122,11 @@ event = {
 		}
 
 		### Diagnostic checks
-		#every_playable_country = {
+		#IF = {
 		#	limit = { lrsk_has_any_gvp_gov = yes }
 		#	country_event = { id = lrsk_government_variety_pack_backend.2001 days = 3 }
 		#}
-		#every_playable_country = {
+		#IF = {
 		#	limit = { lrsk_has_any_gvp_civic = yes }
 		#	country_event = { id = lrsk_government_variety_pack_backend.2002 days = 3 }
 		#}
@@ -943,6 +894,36 @@ country_event = {
 	}
 }
 
+# Xenolinguistic tech for some Origins (I don't actually understand this, but the game uses it...)
+country_event = {
+	id = lrsk_government_variety_pack_backend.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_paragon_dlc = yes
+		is_country_type = default
+		is_gestalt = no
+		OR = {
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+			has_origin = lrsk_gov_var_origin_grand_alliance
+			has_origin = lrsk_gvp_origin_convened_providence
+			has_origin = lrsk_gov_var_origin_uplift
+		}
+	}
+
+	immediate = {
+		add_research_option = tech_xeno_linguistics
+		add_tech_progress = {
+			tech = tech_xeno_linguistics
+			progress = 0.50
+		}
+	}
+}
+
 # Explainers
 country_event = {
 	id = lrsk_government_variety_pack_backend.101
@@ -1053,9 +1034,9 @@ planet_event = {
 	immediate = {
 		IF = {
 			limit  = {			
-				count_owned_pop = {
+				count_owned_pop_amount = {
 					limit = { is_unemployed = yes  }
-					count < 1
+					count < 100
 				}
 			}
 			remove_modifier = lrsk_gvp_statmod_work_plan
@@ -1089,18 +1070,31 @@ country_event = {
 		every_owned_planet = {
 			limit = {
 				is_capital = no
-				num_pops > 2
+				pop_amount > 200
 				NOT = { has_building = building_colony_shelter }
 			}
 			root = { change_variable = { which = lrsk_num_rj_applicable_planets value = 1 } }
 		}
 
-		set_variable = { which = lrsk_num_rj_empire_pops value = 0 }
-		every_owned_pop = {
+		set_variable = { which = lrsk_num_rj_empire_eg_delegates value = 0 }	# this will be each free group's size/100, min 1
+		every_owned_pop_group = {
 			limit = {
 				is_enslaved = no
+				is_being_purged = no
+				is_being_assimilated = no
+				is_sapient = yes
 			}
-			root = { change_variable = { which = lrsk_num_rj_empire_pops value = 1 } }
+
+			set_variable = { which = lrsk_rj_popgroup_popcount value = trigger:pop_group_size }
+
+			# Civilians get half as many
+			IF = { limit = { is_pop_category = civilian } set_variable = { which = lrsk_rj_popcount_per_delegate value = 200 } }
+			ELSE = { set_variable = { which = lrsk_rj_popcount_per_delegate value = 100 } }
+
+			WHILE = { limit = { check_variable = { which = lrsk_rj_popgroup_popcount value > 0 } }
+				subtract_variable = { which = lrsk_rj_popgroup_popcount value = lrsk_rj_popcount_per_delegate }
+				root = { change_variable = { which = lrsk_num_rj_empire_eg_delegates value = 1 } }
+			}
 		}
 
 		set_variable = { which = lrsk_ruler_level value = 0 }
@@ -1150,7 +1144,7 @@ country_event = {
 		trigger = {
 			any_owned_planet = {
 				is_capital = no
-				num_pops > 2
+				pop_amount > 200
 				NOT = { has_building = building_colony_shelter }
 			}
 		}
@@ -1182,7 +1176,7 @@ country_event = {
 			every_owned_planet = {
 				limit = {
 					is_capital = no
-					num_pops > 2
+					pop_amount > 200
 					NOT = { has_building = building_colony_shelter }
 				}
 				add_modifier = {
@@ -1198,8 +1192,11 @@ country_event = {
 		custom_tooltip = lrsk_government_variety_pack_backend.1002.c.tooltip
 
 		trigger = {
-			any_owned_pop = {
-				is_enslaved = no	# Almost certainly true but eh
+			any_owned_pop_group = {
+				is_enslaved = no
+				is_being_purged = no
+				is_being_assimilated = no
+				is_sapient = yes
 			}
 		}
 
@@ -1207,13 +1204,13 @@ country_event = {
 			resource_stockpile_compare = {
 				resource = energy
 				value > 20
-				mult = lrsk_num_rj_empire_pops
+				mult = lrsk_num_rj_empire_eg_delegates
 			}
 		}
 
 		add_resource = {
 			energy = -20
-			mult = lrsk_num_rj_empire_pops
+			mult = lrsk_num_rj_empire_eg_delegates
 		}
 
 		hidden_effect = {
@@ -1241,12 +1238,16 @@ country_event = {
 		}
 
 		allow = {
-			has_resource = {
-				amount >= 200
-				type = influence
+			resource_stockpile_compare = {
+				resource = influence
+				value >= 200
+				mult = lrsk_ruler_level_factor
 			}
 		}
-		add_resource = { influence = -200 }
+		add_resource = {
+			influence = -200 
+			mult = lrsk_ruler_level_factor
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1267,12 +1268,16 @@ country_event = {
 		} }
 
 		allow = {
-			has_resource = {
-				amount >= 100
-				type = influence
+			resource_stockpile_compare = {
+				resource = influence
+				value >= 100
+				mult = lrsk_ruler_level_factor
 			}
 		}
-		add_resource = { influence = -100 }
+		add_resource = {
+			influence = -100 
+			mult = lrsk_ruler_level_factor
+		}
 
 		hidden_effect = {
 			add_modifier = {
@@ -1295,7 +1300,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = {
 				resource = influence
-				value > 300
+				value >= 300
 				mult = lrsk_ruler_level_factor
 			}
 		}
@@ -1324,7 +1329,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = {
 				resource = influence
-				value > 150
+				value >= 150				
 				mult = lrsk_ruler_level_factor
 			}
 		}
@@ -1506,7 +1511,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
+		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v7 } # Update this for every version.
 		lrsk_has_gvp_possible_invalidated_civic = yes
 	}
 
@@ -1530,7 +1535,7 @@ country_event = {
 				mult = trigger:empire_size
 			}
 		}
-		set_country_flag = lrsk_fixed_invalid_civics_v6
+		set_country_flag = lrsk_fixed_invalid_civics_v7
 	}
 
 	option = { name = OK }

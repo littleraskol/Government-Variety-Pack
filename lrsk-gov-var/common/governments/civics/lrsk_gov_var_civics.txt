@@ -10,7 +10,6 @@ lrsk_gov_var_civic_elected_clergy = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_elected_clergy_effects"
-  #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_elected_clergy.dds"
 
   possible = {
     authority = {
@@ -63,8 +62,6 @@ lrsk_gov_var_civic_ascetic_virtues = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_inwards_perfection.dds"
 
   possible = {
     ethics = {
@@ -124,7 +121,6 @@ lrsk_gov_var_civic_republicanism = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_republicanism_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_beacon_of_liberty.dds"
 
   possible = {
     authority = {
@@ -133,7 +129,13 @@ lrsk_gov_var_civic_republicanism = {
         value = auth_oligarchic
       }
     }
-    ethics = { NOT = { value = ethic_authoritarian } }
+    ethics = { 
+      NOR = {
+        text = civic_tooltip_not_authoritarian
+        value = ethic_authoritarian
+        value = ethic_fanatic_authoritarian
+      }
+    }
   }
 
   random_weight = { base = @civic_default_random_weight }
@@ -176,14 +178,8 @@ lrsk_gov_var_civic_utilitarian_planning = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_utilitarian_planning_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_idealistic_foundation.dds"
 
   possible = {
-    #authority = {
-    #  OR = {
-    #    value = auth_dictatorial
-    #  }
-    #}
     ethics = {
       NOR = {
         text = civic_tooltip_not_spiritualist
@@ -193,13 +189,7 @@ lrsk_gov_var_civic_utilitarian_planning = {
     }
   }
 
-  random_weight = {
-    base = @civic_default_random_weight
-    modifier = {
-      factor = 0
-      has_ethic = ethic_fanatic_capitalism
-    }
-  }
+  random_weight = {base = @civic_default_random_weight}
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -215,12 +205,6 @@ lrsk_gov_var_civic_utilitarian_planning = {
 				has_ai_personality = erudite_explorers
 			}
 		}
-		modifier = {
-			factor = @ai_civic_personality_forbid_factor
-			OR = {
-				has_ethic = ethic_fanatic_capitalism
-			}
-		}
 	}
 
   modifier = {
@@ -230,30 +214,6 @@ lrsk_gov_var_civic_utilitarian_planning = {
     edicts_cost_mult = -0.1
   }
 }
-
-##Grandiosity (Dictatorship) - In this society, one can't be taken seriously as a dictator without building some big military hardware. (Enables oversized stations and #ships)
-### LEGACY LISTING
-#lrsk_gov_var_civic_grandiosity = {
-#  description = "lrsk_gov_var_civic_tooltip_grandiosity_effect"
-#  potential = {
-#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-#    civics = { value = lrsk_gov_var_civic_grandiosity }
-#  }
-#
-#  #icon = "gfx/interface/icons/governments/civics/civic_distinguished_admiralty.dds"
-#
-#  possible = {
-#    authority = {
-#      value = auth_dictatorial
-#    }
-#  }
-#
-#
-#  random_weight = { base = 0 }
-#
-#  can_build_ruler_military_station = yes
-#  can_build_ruler_ship = yes
-#}
 
 #Siege Mentality (Not Militarist or Xenophile) - The government's defense policy focuses on fortifications, whether due to the population's concerns about hostile outsiders or its lack of enthusiasm for aggressive warfare. (+2 defense platform cap, -10% defense platform cost, +5% defense platform hull and damage)
 lrsk_gov_var_civic_siege_mentality = {
@@ -268,11 +228,12 @@ lrsk_gov_var_civic_siege_mentality = {
   possible = {
     ethics = {
       NOR = {
-        text = lrsk_gov_var_civic_tooltip_not_xenophile_or_not_militarist
-        #text = civic_tooltip_not_xenophile
+        text = civic_tooltip_not_xenophile
         value = ethic_xenophile
         value = ethic_fanatic_xenophile
-        #text = civic_tooltip_not_militarist
+      }
+      NOR= {
+        text = civic_tooltip_not_militarist
         value = ethic_militarist
         value = ethic_fanatic_militarist
       }
@@ -319,8 +280,6 @@ lrsk_gov_var_civic_cult_of_personality = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
 
   possible = {
     authority = {
@@ -384,7 +343,6 @@ lrsk_gov_var_civic_universal_sovereignty = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_universal_sovereignty_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds"
 
   possible = {
     authority = {
@@ -452,7 +410,6 @@ lrsk_gov_var_civic_workers_councils = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-  #description = "civic_tooltip_lrsk_gov_var_civic_workers_councils_effects"
 
   possible = {
     ethics = {
@@ -462,7 +419,7 @@ lrsk_gov_var_civic_workers_councils = {
         value = ethic_fanatic_egalitarian
       }
     }
-    civics ={
+    civics = {
       NOR = {
         value = lrsk_gov_var_civic_enlightened_liberalism
         value = civic_shared_burden
@@ -470,16 +427,7 @@ lrsk_gov_var_civic_workers_councils = {
     }
   }
 
-  random_weight = {
-    base = @civic_default_random_weight
-    modifier = {
-      factor = 0
-      OR = {
-        has_ethic = ethic_capitalism
-        has_ethic = ethic_fanatic_capitalism
-      }
-    }
-  }
+  random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -499,8 +447,6 @@ lrsk_gov_var_civic_workers_councils = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = ruthless_capitalists
-        has_ethic = ethic_capitalism
-        has_ethic = ethic_fanatic_capitalism
 			}
 		}
 	}
@@ -523,16 +469,7 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
     authority = { NOT = { value = auth_corporate } }
   }
 
-  #icon = "gfx/interface/icons/governments/civics/civic_citizen_service.dds"
-
   possible = {
-    #authority = {
-    #  OR = {
-    #    text = lrsk_gov_var_civic_tooltip_dem_dic
-    #    value = auth_dictatorial
-    #    value = auth_democratic
-    #  }
-    #}
     ethics = {
       NOR = {
         text = civic_tooltip_not_xenophile
@@ -544,8 +481,13 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
       }
+			NOR = {
+				text = civic_tooltip_not_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
     }
-    civics ={
+    civics = {
       NOR = {
         value = civic_fanatic_purifiers
         value = lrsk_gov_var_civic_universal_sovereignty
@@ -597,11 +539,8 @@ lrsk_gov_var_civic_enlightened_liberalism = {
     authority = { NOT = { value = auth_corporate } }
   }
 
-  #icon = "gfx/interface/icons/governments/civics/civic_technocracy.dds"
-  #description = "civic_tooltip_lrsk_gov_var_civic_enlightened_liberalism_effects"
-
   possible = {
-    civics ={
+    civics = {
       NOR = {
         value = lrsk_gov_var_civic_workers_councils
         value = lrsk_gov_var_civic_institutionalized_collectivism
@@ -618,16 +557,7 @@ lrsk_gov_var_civic_enlightened_liberalism = {
     }
   }
   
-  random_weight = {
-    base = @civic_default_random_weight
-    modifier = {
-      factor = 0
-        OR = {
-          has_ethic = ethic_socialism
-          has_ethic = ethic_fanatic_socialism
-      }
-    }
-  }
+  random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -649,8 +579,6 @@ lrsk_gov_var_civic_enlightened_liberalism = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = harmonious_hierarchy
-        has_ethic = ethic_socialism
-        has_ethic = ethic_fanatic_socialism
 			}
 		}
 	}
@@ -669,16 +597,6 @@ lrsk_gov_var_civic_business_lobby = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_aristocratic_elite.dds"
-
-  #possible = {
-  #  civics ={
-  #    NOR = {
-  #      value = lrsk_gov_var_civic_workers_councils
-  #    }
-  #  }
-  #}
 
   random_weight = { base = @civic_default_random_weight }
   
@@ -721,7 +639,6 @@ lrsk_gov_var_civic_chivalry = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_chivalry_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_warrior_culture.dds"
 
   possible = {
     OR = {
@@ -777,7 +694,6 @@ lrsk_gov_var_civic_lifelong_learning = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_lifelong_learning_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_meritocracy.dds"
 
   possible = {
     authority = {
@@ -832,22 +748,8 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
     authority = { NOT = { value = auth_corporate } }
   }
 
-  #icon = "gfx/interface/icons/governments/civics/civic_mining_guilds.dds"
-
   possible = {
-    #authority = {
-    #  NOR = {
-    #    value = auth_democratic
-    #  }
-    #}
-    #ethics = {
-    #  OR = {
-    #    text = civic_tooltip_materialist
-    #    value = ethic_materialist
-    #    value = ethic_fanatic_materialist
-    #  }
-    #}
-    civics ={
+    civics = {
       NOR = {
         value = lrsk_gov_var_civic_enlightened_liberalism
         value = civic_merchant_guilds
@@ -858,16 +760,7 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
     }
   }
   
-  random_weight = {
-    base = @civic_default_random_weight
-    modifier = {
-      factor = 0
-        OR = {
-          has_ethic = ethic_capitalism
-          has_ethic = ethic_fanatic_capitalism
-      }
-    }
-  }
+  random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -889,8 +782,6 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
 			factor = @ai_civic_personality_forbid_factor
 			OR = {
 				has_ai_personality = ruthless_capitalists
-        has_ethic = ethic_capitalism
-        has_ethic = ethic_fanatic_capitalism
 			}
 		}
 	}
@@ -910,7 +801,6 @@ lrsk_gov_var_civic_direct_revelation = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects"
-  #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_direct_revelation.dds"
 
   possible = {
     ethics = {
@@ -953,43 +843,6 @@ lrsk_gov_var_civic_direct_revelation = {
 
   modifier = { job_lrsk_gov_var_job_hedge_preacher_per_pop = 0.0666 }
 }
-## This version deprecated, keeping in comments for, uh, sentimentality's sake?
-#lrsk_gov_var_civic_direct_revelation = {
-#  potential = {
-#    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-#    civics = { value = lrsk_gov_var_civic_direct_revelation }
-#  }
-#
-#  #icon = "gfx/interface/icons/governments/civics/civic_imperial_cult.dds"
-#
-#  possible = {
-#    ethics = {
-#      OR = {
-#        OR = {
-#          text = civic_tooltip_egalitarian
-#          value = ethic_egalitarian
-#          value = ethic_fanatic_egalitarian
-#        }
-#        OR = {
-#          text = civic_tooltip_pacifist
-#      		value = ethic_pacifist
-#      		value = ethic_fanatic_pacifist
-#      	}
-#      }
-#      OR = {
-#        text = civic_tooltip_spiritualist
-#        value = ethic_spiritualist
-#        value = ethic_fanatic_spiritualist
-#      }
-#    }
-#  }
-#
-#  random_weight = { base = @civic_default_random_weight }
-#
-#  modifier = {
-#    tradition_cost_num_colonies_mult = -0.2
-#  }
-#}
 
 #Royal Absolutism (Imperial, Authoritarian) - The monarch is the state, whose will is law without limit. (-50% pop ethics shift speed)
 lrsk_gov_var_civic_royal_absolutism = {
@@ -999,7 +852,6 @@ lrsk_gov_var_civic_royal_absolutism = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_royal_absolutism_effects"
-  #icon = "gfx/interface/icons/governments/civics/civic_philosopher_king.dds"
 
   possible = {
     authority = {
@@ -1060,9 +912,7 @@ lrsk_gov_var_civic_public_works = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-
-  #icon = "gfx/interface/icons/governments/civics/civic_functional_architecture.dds"
-
+  
   random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
@@ -1103,16 +953,7 @@ lrsk_gov_var_civic_imperial_economy = {
 
   description = "civic_tooltip_lrsk_gov_var_civic_imperial_economy_effects"
 
-  #icon = "gfx/interface/icons/governments/civics/civic_slaver_guilds.dds"
-
   possible = {
-    #authority = {
-    #  OR = {
-    #    text = civic_tooltip_dic_imp
-    #    value = auth_dictatorial
-    #    value = auth_imperial
-    #  }
-    #}
     ethics = {
       NOR = {
         text = civic_tooltip_not_xenophile
@@ -1160,7 +1001,7 @@ lrsk_gov_var_civic_imperial_economy = {
 	}
 
   modifier = {
-    country_vassal_naval_capacity_contribution_mult = 0.15
+    country_naval_capacity_contribution_from_subjects_mult = 0.15
     subject_tribute_mult = 0.075
     diplo_weight_economy_mult = 0.15
   }
@@ -1174,8 +1015,6 @@ lrsk_gov_var_civic_colonial_fiefs = {
   }
 
   description = "civic_tooltip_lrsk_gov_var_civic_colonial_fiefs_effects"
-
-  #icon = "gfx/interface/icons/governments/civics/civic_nationalistic_zeal.dds"
 
   possible = {
     authority = {

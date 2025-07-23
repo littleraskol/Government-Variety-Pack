@@ -18,8 +18,12 @@
 # Hedge Preacher
 lrsk_gov_var_job_hedge_preacher = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_primitive_dwellings
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_primitive_dwellings
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -32,7 +36,7 @@ lrsk_gov_var_job_hedge_preacher = {
 	possible_precalc = can_fill_worker_job
 	
 	resources = {
-		category = planet_priests
+		category = planet_bureaucrats
 		produces = {
 			unity = 4
 		}
@@ -42,7 +46,7 @@ lrsk_gov_var_job_hedge_preacher = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 2
+		planet_amenities_add = 200
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
@@ -66,22 +70,36 @@ lrsk_gov_var_job_hedge_preacher = {
 		modifier = {
 			factor = 0.1
 			has_ethic = ethic_materialist
-			NOT = { has_job = lrsk_gov_var_job_hedge_preacher }
+			#NOT = { has_job = lrsk_gov_var_job_hedge_preacher }
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_hedge_preacher
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_hedge_preacher
+		#}
 	}
 
 	inline_script = "jobs/automodding_priority_unity"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Citizen Scholar
 lrsk_gvp_job_citscholar = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_residence
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_residence
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -113,18 +131,18 @@ lrsk_gvp_job_citscholar = {
 			unity = 1
 		}
 
-		produces = {
-			trigger = {
-				exists = owner
-				has_living_standard = {
-					country = owner 
-					type = living_standard_utopian
-				}
-			}
-			physics_research = 1
-			engineering_research = 1
-			society_research = 1
-		}
+		#produces = {
+		#	trigger = {
+		#		exists = owner
+		#		has_living_standard = {
+		#			country = owner 
+		#			type = living_standard_utopian
+		#		}
+		#	}
+		#	physics_research = 1
+		#	engineering_research = 1
+		#	society_research = 1
+		#}
 
 		upkeep = {
 			consumer_goods = 1
@@ -145,22 +163,22 @@ lrsk_gvp_job_citscholar = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 1
+		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			has_living_standard = {
-				country = owner 
-				type = living_standard_utopian
-			}
-		}
-		modifier = {
-			planet_amenities_add = 2
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		exists = owner
+	#		has_living_standard = {
+	#			country = owner 
+	#			type = living_standard_utopian
+	#		}
+	#	}
+	#	modifier = {
+	#		planet_amenities_add = 200
+	#	}
+	#}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -170,7 +188,7 @@ lrsk_gvp_job_citscholar = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = 1
+			planet_amenities_add = 100
 		}
 	}
 
@@ -188,20 +206,34 @@ lrsk_gvp_job_citscholar = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gvp_job_citscholar
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gvp_job_citscholar
+		#}
 	}
 
 	inline_script = "jobs/automodding_priority_research"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Functionary
 lrsk_gov_var_job_functionary = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_managerial_technique_institute
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_managerial_technique_institute
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -214,10 +246,11 @@ lrsk_gov_var_job_functionary = {
 	possible_precalc = can_fill_worker_job
 
 	resources = {
-		category = planet_administrators
+		category = planet_bureaucrats
 
 		produces = {
 			unity = 1
+			trade = 3
 		}
 
 		produces = {
@@ -229,18 +262,18 @@ lrsk_gov_var_job_functionary = {
 		}
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			always = yes
-		}
-		trade_value_add = 3
-		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		always = yes
+	#	}
+	#	trade_value_add = 3
+	#	mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_worker_job_weight
 		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_functionary|RESOURCE|unity|
-		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+		#mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -250,20 +283,34 @@ lrsk_gov_var_job_functionary = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_functionary
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_functionary
+		#}
 	}
 
 	inline_script = "jobs/automodding_priority_trade"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Info-Guide
 lrsk_gov_var_job_infoguide = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_learnarium_dome
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_learnarium_dome
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -288,7 +335,7 @@ lrsk_gov_var_job_infoguide = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 2
+		planet_amenities_add = 200
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
@@ -305,20 +352,34 @@ lrsk_gov_var_job_infoguide = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_infoguide
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_infoguide
+		#}
 	}
 
 	inline_script = "jobs/automodding_priority_research"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Gofer
 lrsk_gov_var_job_gofer = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gvp_bldg_odd_jobs_emporium
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gvp_bldg_odd_jobs_emporium
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -341,7 +402,7 @@ lrsk_gov_var_job_gofer = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 4
+		planet_amenities_add = 400
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
@@ -378,13 +439,27 @@ lrsk_gov_var_job_gofer = {
 	}
 	
 	inline_script = "jobs/automodding_priority_amenities"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Offworld Worker
 lrsk_gov_var_job_offworld_worker = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
+		}
+	}
 	clothes_texture_index = 2
 
 	possible_pre_triggers = {
@@ -407,7 +482,7 @@ lrsk_gov_var_job_offworld_worker = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 4
+		planet_amenities_add = 400
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
@@ -446,6 +521,16 @@ lrsk_gov_var_job_offworld_worker = {
 	}
 	
 	inline_script = "jobs/automodding_priority_amenities"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 ## Specialist Jobs
@@ -453,8 +538,12 @@ lrsk_gov_var_job_offworld_worker = {
 # Knight
 lrsk_gov_var_job_knight = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_hall_of_honor
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_hall_of_honor
+		}
+	}
 	clothes_texture_index = 4
 
 	possible_pre_triggers = {
@@ -491,20 +580,6 @@ lrsk_gov_var_job_knight = {
 		}
 	}
 
-	pop_modifier = {
-		pop_defense_armies_add = 1
-	}
-
-	triggered_pop_modifier = {
-		potential = {
-			planet = {
-				exists = owner
-				owner = { has_technology = "tech_global_defense_grid" }
-			}
-		}
-		pop_defense_armies_add = 1
-	}
-
 	resources = {
 		category = planet_enforcers
 		#produces = {
@@ -527,6 +602,7 @@ lrsk_gov_var_job_knight = {
 	planet_modifier = {
 		planet_crime_add = -5
 		planet_stability_add = 2
+		planet_defense_armies_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -557,6 +633,16 @@ lrsk_gov_var_job_knight = {
 		modifier = {
 			planet_crime_add = -5
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				exists = owner
+				owner = { has_technology = "tech_global_defense_grid" }
+			}
+		}
+		planet_defense_armies_add = 1
 	}
 
 	weight = {
@@ -612,26 +698,40 @@ lrsk_gov_var_job_knight = {
 		modifier = {
 			factor = 0.25
 			is_egalitarian = yes
-			NOT = { has_job = lrsk_gov_var_job_knight }
+			#NOT = { has_job = lrsk_gov_var_job_knight }
 		}
 		modifier = {
 			factor = 1.5
 			is_militarist = yes
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_knight
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_knight
+		#}
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Pastor
 lrsk_gov_var_job_pastor = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_temple
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_temple
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -644,7 +744,7 @@ lrsk_gov_var_job_pastor = {
 	possible_precalc = can_fill_specialist_job
 
 	resources = {
-		category = planet_priests
+		category = planet_bureaucrats
 		produces = {
 			unity = 5
 		}
@@ -657,7 +757,7 @@ lrsk_gov_var_job_pastor = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 5
+		planet_amenities_add = 500
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 	
@@ -665,7 +765,7 @@ lrsk_gov_var_job_pastor = {
 		potential = {
 			has_councilor = { COUNCILOR = "lrsk_gvp_elected_clergy_councilor" }
 		}
-		planet_amenities_add = 0.25
+		planet_amenities_add = 25
 		mult = value:councilor_level|TYPE|lrsk_gvp_elected_clergy_councilor|
 	}
 
@@ -697,22 +797,36 @@ lrsk_gov_var_job_pastor = {
 		modifier = {
 			factor = 0.1
 			has_ethic = ethic_materialist
-			NOT = { has_job = lrsk_gov_var_job_pastor }
+			#NOT = { has_job = lrsk_gov_var_job_pastor }
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_pastor
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_pastor
+		#}
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Otherworld Guide
 lrsk_gov_var_job_otherworld_guide = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_shroud_pocket
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_shroud_pocket
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -725,22 +839,22 @@ lrsk_gov_var_job_otherworld_guide = {
 	possible_precalc = can_fill_specialist_job
 
 	resources = {
-		category = planet_telepaths
+		category = planet_entertainers
 		produces = {
-			unity = 1
-		}
-		produces = {
-			trigger = {	has_trait = lrsk_gov_var_trait_natural_esper }
-			unity = 1
-		}
-		produces = {
-			trigger = {	has_trait = trait_latent_psionic }
 			unity = 2
 		}
-		produces = {
-			trigger = {	has_trait = trait_psionic }
-			unity = 3
-		}
+		#produces = {
+		#	trigger = {	has_trait = lrsk_gov_var_trait_natural_esper }
+		#	unity = 1
+		#}
+		#produces = {
+		#	trigger = {	has_trait = trait_latent_psionic }
+		#	unity = 2
+		#}
+		#produces = {
+		#	trigger = {	has_trait = trait_psionic }
+		#	unity = 3
+		#}
 		upkeep = {
 			consumer_goods = 1
 		}
@@ -748,30 +862,31 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			has_trait = lrsk_gov_var_trait_natural_esper
+			always = yes
 		}
 		planet_stability_add = 1
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_latent_psionic
-		}
-		planet_stability_add = 2
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_latent_psionic
+	#	}
+	#	planet_stability_add = 2
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_psionic
-		}
-		planet_stability_add = 3
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_psionic
+	#	}
+	#	planet_stability_add = 3
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
 		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_otherworld_guide|RESOURCE|unity|
 		modifier = {
-			factor = 0.01	# don't want this going unfilled in edge case where no one has a valid trait...
+			#factor = 0.01	# don't want this going unfilled in edge case where no one has a valid trait...
+			factor = 0	# No way to make the job more powerful per trait level, just going to ban it if lacking a psi trait. Oh well.
 			NOR = {
 				has_trait = trait_latent_psionic
 				has_trait = trait_psionic
@@ -792,13 +907,27 @@ lrsk_gov_var_job_otherworld_guide = {
 			has_trait = trait_psionic
 		}
 		modifier = {
+			factor = 1.2
+			OR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 1.5
-			has_job = lrsk_gov_var_job_otherworld_guide
-		}
+		#modifier = {
+		#	factor = 1.5
+		#	has_job = lrsk_gov_var_job_otherworld_guide
+		#}
 		modifier = {
 			factor = 0.1
 			is_enslaved = yes
@@ -807,13 +936,27 @@ lrsk_gov_var_job_otherworld_guide = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Investigator
 lrsk_gov_var_job_investigator = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_professional_protection_office
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_professional_protection_office
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -853,7 +996,7 @@ lrsk_gov_var_job_investigator = {
 
 	triggered_planet_modifier = {
 		potential = {
-			has_trait = trait_latent_psionic
+			enforcer_is_telepath_trigger = yes
 		}
 		modifier = {
 			planet_crime_add = -5
@@ -861,15 +1004,15 @@ lrsk_gov_var_job_investigator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_psionic
-		}
-		modifier = {
-			planet_crime_add = -10
-			pop_cat_worker_political_power = -0.1
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_psionic
+	#	}
+	#	modifier = {
+	#		planet_crime_add = -10
+	#		pop_cat_worker_political_power = -0.1
+	#	}
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
@@ -890,10 +1033,10 @@ lrsk_gov_var_job_investigator = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 10
-			has_job = lrsk_gov_var_job_investigator
-		}
+		#modifier = {
+		#	factor = 10
+		#	has_job = lrsk_gov_var_job_investigator
+		#}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_latent_psionic
@@ -903,13 +1046,27 @@ lrsk_gov_var_job_investigator = {
 			has_trait = trait_psionic
 		}
 	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 # Suppressor
 lrsk_gov_var_job_suppressor = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_professional_protection_office
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_professional_protection_office
+		}
+	}
 	clothes_texture_index = 5
 
 	possible_pre_triggers = {
@@ -926,45 +1083,45 @@ lrsk_gov_var_job_suppressor = {
 		planet_jobs_worker_produces_mult = 0.1
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_strong
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.05
-			planet_jobs_worker_produces_mult = 0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_strong
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.05
+	#		planet_jobs_worker_produces_mult = 0.05
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_cybernetic
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.05
-			planet_jobs_worker_produces_mult = 0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_cybernetic
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.05
+	#		planet_jobs_worker_produces_mult = 0.05
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			pop_cat_worker_political_power = -0.1
-			planet_jobs_worker_produces_mult = 0.1
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_very_strong
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = -0.1
+	#		planet_jobs_worker_produces_mult = 0.1
+	#	}
+	#}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_weak
-		}
-		modifier = {
-			pop_cat_worker_political_power = +0.05
-			planet_jobs_worker_produces_mult = -0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		has_trait = trait_weak
+	#	}
+	#	modifier = {
+	#		pop_cat_worker_political_power = +0.05
+	#		planet_jobs_worker_produces_mult = -0.05
+	#	}
+	#}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
@@ -993,13 +1150,23 @@ lrsk_gov_var_job_suppressor = {
 			factor = 0.1
 			can_take_servant_job = yes
 		}
-		modifier = {
-			factor = 10
-			has_job = lrsk_gov_var_job_suppressor
-		}
+		#modifier = {
+		#	factor = 10
+		#	has_job = lrsk_gov_var_job_suppressor
+		#}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_cybernetic
+		}
+	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
 		}
 	}
 }
@@ -1007,8 +1174,12 @@ lrsk_gov_var_job_suppressor = {
 # Civil Society Leader
 lrsk_gvp_job_civic_leader = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_capital
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_capital
+		}
+	}
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
@@ -1033,12 +1204,12 @@ lrsk_gvp_job_civic_leader = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 2
+		planet_amenities_add = 200
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	resources = {
-		category = planet_administrators
+		category = planet_bureaucrats
 		produces = {
 			unity = 3
 		}
@@ -1068,6 +1239,16 @@ lrsk_gvp_job_civic_leader = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 ## Ruler Jobs
@@ -1192,8 +1373,12 @@ lrsk_gvp_job_pampered_respite = {
 # Planetmind Overseer
 lrsk_gov_var_job_planetmind_overseer = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1214,15 +1399,16 @@ lrsk_gov_var_job_planetmind_overseer = {
 		}
 		upkeep = {
 			unity = 2
+			energy = 1
 		}
-		upkeep = {
-			trigger = { is_lithoid = no }
-			food = 1
-		}
-		upkeep = {
-			trigger = { is_lithoid = yes }
-			minerals = 1
-		}
+		#upkeep = {
+		#	trigger = { is_lithoid = no }
+		#	food = 1
+		#}
+		#upkeep = {
+		#	trigger = { is_lithoid = yes }
+		#	minerals = 1
+		#}
 	}
 
 	country_modifier = {
@@ -1253,7 +1439,17 @@ lrsk_gov_var_job_planetmind_overseer = {
 
 	weight = {
 		weight = @lrsk_planetmind_job_weight
-		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_planetmind_overseer|RESOURCE|unity|
+		#mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_planetmind_overseer|RESOURCE|unity|
+	}
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = complex_drone
+				AMOUNT = local_pop_amount
+			}
+		}
 	}
 }
 
@@ -1262,8 +1458,12 @@ lrsk_gov_var_job_planetmind_overseer = {
 # Planetary Auditor
 lrsk_gov_var_job_regional_coordinator = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_machine_capital
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1306,4 +1506,14 @@ lrsk_gov_var_job_regional_coordinator = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = complex_drone
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }

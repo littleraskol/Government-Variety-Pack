@@ -33,7 +33,7 @@ lrsk_gvp_aesetic_virtues_councilor = {
 	}
 	civic = lrsk_gov_var_civic_ascetic_virtues
 	modifier = {
-		pop_growth_speed = 0.01
+		logistic_growth_mult = 0.01
 		pop_happiness = 0.01
 		leader_lifespan_add = 2
 	}
@@ -192,9 +192,9 @@ lrsk_gvp_direct_revelation_councilor = {
 	}
 	civic = lrsk_gov_var_civic_direct_revelation
 	modifier = {
-		planet_priests_produces_mult = 0.01
+		planet_bureaucrats_produces_mult = 0.01
 	}
-	custom_tooltip = lrsk_gvp_direct_revelation_councilor_custom_modifier_desc
+	custom_tooltip_with_modifiers = lrsk_gvp_direct_revelation_councilor_custom_modifier_desc
 	conditional_tooltip = lrsk_gvp_direct_revelation_councilor_conditional_tooltip
 }
 
@@ -226,9 +226,9 @@ lrsk_gvp_elected_clergy_councilor = {
 	}
 	civic = lrsk_gov_var_civic_elected_clergy
 	modifier = {
-		planet_priests_upkeep_mult = -0.01
+		planet_bureaucrats_upkeep_mult = -0.01
 	}
-	custom_tooltip = lrsk_gvp_elected_clergy_councilor_custom_modifier_desc
+	custom_tooltip_with_modifiers = lrsk_gvp_elected_clergy_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_elected_clergy_councilor_conditional_tooltip
 }
 
@@ -326,7 +326,8 @@ lrsk_gvp_imperial_economy_councilor = {
 	}
 	civic = lrsk_gov_var_civic_imperial_economy
 	modifier = {
-		trade_value_mult = 0.02
+		country_trade_produces_mult = 0.01
+		country_subject_technology_sharing_mult = 0.02
 	}
 	#custom_tooltip = lrsk_gvp_imperial_economy_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_imperial_economy_councilor_conditional_tooltip
@@ -500,7 +501,7 @@ lrsk_gvp_universal_sovereignty_councilor = {
 	}
 	civic = lrsk_gov_var_civic_universal_sovereignty
 	modifier = {
-		country_vassal_naval_capacity_contribution_mult = 0.03
+		country_naval_capacity_contribution_from_subjects_mult = 0.03
 	}
 	#custom_tooltip = lrsk_gvp_universal_sovereignty_councilor_custom_modifier_desc
 	#conditional_tooltip = lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip

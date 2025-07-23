@@ -646,7 +646,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_workhouses value > 0 }
 			any_owned_planet = {
-				num_pops > 1 # don't want to steal last pop...
+				pop_amount > 100 # don't want to steal last pop...
 				has_planet_flag = lrsk_could_lose_pops_to@root
 			}
 		}
@@ -674,7 +674,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_localmedia value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_planet_flag = lrsk_could_leak_scandal_to@root
 			}
 		}
@@ -754,7 +754,7 @@ country_event = {
 		any_country = {
 			check_variable = { which = lrsk_num_owned_casinos value > 0 }
 			any_owned_planet = {
-				num_pops > 0 # just to hopefully filter out any uninhabited worlds
+				pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 				has_planet_flag = lrsk_can_get_casino_events_from@root
 			}
 		}
@@ -782,7 +782,7 @@ country_event = {
 			check_variable = { which = lrsk_num_built_casinos value > 0 }
 		}
 		any_owned_planet = {
-			num_pops > 0 # just to hopefully filter out any uninhabited worlds
+			pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 			has_branch_office = yes
 			exists = branch_office_owner
 			has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
@@ -800,7 +800,7 @@ country_event = {
 		IF = {
 			limit = {
 				any_owned_planet = {
-					num_pops > 0 # just to hopefully filter out any uninhabited worlds
+					pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 					has_branch_office = yes
 					exists = branch_office_owner
 					has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = planet.branch_office_owner }
@@ -874,9 +874,9 @@ country_event = {
 			}
 			while = {
 				limit = {
-					count_owned_pop = {
+					count_owned_pop_amount = {
 						limit = { is_sapient = no }
-						count < 3
+						count < 300
 					}
 				}
 				create_pop = { species = last_created }
@@ -1311,5 +1311,36 @@ country_event = {
 			unity = 10
 			mult = trigger:empire_size
 		}
+	}
+}
+
+# Gives all special pre-reqs for councilors 
+country_event = {
+	id = lrsk_gvp_testing.31
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		give_technology = { tech = tech_ship_armor_3 message = no }
+		give_technology = { tech = tech_advanced_metallurgy_1 message = no }
+		give_technology = { tech = tech_starbase_3 message = no }
+		give_technology = { tech = tech_hyper_drive_2 message = no }
+		give_technology = { tech = tech_power_plant_3 message = no }
+		give_technology = { tech = tech_cold_fusion_power message = no }
+		give_technology = { tech = tech_vitality_boosters message = no }
+		give_technology = { tech = tech_terrestrial_sculpting message = no }
+		give_technology = { tech = tech_xeno_diplomacy message = no }
+		give_technology = { tech = tech_robotic_workers message = no }
+
+		add_tradition = tr_harmony_finish
+		add_tradition = tr_mercantile_finish
+		add_tradition = tr_expansion_finish
+		add_tradition = tr_supremacy_finish
+		add_tradition = tr_domination_finish
 	}
 }

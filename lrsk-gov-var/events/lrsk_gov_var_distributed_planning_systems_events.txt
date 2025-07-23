@@ -59,7 +59,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -83,7 +83,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -111,9 +111,9 @@ planet_event = {
 						num_buildings = { type = building_refinery value < 1 }
 						num_buildings = { type = building_chemical_plant value < 1 }
 						num_buildings = { type = building_crystal_plant value < 1 }
-						num_buildings = { type = building_mote_harvesters value < 1 }
-						num_buildings = { type = building_gas_extractors value < 1 }
-						num_buildings = { type = building_crystal_mines value < 1 }
+						#num_buildings = { type = building_mote_harvesters value < 1 }
+						#num_buildings = { type = building_gas_extractors value < 1 }
+						#num_buildings = { type = building_crystal_mines value < 1 }
 						num_buildings = { type = building_crystal_plant_2 value < 1 }
 						num_buildings = { type = building_research_lab_1 value < 1 }
 						num_buildings = { type = building_research_lab_2 value < 1 }
@@ -159,14 +159,14 @@ planet_event = {
 						num_buildings = { type = building_crystal_plant_2 value > 0 }
 					}
 				}
-				modifier = {
-					add = 3
-					AND = {
-						num_buildings = { type = building_mote_harvesters value > 0 }
-						num_buildings = { type = building_gas_extractors value > 0 }
-						num_buildings = { type = building_crystal_mines value > 0 }
-					}
-				}
+				#modifier = {
+				#	add = 3
+				#	AND = {
+				#		num_buildings = { type = building_mote_harvesters value > 0 }
+				#		num_buildings = { type = building_gas_extractors value > 0 }
+				#		num_buildings = { type = building_crystal_mines value > 0 }
+				#	}
+				#}
 				modifier = {
 					add = 1
 					num_buildings = { type = building_foundry_1 value > 1 }
@@ -267,18 +267,18 @@ planet_event = {
 					add = 4
 					num_buildings = { type = building_crystal_plant_2 value > 0 }
 				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_mote_harvesters value > 1 }
-				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_crystal_mines value > 1 }
-				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_gas_extractors value > 1 }
-				}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_mote_harvesters value > 1 }
+				#}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_crystal_mines value > 1 }
+				#}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_gas_extractors value > 1 }
+				#}
 				modifier = {
 					add = 1
 					num_buildings = { type = building_uplink_node value > 0 }
@@ -305,7 +305,7 @@ planet_event = {
 						has_industrial_designation = yes
 						has_research_designation = yes
 						has_unity_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 					}
 				}
 				planet_event = { id = lrsk_gov_var_distributed_planning_systems.5 } #Favor complex drone output
@@ -481,7 +481,7 @@ planet_event = {
 						has_industrial_designation = yes
 						has_research_designation = yes
 						has_unity_designation = yes
-						has_refinery_designation = yes
+						# = yes
 					}
 				}
 				modifier = {
@@ -607,7 +607,7 @@ planet_event = {
 						has_unity_designation = yes
 						has_generator_designation = yes
 						has_farming_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 					}
 				}
 				modifier = {
@@ -703,7 +703,7 @@ planet_event = {
 						has_unity_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 					}
 				}
 				modifier = {
@@ -791,7 +791,7 @@ planet_event = {
 						has_unity_designation = yes
 						has_generator_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 					}
 				}
 				modifier = {
@@ -875,7 +875,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -960,7 +960,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -985,9 +985,9 @@ planet_event = {
 						num_buildings = { type = building_refinery value < 1 }
 						num_buildings = { type = building_chemical_plant value < 1 }
 						num_buildings = { type = building_crystal_plant value < 1 }
-						num_buildings = { type = building_mote_harvesters value < 1 }
-						num_buildings = { type = building_gas_extractors value < 1 }
-						num_buildings = { type = building_crystal_mines value < 1 }
+						#num_buildings = { type = building_mote_harvesters value < 1 }
+						#num_buildings = { type = building_gas_extractors value < 1 }
+						#num_buildings = { type = building_crystal_mines value < 1 }
 						num_buildings = { type = building_crystal_plant_2 value < 1 }
 					}
 				}
@@ -999,14 +999,14 @@ planet_event = {
 						num_buildings = { type = building_crystal_plant value > 0 }
 					}
 				}
-				modifier = {
-					add = 10
-					AND = {
-						num_buildings = { type = building_mote_harvesters value > 0 }
-						num_buildings = { type = building_gas_extractors value > 0 }
-						num_buildings = { type = building_crystal_mines value > 0 }
-					}
-				}
+				#modifier = {
+				#	add = 10
+				#	AND = {
+				#		num_buildings = { type = building_mote_harvesters value > 0 }
+				#		num_buildings = { type = building_gas_extractors value > 0 }
+				#		num_buildings = { type = building_crystal_mines value > 0 }
+				#	}
+				#}
 				modifier = {
 					add = 2
 					num_buildings = { type = building_refinery value > 1 }
@@ -1019,18 +1019,18 @@ planet_event = {
 					add = 2
 					num_buildings = { type = building_crystal_plant value > 1 }
 				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_mote_harvesters value > 1 }
-				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_crystal_mines value > 1 }
-				}
-				modifier = {
-					add = 2
-					num_buildings = { type = building_gas_extractors value > 1 }
-				}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_mote_harvesters value > 1 }
+				#}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_crystal_mines value > 1 }
+				#}
+				#modifier = {
+				#	add = 2
+				#	num_buildings = { type = building_gas_extractors value > 1 }
+				#}
 				modifier = {
 					add = 4
 					num_buildings = { type = building_refinery value > 2 }
@@ -1043,18 +1043,18 @@ planet_event = {
 					add = 4
 					num_buildings = { type = building_crystal_plant value > 2 }
 				}
-				modifier = {
-					add = 4
-					num_buildings = { type = building_mote_harvesters value > 2 }
-				}
-				modifier = {
-					add = 4
-					num_buildings = { type = building_crystal_mines value > 2 }
-				}
-				modifier = {
-					add = 4
-					num_buildings = { type = building_gas_extractors value > 2 }
-				}
+				#modifier = {
+				#	add = 4
+				#	num_buildings = { type = building_mote_harvesters value > 2 }
+				#}
+				#modifier = {
+				#	add = 4
+				#	num_buildings = { type = building_crystal_mines value > 2 }
+				#}
+				#modifier = {
+				#	add = 4
+				#	num_buildings = { type = building_gas_extractors value > 2 }
+				#}
 				modifier = {
 					add = 6
 					num_buildings = { type = building_refinery value > 3 }
@@ -1067,25 +1067,25 @@ planet_event = {
 					add = 6
 					num_buildings = { type = building_crystal_plant value > 3 }
 				}
-				modifier = {
-					add = 6
-					num_buildings = { type = building_mote_harvesters value > 3 }
-				}
-				modifier = {
-					add = 6
-					num_buildings = { type = building_crystal_mines value > 3 }
-				}
-				modifier = {
-					add = 6
-					num_buildings = { type = building_gas_extractors value > 3 }
-				}
+				#modifier = {
+				#	add = 6
+				#	num_buildings = { type = building_mote_harvesters value > 3 }
+				#}
+				#modifier = {
+				#	add = 6
+				#	num_buildings = { type = building_crystal_mines value > 3 }
+				#}
+				#modifier = {
+				#	add = 6
+				#	num_buildings = { type = building_gas_extractors value > 3 }
+				#}
 				modifier = {
 					factor = 0.2 # wrong designation
 					OR = {
 						has_fortress_designation = yes
 						has_factory_designation = yes
 						has_foundry_designation = yes
-						has_industrial_designation = yes
+						#has_industrial_designation = yes
 						has_research_designation = yes
 						has_unity_designation = yes
 						has_generator_designation = yes
@@ -1096,7 +1096,8 @@ planet_event = {
 				}
 				modifier = {
 					factor = 5 # right designation
-					has_refinery_designation = yes
+					#has_refinery_designation = yes
+					has_industrial_designation = yes	# ???
 				}
 				planet_event = { id = lrsk_gov_var_distributed_planning_systems.13 } #Rarities focus
 			}
@@ -1177,7 +1178,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -1260,7 +1261,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -1277,27 +1278,27 @@ planet_event = {
 				}
 				modifier = {
 					factor = 0.2
-					num_pops > 30
+					pop_amount > 3000
 				}
 				modifier = {
 					add = 5
-					num_pops < 6
+					pop_amount < 600
 				}
 				modifier = {
 					add = 2
-					num_pops < 11
+					pop_amount < 1100
 				}
 				modifier = {
 					add = 1
-					num_pops < 16
+					pop_amount < 1600
 				}
 				modifier = {
 					add = 1
-					num_pops < 21
+					pop_amount < 2100
 				}
 				modifier = {
 					add = 1
-					num_pops < 26
+					pop_amount < 2600
 				}
 				planet_event = { id = lrsk_gov_var_distributed_planning_systems.16 } #Growth focus
 			}
@@ -1439,7 +1440,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}
@@ -1485,7 +1486,7 @@ planet_event = {
 						has_generator_designation = yes
 						has_farming_designation = yes
 						has_mining_designation = yes
-						has_refinery_designation = yes
+						#has_refinery_designation = yes
 						has_rural_designation = yes
 					}
 				}

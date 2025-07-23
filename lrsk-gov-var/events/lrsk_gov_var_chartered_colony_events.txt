@@ -317,7 +317,7 @@ country_event = {
 				}
 				has_communications = event_target:lrsk_chartering_agent
 			}
-			add_opinion_modifier ={
+			add_opinion_modifier = {
 				modifier = opinion_lrsk_gvp_haughty_bigots
 				who = event_target:lrsk_chartering_agent
 			}
@@ -422,14 +422,18 @@ country_event = {
 				years = 3
 			}
 
-			every_owned_pop = {
+			every_owned_pop_group = {
 				limit = {
 					species = { is_same_value = event_target:lrsk_chartering_usurped_species }
 					NOT = { pop_has_ethic = ethic_fanatic_xenophile }
 				}
 				random = {
 					chance = 50
-					pop_change_ethic = ethic_fanatic_xenophile
+					pop_group_transfer_ethic = {
+						POP_GROUP = this
+						ETHOS = ethic_fanatic_xenophile
+						PERCENTAGE = 1 # 100%
+					}
 				}
 			}
 		}

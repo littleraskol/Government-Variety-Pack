@@ -51,6 +51,9 @@ lrsk_gov_var_origin_shroud_touched = {
 		ethics = { 
 			NOR = { 
 				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_materialist
 				value = ethic_materialist
 				value = ethic_fanatic_materialist
 			} 
@@ -102,25 +105,36 @@ lrsk_gov_var_origin_for_discovery = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
 			OR = {
+				text = civic_tooltip_materialist
 				value = ethic_materialist
 				value = ethic_fanatic_materialist
 			}
 		}
 		civics = {
 			NOR = {
-				value = civic_barbaric_despoilers
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
 			}
 		}
 	}
 
 	description = "lrsk_gov_var_origin_tooltip_for_discovery_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		country_scientist_cap_add = 1
+		scientist_exp_gain = 0.15
+	}
 
 	traits = {
 	}
@@ -158,6 +172,11 @@ lrsk_gov_var_origin_for_discovery_mi = {
 	description = "lrsk_gov_var_origin_tooltip_for_discovery_mi_effects"
 	flags = { custom_start_screen }
 
+	modifier = {
+		scientist_initial_skill = 1
+		leader_scientists_cost_mult = -0.33
+	}
+
 	traits = {
 	}
 
@@ -181,17 +200,42 @@ lrsk_gov_var_origin_for_discovery_npc = {
 	}
 
 	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
 				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_crusader_spirit
+				value = civic_selective_kinship
 			}
 		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
+
+	modifier = {
+		scientist_exp_gain = 0.15
+	}
 
 	random_weight = {
 		base = 0
@@ -209,15 +253,18 @@ lrsk_gov_var_origin_for_discovery_mi_npc = {
 	possible = {
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
-				value = civic_inwards_perfection
-				value = civic_barbaric_despoilers
-				value = civic_criminal_heritage
+				value = civic_machine_servitor				# Base game precludes, dunno why but...
+				value = civic_machine_assimilator
+				value = civic_machine_terminator
 			}
 		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_for_discovery_npc_effects
+
+	modifier = {
+		scientist_initial_skill = 1
+	}
 
 	random_weight = {
 		base = 0
@@ -239,22 +286,36 @@ lrsk_gov_var_origin_tradeways = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
 		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
 			}
-			value = civic_merchant_guilds
+			OR = {
+				value = civic_merchant_guilds
+				value = civic_corporate_dominion
+			}
 		}
 	}
 
 	description = "lrsk_gov_var_origin_tooltip_tradeways_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		country_trade_fee = -0.05
+		diplo_weight_economy_mult = 0.2
+		empire_size_colonies_mult = -0.1
+	}
 
 	traits = {
 	}
@@ -283,14 +344,29 @@ lrsk_gov_var_origin_tradeways_mc = {
 		authority = { value = auth_corporate }
 		ethics = {
 			NOR = {
+				text = civic_tooltip_not_xenophobe
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				text = lrsk_gvp_civic_tooltip_not_antisocial
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
 			}
 		}
 	}
 
 	description = "lrsk_gov_var_origin_tooltip_tradeways_mc_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		branch_office_value_mult = 0.1
+		empire_size_branch_office_mult = -0.25
+	}
 
 	traits = {
 	}
@@ -315,17 +391,38 @@ lrsk_gov_var_origin_tradeways_npc = {
 	}
 
 	possible = {
+		authority = { NOT = { value = auth_corporate } }
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
 				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_crusader_spirit
+				value = civic_selective_kinship
 			}
 		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
+
+	modifier = {
+		country_trade_fee = -0.1
+	}
 
 	random_weight = {
 		base = 0
@@ -341,17 +438,26 @@ lrsk_gov_var_origin_tradeways_mc_npc = {
 	}
 
 	possible = {
+		authority = { value = auth_corporate }
+		ethics = {
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
-				value = civic_inwards_perfection
-				value = civic_barbaric_despoilers
 				value = civic_criminal_heritage
 			}
 		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_tradeways_npc_effects
+
+	modifier = {
+		branch_office_value_mult = 0.1
+	}
 
 	random_weight = {
 		base = 0
@@ -372,25 +478,37 @@ lrsk_gov_var_origin_grand_alliance = {
 	possible = {
 		ethics = {
 			NOR = {
-				value = ethic_gestalt_consciousness
+				text = civic_tooltip_not_xenophobe
 				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
 			OR = {
+				text = civic_tooltip_militarist
 				value = ethic_militarist
 				value = ethic_fanatic_militarist
 			}
 		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
 			}
 		}
 	}
 
 	description = "lrsk_gov_var_origin_tooltip_grand_alliance_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		country_commander_cap_add = 1
+		commander_exp_gain = 0.15
+	}
 
 	traits = {
 	}
@@ -415,17 +533,42 @@ lrsk_gov_var_origin_grand_alliance_npc = {
 	}
 
 	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
 				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_crusader_spirit
+				value = civic_selective_kinship
 			}
 		}
 	}
 
 	description = lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects
+
+	modifier = {
+		commander_exp_gain = 0.15
+	}
 
 	random_weight = {
 		base = 0
@@ -458,15 +601,26 @@ lrsk_gvp_origin_convened_providence = {
 		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
 			}
 		}
 	}
 
 	description = "lrsk_gvp_origin_convened_providence_effects"
 	flags = { custom_start_screen }
+
+	modifier = {
+		country_edict_fund_add = 25
+		tradition_cost_empire_size_mult = -0.15
+		planet_jobs_unity_produces_mult = 0.05
+	}
 
 	traits = {
 	}
@@ -491,17 +645,39 @@ lrsk_gvp_origin_convened_providence_npc = {
 	}
 
 	possible = {
+		ethics = {
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
 		civics = {
 			NOR = {
-				value = civic_fanatic_purifiers
+				text = lrsk_gvp_civic_tooltip_not_antisocial
 				value = civic_inwards_perfection
 				value = civic_barbaric_despoilers
-				value = civic_criminal_heritage # probably no fun to start next to one...
+				value = civic_machine_assimilator
+				value = civic_criminal_heritage
+			}
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_crusader_spirit
+				value = civic_selective_kinship
 			}
 		}
 	}
 
 	description = lrsk_gvp_origin_convened_providence_npc_effects
+
+	modifier = {
+		country_edict_fund_add = 40
+	}
 
 	random_weight = {
 		base = 0
@@ -518,27 +694,38 @@ lrsk_gov_var_origin_uplift = {
 	possible = {
 		ethics = {
 			NOR = {
-				#value = ethic_gestalt_consciousness
-				#value = ethic_xenophobe
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
 		}
 		civics = {
 			NOR = {
-				#value = civic_fanatic_purifiers
-				value = civic_inwards_perfection
-				value = civic_barbaric_despoilers
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
 				value = civic_hive_devouring_swarm
 				value = civic_machine_terminator
+			}
+			NOR = {
+				text = lrsk_gvp_civic_tooltip_not_guided_sapience
+				value = civic_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+				value = civic_corporate_guided_sapience
+			}
+			NOR = {
+				text = lrsk_gvp_civic_tooltip_not_antisocial
+				value = civic_inwards_perfection
+				value = civic_barbaric_despoilers
 				value = civic_machine_assimilator
+				value = civic_criminal_heritage
+			}
+			NOR = {
 				value = civic_machine_servitor
 				value = lrsk_gov_var_civic_automated_indolence
 			}
 		}
-		species_archetype = { NOT = { value = MACHINE } }
 	}
-
-	blocks_random_machine_empire_generation	= yes
 
 	description = "lrsk_gov_var_origin_tooltip_uplift_effects"
 	flags = { custom_start_screen }
@@ -709,5 +896,4 @@ lrsk_gov_var_origin_uplift = {
 #		base = 0
 #	}
 #}
-
 

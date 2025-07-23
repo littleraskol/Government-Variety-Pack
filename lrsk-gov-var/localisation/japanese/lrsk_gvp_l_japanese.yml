@@ -25,7 +25,7 @@ l_japanese:
  lrsk_gvp_elected_clergy_councilor:0 "First Elder of the Faithful"
  lrsk_gvp_elected_clergy_councilor_female:0 "$lrsk_gvp_elected_clergy_councilor$"
  lrsk_gvp_elected_clergy_councilor_desc:0 "The $TITLE$ is the 'chief minister of ministers,' elected by the various planetary chief ministers from among their number to advise the civil government on matters of faith."
- lrsk_gvp_elected_clergy_councilor_custom_modifier_desc:0 "['concept_lrsk_gvp_religious_job'] upkeep reduced by §G1%§!.\n\n£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ produce §G+5%§! more £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
+ lrsk_gvp_elected_clergy_councilor_custom_modifier_desc:0 "£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ produce §G+25%§! more £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
 
  lrsk_gov_var_civic_ascetic_virtues:0 "Ascetic Virtues"
  lrsk_gov_var_civic_ascetic_virtues_desc:0 "This culture's religious beliefs include strict dietary and exercise requirements which help the body as much as the mind."
@@ -144,7 +144,7 @@ l_japanese:
  lrsk_gvp_direct_revelation_councilor:0 "Certifier of Prophesy"
  lrsk_gvp_direct_revelation_councilor_female:0 "$lrsk_gvp_direct_revelation_councilor$"
  lrsk_gvp_direct_revelation_councilor_desc:0 "The $TITLE$ has the important job of encouraging peaceful interfaith relations in a society where new religious movements come and go like fashionable fads. Though all revelations are valid, not all are equally valuable..."
- lrsk_gvp_direct_revelation_councilor_custom_modifier_desc:0 "['concept_lrsk_gvp_religious_job'] output increased by §G1%§!.\n\nThe chance of the §Y$lrsk_gov_var_statmod_doomsday_cult$§! forming decreases by §G+1%§!, while the chance of the §Y$lrsk_gov_var_statmod_golden_age_cult$§! forming increases by §G+1%§!.\n\nEvery ['concept_lrsk_gvp_wild_cult'] increases £happiness£ §YHappiness§! on its planet by §G1%§!."
+ lrsk_gvp_direct_revelation_councilor_custom_modifier_desc:0 "The chance of the §Y$lrsk_gov_var_statmod_doomsday_cult$§! forming decreases by §G+1%§!, while the chance of the §Y$lrsk_gov_var_statmod_golden_age_cult$§! forming increases by §G+1%§!.\n\nEvery ['concept_lrsk_gvp_wild_cult'] increases £happiness£ §YHappiness§! on its planet by §G1%§!."
  lrsk_gvp_direct_revelation_councilor_conditional_tooltip:0 "Requires completing the §HDomination§! Tradition tree."
 
  lrsk_gov_var_civic_royal_absolutism:0 "Royal Absolutism"
@@ -196,6 +196,8 @@ l_japanese:
  lrsk_gov_var_civic_tooltip_dem_dic:0 "Has §YDemocratic§! or §YDictatorial§! Authority"
  lrsk_gov_var_civic_tooltip_not_xenophile_or_not_militarist:0 "Is neither §YXenophile§! to any degree nor §YMilitarist§! to any degree"
  lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist:0 "Is neither §YPacifist§! to any degree nor §YEgalitarian§! to any degree"
+ lrsk_gvp_civic_tooltip_not_guided_sapience:0 "Does not have any ['concept_lrsk_genesis_civics'] Civics."
+ lrsk_gvp_civic_tooltip_not_antisocial:0 "Does not have any ['concept_lrsk_antisocial_civics'] Civics."
  LRSK_CIVIC_NOT_MODDABLE_ONLY_ADD:0 "This Civic cannot be manually added after the game has started."
  LRSK_CIVIC_NOT_MODDABLE_ONLY_ADD_RED:0 "§R$LRSK_CIVIC_NOT_MODDABLE_ONLY_ADD$§!"
 
@@ -634,19 +636,19 @@ l_japanese:
  concept_lrsk_gvp_planetmind_buildings_desc:0 "These '$LRSK_DESC_PLANETMIND_NAME$' buildings improve £amenities_no_happiness£ §Y$PLANET_AMENITIES_TITLE$§! production while also magnifying £crime£ §Y$PLANET_CRIME_NO_HAPPINESS_TITLE$§!. They also add £job_lrsk_gov_var_job_planetmind_overseer£ ['concept_lrsk_gvp_planetmind_overseers']."
  
  concept_lrsk_gvp_bldg_managerial_technique_institute:0 "$lrsk_gvp_bldg_managerial_technique_institute$"
- concept_lrsk_gvp_bldg_managerial_technique_institute_desc:0 "Provides the host planet with §G+2§! £job_lrsk_gov_var_job_functionary£ ['concept_lrsk_gvp_functionary'] Jobs and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_managerial_technique_institute_desc$§!"
+ concept_lrsk_gvp_bldg_managerial_technique_institute_desc:0 "Provides the host planet with §G+200§! £job_lrsk_gov_var_job_functionary£ ['concept_lrsk_gvp_functionary'] Jobs and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §H100§! §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_managerial_technique_institute_desc$§!"
  
  concept_lrsk_gvp_bldg_learnarium_dome:0 "$lrsk_gvp_bldg_learnarium_dome$"
- concept_lrsk_gvp_bldg_learnarium_dome_desc:0 "Provides the host planet with §Y+50% Materialist attraction§! and §G+2§! £job_lrsk_gov_var_job_infoguide£ ['concept_lrsk_gvp_infoguide'] Jobs and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMaterialist§!.\n\n§L$lrsk_gvp_bldg_learnarium_dome_desc$§!"
+ concept_lrsk_gvp_bldg_learnarium_dome_desc:0 "Provides the host planet with §Y+50% Materialist attraction§! and §G+200§! £job_lrsk_gov_var_job_infoguide£ ['concept_lrsk_gvp_infoguide'] Jobs and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMaterialist§!.\n\n§L$lrsk_gvp_bldg_learnarium_dome_desc$§!"
  
  concept_lrsk_gvp_bldg_odd_jobs_emporium:0 "$lrsk_gvp_bldg_odd_jobs_emporium$"
- concept_lrsk_gvp_bldg_odd_jobs_emporium_desc:0 "Provides the host planet with §G+2§! £job_lrsk_gov_var_job_gofer£ ['concept_lrsk_gvp_gofer'] Jobs and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This per-job bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_odd_jobs_emporium_desc$§!"
+ concept_lrsk_gvp_bldg_odd_jobs_emporium_desc:0 "Provides the host planet with §G+200§! £job_lrsk_gov_var_job_gofer£ ['concept_lrsk_gvp_gofer'] Jobs and the megacorp with §G+10% $BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §H100§! §Y$job_lrsk_gov_var_job_gofer$§! job filled. (This bonus changes to §G+10%§! £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_odd_jobs_emporium_desc$§!"
  
  concept_lrsk_gvp_bldg_organizing_hub:0 "$lrsk_gvp_bldg_organizing_hub$"
  concept_lrsk_gvp_bldg_organizing_hub_desc:0 "Provides the host planet with §Y+50% Egalitarian attraction§!, and §Y+25% £political_power£ Political Power§! and §G+5%§! §Y$HAPPINESS$§! of $WORKERS$, and the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YEgalitarian§!.\n\n§L$lrsk_gvp_bldg_organizing_hub_desc$§!"
  
  concept_lrsk_gov_var_bldg_grand_casino:0 "$lrsk_gov_var_bldg_grand_casino$"
- concept_lrsk_gov_var_bldg_grand_casino_desc:0 "Provides the host planet with §G+10§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+5%§! £mod_trade_value_add£ §Y$TRADE_VALUE$§!, and provides the megacorp with either §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! or (if criminal) increases £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet by §G15%§!.\n\n§L$lrsk_gov_var_bldg_grand_casino_desc$§!"
+ concept_lrsk_gov_var_bldg_grand_casino_desc:0 "Provides the host planet with §G+1000§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+5%§! £mod_trade_value_add£ §Y$TRADE_VALUE$§!, and provides the megacorp with either §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! or (if criminal) increases £crime£ §Y$PLANET_CRIME_TITLE$§! on the planet by §G15%§!.\n\n§L$lrsk_gov_var_bldg_grand_casino_desc$§!"
  
  concept_lrsk_gov_var_bldg_galactic_excursions_office:0 "$lrsk_gov_var_bldg_galactic_excursions_office$"
  concept_lrsk_gov_var_bldg_galactic_excursions_office_desc:0 "Provides the host planet with §Y+50% Xenophile attraction§! and §G-15%§! £amenities£ §Y$MOD_POP_AMENITIES_USAGE_BASE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YXenophile§!.\n\n§L$lrsk_gov_var_bldg_galactic_excursions_office_desc$§!"
@@ -658,7 +660,7 @@ l_japanese:
  concept_lrsk_gov_var_bldg_mediation_retreat_desc:0 "Provides the host planet with §Y+50% Pacifist attraction§! and §G+5§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YPacifist§!.\n\n§L$lrsk_gov_var_bldg_mediation_retreat$§!"
  
  concept_lrsk_gov_var_bldg_professional_protection_office:0 "$lrsk_gov_var_bldg_professional_protection_office$"
- concept_lrsk_gov_var_bldg_professional_protection_office_desc:0 "Provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+1§! £job_lrsk_gov_var_job_investigator£ ['concept_lrsk_gvp_investigator'] Job or (if the providing corp is criminal) §G+1§! £job_lrsk_gov_var_job_suppressor£ ['concept_lrsk_gvp_suppressor'] Job .\n\n§L$lrsk_gov_var_bldg_professional_protection_office$§!" 
+ concept_lrsk_gov_var_bldg_professional_protection_office_desc:0 "Provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YAuthoritarian§!. The host planet gets §Y+50% Authoritarian attraction§! and either §G+100§! £job_lrsk_gov_var_job_investigator£ ['concept_lrsk_gvp_investigator'] Jobs or (if the providing corp is criminal) §G+100§! £job_lrsk_gov_var_job_suppressor£ ['concept_lrsk_gvp_suppressor'] Jobs .\n\n§L$lrsk_gov_var_bldg_professional_protection_office$§!" 
 
  concept_lrsk_gov_var_bldg_military_excellence_academy:0 "$lrsk_gov_var_bldg_military_excellence_academy$"
  concept_lrsk_gov_var_bldg_military_excellence_academy_desc:0 "Provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!. The host planet gets §Y+50% Militarist attraction§! and its owner gets §G+10%§! Commander $exp_gain$, as well as §G+50§! starting experience for ships and armies. \n\n§L$lrsk_gov_var_bldg_military_excellence_academy_desc$§!"
@@ -739,6 +741,12 @@ l_japanese:
  
  concept_deposit_lrsk_gvp_shroud_pockets:0 "$d_lrsk_gov_var_shroud_pockets$"
  concept_deposit_lrsk_gvp_shroud_pockets_desc:0 "Adds £job_lrsk_gov_var_job_otherworld_guide£ ['concept_lrsk_gvp_otherworld_guides'].\n\n§L$d_lrsk_gov_var_shroud_pockets_desc$§!"
+ 
+ concept_lrsk_genesis_civics: "Genesis Guidance"
+ concept_lrsk_genesis_civics_desc: "$concept_lrsk_genesis_civics$ Civics consist of: \n- ['civic:civic_guided_sapience']$NEW_LINE$- ['civic:civic_hive_guided_sapience']$NEW_LINE$- ['civic:civic_machine_guided_sapience']$NEW_LINE$- ['civic:civic_corporate_guided_sapience']"
+ 
+ concept_lrsk_antisocial_civics: "Antisocial"
+ concept_lrsk_antisocial_civics_desc: "$concept_lrsk_antisocial_civics$ Civics consist of: \n- ['civic:civic_inwards_perfection']$NEW_LINE$- ['civic:civic_barbaric_despoilers']$NEW_LINE$- ['civic:civic_machine_assimilator']$NEW_LINE$- ['civic:civic_criminal_heritage']"
 
 
  ####################################
@@ -2065,8 +2073,8 @@ l_japanese:
  lrsk_gov_var_bldg_mediation_retreat:0 "Mediation Retreat"
  lrsk_gov_var_bldg_mediation_retreat_desc:0 "This beautiful, secluded retreat provides the perfect environment for interested parties to let our professional dispute mediation and arbitration specialists work out their conflicts through non-violent means and to mutual benefit."
 
- lrsk_gov_var_bldg_professional_protection_office:0 "Professional Protection Office"
- lrsk_gov_var_bldg_professional_protection_office_desc:0 "Dedicated security service professionals stand ready to solve all kinds of problems, from suspicions of marital infidelity, to potential unwanted criminal activity, to rumors of worker agitation."
+ lrsk_gov_var_bldg_professional_protection_office:0 "Professional Investigations Office"
+ lrsk_gov_var_bldg_professional_protection_office_desc:0 "Dedicated professional detectives, inspectors, guards, and other 'troubleshooters' stand ready to solve all kinds of problems: suspicions of marital infidelity, potential (unwanted) criminal activity, rumors of worker agitation, etc."
 
  lrsk_gov_var_bldg_military_excellence_academy:0 "Military Excellence Academy"
  lrsk_gov_var_bldg_military_excellence_academy_desc:0 "The prowess of a people must be well tempered before battle is joined. Here, the finest strategic minds tutor both troops and officers in the art of war... All the better to wage wars, and capitalize on the lucrative speculation opportunites war brings."
@@ -2118,7 +2126,7 @@ l_japanese:
  job_lrsk_gov_var_job_pastor:0 "Pastor"
  job_lrsk_gov_var_job_pastor_plural:0 "$job_lrsk_gov_var_job_pastor$s"
  job_lrsk_gov_var_job_pastor_desc:0 "The elected ministers of their communities, these spiritual leaders serve local confessional needs."
- job_lrsk_gov_var_job_pastor_effect_desc:1 "£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into §G+5§! £unity£ §Y$unity$§! and §G+5§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
+ job_lrsk_gov_var_job_pastor_effect_desc:1 "£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into §G+5§! £unity£ §Y$unity$§! and §G+500§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
  mod_job_lrsk_gov_var_job_pastor_add:0 "$job_lrsk_gov_var_job_pastor$ Jobs"
  mod_job_lrsk_gov_var_job_pastor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_pastor$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_pastor_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_pastor_add£ per $VALUE$ £pop£"
@@ -2129,7 +2137,7 @@ l_japanese:
  job_lrsk_gov_var_job_otherworld_guide_desc:0 "Communities of seers and witches made up of those mentally resiliant (or ill) enough to live near the Otherworld Pockets. Their fortunes and foretellings not only help people feel more confident about their place in the world, they provide a common cultural focus point for society."
  job_lrsk_gov_var_job_otherworld_guide_effect_short_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn §R-1§! £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§! and (conditionally) also increase £stability£ §Y$PLANET_STABILITY_TITLE$§!."
  job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "$job_lrsk_gov_var_job_otherworld_guide_effect_short_desc$ (These effects are modified by §Mpsionic§! traits.)"
- job_lrsk_gov_var_job_otherworld_guide_trait_effect:0 "For the £job_lrsk_gov_var_job_otherworld_guide£ §H$job_lrsk_gov_var_job_otherworld_guide$ Job§!, the traits of the pop holding it matter: any 'psionic' trait increases the output and the likelihood of the pop taking the job. The effects scale as follows, in the format: Trait = +X £unity£ §Y$unity$§!, +Y £stability£ §Y$PLANET_STABILITY_TITLE$§!, ±Z% chance of taking\n\nNo psionic trait = §G+1§! £unity£ §Y$unity$§!, §Y+0§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, §R-99%§! chance of taking\n$lrsk_gov_var_trait_natural_esper$ = §G+2§! £unity£ §Y$unity$§!, §G+1§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, §Y+0%§! chance of taking)\n$trait_latent_psionic$ = §G+3§! £unity£ §Y$unity$§!, §G+2§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, §G+50%§! chance of taking)\n$trait_psionic$ = §G+4§! £unity£ §Y$unity$§!, §G+3§! £stability£ §Y$PLANET_STABILITY_TITLE$§!, §G+100%§! chance of taking)"
+ job_lrsk_gov_var_job_otherworld_guide_trait_effect:0 "For the £job_lrsk_gov_var_job_otherworld_guide£ §H$job_lrsk_gov_var_job_otherworld_guide$ Job§!, the traits of the pop holding it matter: any 'psionic' trait increases the output and the likelihood of the pop taking the job. The effects scale as follows, in the format: Trait = +X £unity£ §Y$unity$§!, +Y £stability£ §Y$PLANET_STABILITY_TITLE$§!, ±Z% chance of taking\n\nNo psionic trait = §G+1§! £unity£, §Y+0§! £stability£, §R-99%§! take chance\n$lrsk_gov_var_trait_natural_esper$ = §G+2§! £unity£, §G+1§! £stability£, §Y+0%§! take chance\n$trait_latent_psionic$ = §G+3§! £unity£, §G+2§! £stability£, §G+50%§! take chance\n$trait_psionic$ = §G+4§! £unity£, §G+3§! £stability£, §G+100%§! take chance"
  mod_job_lrsk_gov_var_job_otherworld_guide_add:0 "$job_lrsk_gov_var_job_otherworld_guide$ Jobs"
  mod_job_lrsk_gov_var_job_otherworld_guide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_otherworld_guide$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_otherworld_guide_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_otherworld_guide_add£ per $VALUE$ £pop£"
@@ -2138,7 +2146,7 @@ l_japanese:
  job_lrsk_gov_var_job_hedge_preacher:0 "Hedge Preacher"
  job_lrsk_gov_var_job_hedge_preacher_plural:0 "$job_lrsk_gov_var_job_hedge_preacher$s"
  job_lrsk_gov_var_job_hedge_preacher_desc:0 "Roving enthusiasts and evangelists of a new religious movement or of their own spontaneously-developed idiosyncratic creed."
- job_lrsk_gov_var_job_hedge_preacher_effect_desc:1 "£job_lrsk_gov_var_job_hedge_preacher£ $job_lrsk_gov_var_job_hedge_preacher_plural$ produce §G+4§! £unity£ §Y$unity$§! and §G+2§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
+ job_lrsk_gov_var_job_hedge_preacher_effect_desc:1 "£job_lrsk_gov_var_job_hedge_preacher£ $job_lrsk_gov_var_job_hedge_preacher_plural$ produce §G+4§! £unity£ §Y$unity$§! and §G+200§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!."
  mod_job_lrsk_gov_var_job_hedge_preacher_add:0 "$job_lrsk_gov_var_job_hedge_preacher$ Jobs"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_hedge_preacher_add£ per $VALUE$ £pop£"
@@ -2201,7 +2209,7 @@ l_japanese:
  job_lrsk_gov_var_job_offworld_worker:0 "Offworld Worker"
  job_lrsk_gov_var_job_offworld_worker_plural:0 "$job_lrsk_gov_var_job_offworld_worker$s"
  job_lrsk_gov_var_job_offworld_worker_desc:0 "Industrious transitory workers who roam the galaxy to get done the jobs that need doing."
- job_lrsk_gov_var_job_offworld_worker_effect_desc:0 "£job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker_plural$ produce £energy£ §Y$energy$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ job_lrsk_gov_var_job_offworld_worker_effect_desc:0 "£job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker_plural$ produce £energy£ §Y$energy$§! and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!"
  mod_job_lrsk_gov_var_job_offworld_worker_add:0 "$job_lrsk_gov_var_job_offworld_worker$ Jobs"
  mod_job_lrsk_gov_var_job_offworld_worker_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_offworld_worker$ Job per $VALUE$ Pops"
  mod_job_lrsk_gov_var_job_offworld_worker_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_offworld_worker_add£ per $VALUE$ £pop£"
@@ -2228,7 +2236,7 @@ l_japanese:
  job_lrsk_gvp_job_civic_leader:0 "Civil Society Leader"
  job_lrsk_gvp_job_civic_leader_plural:0 "$job_lrsk_gvp_job_civic_leader$s"
  job_lrsk_gvp_job_civic_leader_desc:0 "Local notables involved in charitable efforts, reform political movements, voluntary organizations, and neighborhood services."
- job_lrsk_gvp_job_civic_leader_effect_desc:1 "£job_lrsk_gvp_job_civic_leader£ $job_lrsk_gvp_job_civic_leader_plural$ turn §R-2§! £consumer_goods£ §Y$consumer_goods$§! into §G+3§! £unity£ §Y$unity$§! and §G+2§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and increase £stability£ §Y$PLANET_STABILITY_TITLE$§! by §G+1§!."
+ job_lrsk_gvp_job_civic_leader_effect_desc:1 "£job_lrsk_gvp_job_civic_leader£ $job_lrsk_gvp_job_civic_leader_plural$ turn §R-2§! £consumer_goods£ §Y$consumer_goods$§! into §G+3§! £unity£ §Y$unity$§! and §G+200§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and increase £stability£ §Y$PLANET_STABILITY_TITLE$§! by §G+1§!."
  mod_job_lrsk_gvp_job_civic_leader_add:0 "$job_lrsk_gvp_job_civic_leader$ Jobs"
  mod_job_lrsk_gvp_job_civic_leader_per_pop:0 "§G+1§! $job_lrsk_gvp_job_civic_leader$ Job per $VALUE$ Pops"
  mod_job_lrsk_gvp_job_civic_leader_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_civic_leader_add£ per $VALUE$ £pop£"
@@ -2679,7 +2687,7 @@ l_japanese:
  
  lrsk_government_variety_pack_backend.102.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ Political Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire§!.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
- lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+2 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§! ($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
+ lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+200 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§!($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
  lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
 
@@ -2710,7 +2718,7 @@ l_japanese:
  lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
  lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts. (The cost of this option scales with the number of 'established' colonies.)" # -scaling consumer goods
  lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
- lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, drawing delegates from all free social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between social classes. (The cost of this option scales with the number of free pops in the empire.)" # -scaling energy
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, using weighted voting to draw delegates from all free social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between social classes. (The cost of this option scales with the number of free pops in the empire, with civilians counting for half.)" # -scaling energy
  lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
  lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
  lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
@@ -2750,7 +2758,7 @@ l_japanese:
 
  # Slaver corp gets pop from workhouse (inform corp)
  lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
- lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensared enough of the wretches of §Y[lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our enternally indebted workforce."
+ lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensnared enough of the wretches of §Y[lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our eternally indebted workforce."
  lrsk_gvp_mc_bldg_special.21.a:0 "Get to work!"
  lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
 

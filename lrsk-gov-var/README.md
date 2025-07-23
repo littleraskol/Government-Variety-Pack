@@ -22,7 +22,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v?.? (?/?/?) - Automated Indolence Redux
--Brought back the "Automated Indolence" civic as an "Advanced" civic with more complex mechanics.
+-Remade the "Automated Indolence" civic as an "Advanced" civic with more complex mechanics.
 --Now a start-only civic available to organic non-gestalts regardless of ethos.
 --Councilor now gets +robot output effect (moved from base civic modifiers).
 --Start with Administrative AI tech.
@@ -33,6 +33,157 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Homeworld starts with base version of this building.
 --Researching "automation" tech (e.g. robots and AI) improves these buildings.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
+
+v7.0.2 (06/09/25) - Localization Update for New Job System
+Generally changing "+X jobs" to "+X00 jobs" in localisation files.
+
+v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
+-Direct Revelations fixes/updates:
+--Improperly scoped to variable for DR councilor level (rendering whole system possibly moot??) (maybe I should backport this...)
+--Upped pop reqs for Wild Cult
+-Royal Justice edict updates:
+--Per pop now calculated as per 100 pops of applicable pop group for Estates General
+---"Applicable" now means free, not being purged or assimilated, and able to think (maybe I should backport this...)
+--Ruler level now reduces cost of declaring "Realm in Peril" (maybe I should backport this...)
+
+v7.0 (05/05/25) Phoenix (4.0) Update
+-Fixed what was needed for compatibility with Stellaris 4.0 (Phoenix).
+--A lot got changed!
+--Sorted out 4000+ line error log.
+-General pop changes:
+--Pops x100
+--Jobs x100
+--Housing x100 (no consistent factor in base game, but only used in GVP to house pops given a job by the building)
+--Amenities x100 (no consistent factor in base game)
+--Deprecated some questionable edge case features that don't have an easy fix in the new pop system.
+--num_pop to pop_amount
+--count_owned_pop to count_owned_pop_amount or num_assigned_jobs as needed.
+--pop_percentage to pop_amount_percentage
+--pop_growth_speed to logistic_growth_mult
+--pop_defense_armies_add -> planet_defense_armies_add (pop mod -> planet mod)
+--etc_owned_pop -> etc_owned_pop_group
+--pop_has_trait -> pop_group_has_trait
+--etc_pop_flag -> etc_pop_group_flag
+--resettle_pop -> resettle_pop_group
+--pop_event -> pop_group_event
+--pop_change_ethic replaced with pop_group_transfer_ethic
+-Jobs:
+--Added swappable_data blocks
+--Added promotion blocks
+--planet_priests no longer exists; considered bureaucrats now. Needed changes made.
+--has_living_standard can no longer be used from jobs, not necessarily needed though.
+--Can no longer change output based on has_trait
+--planet_administrators replaced with planet_bureaucrats
+--trade_value_add is now a resource (trade)
+--Updated Offworld Worker desc (provides amenities, not trade)
+--Jobs no longer "self-weight"
+--I'm not creating a whole separate kind of job just for pops that eat rocks (Planetmind Overseers consume energy)
+--Maintenance Drones seem to be deprecated.
+-Buildings:
+--Added building_sets definitions.
+--Corp buildings now cost influence.
+--Corp buildings provide some degree of trade bonus from job tags and traders on corp capital (lesser bc only some civics even get them)
+--"Professional Protection Office" is now "Professional Investigations Office" for contrast with base game's new Private Security Company
+-Other:
+--potential_crossbreeding_chance gone
+--trade_value_mult changed to pop_trader_bonus_workforce_mult or country_trade_produces_mult as needed
+--Imperial Bursar councilor gives less trade but more tech sharing
+--country_vassal_naval_capacity_contribution_mult replaced with country_naval_capacity_contribution_from_subjects_mult
+--planet_immigration_pull_mult and pop_growth_from_immigration replaced by planet_resettlement_unemployed_destination_mult
+--has_refinery_designation gone
+--Ethics weighting on Otherwolrd Guide: More likely for Spi, less for Mat
+--a little typo only i would see
+-Updated compat version number.
+
+v6.4.1 (05/04/25) - Planetmind Overseer weight fix
+-Removed weird weight from Planetmind Overseer job (weighted unity production, but it has only unity upkeep?)
+
+v6.4 (04/27/25) Despicable Neutrals Eradication Protocols
+-Attempts to detect and replace "Despicable Neutral" spawned fed partners.
+-Various other streamlining/improvements to fed starts.
+-Fed start opinion modifier set to 100 (half of Common Ground), to be less arbitrarily punishing.
+-NPC fed start origins get minor bonuses (designed to be helpful to the player and not get in the player's way).
+-More robust prevention of MC fed partners for ECC.
+-Deprecating some obsolete stuff in branch office building code.
+-Fixed a typo in Otherworld Guide concept.
+
+v6.3.1 (11/2/24) - Post-Circinus (3.14) Hotfix
+-Check for the Pacifist/Supremacist Demagoguery combo for replacement.
+
+v6.3 (10/29/24) - Circinus (3.14) Update
+-Fixed what was needed for compatibility with Stellaris 3.14 (Circinus).
+-Updated compat version number.
+-Fixed some typos.
+-Improved tooltip readability.
+-Tradeways now available to players without the Megacorp DLC so long as they have Merchant Guilds civic OR the Corporate Dominion civic (long overdue fix to an oversight that probably affected no one...)
+-NPC versions of Grand Alliance, For Discovery, and Convened by Providence now require same ethics as player versions.
+-Used base-game cleanup effect for MI fed partners to try to prevent invalid governments/neutrals.
+-Added final check to make sure player megacorps don't end up with megacorp fed partners.
+-Tweaked the tech ideology civics: They now give -10% research in their "opposite" fields. Might increase it more later based on feedback...
+-Removed all "ECC built-in compatibility" as it turns out it didn't work. A patch will be forthcoming, but the main goal now is just making the mod "safe" to use with Ethics and Civics Classic.
+-Supremacist Demagoguery cannot be Pacifist (this is one of the first civics I made and I have no idea how I never noticed before that it's possible for Pacifists to take a civic that entails "saber rattling rhetoric" and a focus on picking fights!)
+-NPC fed partners cannot have Selective Kinship.
+-KNOWN ISSUE: Federation start origins may rarely spawn partners with no government ("Despicable Neutrals"). The reason is known but the fix is obscure. If this happens to you, at this time the best thing to do is start a new game. It only happens occasionally.
+
+v6.3 (10/14/24) - Various Pre-3.14 (Circinus) Fixes and Updates
+-Federation Start Origin Changes:
+--General update of federation start logic to use base game updates.
+--Federation starts generally preclude having "antisocial" civics (defined as: Inward Perfection, Barbaric Despoilers, Driven Assimilators, and Criminal Heritage) - need to be able to play well with others to start in a federation.
+--More precise and better restrictions on Fed start partners.
+--Explicitly randomize authority for NPC fed partners.
+--No longer need to explicitly set "For Discovery" Machine Intelligence NPC civics since origin precludes badboy (and other) options (why did I not do this sooner).
+--Needed special case for Tradeways origins to not force an invalid government when using E&C.
+--Federation start origins give bonus modifiers:
+---For Discovery gets +1 Scientist cap, +15% Scientist XP gain.
+---Diplomatic Directive: Discover gets +1 Scientist initial skill, -33% scientist cost
+---Tradeways gets -5% market fee, +20% diplomatic weight from economy, -10% empire size from colonies
+---Tradeways, Inc. gets +10% branch office value, -25% empire size from branch offices
+---Grand Alliance gets +1 Commander cap, +15% Commander XP gain.
+---Convened by Providence gets +25 edict fund, -15% tradition cost from empire size, +5% unity from jobs
+---This is to maintain parity with Common Ground, which can be used to move to any non-Hegemony federation type but with more cohesion between members.
+--Various other federation start tweaks.
+-Uplift Origin Changes:
+--Uplift tutor and pupil now have starting trust and intel on each other.
+--Uplift not compatible with "Guided Sapience" civics (too powerful/redundant).
+--Uplift can't be at all Xenophobic or have "antisocial" civics (see above).
+--Fixed various Uplift issues.
+-Other changes:
+--Explicitly randomize civics as needed when using create_country effect.
+--Civic/Origin setup no longer takes place at the same time as setting global flags (i.e., at game start).
+--Some origins will get progress towards Xenolinguistic tech per pattern set in game_start.66
+
+v6.2.1.5 (10/7/24) - Machine Uplift and Backdoor Backup Plan
+-Restored Uplift origin to machine empires - gestalt and individual.
+--This was only removed while I figured out how to update the origin for individual machines, which I have finally done.
+-Checked to make sure Galactic Backdoor has a wormhole, makes one if not.
+--Sometimes found that this origin didn't start with a wormhole, so added several fallbacks attempts with much less strict requirements.
+
+v6.2.1.4 (9/28/24) - Branch Office Events Fix GAIDEN: IIIrd X the Ch∀rm
+-wrong varibale
+
+v6.2.1.3 (9/28/24) - Branch Office Events Fix The Second
+-How long were the on_destroy blocks incrementing the owned building count...!?
+
+v6.2.1.2 (9/23/24) - Branch Office Events Fix
+-Special events related to the Reformatory Workhouse, Grand Casino, and Local News Station branch office buildings should only fire when the relevant buildings are actually present.
+--For some reason I was tracking this with flags and such, when there's no good reason to not just check for the building.
+
+v6.2.1.1 (9/23/24) - Some smaller fixes
+-"Empire of Rapine" weighted too low.
+-Wrong flag for Reformatory Workhouse on_destroy block.
+
+v6.2.1 (9/13/24) - Post-Vela (3.13) Hotfixes
+-Adjusted weights of GVP-added "criminal" governments so they override base game.
+-Using scripted triggers to check authority in places that I missed.
+-NPC fed partners now cannot be Xenophobes.
+-Research Co-op Federation NPC origin was apparently preventing non-MI civics? Now prevents various MI civics the base game does not allow in federations.
+
+v6.2.0 (9/10/24) - Vela (3.13) Update
+-Fixed what was needed for compatibility with Stellaris 3.13 (Vela).
+--Removed references to deprecated resource buildings (building_crystal_mines, building_mote_harvesters, and building_gas_extractors).
+--Shifted pop growth from "Xenophobic" sources to use new founder_species_growth_mult modifier.
+--Pass-through of inter-compatibility triggers (very technical).
+-Updated compat version number.
 
 v6.1.0 (7/19/24) - Built-In Adaptation to Ethics and Civics Classic
 -Using random_weight and ai_weight to null out incompatibility between civics and E&C ethics to avoid randomly-generated and AI-player empires with silly combinations of ethics and civics.
