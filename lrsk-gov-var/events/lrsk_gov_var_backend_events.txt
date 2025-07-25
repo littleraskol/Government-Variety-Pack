@@ -148,6 +148,10 @@ country_event = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				NOT = { has_country_flag = lrsk_gov_var_shroud_touched_lost_otherworld_pockets }
 			}
+			AND = {
+				has_valid_civic = lrsk_gov_var_civic_automated_indolence
+				NOT = { has_country_flag = lrsk_gvp_autoindol_lost_legacy_autoinf }
+			}
 			# Add other checks as needed...
 		}
 	}
@@ -161,6 +165,11 @@ country_event = {
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
 						add_deposit = d_lrsk_gov_var_shroud_pockets
+					}
+				}
+				lrsk_gvp_autoindol_capital = {
+					IF = { limit = { NOT = { has_deposit = d_lrsk_gvp_legacy_autoinf } }
+						add_deposit = d_lrsk_gvp_legacy_autoinf
 					}
 				}
 				# Add other planet flags as needed...

@@ -1,0 +1,32 @@
+# Government Variety Pack
+# Events - Automated Indolence Events
+# Author: littleraskol
+
+namespace = lrsk_gvp_autoindol
+
+# Setup starting tech, buildings, variables
+country_event = {
+	id = lrsk_gvp_autoindol.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_valid_civic = lrsk_gov_var_civic_automated_indolence
+	}
+
+	immediate = {
+		give_technology = { tech = tech_administrative_ai message = no }
+
+		capital_scope = {
+			set_planet_flag = lrsk_gvp_autoindol_capital
+
+			add_deposit = d_lrsk_gvp_legacy_autoinf
+		}
+
+		# Semi-immediate check that some other mod did not remove the special deposit
+		country_event = {
+			id = lrsk_government_variety_pack_backend.2
+			days = 2
+		}
+	}
+}

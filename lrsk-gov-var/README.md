@@ -25,9 +25,13 @@ v7.0.2 (06/09/25) - Localization Update for New Job System
 Generally changing "+X jobs" to "+X00 jobs" in localisation files.
 
 v7.1 (??/??/??) - AutoIndol Returns
--Restored Automated Indolence.
---No longer locked to Materialist ethics.
---Modifiers: +10% automated workforce, +5 stability
+-Remade the "Automated Indolence" civic as an "Advanced" civic with more complex mechanics.
+--Now a start-only civic available to organic non-gestalts regardless of ethos.
+--Incompatible with Shared Burdens and several origins.
+--Modifiers: +10% automated workforce, +5 stability, +5% civilian happiness, -10% worker & slave happiness, -5% worker & slave production
+--Councilor now gets +robot output effect (moved from base civic modifiers).
+--Start with Administrative AI tech.
+--Homeworld starts with planetary feature that gives +5% automated workforce.
 
 v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:
