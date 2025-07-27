@@ -21,24 +21,15 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0.2 (06/09/25) - Localization Update for New Job System
-Generally changing "+X jobs" to "+X00 jobs" in localisation files.
-
-v7.1 (??/??/??) - AutoIndol Returns
--Remade the "Automated Indolence" civic as an "Advanced" civic with more complex mechanics.
---Now a start-only civic available to organic non-gestalts regardless of ethos.
---Incompatible with Shared Burdens and several origins.
---Modifiers: +10% automated workforce, +5 stability, +5% civilian happiness, -10% worker & slave happiness, -5% worker & slave production
---Councilor now also gives +robot workforce in addition to +pop assembly speed.
---Start with Administrative AI tech.
---Homeworld starts with planetary feature that gives +5% automated workforce.
--Several bugfixes
---'planet_jobs_robotic_produces_mult' -> 'robotic_pop_bonus_workforce_mult'
---'add_trait_no_notify = TRAIT' -> 'add_trait = { trait = TRAIT show_message = no }'
---'enforcer_is_telepath_trigger' no logner used.
---'clothes_texture_index' no longer ised.
+v7.0.3 (??/??/??) - Small Fixes
+-'planet_jobs_robotic_produces_mult' -> 'robotic_pop_bonus_workforce_mult'
+-'add_trait_no_notify = TRAIT' -> 'add_trait = { trait = TRAIT show_message = no }'
+-'enforcer_is_telepath_trigger' no logner used.
+-'clothes_texture_index' no longer ised.
 -Base game uses 'dystopian_specialist' category for any job that's "like a cop," and GVP now follows suit.
 
+v7.0.2 (06/09/25) - Localization Update for New Job System
+Generally changing "+X jobs" to "+X00 jobs" in localisation files.
 
 v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:
