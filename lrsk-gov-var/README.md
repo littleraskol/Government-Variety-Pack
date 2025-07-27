@@ -34,6 +34,13 @@ v?.? (?/?/?) - Automated Indolence Redux
 --Researching "automation" tech (e.g. robots and AI) improves these buildings.
 --May eventually get situations related to colonists learning to be more self-sufficient, or choosing to switch to a Rogue Servitor empire.
 
+v7.0.3 (07/27/25) - Small Fixes
+-'planet_jobs_robotic_produces_mult' -> 'robotic_pop_bonus_workforce_mult'
+-'add_trait_no_notify = TRAIT' -> 'add_trait = { trait = TRAIT show_message = no }'
+-'enforcer_is_telepath_trigger' no logner used.
+-'clothes_texture_index' no longer ised.
+-Base game uses 'dystopian_specialist' category for any job that's "like a cop," and GVP now follows suit.
+
 v7.0.2 (06/09/25) - Localization Update for New Job System
 Generally changing "+X jobs" to "+X00 jobs" in localisation files.
 

@@ -24,7 +24,7 @@ lrsk_gov_var_job_hedge_preacher = {
 			building_icon = building_primitive_dwellings
 		}
 	}
-	clothes_texture_index = 2
+	#clothes_texture_index = 2
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -100,7 +100,7 @@ lrsk_gvp_job_citscholar = {
 			building_icon = building_residence
 		}
 	}
-	clothes_texture_index = 3
+	#clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -234,7 +234,7 @@ lrsk_gov_var_job_functionary = {
 			building_icon = lrsk_gvp_bldg_managerial_technique_institute
 		}
 	}
-	clothes_texture_index = 3
+	#clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -311,7 +311,7 @@ lrsk_gov_var_job_infoguide = {
 			building_icon = lrsk_gvp_bldg_learnarium_dome
 		}
 	}
-	clothes_texture_index = 3
+	#clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -380,7 +380,7 @@ lrsk_gov_var_job_gofer = {
 			building_icon = lrsk_gvp_bldg_odd_jobs_emporium
 		}
 	}
-	clothes_texture_index = 2
+	#clothes_texture_index = 2
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -460,7 +460,7 @@ lrsk_gov_var_job_offworld_worker = {
 			building_icon = lrsk_gov_var_bldg_offworld_jobs_placement
 		}
 	}
-	clothes_texture_index = 2
+	#clothes_texture_index = 2
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -544,7 +544,7 @@ lrsk_gov_var_job_knight = {
 			building_icon = lrsk_gov_var_bldg_hall_of_honor
 		}
 	}
-	clothes_texture_index = 4
+	#clothes_texture_index = 4
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -732,7 +732,7 @@ lrsk_gov_var_job_pastor = {
 			building_icon = building_temple
 		}
 	}
-	clothes_texture_index = 3
+	#clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -827,7 +827,7 @@ lrsk_gov_var_job_otherworld_guide = {
 			building_icon = lrsk_gov_var_bldg_shroud_pocket
 		}
 	}
-	clothes_texture_index = 5
+	#clothes_texture_index = 5
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -950,14 +950,14 @@ lrsk_gov_var_job_otherworld_guide = {
 
 # Investigator
 lrsk_gov_var_job_investigator = {
-	category = specialist
+	category = dystopian_specialist
 	swappable_data = {
 		default = {
 			condition_string = SPECIALIST_JOB_TRIGGER
 			building_icon = lrsk_gov_var_bldg_professional_protection_office
 		}
 	}
-	clothes_texture_index = 5
+	#clothes_texture_index = 5
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -994,15 +994,15 @@ lrsk_gov_var_job_investigator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			enforcer_is_telepath_trigger = yes
-		}
-		modifier = {
-			planet_crime_add = -5
-			pop_cat_worker_political_power = -0.05
-		}
-	}
+	#triggered_planet_modifier = {
+	#	potential = {
+	#		enforcer_is_telepath_trigger = yes
+	#	}
+	#	modifier = {
+	#		planet_crime_add = -5
+	#		pop_cat_worker_political_power = -0.05
+	#	}
+	#}
 
 	#triggered_planet_modifier = {
 	#	potential = {
@@ -1060,14 +1060,14 @@ lrsk_gov_var_job_investigator = {
 
 # Suppressor
 lrsk_gov_var_job_suppressor = {
-	category = specialist
+	category = dystopian_specialist
 	swappable_data = {
 		default = {
 			condition_string = SPECIALIST_JOB_TRIGGER
 			building_icon = lrsk_gov_var_bldg_professional_protection_office
 		}
 	}
-	clothes_texture_index = 5
+	#clothes_texture_index = 5
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1180,7 +1180,7 @@ lrsk_gvp_job_civic_leader = {
 			building_icon = building_capital
 		}
 	}
-	clothes_texture_index = 3
+	#clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
