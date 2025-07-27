@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0.3 (??/??/??) - Small Fixes
+v7.0.3 (07/27/25) - Small Fixes
 -'planet_jobs_robotic_produces_mult' -> 'robotic_pop_bonus_workforce_mult'
 -'add_trait_no_notify = TRAIT' -> 'add_trait = { trait = TRAIT show_message = no }'
 -'enforcer_is_telepath_trigger' no logner used.
