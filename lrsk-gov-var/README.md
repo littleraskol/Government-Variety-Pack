@@ -29,9 +29,10 @@ v7.1 (??/??/??) - AutoIndol Returns
 --Now a start-only civic available to organic non-gestalts regardless of ethos.
 --Incompatible with Shared Burdens and several origins.
 --Modifiers: +10% automated workforce, +5 stability, +5% civilian happiness, -10% worker & slave happiness, -5% worker & slave production
---Councilor now gets +robot output effect (moved from base civic modifiers).
+--Councilor now also gives +robot workforce in addition to +pop assembly speed.
 --Start with Administrative AI tech.
 --Homeworld starts with planetary feature that gives +5% automated workforce.
+-Several bugfixes
 
 v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:
