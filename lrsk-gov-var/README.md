@@ -33,6 +33,12 @@ v7.1 (??/??/??) - AutoIndol Returns
 --Start with Administrative AI tech.
 --Homeworld starts with planetary feature that gives +5% automated workforce.
 -Several bugfixes
+--'planet_jobs_robotic_produces_mult' -> 'robotic_pop_bonus_workforce_mult'
+--'add_trait_no_notify = TRAIT' -> 'add_trait = { trait = TRAIT show_message = no }'
+--'enforcer_is_telepath_trigger' no logner used.
+--'clothes_texture_index' no longer ised.
+-Base game uses 'dystopian_specialist' category for any job that's "like a cop," and GVP now follows suit.
+
 
 v7.0.1 (05/06/25) Post Phoenix (4.0) hotfix
 -Direct Revelations fixes/updates:

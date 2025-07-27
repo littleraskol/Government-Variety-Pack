@@ -192,11 +192,11 @@ country_event = {
 				60 = {}
 				#very rarely get full on psionic
 				5 = {
-					add_trait_no_notify = leader_trait_psionic
+					add_trait = { trait = leader_trait_psionic show_message = no }
 				}
 				#sometimes get esper trait
 				35 = {
-					add_trait_no_notify = lrsk_gvp_leader_trait_esper
+					add_trait = { trait = lrsk_gvp_leader_trait_esper show_message = no }
 				}
 			}
 		}
@@ -235,7 +235,7 @@ country_event = {
 				random_list = {
 					20 = {
 						remove_trait = lrsk_gvp_leader_trait_esper
-						add_trait_no_notify = leader_trait_psionic
+						add_trait = { trait = leader_trait_psionic show_message = no }
 						modifier = {
 							add = 10
 							owner = { has_ascension_perk = ap_mind_over_matter }
@@ -271,7 +271,7 @@ country_event = {
 				random_list = {
 					20 = {
 						remove_trait = lrsk_gvp_leader_trait_esper
-						add_trait_no_notify = leader_trait_psionic
+						add_trait = { trait = leader_trait_psionic show_message = no }
 						modifier = {
 							add = 10
 							owner = { has_ascension_perk = ap_mind_over_matter }
