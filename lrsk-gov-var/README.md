@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0.4 (07/??/25) - Origin NPC Likelihood
+v7.0.4 (07/28/25) - Origin NPC Likelihood
 -Fed starts (For Discovery, Tradeways, etc) each had "normal" weighting to appear, making any of them unnecessarily likely to appear. This effect compounded as more were added. Each now only has weight = 1.
 -Shroud Touched also seemed unecessarily highly weighted - halved from 10 to 5.
 
