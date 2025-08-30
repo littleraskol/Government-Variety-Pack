@@ -1326,37 +1326,37 @@ country_event = {
 	}
 
 	immediate = {
-		IF = { limit = { has_valid_civic = lrsk_gvp_artificers }
+		IF = { limit = { has_valid_civic = lrsk_adv_civ_civic_artificers }
 			give_technology = { tech = tech_ship_armor_3 message = no }
 			give_technology = { tech = tech_advanced_metallurgy_1 message = no }
 			give_technology = { tech = tech_starbase_3 message = no }
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_automated_indolence }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
 			give_technology = { tech = tech_robotic_workers message = no }
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_essentialists }
+		IF = { limit = { has_valid_civic = lrsk_adv_civ_civic_essentialists }
 			give_technology = { tech = tech_hyper_drive_2 message = no }
 			give_technology = { tech = tech_power_plant_3 message = no }
 			give_technology = { tech = tech_cold_fusion_power message = no }
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_shapers }
+		IF = { limit = { has_valid_civic = lrsk_adv_civ_civic_shapers }
 			give_technology = { tech = tech_vitality_boosters message = no }
 			give_technology = { tech = tech_terrestrial_sculpting message = no }
 			give_technology = { tech = tech_xeno_diplomacy message = no }
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_aesetic_virtues }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_ascetic_virtues }
 			add_tradition = tr_harmony_finish
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_colonial_fiefs }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_colonial_fiefs }
 			add_tradition = tr_expansion_finish
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_mc_controlling_interest }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_mc_controlling_interest }
 			add_tradition = tr_mercantile_finish
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_cult_of_personality }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_cult_of_personality }
 			add_tradition = tr_supremacy_finish
 		}
-		IF = { limit = { has_valid_civic = lrsk_gvp_direct_revelation }
+		IF = { limit = { has_valid_civic = lrsk_gov_var_civic_direct_revelation }
 			add_tradition = tr_domination_finish
 		}
 		
