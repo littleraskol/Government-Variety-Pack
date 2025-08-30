@@ -1314,7 +1314,7 @@ country_event = {
 	}
 }
 
-# Tests special pre-reqs for possible GVP-added councilors - needs to be run twice (once gives slot, next gives reqs)
+# Gives all special pre-reqs for possible GVP-added councilors 
 country_event = {
 	id = lrsk_gvp_testing.31
 	hide_window = yes
@@ -1326,63 +1326,59 @@ country_event = {
 	}
 
 	immediate = {
-		IF = { limit = { has_country_flag = lrsk_test31_step2 }
-			IF = { limit = { has_valid_civic = lrsk_gvp_artificers }
-				give_technology = { tech = tech_ship_armor_3 message = no }
-				give_technology = { tech = tech_advanced_metallurgy_1 message = no }
-				give_technology = { tech = tech_starbase_3 message = no }
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_automated_indolence }
-				give_technology = { tech = tech_robotic_workers message = no }
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_essentialists }
-				give_technology = { tech = tech_hyper_drive_2 message = no }
-				give_technology = { tech = tech_power_plant_3 message = no }
-				give_technology = { tech = tech_cold_fusion_power message = no }
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_shapers }
-				give_technology = { tech = tech_vitality_boosters message = no }
-				give_technology = { tech = tech_terrestrial_sculpting message = no }
-				give_technology = { tech = tech_xeno_diplomacy message = no }
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_aesetic_virtues }
-				add_tradition = tr_harmony_finish
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_colonial_fiefs }
-				add_tradition = tr_expansion_finish
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_mc_controlling_interest }
-				add_tradition = tr_mercantile_finish
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_cult_of_personality }
-				add_tradition = tr_supremacy_finish
-			}
-			IF = { limit = { has_valid_civic = lrsk_gvp_direct_revelation }
-				add_tradition = tr_domination_finish
-			}
+		IF = { limit = { has_valid_civic = lrsk_gvp_artificers }
+			give_technology = { tech = tech_ship_armor_3 message = no }
+			give_technology = { tech = tech_advanced_metallurgy_1 message = no }
+			give_technology = { tech = tech_starbase_3 message = no }
 		}
-		ELSE = {
-			IF = {
-				limit = {
-					OR = {
-						has_unlocked_council_positions < 4
-						AND = {
-							has_unlocked_council_positions < 5
-							civics_count >= 3
-						}
+		IF = { limit = { has_valid_civic = lrsk_gvp_automated_indolence }
+			give_technology = { tech = tech_robotic_workers message = no }
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_essentialists }
+			give_technology = { tech = tech_hyper_drive_2 message = no }
+			give_technology = { tech = tech_power_plant_3 message = no }
+			give_technology = { tech = tech_cold_fusion_power message = no }
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_shapers }
+			give_technology = { tech = tech_vitality_boosters message = no }
+			give_technology = { tech = tech_terrestrial_sculpting message = no }
+			give_technology = { tech = tech_xeno_diplomacy message = no }
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_aesetic_virtues }
+			add_tradition = tr_harmony_finish
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_colonial_fiefs }
+			add_tradition = tr_expansion_finish
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_mc_controlling_interest }
+			add_tradition = tr_mercantile_finish
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_cult_of_personality }
+			add_tradition = tr_supremacy_finish
+		}
+		IF = { limit = { has_valid_civic = lrsk_gvp_direct_revelation }
+			add_tradition = tr_domination_finish
+		}
+		
+		IF = {
+			limit = {
+				OR = {
+					has_unlocked_council_positions < 4
+					AND = {
+						has_unlocked_council_positions < 5
+						civics_count >= 3
 					}
 				}
-				IF = { limit = { has_agenda_selected = agenda_unlock_slot }
-					add_council_agenda_progress_percent = 0.99
-					finish_council_agenda = yes
-				}
-				ELSE = {
-					set_council_agenda = agenda_unlock_slot
-					add_council_agenda_progress_percent = 0.99
-					finish_council_agenda = yes
-				}
 			}
-			set_country_flag = lrsk_test31_step2
+			IF = { limit = { has_agenda_selected = agenda_unlock_slot }
+				add_council_agenda_progress_percent = 0.99
+				finish_council_agenda = yes
+			}
+			ELSE = {
+				set_council_agenda = agenda_unlock_slot
+				add_council_agenda_progress_percent = 0.99
+				finish_council_agenda = yes
+			}
 		}
 	}
 }
