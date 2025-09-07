@@ -23,6 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v7.1 (09/??/25) Lyra (4.1) Update
 -Fixed what was needed for compatibility with Stellaris 4.1 (Lyra).
+-"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
 
 v7.0.4 (07/28/25) - Origin NPC Likelihood
 -Fed starts (For Discovery, Tradeways, etc) each had "normal" weighting to appear, making any of them unnecessarily likely to appear. This effect compounded as more were added. Each now only has weight = 1.
