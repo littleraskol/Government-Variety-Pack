@@ -1371,15 +1371,11 @@ country_event = {
 					}
 				}
 			}
-			IF = { limit = { has_agenda_selected = agenda_unlock_slot }
-				add_council_agenda_progress_percent = 0.99
-				finish_council_agenda = yes
-			}
-			ELSE = {
+			IF = { limit = { NOT = { has_agenda_selected = agenda_unlock_slot } }
 				set_council_agenda = agenda_unlock_slot
-				add_council_agenda_progress_percent = 0.99
-				finish_council_agenda = yes
 			}
+			add_council_agenda_progress_percent = 0.99
+			finish_council_agenda = yes
 		}
 	}
 }
