@@ -622,7 +622,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_legit_mgmt_bonus
 	}
@@ -630,7 +630,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.1
@@ -640,7 +640,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_functionary
 				value > 0
@@ -654,7 +654,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_functionary
 				value >= 100
@@ -667,7 +667,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_crim_mgmt_bonus
 	}
@@ -675,7 +675,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			planet_crime_add = 20
@@ -685,7 +685,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_functionary
 				value > 0
@@ -699,7 +699,7 @@ lrsk_gvp_bldg_managerial_technique_institute = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_functionary
 				value >= 100
@@ -776,7 +776,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_materialist
 	}
@@ -784,7 +784,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_materialist_attraction_mult = 0.5
@@ -794,7 +794,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_materialist
 	}
@@ -802,7 +802,7 @@ lrsk_gvp_bldg_learnarium_dome = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_materialist_attraction_mult = 0.25
@@ -1012,7 +1012,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_legit_gofer_bonus
 	}
@@ -1020,7 +1020,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.1
@@ -1030,7 +1030,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_gofer
 				value > 0
@@ -1044,7 +1044,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_gofer
 				value >= 100
@@ -1057,7 +1057,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_crim_courier_bonus
 	}
@@ -1065,7 +1065,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.05
@@ -1076,7 +1076,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_gofer
 				value > 0
@@ -1090,7 +1090,7 @@ lrsk_gvp_bldg_odd_jobs_emporium = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_gofer
 				value >= 100
@@ -1168,7 +1168,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_egalitarian
 	}
@@ -1176,7 +1176,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_egalitarian_attraction_mult = 0.5
@@ -1186,7 +1186,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_egalitarian
 	}
@@ -1194,7 +1194,7 @@ lrsk_gvp_bldg_organizing_hub = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_egalitarian_attraction_mult = 0.25
@@ -1403,7 +1403,7 @@ lrsk_gov_var_bldg_grand_casino = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_legit_gamble_bonus
 	}
@@ -1411,7 +1411,7 @@ lrsk_gov_var_bldg_grand_casino = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.1
@@ -1420,7 +1420,7 @@ lrsk_gov_var_bldg_grand_casino = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_crim_gamble_bonus
 	}
@@ -1428,7 +1428,7 @@ lrsk_gov_var_bldg_grand_casino = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			planet_crime_add = 20
@@ -1508,7 +1508,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_authoritarian
 	}
@@ -1516,7 +1516,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.5
@@ -1527,7 +1527,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_authoritarian
 	}
@@ -1535,7 +1535,7 @@ lrsk_gov_var_bldg_professional_protection_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_authoritarian_attraction_mult = 0.25
@@ -1746,7 +1746,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_pacifist
 	}
@@ -1754,7 +1754,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_pacifist_attraction_mult = 0.5
@@ -1764,7 +1764,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_pacifist
 	}
@@ -1772,7 +1772,7 @@ lrsk_gov_var_bldg_mediation_retreat = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_pacifist_attraction_mult = 0.25
@@ -1982,7 +1982,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_xenophobe
 	}
@@ -1990,7 +1990,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_xenophobe_attraction_mult = 0.5
@@ -2000,7 +2000,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_xenophobe
 	}
@@ -2008,7 +2008,7 @@ lrsk_gov_var_bldg_heritage_museum = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_xenophobe_attraction_mult = 0.25
@@ -2219,7 +2219,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_xenophile
 	}
@@ -2227,7 +2227,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_xenophile_attraction_mult = 0.5
@@ -2237,7 +2237,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_xenophile
 	}
@@ -2245,7 +2245,7 @@ lrsk_gov_var_bldg_galactic_excursions_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_xenophile_attraction_mult = 0.25
@@ -2446,9 +2446,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	potential = {
 		NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
 		has_branch_office = yes
-		branch_office_owner = {
-			has_valid_civic = lrsk_gvp_civic_mc_war_profiteers
-		}
+		branch_office_owner = { has_valid_civic = lrsk_gvp_civic_mc_war_profiteers }
 	}
 
 	country_modifier = {
@@ -2460,7 +2458,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_branch_value_legit_militarist
 	}
@@ -2468,7 +2466,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_militarist_attraction_mult = 0.5
@@ -2478,7 +2476,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	triggered_desc = {
 		trigger = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_branch_value_crime_militarist
 	}
@@ -2486,7 +2484,7 @@ lrsk_gov_var_bldg_military_excellence_academy = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			pop_ethic_militarist_attraction_mult = 0.25
@@ -2748,7 +2746,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_legit_debt_repay_bonus
 	}
@@ -2756,7 +2754,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.15
@@ -2765,7 +2763,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_crim_workhouse_pop_steal_chance
 	}
@@ -2773,7 +2771,7 @@ lrsk_gov_var_bldg_reformatory_workhouse = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			planet_crime_add = 20
@@ -2851,7 +2849,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			planet_jobs_ruler_produces_mult = 0.1
@@ -2861,7 +2859,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			planet_jobs_ruler_produces_mult = 0.05
@@ -2871,7 +2869,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_media_legit_favor_chance
 	}
@@ -2879,7 +2877,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.1
@@ -2888,7 +2886,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_media_crim_favor_chance
 	}
@@ -2896,7 +2894,7 @@ lrsk_gov_var_bldg_local_news_office = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			planet_crime_add = 20
@@ -2986,7 +2984,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = {  NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		text = lrsk_legit_worker_bonus
 	}
@@ -2994,7 +2992,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.1
@@ -3004,7 +3002,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_offworld_worker
 				value > 0
@@ -3018,7 +3016,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { NOT = { has_valid_civic = civic_criminal_heritage } }
+			branch_office_owner = { is_legit_or_legal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_offworld_worker
 				value >= 100
@@ -3031,7 +3029,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	
 	triggered_desc = {
 		trigger = {
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		text = lrsk_crim_smuggle_bonus
 	}
@@ -3039,7 +3037,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 		}
 		modifier = {
 			branch_office_value_mult = 0.05
@@ -3050,7 +3048,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_offworld_worker
 				value > 0
@@ -3064,7 +3062,7 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = branch_office_owner
-			branch_office_owner = { has_valid_civic = civic_criminal_heritage }
+			branch_office_owner = { is_illegal_criminal = yes }
 			num_assigned_jobs = {
 				job = lrsk_gov_var_job_offworld_worker
 				value >= 100
