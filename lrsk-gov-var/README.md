@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.0.5 (09/XX/25) - Criminal Branch Office "Swap"
+v7.0.5 (09/07/25) - Criminal Branch Office "Swap"
 -The criminal/legit effects of branch office buildings should properly check for things like commercial pacts, being in a federation, etc.
 
 v7.0.4 (07/28/25) - Origin NPC Likelihood
