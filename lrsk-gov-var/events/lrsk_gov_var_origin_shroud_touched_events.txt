@@ -102,7 +102,7 @@ pop_group_event = {
 			# Catching this case means we may have to sweep all pops for both traits and modify the root species.
 			owner = { if = {
 				limit = {
-					has_tradition = tr_psionics_adopt
+					lrsk_gvp_psi_trad_adopted = yes
 					has_origin = lrsk_gov_var_origin_shroud_touched
 					NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone } 
 				} 
@@ -141,7 +141,7 @@ country_event = {
 	#fire_only_once = yes
 
 	trigger = {
-		has_tradition = tr_psionics_adopt
+		lrsk_gvp_psi_trad_adopted = yes
 		has_origin = lrsk_gov_var_origin_shroud_touched
 		NOT = { has_country_flag = lrsk_gov_var_shroud_touched_esper_undone }
 	}
@@ -179,7 +179,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		NOT = { has_tradition = tr_psionics_adopt }
+		lrsk_gvp_psi_trad_adopted = no
 		from = {
 			species = { has_trait = lrsk_gov_var_trait_natural_esper }
 		}
@@ -242,7 +242,7 @@ country_event = {
 						}
 						modifier = {
 							add = 20
-							owner = { has_tradition = tr_psionics_adopt }
+							owner = { lrsk_gvp_psi_trad_adopted = yes }
 						}
 					}
 					80 = {
@@ -253,7 +253,7 @@ country_event = {
 						}
 						modifier = {
 							subtract = 20
-							owner = { has_tradition = tr_psionics_adopt }
+							owner = { lrsk_gvp_psi_trad_adopted = yes }
 						}
 					}
 				}
@@ -278,7 +278,7 @@ country_event = {
 						}
 						modifier = {
 							add = 20
-							owner = { has_tradition = tr_psionics_adopt }
+							owner = { lrsk_gvp_psi_trad_adopted = yes }
 						}
 					}
 					80 = {
@@ -289,7 +289,7 @@ country_event = {
 						}
 						modifier = {
 							subtract = 20
-							owner = { has_tradition = tr_psionics_adopt }
+							owner = { lrsk_gvp_psi_trad_adopted = yes }
 						}
 					}
 				}
