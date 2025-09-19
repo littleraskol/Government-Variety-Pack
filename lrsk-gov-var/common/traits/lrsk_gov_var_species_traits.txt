@@ -6,8 +6,9 @@
 
 lrsk_gov_var_trait_natural_esper = {
 	cost = 0
-	#potential_crossbreeding_chance = 0
 	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_natural_esper.dds"
+
+	opposites = { "trait_cybernetic" }
 
 	improves_leaders = yes	
 	initial = no
@@ -23,13 +24,9 @@ lrsk_gov_var_trait_natural_esper = {
 	}
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic positive pop_output research unity happiness psionic special }
 
-	modifier = {
-		planet_jobs_engineering_research_produces_mult = 0.025
-		planet_jobs_physics_research_produces_mult = 0.025
-		planet_jobs_society_research_produces_mult = 0.025
-		planet_jobs_unity_produces_mult = 0.025
-	}
+	inline_script = "traits/lrsk_gvp_trait_natural_esper_effects"
 }
 
 ## Uplift
