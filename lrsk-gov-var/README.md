@@ -30,6 +30,7 @@ v7.1 (09/??/25) Lyra (4.1) Update
 --In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
 --Never added GalComm and Federation modifiers!
 -Esper species trait brought into line with pattern set by Psionic trait.
+-Otherworld Guide job output now uses Telepath category (changed from Entertainer)
 -Added attunement bonuses to civics.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -Updated compat version number.
