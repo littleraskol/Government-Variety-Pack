@@ -26,6 +26,9 @@ v7.1 (09/??/25) Lyra (4.1) Update
 -"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
 -Shroud-Touched now gets +10% attunement mult.
 -Shroud-Touched icon changed to be distinct from the new "Shroud-Forged"
+-Esper trait brought into line with pattern set by Psionic trait.
+--In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
+--Never added GalComm and Federation modifiers!
 -Added attunement bonuses to civics.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -Updated compat version number.
