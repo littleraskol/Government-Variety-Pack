@@ -55,6 +55,9 @@ lrsk_gov_var_trait_starborn_hive = {
 		always = no
 	}
 
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic positive migration habitability leader pop_growth }	
+
 	icon = "gfx/interface/icons/traits/trait_primitive.dds"
 
 	modifier = {
@@ -83,6 +86,9 @@ lrsk_gov_var_trait_earthbound_hive = {
 	species_possible_merge_add = {
 		always = no
 	}
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic positive pop_output unity army housing }	
 
 	icon = "gfx/interface/icons/traits/trait_primitive.dds"
 
@@ -118,6 +124,7 @@ lrsk_gov_var_trait_proles_hive = {
 	icon = "gfx/interface/icons/traits/trait_primitive.dds"
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic positive pop_output unity army }
 
 	modifier = {
 		army_damage_mult = 0.10
@@ -151,6 +158,7 @@ lrsk_gov_var_trait_natural_intellectuals_mech = {
 	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
 
 	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive pop_output research unity }
 
 	modifier = {
 		planet_jobs_unity_produces_mult = 0.05
@@ -184,6 +192,7 @@ lrsk_gov_var_trait_proles_mech = {
 	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
 
 	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive pop_output leader army }
 
 	modifier = {
 		army_damage_mult = 0.10
@@ -215,6 +224,7 @@ lrsk_gov_var_trait_conservative_mech = {
 	icon = "gfx/interface/icons/traits/lrsk_gov_var_trait_primitive_machine.dds"
 
 	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive leader }
 
 	modifier = {
 		leaders_upkeep_mult = -0.1

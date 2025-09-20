@@ -35,6 +35,9 @@ v7.1 (09/??/25) Lyra (4.1) Update
 --Job unity production now gated behind empire having Shroud-Touched origin and/or empire having psi tradition progress (and scales with each)
 --Job now gives some degree of amenities base, and more scaling with same factors as unity output.
 --Stability bonus gated by origin and scales with with same factors as unity output.
+-Species Traits:
+--Added tags
+--Added allowed archetypes where needed
 -Added attunement bonuses to civics.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -Updated compat version number.
