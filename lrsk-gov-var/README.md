@@ -30,7 +30,11 @@ v7.1 (09/??/25) Lyra (4.1) Update
 --In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
 --Never added GalComm and Federation modifiers!
 -Esper species trait brought into line with pattern set by Psionic trait.
--Otherworld Guide job output now uses Telepath category (changed from Entertainer)
+-Otherworld Guide changes:
+--Job resources input/output now uses Telepath category (changed from Entertainer)
+--Job unity production now gated behind empire having Shroud-Touched origin and/or empire having psi tradition progress (and scales with each)
+--Job now gives some degree of amenities base, and more scaling with same factors as unity output.
+--Stability bonus gated by origin and scales with with same factors as unity output.
 -Added attunement bonuses to civics.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -Updated compat version number.

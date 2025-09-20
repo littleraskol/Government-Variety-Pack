@@ -237,3 +237,21 @@ lrsk_gvp_psi_trad_adopted = {
 		has_tradition = tr_psionics_shroud_adopt
 	}
 }
+
+# Use to check if a country should have "latent" psionic ascension
+lrsk_gvp_has_part_psi_conditions = {
+	OR = {
+		has_tradition = tr_psionics_shroud_adopt
+		has_tradition = tr_psionics_adopt
+	}
+}
+
+# Use to check if a country should have full psionic ascension
+lrsk_gvp_has_full_psi_conditions = {
+	OR = {
+		has_country_flag = finish_shroud_forged_liberation_flag
+		has_tradition = tr_psionics_psionic_assimilation
+		has_tradition = tr_psionics_shroud_great_awakening
+		has_tradition = tr_psionics_shroud_great_awakening_situation
+	}
+}

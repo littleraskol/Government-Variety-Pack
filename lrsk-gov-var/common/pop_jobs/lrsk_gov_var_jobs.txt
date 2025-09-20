@@ -841,52 +841,125 @@ lrsk_gov_var_job_otherworld_guide = {
 	resources = {
 		category = planet_telepaths
 		produces = {
-			unity = 2
+			trigger = {
+				exists = owner
+				owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+			}
+			unity = 1
 		}
-		#produces = {
-		#	trigger = {	has_trait = lrsk_gov_var_trait_natural_esper }
-		#	unity = 1
-		#}
-		#produces = {
-		#	trigger = {	has_trait = trait_latent_psionic }
-		#	unity = 2
-		#}
-		#produces = {
-		#	trigger = {	has_trait = trait_psionic }
-		#	unity = 3
-		#}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { lrsk_gvp_has_part_psi_conditions = yes }
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_origin = lrsk_gov_var_origin_shroud_touched
+					lrsk_gvp_has_part_psi_conditions = yes
+				}
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { lrsk_gvp_has_full_psi_conditions = yes }
+			}
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_origin = lrsk_gov_var_origin_shroud_touched
+					lrsk_gvp_has_full_psi_conditions = yes
+				}
+			}
+			unity = 1
+		}
 		upkeep = {
 			consumer_goods = 1
 		}
 	}
 
 	triggered_planet_modifier = {
+		potential = { always = yes }
+		planet_amenities_add = 100
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			exists = owner
+			owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+		}
+		planet_amenities_add = 100
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = lrsk_gov_var_origin_shroud_touched
+				lrsk_gvp_has_part_psi_conditions = yes
+			}
+		}
+		planet_amenities_add = 100
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = lrsk_gov_var_origin_shroud_touched
+				lrsk_gvp_has_full_psi_conditions = yes
+			}
+		}
+		planet_amenities_add = 100
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
 		}
 		planet_stability_add = 1
 	}
 
-	#triggered_planet_modifier = {
-	#	potential = {
-	#		has_trait = trait_latent_psionic
-	#	}
-	#	planet_stability_add = 2
-	#}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = lrsk_gov_var_origin_shroud_touched
+				lrsk_gvp_has_part_psi_conditions = yes
+			}
+		}
+		planet_stability_add = 1
+	}
 
-	#triggered_planet_modifier = {
-	#	potential = {
-	#		has_trait = trait_psionic
-	#	}
-	#	planet_stability_add = 3
-	#}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = lrsk_gov_var_origin_shroud_touched
+				lrsk_gvp_has_full_psi_conditions = yes
+			}
+		}
+		planet_stability_add = 1
+	}
 
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
 		mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_otherworld_guide|RESOURCE|unity|
 		modifier = {
-			#factor = 0.01	# don't want this going unfilled in edge case where no one has a valid trait...
-			factor = 0	# No way to make the job more powerful per trait level, just going to ban it if lacking a psi trait. Oh well.
+			factor = 0.01	# Heavily weight for some degree of psi
 			NOR = {
 				has_trait = trait_latent_psionic
 				has_trait = trait_psionic
