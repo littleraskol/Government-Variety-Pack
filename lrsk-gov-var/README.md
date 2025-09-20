@@ -24,8 +24,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v7.1 (09/??/25) Lyra (4.1) Update
 -Fixed what was needed for compatibility with Stellaris 4.1 (Lyra).
 -"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
--Shroud-Touched now gets +10% attunement mult.
--Shroud-Touched icon changed to be distinct from the new "Shroud-Forged"
+-Shroud-Touched origin:
+--Requires either Utopia or Shadows of the Shroud.
+--Now gets a bonus that only matters for pursuing psionic ascension (with SotS: +10% attunement mult; otherwise: -5% empire size from psi pops) - meant as a soft encouragement more than an explicit requirement.
+--Icon changed to be distinct from the new "Shroud-Forged" origin's.
 -Esper leader trait brought into line with pattern set by Psionic trait.
 --In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
 --Never added GalComm and Federation modifiers!
