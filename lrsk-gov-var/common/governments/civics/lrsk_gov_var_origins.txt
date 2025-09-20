@@ -76,7 +76,16 @@ lrsk_gov_var_origin_shroud_touched = {
 	modifier = {
 		pop_ethic_spiritualist_attraction_mult = 0.1
 		pop_ethic_materialist_attraction_mult = -0.1
-		empire_size_psionic_pops_mult = -0.05
+	}
+
+	swap_type = {
+		trigger = {
+			host_has_dlc = "Utopia"
+		}
+
+		modifier = {
+			empire_size_psionic_pops_mult = -0.05
+		}
 	}
 
 	swap_type = {
@@ -85,11 +94,10 @@ lrsk_gov_var_origin_shroud_touched = {
 		}
 
 		modifier = {
-			pop_ethic_spiritualist_attraction_mult = 0.1
-			pop_ethic_materialist_attraction_mult = -0.1
 			attunement_mult = 0.1
 		}
 	}
+
 	traits = {
 		trait = lrsk_gov_var_trait_natural_esper
 	}
