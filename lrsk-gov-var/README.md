@@ -45,7 +45,11 @@ v7.1 (09/??/25) Lyra (4.1) Update
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -General localisation improvement pass.
 --Some wording just cleaned up.
---Now using more special icons (esp. for leader traits)
+--Now using more special icons (esp. for leader traits).
+--Refactor of resource descriptions to use standard shorthands.
+--Some typos fixed.
+--Removed `mod_councilor_ruler_imperial_exp_gain` that has been added to base game (preventing unneeded override)
+--Removed specific numbers from job effects (brevity, easier to maintain, base game communicates this well enough)
 -Updated compat version number.
 
 v7.0.5 (09/07/25) - Criminal Branch Office "Swap"
