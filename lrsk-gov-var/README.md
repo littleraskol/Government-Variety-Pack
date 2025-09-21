@@ -23,7 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v7.1 (09/??/25) Lyra (4.1) Update
 -Fixed what was needed for compatibility with Stellaris 4.1 (Lyra).
--"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
+-Added attunement bonuses to civics.
 -Shroud-Touched origin:
 --Requires either Utopia or Shadows of the Shroud.
 --Now gets a bonus that only matters for pursuing psionic ascension (with SotS: +10% attunement mult; otherwise: -5% empire size from psi pops) - meant as a soft encouragement more than an explicit requirement.
@@ -40,7 +40,7 @@ v7.1 (09/??/25) Lyra (4.1) Update
 -Species Traits:
 --Added tags
 --Added allowed archetypes where needed
--Added attunement bonuses to civics.
+-"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
 -Updated compat version number.
 
