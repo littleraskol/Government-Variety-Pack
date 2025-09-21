@@ -27,7 +27,7 @@ v7.1 (09/??/25) Lyra (4.1) Update
 -Shroud-Touched origin:
 --Requires either Utopia or Shadows of the Shroud.
 --Now gets a bonus that only matters for pursuing psionic ascension (with SotS: +10% attunement mult; otherwise: -5% empire size from psi pops) - meant as a soft encouragement more than an explicit requirement.
---Icon changed to be distinct from the new "Shroud-Forged" origin's.
+--Icon changed to be distinct from that of the new "Shroud-Forged" origin.
 -Esper leader trait brought into line with pattern set by Psionic trait.
 --In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
 --Never added GalComm and Federation modifiers!
