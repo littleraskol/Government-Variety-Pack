@@ -486,7 +486,7 @@ l_spanish:
  lrsk_gov_var_origin_shroud_touched:0 "Shroud-Touched"
  lrsk_gov_var_origin_shroud_touched_desc:0 "The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies."
  #origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the §MNatural Esper§! trait, which is a lesser psionic trait.\n-Can get leader traits like lesser versions of psionic leader traits. (TBD)\n-Very rarely, actual §MLatent Psionics§! can spawn.\n-The §MPsionic Theory§! tech option starts ready to research.\n-Your homeworld has a §MOtherworld Pockets§! deposit which adds special esper jobs.\n-Getting the Mind Over Matter perk unlocks the £decision£ §YOtherworld Jaunt§! decision to prematurely contact the Shroud. §RSounds safe!§! (TBD)\n\n"
- origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-Leaders can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Rarely, actual §M$trait_latent_psionic$§! £pop£ §YPops§! can spawn, and leaders can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
+ origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-§Y£leader£ Leaders§! can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Rarely, actual §M$trait_latent_psionic$§! £pop£ §YPops§! can spawn, and §Y£leader£ Leaders§! can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
 
  #### For Discovery: Start in research co-op.
 
@@ -737,7 +737,7 @@ l_spanish:
  concept_trait_lrsk_gvp_natural_esper_desc:0 "§G+2.5%§! £unity£ §Y$unity$§! and £science£ §YResearch§! from pops with this trait.\n\n$lrsk_gov_var_trait_natural_esper_desc$"
  
  concept_leader_trait_lrsk_gvp_esper:0 "$lrsk_gvp_leader_trait_esper$"
- concept_leader_trait_lrsk_gvp_esper_desc:0 "Exact effects depend on the leader type, but are toned-down versions of the benefits provided by the §Y$leader_trait_psionic$§! leader trait."
+ concept_leader_trait_lrsk_gvp_esper_desc:0 "Exact effects depend on the §Y£leader£ Leader§! type, but are toned-down versions of the benefits provided by the §Y$leader_trait_psionic$§! trait."
  
  concept_deposit_lrsk_gvp_shroud_pockets:0 "$d_lrsk_gov_var_shroud_pockets$"
  concept_deposit_lrsk_gvp_shroud_pockets_desc:0 "Adds £job_lrsk_gov_var_job_otherworld_guide£ ['concept_lrsk_gvp_otherworld_guides'].\n\n§L$d_lrsk_gov_var_shroud_pockets_desc$§!"
@@ -1418,7 +1418,7 @@ l_spanish:
  LRSK_GOV_VAR_HT_PEP_CROWN_PRINCE:0 "People's Crown Prince"
  LRSK_GOV_VAR_HT_PEP_CROWN_PRINCESS:0 "People's Crown Princess"
 
- LRSK_GOV_VAR_START_SCREEN_P2_REVOLUTIONARY_EMPIRE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the world. And, standing shoulder to shoulder, they won. The free peoples of the world looked to us for guidance. Once again, we shocked the world. We gave a crown to the hero who led our valiant struggle, who in turn gave us a promise: to see the whole world free and at peace. And after that, perhaps the galaxy?"
+ LRSK_GOV_VAR_START_SCREEN_P2_REVOLUTIONARY_EMPIRE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the world. And, standing shoulder to shoulder, they won. The free peoples of the world looked to us for guidance, and once again, we shocked the world: we freely gave a crown to the hero who led our valiant struggle. Our Emperor in turn gave us a promise: to see the whole world free and at peace. And after that, perhaps the galaxy?"
  
  ####################################
  ### Hive Minds
@@ -1733,7 +1733,7 @@ l_spanish:
  
  lrsk_gov_var_trait_starborn_hive:0 "Swarmers"
  lrsk_gov_var_trait_starborn_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ moved in great restless swarms, expanding rapidly and inexorably into even the least hospitable places.§!\n"
- lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! pop growth\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to leader lifespan"
+ lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! pop growth\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to §Y£leader£ Leader§! lifespan"
  
  #lrsk_gov_var_trait_earthbound:0 "$trait_presapient_earthbound$"
  #lrsk_gov_var_trait_earthbound_desc:0 "§L$trait_presapient_earthbound_desc$§!\n"
@@ -1761,15 +1761,15 @@ l_spanish:
  
  lrsk_gov_var_trait_proles_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Skill Emulation"
  lrsk_gov_var_trait_proles_mech_desc:0 "§L$LRSK_GOV_VAR_MECHPRIM$ seem designed to model and reproduce data gathered from skilled sapient professionals, perhaps to replace them? This left it somewhat inflexible in terns of learning ability, but it was familiar enough with the patterns of sapient minds to be bootstrapped to self-directed thought and creativity.\n"
- lrsk_gov_var_trait_proles_mech_effects:0 "§G+10%§! £army_power£ Army Damage\n§G+10%§! complex drone job production\n§R-33%§! leader exp gain"
+ lrsk_gov_var_trait_proles_mech_effects:0 "§G+10%§! £army_power£ Army Damage\n§G+10%§! complex drone job production\n§R-33%§! §Y£leader£ Leader§! exp gain"
  
  #lrsk_gov_var_trait_conservative:0 "$trait_presapient_conservative$"
  #lrsk_gov_var_trait_conservative_desc:0 "§L$trait_presapient_conservative_desc$§!\n"
- lrsk_gov_var_trait_conservative_effects:0 "§G+5%§! happiness\n§G+25%§! governing ethics attraction\n§R-33%§! leader exp gain"
+ lrsk_gov_var_trait_conservative_effects:0 "§G+5%§! happiness\n§G+25%§! governing ethics attraction\n§R-33%§! §Y£leader£ Leader§! exp gain"
  
  lrsk_gov_var_trait_conservative_mech:0 "$LRSK_GOV_VAR_DEEPCODE$ Profiling"
  lrsk_gov_var_trait_conservative_mech_desc:0 "§L$LRSK_GOV_VAR_MECHPRIM$ were built to create precise and complex data models of sapient minds to benefit the strategies of its designers. Raising this AI to true sapience was almost too easy.§!\n"
- lrsk_gov_var_trait_conservative_mech_effects:0 "§G+2§! leader skill levels\n§G+33%§! leader exp gain"
+ lrsk_gov_var_trait_conservative_mech_effects:0 "§G+2§! §Y£leader£ Leader§! skill levels\n§G+33%§! §Y£leader£ Leader§! exp gain"
 
  trait_lrsk_gov_var_trait_enlightened_effect:0 "§G+1§! Envoys\n§G+10%§! trust growth\n§G+15%§! anomaly research speed\n§G+20%§! survey speed"
 
@@ -2686,7 +2686,7 @@ l_spanish:
  LRSK_CRIM_CHANGES_EXPLAIN:0 "\n\nNote that if you have taken the §H$civic_criminal_heritage$§! Civic, some of these effects may be different..."
   
  lrsk_government_variety_pack_backend.102.name:0 "$lrsk_government_variety_pack_backend.101.name$"
- lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §H$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with a §Gbonus to military leader experience gain§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
+ lrsk_government_variety_pack_backend.102.milcorp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_naval_contractors$§! and/or §H$civic_private_military_companies$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_military_excellence_academy$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+50% Militarist attraction§!, the host empire with a §Gbonus to military §Y£leader£ Leader§! experience gain§!, and provides the megacorp with $LRSK_GVP_MEGACORP_SCALING_COMMON$ §YMilitarist§!."
  
  lrsk_government_variety_pack_backend.102.media:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_media_conglomerate$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_local_news_office$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_ruler£ §Y$pop_cat_ruler$ job output§!, §Y+20% £pop_cat_specialist£ $pop_cat_specialist$ £political_power£ Political Power§!, and §G+5%§! £pop_cat_specialist£ §Y$pop_cat_specialist$ £happiness£ Happiness§!. It provides the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§! and §Ga chance to occasionally get Favors from the host empire§!.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
@@ -2885,7 +2885,7 @@ l_spanish:
  lrsk_gov_var_direct_revelation.90.name:0 "Restoring Faith"
  lrsk_gov_var_direct_revelation.90.desc:0 "Our people have always been drawn to various spiritual trends and new visions, but the revelation that a cataclysm will destroy [this.capital_scope.GetName] has inflicted a spiritual wound on our collective psyche. Now, [this.species.GetNamePlural] flock in droves to the nihilistic comfort of a rampant §R$lrsk_gov_var_statmod_doomsday_cult$§! that shows no signs of subsiding. It is on us, as the secular and spiritual leaders of the [this.GetName], to prove that the fate of [this.species.GetName]kind is not yet sealed!"
  lrsk_gov_var_direct_revelation.90.a:0 "Our destiny is yet to be written!"
- lrsk_gov_var_direct_revelation.90.a.tooltip:0 "Your empire has the §G$lrsk_gov_var_empire_endisnigh$§! modifier, imrpoving survey speed and colony development speed by 20%"
+ lrsk_gov_var_direct_revelation.90.a.tooltip:0 "Your empire has the §G$lrsk_gov_var_empire_endisnigh$§! modifier, improving survey speed and colony development speed by §G20%§!"
 
  lrsk_gov_var_direct_revelation.10.name:0 "$lrsk_gov_var_direct_revelation_generic_title$"
  lrsk_gov_var_direct_revelation.10.desc:0 "$lrsk_gov_var_direct_revelation_generic_desc_1$ $lrsk_gov_var_statmod_golden_age_cult_desc$ $lrsk_gov_var_direct_revelation_generic_desc_2$"

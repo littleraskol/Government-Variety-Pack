@@ -43,6 +43,9 @@ v7.1 (09/??/25) Lyra (4.1) Update
 --Added allowed archetypes where needed
 -"Casino Mysticism" renamed to "Games of Chance" (avoids slight thematic overlap with "Fortune Enterprise"), no longer requires non-Materialist.
 -Balanced Shaper/Artificer/Essentialist (increased wrong-tech penalties, added researcher upkeep cost malus for wrong techs)
+-General localisation improvement pass.
+--Some wording just cleaned up.
+--Now using more special icons (esp. for leader traits)
 -Updated compat version number.
 
 v7.0.5 (09/07/25) - Criminal Branch Office "Swap"
