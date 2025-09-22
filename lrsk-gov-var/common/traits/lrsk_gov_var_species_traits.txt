@@ -24,7 +24,32 @@ lrsk_gov_var_trait_natural_esper = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	tags = { organic positive pop_output research unity happiness psionic special }
 
-	inline_script = "traits/lrsk_gvp_trait_natural_esper_effects"
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.025
+		bureaucrat_jobs_bonus_workforce_mult = 0.025
+		telepath_jobs_bonus_workforce_mult = 0.025
+	}
+
+	slave_cost = {
+		energy = 750
+	}
+
+	assembly_score = {
+		base = 0.5
+		modifier = {
+			add = 0.5
+			from = { has_research_designation = yes }
+		}
+		modifier = {
+			add = 0.5
+			from = { has_unity_designation = yes }
+		}
+		modifier = {
+			subtract = 1
+			exists = from.owner
+			from.owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+		}
+	}
 }
 
 ## Uplift

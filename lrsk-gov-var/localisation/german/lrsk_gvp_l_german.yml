@@ -485,7 +485,7 @@ l_german:
 
  lrsk_gov_var_origin_shroud_touched:0 "Shroud-Touched"
  lrsk_gov_var_origin_shroud_touched_desc:0 "The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies."
- origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most pops of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-§Y£leader£ Leaders§! can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Rarely, actual §M$trait_latent_psionic$§! £pop£ §YPops§! can spawn, and §Y£leader£ Leaders§! can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
+ origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most £pop£ §YPops§! of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-§Y£leader£ Leaders§! can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Rarely, actual §M$trait_latent_psionic$§! £pop£ §YPops§! can spawn, and §Y£leader£ Leaders§! can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
 
  #### For Discovery: Start in research co-op.
 
@@ -625,7 +625,7 @@ l_german:
  
  concept_lrsk_gvp_wild_cult:0 "Wild Cult"
  concept_lrsk_gvp_wild_cults:0 "$concept_lrsk_gvp_wild_cult$s"
- concept_lrsk_gvp_wild_cult_desc:0 "New religious movements that randomly spawn on colonies owned by empires with the §Y$lrsk_gov_var_civic_direct_revelation$§! civic.\n\nThere are ten kinds, each with a 10% chance to appear when a $concept_lrsk_gvp_wild_cult$ spawns. They have mostly beneficial effects, can alter pop ethics attraction, and each adds a £job_lrsk_gov_var_job_hedge_preacher£ ['concept_lrsk_gvp_hedge_preacher'] Job."
+ concept_lrsk_gvp_wild_cult_desc:0 "New religious movements that randomly spawn on colonies owned by empires with the §Y$lrsk_gov_var_civic_direct_revelation$§! civic.\n\nThere are ten kinds, each with a 10% chance to appear when a $concept_lrsk_gvp_wild_cult$ spawns. They have mostly beneficial effects, can alter £pop£ §YPop§! ethics attraction, and each adds a £job_lrsk_gov_var_job_hedge_preacher£ ['concept_lrsk_gvp_hedge_preacher'] Job."
  
  concept_lrsk_gvp_special_subjects:0 "$concept_lrsk_gvp_special_subject$s"
  concept_lrsk_gvp_special_subject:0 "Special Subject Type"
@@ -733,7 +733,7 @@ l_german:
  concept_policy_lrsk_gvp_colfief_policy_desc:0 "Controls the $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$ Can also prohibit this from happening.\n\n§L$policy_lrsk_gvp_colfief_policy_desc$§!"
  
  concept_trait_lrsk_gvp_natural_esper:0 "$lrsk_gov_var_trait_natural_esper$"
- concept_trait_lrsk_gvp_natural_esper_desc:0 "§G+2.5%§! $r_unity$ and $r_lrsk_research$ from pops with this trait.\n\n$lrsk_gov_var_trait_natural_esper_desc$"
+ concept_trait_lrsk_gvp_natural_esper_desc:0 "§G+2.5%§! $BONUS_WORKFORCE_FOR$ ['concept_planet_researchers'], ['concept_planet_bureaucrats'], and ['concept_planet_lrsk_telepaths']\n\n$lrsk_gov_var_trait_natural_esper_desc$"
  
  concept_leader_trait_lrsk_gvp_esper:0 "$lrsk_gvp_leader_trait_esper$"
  concept_leader_trait_lrsk_gvp_esper_desc:0 "Exact effects depend on the §Y£leader£ Leader§! type, but are toned-down versions of the benefits provided by the §Y$leader_trait_psionic$§! trait."
@@ -742,10 +742,13 @@ l_german:
  concept_deposit_lrsk_gvp_shroud_pockets_desc:0 "Adds £job_lrsk_gov_var_job_otherworld_guide£ ['concept_lrsk_gvp_otherworld_guides'].\n\n§L$d_lrsk_gov_var_shroud_pockets_desc$§!"
  
  concept_lrsk_genesis_civics: "Genesis Guidance"
- concept_lrsk_genesis_civics_desc: "$concept_lrsk_genesis_civics$ Civics consist of: \n- ['civic:civic_guided_sapience']$NEW_LINE$- ['civic:civic_hive_guided_sapience']$NEW_LINE$- ['civic:civic_machine_guided_sapience']$NEW_LINE$- ['civic:civic_corporate_guided_sapience']"
+ concept_lrsk_genesis_civics_desc: "$concept_lrsk_genesis_civics$ Civics consist of: \n- ['civic:civic_guided_sapience']$TABBED_NEW_LINE$- ['civic:civic_hive_guided_sapience']$TABBED_NEW_LINE$- ['civic:civic_machine_guided_sapience']$TABBED_NEW_LINE$- ['civic:civic_corporate_guided_sapience']"
  
  concept_lrsk_antisocial_civics: "Antisocial"
- concept_lrsk_antisocial_civics_desc: "$concept_lrsk_antisocial_civics$ Civics consist of: \n- ['civic:civic_inwards_perfection']$NEW_LINE$- ['civic:civic_barbaric_despoilers']$NEW_LINE$- ['civic:civic_machine_assimilator']$NEW_LINE$- ['civic:civic_criminal_heritage']"
+ concept_lrsk_antisocial_civics_desc: "$concept_lrsk_antisocial_civics$ Civics consist of: \n- ['civic:civic_inwards_perfection']$TABBED_NEW_LINE$- ['civic:civic_barbaric_despoilers']$TABBED_NEW_LINE$- ['civic:civic_machine_assimilator']$TABBED_NEW_LINE$- ['civic:civic_criminal_heritage']"
+ 
+ concept_planet_lrsk_telepaths: "$concept_planet_telepaths$"
+ concept_planet_lrsk_telepaths_desc: "$concept_planet_telepaths_desc$ $TABBED_NEW_LINE$- $job_lrsk_gov_var_job_otherworld_guide_plural$"
 
 
  ####################################
@@ -1732,7 +1735,7 @@ l_german:
  
  lrsk_gov_var_trait_starborn_hive:0 "Swarmers"
  lrsk_gov_var_trait_starborn_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ moved in great restless swarms, expanding rapidly and inexorably into even the least hospitable places.§!\n"
- lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! pop growth\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to §Y£leader£ Leader§! lifespan"
+ lrsk_gov_var_trait_starborn_hive_effects:0 "§G+10%§! £pop£ §YPop Growth§!\n§G-20%§! resettle cost\n§G+10%§! habitability\n§R-10§! years to §Y£leader£ Leader§! lifespan"
  
  #lrsk_gov_var_trait_earthbound:0 "$trait_presapient_earthbound$"
  #lrsk_gov_var_trait_earthbound_desc:0 "§L$trait_presapient_earthbound_desc$§!\n"
@@ -1740,7 +1743,7 @@ l_german:
  
  lrsk_gov_var_trait_earthbound_hive:0 "Pack-Runners"
  lrsk_gov_var_trait_earthbound_hive_desc:0 "§L$LRSK_GOV_VAR_HIVEPRIM$ showed exceptionally high levels of 'teamwork,' spontaneously organizing into complex packs or gangs that could coordinate with each other to take advantage of territory or defend it.§!\n"
- lrsk_gov_var_trait_earthbound_hive_effects:0 "§G-5%§! empire sprawl from pops\n§G+10%§! $r_unity$ from jobs\n§G-10%§! £housing£ pop housing usage\n§G+50%§! £defense_army£ Defense Army strength"
+ lrsk_gov_var_trait_earthbound_hive_effects:0 "§G-5%§! empire sprawl from £pop£ §YPops§!\n§G+10%§! $r_unity$ from jobs\n§G-10%§! £pop£ §Y$MOD_POP_HOUSING_USAGE_MULT$§!\n§G+50%§! £defense_army£ Defense Army strength"
  
  #lrsk_gov_var_trait_natural_intellectuals:0 "$trait_presapient_natural_intellectuals$"
  #lrsk_gov_var_trait_natural_intellectuals_desc:0 "§L$trait_presapient_natural_intellectuals_desc$§!\n"
@@ -2025,7 +2028,7 @@ l_german:
  lrsk_branch_value_crime_xenophile:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophilic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
  lrsk_branch_value_crime_xenophobe:0 "$LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_1$ Xenophobic $LRSK_BRANCH_VAL_ETHOS_CRIME_COMMON_2$"
 
- LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! for every 10% of pops on the planet that are§Y"
+ LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1:0 "§G+5%§! §Y$BRANCH_OFFICE_VALUE$§! for every 10% of £pop£ §YPops§! on the planet that are§Y"
  LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2:0 "§!(minimum +5% if any, maximum +50%)\n\n"
 
  lrsk_scaling_branch_value_authoritarian:0 "$LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_1$ Authoritarian $LRSK_SCALING_BRANCH_VAL_ETHOS_COMMON_2$"
@@ -2121,7 +2124,7 @@ l_german:
  job_lrsk_gov_var_job_knight_desc:0 "Minor warrior gentry who have become an integral part of the modern state and military apparatus. Still, they uphold an ancient code: defend the realm, protect the weak, maintain order, and see justice done."
  job_lrsk_gov_var_job_knight_effect_desc:1 "£job_lrsk_gov_var_job_knight£ $job_lrsk_gov_var_job_knight_plural$ increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, spawn £defense_army£ §YDefense Armies§!, decrease $type_crime$, and increase $r_stability$."
  mod_job_lrsk_gov_var_job_knight_add:0 "$job_lrsk_gov_var_job_knight$ Jobs"
- mod_job_lrsk_gov_var_job_knight_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_knight$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_knight_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_knight$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_knight_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_knight_add£ per $VALUE$ £pop£"
 
  #Pastor
@@ -2130,18 +2133,18 @@ l_german:
  job_lrsk_gov_var_job_pastor_desc:0 "The elected ministers of their communities, these spiritual leaders serve local confessional needs."
  job_lrsk_gov_var_job_pastor_effect_desc:1 "£job_lrsk_gov_var_job_pastor£ $job_lrsk_gov_var_job_pastor_plural$ turn $r_consumer_goods$ into $r_unity$ and $r_amenities$."
  mod_job_lrsk_gov_var_job_pastor_add:0 "$job_lrsk_gov_var_job_pastor$ Jobs"
- mod_job_lrsk_gov_var_job_pastor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_pastor$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_pastor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_pastor$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_pastor_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_pastor_add£ per $VALUE$ £pop£"
 
  #Otherworld Guide
  job_lrsk_gov_var_job_otherworld_guide:0 "Otherworld Guide"
  job_lrsk_gov_var_job_otherworld_guide_plural:0 "$job_lrsk_gov_var_job_otherworld_guide$s"
  job_lrsk_gov_var_job_otherworld_guide_desc:0 "Communities of seers and witches made up of those mentally resiliant (or ill) enough to live near the Otherworld Pockets. Their fortunes and foretellings not only help people feel more confident about their place in the world, they provide a common cultural focus point for society."
- job_lrsk_gov_var_job_otherworld_guide_effect_short_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn $r_consumer_goods$ into $r_amenities$ and  (conditionally) $r_unity$ and also (conditionally) increase $r_stability$."
- job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "$job_lrsk_gov_var_job_otherworld_guide_effect_short_desc$ (These effects are modified by §M$PSIONIC$§! traits.)"
- job_lrsk_gov_var_job_otherworld_guide_trait_effect:0 "£job_lrsk_gov_var_job_otherworld_guide£ §H$job_lrsk_gov_var_job_otherworld_guide_plural$§! increase $r_unity$, $r_amenities$, and $r_stability$, but the nature of the empire which owns the planet matters. \n\nIncreasing degrees of §!$PSIONIC$§! ascension increase output. Some outputs are gated behind the planet's owner having the $lrsk_gov_var_origin_shroud_touched$ origin.\n\n§M$PSIONIC$§! £pop£ §YPops§! are much more likely to take this job."
+  job_lrsk_gov_var_job_otherworld_guide_effect_short_desc:1 "£job_lrsk_gov_var_job_otherworld_guide£ $job_lrsk_gov_var_job_otherworld_guide_plural$ turn $r_consumer_goods$ into $r_amenities$ and $r_unity$, and also increase $r_stability$."
+ job_lrsk_gov_var_job_otherworld_guide_effect_desc:1 "$job_lrsk_gov_var_job_otherworld_guide_effect_short_desc$\n\n$job_lrsk_gov_var_job_otherworld_guide_trait_effect$"
+ job_lrsk_gov_var_job_otherworld_guide_trait_effect:0 "Increasing degrees of §M$PSIONIC$§! ascension increase output. Some outputs are gated behind the planet's owner having the §H$lrsk_gov_var_origin_shroud_touched$§! origin. Additionally, §M$PSIONIC$§! £pop£ §YPops§! are much more likely to take this job."
  mod_job_lrsk_gov_var_job_otherworld_guide_add:0 "$job_lrsk_gov_var_job_otherworld_guide$ Jobs"
- mod_job_lrsk_gov_var_job_otherworld_guide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_otherworld_guide$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_otherworld_guide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_otherworld_guide$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_otherworld_guide_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_otherworld_guide_add£ per $VALUE$ £pop£"
 
  #Hedge Preacher
@@ -2150,7 +2153,7 @@ l_german:
  job_lrsk_gov_var_job_hedge_preacher_desc:0 "Roving enthusiasts and evangelists of a new religious movement or of their own spontaneously-developed idiosyncratic creed."
  job_lrsk_gov_var_job_hedge_preacher_effect_desc:1 "£job_lrsk_gov_var_job_hedge_preacher£ $job_lrsk_gov_var_job_hedge_preacher_plural$ produce $r_unity$ and $r_amenities$."
  mod_job_lrsk_gov_var_job_hedge_preacher_add:0 "$job_lrsk_gov_var_job_hedge_preacher$ Jobs"
- mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_hedge_preacher_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_hedge_preacher$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_hedge_preacher_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_hedge_preacher_add£ per $VALUE$ £pop£"
  
  # Citizen Scholar
@@ -2159,7 +2162,7 @@ l_german:
  job_lrsk_gvp_job_citscholar_desc:0 "These bright and curious ordinary citizens are subsidized by the government to pursue their varied academic interests and share them with their communities."
  job_lrsk_gvp_job_citscholar_effect_desc:0 "£job_lrsk_gvp_job_citscholar£ $job_lrsk_gvp_job_citscholar_plural$ turn $r_consumer_goods$ into $r_lrsk_research$, $r_unity$, and $r_amenities$"
  mod_job_lrsk_gvp_job_citscholar_add:0 "$job_lrsk_gvp_job_citscholar$ Jobs"
- mod_job_lrsk_gvp_job_citscholar_per_pop:0 "§G+1§! $job_lrsk_gvp_job_citscholar$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gvp_job_citscholar_per_pop:0 "§G+1§! $job_lrsk_gvp_job_citscholar$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gvp_job_citscholar_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gvp_job_citscholar_add£ per $VALUE$ £pop£"
 
  # Planetary Auditor
@@ -2168,7 +2171,7 @@ l_german:
  job_lrsk_gov_var_job_regional_coordinator_desc:0 "Local administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
  job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ turn $r_energy$ into $r_unity$ and $r_lrsk_amenities_nohappy$. However, they decrease $r_stability$."
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
- mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
 
  # Planetmind Overseer
@@ -2177,7 +2180,7 @@ l_german:
  job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
  job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce $r_influence$, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§!, increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and reduce £mod_empire_size_add£ §Y$EMPIRE_SIZE$§!. However, they produce $type_deviancy$ and decrease $r_stability$. They consume $r_food$ and $r_unity$."
  mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
- mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
 
  # Functionary
@@ -2186,7 +2189,7 @@ l_german:
  job_lrsk_gov_var_job_functionary_desc:0 "Sure, the hours are long, the paperwork is tedious, and you're paying for the privilege, but think of how great this will look on your resume!"
  job_lrsk_gov_var_job_functionary_effect_desc:0 "£job_lrsk_gov_var_job_functionary£ $job_lrsk_gov_var_job_functionary_plural$ produce $r_unity$ and $r_trade$"
  mod_job_lrsk_gov_var_job_functionary_add:0 "$job_lrsk_gov_var_job_functionary$ Jobs"
- mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_functionary_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_functionary$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_functionary_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_functionary_add£ per $VALUE$ £pop£"
 
  # Info-Guide
@@ -2195,7 +2198,7 @@ l_german:
  job_lrsk_gov_var_job_infoguide_desc:0 "Experienced tour guides and educators keep the learning attractions running and help pupil-patrons find the most relevant and interesting experiences on their quest for knowledge."
  job_lrsk_gov_var_job_infoguide_effect_desc:0 "£job_lrsk_gov_var_job_infoguide£ $job_lrsk_gov_var_job_infoguide_plural$ produce $r_lrsk_research$ and $r_amenities$"
  mod_job_lrsk_gov_var_job_infoguide_add:0 "$job_lrsk_gov_var_job_infoguide$ Jobs"
- mod_job_lrsk_gov_var_job_infoguide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_infoguide$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_infoguide_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_infoguide$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_infoguide_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_infoguide_add£ per $VALUE$ £pop£"
 
  # Gofer
@@ -2204,7 +2207,7 @@ l_german:
  job_lrsk_gov_var_job_gofer_desc:0 "Need some food? A ride? To figure out how to fix your damn bleeping computer? Need it in 1 hour tops? Gofers are here, there, and everywhere to satisfy whatever whims can be expressed in an app-based social marketplace. Tipping optional."
  job_lrsk_gov_var_job_gofer_effect_desc:0 "£job_lrsk_gov_var_job_gofer£ $job_lrsk_gov_var_job_gofer_plural$ produce $r_amenities$ and $r_consumer_goods$"
  mod_job_lrsk_gov_var_job_gofer_add:0 "$job_lrsk_gov_var_job_gofer$ Jobs"
- mod_job_lrsk_gov_var_job_gofer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_gofer$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_gofer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_gofer$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_gofer_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_gofer_add£ per $VALUE$ £pop£"
 
  # Offworld Worker
@@ -2213,7 +2216,7 @@ l_german:
  job_lrsk_gov_var_job_offworld_worker_desc:0 "Industrious transitory workers who roam the galaxy to get done the jobs that need doing."
  job_lrsk_gov_var_job_offworld_worker_effect_desc:0 "£job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker_plural$ produce $r_energy$ and $r_amenities$"
  mod_job_lrsk_gov_var_job_offworld_worker_add:0 "$job_lrsk_gov_var_job_offworld_worker$ Jobs"
- mod_job_lrsk_gov_var_job_offworld_worker_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_offworld_worker$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_offworld_worker_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_offworld_worker$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_offworld_worker_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_offworld_worker_add£ per $VALUE$ £pop£"
 
  # Investigator
@@ -2222,7 +2225,7 @@ l_german:
  job_lrsk_gov_var_job_investigator_desc:0 "Detectives who can be hired by private citizens, businesses, or even the government to find and expose unwanted clandestine behavior. Can be outfitted with trenchcoats and smoking pipes at customer request."
  job_lrsk_gov_var_job_investigator_effect_desc:0 "£job_lrsk_gov_var_job_investigator£ $job_lrsk_gov_var_job_investigator_plural$ reduce $type_crime$ and also the £political_power£ §YPolitical Power§! of $WORKERS$"
  mod_job_lrsk_gov_var_job_investigator_add:0 "$job_lrsk_gov_var_job_investigator$ Jobs"
- mod_job_lrsk_gov_var_job_investigator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_investigator$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_investigator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_investigator$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_investigator_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_investigator_add£ per $VALUE$ £pop£"
 
  # Suppressor
@@ -2231,7 +2234,7 @@ l_german:
  job_lrsk_gov_var_job_suppressor_desc:0 "For those problems that can't be solved within the bounds of the law, these unofficial enforcers can make a point even with a blunt object. Whether it's outlawed trade on your turf or employees banding together to demand their 'rights,' these brutes get the job done."
  job_lrsk_gov_var_job_suppressor_effect_desc:0 "£job_lrsk_gov_var_job_suppressor£ $job_lrsk_gov_var_job_suppressor_plural$ reduce the £political_power£ §YPolitical Power§! of $WORKERS$ while increasing the output of $WORKERS$"
  mod_job_lrsk_gov_var_job_suppressor_add:0 "$job_lrsk_gov_var_job_suppressor$ Jobs"
- mod_job_lrsk_gov_var_job_suppressor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_suppressor$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gov_var_job_suppressor_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_suppressor$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_suppressor_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gov_var_job_suppressor_add£ per $VALUE$ £pop£"
 
  #Civic Leader
@@ -2240,7 +2243,7 @@ l_german:
  job_lrsk_gvp_job_civic_leader_desc:0 "Local notables involved in charitable efforts, reform political movements, voluntary organizations, and neighborhood services."
  job_lrsk_gvp_job_civic_leader_effect_desc:1 "£job_lrsk_gvp_job_civic_leader£ $job_lrsk_gvp_job_civic_leader_plural$ turn $r_consumer_goods$ into $r_unity$ and $r_amenities$, and increase $r_stability$."
  mod_job_lrsk_gvp_job_civic_leader_add:0 "$job_lrsk_gvp_job_civic_leader$ Jobs"
- mod_job_lrsk_gvp_job_civic_leader_per_pop:0 "§G+1§! $job_lrsk_gvp_job_civic_leader$ Job per $VALUE$ Pops"
+ mod_job_lrsk_gvp_job_civic_leader_per_pop:0 "§G+1§! $job_lrsk_gvp_job_civic_leader$ Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gvp_job_civic_leader_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gvp_job_civic_leader_add£ per $VALUE$ £pop£"
 
  ## Edicts
@@ -2249,8 +2252,8 @@ l_german:
  edict_lrsk_gvp_citschol:0 "Promote Citizen Scholarship"
  edict_lrsk_gvp_citschol_desc:0 "We must enable our citizens to pursue their intellectual interests and enrich their communities thereby."
  edict_lrsk_gvp_citschol_tooltip:0 "Gives planets $edict_lrsk_gvp_citschol_effects_common$"
- edict_lrsk_gvp_citschol_no_suitable_planets:0 "§RBecause this gives 1 job per 15 pops, there is no effect if none of your planets have at least 15 pops.§!"
- edict_lrsk_gvp_citschol_effects_common:0 "Adds §Y1§! £job_lrsk_gvp_job_citscholar£ ['concept_lrsk_gvp_citscholar'] Job per §Y15§! £pop£ Pops."
+ edict_lrsk_gvp_citschol_no_suitable_planets:0 "§RBecause this gives 1 job per 15 £pop£ §YPops§R, there is no effect if none of your planets have at least 15 £pop£ §YPops§R.§!"
+ edict_lrsk_gvp_citschol_effects_common:0 "Adds §Y1§! £job_lrsk_gvp_job_citscholar£ ['concept_lrsk_gvp_citscholar'] Job per §Y15§! £pop£ §YPops§!."
 
  # Royal Absolutism - Proclamation of Justice
  edict_lrsk_gvp_royjustice:0 "Proclamation of Justice"
@@ -2398,7 +2401,7 @@ l_german:
 
  lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
  lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
- lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! Pop Demotion Time at the cost of §R-15%§! $r_trade$. (Can be ended any time, will automatically end when no pops are unemployed for one month.)"
+ lrsk_gvp_statmod_work_plan_effects_common:0 "§G+35%§! Automatic Resettlement Chance and §G-25%§! £pop£ §Y$MOD_POP_DEMOTION_TIME_MULT$§! at the cost of §R-15%§! $r_trade$. (Can be ended any time, will automatically end when no £pop£ §YPops§! are unemployed for one month.)"
 
  ## Royal Absolutism - New Aristos
 
@@ -2592,7 +2595,7 @@ l_german:
  # Colonial Fiefs
  policy_lrsk_gvp_colfief_policy:0 "Explorer Colonies"
  policy_lrsk_gvp_colfief_policy_desc:1 "Within the course of our colonization efforts, our government grants fiefholding rights to encourage growth and development. But we could expand the scope of these efforts, allowing or encouraging explorers to settle new worlds in our name. Surely, if given the chance, some groups of our subjects would venture forth and create new vassal colonies to serve the greater empire.\n"
- LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON:0 "chance per year that one of your £pop£ pops will found a §Ynew subject empire§! in some distant system."
+ LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON:0 "chance per year that one of your £pop£ £pop£ §YPops§! will found a §Ynew subject empire§! in some distant system."
 
  lrsk_gvp_colfief_prohibited:0 "Prohibited"
  lrsk_gvp_colfief_prohibited_name:0 "Forbid $policy_lrsk_gvp_colfief_policy$"
@@ -2604,7 +2607,7 @@ l_german:
 
  lrsk_gvp_colfief_promoted:0 "Promoted"
  lrsk_gvp_colfief_promoted_name:0 "Encourage $policy_lrsk_gvp_colfief_policy$"
- lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opporunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ pop."
+ lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opportunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ §YPop§!."
 
  ## Events
  
@@ -2641,7 +2644,7 @@ l_german:
 
  # Explainer
  lrsk_gov_var_colfief.101.name:0 "Explorer Colonies and Viceroyal Vassals"
- lrsk_gov_var_colfief.101.desc:0 "The §Y$lrsk_gov_var_civic_colonial_fiefs$§! Civic grants access to the 'Explorer Colonies' policy tree. By default, the initially selected option does nothing. You can select other policy options that will allow your pops to start new empires on unexplored worlds which will become subjects to your empire. Note that you must have an inhabited planet with at least 10 pops and at least one of those pops must be free, not in the process of being purged, and not have the '$trait_syncretic_proles$' trait. Additionally, there must be a world in an unowned, unoccupied system at a bit of a distance to your empire with an unsurveyed world that has at least some degree of decent (at least 50%) habitability for one of the pops meeting the prior criteria. AI players will not use any of this to cut down on player frustration."
+ lrsk_gov_var_colfief.101.desc:0 "The §Y$lrsk_gov_var_civic_colonial_fiefs$§! Civic grants access to the 'Explorer Colonies' policy tree. By default, the initially selected option does nothing. You can select other policy options that will allow your £pop£ §YPops§! to start new empires on unexplored worlds which will become subjects to your empire. Note that you must have an inhabited planet with at least 900 £pop£ §YPops§! and at least 200 of those £pop£ §YPops§! must be free, not in the process of being purged, not have the §Y$trait_syncretic_proles$§! trait, and not be in the §Y$pop_cat_ruler$§! stratum. Additionally, there must be a world in an unowned, unoccupied system at a bit of a distance to your empire with an unsurveyed world that has at least some degree of decent (at least 50%) habitability for one of the £pop£ §YPops§! meeting the prior criteria. AI players will not use any of this to cut down on player frustration."
  lrsk_gov_var_colfief.101.a:0 "For gold and glory!"
 
  ## Casino Luck Modifiers (not really interested in descriptions for these...)
@@ -2691,7 +2694,7 @@ l_german:
  
  lrsk_government_variety_pack_backend.102.prosp:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_private_prospectors$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_offworld_jobs_placement$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §Y+200 £job_lrsk_gov_var_job_offworld_worker£ $job_lrsk_gov_var_job_offworld_worker$ Jobs§!($job_lrsk_gov_var_job_offworld_worker_effect_desc$), and provides the megacorp with §Gimproved colony growth speed and mining station output§! and §G+5%§! §Y$BRANCH_OFFICE_VALUE$§! per $job_lrsk_gov_var_job_offworld_worker$ job filled.$LRSK_CRIM_CHANGES_EXPLAIN$"
  
- lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave pops from the planet!" 
+ lrsk_government_variety_pack_backend.102.indent:0 "$LRSK_GVP_BACKEND_EXPLAIN_COMMON_1$ $civic_indentured_assets$§! $LRSK_GVP_BACKEND_EXPLAIN_BLDG_ENABLED$ §Y$lrsk_gov_var_bldg_reformatory_workhouse$§! $BRANCH_OFFICE_BUILDING$, which provides the host planet with §G+10%§! £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$§! job output, and provides the megacorp with §G+15%§! §Y$BRANCH_OFFICE_VALUE$§!.$LRSK_CRIM_CHANGES_EXPLAIN$ For example: a criminal megacorp that operates this building can occasionally steal and enslave £pop£ §YPops§! from the planet!" 
 
  # Combat Data: New Post-Data Intel
 
@@ -2720,7 +2723,7 @@ l_german:
  lrsk_government_variety_pack_backend.1002.b:0 "Ennoble our most loyal officials as courtiers!"
  lrsk_government_variety_pack_backend.1002.b.tooltip:0 "Government functionaries from the educated specialist class, selected for political reliability, are raised to nobility and given offices on [this.Capital.GetName]. This will curb their status anxiety and desire for reform while propping up the power of the court, although entrenched elites on our well established colony worlds will resent these upstarts. (The cost of this option scales with the number of 'established' colonies.)" # -scaling consumer goods
  lrsk_government_variety_pack_backend.1002.c:0 "Assemble the Estates of the Realm!"
- lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, using weighted voting to draw delegates from all free social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between social classes. (The cost of this option scales with the number of free pops in the empire, with civilians counting for half.)" # -scaling energy
+ lrsk_government_variety_pack_backend.1002.c.tooltip:0 "The advisory 'legislature' of the realm is convened, using weighted voting to draw delegates from all free social classes. This allows for greater governing flexibility, although it will have some ongoing expenses and may destabilize the balance of power between social classes. (The cost of this option scales with the number of free £pop£ §YPops§! in the empire, with civilians counting for half.)" # -scaling energy
  lrsk_government_variety_pack_backend.1002.d:0 "Our nation is in peril!"
  lrsk_government_variety_pack_backend.1002.d.tooltip:0 "Ready the state for any threats, from within and without, at any cost. These methods will be resented by the underclasses who will likely bear the brunt of any excesses in enforcement. Less costly in terms of political capital when at war or with a clear need for law enforcement." # -200 influence
  lrsk_government_variety_pack_backend.1002.e:0 "$lrsk_government_variety_pack_backend.1002.d$"
@@ -2758,17 +2761,17 @@ l_german:
  lrsk_gvp_mc_bldg_special.12.b:0 "Good, but don't bother me with this again."
  lrsk_gvp_mc_bldg_special.12.b.tooltip:0 "You will not get an update when this happens again."
 
- # Slaver corp gets pop from workhouse (inform corp)
+ # Slaver corp gets £pop£ §YPop§! from workhouse (inform corp)
  lrsk_gvp_mc_bldg_special.21.name:0 "A Chained Harvest"
  lrsk_gvp_mc_bldg_special.21.desc:0 "Through clever methods of entrapment, enticement, risky loan schemes, and outright trickery, we have ensnared enough of the wretches of §Y[lrsk_slaver_corp_abduct_location.GetName]§! to bring them 'home' as part of our eternally indebted workforce."
  lrsk_gvp_mc_bldg_special.21.a:0 "Get to work!"
- lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted a £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
+ lrsk_gvp_mc_bldg_special.21.a.tooltip:0 "We've abducted £pop£ §YPops§! from §Y[lrsk_slaver_corp_abduct_location.GetName]§! and placed them on §Y[this.capital_scope.GetName]§!. (Consider checking their species rights and adjusting as appropriate.) The government of §H[lrsk_slaver_corp_abduct_gov.GetName]§! will be §Rquite angry with us...§!"
 
- # Slaver corp gets pop from workhouse (inform victim)
+ # Slaver corp gets £pop£ §YPop§! from workhouse (inform victim)
  lrsk_gvp_mc_bldg_special.22.name:0 "Detestable Slavers!"
  lrsk_gvp_mc_bldg_special.22.desc:0 "The underhanded corporate bandits of §H[lrsk_slaver_corp_to_steal.GetName]§! have sunk to a new low, ensnaring and abducting our people on §Y[lrsk_slaver_corp_abduct_location.GetName]§! to toil on their worlds!"
  lrsk_gvp_mc_bldg_special.22.a:0 "This will NOT stand."
- lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A £pop£ pop from §Y[lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
+ lrsk_gvp_mc_bldg_special.22.a.tooltip:0 "A group of our £pop£ §YPops§! from §Y[lrsk_slaver_corp_abduct_location.GetName]§! was abducted by the slavers of §H[lrsk_slaver_corp_to_steal.GetName]§!, and obviously §Rwe are outraged!§!"
 
  # Media corp favor choice
  LRSK_GVP_SCANDAL_COMMON:0 "£mod_influence_produces_mult£ §Y$mod_country_base_influence_produces_mult$§!, £diplo_weight£ §Y$diplomatic_weight$§!, and £happiness£ §YPop Happiness§! for §Y1§! year."
@@ -2814,7 +2817,7 @@ l_german:
  # Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
  lrsk_gvp_mc_bldg_special.51.desc.b:0 "What a bout! Tens, if not hundreds, of thousands of patrons bet on the outcome of the recent prize fight at the $lrsk_gov_var_bldg_grand_casino$ on §Y[lrsk_casino_corp_play_location.GetName]§!, and it was the spectacle of the century for the planet's inhabitants."
  lrsk_gvp_mc_bldg_special.51.b:0 "To the victor goes the spoils!"
- lrsk_gvp_mc_bldg_special.51.b.tooltip:0 "§G+5% £happiness£ Pop Happiness§! on §Y[lrsk_casino_corp_play_location.GetName]§! for one year."
+ lrsk_gvp_mc_bldg_special.51.b.tooltip:0 "§G+5% £pop£ §YPop§! £happiness£ §YHappiness§! on §Y[lrsk_casino_corp_play_location.GetName]§! for one year."
  
  # Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
  lrsk_gvp_mc_bldg_special.51.desc.c:0 "In what's being called the most wild and rowdy after-game brawl in the history of §Y[lrsk_casino_corp_play_location.GetName]§!, the streets are filled with sports fans who are... Furious? Elated? Filled with strong emotions, at any rate, over the outcome of the latest sports gambling event at the $lrsk_gov_var_bldg_grand_casino$. The property damage may take months to repair."
