@@ -50,6 +50,7 @@ v7.1 (09/22/25) Lyra (4.1) Update
 --Some typos fixed.
 --Removed `mod_councilor_ruler_imperial_exp_gain` that has been added to base game (preventing unneeded override)
 --Removed specific numbers from job effects (brevity, easier to maintain, base game communicates this well enough)
+--Concepts now have icons where appropriate.
 -Updated compat version number.
 
 v7.0.5 (09/07/25) - Criminal Branch Office "Swap"
