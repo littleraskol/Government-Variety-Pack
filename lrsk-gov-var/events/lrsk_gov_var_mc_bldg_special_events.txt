@@ -864,8 +864,16 @@ country_event = {
 					set_timed_planet_flag = { flag = lrsk_casino_luck_rolled days = 7 } # marks this planet
 
 					random_list = {
-						2 = {
-							# Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
+						# Both event: Moral reformers protest gambling (negative: lower trade value and branch office value) [Flag 1]
+						4 = {
+							modifier = {
+								add = -1
+								root = { lrsk_gvp_superstition_civic = yes }
+							}
+							modifier = {
+								add = -1
+								owner = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 
@@ -892,8 +900,16 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
-						8 = {
-							# Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
+						# Both event: Prize fight is the spectacle of the decade (positive: happy population, better host opinion of corp) [Flag 2]
+						12 = {
+							modifier = {
+								add = 1
+								root = { lrsk_gvp_superstition_civic = yes }
+							}
+							modifier = {
+								add = 1
+								owner = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 							
@@ -919,8 +935,12 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
+						# Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
 						2 = {
-							# Host event: Riot over sports betting outcome (negative: stability loss, devastation?) [Flag 3]
+							modifier = {
+								add = -1
+								owner = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 							
@@ -937,8 +957,12 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 						}
+						# Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
 						8 = {
-							# Host event: Higher tourism (positive: temp boost to trade value, energy reward) [Flag 4]
+							modifier = {
+								add = 1
+								owner = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 							
@@ -954,8 +978,12 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.51 }
 							}
 						}
+						# Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
 						2 = {
-							# Corp event: Unusually lucky guest keeps winning big (negative: temp branch office value loss) [Flag 5]
+							modifier = {
+								add = -1
+								root = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 							
@@ -970,8 +998,12 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
+						# Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
 						8 = {
-							# Corp event: The house wins big (positive: temp boost to branch office value, energy reward) [Flag 6]
+							modifier = {
+								add = 1
+								root = { lrsk_gvp_superstition_civic = yes }
+							}
 
 							save_event_target_as = lrsk_casino_corp_play_location
 							
@@ -986,12 +1018,12 @@ country_event = {
 								country_event = { id = lrsk_gvp_mc_bldg_special.52 }
 							}
 						}
-						60 = {
+						# Do nothing (set this to twice the total weight of an event happening for 33% chance)
+						72 = {
 							modifier = {
 								factor = 0
 								root = { has_country_flag = lrsk_gvp_testcall }
-							}						
-							# Do nothing (set this to twice the total weight of an event happening for 33% chance)
+							}
 						}
 					}
 				}
