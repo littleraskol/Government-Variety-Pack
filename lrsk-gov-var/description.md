@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Newly updated for Stellaris 4.0 (Phoenix)[/b] - This is a big one. I've made sure that it doesn't throw and errors on load, and done some sanity checking of everything that touches pops, but have not had time (nor do I expect to have time) for a detailed test of everything that was changed.
+[b]Newly updated for Stellaris 4.1 (Lyra)[/b] - I don't believe changes should break 4.0 saves.
 
 [i][b]New Civics[/b][/i]
 
