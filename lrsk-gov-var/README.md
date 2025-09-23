@@ -30,8 +30,9 @@ v7.1 (09/22/25) Lyra (4.1) Update
 --Icon changed to be distinct from that of the new "Shroud-Forged" origin.
 --Imrpoved effects tooltip.
 -Esper leader trait brought into line with pattern set by Psionic trait.
---In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic
+--In some cases, this meant removing one of two modifiers but keeping the remaining one at parity with Psionic.
 --Never added GalComm and Federation modifiers!
+--Commanders of fleets have +10% evasion instead of previous modifiers.
 -Esper species trait brought into line with pattern set by Psionic trait.
 -Otherworld Guide changes:
 --Job resources input/output now uses Telepath category (changed from Entertainer)
