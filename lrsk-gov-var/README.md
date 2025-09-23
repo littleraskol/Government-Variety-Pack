@@ -21,6 +21,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v7.2 (09/22/25) Post-Lyra (4.1) Improvements
+
 v7.1 (09/22/25) Lyra (4.1) Update
 -Fixed what was needed for compatibility with Stellaris 4.1 (Lyra).
 -Added attunement bonuses to civics.
