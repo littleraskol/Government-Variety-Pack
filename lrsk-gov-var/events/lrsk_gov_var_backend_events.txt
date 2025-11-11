@@ -1540,6 +1540,32 @@ country_event = {
 
 	option = { name = OK }
 }
+
+# Diagnostic: Warn about bugged civics
+country_event = {
+	id = lrsk_government_variety_pack_backend.2004
+	title = lrsk_government_variety_pack_backend.2004.name
+	desc = lrsk_government_variety_pack_backend.2004.desc
+	picture = GFX_evt_announcement
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } 
+
+		# Comment out as things get fixed
+		OR = {
+			has_civic = lrsk_gov_var_civic_chivalry
+			has_civic = lrsk_gov_var_civic_colonial_fiefs
+		}
+	}
+
+	immediate = {
+		set_country_flag = lrsk_warned_bugged_civics_v1
+	}
+
+	option = { name = WELP }
+}
+
 #country_event = {
 #	id = lrsk_government_variety_pack_backend.20031
 #	is_triggered_only = yes

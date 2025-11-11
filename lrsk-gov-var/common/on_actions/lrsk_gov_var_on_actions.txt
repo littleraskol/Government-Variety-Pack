@@ -4,19 +4,18 @@
 
 on_game_start = {
 	events = {
-		lrsk_government_variety_pack_backend.1      		# Set mod active flag
-		#lrsk_government_variety_pack_backend.2004      	# Remove/replace deprecated civics (removes duplicates/redundancy)
+		lrsk_government_variety_pack_backend.1      	# Set mod active flag
+		lrsk_government_variety_pack_backend.2004     	# Warn about bugged civics
 	}
 }
 
 # No scope, like on_game_start
 # Does not run when loading MP saves due to OOS concerns
-#on_single_player_save_game_load = {
-#	events = {
-#		lrsk_government_variety_pack_backend.20032		# Detect and address invalidated civics
-#		lrsk_government_variety_pack_backend.2004     	# Remove/replace deprecated civics (removes duplicates/redundancy)
-#	}
-#}
+on_single_player_save_game_load = {
+	events = {
+		lrsk_government_variety_pack_backend.2004     	# Warn about bugged civics
+	}
+}
 
 # called during empire initialization when starting a new game
 # scope: country
