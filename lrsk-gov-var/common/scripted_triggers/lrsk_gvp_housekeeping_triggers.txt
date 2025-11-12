@@ -702,3 +702,13 @@ lrsk_is_impecon_special_vassal = {
 		is_subject_with_preset = { PRESET = preset_lrsk_gvp_vassal_prospector }
 	}
 }
+
+# For bugged civic warning
+lrsk_has_bugged_civic = {
+	# Comment out as things get fixed
+	OR = {
+		has_civic = lrsk_gov_var_civic_chivalry
+		has_civic = lrsk_gov_var_civic_colonial_fiefs
+	}
+
+}

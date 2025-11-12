@@ -924,6 +924,45 @@ country_event = {
 	}
 }
 
+# Various post-game load and start warnings
+event = {
+	id = lrsk_government_variety_pack_backend.8
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			#any_country = {
+			#	lrsk_has_gvp_possible_invalidated_civic = yes
+			#	NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
+			#}
+			
+			any_country = {
+				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
+				lrsk_has_bugged_civic = yes
+			}
+		}
+	}
+
+	immediate = {
+		#every_country = {
+		#	limit = {
+		#		lrsk_has_gvp_possible_invalidated_civic = yes
+		#		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
+		#	}
+		#	country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
+		#}
+		
+		every_country = {
+			limit = {
+				lrsk_has_bugged_civic = yes
+				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.2004 days = 1 }
+		}
+	}
+}
+
 # Explainers
 country_event = {
 	id = lrsk_government_variety_pack_backend.101
@@ -1542,7 +1581,7 @@ country_event = {
 }
 
 # Diagnostic: Warn about bugged civics
-event = {
+country_event = {
 	id = lrsk_government_variety_pack_backend.2004
 	title = lrsk_government_variety_pack_backend.2004.name
 	desc = lrsk_government_variety_pack_backend.2004.desc
@@ -1550,13 +1589,8 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } 
-
-		# Comment out as things get fixed
-		OR = {
-			has_civic = lrsk_gov_var_civic_chivalry
-			has_civic = lrsk_gov_var_civic_colonial_fiefs
-		}
+		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
+		lrsk_has_bugged_civic = yes
 	}
 
 	immediate = {
