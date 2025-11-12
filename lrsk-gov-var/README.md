@@ -24,6 +24,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v7.1.1 (11/11/25) Bugged Civics
 -The Colonial Fiefs and Chivalry civics seem bugged and their signature features are unavailable. I don't know why, so I have just given them static modifiers to compensate.
 -Player will be warned once on game start or load about this.
+-Various other fixes.
 
 v7.1 (09/22/25) Lyra (4.1) Update
 -Fixed what was needed for compatibility with Stellaris 4.1 (Lyra).

@@ -117,8 +117,8 @@ planet_event = {
 					}
 				}
 				set_variable = { which = lrsk_dr_councilor_lvl_pos_factor value = owner.lrsk_dr_councilor_lvl }
-				multiply_variable = { which = owner.lrsk_dr_councilor_lvl value = -1 } #negating for next
 				set_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = owner.lrsk_dr_councilor_lvl }
+				multiply_variable = { which = lrsk_dr_councilor_lvl_neg_factor value = -1 } #negate
 
 				#Each cult otherwise has an equal chance to form so long as it doesn't already exist, but a cult is less likely to form if its "opposite" is present.
 				random_list = {
