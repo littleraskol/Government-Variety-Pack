@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v7.2 (11/??/25) - Corvus (4.2) Update
+-Fixed what was needed for compatibility with Stellaris 4.2 (Corvus).
+-Updated compat version number.
+
 v7.1.2 (11/21/25) - Unpexpected Case Type
 -lrsk_fix_null_partner should not be checking for lrsk_gvp_origin_convened_providence_npc.
 
