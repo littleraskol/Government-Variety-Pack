@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v7.1.2 (11/??/25) - Unpexpected Case Type
+v7.1.2 (11/21/25) - Unpexpected Case Type
 -lrsk_fix_null_partner should not be checking for lrsk_gvp_origin_convened_providence_npc.
 
 v7.1.1 (11/11/25) - Bugged Civics
