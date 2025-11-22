@@ -3149,3 +3149,172 @@ lrsk_gov_var_bldg_offworld_jobs_placement = {
 		#}
 	}
 }
+
+## Automation/"Pop Assembly" Buildings
+
+# Automated Indolence - Automation Infrastructure
+
+lrsk_gvp_building_auto_inf_generator = {
+	base_buildtime = @b1_time
+	district_limit = 1
+	category = pop_assembly
+	icon = building_automation_1
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	building_sets = {
+		generator_automation
+	}
+
+	potential = {
+		always = no
+	}
+
+	upgrades = {
+		building_automation_generator_1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_automated_indolence
+			}
+		}
+		district_automated_workforce = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+			}
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = @b2_upkeep
+			mult = value:generator_districts_value
+		}
+	}
+
+	triggered_desc = {
+		text = lrsk_gvp_autoinf_upkeep_tooltip
+	}
+}
+
+lrsk_gvp_building_auto_inf_mining = {
+	base_buildtime = @b1_time
+	district_limit = 1
+	category = pop_assembly
+	icon = building_automation_1
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	building_sets = {
+		mining_automation
+	}
+
+	potential = {
+		always = no
+	}
+
+	upgrades = {
+		building_automation_mining_1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_automated_indolence
+			}
+		}
+		district_automated_workforce = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+			}
+		}
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = @b2_upkeep
+			mult = value:mining_districts_value
+		}
+	}
+
+	triggered_desc = {
+		text = lrsk_gvp_autoinf_upkeep_tooltip
+	}
+}
+
+lrsk_gvp_building_auto_inf_farming = {
+	base_buildtime = @b1_time
+	district_limit = 1
+	category = pop_assembly
+	icon = building_automation_1
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	building_sets = {
+		farming_automation
+	}
+
+	potential = {
+		always = no
+	}
+
+	upgrades = {
+		building_automation_farming_1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_automated_indolence
+			}
+		}
+		district_automated_workforce = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_automated_indolence }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = @b2_upkeep
+			mult = value:farming_districts_value
+		}
+	}
+
+	triggered_desc = {
+		text = lrsk_gvp_autoinf_upkeep_tooltip
+	}
+}
