@@ -23,6 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v7.2 (11/??/25) - Corvus (4.2) Update
 -Fixed what was needed for compatibility with Stellaris 4.2 (Corvus).
+-Excluding "Scorched Earth" type civics from anything that needs to do diplomacy.
 -Updated compat version number.
 
 v7.1.2 (11/21/25) - Unpexpected Case Type

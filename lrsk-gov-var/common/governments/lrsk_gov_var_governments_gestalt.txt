@@ -14,7 +14,10 @@ lrsk_gov_var_gov_coop_supersap = {
 	possible = {
 		has_auth_hive = yes
 		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-		NOT = { has_valid_civic = civic_hive_devouring_swarm }
+		NOR = {
+			has_valid_civic = civic_hive_devouring_swarm
+			has_valid_civic = civic_hive_scorched_earth
+		}
 	}
 
 	weight = {
