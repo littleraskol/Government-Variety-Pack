@@ -15,7 +15,15 @@ country_event = {
 	}
 
 	immediate = {
-		give_technology = { tech = tech_administrative_ai message = no }
+		# Starting tech progress - can get into automation sooner
+		IF = {
+			limit = { NOT = { has_technology = tech_assembly_pattern } }
+			add_research_option = tech_assembly_pattern
+			add_tech_progress = {
+				tech = tech_assembly_pattern
+				progress = 0.5
+			}
+		}
 
 		capital_scope = {
 			set_planet_flag = lrsk_gvp_autoindol_capital
