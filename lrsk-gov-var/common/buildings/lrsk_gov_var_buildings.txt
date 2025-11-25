@@ -3159,7 +3159,7 @@ lrsk_gvp_building_auto_inf_generator = {
 	district_limit = 1
 	category = pop_assembly
 	icon = building_automation_1
-	#can_build = no
+	can_build = no
 	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
@@ -3169,7 +3169,10 @@ lrsk_gvp_building_auto_inf_generator = {
 	}
 
 	potential = {
-		always = no
+		exists = owner
+		owner = {
+			has_valid_civic = lrsk_gov_var_civic_automated_indolence
+		}
 	}
 
 	upgrades = {
@@ -3214,7 +3217,7 @@ lrsk_gvp_building_auto_inf_mining = {
 	district_limit = 1
 	category = pop_assembly
 	icon = building_automation_1
-	#can_build = no
+	can_build = no
 	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
@@ -3224,8 +3227,12 @@ lrsk_gvp_building_auto_inf_mining = {
 	}
 
 	potential = {
-		always = no
+		exists = owner
+		owner = {
+			has_valid_civic = lrsk_gov_var_civic_automated_indolence
+		}
 	}
+
 
 	upgrades = {
 		building_automation_mining_1
@@ -3269,7 +3276,7 @@ lrsk_gvp_building_auto_inf_farming = {
 	district_limit = 1
 	category = pop_assembly
 	icon = building_automation_1
-	#can_build = no
+	can_build = no
 	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
@@ -3279,8 +3286,12 @@ lrsk_gvp_building_auto_inf_farming = {
 	}
 
 	potential = {
-		always = no
+		exists = owner
+		owner = {
+			has_valid_civic = lrsk_gov_var_civic_automated_indolence
+		}
 	}
+
 
 	upgrades = {
 		building_automation_farming_1
