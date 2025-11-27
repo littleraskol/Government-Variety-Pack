@@ -24,7 +24,17 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v7.1.? (??/??/??) - Return of Automated Indolence
 -its back baby
 
-v7.1.2 (11/??/25) - Unpexpected Case Type
+v7.2 (11/25/25) - Corvus (4.2) Update
+-Fixed what was needed for compatibility with Stellaris 4.2 (Corvus).
+-Excluding "Scorched Earth" type civics from anything that needs to do diplomacy.
+-Shroud-Touched:
+--Replaced weird custom check for adopting psi traditions with one that already exists in base game.
+--Natural Esper leader trait no longer set to be "opposite" to Psychic (think this might cause edge case problems with ascension).
+--Refined detection of when a country can psi assimilate to include SotS condition.
+--Events that change traits as player advances through psi ascension should be called more promptly (added to on_tradition_picked on-action)
+-Updated compat version number.
+
+v7.1.2 (11/21/25) - Unpexpected Case Type
 -lrsk_fix_null_partner should not be checking for lrsk_gvp_origin_convened_providence_npc.
 
 v7.1.1 (11/11/25) - Bugged Civics

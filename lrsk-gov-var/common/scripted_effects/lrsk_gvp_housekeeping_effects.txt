@@ -331,6 +331,12 @@ lrsk_add_flag = {
 	}
 }
 
+lrsk_set_modifier = {
+	IF = { limit = { NOT = { has_modifier = $MOD$ } }
+		add_modifier = { modifier = $MOD$ }
+	}
+}
+
 # These are the basic default transformations of vassals in their 'effect = { }' blocks.
 # I don't really understand it, but all base game vassal definitions seem to have this so I assume it's important.
 # Every special vassal transformation effect should call this.
