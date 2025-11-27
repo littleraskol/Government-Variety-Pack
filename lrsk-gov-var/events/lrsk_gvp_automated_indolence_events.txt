@@ -47,12 +47,20 @@ planet_event = {
 			add_zone = { district = district_generator zone = zone_energy }
 			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
 		}
+		IF = { limit = { has_district = district_geothermal }
+			add_zone = { district = district_geothermal zone = zone_energy }
+			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+		}
 		IF = { limit = { has_district = district_generator_uncapped }
 			add_zone = { district = district_generator_uncapped zone = zone_energy }
 			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_mining }
 			add_zone = { district = district_mining zone = zone_minerals }
+			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
+		}
+		IF = { limit = { has_district = district_melting }
+			add_zone = { district = district_melting zone = zone_minerals }
 			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
 		}
 		# Only if Subterranean origin
