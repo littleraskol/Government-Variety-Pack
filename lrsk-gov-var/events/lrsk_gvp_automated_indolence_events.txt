@@ -44,64 +44,64 @@ planet_event = {
 
 		# Automation Infrastructure buildings - need to determine what districts are present at start, force add the zones, and then add the building.
 		IF = { limit = { has_district = district_generator }
-			add_zone = { district = district_generator zone = zone_energy }
-			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+			add_zone = { district = district_generator zone = lrsk_gvp_zone_auto_power }
+			add_building = { zone = lrsk_gvp_zone_auto_power building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_geothermal }
-			add_zone = { district = district_geothermal zone = zone_energy }
-			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+			add_zone = { district = district_geothermal zone = lrsk_gvp_zone_auto_power }
+			add_building = { zone = lrsk_gvp_zone_auto_power building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_generator_uncapped }
-			add_zone = { district = district_generator_uncapped zone = zone_energy }
-			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+			add_zone = { district = district_generator_uncapped zone = lrsk_gvp_zone_auto_power }
+			add_building = { zone = lrsk_gvp_zone_auto_power building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_mining }
-			add_zone = { district = district_mining zone = zone_minerals }
-			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
+			add_zone = { district = district_mining zone = lrsk_gvp_zone_auto_mining }
+			add_building = { zone = lrsk_gvp_zone_auto_mining building = lrsk_gvp_building_auto_inf_mining }
 		}
 		IF = { limit = { has_district = district_melting }
-			add_zone = { district = district_melting zone = zone_minerals }
-			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
+			add_zone = { district = district_melting zone = lrsk_gvp_zone_auto_mining }
+			add_building = { zone = lrsk_gvp_zone_auto_mining building = lrsk_gvp_building_auto_inf_mining }
 		}
 		# Only if Subterranean origin
 		IF = { limit = { num_zones = { type = zone_subterranean_urban value > 0 } }
 			add_building = { zone = zone_subterranean_urban building = lrsk_gvp_building_auto_inf_mining }
 		}
 		ELSE_IF = { limit = { has_district = district_mining_uncapped }
-			add_zone = { district = district_mining_uncapped zone = zone_minerals }
-			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
+			add_zone = { district = district_mining_uncapped zone = lrsk_gvp_zone_auto_mining }
+			add_building = { zone = lrsk_gvp_zone_auto_mining building = lrsk_gvp_building_auto_inf_mining }
 		}
 		# Only if Agrarian Idyll (Maybe)
 		IF = { limit = { num_zones = { type = zone_agrarian_urban value > 0 } }
 			add_building = { district = district_farming zone = zone_agrarian_urban building = lrsk_gvp_building_auto_inf_farming }
 		}
 		ELSE_IF = { limit = { has_district = district_farming }
-			add_zone = { district = district_farming zone = zone_food }
-			add_building = { zone = zone_food building = lrsk_gvp_building_auto_inf_farming }
+			add_zone = { district = district_farming zone = lrsk_gvp_zone_auto_farming }
+			add_building = { zone = lrsk_gvp_zone_auto_farming building = lrsk_gvp_building_auto_inf_farming }
 		}
 		# Only if Anglers (Maybe)
 		IF = { limit = { num_zones = { type = zone_anglers value > 0 } }
 			add_building = { zone = zone_anglers building = lrsk_gvp_building_auto_inf_farming }
 		}
 		ELSE_IF = { limit = { has_district = district_farming_uncapped }
-			add_zone = { district = district_farming_uncapped zone = zone_food }
-			add_building = { zone = zone_food building = lrsk_gvp_building_auto_inf_farming }
+			add_zone = { district = district_farming_uncapped zone = lrsk_gvp_zone_auto_farming }
+			add_building = { zone = lrsk_gvp_zone_auto_farming building = lrsk_gvp_building_auto_inf_farming }
 		}
 		IF = { limit = { has_district = district_hab_mining }
-			add_zone = { district = district_hab_mining zone = zone_minerals }
-			add_building = { zone = zone_minerals building = lrsk_gvp_building_auto_inf_mining }
+			add_zone = { district = district_hab_mining zone = lrsk_gvp_zone_auto_mining }
+			add_building = { zone = lrsk_gvp_zone_auto_mining building = lrsk_gvp_building_auto_inf_mining }
 		}
 		IF = { limit = { has_district = district_hab_energy }
-			add_zone = { district = district_hab_energy zone = zone_energy }
-			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+			add_zone = { district = district_hab_energy zone = lrsk_gvp_zone_auto_power }
+			add_building = { zone = lrsk_gvp_zone_auto_power building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_rw_generator }
-			add_zone = { district = district_rw_generator zone = zone_energy }
-			add_building = { zone = zone_energy building = lrsk_gvp_building_auto_inf_generator }
+			add_zone = { district = district_rw_generator zone = lrsk_gvp_zone_auto_power }
+			add_building = { zone = lrsk_gvp_zone_auto_power building = lrsk_gvp_building_auto_inf_generator }
 		}
 		IF = { limit = { has_district = district_rw_farming }
-			add_zone = { district = district_rw_farming zone = zone_food }
-			add_building = { zone = zone_food building = lrsk_gvp_building_auto_inf_farming }
+			add_zone = { district = district_rw_farming zone = lrsk_gvp_zone_auto_farming }
+			add_building = { zone = lrsk_gvp_zone_auto_farming building = lrsk_gvp_building_auto_inf_farming }
 		}
 
 		# Semi-immediate check that some other mod did not remove the special deposit
