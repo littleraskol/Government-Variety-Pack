@@ -1,0 +1,139 @@
+# Government Variety Pack
+# Zones
+# Author: littleraskol
+
+# Automated Indolence - Legacy (Rural) Automation Zones
+
+lrsk_gvp_zone_auto_mining = {
+	icon = GFX_district_specialization_minerals
+	base_buildtime = @zone_buildtime
+
+	potential = { # planet scope
+		hidden_trigger = {
+			always = yes
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+
+	included_building_sets = {
+		mining_automation
+	}
+
+	convert_to = {
+		zone_minerals
+		zone_minerals_nexus
+		zone_minerals_hive
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = 1
+	}
+
+	ai_priority = 0
+
+	zone_sets = {
+		minerals
+		habitat_minerals
+	}
+}
+ 
+lrsk_gvp_zone_auto_farming = {
+	icon = GFX_district_specialization_food
+	base_buildtime = @zone_buildtime
+
+	potential = { # planet scope
+		hidden_trigger = {
+			always = yes
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+
+	included_building_sets = {
+		farming_automation
+	}
+
+	convert_to = {
+		zone_food
+		zone_food_ring_world
+		zone_food_hive
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = 1
+	}
+
+	ai_priority = 0
+
+	zone_sets = {
+		food
+	}
+}
+
+lrsk_gvp_zone_auto_power = {
+	icon = GFX_district_specialization_energy
+	base_buildtime = @zone_buildtime
+
+	potential = { # planet scope
+		hidden_trigger = {
+			always = yes
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+
+	included_building_sets = {
+		generator_automation
+	}
+
+	convert_to = {
+		zone_energy
+		zone_energy_nexus
+		zone_energy_hive
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = 1
+	}
+
+	ai_priority = 0
+
+	zone_sets = {
+		energy
+		habitat_energy
+	}
+}
