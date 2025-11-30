@@ -10,13 +10,13 @@ lrsk_gvp_zone_auto_mining = {
 
 	potential = { # planet scope
 		hidden_trigger = {
-			always = yes
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
 	unlock = { # planet scope
 		hidden_trigger = {
-			always = no
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
@@ -31,15 +31,13 @@ lrsk_gvp_zone_auto_mining = {
 		mining_automation
 	}
 
-	convert_to = {
-		zone_minerals
-		zone_minerals_nexus
-		zone_minerals_hive
-	}
+	#convert_to = {
+	#	zone_minerals
+	#	zone_minerals_nexus
+	#	zone_minerals_hive
+	#}
 
-	planet_modifier = {
-		zone_building_slots_add = 1
-	}
+	max_buildings = 1
 
 	ai_priority = 0
 
@@ -55,13 +53,13 @@ lrsk_gvp_zone_auto_farming = {
 
 	potential = { # planet scope
 		hidden_trigger = {
-			always = yes
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
 	unlock = { # planet scope
 		hidden_trigger = {
-			always = no
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
@@ -76,15 +74,13 @@ lrsk_gvp_zone_auto_farming = {
 		farming_automation
 	}
 
-	convert_to = {
-		zone_food
-		zone_food_ring_world
-		zone_food_hive
-	}
+	#convert_to = {
+	#	zone_food
+	#	zone_food_ring_world
+	#	zone_food_hive
+	#}
 
-	planet_modifier = {
-		zone_building_slots_add = 1
-	}
+	max_buildings = 1
 
 	ai_priority = 0
 
@@ -99,13 +95,13 @@ lrsk_gvp_zone_auto_power = {
 
 	potential = { # planet scope
 		hidden_trigger = {
-			always = yes
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
 	unlock = { # planet scope
 		hidden_trigger = {
-			always = no
+			has_planet_flag = lrsk_gvp_autoindol_capital
 		}
 	}
 
@@ -120,15 +116,13 @@ lrsk_gvp_zone_auto_power = {
 		generator_automation
 	}
 
-	convert_to = {
-		zone_energy
-		zone_energy_nexus
-		zone_energy_hive
-	}
+	#convert_to = {
+	#	zone_energy
+	#	zone_energy_nexus
+	#	zone_energy_hive
+	#}
 
-	planet_modifier = {
-		zone_building_slots_add = 1
-	}
+	max_buildings = 1
 
 	ai_priority = 0
 
