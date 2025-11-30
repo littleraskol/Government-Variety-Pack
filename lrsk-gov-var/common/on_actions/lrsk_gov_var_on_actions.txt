@@ -4,19 +4,18 @@
 
 on_game_start = {
 	events = {
-		lrsk_government_variety_pack_backend.1      		# Set mod active flag
-		#lrsk_government_variety_pack_backend.2004      	# Remove/replace deprecated civics (removes duplicates/redundancy)
+		lrsk_government_variety_pack_backend.1      	# Set mod active flag
+		lrsk_government_variety_pack_backend.8     		# Various post-game load and start warnings
 	}
 }
 
 # No scope, like on_game_start
 # Does not run when loading MP saves due to OOS concerns
-#on_single_player_save_game_load = {
-#	events = {
-#		lrsk_government_variety_pack_backend.20032		# Detect and address invalidated civics
-#		lrsk_government_variety_pack_backend.2004     	# Remove/replace deprecated civics (removes duplicates/redundancy)
-#	}
-#}
+on_single_player_save_game_load = {
+	events = {
+		lrsk_government_variety_pack_backend.8     	# Various post-game load and start warnings
+	}
+}
 
 # called during empire initialization when starting a new game
 # scope: country
@@ -191,4 +190,11 @@ on_space_battle_lost = {
 	events = {
 		lrsk_gov_var_combat_data.2	# New intel check on battle lost
 	}
+}
+
+on_tradition_picked = {
+	events = {
+		lrsk_gov_var_shroud_touched.7
+		lrsk_gov_var_shroud_touched.8
+	}	
 }

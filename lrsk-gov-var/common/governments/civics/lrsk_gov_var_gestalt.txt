@@ -245,7 +245,10 @@ lrsk_gov_var_civic_hive_analgesic_stoicism = {
 # Domineering Expectations (+15% subject research share, +7.5% tributary income) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones.
 lrsk_gov_var_civic_hive_domineering_expectations = {
 	potential = { authority = { value = auth_hive_mind } }
-    possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
+    possible = { civics = { NOR = { 
+		value = civic_hive_devouring_swarm
+		value = civic_hive_scorched_earth
+	} } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
@@ -278,7 +281,10 @@ lrsk_gov_var_civic_hive_unending_bloom = {
 # Benign Overmind (-25% Subject Power Penalty, +20% vassal naval capacity contribution) - To those who who serve it, the Hive Mind is like a kindly parental god, and they are proud to advance its inscrutable designs.
 lrsk_gov_var_civic_hive_benign_overmind = {
 	potential = { authority = { value = auth_hive_mind } }
-    possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
+    possible = { civics = { NOR = { 
+		value = civic_hive_devouring_swarm
+		value = civic_hive_scorched_earth
+	} } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
@@ -296,7 +302,10 @@ lrsk_gov_var_civic_hive_benign_overmind = {
 # Gestalt Extroversion (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends.
 lrsk_gov_var_civic_hive_gestalt_extroversion = {
 	potential = { authority = { value = auth_hive_mind } }
-    possible = { civics = { NOR = { value = civic_hive_devouring_swarm } } }
+    possible = { civics = { NOR = { 
+		value = civic_hive_devouring_swarm
+		value = civic_hive_scorched_earth
+	} } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
