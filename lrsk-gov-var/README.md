@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+7.2.1 (??/??/25) - Chivalry Fixed
+-Apparently the "knights" building set is incompatible with the default zone. Whoops!
+-Changed "Cavalier" name to "Realm Cavalier" (just fancier)
+
 v7.2 (11/25/25) - Corvus (4.2) Update
 -Fixed what was needed for compatibility with Stellaris 4.2 (Corvus).
 -Excluding "Scorched Earth" type civics from anything that needs to do diplomacy.

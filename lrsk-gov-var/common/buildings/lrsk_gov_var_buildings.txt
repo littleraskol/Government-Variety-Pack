@@ -11,14 +11,14 @@ lrsk_gov_var_bldg_hall_of_honor = {
 	position_priority = 100
 	can_be_ruined = no
 	exempt_from_ai_planet_specialization = no
-	base_cap_amount = 1
+	base_cap_amount = 2
 
 	category = army
 
 	building_sets = {
 		government
 		fortress
-		knights
+		#knights	# this breaks it??
 	}
 
 	potential = {
@@ -77,7 +77,7 @@ lrsk_gov_var_bldg_hall_of_valor = {
 	building_sets = {
 		government
 		fortress
-		knights
+		#knights	# this breaks it??
 	}
 
 	potential = {
@@ -114,10 +114,6 @@ lrsk_gov_var_bldg_hall_of_valor = {
 		}
 		planet_housing_add = 200
 		job_lrsk_gov_var_job_knight_add = 200
-	}
-
-	upgrades = {
-		"lrsk_gov_var_bldg_hall_of_valor"
 	}
 }
 
