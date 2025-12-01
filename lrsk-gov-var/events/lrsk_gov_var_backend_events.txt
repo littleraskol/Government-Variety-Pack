@@ -32,6 +32,7 @@ country_event = {
 		# Add any new ones onto here.
 		OR = {
 			has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
+			has_valid_civic= lrsk_gov_var_civic_chivalry
 			AND = {
 				is_ai = no
 				OR = {
@@ -52,6 +53,12 @@ country_event = {
 		IF = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
 			set_country_flag = lrsk_gvp_xeno_comms_country	# Allows civic to be re-added if removed.
+		}
+
+		# Chivalry - Start w/ Honor Hall
+		IF = {
+			limit = { has_valid_civic= lrsk_gov_var_civic_chivalry }
+			capital_scope = { add_building = lrsk_gov_var_bldg_hall_of_honor }
 		}
 
 		## Escape routes for possible boxed-in starts
