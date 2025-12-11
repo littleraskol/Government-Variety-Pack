@@ -217,14 +217,14 @@ country_event = {
 								IF = { limit = { pop_group_size < 1000 }
 									resettle_pop_group = {
 										POP_GROUP = this
-										PLANET = owner.capital_scope
+										PLANET = root.capital_scope
 										PERCENTAGE = 0.75
 									}
 								}
 								ELSE = {
 									resettle_pop_group = {
 										POP_GROUP = this
-										PLANET = owner.capital_scope
+										PLANET = root.capital_scope
 										AMOUNT = 750
 									}
 								}

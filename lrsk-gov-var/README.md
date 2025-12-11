@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+7.2.2 (12/10/25) - Popsteal fix
+Needed to fix scope for Reformatory Workhouse pop steal.
+
 7.2.1 (12/01/25) - Chivalry Fixed
 -Apparently the "knights" building set is incompatible with the default zone. Whoops!
 -Changed "Cavalier" name to "Realm Cavalier" (just fancier).
