@@ -543,14 +543,14 @@ country_event = {
 				resettle_pop_group = {
 					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
 					PLANET = event_target:lrsk_colfief_new_vassal_world
-					PERCENTAGE = lrsk_colfief_popratio
+					PERCENTAGE = root.lrsk_colfief_popratio
 				}
 			}
 			ELSE = {
 				resettle_pop_group = {
 					POP_GROUP = event_target:lrsk_colfief_new_vassal_founder
 					PLANET = event_target:lrsk_colfief_new_vassal_world
-					AMOUNT = lrsk_colfief_popcount
+					AMOUNT = root.lrsk_colfief_popcount
 				}
 			}
 
