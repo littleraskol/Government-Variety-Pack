@@ -258,6 +258,16 @@ country_event = {
 							factor = 1.5
 							is_pop_category = civilian
 						}
+						modifier = {
+							factor = 1.5
+							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
+							lrsk_gvp_founder_has_governing_ethos = yes
+						}
+						modifier = {
+							factor = 3
+							root = { has_policy_flag = lrsk_gvp_colfief_promoted }						
+							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_founder
 				}
