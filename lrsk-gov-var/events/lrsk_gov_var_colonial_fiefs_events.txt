@@ -578,17 +578,34 @@ country_event = {
 				}
 				set_country_flag = lrsk_colony_hails_from@root
 
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_lrsk_gvp_loyal_explorer_vassal
+				IF = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted }
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gvp_loyal_explorer_vassal
+					}
+					add_trust = {
+						amount = 50
+						who = root
+					}
+					add_intel = {
+						amount = 60
+						who = root
+					}
 				}
-				add_trust = {
-					amount = 50
-					who = root
-				}
-				add_intel = {
-					amount = 60
-					who = root
+				ELSE = {
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_lrsk_gvp_happy_explorer_vassal
+					}
+					add_trust = {
+						amount = 25
+						who = root
+					}
+					add_intel = {
+						amount = 30
+						who = root
+					}
+
 				}
 
 				#Resource boosts to keep them viable
