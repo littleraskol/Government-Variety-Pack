@@ -24,7 +24,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 7.2.3 (12/14/25) - Colonial Fiefs fixed
 -Changing to pop groups required moving "portions" of pops, but relevant variable was not scoped correctly.
 -Explorer Colonies policy options now have more distinct modifier effects (and changing costs for some interactions with ALL subjects made little sense).
--With "Promoted" Explorer Colonies policy, founder pops are now more likely to have governing ethos, which means the new subject empire is more likely to match ethics with source.
+-With "Promoted" Explorer Colonies policy, the new subject empire is more likely to match ethics with source.
 -With "Promoted" Explorer Colonies policy, starting relations generally better (more trust, higher opinion, more intel) with new subject empire.
 
 7.2.2 (12/10/25) - Popsteal fix
