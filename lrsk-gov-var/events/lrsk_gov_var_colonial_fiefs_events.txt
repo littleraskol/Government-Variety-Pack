@@ -261,12 +261,12 @@ country_event = {
 						modifier = {
 							factor = 1.5
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_ethos = yes
+							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
 							factor = 3
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_founder
@@ -335,11 +335,11 @@ country_event = {
 			event_target:lrsk_colfief_new_vassal_founder = {
 
 				# test to see if ethics match even, uh, works
-				IF = { limit = { lrsk_gvp_founder_has_governing_ethos = yes }
+				IF = { limit = { lrsk_gvp_popgroup_has_governing_ethos = yes }
 					log = "GVP: Founder pop has governing ethos"
 				}
 				ELSE_IF = {
-					limit = { lrsk_gvp_founder_has_governing_fanatic_ethos = yes }
+					limit = { lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes }
 					log = "GVP: Founder pop has fanatical governing ethos"
 				}
 				ELSE = {
@@ -360,22 +360,22 @@ country_event = {
 						modifier = {
 							add = 2
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-							lrsk_gvp_founder_has_governing_ethos = yes
+							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
 							add = 4
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
 						modifier = {
 							add = 6
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_ethos = yes
+							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
 							add = 8
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
 						create_country = {
 							name_list = root
@@ -399,22 +399,22 @@ country_event = {
 						modifier = {
 							subtract = 2
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-							lrsk_gvp_founder_has_governing_ethos = yes
+							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
 							subtract = 4
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
 						modifier = {
 							subtract = 6
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_ethos = yes
+							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
 							subtract = 8
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
-							lrsk_gvp_founder_has_governing_fanatic_ethos = yes
+							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
 						switch = {
 							trigger = pop_has_ethic
