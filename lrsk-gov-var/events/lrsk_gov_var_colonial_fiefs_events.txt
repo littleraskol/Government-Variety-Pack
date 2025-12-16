@@ -333,27 +333,6 @@ country_event = {
 
 			# Determine the new empire according to founder ethos
 			event_target:lrsk_colfief_new_vassal_founder = {
-
-				# test to see if ethics match even, uh, works
-				IF = { limit = { lrsk_gvp_popgroup_has_governing_ethos = yes }
-					log = "GVP: Founder pop has governing ethos"
-				}
-				ELSE_IF = {
-					limit = { lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes }
-					log = "GVP: Founder pop has fanatical governing ethos"
-				}
-				ELSE = {
-					log = "GVP: Founder pop does not have governing ethos"
-				}
-
-				# test promo flag
-				IF = { limit = { root = { has_policy_flag = lrsk_gvp_colfief_promoted } }
-					log = "GVP: Explorer Colony policy set to Promoted"
-				}
-				ELSE = {
-					log = "GVP: Explorer Colony policy set to Permitted (or Prohibited?)"
-				}
-
 				random_list = {
 					# perfect match - more likely the more founder aligns w/ homeworld, & w/ promotion
 					1 = {
