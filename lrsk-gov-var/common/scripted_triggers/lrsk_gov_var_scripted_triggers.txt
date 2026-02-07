@@ -238,3 +238,77 @@ lrsk_gvp_has_full_psi_conditions = {
 		has_tradition = tr_psionics_shroud_great_awakening
 	}
 }
+
+# The following match pop groups to root empire ethics
+lrsk_gvp_popgroup_has_governing_ethos = {	
+	OR = {
+		AND = {
+			has_ethic = ethic_xenophile
+			root = { has_ethic = ethic_xenophile }
+		}
+		AND = {
+			has_ethic = ethic_xenophobe
+			root = { has_ethic = ethic_xenophobe }
+		}
+		AND = {
+			has_ethic = ethic_militarist
+			root = { has_ethic = ethic_militarist }
+		}
+		AND = {
+			has_ethic = ethic_pacifist
+			root = { has_ethic = ethic_pacifist }
+		}
+		AND = {
+			has_ethic = ethic_spiritualist
+			root = { has_ethic = ethic_spiritualist }
+		}
+		AND = {
+			has_ethic = ethic_materialist
+			root = { has_ethic = ethic_materialist }
+		}
+		AND = {
+			has_ethic = ethic_authoritarian
+			root = { has_ethic = ethic_authoritarian }
+		}
+		AND = {
+			has_ethic = ethic_egalitarian
+			root = { has_ethic = ethic_egalitarian }
+		}
+	}
+}
+lrsk_gvp_popgroup_has_governing_fanatic_ethos = {
+	OR = {
+		AND = {
+			has_ethic = ethic_xenophile
+			root = { has_ethic = ethic_fanatic_xenophile }
+		}
+		AND = {
+			has_ethic = ethic_xenophobe
+			root = { has_ethic = ethic_fanatic_xenophobe }
+		}
+		AND = {
+			has_ethic = ethic_militarist
+			root = { has_ethic = ethic_fanatic_militarist }
+		}
+		AND = {
+			has_ethic = ethic_pacifist
+			root = { has_ethic = ethic_fanatic_pacifist }
+		}
+		AND = {
+			has_ethic = ethic_spiritualist
+			root = { has_ethic = ethic_fanatic_spiritualist }
+		}
+		AND = {
+			has_ethic = ethic_materialist
+			root = { has_ethic = ethic_fanatic_materialist }
+		}
+		AND = {
+			has_ethic = ethic_authoritarian
+			root = { has_ethic = ethic_fanatic_authoritarian }
+		}
+		AND = {
+			has_ethic = ethic_egalitarian
+			root = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+}

@@ -8,46 +8,31 @@
 
 lrsk_gov_var_bldg_hall_of_honor = {
 	base_buildtime = 240
-	#add_to_first_building_slot = yes
+	position_priority = 100
+	can_be_ruined = no
+	exempt_from_ai_planet_specialization = no
 	base_cap_amount = 2
 
 	category = army
-	
+
 	building_sets = {
-		fortress
 		government
-		knights
+		fortress
+		#knights	# this breaks it??
 	}
 
 	potential = {
+		exists = owner
+		NOT = { has_modifier = resort_colony }
 		owner = { has_valid_civic = lrsk_gov_var_civic_chivalry }
 	}
-
+	
 	allow = {
 		has_upgraded_capital = yes
 	}
 
-	planet_modifier = {
-		planet_housing_add = 100
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_chivalry
-			}
-		}
-		job_lrsk_gov_var_job_knight_add = 100
-	}
-
-	army_modifier = {
-		army_starting_experience_add = 25
-		army_morale = 0.1
-	}
-
 	resources = {
-		category = planet_buildings
+		category = planet_buildings_strongholds
 		cost = {
 			minerals = 300
 		}
@@ -56,58 +41,9 @@ lrsk_gov_var_bldg_hall_of_honor = {
 		}
 	}
 
-	upgrades = {
-		"lrsk_gov_var_bldg_hall_of_valor"
-	}
-
-	ai_weight = {
-		weight = 0.75
-
-		modifier = {
-			factor = 5
-			planet_crime > 4
-			planet_crime < 15
-		}
-
-		modifier = {
-			factor = 10
-			planet_crime > 14
-			planet_crime < 30
-		}
-
-		modifier = {
-			factor = 20
-			planet_crime > 29
-			planet_crime < 50
-		}
-
-		modifier = {
-			factor = 25
-			planet_crime > 49
-		}
-	}
-}
-
-# Hall of Valor
-
-lrsk_gov_var_bldg_hall_of_valor = {
-	base_buildtime = 360
-	can_build = no
-
-	category = army
-	
-	building_sets = {
-		fortress
-		government
-		knights
-	}
-
-	allow = {
-		has_major_upgraded_capital = yes
-	}
-
-	planet_modifier = {
-		planet_housing_add = 200
+	army_modifier = {
+		army_starting_experience_add = 25
+		army_morale = 0.1
 	}
 	
 	triggered_planet_modifier = {
@@ -117,16 +53,45 @@ lrsk_gov_var_bldg_hall_of_valor = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 200
+		planet_housing_add = 100
+		job_lrsk_gov_var_job_knight_add = 100
 	}
 
-	army_modifier = {
-		army_starting_experience_add = 50
-		army_morale = 0.2
+	upgrades = {
+		"lrsk_gov_var_bldg_hall_of_valor"
+	}
+}
+
+# Hall of Valor
+
+lrsk_gov_var_bldg_hall_of_valor = {
+	base_buildtime = 360
+	position_priority = 100
+	can_be_ruined = no
+	can_build = no
+	exempt_from_ai_planet_specialization = no
+	base_cap_amount = 1
+
+	category = army
+
+	building_sets = {
+		government
+		fortress
+		#knights	# this breaks it??
+	}
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = resort_colony }
+		owner = { has_valid_civic = lrsk_gov_var_civic_chivalry }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
 	}
 
 	resources = {
-		category = planet_buildings
+		category = planet_buildings_strongholds
 		cost = {
 			minerals = 600
 		}
@@ -135,31 +100,20 @@ lrsk_gov_var_bldg_hall_of_valor = {
 		}
 	}
 
-	ai_weight = {
-		weight = 0.75
-
-		modifier = {
-			factor = 5
-			planet_crime > 4
-			planet_crime < 15
+	army_modifier = {
+		army_starting_experience_add = 50
+		army_morale = 0.2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+			}
 		}
-
-		modifier = {
-			factor = 10
-			planet_crime > 14
-			planet_crime < 30
-		}
-
-		modifier = {
-			factor = 20
-			planet_crime > 29
-			planet_crime < 50
-		}
-
-		modifier = {
-			factor = 25
-			planet_crime > 49
-		}
+		planet_housing_add = 200
+		job_lrsk_gov_var_job_knight_add = 200
 	}
 }
 

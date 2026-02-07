@@ -24,6 +24,21 @@ This mod only adds new things to the game, in new files. There's no possibility 
 v7.1.? (??/??/??) - Return of Automated Indolence
 -its back baby
 
+7.2.3 (12/14/25) - Colonial Fiefs fixed
+-Changing to pop groups required moving "portions" of pops, but relevant variable was not scoped correctly.
+-Explorer Colonies policy options now have more distinct modifier effects (and changing costs for some interactions with ALL subjects made little sense).
+-With "Promoted" Explorer Colonies policy, the new subject empire is more likely to match ethics with source.
+-With "Promoted" Explorer Colonies policy, starting relations generally better (more trust, higher opinion & loyalty, more intel) with new subject empire.
+
+7.2.2 (12/10/25) - Popsteal fix
+Needed to fix scope for Reformatory Workhouse pop steal.
+
+7.2.1 (12/01/25) - Chivalry Fixed
+-Apparently the "knights" building set is incompatible with the default zone. Whoops!
+-Changed "Cavalier" name to "Realm Cavalier" (just fancier).
+-Starts with Hall of Honor on homeworld.
+-Building alignment needed to be centered for all buildings (only done for "Warrior Halls" so far).
+
 v7.2 (11/25/25) - Corvus (4.2) Update
 -Fixed what was needed for compatibility with Stellaris 4.2 (Corvus).
 -Excluding "Scorched Earth" type civics from anything that needs to do diplomacy.

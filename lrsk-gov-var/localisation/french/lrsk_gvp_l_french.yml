@@ -114,7 +114,7 @@ l_french:
  lrsk_gov_var_civic_chivalry_desc:0 "Ideals of martial valor and honorable conduct define ruling class culture."
  lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$ (Legacy Civic)"
  lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$\n\n§PThis version for Aristocratic Elite is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
- civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights'].\n\n"
+ civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights']; starts with one on homeworld.\n\n"
 
  lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
  lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
@@ -1930,7 +1930,8 @@ l_french:
  triggered_opinion_lrsk_gvp_unisov_potential_vassals_2:0 "$triggered_opinion_lrsk_gvp_unisov_potential_vassals_1$"
 
  # Colonial Fiefs
- opinion_lrsk_gvp_loyal_explorer_vassal:0 "Grateful for New Start"
+ opinion_lrsk_gvp_happy_explorer_vassal:0 "Fresh Start"
+ opinion_lrsk_gvp_loyal_explorer_vassal:0 "Grateful for New Beginning"
 
  # Chartered Colony Stuff
  opinion_lrsk_gvp_haughty_bigots:0 "Haughty Bigots"
@@ -2143,7 +2144,7 @@ l_french:
  ##Jobs
 
  #Knight
- job_lrsk_gov_var_job_knight:0 "Cavalier"
+ job_lrsk_gov_var_job_knight:0 "Realm Cavalier"
  job_lrsk_gov_var_job_knight_plural:0 "$job_lrsk_gov_var_job_knight$s"
  job_lrsk_gov_var_job_knight_desc:0 "Minor warrior gentry who have become an integral part of the modern state and military apparatus. Still, they uphold an ancient code: defend the realm, protect the weak, maintain order, and see justice done."
  job_lrsk_gov_var_job_knight_effect_desc:1 "£job_lrsk_gov_var_job_knight£ $job_lrsk_gov_var_job_knight_plural$ increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, spawn £defense_army£ §YDefense Armies§!, decrease $type_crime$, and increase $r_stability$."
@@ -2619,7 +2620,7 @@ l_french:
  # Colonial Fiefs
  policy_lrsk_gvp_colfief_policy:0 "Explorer Colonies"
  policy_lrsk_gvp_colfief_policy_desc:1 "Within the course of our colonization efforts, our government grants fiefholding rights to encourage growth and development. But we could expand the scope of these efforts, allowing or encouraging explorers to settle new worlds in our name. Surely, if given the chance, some groups of our subjects would venture forth and create new vassal colonies to serve the greater empire.\n"
- LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON:0 "chance per year that one of your £pop£ £pop£ §YPops§! will found a §Ynew subject empire§! in some distant system."
+ LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON:0 "chance per year that a group of your £pop£ §YPops§! will found a §Ynew subject empire§! in some distant system." 
 
  lrsk_gvp_colfief_prohibited:0 "Prohibited"
  lrsk_gvp_colfief_prohibited_name:0 "Forbid $policy_lrsk_gvp_colfief_policy$"
@@ -2631,7 +2632,7 @@ l_french:
 
  lrsk_gvp_colfief_promoted:0 "Promoted"
  lrsk_gvp_colfief_promoted_name:0 "Encourage $policy_lrsk_gvp_colfief_policy$"
- lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster a spirit of adventure in the people to inspire them to take up new opportunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new empire's homeworld will start with an additional £pop£ §YPop§!."
+ lrsk_gvp_colfief_promoted_desc:0 "Such ventures can only hasten the expansion of our great empire, and so we should foster (and incentivize) a spirit of adventure in the people to inspire them to take up new opportunities on new worlds.\n\n§G25%§! $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$\n§G25%§! chance that the new subject empire's homeworld will start with additional £pop£ §YPops§!.\nNew subject empire's ethics are §Gmore likely to match yours§!.\nNew subject empire will have §Gbetter starting relations§! with you."
 
  ## Events
  
@@ -2776,7 +2777,7 @@ l_french:
  lrsk_government_variety_pack_backend.2003.desc:0 "Due to an update to §HGovernment Variety Pack§!, one or more of your civics §Rhas become invalid§!. You have been gifted $r_unity$ sufficient to reform your government. If government reform was on cooldown, it has been reset."
  
  lrsk_government_variety_pack_backend.2004.name:0 "Bugged Civic(s) Detected"
- lrsk_government_variety_pack_backend.2004.desc:0 "There are known issues with the following civics which have resulted in them not working as intended:$TABBED_NEW_LINE$§H$lrsk_gov_var_civic_chivalry$§! - Signature §Y$lrsk_gov_var_bldg_hall_of_honor$§! and §Y$lrsk_gov_var_bldg_hall_of_valor$§! buildings are unexpectedly unavailable to be built.$TABBED_NEW_LINE$§H$lrsk_gov_var_civic_colonial_fiefs$§! - The §Y$policy_lrsk_gvp_colfief_policy$§! seem to always fail after founding.\n\nCurrently there's no known fix for these, so these civics have just been given some static modifiers (or had existing ones buffed) until a fix is found."
+ lrsk_government_variety_pack_backend.2004.desc:0 "There are known issues with the following civics which have resulted in them not working as intended:$TABBED_NEW_LINE$§H$lrsk_gov_var_civic_colonial_fiefs$§! - The §Y$policy_lrsk_gvp_colfief_policy$§! seem to always fail after founding.\n\nCurrently there's no known fix for these, so these civics have just been given some static modifiers (or had existing ones buffed) until a fix is found."
 
  # Megacorp building special effects
 
