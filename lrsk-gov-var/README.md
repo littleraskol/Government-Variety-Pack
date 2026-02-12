@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+7.2.4 (xx/xx/26) - New Government "Pretender Matrix"
+-Added "Pretender Matrix" as an individualist machine take on "Pretender Hive"
+--Requires Technocracy, Utilitarian Planning, and Fanatic Authoritarian
+
 7.2.3 (12/14/25) - Colonial Fiefs fixed
 -Changing to pop groups required moving "portions" of pops, but relevant variable was not scoped correctly.
 -Explorer Colonies policy options now have more distinct modifier effects (and changing costs for some interactions with ALL subjects made little sense).

@@ -36,6 +36,38 @@ lrsk_gov_var_gov_pretender_hive_imp = {
 	}
 }
 
+# Pretender Matrix
+lrsk_gov_var_gov_pretender_matrix = {
+	ruler_title = LRSK_GOV_VAR_RT_CPU
+
+	possible = {
+		has_valid_civic = civic_technocracy
+		has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
+    	has_ethic = ethic_fanatic_authoritarian
+		has_auth_dictatorial = yes
+	}
+
+	weight = {
+		base = @lrsk_gov_civic_weight_low_L1
+	}
+}
+# Pretender Hive - Imperialist Variant
+lrsk_gov_var_gov_pretender_hive_imp = {
+	ruler_title = LRSK_GOV_VAR_RT_CPU
+	heir_title = LRSK_GOV_VAR_HT_APU
+
+	possible = {
+		has_valid_civic = civic_technocracy
+		has_valid_civic = lrsk_gov_var_civic_utilitarian_planning
+   		has_ethic = ethic_fanatic_authoritarian
+		has_auth_imperial = yes
+	}
+
+	weight = {
+		base = @lrsk_gov_civic_weight_low_L1
+	}
+}
+
 
 #test
 lrsk_gov_var_gov_colonial_viceroyalty_imp = {
