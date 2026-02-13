@@ -63,3 +63,67 @@ lrsk_gov_var_quasicollective_consciousness = {
 		weight = 1000
 	}
 }
+
+# For pretender matrices
+lrsk_gvp_quasigestalt_centralizer = {
+	aggressiveness = 1.0
+	trade_willingness = 0.8
+	bravery = 1.0
+	combat_bravery = 1.0
+
+	military_spending = 1.0
+	colony_spending = 1.2
+
+	federation_acceptance = 0 #-30
+	nap_acceptance = 0
+	commercial_pact_acceptance = 0
+	research_agreement_acceptance = 0
+	defensive_pact_acceptance = 0
+	loyalty_acceptance = 1.0
+
+	advanced_start_chance = 50
+
+	weapon_preferences = weapon_type_energy
+	armor_ratio = 0.4
+	shields_ratio = 0.4
+	hull_ratio = 0.2
+
+	threat_modifier = 0.75
+	threat_others_modifier = 0.5
+	friction_modifier = 1.25
+	claims_modifier = 1.25
+
+	behaviour = {
+		conqueror = yes
+		subjugator = no
+		liberator = no
+		opportunist = yes
+		slaver = yes
+		uplifter = no
+		purger = no
+		displacer = yes
+		dominator = no
+		infiltrator = yes
+		robot_exploiter = no
+		robot_liberator = yes
+		propagator = no
+		multispecies = no
+		crisis_fighter = yes
+	}
+
+	allow = {
+		NOT = { is_country_type = fallen_empire }
+		NOT = { is_country_type = awakened_fallen_empire }
+  		has_civic = "civic_technocracy"
+  		has_civic = "lrsk_gov_var_civic_utilitarian_planning"
+    	has_ethic = "ethic_fanatic_authoritarian"
+		founder_species = { OR = {
+			is_archetype = ROBOT
+			is_archetype = MACHINE
+		} }
+	}
+
+	weight_modifier = {
+		weight = 1000
+	}
+}
