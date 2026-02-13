@@ -1190,6 +1190,22 @@ part = {
 	}
 }
 
+# Pretender Matrix
+part = {
+	location = 1
+	localization = "LRSK_GVP_START_SCREEN_PART_TWO_PRETENDER_MATRIX"
+
+	trigger = {
+		OR = {
+			has_government = lrsk_gvp_gov_pretender_matrix
+			has_government = lrsk_gvp_gov_pretender_matrix_imp
+		}
+		NOT = {
+			has_country_flag = custom_start_screen
+		}
+	}
+}
+
 #part = {
 #	location = 0
 #	localization = "LRSK_GOV_VAR_START_SCREEN_SUBLIGHT_EMPIRE"
