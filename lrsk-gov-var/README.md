@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v8.0 (??/??/??) - Cetus (4.3) Update
+-Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
+-Updated compat version number.
+
 7.2.3 (12/14/25) - Colonial Fiefs fixed
 -Changing to pop groups required moving "portions" of pops, but relevant variable was not scoped correctly.
 -Explorer Colonies policy options now have more distinct modifier effects (and changing costs for some interactions with ALL subjects made little sense).
