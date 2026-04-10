@@ -23,6 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v8.0 (??/??/??) - Cetus (4.3) Update
 -Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
+-Updated Steam page description (added French localization).
 -Updated compat version number.
 
 7.2.3 (12/14/25) - Colonial Fiefs fixed

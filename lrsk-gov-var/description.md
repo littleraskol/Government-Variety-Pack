@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Newly updated for Stellaris 4.1 (Lyra)[/b] - I don't believe changes should break 4.0 saves.
+[b]Please do not expect a 4.3 (Cetus) update any time soon, it will take quite a while.[/b] The mod might actually run "okay" in Cetus, though. It throws few errors, but it will be kind of unbalanced.
 
 [i][b]New Civics[/b][/i]
 
@@ -41,6 +41,7 @@ Mods that have built-in compatibility:
 For non-English language translations:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2682891259]Japanese localization[/url] by Rio_Mizuhoshi (might be work-in-progress).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3513691177]French localization[/url] by Tarkain, as part of a larger French-language localization project. 
 [/list]
 
 Want to make a compatibility or localization patch? [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/3423311880045971276/]See this post to find out how[/url]!
