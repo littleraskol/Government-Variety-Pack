@@ -172,8 +172,10 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-    civics = { NOT = { value = lrsk_gov_var_civic_mc_chartered_company } }
+   		civics = { NOT = { value = lrsk_gov_var_civic_mc_chartered_company } }
   }
+
+	possible = { is_nomadic = no }
 
   #icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
   description = "civic_tooltip_lrsk_gov_var_mc_chart_corp_board_effects"
@@ -210,6 +212,7 @@ lrsk_gov_var_civic_mc_chartered_company = {
 		}
     civics = { value = lrsk_gov_var_civic_mc_chartered_company }
   }
+	possible = { is_nomadic = no }
   modification = no
 
   #icon = "gfx/interface/icons/governments/civics/civic_private_prospectors.dds"
@@ -273,7 +276,7 @@ lrsk_gov_var_civic_mc_controlling_interest = {
 
 	modifier = {
 		country_election_cost_mult = -0.75
-    country_trade_fee = -0.05
+    	country_trade_fee = -0.05
 	}
 }
 

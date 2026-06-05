@@ -8,10 +8,13 @@
 lrsk_gov_var_civic_hive_planetmind_creativity = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
-    possible = { civics = { NOR = { 
-		value = civic_hive_divided_attention
-		value = civic_hive_subsumed_will
-	} } }
+    possible = { 
+		civics = { NOR = { 
+			value = civic_hive_divided_attention
+			value = civic_hive_subsumed_will
+		} } 
+		is_nomadic = no
+	}
 	random_weight = { base = @civic_uncommon_random_weight }
 	ai_weight = {
 		base = @ai_civic_uncommon_base_weight
@@ -265,6 +268,7 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
 # Unending Bloom (+15% colony development speed, -5% starbase influence cost) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy.
 lrsk_gov_var_civic_hive_unending_bloom = {
 	potential = { authority = { value = auth_hive_mind } }
+	possible = { is_nomadic = no }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
@@ -567,6 +571,7 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 # Geosurvey Heuristics (-10% clear tile blocker cost, terraform cost, and terraform completion time) - Land reclamation, architectural survey, and landscaping for civil engineering projects were some of the most indispensable functions of the Machine Intelligence's precursor systems, a digital inheritance it now deploys to better exploit its territory.
 lrsk_gov_var_civic_machine_geosurvey_heuristics = {
 	potential = { authority = { value = auth_machine_intelligence } }
+	possible = { is_nomadic = no }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
@@ -610,6 +615,7 @@ lrsk_gov_var_civic_machine_exploitation_algorithms = {
 # Optimized Expansion (+15% colony development speed, -5% starbase influence cost) - The civilization that designed the Machine Intelligence will never spread to the worlds which they designed it to colonize with such efficiency.
 lrsk_gov_var_civic_machine_optimized_expansion = {
 	potential = { authority = { value = auth_machine_intelligence } }
+	possible = { is_nomadic = no }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_mech.dds"
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {

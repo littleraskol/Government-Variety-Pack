@@ -241,6 +241,7 @@ lrsk_gov_var_civic_siege_mentality = {
         value = ethic_fanatic_militarist
       }
     }
+    is_nomadic = no
   }
 
   random_weight = { base = @civic_default_random_weight }
@@ -922,6 +923,8 @@ lrsk_gov_var_civic_public_works = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
+
+  possible = { is_nomadic = no }
   
   random_weight = { base = @civic_default_random_weight }
   
@@ -1041,6 +1044,7 @@ lrsk_gov_var_civic_colonial_fiefs = {
     		value = ethic_fanatic_militarist
     	}
     }
+    is_nomadic = no
   }
 
   random_weight = { base = @civic_rare_random_weight }
@@ -1109,6 +1113,7 @@ lrsk_gov_var_civic_automated_indolence = {
 				value = MACHINE
 			}
 		}
+    is_nomadic = no
   }
 
   random_weight = {
