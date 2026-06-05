@@ -21,8 +21,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v8.0 (??/??/??) - Cetus (4.3) Update
--Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
+v8.0 (??/??/??) - Pegasus (4.4) Update
+-Fixed what was needed for compatibility with Stellaris 4.3 (Cetus) and 4.4 (Pegasus).
 -Updated Steam page description (added French localization).
 -Updated compat version number.
 
