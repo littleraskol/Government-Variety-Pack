@@ -168,6 +168,7 @@ lrsk_gov_var_civic_mc_gig_economy = {
 	}
 	swap_type = {
 		trigger = { is_nomadic = yes }
+		name = "lrsk_gov_var_civic_machine_astroprospecting_mainframe_nomad"
 		modifier = { shipsize_nomads_constructor_stockpile_capacity_mult = 0.25 }			
 	}
 }
@@ -483,10 +484,15 @@ lrsk_gov_var_civic_mc_vacay_planning = {
 		#}
 	}
 
-  modifier = {
-    pop_amenities_usage_mult = -0.10
-	add_attunement_the_composer_of_strands = @civic_attunement1 
-  }
+	modifier = {
+		pop_amenities_usage_mult = -0.10
+		add_attunement_the_composer_of_strands = @civic_attunement1 
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		name = "lrsk_gov_var_civic_mc_vacay_planning_nomad"
+	}
 }
 
 #Heritage Trust (Xenophobe) - The outcome of a proud people spawning a lucrative culture industry, this corporation has effectively turned the supremacy of its society's culture and history into a brand. It now supports an ideal of interstellar trade 'at arm's length' between single-species star nations. (+5 stability, build Heritage Museum)

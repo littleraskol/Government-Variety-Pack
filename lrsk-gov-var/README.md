@@ -25,6 +25,7 @@ v8.0 (??/??/??) - Pegasus (4.4) Update
 -Fixed what was needed for compatibility with Stellaris 4.3 (Cetus) and 4.4 (Pegasus).
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
+-Updated civic/government/etc flavor text to accomodate possible nomads.
 -Updated Steam page description (added French localization).
 -Updated compat version number.
 
