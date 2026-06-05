@@ -63,10 +63,18 @@ lrsk_gov_var_civic_hive_builder_caste = {
 	modifier = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.1
-    	starbase_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
     	job_maintenance_drone_per_pop = 0.1
 		add_attunement_the_composer_of_strands = @civic_attunement1 
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = { starbase_building_build_speed_mult = 0.1 }			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { megastructure_waystation_megastructure_build_speed_mult = 0.1 }			
 	}
 }
 
@@ -161,8 +169,19 @@ lrsk_gov_var_civic_hive_void_affinity = {
 	}
 	modifier = {
 		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
-    	station_gatherers_produces_mult = 0.2
-    	station_researchers_produces_mult = 0.2
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = {
+      	station_gatherers_produces_mult = 0.2
+      	station_researchers_produces_mult = 0.2
+    }
+	}	
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		name = "lrsk_gov_var_civic_hive_void_affinity_nomadic"
+		modifier = { starbase_collected_system_resources_mult = 0.2 }
 	}
 }
 
@@ -218,6 +237,7 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
 # Big Picture Thinker (+15% terraform and megastructure build speed) - Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects.
 lrsk_gov_var_civic_hive_big_picture_thinker = {
 	potential = { authority = { value = auth_hive_mind } }
+	possible = { is_nomadic = no }
   	#icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
@@ -421,9 +441,17 @@ lrsk_gov_var_civic_machine_architect_expert_systems = {
 	modifier = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.2
-    	starbase_building_build_speed_mult = 0.2
     	starbase_shipyard_build_speed_mult = 0.2
 		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = { starbase_building_build_speed_mult = 0.1 }			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { megastructure_waystation_megastructure_build_speed_mult = 0.1 }			
 	}
 }
 
@@ -499,8 +527,18 @@ lrsk_gov_var_civic_machine_astroprospecting_mainframe = {
 	}
 	modifier = {
 		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
-    	station_gatherers_produces_mult = 0.2
-    	station_researchers_produces_mult = 0.2
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = {
+			station_gatherers_produces_mult = 0.2
+			station_researchers_produces_mult = 0.2
+		}			
+	}	
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { starbase_collected_system_resources_mult = 0.2 }			
 	}
 }
 
@@ -561,10 +599,24 @@ lrsk_gov_var_civic_machine_reciprocal_planning_routines = {
 	}
   	modifier = {
 		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
-		empire_size_systems_mult = -0.1
-		empire_size_colonies_mult = -0.2
-		empire_size_districts_mult = -0.15
+
 		add_attunement_the_composer_of_strands = @civic_attunement1 
+	}
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = {
+			empire_size_systems_mult = -0.1
+			empire_size_colonies_mult = -0.2
+			empire_size_districts_mult = -0.15
+		}			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = {
+			empire_size_colonies_mult = -0.25
+			empire_size_districts_mult = -0.2
+		}			
 	}
 }
 

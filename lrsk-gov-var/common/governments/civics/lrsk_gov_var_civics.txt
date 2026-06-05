@@ -333,11 +333,19 @@ lrsk_gov_var_civic_cult_of_personality = {
 	}
 
   modifier = {
-	country_starbase_influence_cost_mult = -0.1
     country_unity_produces_mult = 0.1
     country_war_exhaustion_mult = -0.1
 	add_attunement_the_instrument_of_desire = @civic_attunement1
   }
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = { country_starbase_influence_cost_mult = -0.1 }			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { megastructures_waystations_influence_cost_mult = -0.1 }			
+	}
 }
 
 #Universal Sovereignty (Dictatorship/Imperial, not Xenophobic) - The ruler has an inclusive ideology that embraces all forms of sentient life... as future subjects. (-25% vassal integration cost)
@@ -458,14 +466,22 @@ lrsk_gov_var_civic_workers_councils = {
 
   modifier = {
     planet_building_build_speed_mult = 0.1
-    starbase_building_build_speed_mult = 0.1
     starbase_shipyard_build_speed_mult = 0.1
     pop_cat_worker_happiness = 0.05
     pop_cat_worker_political_power = 0.5
     pop_cat_specialist_happiness = 0.025
     pop_cat_specialist_political_power = 0.25
-	add_attunement_the_cradle_of_souls = @civic_attunement1
+	  add_attunement_the_cradle_of_souls = @civic_attunement1
   }
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = { starbase_building_build_speed_mult = 0.1 }			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { megastructure_waystation_megastructure_build_speed_mult = 0.1 }			
+	}
 }
 
 #Supremacist Demagoguery (Not Xenophile and not Egalitarian, not Fanatic Purifiers) - The government manipulates the population with saber rattling rhetoric and appeals to common prejudices and fears. (+2 maximum rivalvries, +20% army morale damage)
@@ -592,12 +608,22 @@ lrsk_gov_var_civic_enlightened_liberalism = {
 	}
 
   modifier = {
-    station_gatherers_produces_mult = 0.2
-    station_researchers_produces_mult = 0.2
     pop_cat_worker_political_power = 0.25
     pop_cat_specialist_political_power = 0.5
-	add_attunement_the_cradle_of_souls = @civic_attunement1
+	  add_attunement_the_cradle_of_souls = @civic_attunement1
   }
+
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = {
+      station_gatherers_produces_mult = 0.2
+      station_researchers_produces_mult = 0.2
+    }			
+	}	
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { starbase_collected_system_resources_mult = 0.2 }			
+	}
 }
 
 #Budgetary Thrift (Any) - This society prizes cutting waste and operational efficiency above all things. (+5% tile mineral and energy output, -5% trade fee)

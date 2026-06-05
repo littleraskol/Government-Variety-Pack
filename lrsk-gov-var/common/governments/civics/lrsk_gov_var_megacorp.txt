@@ -157,12 +157,19 @@ lrsk_gov_var_civic_mc_gig_economy = {
 		#}
 	}
 
-  modifier = {
-    pop_resettlement_cost_mult = -0.25
-    pop_cat_specialist_happiness = 0.05
-    pop_cat_ruler_happiness = 0.05
-	add_attunement_the_instrument_of_desire = @civic_attunement1
-  }
+  	modifier = {
+		pop_cat_specialist_happiness = 0.05
+		pop_cat_ruler_happiness = 0.05
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+  	}
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = { pop_resettlement_cost_mult = -0.25 }			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = { shipsize_nomads_constructor_stockpile_capacity_mult = 0.25 }			
+	}
 }
 
 #Colonial Chartering (Any) - A system of chartered joint-stock companies to raise investment money for space-based resource extraction. These companies eventually came to form an integral part of government above the planetary level. (+15% research and mining station output, special vassal interactions)
@@ -385,20 +392,21 @@ lrsk_gov_var_civic_mc_casino_mystic = {
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
 	}
-  #icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
-  description = "civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects"
+	possible = { is_nomadic = no }
+	#icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
+	description = "civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects"
 
-  #possible = {
-  #  ethics = {
-  #    NOR = {
-  #      text = civic_tooltip_not_materialist
-  #      value = ethic_materialist
-  #      value = ethic_fanatic_materialist
-  #    }
-  #  }
-  #}
+	#possible = {
+	#  ethics = {
+	#    NOR = {
+	#      text = civic_tooltip_not_materialist
+	#      value = ethic_materialist
+	#      value = ethic_fanatic_materialist
+	#    }
+	#  }
+	#}
 
-  random_weight = { base = @civic_default_random_weight }
+  	random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -423,10 +431,10 @@ lrsk_gov_var_civic_mc_casino_mystic = {
 		#}
 	}
 
-  modifier = {
-    pop_demotion_time_mult = -0.25
-    planet_colony_development_speed_mult = 0.25
-  }
+	modifier = {
+		pop_demotion_time_mult = -0.25
+		planet_colony_development_speed_mult = 0.25
+	}
 }
 
 #Vacation Experience Planning (Xenophile) - The people of this society always had a lust for new and exiting experiences, and so this megacorp grew wealthy and powerful by providing them. Their big break was pioneering both off-world tourism and the legal infrastruture to support it. (-10% pop amenities usage, build Galactic Excursions Office)
