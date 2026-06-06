@@ -43,10 +43,12 @@ lrsk_gov_var_origin_shroud_touched = {
 	#max_once_global = yes
 
 	playable = {
-		OR = {
-			has_utopia = yes
-			has_shroud_dlc = yes
-		}
+		# Utopia content now in base game, always playable.
+		#OR = {
+		#	has_utopia = yes
+		#	has_shroud_dlc = yes
+		#}
+		always = yes
 	}
 
 	possible = {
@@ -82,7 +84,7 @@ lrsk_gov_var_origin_shroud_touched = {
 		description = "origin_tooltip_lrsk_gvp_shroud_touched_effects"
 
 		trigger = {
-			has_utopia = yes
+			#has_utopia = yes	# available in pase game now
 			has_shroud_dlc = no
 		}
 

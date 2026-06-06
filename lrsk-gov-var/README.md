@@ -23,6 +23,13 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v8.0 (??/??/??) - Pegasus (4.4) Update
 -Fixed what was needed for compatibility with Stellaris 4.3 (Cetus) and 4.4 (Pegasus).
+--pop_cat_slave_happiness -> pop_slave_happiness
+--is_pop_category = slave -> is_enslaved = yes
+--pop_demotion_time_mult removed, generally replaced with planet_resettlement_unemployed_mult (or buff to latter)
+--Removed Utopia DLC checks (now in base game)
+--Job weights no longer have scaling mults?
+--Removed promotion blocks (we hardly knew ye)
+--dystopian_specialist removed (just specialist now)
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
 -Updated civic/government/etc flavor text to accomodate possible nomads.
