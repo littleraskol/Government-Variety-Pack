@@ -59,7 +59,7 @@ country_event = {
 						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
-						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						NOT = { has_carrier_flag = lrsk_pop_steal_rolled }
 						any_owned_pop_group = {
 							can_be_smuggled = yes
 							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
@@ -67,12 +67,12 @@ country_event = {
 					}
 				}
 
-				random_owned_planet = {
+				random_owned_colony = {
 					limit = {
 						pop_amount > @lrsk_rw_popsteal_min_planet_pops 
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_reformatory_workhouse owner = root }
-						NOT = { has_planet_flag = lrsk_pop_steal_rolled }
+						NOT = { has_carrier_flag = lrsk_pop_steal_rolled }
 						any_owned_pop_group = {
 							can_be_smuggled = yes
 							pop_group_size > @lrsk_rw_popsteal_min_popgrp_size
@@ -123,7 +123,7 @@ country_event = {
 						}
 					}
 
-					set_timed_planet_flag = { flag = lrsk_pop_steal_rolled days = 7 } # marks this planet
+					set_timed_carrier_flag = { flag = lrsk_pop_steal_rolled days = 7 } # marks this planet
 
 					random_list = {
 						5 = {
@@ -373,19 +373,19 @@ country_event = {
 						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
-						NOT = { has_planet_flag = lrsk_scandal_rolled }
+						NOT = { has_carrier_flag = lrsk_scandal_rolled }
 					}
 				}
 
-				random_owned_planet = {
+				random_owned_colony = {
 					limit = {
 						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_local_news_office owner = root }
-						NOT = { has_planet_flag = lrsk_scandal_rolled }
+						NOT = { has_carrier_flag = lrsk_scandal_rolled }
 					}
 
-					set_timed_planet_flag = { flag = lrsk_scandal_rolled days = 7 } # marks this planet
+					set_timed_carrier_flag = { flag = lrsk_scandal_rolled days = 7 } # marks this planet
 
 					random_list = {
 						10 = {
@@ -849,19 +849,19 @@ country_event = {
 						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
-						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
+						NOT = { has_carrier_flag = lrsk_casino_luck_rolled }
 					}
 				}
 
-				random_owned_planet = {
+				random_owned_colony = {
 					limit = {
 						pop_amount > 0 # just to hopefully filter out any uninhabited worlds
 						has_branch_office = yes
 						has_holding = { holding = lrsk_gov_var_bldg_grand_casino owner = root }
-						NOT = { has_planet_flag = lrsk_casino_luck_rolled }
+						NOT = { has_carrier_flag = lrsk_casino_luck_rolled }
 					}
 
-					set_timed_planet_flag = { flag = lrsk_casino_luck_rolled days = 7 } # marks this planet
+					set_timed_carrier_flag = { flag = lrsk_casino_luck_rolled days = 7 } # marks this planet
 
 					random_list = {
 						2 = {

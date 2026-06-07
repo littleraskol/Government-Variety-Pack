@@ -167,7 +167,7 @@ country_event = {
 		# Most of these will check on capitals, since that's the most likely place for mod-added features.
 		capital_scope = {
 			switch = {
-				trigger = has_planet_flag
+				trigger = has_carrier_flag
 				# Restore Otherworld Pockets if removed
 				lrsk_gov_var_shroud_touched_capital = {
 					IF = { limit = { NOT = { has_deposit = d_lrsk_gov_var_shroud_pockets } }
@@ -1113,7 +1113,7 @@ country_event = {
 		# Calculate factors
 		
 		set_variable = { which = lrsk_num_rj_applicable_planets value = 0 }
-		every_owned_planet = {
+		every_owned_colony = {
 			limit = {
 				is_capital = no
 				pop_amount > 200
@@ -1219,7 +1219,7 @@ country_event = {
 					days = 1800
 				}
 			}
-			every_owned_planet = {
+			every_owned_colony = {
 				limit = {
 					is_capital = no
 					pop_amount > 200

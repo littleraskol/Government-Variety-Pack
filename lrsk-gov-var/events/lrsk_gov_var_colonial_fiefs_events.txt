@@ -64,7 +64,7 @@ country_event = {
 		#log = "In colonial fiefs vassal spawner"
 		
 		# Mark all empire planets from which a colony founder can emigrate.
-		every_owned_planet = {
+		every_owned_colony = {
 			limit = {
 				pop_amount > 900
 				any_owned_pop_group = {
@@ -75,7 +75,7 @@ country_event = {
 					NOT = { is_pop_category = ruler }	# Too much power/prestige to take on this risk
 				}
 			}
-			set_timed_planet_flag = {
+			set_timed_carrier_flag = {
 				flag = lrsk_colfief_possible_source_world
 				days = 2
 			}
@@ -188,9 +188,9 @@ country_event = {
 			}
 
 			# Select founder pop group from a source planet with (we hope) an ideal pop group size
-			random_owned_planet = {
+			random_owned_colony = {
 				limit = {
-					has_planet_flag = lrsk_colfief_possible_source_world
+					has_carrier_flag = lrsk_colfief_possible_source_world
 					any_owned_pop_group = { has_pop_group_flag = lrsk_colfief_possible_founder }
 				}
 				weights = {

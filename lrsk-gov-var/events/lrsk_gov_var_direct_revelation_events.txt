@@ -401,8 +401,8 @@ planet_event = {
 			}
 		}
 		#This flag used to reduce the likelihood of a new cult forming on this planet for 4 years after the country flag goes away.
-		if = { limit = { has_planet_flag = lrsk_gov_var_new_wild_cult_on_planet } remove_planet_flag = lrsk_gov_var_new_wild_cult_on_planet }
-		set_timed_planet_flag = {
+		if = { limit = { has_carrier_flag = lrsk_gov_var_new_wild_cult_on_planet } remove_carrier_flag = lrsk_gov_var_new_wild_cult_on_planet }
+		set_timed_carrier_flag = {
 			flag = lrsk_gov_var_new_wild_cult_on_planet
 			days = 1800
 			#days = 10 # Testing value 
@@ -915,12 +915,12 @@ country_event = {
 				}
 				
 				# Heavily discourage other cults, though if one forms this will be reset.
-				set_timed_planet_flag = {
+				set_timed_carrier_flag = {
 					flag = lrsk_gov_var_new_wild_cult_on_planet
 					days = 18000
 				}
-							
-				planet_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
+				
+				colony_event = { id = lrsk_gov_var_direct_revelation.9 days = 2 } # Let the player know...
 			}
 		}
 	}
@@ -993,7 +993,7 @@ country_event = {
 			}
 			variable = lrsk_dr_councilor_lvl
 		}
-		every_owned_planet = {
+		every_owned_colony = {
 			limit = {
 				NOT = { has_modifier = lrsk_gvp_dr_councilor_effect }
 				is_variable_set = lrsk_num_wild_cults
