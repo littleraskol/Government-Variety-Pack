@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v8.0 (??/??/??) - Pegasus (4.4) Update
+v8.0 (??/??/??) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 -Fixed what was needed for compatibility with Stellaris 4.3 (Cetus) and 4.4 (Pegasus).
 --pop_cat_slave_happiness -> pop_slave_happiness
 --is_pop_category = slave -> is_enslaved = yes
