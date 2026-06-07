@@ -1138,48 +1138,94 @@ part = {
 		has_origin = lrsk_gov_var_origin_galactic_backdoor
 	}
 }
-
 part = {
 	location = 0
-	localization = "LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY"
+	localization = "LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY_SETTLED"
 	
 	trigger = {
 		OR = {
 			has_origin = lrsk_gov_var_origin_for_discovery
 			has_origin = lrsk_gov_var_origin_for_discovery_mi
 		}
+		is_nomadic = no
+	}
+}
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY_NOMADIC"
+	
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_for_discovery
+			has_origin = lrsk_gov_var_origin_for_discovery_mi
+		}
+		is_nomadic = yes
 	}
 }
 
 part = {
 	location = 0
-	localization = "LRSK_GOV_VAR_START_SCREEN_TRADEWAYS"
+	localization = "LRSK_GOV_VAR_START_SCREEN_TRADEWAYS_SETTLED"
 	
 	trigger = {
 		OR = {
 			has_origin = lrsk_gov_var_origin_tradeways
 			has_origin = lrsk_gov_var_origin_tradeways_mc
 		}
+		is_nomadic = no
+	}
+}
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_TRADEWAYS_NOMADIC"
+	
+	trigger = {
+		OR = {
+			has_origin = lrsk_gov_var_origin_tradeways
+			has_origin = lrsk_gov_var_origin_tradeways_mc
+		}
+		is_nomadic = yes
 	}
 }
 
 part = {
 	location = 0
-	localization = "LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE"
+	localization = "LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE_SETTLED"
 	
 	trigger = {
 		has_origin = lrsk_gov_var_origin_grand_alliance
 	}
+		is_nomadic = no
+}
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE_NOMADIC"
+	
+	trigger = {
+		has_origin = lrsk_gov_var_origin_grand_alliance
+	}
+		is_nomadic = yes
 }
 
 part = {
 	location = 0
-	localization = "LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE"
+	localization = "LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE_SETTLED"
 	
 	trigger = {
 		has_origin = lrsk_gvp_origin_convened_providence
 	}
+		is_nomadic = no
 }
+part = {
+	location = 0
+	localization = "LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE_NOMADIC"
+	
+	trigger = {
+		has_origin = lrsk_gvp_origin_convened_providence
+	}
+		is_nomadic = yes
+}
+
 
 part = {
 	location = 0
