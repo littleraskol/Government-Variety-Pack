@@ -39,3 +39,54 @@ defined_text = {
     }
     # doesn't handle envoys
 }
+
+# Assumes capital scope. Use in place of "planetary" or "global" as: [capital_scope.GetCapitalCarrierTypeAdj]
+defined_text = {
+	name = GetCapitalCarrierTypeAdj
+	text = {
+		trigger = {
+			carrier_is_type = planet
+		}
+		localization_key = lrsk_gvp_planetary
+	}
+	text = {
+		trigger = {
+			carrier_is_type = ship
+		}
+		localization_key = lrsk_gvp_arkwide
+	}
+}
+
+# Assumes capital scope. Use in place of "homeworld" as: [capital_scope.GetCapitalCarrierType]
+defined_text = {
+	name = GetCapitalCarrierType
+	text = {
+		trigger = {
+			carrier_is_type = planet
+		}
+		localization_key = lrsk_gvp_homeworld
+	}
+	text = {
+		trigger = {
+			carrier_is_type = ship
+		}
+		localization_key = lrsk_gvp_arkship
+	}
+}
+
+# Assumes capital scope. Use in place of "world" as: [capital_scope.GetCapitalCarrierTypeShort]
+defined_text = {
+	name = GetCapitalCarrierTypeShort
+	text = {
+		trigger = {
+			carrier_is_type = planet
+		}
+		localization_key = lrsk_gvp_world
+	}
+	text = {
+		trigger = {
+			carrier_is_type = ship
+		}
+		localization_key = lrsk_gvp_ark
+	}
+}
