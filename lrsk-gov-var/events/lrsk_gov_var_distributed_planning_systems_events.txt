@@ -5,7 +5,7 @@
 namespace = lrsk_gov_var_distributed_planning_systems
 
 #Gate Event from Decision
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.1
 	#title = lrsk_gov_var_distributed_planning_systems.1.name
 	#desc = lrsk_gov_var_distributed_planning_systems.1.desc
@@ -27,7 +27,7 @@ planet_event = {
 				years = 6
 			}
 		}
-		planet_event = {
+		carrier_event = {
 			id = lrsk_gov_var_distributed_planning_systems.2
 			days = 360			
 		}
@@ -35,7 +35,7 @@ planet_event = {
 }
 
 #Selects the modifier
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.2
 	#title = lrsk_gov_var_distributed_planning_systems.2.name
 	#desc = lrsk_gov_var_distributed_planning_systems.2.desc
@@ -68,7 +68,7 @@ planet_event = {
 					has_planet_flag = lrsk_gvp_rra_ongoing@owner
 				}
 				set_planet_flag = lrsk_gvp_rra_ongoing@owner
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.3 }	#Ongoing Audit (bad result)
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.3 }	#Ongoing Audit (bad result)
 			}
 			5 = {
 				modifier = {
@@ -92,7 +92,7 @@ planet_event = {
 					has_planet_flag = lrsk_gvp_rra_confused@owner
 				}
 				set_planet_flag = lrsk_gvp_rra_confused@owner
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.4 } #Confused Audit (worst result)
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.4 } #Confused Audit (worst result)
 			}
 			5 = {
 				modifier = {
@@ -308,7 +308,7 @@ planet_event = {
 						#has_refinery_designation = yes
 					}
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.5 } #Favor complex drone output
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.5 } #Favor complex drone output
 			}
 			5 = {
 				modifier = {
@@ -493,7 +493,7 @@ planet_event = {
 						has_rural_designation = yes
 					}
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.6 } #Favor simple drone output
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.6 } #Favor simple drone output
 			}
 			5 = {
 				modifier = {
@@ -533,7 +533,7 @@ planet_event = {
 					add = 5
 					num_buildings = { type = building_resource_silo value > 2 }
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.7 }	#Logistics
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.7 }	#Logistics
 			}
 			5 = {
 				modifier = {
@@ -618,7 +618,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_mining_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.8 } #Mining focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.8 } #Mining focus
 			}
 			5 = {
 				modifier = {
@@ -714,7 +714,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_generator_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.9 } #Energy focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.9 } #Energy focus
 			}
 			5 = {
 				modifier = {
@@ -802,7 +802,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_generator_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.10 } #Food focus (servitor/assimilator only)
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.10 } #Food focus (servitor/assimilator only)
 			}
 			5 = {
 				modifier = {
@@ -887,7 +887,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_foundry_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.11 } #Alloys focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.11 } #Alloys focus
 			}
 			5 = {
 				modifier = {
@@ -972,7 +972,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_foundry_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.12 } #Consumer goods focus (servitor only)
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.12 } #Consumer goods focus (servitor only)
 			}
 			5 = {
 				modifier = {
@@ -1099,7 +1099,7 @@ planet_event = {
 					#has_refinery_designation = yes
 					has_industrial_designation = yes	# ???
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.13 } #Rarities focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.13 } #Rarities focus
 			}
 			5 = {
 				modifier = {
@@ -1186,7 +1186,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_research_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.14 } #Research focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.14 } #Research focus
 			}
 			5 = {
 				modifier = {
@@ -1269,7 +1269,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_fortress_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.15 } #Military focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.15 } #Military focus
 			}
 			5 = {
 				modifier = {
@@ -1300,7 +1300,7 @@ planet_event = {
 					add = 1
 					pop_amount < 2600
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.16 } #Growth focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.16 } #Growth focus
 			}
 			5 = {
 				modifier = {
@@ -1334,7 +1334,7 @@ planet_event = {
 					add = 5
 					planet_stability < 30
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.17 } #Stability focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.17 } #Stability focus
 			}
 			5 = {
 				modifier = {
@@ -1448,7 +1448,7 @@ planet_event = {
 					factor = 5 # right designation
 					has_unity_designation = yes
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.18 } #Unity Focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.18 } #Unity Focus
 			}
 			5 = {
 				modifier = {
@@ -1471,7 +1471,7 @@ planet_event = {
 					add = 10
 					free_building_slots > 4
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.19 } #Build Speed Focus
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.19 } #Build Speed Focus
 			}
 			20 = {
 				modifier = {
@@ -1517,7 +1517,7 @@ planet_event = {
 				ELSE = {
 					set_planet_flag = lrsk_gvp_rra_none_1@owner
 				}
-				planet_event = { id = lrsk_gov_var_distributed_planning_systems.20 } #Inconclusive (nothing happens)
+				carrier_event = { id = lrsk_gov_var_distributed_planning_systems.20 } #Inconclusive (nothing happens)
 			}
 		}
 	}
@@ -1528,7 +1528,7 @@ planet_event = {
 }
 
 #Ongoing Audit
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.3
 	title = lrsk_gov_var_distributed_planning_systems.3.name
 	desc = lrsk_gov_var_distributed_planning_systems.3.desc
@@ -1548,7 +1548,7 @@ planet_event = {
 }
 
 #Confused Audit
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.4
 	title = lrsk_gov_var_distributed_planning_systems.4.name
 	desc = lrsk_gov_var_distributed_planning_systems.4.desc
@@ -1568,7 +1568,7 @@ planet_event = {
 }
 
 #Favor complex drone output
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.5
 	title = lrsk_gov_var_distributed_planning_systems.5.name
 	desc = lrsk_gov_var_distributed_planning_systems.5.desc
@@ -1588,7 +1588,7 @@ planet_event = {
 }
 
 #Favor simple drone output
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.6
 	title = lrsk_gov_var_distributed_planning_systems.6.name
 	desc = lrsk_gov_var_distributed_planning_systems.6.desc
@@ -1608,7 +1608,7 @@ planet_event = {
 }
 
 #Logistics
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.7
 	title = lrsk_gov_var_distributed_planning_systems.7.name
 	desc = lrsk_gov_var_distributed_planning_systems.7.desc
@@ -1628,7 +1628,7 @@ planet_event = {
 }
 
 #Mining focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.8
 	title = lrsk_gov_var_distributed_planning_systems.8.name
 	desc = lrsk_gov_var_distributed_planning_systems.8.desc
@@ -1648,7 +1648,7 @@ planet_event = {
 }
 
 #Energy focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.9
 	title = lrsk_gov_var_distributed_planning_systems.9.name
 	desc = lrsk_gov_var_distributed_planning_systems.9.desc
@@ -1668,7 +1668,7 @@ planet_event = {
 }
 
 #Food focus (servitor/assimilator only)
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.10
 	title = lrsk_gov_var_distributed_planning_systems.10.name
 	desc = lrsk_gov_var_distributed_planning_systems.10.desc
@@ -1688,7 +1688,7 @@ planet_event = {
 }
 
 #Alloys focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.11
 	title = lrsk_gov_var_distributed_planning_systems.11.name
 	desc = lrsk_gov_var_distributed_planning_systems.11.desc
@@ -1708,7 +1708,7 @@ planet_event = {
 }
 
 #Consumer goods focus (servitor only)
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.12
 	title = lrsk_gov_var_distributed_planning_systems.12.name
 	desc = lrsk_gov_var_distributed_planning_systems.12.desc
@@ -1728,7 +1728,7 @@ planet_event = {
 }
 
 #Rarities focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.13
 	title = lrsk_gov_var_distributed_planning_systems.13.name
 	desc = lrsk_gov_var_distributed_planning_systems.13.desc
@@ -1748,7 +1748,7 @@ planet_event = {
 }
 
 #Research focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.14
 	title = lrsk_gov_var_distributed_planning_systems.14.name
 	desc = lrsk_gov_var_distributed_planning_systems.14.desc
@@ -1768,7 +1768,7 @@ planet_event = {
 }
 
 #Military focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.15
 	title = lrsk_gov_var_distributed_planning_systems.15.name
 	desc = lrsk_gov_var_distributed_planning_systems.15.desc
@@ -1788,7 +1788,7 @@ planet_event = {
 }
 
 #Growth focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.16
 	title = lrsk_gov_var_distributed_planning_systems.16.name
 	desc = lrsk_gov_var_distributed_planning_systems.16.desc
@@ -1808,7 +1808,7 @@ planet_event = {
 }
 
 #Stability focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.17
 	title = lrsk_gov_var_distributed_planning_systems.17.name
 	desc = lrsk_gov_var_distributed_planning_systems.17.desc
@@ -1828,7 +1828,7 @@ planet_event = {
 }
 
 #Unity Focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.18
 	title = lrsk_gov_var_distributed_planning_systems.18.name
 	desc = lrsk_gov_var_distributed_planning_systems.18.desc
@@ -1848,7 +1848,7 @@ planet_event = {
 }
 
 #Build Speed Focus
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.19
 	title = lrsk_gov_var_distributed_planning_systems.19.name
 	desc = lrsk_gov_var_distributed_planning_systems.19.desc
@@ -1868,7 +1868,7 @@ planet_event = {
 }
 
 #Inconclusive (no modifier, fail state)
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_distributed_planning_systems.20
 	title = lrsk_gov_var_distributed_planning_systems.20.name
 	desc = lrsk_gov_var_distributed_planning_systems.20.desc

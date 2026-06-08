@@ -5,7 +5,7 @@
 namespace = lrsk_gov_var_direct_revelation
 
 #Gate Event
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.1
 	#title = lrsk_gov_var_direct_revelation.1.name
 	#desc = lrsk_gov_var_direct_revelation.1.desc
@@ -91,7 +91,7 @@ planet_event = {
 				log = "Forming a cult."
 
 				#Common housekeeping.
-				planet_event = { id = lrsk_gov_var_direct_revelation.2 }
+				carrier_event = { id = lrsk_gov_var_direct_revelation.2 }
 
 				# DR Councilor level affects formation chances as a strait ±1%/lvl factor (here meaning ±1% to the base 10% chance per lvl) and adds +1% happiness per councilor level per wild cult
 				owner = {
@@ -108,7 +108,7 @@ planet_event = {
 
 						root = {
 							# Handle councilor benefit: +1% happiness per councilor level per wild cult
-							planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.1003 }
 						}
 					}
 					ELSE_IF = {
@@ -142,7 +142,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_divine_right_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.3 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.3 }
 						}
 					}
 					10 = {
@@ -165,7 +165,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_children_of_heaven_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.4 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.4 }
 						}
 					  }
 					10 = {
@@ -188,7 +188,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_holy_war_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.5 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.5 }
 						}
 					}
 					10 = {
@@ -211,7 +211,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_harmony_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.6 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.6 }
 						}
 					}
 					10 = {
@@ -234,7 +234,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_chosen_few_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.7 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.7 }
 						}
 					}
 					10 = {
@@ -257,7 +257,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_universal_family_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.8 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.8 }
 						}
 					}
 					10 = {
@@ -284,7 +284,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_doomsday_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.9 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.9 }
 						}
 					}
 					10 = {
@@ -311,7 +311,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_golden_age_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.10 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.10 }
 						}
 					}
 					10 = {
@@ -334,7 +334,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_penance_and_redemption_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.11 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.11 }
 						}
 					}
 					10 = {
@@ -357,7 +357,7 @@ planet_event = {
 								has_country_flag = lrsk_gov_var_wild_cult_ignore_planet@root
 								has_country_flag = lrsk_gov_var_ignore_wild_revelry_cult
 							} } }
-							planet_event = { id = lrsk_gov_var_direct_revelation.12 }
+							carrier_event = { id = lrsk_gov_var_direct_revelation.12 }
 						}
 					}
 				}
@@ -370,7 +370,7 @@ planet_event = {
 }
 
 #Housekeeping on planet.
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.2
 	#title = lrsk_gov_var_direct_revelation.2.name
 	#desc = lrsk_gov_var_direct_revelation.2.desc
@@ -387,7 +387,7 @@ planet_event = {
 		multiply_variable = { which = lrsk_neg_num_wild_cults value = -1 }
 		
 		# deccrements wild cult count in 10 years
-		planet_event = {
+		carrier_event = {
 			id = lrsk_gov_var_direct_revelation.1001
 			days = 3600
 		}
@@ -415,7 +415,7 @@ planet_event = {
 }
 
 #Divine Right Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.3
 	title = lrsk_gov_var_direct_revelation.3.name
 	desc = lrsk_gov_var_direct_revelation.3.desc
@@ -426,7 +426,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
 	option = { name = INTRIGUING }
 	option = {
@@ -459,7 +459,7 @@ planet_event = {
 }
 
 #Children of Heaven Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.4
 	title = lrsk_gov_var_direct_revelation.4.name
 	desc = lrsk_gov_var_direct_revelation.4.desc
@@ -470,7 +470,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -503,7 +503,7 @@ planet_event = {
 }
 
 #Holy War Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.5
 	title = lrsk_gov_var_direct_revelation.5.name
 	desc = lrsk_gov_var_direct_revelation.5.desc
@@ -514,7 +514,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -547,7 +547,7 @@ planet_event = {
 }
 
 #Harmony Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.6
 	title = lrsk_gov_var_direct_revelation.6.name
 	desc = lrsk_gov_var_direct_revelation.6.desc
@@ -558,7 +558,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -591,7 +591,7 @@ planet_event = {
 }
 
 #Chosen Few Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.7
 	title = lrsk_gov_var_direct_revelation.7.name
 	desc = lrsk_gov_var_direct_revelation.7.desc
@@ -602,7 +602,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -635,7 +635,7 @@ planet_event = {
 }
 
 #Universal Family Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.8
 	title = lrsk_gov_var_direct_revelation.8.name
 	desc = lrsk_gov_var_direct_revelation.8.desc
@@ -646,7 +646,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -679,7 +679,7 @@ planet_event = {
 }
 
 #Doomsday Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.9
 	title = lrsk_gov_var_direct_revelation.9.name
 	desc = lrsk_gov_var_direct_revelation.9.desc
@@ -690,7 +690,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
 	option = { name = DISCONCERTING }
 	option = {
@@ -750,7 +750,7 @@ country_event = {
 }
 
 #Golden Age Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.10
 	title = lrsk_gov_var_direct_revelation.10.name
 	desc = lrsk_gov_var_direct_revelation.10.desc
@@ -761,7 +761,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 
 	option = { name = MARVELOUS }
 	option = {
@@ -794,7 +794,7 @@ planet_event = {
 }
 
 #Penance and Redemption Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.11
 	title = lrsk_gov_var_direct_revelation.11.name
 	desc = lrsk_gov_var_direct_revelation.11.desc
@@ -805,7 +805,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -838,7 +838,7 @@ planet_event = {
 }
 
 #Wild Revelry Cult
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.12
 	title = lrsk_gov_var_direct_revelation.12.name
 	desc = lrsk_gov_var_direct_revelation.12.desc
@@ -849,7 +849,7 @@ planet_event = {
 	location = this
 
   	#Call event to see if the cult fizzles or has a revival. (Not sure how to make this work yet...)
-  	#hidden_effect = { planet_event = { id = lrsk_gov_var_direct_revelation.20 } }
+  	#hidden_effect = { carrier_event = { id = lrsk_gov_var_direct_revelation.20 } }
 	  
 	option = { name = INTRIGUING }
 	option = {
@@ -927,7 +927,7 @@ country_event = {
 }
 
 # Deccrements wild cult count, recalcs as needed
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.1001
 	hide_window = yes
 
@@ -957,7 +957,7 @@ planet_event = {
 
 				root = {
 					# Handle councilor benefit: +1% happiness per councilor level per wild cult
-					planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
+					carrier_event = { id = lrsk_gov_var_direct_revelation.1003 }
 				}
 			}
 			ELSE_IF = {
@@ -1000,14 +1000,14 @@ country_event = {
 				check_variable = { which = lrsk_num_wild_cults value > 0 }
 			}
 
-			planet_event = { id = lrsk_gov_var_direct_revelation.1003 }
+			carrier_event = { id = lrsk_gov_var_direct_revelation.1003 }
 		}
 	}
 	
 }
 
 # Apply councilor benefit to planet
-planet_event = {
+carrier_event = {
 	id = lrsk_gov_var_direct_revelation.1003
 	hide_window = yes
 	is_triggered_only = yes
@@ -1038,7 +1038,7 @@ planet_event = {
 ## WORK IN PROGRESS/MAYBE FUTURE STUFF
 
 ##Revival or fizzle event
-#planet_event = {
+#carrier_event = {
 #	id = lrsk_gov_var_direct_revelation.20
 #	title = lrsk_gov_var_direct_revelation.20.name
 #	desc = lrsk_gov_var_direct_revelation.20.desc
@@ -1077,7 +1077,7 @@ planet_event = {
 #}
 #
 ##Fizzle event
-#planet_event = {
+#carrier_event = {
 #	id = lrsk_gov_var_direct_revelation.21
 #	title = lrsk_gov_var_direct_revelation.21.name
 #	desc = lrsk_gov_var_direct_revelation.21.desc
@@ -1091,7 +1091,7 @@ planet_event = {
 #}
 #
 ##Revival event
-#planet_event = {
+#carrier_event = {
 #	id = lrsk_gov_var_direct_revelation.22
 #	title = lrsk_gov_var_direct_revelation.22.name
 #	desc = lrsk_gov_var_direct_revelation.22.desc

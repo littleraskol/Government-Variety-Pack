@@ -1068,7 +1068,7 @@ country_event = {
 ## Civic Cleanup Tasks
 
 # Utilitarian Planning: Remove work plan if no unemployment
-planet_event = {
+carrier_event = {
 	id = lrsk_government_variety_pack_backend.1000
 	is_triggered_only = yes
 	hide_window = yes
@@ -1088,7 +1088,7 @@ planet_event = {
 			remove_modifier = lrsk_gvp_statmod_work_plan
 		}
 		ELSE = {
-			planet_event = {
+			carrier_event = {
 				id = lrsk_government_variety_pack_backend.1000
 				days = 30
 			}
