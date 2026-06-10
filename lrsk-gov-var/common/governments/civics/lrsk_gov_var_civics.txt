@@ -949,8 +949,6 @@ lrsk_gov_var_civic_public_works = {
     ethics = { NOT = { value = ethic_gestalt_consciousness } }
     authority = { NOT = { value = auth_corporate } }
   }
-
-  possible = { is_nomadic = no }
   
   random_weight = { base = @civic_default_random_weight }
   
@@ -977,11 +975,23 @@ lrsk_gov_var_civic_public_works = {
 		}
 	}
 
-  modifier = {
-    deposit_blockers_cost_mult = -0.15
-    pop_environment_tolerance = 0.05
-	add_attunement_the_composer_of_strands = @civic_attunement1 
-  }
+	modifier = {
+		add_attunement_the_composer_of_strands = @civic_attunement1 
+	}
+	swap_type = {
+		trigger = { is_nomadic = no }
+		modifier = {
+			deposit_blockers_cost_mult = -0.15
+			pop_environment_tolerance = 0.05
+		}			
+	}
+	swap_type = {
+		trigger = { is_nomadic = yes }
+		modifier = {
+			megastructure_waystation_megastructure_build_speed_mult = 0.15
+			starbase_arkship_upgrades_cost_mult = -0.05
+		}			
+	}
 }
 
 #Extractive Economy (Dictatorial/Imperial, not Xenophile) - The regime exploits its vassals ruthlessly. (+10% subject research share, +7.5% tributary income)
