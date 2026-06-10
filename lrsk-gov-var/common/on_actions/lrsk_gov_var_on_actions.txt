@@ -31,10 +31,10 @@ empire_init_add_technologies = {
 
 # Called during empire initialization when starting a new game if has_secondary_species game rule is true.
 # Called before empire_init_create_capital_pops.
-# scope: planet
+# scope: colony
 # from: founder species
 # fromfrom: secondary species (if exists)
-empire_init_capital_planet = {
+empire_init_capital_colony = {
 	events = {
 		lrsk_gov_var_galactic_backdoor.2			# Sets wormholes to seen, and creates wormhole pair.
 		lrsk_gov_var_shroud_touched.6				# Sets planet deposit and pop traits.
