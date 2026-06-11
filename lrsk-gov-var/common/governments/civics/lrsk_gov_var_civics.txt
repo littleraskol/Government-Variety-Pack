@@ -280,34 +280,26 @@ lrsk_gov_var_civic_siege_mentality = {
 
 #Cult of Personality (Dictatorship/Imperial, Authoritarian and not Spiritualist) - The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence. (+10% influence production, -10% war exhaustion)
 lrsk_gov_var_civic_cult_of_personality = {
-  potential = {
-    ethics = { NOT = { value = ethic_gestalt_consciousness } }
-    authority = { NOT = { value = auth_corporate } }
-  }
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
 
-  possible = {
-    authority = {
-      OR = {
-        text = civic_tooltip_dic_imp
-        value = auth_dictatorial
-        value = auth_imperial
-      }
-    }
-    ethics = {
-      OR = {
-        text = civic_tooltip_authoritarian
-        value = ethic_authoritarian
-        value = ethic_fanatic_authoritarian
-      }
-      NOR = {
-        text = civic_tooltip_not_spiritualist
-        value = ethic_spiritualist
-        value = ethic_fanatic_spiritualist
-      }
-    }
-  }
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+			NOR = {
+				text = civic_tooltip_not_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
 
-  random_weight = { base = @civic_default_random_weight }
+	random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
 		base = @ai_civic_default_base_weight
@@ -315,6 +307,7 @@ lrsk_gov_var_civic_cult_of_personality = {
 			factor = @ai_civic_personality_match_factor
 			OR = {
 				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = ruthless_capitalists
 			}
 		}
 		modifier = {
@@ -322,6 +315,7 @@ lrsk_gov_var_civic_cult_of_personality = {
 			OR = {
 				has_ai_personality = harmonious_hierarchy
 				has_ai_personality = decadent_hierarchy
+				has_ai_personality = peaceful_traders
 			}
 		}
 		#modifier = {
@@ -332,19 +326,31 @@ lrsk_gov_var_civic_cult_of_personality = {
 		#}
 	}
 
-  modifier = {
-    country_unity_produces_mult = 0.1
-    country_war_exhaustion_mult = -0.1
-	add_attunement_the_instrument_of_desire = @civic_attunement1
-  }
-
-	swap_type = {
-		trigger = { is_nomadic = no }
-		modifier = { country_starbase_influence_cost_mult = -0.1 }			
+	modifier = {
+		country_unity_produces_mult = 0.1
+		species_leader_exp_gain = -0.1
+		all_technology_research_speed = -0.05
+		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
 	swap_type = {
-		trigger = { is_nomadic = yes }
-		modifier = { megastructures_waystations_influence_cost_mult = -0.1 }			
+		trigger = {
+			is_nomadic = no
+			#has_auth_imperial = yes	# future ideas
+		}
+		modifier = {
+			country_starbase_influence_cost_distance_mult = -0.05
+			country_claim_influence_cost_mult = -0.1
+		}			
+	}
+	swap_type = {
+		trigger = {
+			is_nomadic = yes
+			#has_auth_imperial = yes	# future ideas
+		}
+		modifier = {
+			megastructures_waystations_influence_cost_mult = -0.05
+			megastructures_arkships_cost_mult = -0.1
+		}			
 	}
 }
 

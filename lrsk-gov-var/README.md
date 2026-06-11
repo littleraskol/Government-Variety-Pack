@@ -33,6 +33,13 @@ v8.0 (??/??/??) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 --dystopian_specialist removed (just specialist now)
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
+-Cult of Personality civic ended up changing quite a bit to account for Nomad changes.
+--Now available to all non-gestalt, non-spirirtualist and authoritarian empires. (Yes, you can have a cult of the "brilliant" CEO now if you want.)
+--Councilor provides +1.5% influence production and -1.5% war exhausiton per level.
+--Base civic provides +10% unity production but -10% leader exp gain and -5% research.
+--For settled empires, provides -5% starbase influence cost and -10% claim cost.
+--For nomadic empires, provides -5% waystation influence cost and -10% arkship cost.
+--I actually don't know if I love all of these tbh. Real-life cults of personality are as likely to be fostered to consolidate control in an isolationist way as to justify expansion. It might be worth thinking a bit about how it differs from just plain old authoritarianism in concept.
 -Updated civic/government/etc flavor text to accomodate possible nomads.
 -Updated Steam page description (added French localization).
 -Updated compat version number.
