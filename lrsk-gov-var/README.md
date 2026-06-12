@@ -31,6 +31,13 @@ v8.0 (??/??/??) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 --Removed promotion blocks (we hardly knew ye)
 -Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
 --dystopian_specialist removed (just specialist now)
+-Cetus balance changes:
+--Jobs per Pop:
+---Not ready to totally give up on this, but where these modifiers remaing they have been halved.
+---Direct Revelation does not give base Hedge Preachers per pop (they should get plenty from Wild Cults)
+---Worker Caste does not give any jobs per pop (maint. drones are basically gestalt civilians now?), instead gets other bonuses
+--Hive Mind "Caste" series of civics:
+---Worker Caste now gets -10% clear blocker cost (settled) or +10% waystation build speed and -10% arkship upgrades cost mult.
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
 -Cult of Personality civic ended up changing quite a bit to account for Nomad changes.
