@@ -33,6 +33,7 @@ v8.0 (??/??/??) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 --dystopian_specialist removed (just specialist now)
 -Cetus balance changes:
 --Stratum production mult modifiers changed to workforce multipliers (i.e. "efficiency" modifiers).
+--Empire size mults reduced.
 --Jobs per Pop:
 ---Not ready to totally give up on this, but where these modifiers remaing they have been halved.
 ---Direct Revelation does not give base Hedge Preachers per pop (they should get plenty from Wild Cults)
