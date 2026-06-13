@@ -40,7 +40,13 @@ v8.0 (??/??/??) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 ---Direct Revelation does not give base Hedge Preachers per pop (they should get plenty from Wild Cults)
 ---Worker Caste does not give any jobs per pop (maint. drones are basically gestalt civilians now?), instead gets other bonuses
 --Hive Mind "Caste" series of civics:
----Worker Caste now gets -10% clear blocker cost (settled) or +10% waystation build speed and -10% arkship upgrades cost mult.
+---Worker Caste caste renamed (back to?) "Builder Caste," now gets -10% clear blocker cost (settled) or +10% waystation build speed and -10% arkship upgrades cost mult (nomadic).
+---Added "Thinker Caste" which is, unsurprisingly, just like Royal Caste but for scientists.
+---Each gets a penalty to the others' "domain"
+----If not Builder Caste: +5% infrastructure upkeep cost
+----If not Thinker Caste: -5% all research
+----If not Warrior Caste: +5% military ship upkeep cost
+----If not Royal Caste: -10% council agenda speed
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
 -Cult of Personality civic ended up changing quite a bit to account for Nomad changes.

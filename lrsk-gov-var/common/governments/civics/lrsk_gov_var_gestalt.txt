@@ -52,7 +52,7 @@ lrsk_gov_var_civic_hive_caste_quickening = {
 	}
 }
 
-# Worker Caste (-10% building and ship construction time, 1 Maintenance Drone per 10 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
+# Builder Caste (-10% building and ship construction time, 1 Maintenance Drone per 10 pops) - The Hive Mind spawns a special breed of drones that are adapted for general labor.
 lrsk_gov_var_civic_hive_builder_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
@@ -64,7 +64,9 @@ lrsk_gov_var_civic_hive_builder_caste = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
-    	#job_maintenance_drone_per_pop = 0.1
+    	ship_military_upkeep_mult = 0.05
+		council_agenda_progress_speed = -0.1
+		all_technology_research_speed = -0.05
 		add_attunement_the_composer_of_strands = @civic_attunement1 
 	}
 
@@ -81,6 +83,28 @@ lrsk_gov_var_civic_hive_builder_caste = {
 			megastructure_waystation_megastructure_build_speed_mult = 0.1
 			starbase_arkship_upgrades_cost_mult = -0.1
 		}			
+	}
+}
+
+# Thinker Caste (+1 scientist leader skill levels, 1 Brain Drone per X pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
+lrsk_gov_var_civic_hive_thinker_caste = {
+	potential = { authority = { value = auth_hive_mind } }
+    #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
+	random_weight = { base = @civic_default_random_weight }
+	ai_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+		scientist_exp_gain = 0.1
+		scientist_initial_skill = 1
+		country_scientist_cap_add = 1
+    	job_calculator_physicist_per_pop = 0.01
+    	job_calculator_biologist_per_pop = 0.01
+    	job_calculator_engineer_per_pop = 0.01
+		council_agenda_progress_speed = -0.1
+		planet_structures_upkeep_mult = 0.05
+    	ship_military_upkeep_mult = 0.05
 	}
 }
 
@@ -104,6 +128,9 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 		commander_initial_skill = 1
 		country_commander_cap_add = 1
     	job_warrior_drone_per_pop = 0.0333
+		council_agenda_progress_speed = -0.1
+		planet_structures_upkeep_mult = 0.05
+		all_technology_research_speed = -0.05
 		add_attunement_the_eater_of_worlds = @civic_attunement1
 	}
 }
@@ -122,6 +149,9 @@ lrsk_gov_var_civic_hive_royal_caste = {
 		official_initial_skill = 1
 		country_official_cap_add = 1
     	job_synapse_drone_per_pop = 0.025
+		planet_structures_upkeep_mult = 0.05
+    	ship_military_upkeep_mult = 0.05
+		all_technology_research_speed = -0.05
 		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
 }
