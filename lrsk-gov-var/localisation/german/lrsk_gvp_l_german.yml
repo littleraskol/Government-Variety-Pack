@@ -57,7 +57,6 @@ l_german:
  lrsk_gvp_siege_mentality_councilor:0 "Supreme Home-Fleet Commander"
  lrsk_gvp_siege_mentality_councilor_female:0 "$lrsk_gvp_siege_mentality_councilor$"
  lrsk_gvp_siege_mentality_councilor_desc:0 "The $TITLE$ is a position created out of the recognition that a more 'active defensive' stance may be needed to truly defend the nation."
- #lrsk_gvp_siege_mentality_councilor_desc:0 "The $TITLE$ is a position created out of the recognition that a more 'active defensive' stance may be needed to truly defend the [owner.GetName]."
 
  lrsk_gov_var_civic_cult_of_personality:0 "Cult of Personality"
  lrsk_gov_var_civic_cult_of_personality_desc:0 "The ruler is considered a uniquely powerful and heroic individual nearly deserving of reverence."
@@ -65,7 +64,6 @@ l_german:
  lrsk_gvp_cult_of_personality_councilor:0 "Public Information Officer"
  lrsk_gvp_cult_of_personality_councilor_female:0 "$lrsk_gvp_cult_of_personality_councilor$"
  lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits and grand designs of the Leader."
- #lrsk_gvp_cult_of_personality_councilor_desc:0 "The $TITLE$ combines the roles of public relations expert, press correspondent, and propaganda minister: information provided to the public by this councilor's office almost entirely relates to the heroic exploits of the [GetRulerTitle] and [ruler.GetHerHis] grand designs."
  lrsk_gvp_cult_of_personality_councilor_conditional_tooltip:0 "Requires completing the §HSupremacy§! Tradition tree."
 
  lrsk_gov_var_civic_universal_sovereignty:0 "Universal Sovereignty"
@@ -75,12 +73,9 @@ l_german:
  lrsk_gvp_universal_sovereignty_councilor:0 "Client Obligations Guarantor"
  lrsk_gvp_universal_sovereignty_councilor_female:0 "$lrsk_gvp_universal_sovereignty_councilor$"
  lrsk_gvp_universal_sovereignty_councilor_desc:0 "The $TITLE$ ensures that those weaker states who have chosen safety under our aegis contribute to its benevolent protection."
- #lrsk_gvp_universal_sovereignty_councilor_desc:0 "The $TITLE$ ensures that those weaker states who have chosen safety under the [owner.GetName]'s aegis contribute to its benevolent protection."
- #lrsk_gvp_universal_sovereignty_councilor_conditional_tooltip:0 "$LRSK_MUST_BE_OVERLORD$"
 
  lrsk_gov_var_civic_workers_councils:0 "Workers' Councils"
  lrsk_gov_var_civic_workers_councils_desc:0 "Trade unions, democratic workplaces, and cooperatives are a vital part of civil society and an integral part of government."
- #civic_tooltip_lrsk_gov_var_civic_workers_councils_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y50%§! and §Y12.5%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
  
  lrsk_gvp_workers_councils_councilor:0 "Solidarity Working Group Chairperson"
  lrsk_gvp_workers_councils_councilor_female:0 "$lrsk_gvp_workers_councils_councilor$"
@@ -92,7 +87,6 @@ l_german:
  lrsk_gvp_supremacist_demagoguery_councilor:0 "Folksculture Curator"
  lrsk_gvp_supremacist_demagoguery_councilor_female:0 "$lrsk_gvp_supremacist_demagoguery_councilor$"
  lrsk_gvp_supremacist_demagoguery_councilor_desc:0 "The $TITLE$ organizes institutions, events, and programs in increase appreciation of the culture of the nation and its people in order to encourage national unity."
- #lrsk_gvp_supremacist_demagoguery_councilor_desc:0 "The $TITLE$ organizes institutions, events, and programs related to appreciation of the [owner.GetName]'s culture in order to encourage national unity."
 
  lrsk_gov_var_civic_enlightened_liberalism:0 "Enlightened Liberalism"
  lrsk_gov_var_civic_enlightened_liberalism_desc:0 "This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry."
@@ -114,7 +108,7 @@ l_german:
  lrsk_gov_var_civic_chivalry_desc:0 "Ideals of martial valor and honorable conduct define ruling class culture."
  lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$ (Legacy Civic)"
  lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$\n\n§PThis version for Aristocratic Elite is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
- civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights']; starts with one on homeworld.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights']; starts with one built on homeworld or starting arkship.\n\n"
 
  lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
  lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
@@ -139,12 +133,12 @@ l_german:
 
  lrsk_gov_var_civic_direct_revelation:0 "Direct Revelation"
  lrsk_gov_var_civic_direct_revelation_desc:0 "The religious culture of this society values insights from personal experiences of the divine."
- civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects:0 "Occasionally, ['concept_lrsk_gvp_wild_cults'] may form on planets.\nGives planets £job_lrsk_gov_var_job_hedge_preacher£ ['concept_lrsk_gvp_hedge_preacher'] Jobs at the following rate:\n"
+ civic_tooltip_lrsk_gov_var_civic_direct_revelation_effects:0 "Occasionally, ['concept_lrsk_gvp_wild_cults'] may form on planets.\n"
 
  lrsk_gvp_direct_revelation_councilor:0 "Certifier of Prophesy"
  lrsk_gvp_direct_revelation_councilor_female:0 "$lrsk_gvp_direct_revelation_councilor$"
  lrsk_gvp_direct_revelation_councilor_desc:0 "The $TITLE$ has the important job of encouraging peaceful interfaith relations in a society where new religious movements come and go like fashionable fads. Though all revelations are valid, not all are equally valuable..."
- lrsk_gvp_direct_revelation_councilor_custom_modifier_desc:0 "The chance of the §Y$lrsk_gov_var_statmod_doomsday_cult$§! forming decreases by §G+1%§!, while the chance of the §Y$lrsk_gov_var_statmod_golden_age_cult$§! forming increases by §G+1%§!.\n\nEvery ['concept_lrsk_gvp_wild_cult'] increases £happiness£ §YHappiness§! on its planet by §G1%§!."
+ lrsk_gvp_direct_revelation_councilor_custom_modifier_desc:0 "-The chance of the §Y$lrsk_gov_var_statmod_doomsday_cult$§! forming decreases by §G+1%§!\n-The chance of the §Y$lrsk_gov_var_statmod_golden_age_cult$§! forming increases by §G+1%§!.\n-Every ['concept_lrsk_gvp_wild_cult'] increases £happiness£ §YHappiness§! on its planet by §G1%§!."
  lrsk_gvp_direct_revelation_councilor_conditional_tooltip:0 "Requires completing the §HDomination§! Tradition tree."
 
  lrsk_gov_var_civic_royal_absolutism:0 "Royal Absolutism"
@@ -219,14 +213,17 @@ l_german:
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
 
- lrsk_gov_var_civic_hive_builder_caste:0 "Worker Caste"
- lrsk_gov_var_civic_hive_builder_caste_desc:0 "The Hive Mind spawns a special breed of drones that are adapted for all kinds of laborious tasks."
+ lrsk_gov_var_civic_hive_builder_caste:0 "Builder Caste"
+ lrsk_gov_var_civic_hive_builder_caste_desc:0 "The Hive Mind spawns an industrious breed of drones that are adapted for assembling infrastructure."
+
+ lrsk_gvp_civic_hive_thinker_caste:0 "Thinker Caste"
+ lrsk_gvp_civic_hive_thinker_caste_desc:0 "To better expand the horizons of the hive's ambitions, the Hive Mind breeds a special caste of inquisitive and analytical drones to grow its collective knowledge."
 
  lrsk_gov_var_civic_hive_warrior_caste:0 "Warrior Caste"
  lrsk_gov_var_civic_hive_warrior_caste_desc:0 "The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones."
 
  lrsk_gov_var_civic_hive_royal_caste:0 "Royal Caste"
- lrsk_gov_var_civic_hive_royal_caste_desc:0 "To better expand the horizons of the hive's growth and development, the Hive Mind breeds highly intelligent drones to direct other drones in productive and creative activity."
+ lrsk_gov_var_civic_hive_royal_caste_desc:0 "The Hive Mind cultivates an elite breed of highly intelligent drones to direct other drones in productive and creative activity."
 
  lrsk_gov_var_civic_hive_reclamation_pools:0 "Reclamation Pools"
  lrsk_gov_var_civic_hive_reclamation_pools_desc:0 "All dead drones are reprocessed for the sustenance of hive's next generation."
@@ -324,7 +321,7 @@ l_german:
  ####################################
  ### Megacorp
 
- LRSK_GVP_MEGACORP_SCALING_COMMON:0 "§Gincreased $BRANCH_OFFICE_VALUE$§! that scales with the proportion of the £pop£ planetary population that is"
+ LRSK_GVP_MEGACORP_SCALING_COMMON:0 "§Gincreased $BRANCH_OFFICE_VALUE$§! that scales with the proportion of the £pop£ [capital_scope.GetCapitalCarrierTypeAdj] population that is"
 
  lrsk_gov_var_civic_mc_sci_mgnt:0 "Scientific Management"
  lrsk_gov_var_civic_mc_sci_mgnt_desc:0 "This business grew through precise and empirically tested management techniques that govern every aspect of employee life: the tools, workspaces, physical motions, work rhythm, on and off the clock, from cradle to grave."
@@ -495,6 +492,11 @@ l_german:
  lrsk_gov_var_origin_shroud_touched_desc:0 "The Otherworld has left its mark on this civilization's homeworld and its people. They are naturally in tune with psychic energies."
  origin_tooltip_lrsk_gvp_shroud_touched_effects:0 "-Most £pop£ §YPops§! of your starting species have the ['concept_trait_lrsk_gvp_natural_esper'] trait.\n-§Y£leader£ Leaders§! can start with the ['concept_leader_trait_lrsk_gvp_esper'] trait.\n-Rarely, actual §M$trait_latent_psionic$§! £pop£ §YPops§! can spawn, and §Y£leader£ Leaders§! can 'precociously' get the §M$leader_trait_psionic$§! trait\n-The §M$tech_psionic_theory$§! tech option starts ready to research.\n-Your homeworld has an ['concept_deposit_lrsk_gvp_shroud_pockets'] deposit.\n\n"
 
+ #### Common Fed Start Strings
+
+ LRSK_GVP_FED_START_SETTLED_COMMON:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own,  we discovered the presence of two distinct alien civilizations."
+ LRSK_GVP_FED_START_NOMADIC_COMMON:0 "Decades ago, our wandering path brought us within range of two inhabited systems - and with them, first contact with two distinct alien civilizations."
+
  #### For Discovery: Start in research co-op.
 
  LRSK_GOV_VAR_FOR_DISCOVERY_DESC_COMMON:0 "established early contact and intellectual collaboration with its immediate alien neighbors. Finding a common interest in scientific advancement, they decided to enter a more formal arrangement for sharing the fruits of their intellectual efforts."
@@ -514,7 +516,10 @@ l_german:
  lrsk_gov_var_origin_for_discovery_mi_npc_desc:0 "$lrsk_gov_var_origin_for_discovery_mi_desc$"
  lrsk_gov_var_origin_tooltip_for_discovery_npc_effects:0 "-Starts as a member of a §HResearch Cooperative§! federation with two additional members."
  
- LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physical forms, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to the pursuit of knowledge and exploration.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would combine our intellects, and when we were ready to spread out into the cosmos, share our discoveries and the knowledge we would gain."
+ LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY:0 "Despite the radical differences in our physical forms, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to the pursuit of knowledge and exploration.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would combine our intellects, and share our discoveries and the knowledge we would gain."
+ 
+ LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY_SETTLED:0 "$LRSK_GVP_FED_START_SETTLED_COMMON$ $LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY$"
+ LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY_NOMADIC:0 "$LRSK_GVP_FED_START_NOMADIC_COMMON$ $LRSK_GOV_VAR_START_SCREEN_FOR_DISCOVERY$"
  
  #Tradeways: Start in trade league. 
  LRSK_GOV_VAR_TRADEWAYS_DESC_COMMON:0 "established early contact and exchange with its immediate alien neighbors. Finding that they shared an interest in their mutual material enrichment, they decided to enter an interstellar trade compact to enjoy the diverse fruits of their industry."
@@ -524,7 +529,7 @@ l_german:
  lrsk_gov_var_origin_tooltip_tradeways_effects:0 "-Start as the leader of a §HTrade League§! federation with two additional members.\n-Members will occupy any Guaranteed Habitable Worlds slots near your home system.\n-Start with §HThe Federation§! tradition unlocked."
  
  lrsk_gov_var_origin_tradeways_mc:0 "$lrsk_gov_var_origin_tradeways$, Inc."
- lrsk_gov_var_origin_tradeways_mc_desc:0 "This global megacorporation $LRSK_GOV_VAR_TRADEWAYS_DESC_COMMON$"
+ lrsk_gov_var_origin_tradeways_mc_desc:0 "This megacorporation $LRSK_GOV_VAR_TRADEWAYS_DESC_COMMON$"
  lrsk_gov_var_origin_tooltip_tradeways_mc_effects:0 "$lrsk_gov_var_origin_tooltip_tradeways_effects$"
  
  lrsk_gov_var_origin_tradeways_npc:0 "$lrsk_gov_var_origin_tradeways$"
@@ -533,8 +538,11 @@ l_german:
  
  lrsk_gov_var_origin_tradeways_mc_npc:0 "$lrsk_gov_var_origin_tradeways_mc$"
  lrsk_gov_var_origin_tradeways_mc_npc_desc:0 "$lrsk_gov_var_origin_tradeways_mc_desc$"
+
+ LRSK_GOV_VAR_START_SCREEN_TRADEWAYS:0 "Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to the pursuit of profit and material abundance.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would exchange the fruits of our labors, and profit jointly from the riches we would find."
  
- LRSK_GOV_VAR_START_SCREEN_TRADEWAYS:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to the pursuit of profit and material abundance.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would exchange the fruits of our labors, and when we were ready to spread out into the cosmos, profit jointly from the riches we would find."
+ LRSK_GOV_VAR_START_SCREEN_TRADEWAYS_SETTLED:0 "$LRSK_GVP_FED_START_SETTLED_COMMON$ $LRSK_GOV_VAR_START_SCREEN_TRADEWAYS$"
+ LRSK_GOV_VAR_START_SCREEN_TRADEWAYS_NOMADIC:0 "$LRSK_GVP_FED_START_NOMADIC_COMMON$ $LRSK_GOV_VAR_START_SCREEN_TRADEWAYS$"
  
  #### Grand Alliance: Start in martial alliance. 
 
@@ -546,7 +554,10 @@ l_german:
  lrsk_gov_var_origin_grand_alliance_npc_desc:0 "$lrsk_gov_var_origin_grand_alliance_desc$"
  lrsk_gov_var_origin_tooltip_grand_alliance_npc_effects:0 "-Starts as a member of a §HMartial Alliance§! federation with two additional members."
  
- LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to military excellence and glory.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would be allies bound for mutual defense, and when we were ready to spread out into the cosmos, face whatever threats arose there as a strong united front."
+ LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE:0 "Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also dedicated to military excellence and glory.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - we would be allies bound for mutual defense, and face whatever threats arose there as a strong united front."
+ 
+ LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE_SETTLED:0 "$LRSK_GVP_FED_START_SETTLED_COMMON$ $LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE$"
+ LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE_NOMADIC:0 "$LRSK_GVP_FED_START_NOMADIC_COMMON$ $LRSK_GOV_VAR_START_SCREEN_GRAND_ALLIANCE$"
  
  #### Convened by Providence: Start in a holy covenant.
 
@@ -558,7 +569,10 @@ l_german:
  lrsk_gvp_origin_convened_providence_npc_desc:0 "$lrsk_gvp_origin_convened_providence_desc$"
  lrsk_gvp_origin_convened_providence_npc_effects:0 "-Starts as a member of a §HHoly Covenant§! federation with two additional members."
  
- LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of two distinct alien civilizations. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were spiritual seekers, attuned to the energy of the divine.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - as the forces of the divine world itself had blessed us by raising us together, we would honor the gods together."
+ LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE:0 "Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were spiritual seekers, attuned to the energy of the divine.\n\nA bond was formed between our three civilizations, which eventually led to the birth of a federation - as the forces of the divine world itself had blessed us by bringing us together, we would honor the gods together."
+ 
+ LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE_SETTLED:0 "$LRSK_GVP_FED_START_SETTLED_COMMON$ $LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE$"
+ LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE_NOMADIC:0 "$LRSK_GVP_FED_START_NOMADIC_COMMON$ $LRSK_GOV_VAR_START_SCREEN_CONVENED_PROVIDENCE$"
 
  #### Uplift: Start as a protectorate of an advanced start empire, who are benefactors that uplifted you. Able to take uplift traits.
 
@@ -772,7 +786,7 @@ l_german:
  LRSK_GOV_VAR_RT_CHIEF_JUSTICE:0 "Chief Arbitrator"
  LRSK_GOV_VAR_RT_CHIEF_JUSTICE_FEMALE:0 "$LRSK_GOV_VAR_RT_CHIEF_JUSTICE$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_LIBERTARIAN_FREEHOLD:0 "In the early days, our people were governed by huge, inefficient states. We stagnated under their bloated bureaucracies. Then an innovation in statecraft took hold: we let more nimble and efficient businesses start doing the government's work. Now our planetary government mostly serves to set the standards for private contractors and to see justice done when anyone's rights are violated."
+ LRSK_GOV_VAR_START_SCREEN_P2_LIBERTARIAN_FREEHOLD:0 "In the early days, our people were governed by huge, inefficient states. We stagnated under their bloated bureaucracies. Then an innovation in statecraft took hold: we let more nimble and efficient businesses start doing the government's work. Now our [capital_scope.GetCapitalCarrierTypeAdj] government mostly serves to set the standards for private contractors and to see justice done when anyone's rights are violated."
 
  lrsk_gov_var_gov_anarcho_capitalism:0 "Anarcho-Capitalism"
  lrsk_gov_var_gov_anarcho_capitalism_desc:0 "This government is theoretically no government at all, as all functions of a normal government have been distributed to various competing private entities, even law-enforcement and justice. Only a single position, a dispute-resolver of last resort, remains as anything resembling an officer of a sovereign state."
@@ -783,7 +797,7 @@ l_german:
  LRSK_GOV_VAR_START_SCREEN_P2_ANARCHO_CAPITALISM:0 "In the early days, our people were imprisoned and extorted by states. We groaned under the violent demands of kings and bureaucrats. Slowly, freedom-lovers realized that businesses, charities, and civil associations could do everything a state could without coercion. The revolution saw states swept aside and replaced with a variety of voluntary, competitive dispute resolution organizations and covenant communities. Only one vestigial position of government remains to provide a light moderating force."
 
  lrsk_gov_var_gov_corporate_neofuedalism:0 "Corporate Neofeudalism"
- lrsk_gov_var_gov_corporate_neofuedalism_desc:0 "This government didn't merely contract out its functions to businesses, it is the result of decentralizing government to regional or local scale and running states as businesses, under the forward-thinking guidance of a new aristocracy of wealth. On a global scale, the corporate overlords entrust foreign affairs and the military to a hired agent."
+ lrsk_gov_var_gov_corporate_neofuedalism_desc:0 "This government didn't merely contract out its functions to businesses, it is the result of decentralizing government to regional or local scale and running states as businesses, under the forward-thinking guidance of a new aristocracy of wealth. Facing outward, the corporate overlords entrust foreign affairs and the military to a hired agent."
 
  LRSK_GOV_VAR_RT_AMBAS_AGENT:0 "Ambassadorial Agent"
  LRSK_GOV_VAR_RT_AMBAS_AGENT_FEMALE:0 "$LRSK_GOV_VAR_RT_AMBAS_AGENT$"
@@ -798,7 +812,7 @@ l_german:
  LRSK_GOV_VAR_HT_SENIOR_VP:0 "Senior Vice President"
  LRSK_GOV_VAR_HT_SENIOR_VP_FEMALE:0 "$LRSK_GOV_VAR_HT_SENIOR_VP$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_PROPRIETARY_FRANCHISE:0 "In the early days, our people were governed by inefficient republics and pompous royal dynasties. Gradually, as global trade increased, the influence of merchant families grew steadily. Eventually one cunning and ruthless family business managed to corner the market in nearly every sector and become the de facto rulers of the world. States still operate, other businesses still serve niche markets, but everyone knows better than to disturb the family's bottom line. It's just better to let their money keep rolling in."
+ LRSK_GOV_VAR_START_SCREEN_P2_PROPRIETARY_FRANCHISE:0 "In the early days, our people were governed by inefficient republics and pompous royal dynasties. Gradually, as [capital_scope.GetCapitalCarrierTypeAdj] trade increased, the influence of merchant families grew steadily. Eventually one cunning and ruthless family business managed to corner the market in nearly every sector and become the de facto rulers of the [capital_scope.GetCapitalCarrierType]. States still operate, other businesses still serve niche markets, but everyone knows better than to disturb the family's bottom line. It's just better to let their money keep rolling in."
 
  lrsk_gov_var_gov_entrepreneurial_council:0 "Entrepreneurial Council"
  lrsk_gov_var_gov_entrepreneurial_council_desc:0 "This government is primarily concerned with managing its ideal of a competitive and fair market economy. Social mobility is precariously fluid, but those who succeed in business exert great power."
@@ -806,13 +820,13 @@ l_german:
  LRSK_GOV_VAR_RT_ENTERPRISE_COM:0 "Enterprise Commissioner"
  LRSK_GOV_VAR_RT_ENTERPRISE_COM_FEMALE:0 "$LRSK_GOV_VAR_RT_ENTERPRISE_COM$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ENTREPRENEURIAL_COUNCIL:0 "In the early days, our people were governed by huge, inefficient states. We stagnated under their bloated bureaucracies. The top became too heavy to be held up, though, and eventually nimble and hungry private enterprises became more influential and powerful than any state by virtue of their innovations. Today, a council of entrepreneurs acts as global referees for business practices to ensure that the freedom to innovate neither overwhelms customers and employees nor crowds out competition."
+ LRSK_GOV_VAR_START_SCREEN_P2_ENTREPRENEURIAL_COUNCIL:0 "In the early days, our people were governed by huge, inefficient states. We stagnated under their bloated bureaucracies. The top became too heavy to be held up, though, and eventually nimble and hungry private enterprises became more influential and powerful than any state by virtue of their innovations. Today, a council of entrepreneurs acts as [capital_scope.GetCapitalCarrierTypeAdj] referees for business practices to ensure that the freedom to innovate neither overwhelms customers and employees nor crowds out competition."
 
  LRSK_GOV_VAR_MERCH_COMMON:0 "This society sees commercial success and overall social merit as inextricably linked."
- LRSK_GOV_VAR_MERCH_START_COMMON:0 "In the early days, our original republican liberty was overrun by tyrannical lords and empires. Gradually, as global trade increased, the importance of merchants and industry became impossible to ignore, and it could be said that gold ruled the world."
+ LRSK_GOV_VAR_MERCH_START_COMMON:0 "In the early days, our original republican liberty was overrun by tyrannical lords and empires. Gradually, as [capital_scope.GetCapitalCarrierTypeAdj] trade increased, the importance of merchants and industry became impossible to ignore, and it could be said that gold ruled the world."
 
  lrsk_gov_var_gov_merchant_republic:0 "Merchant Republic"
- lrsk_gov_var_gov_merchant_republic_desc:0 "$LRSK_GOV_VAR_MERCH_COMMON$ As a result, a old form of government - a republic in which power inheres to the wealthiest and therefore worthiest business leaders - has maintained relevance into the interstellar era."
+ lrsk_gov_var_gov_merchant_republic_desc:0 "$LRSK_GOV_VAR_MERCH_COMMON$ As a result, a old form of government - a republic in which power inheres to the wealthiest and therefore worthiest business leaders - has maintained relevance into the hypermodern era."
  
  LRSK_GOV_VAR_RT_SERENE_DOG:0 "Serene Dog" # woof...
  LRSK_GOV_VAR_RT_SERENE_DOGE:0 "$LRSK_GOV_VAR_RT_SERENE_DOG$e"
@@ -828,29 +842,34 @@ l_german:
 
  LRSK_GOV_VAR_START_SCREEN_P2_CONST_PLUT:0 "$LRSK_GOV_VAR_MERCH_START_COMMON$ The democratic movement against tyranny, therefore, wisely made the rule of the wealthy and worthy its watchword, ensuring that administration of the state would be in the hands of those who could prove their fitness for office through their purchasing power."
 
+ LRSK_GVP_ENTERPRISE_DESC_COMMON:0 "This government is based on the principle that people can have great personal freedom even without political rights, and that it's probably better that way."
+ LRSK_GVP_ENTERPRISE_START_COMMON_1:0 "Throughout our history, there has been a struggle between those who believed in freedom and the excellence it brings, and those who believe in 'equality' no matter how much squalor and oppression it takes."
+ LRSK_GVP_ENTERPRISE_START_COMMON_2:0 "Freedom nearly died on our [capital_scope.GetCapitalCarrierType], done in by a jealous and underachieving majority given the vote. Fortunately, our wisest philosophers advised"
+ LRSK_GVP_ENTERPRISE_START_COMMON_3:0 "to step in and ensure that we would not suffer under a 'democracy' without the liberty to strive and achieve and enjoy the fruits of our labor."
+
  lrsk_gov_var_gov_enterprise_society:0 "Enterprise Society"
  lrsk_gov_var_gov_enterprise_society_desc:0 "This government takes the protection of private property very seriously as its highest responsibility. Its citizens support strict law enforcement measures and stripping political rights from criminals and 'the unproductive.'"
 
  LRSK_GOV_VAR_RT_FRANCHISE_MINISTER:0 "Franchise Minister"
  LRSK_GOV_VAR_RT_FRANCHISE_MINISTER_FEMALE:0 "$LRSK_GOV_VAR_RT_FRANCHISE_MINISTER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_SOCIETY:0 "Throughout our history, there has been a struggle between those who believed in freedom and the excellence it brings, and those who believe in 'equality' no matter how much squalor and oppression it takes. We came to reject a doctrinaire insistence on 'democratic' politics if it meant forfeiting the liberty to strive and achieve and enjoy the fruits of our labor. Consequently, our republic does not permit vice, criminality, or laziness to go unpunished and keeps the underachieving masses from skewing the political process in their favor."
+ LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_SOCIETY:0 "$LRSK_GVP_ENTERPRISE_START_COMMON_1$ We came to reject a doctrinaire insistence on 'democratic' politics if it meant forfeiting the liberty to strive and achieve and enjoy the fruits of our labor. Consequently, our republic does not permit vice, criminality, or laziness to go unpunished and keeps the underachieving masses from skewing the political process in their favor."
 
  lrsk_gov_var_gov_enterprise_junta:0 "Enterprise Junta"
- lrsk_gov_var_gov_enterprise_junta_desc:0 "This government is based on the principle that people can have great personal freedom even without political rights, and that it's probably better that way. A police or military clique ensures order in the name of freedom of initiative and protection of property."
+ lrsk_gov_var_gov_enterprise_junta_desc:0 "$LRSK_GVP_ENTERPRISE_DESC_COMMON$ A police or military clique ensures order in the name of freedom of initiative and protection of property."
 
  LRSK_GOV_VAR_RT_PRES_COMMANDER:0 "Presiding Commander"
  LRSK_GOV_VAR_RT_PRES_COMMANDER_FEMALE:0 "$LRSK_GOV_VAR_RT_PRES_COMMANDER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_JUNTA:0 "Throughout our history, there has been a struggle between those who believed in freedom and the excellence it brings, and those who believe in 'equality' no matter how much squalor and oppression it takes. Freedom nearly died on our world, done in by a jealous and underachieving majority given the vote. Fortunately, our wisest philosophers advised our most judicious police and military officers to stepped in to ensure that we would not suffer under a 'democracy' without the liberty to strive and achieve and enjoy the fruits of our labor."
+ LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_JUNTA:0 "$LRSK_GVP_ENTERPRISE_START_COMMON_1$ $LRSK_GVP_ENTERPRISE_START_COMMON_2$ our most judicious police and military officers $LRSK_GVP_ENTERPRISE_START_COMMON_3$"
 
  lrsk_gov_var_gov_enterprise_authority:0 "Enterprise Authority"
- lrsk_gov_var_gov_enterprise_authority_desc:0 "This government is based on the principle that people can have great personal freedom even without political rights, and that it's probably better that way. A police or military commander ensures order in the name of freedom of initiative and protection of property."
+ lrsk_gov_var_gov_enterprise_authority_desc:0 "$LRSK_GVP_ENTERPRISE_DESC_COMMON$ A police or military commander ensures order in the name of freedom of initiative and protection of property."
 
  LRSK_GOV_VAR_RT_EXEC_MARSHAL:0 "Executive Marshal"
  LRSK_GOV_VAR_RT_EXEC_MARSHAL_FEMALE:0 "$LRSK_GOV_VAR_RT_EXEC_MARSHAL$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_AUTHORITY:0 "Throughout our history, there has been a struggle between those who believed in freedom and the excellence it brings, and those who believe in 'equality' no matter how much squalor and oppression it takes. Freedom nearly died on our world, done in by a jealous and underachieving majority given the vote. Fortunately, our wisest philosophers advised a judicious commander to step in and ensure that we would not suffer under a 'democracy' without the liberty to strive and achieve and enjoy the fruits of our labor."
+ LRSK_GOV_VAR_START_SCREEN_P2_ENTERPRISE_AUTHORITY:0 "$LRSK_GVP_ENTERPRISE_START_COMMON_1$ $LRSK_GVP_ENTERPRISE_START_COMMON_2$ a judicious commander $LRSK_GVP_ENTERPRISE_START_COMMON_3$"
 
  lrsk_gov_var_gov_libertine_empire:0 "Empire of Liberty"
  lrsk_gov_var_gov_libertine_empire_desc:0 "This government has a powerful monarch who is nonetheless bound by tradition and constitutional limits. The monarch swears to protect the rights and freedoms of the people upon ascension to the throne. Political rights, however, typically aren't on the agenda."
@@ -870,7 +889,7 @@ l_german:
  LRSK_GOV_VAR_HT_PRINCELICENTIOUS:0 "Prince-Licentious"
  LRSK_GOV_VAR_HT_PRINCESSLICENTIOUS:0 "Princess-Licentious"
 
- LRSK_GOV_VAR_START_SCREEN_P2_EMPIRE_OF_RAPINE:0 "Our dynasty began when upstart military officer perceived a better way to run the world and challenged the powers-that-be of the time, establishing a new system of free and fair rule. Of course, 'free and fair' can mean many things. Fair to whom? And who gets to be free? It is the self-evident law of nature that the strong dominate the weak, and our society came to recognize that freedom must be earned. Those not fit for freedom are fit only to serve."
+ LRSK_GOV_VAR_START_SCREEN_P2_EMPIRE_OF_RAPINE:0 "Our dynasty began when upstart military officer perceived a better way to run the [capital_scope.GetCapitalCarrierTypeShort] and challenged the powers-that-be of the time, establishing a new system of free and fair rule. Of course, 'free and fair' can mean many things. Fair to whom? And who gets to be free? It is the self-evident law of nature that the strong dominate the weak, and our society came to recognize that freedom must be earned. Those not fit for freedom are fit only to serve."
 
  lrsk_gov_var_gov_rationalist_managerial_firm:0 "Rationalist-Managerial Firm"
  lrsk_gov_var_gov_rationalist_managerial_firm_desc:0 "This government is actually a kind of business enterprise that operates according to a principle of rationally planned efficiency for profit maximization. Every aspect of the lives of citizen-workers has been designed according to best practices. Local and regional governments have had their roles reduced to enforcement of waste-reduction measures."
@@ -899,13 +918,17 @@ l_german:
  ####################################
  ### Science-y
 
+ LRSK_GVP_SCHOLSTATE_COMBINE_STRING:0 "Our most daring and successful intellectuals - scientists, scholars, inventors - combined their"
+ LRSK_GVP_SCHOLSTATE_START_COMMON_1:0 "Our intellectual advancement as a species was hampered by our political and economic systems. The former sought to bend our minds' efforts to partisan interests and the military. The latter only cared about marginal advancements for a quick improvement in the bottom line. The desire of our people to know more, to do more, could not be hampered by this pettiness of vision forever, though. $LRSK_GVP_SCHOLSTATE_COMBINE_STRING$"
+ LRSK_GVP_SCHOLSTATE_START_COMMON_2:0 "Now knowledge and creativity in many fields is the index of political power and our whole society's resources can be put to the task of innovation, discovery, new interpretations.""
+
  lrsk_gov_var_gov_innovation_initiative:0 "Innovation Initiative"
  lrsk_gov_var_gov_innovation_initiative_desc:0 "This government, from the outside, seems to be like a university or laboratory that has absorbed the functions of a state. Internally, its politics are like a series of experiments in governmental and social organizational forms."
 
  LRSK_GOV_VAR_RT_EXEC_DEAN:0 "Executive Dean"
  LRSK_GOV_VAR_RT_EXEC_DEAN_FEMALE:0 "$LRSK_GOV_VAR_RT_EXEC_DEAN$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_INNOVATION_INITIATIVE:0 "Our people were once mismanaged by huge, inefficient states. The monopolistic visions and orders they imposed were too inflexible for real advancement of knowledge and social organization. Only with time did we learn the virtue of inequality and the power of innovative disruption. Our most daring and successful intellectuals - scientists, scholars, inventors - combined their resources to buy out the privileges of financially failing states and institute a new system of experimentation in all things, from the advance of knowledge to the organization of governments, economies, societies, cultures, all sapient life."
+ LRSK_GOV_VAR_START_SCREEN_P2_INNOVATION_INITIATIVE:0 "Our people were once mismanaged by huge, inefficient states. The monopolistic visions and orders they imposed were too inflexible for real advancement of knowledge and social organization. Only with time did we learn the virtue of inequality and the power of innovative disruption. $LRSK_GVP_SCHOLSTATE_COMBINE_STRING$ resources to buy out the privileges of financially failing states and institute a new system of experimentation in all things, from the advance of knowledge to the organization of governments, economies, societies, cultures, all sapient life."
 
  lrsk_gov_var_gov_academy_state:0 "Academy State"
  lrsk_gov_var_gov_academy_state_desc:0 "This government seems to be so devoted to advancing and spreading knowledge that it's rather like a gigantic university with a faculty administration. Rank in government closely tracks degrees of training and education."
@@ -913,7 +936,7 @@ l_german:
  LRSK_GOV_VAR_RT_PROVOST_GEN:0 "Provost-General"
  LRSK_GOV_VAR_RT_PROVOST_GEN_FEMALE:0 "$LRSK_GOV_VAR_RT_PROVOST_GEN$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ACADEMY_STATE:0 "Our intellectual advancement as a species was hampered by our political and economic systems. The former sought to bend our minds' efforts to partisan interests and the military. The latter only cared about marginal advancements for a quick improvement in the bottom line. The desire of our people to know more, to do more, could not be hampered by this pettiness of vision forever, though. Our most daring and successful intellectuals - scientists, scholars, inventors - combined their resources to buy out the privileges of financially failing states. Now knowledge and creativity in many fields is the index of political power and our whole society's resources can be put to the task of innovation, discovery, new interpretations."
+ LRSK_GOV_VAR_START_SCREEN_P2_ACADEMY_STATE:0 "$LRSK_GVP_SCHOLSTATE_START_COMMON_1$ resources to buy out the privileges of financially failing states. $LRSK_GVP_SCHOLSTATE_START_COMMON_2$"
 
  lrsk_gov_var_gov_scholastic_commonwealth:0 "Scholastic Commonwealth"
  lrsk_gov_var_gov_scholastic_commonwealth_desc:0 "This government seems to be so devoted to advancing and spreading knowledge that it's rather like a gigantic university with an elected faculty senate. Political rights expand according to degrees of training and education."
@@ -921,10 +944,12 @@ l_german:
  LRSK_GOV_VAR_RT_FACULTY_DIRECTOR:0 "Faculty Director"
  LRSK_GOV_VAR_RT_FACULTY_DIRECTOR_FEMALE:0 "$LRSK_GOV_VAR_RT_FACULTY_DIRECTOR$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_SCHOLASTIC_COMMONWEALTH:0 "Our intellectual advancement as a species was hampered by our political and economic systems. The former sought to bend our minds' efforts to partisan interests and the military. The latter only cared about marginal advancements for a quick improvement in the bottom line. The desire of our people to know more, to do more, could not be hampered by this pettiness of vision forever, though. Our most daring and successful intellectuals - scientists, scholars, inventors - combined their efforts to teach and persuade the people, and then ran for office on a platform of dramatic governmental reform. Now knowledge and creativity in many fields is the index of political power and our whole society's resources can be put to the task of innovation, discovery, new interpretations."
+ LRSK_GOV_VAR_START_SCREEN_P2_SCHOLASTIC_COMMONWEALTH:0 "$LRSK_GVP_SCHOLSTATE_START_COMMON_1$ efforts to teach and persuade the people, and then ran for office on a platform of dramatic governmental reform. $LRSK_GVP_SCHOLSTATE_START_COMMON_2$"
 
  ####################################
  ### Socialistic
+
+ LRSK_GVP_COMMIE_START_1:0 "After ages of slaving for bloodthirsty kings and greedy merchants,"
 
  lrsk_gov_var_gov_proletarian_dictatorship:0 "Proletarian Regime"
  lrsk_gov_var_gov_proletarian_dictatorship_desc:0 "This government is a single-party state that justifies its rule as necessary to see to the needs of the people and defend their revolution."
@@ -935,17 +960,17 @@ l_german:
  #LRSK_GOV_VAR_RT_PARTY_CHAIRMAN:0 "Comrade Chairman"
  #LRSK_GOV_VAR_RT_PARTY_CHAIRWOMAN:0 "Comrade Chairwoman"
 
- LRSK_GOV_VAR_START_SCREEN_P2_PROLETARIAN_DICTATORSHIP:0 "After ages of slaving for bloody kings and greedy merchants, the people finally rose up in revolution. Workers' parties have captured the governments of the majority of advanced nations and put them to the task of liberating our people from toil. The forces of reaction have yet to be destroyed, however, so the people have entrusted power to a supreme leader until the danger passes."
+ LRSK_GOV_VAR_START_SCREEN_P2_PROLETARIAN_DICTATORSHIP:0 "$LRSK_GVP_COMMIE_START_1$ the people finally rose up in revolution. Workers' parties have captured the governments of the majority of advanced nations and put them to the task of liberating our people from toil. The forces of reaction have yet to be destroyed, however, so the people have entrusted power to a supreme leader until the danger passes."
 
  lrsk_gov_var_gov_insurrectionary_lineage:0 "Insurrectionary Lineage"
- lrsk_gov_var_gov_insurrectionary_lineage_desc:0 "This government has theoretically been waging a global revolution against various oppressors of the people under the emergency guidance of a single leader for so long that the leadership has practically become hereditary."
+ lrsk_gov_var_gov_insurrectionary_lineage_desc:0 "This government has theoretically been waging a total revolution against all oppressors of the people under the emergency guidance of a single leader for so long that the leadership has practically become hereditary."
 
  LRSK_GOV_VAR_RT_DEAR_LEADER:0 "Dear Leader"
  LRSK_GOV_VAR_RT_DEAR_LEADER_FEMALE:0 "$LRSK_GOV_VAR_RT_DEAR_LEADER$"
  LRSK_GOV_VAR_HT_DEPUTY_LEADER:0 "Deputy Leader"
  LRSK_GOV_VAR_HT_DEPUTY_LEADER_FEMALE:0 "$LRSK_GOV_VAR_HT_DEPUTY_LEADER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_INSURRECTIONARY_LINEAGE:0 "After ages of slaving for bloody kings and greedy merchants, a wise and loving revolutionary led the people in an uprising. United under this benevolent leadership, our ancestors overthrew oppressor states the world over. While the revolution has been nearly complete for some time the forces of reaction have yet to be fully destroyed. And so we look to the heirs of the great revolutionary leader to guide us to a better tomorrow."
+ LRSK_GOV_VAR_START_SCREEN_P2_INSURRECTIONARY_LINEAGE:0 "$LRSK_GVP_COMMIE_START_1$ a wise and loving revolutionary led the people in an uprising. United under this benevolent leadership, our ancestors overthrew oppressor states throughout the [capital_scope.GetCapitalCarrierType]. While the revolution has been nearly complete for some time the forces of reaction have yet to be fully destroyed. And so we look to the heirs of the great revolutionary leader to guide us to a better tomorrow."
 
  lrsk_gov_var_gov_social_bureaucracy:0 "Social Bureaucracy"
  lrsk_gov_var_gov_social_bureaucracy_desc:0 "This government is a single-party state theoretically ruling on behalf of the common people through a bureaucracy operating state-owned industry for the public good."
@@ -953,7 +978,7 @@ l_german:
  LRSK_GOV_VAR_RT_GENERAL_DIRECTOR:0 "Director-General"
  LRSK_GOV_VAR_RT_GENERAL_DIRECTOR_FEMALE:0 "$LRSK_GOV_VAR_RT_GENERAL_DIRECTOR$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_BUREAUCRACY:0 "After ages of slaving for bloody kings and greedy merchants, the people instituted a more rational and equitable political and economic system. The dangers of revolution have passed, and our global workers' party oversees the organs of state-controlled industry for the common good."
+ LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_BUREAUCRACY:0 "$LRSK_GVP_COMMIE_START_1$ the people instituted a more rational and equitable political and economic system. The dangers of revolution have passed, and our [capital_scope.GetCapitalCarrierTypeAdj] workers' party oversees the organs of state-controlled industry for the common good."
 
  lrsk_gov_var_gov_social_democracy:0 "Social Democracy"
  lrsk_gov_var_gov_social_democracy_desc:0 "This government is a democracy that has made securing the needs of its citizens its mission, and its generous welfare state affords its citizens financial security and more free time."
@@ -969,7 +994,7 @@ l_german:
  LRSK_GOV_VAR_RT_GENERAL_RESOURCE_MANAGER:0 "General Resource Manager"
  LRSK_GOV_VAR_RT_GENERAL_RESOURCE_MANAGER_FEMALE:0 "$LRSK_GOV_VAR_RT_GENERAL_RESOURCE_MANAGER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_AGRARIAN_SOCIAL_STATE:0 "After ages of slaving for greedy landlords and city merchants, the people instituted a more rational and equitable political and economic system. The dangers of revolution have passed, and our global workers' party oversees the organs of state-controlled agriculture and rustic production for the common good."
+ LRSK_GOV_VAR_START_SCREEN_P2_AGRARIAN_SOCIAL_STATE:0 "After ages of slaving for greedy landlords and city merchants, the people instituted a more rational and equitable political and economic system. The dangers of revolution have passed, and our [capital_scope.GetCapitalCarrierTypeAdj] workers' party oversees the organs of state-controlled agriculture and rustic production for the common good."
 
  lrsk_gov_var_gov_agrarian_commonwealth:0 "Agrarian Commonwealth"
  lrsk_gov_var_gov_agrarian_commonwealth_desc:0 "This government is a democracy that focuses on the needs of its citizens, the majority of whom are farmers and other rural workers. Its generous welfare state sets as its goal securing for them a traditional understanding of a balanced and good life."
@@ -987,7 +1012,7 @@ l_german:
  LRSK_GOV_VAR_HT_MOST_CHARITABLE_LORD:0 "Most Charitable Lord"
  LRSK_GOV_VAR_HT_MOST_CHARITABLE_LADY:0 "Most Charitable Lady"
 
- LRSK_GOV_VAR_START_SCREEN_P2_POPULIST_MONARCHY:0 "Since time immemorial, our people have known the cruelty and oppression of landlords, slave drivers, guild masters, and merchant princes. Fortunately, not all the powers of the world were so unjust and rapacious. One lineage of wise and charitable monarchs used their power to enforce a just distribution of land and ensure that the people could eat even in times of famine. Supported by a grateful and enthusiastic populace, this dynasty has become the dominant power of our world."
+ LRSK_GOV_VAR_START_SCREEN_P2_POPULIST_MONARCHY:0 "Since time immemorial, our people have known the cruelty and oppression of landlords, slave drivers, guild masters, and merchant princes. Fortunately, not all the powers of the [capital_scope.GetCapitalCarrierType] were so unjust and rapacious. One lineage of wise and charitable monarchs used their power to enforce a just distribution of land and ensure that the people could eat even in times of famine. Supported by a grateful and enthusiastic populace, this dynasty has become the dominant power of our [capital_scope.GetCapitalCarrierTypeShort]."
 
  lrsk_gov_var_gov_communal_democracy:0 "Communal Democracy"
  lrsk_gov_var_gov_communal_democracy_desc:0 "This government has extended the principle of representative government to the whole political economy, with the central state being simply the largest-scale democratic decision making body. The personal truly is political, and its citizens collectively participate in nearly all the relevant decisions of all aspects of their lives."
@@ -995,7 +1020,7 @@ l_german:
  LRSK_GOV_VAR_RT_POP_TRIBUNE:0 "Popular Tribune"
  LRSK_GOV_VAR_RT_POP_TRIBUNE_FEMALE:0 "$LRSK_GOV_VAR_RT_POP_TRIBUNE$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_COMMUNAL_DEMOCRACY:0 "Though once our people lived and worked under the oppression of various tyrannies, through struggle we have extended the principle of democracy - of accountable power wielded by a free people - to all aspects of society, from neighborhoods to workplaces to the global government. We are bound by common consensus and work for our mutual prosperity and liberty."
+ LRSK_GOV_VAR_START_SCREEN_P2_COMMUNAL_DEMOCRACY:0 "Though once our people lived and worked under the oppression of various tyrannies, through struggle we have extended the principle of democracy - of accountable power wielded by a free people - to all aspects of society, from neighborhoods to workplaces to the [capital_scope.GetCapitalCarrierTypeAdj] government. We are bound by common consensus and work for our mutual prosperity and liberty."
 
  lrsk_gov_var_gov_socialist_plenary:0 "Socialist Plenary"
  lrsk_gov_var_gov_socialist_plenary_desc:0 "This government operates under an ongoing series of panels, committees, and conferences held by representatives of various trade unions and worker-stakeholder organizations. While high politics is a bit distant from the ordinary citizen's reach, locally and regionally they are active and engaged in all the decisions that affect their lives."
@@ -1026,6 +1051,8 @@ l_german:
 
  LRSK_GOV_VAR_START_SCREEN_P2_AUTOMATED_WORLDCOMMUNE:0 "Throughout history, the wisest and most compassionate among us have recognized inequality of needs and means as the great enemy of personal freedom. Going from realizing this to fixing it has necessitated many struggles. After much experimentation, we devised a system that automated the allocation of resources and labor to secure all people against destitution."
 
+ LRSK_GVP_ANARCHOSOC_START_1:0 "In the early days, our people were ruled by robber baron bosses and the states that enforced their wills."
+
  lrsk_gov_var_gov_syndicalist_conference:0 "Syndicalist Conference"
  lrsk_gov_var_gov_syndicalist_conference_desc:0 "This government is theoretically no government at all, as all the functions of the state have been subsumed into a consortium of decentralized worker cooperatives and labor unions. Each such syndicate elects an officer to a steering committee that executes policy for the common good."
 
@@ -1038,7 +1065,7 @@ l_german:
  LRSK_GOV_VAR_RT_GENERAL_SECRETARY:0 "Secretary-General"
  LRSK_GOV_VAR_RT_GENERAL_SECRETARY_FEMALE:0 "$LRSK_GOV_VAR_RT_GENERAL_SECRETARY$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_SYNDICALISM:0 "In the early days, our people were ruled by robber baron bosses and the states that enforced their wills. Gradually, people realized their common interests, and formed democratic unions of workers and new cooperative enterprises. Through hard work and political struggle, these syndicates have taken over the global economy, and so global governance by default."
+ LRSK_GOV_VAR_START_SCREEN_P2_SYNDICALISM:0 "$LRSK_GVP_ANARCHOSOC_START_1$ Gradually, people realized their common interests, and formed democratic unions of workers and new cooperative enterprises. Through hard work and political struggle, these syndicates have taken over the [capital_scope.GetCapitalCarrierTypeAdj] economy, and so [capital_scope.GetCapitalCarrierTypeAdj] governance by default."
 
  lrsk_gov_var_gov_market_socialism:0 "Market Socialism"
  lrsk_gov_var_gov_market_socialism_desc:0 "This government is a consortium of worker co-ops and other democratically run firms, where the employees are all part owners in the enterprise. It exists to ensure that non-oppressive relations between different businesses prevail."
@@ -1046,7 +1073,7 @@ l_german:
  LRSK_GOV_VAR_RT_CONTRACT_MEDIATOR:0 "Contract Mediator"
  LRSK_GOV_VAR_RT_CONTRACT_MEDIATOR_FEMALE:0 "$LRSK_GOV_VAR_RT_CONTRACT_MEDIATOR$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_MARKET_SOCIALISM:0 "In the early days, our people were ruled by robber baron bosses and the states that enforced their wills. Gradually, people realized their common interests, and formed democratic unions of workers and new cooperative enterprises. Through hard work and political struggle, a global confederation of the representatives of these cooperative firms came to run the global economy in the name of common dignity and freedom."
+ LRSK_GOV_VAR_START_SCREEN_P2_MARKET_SOCIALISM:0 "$LRSK_GVP_ANARCHOSOC_START_1$ Gradually, people realized their common interests, and formed democratic unions of workers and new cooperative enterprises. Through hard work and political struggle, a [capital_scope.GetCapitalCarrierTypeAdj] confederation of the representatives of these cooperative firms came to run the [capital_scope.GetCapitalCarrierTypeAdj] economy in the name of common dignity and freedom."
 
  lrsk_gov_var_gov_coop_enterprise:0 "Cooperative Enterprise"
  lrsk_gov_var_gov_coop_enterprise_desc:0 "This government is a gigantic commercial venture run on a system of internal democracy where the employees are all part co-owner. It exists to increase the collective prosperity of its worker-shareholders."
@@ -1054,7 +1081,7 @@ l_german:
  LRSK_GOV_VAR_RT_COORDINATING_OFFICER:0 "Coordinating Officer"
  LRSK_GOV_VAR_RT_COORDINATING_OFFICER_FEMALE:0 "$LRSK_GOV_VAR_RT_COORDINATING_OFFICER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_COOP_ENTERPRISE:0 "In the early days, our people were ruled by robber baron bosses and the states that enforced their wills. Gradually, people realized their common interests, and formed worker-owned and worker-run companies. Through both political organizing and entreprenurial gumption, these companies came to dominate the market. After a final merger of the most powerful such enterprises, a cooperative conglomerate has become the de facto world government."
+ LRSK_GOV_VAR_START_SCREEN_P2_COOP_ENTERPRISE:0 "$LRSK_GVP_ANARCHOSOC_START_1$ Gradually, people realized their common interests, and formed worker-owned and worker-run companies. Through both political organizing and entreprenurial gumption, these companies came to dominate the market. After a final merger of the most powerful such enterprises, a cooperative conglomerate has become the de facto [capital_scope.GetCapitalCarrierTypeShort] government."
  
  ####################################
  ### Religious
@@ -1083,7 +1110,7 @@ l_german:
  LRSK_GOV_VAR_RT_CHIEF_MINISTERIAL_OFFICER:0 "Chief Ministerial Officer"
  LRSK_GOV_VAR_RT_CHIEF_MINISTERIAL_OFFICER_FEMALE:0 "$LRSK_GOV_VAR_RT_CHIEF_MINISTERIAL_OFFICER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_EVANGELICAL_FRANCHISE:0 "Advancement in spiritual understanding was slow, confused, and sporadic. Rampant greed and materialism threatened to drown out any kind of religious life. Then an enlightened sect of the world's greatest faith made a innovative connection between secular marketing and missionary work. Thanks to its enterprising spirit, all the people of the world have invested in the one true faith. Hallelujah!"
+ LRSK_GOV_VAR_START_SCREEN_P2_EVANGELICAL_FRANCHISE:0 "Advancement in spiritual understanding was slow, confused, and sporadic. Rampant greed and materialism threatened to drown out any kind of religious life. Then an enlightened sect of the [capital_scope.GetCapitalCarrierType]'s greatest faith made a innovative connection between secular marketing and missionary work. Thanks to its enterprising spirit, all the people of the [capital_scope.GetCapitalCarrierTypeShort] have invested in the one true faith. Hallelujah!"
 
  lrsk_gov_var_gov_occult_franchise:0 "Occult Cartel"
  lrsk_gov_var_gov_occult_franchise_desc:0 "This government is what happens when something like a cross between a pyramid scheme and a cult gains political power. Its adherents/customers/citizens are either indentured seekers, penitent laborers, or enthusiastic donors."
@@ -1096,6 +1123,8 @@ l_german:
  ####################################
  ### Royals
 
+ LRSK_GVP_CRUSADER_START_1:0 "How long did our people wallow in the spiritual confusion of a thousand false faiths? How many were damned without ever knowing why? Any price, even the [capital_scope.GetCapitalCarrierTypeAdj] holy war that finally united all under the one true faith, was worth it to end those dark days."
+
  lrsk_gov_var_gov_crusader_kingdom:0 "Crusader Kingdom"
  lrsk_gov_var_gov_crusader_kingdom_desc:0 "This government is a zealous warrior monarchy dedicated to defending and spreading its faith by force."
 
@@ -1104,17 +1133,19 @@ l_german:
  LRSK_GOV_VAR_HT_QUEST_PRINCE:0 "Prince-Questant"
  LRSK_GOV_VAR_HT_QUEST_PRINCESS:0 "Princess-Questant"
 
- LRSK_GOV_VAR_START_SCREEN_P2_CRUSADER_KINGDOM:0 "How long did our people wallow in the spiritual confusion of a thousand false faiths? How many were damned without ever knowing why? Any price, even the global holy war that finally united all under the one true faith, was worth it to end those dark days. Only by blood and fire under a righteous warrior-king could heresy and idolatry have been banished from our world. The line of this strong Knight of Faith still rules us today, guarding against spiritual corruption."
+ LRSK_GOV_VAR_START_SCREEN_P2_CRUSADER_KINGDOM:0 "$LRSK_GVP_CRUSADER_START_1$ Only by blood and fire under a righteous warrior-king could heresy and idolatry have been banished from our [capital_scope.GetCapitalCarrierType]. The line of this strong Knight of Faith still rules us today, guarding against spiritual corruption."
+
+ LRSK_GVP_NOBLE_START_1:0 "Once upon a time countless realms covered the [capital_scope.GetCapitalCarrierType]: bound by ties of love and loyalty, divided by pride and vengeance. Through adventures worthy of an epic saga - one filled valorous battle, chivalrous romance, and cunning intrigue -"
 
  lrsk_gov_var_gov_noble_empire:0 "Noble Empire"
- lrsk_gov_var_gov_noble_empire_desc:0 "This government is a quaint, romantic monarchy in which a strong central ruler governs a complex hierarchy of planetary vassal-lords. Could be the subject of a good opera, in space. A 'space opera' if you will."
+ lrsk_gov_var_gov_noble_empire_desc:0 "This government is a quaint, romantic monarchy in which a strong central ruler governs a complex hierarchy of interstellar vassal-lords. Could be the subject of a good opera, in space. A 'space opera' if you will."
 
  LRSK_GOV_VAR_RT_GREAT_KING:0 "Great King"
  LRSK_GOV_VAR_RT_GREAT_QUEEN:0 "Great Queen"
  LRSK_GOV_VAR_HT_HIGH_PRINCE:0 "High Prince"
  LRSK_GOV_VAR_HT_HIGH_PRINCESS:0 "High Princess"
 
- LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_EMPIRE:0 "Once upon a time countless realms covered the world: bound by ties of love and loyalty, divided by pride and vengeance. Through adventures worthy of an epic saga - one filled valorous battle, chivalrous romance, and cunning intrigue - one dynasty claimed the throne of the world. Now the scions of that line rule with righteousness, attended by their numerous vassal barons, dukes, satraps, knights, boyers, mandarins, and other colorfully titled characters."
+ LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_EMPIRE:0 "$LRSK_GVP_NOBLE_START_1$ one dynasty claimed the throne over all other powers. Now the scions of that line rule with righteousness, attended by their numerous vassal barons, dukes, satraps, knights, boyers, mandarins, and other colorfully titled characters."
 
  lrsk_gov_var_gov_noble_republic:0 "Noble Republic"
  lrsk_gov_var_gov_noble_republic_desc:0 "This government is a quaint, romantic aristocracy in which a high council of noble families selects one of the heads of the dynastic houses to be first-among-equals and mediator of affairs of state. Could be the subject of a good opera, in space. A 'space opera' if you will."
@@ -1122,7 +1153,7 @@ l_german:
  LRSK_GOV_VAR_RT_HIGH_PRINCE:0 "High Prince"
  LRSK_GOV_VAR_RT_HIGH_PRINCESS:0 "High Princess"
 
- LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_REPUBLIC:0 "Once upon a time countless realms covered the world: bound by ties of love and loyalty, divided by pride and vengeance. Through adventures worthy of an epic saga - one filled valorous battle, chivalrous romance, and cunning intrigue - the highborn dynastic houses formed an uneasy but bold compact of shared rule. Now the great aristocratic council convenes to settle the affairs of the barons, dukes, satraps, knights, boyers, mandarins, and other colorfully titled characters."
+ LRSK_GOV_VAR_START_SCREEN_P2_NOBLE_REPUBLIC:0 "$LRSK_GVP_NOBLE_START_1$ the highborn dynastic houses formed an uneasy but bold compact of shared rule. Now the great aristocratic council convenes to settle the affairs of the barons, dukes, satraps, knights, boyers, mandarins, and other colorfully titled characters."
 
  lrsk_gov_var_gov_absolute_monarchy:0 "Absolute Monarchy"
  lrsk_gov_var_gov_absolute_monarchy_desc:0 "This government is a powerful, centralized monarchy. Its ruling dynasty seeks to exert absolute control over its territory and integrate all its dependents into one order."
@@ -1132,7 +1163,7 @@ l_german:
  LRSK_GOV_VAR_HT_BLOOD_PRINCE:0 "Prince of the Blood"
  LRSK_GOV_VAR_HT_BLOOD_PRINCESS:0 "Princess of the Blood"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ABSOLUTE_MONARCHY:0 "Since time immemorial, our people have known the firm and stable rule of wise monarchs. Though for many ages their power was degraded and challenged by vain, upstart nobility, today one great dynasty has unified the whole world under its righteous control. With our monarch as the head, all the orders and classes of society work together in their proper places."
+ LRSK_GOV_VAR_START_SCREEN_P2_ABSOLUTE_MONARCHY:0 "Since time immemorial, our people have known the firm and stable rule of wise monarchs. Though for many ages their power was degraded and challenged by vain, upstart nobility, today one great dynasty has unified the [capital_scope.GetCapitalCarrierType] under its righteous control. With our monarch as the head, all the orders and classes of society work together in their proper places."
  
  ####################################
  ### Other
@@ -1156,12 +1187,12 @@ l_german:
  LRSK_GOV_VAR_START_SCREEN_P2_GALACTIC_IMPERIUM:0 "The early chaotic periods of our history saw many nation states vying with each other for power, until we were at last united under the most glorious and honorable monarch in history, whose single, burning vision is to see every knee bent before the throne. Let the barbarians of the stars stare in awe, for we are coming to show them true glory."
 
  lrsk_gov_var_gov_galactic_cartel:0 "Cosmic Cartel"
- lrsk_gov_var_gov_galactic_cartel_desc:0 "This government is a staggeringly ambitious business with designs on total monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe."
+ lrsk_gov_var_gov_galactic_cartel_desc:0 "This government is a staggeringly ambitious business with designs on total galactic monopoly. Its selection is unbelievably diverse, its stock value soaring, its employees productive and courteous. Any who are not yet loyal customers feel an emptiness they don't yet know how to fill, or so the stockholders believe."
 
  LRSK_GOV_VAR_RT_COSEO:0 "Cosmic Executive Officer"
  LRSK_GOV_VAR_RT_COSEO_FEMALE:0 "$LRSK_GOV_VAR_RT_COSEO$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_GALACTIC_CARTEL:0 "In the early days, our people were governed inefficient and unprofitable states. After a series of mergers and violent take-overs, a cartel of ruthless entrepreneurs eventually emerged as the sole ruling body of our homeworld. They look to the stars, imagine worlds beset by unmet yearning for finery and luxury and the satiation of every desire, and feel a deep and righteous greed."
+ LRSK_GOV_VAR_START_SCREEN_P2_GALACTIC_CARTEL:0 "In the early days, our people were governed inefficient and unprofitable states. After a series of mergers and violent take-overs, a cartel of ruthless entrepreneurs eventually emerged as the sole ruling body of our [capital_scope.GetCapitalCarrierType]. They look to the stars, imagining worlds beset by unmet yearning for finery and luxury and the satiation of every desire, and feel a deep and righteous greed."
 
  lrsk_gov_var_gov_pretender_hive:0 "Pretender Hive"
  lrsk_gov_var_gov_pretender_hive_desc:0 "This government is some kind of bizarre and perverse experiment in extreme collectivization. It seems the master of this empire is trying to organize society as to be as close to a hive mind as possible without actually being hive minded."
@@ -1221,7 +1252,7 @@ l_german:
  LRSK_GOV_VAR_HT_TERROR_JINONG:0 "Jinong of Terror"
  LRSK_GOV_VAR_HT_TERROR_GONJI:0 "Gonji of Terror"
 
- LRSK_GOV_VAR_START_SCREEN_P2_DOOM_HORDE:0 "There were other [GetAdj] cultures once, weak and soft, fit only for the sport of their betters. These weaklings were dealt with, one after the other, until our world no longer bore the shame of their pathetic existence. Today only the strong remain."
+ LRSK_GOV_VAR_START_SCREEN_P2_DOOM_HORDE:0 "There were other [GetAdj] cultures once, weak and soft, fit only for the sport of their betters. These weaklings were dealt with, one after the other, until our [capital_scope.GetCapitalCarrierType] no longer bore the shame of their pathetic existence. Today only the strong remain."
 
  lrsk_gov_var_gov_death_cult:0 "Church of Slaughter"
  lrsk_gov_var_gov_death_cult_desc:0 "This government is a rabidly xenophobic church. Under the leadership of its prophets of death and gurus of bloodshed, these fanatics will slay all the wicked aliens of the galaxy and send them screaming to hell."
@@ -1237,15 +1268,16 @@ l_german:
  LRSK_GOV_VAR_HT_SLAUGHTER_HERO:0 "Hero of Slaughter"
  LRSK_GOV_VAR_HT_SLAUGHTER_HEROINE:0 "Heroine of Slaughter"
 
- LRSK_GOV_VAR_START_SCREEN_P2_DEATH_CULT:0 "There were other [GetAdj] cultures once, sinful and cursed, their wicked ways a constant blasphemy. These sinners were dealt with, one after the other, until our world had been utterly redeemed, free at last from their heresy. Today only the holy remain."
+ LRSK_GOV_VAR_START_SCREEN_P2_DEATH_CULT:0 "There were other [GetAdj] cultures once, sinful and cursed, their wicked ways a constant blasphemy. These sinners were dealt with, one after the other, until our [capital_scope.GetCapitalCarrierType] had been utterly redeemed, free at last from their heresy. Today only the holy remain."
 
  lrsk_gov_var_gov_citizen_legion:0 "Citizen Legion"
  lrsk_gov_var_gov_citizen_legion_desc:0 "This government is a rabidly xenophobic state in which political rights are granted to veterans: only those who have risked their lives to eradicate the xeno threat are trusted with the franchise. Its volunteer legions will cleanse the galaxy of all threats to the polity."
 
- LRSK_GOV_VAR_RT_GRAVE_MARSHAL:0 "Grand Margrave"
- LRSK_GOV_VAR_RT_GRAVE_MARSHAL_FEMALE:0 "$LRSK_GOV_VAR_RT_GRAVE_MARSHAL$"
+ LRSK_GVP_MARGRAV:0 "Grand Margrav"
+ LRSK_GOV_VAR_RT_GRAVE_MARSHAL:0 "$LRSK_GVP_MARGRAV$e"
+ LRSK_GOV_VAR_RT_GRAVE_MARSHAL_FEMALE:0 "$LRSK_GVP_MARGRAV$ine"
 
- LRSK_GOV_VAR_START_SCREEN_P2_CITIZEN_LEGION:0 "There were other [GetAdj] cultures once, decadent and vicious, a threat to the unity of the race. Legions of our people formed to deal with these degenerates, one after the other, until our people were finally, completely secure. Today the veterans of this honorable service lead us."
+ LRSK_GOV_VAR_START_SCREEN_P2_CITIZEN_LEGION:0 "There were other [GetAdj] cultures once, decadent and vicious, a threat to the vigor and character of the species. Legions of our people formed to deal with these degenerates, one after the other, until our people were finally, completely secure. Today the veterans of this honorable service lead us."
 
  lrsk_gov_var_gov_private_military_contractor:0 "Private Military Contractor"
  lrsk_gov_var_gov_private_military_contractor_desc:0 "This government is actually a mercenary company that has been contracted by local and regional governments to provide police, national defense, and foreign relations services for the empire. Rank in government typically requires enlistment as a soldier for hire, but the internal structure of the company may be fairly democratic."
@@ -1260,7 +1292,7 @@ l_german:
 
  LRSK_GOV_VAR_RT_MP_MARSHALL:0 "Most Pious Marshall"
 
- LRSK_GOV_VAR_START_SCREEN_P2_CITIZEN_CRUSADE:0 "How long did our people wallow in the spiritual confusion of a thousand false faiths? How many were damned without ever knowing why? Any price, even the global holy war that finally united all under the one true faith, was worth it to end those dark days. Only the dedication and valor of a holy people's army could bring all the unbelievers into the fold. This pious martial tradition continues to this day: only those willing to risk martyrdom have the right to rule."
+ LRSK_GOV_VAR_START_SCREEN_P2_CITIZEN_CRUSADE:0 "$LRSK_GVP_CRUSADER_START_1$ Only the dedication and valor of a holy people's army could bring all the unbelievers into the fold. This pious martial tradition continues to this day: only those willing to risk martyrdom have the right to rule."
  
  lrsk_gov_var_gov_crusader_order:0 "Crusader Order"
  lrsk_gov_var_gov_crusader_order_desc:0 "This government is run by a zealous host of holy warriors dedicated to defending and spreading its faith by force."
@@ -1268,7 +1300,7 @@ l_german:
  LRSK_GOV_VAR_RT_GRANDMASTER:0 "Grandmaster"
  LRSK_GOV_VAR_RT_GRANDMASTER_FEMALE:0 "$LRSK_GOV_VAR_RT_GRANDMASTER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_CRUSADER_ORDER:0 "How long did our people wallow in the spiritual confusion of a thousand false faiths? How many were damned without ever knowing why? Any price, even the global holy war that finally united all under the one true faith, was worth it to end those dark days. Only by blood and fire under a righteous order of holy warriors could heresy and idolatry have been banished from our world. These strong Knights of Faith still rule us today, guarding against spiritual corruption."
+ LRSK_GOV_VAR_START_SCREEN_P2_CRUSADER_ORDER:0 "$LRSK_GVP_CRUSADER_START_1$ Only by blood and fire under a righteous order of holy warriors could heresy and idolatry have been banished from our [capital_scope.GetCapitalCarrierType]. These strong Knights of Faith still rule us today, guarding against spiritual corruption."
 
  lrsk_gov_var_gov_whig_republic:0 "Whig Republic"
  lrsk_gov_var_gov_whig_republic_desc:0 "This government is a paradox. Its citizens are deeply suspicious of threats to their freedom from wealthy fatcats with political connections, who are surely scheming to enslave the people at all hours. Thus there is a near-constant agitation for reform to reduce the state's power, which often ends up benefiting the biggest businesses anyway. Yet while this imparts a paranoid style to its political culture, who's to say its citizens aren't right to be paranoid?"
@@ -1338,7 +1370,7 @@ l_german:
  LRSK_GVP_RT_CHIEF_MEDIATOR:0 "Chief Mediator"
  LRSK_GVP_RT_CHIEF_MEDIATOR_FEMALE:0 "$LRSK_GVP_RT_CHIEF_MEDIATOR$"
 
- LRSK_GVP_START_SCREEN_P2_TRANQUIL_REPUBLIC:0 "As we advanced from tyranny to liberty, we also matured as a people. We acknowledged peaceful commerce as a superior vehichle for prosperity than conquest, and a global republic was formed on the principles of resolving conflict peacefully."
+ LRSK_GVP_START_SCREEN_P2_TRANQUIL_REPUBLIC:0 "As we advanced from tyranny to liberty, we also matured as a people. We acknowledged peaceful commerce as a superior vehichle for prosperity than conquest, and a [capital_scope.GetCapitalCarrierTypeAdj] republic was formed on the principles of resolving conflict peacefully."
 
  # Enlightened Republic/Commonwealth
  LRSK_GVP_ENLIGHTENED_REP_COMMON:0 "the rational and inquisitive citizen is the considered the most virtuous. Political culture places a strong emphasis on education and the best politicians are those who approach political problems with an empirical and experimental method."
@@ -1394,7 +1426,7 @@ l_german:
  LRSK_GOV_VAR_RT_MLEADER:0 "Majority Leader"
  LRSK_GOV_VAR_RT_MLEADER_FEMALE:0 "$LRSK_GOV_VAR_RT_MLEADER$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_FEDERAL_REPUBLIC:0 "Though once our people bore the uncaring demands of a distant central state, through struggle we have established a system of government that respects regional and local values and interests. As such, our government's legislature operates on the basis of free-wheeling debate and citizen input. This has been the key to our advancement, socially and scientifically, and why our government has been able to unify much of our diverse world."
+ LRSK_GOV_VAR_START_SCREEN_P2_FEDERAL_REPUBLIC:0 "Though once our people bore the uncaring demands of a distant central state, through struggle we have established a system of government that respects regional and local values and interests. As such, our government's legislature operates on the basis of free-wheeling debate and citizen input. This has been the key to our advancement, socially and scientifically, and why our government has been able to unify much of our diverse [capital_scope.GetCapitalCarrierType]."
 
  lrsk_gov_var_gov_revolutionary_republic:0 "Revolutionary Republic"
  lrsk_gov_var_gov_revolutionary_republic_desc:0 "This government is a democratic state that sees the strident defense of its liberties against enemies domestic and foreign as its highest duty. This vigilant stance may lead to a policy of preemptive regime change in other empires."
@@ -1410,15 +1442,15 @@ l_german:
  LRSK_GOV_VAR_RT_PRES_COUNC:0 "Presiding Councilor"
  LRSK_GOV_VAR_RT_PRES_COUNC_FEMALE:0 "$LRSK_GOV_VAR_RT_PRES_COUNC$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_REPUBLICAN_DIRECTORY:0 "Our people have lived under the oppression of kings and nobles and through the bloody chaos of an excessive revolution. Establishing liberty is difficult, defending it even moreso. We still face many challenges from the backwards tyrannies of the world, although more and more free peoples look to our government for liberation and protection. As freedom is ever on the march, so our vigil must be eternal."
+ LRSK_GOV_VAR_START_SCREEN_P2_REPUBLICAN_DIRECTORY:0 "Our people have lived under the oppression of kings and nobles and through the bloody chaos of an excessive revolution. Establishing liberty is difficult, defending it even moreso. We still face many challenges from the backwards tyrannies of the [capital_scope.GetCapitalCarrierType], although more and more free peoples look to our government for liberation and protection. As freedom is ever on the march, so our vigil must be eternal."
 
  lrsk_gov_var_gov_republican_protectorate:0 "Republican Protectorate"
- lrsk_gov_var_gov_republican_protectorate_desc:0 "This government is, in theory, a republic with a revolutionary and liberatory mission. In practice, over-extension of its military forces and the need to manage an empire of vassal states has led to the rule of populist military leaders."
+ lrsk_gov_var_gov_republican_protectorate_desc:0 "This government is, in theory, a republic with a revolutionary and liberatory mission. In practice, over-extension of its military forces and the need to manage an empire of client states has led to the rule of populist military leaders."
 
  LRSK_GOV_VAR_RT_FIRST_CONSUL:0 "First Consul"
  LRSK_GOV_VAR_RT_FIRST_CONSUL_FEMALE:0 "$LRSK_GOV_VAR_RT_FIRST_CONSUL$"
 
- LRSK_GOV_VAR_START_SCREEN_P2_REPUBLICAN_PROTECTORATE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the world. And, standing shoulder to shoulder, they won. Victory sings and freedom marches on, and the despots of the world tremble at our approach while those we have already liberated salute us in gratitude."
+ LRSK_GOV_VAR_START_SCREEN_P2_REPUBLICAN_PROTECTORATE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the people. And, standing shoulder to shoulder, they won. Victory sings and freedom marches on, and the despots of the [capital_scope.GetCapitalCarrierTypeShort] tremble at our approach while those we have already liberated salute us in gratitude."
 
  lrsk_gov_var_gov_revolutionary_empire:0 "Revolutionary Empire"
  lrsk_gov_var_gov_revolutionary_empire_desc:0 "This government is monarchical in form but republican in spirit, or so its loyalists claim. Its emperor has sworn to be the embodiment of the people's will and the protector of their liberties, and indeed to embrace all sentient life in a new empire of liberty."
@@ -1428,7 +1460,7 @@ l_german:
  LRSK_GOV_VAR_HT_PEP_CROWN_PRINCE:0 "People's Crown Prince"
  LRSK_GOV_VAR_HT_PEP_CROWN_PRINCESS:0 "People's Crown Princess"
 
- LRSK_GOV_VAR_START_SCREEN_P2_REVOLUTIONARY_EMPIRE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the world. And, standing shoulder to shoulder, they won. The free peoples of the world looked to us for guidance, and once again, we shocked the world: we freely gave a crown to the hero who led our valiant struggle. Our Emperor in turn gave us a promise: to see the whole world free and at peace. And after that, perhaps the galaxy?"
+ LRSK_GOV_VAR_START_SCREEN_P2_REVOLUTIONARY_EMPIRE:0 "After ages of the darkness of ignorance and oppression, our people rose up. They overthrew tyrants and faced down the endless hordes of the oppressors of the people. And, standing shoulder to shoulder, they won. The free peoples of our [capital_scope.GetCapitalCarrierType] looked to us for guidance, and once again, we shocked them all: we freely gave a crown to the hero who led our valiant struggle. Our Emperor in turn gave us a promise: to see the whole [capital_scope.GetCapitalCarrierTypeShort] free and at peace. And after that, perhaps the galaxy?"
  
  ####################################
  ### Hive Minds
@@ -1451,6 +1483,9 @@ l_german:
 
  LRSK_GOV_VAR_START_SCREEN_P2_CONSPIRACY_OF_EQUALS:0 "Though once our people lived under the oppression of various oppressive hierarchies, through struggle we have extended the principle of equality to all aspects of society. The work of banishing hierarchies continues, and it as if the moral order of the universe agrees with our project: none rise too far up without eventually being brought low, as we learn to live in freedom."
 
+ LRSK_GVP_UTOPIAN_START_1:0 "For far too long, the people of the [capital_scope.GetCapitalCarrierType] groaned under the reign of greed and pride, an irrational system of people preying on each other like beasts. But eventually, through the work of modern moral philosophers dedicated to building a more rational society of cooperation where all may prosper, this changed. We now live"
+ LRSK_GVP_UTOPIAN_START_2:0 "for universal love and moral improvement. Never will [GetSpeciesName] prey on [GetSpeciesName] again!"
+
  lrsk_gov_var_gov_utopian_despotism_dic:0 "Utopian Despotism"
  lrsk_gov_var_gov_utopian_despotism_dic_desc:0 "Either as hereditary monarchs or dictators elected for life, the rulers of this society have secured their rule by eradicating poverty amongst their subjects, who dwell in collective communes according to a precise social plan. Though essential class divisions remain, the benevolent despots take special care of the people in the spirit of philanthropy, universal love, and moral improvement."
 
@@ -1462,14 +1497,14 @@ l_german:
  LRSK_GOV_VAR_RT_GRAND_PHILANTHROPIST_I:0 "$LRSK_GOV_VAR_RT_GRAND_PHILANTHROPIST_D$"
  LRSK_GOV_VAR_HT_PHILANTHROPIC_APPRENTICE:0 "Philanthropic Apprentice"
 
- LRSK_GOV_VAR_START_SCREEN_P2_UTOPIAN_DESPOTISM:0 "For far too long, the world groaned under the reign of greed and pride, an irrational system of people preying on each other like beasts. But eventually, through the work of modern moral philosophers dedicated to building a more rational world of cooperation where all may prosper, this changed. We now live under the benevolent direction of a wise Philanthropist to execute a grand plan for universal love and moral improvement. Never will [GetSpeciesName] prey on [GetSpeciesName] again!"
+ LRSK_GOV_VAR_START_SCREEN_P2_UTOPIAN_DESPOTISM:0 "$LRSK_GVP_UTOPIAN_START_1$ under the benevolent direction of a wise Philanthropist to execute a grand plan $LRSK_GVP_UTOPIAN_START_2$"
 
  lrsk_gov_var_gov_utopian_socialism:0 "Utopian Socialism"
  lrsk_gov_var_gov_utopian_socialism_desc:0 "The people live in precisely planned collective communes, safe in the knowledge that a rational and humane economic system provides for all their needs. Though essential class divisions remain, the benevolent economic planners take special care of their workers in the spirit of philanthropy, universal love, and moral improvement."
 
  LRSK_GOV_VAR_RT_PHILANTHROPY_DIRECTOR:0 "Philanthropy Director"
 
- LRSK_GOV_VAR_START_SCREEN_P2_UTOPIAN_SOCIALISM:0 "For far too long, the world groaned under the reign of greed and pride, an irrational system of people preying on each other like beasts. But eventually, through the work of modern moral philosophers dedicated to building a more rational world of cooperation where all may prosper, this changed. We now live according to the Great Philanthropic Plan for universal love and moral improvement. Never will [GetSpeciesName] prey on [GetSpeciesName] again!"
+ LRSK_GOV_VAR_START_SCREEN_P2_UTOPIAN_SOCIALISM:0 "$LRSK_GVP_UTOPIAN_START_1$ according to the Great Philanthropic Plan $LRSK_GVP_UTOPIAN_START_2$"
 
  lrsk_gov_var_gov_social_imperialism:0 "Colonial Socialism"
  lrsk_gov_var_gov_social_imperialism_desc:0 "This socialist state maintains stability by the widespread distribution of goods and services... underwritten by colonialist avarice. With an expansionistic policy that shows little regard for concepts of self-determination and equality, those who fall beneath the hegemony of this state in the name of interplanetary revolution are aptly called 'captive nations.'"
@@ -1479,21 +1514,21 @@ l_german:
  LRSK_GOV_VAR_HT_DEPUTY_CHAIRMAN:0 "Deputy Chairman"
  LRSK_GOV_VAR_HT_DEPUTY_CHAIRWOMAN:0 "Deputy Chairwoman"
 
- LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_IMPERIALISM:0 "After ages of slaving for bloody kings and greedy merchants, the people finally rose up in revolution. Workers' parties have captured the governments of the majority of nations and put them to the task of social development. The International system on [Capital.GetName] worked well at empowering the vanguard nation of the revolution to free the world with solidarity contributions from its associate workers' states."
+ LRSK_GOV_VAR_START_SCREEN_P2_SOCIAL_IMPERIALISM:0 "$LRSK_GVP_COMMIE_START_1$, the people finally rose up in revolution. Workers' parties have captured the governments of the majority of nations and put them to the task of social development. The International system on [Capital.GetName] worked well at empowering the vanguard nation of the revolution to liberate the downtrodden, with solidarity contributions from its associate workers' states."
 
  lrsk_gov_var_gov_pure_social_republic:0 "Purity Collective"
  lrsk_gov_var_gov_pure_social_republic_desc:0 "The emancipated proletarians of this master-race worker's state are interested in breaking only one kind of chain - the chains binding the souls of degenerate aliens to their living bodies!"
 
  LRSK_GOV_VAR_RT_PEOPLES_CHAMPION:0 "People's Champion"
 
- LRSK_GOV_VAR_START_SCREEN_P2_PURE_SOCIAL_REPUBLIC:0 "There were other [GetAdj] cultures once, degenerate and abnormal, a threat to the unity of real working people. A people's army dealt with these misfits, one after the other, until ordinary hard working [GetSpeciesNamePlural] ruled the world in freedom and plenty. Today only the normal remain."
+ LRSK_GOV_VAR_START_SCREEN_P2_PURE_SOCIAL_REPUBLIC:0 "There were other [GetAdj] cultures once, degenerate and abnormal, a threat to the unity of real working people. A people's army dealt with these misfits, one after the other, until ordinary, hard-working [GetSpeciesNamePlural] ruled the [capital_scope.GetCapitalCarrierType] in freedom and plenty. Today, only the normal remain."
 
  lrsk_gov_var_gov_onestate_socialism:0 "Exemplary Socialism"
  lrsk_gov_var_gov_onestate_socialism_desc:0 "This society has committed itself to constructing socialism in one state, and has renounced the ideal of interplanetary revolution beyond indirect support. Though ready to defend itself against any aggressor, this society directs all its efforts towards the task of socialist construction within its own borders so as to be an inspiration to revolutionaries elsewhere."
 
  LRSK_GOV_VAR_RT_NATIONAL_PARTY_CHAIR:0 "National Party Chair"
 
- LRSK_GOV_VAR_START_SCREEN_P2_ONESTATE_SOCIALISM:0 "After ages of slaving for bloody kings and greedy merchants, the people finally rose up in revolution. A worker's party took control of an advanced nation and devoted its economy to the task of building a model of socialist freedom and plenty. This model inspired other revolutionaries around the world without the need for foreign entanglements or wars."
+ LRSK_GOV_VAR_START_SCREEN_P2_ONESTATE_SOCIALISM:0 "$LRSK_GVP_COMMIE_START_1$, the people finally rose up in revolution. A worker's party took control of an advanced nation and devoted its economy to the task of building a model of socialist freedom and plenty. This model inspired other revolutionaries around the [capital_scope.GetCapitalCarrierType] without the need for foreign entanglements or wars."
 
  lrsk_gov_var_gov_workers_republic:0 "Worker's Republic"
  lrsk_gov_var_gov_workers_republic_desc:0 "This is a republican system of government where the working class and their elected leaders are predominant. Though similar in structure to most republics, the most influential political blocs are the labor unions and cooperative industry lobbies."
@@ -1508,30 +1543,32 @@ l_german:
  LRSK_GOV_VAR_RT_COUNTRY_CHANCELLOR:0 "Country Chancellor"
 
  LRSK_GOV_VAR_START_SCREEN_P2_RUSTIC_REPUBLIC:0 "Since time immemorial, the vast majority of our people have lived and worked in the countrysides. When they realized their common interests and instituted governments by and for the people, it was the rural people who spoke with the loudest voice. Practically speaking, it isn't feasible to even run for office without the backing of the farms and small towns."
+ 
+ LRSK_GVP_RURALREV_START_1:0 "The vast majority of our people have always dwelled in the countrysides and have known the exploitation of absentee landlords, bankers, nobles, and merchants living high on the hog in the cities,"
 
  lrsk_gov_var_gov_peasant_commune_collective:0 "Rural Commune Collective"
  lrsk_gov_var_gov_peasant_commune_collective_desc:0 "This society is a federation of largely self-reliant farming communes, run by elected village councils who delegate their authority to a central government that handles foreign policy and coordinates responses to disasters. It is a fundamentally peaceful society with little interest in conquest."
 
  LRSK_GOV_VAR_RT_COMMUNAL_REPRESENTATIVE:0 "Communal Representative"
 
- LRSK_GOV_VAR_START_SCREEN_P2_PEASANT_COMMUNE_COLLECTIVE:0 "The vast majority of our people have always dwelled in the countrysides and have known the exploitation of absentee landlords, bankers, nobles, and merchants living high on the hog in the cities, sending them to fight and die in wars to enrich the already too-wealthy. With time they came to realize their common interests, and formed agricultural unions and cooperatively owned land trusts, wresting power for themelves and bringing the predation of the cities to an end. Networks of small and sparse communities united by these institutions run the world peacefully to this day."
+ LRSK_GOV_VAR_START_SCREEN_P2_PEASANT_COMMUNE_COLLECTIVE:0 "$LRSK_GVP_RURALREV_START_1$ sending them to fight and die in wars to enrich the already too-wealthy. With time they came to realize their common interests, and formed agricultural unions and cooperatively owned land trusts, wresting power for themelves and bringing the predation of the cities to an end. Networks of small and sparse communities united by these institutions run the [capital_scope.GetCapitalCarrierType] peacefully to this day."
 
  lrsk_gov_var_gov_peasant_dictatorship:0 "Peasant Dictatorship"
  lrsk_gov_var_gov_peasant_dictatorship_desc:0 "When a revolutionary party organized the peasantry against their oppressors - landlords, foreign imperialists, and urban capitalists - they enacted a program of radical agrarian collectivism. The result is a ruthless dictatorship where city dwellers and intellectuals are routinely forced to leave the cities and join the peasants in the countryside to learn humility and equality. The party draws its base of support from the peasantry and its governing priorities reflect agrarian needs."
 
  LRSK_GOV_VAR_RT_COLLECTIVE_DIRECTOR:0 "Collective Director"
 
- LRSK_GOV_VAR_START_SCREEN_P2_PEASANT_DICTATORSHIP:0 "The vast majority of our people have always dwelled in the countrysides and have known the exploitation of absentee landlords, bankers, and merchants living high on the hog in the cities, many the puppets of foreign empires who laid waste to the farmlands in bloody wars of conquest. Revolutionary parties of united peasants and workers eventually formed, laid siege to the cities, and wrested power from the exploiters by force. Such a party rules to this day, ensuring that all are taught the great chain of labor from countryside to city that makes the world work and how we all have an equal and tranquil place within it."
+ LRSK_GOV_VAR_START_SCREEN_P2_PEASANT_DICTATORSHIP:0 "T$LRSK_GVP_RURALREV_START_1$ many the puppets of foreign empires who laid waste to the farmlands in bloody wars of conquest. Revolutionary parties of united peasants and workers eventually formed, laid siege to the cities, and wrested power from the exploiters by force. Such a party rules to this day, ensuring that all are taught the great chain of labor from countryside to city that makes the society work and how we all have an equal and tranquil place within it."
 
  lrsk_gov_var_gov_agrarian_monarchy:0 "Agrarian Monarchy"
- lrsk_gov_var_gov_agrarian_monarchy_desc:0 "The peasants of this world rose up against the landlords and city merchants who exploited them, yet they stilled wished to retain the tradition of the royal family, believing that their sovereigns were benevolent parents misled by evil advisors. Now a single monarch rules over the masses of peasants, the beloved if rather overwhelmed head of a vast family of rural subjects."
+ lrsk_gov_var_gov_agrarian_monarchy_desc:0 "The peasants of this society rose up against the landlords and city merchants who exploited them, yet they stilled wished to retain the tradition of the royal family, believing that their sovereigns were benevolent parents misled by evil advisors. Now a single monarch rules over the masses of peasants, the beloved if rather overwhelmed head of a vast family of rural subjects."
 
  LRSK_GOV_VAR_RT_FATHERKING:0 "Father-King"
  LRSK_GOV_VAR_RT_MOTHERQUEEN:0 "Mother-Queen"
  LRSK_GOV_VAR_HT_BROTHERPRINCE:0 "Brother-Prince"
  LRSK_GOV_VAR_HT_SISTERPRINCESS:0 "Sister-Princess"
 
- LRSK_GOV_VAR_START_SCREEN_P2_AGRARIAN_MONARCHY:0 "Since time immemorial, our people have known the cruelty and oppression of the landlords and merchant princes of the cities who corrupted the benevolent monarchs, parents of all the people, with money and bad counsel. When the commoners of the countryside rose up against their urban masters to demand peace and plenty, they effectively freed the royal fathers and mothers of the nations to be the guiding lights they were always meant to be. Supported by a grateful and enthusiastic populace, the chief monarch of the world has become parent to all."
+ LRSK_GOV_VAR_START_SCREEN_P2_AGRARIAN_MONARCHY:0 "Since time immemorial, our people have known the cruelty and oppression of the landlords and merchant princes of the cities who corrupted the benevolent monarchs, parents of all the people, with money and bad counsel. When the commoners of the countryside rose up against their urban masters to demand peace and plenty, they effectively freed the royal fathers and mothers of the nations to be the guiding lights they were always meant to be. Supported by a grateful and enthusiastic populace, the chief monarch of the [capital_scope.GetCapitalCarrierType] has become parent to all."
 
  lrsk_gov_var_gov_reactionary_socialism:0 "Reactionary Socialism"
  lrsk_gov_var_gov_reactionary_socialism_desc:0 "Once, the old elites of this society were threatened by the rise of capitalism. In response, an alliance of the aristocrats and petty-bourgeoise were able to manipulate the emerging working class into siding with them against the new captains of industry. The result is that a restrictive system of state ownership, regulations, tariffs, and taxation to prevent the new self-made bourgeoise from ever threatening to size state power away from old money and old blood."
@@ -1540,7 +1577,7 @@ l_german:
  LRSK_GOV_VAR_RT_LADY_PRESIDENT:0 "Lady President"
  LRSK_GOV_VAR_HT_VP_ESQ:0 "Hon. Vice President, Esq."
 
- LRSK_GOV_VAR_START_SCREEN_P2_REACTIONARY_SOCIALISM:0 "Since time immemorial, our people have known the cruelty and oppression of merchant princes and guild masters, who grew wealthier the more we toiled for them, sundering all the social bonds which support the world. Fortunately, our wise nobility put a stop to their rapacious designs. Through their generous partnership with the common people and prudent limits on accumulation, the world can still work for working people."
+ LRSK_GOV_VAR_START_SCREEN_P2_REACTIONARY_SOCIALISM:0 "Since time immemorial, our people have known the cruelty and oppression of merchant princes and guild masters, who grew wealthier the more we toiled for them, sundering all the social bonds which support the world. Fortunately, our wise nobility put a stop to their rapacious designs. Through their generous partnership with the common people and prudent limits on accumulation, the [capital_scope.GetCapitalCarrierTypeShort] can still work for working people."
 
  lrsk_gov_var_gov_feudal_socialism:0 "Feudal Socialism"
  lrsk_gov_var_gov_feudal_socialism_desc:0 "The aristocracy of this society were able to strangle capitalism in its cradle by convincing the workers and peasants that only the noble orders of society could protect them from exploitation. Now the monarch and the court control state-run industries in the same manner as the landed estates of old, passing down mines and manufactories by right of birth. The workers are bound as serfs to their production lines in exchange for the traditional noble obligation of charity, which is much more generous thanks to industrial production methods."
@@ -1588,9 +1625,9 @@ l_german:
  LRSK_GOV_VAR_RT_MERCHANT_PRINCESS:0 "$LRSK_GOV_VAR_RT_MERCHANT_PRINCE$ss"
  LRSK_GOV_VAR_HT_VICEPRINCEPS:0 "Vice-Princeps"
 
- LRSK_GOV_VAR_START_SCREEN_P2_MERCHANT_PRINCIPALITY:0 "$LRSK_GOV_VAR_MERCH_START_COMMON$ Eventually the heads of the most profitable firms came together to reach an agreement about how to best manage and protect production and exchange. This compact gradually went from being the de facto government to the true locus of world power."
+ LRSK_GOV_VAR_START_SCREEN_P2_MERCHANT_PRINCIPALITY:0 "$LRSK_GOV_VAR_MERCH_START_COMMON$ Eventually the heads of the most profitable firms came together to reach an agreement about how to best manage and protect production and exchange. This compact gradually went from being the de facto government to the true locus of [capital_scope.GetCapitalCarrierTypeAdj] power."
 
- LRSK_GOV_VAR_GOV_SHARESTAKE_COMMON:0 "But although we valued enterprise, we also valued the public good. So, to prevent the masters of commerce from becoming new masters of the world,"
+ LRSK_GOV_VAR_GOV_SHARESTAKE_COMMON:0 "But although we valued enterprise, we also valued the public good. So, to prevent the masters of commerce from becoming new masters of the [capital_scope.GetCapitalCarrierType],"
 
  lrsk_gov_var_gov_stakeholder_polity:0 "Stakeholder Polity"
  lrsk_gov_var_gov_stakeholder_polity_desc:0 "Though corporations hold great sway in society, their management is actually held to a standard of accountability to the public by a central 'Fair Deals Council' made up of experienced public advocates, community leaders, and philanthropists. This holds back the worst greedy instincts."
@@ -1629,21 +1666,6 @@ l_german:
 
  LRSK_GOV_VAR_RT_GOV_PRES:0 "Governor-President"
 
- ####################################
- ### Garlic Pudding
-
- LRSK_GOV_VAR_GOV_MERCHANT_PRINCIPALITY_COMMON:0 "An empire ruled by a council of the wealthiest merchants and conglomerates who jointly manage all matters of state for profit."
- lrsk_gov_var_gov_merchant_principality_d:0 "Merchant Principality"
- lrsk_gov_var_gov_merchant_principality_d_desc:0 "$LRSK_GOV_VAR_GOV_MERCHANT_PRINCIPALITY_COMMON$ These powerful business magnates representing the wealthiest firms select from their number a final arbitrator of internal issues according to the candidates' past records of discernment and wise business decisions."
- lrsk_gov_var_gov_merchant_principality_i:0 "$lrsk_gov_var_gov_merchant_principality_d$"
- lrsk_gov_var_gov_merchant_principality_i_desc:0 "$LRSK_GOV_VAR_GOV_MERCHANT_PRINCIPALITY_COMMON$ They are led by a final arbiter of internal issues drawn from their number according to the stock value of the involved firms such that when a new head of state takes office, the wealthiest firm puts forward the successor who acts as something like an apprentice and representative."
-
- LRSK_GOV_VAR_RT_MERCHANT_PRINCE:0 "Merchant Prince"
- LRSK_GOV_VAR_RT_MERCHANT_PRINCESS:0 "$LRSK_GOV_VAR_RT_MERCHANT_PRINCE$ss"
- LRSK_GOV_VAR_HT_VICEPRINCEPS:0 "Vice-Princeps"
-
- LRSK_GOV_VAR_START_SCREEN_P2_MERCHANT_PRINCIPALITY:0 "In the early days, our people were governed by inefficient republics and pompous royal dynasties. Gradually, as global trade increased, the importance of merchants and industry became impossible to ignore, and it could be said that gold ruled the world. Eventually the heads of the most profitable firms came together to reach an agreement about how to best manage and protect production and exchange. This compact gradually went from being the de facto government to the true locus of world power."
- 
  lrsk_gov_var_gov_crusading_company:0 "Crusading Company"
  lrsk_gov_var_gov_crusading_company_desc:0 "An odd amalgamation of mercenary company and megachurch, this corporation believes in God, gold, and glory, not necessarily in that order. To them, nothing pleases the Divine more than enlightening others to their gospel of prosperity... and if some potential customer-congregants prove stubborn, then their missionaries may simply use some paradigm-breaking aggressive marketing tactics."
 
@@ -1832,7 +1854,7 @@ l_german:
  d_lrsk_gov_var_shroud_pockets_desc:0 "The Otherworld is poking through to our reality in these haunted, remote places. Psychic energy howling from these pockets has surely influenced the development of intelligent life on this world."
 
  d_lrsk_gvp_legacy_autoinf:0 "Legacy Automation"
- d_lrsk_gvp_legacy_autoinf_desc:0 "This civilization built its vast automation infrastructure bit by bit, to the point that it is seamlessly integrated into all construction and logistics on the homeworld."
+ d_lrsk_gvp_legacy_autoinf_desc:0 "This civilization built its vast automation infrastructure bit by bit, to the point that it is seamlessly integrated into all construction and logistics on the [owner.capital_scope.GetCapitalCarrierType]."
 
  ## Subjects
 
@@ -2119,7 +2141,7 @@ l_german:
  lrsk_gov_var_bldg_local_news_office:0 "Local News Station"
  lrsk_gov_var_bldg_local_news_office_desc:0 "Broadcasting all-day every-day coverage of all the notable news of the planet for mass consumption: sports, weather, political scandals, talking heads, this news station has it all."
 
- LRSK_MEDIA_FAVOR_COMMON:0 "chance per year to get a §YFavor§! from the host empire when it uncovers a national scandal on this planet to use as blackmail! This is more likely on the capital world, on worlds with high $type_crime$ and/or low $r_stability$, and on worlds with certain decision-based modifiers (i.e., §Y$anticrime_campaign$§!, §Y$crime_lord_deal$§!, §Y$planet_population_expelled$§!, §Y$planet_population_control$§!, §Y$planet_growth_discouraged$§!, and §Y$martial_law$§!). It can happen in the host empire at most once every 5 years."
+ LRSK_MEDIA_FAVOR_COMMON:0 "chance per year to get a §YFavor§! from the host empire when it uncovers a national scandal on this planet to use as blackmail! This is more likely in the capital, in colonies with high $type_crime$ and/or low $r_stability$, and in colonies with certain decision-based modifiers (i.e., §Y$anticrime_campaign$§!, §Y$crime_lord_deal$§!, §Y$planet_population_expelled$§!, §Y$planet_population_control$§!, §Y$planet_growth_discouraged$§!, and §Y$martial_law$§!). It can happen in the host empire at most once every 5 years."
 
  lrsk_media_legit_favor_chance:0 "The branch office owner has a §R5%§! $LRSK_MEDIA_FAVOR_COMMON$\n\nQuality subscription options and subscriber services increase §Y$BRANCH_OFFICE_VALUE$§! by §G10%§!.\n\n"
 
@@ -2175,9 +2197,9 @@ l_german:
  mod_job_lrsk_gvp_job_citscholar_per_pop_short:0 "\n§G+1§! £mod_job_lrsk_gvp_job_citscholar_add£ per $VALUE$ £pop£"
 
  # Planetary Auditor
- job_lrsk_gov_var_job_regional_coordinator:0 "Planetary Auditor"
+ job_lrsk_gov_var_job_regional_coordinator:0 "Colonial Audit Master Agent"
  job_lrsk_gov_var_job_regional_coordinator_plural:0 "$job_lrsk_gov_var_job_regional_coordinator$s"
- job_lrsk_gov_var_job_regional_coordinator_desc:0 "Local administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram planetary logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
+ job_lrsk_gov_var_job_regional_coordinator_desc:0 "Local administrative subroutines temporarily given semi-sapience and a sweeping mandate to audit and reprogram colonial logistics systems. While their interventions unleash some impressive gains in organizational coherency and service efficiency, they also introduce some irregularities and conflicts."
  job_lrsk_gov_var_job_regional_coordinator_effect_desc:1 "£job_lrsk_gov_var_job_regional_coordinator£ $job_lrsk_gov_var_job_regional_coordinator_plural$ turn $r_energy$ into $r_unity$ and $r_lrsk_amenities_nohappy$. However, they decrease $r_stability$."
  mod_job_lrsk_gov_var_job_regional_coordinator_add:0 "$job_lrsk_gov_var_job_regional_coordinator$ Jobs"
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_regional_coordinator$ Job per $VALUE$ §YPop§!"
@@ -2278,18 +2300,18 @@ l_german:
 
  # Run Recursive Audit
  decision_lrsk_gov_var_rra:0 "Run Recursive Audit"
- decision_lrsk_gov_var_rra_desc:1 "The local administrative subroutines of the planet shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent planetary factors bearing on productivity in order to re-optimize local operations."
+ decision_lrsk_gov_var_rra_desc:1 "The local administrative subroutines of the colony shall temporarily be given semi-autonomous processing power in order to engage in a sweeping inspection, catalog, and analysis process of all recent colonial factors bearing on productivity in order to re-optimize local operations."
  decision_lrsk_gov_var_rra_effects:0 "Adds several £job_lrsk_gov_var_job_regional_coordinator£ ['concept_lrsk_gvp_regional_coordinators']. Removes the results of any prior audit.\n\nAfter one year the audit will conclude and the planet's logistical systems should be upgraded. \n\n§HNote:§! The more specialized this planet's production, the higher the likelihood of a useful result!"
  lrsk_gvp_rra_fail_cooldown_planet:0 "£trigger_no£ Need to wait §R10 years§! before running another audit on §Y[this.GetName]§!."
  lrsk_gvp_rra_fail_cooldown_empire:0 "£trigger_no£ The §Y[this.owner.GetName]§! needs to wait §R5 years§! before running another audit on one of its colonies."
 
  # Work Allocation Plan
  decision_lrsk_gvp_work_allocation_plan:0 "Work Allocation Plan"
- decision_lrsk_gvp_work_allocation_plan_desc:1 "Due to high unemployment, the planetary government designs, implements, and continually improves a plan to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This will have some regretable impact on the local economy."
+ decision_lrsk_gvp_work_allocation_plan_desc:1 "Due to high unemployment, the colonial government designs, implements, and continually improves a plan to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This will have some regretable impact on the local economy."
  decision_lrsk_gvp_work_allocation_plan_effects:0 "Adds the §H$lrsk_gvp_statmod_work_plan$§! modifier, which gives $lrsk_gvp_statmod_work_plan_effects_common$."
 
  decision_lrsk_gvp_end_work_allocation_plan:0 "End Work Allocation Plan"
- decision_lrsk_gvp_end_work_allocation_plan_desc:1 "Due to satisfactory planetary employment levels, the plan to alleviate unemployment can come to an end."
+ decision_lrsk_gvp_end_work_allocation_plan_desc:1 "Due to satisfactory colonial employment levels, the plan to alleviate unemployment can come to an end."
  decision_lrsk_gvp_end_work_allocation_plan_effects:0 "Removes the §H$lrsk_gvp_statmod_work_plan$§! modifier, ending $lrsk_gvp_statmod_work_plan_effects_common$."
 
  # Charter Colonial Company
@@ -2409,7 +2431,7 @@ l_german:
  ## Utilitarian Planning - Work Allocation Plan
 
  lrsk_gvp_statmod_work_plan:0 "Work Allocation Planning"
- lrsk_gvp_statmod_work_plan_desc:0 "The planetary government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
+ lrsk_gvp_statmod_work_plan_desc:0 "The colonial government is making efforts to encourage unemployed residents to find jobs (whether on this planet or elsewhere). This has some regretable impact on the local economy."
  lrsk_gvp_statmod_work_plan_effects_common:0 "§G+50%§! Automatic Resettlement Chance at the cost of §R-15%§! $r_trade$. (Can be ended any time, will automatically end when no £pop£ §YPops§! are unemployed for one month.)"
 
  ## Royal Absolutism - New Aristos
@@ -2464,7 +2486,7 @@ l_german:
  ## Distributed Planning Systems Audits
 
  lrsk_gov_var_statmod_planet_audit:0 "Recursive Functionality Audit"
- lrsk_gov_var_statmod_planet_audit_desc:0 "The local administrative subroutines have temporarily been given semi-sapience rights and a sweeping mandate to audit and reprogram planetary logistics systems."
+ lrsk_gov_var_statmod_planet_audit_desc:0 "The local administrative subroutines have temporarily been given semi-sapience rights and a sweeping mandate to audit and reprogram colonial logistics systems."
 
  #lrsk_gov_var_statmod_planet_audit_1:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON$"
  #lrsk_gov_var_statmod_planet_audit_1_desc:0 "$LRSK_GOV_VAR_STATMOD_PLANET_AUDIT_COMMON_DESC$"
@@ -2497,13 +2519,13 @@ l_german:
  lrsk_gov_var_statmod_planet_logistic_priority_desc:0 "The local administrative subroutines focused on further improving their own logicistics optimizations."
 
  lrsk_gov_var_statmod_planet_mining_priority:0 "$PRIORITY_STRING$ Mining"
- lrsk_gov_var_statmod_planet_mining_priority_desc:0 "All planetary mines and related infratructure receive priority in allocations and queues."
+ lrsk_gov_var_statmod_planet_mining_priority_desc:0 "All mines and related infratructure receive priority in allocations and queues."
 
  lrsk_gov_var_statmod_planet_energy_priority:0 "$PRIORITY_STRING$ Energy"
- lrsk_gov_var_statmod_planet_energy_priority_desc:0 "All planetary generators and related infratructure receive priority in allocations and queues."
+ lrsk_gov_var_statmod_planet_energy_priority_desc:0 "All generators and related infratructure receive priority in allocations and queues."
 
  lrsk_gov_var_statmod_planet_food_priority:0 "$PRIORITY_STRING$ Food"
- lrsk_gov_var_statmod_planet_food_priority_desc:0 "All planetary farms and related infratructure receive priority in allocations and queues."
+ lrsk_gov_var_statmod_planet_food_priority_desc:0 "All farms and related infratructure receive priority in allocations and queues."
 
  lrsk_gov_var_statmod_planet_smelting_priority:0 "$PRIORITY_STRING$ Alloys"
  lrsk_gov_var_statmod_planet_smelting_priority_desc:0 "Spare processing power is diverted to smart scheduling the production of military needs."
@@ -2530,7 +2552,7 @@ l_german:
  lrsk_gov_var_statmod_planet_unity_priority_desc:0 "Maintaining clear and clean channels of communication is prioritized, givng network hubs and related infrastucture extra resources."
 
  lrsk_gov_var_statmod_planet_construction_priority:0 "$PRIORITY_STRING$ Construction"
- lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up planetary infrastructure is prioritized, providing extra resources to construction projects."
+ lrsk_gov_var_statmod_planet_construction_priority_desc:0 "Building up colonial infrastructure is prioritized, providing extra resources to construction projects."
  
  ## Opinion Modifiers
 
@@ -4419,5 +4441,13 @@ l_german:
  mod_planet_jobs_society_research_upkeep_mult:0 "[biologist.GetIcon] Society $job_researcher$ Upkeep"
  mod_planet_jobs_engineering_research_upkeep_mult:0 "[engineer.GetIcon] Engineering $job_researcher$ Upkeep"
  
+ lrsk_gvp_planetary:0 "planetary"
+ lrsk_gvp_homeworld:0 "homeworld"
+ lrsk_gvp_world:0 "world"
+ 
+ lrsk_gvp_arkwide:0 "ark-wide"
+ lrsk_gvp_arkship:0 "arkship"
+ lrsk_gvp_ark:0 "ark"
+
  TBD:0 "To Be Done (fix this!)"
  WELP:0 "Welp."
