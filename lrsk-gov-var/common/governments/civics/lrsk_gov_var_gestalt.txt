@@ -87,7 +87,7 @@ lrsk_gov_var_civic_hive_builder_caste = {
 }
 
 # Thinker Caste (+1 scientist leader skill levels, 1 Brain Drone per X pops) - The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones.
-lrsk_gov_var_civic_hive_thinker_caste = {
+lrsk_gvp_civic_hive_thinker_caste = {
 	potential = { authority = { value = auth_hive_mind } }
     #icon = "gfx/interface/icons/governments/civics/lrsk_gov_var_civic_default_hive.dds"
 	random_weight = { base = @civic_default_random_weight }
@@ -99,9 +99,9 @@ lrsk_gov_var_civic_hive_thinker_caste = {
 		scientist_exp_gain = 0.1
 		scientist_initial_skill = 1
 		country_scientist_cap_add = 1
-    	job_calculator_physicist_per_pop = 0.01
-    	job_calculator_biologist_per_pop = 0.01
-    	job_calculator_engineer_per_pop = 0.01
+    	job_calculator_physicist_per_pop = 0.015
+    	job_calculator_biologist_per_pop = 0.015
+    	job_calculator_engineer_per_pop = 0.015
 		council_agenda_progress_speed = -0.1
 		planet_structures_upkeep_mult = 0.05
     	ship_military_upkeep_mult = 0.05
