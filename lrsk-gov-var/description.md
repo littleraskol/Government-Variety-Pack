@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Please do not expect a 4.3 (Cetus) update any time soon, it will take quite a while.[/b] The mod might actually run "okay" in Cetus, though. It throws few errors, but it will be kind of unbalanced.
+[b]Newly updated for Stellaris 4.4 (Pegasus).[/b]
 
 [i][b]New Civics[/b][/i]
 
