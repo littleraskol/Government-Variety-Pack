@@ -29,27 +29,9 @@ v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 --Removed Utopia DLC checks (now in base game)
 --Job weights no longer have scaling mults?
 --Removed promotion blocks (we hardly knew ye)
--Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
---dystopian_specialist removed (just specialist now)
--Cetus balance changes:
---Stratum production mult modifiers changed to workforce multipliers (i.e. "efficiency" modifiers).
---Empire size mults reduced.
---Stability adds reduced.
---Jobs per Pop:
----Not ready to totally give up on this, but where these modifiers remaing they have been halved.
----Direct Revelation does not give base Hedge Preachers per pop (they should get plenty from Wild Cults)
----Worker Caste does not give any jobs per pop (maint. drones are basically gestalt civilians now?), instead gets other bonuses
---Hive Mind "Caste" series of civics:
----Worker Caste caste renamed (back to?) "Builder Caste," now gets -10% clear blocker cost (settled) or +10% waystation build speed and -10% arkship upgrades cost mult (nomadic).
----Added "Thinker Caste" which is, unsurprisingly, just like Royal Caste but for scientists.
----Each gets a penalty to the others' "domain"
-----If not Builder Caste: +5% infrastructure upkeep cost
-----If not Thinker Caste: -5% all research
-----If not Warrior Caste: +5% military ship upkeep cost
-----If not Royal Caste: -10% council agenda speed
 -Designated non-nomadic civics and origins.
 -Added nomadic/settled swaps for civic modifiers.
--Cult of Personality civic ended up changing quite a bit to account for Nomad changes.
+-Cult of Personality civic ended up changing quite a bit to account for Nomad changes because so much of what it did was tied to things nomads don't.
 --Now available to all non-gestalt, non-spirirtualist and authoritarian empires. (Yes, you can have a cult of the "brilliant" CEO now if you want.)
 --Councilor provides +1.5% influence production and -1.5% war exhausiton per level.
 --Base civic provides +10% unity production but -10% leader exp gain and -5% research.
@@ -57,6 +39,24 @@ v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 --For nomadic empires, provides -5% waystation influence cost and -10% arkship cost.
 --I actually don't know if I love all of these tbh. Real-life cults of personality are as likely to be fostered to consolidate control in an isolationist way as to justify expansion. It might be worth thinking a bit about how it differs from just plain old authoritarianism in concept.
 -Updated civic/government/etc flavor text to accomodate possible nomads.
+-Fixed what was needed for compatibility with Stellaris 4.3 (Cetus).
+--dystopian_specialist removed (just specialist now)
+-Cetus balance changes:
+--Stratum production mult modifiers changed to workforce multipliers (i.e. "efficiency" modifiers).
+--Empire size mults reduced.
+--Stability adds reduced.
+--Jobs per Pop:
+---Not ready to totally give up on this, but where these modifiers remain they have been halved.
+---Direct Revelation does not give base Hedge Preachers per pop (should get plenty from Wild Cults)
+---Worker Caste does not give any jobs per pop (maint. drones are basically gestalt civilians now?), instead gets other bonuses
+--Hive Mind "Caste" series of civics:
+---Worker Caste caste renamed (back to?) "Builder Caste," now gets -10% clear blocker cost (settled) or +10% waystation build speed and -10% arkship upgrades cost mult (nomadic).
+---Added "Thinker Caste" which is, unsurprisingly, like Royal Caste or Warrior Caste but for scientists.
+---Each gets a penalty to the others' "domain"
+----If not Builder Caste: +5% infrastructure upkeep cost
+----If not Thinker Caste: -5% all research
+----If not Warrior Caste: +5% military ship upkeep cost
+----If not Royal Caste: -10% council agenda speed
 -Updated Steam page description (added French localization).
 -Updated compat version number.
 
