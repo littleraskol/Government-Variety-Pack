@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Please do not expect a 4.3 (Cetus) update any time soon, it will take quite a while.[/b] The mod might actually run "okay" in Cetus, though. It throws few errors, but it will be kind of unbalanced.
+[i]This is a backup/legacy version for Stellaris v.4.2, but it will also work "well enough" with 4.3.[/i] The current version can be found here: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2806903835]Government Variety Pack (Current)[/url]
 
 [i][b]New Civics[/b][/i]
 
