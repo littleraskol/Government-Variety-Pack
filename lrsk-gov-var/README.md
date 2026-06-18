@@ -60,16 +60,16 @@ v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 -Updated Steam page description (added French localization).
 -Updated compat version number.
 
-7.2.3 (12/14/25) - Colonial Fiefs fixed
+v7.2.3 (12/14/25) - Colonial Fiefs fixed
 -Changing to pop groups required moving "portions" of pops, but relevant variable was not scoped correctly.
 -Explorer Colonies policy options now have more distinct modifier effects (and changing costs for some interactions with ALL subjects made little sense).
 -With "Promoted" Explorer Colonies policy, the new subject empire is more likely to match ethics with source.
 -With "Promoted" Explorer Colonies policy, starting relations generally better (more trust, higher opinion & loyalty, more intel) with new subject empire.
 
-7.2.2 (12/10/25) - Popsteal fix
+v7.2.2 (12/10/25) - Popsteal fix
 Needed to fix scope for Reformatory Workhouse pop steal.
 
-7.2.1 (12/01/25) - Chivalry Fixed
+v7.2.1 (12/01/25) - Chivalry Fixed
 -Apparently the "knights" building set is incompatible with the default zone. Whoops!
 -Changed "Cavalier" name to "Realm Cavalier" (just fancier).
 -Starts with Hall of Honor on homeworld.
