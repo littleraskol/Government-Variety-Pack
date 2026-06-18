@@ -21,6 +21,11 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v8.??? (??/??/??) - New Job Scaling Effects
+Replacing "jobs per pop" in some instances.
+-Shroud Pockets provide Otherworld Guide jobs scaling with owner's "psionic achievement" (based on techs and traditions).
+--They also account for the possibility of psionic machines.
+
 v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 -Fixed what was needed for compatibility with Stellaris 4.4 (Pegasus).
 --pop_cat_slave_happiness -> pop_slave_happiness
