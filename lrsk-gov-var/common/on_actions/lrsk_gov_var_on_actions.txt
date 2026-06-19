@@ -202,7 +202,17 @@ on_space_battle_lost = {
 # THIS = country
 on_tradition_picked = {
 	events = {
-		lrsk_gov_var_shroud_touched.7
-		lrsk_gov_var_shroud_touched.8
+		lrsk_gov_var_shroud_touched.4		# Attempt to change species after adopting Psionics tradition tree.
+		lrsk_gov_var_shroud_touched.7		# Esper leaders can get Psychic trait under some circumstances 
+		lrsk_gov_var_shroud_touched.8		# Convert leader trait to psionic when psionic ascension unlocked
+		lrsk_gov_var_shroud_touched.12		# Count psionic traditions
 	}	
+}
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		lrsk_gov_var_shroud_touched.11		 # Count psionic techs
+	}
 }

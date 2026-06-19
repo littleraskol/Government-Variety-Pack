@@ -4,7 +4,7 @@
 
 namespace = lrsk_gov_var_shroud_touched
 
-# Sets initial tech progress (Psionic Theory) and flag.
+# Sets initial tech progress (Psionic Theory), count variables, and flag.
 country_event = {
 	id = lrsk_gov_var_shroud_touched.1
 	hide_window = yes
@@ -22,6 +22,11 @@ country_event = {
 			tech = tech_psionic_theory
 			progress = 0.05
 		}
+
+		# Used to scale num of OW Guide jobs
+		set_variable = { which = lrsk_gvp_num_psi_techs value = 0 }
+		set_variable = { which = lrsk_gvp_num_psi_trads value = 0 }
+		set_variable = { which = lrsk_gvp_psi_progress value = 1 }	# Needs to be at least 1 for any effect
 	}
 }
 
@@ -409,6 +414,43 @@ event = {
 					remove_trait = lrsk_gov_var_trait_natural_esper
 				}
 			}
+		}
+	}
+}
+
+# Count psionic techs
+country_event = {
+	id = lrsk_gov_var_shroud_touched.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_shroud_touched
+	}
+	
+	immediate = {
+		IF = { limit = { is_last_increased_tech_category = psionics }
+			change_variable = { which = lrsk_gvp_num_psi_techs value = 1 }
+		}
+	}
+}
+# Count psionic traditions
+country_event = {
+	id = lrsk_gov_var_shroud_touched.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = lrsk_gov_var_origin_shroud_touched
+	}
+	
+	immediate = {
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_psionics
+				category_last_picked_tradition = tradition_psionics_shroud
+			} }
+			change_variable = { which = lrsk_gvp_num_psi_trads value = 1 }
 		}
 	}
 }
