@@ -72,53 +72,6 @@ d_lrsk_gov_var_shroud_pockets = {
 		job_lrsk_gov_var_job_otherworld_guide_add = 50
 		mult = owner.lrsk_gvp_num_psi_trads
 	}
-	
-	# Only Shroud-Touched gets psi progress variables. This makes the deposit a little more interesting for other empires.
-	triggered_planet_modifier = {
-		potential = {
-			owner? = {
-				OR = {
-					NOR = { 
-						is_mechanical_empire = yes
-						is_synthetic_empire = yes
-						is_hive_empire = yes
-					}
-					is_psionic = yes
-				}
-				NOR = {
-					is_variable_set = lrsk_gvp_num_psi_techs
-					is_variable_set = lrsk_gvp_num_psi_trads
-				}
-			}
-		}
-		job_lrsk_gov_var_job_otherworld_guide_add = 1
-		mult = trigger:years_passed
-	}
-	
-	# Anyone with 0 psi potential just gets a neat little thing to study.
-	triggered_planet_modifier = {
-		potential = {
-			owner? = {
-				OR = {
-					is_mechanical_empire = yes
-					is_synthetic_empire = yes
-					is_hive_empire = yes
-					is_psionic = no
-				}
-				NOR = {
-					has_origin = lrsk_gov_var_shroud_touched
-					has_origin = origin_shroudwalker_apprentice
-					has_origin = origin_shroud_forged
-				}
-			}
-		}
-		planet_jobs_society_research_produces_mult = 0.1
-		planet_jobs_physics_research_produces_mult = 0.05
-	}
-	
-	drop_weight = {
-		weight = 0
-	}
 }
 
 d_lrsk_gvp_legacy_autoinf = {
