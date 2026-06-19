@@ -26,11 +26,115 @@ d_lrsk_gov_var_shroud_pockets = {
 	
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = { NOT = { has_country_flag = synthetic_empire } }
+			owner? = {
+				OR = {
+					NOR = { 
+						is_mechanical_empire = yes
+						is_synthetic_empire = yes
+						is_hive_empire = yes
+					}
+					is_psionic = yes
+				}
+			}
 		}
 		job_lrsk_gov_var_job_otherworld_guide_add = 100
-		job_lrsk_gov_var_job_otherworld_guide_per_pop = 0.025
+	}
+	
+	# Starting psi ascension gets a bunch of OW Guides (1 per years passed)
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				OR = {
+					NOR = { 
+						is_mechanical_empire = yes
+						is_synthetic_empire = yes
+						is_hive_empire = yes
+					}
+					is_psionic = yes
+				}
+				has_ascension_perk = ap_mind_over_matter
+			}
+		}
+		job_lrsk_gov_var_job_otherworld_guide_add = 1
+		mult = trigger:years_passed
+	}
+	
+	# +20 OW Guides per psi tech
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				OR = {
+					NOR = { 
+						is_mechanical_empire = yes
+						is_synthetic_empire = yes
+						is_hive_empire = yes
+					}
+					is_psionic = yes
+				}
+				is_variable_set = lrsk_gvp_num_psi_techs
+				check_variable = { which = lrsk_gvp_num_psi_techs value > 0 }
+			}
+		}
+		job_lrsk_gov_var_job_otherworld_guide_add = 20
+		mult = owner.lrsk_gvp_num_psi_techs
+	}
+	
+	# +50 OW Guides per psi tradition
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				OR = {
+					NOR = { 
+						is_mechanical_empire = yes
+						is_synthetic_empire = yes
+						is_hive_empire = yes
+					}
+					is_psionic = yes
+				}
+				is_variable_set = lrsk_gvp_num_psi_trads
+				check_variable = { which = lrsk_gvp_num_psi_trads value > 0 }
+			}
+		}
+		job_lrsk_gov_var_job_otherworld_guide_add = 50
+		mult = owner.lrsk_gvp_num_psi_trads
+	}
+	
+	# Only Shroud-Touched gets psi progress variables. This makes the deposit a little more interesting for other empires.
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				OR = {
+					NOR = { 
+						is_mechanical_empire = yes
+						is_synthetic_empire = yes
+						is_hive_empire = yes
+					}
+					is_psionic = yes
+				}
+				NOR = {
+					is_variable_set = lrsk_gvp_num_psi_techs
+					is_variable_set = lrsk_gvp_num_psi_trads
+				}
+			}
+		}
+		job_lrsk_gov_var_job_otherworld_guide_add = 1
+		mult = trigger:years_passed
+	}
+	
+	# Anyone with 0 psi potential just gets a neat little thing to study.
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				OR = {
+					is_mechanical_empire = yes
+					is_synthetic_empire = yes
+					is_hive_empire = yes
+					is_psionic = no
+				}
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.05
 	}
 	
 	drop_weight = {
