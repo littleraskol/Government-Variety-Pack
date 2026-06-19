@@ -43,17 +43,7 @@ d_lrsk_gov_var_shroud_pockets = {
 	# Starting psi ascension gets a bunch of OW Guides (1 per years passed)
 	triggered_planet_modifier = {
 		potential = {
-			owner? = {
-				OR = {
-					NOR = { 
-						is_mechanical_empire = yes
-						is_synthetic_empire = yes
-						is_hive_empire = yes
-					}
-					is_psionic = yes
-				}
-				has_ascension_perk = ap_mind_over_matter
-			}
+			owner? = { has_ascension_perk = ap_mind_over_matter }
 		}
 		job_lrsk_gov_var_job_otherworld_guide_add = 1
 		mult = trigger:years_passed
@@ -63,14 +53,6 @@ d_lrsk_gov_var_shroud_pockets = {
 	triggered_planet_modifier = {
 		potential = {
 			owner? = {
-				OR = {
-					NOR = { 
-						is_mechanical_empire = yes
-						is_synthetic_empire = yes
-						is_hive_empire = yes
-					}
-					is_psionic = yes
-				}
 				is_variable_set = lrsk_gvp_num_psi_techs
 				check_variable = { which = lrsk_gvp_num_psi_techs value > 0 }
 			}
@@ -83,14 +65,6 @@ d_lrsk_gov_var_shroud_pockets = {
 	triggered_planet_modifier = {
 		potential = {
 			owner? = {
-				OR = {
-					NOR = { 
-						is_mechanical_empire = yes
-						is_synthetic_empire = yes
-						is_hive_empire = yes
-					}
-					is_psionic = yes
-				}
 				is_variable_set = lrsk_gvp_num_psi_trads
 				check_variable = { which = lrsk_gvp_num_psi_trads value > 0 }
 			}
@@ -130,6 +104,11 @@ d_lrsk_gov_var_shroud_pockets = {
 					is_synthetic_empire = yes
 					is_hive_empire = yes
 					is_psionic = no
+				}
+				NOR = {
+					has_origin = lrsk_gov_var_shroud_touched
+					has_origin = origin_shroudwalker_apprentice
+					has_origin = origin_shroud_forged
 				}
 			}
 		}
