@@ -425,12 +425,13 @@ country_event = {
 
 	trigger = {
 		has_origin = lrsk_gov_var_origin_shroud_touched
+		is_last_increased_tech_category = psionics
 	}
 	
 	immediate = {
-		IF = { limit = { is_last_increased_tech_category = psionics }
-			change_variable = { which = lrsk_gvp_num_psi_techs value = 1 }
-		}
+		change_variable = { which = lrsk_gvp_num_psi_techs value = 1 }
+		
+		log = "Num psi techs = [this.lrsk_gvp_num_psi_techs]"
 	}
 }
 # Count psionic traditions
@@ -441,15 +442,15 @@ country_event = {
 
 	trigger = {
 		has_origin = lrsk_gov_var_origin_shroud_touched
+		OR = {
+			category_last_picked_tradition = tradition_psionics
+			category_last_picked_tradition = tradition_psionics_shroud
+		}
 	}
 	
 	immediate = {
-		IF = {
-			limit = { OR = {
-				category_last_picked_tradition = tradition_psionics
-				category_last_picked_tradition = tradition_psionics_shroud
-			} }
-			change_variable = { which = lrsk_gvp_num_psi_trads value = 1 }
-		}
+		change_variable = { which = lrsk_gvp_num_psi_trads value = 1 }
+		
+		log = "Num psi trads = [this.lrsk_gvp_num_psi_trads]"
 	}
 }
