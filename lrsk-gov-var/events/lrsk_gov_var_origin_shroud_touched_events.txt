@@ -425,7 +425,33 @@ country_event = {
 
 	trigger = {
 		has_origin = lrsk_gov_var_origin_shroud_touched
-		is_last_increased_tech_category = psionics
+		#is_last_increased_tech_category = psionics # I believe that this will work someday!
+		OR = {
+			last_increased_tech = tech_pk_godray
+			last_increased_tech = tech_cloaking_psi
+			last_increased_tech = tech_psionic_aura
+			last_increased_tech = tech_aura_intensification
+			last_increased_tech = tech_psionic_suppression
+			last_increased_tech = tech_aura_resonation
+			last_increased_tech = tech_materiality_engine
+			last_increased_tech = tech_psionic_bombers
+			last_increased_tech = tech_psionic_lightning
+			last_increased_tech = tech_psionic_disruptor
+			last_increased_tech = tech_zro_launcher
+			last_increased_tech = tech_mine_zro
+			last_increased_tech = tech_psionic_theory
+			last_increased_tech = tech_telepathy
+			last_increased_tech = tech_precognition_interface
+			last_increased_tech = tech_thought_enforcement
+			last_increased_tech = tech_psi_jump_drive_1
+			last_increased_tech = tech_psionic_barrier
+			last_increased_tech = tech_psionic_shield
+			last_increased_tech = tech_covenant_composer
+			last_increased_tech = tech_covenant_eater
+			last_increased_tech = tech_covenant_instrument
+			last_increased_tech = tech_covenant_whisperers
+			last_increased_tech = tech_covenant_cradle
+		}
 	}
 	
 	immediate = {
