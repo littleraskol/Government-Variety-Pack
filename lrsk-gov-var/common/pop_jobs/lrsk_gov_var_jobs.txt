@@ -842,22 +842,19 @@ lrsk_gov_var_job_otherworld_guide = {
 		category = planet_telepaths
 		produces = {
 			trigger = {
-				exists = owner
-				owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+				owner? = { has_origin = lrsk_gov_var_origin_shroud_touched }
 			}
 			unity = 1
 		}
 		produces = {
 			trigger = {
-				exists = owner
-				owner = { has_adopted_psionic_tradition = yes }
+				owner? = { has_adopted_psionic_tradition = yes }
 			}
 			unity = 1
 		}
 		produces = {
 			trigger = {
-				exists = owner
-				owner = {
+				owner? = {
 					has_origin = lrsk_gov_var_origin_shroud_touched
 					has_adopted_psionic_tradition = yes
 				}
@@ -866,15 +863,13 @@ lrsk_gov_var_job_otherworld_guide = {
 		}
 		produces = {
 			trigger = {
-				exists = owner
-				owner = { lrsk_gvp_has_full_psi_conditions = yes }
+				owner? = { lrsk_gvp_has_full_psi_conditions = yes }
 			}
 			unity = 1
 		}
 		produces = {
 			trigger = {
-				exists = owner
-				owner = {
+				owner? = {
 					has_origin = lrsk_gov_var_origin_shroud_touched
 					lrsk_gvp_has_full_psi_conditions = yes
 				}
@@ -894,8 +889,7 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+			owner? = { has_origin = lrsk_gov_var_origin_shroud_touched }
 		}
 		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
@@ -903,8 +897,7 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
+			owner? = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				has_adopted_psionic_tradition = yes
 			}
@@ -915,8 +908,7 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
+			owner? = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				lrsk_gvp_has_full_psi_conditions = yes
 			}
@@ -927,16 +919,14 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = { has_origin = lrsk_gov_var_origin_shroud_touched }
+			owner? = { has_origin = lrsk_gov_var_origin_shroud_touched }
 		}
 		planet_stability_add = 1
 	}
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
+			owner? = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				has_adopted_psionic_tradition = yes
 			}
@@ -946,13 +936,27 @@ lrsk_gov_var_job_otherworld_guide = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
+			owner? = {
 				has_origin = lrsk_gov_var_origin_shroud_touched
 				lrsk_gvp_has_full_psi_conditions = yes
 			}
 		}
 		planet_stability_add = 1
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			has_shroud_dlc = no
+			owner? = { has_country_flag = breached_shroud }
+		}
+		shroud_delve_cost = -0.015
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_shroud_dlc = yes
+			owner? = { has_country_flag = breached_shroud }
+		}
+		shroud_delve_cooldown = -0.015 # Delving doesn't cost anything in Shroud so it's changed
 	}
 
 	weight = {
