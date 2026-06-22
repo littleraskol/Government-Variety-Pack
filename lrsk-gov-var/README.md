@@ -26,6 +26,9 @@ Replacing "jobs per pop" in some instances.
 -Shroud Pockets provide Otherworld Guide jobs scaling with owner's "psionic achievement" (based on techs and traditions).
 --They also account for the possibility of psionic machines.
 
+v.8.0.1 (6/22/26) - Minor hotfix
+An event was incorrectly scoped.
+
 v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)
 -Fixed what was needed for compatibility with Stellaris 4.4 (Pegasus).
 --pop_cat_slave_happiness -> pop_slave_happiness
