@@ -64,12 +64,9 @@ lrsk_gov_var_civic_hive_builder_caste = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
-    	ship_military_upkeep_mult = 0.05
-		council_agenda_progress_speed = -0.1
-		all_technology_research_speed = -0.05
 		add_attunement_the_composer_of_strands = @civic_attunement1 
 	}
-
+	
 	swap_type = {
 		trigger = { is_nomadic = no }
 		modifier = {
@@ -83,6 +80,33 @@ lrsk_gov_var_civic_hive_builder_caste = {
 			megastructure_waystation_megastructure_build_speed_mult = 0.1
 			starbase_arkship_upgrades_cost_mult = -0.1
 		}			
+	}
+	
+	# No Royal Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_royal_caste }
+		}
+		council_agenda_progress_speed = -0.1 
+	}
+
+	# No Warrior Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_warrior_caste }
+		}
+		ship_military_upkeep_mult = 0.05 
+	}
+
+	# No Thinker Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gvp_civic_hive_thinker_caste}
+		}
+		all_technology_research_speed = -0.05 
 	}
 }
 
@@ -102,9 +126,33 @@ lrsk_gvp_civic_hive_thinker_caste = {
     	job_calculator_physicist_per_pop = 0.0125
     	job_calculator_biologist_per_pop = 0.0125
     	job_calculator_engineer_per_pop = 0.0125
-		council_agenda_progress_speed = -0.1
-		planet_structures_upkeep_mult = 0.05
-    	ship_military_upkeep_mult = 0.05
+	}
+
+	# No Royal Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_royal_caste }
+		}
+		council_agenda_progress_speed = -0.1 
+	}
+
+	# No Builder Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_builder_caste}
+		}
+		planet_structures_upkeep_mult = 0.05 
+	}
+
+	# No Warrior Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_warrior_caste }
+		}
+		ship_military_upkeep_mult = 0.05 
 	}
 }
 
@@ -128,10 +176,34 @@ lrsk_gov_var_civic_hive_warrior_caste = {
 		commander_initial_skill = 1
 		country_commander_cap_add = 1
     	job_warrior_drone_per_pop = 0.0333
-		council_agenda_progress_speed = -0.1
-		planet_structures_upkeep_mult = 0.05
-		all_technology_research_speed = -0.05
 		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	# No Royal Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_royal_caste }
+		}
+		council_agenda_progress_speed = -0.1 
+	}
+
+	# No Builder Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_builder_caste}
+		}
+		planet_structures_upkeep_mult = 0.05 
+	}
+
+	# No Thinker Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gvp_civic_hive_thinker_caste}
+		}
+		all_technology_research_speed = -0.05 
 	}
 }
 
@@ -153,6 +225,33 @@ lrsk_gov_var_civic_hive_royal_caste = {
     	ship_military_upkeep_mult = 0.05
 		all_technology_research_speed = -0.05
 		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+
+	# No Builder Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_builder_caste}
+		}
+		planet_structures_upkeep_mult = 0.05 
+	}
+
+	# No Warrior Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gov_var_civic_hive_warrior_caste }
+		}
+		ship_military_upkeep_mult = 0.05 
+	}
+
+	# No Thinker Caste
+	swap_type = {
+		trigger = {
+			is_scope_valid = yes
+			NOT = { has_valid_civic = lrsk_gvp_civic_hive_thinker_caste}
+		}
+		all_technology_research_speed = -0.05 
 	}
 }
 
