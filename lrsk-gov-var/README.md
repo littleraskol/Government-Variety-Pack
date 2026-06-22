@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v8.?.? (??/??/??) - Caste Civic Penalty Fix
+Doesn't make sense that if you have two caste hive civics, you should get the penalty for not having both of them. They are now actually conditional on having one caste civic and lacking another.
+
 v.8.0.1 (6/22/26) - Minor hotfix
 An event was incorrectly scoped.
 
