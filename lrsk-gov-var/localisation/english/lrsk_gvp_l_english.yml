@@ -213,17 +213,23 @@ l_english:
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
 
+ LRSK_GVP_CASTE_NEG_COMMON:0 "Lacking other §Ycaste civics§! will incur ['concept_lrsk_gvp_caste_penalties']."
+
  lrsk_gov_var_civic_hive_builder_caste:0 "Builder Caste"
  lrsk_gov_var_civic_hive_builder_caste_desc:0 "The Hive Mind spawns an industrious breed of drones that are adapted for assembling infrastructure."
+ civic_tooltip_lrsk_gov_var_civic_hive_builder_caste_effects:0 "$LRSK_GVP_CASTE_NEG_COMMON$"
 
  lrsk_gvp_civic_hive_thinker_caste:0 "Thinker Caste"
  lrsk_gvp_civic_hive_thinker_caste_desc:0 "To better expand the horizons of the hive's ambitions, the Hive Mind breeds a special caste of inquisitive and analytical drones to grow its collective knowledge."
+ civic_tooltip_lrsk_gvp_civic_hive_thinker_caste_effects:0 "$LRSK_GVP_CASTE_NEG_COMMON$"
 
  lrsk_gov_var_civic_hive_warrior_caste:0 "Warrior Caste"
  lrsk_gov_var_civic_hive_warrior_caste_desc:0 "The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones."
+ civic_tooltip_lrsk_gov_var_civic_hive_warrior_caste_effects:0 "$LRSK_GVP_CASTE_NEG_COMMON$"
 
  lrsk_gov_var_civic_hive_royal_caste:0 "Royal Caste"
  lrsk_gov_var_civic_hive_royal_caste_desc:0 "The Hive Mind cultivates an elite breed of highly intelligent drones to direct other drones in productive and creative activity."
+ civic_tooltip_lrsk_gov_var_civic_hive_royal_caste_effects:0 "$LRSK_GVP_CASTE_NEG_COMMON$"
 
  lrsk_gov_var_civic_hive_reclamation_pools:0 "Reclamation Pools"
  lrsk_gov_var_civic_hive_reclamation_pools_desc:0 "All dead drones are reprocessed for the sustenance of hive's next generation."
@@ -772,6 +778,8 @@ l_english:
  concept_planet_lrsk_telepaths: "$concept_planet_telepaths$"
  concept_planet_lrsk_telepaths_desc: "$concept_planet_telepaths_desc$ $TABBED_NEW_LINE$- $job_lrsk_gov_var_job_otherworld_guide_plural$"
 
+ concept_lrsk_gvp_caste_penalties:0 "Caste Overspecialization Penalties"
+ concept_lrsk_gvp_caste_penalties_desc:0 "The hive's investment in one specialized drone caste comes at the cost of deficiencies in areas that other castes specialize in.$TABBED_NEW_LINE$Lacking §Y$lrsk_gov_var_civic_hive_builder_caste$§! incurs §R+5%§! §Y$planet_structures_upkeep_mult$§! $TABBED_NEW_LINE$Lacking §Y$lrsk_gvp_civic_hive_thinker_caste$§! incurs §R-5%§! §YAll Research Speed§!$TABBED_NEW_LINE$Lacking §Y$lrsk_gov_var_civic_hive_warrior_caste$§! incurs §R+5%§! §Y$ship_military_upkeep_mult$§!$TABBED_NEW_LINE$Lacking §Y$lrsk_gov_var_civic_hive_royal_caste$§! incurs §R-10%§! §YCouncil Agenda Speed$§!"
 
  ####################################
  # Governments
