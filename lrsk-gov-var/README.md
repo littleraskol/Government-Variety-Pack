@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v.8.0.2 (6/22/26) - Hotfix for Artificers Councilor
+v.8.0.2 (6/30/26) - Hotfix for Artificers Councilor
 Dean of Artificery used to require Starhold, which nomads can't take. Now requires either Starhold or Improved Wayline Logistics
 
 v.8.0.1 (6/22/26) - Minor hotfix
