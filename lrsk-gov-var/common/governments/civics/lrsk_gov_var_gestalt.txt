@@ -64,6 +64,8 @@ lrsk_gov_var_civic_hive_builder_caste = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
     	planet_building_build_speed_mult = 0.1
     	starbase_shipyard_build_speed_mult = 0.1
+		foundry_jobs_bonus_workforce_mult = 0.125
+		artisan_jobs_bonus_workforce_mult = 0.125
     	ship_military_upkeep_mult = 0.05
 		council_agenda_progress_speed = -0.1
 		all_technology_research_speed = -0.05
@@ -74,13 +76,11 @@ lrsk_gov_var_civic_hive_builder_caste = {
 		trigger = { is_nomadic = no }
 		modifier = {
 			starbase_building_build_speed_mult = 0.1
-			deposit_blockers_cost_mult = -0.1
 		}
 	}
 	swap_type = {
 		trigger = { is_nomadic = yes }
 		modifier = {
-			megastructure_waystation_megastructure_build_speed_mult = 0.1
 			starbase_arkship_upgrades_cost_mult = -0.1
 		}			
 	}

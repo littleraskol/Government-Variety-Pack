@@ -23,6 +23,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v.8.1.0 (??/??/??) - Caste Civic Job Bonuses
 -Hive Caste civics no longer give jobs-per-pop, instead giving job efficiency.
+-Builder Caste gains +12.5% foundry and artisan drone efficiency, but loses bonus to tile blocker clearing or waystation construction.
 
 
 v.8.0.2 (6/30/26) - Hotfix for Artificers Councilor
