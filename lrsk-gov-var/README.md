@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v.8.1.0 (??/??/??) - Caste Civic Job Bonuses
+-Hive Caste civics no longer give jobs-per-pop, instead giving job efficiency.
+
+
 v.8.0.2 (6/30/26) - Hotfix for Artificers Councilor
 Dean of Artificery used to require Starhold, which nomads can't take. Now requires either Starhold or Improved Wayline Logistics
 
