@@ -25,6 +25,8 @@ v.8.1.0 (??/??/??) - Caste Civic Job Bonuses
 -Hive Caste civics no longer give jobs-per-pop, instead giving job efficiency.
 -Builder Caste gains +12.5% foundry and artisan drone efficiency, but loses bonus to tile blocker clearing or waystation construction.
 
+v.8.0.3 (7/26/26) - Hotfix for Govt. Names
+Certain government names lacked a valid short descriptor due to having outdated definitions.
 
 v.8.0.2 (6/30/26) - Hotfix for Artificers Councilor
 Dean of Artificery used to require Starhold, which nomads can't take. Now requires either Starhold or Improved Wayline Logistics
