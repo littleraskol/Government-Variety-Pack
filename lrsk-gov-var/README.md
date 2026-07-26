@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v.8.0.3 (7/26/26) - Hotfix for Govt. Names
+Certain government names lacked a valid short descriptor due to having outdated definitions.
+
 v.8.0.2 (6/30/26) - Hotfix for Artificers Councilor
 Dean of Artificery used to require Starhold, which nomads can't take. Now requires either Starhold or Improved Wayline Logistics
 
