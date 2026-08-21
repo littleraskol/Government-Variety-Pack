@@ -212,6 +212,10 @@ l_simp_chinese:
 
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
+ civic_tooltip_lrsk_gvp_nulls_caste_overspec_effects:0 "- Prevents ['concept_lrsk_gvp_caste_penalties']."
+
+ # Common to following four
+ civic_tooltip_lrsk_gvp_caste_overspec_effects:0 "- May incur ['concept_lrsk_gvp_caste_penalties']."
 
  lrsk_gov_var_civic_hive_builder_caste:0 "Builder Caste"
  lrsk_gov_var_civic_hive_builder_caste_desc:0 "The Hive Mind spawns an industrious breed of drones that are adapted for assembling infrastructure."
@@ -771,6 +775,12 @@ l_simp_chinese:
  
  concept_planet_lrsk_telepaths: "$concept_planet_telepaths$"
  concept_planet_lrsk_telepaths_desc: "$concept_planet_telepaths_desc$ $TABBED_NEW_LINE$- $job_lrsk_gov_var_job_otherworld_guide_plural$"
+
+ concept_lrsk_gvp_caste_civics:0 "Hive Caste Civic"
+ concept_lrsk_gvp_caste_civics_desc:0 "The following count as this kind of civic: §Y$lrsk_gov_var_civic_hive_builder_caste$§!, §Y$lrsk_gvp_civic_hive_thinker_caste$§!, §Y$lrsk_gov_var_civic_hive_warrior_caste$§!, and §Y$lrsk_gov_var_civic_hive_royal_caste$§!."
+
+ concept_lrsk_gvp_caste_penalties:0 "Caste Overspecialization Penalties"
+ concept_lrsk_gvp_caste_penalties_desc:0 "For hive minds that have adopted any ['concept_lrsk_gvp_caste_civics'], the investment in one specialized drone caste comes at the cost of deficiencies in areas that other castes specialize in.\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_builder_caste$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_planet_structures_upkeep_mult$§!$TABBED_NEW_LINE$§R+10%§! §Y$MOD_PLANET_BUILDING_TIME_MULT$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_alloy_drone_bonus_workforce_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_artisan_drone_bonus_workforce_mult$§!.\n\n£trigger_no£ Lacking §H$lrsk_gvp_civic_hive_thinker_caste$§! incurs:$TABBED_NEW_LINE$§R-5%§! §YAll Research Speed§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_scientist_exp_gain$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_brain_drone_physicist_bonus_workforce_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_brain_drone_biologist_bonus_workforce_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_brain_drone_engineer_bonus_workforce_mult$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_warrior_caste$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_ship_military_upkeep_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_commander_exp_gain$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_warrior_drone_bonus_workforce_mult$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_royal_caste$§! incurs:$TABBED_NEW_LINE$§R-10%§! §Y$MOD_COUNCIL_AGENDA_PROGRESS_SPEED$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_official_exp_gain$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_pop_synapse_drone_bonus_workforce_mult$§!\n\n£trigger_yes£ §GNOTE:§! These penalties will not be applied if your empire has the §H$lrsk_gov_var_civic_hive_caste_quickening$§! civic."
 
 
  ####################################
