@@ -1539,10 +1539,17 @@ country_event = {
 			erase_modifier = { MOD = lrsk_gvp_no_royal_caste }
 		}
 		ELSE = {
-			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_builder_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_builder_caste } }
-			IF = { limit = { NOT = { has_civic = lrsk_gvp_civic_hive_thinker_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
-			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_warrior_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
-			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_royal_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_royal_caste } }
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_builder_caste } erase_modifier = { MOD = lrsk_gvp_no_builder_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_builder_caste } }
+			
+			IF = { limit = { has_civic = lrsk_gvp_civic_hive_thinker_caste } erase_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_warrior_caste } erase_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_royal_caste } erase_modifier = { MOD = lrsk_gvp_no_royal_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_royal_caste } }
 		}
 	}	
 }
