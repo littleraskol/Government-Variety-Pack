@@ -944,21 +944,6 @@ lrsk_gov_var_job_otherworld_guide = {
 		planet_stability_add = 1
 	}
 
-	triggered_country_modifier = {
-		potential = {
-			has_shroud_dlc = no
-			owner? = { has_country_flag = breached_shroud }
-		}
-		shroud_delve_cost = -0.015
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_shroud_dlc = yes
-			owner? = { has_country_flag = breached_shroud }
-		}
-		shroud_delve_cooldown = -0.015 # Delving doesn't cost anything in Shroud so it's changed
-	}
-
 	weight = {
 		weight = @lrsk_desirable_spec_job_weight
 		#mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_otherworld_guide|RESOURCE|unity|
