@@ -1515,6 +1515,38 @@ country_event = {
 	}	
 }
 
+#Caste Civics: Add maluses in smart way
+country_event = {
+	id = lrsk_government_variety_pack_backend.1005
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_civic = lrsk_gov_var_civic_hive_builder_caste
+			has_civic = lrsk_gvp_civic_hive_thinker_caste
+			has_civic = lrsk_gov_var_civic_hive_warrior_caste
+			has_civic = lrsk_gov_var_civic_hive_royal_caste
+		}
+	}
+
+	immediate = {
+		# Caste Quickening should basically prevent any of these maluses from applying.
+		IF = { limit = { has_civic = lrsk_gov_var_civic_hive_caste_quickening }
+			erase_modifier = { MOD = lrsk_gvp_no_builder_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_thinker_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_warrior_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_royal_caste }
+		}
+		ELSE = {
+			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_builder_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_builder_caste } }
+			IF = { limit = { NOT = { has_civic = lrsk_gvp_civic_hive_thinker_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
+			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_warrior_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
+			IF = { limit = { NOT = { has_civic = lrsk_gov_var_civic_hive_royal_caste } } lrsk_set_modifier = { MOD = lrsk_gvp_no_royal_caste } }
+		}
+	}	
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000
