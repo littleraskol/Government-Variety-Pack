@@ -26,7 +26,8 @@ empire_init_add_technologies = {
 		lrsk_government_variety_pack_backend.5		# Add Shaper/Artificer/Essentialist starting techs.
 		lrsk_government_variety_pack_backend.7		# Xenolinguistic tech for some Origins (I don't actually understand this, but the game uses it...)
 		#lrsk_gvp_autoindol.1 						# Setup starting tech, features
-		lrsk_government_variety_pack_backend.1005
+		lrsk_government_variety_pack_backend.1004	# Check for caste civics
+		lrsk_government_variety_pack_backend.1005	# Apply caste civic maluses as needed
 	}
 }
 
@@ -208,10 +209,18 @@ on_tradition_picked = {
 	}	
 }
 
+# Executed just as country is changing its government, before the new one is applied
+# THIS = country
+on_pre_government_changed = {
+	events = {
+		lrsk_government_variety_pack_backend.1004	# Check for caste civics
+	}
+}
+
 # Executed just as country is changing its government, after the new one is applied
 # THIS = country
 on_post_government_changed = {
 	events = {
-		lrsk_government_variety_pack_backend.1005
+		lrsk_government_variety_pack_backend.1005	# Apply caste civic maluses as needed
 	}
 }
