@@ -1379,3 +1379,49 @@ country_event = {
 		}
 	}
 }
+
+# Testing OW jobs from various sources
+country_event = {
+	id = lrsk_gvp_testing.32
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# This can be set in lrsk_government_variety_pack_backend.1 to turn off testing events
+		NOT = { has_global_flag = lrsk_government_variety_pack_live_version }
+	}
+
+	immediate = {
+		IF = { limit = { NOT = { has_country_flag = lrsk_owg_test_runonce } }
+			set_country_flag = lrsk_owg_test_runonce
+			set_country_flag = lrsk_test_owg_step_1
+		}
+
+		switch = {
+			trigger = has_country_flag			
+			lrsk_test_owg_step_1 = {
+				remove_country_flag = lrsk_test_owg_step_1
+
+				# 3 techs should give 60 jobs
+				give_technology = { tech = tech_zro_launcher message = no }
+				give_technology = { tech = tech_psionic_barrier message = no }
+				give_technology = { tech = tech_psionic_theory message = no }
+
+				set_country_flag = lrsk_test_owg_step_2
+			}
+			lrsk_test_owg_step_2 = {
+				remove_country_flag = lrsk_test_owg_step_2
+
+
+				set_country_flag = lrsk_test_owg_step_3
+			}
+			lrsk_test_owg_step_3 = {
+				remove_country_flag = lrsk_test_owg_step_3
+				remove_country_flag = lrsk_owg_test_runonce # Allows restart
+
+
+
+			}
+		}
+	}
+}
