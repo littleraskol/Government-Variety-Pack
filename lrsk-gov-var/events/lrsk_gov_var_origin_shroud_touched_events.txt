@@ -22,10 +22,6 @@ country_event = {
 			tech = tech_psionic_theory
 			progress = 0.05
 		}
-
-		# Used to scale num of OW Guide jobs
-		set_variable = { which = lrsk_gvp_num_psi_techs value = 0 }
-		set_variable = { which = lrsk_gvp_num_psi_trads value = 0 }
 	}
 }
 
@@ -417,14 +413,16 @@ event = {
 	}
 }
 
-# Count psionic techs
+# Count psionic techs (can be called by any default type country)
 country_event = {
 	id = lrsk_gov_var_shroud_touched.11
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_shroud_touched
+		#has_origin = lrsk_gov_var_origin_shroud_touched # Should check for any empire, handles case where homeworld conquered.
+		is_country_type = default
+
 		#is_last_increased_tech_category = psionics # I believe that this will work someday!
 		OR = {
 			last_increased_tech = tech_pk_godray
@@ -455,19 +453,23 @@ country_event = {
 	}
 	
 	immediate = {
+		IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_psi_techs } } set_variable = { which = lrsk_gvp_num_psi_techs value = 0 } }
+
 		change_variable = { which = lrsk_gvp_num_psi_techs value = 1 }
 		
 		log = "Num psi techs = [this.lrsk_gvp_num_psi_techs]"
 	}
 }
-# Count psionic traditions
+# Count psionic traditions (can be called by any default type country)
 country_event = {
 	id = lrsk_gov_var_shroud_touched.12
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_shroud_touched
+		#has_origin = lrsk_gov_var_origin_shroud_touched # Should check for any empire, handles case where homeworld conquered.
+		is_country_type = default
+		
 		OR = {
 			category_last_picked_tradition = tradition_psionics
 			category_last_picked_tradition = tradition_psionics_shroud
@@ -475,6 +477,8 @@ country_event = {
 	}
 	
 	immediate = {
+		IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_psi_trads } } set_variable = { which = lrsk_gvp_num_psi_trads value = 0 } }
+
 		change_variable = { which = lrsk_gvp_num_psi_trads value = 1 }
 		
 		log = "Num psi trads = [this.lrsk_gvp_num_psi_trads]"
