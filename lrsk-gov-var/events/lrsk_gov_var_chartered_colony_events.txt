@@ -425,13 +425,12 @@ country_event = {
 			every_owned_pop_group = {
 				limit = {
 					species = { is_same_value = event_target:lrsk_chartering_usurped_species }
-					NOT = { pop_has_ethic = ethic_fanatic_xenophile }
+					pop_ethic_percentage = { percentage < 0.5 ethic = ethic_fanatic_xenophile }
 				}
 				random = {
 					chance = 50
-					pop_group_transfer_ethic = {
-						POP_GROUP = this
-						ETHOS = ethic_fanatic_xenophile
+					pop_force_add_ethic = {
+						ETHIC = ethic_fanatic_xenophile
 						PERCENTAGE = 1 # 100%
 					}
 				}

@@ -1515,6 +1515,67 @@ country_event = {
 	}	
 }
 
+# Caste Civics: Check to see if you need to deal with caste maluses
+country_event = {
+	id = lrsk_government_variety_pack_backend.1004
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		lrsk_has_any_hive_caste_civic = yes
+	}
+
+	immediate = {
+		set_country_flag = lrsk_gvp_caste_civic_check_needed
+	}
+}
+
+# Caste Civics: Add and remove maluses in smart way
+country_event = {
+	id = lrsk_government_variety_pack_backend.1005
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_country_flag = lrsk_gvp_caste_civic_check_needed
+			lrsk_has_any_hive_caste_civic = yes						# Needed when adding mid-game having not had before.
+		}
+	}
+
+	immediate = {
+		# Remove all conditions
+		IF = {
+			limit = {
+				OR = {
+					has_civic = lrsk_gov_var_civic_hive_caste_quickening
+					lrsk_has_any_hive_caste_civic = no
+				}
+			}
+			erase_modifier = { MOD = lrsk_gvp_no_builder_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_thinker_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_warrior_caste }
+			erase_modifier = { MOD = lrsk_gvp_no_royal_caste }
+		}
+		# Add/remove as needed
+		ELSE = {
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_builder_caste } erase_modifier = { MOD = lrsk_gvp_no_builder_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_builder_caste } }
+			
+			IF = { limit = { has_civic = lrsk_gvp_civic_hive_thinker_caste } erase_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_thinker_caste } }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_warrior_caste } erase_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_warrior_caste } }
+
+			IF = { limit = { has_civic = lrsk_gov_var_civic_hive_royal_caste } erase_modifier = { MOD = lrsk_gvp_no_royal_caste } }
+			ELSE = { lrsk_set_modifier = { MOD = lrsk_gvp_no_royal_caste } }
+		}
+
+		remove_country_flag = lrsk_gvp_caste_civic_check_needed
+	}	
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000

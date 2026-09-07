@@ -26,7 +26,24 @@ Replacing "jobs per pop" in some instances.
 -Shroud Pockets provide Otherworld Guide jobs scaling with owner's "psionic achievement" (based on techs and traditions).
 --They also account for the possibility of psionic machines.
 
-v.8.0.1 (6/22/26) - Minor hotfix
+v8.2 (??/??/??) - Cygnus (4.5) Update
+-Fixed what was needed for compatibility with Stellaris 4.5 (Cygnus).
+-Updated compat version number.
+
+v.8.1.0 (08/21/26) - Caste Civic Job Bonuses & Penalty Fix
+-Hive Caste civics no longer give jobs-per-pop, instead giving job efficiency.
+-Builder Caste gains +12.5% foundry and artisan drone efficiency, but loses bonus to tile blocker clearing or waystation construction.
+-Doesn't make sense that if you have two caste hive civics, you should get the penalty for not having both of them. They are now actually conditional on having one caste civic and lacking another.
+--Caste civic penalties for lacking other such civics now dynamically added/removed by events.
+--The "Caste Quickening" civic prevents such penalties from applying.
+
+v.8.0.3 (07/26/26) - Hotfix for Govt. Names
+Certain government names lacked a valid short descriptor due to having outdated definitions.
+
+v.8.0.2 (06/30/26) - Hotfix for Artificers Councilor
+Dean of Artificery used to require Starhold, which nomads can't take. Now requires either Starhold or Improved Wayline Logistics
+
+v.8.0.1 (06/22/26) - Minor hotfix
 An event was incorrectly scoped.
 
 v8.0 (06/15/26) - Pegasus (4.4) Update (but also kinda Cetus (4.3) update?)

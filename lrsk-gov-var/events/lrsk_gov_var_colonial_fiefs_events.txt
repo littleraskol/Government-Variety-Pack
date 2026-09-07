@@ -395,192 +395,189 @@ country_event = {
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
-						switch = {
-							trigger = pop_has_ethic
-							ethic_authoritarian = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_authoritarian
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_authoritarian } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_authoritarian
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_egalitarian = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_egalitarian
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_egalitarian } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_egalitarian
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_materialist = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_materialist
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_materialist } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_materialist
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_militarist = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_militarist
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_militarist } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_militarist
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_pacifist = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_pacifist
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_pacifist } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_pacifist
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_spiritualist = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_spiritualist
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_spiritualist } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_spiritualist
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_xenophile = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_xenophile
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_xenophile } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_xenophile
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							ethic_xenophobe = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = {
-										ethic = ethic_xenophobe
-										ethic = random
-									}
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_xenophobe } }
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = {
+									ethic = ethic_xenophobe
+									ethic = random
+								}
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
-							default = {
-								create_country = {
-									name_list = root
-									species = event_target:lrsk_colfief_new_vassal_founder
-									type = default
-									origin = lrsk_gov_var_origin_colonial_venture
-									ignore_initial_colony_error = yes
-									day_zero_contact = no
-									ethos = random
-									authority = random
-									civics = random
-									effect = {
-										copy_techs_from = { target = root }
-										save_event_target_as = lrsk_colfief_new_vassal_empire
-										establish_communications_no_message = root
-									}
+						}
+						ELSE = {
+							create_country = {
+								name_list = root
+								species = event_target:lrsk_colfief_new_vassal_founder
+								type = default
+								origin = lrsk_gov_var_origin_colonial_venture
+								ignore_initial_colony_error = yes
+								day_zero_contact = no
+								ethos = random
+								authority = random
+								civics = random
+								effect = {
+									copy_techs_from = { target = root }
+									save_event_target_as = lrsk_colfief_new_vassal_empire
+									establish_communications_no_message = root
 								}
 							}
 						}

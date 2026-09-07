@@ -395,6 +395,7 @@ lrsk_has_gvp_hive_civic = {
 		has_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		has_civic = lrsk_gov_var_civic_hive_caste_quickening
 		has_civic = lrsk_gov_var_civic_hive_builder_caste
+		has_civic = lrsk_gvp_civic_hive_thinker_caste
 		has_civic = lrsk_gov_var_civic_hive_warrior_caste
 		has_civic = lrsk_gov_var_civic_hive_royal_caste
 		has_civic = lrsk_gov_var_civic_hive_reclamation_pools
@@ -522,6 +523,7 @@ lrsk_has_gvp_hive_valid_civic = {
 		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		has_valid_civic = lrsk_gov_var_civic_hive_caste_quickening
 		has_valid_civic = lrsk_gov_var_civic_hive_builder_caste
+		has_valid_civic = lrsk_gvp_civic_hive_thinker_caste
 		has_valid_civic = lrsk_gov_var_civic_hive_warrior_caste
 		has_valid_civic = lrsk_gov_var_civic_hive_royal_caste
 		has_valid_civic = lrsk_gov_var_civic_hive_reclamation_pools
@@ -628,6 +630,15 @@ lrsk_has_gvp_npc_origin = {
 		#has_origin = lrsk_gov_var_origin_sublight_colony_gsp
 		#has_origin = lrsk_gov_var_origin_sublight_colony_dis
 		has_origin = lrsk_gov_var_origin_colonial_charter
+	}
+}
+
+lrsk_has_any_hive_caste_civic = {
+	OR = {
+		has_civic = lrsk_gov_var_civic_hive_builder_caste
+		has_civic = lrsk_gvp_civic_hive_thinker_caste
+		has_civic = lrsk_gov_var_civic_hive_warrior_caste
+		has_civic = lrsk_gov_var_civic_hive_royal_caste
 	}
 }
 

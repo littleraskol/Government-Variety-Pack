@@ -41,7 +41,8 @@ Mods that have built-in compatibility:
 For non-English language translations:
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2682891259]Japanese localization[/url] by Rio_Mizuhoshi (might be work-in-progress).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3513691177]French localization[/url] by Tarkain, as part of a larger French-language localization project. 
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3513691177]French localization[/url] by Tarkain, as part of a larger French-language localization project.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3780683270]Russian localization[/url] by Anton Rabe.
 [/list]
 
 Want to make a compatibility or localization patch? [url=https://steamcommunity.com/workshop/filedetails/discussion/2806903835/3423311880045971276/]See this post to find out how[/url]!

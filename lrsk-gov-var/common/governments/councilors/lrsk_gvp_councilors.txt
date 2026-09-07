@@ -7,7 +7,10 @@ lrsk_gvp_artificers_councilor = {
 	possible = {
 		has_technology = tech_ship_armor_3
 		has_technology = tech_advanced_metallurgy_1
-		has_technology = tech_starbase_3
+		OR = {
+			has_technology = tech_starbase_3
+			has_technology = tech_waystation_2
+		}
 	}
 	is_leader_possible = {
 		leader_class = scientist
