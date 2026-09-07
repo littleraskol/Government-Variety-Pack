@@ -21,6 +21,10 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v8.2 (??/??/??) - Cygnus (4.5) Update
+-Fixed what was needed for compatibility with Stellaris 4.5 (Cygnus).
+-Updated compat version number.
+
 v.8.1.0 (08/21/26) - Caste Civic Job Bonuses & Penalty Fix
 -Hive Caste civics no longer give jobs-per-pop, instead giving job efficiency.
 -Builder Caste gains +12.5% foundry and artisan drone efficiency, but loses bonus to tile blocker clearing or waystation construction.
