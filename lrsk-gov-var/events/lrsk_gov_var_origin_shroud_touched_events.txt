@@ -4,7 +4,7 @@
 
 namespace = lrsk_gov_var_shroud_touched
 
-# Sets initial tech progress (Psionic Theory), count variables, and flag.
+# Sets initial tech progress (Psionic Theory), and flag.
 country_event = {
 	id = lrsk_gov_var_shroud_touched.1
 	hide_window = yes
@@ -469,7 +469,7 @@ country_event = {
 	trigger = {
 		#has_origin = lrsk_gov_var_origin_shroud_touched # Should check for any empire, handles case where homeworld conquered.
 		is_country_type = default
-		
+
 		OR = {
 			category_last_picked_tradition = tradition_psionics
 			category_last_picked_tradition = tradition_psionics_shroud
