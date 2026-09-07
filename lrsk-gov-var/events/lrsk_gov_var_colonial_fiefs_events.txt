@@ -395,7 +395,7 @@ country_event = {
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
 						}
-						IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_authoritarian } }
+						IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_authoritarian } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -416,7 +416,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_egalitarian } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_egalitarian } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -437,7 +437,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_materialist } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_materialist } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -458,7 +458,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_militarist } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_militarist } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -479,7 +479,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_pacifist } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_pacifist } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -500,7 +500,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_spiritualist } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_spiritualist } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -521,7 +521,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_xenophile } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_xenophile } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
@@ -542,7 +542,7 @@ country_event = {
 								}
 							}
 						}
-						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 49 ethic = ethic_xenophobe } }
+						ELSE_IF = { limit = { pop_ethic_percentage = { percentage > 0.49 ethic = ethic_xenophobe } }
 							create_country = {
 								name_list = root
 								species = event_target:lrsk_colfief_new_vassal_founder
