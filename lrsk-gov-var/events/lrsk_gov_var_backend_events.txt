@@ -20,35 +20,50 @@ event = {
 	}
 }
 
-# Misc country startup chores.
+# Misc country startup chores. This is run on all counties, though not all effects will trigger.
 country_event = {
 	id = lrsk_government_variety_pack_backend.6			# Why is 6 right after 1? To troll my OCD.
 	is_triggered_only = yes
 	hide_window = yes
 	
-	trigger = { 
-		is_country_type = default
-	
-		# Add any new ones onto here.
-		OR = {
-			has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
-			has_valid_civic= lrsk_gov_var_civic_chivalry
-			AND = {
-				is_ai = no
-				OR = {
-					has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
-					has_valid_civic = lrsk_gov_var_civic_imperial_economy
-					has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
-					AND = {
-						NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
-						lrsk_has_enhanced_valid_civic = yes
-					}
-				}
-			}
-		}
-	}
+	## Should not be conditional to run at all.
+	#trigger = { 
+	#	is_country_type = default
+	#
+	#	# Add any new ones onto here.
+	#	OR = {
+	#		has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols
+	#		has_valid_civic= lrsk_gov_var_civic_chivalry
+	#		AND = {
+	#			is_ai = no
+	#			OR = {
+	#				has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+	#				has_valid_civic = lrsk_gov_var_civic_imperial_economy
+	#				has_valid_civic = lrsk_gov_var_civic_colonial_fiefs
+	#				AND = {
+	#					NOT = { has_global_flag = lrsk_gvp_enhanced_civics_off }
+	#					lrsk_has_enhanced_valid_civic = yes
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
 	
 	immediate = {
+		### All empires
+
+		# Extreme cludge alert: explicitly mark initially owned systems...
+		IF = { limit = { exists = capital_scope }
+			capital_scope.solar_system = {
+				lrsk_mark_owned_system = yes
+			}
+		}
+		every_system_within_border = {
+			lrsk_mark_owned_system = yes
+		}
+
+		### Specific empire tasks
+
 		# Xeno Communication Expert System
 		IF = {
 			limit = { has_valid_civic= lrsk_gov_var_civic_machine_diplomatic_protocols }
@@ -62,17 +77,6 @@ country_event = {
 		}
 
 		## Escape routes for possible boxed-in starts
-
-		# Extreme cludge alert: explicitly mark initially owned systems...
-
-		IF = { limit = { exists = capital_scope }
-			capital_scope.solar_system = {
-				lrsk_mark_owned_system = yes
-			}
-		}
-		every_system_within_border = {
-			lrsk_mark_owned_system = yes
-		}
 
 		# Find escape routes for human players first
 		IF = {
@@ -96,7 +100,10 @@ country_event = {
 
 		# Colonial Chartering
 		IF = {
-			limit = { has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board }
+			limit = {
+				is_ai = no
+				has_valid_civic = lrsk_gov_var_civic_mc_chart_corp_board
+			}
 			country_event = { id = lrsk_gov_var_chartered.101 days = 2}
 		}
 
