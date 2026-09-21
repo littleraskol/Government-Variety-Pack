@@ -208,7 +208,17 @@ on_tradition_picked = {
 	events = {
 		lrsk_gov_var_shroud_touched.7
 		lrsk_gov_var_shroud_touched.8
+		lrsk_government_variety_pack_backend.1006
+		lrsk_gov_var_shroud_touched.12
 	}	
+}
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+on_tech_increased = {
+	events = {
+		lrsk_gov_var_shroud_touched.11		 # Count psionic techs
+	}
 }
 
 # Executed just as country is changing its government, before the new one is applied
