@@ -1642,7 +1642,7 @@ country_event = {
 				category_last_picked_tradition = tradition_domination
 			} }
 			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_piety_trads } } set_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
-			ELSE = { change_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
 			
 			log = "Num social piety trads = [this.lrsk_gvp_num_piety_trads]"		
 		}
