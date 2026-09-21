@@ -1583,6 +1583,72 @@ country_event = {
 	}	
 }
 
+# Count traditions (all singleton empires)
+# This is setting up a future updates to replace jobs-per-pop with provision of jobs that scales based on tradition tree progress
+# Has to be called for any empire that can take any of the related civics due to civic swapping possibility
+country_event = {
+	id = lrsk_government_variety_pack_backend.1006
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = default
+
+		OR = {
+			category_last_picked_tradition = tradition_enmity
+			category_last_picked_tradition = tradition_supremacy
+			category_last_picked_tradition = tradition_unyielding
+			category_last_picked_tradition = tradition_statecraft
+			category_last_picked_tradition = tradition_politics
+			category_last_picked_tradition = tradition_aptitude
+			category_last_picked_tradition = tradition_harmony
+			category_last_picked_tradition = tradition_archivism
+			category_last_picked_tradition = tradition_domination
+		}
+	}
+	
+	immediate = {
+		# Chivalry: Enmity, Supremacy, Fortification
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_enmity
+				category_last_picked_tradition = tradition_supremacy
+				category_last_picked_tradition = tradition_unyielding
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_valor_trads } } set_variable = { which = lrsk_gvp_num_valor_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_valor_trads value = 1 } }
+			
+			log = "Num valor trads = [this.lrsk_gvp_num_valor_trads]"		
+		}
+		
+		# Republicanism: Statecraft, Politics, Aptitude
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_statecraft
+				category_last_picked_tradition = tradition_politics
+				category_last_picked_tradition = tradition_aptitude
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_virtue_trads } } set_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			
+			log = "Num civic virtue trads = [this.lrsk_gvp_num_virtue_trads]"		
+		}
+		
+		# Elected Clergy: Harmony, Archivism, Domination
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_harmony
+				category_last_picked_tradition = tradition_archivism
+				category_last_picked_tradition = tradition_domination
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_piety_trads } } set_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			
+			log = "Num social piety trads = [this.lrsk_gvp_num_piety_trads]"		
+		}
+	}
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000

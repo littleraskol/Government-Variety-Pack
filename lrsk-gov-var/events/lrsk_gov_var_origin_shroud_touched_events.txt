@@ -412,3 +412,74 @@ event = {
 		}
 	}
 }
+
+## The following are setting up a future change to replace Otherworld Guide jobs-per-pop
+# Count psionic techs
+# Has to be called for any any psi-capable empire to handle some other empire taking homeworld
+country_event = {
+	id = lrsk_gov_var_shroud_touched.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = default
+
+		#is_last_increased_tech_category = psionics # I believe that this will work someday!
+		OR = {
+			last_increased_tech = tech_pk_godray
+			last_increased_tech = tech_cloaking_psi
+			last_increased_tech = tech_psionic_aura
+			last_increased_tech = tech_aura_intensification
+			last_increased_tech = tech_psionic_suppression
+			last_increased_tech = tech_aura_resonation
+			last_increased_tech = tech_materiality_engine
+			last_increased_tech = tech_psionic_bombers
+			last_increased_tech = tech_psionic_lightning
+			last_increased_tech = tech_psionic_disruptor
+			last_increased_tech = tech_zro_launcher
+			last_increased_tech = tech_mine_zro
+			last_increased_tech = tech_psionic_theory
+			last_increased_tech = tech_telepathy
+			last_increased_tech = tech_precognition_interface
+			last_increased_tech = tech_thought_enforcement
+			last_increased_tech = tech_psi_jump_drive_1
+			last_increased_tech = tech_psionic_barrier
+			last_increased_tech = tech_psionic_shield
+			last_increased_tech = tech_covenant_composer
+			last_increased_tech = tech_covenant_eater
+			last_increased_tech = tech_covenant_instrument
+			last_increased_tech = tech_covenant_whisperers
+			last_increased_tech = tech_covenant_cradle
+		}
+	}
+
+	immediate = {
+		IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_psi_techs } } set_variable = { which = lrsk_gvp_num_psi_techs value = 1 } }
+		ELSE = { change_variable = { which = lrsk_gvp_num_psi_techs value = 1 } }
+
+		log = "Num psi techs = [this.lrsk_gvp_num_psi_techs]"
+	}
+}
+# Count psionic traditions
+# Has to be called for any any psi-capable empire to handle some other empire taking homeworld
+country_event = {
+	id = lrsk_gov_var_shroud_touched.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = default
+
+		OR = {
+			category_last_picked_tradition = tradition_psionics
+			category_last_picked_tradition = tradition_psionics_shroud
+		}
+	}
+
+	immediate = {
+		IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_psi_trads } } set_variable = { which = lrsk_gvp_num_psi_trads value = 1 } }
+		ELSE = { change_variable = { which = lrsk_gvp_num_psi_trads value = 1 } }
+
+		log = "Num psi trads = [this.lrsk_gvp_num_psi_trads]"
+	}
+}
