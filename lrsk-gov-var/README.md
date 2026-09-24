@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v8.2.1 (09/24/26) - Random Fixes
+v8.2.1 (09/24/26) - Missing Start Screens
 -Certain governments lacked a start screen but now have one.
 
 v8.2 (09/22/26) - Cygnus (4.5) Update
