@@ -12,7 +12,10 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 		civics = { NOR = { 
 			value = civic_hive_divided_attention
 			value = civic_hive_subsumed_will
-		} } 
+		} }
+		origin = {
+			NOT = { value = origin_wilderness }
+		}
 		is_nomadic = no
 	}
 	random_weight = { base = @civic_uncommon_random_weight }

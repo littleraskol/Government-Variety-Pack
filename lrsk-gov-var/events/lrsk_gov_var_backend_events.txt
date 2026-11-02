@@ -946,31 +946,24 @@ event = {
 
 	trigger = {
 		OR = {
-			#any_country = {
-			#	lrsk_has_gvp_possible_invalidated_civic = yes
-			#	NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-			#}
-			
-			any_country = {
-				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
-				lrsk_has_bugged_civic = yes
-			}
+			any_country = { lrsk_has_gvp_possible_invalidated_civic = yes }			
+			any_country = { lrsk_has_bugged_civic = yes }
 		}
 	}
 
 	immediate = {
-		#every_country = {
-		#	limit = {
-		#		lrsk_has_gvp_possible_invalidated_civic = yes
-		#		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-		#	}
-		#	country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
-		#}
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v822 } # Update this for every version where a conflict is created.
+				lrsk_has_gvp_possible_invalidated_civic = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
+		}
 		
 		every_country = {
 			limit = {
+				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } # Update this for every version where a bug needs a warning.
 				lrsk_has_bugged_civic = yes
-				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
 			}
 			country_event = { id = lrsk_government_variety_pack_backend.2004 days = 3 }
 		}
@@ -1691,7 +1684,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v7 } # Update this for every version.
+		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v822 } # Update this for every version where a conflict is created.
 		lrsk_has_gvp_possible_invalidated_civic = yes
 	}
 
@@ -1715,7 +1708,7 @@ country_event = {
 				mult = trigger:empire_size
 			}
 		}
-		set_country_flag = lrsk_fixed_invalid_civics_v7
+		set_country_flag = lrsk_fixed_invalid_civics_v822
 	}
 
 	option = { name = OK }
@@ -1730,7 +1723,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
+		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } # Update this for every version where a bug needs a warning.
 		lrsk_has_bugged_civic = yes
 	}
 
@@ -1740,39 +1733,6 @@ country_event = {
 
 	option = { name = WELP }
 }
-
-#country_event = {
-#	id = lrsk_government_variety_pack_backend.20031
-#	is_triggered_only = yes
-#	hide_window = yes
-#
-#	immediate = {
-#		add_resource = { influence = 250 }
-#	}
-#}
-# This just calls 2003 for the scopeless on_single_player_save_game_load on action
-#event = {
-#	id = lrsk_government_variety_pack_backend.20032
-#	is_triggered_only = yes
-#	hide_window = yes
-#
-#	trigger = {
-#		any_country = {
-#			lrsk_has_gvp_possible_invalidated_civic = yes
-#			NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-#		}
-#	}
-#
-#	immediate = {
-#		every_country = {
-#			limit = {
-#				lrsk_has_gvp_possible_invalidated_civic = yes
-#				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-#			}
-#			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
-#		}
-#	}
-#}
 
 # Diagnostic: Remove/replace deprecated civics (removes duplicates/redundancy) - Bring this back when needed.
 # Remove/deactivate after next save-breaking Stellaris update
