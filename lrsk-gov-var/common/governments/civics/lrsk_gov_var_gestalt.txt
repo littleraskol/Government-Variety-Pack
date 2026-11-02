@@ -196,7 +196,7 @@ lrsk_gov_var_civic_hive_reclamation_pools = {
 		planet_jobs_food_produces_mult = 0.1
 	}
 	swap_type = {
-		name = llrsk_gov_var_civic_hive_reclamation_pools_wild # in order to show a new flavor description
+		name = lrsk_gov_var_civic_hive_reclamation_pools_wild # in order to show a new flavor description
 		trigger = { is_wilderness_empire = yes }
 	}
 }
@@ -224,6 +224,10 @@ lrsk_gov_var_civic_hive_boundless_spite = {
 		country_power_projection_influence_produces_mult = 0.25
 		add_attunement_the_eater_of_worlds = @civic_attunement1
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_boundless_spite_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Void Affinity (+20% research and mining station output) - Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars.
@@ -239,7 +243,21 @@ lrsk_gov_var_civic_hive_void_affinity = {
 	}
 
 	swap_type = {
-		trigger = { is_nomadic = no }
+		trigger = {
+			is_nomadic = no			
+			is_wilderness_empire = no
+		}
+		modifier = {
+			station_gatherers_produces_mult = 0.2
+			station_researchers_produces_mult = 0.2
+		}
+	}
+	swap_type = {
+		trigger = {
+			is_nomadic = no			
+			is_wilderness_empire = yes
+		}
+		name = lrsk_gov_var_civic_hive_void_affinity_wild # in order to show a new flavor
 		modifier = {
 			station_gatherers_produces_mult = 0.2
 			station_researchers_produces_mult = 0.2
@@ -247,7 +265,7 @@ lrsk_gov_var_civic_hive_void_affinity = {
 	}
 	swap_type = {
 		trigger = { is_nomadic = yes }
-		name = "lrsk_gov_var_civic_hive_void_affinity_nomadic"
+		name = lrsk_gov_var_civic_hive_void_affinity_nomadic
 		modifier = { starbase_collected_system_resources_mult = 0.2 }
 	}
 }
@@ -262,10 +280,18 @@ lrsk_gov_var_civic_hive_hoarder = {
 	}
 	modifier = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
-    	country_energy_produces_mult = 0.05
-    	country_minerals_produces_mult = 0.05
+		country_energy_produces_mult = 0.05
 		country_resource_max_add = 7500
 		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	swap_type = {
+		trigger = { is_wilderness_empire = no }
+		country_minerals_produces_mult = 0.05
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_hoarder_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+		country_food_produces_mult = 0.05
 	}
 }
 
