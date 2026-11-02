@@ -54,12 +54,30 @@ empire_name_format = {
 		modifier = {
 			add = 5000
 			lrsk_has_gvp_hive_gov = yes
+			is_wilderness_empire = no
 		}
 	}
 	format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
 	adjective = "{[This.GetSpeciesAdj]}"
 	prefix_format = "{[This.GetSpeciesAdj] {<hive_mind>}}"
 	# Human Empire
+}
+
+# Need a copy of the Wilderness namegen for that option.
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 5000
+			lrsk_has_gvp_hive_gov = yes
+			is_wilderness_empire = yes
+		}
+	}
+	format = "{<wilderness_start> {<wilderness_end> {[This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.Capital.GetName] {<wilderness_start>}}"
+	# Dawnwoven Canopy of Earth
 }
 
 # # Noble Republics

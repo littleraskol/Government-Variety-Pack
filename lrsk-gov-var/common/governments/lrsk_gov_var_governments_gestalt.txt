@@ -6,14 +6,38 @@
 
 # Cooperative Super-Sapience
 lrsk_gov_var_gov_coop_supersap = {
-	ruler_title = RT_OVERMIND
-	ruler_title_female = RT_OVERMIND
+	ruler_title = LRSK_GVP_RT_OVERMIND
+	ruler_title_female = LRSK_GVP_RT_OVERMIND
 	
 	should_force_rename = yes
 
 	possible = {
 		has_auth_hive = yes
 		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		is_wilderness_empire = no
+		NOR = {
+			has_valid_civic = civic_hive_devouring_swarm
+			has_valid_civic = civic_hive_scorched_earth
+		}
+	}
+
+	weight = {
+		base = @lrsk_gov_civic_override_weight
+	}
+}
+
+# Cooperative Super-Sapience (Wilderness Variant)
+# This will still show as a "Cooperative Super-Sapience" in-game, but the different government type is needed for random naming.
+lrsk_gov_var_gov_coop_supersap_wild = {
+	ruler_title = LRSK_GVP_RT_OVERSOUL
+	ruler_title_female = LRSK_GVP_RT_OVERSOUL
+	
+	should_force_rename = yes
+
+	possible = {
+		has_auth_hive = yes
+		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		is_wilderness_empire = yes
 		NOR = {
 			has_valid_civic = civic_hive_devouring_swarm
 			has_valid_civic = civic_hive_scorched_earth
