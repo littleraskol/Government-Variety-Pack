@@ -946,12 +946,13 @@ event = {
 
 	trigger = {
 		OR = {
-			any_country = { lrsk_has_gvp_possible_invalidated_civic = yes }			
+			any_country = { lrsk_has_gvp_possible_invalidated_civic = yes }
 			any_country = { lrsk_has_bugged_civic = yes }
 		}
 	}
 
 	immediate = {
+		# Offers a gov change option (or forces one) if empire has newly invalid combo
 		every_country = {
 			limit = {
 				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v822 } # Update this for every version where a conflict is created.
@@ -960,6 +961,7 @@ event = {
 			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
 		}
 		
+		# When I find that a civic is bugged as designed, I sometimes alter its effects in practice until a fix.
 		every_country = {
 			limit = {
 				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } # Update this for every version where a bug needs a warning.
