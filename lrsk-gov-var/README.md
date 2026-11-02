@@ -22,7 +22,8 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v?.?.? (??/??/??) - Wilderness Update
--Updating hive civics to account for Wilderness.
+-Updating hive civics to account for Wilderness origin.
+-Planetmind Creativity can once again be used with Wilderness.
 
 v8.2.2 (11/02/26) - Temp Fix: Planetmind Creativity incompatible w/ Wilderness
 -This needs a major overhaul, as the building upgrades depend on pops and Wilderness doesn't have them!
