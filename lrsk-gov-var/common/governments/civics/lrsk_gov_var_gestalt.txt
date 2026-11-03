@@ -305,6 +305,10 @@ lrsk_gov_var_civic_hive_eusocial_rhythm = {
     	planet_structures_upkeep_mult = -0.05
 		add_attunement_the_cradle_of_souls = @civic_attunement1
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_eusocial_rhythm_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Inquisitive Bent (+15% survey speed, +10% anomaly research speed, +10% anomaly find chance) - The Hive Mind has a deep and impatient curiosity about the universe.
@@ -320,6 +324,10 @@ lrsk_gov_var_civic_hive_inquisitive_bent = {
     	science_ship_survey_speed = 0.15
     	ship_anomaly_research_speed_mult = 0.1
   		ship_anomaly_generation_chance_mult = 0.1
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_inquisitive_bent_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
 	}
 }
 
@@ -337,7 +345,11 @@ lrsk_gov_var_civic_hive_big_picture_thinker = {
 		terraform_speed_mult = 0.15
 		megastructure_build_speed_mult = 0.15
 		add_attunement_the_instrument_of_desire = @civic_attunement1
-	 }
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_big_picture_thinker_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Toiling Multitudes (+10% simple drone output) - Many hands make light work, for the simplest tasks at least. That's fine when, like a Hive Mind, you have all the hands. [Token is legacy name.]
