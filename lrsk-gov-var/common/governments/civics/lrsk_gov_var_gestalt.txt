@@ -364,6 +364,10 @@ lrsk_gov_var_civic_hive_analgesic_stoicism = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 		pop_cat_simple_drone_bonus_workforce_mult = 0.1
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_analgesic_stoicism_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Domineering Expectations (+15% subject research share, +7.5% tributary income) - The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones.
@@ -384,6 +388,10 @@ lrsk_gov_var_civic_hive_domineering_expectations = {
     	subject_tribute_mult = 0.075
 		diplo_weight_sprawl_mult = 0.15
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_domineering_expectations_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Unending Bloom (+15% colony development speed, -5% starbase influence cost) - Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy.
@@ -400,6 +408,10 @@ lrsk_gov_var_civic_hive_unending_bloom = {
     	planet_colony_development_speed_mult = 0.15
     	country_starbase_influence_cost_mult = -0.05
 		add_attunement_the_composer_of_strands = @civic_attunement1 
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_unending_bloom_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
 	}
 }
 
@@ -422,6 +434,10 @@ lrsk_gov_var_civic_hive_benign_overmind = {
 		diplo_weight_pops_mult = 0.15
 		add_attunement_the_cradle_of_souls = @civic_attunement1
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_benign_overmind_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Gestalt Extroversion (-25% diplomatic influence cost, +15% trust growth rate and +20 trust cap) - On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends.
@@ -442,6 +458,10 @@ lrsk_gov_var_civic_hive_gestalt_extroversion = {
 		country_trust_growth = 0.15
 		first_contact_speed_mult = 0.1
 		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_gestalt_extroversion_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
 	}
 }
 
@@ -465,6 +485,10 @@ lrsk_gov_var_civic_hive_frenzy = {
     	ship_evasion_mult = 0.1
 		add_attunement_the_eater_of_worlds = @civic_attunement1
 	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_frenzy_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
+	}
 }
 
 # Vigorous Introversion (+10% army health, -10% growth time) - The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus.
@@ -479,6 +503,10 @@ lrsk_gov_var_civic_hive_vigorous_introversion = {
 		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 		army_health = 0.1
     	logistic_growth_mult = 0.1
+	}
+	swap_type = {
+		name = lrsk_gov_var_civic_hive_vigorous_introversion_wild # in order to show a new flavor description
+		trigger = { is_wilderness_empire = yes }
 	}
 }
 
