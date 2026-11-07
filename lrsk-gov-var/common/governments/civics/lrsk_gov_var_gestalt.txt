@@ -507,6 +507,11 @@ lrsk_gov_var_civic_hive_vigorous_introversion = {
 	swap_type = {
 		name = lrsk_gov_var_civic_hive_vigorous_introversion_wild # in order to show a new flavor description
 		trigger = { is_wilderness_empire = yes }
+		modifier = { bonus_pop_growth_mult = 0.1 }
+	}
+	swap_type = {
+		trigger = { is_wilderness_empire = no }
+		modifier = { logistic_growth_mult = 0.1 }
 	}
 }
 
