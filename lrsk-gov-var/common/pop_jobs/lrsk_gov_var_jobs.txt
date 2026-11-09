@@ -1336,6 +1336,13 @@ lrsk_gov_var_job_planetmind_overseer = {
 			condition_string = DRONE_JOB_TRIGGER
 			building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
 		}
+		swap_type = {
+			trigger = { owner? = { is_wilderness_empire = yes } }
+			name = lrsk_gov_var_job_planetmind_overseer_wild
+			icon = lrsk_gov_var_job_planetmind_overseer
+			desc = lrsk_gov_var_job_planetmind_overseer_wild_desc
+			weight = 500
+		}
 	}
 
 	possible_pre_triggers = {
