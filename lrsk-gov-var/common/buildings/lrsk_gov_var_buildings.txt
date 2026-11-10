@@ -134,6 +134,7 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
+			is_wilderness_empire = no
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
@@ -221,6 +222,7 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
+			is_wilderness_empire = no
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
@@ -308,6 +310,7 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
+			is_wilderness_empire = no
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
@@ -395,6 +398,7 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
+			is_wilderness_empire = no
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
@@ -482,6 +486,443 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		exists = owner
 		owner = {
 			is_hive_empire = yes
+			is_wilderness_empire = no
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_5
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_5
+		job_lrsk_gov_var_job_planetmind_overseer_add = 500
+		#job_maintenance_drone_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.25
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade_4
+		}
+		upkeep = {
+			energy = 4
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep_5
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Tendrils (Wilderness)
+lrsk_gov_var_bldg_planet_synaptic_tendril = {
+	base_buildtime = 360
+	base_cap_amount = 1
+
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_1
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_cluster
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
+		job_lrsk_gov_var_job_planetmind_overseer_add = 100
+		#job_maintenance_drone_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.05
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_base
+		}
+		upkeep = {
+			energy = 2
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Cluster (Wilderness)
+lrsk_gov_var_bldg_planet_synaptic_bundle = {
+	base_buildtime = 450
+
+	category = government
+	can_build = no
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_2
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_confluence
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_2
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_2
+		job_lrsk_gov_var_job_planetmind_overseer_add = 200
+		#job_maintenance_drone_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade_1
+		}
+		upkeep = {
+			energy = 2
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Confluence (Wilderness)
+lrsk_gov_var_bldg_planet_synaptic_rhizome = {
+	base_buildtime = 540
+
+	category = government
+	can_build = no
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_3
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_core
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_3
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_3
+		job_lrsk_gov_var_job_planetmind_overseer_add = 300
+		#job_maintenance_drone_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.15
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade_2
+		}
+		upkeep = {
+			energy = 3
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep_3
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Core (Wilderness)
+lrsk_gov_var_bldg_planet_synaptic_tuber = {
+	base_buildtime = 630
+
+	category = government
+	can_build = no
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
+	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	allow = {
+		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_4
+	}
+
+	upgrades = {
+		lrsk_gov_var_bldg_planet_synaptic_nexus
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_4
+		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_4
+		job_lrsk_gov_var_job_planetmind_overseer_add = 400
+		#job_maintenance_drone_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.2
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 700
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upgrade_3
+		}
+		upkeep = {
+			energy = 3
+			unity = @lrsk_gov_var_planet_synaptic_unity_cost_upkeep_4
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Planetary Synaptic Nexus (Wilderness)
+lrsk_gov_var_bldg_planet_synaptic_taproot = {
+	base_buildtime = 800
+
+	category = government
+	can_build = no
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
