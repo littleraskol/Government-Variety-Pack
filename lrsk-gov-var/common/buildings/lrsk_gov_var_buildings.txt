@@ -138,6 +138,8 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+	
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_tendril }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_1
@@ -227,6 +229,8 @@ lrsk_gov_var_bldg_planet_synaptic_cluster = {
 		}
 	}
 
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_bundle }
+
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_2
 	}
@@ -314,6 +318,8 @@ lrsk_gov_var_bldg_planet_synaptic_confluence = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_rhizome }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_3
@@ -403,6 +409,8 @@ lrsk_gov_var_bldg_planet_synaptic_core = {
 		}
 	}
 
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_tuber }
+
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_4
 	}
@@ -491,6 +499,8 @@ lrsk_gov_var_bldg_planet_synaptic_nexus = {
 		}
 	}
 
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_taproot }
+
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_5
 	}
@@ -575,6 +585,8 @@ lrsk_gov_var_bldg_planet_synaptic_tendril = {
 		}
 	}
 
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_node }
+
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_1
 	}
@@ -643,7 +655,7 @@ lrsk_gov_var_bldg_planet_synaptic_tendril = {
 	}
 }
 
-# Planetary Synaptic Cluster (Wilderness)
+# Planetary Synaptic Bundle (Wilderness)
 lrsk_gov_var_bldg_planet_synaptic_bundle = {
 	base_buildtime = 450
 
@@ -662,6 +674,8 @@ lrsk_gov_var_bldg_planet_synaptic_bundle = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_cluster }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_2
@@ -731,7 +745,7 @@ lrsk_gov_var_bldg_planet_synaptic_bundle = {
 	}
 }
 
-# Planetary Synaptic Confluence (Wilderness)
+# Planetary Synaptic Rhizome (Wilderness)
 lrsk_gov_var_bldg_planet_synaptic_rhizome = {
 	base_buildtime = 540
 
@@ -750,6 +764,8 @@ lrsk_gov_var_bldg_planet_synaptic_rhizome = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_confluence }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_3
@@ -819,7 +835,7 @@ lrsk_gov_var_bldg_planet_synaptic_rhizome = {
 	}
 }
 
-# Planetary Synaptic Core (Wilderness)
+# Planetary Synaptic Tuber-Clutch (Wilderness)
 lrsk_gov_var_bldg_planet_synaptic_tuber = {
 	base_buildtime = 630
 
@@ -838,6 +854,8 @@ lrsk_gov_var_bldg_planet_synaptic_tuber = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_core }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_4
@@ -907,7 +925,7 @@ lrsk_gov_var_bldg_planet_synaptic_tuber = {
 	}
 }
 
-# Planetary Synaptic Nexus (Wilderness)
+# Planetary Synaptic Taproot (Wilderness)
 lrsk_gov_var_bldg_planet_synaptic_taproot = {
 	base_buildtime = 800
 
@@ -926,6 +944,8 @@ lrsk_gov_var_bldg_planet_synaptic_taproot = {
 	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
 		}
 	}
+
+	convert_to = { lrsk_gov_var_bldg_planet_synaptic_nexus }
 
 	allow = {
 		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_5
