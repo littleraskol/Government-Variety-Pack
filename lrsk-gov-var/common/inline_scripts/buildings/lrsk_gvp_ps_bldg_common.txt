@@ -30,28 +30,6 @@
 		mult = $LRSK_GVP_PSLVL$
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-				is_wilderness_empire = no
-			}
-		}
-		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-				is_wilderness_empire = yes
-			}
-		}
-		text = job_lrsk_gov_var_job_planetmind_overseer_wild_effect_desc
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
