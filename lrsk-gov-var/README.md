@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v8.2.3 (11/14/26) - Removing Redundant triggered_desc
+Still had some triggered_desc for jobs, which is no longer needed.
+
 v8.2.2 (11/02/26) - Temp Fix: Planetmind Creativity incompatible w/ Wilderness
 -This needs a major overhaul, as the building upgrades depend on pops and Wilderness doesn't have them!
 -Hopefully the backend process of detecting invalid civic combos is more efficient now (checks at game start and load, not monthly)
