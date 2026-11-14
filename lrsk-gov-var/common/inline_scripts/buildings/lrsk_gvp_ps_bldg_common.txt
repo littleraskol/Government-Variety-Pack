@@ -1,0 +1,50 @@
+
+	# Planetary Synaptic building common definitions
+
+    triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		job_lrsk_gov_var_job_planetmind_overseer_add = 100
+		mult = $LRSK_GVP_PSLVL$
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = no
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = yes
+			}
+		}
+		text = job_lrsk_gov_var_job_planetmind_overseer_wild_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.05
+		mult = $LRSK_GVP_PSLVL$
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
