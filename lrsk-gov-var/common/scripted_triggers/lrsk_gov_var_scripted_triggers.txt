@@ -288,7 +288,10 @@ lrsk_gvp_popgroup_has_governing_fanatic_ethos = {
 		}
 		AND = {
 			has_ethic = ethic_militarist
-			root = { has_ethic = ethic_fanatic_militarist }
+			root = { OR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_absolute_militarist
+			} }
 		}
 		AND = {
 			has_ethic = ethic_pacifist

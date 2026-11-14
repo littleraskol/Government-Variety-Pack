@@ -13,6 +13,7 @@ lrsk_remove_all_ethics = {
 	country_remove_ethic = ethic_fanatic_pacifist
 	country_remove_ethic = ethic_militarist
 	country_remove_ethic = ethic_fanatic_militarist
+	country_remove_ethic = ethic_absolute_militarist
 	country_remove_ethic = ethic_materialist
 	country_remove_ethic = ethic_fanatic_materialist
 	country_remove_ethic = ethic_spiritualist
@@ -30,6 +31,8 @@ lrsk_remove_all_ethics = {
 # Randomize ethics
 lrsk_randomize_ethics = {
 	lrsk_remove_all_ethics = yes
+
+	set_variable = { which = lrsk_ethos_points value = 0 } 
 
 	while = {
 		limit = { check_variable = { which = lrsk_ethos_points value < 3 } }
