@@ -636,7 +636,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}
@@ -706,7 +706,7 @@ lrsk_fix_null_partner = {
 			}
 			lrsk_gov_var_origin_tradeways = {
 				# default megacorp
-				IF = { limit = { root = { has_megacorp = yes } }
+				IF = { limit = { root = { has_megacorp_dlc = yes } }
 					create_country = {
 						name = random
 						name_list = random
@@ -779,7 +779,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}
@@ -835,7 +835,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}
