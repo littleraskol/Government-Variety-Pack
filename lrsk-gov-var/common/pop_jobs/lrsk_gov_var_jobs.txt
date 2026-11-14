@@ -1361,7 +1361,7 @@ lrsk_gov_var_job_planetmind_overseer = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			influence = 0.1
+			influence = 0.05
 		}
 		upkeep = {
 			unity = 2
@@ -1378,7 +1378,7 @@ lrsk_gov_var_job_planetmind_overseer = {
 	}
 
 	country_modifier = {
-		country_naval_cap_add = 2
+		country_naval_cap_add = 1
 	}
 
 	triggered_country_modifier = {		
@@ -1398,9 +1398,10 @@ lrsk_gov_var_job_planetmind_overseer = {
 	}
 
 	planet_modifier = {
-		planet_crime_add = 5
-		planet_stability_add = -1
-		pop_housing_usage_mult = -0.1
+		planet_crime_add = 10
+		planet_crime_mult = 0.2
+		pop_housing_usage_mult = -0.05
+		pop_amenities_usage_no_happiness_mult = -0.05
 	}
 
 	weight = {
