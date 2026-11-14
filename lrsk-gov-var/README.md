@@ -21,6 +21,9 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
+v?.?.? (??/??/??) - Pre-4.6 Update Cleanup
+-Esper leaders should apply planet/sector bonus regardless of class.
+
 v8.2.3 (11/14/26) - Removing Redundant triggered_desc
 Still had some triggered_desc for jobs, which is no longer needed.
 
