@@ -124,88 +124,20 @@ lrsk_gov_var_bldg_planet_synaptic_node = {
 	base_buildtime = 360
 	base_cap_amount = 1
 
-	category = government
-
-	building_sets = {
-		government
+	inline_script = {
+		script = buildings/lrsk_gvp_ps_bldg_common
+		LRSK_GVP_PSLVL = 1
 	}
 
-	potential = {
-		exists = owner
-		owner = {
-			is_hive_empire = yes
-			is_wilderness_empire = no
-	  		has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-		}
-	}
-	
 	convert_to = { lrsk_gov_var_bldg_planet_synaptic_tendril }
-
-	allow = {
-		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_1
-	}
 
 	upgrades = {
 		lrsk_gov_var_bldg_planet_synaptic_cluster
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-			}
-		}
-		planet_amenities_no_happiness_mult = @lrsk_gov_var_planet_synaptic_amenities_1
-		planet_crime_no_happiness_mult = @lrsk_gov_var_planet_synaptic_crime_1
-		job_lrsk_gov_var_job_planetmind_overseer_add = 100
-		#job_maintenance_drone_add = 100
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
-			}
-		}
-		planet_jobs_society_research_produces_mult = 0.05
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-			}
-		}
-		text = job_lrsk_gov_var_job_planetmind_overseer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
-			}
-		}
-		text = job_maintenance_drone_effect_desc
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 400
-			unity = @lrsk_gov_var_planet_synaptic_unity_cost_1
-		}
-		upkeep = {
-			energy = 2
-			unity = @lrsk_gov_var_planet_synaptic_unity_upkeep_1
-		}
-	}
-
-	ai_weight = {
-		weight = 1
+	inline_script = {
+		script = buildings/lrsk_gvp_ps_nonwild_bldg_costs
+		LRSK_GVP_PSLVL = 1
 	}
 }
 

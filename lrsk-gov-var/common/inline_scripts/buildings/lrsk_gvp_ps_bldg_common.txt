@@ -1,6 +1,21 @@
 
 	# Planetary Synaptic building common definitions
 
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			is_wilderness_empire = no
+			has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
     triggered_planet_modifier = {
 		potential = {
 			exists = owner
