@@ -19,9 +19,10 @@ lrsk_gov_var_civic_elected_clergy = {
     }
     ethics = {
       OR = {
-    	  text = civic_tooltip_spiritualist
-    		value = ethic_spiritualist
-    		value = ethic_fanatic_spiritualist
+		text = civic_tooltip_spiritualist
+		value = ethic_spiritualist
+		value = is_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -185,9 +186,10 @@ lrsk_gov_var_civic_utilitarian_planning = {
   possible = {
     ethics = {
       NOR = {
-        text = civic_tooltip_not_spiritualist
-        value = ethic_spiritualist
-        value = ethic_fanatic_spiritualist
+		text = civic_tooltip_not_spiritualist
+		value = ethic_spiritualist
+		value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -296,6 +298,7 @@ lrsk_gov_var_civic_cult_of_personality = {
 				text = civic_tooltip_not_spiritualist
 				value = ethic_spiritualist
 				value = ethic_fanatic_spiritualist
+				value = ethic_absolute_spiritualist
 			}
 		}
 	}
@@ -583,6 +586,7 @@ lrsk_gov_var_civic_enlightened_liberalism = {
         text = civic_tooltip_not_spiritualist
         value = ethic_spiritualist
         value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
       NOT = { value = ethic_fanatic_authoritarian }
     }
@@ -852,11 +856,13 @@ lrsk_gov_var_civic_direct_revelation = {
         text = civic_tooltip_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+		value = ethic_absolute_egalitarian
       }
       OR = {
         text = civic_tooltip_spiritualist
         value = ethic_spiritualist
         value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -1164,18 +1170,12 @@ lrsk_gov_var_civic_automated_indolence = {
   random_weight = {
     base = @civic_rare_random_weight
     modifier = {
-			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
-		}
+		factor = 2
+		is_materialist = yes
+	}
     modifier = {
       factor = 0.5
-      OR = {
-        has_ethic = ethic_spiritualist
-        has_ethic = ethic_fanatic_spiritualist
-      }
+      is_spiritualist = yes
     }
     #modifier = {
 		#	factor = 0

@@ -165,8 +165,8 @@ lrsk_gov_var_gov_crusader_kingdom = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_fanatic_militarist
+				is_fanatic_spiritualist = yes
+				is_fanatic_materialist = yes
 			}
 		}
 	}
@@ -178,10 +178,7 @@ lrsk_gov_var_gov_crusader_order = {
 
 	possible = {
 		has_auth_oligarchic = yes
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 		AND = {
 			has_valid_civic = civic_aristocratic_elite
 			OR = {
@@ -198,8 +195,8 @@ lrsk_gov_var_gov_crusader_order = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_fanatic_militarist
+				is_fanatic_spiritualist = yes
+				is_fanatic_materialist = yes
 			}
 		}
 	}
