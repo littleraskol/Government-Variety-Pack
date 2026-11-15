@@ -33,12 +33,8 @@ lrsk_gov_var_gov_cosmic_choir_olig = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_direct_revelation
 		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		}
+		is_pacifist = yes
+		is_xenophile = yes
 	}
 
 	#leader_class = governor
@@ -54,12 +50,8 @@ lrsk_gov_var_gov_cosmic_choir = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_direct_revelation
 		has_valid_civic = lrsk_gov_var_civic_ascetic_virtues
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		}
+		is_pacifist = yes
+		is_xenophile = yes
 	}
 
 	#leader_class = governor
@@ -81,8 +73,8 @@ lrsk_gov_var_gov_evangelical_franchise = {
 			}			
 			has_valid_civic = civic_gospel_of_the_masses
 		}
-		has_ethic = ethic_pacifist
-		has_ethic = ethic_egalitarian
+		is_pacifist = yes
+		is_egalitarian = yes
 	}
 
 	#leader_class = governor

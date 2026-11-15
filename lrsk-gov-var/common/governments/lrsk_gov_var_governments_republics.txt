@@ -179,17 +179,14 @@ lrsk_gvp_gov_tranquil_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 		modifier = {
 			factor = 1.5
@@ -206,17 +203,14 @@ lrsk_gvp_gov_tranquil_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 		modifier = {
 			factor = 1.5
