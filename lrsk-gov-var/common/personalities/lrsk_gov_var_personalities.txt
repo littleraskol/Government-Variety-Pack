@@ -51,23 +51,24 @@ lrsk_gov_var_quasicollective_consciousness = {
 	}
 
 	allow = {
-		NOT = { is_country_type = fallen_empire }
-		NOT = { is_country_type = awakened_fallen_empire }
-  		has_civic = "lrsk_gov_var_civic_ascetic_virtues"
-  		has_civic = "lrsk_gov_var_civic_utilitarian_planning"
-    	has_ethic = "ethic_fanatic_authoritarian"
-		has_ethic = "ethic_xenophobe"
+		#NOT = { is_country_type = fallen_empire }
+		#NOT = { is_country_type = awakened_fallen_empire }
+  		#has_civic = "lrsk_gov_var_civic_ascetic_virtues"
+  		#has_civic = "lrsk_gov_var_civic_utilitarian_planning"
+    	#has_ethic = "ethic_fanatic_authoritarian"
+		#has_ethic = "ethic_xenophobe"
+		always = no
 	}
 
   #I'm not sure if "has_government" is valid for the "allow" scope, but it is use in the "weight_modifier" scope. Hence...
 	weight_modifier = {
-		weight = 1
-		modifier = {
-			factor = 1000
-			OR = {
-				has_government = lrsk_gov_var_gov_pretender_hive
-				has_government = lrsk_gov_var_gov_pretender_hive_imp
-			}
-		}
+		weight = 0
+		#modifier = {
+		#	factor = 1000
+		#	OR = {
+		#		has_government = lrsk_gov_var_gov_pretender_hive
+		#		has_government = lrsk_gov_var_gov_pretender_hive_imp
+		#	}
+		#}
 	}
 }

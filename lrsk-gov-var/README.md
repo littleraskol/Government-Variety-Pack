@@ -27,6 +27,7 @@ v8.3 (11/23/26) - Corona Borealis (4.6) Update
 -Updated to accomodate Willpower DLC changes
 --Absolute Ethics accounted for as needed.
 --Added "Ideological Strength from Advocate" and "Experience from Ideological Conversion" to Esper leader modifier.
+-Removed "Pretender Hive" and associated AI personality - I could never maintain the changes to diplo phrases, and likely never will be able to.
 -Updated compat version number.
 
 v8.2.3 (11/14/26) - Removing Redundant triggered_desc
