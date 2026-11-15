@@ -123,11 +123,7 @@ lrsk_gvp_gov_bellicose_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_absolute_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -158,11 +154,7 @@ lrsk_gvp_gov_bellicose_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_absolute_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {

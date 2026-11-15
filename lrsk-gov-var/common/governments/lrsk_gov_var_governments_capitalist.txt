@@ -21,11 +21,7 @@ lrsk_gov_var_gov_galactic_cartel = {
 				has_valid_civic = civic_brand_loyalty
 			}
 		}
-		OR = {
-			has_ethic = ethic_absolute_militarist
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_militarist
-		}
+		is_militarist = yes
 	}
 
 	#leader_class = governor
@@ -44,11 +40,7 @@ lrsk_gov_var_gov_libertarian_freehold = {
 		has_auth_democratic = yes
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
-		NOR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_absolute_militarist
-		}
+		is_militarist = no
 	}
 	
 	#leader_class = governor
@@ -66,11 +58,7 @@ lrsk_gov_var_gov_anarcho_capitalism = {
 		has_auth_oligarchic = yes
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
-		NOR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_absolute_militarist
-		}
+		is_militarist = no
 	}
 	
 	#leader_class = governor
