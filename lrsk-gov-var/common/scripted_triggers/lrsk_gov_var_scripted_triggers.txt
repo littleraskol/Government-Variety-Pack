@@ -276,6 +276,7 @@ lrsk_gvp_popgroup_has_governing_ethos = {
 		}
 	}
 }
+
 lrsk_gvp_popgroup_has_governing_fanatic_ethos = {
 	OR = {
 		AND = {
@@ -288,10 +289,7 @@ lrsk_gvp_popgroup_has_governing_fanatic_ethos = {
 		}
 		AND = {
 			has_ethic = ethic_militarist
-			root = { OR = {
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_absolute_militarist
-			} }
+			root = { has_ethic = ethic_fanatic_militarist }
 		}
 		AND = {
 			has_ethic = ethic_pacifist
@@ -312,6 +310,43 @@ lrsk_gvp_popgroup_has_governing_fanatic_ethos = {
 		AND = {
 			has_ethic = ethic_egalitarian
 			root = { has_ethic = ethic_fanatic_egalitarian }
+		}
+	}
+}
+
+lrsk_gvp_popgroup_has_governing_absolute_ethos = {
+	OR = {
+		AND = {
+			has_ethic = ethic_xenophile
+			root = { has_ethic = ethic_absolute_xenophile }
+		}
+		AND = {
+			has_ethic = ethic_xenophobe
+			root = { has_ethic = ethic_absolute_xenophobe }
+		}
+		AND = {
+			has_ethic = ethic_militarist
+			root = { has_ethic = ethic_absolute_militarist }
+		}
+		AND = {
+			has_ethic = ethic_pacifist
+			root = { has_ethic = ethic_absolute_pacifist }
+		}
+		AND = {
+			has_ethic = ethic_spiritualist
+			root = { has_ethic = ethic_absolute_spiritualist }
+		}
+		AND = {
+			has_ethic = ethic_materialist
+			root = { has_ethic = ethic_absolute_materialist }
+		}
+		AND = {
+			has_ethic = ethic_authoritarian
+			root = { has_ethic = ethic_absolute_authoritarian }
+		}
+		AND = {
+			has_ethic = ethic_egalitarian
+			root = { has_ethic = ethic_absolute_egalitarian }
 		}
 	}
 }

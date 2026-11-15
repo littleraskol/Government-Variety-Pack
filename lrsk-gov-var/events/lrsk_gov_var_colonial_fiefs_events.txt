@@ -259,14 +259,19 @@ country_event = {
 							is_pop_category = civilian
 						}
 						modifier = {
-							factor = 1.5
+							factor = 2
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
-							factor = 3
+							factor = 4
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
+						}
+						modifier = {
+							factor = 6
+							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
+							lrsk_gvp_popgroup_has_governing_absolute_ethos = yes
 						}
 					}
 					save_event_target_as = lrsk_colfief_new_vassal_founder
@@ -342,9 +347,14 @@ country_event = {
 							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
-							add = 4
+							add = 3
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
+						}
+						modifier = {
+							add = 4
+							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
+							lrsk_gvp_popgroup_has_governing_absolute_ethos = yes
 						}
 						modifier = {
 							add = 6
@@ -352,9 +362,14 @@ country_event = {
 							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
-							add = 8
+							add = 7
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
+						}
+						modifier = {
+							add = 8
+							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
+							lrsk_gvp_popgroup_has_governing_absolute_ethos = yes
 						}
 						create_country = {
 							name_list = root
@@ -381,9 +396,14 @@ country_event = {
 							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
-							subtract = 4
+							subtract = 3
 							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
+						}
+						modifier = {
+							subtract = 4
+							root = { NOT = { has_policy_flag = lrsk_gvp_colfief_promoted } }
+							lrsk_gvp_popgroup_has_governing_absolute_ethos = yes
 						}
 						modifier = {
 							subtract = 6
@@ -391,9 +411,14 @@ country_event = {
 							lrsk_gvp_popgroup_has_governing_ethos = yes
 						}
 						modifier = {
-							subtract = 8
+							subtract = 7
 							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
 							lrsk_gvp_popgroup_has_governing_fanatic_ethos = yes
+						}
+						modifier = {
+							subtract = 8
+							root = { has_policy_flag = lrsk_gvp_colfief_promoted }
+							lrsk_gvp_popgroup_has_governing_absolute_ethos = yes
 						}
 						IF = { limit = { pop_ethic_percentage = { percentage > 0.50 ethic = ethic_authoritarian } }
 							create_country = {
