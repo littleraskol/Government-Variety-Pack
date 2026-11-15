@@ -57,10 +57,7 @@ lrsk_gov_var_gov_republic_of_virtue = {
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_republicanism
 		has_valid_civic = lrsk_gov_var_civic_lifelong_learning
-		OR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
+		is_egalitarian = yes
 	}
 	
 	#leader_class = governor
@@ -77,10 +74,7 @@ lrsk_gov_var_gov_federal_republic = {
 	possible = {
 		has_valid_civic = civic_parliamentary_system
 		has_valid_civic = civic_efficient_bureaucracy
-		OR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
+		is_egalitarian = yes
 	}
 	
 	#leader_class = governor
@@ -97,7 +91,7 @@ lrsk_gov_var_gov_revolutionary_republic = {
 	possible = {
 		has_valid_civic = lrsk_gov_var_civic_republicanism
 		has_valid_civic = civic_nationalistic_zeal
-		has_ethic = ethic_fanatic_egalitarian
+		is_fanatic_egalitarian = yes
 	}
 	
 	#leader_class = governor
@@ -118,7 +112,7 @@ lrsk_gov_var_gov_republican_directory = {
 			has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
 			has_valid_civic = lrsk_gov_var_civic_republicanism			
 		}
-		has_ethic = ethic_egalitarian
+		is_egalitarian = yes
 	}
 	
 	#leader_class = governor

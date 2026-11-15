@@ -77,7 +77,7 @@ lrsk_gov_var_gov_corporate_neofuedalism = {
 		has_auth_oligarchic = yes
 		has_valid_civic = civic_merchant_guilds
 		has_valid_civic = lrsk_gov_var_civic_enlightened_liberalism
-		NOT = { has_ethic = ethic_egalitarian }
+		is_egalitarian = no
 	}
 	
 	#leader_class = governor
@@ -135,10 +135,7 @@ lrsk_gov_var_gov_merchant_republic = {
 		has_auth_oligarchic = yes
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = civic_merchant_guilds
-		NOR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
+		is_egalitarian = no
 	}
 	
 	#leader_class = governor
@@ -157,10 +154,7 @@ lrsk_gov_var_gov_constitutional_plutocracy = {
 		has_auth_democratic = yes
 		has_valid_civic = civic_meritocracy
 		has_valid_civic = civic_merchant_guilds
-		NOR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
+		is_egalitarian = no
 	}
 
 	#leader_class = governor
