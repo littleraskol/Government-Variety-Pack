@@ -179,7 +179,7 @@ country_event = {
 		}
 
 		allow = {
-			NOT = { has_ethic = ethic_fanatic_xenophile }
+			is_fanatic_xenophile = no
 			from = { is_ai = yes } # just in double case!!
 		}
 
@@ -311,10 +311,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				or = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 				has_communications = event_target:lrsk_chartering_agent
 			}
 			add_opinion_modifier = {
@@ -325,20 +322,14 @@ country_event = {
 	}
 
 	option = {
-		trigger = { nor = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		} }
+		trigger = { is_xenophile = no }
 	
 		name = lrsk_gov_var_chartered.20.a
 	}
 
 	option = {
 		trigger = {
-			or = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			has_communications = event_target:lrsk_chartering_agent
 		}
 		
@@ -348,10 +339,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			or = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			not = { has_communications = event_target:lrsk_chartering_agent }
 		}
 		
