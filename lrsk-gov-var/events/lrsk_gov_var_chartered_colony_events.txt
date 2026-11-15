@@ -119,8 +119,8 @@ country_event = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				factor = 2
-				has_ethic = ethic_egalitarian
-				NOT = { has_ethic = ethic_xenophobe }
+				is_egalitarian = yes
+				is_xenophobe = no
 			}
 			modifier = {
 				factor = 2
@@ -128,15 +128,15 @@ country_event = {
 			}
 			modifier = {
 				factor = 3
-				has_ethic = ethic_fanatic_xenophile
+				is_fanatic_xenophile = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_authoritarian
+				is_authoritarian = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_xenophobe
+				is_xenophobe = yes
 			}
 			modifier = {
 				factor = 10
@@ -231,16 +231,16 @@ country_event = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_egalitarian
-				NOT = { has_ethic = ethic_xenophobe }
+				is_egalitarian = yes
+				is_xenophobe = no
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_xenophile
+				is_xenophile = yes
 			}
 			modifier = {
 				factor = 2
-				has_ethic = ethic_authoritarian
+				is_authoritarian = yes
 			}
 			modifier = {
 				factor = 2
@@ -248,7 +248,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 3
-				has_ethic = ethic_fanatic_xenophobe
+				is_fanatic_xenophobe = yes
 			}
 			modifier = {
 				factor = 0
