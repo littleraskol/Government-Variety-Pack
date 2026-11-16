@@ -1338,9 +1338,10 @@ lrsk_gov_var_job_planetmind_overseer = {
 		}
 		swap_type = {
 			trigger = { owner? = { is_wilderness_empire = yes } }
-			name = job_lrsk_gov_var_job_planetmind_overseer_wild
+			condition_string = DRONE_JOB_TRIGGER
+			name = lrsk_gov_var_job_planetmind_overseer_wild
 			icon = lrsk_gov_var_job_planetmind_overseer
-			desc = job_lrsk_gov_var_job_planetmind_overseer_wild_desc
+			desc = lrsk_gov_var_job_planetmind_overseer_wild
 			building_icon = lrsk_gov_var_bldg_planet_synaptic_rhizome
 			weight = 500
 		}
