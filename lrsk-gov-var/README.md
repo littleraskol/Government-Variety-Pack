@@ -26,6 +26,7 @@ v?.?.? (??/??/??) - Pre-4.6 Update Cleanup
 -Check for Colonial Fiefs spawned vassal matching empire ethos if founder has a governing ethic now checks to see if a governing ethic is adhered to by the majority of the pop group (rather than just whether the ethic is held by any portion of the group).
 -Caste civic penalties are a bit extreme, removed job efficiency penalties.
 -Noticed that `country_power_projection_influence_produces_mult` isn't really used as a modifier much (outside one technical function), so replaced it with other bonuses.
+-Some minor tweaks/fixes to loc
 
 v8.2.3 (11/14/26) - Removing Redundant triggered_desc
 Still had some triggered_desc for jobs, which is no longer needed.
