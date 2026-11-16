@@ -1,7 +1,13 @@
 	# Non-Wilderness Planetary Synaptic building costs etc
 
-	allow = {
-		pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_$LRSK_GVP_PSLVL$
+	allow = { pop_amount >= @lrsk_gov_var_planet_synaptic_popsreq_$LRSK_GVP_PSLVL$ }
+
+	# facilitates conversion - wild version will always show as appropriate, even if its function is different
+	destroy_trigger = { 
+		owner? = {
+			is_hive_empire = yes
+			is_wilderness_empire = yes
+		} 
 	}
 
 	resources = {
