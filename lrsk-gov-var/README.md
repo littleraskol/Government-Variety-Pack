@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v8.3 (11/23/26) - Corona Borealis (4.6) Update
+v9.0 (11/23/26) - Corona Borealis (4.6) Update
 -Fixed what was needed for compatibility with Stellaris 4.6 (Corona Borealis).
 --'has_megacorp' replaced with 'has_megacorp_dlc'
 -Updated to accomodate Willpower DLC changes
