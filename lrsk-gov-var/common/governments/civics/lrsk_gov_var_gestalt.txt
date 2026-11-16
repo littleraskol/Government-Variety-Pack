@@ -26,8 +26,6 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 		}
 	}
 
-	description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
-
 	modifier = {
 		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 		add_attunement_the_cradle_of_souls = @civic_attunement1
@@ -35,11 +33,13 @@ lrsk_gov_var_civic_hive_planetmind_creativity = {
 
 	swap_type = {
 		name = lrsk_gov_var_civic_hive_planetmind_creativity_wild # in order to show a new flavor description
+		description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 		trigger = { is_wilderness_empire = yes }
 		modifier = { empire_size_systems_mult = -0.15 }
 	}
 	swap_type = {
 		trigger = { is_wilderness_empire = no }
+		description = "civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects"
 		modifier = { empire_size_colonies_mult = -0.15 }
 	}
 }
