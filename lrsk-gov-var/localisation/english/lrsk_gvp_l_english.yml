@@ -90,12 +90,10 @@ l_english:
 
  lrsk_gov_var_civic_enlightened_liberalism:0 "Enlightened Liberalism"
  lrsk_gov_var_civic_enlightened_liberalism_desc:0 "This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry."
- #civic_tooltip_lrsk_gov_var_civic_enlightened_liberalism_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y25%§! and §Y50%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
 
  lrsk_gvp_enlightened_liberalism_councilor:0 "Constitutional Scholar-in-Residence"
  lrsk_gvp_enlightened_liberalism_councilor_female:0 "$lrsk_gvp_enlightened_liberalism_councilor$"
  lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the nation's Constitution, and advising on how to apply its requirements to an expanding and changing society."
- #lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the [owner.GetName]'s Constitution, and advising on how to apply its requirements to an expanding and changing society."
 
  lrsk_gov_var_civic_business_lobby:0 "Budgetary Thrift"
  lrsk_gov_var_civic_business_lobby_desc:0 "This society prizes cutting waste and operational efficiency above all things."
@@ -113,7 +111,6 @@ l_english:
  lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
  lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
  lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the ruler's security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
- #lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the [GetRulerTitle]'s security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
 
  lrsk_gov_var_civic_lifelong_learning:0 "Lifelong Learning"
  lrsk_gov_var_civic_lifelong_learning_desc:0 "This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives."
@@ -122,7 +119,6 @@ l_english:
  lrsk_gvp_lifelong_learning_councilor:0 "Secretary of Citizen Academics"
  lrsk_gvp_lifelong_learning_councilor_female:0 "$lrsk_gvp_lifelong_learning_councilor$"
  lrsk_gvp_lifelong_learning_councilor_desc:0 "The $TITLE$ ensures that citizens at every phase of life have the chance to learn and contribute to the generation of knowledge."
- #lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc:0 "§Y$job_lrsk_gvp_job_citscholar_plural$§! produce §Y+1§! $r_lrsk_research$." 
 
  lrsk_gov_var_civic_institutionalized_collectivism:0 "Institutionalized Collectivism"
  lrsk_gov_var_civic_institutionalized_collectivism_desc:0 "The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met."
@@ -149,7 +145,6 @@ l_english:
  lrsk_gvp_royal_absolutism_councilor_female:0 "$lrsk_gvp_royal_absolutism_councilor$"
  lrsk_gvp_royal_absolutism_councilor_desc:0 "The $TITLE$ is both a spiritual advisor and something of a tutor in the theory of sound monarchical governance."
  lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "- The base experience gain of the §Yheir§! is increased by §G5%§! per month."
- #lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "§YIncreased ruler experience gain§! by §G1%§! per month.\n\nThe base monthly experience gain of the §Y[GetHeirTitle]§! is increased by §G5%§!."
  lrsk_gvp_royal_absolutism_councilor_conditional_tooltip:0 "The §Yheir to the throne§! cannot take this position."
 
  lrsk_gov_var_civic_public_works:0 "Public Works"
@@ -166,7 +161,6 @@ l_english:
  lrsk_gvp_imperial_economy_councilor:0 "Imperial Bursar"
  lrsk_gvp_imperial_economy_councilor_female:0 "$lrsk_gvp_imperial_economy_councilor$"
  lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the empire receives all that it is due."
- #lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the [owner.GetName] receives all that it is due."
 
  lrsk_gov_var_civic_colonial_fiefs:0 "Colonial Fiefs"
  lrsk_gov_var_civic_colonial_fiefs_desc:0 "The monarch is willing to grant landholding rights to those bold enough to colonize new worlds."
@@ -206,12 +200,16 @@ l_english:
  ####################################
  ### Hive Mind
 
+ LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1:0 "Allows constructing £building£ §Y$LRSK_DESC_PLANETMIND_NAME$§! Buildings, which add §G100§!"
+ LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2:0 "Jobs per building level. They also diminish $r_stability$ and magnify $type_deviancy$ by a degree that also scales with building level."
+
  lrsk_gov_var_civic_hive_planetmind_creativity:0 "Planetmind Creativity"
  lrsk_gov_var_civic_hive_planetmind_creativity_desc:0 "Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs."
+ civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "$LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1$ ['concept_lrsk_gvp_planetmind_overseer'] $LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2$"
 
- lrsk_gov_var_civic_hive_planetmind_creativity_wild:0 "Biomesoul Wisdom"
- lrsk_gov_var_civic_hive_planetmind_creativity_wild_desc:0 "Every planet of this Wilderness has its own homegrown intellect to coordinate activity within its region of the Wilderness."
- civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "Allows constructing £building£ ['concept_lrsk_gvp_planetmind_buildings'].\n\n"
+ lrsk_gov_var_civic_hive_planetmind_creativity_wild:0 "Biomesoul Song"
+ lrsk_gov_var_civic_hive_planetmind_creativity_wild_desc:0 "Every planet of this Wilderness has a homegrown conductor of activity within its region of the Wilderness."
+ civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_wild_desc_effects:0 "$LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1$ ['concept_lrsk_gvp_temposymbiont'] $LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2$"
 
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
@@ -698,9 +696,6 @@ l_english:
  concept_lrsk_gvp_special_subject:0 "Special Subject Type"
  concept_lrsk_gvp_special_subjects_desc:0 "New subject presets and/or agreeement terms with various beneficial effects, available to certain civics added by the §HGovernment Variety Pack§! mod. These are distinct from the 'specialized' subjects added by the Overlord DLC."
  
- concept_lrsk_gvp_planetmind_buildings:0 "Planetmind Buildings"
- concept_lrsk_gvp_planetmind_buildings_desc:0 "These '$LRSK_DESC_PLANETMIND_NAME$' buildings improve $r_lrsk_amenities_nohappy$ production while also magnifying $type_deviancy$. They also add £job_lrsk_gov_var_job_planetmind_overseer£ ['concept_lrsk_gvp_planetmind_overseers']."
- 
  concept_lrsk_gvp_bldg_managerial_technique_institute:0 "$lrsk_gvp_bldg_managerial_technique_institute$"
  concept_lrsk_gvp_bldg_managerial_technique_institute_desc:0 "Provides the host planet with §G+200§! £job_lrsk_gov_var_job_functionary£ ['concept_lrsk_gvp_functionary'] Jobs and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §H100§! §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This bonus changes to §G+10%§! $type_crime$ on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_managerial_technique_institute_desc$§!"
  
@@ -759,6 +754,10 @@ l_english:
  concept_lrsk_gvp_planetmind_overseer:0 "$job_lrsk_gov_var_job_planetmind_overseer$"
  concept_lrsk_gvp_planetmind_overseers_desc:0 "$job_lrsk_gov_var_job_planetmind_overseer_effect_desc$\n\n§L$job_lrsk_gov_var_job_planetmind_overseer_desc$§!"
  
+ concept_lrsk_gvp_temposymbionts:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild_plural$"
+ concept_lrsk_gvp_temposymbiont:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild$"
+ concept_lrsk_gvp_temposymbionts_jobs_desc:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild_effect_desc$\n\n§L$job_lrsk_gov_var_job_planetmind_overseer_wild_desc$§!"
+
  concept_lrsk_gvp_functionaries:0 "$job_lrsk_gov_var_job_functionary_plural$"
  concept_lrsk_gvp_functionary:0 "$job_lrsk_gov_var_job_functionary$"
  concept_lrsk_gvp_functionaries_desc:0 "$job_lrsk_gov_var_job_functionary_effect_desc$\n\n§L$job_lrsk_gov_var_job_functionary_desc$§!"
