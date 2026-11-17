@@ -1368,14 +1368,6 @@ lrsk_gov_var_job_planetmind_overseer = {
 			unity = 3
 			energy = 1
 		}
-		#upkeep = {
-		#	trigger = { is_lithoid = no }
-		#	food = 1
-		#}
-		#upkeep = {
-		#	trigger = { is_lithoid = yes }
-		#	minerals = 1
-		#}
 	}
 
 	country_modifier = {
@@ -1392,18 +1384,7 @@ lrsk_gov_var_job_planetmind_overseer = {
 
 	weight = {
 		weight = @lrsk_planetmind_job_weight
-		#mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_planetmind_overseer|RESOURCE|unity|
 	}
-
-	#promotion = {
-	#	time = @standard_promotion_time
-	#	effect = {
-	#		pop_amount_change_category = {
-	#			CATEGORY = complex_drone
-	#			AMOUNT = local_pop_amount
-	#		}
-	#	}
-	#}
 }
 
 ## Complex Drones (Machine)
