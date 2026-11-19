@@ -577,3 +577,29 @@ lrsk_gvp_civic_mc_war_profiteers_councilor = {
 		commander_exp_gain = 0.01
 	}
 }
+
+lrsk_gvp_total_zeal_councilor = {
+	leader_class = { official }
+	is_leader_possible = {
+		leader_class = official
+	}
+	civic = lrsk_gvp_civic_total_zeal
+	modifier = {
+		country_edict_fund_mult = 0.025
+	}
+	#custom_tooltip = lrsk_gvp_business_lobby_councilor_custom_modifier_desc
+	#conditional_tooltip = lrsk_gvp_business_lobby_councilor_conditional_tooltip
+}
+
+lrsk_gvp_mc_total_zeal_councilor = {
+	leader_class = { official }
+	is_leader_possible = {
+		leader_class = official
+	}
+	civic = lrsk_gvp_civic_mc_total_zeal
+	modifier = {
+		country_edict_fund_mult = 0.025
+	}
+	#custom_tooltip = lrsk_gvp_business_lobby_councilor_custom_modifier_desc
+	#conditional_tooltip = lrsk_gvp_business_lobby_councilor_conditional_tooltip
+}

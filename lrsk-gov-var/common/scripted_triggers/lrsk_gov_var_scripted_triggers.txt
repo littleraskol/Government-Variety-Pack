@@ -350,3 +350,26 @@ lrsk_gvp_popgroup_has_governing_absolute_ethos = {
 		}
 	}
 }
+
+lrsk_gvp_has_total_zeal = {
+	OR = {
+		has_valid_civic = lrsk_gvp_civic_total_zeal
+		has_valid_civic = lrsk_gvp_civic_mc_total_zeal
+	}
+}
+
+lrsk_gvp_is_corp = {
+	OR = {
+		has_authority = auth_corporate
+		has_valid_civic = civic_corporate_dominion
+	}
+}
+
+lrsk_gvp_can_terraform = {
+	OR = { 
+		has_technology = tech_terrestrial_sculpting
+		has_technology = tech_ecological_adaptation
+		has_technology = tech_climate_restoration
+		has_technology = tech_volcanic_terraforming
+	}
+}

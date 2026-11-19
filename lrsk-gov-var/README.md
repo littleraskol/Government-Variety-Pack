@@ -28,6 +28,12 @@ v9.0 (11/23/26) - Corona Borealis (4.6) Update
 --Absolute Ethics accounted for as needed.
 --Added "Ideological Strength from Advocate" and "Experience from Ideological Conversion" to Esper leader modifier.
 -Removed "Pretender Hive" and associated AI personality - I could never maintain the changes to diplo phrases, and likely never will be able to.
+-Added "Total Zeal" civic
+--Only available with Willpower DLC.
+--Can be taken by any non-gestalt empire.
+--Allows starting with an absolute ethic.
+--Mechanics support challenging Fallen/Awakened Empires and completing grand projects.
+--Associated governments added.
 -Updated compat version number.
 
 v8.2.3 (11/14/26) - Removing Redundant triggered_desc
