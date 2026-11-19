@@ -237,9 +237,20 @@ lrsk_gvp_wonder_age = {
 
 	potential = {
 		lrsk_gvp_has_total_zeal = yes
+	}
+
+	allow = {
 		OR = {
-			can_build_megastructures = yes
-			lrsk_gvp_can_terraform = yes
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
+				can_build_megastructures = yes
+			}
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_TERRA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_TERRA
+				lrsk_gvp_can_terraform = yes
+			}
 			has_ascension_perk = ap_arcology_project
 		}
 	}
