@@ -1648,6 +1648,65 @@ country_event = {
 	}
 }
 
+# Total Zeal: Absolute Ethic Conversion at game start
+country_event = {
+	id = lrsk_government_variety_pack_backend.1007
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		lrsk_gvp_has_total_zeal = yes
+		is_absolute = no
+	}
+	
+	immediate = {
+		switch = {
+			trigger = has_ethic
+			ethic_fanatic_authoritarian = {
+				country_remove_ethic = ethic_fanatic_authoritarian
+				county_add_ethic = ethic_absolute_authoritarian
+			}
+			ethic_fanatic_egalitarian = {
+				country_remove_ethic = ethic_fanatic_egalitarian
+				county_add_ethic = ethic_absolute_egalitarian
+			}
+			ethic_fanatic_materialist = {
+				country_remove_ethic = ethic_fanatic_materialist
+				county_add_ethic = ethic_absolute_materialist
+			}
+			ethic_fanatic_militarist = {
+				country_remove_ethic = ethic_fanatic_militarist
+				county_add_ethic = ethic_absolute_militarist
+			}
+			ethic_fanatic_pacifist = {
+				country_remove_ethic = ethic_fanatic_pacifist
+				county_add_ethic = ethic_absolute_pacifist
+			}
+			ethic_fanatic_spiritualist = {
+				country_remove_ethic = ethic_fanatic_spiritualist
+				county_add_ethic = ethic_absolute_spiritualist
+			}
+			ethic_fanatic_xenophile = {
+				country_remove_ethic = ethic_fanatic_xenophile
+				county_add_ethic = ethic_absolute_xenophile
+			}
+			ethic_fanatic_xenophobe = {
+				country_remove_ethic = ethic_fanatic_xenophobe
+				county_add_ethic = ethic_absolute_xenophobe
+			}
+		}
+		
+		country_remove_ethic = ethic_pacifist
+		country_remove_ethic = ethic_militarist
+		country_remove_ethic = ethic_materialist
+		country_remove_ethic = ethic_spiritualist
+		country_remove_ethic = ethic_egalitarian
+		country_remove_ethic = ethic_authoritarian
+		country_remove_ethic = ethic_xenophile
+		country_remove_ethic = ethic_xenophobe
+	}
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000
