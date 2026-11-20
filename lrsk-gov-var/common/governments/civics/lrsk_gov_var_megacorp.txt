@@ -724,7 +724,7 @@ lrsk_gvp_civic_mc_total_zeal = {
 	possible = {
 		ethics = {
 			OR = {
-				text = civic_tooltip_fanatic
+				text = LRSK_GVP_NO_FAN_EGAL_AUTH
 				#value = ethic_fanatic_authoritarian
 				#value = ethic_fanatic_egalitarian
 				value = ethic_fanatic_materialist
@@ -747,6 +747,18 @@ lrsk_gvp_civic_mc_total_zeal = {
 	}
 
 	random_weight = { base = @civic_uncommon_random_weight }
+
+	triggered_country_modifier = {
+		potential = {
+			lrsk_gvp_at_war_w_fe = yes
+		}
+		modifier = {
+			ship_home_territory_fire_rate_mult = 0.2
+		}
+		show_if_trigger_false = yes
+		trigger_false_key_override = lrsk_gvp_war_when_war_w_fe
+		trigger_true_key_override = lrsk_gvp_war_when_war_w_fe
+	}
 
 	modifier = {
 		ideological_resistance_mult = 0.15

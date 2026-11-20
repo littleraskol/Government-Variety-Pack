@@ -373,3 +373,15 @@ lrsk_gvp_can_terraform = {
 		has_technology = tech_volcanic_terraforming
 	}
 }
+
+lrsk_gvp_at_war_w_fe = {
+	is_at_war = yes
+	any_war = { 
+		any_war_participant = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		} 
+	}
+}

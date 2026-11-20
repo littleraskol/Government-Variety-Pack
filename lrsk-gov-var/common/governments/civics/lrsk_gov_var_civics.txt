@@ -1424,6 +1424,18 @@ lrsk_gvp_civic_total_zeal = {
 
 	triggered_country_modifier = {
 		potential = {
+			lrsk_gvp_at_war_w_fe = yes
+		}
+		modifier = {
+			ship_home_territory_fire_rate_mult = 0.2
+		}
+		show_if_trigger_false = yes
+		trigger_false_key_override = lrsk_gvp_war_when_war_w_fe
+		trigger_true_key_override = lrsk_gvp_war_when_war_w_fe
+	}
+	
+	triggered_country_modifier = {
+		potential = {
 			is_absolute = yes
 		}
 		modifier = {

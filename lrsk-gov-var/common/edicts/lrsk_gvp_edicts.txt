@@ -169,7 +169,6 @@ lrsk_gvp_audacity_war = {
 	modifier = {
 		damage_vs_country_type_fallen_empire_mult = 0.25
 		damage_vs_country_type_awakened_fallen_empire_mult = 0.25
-		ship_home_territory_fire_rate_mult = 0.2
 	}
 
 	potential = {
@@ -178,18 +177,15 @@ lrsk_gvp_audacity_war = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = "lrsk_gvp_tooltip_fail_war_with_fe"
-			is_at_war = yes
-			any_war = { 
-				any_war_participant = {
-					OR = {
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
-					}
-				} 
-			}
+			success_text = lrsk_gvp_tooltip_at_war_with_fe
+			fail_text = lrsk_gvp_tooltip_at_war_with_fe
+			lrsk_gvp_at_war_w_fe = yes
 		}
-		is_absolute = yes	#technically, this civic can be "valid" as non-absolute
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE
+			fail_text = LRSK_GVP_IS_ABSOLUTE
+			is_absolute = yes
+		}
 	}
 
 	ai_weight = {
@@ -252,7 +248,10 @@ lrsk_gvp_wonder_age = {
 			}
 			has_ascension_perk = ap_arcology_project
 		}
-		is_absolute = yes	#technically, this civic can be "valid" as non-absolute
+		custom_tooltip = {
+			fail_text = "LRSK_GVP_IS_ABSOLUTE"
+			is_absolute = yes
+		}
 	}
 
 	ai_weight = {
