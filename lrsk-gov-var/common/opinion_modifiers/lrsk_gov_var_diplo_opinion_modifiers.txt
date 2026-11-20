@@ -541,6 +541,7 @@ triggered_opinion_lrsk_gvp_obscene_shapers = {
 	}
 }
 
+# FEs do not like Total Zeal
 triggered_opinion_lrsk_gvp_fe_total_zeal = {
 	trigger = {
 		FROM = {
@@ -559,6 +560,57 @@ triggered_opinion_lrsk_gvp_fe_total_zeal = {
 			from = {
 				has_edict = lrsk_gvp_audacity_war
 			}
+		}
+	}
+}
+
+# Ethic Appreciation for co-ethicists
+triggered_opinion_lrsk_gvp_ethic_share_total_zeal = {
+	trigger = {
+		from = { lrsk_gvp_has_total_zeal = yes }
+		is_fallen_empire = no
+	}
+	opinion = {
+		base = 0
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_pacifist = yes
+			FROM = { is_fanatic_pacifist = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_militarist = yes
+			FROM = { is_fanatic_militarist = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_materialist = yes
+			FROM = { is_fanatic_materialist = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_spiritualist = yes
+			FROM = { is_fanatic_spiritualist = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_egalitarian = yes
+			FROM = { is_fanatic_egalitarian = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_authoritarian = yes
+			FROM = { is_fanatic_authoritarian = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_xenophile = yes
+			FROM = { is_fanatic_xenophile = yes }
+		}
+		modifier = {
+			add = @lrsk_total_zeal_appreciation
+			is_xenophobe = yes
+			FROM = { is_fanatic_xenophobe = yes }
 		}
 	}
 }
