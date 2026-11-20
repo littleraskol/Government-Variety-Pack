@@ -1381,8 +1381,19 @@ lrsk_gvp_civic_total_zeal = {
 	negative_description = "civic_tooltip_lrsk_gvp_total_zeal_fe_hate"
 	
 	alternate_civic_version = lrsk_gvp_civic_mc_total_zeal
-
-	modification = no
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = lrsk_gvp_civic_mc_total_zeal
+			}
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = CIVIC_NOT_MODDABLE_UNTIL_INACTIVE
+				has_invalid_civic = lrsk_gvp_civic_total_zeal
+			}
+		}
+	}
 
 	possible = {
 		ethics = {
