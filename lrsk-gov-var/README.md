@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v?.?.? (??/??/??) - Wilderness Update
+v8.3 (11/21/26) - Wilderness Update
 -Updating hive civics to account for Wilderness origin.
 --In some cases, this meant altering the benefits they provide slightly.
 -Planetmind Creativity can once again be used with Wilderness.
