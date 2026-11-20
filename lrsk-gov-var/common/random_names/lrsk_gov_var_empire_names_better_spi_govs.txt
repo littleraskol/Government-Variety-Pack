@@ -12,6 +12,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				AND = {
+					has_government = "lrsk_gvp_gov_rising_empire"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -32,6 +36,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				AND = {
+					has_government = "lrsk_gvp_gov_rising_empire"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -52,6 +60,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				AND = {
+					has_government = "lrsk_gvp_gov_rising_empire"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -72,6 +84,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				AND = {
+					has_government = "lrsk_gvp_gov_rising_empire"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -92,6 +108,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_crusader_kingdom"
+				AND = {
+					has_government = "lrsk_gvp_gov_rising_empire"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -105,117 +125,121 @@ empire_name_format = {
 }
 
 
-# ### Dictatorial Spiritualist
-# # COMMENTED OUT UNTIL SUCH TIME AS I NEED THESE FOR CUSTOM GOVERNMENTS
-# ## Dictatorial Spiritualist 1
-# #empire_name_format = {
-# #	random_weight = {
-# #		factor = 0
-# #		modifier = {
-# #			add = 25
-# #			OR = {
-# #
-# #			}
-# #			is_pirate = no
-# #			is_primitive = no
-# #			NOT = { is_country_type = fallen_empire }
-# #			NOT = { is_country_type = awakened_fallen_empire }
-# #		}
-# #	}
-# #	#lookups = 
-# #	format = format.lrsk_dic_spi.1
-# #	noun = "{[This.Capital.System.GetName]}"
-# #	prefix_format = format_prefix.lrsk_dic_spi.1
-# #	# Empire of Sol
-# #}
-# #
-# ## Dictatorial Spiritualist 2
-# #empire_name_format = {
-# #	random_weight = {
-# #		factor = 0
-# #		modifier = {
-# #			add = 25
-# #			OR = {
-# #
-# #			}
-# #			is_pirate = no
-# #			is_primitive = no
-# #			NOT = { is_country_type = fallen_empire }
-# #			NOT = { is_country_type = awakened_fallen_empire }
-# #		}
-# #	}
-# #	#lookups = 
-# #	format = format.lrsk_dic_spi.2
-# #	noun = "{[This.Capital.GetName]}"
-# #	prefix_format = format_prefix.lrsk_dic_spi.2
-# #	# Empire of Earth
-# #}
-# #
-# ## Dictatorial Spiritualist 3
-# #empire_name_format = {
-# #	random_weight = {
-# #		factor = 0
-# #		modifier = {
-# #			add = 25
-# #			OR = {
-# #
-# #			}
-# #			is_pirate = no
-# #			is_primitive = no
-# #			NOT = { is_country_type = fallen_empire }
-# #			NOT = { is_country_type = awakened_fallen_empire }
-# #		}
-# #	}
-# #	#lookups = 
-# #	format = format.lrsk_dic_spi.3
-# #	adjective = "{[This.GetSpeciesAdj]}"
-# #	prefix_format = format_prefix.lrsk_dic_spi.3
-# #	# Human Empire
-# #}
-# #
-# ## Dictatorial Spiritualist 4
-# #empire_name_format = {
-# #	random_weight = {
-# #		factor = 0
-# #		modifier = {
-# #			add = 25
-# #			OR = {
-# #
-# #			}
-# #			is_pirate = no
-# #			is_primitive = no
-# #			NOT = { is_country_type = fallen_empire }
-# #			NOT = { is_country_type = awakened_fallen_empire }
-# #		}
-# #	}
-# #	#lookups = 
-# #	format = format.lrsk_dic_spi.4
-# #	adjective = "{[This.GetSpeciesAdj]}"
-# #	prefix_format = format_prefix.lrsk_dic_spi.3
-# #	# Great Human Empire
-# #}
-# #
-# ## Dictatorial Spiritualist 5
-# #empire_name_format = {
-# #	random_weight = {
-# #		factor = 0
-# #		modifier = {
-# #			add = 25
-# #			OR = {
-# #
-# #			}
-# #			is_pirate = no
-# #			is_primitive = no
-# #			NOT = { is_country_type = fallen_empire }
-# #			NOT = { is_country_type = awakened_fallen_empire }
-# #		}
-# #	}
-# #	#lookups = 
-# #	format = format.lrsk_dic_spi.5
-# #	adjective = "{[This.GetSpeciesAdj]}"
-# #	prefix_format = format_prefix.lrsk_dic_spi.3
-# #	# Human Star Empire
-# #}
+## Dictatorial Spiritualist
+# Dictatorial Spiritualist 1
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				AND = {
+					has_government = "lrsk_gvp_gov_audacity_regime"
+					is_fanatic_spiritualist = yes
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_dictatorial_spi> [This.Capital.System.GetName]}}}"
+	noun = "{[This.Capital.System.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.System.GetName] <lrsk_dictatorial_spi>}}"
+}
+
+# Dictatorial Spiritualist 2
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				AND = {
+					has_government = "lrsk_gvp_gov_audacity_regime"
+					is_fanatic_spiritualist = yes
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc>{AofB{<lrsk_dictatorial_spi> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName]}"
+	prefix_format = "{AofBpfx{[This.Capital.GetName] <lrsk_dictatorial_spi>}}"
+}
+
+# Dictatorial Spiritualist 3
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				AND = {
+					has_government = "lrsk_gvp_gov_audacity_regime"
+					is_fanatic_spiritualist = yes
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskKindSuff {<lrsk_dictatorial_spi> [This.GetSpeciesName]}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{lrskKindSuff {<lrsk_dictatorial_spi> [This.GetSpeciesName]}}"
+}
+
+# Dictatorial Spiritualist 4
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				AND = {
+					has_government = "lrsk_gvp_gov_audacity_regime"
+					is_fanatic_spiritualist = yes
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{<lrsk_spi_desc> {lrskAdjacent {[This.GetSpeciesAdj] <lrsk_dictatorial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_dictatorial_spi>}}"
+}
+
+# Dictatorial Spiritualist 5
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			OR = {
+				AND = {
+					has_government = "lrsk_gvp_gov_audacity_regime"
+					is_fanatic_spiritualist = yes
+				}
+			}
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj]{<lrsk_spi_desc>{<lrsk_dictatorial_spi>}}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj]{<lrsk_dictatorial_spi>}}"
+}
 
 
 # ### Oligarchic Spiritualist
@@ -228,6 +252,10 @@ empire_name_format = {
 			add = 25
 			OR = {
     			has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+				AND = {
+					has_government = "lrsk_gvp_gov_aspirational_council"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -248,6 +276,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+				AND = {
+					has_government = "lrsk_gvp_gov_aspirational_council"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -268,6 +300,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+				AND = {
+					has_government = "lrsk_gvp_gov_aspirational_council"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -288,6 +324,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+				AND = {
+					has_government = "lrsk_gvp_gov_aspirational_council"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -308,6 +348,10 @@ empire_name_format = {
 			add = 25
 			OR = {
 				has_government = "lrsk_gov_var_gov_cosmic_choir_olig"
+				AND = {
+					has_government = "lrsk_gvp_gov_aspirational_council"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -335,6 +379,10 @@ empire_name_format = {
 				has_government = "lrsk_gov_var_gov_saintly_assembly"
 				has_government = "lrsk_gvp_gov_pious_republic"
 				has_government = "lrsk_gvp_gov_pious_commonwealth"
+				AND = {
+					has_government = "lrsk_gvp_gov_parliament_of_ascent"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -358,6 +406,10 @@ empire_name_format = {
 				has_government = "lrsk_gov_var_gov_saintly_assembly"
 				has_government = "lrsk_gvp_gov_pious_republic"
 				has_government = "lrsk_gvp_gov_pious_commonwealth"
+				AND = {
+					has_government = "lrsk_gvp_gov_parliament_of_ascent"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -382,6 +434,10 @@ empire_name_format = {
 				has_government = "lrsk_gov_var_gov_saintly_assembly"
 				has_government = "lrsk_gvp_gov_pious_republic"
 				has_government = "lrsk_gvp_gov_pious_commonwealth"
+				AND = {
+					has_government = "lrsk_gvp_gov_parliament_of_ascent"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -405,6 +461,10 @@ empire_name_format = {
 				has_government = "lrsk_gov_var_gov_saintly_assembly"
 				has_government = "lrsk_gvp_gov_pious_republic"
 				has_government = "lrsk_gvp_gov_pious_commonwealth"
+				AND = {
+					has_government = "lrsk_gvp_gov_parliament_of_ascent"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
@@ -426,6 +486,10 @@ empire_name_format = {
 			OR = {
 				has_government = "lrsk_gov_var_gov_cosmic_choir"
 				has_government = "lrsk_gov_var_gov_saintly_assembly"
+				AND = {
+					has_government = "lrsk_gvp_gov_parliament_of_ascent"
+					is_fanatic_spiritualist = yes
+				}
 			}
 			is_pirate = no
 			is_primitive = no
