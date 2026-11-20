@@ -1323,6 +1323,15 @@ lrsk_gov_var_job_planetmind_overseer = {
 			condition_string = DRONE_JOB_TRIGGER
 			building_icon = lrsk_gov_var_bldg_planet_synaptic_confluence
 		}
+		swap_type = {
+			trigger = { owner? = { is_wilderness_empire = yes } }
+			condition_string = DRONE_JOB_TRIGGER
+			name = lrsk_gov_var_job_planetmind_overseer_wild
+			icon = lrsk_gov_var_job_planetmind_overseer
+			desc = lrsk_gov_var_job_planetmind_overseer_wild
+			building_icon = lrsk_gov_var_bldg_planet_synaptic_rhizome
+			weight = 500
+		}
 	}
 
 	possible_pre_triggers = {
@@ -1343,59 +1352,24 @@ lrsk_gov_var_job_planetmind_overseer = {
 			influence = 0.1
 		}
 		upkeep = {
-			unity = 2
+			unity = 3
 			energy = 1
 		}
-		#upkeep = {
-		#	trigger = { is_lithoid = no }
-		#	food = 1
-		#}
-		#upkeep = {
-		#	trigger = { is_lithoid = yes }
-		#	minerals = 1
-		#}
 	}
 
 	country_modifier = {
-		country_naval_cap_add = 2
-	}
-
-	triggered_country_modifier = {		
-		potential = {
-			exists = owner
-			owner = { empire_size > 2 }
-		}
-		empire_size_add = -2
-	}
-
-	triggered_country_modifier = {		
-		potential = {
-			exists = owner
-			owner = { empire_size = 2 }
-		}
-		empire_size_add = -1
+		country_naval_cap_add = 3
+		empire_size_add = -4
 	}
 
 	planet_modifier = {
-		planet_crime_add = 5
+		planet_crime_add = 10
 		planet_stability_add = -1
-		pop_housing_usage_mult = -0.1
 	}
 
 	weight = {
 		weight = @lrsk_planetmind_job_weight
-		#mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_planetmind_overseer|RESOURCE|unity|
 	}
-
-	#promotion = {
-	#	time = @standard_promotion_time
-	#	effect = {
-	#		pop_amount_change_category = {
-	#			CATEGORY = complex_drone
-	#			AMOUNT = local_pop_amount
-	#		}
-	#	}
-	#}
 }
 
 ## Complex Drones (Machine)

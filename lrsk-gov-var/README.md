@@ -30,6 +30,23 @@ v9.0 (11/23/26) - Corona Borealis (4.6) Update
 -Removed "Pretender Hive" and associated AI personality - I could never maintain the changes to diplo phrases, and likely never will be able to.
 -Updated compat version number.
 
+v8.3 (11/21/26) - Wilderness Update
+-Updating hive civics to account for Wilderness origin.
+--In some cases, this meant altering the benefits they provide slightly.
+-Planetmind Creativity can once again be used with Wilderness.
+--Its version of the Planetmind building scales with number of districts built.
+-Planetmind Creativity changes:
+--Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult.
+--The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
+--Planetmind buildings require fewer pops to build/upgrade.
+
+v8.2.4 (11/20/26) - Pre-4.6 Update Cleanup
+-Esper leaders should apply planet/sector bonus regardless of class.
+-Check for Colonial Fiefs spawned vassal matching empire ethos if founder has a governing ethic now checks to see if a governing ethic is adhered to by the majority of the pop group (rather than just whether the ethic is held by any portion of the group).
+-Caste civic penalties are a bit extreme, removed job efficiency penalties.
+-Noticed that `country_power_projection_influence_produces_mult` isn't really used as a modifier much (outside one technical function), so replaced it with other bonuses.
+-Some minor tweaks/fixes to loc
+
 v8.2.3 (11/14/26) - Removing Redundant triggered_desc
 Still had some triggered_desc for jobs, which is no longer needed.
 
