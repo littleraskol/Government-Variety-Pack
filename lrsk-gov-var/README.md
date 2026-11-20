@@ -44,6 +44,7 @@ v8.3 (11/21/26) - Wilderness Update
 --Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult.
 --The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
 --Planetmind buildings require fewer pops to build/upgrade.
+-Minor fix: Added in some missing random name options for governments that should have had them.
 
 v8.2.4 (11/20/26) - Pre-4.6 Update Cleanup
 -Esper leaders should apply planet/sector bonus regardless of class.
