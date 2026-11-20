@@ -11,6 +11,11 @@
 
 	random_weight = { base = @civic_uncommon_random_weight }
 
+    modifier = {
+        ideological_resistance_mult = 0.15
+    }
+	custom_tooltip_with_modifiers = civic_tooltip_lrsk_gvp_total_zeal_ideo_res
+
 	triggered_country_modifier = {
 		potential = {
 			lrsk_gvp_at_war_w_fe = yes
@@ -35,8 +40,3 @@
 		trigger_false_key_override = LRSK_GVP_ONLY_HAS_FANATIC_ETHIC
 		trigger_true_key_override = LRSK_GVP_ONLY_HAS_FANATIC_ETHIC
 	}
-
-    modifier = {
-        ideological_resistance_mult = 0.15
-    }
-	custom_tooltip_with_modifiers = civic_tooltip_lrsk_gvp_total_zeal_fe_hate
