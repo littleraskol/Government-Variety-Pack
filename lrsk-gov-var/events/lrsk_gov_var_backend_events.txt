@@ -1648,7 +1648,7 @@ country_event = {
 	}
 }
 
-# Total Zeal: Absolute Ethic Conversion at game start
+# Total Zeal: Remove non-fanatic ethics, replace with lesser modifier.
 country_event = {
 	id = lrsk_government_variety_pack_backend.1007
 	is_triggered_only = yes
@@ -1656,36 +1656,44 @@ country_event = {
 
 	trigger = {
 		lrsk_gvp_has_total_zeal = yes
-		is_absolute = no
 	}
 	
 	immediate = {
 		switch = {
 			trigger = has_ethic
-			ethic_fanatic_authoritarian = {
-				shift_ethic = ethic_absolute_authoritarian
+			ethic_xenophile = {
+				country_remove_ethic = ethic_xenophile
+				add_modifier = { modifier = lrsk_gvp_diversity_traditions days = -1 }
 			}
-			ethic_fanatic_egalitarian = {
-				shift_ethic = ethic_absolute_egalitarian
+			ethic_xenophobe = {
+				country_remove_ethic = ethic_xenophobe
+				add_modifier = { modifier = lrsk_gvp_purity_traditions days = -1 }
 			}
-			ethic_fanatic_materialist = {
-				shift_ethic = ethic_absolute_materialist
+			ethic_militarist = {
+				country_remove_ethic = ethic_militarist
+				add_modifier = { modifier = lrsk_gvp_valor_traditions days = -1 }
 			}
-			ethic_fanatic_militarist = {
-				shift_ethic = ethic_absolute_militarist
+			ethic_pacifist = {
+				country_remove_ethic = ethic_pacifist
+				add_modifier = { modifier = lrsk_gvp_tranquility_traditions days = -1 }
 			}
-			ethic_fanatic_pacifist = {
-				shift_ethic = ethic_absolute_pacifist
+			ethic_spiritualist = {
+				country_remove_ethic = ethic_spiritualist
+				add_modifier = { modifier = lrsk_gvp_faith_traditions days = -1 }
 			}
-			ethic_fanatic_spiritualist = {
-				shift_ethic = ethic_absolute_spiritualist
+			ethic_materialist = {
+				country_remove_ethic = ethic_materialist
+				add_modifier = { modifier = lrsk_gvp_knowledge_traditions days = -1 }
 			}
-			ethic_fanatic_xenophile = {
-				shift_ethic = ethic_absolute_xenophile
+			ethic_authoritarian = {
+				country_remove_ethic = ethic_authoritarian
+				add_modifier = { modifier = lrsk_gvp_hierarchy_traditions days = -1 }
 			}
-			ethic_fanatic_xenophobe = {
-				shift_ethic = ethic_absolute_xenophobe
+			ethic_egalitarian = {
+				country_remove_ethic = ethic_egalitarian
+				add_modifier = { modifier = lrsk_gvp_equality_traditions days = -1 }
 			}
+			default = { log = "(LRSK GVP) ERROR: TOTAL ZEAL EMPIRE STARTED WITHOUT NON-FANATIC ETHOS" }
 		}
 	}
 }
