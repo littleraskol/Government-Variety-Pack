@@ -90,12 +90,10 @@ l_english:
 
  lrsk_gov_var_civic_enlightened_liberalism:0 "Enlightened Liberalism"
  lrsk_gov_var_civic_enlightened_liberalism_desc:0 "This society values personal property rights, individual enterprise, advancing knowledge, and technical innovation. A culture for true captains of industry."
- #civic_tooltip_lrsk_gov_var_civic_enlightened_liberalism_effects:0 "£political_power£ §YPolitical Power§! of $WORKERS$ and $SPECIALISTS$ increased by §Y25%§! and §Y50%§! respectively (assuming §YDecent Conditions§! living standards, will vary by species rights settings).\n\n"
 
  lrsk_gvp_enlightened_liberalism_councilor:0 "Constitutional Scholar-in-Residence"
  lrsk_gvp_enlightened_liberalism_councilor_female:0 "$lrsk_gvp_enlightened_liberalism_councilor$"
  lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the nation's Constitution, and advising on how to apply its requirements to an expanding and changing society."
- #lrsk_gvp_enlightened_liberalism_councilor_desc:0 "The $TITLE$ is an advisor with a great deal of soft power, being responsible for studying and reviewing the history of the [owner.GetName]'s Constitution, and advising on how to apply its requirements to an expanding and changing society."
 
  lrsk_gov_var_civic_business_lobby:0 "Budgetary Thrift"
  lrsk_gov_var_civic_business_lobby_desc:0 "This society prizes cutting waste and operational efficiency above all things."
@@ -113,7 +111,6 @@ l_english:
  lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
  lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
  lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the ruler's security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
- #lrsk_gvp_chivalry_councilor_desc:0 "The $TITLE$ is technically the chief of the [GetRulerTitle]'s security detail, but in practice the prestige of this position sets the standard for honorable and valorous conduct throughout the empire."
 
  lrsk_gov_var_civic_lifelong_learning:0 "Lifelong Learning"
  lrsk_gov_var_civic_lifelong_learning_desc:0 "This society values public education so strongly that opportunities for learning and development are made available throughout citizens' lives."
@@ -122,7 +119,6 @@ l_english:
  lrsk_gvp_lifelong_learning_councilor:0 "Secretary of Citizen Academics"
  lrsk_gvp_lifelong_learning_councilor_female:0 "$lrsk_gvp_lifelong_learning_councilor$"
  lrsk_gvp_lifelong_learning_councilor_desc:0 "The $TITLE$ ensures that citizens at every phase of life have the chance to learn and contribute to the generation of knowledge."
- #lrsk_gvp_lifelong_learning_councilor_custom_modifier_desc:0 "§Y$job_lrsk_gvp_job_citscholar_plural$§! produce §Y+1§! $r_lrsk_research$." 
 
  lrsk_gov_var_civic_institutionalized_collectivism:0 "Institutionalized Collectivism"
  lrsk_gov_var_civic_institutionalized_collectivism_desc:0 "The government controls industry and infrastructure to ensure a baseline of economic cooperation and fairness so that basic needs can be met."
@@ -149,7 +145,6 @@ l_english:
  lrsk_gvp_royal_absolutism_councilor_female:0 "$lrsk_gvp_royal_absolutism_councilor$"
  lrsk_gvp_royal_absolutism_councilor_desc:0 "The $TITLE$ is both a spiritual advisor and something of a tutor in the theory of sound monarchical governance."
  lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "- The base experience gain of the §Yheir§! is increased by §G5%§! per month."
- #lrsk_gvp_royal_absolutism_councilor_custom_modifier_desc:0 "§YIncreased ruler experience gain§! by §G1%§! per month.\n\nThe base monthly experience gain of the §Y[GetHeirTitle]§! is increased by §G5%§!."
  lrsk_gvp_royal_absolutism_councilor_conditional_tooltip:0 "The §Yheir to the throne§! cannot take this position."
 
  lrsk_gov_var_civic_public_works:0 "Public Works"
@@ -166,7 +161,6 @@ l_english:
  lrsk_gvp_imperial_economy_councilor:0 "Imperial Bursar"
  lrsk_gvp_imperial_economy_councilor_female:0 "$lrsk_gvp_imperial_economy_councilor$"
  lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the empire receives all that it is due."
- #lrsk_gvp_imperial_economy_councilor_desc:0 "The $TITLE$ audits the tax and tribute records to ensure that the [owner.GetName] receives all that it is due."
 
  lrsk_gov_var_civic_colonial_fiefs:0 "Colonial Fiefs"
  lrsk_gov_var_civic_colonial_fiefs_desc:0 "The monarch is willing to grant landholding rights to those bold enough to colonize new worlds."
@@ -206,72 +200,117 @@ l_english:
  ####################################
  ### Hive Mind
 
+ LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1:0 "Allows constructing £building£ §Y$LRSK_DESC_PLANETMIND_NAME$§! Buildings, which add §G100§!"
+ LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2:0 "Jobs per building level. They also diminish $r_stability$ and magnify $type_deviancy$ by a degree that also scales with building level."
+
  lrsk_gov_var_civic_hive_planetmind_creativity:0 "Planetmind Creativity"
  lrsk_gov_var_civic_hive_planetmind_creativity_desc:0 "Every planet in the Hive Mind's comprehension has its own semi-autonomous intellect to carry out its designs."
- civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "Allows constructing £building£ ['concept_lrsk_gvp_planetmind_buildings'].\n\n"
+ civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_desc_effects:0 "$LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1$ ['concept_lrsk_gvp_planetmind_overseer'] $LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2$"
+
+ lrsk_gov_var_civic_hive_planetmind_creativity_wild:0 "Biomesoul Song"
+ lrsk_gov_var_civic_hive_planetmind_creativity_wild_desc:0 "Every planet of this Wilderness has a homegrown conductor of activity within its region of the Wilderness."
+ civic_tooltip_lrsk_gov_var_civic_hive_planetmind_creativity_wild_desc_effects:0 "$LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_1$ ['concept_lrsk_gvp_temposymbiont'] $LRSK_GVP_PLANETMIND_TOOLTIP_COMMON_2$"
 
  lrsk_gov_var_civic_hive_caste_quickening:0 "Caste Quickening"
  lrsk_gov_var_civic_hive_caste_quickening_desc:0 "The Hive Mind takes special care to cultivate the talents of its drones and creatively redesigns them for its purposes."
+ lrsk_gov_var_civic_hive_caste_quickening_wild:0 "Clade Refinement"
+ lrsk_gov_var_civic_hive_caste_quickening_wild_desc:0 "The Wilderness takes special care to cultivate the features of its symbionts, manipulating evolution to bring forth the best traits for its purposes."
  civic_tooltip_lrsk_gvp_nulls_caste_overspec_effects:0 "- Prevents ['concept_lrsk_gvp_caste_penalties']."
 
  # Common to following four
- civic_tooltip_lrsk_gvp_caste_overspec_effects:0 "- May incur ['concept_lrsk_gvp_caste_penalties']."
+ civic_tooltip_lrsk_gvp_caste_overspec_effects:0 "- §PMay incur §!['concept_lrsk_gvp_caste_penalties']§P.§!"
 
  lrsk_gov_var_civic_hive_builder_caste:0 "Builder Caste"
  lrsk_gov_var_civic_hive_builder_caste_desc:0 "The Hive Mind spawns an industrious breed of drones that are adapted for assembling infrastructure."
+ lrsk_gov_var_civic_hive_builder_caste_wild:0 "Crafter Clade"
+ lrsk_gov_var_civic_hive_builder_caste_wild_desc:0 "The Wilderness evolved an industrious clade of symbionts adapted for building structures of all kinds."
 
- lrsk_gvp_civic_hive_thinker_caste:0 "Thinker Caste"
+ lrsk_gvp_civic_hive_thinker_caste:0 "Scholar Caste"
  lrsk_gvp_civic_hive_thinker_caste_desc:0 "To better expand the horizons of the hive's ambitions, the Hive Mind breeds a special caste of inquisitive and analytical drones to grow its collective knowledge."
+ lrsk_gvp_civic_hive_thinker_caste_wild:0 "Thinker Clade"
+ lrsk_gvp_civic_hive_thinker_caste_wild_desc:0 "The Wilderness evolved a special clade of curious, thoughtful, and creative symbionts to grow its shared understanding."
 
  lrsk_gov_var_civic_hive_warrior_caste:0 "Warrior Caste"
  lrsk_gov_var_civic_hive_warrior_caste_desc:0 "The hive's prowess in mortal conflict is this Hive Mind's highest concern and it pours resources into cultivating a hardy cadre of fighting drones."
+ lrsk_gov_var_civic_hive_warrior_caste_wild:0 "Hunter Clade"
+ lrsk_gov_var_civic_hive_warrior_caste_wild_desc:0 "The Wilderness evolved a fierce clade of symbionts with killer instincts and cunning minds to defend it."
 
  lrsk_gov_var_civic_hive_royal_caste:0 "Royal Caste"
- lrsk_gov_var_civic_hive_royal_caste_desc:0 "The Hive Mind cultivates an elite breed of highly intelligent drones to direct other drones in productive and creative activity."
+ lrsk_gov_var_civic_hive_royal_caste_desc:0 "The Hive Mind cultivates an elite breed of highly driven and intelligent drones to direct other drones in productive and creative activity."
+ lrsk_gov_var_civic_hive_royal_caste_wild:0 "Noble Clade"
+ lrsk_gov_var_civic_hive_royal_caste_wild_desc:0 "The Wilderness evolved an elite clade of willful and calculating symbionts to coordinate productive and creative activity."
 
  lrsk_gov_var_civic_hive_reclamation_pools:0 "Reclamation Pools"
  lrsk_gov_var_civic_hive_reclamation_pools_desc:0 "All dead drones are reprocessed for the sustenance of hive's next generation."
+ lrsk_gov_var_civic_hive_reclamation_pools_wild:0 "Recomposition Bogs"
+ lrsk_gov_var_civic_hive_reclamation_pools_wild_desc:0 "Dead symbionts decompose in speciallty cultivated garden-wetlands so that the overall Wilderness benefits from reclaimed nutrients."
 
  lrsk_gov_var_civic_hive_boundless_spite:0 "Boundless Spite"
  lrsk_gov_var_civic_hive_boundless_spite_desc:0 "The Hive Mind is petty to a degree that would drive singleton minds mad with horrified disgust if they could contemplate but a fraction of its loathing."
+ lrsk_gov_var_civic_hive_boundless_spite_wild:0 "Wild Fury"
+ lrsk_gov_var_civic_hive_boundless_spite_wild_desc:0 "Instinctive, genome-deep anger at all competitors is the common inheritance of this Wilderness and all its irate symbionts."
  
  lrsk_gov_var_civic_hive_void_affinity:0 "Void Affinity"
  lrsk_gov_var_civic_hive_void_affinity_desc:0 "Eons of planet-bound thought has left the Hive Mind ravenously fascinated by the riches of the stars."
+ lrsk_gov_var_civic_hive_void_affinity_wild:0 "Unbounded Fascination"
+ lrsk_gov_var_civic_hive_void_affinity_wild_desc:0 "Symbionts of this Wilderness have an innate wanderlust, all moving instinctively to undiscovered opportunites."
  lrsk_gov_var_civic_hive_void_affinity_nomadic:0 "$rsk_gov_var_civic_hive_void_affinity$"
  lrsk_gov_var_civic_hive_void_affinity_nomadic_desc:0 "Eons of interstellar grazing has made the Hive Mind a gourmand of planetary riches."
 
  lrsk_gov_var_civic_hive_hoarder:0 "Hoarder"
  lrsk_gov_var_civic_hive_hoarder_desc:0 "The Hive Mind hungers for material wealth and its drones feed this hunger with great enthusiasm."
+ lrsk_gov_var_civic_hive_hoarder_wild:0 "Maw of the Wild"
+ lrsk_gov_var_civic_hive_hoarder_wild_desc:0 "The Wilderness hungers for nutrients and raw materials, driving its symbionts to feed this hunger with great enthusiasm."
 
  lrsk_gov_var_civic_hive_eusocial_rhythm:0 "Eusocial Rhythm"
  lrsk_gov_var_civic_hive_eusocial_rhythm_desc:0 "All drones assigned to particular facilities are psionically synced together in local cooperative packs to harmonize their actions, reducing the cost of routine tasks."
+ lrsk_gov_var_civic_hive_eusocial_rhythm_wild:0 "Ecosync"
+ lrsk_gov_var_civic_hive_eusocial_rhythm_wild_desc:0 "The Wilderness is a great harmonious dance of symbionts from all clades, birthing and eating and excreting and growing and mating and killing and dying in a syncronized pattern."
 
  lrsk_gov_var_civic_hive_inquisitive_bent:0 "Inquisitive Bent"
  lrsk_gov_var_civic_hive_inquisitive_bent_desc:0 "The Hive Mind has a deep and impatient curiosity about the universe."
+ lrsk_gov_var_civic_hive_inquisitive_bent_wild:0 "$lrsk_gov_var_civic_hive_inquisitive_bent$"
+ lrsk_gov_var_civic_hive_inquisitive_bent_wild_desc:0 "The Wilderness regards the the universe with unquenchable wonder."
 
  lrsk_gov_var_civic_hive_big_picture_thinker:0 "Big Picture Thinker"
  lrsk_gov_var_civic_hive_big_picture_thinker_desc:0 "Vast and ambitious are the plans of the Hive Mind. It easily sees the whole blueprint of even the grandest projects."
+ lrsk_gov_var_civic_hive_big_picture_thinker_wild:0 "$lrsk_gov_var_civic_hive_big_picture_thinker$"
+ lrsk_gov_var_civic_hive_big_picture_thinker_wild_desc:0 "For the Wilderness, as a single vast mind emergent from an entire ecosystem, grand projects are trivial to conceptualize."
 
  lrsk_gov_var_civic_hive_analgesic_stoicism:0 "Toiling Multitudes"
  lrsk_gov_var_civic_hive_analgesic_stoicism_desc:0 "Many hands make light work, for the simplest tasks at least. That's fine when, like a Hive Mind, you have all the hands."
+ lrsk_gov_var_civic_hive_analgesic_stoicism_wild:0 "Bustling Understory"
+ lrsk_gov_var_civic_hive_analgesic_stoicism_wild_desc:0 "The lowly, ground-crawling levels of the ecosystem aren't glamorous, but they are the bedrock of the Wilderness as a functioning meta-organism."
 
  lrsk_gov_var_civic_hive_domineering_expectations:0 "Domineering Expectations"
  lrsk_gov_var_civic_hive_domineering_expectations_desc:0 "The Hive Mind sees no reason why it should not direct its diplomatically bound servants with the same ruthlessness as its own drones."
+ lrsk_gov_var_civic_hive_domineering_expectations_wild:0 "Rules of Nature"
+ lrsk_gov_var_civic_hive_domineering_expectations_wild_desc:0 "Only the strong survive, and the best adapted forms of life sit at the apex. The Wilderness enforces this principle when exterior nations come under its thrall."
 
  lrsk_gov_var_civic_hive_unending_bloom:0 "Unending Bloom"
- lrsk_gov_var_civic_hive_unending_bloom_desc:0 "Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own flowering throughout the galaxy."
+ lrsk_gov_var_civic_hive_unending_bloom_desc:0 "Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Hive Mind's obsession with its own spread throughout the galaxy."
+ lrsk_gov_var_civic_hive_unending_bloom_wild:0 "$lrsk_gov_var_civic_hive_unending_bloom$"
+ lrsk_gov_var_civic_hive_unending_bloom_wild_desc:0 "Growth is the purpose of all life and expansion the best insurance of its survival. These facts inspire the Wilderness's obsession with its own flowering throughout the galaxy."
 
  lrsk_gov_var_civic_hive_benign_overmind:0 "Benign Overmind"
  lrsk_gov_var_civic_hive_benign_overmind_desc:0 "To those who who serve it, the Hive Mind is like a kindly parental god and they are proud to advance its inscrutable designs."
+ lrsk_gov_var_civic_hive_benign_overmind_wild:0 "Nurturing Nature"
+ lrsk_gov_var_civic_hive_benign_overmind_wild_desc:0 "To those who who serve it, the Wilderness is like a generous parental guardian spirit and they are proud to have found their niche within it."
 
  lrsk_gov_var_civic_hive_gestalt_extroversion:0 "Gestalt Extroversion"
  lrsk_gov_var_civic_hive_gestalt_extroversion_desc:0 "On the scale that a Hive Mind operates, diplomacy is friendship, and this gregarious Hive Mind is always looking for new friends."
+ lrsk_gov_var_civic_hive_gestalt_extroversion_wild:0 "Fairy-Glade Form"
+ lrsk_gov_var_civic_hive_gestalt_extroversion_wild_desc:0 "The Wilderness is a garden of delights, eager for new friends to frolic within it."
 
  lrsk_gov_var_civic_hive_frenzy:0 "Frenzy"
  lrsk_gov_var_civic_hive_frenzy_desc:0 "A strange sense of panic seems to drive this Hive Mind and imbues all its wartime coordination with speed and ferocity."
+ lrsk_gov_var_civic_hive_frenzy_wild:0 "Red in Tooth and Claw"
+ lrsk_gov_var_civic_hive_frenzy_wild_desc:0 "The principle of predation is the spiritual backbone of this Wilderness."
 
  lrsk_gov_var_civic_hive_vigorous_introversion:0 "Vigorous Introversion"
  lrsk_gov_var_civic_hive_vigorous_introversion_desc:0 "The Hive Mind is obsessed with the bodily experience of its drones and directs the development of their physical and sensual faculties with great focus."
+ lrsk_gov_var_civic_hive_vigorous_introversion_wild:0 "Robust Vitality"
+ lrsk_gov_var_civic_hive_vigorous_introversion_wild_desc:0 "The Wilderness is obsessed with the health and fertility of all life within its remit."
 
  ####################################
  ### Machine Intelligence
@@ -677,9 +716,6 @@ l_english:
  concept_lrsk_gvp_special_subject:0 "Special Subject Type"
  concept_lrsk_gvp_special_subjects_desc:0 "New subject presets and/or agreeement terms with various beneficial effects, available to certain civics added by the §HGovernment Variety Pack§! mod. These are distinct from the 'specialized' subjects added by the Overlord DLC."
  
- concept_lrsk_gvp_planetmind_buildings:0 "Planetmind Buildings"
- concept_lrsk_gvp_planetmind_buildings_desc:0 "These '$LRSK_DESC_PLANETMIND_NAME$' buildings improve $r_lrsk_amenities_nohappy$ production while also magnifying $type_deviancy$. They also add £job_lrsk_gov_var_job_planetmind_overseer£ ['concept_lrsk_gvp_planetmind_overseers']."
- 
  concept_lrsk_gvp_bldg_managerial_technique_institute:0 "$lrsk_gvp_bldg_managerial_technique_institute$"
  concept_lrsk_gvp_bldg_managerial_technique_institute_desc:0 "Provides the host planet with §G+200§! £job_lrsk_gov_var_job_functionary£ ['concept_lrsk_gvp_functionary'] Jobs and the megacorp with §G+10%§! §Y$BRANCH_OFFICE_VALUE$§!, with an additional §G+5%§! per §H100§! §Y$job_lrsk_gov_var_job_functionary$§! job filled. (This bonus changes to §G+10%§! $type_crime$ on the planet for a criminal corp.)\n\n§L$lrsk_gvp_bldg_managerial_technique_institute_desc$§!"
  
@@ -738,6 +774,10 @@ l_english:
  concept_lrsk_gvp_planetmind_overseer:0 "$job_lrsk_gov_var_job_planetmind_overseer$"
  concept_lrsk_gvp_planetmind_overseers_desc:0 "$job_lrsk_gov_var_job_planetmind_overseer_effect_desc$\n\n§L$job_lrsk_gov_var_job_planetmind_overseer_desc$§!"
  
+ concept_lrsk_gvp_temposymbionts:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild_plural$"
+ concept_lrsk_gvp_temposymbiont:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild$"
+ concept_lrsk_gvp_temposymbionts_jobs_desc:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild_effect_desc$\n\n§L$job_lrsk_gov_var_job_planetmind_overseer_wild_desc$§!"
+
  concept_lrsk_gvp_functionaries:0 "$job_lrsk_gov_var_job_functionary_plural$"
  concept_lrsk_gvp_functionary:0 "$job_lrsk_gov_var_job_functionary$"
  concept_lrsk_gvp_functionaries_desc:0 "$job_lrsk_gov_var_job_functionary_effect_desc$\n\n§L$job_lrsk_gov_var_job_functionary_desc$§!"
@@ -802,11 +842,11 @@ l_english:
  concept_planet_lrsk_telepaths: "$concept_planet_telepaths$"
  concept_planet_lrsk_telepaths_desc: "$concept_planet_telepaths_desc$ $TABBED_NEW_LINE$- $job_lrsk_gov_var_job_otherworld_guide_plural$"
 
- concept_lrsk_gvp_caste_civics:0 "Hive Caste Civic"
- concept_lrsk_gvp_caste_civics_desc:0 "The following count as this kind of civic: §Y$lrsk_gov_var_civic_hive_builder_caste$§!, §Y$lrsk_gvp_civic_hive_thinker_caste$§!, §Y$lrsk_gov_var_civic_hive_warrior_caste$§!, and §Y$lrsk_gov_var_civic_hive_royal_caste$§!."
+ concept_lrsk_gvp_caste_civics:0 "Caste/Clade Civic"
+ concept_lrsk_gvp_caste_civics_desc:0 "The following §HHive Mind§! civics (with §HWilderness§! variant names in parentheses) are part of this category: §Y$lrsk_gov_var_civic_hive_builder_caste$§! (§Y$lrsk_gov_var_civic_hive_builder_caste_wild$§!), §Y$lrsk_gvp_civic_hive_thinker_caste$§! (§Y$lrsk_gvp_civic_hive_thinker_caste_wild$§!), §Y$lrsk_gov_var_civic_hive_warrior_caste$§! (§Y$lrsk_gov_var_civic_hive_warrior_caste_wild$§!), and §Y$lrsk_gov_var_civic_hive_royal_caste$§! (§Y$lrsk_gov_var_civic_hive_royal_caste_wild$§!)."
 
- concept_lrsk_gvp_caste_penalties:0 "Caste Overspecialization Penalties"
- concept_lrsk_gvp_caste_penalties_desc:0 "For hive minds that have adopted any ['concept_lrsk_gvp_caste_civics'], the investment in one specialized drone caste comes at the cost of deficiencies in areas that other castes specialize in.\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_builder_caste$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_planet_structures_upkeep_mult$§!$TABBED_NEW_LINE$§R+10%§! §Y$MOD_PLANET_BUILDING_TIME_MULT$§!\n\n£trigger_no£ Lacking §H$lrsk_gvp_civic_hive_thinker_caste$§! incurs:$TABBED_NEW_LINE$§R-5%§! §YAll Research Speed§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_scientist_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_warrior_caste$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_ship_military_upkeep_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_commander_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_royal_caste$§! incurs:$TABBED_NEW_LINE$§R-10%§! §Y$MOD_COUNCIL_AGENDA_PROGRESS_SPEED$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_official_exp_gain$§!\n\n£trigger_yes£ §GNOTE:§! These penalties will not be applied if your empire has the §H$lrsk_gov_var_civic_hive_caste_quickening$§! civic."
+ concept_lrsk_gvp_caste_penalties:0 "Caste/Clade Overspecialization Penalties"
+ concept_lrsk_gvp_caste_penalties_desc:0 "For §HHive Minds§!/§HWildernesses§! that have adopted any ['concept_lrsk_gvp_caste_civics'], the investment in one specialized drone caste/symbiont clade comes at the cost of deficiencies in areas that other castes specialize in.\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_builder_caste$§!/§H$lrsk_gov_var_civic_hive_builder_caste_wild$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_planet_structures_upkeep_mult$§!$TABBED_NEW_LINE$§R+10%§! §Y$MOD_PLANET_BUILDING_TIME_MULT$§!\n\n£trigger_no£ Lacking §H$lrsk_gvp_civic_hive_thinker_caste$§!/§H$lrsk_gvp_civic_hive_thinker_caste_wild$§! incurs:$TABBED_NEW_LINE$§R-5%§! §YAll Research Speed§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_scientist_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_warrior_caste$§!/§H$lrsk_gov_var_civic_hive_warrior_caste_wild$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_ship_military_upkeep_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_commander_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_royal_caste$§!/§H$lrsk_gov_var_civic_hive_royal_caste_wild$§! incurs:$TABBED_NEW_LINE$§R-10%§! §Y$MOD_COUNCIL_AGENDA_PROGRESS_SPEED$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_official_exp_gain$§!\n\n£trigger_yes£ §GNOTE:§! These penalties will not be applied if your empire has the §H$lrsk_gov_var_civic_hive_caste_quickening$§!/§H$lrsk_gov_var_civic_hive_caste_quickening_wild$§! civic."
 
 
  ####################################
@@ -1502,12 +1542,18 @@ l_english:
  ### Hive Minds
 
  lrsk_gov_var_gov_coop_supersap:0 "Cooperative Super-Sapience"
- lrsk_gov_var_gov_coop_supersap_desc:0 "This government operates as a kind of multiple personality collective consciousness. The population has no individual desires whatsoever beyond fulfilling the needs of the overall directing intelligence, with sometimes contrary assistance from subsidiary planet-bound sub-minds."
+ lrsk_gov_var_gov_coop_supersap_desc:0 "This hive mind operates as a kind of multiple personality collective consciousness. The population has no individual desires whatsoever beyond fulfilling the needs of the overall directing intelligence, with sometimes contrary assistance from subsidiary planet-bound sub-minds."
 
- RT_OVERMIND:0 "Overmind"
- RT_OVERMIND_FEMALE:0 "$RT_OVERMIND$"
+ LRSK_GVP_RT_OVERMIND:0 "Overmind"
 
- START_SCREEN_PART_TWO_COOP_SUPERSAP:0 "And so, at the dawn of time, we awoke. The Overmind studied our surroundings on [GetHomeWorldName] from the several different but subordinate perspectives that ultimately constituted its cooperative self. We moved as one, building shelters for the drones, developing industry, researching new technologies and harnessing the resources of the land.\n\nThrough the assistance of regional sub-minds to handle mundane tasks, we grew to encompass the entire world. A small number of autonomous drones were created to serve as independent agents. These more formidable drones had the capacity for limited free thought, but unlike the sub-minds, were still as inexorably bound to the will of the Overmind as any of its other instruments.\n\nAs we achieved complete dominion over [GetHomeWorldName], the Overmind became aware of other worlds, orbiting other suns. In conference with its internal diversity of consciousnesses, the Overmind came to a conclusion: the [GetName] must grow further. The most intelligent of our autonomous drones devised new methods of travel, enabling us to cross the vast distances between the stars."
+ START_SCREEN_PART_TWO_COOP_SUPERSAP:0 "And so, at the dawn of time, we awoke. The $LRSK_GVP_RT_OVERMIND$ studied our surroundings on [GetHomeWorldName] from the several different but subordinate perspectives that ultimately constituted its cooperative self. We moved as one, building shelters for the drones, developing industry, researching new technologies and harnessing the resources of the land.\n\nThrough the assistance of regional sub-minds to handle mundane tasks, we grew to encompass the entire world. A small number of autonomous drones were created to serve as independent agents. These more formidable drones had the capacity for limited free thought, but unlike the sub-minds, were still as inexorably bound to the will of the $LRSK_GVP_RT_OVERMIND$ as any of its other instruments.\n\nAs we achieved complete dominion over [GetHomeWorldName], the $LRSK_GVP_RT_OVERMIND$ became aware of other worlds, orbiting other suns. In conference with its internal diversity of consciousnesses, the $LRSK_GVP_RT_OVERMIND$ came to a conclusion: the [GetName] must grow further. The most intelligent of our autonomous drones devised new methods of travel, enabling us to cross the vast distances between the stars."
+
+ lrsk_gov_var_gov_coop_supersap_wild:0 "$lrsk_gov_var_gov_coop_supersap$"
+ lrsk_gov_var_gov_coop_supersap_wild_desc:0 "This sapient biosphere operates as a kind of multiple personality collective consciousness. Constituent organisms have no individual desires whatsoever beyond fulfilling the needs of the intelligence emerging from the combined interplanetary ecosystem, with sometimes contrary assistance from subsidiary planet-bound awakened biomes."
+
+ LRSK_GVP_RT_OVERSOUL:0 "Oversoul"
+
+ # Will use Wilderness start screen
  
  ####################################
  ### Namazuo
@@ -2103,18 +2149,31 @@ l_english:
 
  # Planetmind Line
  LRSK_DESC_PLANETMIND_NAME:0 "Planetary Synaptic"
- LRSK_DESC_PLANETMIND_DESC:0 "synaptic resonance cords serves as the seat of the local planetmind's semi-autonomous consciousness. While this improves the efficiency of planetary management, it also causes some local distortions from the greater hive mind's will. This is usually well worth the increased overall focus it frees up."
+ LRSK_DESC_PLANETMIND_DESC:0 "of synaptic resonance cords serves as the seat of the local planetmind's semi-autonomous consciousness. While this improves the efficiency of planetary management, it also causes some local distortions from the greater hive mind's will. This is usually well worth the increased overall focus it frees up."
 
- lrsk_gov_var_bldg_planet_synaptic_node:0 "$LRSK_DESC_PLANETMIND_NAME$ Node"
- lrsk_gov_var_bldg_planet_synaptic_node_desc:2 "This knot of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_node:0 "$LRSK_DESC_PLANETMIND_NAME$ Nodule"
+ lrsk_gov_var_bldg_planet_synaptic_node_desc:2 "This knot $LRSK_DESC_PLANETMIND_DESC$"
  lrsk_gov_var_bldg_planet_synaptic_cluster:0 "$LRSK_DESC_PLANETMIND_NAME$ Cluster"
- lrsk_gov_var_bldg_planet_synaptic_cluster_desc:2 "This tangle of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_cluster_desc:2 "This tangle $LRSK_DESC_PLANETMIND_DESC$"
  lrsk_gov_var_bldg_planet_synaptic_confluence:0 "$LRSK_DESC_PLANETMIND_NAME$ Confluence"
- lrsk_gov_var_bldg_planet_synaptic_confluence_desc:2 "This massive tangle of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_confluence_desc:2 "This massive tangle $LRSK_DESC_PLANETMIND_DESC$"
  lrsk_gov_var_bldg_planet_synaptic_core:0 "$LRSK_DESC_PLANETMIND_NAME$ Core"
- lrsk_gov_var_bldg_planet_synaptic_core_desc:2 "This great tangled whorl of $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_core_desc:2 "This great tangled whorl $LRSK_DESC_PLANETMIND_DESC$"
  lrsk_gov_var_bldg_planet_synaptic_nexus:0 "$LRSK_DESC_PLANETMIND_NAME$ Nexus"
- lrsk_gov_var_bldg_planet_synaptic_nexus_desc:2 "This enormous thicket of tangled $LRSK_DESC_PLANETMIND_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_nexus_desc:2 "This enormous thicket tangled $LRSK_DESC_PLANETMIND_DESC$"
+
+ LRSK_DESC_PLANETMIND_WILD_DESC:0 "of synaptic resonance cords amplifies the local biomesoul's melody. While this improves the efficiency of planetary ecology, it also causes some local variations from the grand theme of the Wilderness. This is usually well worth the increased overall focus it frees up."
+
+ lrsk_gov_var_bldg_planet_synaptic_tendril:0 "$LRSK_DESC_PLANETMIND_NAME$ Tendrils"
+ lrsk_gov_var_bldg_planet_synaptic_tendril_desc:2 "This knot $LRSK_DESC_PLANETMIND_WILD_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_bundle:0 "$LRSK_DESC_PLANETMIND_NAME$ Bundle"
+ lrsk_gov_var_bldg_planet_synaptic_bundle_desc:2 "This thicket $LRSK_DESC_PLANETMIND_WILD_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_rhizome:0 "$LRSK_DESC_PLANETMIND_NAME$ Rhizome"
+ lrsk_gov_var_bldg_planet_synaptic_rhizome_desc:2 "This living network $LRSK_DESC_PLANETMIND_WILD_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_tuber:0 "$LRSK_DESC_PLANETMIND_NAME$ Tuber-Clutch"
+ lrsk_gov_var_bldg_planet_synaptic_tuber_desc:2 "This bloated collection $LRSK_DESC_PLANETMIND_WILD_DESC$"
+ lrsk_gov_var_bldg_planet_synaptic_taproot:0 "$LRSK_DESC_PLANETMIND_NAME$ Taproot"
+ lrsk_gov_var_bldg_planet_synaptic_taproot_desc:2 "This massive core $LRSK_DESC_PLANETMIND_WILD_DESC$"
 
  # Branch Office Buildings
 
@@ -2295,13 +2354,24 @@ l_english:
  mod_job_lrsk_gov_var_job_regional_coordinator_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_regional_coordinator_add£ per $VALUE$ £pop£"
 
  # Planetmind Overseer
+ LRSK_GPV_PLANETMIND_OVERSEER_EFFECT_DESC_COMMON:0 "produce $r_influence$, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§! and §Y$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$§!, increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and reduce £mod_empire_size_add£ §Y$EMPIRE_SIZE$§!. However, they produce $type_deviancy$ and decrease $r_stability$. They consume $r_food$ and $r_unity$."
  job_lrsk_gov_var_job_planetmind_overseer:0 "Planetmind Overseer"
  job_lrsk_gov_var_job_planetmind_overseer_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer$s"
- job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary hive mind. This frees up the overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
- job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ produce $r_influence$, reduce £pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§!, increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and reduce £mod_empire_size_add£ §Y$EMPIRE_SIZE$§!. However, they produce $type_deviancy$ and decrease $r_stability$. They consume $r_food$ and $r_unity$."
- mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "$job_lrsk_gov_var_job_planetmind_overseer$ Jobs"
- mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer$ Job per $VALUE$ §YPop§!"
+ job_lrsk_gov_var_job_planetmind_overseer_desc:0 "Highly specialized drones that focus and interpret the will of the local planetmind, allowing it to act as a subsidiary Hive Mind. This frees up the Overmind for other tasks. However, the planetmind may have its own, strange ideas about how to run things..."
+ job_lrsk_gov_var_job_planetmind_overseer_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_plural$ $LRSK_GPV_PLANETMIND_OVERSEER_EFFECT_DESC_COMMON$"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_add:0 "[Owner.GetLRSKGVPPlanetmindJobName] Jobs"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop:0 "§G+1§! [lrsk_gov_var_job_planetmind_overseer.GetName] Job per $VALUE$ §YPop§!"
  mod_job_lrsk_gov_var_job_planetmind_overseer_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
+
+ # Temposymbiont (Planetmind Overseer variant for Wilderness)
+ lrsk_gov_var_job_planetmind_overseer_wild:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild$"
+ job_lrsk_gov_var_job_planetmind_overseer_wild:0 "Temposymbiont"
+ job_lrsk_gov_var_job_planetmind_overseer_wild_plural:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild$s"
+ job_lrsk_gov_var_job_planetmind_overseer_wild_desc:0 "Highly specialized symbionts that harmonize the inchoate notes of the local biomesoul, allowing it to orchestrate its region of the Wilderness. This frees up the Oversoul for grander designs. However, the biomesoul may not be perfectly in tune with the rhythm of the Oversoul..."
+ job_lrsk_gov_var_job_planetmind_overseer_wild_effect_desc:1 "£job_lrsk_gov_var_job_planetmind_overseer£ $job_lrsk_gov_var_job_planetmind_overseer_wild_plural$ $LRSK_GPV_PLANETMIND_OVERSEER_EFFECT_DESC_COMMON$"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_wild_add:0 "$job_lrsk_gov_var_job_planetmind_overseer_wild$ Jobs"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_wild_per_pop:0 "§G+1§! $job_lrsk_gov_var_job_planetmind_overseer_wild$ Job per $VALUE$ §YPop§!"
+ mod_job_lrsk_gov_var_job_planetmind_overseer_wild_per_pop_short:0 "\n\n§G+1§! £mod_job_lrsk_gov_var_job_planetmind_overseer_add£ per $VALUE$ £pop£"
 
  # Functionary
  job_lrsk_gov_var_job_functionary:0 "Functionary"

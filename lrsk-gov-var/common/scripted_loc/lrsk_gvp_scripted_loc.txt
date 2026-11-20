@@ -90,3 +90,23 @@ defined_text = {
 		localization_key = lrsk_gvp_ark
 	}
 }
+
+
+# Country scope?
+defined_text = {
+	name = GetLRSKGVPPlanetmindJobName
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_wilderness_empire = no
+		}
+        localization_key = job_lrsk_gov_var_job_planetmind_overseer
+    }
+    text = {
+		trigger = {
+			is_scope_valid = yes
+			is_wilderness_empire = yes
+		}
+        localization_key = job_lrsk_gov_var_job_planetmind_overseer_wild
+    }
+}
