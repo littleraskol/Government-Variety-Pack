@@ -23,7 +23,13 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 v?.?.? (??/??/??) - Wilderness Update
 -Updating hive civics to account for Wilderness origin.
+--In some cases, this meant altering the benefits they provide slightly.
 -Planetmind Creativity can once again be used with Wilderness.
+--Its version of the Planetmind building scales with number of districts built.
+-Planetmind Creativity changes:
+--Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult.
+--The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
+--Planetmind buildings require fewer pops to build/upgrade.
 
 v8.2.4 (11/20/26) - Pre-4.6 Update Cleanup
 -Esper leaders should apply planet/sector bonus regardless of class.
