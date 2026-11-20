@@ -11,11 +11,6 @@
 
 	random_weight = { base = @civic_uncommon_random_weight }
 
-    modifier = {
-        ideological_resistance_mult = 0.15
-    }
-	custom_tooltip_with_modifiers = civic_tooltip_lrsk_gvp_total_zeal_ideo_res
-
 	triggered_country_modifier = {
 		potential = {
 			lrsk_gvp_at_war_w_fe = yes
@@ -34,6 +29,7 @@
 		}
 		modifier = {
 			damage_vs_ideological_rival_mult = 0.15
+			colony_ideological_reach_mult = 0.1
 			pop_government_ethic_attraction = 0.2
 		}
 		show_if_trigger_false = yes
