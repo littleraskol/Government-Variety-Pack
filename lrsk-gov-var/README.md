@@ -31,8 +31,7 @@ v9.0 (11/23/26) - Corona Borealis (4.6) Update
 -Added "Total Zeal" civic
 --Only available with Willpower DLC.
 --Can be taken by any non-gestalt empire.
---Allows starting with an absolute ethic.
---Mechanics support challenging Fallen/Awakened Empires and completing grand projects.
+--Mechanics support the ideology game, and eventually challenging Fallen/Awakened Empires and completing grand projects.
 --Associated governments added.
 -Updated compat version number.
 
