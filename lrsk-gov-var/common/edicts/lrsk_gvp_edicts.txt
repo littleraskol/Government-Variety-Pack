@@ -176,17 +176,15 @@ lrsk_gvp_audacity_war = {
 	}
 
 	allow = {
-		AND = {
-			custom_tooltip = {
-				success_text = lrsk_gvp_tooltip_at_war_with_fe
-				fail_text = lrsk_gvp_tooltip_at_war_with_fe
-				lrsk_gvp_at_war_w_fe = yes
-			}
-			custom_tooltip = {
-				success_text = LRSK_GVP_IS_ABSOLUTE
-				fail_text = LRSK_GVP_IS_ABSOLUTE
-				is_absolute = yes
-			}
+		custom_tooltip = {
+			success_text = lrsk_gvp_tooltip_at_war_with_fe
+			fail_text = lrsk_gvp_tooltip_at_war_with_fe
+			lrsk_gvp_at_war_w_fe = yes
+		}
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE
+			fail_text = LRSK_GVP_IS_ABSOLUTE
+			is_absolute = yes
 		}
 	}
 
@@ -237,24 +235,22 @@ lrsk_gvp_wonder_age = {
 	}
 
 	allow = {
-		AND = {
-			OR = {
-				custom_tooltip = {
-					success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
-					fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
-					can_build_megastructures = yes
-				}
-				custom_tooltip = {
-					success_text = LRSK_GVP_CAN_WONDER_AGE_TERRA
-					fail_text = LRSK_GVP_CANT_WONDER_AGE_TERRA
-					lrsk_gvp_can_terraform = yes
-				}
-				has_ascension_perk = ap_arcology_project
+		OR = {
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
+				can_build_megastructures = yes
 			}
 			custom_tooltip = {
-				fail_text = "LRSK_GVP_IS_ABSOLUTE"
-				is_absolute = yes
+				success_text = LRSK_GVP_CAN_WONDER_AGE_TERRA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_TERRA
+				lrsk_gvp_can_terraform = yes
 			}
+			has_ascension_perk = ap_arcology_project
+		}
+		custom_tooltip = {
+			fail_text = "LRSK_GVP_IS_ABSOLUTE"
+			is_absolute = yes
 		}
 	}
 
