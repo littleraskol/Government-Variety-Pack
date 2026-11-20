@@ -21,7 +21,7 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v?.?.? (??/??/??) - Pre-4.6 Update Cleanup
+v8.2.4 (11/20/26) - Pre-4.6 Update Cleanup
 -Esper leaders should apply planet/sector bonus regardless of class.
 -Check for Colonial Fiefs spawned vassal matching empire ethos if founder has a governing ethic now checks to see if a governing ethic is adhered to by the majority of the pop group (rather than just whether the ethic is held by any portion of the group).
 -Caste civic penalties are a bit extreme, removed job efficiency penalties.
