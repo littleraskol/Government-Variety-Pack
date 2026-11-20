@@ -169,6 +169,9 @@ lrsk_gvp_audacity_war = {
 	modifier = {
 		damage_vs_country_type_fallen_empire_mult = 0.25
 		damage_vs_country_type_awakened_fallen_empire_mult = 0.25
+		ship_fire_rate_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		ships_upkeep_mult = -0.1
 	}
 
 	potential = {
@@ -177,14 +180,14 @@ lrsk_gvp_audacity_war = {
 
 	allow = {
 		custom_tooltip = {
-			success_text = lrsk_gvp_tooltip_at_war_with_fe
-			fail_text = lrsk_gvp_tooltip_at_war_with_fe
-			lrsk_gvp_at_war_w_fe = yes
-		}
-		custom_tooltip = {
 			success_text = LRSK_GVP_IS_ABSOLUTE
 			fail_text = LRSK_GVP_IS_ABSOLUTE
 			is_absolute = yes
+		}
+		custom_tooltip = {
+			success_text = lrsk_gvp_tooltip_at_war_with_fe
+			fail_text = lrsk_gvp_tooltip_at_war_with_fe
+			lrsk_gvp_at_war_w_fe = yes
 		}
 	}
 
@@ -212,11 +215,11 @@ lrsk_gvp_wonder_age = {
 	resources = {
 		category = edicts
 		cost = {
-			unity = 15
+			unity = 20
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			unity = 15
+			unity = 20
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -235,6 +238,10 @@ lrsk_gvp_wonder_age = {
 	}
 
 	allow = {
+		custom_tooltip = {
+			fail_text = LRSK_GVP_IS_ABSOLUTE
+			is_absolute = yes
+		}
 		OR = {
 			custom_tooltip = {
 				success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
@@ -247,10 +254,6 @@ lrsk_gvp_wonder_age = {
 				lrsk_gvp_can_terraform = yes
 			}
 			has_ascension_perk = ap_arcology_project
-		}
-		custom_tooltip = {
-			fail_text = "LRSK_GVP_IS_ABSOLUTE"
-			is_absolute = yes
 		}
 	}
 

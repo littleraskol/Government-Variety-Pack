@@ -17,6 +17,8 @@
 		}
 		modifier = {
 			ship_home_territory_fire_rate_mult = 0.2
+			ship_friendly_territory_fire_rate_mult = 0.1
+			country_war_exhaustion_mult = -0.2
 		}
 		show_if_trigger_false = yes
 		trigger_false_key_override = lrsk_gvp_war_when_war_w_fe
@@ -28,11 +30,24 @@
 			lrsk_gvp_only_fanatic_ethics = yes
 		}
 		modifier = {
-			damage_vs_ideological_rival_mult = 0.15
-			colony_ideological_reach_mult = 0.1
-			pop_government_ethic_attraction = 0.2
+			ideological_resistance_vs_rival_mult = 0.1
+			adopted_ideology_upkeep_mult = -0.1
+			pop_government_ethic_attraction = 0.1
 		}
 		show_if_trigger_false = yes
 		trigger_false_key_override = LRSK_GVP_ONLY_HAS_FANATIC_ETHIC
 		trigger_true_key_override = LRSK_GVP_ONLY_HAS_FANATIC_ETHIC
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_absolute = yes
+		}
+		modifier = {
+			tradition_cost_mult = -0.1
+			pop_happiness = 0.1
+		}
+		show_if_trigger_false = yes
+		trigger_false_key_override = LRSK_GVP_IS_ABSOLUTE
+		trigger_true_key_override = LRSK_GVP_IS_ABSOLUTE
 	}
