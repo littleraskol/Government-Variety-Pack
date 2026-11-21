@@ -1360,11 +1360,26 @@ lrsk_gov_var_job_planetmind_overseer = {
 	country_modifier = {
 		country_naval_cap_add = 3
 		empire_size_add = -4
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = yes
+			}
+		}
+		planet_stability_add = -3
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = no
+			}
+		}
 		planet_crime_add = 10
-		planet_stability_add = -1
 	}
 
 	weight = {
