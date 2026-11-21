@@ -25,7 +25,7 @@ v8.3 (11/21/26) - Wilderness Update
 -Updated hive civics to account for Wilderness origin.
 --In some cases, this meant altering the benefits they provide slightly.
 -Planetmind Creativity can once again be used with Wilderness (under the name "Biomesoul Song").
---Instead of pops, its version of the Planetmind building a scaling number of districts built.
+--Instead of pops, its version of the Planetmind building requires a scaling number of districts built.
 --Because Wildernesses seem to rarely have any appreciable crime, the penalties for the building and job were split so that the Wilderness version gets -stability and the normal version gets +crime.
 -Planetmind Creativity changes:
 --Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult. Other advantages have been cut.
