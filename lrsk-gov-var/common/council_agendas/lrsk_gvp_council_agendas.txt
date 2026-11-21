@@ -1,0 +1,68 @@
+# Government Variety Pack
+# Council Agendas
+# Author: littleraskol
+
+# Total Zeal: Age of Wonders (Settled)
+
+agenda_lrsk_gvp_wonder_age = {
+	agenda_cost = 7000	# base default
+	potential = {
+		lrsk_gvp_has_total_zeal = yes
+		is_nomadic = no
+		NOT = { has_modifier = agenda_lrsk_gvp_wonder_age_finish }
+	}
+	allow = {
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
+			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
+			is_absolute = yes
+		}
+		OR = {
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
+				can_build_megastructures = yes
+			}
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_TERRA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_TERRA
+				lrsk_gvp_can_terraform = yes
+			}
+		}
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.1
+		megastructures_cost_mult = -0.05
+		terraform_speed_mult = 0.1
+		terraforming_cost_mult = -0.05
+	}
+	finish_modifier = agenda_lrsk_gvp_wonder_age_finish
+}
+
+# Total Zeal: Age of Wonders (Nomadic)
+
+agenda_lrsk_gvp_nomadic_wonder_age = {
+	agenda_cost = 7000	# base default
+	potential = {
+		lrsk_gvp_has_total_zeal = yes
+		is_nomadic = yes
+		NOT = { has_modifier = agenda_lrsk_gvp_wonder_age_finish }
+	}
+	allow = {
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
+			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
+			is_absolute = yes
+		}
+		custom_tooltip = {
+			success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
+			fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
+			can_build_megastructures = yes
+		}
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.15
+		megastructures_cost_mult = -0.1
+	}
+	finish_modifier = agenda_lrsk_gvp_nomadic_wonder_age_finish
+}
