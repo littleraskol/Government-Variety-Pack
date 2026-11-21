@@ -517,6 +517,26 @@ l_spanish:
  lrsk_gvp_essentialists_councilor_desc:0 "The $TITLE$ ensures advancement in the investigation of essential mysteries by coordinating theoretical and practical research."
  lrsk_gvp_essentialists_councilor_conditional_tooltip: "Requires the following technologies: §Y$tech_hyper_drive_2$§!, §Y$tech_power_plant_3$§!, and §Y$tech_cold_fusion_power$§!."
 
+ lrsk_gvp_civic_total_zeal:0 "Total Zeal"
+ lrsk_gvp_civic_total_zeal_desc:0 "This civilization has ardent convictions and grandiose ambitions. They believe, with a stellar intensity, that their values are meant to be written in the laws of the nature. They intend to carve them there or burn out trying."
+ LRSK_GVP_HAS_ABSOLUTE:0 "With any §YAbsolute§! ethic:" 
+ LRSK_GVP_WAR_W_FE_COMMON:0 "war with a §Y$COUNTRY_FALLEN_EMPIRE$§! or §Y$COUNTRY_AWAKENED_FALLEN_EMPIRE$§!"
+ LRSK_GVP_ONLY_HAS_FANATIC_ETHIC:0 "When empire ethics are only §YFanatic§! or §YAbsolute§!:"
+ lrsk_gvp_war_when_war_w_fe:0 "When at $LRSK_GVP_WAR_W_FE_COMMON$:"
+ civic_tooltip_lrsk_gvp_total_zeal_fe_hate:0 "$t$§R-25§! §Yopinion§! with any ['concept_fallen_empires'] or ['concept_awakened_empires']"
+ civic_tooltip_lrsk_gvp_civic_total_zeal_effects:0 "$t$- Your §YNon-Fanatic§! ethic will be replaced with a modifier with lesser corresponding effects.$TABBED_NEW_LINE$§G+25§! §Yopinion§! with empires that share your §YFanatic§! or §YAbsolute§! ethic.$TABBED_NEW_LINE$- Gain access to the ['concept_edict_lrsk_gvp_audacity_war'] and ['concept_edict_lrsk_gvp_wonder_age'] Edicts upon attaining an §YAbsolute§! ethic."
+
+ lrsk_gvp_total_zeal_councilor:0 "Cosmic Censor"
+ lrsk_gvp_total_zeal_councilor_female:0 "$lrsk_gvp_total_zeal_councilor$"
+ lrsk_gvp_total_zeal_councilor_desc:0 "The $TITLE$ ensures that the decrees of the aspirant government are like unto laws of nature: unquestionable and unerring."
+
+ lrsk_gvp_civic_mc_total_zeal:0 "Entrepreneurial Zeal"
+ lrsk_gvp_civic_mc_total_zeal_desc:0 "This business vanture has ardent convictions and grandiose ambitions. All participants in the enterprise - shareholders, executives, employees, and customers - believe, with a stellar intensity, in the goal of disrupting the paradigm of nature itself with its values."
+ LRSK_GVP_NO_FAN_EGAL_AUTH:0 "$civic_tooltip_fanatic$ other than §Y$ethic_fanatic_egalitarian$§! or §Y$ethic_fanatic_authoritarian$§!"
+
+ lrsk_gvp_mc_total_zeal_councilor:0 "Reality Disruption Director"
+ lrsk_gvp_mc_total_zeal_councilor_female:0 "$lrsk_gvp_mc_total_zeal_councilor$"
+ lrsk_gvp_mc_total_zeal_councilor_desc:0 "The $TITLE$ ensures that the paradigm-breaking initiatives of the aspirant enterprise are like unto cosmic natural phenomena: inevitable and awe-inspiring."
 
  ####################################
  # Origins
@@ -794,7 +814,13 @@ l_spanish:
  
  concept_edict_lrsk_gvp_citschol:0 "$edict_lrsk_gvp_citschol$"
  concept_edict_lrsk_gvp_citschol_desc:0 "$edict_lrsk_gvp_citschol_effects_common$\n\n§L$edict_lrsk_gvp_citschol_desc$§!"
- 
+
+ concept_edict_lrsk_gvp_audacity_war:0 "$edict_lrsk_gvp_audacity_war$"
+ concept_edict_lrsk_gvp_audacity_war_desc:0 "$edict_lrsk_gvp_audacity_war_effects_common$\n\n§L$edict_lrsk_gvp_audacity_war_desc$§!"
+
+ concept_edict_lrsk_gvp_wonder_age:0 "$edict_lrsk_gvp_wonder_age$"
+ concept_edict_lrsk_gvp_wonder_age_desc:0 "$edict_lrsk_gvp_wonder_age_effects_common$\n\n§L$edict_lrsk_gvp_wonder_age_desc$§!"
+
  concept_policy_lrsk_gvp_colfief_policy:0 "$policy_lrsk_gvp_colfief_policy$"
  concept_policy_lrsk_gvp_colfief_policy_desc:0 "Controls the $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$ Can also prohibit this from happening.\n\n§L$policy_lrsk_gvp_colfief_policy_desc$§!"
  
@@ -1742,7 +1768,58 @@ l_spanish:
  lrsk_gov_var_gov_colonial_company_desc:0 "$lrsk_gov_var_civic_mc_chartered_company_desc$ The challenges of administering an interstellar empire leave considerable governing authority in its hands."
 
  LRSK_GOV_VAR_RT_GOV_PRES:0 "Governor-President"
-  
+
+ ####################################
+ ### Total Zeal (aka "Aspirant")
+
+ LRSK_GVP_START_SCREEN_ASPIRANT_OPEN:0 "From the beginning we were in Ascent: from the muck to thinking life to civilization, always looking up at the stars and wanting more. Our culture came to coalesce around a single driving ideal that we wished to see woven into the fabric of Reality itself."
+ LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE:0 "an empire that will show to all the universe the power of our beliefs and the grandeur of our culture."
+
+ LRSK_GVP_GOV_ASPIRATION_1:0 "This government is a political project with a daring purpose."
+ LRSK_GVP_GOV_ASPIRATION_2:0 "empire that can embody their society's most cherished cultural values and act as a shining beacon for all the galaxy and an example of the best that sapient life can achieve."
+
+ lrsk_gvp_gov_parliament_of_ascent:0 "Parliament of Ascent"
+ lrsk_gvp_gov_parliament_of_ascent_desc:0 "$LRSK_GVP_GOV_ASPIRATION_1$ Its democratically-elected leadership oversees the creation of an $LRSK_GVP_GOV_ASPIRATION_2$"
+
+ LRSK_GVP_ASPIRATIONAL_RECTOR:0 "Aspirational Rector"
+ LRSK_GVP_ASPIRATIONAL_RECTOR_FEMALE:0 "$LRSK_GVP_ASPIRATIONAL_RECTOR$"
+
+ LRSK_GVP_START_SCREEN_P2_PARLIAMENT_OF_ASCENT:0 "$LRSK_GVP_START_SCREEN_ASPIRANT_OPEN$ We will not allow our elected representatives to be mired in partisan politics, for their charge is to found $LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE$"
+
+ lrsk_gvp_gov_aspirational_council:0 "Aspirational Council"
+ lrsk_gvp_gov_aspirational_council_desc:0 "$LRSK_GVP_GOV_ASPIRATION_1$ The members of its ruling council are the architects of a future $LRSK_GVP_GOV_ASPIRATION_2$"
+
+ LRSK_GVP_PURPOSE_ADJUDICATOR:0 "Purpose Adjudicator"
+ LRSK_GVP_PURPOSE_ADJUDICATOR_FEMALE:0 "$LRSK_GVP_PURPOSE_ADJUDICATOR$"
+
+ LRSK_GVP_START_SCREEN_P2_ASPIRATIONAL_COUNCIL:0 "$LRSK_GVP_START_SCREEN_ASPIRANT_OPEN$ Our ruling council is therefore composed only of the representatives of those organizations of society that prove themselves best able to help found $LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE$"
+
+ lrsk_gvp_gov_audacity_regime:0 "Audacity Regime"
+ lrsk_gvp_gov_audacity_regime_desc:0 "$LRSK_GVP_GOV_ASPIRATION_1$ Its supreme leader has sworn to found an $LRSK_GVP_GOV_ASPIRATION_2$"
+
+ LRSK_GVP_FIRST_ASCENDANT:0 "First Ascendant"
+ LRSK_GVP_FIRST_ASCENDANT_FEMALE:0 "$LRSK_GVP_FIRST_ASCENDANT$"
+
+ LRSK_GVP_START_SCREEN_P2_AUDACITY_REGIME:0 "$LRSK_GVP_START_SCREEN_ASPIRANT_OPEN$ At the inauguration of each of our supreme leaders, they take an oath to devote all their effort and only wield their power for the sake of founding $LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE$"
+
+ lrsk_gvp_gov_rising_empire:0 "Rising Empire"
+ lrsk_gvp_gov_rising_empire_desc:0 "$LRSK_GVP_GOV_ASPIRATION_1$ Its reigning dynasty has made it a point of royal honor to someday rule over an $LRSK_GVP_GOV_ASPIRATION_2$"
+
+ LRSK_GVP_RT_EMPEROR_ASCENDANT:0 "Emperor-Ascendant"
+ LRSK_GVP_RT_EMPRESS_ASCENDANT:0 "Empress-Ascendant"
+ LRSK_GVP_HT_PROMISED_PRINCE:0 "Promised Prince"
+ LRSK_GVP_HT_PROMISED_PRINCESS:0 "Promised Princess"
+
+ LRSK_GVP_START_SCREEN_P2_RISING_EMPIRE:0 "$LRSK_GVP_START_SCREEN_ASPIRANT_OPEN$ Our wise and worthy monarchs pass down from one scion of the dynasty to the next the importance, for their honor and glory, of founding $LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE$"
+
+ lrsk_gvp_gov_apex_enterprise:0 "Apex Enterprise"
+ lrsk_gvp_gov_apex_enterprise_desc:0 "This government is a business venture with a daring purpose. Its upper management and executives scheme night and day to grow the company's profits enough to fund an $LRSK_GVP_GOV_ASPIRATION_2$"
+
+ LRSK_GVP_PARADIGM_USURPER:0 "Paradigm Usurper"
+ LRSK_GVP_PARADIGM_USURPER_FEMALE:0 "$LRSK_GVP_PARADIGM_USURPER$"
+
+ LRSK_GVP_START_SCREEN_P2_APEX_ENTERPRISE:0 "$LRSK_GVP_START_SCREEN_ASPIRANT_OPEN$ Every business quarter we calculate whether the return on our investments will most efficiently fund an $LRSK_GVP_START_SCREEN_ASPIRANT_CLOSE$"
+
  ### NPC
 
  LRSK_GOV_VAR_GOV_COLONIAL_FOUNDERS_COMMON:0 "from which its founders hailed."
@@ -2059,6 +2136,8 @@ l_spanish:
  triggered_opinion_lrsk_gvp_devious_essentialists:0 "Devious Essentialists"
  triggered_opinion_lrsk_gvp_reckless_artificers:0 "Reckless Artificers"
  triggered_opinion_lrsk_gvp_obscene_shapers:0 "Obscene Shapers"
+ triggered_opinion_lrsk_gvp_fe_total_zeal:0 "Impudent Upstarts"
+ triggered_opinion_lrsk_gvp_ethic_share_total_zeal:0 "Ethical Zeal"
 
  ## Buildings
 
@@ -2377,6 +2456,25 @@ l_spanish:
  edict_lrsk_gvp_royjustice_no_cooldown:0 "§RAt least one policy whose cooldown could be ended by this edict must be on cooldown.§!"
  edict_lrsk_gvp_royjustice_15_years:0 "§RCan only use this edict once every 15 years.§!"
 
+ # Aspirant Edicts
+ LRSK_GVP_IS_ABSOLUTE:0 "Must have an §YAbsolute§! ethic."
+ LRSK_GVP_IS_ABSOLUTE_PASS:0 "$TRIGGER_PASS$$LRSK_GVP_IS_ABSOLUTE$"
+ LRSK_GVP_IS_ABSOLUTE_FAIL:0 "$TRIGGER_FAIL$$LRSK_GVP_IS_ABSOLUTE$"
+ edict_lrsk_gvp_audacity_war:0 "War of Audacity"
+ edict_lrsk_gvp_audacity_war_desc:0 "In the struggle to attain our aspirations, the haughty ancient empires of the galaxy must be laid low."
+ lrsk_gvp_tooltip_at_war_with_fe:0 "At $LRSK_GVP_WAR_W_FE_COMMON$."
+ lrsk_gvp_tooltip_at_war_with_fe_pass:0 "$TRIGGER_PASS$$lrsk_gvp_tooltip_at_war_with_fe$"
+ lrsk_gvp_tooltip_at_war_with_fe_fail:0 "$TRIGGER_FAIL$$lrsk_gvp_tooltip_at_war_with_fe$"
+ edict_lrsk_gvp_audacity_war_effects_common:0 "§G+25%§! §Y$mod_damage_vs_country_type_fallen_empire_mult$§!\n§G+25%§! §Y$mod_damage_vs_country_type_awakened_fallen_empire_mult$§!\n§G+10%§! §Y$MOD_SHIP_FIRE_RATE_MULT$§!\n§G+10%§! §Y$MOD_STARBASE_SHIPYARD_BUILD_SPEED_MULT$§!\n§G-10%§! §Y$mod_ships_upkeep_mult$§!\n- §YOpinion penalty§! with $COUNTRY_FALLEN_EMPIRE$s and $COUNTRY_AWAKENED_FALLEN_EMPIRE$s increases to §R-50§!"
+
+ edict_lrsk_gvp_wonder_age:0 "Age of Wonders"
+ edict_lrsk_gvp_wonder_age_desc:0 "How can we prove our cosmic significance without works of cosmic scope?"
+ edict_lrsk_gvp_wonder_age_effects_common:0 "§G+20%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!\n§G-10%§! §Y$mod_megastructures_cost_mult$§!\n§G+20%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!\n§G-10%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!\n§G-25%§! §Y$mod_arcology_project_cost_mult$§!\n§R-10%§! §Y$mod_planet_jobs_worker_produces_mult$§!.\n§R-15%§! §Y$mod_planet_jobs_specialist_produces_mult$§!"
+ LRSK_GVP_CAN_WONDER_AGE_MEGA:0 "Can construct some kind of megastructure."
+ LRSK_GVP_CANT_WONDER_AGE_MEGA:0 "Must be able to construct some kind of megastructure."
+ LRSK_GVP_CAN_WONDER_AGE_TERRA:0 "Can terraform."
+ LRSK_GVP_CANT_WONDER_AGE_TERRA:0 "Must be able to terraform."
+
  ## Decisions
 
  # Run Recursive Audit
@@ -2517,7 +2615,27 @@ l_spanish:
  lrsk_gvp_no_warrior_caste_desc:0 "$LRSK_NOCASTE_DESC_COMMON$ fighting drones somewhat lacking in vigor and ferocity."
  lrsk_gvp_no_royal_caste:0 "$LRSK_NOCASTE_COMMON$ Befuddled Royals"
  lrsk_gvp_no_royal_caste_desc:0 "$LRSK_NOCASTE_DESC_COMMON$ an unfortunate degree of confusion among coordinating drones."
- 
+
+ LRSK_GVP_IDEALS_TRAD:0 "Traditions of"
+ LRSK_GVP_IDEALS_TRAD_DESC:0 "ideals have been left behind, but still exert a lingering influence."
+
+ lrsk_gvp_equality_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Equality"
+ lrsk_gvp_equality_traditions_desc:0 "Egalitarian $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_hierarchy_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Hierarchy"
+ lrsk_gvp_hierarchy_traditions_desc:0 "Authoritarian $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_faith_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Faith"
+ lrsk_gvp_faith_traditions_desc:0 "Spiritualist $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_knowledge_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Knowledge"
+ lrsk_gvp_knowledge_traditions_desc:0 "Materialist $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_purity_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Purity"
+ lrsk_gvp_purity_traditions_desc:0 "Xenophobic $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_diversity_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Diversity"
+ lrsk_gvp_diversity_traditions_desc:0 "Xenophilic $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_valor_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Valor"
+ lrsk_gvp_valor_traditions_desc:0 "Militarist $LRSK_GVP_IDEALS_TRAD_DESC$"
+ lrsk_gvp_tranquility_traditions:0 "$LRSK_GVP_IDEALS_TRAD$ Tranquility"
+ lrsk_gvp_tranquility_traditions_desc:0 "Pacifist $LRSK_GVP_IDEALS_TRAD_DESC$"
+
  ### Planet Modifiers
 
  ## Utilitarian Planning - Work Allocation Plan
