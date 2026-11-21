@@ -1,6 +1,6 @@
 A grab bag of new civics, origins, and government types.
 
-[b]Newly updated for Stellaris 4.4 (Pegasus).[/b]
+[b]Newly updated for Stellaris 4.6 (Corona Borealis).[/b]
 
 [i][b]New Civics[/b][/i]
 
