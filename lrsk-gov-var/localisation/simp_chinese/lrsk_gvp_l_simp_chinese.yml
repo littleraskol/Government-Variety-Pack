@@ -524,7 +524,9 @@ l_simp_chinese:
  LRSK_GVP_ONLY_HAS_FANATIC_ETHIC:0 "When empire ethics are only §YFanatic§! or §YAbsolute§!:"
  lrsk_gvp_war_when_war_w_fe:0 "When at $LRSK_GVP_WAR_W_FE_COMMON$:"
  civic_tooltip_lrsk_gvp_total_zeal_fe_hate:0 "$t$§R-25§! §Yopinion§! with any ['concept_fallen_empires'] or ['concept_awakened_empires']"
- civic_tooltip_lrsk_gvp_civic_total_zeal_effects:0 "$t$- Your §YNon-Fanatic§! ethic will be replaced with a modifier with lesser corresponding effects.$TABBED_NEW_LINE$§G+25§! §Yopinion§! with empires that share your §YFanatic§! or §YAbsolute§! ethic.$TABBED_NEW_LINE$- Gain access to the ['concept_edict_lrsk_gvp_audacity_war'] and ['concept_edict_lrsk_gvp_wonder_age'] Edicts upon attaining an §YAbsolute§! ethic."
+ LRSK_GVP_CIVIC_TOTAL_ZEAL_EFFECTS_COMMON:0 "$t$- Your §YNon-Fanatic§! ethic will be replaced with a related modifier.$TABBED_NEW_LINE$§G+25§! §Yopinion§! with empires that share your §YFanatic§! or §YAbsolute§! ethic.$TABBED_NEW_LINE$- Upon attaining an §YAbsolute§! ethic, gain access to:$TABBED_NEW_LINE$$t$ -['concept_edict_lrsk_gvp_audacity_war'] Edict$TABBED_NEW_LINE$$t$- "
+ civic_tooltip_lrsk_gvp_civic_total_zeal_effects:0 "$LRSK_GVP_CIVIC_TOTAL_ZEAL_EFFECTS_COMMON$['concept_agenda_lrsk_gvp_wonder_age'] Council Agenda"
+ civic_tooltip_lrsk_gvp_civic_total_zeal_effects_nomadic:0 "$LRSK_GVP_CIVIC_TOTAL_ZEAL_EFFECTS_COMMON$['concept_agenda_lrsk_gvp_nomadic_wonder_age'] Council Agenda"
 
  lrsk_gvp_total_zeal_councilor:0 "Cosmic Censor"
  lrsk_gvp_total_zeal_councilor_female:0 "$lrsk_gvp_total_zeal_councilor$"
@@ -820,6 +822,11 @@ l_simp_chinese:
 
  concept_edict_lrsk_gvp_wonder_age:0 "$edict_lrsk_gvp_wonder_age$"
  concept_edict_lrsk_gvp_wonder_age_desc:0 "$edict_lrsk_gvp_wonder_age_effects_common$\n\n§L$edict_lrsk_gvp_wonder_age_desc$§!"
+
+ concept_agenda_lrsk_gvp_wonder_age:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$"
+ concept_agenda_lrsk_gvp_wonder_age_desc:0 "$lrsk_gvp_wonder_age_effects$\n\n§L$council_agenda_agenda_lrsk_gvp_wonder_age_desc$§!"
+ concept_agenda_lrsk_gvp_nomadic_wonder_age:0 "$concept_agenda_lrsk_gvp_wonder_age$"
+ concept_agenda_lrsk_gvp_nomadic_wonder_age_desc:0 "$lrsk_gvp_nomadic_wonder_age_effects$\n\n§L$council_agenda_agenda_lrsk_gvp_wonder_age_desc$§!"
 
  concept_policy_lrsk_gvp_colfief_policy:0 "$policy_lrsk_gvp_colfief_policy$"
  concept_policy_lrsk_gvp_colfief_policy_desc:0 "Controls the $LRSK_GVP_COLFIEF_POLICY_EFFECT_COMMON$ Can also prohibit this from happening.\n\n§L$policy_lrsk_gvp_colfief_policy_desc$§!"
@@ -1873,6 +1880,25 @@ l_simp_chinese:
  ####################################
  # Other Localization Tokens
  ####################################
+
+ ## Council Agendas
+	
+ council_agenda_agenda_lrsk_gvp_wonder_age_name:0 "Age of Wonders"
+ council_agenda_agenda_lrsk_gvp_wonder_age_desc:1 "How can we prove our cosmic significance without works of cosmic scope?"
+ agenda_lrsk_gvp_wonder_age_finish:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$ $agenda_ref$"
+ agenda_lrsk_gvp_wonder_age_finish_desc:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_desc$"
+ 
+ council_agenda_agenda_lrsk_gvp_nomadic_wonder_age_name:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$"
+ council_agenda_agenda_lrsk_gvp_nomadic_wonder_age_desc:1 "$council_agenda_agenda_lrsk_gvp_wonder_age_desc$"
+ agenda_lrsk_gvp_nomadic_wonder_age_finish:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$ $agenda_ref$"
+ agenda_lrsk_gvp_nomadic_wonder_age_finish_desc:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_desc$"
+	
+ lrsk_gvp_wonder_age_effects:0 "When initiated:$TABBED_NEW_LINE$§G+10%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-5%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+10%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!$TABBED_NEW_LINE$§G-5%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!\nWhen launched:$TABBED_NEW_LINE$§G+30%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+30%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!"
+ lrsk_gvp_nomadic_wonder_age_effects:0 "When initiated:$TABBED_NEW_LINE$§G+15%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-10%§! §Y$mod_megastructures_cost_mult$§!\nWhen launched:$TABBED_NEW_LINE$§G+45%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-30%§! §Y$mod_megastructures_cost_mult$§!"
+ LRSK_GVP_CAN_WONDER_AGE_MEGA:0 "Can construct some kind of megastructure."
+ LRSK_GVP_CANT_WONDER_AGE_MEGA:0 "Must be able to construct some kind of megastructure."
+ LRSK_GVP_CAN_WONDER_AGE_TERRA:0 "Can terraform."
+ LRSK_GVP_CANT_WONDER_AGE_TERRA:0 "Must be able to terraform."
 
  ## Traits
 
