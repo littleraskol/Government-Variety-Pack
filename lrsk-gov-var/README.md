@@ -22,13 +22,13 @@ This mod only adds new things to the game, in new files. There's no possibility 
 5. Changes
 
 v8.3 (11/21/26) - Wilderness Update
--Updating hive civics to account for Wilderness origin.
+-Updated hive civics to account for Wilderness origin.
 --In some cases, this meant altering the benefits they provide slightly.
--Planetmind Creativity can once again be used with Wilderness.
---Its version of the Planetmind building scales with number of districts built.
+-Planetmind Creativity can once again be used with Wilderness (under the name "Biomesoul Song").
+--Instead of pops, its version of the Planetmind building a scaling number of districts built.
 --Because Wildernesses seem to rarely have any appreciable crime, the penalties for the building and job were split so that the Wilderness version gets -stability and the normal version gets +crime.
 -Planetmind Creativity changes:
---Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult.
+--Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult. Other advantages have been cut.
 --The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
 --Planetmind buildings require fewer pops to build/upgrade.
 -Minor fix: Added in some missing random name options for governments that should have had them.
