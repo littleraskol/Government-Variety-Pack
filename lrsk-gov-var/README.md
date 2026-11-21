@@ -26,6 +26,7 @@ v8.3 (11/21/26) - Wilderness Update
 --In some cases, this meant altering the benefits they provide slightly.
 -Planetmind Creativity can once again be used with Wilderness.
 --Its version of the Planetmind building scales with number of districts built.
+--Because Wildernesses seem to rarely have any appreciable crime, the penalties for the building and job were split so that the Wilderness version gets -stability and the normal version gets +crime.
 -Planetmind Creativity changes:
 --Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult.
 --The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
