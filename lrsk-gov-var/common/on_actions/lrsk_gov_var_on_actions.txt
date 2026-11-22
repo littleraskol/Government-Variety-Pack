@@ -56,11 +56,8 @@ on_game_start_country = {
 
 on_yearly_pulse_country = {
 	events = {
-		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
-		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.8 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.10 # Not the best solution but I don't want to poll all pops everywhere too often...
+		lrsk_gov_var_shroud_touched.9 	# A kind of general fallback sanity check... (Removes obsoleted Esper leader trait)
+		lrsk_gov_var_shroud_touched.10 	# A kind of general fallback sanity check... (Removes obsoleted Esper species trait)
 
 		# Just in case some mod removed starting planet features. To be deprecated in future version (i.e., is immediate fix).
 		lrsk_government_variety_pack_backend.2 
@@ -119,11 +116,11 @@ on_leader_spawned = {
 # A leader leveled up.
 # Scope = Country
 # From = Leader
-#on_leader_level_up = {
-#	events = {
-#		#lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
-#	}
-#}
+on_leader_level_up = {
+	events = {
+		lrsk_gov_var_shroud_touched.7	# Esper leaders can get Psychic trait on level up
+	}
+}
 
 # Executed when the ruler is ousted and goes back to their pre-ruler class
 # From = Previous Ruler, already has the new class
@@ -204,10 +201,10 @@ on_space_battle_lost = {
 # THIS = country
 on_tradition_picked = {
 	events = {
-		lrsk_gov_var_shroud_touched.7
-		lrsk_gov_var_shroud_touched.8
+		lrsk_gov_var_shroud_touched.4 				# Attempt to change species after adopting Psionics tradition tree.
+		lrsk_gov_var_shroud_touched.8				# Convert leader trait to psionic when psionic ascension unlocked
 		lrsk_government_variety_pack_backend.1006
-		lrsk_gov_var_shroud_touched.12
+		lrsk_gov_var_shroud_touched.12				# Count psionic traditions
 	}	
 }
 
