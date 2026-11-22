@@ -1412,15 +1412,20 @@ country_event = {
 			lrsk_test_owg_step_2 = {
 				remove_country_flag = lrsk_test_owg_step_2
 
+				# need to run for a year to see what this does.
+				add_ascension_perk = ap_mind_over_matter
 
 				set_country_flag = lrsk_test_owg_step_3
 			}
 			lrsk_test_owg_step_3 = {
 				remove_country_flag = lrsk_test_owg_step_3
+
+				# 3 trads should give 150 jobs
+				add_tradition = tr_psionics_shroud_psi_corps
+				add_tradition = tr_psionics_shroud_telekinesis
+				add_tradition = tr_psionics_shroud_clairvoyance
+
 				remove_country_flag = lrsk_owg_test_runonce # Allows restart
-
-
-
 			}
 		}
 	}
