@@ -37,6 +37,13 @@ v9.0 (11/23/26) - Corona Borealis (4.6) Update
 --Shroud-Touched Origin gets minor bonuses to shroud delving.
 -Updated compat version number.
 
+v8.3.1 (11/22/26) Last-Minute Fix
+Shroud-Touched Origin:
+-Events were not being checked correctly.
+-Now gets minor bonuses to shroud delving.
+-Tweaked trait logic.
+-I have badly misunderstood something about how pop groups work, the "randomly, some pops get a better trait and some get none" is leading to wild swings where almost all pops have or don't have a relevant trait. For now, I am shutting down the random pop trait assignment (or maybe I just keep it this way, it's a lot cleaner/simpler...).
+
 v8.3 (11/21/26) - Wilderness Update
 -Updated hive civics to account for Wilderness origin.
 --In some cases, this meant altering the benefits they provide slightly.

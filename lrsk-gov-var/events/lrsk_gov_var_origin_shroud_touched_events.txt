@@ -44,10 +44,11 @@ colony_event = {
 			species = { set_species_flag = lrsk_gov_var_shroud_touched_species }
 			
 			# Randomly sets some to Latent Psionic or to lose Natural Esper
-			every_owned_pop_group = { 
-				limit = { pop_group_has_trait = lrsk_gov_var_trait_natural_esper }
-				pop_group_event = { id = lrsk_gov_var_shroud_touched.3 }
-			}
+			# Shut down until I figure out how to use with pop groups
+			#every_owned_pop_group = { 
+			#	limit = { pop_group_has_trait = lrsk_gov_var_trait_natural_esper }
+			#	pop_group_event = { id = lrsk_gov_var_shroud_touched.3 }
+			#}
 
 			# Semi-immediate check that some other mod did not remove the shroud pockets
 			country_event = {
@@ -110,26 +111,27 @@ pop_group_event = {
 			} } 
 		}
 		# Usually do nothing, rarely promote pop to Latent Psionic, sometimes remove Natural Esper
-		else = {
-			random_list = {
-				60 = { } 
-				5 = { 
-					modify_species = { 
-						species = this
-						remove_trait = lrsk_gov_var_trait_natural_esper
-						add_trait = trait_latent_psionic
-						#set_species_flag = lrsk_gov_var_shroud_touched_promoted
-					} 
-				}
-				35 = {
-					modify_species = { 
-						species = this
-						remove_trait = lrsk_gov_var_trait_natural_esper
-						#set_species_flag = lrsk_gov_var_shroud_touched_demoted
-					} 
-				}
-			}
-		}
+		# Shut down until I figure out how to use with pop groups
+		#else = {
+		#	random_list = {
+		#		60 = { } 
+		#		5 = { 
+		#			modify_species = { 
+		#				species = this
+		#				remove_trait = lrsk_gov_var_trait_natural_esper
+		#				add_trait = trait_latent_psionic
+		#				#set_species_flag = lrsk_gov_var_shroud_touched_promoted
+		#			} 
+		#		}
+		#		35 = {
+		#			modify_species = { 
+		#				species = this
+		#				remove_trait = lrsk_gov_var_trait_natural_esper
+		#				#set_species_flag = lrsk_gov_var_shroud_touched_demoted
+		#			} 
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -190,10 +192,19 @@ country_event = {
 		from = {
 			random_list = {
 				#usually no trait
-				60 = {}
+				60 = {
+					modifier = {
+						subtract = 10
+						owner = { has_ascension_perk = ap_mind_over_matter }
+					}
+				}
 				#very rarely get full on psionic
 				5 = {
 					add_trait = { trait = leader_trait_psionic show_message = no }
+					modifier = {
+						add = 10
+						owner = { has_ascension_perk = ap_mind_over_matter }
+					}
 				}
 				#sometimes get esper trait
 				35 = {
@@ -204,94 +215,57 @@ country_event = {
 	}
 }
 
-# Esper leaders can get Psychic trait under some circumstances
+# Esper leaders can get Psychic trait on level up
 country_event = {
 	id = lrsk_gov_var_shroud_touched.7
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		has_origin = lrsk_gov_var_origin_shroud_touched
+		from = {
+			has_trait = lrsk_gvp_leader_trait_esper
+			NOT = { has_trait =	leader_trait_psionic }
+			can_receive_psionic_leader_trait = yes
+		}
 	}
 
 	immediate = {
-		every_country = {
-			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
-			}
-			every_owned_leader = {
-				limit = {
-					is_same_species = root
-					NOR = {
-						has_leader_flag = lrsk_gvp_esper_trait_checked
-						has_trait =	leader_trait_psionic
-					}
-					has_trait = lrsk_gvp_leader_trait_esper
-				}
-				set_leader_flag = lrsk_gvp_esper_trait_checked
-				random_list = {
-					20 = {
-						remove_trait = lrsk_gvp_leader_trait_esper
-						add_trait = { trait = leader_trait_psionic show_message = no }
-						modifier = {
-							add = 10
-							owner = { has_ascension_perk = ap_mind_over_matter }
-						}
-						modifier = {
-							add = 20
-							owner = { has_adopted_psionic_tradition = yes }
+		from = {
+			random_list = {
+				5 = {
+					remove_trait = lrsk_gvp_leader_trait_esper
+					add_trait = { trait = leader_trait_psionic }
+					owner = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = psionic_leader_toast
+								}
+							}
+							set_timed_country_flag = {
+								flag = psionic_leader_toast
+								days = 30
+							}
 						}
 					}
-					80 = {
-						#Do nothing
-						modifier = {
-							subtract = 10
-							owner = { has_ascension_perk = ap_mind_over_matter }
-						}
-						modifier = {
-							subtract = 20
-							owner = { has_adopted_psionic_tradition = yes }
-						}
+					modifier = {
+						add = 15
+						owner = { has_ascension_perk = ap_mind_over_matter }
+					}
+					modifier = {
+						add = 20
+						owner = { has_adopted_psionic_tradition = yes }
 					}
 				}
-			}
-			every_pool_leader = {
-				limit = {
-					is_same_species = root
-					NOR = {
-						has_leader_flag = lrsk_gvp_esper_trait_checked
-						has_trait =	leader_trait_psionic
+				95 = {
+					#Do nothing
+					modifier = {
+						subtract = 15
+						owner = { has_ascension_perk = ap_mind_over_matter }
 					}
-					has_trait = lrsk_gvp_leader_trait_esper
-				}
-				set_leader_flag = lrsk_gvp_esper_trait_checked
-				random_list = {
-					20 = {
-						remove_trait = lrsk_gvp_leader_trait_esper
-						add_trait = { trait = leader_trait_psionic show_message = no }
-						modifier = {
-							add = 10
-							owner = { has_ascension_perk = ap_mind_over_matter }
-						}
-						modifier = {
-							add = 20
-							owner = { has_adopted_psionic_tradition = yes }
-						}
-					}
-					80 = {
-						#Do nothing
-						modifier = {
-							subtract = 10
-							owner = { has_ascension_perk = ap_mind_over_matter }
-						}
-						modifier = {
-							subtract = 20
-							owner = { has_adopted_psionic_tradition = yes }
-						}
+					modifier = {
+						subtract = 20
+						owner = { has_adopted_psionic_tradition = yes }
 					}
 				}
 			}
@@ -341,73 +315,74 @@ country_event = {
 	}
 }
 
-# A kind of general fallback sanity check...
-event = {
+# A kind of general fallback sanity check... (Removes obsoleted Esper leader trait)
+country_event = {
 	id = lrsk_gov_var_shroud_touched.9
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-	}
-
-	immediate = {
-		every_country = {
-			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
-			}
-			every_owned_leader = {
-				limit = {
-					has_trait = lrsk_gvp_leader_trait_esper
-					OR = {
-						has_trait =	leader_trait_psionic
-						has_trait = leader_trait_chosen
-					}
-				}
-				remove_trait = lrsk_gvp_leader_trait_esper
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+		any_owned_leader = {
+			has_trait = lrsk_gvp_leader_trait_esper
+			OR = {
+				has_trait =	leader_trait_psionic
+				has_trait = leader_trait_chosen
 			}
 		}
 	}
+
+	immediate = {
+		every_owned_leader = {
+			limit = {
+				has_trait = lrsk_gvp_leader_trait_esper
+				OR = {
+					has_trait =	leader_trait_psionic
+					has_trait = leader_trait_chosen
+				}
+			}
+			remove_trait = lrsk_gvp_leader_trait_esper
+		}
+	}
 }
-event = {
+
+# A kind of general fallback sanity check... (Removes obsoleted Esper species trait)
+country_event = {
 	id = lrsk_gov_var_shroud_touched.10
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		#any_pop = {
-		#	pop_group_has_trait = lrsk_gov_var_trait_natural_esper
-		#	OR = {
-		#		pop_group_has_trait = trait_latent_psionic
-		#		pop_group_has_trait = trait_psionic
-		#	}
-		#}
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+		any_owned_pop_group = {
+			pop_group_has_trait = lrsk_gov_var_trait_natural_esper
+			OR = {
+				pop_group_has_trait = trait_latent_psionic
+				pop_group_has_trait = trait_psionic
+			}
+		}
 	}
 
 	immediate = {
-		every_country = {
+		every_owned_pop_group = {
 			limit = {
+				pop_group_has_trait = lrsk_gov_var_trait_natural_esper
 				OR = {
-					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					pop_group_has_trait = trait_latent_psionic
+					pop_group_has_trait = trait_psionic
 				}
 			}
-			every_owned_pop_group = {
-				limit = {
-					pop_group_has_trait = lrsk_gov_var_trait_natural_esper
-					OR = {
-						pop_group_has_trait = trait_latent_psionic
-						pop_group_has_trait = trait_psionic
-					}
-				}
-				modify_species = {
-					species = this
-					remove_trait = lrsk_gov_var_trait_natural_esper
-				}
+			modify_species = {
+				species = this
+				remove_trait = lrsk_gov_var_trait_natural_esper
 			}
 		}
 	}
