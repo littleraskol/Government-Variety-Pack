@@ -33,6 +33,8 @@ v9.0 (11/23/26) - Corona Borealis (4.6) Update
 --Can be taken by any non-gestalt empire.
 --Mechanics support the ideology game, and eventually challenging Fallen/Awakened Empires and completing grand projects.
 --Associated governments added.
+-Other changes:
+--Shroud-Touched Origin gets minor bonuses to shroud delving.
 -Updated compat version number.
 
 v8.3 (11/21/26) - Wilderness Update
