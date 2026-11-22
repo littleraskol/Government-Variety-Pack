@@ -579,9 +579,13 @@ lrsk_gvp_civic_mc_war_profiteers_councilor = {
 }
 
 lrsk_gvp_total_zeal_councilor = {
-	leader_class = { official }
+	leader_class = { commander scientist official }
 	is_leader_possible = {
-		leader_class = official
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
 	}
 	civic = lrsk_gvp_civic_total_zeal
 	modifier = {
@@ -592,9 +596,13 @@ lrsk_gvp_total_zeal_councilor = {
 }
 
 lrsk_gvp_mc_total_zeal_councilor = {
-	leader_class = { official }
+	leader_class = { commander scientist official }
 	is_leader_possible = {
-		leader_class = official
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
 	}
 	civic = lrsk_gvp_civic_mc_total_zeal
 	modifier = {
