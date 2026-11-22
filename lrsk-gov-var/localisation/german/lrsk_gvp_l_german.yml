@@ -1881,7 +1881,7 @@ l_german:
  ## Council Agendas
 	
  council_agenda_agenda_lrsk_gvp_wonder_age_name:0 "Age of Wonders"
- council_agenda_agenda_lrsk_gvp_wonder_age_desc:1 "How can we prove our cosmic significance without works of cosmic scope?"
+ council_agenda_agenda_lrsk_gvp_wonder_age_desc:1 "How can we prove our cosmic significance without works of cosmic scope? Rally the people to the effort of building the reality of our dreams."
  agenda_lrsk_gvp_wonder_age_finish:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$ $agenda_ref$"
  agenda_lrsk_gvp_wonder_age_finish_desc:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_desc$"
  
@@ -1890,8 +1890,12 @@ l_german:
  agenda_lrsk_gvp_nomadic_wonder_age_finish:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_name$ $agenda_ref$"
  agenda_lrsk_gvp_nomadic_wonder_age_finish_desc:0 "$council_agenda_agenda_lrsk_gvp_wonder_age_desc$"
 	
- lrsk_gvp_wonder_age_effects:0 "When initiated:$TABBED_NEW_LINE$§G+10%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-5%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+10%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!$TABBED_NEW_LINE$§G-5%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!\nWhen launched:$TABBED_NEW_LINE$§G+30%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+30%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!"
- lrsk_gvp_nomadic_wonder_age_effects:0 "When initiated:$TABBED_NEW_LINE$§G+15%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-10%§! §Y$mod_megastructures_cost_mult$§!\nWhen launched:$TABBED_NEW_LINE$§G+45%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-30%§! §Y$mod_megastructures_cost_mult$§!"
+ LRSK_GVP_WONDER_AGE_EFF_COMMON:0 "When initiated:$TABBED_NEW_LINE$§R+10%§! §Y$MOD_POP_AMENITIES_USAGE_MULT$§!$TABBED_NEW_LINE$§R+10%§! §Y$mod_planet_pops_consumer_goods_upkeep_mult$§!$TABBED_NEW_LINE$§G+5%§! §Y$mod_country_unity_produces_mult$§!\nWhen launched:"
+ 
+ lrsk_gvp_wonder_age_effects:0 "$LRSK_GVP_WONDER_AGE_EFF_COMMON$$TABBED_NEW_LINE$§G+30%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+30%§! §Y$mod_starbase_arkship_upgrades_cost_mult$§!$TABBED_NEW_LINE$§G-15%§! §Y$mod_megastructures_arkships_cost_mult$§!"
+ 
+ lrsk_gvp_nomadic_wonder_age_effects:0 "$LRSK_GVP_WONDER_AGE_EFF_COMMON$$TABBED_NEW_LINE$§G+45%§! §Y$MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$§!$TABBED_NEW_LINE$§G-30%§! §Y$mod_megastructures_cost_mult$§!$TABBED_NEW_LINE$§G+30%§! §Y$MOD_COUNTRY_TERRAFORM_SPEED_MULT$§!$TABBED_NEW_LINE$§G-15%§! §Y$MOD_COUNTRY_TERRAFORMING_COST_MULT$§!"
+ 
  LRSK_GVP_CAN_WONDER_AGE_MEGA:0 "Can construct some kind of megastructure."
  LRSK_GVP_CANT_WONDER_AGE_MEGA:0 "Must be able to construct some kind of megastructure."
  LRSK_GVP_CAN_WONDER_AGE_TERRA:0 "Can terraform."

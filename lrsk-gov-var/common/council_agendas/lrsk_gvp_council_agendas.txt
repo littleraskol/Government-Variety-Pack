@@ -31,10 +31,9 @@ agenda_lrsk_gvp_wonder_age = {
 		}
 	}
 	modifier = {
-		megastructure_build_speed_mult = 0.1
-		megastructures_cost_mult = -0.05
-		terraform_speed_mult = 0.1
-		terraforming_cost_mult = -0.05
+		pop_amenities_usage_mult = 0.1
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.05
 	}
 	finish_modifier = agenda_lrsk_gvp_wonder_age_finish
 }
@@ -54,15 +53,11 @@ agenda_lrsk_gvp_nomadic_wonder_age = {
 			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
 			is_absolute = yes
 		}
-		custom_tooltip = {
-			success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
-			fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
-			can_build_megastructures = yes
-		}
 	}
 	modifier = {
-		megastructure_build_speed_mult = 0.15
-		megastructures_cost_mult = -0.1
+		pop_amenities_usage_mult = 0.1
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.05
 	}
 	finish_modifier = agenda_lrsk_gvp_nomadic_wonder_age_finish
 }
