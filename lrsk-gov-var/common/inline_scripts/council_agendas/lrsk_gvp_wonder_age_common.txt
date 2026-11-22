@@ -1,0 +1,13 @@
+
+
+	agenda_cost = 7000	# base default
+	potential = {
+		lrsk_gvp_has_total_zeal = yes
+		is_nomadic = $LRSK_GVP_ISNOMAD$
+		NOT = { has_modifier = agenda_lrsk_gvp_wonder_age_finish }
+	}
+	modifier = {
+		pop_amenities_usage_mult = 0.1
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.1
+	}

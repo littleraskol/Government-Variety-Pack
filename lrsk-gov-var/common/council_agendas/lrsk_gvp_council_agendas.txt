@@ -5,12 +5,6 @@
 # Total Zeal: Age of Wonders (Settled)
 
 agenda_lrsk_gvp_wonder_age = {
-	agenda_cost = 7000	# base default
-	potential = {
-		lrsk_gvp_has_total_zeal = yes
-		is_nomadic = no
-		NOT = { has_modifier = agenda_lrsk_gvp_wonder_age_finish }
-	}
 	allow = {
 		custom_tooltip = {
 			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
@@ -30,10 +24,9 @@ agenda_lrsk_gvp_wonder_age = {
 			}
 		}
 	}
-	modifier = {
-		pop_amenities_usage_mult = 0.1
-		planet_pops_consumer_goods_upkeep_mult = 0.1
-		planet_jobs_unity_produces_mult = 0.05
+	inline_script = {
+		script = buildings/lrsk_gvp_wonder_age_common
+		LRSK_GVP_ISNOMAD = no
 	}
 	finish_modifier = agenda_lrsk_gvp_wonder_age_finish
 }
@@ -41,12 +34,6 @@ agenda_lrsk_gvp_wonder_age = {
 # Total Zeal: Age of Wonders (Nomadic)
 
 agenda_lrsk_gvp_nomadic_wonder_age = {
-	agenda_cost = 7000	# base default
-	potential = {
-		lrsk_gvp_has_total_zeal = yes
-		is_nomadic = yes
-		NOT = { has_modifier = agenda_lrsk_gvp_wonder_age_finish }
-	}
 	allow = {
 		custom_tooltip = {
 			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
@@ -54,10 +41,9 @@ agenda_lrsk_gvp_nomadic_wonder_age = {
 			is_absolute = yes
 		}
 	}
-	modifier = {
-		pop_amenities_usage_mult = 0.1
-		planet_pops_consumer_goods_upkeep_mult = 0.1
-		planet_jobs_unity_produces_mult = 0.1
+	inline_script = {
+		script = buildings/lrsk_gvp_wonder_age_common
+		LRSK_GVP_ISNOMAD = yes
 	}
 	finish_modifier = agenda_lrsk_gvp_nomadic_wonder_age_finish
 }
