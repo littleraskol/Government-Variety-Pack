@@ -27,7 +27,46 @@ Replacing "jobs per pop" in some instances.
 --They also account for the possibility of psionic machines.
 
 v8.2 (??/??/??) - Cygnus (4.5) Update
+v8.3.1 (11/22/26) Last-Minute Fix
+Shroud-Touched Origin:
+-Events were not being checked correctly.
+-Now gets minor bonuses to shroud delving.
+-Tweaked trait logic.
+-I have badly misunderstood something about how pop groups work, the "randomly, some pops get a better trait and some get none" is leading to wild swings where almost all pops have or don't have a relevant trait. For now, I am shutting down the random pop trait assignment (or maybe I just keep it this way, it's a lot cleaner/simpler...).
+
+v8.3 (11/21/26) - Wilderness Update
+-Updated hive civics to account for Wilderness origin.
+--In some cases, this meant altering the benefits they provide slightly.
+-Planetmind Creativity can once again be used with Wilderness (under the name "Biomesoul Song").
+--Instead of pops, its version of the Planetmind building requires a scaling number of districts built.
+--Because Wildernesses seem to rarely have any appreciable crime, the penalties for the building and job were split so that the Wilderness version gets -stability and the normal version gets +crime.
+-Planetmind Creativity changes:
+--Civic is much more focused on the Planetmind Overseer job effects enabling expansion, warfare, and diplomatic action through influence production, naval cap, and empire size mult. Other advantages have been cut.
+--The job drawbacks are somewhat pronounced, to offset the base building losing some negative effects.
+--Planetmind buildings require fewer pops to build/upgrade.
+-Minor fix: Added in some missing random name options for governments that should have had them.
+
+v8.2.4 (11/20/26) - Pre-4.6 Update Cleanup
+-Esper leaders should apply planet/sector bonus regardless of class.
+-Check for Colonial Fiefs spawned vassal matching empire ethos if founder has a governing ethic now checks to see if a governing ethic is adhered to by the majority of the pop group (rather than just whether the ethic is held by any portion of the group).
+-Caste civic penalties are a bit extreme, removed job efficiency penalties.
+-Noticed that `country_power_projection_influence_produces_mult` isn't really used as a modifier much (outside one technical function), so replaced it with other bonuses.
+-Some minor tweaks/fixes to loc
+
+v8.2.3 (11/14/26) - Removing Redundant triggered_desc
+Still had some triggered_desc for jobs, which is no longer needed.
+
+v8.2.2 (11/02/26) - Temp Fix: Planetmind Creativity incompatible w/ Wilderness
+-This needs a major overhaul, as the building upgrades depend on pops and Wilderness doesn't have them!
+-Hopefully the backend process of detecting invalid civic combos is more efficient now (checks at game start and load, not monthly)
+-Fixed a few small backend bugs.
+
+v8.2.1 (09/24/26) - Missing Start Screens
+-Certain governments lacked a start screen but now have one.
+
+v8.2 (09/22/26) - Cygnus (4.5) Update
 -Fixed what was needed for compatibility with Stellaris 4.5 (Cygnus).
+-Backend: Set up for (future) conversion of jobs-per-pop to something else. 
 -Updated compat version number.
 
 v8.1.1 (09/07/26) - Backend setup fixes

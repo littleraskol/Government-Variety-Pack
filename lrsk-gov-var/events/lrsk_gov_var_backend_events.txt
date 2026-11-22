@@ -946,31 +946,26 @@ event = {
 
 	trigger = {
 		OR = {
-			#any_country = {
-			#	lrsk_has_gvp_possible_invalidated_civic = yes
-			#	NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-			#}
-			
-			any_country = {
-				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
-				lrsk_has_bugged_civic = yes
-			}
+			any_country = { lrsk_has_gvp_possible_invalidated_civic = yes }
+			any_country = { lrsk_has_bugged_civic = yes }
 		}
 	}
 
 	immediate = {
-		#every_country = {
-		#	limit = {
-		#		lrsk_has_gvp_possible_invalidated_civic = yes
-		#		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-		#	}
-		#	country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
-		#}
-		
+		# Offers a gov change option (or forces one) if empire has newly invalid combo
 		every_country = {
 			limit = {
+				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v822 } # Update this for every version where a conflict is created.
+				lrsk_has_gvp_possible_invalidated_civic = yes
+			}
+			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
+		}
+		
+		# When I find that a civic is bugged as designed, I sometimes alter its effects in practice until a fix.
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } # Update this for every version where a bug needs a warning.
 				lrsk_has_bugged_civic = yes
-				NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
 			}
 			country_event = { id = lrsk_government_variety_pack_backend.2004 days = 3 }
 		}
@@ -1583,6 +1578,72 @@ country_event = {
 	}	
 }
 
+# Count traditions (all singleton empires)
+# This is setting up a future updates to replace jobs-per-pop with provision of jobs that scales based on tradition tree progress
+# Has to be called for any empire that can take any of the related civics due to civic swapping possibility
+country_event = {
+	id = lrsk_government_variety_pack_backend.1006
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = default
+
+		OR = {
+			category_last_picked_tradition = tradition_enmity
+			category_last_picked_tradition = tradition_supremacy
+			category_last_picked_tradition = tradition_unyielding
+			category_last_picked_tradition = tradition_statecraft
+			category_last_picked_tradition = tradition_politics
+			category_last_picked_tradition = tradition_aptitude
+			category_last_picked_tradition = tradition_harmony
+			category_last_picked_tradition = tradition_archivism
+			category_last_picked_tradition = tradition_domination
+		}
+	}
+	
+	immediate = {
+		# Chivalry: Enmity, Supremacy, Fortification
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_enmity
+				category_last_picked_tradition = tradition_supremacy
+				category_last_picked_tradition = tradition_unyielding
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_valor_trads } } set_variable = { which = lrsk_gvp_num_valor_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_valor_trads value = 1 } }
+			
+			log = "Num valor trads = [this.lrsk_gvp_num_valor_trads]"		
+		}
+		
+		# Republicanism: Statecraft, Politics, Aptitude
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_statecraft
+				category_last_picked_tradition = tradition_politics
+				category_last_picked_tradition = tradition_aptitude
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_virtue_trads } } set_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_virtue_trads value = 1 } }
+			
+			log = "Num civic virtue trads = [this.lrsk_gvp_num_virtue_trads]"		
+		}
+		
+		# Elected Clergy: Harmony, Archivism, Domination
+		IF = {
+			limit = { OR = {
+				category_last_picked_tradition = tradition_harmony
+				category_last_picked_tradition = tradition_archivism
+				category_last_picked_tradition = tradition_domination
+			} }
+			IF = { limit = { NOT = { is_variable_set = lrsk_gvp_num_piety_trads } } set_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
+			ELSE = { change_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
+			
+			log = "Num social piety trads = [this.lrsk_gvp_num_piety_trads]"		
+		}
+	}
+}
+
 # Diagnostic: General test event mostly to test when events can be called.
 country_event = {
 	id = lrsk_government_variety_pack_backend.2000
@@ -1625,7 +1686,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v7 } # Update this for every version.
+		NOT = { has_country_flag = lrsk_fixed_invalid_civics_v822 } # Update this for every version where a conflict is created.
 		lrsk_has_gvp_possible_invalidated_civic = yes
 	}
 
@@ -1649,7 +1710,7 @@ country_event = {
 				mult = trigger:empire_size
 			}
 		}
-		set_country_flag = lrsk_fixed_invalid_civics_v7
+		set_country_flag = lrsk_fixed_invalid_civics_v822
 	}
 
 	option = { name = OK }
@@ -1664,7 +1725,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 }
+		NOT = { has_country_flag = lrsk_warned_bugged_civics_v1 } # Update this for every version where a bug needs a warning.
 		lrsk_has_bugged_civic = yes
 	}
 
@@ -1674,39 +1735,6 @@ country_event = {
 
 	option = { name = WELP }
 }
-
-#country_event = {
-#	id = lrsk_government_variety_pack_backend.20031
-#	is_triggered_only = yes
-#	hide_window = yes
-#
-#	immediate = {
-#		add_resource = { influence = 250 }
-#	}
-#}
-# This just calls 2003 for the scopeless on_single_player_save_game_load on action
-#event = {
-#	id = lrsk_government_variety_pack_backend.20032
-#	is_triggered_only = yes
-#	hide_window = yes
-#
-#	trigger = {
-#		any_country = {
-#			lrsk_has_gvp_possible_invalidated_civic = yes
-#			NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-#		}
-#	}
-#
-#	immediate = {
-#		every_country = {
-#			limit = {
-#				lrsk_has_gvp_possible_invalidated_civic = yes
-#				NOT = { has_country_flag = lrsk_fixed_invalid_civics_v6 } # Update this for every version.
-#			}
-#			country_event = { id = lrsk_government_variety_pack_backend.2003 days = 1 }
-#		}
-#	}
-#}
 
 # Diagnostic: Remove/replace deprecated civics (removes duplicates/redundancy) - Bring this back when needed.
 # Remove/deactivate after next save-breaking Stellaris update

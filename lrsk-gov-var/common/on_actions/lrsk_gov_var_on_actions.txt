@@ -5,7 +5,7 @@
 on_game_start = {
 	events = {
 		lrsk_government_variety_pack_backend.1      	# Set mod active flag
-		#lrsk_government_variety_pack_backend.8     		# Various post-game load and start warnings
+		lrsk_government_variety_pack_backend.8     		# Various post-game load and start warnings
 	}
 }
 
@@ -13,9 +13,7 @@ on_game_start = {
 # Does not run when loading MP saves due to OOS concerns
 on_single_player_save_game_load = {
 	events = {
-		#lrsk_government_variety_pack_backend.8     	# Various post-game load and start warnings
-		lrsk_government_variety_pack_backend.1004		# Check for caste civics
-		lrsk_government_variety_pack_backend.1005		# Apply caste civic maluses as needed
+		lrsk_government_variety_pack_backend.8     		# Various post-game load and start warnings
 	}
 }
 
@@ -58,11 +56,8 @@ on_game_start_country = {
 
 on_yearly_pulse_country = {
 	events = {
-		lrsk_gov_var_shroud_touched.4 # This gets checked a few places, but having an occasional fallback check is good.
-		lrsk_gov_var_shroud_touched.7 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.8 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.9 # Not the best solution but I don't want to poll all leaders everywhere too often...
-		lrsk_gov_var_shroud_touched.10 # Not the best solution but I don't want to poll all pops everywhere too often...
+		lrsk_gov_var_shroud_touched.9 	# A kind of general fallback sanity check... (Removes obsoleted Esper leader trait)
+		lrsk_gov_var_shroud_touched.10 	# A kind of general fallback sanity check... (Removes obsoleted Esper species trait)
 
 		# Just in case some mod removed starting planet features. To be deprecated in future version (i.e., is immediate fix).
 		lrsk_government_variety_pack_backend.2 
@@ -79,7 +74,7 @@ on_monthly_pulse_country = {
 	events = {
 		#lrsk_government_variety_pack_backend.1000 # Changed to looping planet event...
 		lrsk_gov_var_chartered.1000					# Chartered company housekeeping
-		lrsk_government_variety_pack_backend.2003	# Detect and address invalidated civics
+		#lrsk_government_variety_pack_backend.2003	# Detect and address invalidated civics
 		#lrsk_gov_var_impecon.3 # Recalc legit bonus in case a vassal is lost
 		lrsk_government_variety_pack_backend.1003	# feed exp to Royal Absolutism heir with Royal Confessor councilor
 		lrsk_gov_var_direct_revelation.1002 		# Checks for ability to apply councilor benefit on monthly pulse
@@ -121,11 +116,11 @@ on_leader_spawned = {
 # A leader leveled up.
 # Scope = Country
 # From = Leader
-#on_leader_level_up = {
-#	events = {
-#		#lrsk_gvp_mc_bldg_special.10	# Handle special military leader bonus from Military Excellence Academy
-#	}
-#}
+on_leader_level_up = {
+	events = {
+		lrsk_gov_var_shroud_touched.7	# Esper leaders can get Psychic trait on level up
+	}
+}
 
 # Executed when the ruler is ousted and goes back to their pre-ruler class
 # From = Previous Ruler, already has the new class
@@ -206,10 +201,10 @@ on_space_battle_lost = {
 # THIS = country
 on_tradition_picked = {
 	events = {
-		lrsk_gov_var_shroud_touched.4		# Attempt to change species after adopting Psionics tradition tree.
-		lrsk_gov_var_shroud_touched.7		# Esper leaders can get Psychic trait under some circumstances 
-		lrsk_gov_var_shroud_touched.8		# Convert leader trait to psionic when psionic ascension unlocked
-		lrsk_gov_var_shroud_touched.12		# Count psionic traditions
+		lrsk_gov_var_shroud_touched.4 				# Attempt to change species after adopting Psionics tradition tree.
+		lrsk_gov_var_shroud_touched.8				# Convert leader trait to psionic when psionic ascension unlocked
+		lrsk_government_variety_pack_backend.1006
+		lrsk_gov_var_shroud_touched.12				# Count psionic traditions
 	}	
 }
 
@@ -220,7 +215,7 @@ on_tech_increased = {
 		lrsk_gov_var_shroud_touched.11		 # Count psionic techs
 	}
 }
-	
+
 # Executed just as country is changing its government, before the new one is applied
 # THIS = country
 on_pre_government_changed = {

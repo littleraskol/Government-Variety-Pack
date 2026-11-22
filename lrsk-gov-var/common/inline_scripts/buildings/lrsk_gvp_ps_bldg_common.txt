@@ -1,0 +1,65 @@
+
+	# Planetary Synaptic building common definitions
+
+	base_buildtime = @b$LRSK_GVP_PSLVL$_time
+	base_cap_amount = 1
+
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	potential = {
+		owner? = {
+			is_hive_empire = yes
+			is_wilderness_empire = $LRSK_GVP_ISWILD$
+			has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+			}
+		}
+		job_lrsk_gov_var_job_planetmind_overseer_add = 100
+		mult = $LRSK_GVP_PSLVL$
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = yes
+			}
+		}
+		planet_stability_mult = -0.05
+		mult = $LRSK_GVP_PSLVL$
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity
+				is_wilderness_empire = no
+			}
+		}
+		planet_crime_mult = 0.1
+		mult = $LRSK_GVP_PSLVL$
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				NOT = { has_valid_civic = lrsk_gov_var_civic_hive_planetmind_creativity }
+			}
+		}
+		planet_jobs_society_research_produces_mult = 0.05
+		mult = $LRSK_GVP_PSLVL$
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
