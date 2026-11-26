@@ -106,7 +106,7 @@ l_simp_chinese:
  lrsk_gov_var_civic_chivalry_desc:0 "Ideals of martial valor and honorable conduct define ruling class culture."
  lrsk_gov_var_civic_chivalry_aristo:0 "$lrsk_gov_var_civic_chivalry$ (Legacy Civic)"
  lrsk_gov_var_civic_chivalry_aristo_desc:0 "$lrsk_gov_var_civic_chivalry_desc$\n\n§PThis version for Aristocratic Elite is deprecated, but still works for empires that already have it. One civic meets all the requirements now.§!"
- civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights']; starts with one built on homeworld or starting arkship.\n\n"
+ civic_tooltip_lrsk_gov_var_civic_chivalry_effects:0 "Allows building £building£ §YWarrior Halls§! that improve armies and add £job_lrsk_gov_var_job_knight£ ['concept_lrsk_gvp_knights'] (and add more as you obtain ['concept_lrsk_gvp_valor_trad']); starts with one built on homeworld or starting arkship.\n\n"
 
  lrsk_gvp_chivalry_councilor:0 "Commander of the Honor Guard"
  lrsk_gvp_chivalry_councilor_female:0 "$lrsk_gvp_chivalry_councilor$"
@@ -852,6 +852,11 @@ l_simp_chinese:
 
  concept_lrsk_gvp_caste_penalties:0 "Caste/Clade Overspecialization Penalties"
  concept_lrsk_gvp_caste_penalties_desc:0 "For §HHive Minds§!/§HWildernesses§! that have adopted any ['concept_lrsk_gvp_caste_civics'], the investment in one specialized drone caste/symbiont clade comes at the cost of deficiencies in areas that other castes specialize in.\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_builder_caste$§!/§H$lrsk_gov_var_civic_hive_builder_caste_wild$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_planet_structures_upkeep_mult$§!$TABBED_NEW_LINE$§R+10%§! §Y$MOD_PLANET_BUILDING_TIME_MULT$§!\n\n£trigger_no£ Lacking §H$lrsk_gvp_civic_hive_thinker_caste$§!/§H$lrsk_gvp_civic_hive_thinker_caste_wild$§! incurs:$TABBED_NEW_LINE$§R-5%§! §YAll Research Speed§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_scientist_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_warrior_caste$§!/§H$lrsk_gov_var_civic_hive_warrior_caste_wild$§! incurs:$TABBED_NEW_LINE$§R+5%§! §Y$mod_ship_military_upkeep_mult$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_commander_exp_gain$§!\n\n£trigger_no£ Lacking §H$lrsk_gov_var_civic_hive_royal_caste$§!/§H$lrsk_gov_var_civic_hive_royal_caste_wild$§! incurs:$TABBED_NEW_LINE$§R-10%§! §Y$MOD_COUNCIL_AGENDA_PROGRESS_SPEED$§!$TABBED_NEW_LINE$§R-5%§! §Y$mod_official_exp_gain$§!\n\n£trigger_yes£ §GNOTE:§! These penalties will not be applied if your empire has the §H$lrsk_gov_var_civic_hive_caste_quickening$§!/§H$lrsk_gov_var_civic_hive_caste_quickening_wild$§! civic."
+ 
+ LRSK_GVP_TRADLOCKED_NOTE:0 "\n\nA static modifier will be added as appropriate if you lack the DLC for any of the listed traditions."
+ 
+ concept_lrsk_gvp_valor_trad:0 "Traditions of Noble Valor"
+ concept_lrsk_gvp_valor_trad_desc:0 "These consist of tradition picks in the following trees:$TABBED_NEW_LINE$§Y$tradition_unyielding$§! to defend the meek and humble.$TABBED_NEW_LINE$§Y$tradition_supremacy$§! to ensure the reign of justice.$TABBED_NEW_LINE$§Y$tradition_enmity$§! to smite the foe with righteous anger.$LRSK_GVP_TRADLOCKED_NOTE$"
 
 
  ####################################
