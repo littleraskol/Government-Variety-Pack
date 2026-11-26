@@ -50,7 +50,18 @@
 				has_valid_civic = lrsk_gov_var_civic_chivalry
 			}
 		}
-		planet_housing_add = 100
 		job_lrsk_gov_var_job_knight_add = 100
 		mult = $LRSK_GVP_WHLVL$
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+				is_variable_set = lrsk_gvp_num_valor_trads
+				check_variable = { which = lrsk_gvp_num_valor_trads value > 0 }
+			}
+		}
+		job_lrsk_gov_var_job_knight_add = $LRSK_GVP_WHLVL$0
+		mult = owner.lrsk_gvp_num_valor_trads
 	}
