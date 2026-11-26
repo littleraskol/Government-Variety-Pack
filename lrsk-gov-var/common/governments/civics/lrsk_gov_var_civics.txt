@@ -735,10 +735,25 @@ lrsk_gov_var_civic_chivalry = {
 		}
 	}
 
-  modifier = {
-    commander_exp_gain = 0.2
-    commander_initial_skill = 1
-  }
+	modifier = {
+		commander_exp_gain = 0.2
+		commander_initial_skill = 1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			NOR = {
+				has_apocalypse_dlc = yes
+				has_overlord_dlc = yes
+			}
+		}
+		modifier = {
+			army_morale = 0.1
+		}
+		show_if_trigger_false = no
+		show_trigger_if_false = no
+		show_trigger_if_true = no
+	}
 }
 
 #Lifelong Learning (Democratic or Pacifist) - This society values public education so strongly that opportunities for it are made available throughout citizens' lives. (+1 governor and scientist skill levels, +20% leader experience gain)

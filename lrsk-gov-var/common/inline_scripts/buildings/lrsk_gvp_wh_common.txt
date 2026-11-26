@@ -1,0 +1,67 @@
+	position_priority = 100
+	exempt_from_ai_planet_specialization = no
+
+	base_buildtime = @b$LRSK_GVP_WHLVL$_time
+	
+	category = army
+
+	building_sets = {
+		government
+		fortress
+	}
+
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		owner? = { has_valid_civic = lrsk_gov_var_civic_chivalry }
+	}
+	
+	allow = {
+		has_$LRSK_GVP_MAJOR$upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings_strongholds
+		cost = {
+			minerals = @b$LRSK_GVP_WHLVL$_minerals
+		}
+		upkeep = {
+			energy = @b$LRSK_GVP_WHLVL$_upkeep
+		}
+	}
+
+	army_modifier = {
+		army_starting_experience_add = $LRSK_GVP_WHEXP$
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			NOR = {
+				has_apocalypse_dlc = yes
+				has_overlord_dlc = yes
+			}
+		}
+		army_morale = 0.1
+		mult = $LRSK_GVP_WHLVL$
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+			}
+		}
+		job_lrsk_gov_var_job_knight_add = 100
+		mult = $LRSK_GVP_WHLVL$
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				has_valid_civic = lrsk_gov_var_civic_chivalry
+				is_variable_set = lrsk_gvp_num_valor_trads
+				check_variable = { which = lrsk_gvp_num_valor_trads value > 0 }
+			}
+		}
+		job_lrsk_gov_var_job_knight_add = $LRSK_GVP_WHLVL$0
+		mult = owner.lrsk_gvp_num_valor_trads
+	}
