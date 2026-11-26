@@ -25,6 +25,9 @@ v9.1 (??/??/??) - New Job Scaling Effects
 Replacing "jobs per pop" in some instances.
 -Shroud Pockets provide Otherworld Guide jobs scaling with owner's "psionic achievement" (based on techs and traditions).
 --They also account for the possibility of psionic machines.
+-Knight Halls add +10/+20 Realm Cavalier jobs per "valor" tradition gained.
+--These are Fortification, Supremacy, Enmity.
+--Lacking a DLC that allows Fortification grants an army morale bonus on base civic and Knight Halls.
 
 v9.0 (11/23/26) - Corona Borealis (4.6) Update
 -Fixed what was needed for compatibility with Stellaris 4.6 (Corona Borealis).
