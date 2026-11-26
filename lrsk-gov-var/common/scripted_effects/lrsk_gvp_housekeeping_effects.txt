@@ -11,25 +11,35 @@ log_lrsk_scopes = {
 lrsk_remove_all_ethics = {
 	country_remove_ethic = ethic_pacifist
 	country_remove_ethic = ethic_fanatic_pacifist
+	country_remove_ethic = ethic_absolute_pacifist
 	country_remove_ethic = ethic_militarist
 	country_remove_ethic = ethic_fanatic_militarist
+	country_remove_ethic = ethic_absolute_militarist
 	country_remove_ethic = ethic_materialist
 	country_remove_ethic = ethic_fanatic_materialist
+	country_remove_ethic = ethic_absolute_materialist
 	country_remove_ethic = ethic_spiritualist
 	country_remove_ethic = ethic_fanatic_spiritualist
+	country_remove_ethic = ethic_absolute_spiritualist
 	country_remove_ethic = ethic_egalitarian
 	country_remove_ethic = ethic_fanatic_egalitarian
+	country_remove_ethic = ethic_absolute_egalitarian
 	country_remove_ethic = ethic_authoritarian
 	country_remove_ethic = ethic_fanatic_authoritarian
+	country_remove_ethic = ethic_absolute_authoritarian
 	country_remove_ethic = ethic_xenophile
 	country_remove_ethic = ethic_fanatic_xenophile
+	country_remove_ethic = ethic_absolute_xenophile
 	country_remove_ethic = ethic_xenophobe
 	country_remove_ethic = ethic_fanatic_xenophobe
+	country_remove_ethic = ethic_absolute_xenophobe
 }
 
 # Randomize ethics
 lrsk_randomize_ethics = {
 	lrsk_remove_all_ethics = yes
+
+	set_variable = { which = lrsk_ethos_points value = 0 } 
 
 	while = {
 		limit = { check_variable = { which = lrsk_ethos_points value < 3 } }

@@ -102,7 +102,7 @@ country_event = {
 
 		allow = {
 			OR = {
-				NOT = { has_ethic = ethic_fanatic_xenophobe }
+				is_fanatic_xenophobe = no
 				from = { is_ai = no } # For an edge case: player vassalized by Fanatic Xenophobe chartering agent
 			}
 		}
@@ -119,8 +119,8 @@ country_event = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				factor = 2
-				has_ethic = ethic_egalitarian
-				NOT = { has_ethic = ethic_xenophobe }
+				is_egalitarian = yes
+				is_xenophobe = no
 			}
 			modifier = {
 				factor = 2
@@ -128,15 +128,15 @@ country_event = {
 			}
 			modifier = {
 				factor = 3
-				has_ethic = ethic_fanatic_xenophile
+				is_fanatic_xenophile = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_authoritarian
+				is_authoritarian = yes
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_xenophobe
+				is_xenophobe = yes
 			}
 			modifier = {
 				factor = 10
@@ -179,7 +179,7 @@ country_event = {
 		}
 
 		allow = {
-			NOT = { has_ethic = ethic_fanatic_xenophile }
+			is_fanatic_xenophile = no
 			from = { is_ai = yes } # just in double case!!
 		}
 
@@ -231,16 +231,16 @@ country_event = {
 			factor = 100 # AI chartering corp should always turn its vassals into chartered colonies if possible.
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_egalitarian
-				NOT = { has_ethic = ethic_xenophobe }
+				is_egalitarian = yes
+				is_xenophobe = no
 			}
 			modifier = {
 				factor = 0.5
-				has_ethic = ethic_xenophile
+				is_xenophile = yes
 			}
 			modifier = {
 				factor = 2
-				has_ethic = ethic_authoritarian
+				is_authoritarian = yes
 			}
 			modifier = {
 				factor = 2
@@ -248,7 +248,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 3
-				has_ethic = ethic_fanatic_xenophobe
+				is_fanatic_xenophobe = yes
 			}
 			modifier = {
 				factor = 0
@@ -311,10 +311,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				or = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 				has_communications = event_target:lrsk_chartering_agent
 			}
 			add_opinion_modifier = {
@@ -325,20 +322,14 @@ country_event = {
 	}
 
 	option = {
-		trigger = { nor = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		} }
+		trigger = { is_xenophile = no }
 	
 		name = lrsk_gov_var_chartered.20.a
 	}
 
 	option = {
 		trigger = {
-			or = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			has_communications = event_target:lrsk_chartering_agent
 		}
 		
@@ -348,10 +339,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			or = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			not = { has_communications = event_target:lrsk_chartering_agent }
 		}
 		
@@ -386,12 +374,20 @@ country_event = {
 				has_ethic = ethic_fanatic_militarist
 			}
 			modifier = {
+				add = -15
+				has_ethic = ethic_absolute_militarist
+			}
+			modifier = {
 				add = -5
 				has_ethic = ethic_xenophobe
 			}
 			modifier = {
 				add = -10
 				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				add = -15
+				has_ethic = ethic_absolute_xenophobe
 			}
 			modifier = {
 				add = -5
@@ -402,12 +398,20 @@ country_event = {
 				has_ethic = ethic_fanatic_egalitarian
 			}
 			modifier = {
+				add = -15
+				has_ethic = ethic_absolute_egalitarian
+			}
+			modifier = {
 				add = 10
 				has_ethic = ethic_pacifist
 			}
 			modifier = {
 				add = 20
 				has_ethic = ethic_fanatic_pacifist
+			}
+			modifier = {
+				add = 30
+				has_ethic = ethic_absolute_pacifist
 			}
 		}
 	}
@@ -448,12 +452,20 @@ country_event = {
 				has_ethic = ethic_fanatic_militarist
 			}
 			modifier = {
+				add = 15
+				has_ethic = ethic_absolute_militarist
+			}
+			modifier = {
 				add = 5
 				has_ethic = ethic_xenophobe
 			}
 			modifier = {
 				add = 10
 				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				add = 15
+				has_ethic = ethic_absolute_xenophobe
 			}
 			modifier = {
 				add = 5
@@ -464,12 +476,20 @@ country_event = {
 				has_ethic = ethic_fanatic_egalitarian
 			}
 			modifier = {
+				add = 15
+				has_ethic = ethic_absolute_egalitarian
+			}
+			modifier = {
 				add = -5
 				has_ethic = ethic_pacifist
 			}
 			modifier = {
 				add = -10
 				has_ethic = ethic_fanatic_pacifist
+			}
+			modifier = {
+				add = -15
+				has_ethic = ethic_absolute_pacifist
 			}
 		}
 	}

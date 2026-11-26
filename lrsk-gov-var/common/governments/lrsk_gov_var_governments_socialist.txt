@@ -30,10 +30,7 @@ lrsk_gov_var_gov_insurrectionary_lineage = {
 			has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
 			has_valid_civic = lrsk_gov_var_civic_cult_of_personality
 		}
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -169,10 +166,7 @@ lrsk_gov_var_gov_automated_worldcommune = {
 		has_auth_dictatorial = yes
 		has_valid_civic = civic_technocracy
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		is_authoritarian = no
 	}
 
 	weight = {
@@ -188,10 +182,7 @@ lrsk_gov_var_gov_automated_worldcommune_oli = {
 		has_auth_oligarchic = yes
 		has_valid_civic = civic_technocracy
 		has_valid_civic = lrsk_gov_var_civic_institutionalized_collectivism
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		is_authoritarian = no
 	}
 
 	weight = {

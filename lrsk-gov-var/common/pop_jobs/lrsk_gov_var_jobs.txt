@@ -52,7 +52,6 @@ lrsk_gov_var_job_hedge_preacher = {
 
 	weight = {
 		weight = @lrsk_desirable_worker_job_weight
-		#mult = value:job_weights_modifier|JOB|lrsk_gov_var_job_hedge_preacher|RESOURCE|unity|
 		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 		modifier = {
 			factor = 0.2
@@ -61,7 +60,7 @@ lrsk_gov_var_job_hedge_preacher = {
 		}
 		modifier = {
 			factor = 1.2
-			has_ethic = ethic_spiritualist
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 0.5
@@ -69,13 +68,8 @@ lrsk_gov_var_job_hedge_preacher = {
 		}
 		modifier = {
 			factor = 0.1
-			has_ethic = ethic_materialist
-			#NOT = { has_job = lrsk_gov_var_job_hedge_preacher }
+			is_materialist = yes
 		}
-		#modifier = {
-		#	factor = 1.5
-		#	has_job = lrsk_gov_var_job_hedge_preacher
-		#}
 	}
 
 	inline_script = "jobs/automodding_priority_unity"
@@ -780,11 +774,11 @@ lrsk_gov_var_job_pastor = {
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_spiritualist
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 1.2
-			has_ethic = ethic_egalitarian
+			is_egalitarian = yes
 		}
 		modifier = {
 			factor = 0.5
@@ -796,8 +790,7 @@ lrsk_gov_var_job_pastor = {
 		}
 		modifier = {
 			factor = 0.1
-			has_ethic = ethic_materialist
-			#NOT = { has_job = lrsk_gov_var_job_pastor }
+			is_materialist = yes
 		}
 		#modifier = {
 		#	factor = 1.5
@@ -970,17 +963,11 @@ lrsk_gov_var_job_otherworld_guide = {
 		}
 		modifier = {
 			factor = 1.2
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 0.1

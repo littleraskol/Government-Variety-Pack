@@ -20,6 +20,7 @@ lrsk_gov_var_civic_mc_sci_mgnt = {
 	  	text = civic_tooltip_not_egalitarian
 	  	value = ethic_egalitarian
 	  	value = ethic_fanatic_egalitarian
+	  	value = ethic_absolute_egalitarian	# technically should not be possible but w/e
 	  }
     }
   }
@@ -74,6 +75,7 @@ lrsk_gov_var_civic_mc_edu_corp = {
         text = civic_tooltip_materialist
         value = ethic_materialist
         value = ethic_fanatic_materialist
+        value = ethic_absolute_materialist
       }
     }
   }
@@ -128,6 +130,7 @@ lrsk_gov_var_civic_mc_gig_economy = {
         text = civic_tooltip_not_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+	  	value = ethic_absolute_egalitarian	# technically should not be possible but w/e
       }
     }
   }
@@ -190,19 +193,6 @@ lrsk_gov_var_civic_mc_chart_corp_board = {
 
   modification = no
 
-  # Don't really think this needs to be ethos locked...
-  #possible = {
-  #  ethics = {
-	#		NOR = {
-	#			text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
-	#			value = ethic_egalitarian
-	#			value = ethic_fanatic_egalitarian
-	#			value = ethic_pacifist
-	#			value = ethic_fanatic_pacifist
-	#		}
-  #  }
-  #}
-
   random_weight = { base = @civic_rare_random_weight } # Not sure how I feel about this in AI hands, will it be able to create vassals as needed?
   
   modifier = {
@@ -228,15 +218,6 @@ lrsk_gov_var_civic_mc_chartered_company = {
 
   possible = {
     civics = { NOT = { value = lrsk_gov_var_civic_mc_chart_corp_board } }
-    #ethics = { # ethos locking this just makes everything more complicated
-		#	NOR = {
-		#		text = lrsk_gov_var_civic_tooltip_not_egalitarian_pacifist
-		#		value = ethic_egalitarian
-		#		value = ethic_fanatic_egalitarian
-		#		value = ethic_pacifist
-		#		value = ethic_fanatic_pacifist
-		#	}
-    #}
   }
 
   random_weight = { base = 0 }
@@ -346,6 +327,7 @@ lrsk_gov_var_civic_mc_workers_councils = {
         text = civic_tooltip_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+	  	value = ethic_absolute_egalitarian	# technically should not be possible but w/e
       }
     }
   }
@@ -397,16 +379,6 @@ lrsk_gov_var_civic_mc_casino_mystic = {
 	#icon = "gfx/interface/icons/governments/civics/civic_public_relations_specialists.dds"
 	description = "civic_tooltip_lrsk_gov_var_civic_mc_casino_mystic_effects"
 
-	#possible = {
-	#  ethics = {
-	#    NOR = {
-	#      text = civic_tooltip_not_materialist
-	#      value = ethic_materialist
-	#      value = ethic_fanatic_materialist
-	#    }
-	#  }
-	#}
-
   	random_weight = { base = @civic_default_random_weight }
   
 	ai_weight = {
@@ -452,9 +424,10 @@ lrsk_gov_var_civic_mc_vacay_planning = {
   possible = {
     ethics = {
       OR = {
-				text = civic_tooltip_xenophile
-				value = ethic_xenophile
-				value = ethic_fanatic_xenophile
+		text = civic_tooltip_xenophile
+		value = ethic_xenophile
+		value = ethic_fanatic_xenophile
+		value = ethic_absolute_xenophile
       }
     }
   }
@@ -509,9 +482,10 @@ lrsk_gov_var_civic_mc_heritage_trust = {
   possible = {
     ethics = {
       OR = {
-				text = civic_tooltip_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
+		text = civic_tooltip_xenophobe
+		value = ethic_xenophobe
+		value = ethic_fanatic_xenophobe
+        value = ethic_absolute_xenophobe
       }
     }
   }
@@ -560,9 +534,10 @@ lrsk_gov_var_civic_mc_conflict_res = {
   possible = {
     ethics = {
       OR = {
-				text = civic_tooltip_pacifist
-				value = ethic_pacifist
-				value = ethic_fanatic_pacifist
+		text = civic_tooltip_pacifist
+		value = ethic_pacifist
+		value = ethic_fanatic_pacifist
+		value = ethic_absolute_pacifist
       }
     }
   }
@@ -615,9 +590,10 @@ lrsk_gov_var_civic_mc_police_state = {
   possible = {
     ethics = {
       OR = {
-				text = civic_tooltip_authoritarian
-				value = ethic_authoritarian
-				value = ethic_fanatic_authoritarian
+		text = civic_tooltip_authoritarian
+		value = ethic_authoritarian
+		value = ethic_fanatic_authoritarian
+		value = ethic_absolute_authoritarian
       }
     }
   }
@@ -701,6 +677,7 @@ lrsk_gvp_civic_mc_war_profiteers = {
 				text = civic_tooltip_militarist
 				value = ethic_militarist
 				value = ethic_fanatic_militarist
+				value = ethic_absolute_militarist
 			}
 		}
 	}
@@ -709,5 +686,58 @@ lrsk_gvp_civic_mc_war_profiteers = {
 		planet_army_build_speed_mult = 0.15
 		starbase_shipyard_build_speed_mult = 0.15
 		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+}
+
+lrsk_gvp_civic_mc_total_zeal = {
+	inline_script = {
+		script = governments/civics/lrsk_gvp_total_zeal_common
+	}
+
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	
+	alternate_civic_version = lrsk_gvp_civic_total_zeal
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = lrsk_gvp_civic_total_zeal
+			}
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = CIVIC_NOT_MODDABLE_UNTIL_INACTIVE
+				has_invalid_civic = lrsk_gvp_civic_mc_total_zeal
+			}
+		}
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = LRSK_GVP_NO_FAN_EGAL_AUTH
+				#value = ethic_fanatic_authoritarian
+				#value = ethic_fanatic_egalitarian
+				value = ethic_fanatic_materialist
+				value = ethic_fanatic_militarist
+				value = ethic_fanatic_pacifist
+				value = ethic_fanatic_spiritualist
+				value = ethic_fanatic_xenophile
+				value = ethic_fanatic_xenophobe
+				# The following is needed for in-game compatibility.
+				#value = ethic_absolute_authoritarian
+				#value = ethic_absolute_egalitarian
+				value = ethic_absolute_materialist
+				value = ethic_absolute_militarist
+				value = ethic_absolute_pacifist
+				value = ethic_absolute_spiritualist
+				value = ethic_absolute_xenophile
+				value = ethic_absolute_xenophobe
+			}
+		}
 	}
 }

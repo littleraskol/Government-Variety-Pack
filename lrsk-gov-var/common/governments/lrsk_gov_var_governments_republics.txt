@@ -12,7 +12,7 @@ lrsk_gov_var_gov_whig_republic = {
 			has_valid_civic = civic_idealistic_foundation
 			AND = {
 				has_valid_civic = civic_meritocracy
-				has_ethic = ethic_egalitarian
+				is_egalitarian = yes
 			}
 		}
 		has_auth_oligarchic = yes
@@ -36,10 +36,7 @@ lrsk_gov_var_gov_whig_commonwealth = {
 			has_valid_civic = civic_beacon_of_liberty
 			AND = {
 				has_valid_civic = civic_meritocracy
-				OR = {
-				 has_ethic = ethic_egalitarian
-				 has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 		}
 		has_auth_democratic = yes
@@ -85,10 +82,7 @@ lrsk_gvp_gov_pious_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 	}
 
 	weight = {
@@ -104,10 +98,7 @@ lrsk_gvp_gov_pious_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 	}
 
 	weight = {
@@ -123,10 +114,7 @@ lrsk_gvp_gov_bellicose_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -134,6 +122,10 @@ lrsk_gvp_gov_bellicose_republic = {
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_absolute_militarist
 		}
 		modifier = {
 			factor = 1.10
@@ -153,10 +145,7 @@ lrsk_gvp_gov_bellicose_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -164,6 +153,10 @@ lrsk_gvp_gov_bellicose_commonwealth = {
 		modifier = {
 			factor = 2
 			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_absolute_militarist
 		}
 		modifier = {
 			factor = 1.10
@@ -183,17 +176,14 @@ lrsk_gvp_gov_tranquil_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 		modifier = {
 			factor = 1.5
@@ -210,17 +200,14 @@ lrsk_gvp_gov_tranquil_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 		modifier = {
 			factor = 1.5
@@ -237,17 +224,14 @@ lrsk_gvp_gov_enlightened_republic = {
 	possible = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_materialist
+			is_fanatic_materialist = yes
 		}
 		modifier = {
 			factor = 1.5
@@ -264,17 +248,14 @@ lrsk_gvp_gov_enlightened_commonwealth = {
 	possible = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_republicanism
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 	}
 
 	weight = {
 		base = @lrsk_gov_ethic_weight
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_materialist
+			is_fanatic_materialist = yes
 		}
 		modifier = {
 			factor = 1.5

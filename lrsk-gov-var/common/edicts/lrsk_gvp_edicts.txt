@@ -149,3 +149,61 @@ lrsk_gvp_royjustice = {
 	}
 
 }
+
+lrsk_gvp_audacity_war = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = 20
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = 20
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		damage_vs_country_type_fallen_empire_mult = 0.25
+		damage_vs_country_type_awakened_fallen_empire_mult = 0.25
+		ship_fire_rate_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		ships_upkeep_mult = -0.1
+	}
+
+	potential = {
+		lrsk_gvp_has_total_zeal = yes
+	}
+
+	allow = {
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
+			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
+			is_absolute = yes
+		}
+		custom_tooltip = {
+			success_text = lrsk_gvp_tooltip_at_war_with_fe_pass
+			fail_text = lrsk_gvp_tooltip_at_war_with_fe_fail
+			lrsk_gvp_at_war_w_fe = yes
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			is_at_war = yes
+			any_war = { 
+				any_war_participant = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				} 
+			}
+		}
+	}
+}

@@ -14,7 +14,7 @@ lrsk_create_tradeways_member_mc = {
 			}
 			modifier = {
 				factor = 2
-				root = { has_ethic = ethic_fanatic_pacifist }
+				root = { is_fanatic_pacifist = yes }
 			}
 			create_country = {
 				name_list = random
@@ -40,7 +40,7 @@ lrsk_create_tradeways_member_mc = {
 			}
 			modifier = {
 				factor = 2
-				root = { has_ethic = ethic_fanatic_materialist }
+				root = { is_fanatic_materialist = yes }
 			}
 			create_country = {
 				name_list = random
@@ -66,7 +66,7 @@ lrsk_create_tradeways_member_mc = {
 			}
 			modifier = {
 				factor = 2
-				root = { has_ethic = ethic_fanatic_spiritualist }
+				root = { is_fanatic_spiritualist = yes }
 			}
 			create_country = {
 				name_list = random
@@ -93,6 +93,10 @@ lrsk_create_tradeways_member_mc = {
 			modifier = {
 				factor = 2
 				root = { has_ethic = ethic_fanatic_militarist }
+			}
+			modifier = {
+				factor = 3
+				root = { has_ethic = ethic_absolute_militarist }
 			}
 			create_country = {
 				name_list = random
@@ -144,7 +148,7 @@ lrsk_create_tradeways_member_mc = {
 			}
 			modifier = {
 				factor = 2
-				root = { has_ethic = ethic_fanatic_egalitarian }
+				root = { is_fanatic_egalitarian = yes }
 			}
 			create_country = {
 				name_list = random
@@ -312,7 +316,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 				modifier = {
 					factor = 2
-					root = { has_ethic = ethic_fanatic_pacifist }
+					root = { is_fanatic_pacifist = yes }
 				}
 				create_country = {
 					name = random
@@ -342,7 +346,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 				modifier = {
 					factor = 2
-					root = { has_ethic = ethic_fanatic_materialist }
+					root = { is_fanatic_materialist = yes }
 				}
 				create_country = {
 					name = random
@@ -372,7 +376,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 				modifier = {
 					factor = 2
-					root = { has_ethic = ethic_fanatic_spiritualist }
+					root = { is_fanatic_spiritualist = yes }
 				}
 				create_country = {
 					name = random
@@ -403,6 +407,10 @@ lrsk_create_tradeways_member_mg = {
 				modifier = {
 					factor = 2
 					root = { has_ethic = ethic_fanatic_militarist }
+				}
+				modifier = {
+					factor = 3
+					root = { has_ethic = ethic_absolute_militarist }
 				}
 				create_country = {
 					name = random
@@ -462,7 +470,7 @@ lrsk_create_tradeways_member_mg = {
 				}
 				modifier = {
 					factor = 2
-					root = { has_ethic = ethic_fanatic_egalitarian }
+					root = { is_fanatic_egalitarian = yes }
 				}
 				create_country = {
 					name = random
@@ -636,7 +644,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}
@@ -706,7 +714,7 @@ lrsk_fix_null_partner = {
 			}
 			lrsk_gov_var_origin_tradeways = {
 				# default megacorp
-				IF = { limit = { root = { has_megacorp = yes } }
+				IF = { limit = { root = { has_megacorp_dlc = yes } }
 					create_country = {
 						name = random
 						name_list = random
@@ -779,7 +787,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}
@@ -835,7 +843,7 @@ lrsk_fix_null_partner = {
 							factor = 0
 							root = { 
 								OR = {
-									has_megacorp = no
+									has_megacorp_dlc = no
 									has_auth_corporate = yes
 								}
 							}

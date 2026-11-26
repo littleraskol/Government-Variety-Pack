@@ -60,17 +60,33 @@ lrsk_gvp_leader_trait_esper = {
 		}
 		federation_experience_add = 0.5
 	}
+	# Official - Advocate Modifier
+	triggered_advocate_modifier = {
+		potential = {
+			has_force_of_will_dlc = yes
+			is_ruler = no
+		}
+		advocate_ideological_strength_mult = 0.05
+	}
+	# Official - Self Modifier
+	triggered_self_modifier = {
+		potential = {
+			has_force_of_will_dlc = yes
+			is_ruler = no
+		}
+		cultural_envoy_leader_exp_gain_mult = 0.05
+	}
 	# Any Class - Planet Modifier
 	triggered_planet_modifier = {
 		potential = {
-			is_ruler = no
+			leader_can_govern = yes
 		}
 		planet_jobs_unity_produces_mult = 0.05
 	}
 	# Any Class - Sector Modifier
 	triggered_sector_modifier = {
 		potential = {
-			is_ruler = no
+			leader_can_govern = yes
 		}
 		planet_jobs_unity_produces_mult = 0.025
 	}

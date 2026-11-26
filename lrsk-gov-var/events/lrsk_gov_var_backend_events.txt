@@ -751,7 +751,7 @@ country_event = {
 						}
 						modifier = {
 							factor = 2
-							root = { has_ethic = ethic_fanatic_pacifist }
+							root = { is_fanatic_pacifist = yes }
 						}
 
 						lrsk_remove_all_ethics = yes
@@ -783,7 +783,7 @@ country_event = {
 						}
 						modifier = {
 							factor = 2
-							root = { has_ethic = ethic_fanatic_spiritualist }
+							root = { is_fanatic_spiritualist = yes }
 						}
 
 						lrsk_remove_all_ethics = yes
@@ -819,6 +819,10 @@ country_event = {
 							factor = 2
 							root = { has_ethic = ethic_fanatic_militarist }
 						}
+						modifier = {
+							factor = 3
+							root = { has_ethic = ethic_absolute_militarist }
+						}
 
 						lrsk_remove_all_ethics = yes
 						random_list = {
@@ -849,7 +853,7 @@ country_event = {
 						}
 						modifier = {
 							factor = 2
-							root = { has_ethic = ethic_fanatic_materialist }
+							root = { is_fanatic_materialist = yes }
 						}
 						
 						lrsk_remove_all_ethics = yes
@@ -1640,6 +1644,56 @@ country_event = {
 			ELSE = { change_variable = { which = lrsk_gvp_num_piety_trads value = 1 } }
 			
 			log = "Num social piety trads = [this.lrsk_gvp_num_piety_trads]"		
+		}
+	}
+}
+
+# Total Zeal: Remove non-fanatic ethics, replace with lesser modifier.
+country_event = {
+	id = lrsk_government_variety_pack_backend.1007
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		lrsk_gvp_has_total_zeal = yes
+	}
+	
+	immediate = {
+		switch = {
+			trigger = has_ethic
+			ethic_xenophile = {
+				country_remove_ethic = ethic_xenophile
+				add_modifier = { modifier = lrsk_gvp_diversity_traditions days = -1 }
+			}
+			ethic_xenophobe = {
+				country_remove_ethic = ethic_xenophobe
+				add_modifier = { modifier = lrsk_gvp_purity_traditions days = -1 }
+			}
+			ethic_militarist = {
+				country_remove_ethic = ethic_militarist
+				add_modifier = { modifier = lrsk_gvp_valor_traditions days = -1 }
+			}
+			ethic_pacifist = {
+				country_remove_ethic = ethic_pacifist
+				add_modifier = { modifier = lrsk_gvp_tranquility_traditions days = -1 }
+			}
+			ethic_spiritualist = {
+				country_remove_ethic = ethic_spiritualist
+				add_modifier = { modifier = lrsk_gvp_faith_traditions days = -1 }
+			}
+			ethic_materialist = {
+				country_remove_ethic = ethic_materialist
+				add_modifier = { modifier = lrsk_gvp_knowledge_traditions days = -1 }
+			}
+			ethic_authoritarian = {
+				country_remove_ethic = ethic_authoritarian
+				add_modifier = { modifier = lrsk_gvp_hierarchy_traditions days = -1 }
+			}
+			ethic_egalitarian = {
+				country_remove_ethic = ethic_egalitarian
+				add_modifier = { modifier = lrsk_gvp_equality_traditions days = -1 }
+			}
+			default = { log = "(LRSK GVP) ERROR: TOTAL ZEAL EMPIRE STARTED WITHOUT NON-FANATIC ETHOS" }
 		}
 	}
 }

@@ -19,9 +19,10 @@ lrsk_gov_var_civic_elected_clergy = {
     }
     ethics = {
       OR = {
-    	  text = civic_tooltip_spiritualist
-    		value = ethic_spiritualist
-    		value = ethic_fanatic_spiritualist
+		text = civic_tooltip_spiritualist
+		value = ethic_spiritualist
+		value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -70,6 +71,7 @@ lrsk_gov_var_civic_ascetic_virtues = {
         text = civic_tooltip_not_materialist
         value = ethic_materialist
         value = ethic_fanatic_materialist
+        value = ethic_absolute_materialist
       }
     }
 		species_archetype = {
@@ -136,6 +138,7 @@ lrsk_gov_var_civic_republicanism = {
         text = civic_tooltip_not_authoritarian
         value = ethic_authoritarian
         value = ethic_fanatic_authoritarian
+        value = ethic_absolute_authoritarian
       }
     }
   }
@@ -185,9 +188,10 @@ lrsk_gov_var_civic_utilitarian_planning = {
   possible = {
     ethics = {
       NOR = {
-        text = civic_tooltip_not_spiritualist
-        value = ethic_spiritualist
-        value = ethic_fanatic_spiritualist
+		text = civic_tooltip_not_spiritualist
+		value = ethic_spiritualist
+		value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -234,11 +238,13 @@ lrsk_gov_var_civic_siege_mentality = {
         text = civic_tooltip_not_xenophile
         value = ethic_xenophile
         value = ethic_fanatic_xenophile
+        value = ethic_absolute_xenophile
       }
       NOR= {
         text = civic_tooltip_not_militarist
         value = ethic_militarist
         value = ethic_fanatic_militarist
+        value = ethic_absolute_militarist
       }
     }
     is_nomadic = no
@@ -290,11 +296,13 @@ lrsk_gov_var_civic_cult_of_personality = {
 				text = civic_tooltip_authoritarian
 				value = ethic_authoritarian
 				value = ethic_fanatic_authoritarian
+				value = ethic_absolute_authoritarian
 			}
 			NOR = {
 				text = civic_tooltip_not_spiritualist
 				value = ethic_spiritualist
 				value = ethic_fanatic_spiritualist
+				value = ethic_absolute_spiritualist
 			}
 		}
 	}
@@ -376,6 +384,7 @@ lrsk_gov_var_civic_universal_sovereignty = {
         text = civic_tooltip_not_xenophobe
         value = ethic_xenophobe
         value = ethic_fanatic_xenophobe
+        value = ethic_absolute_xenophobe
       }
     }
     civics = {
@@ -436,6 +445,7 @@ lrsk_gov_var_civic_workers_councils = {
         text = civic_tooltip_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+        value = ethic_absolute_egalitarian
       }
     }
     civics = {
@@ -499,21 +509,24 @@ lrsk_gov_var_civic_supremacist_demagoguery = {
 
   possible = {
     ethics = {
-      NOR = {
-        text = civic_tooltip_not_xenophile
-        value = ethic_xenophile
-        value = ethic_fanatic_xenophile
-      }
-      NOR = {
-        text = civic_tooltip_not_egalitarian
-        value = ethic_egalitarian
-        value = ethic_fanatic_egalitarian
-      }
-			NOR = {
-				text = civic_tooltip_not_pacifist
-				value = ethic_pacifist
-				value = ethic_fanatic_pacifist
-			}
+		NOR = {
+			text = civic_tooltip_not_xenophile
+			value = ethic_xenophile
+			value = ethic_fanatic_xenophile
+			value = ethic_absolute_xenophile
+		}
+		NOR = {
+			text = civic_tooltip_not_egalitarian
+			value = ethic_egalitarian
+			value = ethic_fanatic_egalitarian
+			value = ethic_absolute_egalitarian
+		}
+		NOR = {
+			text = civic_tooltip_not_pacifist
+			value = ethic_pacifist
+			value = ethic_fanatic_pacifist
+			value = ethic_absolute_pacifist
+		}
     }
     civics = {
       NOR = {
@@ -581,6 +594,7 @@ lrsk_gov_var_civic_enlightened_liberalism = {
         text = civic_tooltip_not_spiritualist
         value = ethic_spiritualist
         value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
       NOT = { value = ethic_fanatic_authoritarian }
     }
@@ -690,6 +704,7 @@ lrsk_gov_var_civic_chivalry = {
         text = civic_tooltip_militarist
         value = ethic_militarist
         value = ethic_fanatic_militarist
+        value = ethic_absolute_militarist
       }
     }
   }
@@ -743,9 +758,10 @@ lrsk_gov_var_civic_lifelong_learning = {
     }
     ethics = {
       OR = {
-        text = civic_tooltip_pacifist
-        value = ethic_pacifist
-    	  value = ethic_fanatic_pacifist
+			text = civic_tooltip_pacifist
+			value = ethic_pacifist
+			value = ethic_fanatic_pacifist
+			value = ethic_absolute_pacifist
     	}
     }
   }
@@ -797,7 +813,10 @@ lrsk_gov_var_civic_institutionalized_collectivism = {
       }
     }
     ethics = {
-			NOT = { value = ethic_fanatic_authoritarian }
+		NOR = {
+			value = ethic_fanatic_authoritarian
+			value = ethic_absolute_authoritarian
+		}
     }
   }
   
@@ -849,11 +868,13 @@ lrsk_gov_var_civic_direct_revelation = {
         text = civic_tooltip_egalitarian
         value = ethic_egalitarian
         value = ethic_fanatic_egalitarian
+		value = ethic_absolute_egalitarian
       }
       OR = {
         text = civic_tooltip_spiritualist
         value = ethic_spiritualist
         value = ethic_fanatic_spiritualist
+		value = ethic_absolute_spiritualist
       }
     }
   }
@@ -905,6 +926,7 @@ lrsk_gov_var_civic_royal_absolutism = {
         text = civic_tooltip_authoritarian
         value = ethic_authoritarian
         value = ethic_fanatic_authoritarian
+        value = ethic_absolute_authoritarian
       }
     }
     civics = {
@@ -1010,23 +1032,25 @@ lrsk_gov_var_civic_imperial_economy = {
 
   possible = {
     ethics = {
-      NOR = {
-        text = civic_tooltip_not_xenophile
-        value = ethic_xenophile
-        value = ethic_fanatic_xenophile
-      }
-      NOR = {
-        text = civic_tooltip_not_egalitarian
-        value = ethic_egalitarian
-        value = ethic_fanatic_egalitarian
-      }
+		NOR = {
+			text = civic_tooltip_not_xenophile
+			value = ethic_xenophile
+			value = ethic_fanatic_xenophile
+			value = ethic_absolute_xenophile
+		}
+		NOR = {
+			text = civic_tooltip_not_egalitarian
+			value = ethic_egalitarian
+			value = ethic_fanatic_egalitarian
+			value = ethic_absolute_egalitarian
+		}
     }
     civics = {
-      NOR = {
-        value = civic_fanatic_purifiers
-        value = civic_scorched_earth
-        value = civic_inwards_perfection
-      }
+		NOR = {
+			value = civic_fanatic_purifiers
+			value = civic_scorched_earth
+			value = civic_inwards_perfection
+		}
     }
   }
 
@@ -1080,9 +1104,10 @@ lrsk_gov_var_civic_colonial_fiefs = {
     }
     ethics = {
       NOR = {
-        text = civic_tooltip_not_militarist
+        	text = civic_tooltip_not_militarist
     		value = ethic_militarist
     		value = ethic_fanatic_militarist
+        	value = ethic_absolute_militarist
     	}
     }
     is_nomadic = no
@@ -1160,18 +1185,12 @@ lrsk_gov_var_civic_automated_indolence = {
   random_weight = {
     base = @civic_rare_random_weight
     modifier = {
-			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
-		}
+		factor = 2
+		is_materialist = yes
+	}
     modifier = {
       factor = 0.5
-      OR = {
-        has_ethic = ethic_spiritualist
-        has_ethic = ethic_fanatic_spiritualist
-      }
+      is_spiritualist = yes
     }
     #modifier = {
 		#	factor = 0
@@ -1347,6 +1366,57 @@ lrsk_adv_civ_civic_essentialists = {
 		planet_researchers_society_research_produces_mult = @lrsk_tech_gov_result_malus
 		planet_jobs_society_research_upkeep_mult = @lrsk_tech_gov_upkeep_malus
 		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+}
+
+lrsk_gvp_civic_total_zeal = {
+	inline_script = {
+		script = governments/civics/lrsk_gvp_total_zeal_common
+	}
+
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+
+	alternate_civic_version = lrsk_gvp_civic_mc_total_zeal
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = lrsk_gvp_civic_mc_total_zeal
+			}
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = CIVIC_NOT_MODDABLE_UNTIL_INACTIVE
+				has_invalid_civic = lrsk_gvp_civic_total_zeal
+			}
+		}
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_fanatic
+				value = ethic_fanatic_authoritarian
+				value = ethic_fanatic_egalitarian
+				value = ethic_fanatic_materialist
+				value = ethic_fanatic_militarist
+				value = ethic_fanatic_pacifist
+				value = ethic_fanatic_spiritualist
+				value = ethic_fanatic_xenophile
+				value = ethic_fanatic_xenophobe
+				# The following is needed for in-game compatibility.
+				value = ethic_absolute_authoritarian
+				value = ethic_absolute_egalitarian
+				value = ethic_absolute_materialist
+				value = ethic_absolute_militarist
+				value = ethic_absolute_pacifist
+				value = ethic_absolute_spiritualist
+				value = ethic_absolute_xenophile
+				value = ethic_absolute_xenophobe
+			}
+		}
 	}
 }
 

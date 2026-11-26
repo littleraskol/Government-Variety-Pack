@@ -366,33 +366,6 @@ lrsk_refresh_chartered_colony_loyalty_offset = {
 
 # Set as chartered colony subject with decaying opinion modifier.
 lrsk_make_chartered_colony_subject = {
-	# Need to do this because removing this preset in the Agreements menu will restore.
-	#store_country_backup_data = {
-	#	name = yes
-	#	government = yes
-	#	ethics = yes
-	#}
-	#
-	#switch = {
-	#	trigger = has_ethic
-	#	ethic_fanatic_authoritarian = {
-	#		country_remove_ethic = ethic_fanatic_authoritarian
-	#		shift_ethic = ethic_authoritarian
-	#	}
-	#	ethic_fanatic_egalitarian = {
-	#		country_remove_ethic = ethic_fanatic_egalitarian
-	#		shift_ethic = ethic_egalitarian
-	#	}
-	#}
-	#change_government = {
-	#	authority = auth_corporate
-	#	civics = {
-	#		civic = lrsk_gov_var_civic_mc_chartered_company
-	#		civic = random
-	#	}
-	#}
-	#set_name = random # Fixes some naming issues
-
 	# Should always already be a subject, but JIC
 	IF = { limit = { is_subject = yes }
 		random_agreement = {
@@ -743,8 +716,8 @@ lrsk_federation_origin_megacorp_fix = {
 				modifier = {
 					add = -1
 					root = { OR = {
-						has_ethic = ethic_fanatic_authoritarian
-						has_ethic = ethic_fanatic_egalitarian
+						is_fanatic_authoritarian = yes
+						is_fanatic_egalitarian = yes
 					} }
 				}
 				change_government = { 
@@ -764,7 +737,7 @@ lrsk_federation_origin_megacorp_fix = {
 				}
 				modifier = {
 					add =  1
-					root = { has_ethic = ethic_authoritarian }
+					root = { is_fanatic_authoritarian = yes }
 				}
 				modifier = {
 					add =  1
@@ -787,7 +760,7 @@ lrsk_federation_origin_megacorp_fix = {
 				}
 				modifier = {
 					add =  1
-					root = { has_ethic = ethic_fanatic_authoritarian }
+					root = { is_fanatic_authoritarian = yes }
 				}
 				modifier = {
 					add =  1

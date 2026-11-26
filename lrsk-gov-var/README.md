@@ -21,12 +21,25 @@ This mod only adds new things to the game, in new files. There's no possibility 
 
 5. Changes
 
-v8.??? (??/??/??) - New Job Scaling Effects
+v9.1 (??/??/??) - New Job Scaling Effects
 Replacing "jobs per pop" in some instances.
 -Shroud Pockets provide Otherworld Guide jobs scaling with owner's "psionic achievement" (based on techs and traditions).
 --They also account for the possibility of psionic machines.
 
-v8.2 (??/??/??) - Cygnus (4.5) Update
+v9.0 (11/23/26) - Corona Borealis (4.6) Update
+-Fixed what was needed for compatibility with Stellaris 4.6 (Corona Borealis).
+--'has_megacorp' replaced with 'has_megacorp_dlc'
+-Updated to accomodate Willpower DLC changes
+--Absolute Ethics accounted for as needed.
+--Added "Ideological Strength from Advocate" and "Experience from Ideological Conversion" to Esper leader modifier.
+-Removed "Pretender Hive" and associated AI personality - I could never maintain the changes to diplo phrases, and likely never will be able to.
+-Added "Total Zeal" civic
+--Only available with Willpower DLC.
+--Can be taken by any non-gestalt empire.
+--Mechanics support the ideology game, and eventually challenging Fallen/Awakened Empires and completing grand projects.
+--Associated governments added.
+-Updated compat version number.
+
 v8.3.1 (11/22/26) Last-Minute Fix
 Shroud-Touched Origin:
 -Events were not being checked correctly.

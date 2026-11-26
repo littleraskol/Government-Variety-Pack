@@ -10,10 +10,7 @@ lrsk_gov_var_gov_galactic_dominion = {
 		has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -35,10 +32,7 @@ lrsk_gov_var_gov_galactic_imperium = {
 		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_universal_sovereignty
 		has_valid_civic = lrsk_gov_var_civic_imperial_economy
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 
 	weight = {
@@ -54,10 +48,8 @@ lrsk_gov_var_gov_folkish_commonwealth = {
 		has_auth_democratic = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
+			is_xenophobe = yes
+			is_militarist = yes
 		}
 		NOR = {
 			has_valid_civic = civic_citizen_service
@@ -81,10 +73,8 @@ lrsk_gov_var_gov_folkish_league = {
 		has_auth_oligarchic = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
+			is_xenophobe = yes
+			is_militarist = yes
 		}
 		NOR = {
 			has_valid_civic = civic_citizen_service
@@ -108,10 +98,8 @@ lrsk_gov_var_gov_folkish_regime = {
 		has_auth_dictatorial = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
+			is_xenophobe = yes
+			is_militarist = yes
 		}
 		NOR = {
 			has_valid_civic = civic_fanatic_purifiers
@@ -135,10 +123,8 @@ lrsk_gov_var_gov_folkish_realm = {
 		has_auth_imperial = yes
 		has_valid_civic = lrsk_gov_var_civic_supremacist_demagoguery
 		OR = {
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
+			is_xenophobe = yes
+			is_militarist = yes
 		}
 		NOR = {
 			has_valid_civic = civic_fanatic_purifiers
@@ -164,14 +150,8 @@ lrsk_gov_var_gov_crusader_kingdom = {
 	possible = {
 		has_auth_imperial = yes
 		AND = {
-			OR = {
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_militarist
-			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_militarist = yes
+			is_spiritualist = yes
 		}
 		OR = {
 			has_valid_civic = civic_feudal_realm
@@ -185,8 +165,8 @@ lrsk_gov_var_gov_crusader_kingdom = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_fanatic_militarist
+				is_fanatic_spiritualist = yes
+				is_fanatic_materialist = yes
 			}
 		}
 	}
@@ -198,10 +178,7 @@ lrsk_gov_var_gov_crusader_order = {
 
 	possible = {
 		has_auth_oligarchic = yes
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 		AND = {
 			has_valid_civic = civic_aristocratic_elite
 			OR = {
@@ -218,8 +195,8 @@ lrsk_gov_var_gov_crusader_order = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_fanatic_militarist
+				is_fanatic_spiritualist = yes
+				is_fanatic_materialist = yes
 			}
 		}
 	}

@@ -1,0 +1,49 @@
+# Government Variety Pack
+# Council Agendas
+# Author: littleraskol
+
+# Total Zeal: Age of Wonders (Settled)
+
+agenda_lrsk_gvp_wonder_age = {
+	allow = {
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
+			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
+			is_absolute = yes
+		}
+		OR = {
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_MEGA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_MEGA
+				can_build_megastructures = yes
+			}
+			custom_tooltip = {
+				success_text = LRSK_GVP_CAN_WONDER_AGE_TERRA
+				fail_text = LRSK_GVP_CANT_WONDER_AGE_TERRA
+				lrsk_gvp_can_terraform = yes
+			}
+		}
+	}
+	inline_script = {
+		script = council_agendas/lrsk_gvp_wonder_age_common
+		LRSK_GVP_ISNOMAD = no
+	}
+	finish_modifier = agenda_lrsk_gvp_wonder_age_finish
+}
+
+# Total Zeal: Age of Wonders (Nomadic)
+
+agenda_lrsk_gvp_nomadic_wonder_age = {
+	allow = {
+		custom_tooltip = {
+			success_text = LRSK_GVP_IS_ABSOLUTE_PASS
+			fail_text = LRSK_GVP_IS_ABSOLUTE_FAIL
+			is_absolute = yes
+		}
+	}
+	inline_script = {
+		script = council_agendas/lrsk_gvp_wonder_age_common
+		LRSK_GVP_ISNOMAD = yes
+	}
+	finish_modifier = agenda_lrsk_gvp_nomadic_wonder_age_finish
+}
