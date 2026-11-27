@@ -28,6 +28,8 @@ Replacing "jobs per pop" in some instances.
 -Knight Halls add +10/+20 Realm Cavalier jobs per "valor" tradition gained.
 --These are Fortification, Supremacy, Enmity.
 --Lacking a DLC that allows Fortification grants an army morale bonus on base civic and Knight Halls.
+...
+-Changed icon for "Labor-Management Retreat" building (differentiate from new building using similar icon).
 
 v9.0 (11/23/26) - Corona Borealis (4.6) Update
 -Fixed what was needed for compatibility with Stellaris 4.6 (Corona Borealis).
