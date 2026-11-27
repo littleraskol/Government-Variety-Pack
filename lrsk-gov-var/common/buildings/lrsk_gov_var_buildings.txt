@@ -5,7 +5,6 @@
 ## Army Buildings
 
 # Hall of Honor
-
 lrsk_gov_var_bldg_hall_of_honor = {
 	base_cap_amount = 2
 
@@ -22,7 +21,6 @@ lrsk_gov_var_bldg_hall_of_honor = {
 }
 
 # Hall of Valor
-
 lrsk_gov_var_bldg_hall_of_valor = {
 	base_cap_amount = 1
 	
@@ -225,6 +223,32 @@ lrsk_gov_var_bldg_planet_synaptic_taproot = {
 	inline_script = {
 		script = buildings/lrsk_gvp_ps_wild_bldg_common
 		LRSK_GVP_PSLVL = 5
+	}
+}
+
+# Public Forums
+lrsk_gvp_bldg_public_forum = {
+	icon = lrsk_gvp_bldg_public_forum_1
+
+	inline_script = {
+		script = buildings/lrsk_gvp_pf_common
+		LRSK_GVP_BLVL = 1
+		LRSK_GVP_MAJOR = ""
+	}
+
+	upgrades = {
+		"lrsk_gvp_bldg_public_plaza"
+	}
+}
+
+# Public Plazas
+lrsk_gvp_bldg_public_plaza = {
+	icon = lrsk_gvp_bldg_public_forum_2
+	
+	inline_script = {
+		script = buildings/lrsk_gvp_pf_common
+		LRSK_GVP_BLVL = 2
+		LRSK_GVP_MAJOR = "major_"
 	}
 }
 

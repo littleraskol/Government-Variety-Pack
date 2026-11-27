@@ -1,26 +1,29 @@
+	base_cap_amount = 1
 	position_priority = 100
 	exempt_from_ai_planet_specialization = no
 
 	base_buildtime = @b$LRSK_GVP_BLVL$_time
 	
-	category = army
+	category = government
 
 	building_sets = {
 		government
-		fortress
 	}
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		owner? = { has_valid_civic = lrsk_gov_var_civic_chivalry }
+		owner? = { has_valid_civic = lrsk_gov_var_civic_republicanism }
 	}
 	
 	allow = {
+		NOR = {
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
 		has_$LRSK_GVP_MAJOR$upgraded_capital = yes
 	}
 
 	resources = {
-		category = planet_buildings_strongholds
+		category = planet_buildings
 		cost = {
 			minerals = @b$LRSK_GVP_BLVL$_minerals
 		}
@@ -28,29 +31,32 @@
 			energy = @b$LRSK_GVP_BLVL$_upkeep
 		}
 	}
-
-	army_modifier = {
-		army_starting_experience_add = $LRSK_GVP_WHEXP$
+	
+	# need a "base" modifier even if lacking civic
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_federations_dlc = no
+		}
+		# ??
+		mult = $LRSK_GVP_BLVL$
 	}
 	
 	triggered_planet_modifier = {
 		potential = {
-			NOR = {
-				has_apocalypse_dlc = yes
-				has_overlord_dlc = yes
-			}
+			has_paragon_dlc = no
 		}
-		army_morale = 0.1
+		# ??
 		mult = $LRSK_GVP_BLVL$
 	}
 	
 	triggered_planet_modifier = {
 		potential = {
 			owner? = {
-				has_valid_civic = lrsk_gov_var_civic_chivalry
+				has_valid_civic = lrsk_gov_var_civic_republicanism
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = 100
+		job_lrsk_gvp_job_civic_leader_add = 100
 		mult = $LRSK_GVP_BLVL$
 	}
 
@@ -58,10 +64,10 @@
 		potential = {
 			owner? = {
 				has_valid_civic = lrsk_gov_var_civic_chivalry
-				is_variable_set = lrsk_gvp_num_valor_trads
-				check_variable = { which = lrsk_gvp_num_valor_trads value > 0 }
+				is_variable_set = lrsk_gvp_num_virtue_trads
+				check_variable = { which = lrsk_gvp_num_virtue_trads value > 0 }
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = $LRSK_GVP_BLVL$0
-		mult = owner.lrsk_gvp_num_valor_trads
+		job_lrsk_gvp_job_civic_leader_add = $LRSK_GVP_BLVL$0
+		mult = owner.lrsk_gvp_num_virtue_trads
 	}
