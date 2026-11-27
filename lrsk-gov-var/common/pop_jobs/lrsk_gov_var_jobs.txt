@@ -1242,10 +1242,21 @@ lrsk_gvp_job_civic_leader = {
 	
 	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			is_capital = no
 		}
 		modifier = {
-			planet_stability_add = 1
+			planet_decision_enact_speed_mult = 0.03
+			planetary_ascension_cost_mult = -0.03
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+		}
+		modifier = {
+			council_agenda_progress_speed = 0.03
+			council_agenda_early_activation_cost_mult = -0.03
 		}
 	}
 
@@ -1253,17 +1264,18 @@ lrsk_gvp_job_civic_leader = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 200
+		planet_amenities_add = 50
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	resources = {
 		category = planet_bureaucrats
 		produces = {
-			unity = 3
+			unity = 2
 		}
 		upkeep = {
-			consumer_goods = 2
+			consumer_goods = 1
+			trade = 1
 		}
 	}
 
@@ -1288,16 +1300,6 @@ lrsk_gvp_job_civic_leader = {
 	}
 	
 	inline_script = "jobs/automodding_priority_unity"
-
-	#promotion = {
-	#	time = @standard_promotion_time
-	#	effect = {
-	#		pop_amount_change_category = {
-	#			CATEGORY = specialist
-	#			AMOUNT = local_pop_amount
-	#		}
-	#	}
-	#}
 }
 
 ## Ruler Jobs
