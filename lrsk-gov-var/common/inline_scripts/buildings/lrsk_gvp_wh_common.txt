@@ -1,7 +1,7 @@
 	position_priority = 100
 	exempt_from_ai_planet_specialization = no
 
-	base_buildtime = @b$LRSK_GVP_WHLVL$_time
+	base_buildtime = @b$LRSK_GVP_BLVL$_time
 	
 	category = army
 
@@ -22,10 +22,10 @@
 	resources = {
 		category = planet_buildings_strongholds
 		cost = {
-			minerals = @b$LRSK_GVP_WHLVL$_minerals
+			minerals = @b$LRSK_GVP_BLVL$_minerals
 		}
 		upkeep = {
-			energy = @b$LRSK_GVP_WHLVL$_upkeep
+			energy = @b$LRSK_GVP_BLVL$_upkeep
 		}
 	}
 
@@ -41,7 +41,7 @@
 			}
 		}
 		army_morale = 0.1
-		mult = $LRSK_GVP_WHLVL$
+		mult = $LRSK_GVP_BLVL$
 	}
 	
 	triggered_planet_modifier = {
@@ -51,7 +51,7 @@
 			}
 		}
 		job_lrsk_gov_var_job_knight_add = 100
-		mult = $LRSK_GVP_WHLVL$
+		mult = $LRSK_GVP_BLVL$
 	}
 
 	triggered_planet_modifier = {
@@ -62,6 +62,6 @@
 				check_variable = { which = lrsk_gvp_num_valor_trads value > 0 }
 			}
 		}
-		job_lrsk_gov_var_job_knight_add = $LRSK_GVP_WHLVL$0
+		job_lrsk_gov_var_job_knight_add = $LRSK_GVP_BLVL$0
 		mult = owner.lrsk_gvp_num_valor_trads
 	}
